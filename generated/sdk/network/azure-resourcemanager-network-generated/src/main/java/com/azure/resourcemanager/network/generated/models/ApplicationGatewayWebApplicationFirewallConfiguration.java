@@ -291,16 +291,19 @@ public final class ApplicationGatewayWebApplicationFirewallConfiguration {
      */
     public void validate() {
         if (firewallMode() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property firewallMode in model ApplicationGatewayWebApplicationFirewallConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property firewallMode in model ApplicationGatewayWebApplicationFirewallConfiguration"));
         }
         if (ruleSetType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleSetType in model ApplicationGatewayWebApplicationFirewallConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleSetType in model ApplicationGatewayWebApplicationFirewallConfiguration"));
         }
         if (ruleSetVersion() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleSetVersion in model ApplicationGatewayWebApplicationFirewallConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleSetVersion in model ApplicationGatewayWebApplicationFirewallConfiguration"));
         }
         if (disabledRuleGroups() != null) {
             disabledRuleGroups().forEach(e -> e.validate());

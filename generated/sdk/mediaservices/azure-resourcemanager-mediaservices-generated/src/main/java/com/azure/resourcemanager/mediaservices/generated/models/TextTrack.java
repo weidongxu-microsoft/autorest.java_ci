@@ -6,16 +6,25 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * Represents a text track in an asset. A text track is usually used for sparse data related to the audio or video tracks.
+ * Represents a text track in an asset. A text track is usually used for sparse data related to the audio or video
+ * tracks.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = TextTrack.class, visible = true)
 @JsonTypeName("#Microsoft.Media.TextTrack")
 @Fluent
 public final class TextTrack extends TrackBase {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.TextTrack";
+
     /*
      * The file name to the source file. This file is located in the storage container of the asset.
      */
@@ -50,11 +59,21 @@ public final class TextTrack extends TrackBase {
      * Creates an instance of TextTrack class.
      */
     public TextTrack() {
-        withOdataType("#Microsoft.Media.TextTrack");
     }
 
     /**
-     * Get the fileName property: The file name to the source file. This file is located in the storage container of the asset.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the fileName property: The file name to the source file. This file is located in the storage container of the
+     * asset.
      * 
      * @return the fileName value.
      */
@@ -63,7 +82,8 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Set the fileName property: The file name to the source file. This file is located in the storage container of the asset.
+     * Set the fileName property: The file name to the source file. This file is located in the storage container of the
+     * asset.
      * 
      * @param fileName the fileName value to set.
      * @return the TextTrack object itself.
@@ -74,7 +94,8 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Get the displayName property: The display name of the text track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
+     * Get the displayName property: The display name of the text track on a video player. In HLS, this maps to the NAME
+     * attribute of EXT-X-MEDIA.
      * 
      * @return the displayName value.
      */
@@ -83,7 +104,8 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Set the displayName property: The display name of the text track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
+     * Set the displayName property: The display name of the text track on a video player. In HLS, this maps to the NAME
+     * attribute of EXT-X-MEDIA.
      * 
      * @param displayName the displayName value to set.
      * @return the TextTrack object itself.
@@ -103,7 +125,9 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Get the playerVisibility property: When PlayerVisibility is set to "Visible", the text track will be present in the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the text will not be available to the client. The default value is "Visible".
+     * Get the playerVisibility property: When PlayerVisibility is set to "Visible", the text track will be present in
+     * the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the
+     * text will not be available to the client. The default value is "Visible".
      * 
      * @return the playerVisibility value.
      */
@@ -112,7 +136,9 @@ public final class TextTrack extends TrackBase {
     }
 
     /**
-     * Set the playerVisibility property: When PlayerVisibility is set to "Visible", the text track will be present in the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the text will not be available to the client. The default value is "Visible".
+     * Set the playerVisibility property: When PlayerVisibility is set to "Visible", the text track will be present in
+     * the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the
+     * text will not be available to the client. The default value is "Visible".
      * 
      * @param playerVisibility the playerVisibility value to set.
      * @return the TextTrack object itself.

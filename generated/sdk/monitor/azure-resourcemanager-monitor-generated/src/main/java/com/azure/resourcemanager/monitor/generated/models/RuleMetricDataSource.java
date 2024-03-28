@@ -6,6 +6,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -21,6 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class RuleMetricDataSource extends RuleDataSource {
     /*
+     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource";
+
+    /*
      * the name of the metric that defines what the rule monitors.
      */
     @JsonProperty(value = "metricName")
@@ -30,7 +38,17 @@ public final class RuleMetricDataSource extends RuleDataSource {
      * Creates an instance of RuleMetricDataSource class.
      */
     public RuleMetricDataSource() {
-        withOdataType("Microsoft.Azure.Management.Insights.Models.RuleMetricDataSource");
+    }
+
+    /**
+     * Get the odataType property: specifies the type of data source. There are two types of rule data sources:
+     * RuleMetricDataSource and RuleManagementEventDataSource.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

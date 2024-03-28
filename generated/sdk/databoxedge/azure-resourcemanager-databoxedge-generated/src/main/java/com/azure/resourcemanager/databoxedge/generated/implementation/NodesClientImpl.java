@@ -55,7 +55,8 @@ public final class NodesClientImpl implements NodesClient {
     }
 
     /**
-     * The interface defining all the services for DataBoxEdgeManagementClientNodes to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for DataBoxEdgeManagementClientNodes to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DataBoxEdgeManagemen")
@@ -86,7 +87,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the nodes currently configured under this Data Box Edge device along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NodeInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -124,7 +126,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the nodes currently configured under this Data Box Edge device along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NodeInner>> listByDataBoxEdgeDeviceSinglePageAsync(String deviceName,
@@ -161,7 +164,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device as paginated response with {@link PagedFlux}.
+     * @return all the nodes currently configured under this Data Box Edge device as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NodeInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName) {
@@ -178,7 +182,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device as paginated response with {@link PagedFlux}.
+     * @return all the nodes currently configured under this Data Box Edge device as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NodeInner> listByDataBoxEdgeDeviceAsync(String deviceName, String resourceGroupName,
@@ -195,7 +200,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device as paginated response with {@link PagedIterable}.
+     * @return all the nodes currently configured under this Data Box Edge device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NodeInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName) {
@@ -211,7 +217,8 @@ public final class NodesClientImpl implements NodesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the nodes currently configured under this Data Box Edge device as paginated response with {@link PagedIterable}.
+     * @return all the nodes currently configured under this Data Box Edge device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NodeInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName,

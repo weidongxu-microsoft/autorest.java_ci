@@ -104,12 +104,12 @@ public final class AzureSku {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model AzureSku"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model AzureSku"));
         }
         if (tier() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property tier in model AzureSku"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property tier in model AzureSku"));
         }
     }
 

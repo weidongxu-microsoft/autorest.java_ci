@@ -135,7 +135,8 @@ public interface WebApplicationFirewallPolicy {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.WebApplicationFirewallPolicyInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.WebApplicationFirewallPolicyInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -193,7 +194,8 @@ public interface WebApplicationFirewallPolicy {
         }
 
         /**
-         * The stage of the WebApplicationFirewallPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the WebApplicationFirewallPolicy definition which contains all the minimum required properties
+         * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPolicySettings,
             DefinitionStages.WithCustomRules, DefinitionStages.WithManagedRules {

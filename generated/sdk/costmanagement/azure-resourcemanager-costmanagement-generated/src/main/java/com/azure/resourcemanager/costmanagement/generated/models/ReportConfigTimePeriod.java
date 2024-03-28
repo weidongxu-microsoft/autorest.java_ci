@@ -79,12 +79,12 @@ public final class ReportConfigTimePeriod {
      */
     public void validate() {
         if (from() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property from in model ReportConfigTimePeriod"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property from in model ReportConfigTimePeriod"));
         }
         if (to() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property to in model ReportConfigTimePeriod"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property to in model ReportConfigTimePeriod"));
         }
     }
 

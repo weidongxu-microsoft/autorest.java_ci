@@ -50,7 +50,8 @@ public final class SchemasClientImpl implements SchemasClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientSchemas to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientSchemas to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")

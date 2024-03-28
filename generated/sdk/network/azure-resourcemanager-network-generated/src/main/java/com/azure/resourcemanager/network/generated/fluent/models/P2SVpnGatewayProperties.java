@@ -191,7 +191,8 @@ public final class P2SVpnGatewayProperties {
     }
 
     /**
-     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the P2SVpnGateway.
+     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the P2SVpnGateway.
      * 
      * @return the isRoutingPreferenceInternet value.
      */
@@ -200,7 +201,8 @@ public final class P2SVpnGatewayProperties {
     }
 
     /**
-     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the P2SVpnGateway.
+     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the P2SVpnGateway.
      * 
      * @param isRoutingPreferenceInternet the isRoutingPreferenceInternet value to set.
      * @return the P2SVpnGatewayProperties object itself.

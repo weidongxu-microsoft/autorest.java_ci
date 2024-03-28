@@ -79,8 +79,9 @@ public final class DatabaseInviteFollowerRequest {
      */
     public void validate() {
         if (inviteeEmail() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property inviteeEmail in model DatabaseInviteFollowerRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property inviteeEmail in model DatabaseInviteFollowerRequest"));
         }
         if (tableLevelSharingProperties() != null) {
             tableLevelSharingProperties().validate();

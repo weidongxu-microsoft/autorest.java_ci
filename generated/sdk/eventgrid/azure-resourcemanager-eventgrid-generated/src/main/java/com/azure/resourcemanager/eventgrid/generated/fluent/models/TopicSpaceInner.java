@@ -77,10 +77,10 @@ public final class TopicSpaceInner extends ProxyResource {
 
     /**
      * Get the topicTemplates property: The topic filters in the topic space.
-     * Example: "topicTemplates": [ 
-     *               "devices/foo/bar",
-     *               "devices/topic1/+",
-     *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+     * Example: "topicTemplates": [
+     * "devices/foo/bar",
+     * "devices/topic1/+",
+     * "devices/${principal.name}/${principal.attributes.keyName}" ].
      * 
      * @return the topicTemplates value.
      */
@@ -90,10 +90,10 @@ public final class TopicSpaceInner extends ProxyResource {
 
     /**
      * Set the topicTemplates property: The topic filters in the topic space.
-     * Example: "topicTemplates": [ 
-     *               "devices/foo/bar",
-     *               "devices/topic1/+",
-     *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+     * Example: "topicTemplates": [
+     * "devices/foo/bar",
+     * "devices/topic1/+",
+     * "devices/${principal.name}/${principal.attributes.keyName}" ].
      * 
      * @param topicTemplates the topicTemplates value to set.
      * @return the TopicSpaceInner object itself.

@@ -53,7 +53,8 @@ public final class ResourceSkuRestrictions {
     }
 
     /**
-     * Get the values property: The value of restrictions. If the restriction type is set to location. This would be different locations where the SKU is restricted.
+     * Get the values property: The value of restrictions. If the restriction type is set to location. This would be
+     * different locations where the SKU is restricted.
      * 
      * @return the values value.
      */

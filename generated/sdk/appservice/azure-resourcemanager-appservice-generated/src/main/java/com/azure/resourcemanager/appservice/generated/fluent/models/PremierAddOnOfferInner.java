@@ -114,7 +114,8 @@ public final class PremierAddOnOfferInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the promoCodeRequired value.
      */
@@ -123,7 +124,8 @@ public final class PremierAddOnOfferInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param promoCodeRequired the promoCodeRequired value to set.
      * @return the PremierAddOnOfferInner object itself.

@@ -56,7 +56,8 @@ public final class IotHubDescriptionInner extends Resource {
     }
 
     /**
-     * Get the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
+     * Get the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
+     * provided as a header per the normal ETag convention.
      * 
      * @return the etag value.
      */
@@ -65,7 +66,8 @@ public final class IotHubDescriptionInner extends Resource {
     }
 
     /**
-     * Set the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
+     * Set the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
+     * provided as a header per the normal ETag convention.
      * 
      * @param etag the etag value to set.
      * @return the IotHubDescriptionInner object itself.
@@ -172,8 +174,8 @@ public final class IotHubDescriptionInner extends Resource {
             properties().validate();
         }
         if (sku() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sku in model IotHubDescriptionInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sku in model IotHubDescriptionInner"));
         } else {
             sku().validate();
         }

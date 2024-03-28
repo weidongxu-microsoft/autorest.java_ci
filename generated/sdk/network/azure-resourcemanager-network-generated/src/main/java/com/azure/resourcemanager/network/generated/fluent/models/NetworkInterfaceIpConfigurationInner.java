@@ -59,7 +59,8 @@ public final class NetworkInterfaceIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -68,7 +69,8 @@ public final class NetworkInterfaceIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the NetworkInterfaceIpConfigurationInner object itself.
@@ -164,7 +166,8 @@ public final class NetworkInterfaceIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Get the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool resource.
+     * Get the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool
+     * resource.
      * 
      * @return the applicationGatewayBackendAddressPools value.
      */
@@ -173,7 +176,8 @@ public final class NetworkInterfaceIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Set the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool resource.
+     * Set the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool
+     * resource.
      * 
      * @param applicationGatewayBackendAddressPools the applicationGatewayBackendAddressPools value to set.
      * @return the NetworkInterfaceIpConfigurationInner object itself.
@@ -375,7 +379,8 @@ public final class NetworkInterfaceIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Get the applicationSecurityGroups property: Application security groups in which the IP configuration is included.
+     * Get the applicationSecurityGroups property: Application security groups in which the IP configuration is
+     * included.
      * 
      * @return the applicationSecurityGroups value.
      */
@@ -384,7 +389,8 @@ public final class NetworkInterfaceIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Set the applicationSecurityGroups property: Application security groups in which the IP configuration is included.
+     * Set the applicationSecurityGroups property: Application security groups in which the IP configuration is
+     * included.
      * 
      * @param applicationSecurityGroups the applicationSecurityGroups value to set.
      * @return the NetworkInterfaceIpConfigurationInner object itself.

@@ -34,7 +34,8 @@ public interface PolicyDefinition {
     String type();
 
     /**
-     * Gets the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
+     * Gets the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
+     * and Static.
      * 
      * @return the policyType value.
      */
@@ -69,14 +70,16 @@ public interface PolicyDefinition {
     Object policyRule();
 
     /**
-     * Gets the metadata property: The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+     * Gets the metadata property: The policy definition metadata. Metadata is an open ended object and is typically a
+     * collection of key value pairs.
      * 
      * @return the metadata value.
      */
     Object metadata();
 
     /**
-     * Gets the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the parameter names.
+     * Gets the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the
+     * parameter names.
      * 
      * @return the parameters value.
      */
@@ -106,7 +109,8 @@ public interface PolicyDefinition {
         }
 
         /**
-         * The stage of the PolicyDefinition definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PolicyDefinition definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPolicyType, DefinitionStages.WithMode,
             DefinitionStages.WithDisplayName, DefinitionStages.WithDescription, DefinitionStages.WithPolicyRule,
@@ -132,9 +136,11 @@ public interface PolicyDefinition {
          */
         interface WithPolicyType {
             /**
-             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static..
+             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified,
+             * BuiltIn, Custom, and Static..
              * 
-             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
+             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and
+             * Static.
              * @return the next definition stage.
              */
             WithCreate withPolicyType(PolicyType policyType);
@@ -145,7 +151,8 @@ public interface PolicyDefinition {
          */
         interface WithMode {
             /**
-             * Specifies the mode property: The policy definition mode. Some examples are All, Indexed, Microsoft.KeyVault.Data..
+             * Specifies the mode property: The policy definition mode. Some examples are All, Indexed,
+             * Microsoft.KeyVault.Data..
              * 
              * @param mode The policy definition mode. Some examples are All, Indexed, Microsoft.KeyVault.Data.
              * @return the next definition stage.
@@ -197,9 +204,11 @@ public interface PolicyDefinition {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs..
+             * Specifies the metadata property: The policy definition metadata. Metadata is an open ended object and is
+             * typically a collection of key value pairs..
              * 
-             * @param metadata The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+             * @param metadata The policy definition metadata. Metadata is an open ended object and is typically a
+             * collection of key value pairs.
              * @return the next definition stage.
              */
             WithCreate withMetadata(Object metadata);
@@ -210,9 +219,11 @@ public interface PolicyDefinition {
          */
         interface WithParameters {
             /**
-             * Specifies the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the parameter names..
+             * Specifies the parameters property: The parameter definitions for parameters used in the policy rule. The
+             * keys are the parameter names..
              * 
-             * @param parameters The parameter definitions for parameters used in the policy rule. The keys are the parameter names.
+             * @param parameters The parameter definitions for parameters used in the policy rule. The keys are the
+             * parameter names.
              * @return the next definition stage.
              */
             WithCreate withParameters(Map<String, ParameterDefinitionsValue> parameters);
@@ -257,9 +268,11 @@ public interface PolicyDefinition {
          */
         interface WithPolicyType {
             /**
-             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static..
+             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified,
+             * BuiltIn, Custom, and Static..
              * 
-             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
+             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and
+             * Static.
              * @return the next definition stage.
              */
             Update withPolicyType(PolicyType policyType);
@@ -270,7 +283,8 @@ public interface PolicyDefinition {
          */
         interface WithMode {
             /**
-             * Specifies the mode property: The policy definition mode. Some examples are All, Indexed, Microsoft.KeyVault.Data..
+             * Specifies the mode property: The policy definition mode. Some examples are All, Indexed,
+             * Microsoft.KeyVault.Data..
              * 
              * @param mode The policy definition mode. Some examples are All, Indexed, Microsoft.KeyVault.Data.
              * @return the next definition stage.
@@ -322,9 +336,11 @@ public interface PolicyDefinition {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs..
+             * Specifies the metadata property: The policy definition metadata. Metadata is an open ended object and is
+             * typically a collection of key value pairs..
              * 
-             * @param metadata The policy definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+             * @param metadata The policy definition metadata. Metadata is an open ended object and is typically a
+             * collection of key value pairs.
              * @return the next definition stage.
              */
             Update withMetadata(Object metadata);
@@ -335,9 +351,11 @@ public interface PolicyDefinition {
          */
         interface WithParameters {
             /**
-             * Specifies the parameters property: The parameter definitions for parameters used in the policy rule. The keys are the parameter names..
+             * Specifies the parameters property: The parameter definitions for parameters used in the policy rule. The
+             * keys are the parameter names..
              * 
-             * @param parameters The parameter definitions for parameters used in the policy rule. The keys are the parameter names.
+             * @param parameters The parameter definitions for parameters used in the policy rule. The keys are the
+             * parameter names.
              * @return the next definition stage.
              */
             Update withParameters(Map<String, ParameterDefinitionsValue> parameters);

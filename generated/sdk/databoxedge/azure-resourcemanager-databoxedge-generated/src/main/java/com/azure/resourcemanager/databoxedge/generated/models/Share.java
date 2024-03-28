@@ -77,14 +77,16 @@ public interface Share {
     ShareAccessProtocol accessProtocol();
 
     /**
-     * Gets the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
+     * Gets the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
+     * SMB protocol).
      * 
      * @return the userAccessRights value.
      */
     List<UserAccessRight> userAccessRights();
 
     /**
-     * Gets the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
+     * Gets the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
+     * for NFS protocol).
      * 
      * @return the clientAccessRights value.
      */
@@ -197,7 +199,8 @@ public interface Share {
         }
 
         /**
-         * The stage of the Share definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Share definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithAzureContainerInfo,
             DefinitionStages.WithUserAccessRights, DefinitionStages.WithClientAccessRights,
@@ -249,9 +252,11 @@ public interface Share {
          */
         interface WithUserAccessRights {
             /**
-             * Specifies the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol)..
+             * Specifies the userAccessRights property: Mapping of users and corresponding access rights on the share
+             * (required for SMB protocol)..
              * 
-             * @param userAccessRights Mapping of users and corresponding access rights on the share (required for SMB protocol).
+             * @param userAccessRights Mapping of users and corresponding access rights on the share (required for SMB
+             * protocol).
              * @return the next definition stage.
              */
             WithCreate withUserAccessRights(List<UserAccessRight> userAccessRights);
@@ -262,9 +267,11 @@ public interface Share {
          */
         interface WithClientAccessRights {
             /**
-             * Specifies the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol)..
+             * Specifies the clientAccessRights property: List of IP addresses and corresponding access rights on the
+             * share(required for NFS protocol)..
              * 
-             * @param clientAccessRights List of IP addresses and corresponding access rights on the share(required for NFS protocol).
+             * @param clientAccessRights List of IP addresses and corresponding access rights on the share(required for
+             * NFS protocol).
              * @return the next definition stage.
              */
             WithCreate withClientAccessRights(List<ClientAccessRight> clientAccessRights);
@@ -401,9 +408,11 @@ public interface Share {
          */
         interface WithUserAccessRights {
             /**
-             * Specifies the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol)..
+             * Specifies the userAccessRights property: Mapping of users and corresponding access rights on the share
+             * (required for SMB protocol)..
              * 
-             * @param userAccessRights Mapping of users and corresponding access rights on the share (required for SMB protocol).
+             * @param userAccessRights Mapping of users and corresponding access rights on the share (required for SMB
+             * protocol).
              * @return the next definition stage.
              */
             Update withUserAccessRights(List<UserAccessRight> userAccessRights);
@@ -414,9 +423,11 @@ public interface Share {
          */
         interface WithClientAccessRights {
             /**
-             * Specifies the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol)..
+             * Specifies the clientAccessRights property: List of IP addresses and corresponding access rights on the
+             * share(required for NFS protocol)..
              * 
-             * @param clientAccessRights List of IP addresses and corresponding access rights on the share(required for NFS protocol).
+             * @param clientAccessRights List of IP addresses and corresponding access rights on the share(required for
+             * NFS protocol).
              * @return the next definition stage.
              */
             Update withClientAccessRights(List<ClientAccessRight> clientAccessRights);

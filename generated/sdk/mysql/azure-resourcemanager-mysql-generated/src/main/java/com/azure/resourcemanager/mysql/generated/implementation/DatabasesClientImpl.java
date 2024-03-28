@@ -64,7 +64,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientDatabases to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientDatabases to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")

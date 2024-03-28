@@ -54,7 +54,8 @@ public interface DomainOwnershipIdentifier {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DomainOwnershipIdentifierInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -92,7 +93,8 @@ public interface DomainOwnershipIdentifier {
         }
 
         /**
-         * The stage of the DomainOwnershipIdentifier definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DomainOwnershipIdentifier definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithOwnershipId {
             /**

@@ -80,17 +80,6 @@ public class EffectiveBaseSecurityAdminRule {
     }
 
     /**
-     * Set the kind property: Whether the rule is custom or default.
-     * 
-     * @param kind the kind value to set.
-     * @return the EffectiveBaseSecurityAdminRule object itself.
-     */
-    protected EffectiveBaseSecurityAdminRule withKind(EffectiveAdminRuleKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the id property: Resource ID.
      * 
      * @return the id value.

@@ -66,7 +66,8 @@ public interface PrivateLinkService {
     String id();
 
     /**
-     * Gets the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP configurations.
+     * Gets the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP
+     * configurations.
      * 
      * @return the loadBalancerFrontendIpConfigurations value.
      */
@@ -80,7 +81,8 @@ public interface PrivateLinkService {
     List<PrivateLinkServiceIpConfiguration> ipConfigurations();
 
     /**
-     * Gets the networkInterfaces property: An array of references to the network interfaces created for this private link service.
+     * Gets the networkInterfaces property: An array of references to the network interfaces created for this private
+     * link service.
      * 
      * @return the networkInterfaces value.
      */
@@ -215,7 +217,8 @@ public interface PrivateLinkService {
         }
 
         /**
-         * The stage of the PrivateLinkService definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PrivateLinkService definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithLoadBalancerFrontendIpConfigurations, DefinitionStages.WithIpConfigurations,
@@ -268,9 +271,11 @@ public interface PrivateLinkService {
          */
         interface WithLoadBalancerFrontendIpConfigurations {
             /**
-             * Specifies the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP configurations..
+             * Specifies the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer
+             * IP configurations..
              * 
-             * @param loadBalancerFrontendIpConfigurations An array of references to the load balancer IP configurations.
+             * @param loadBalancerFrontendIpConfigurations An array of references to the load balancer IP
+             * configurations.
              * @return the next definition stage.
              */
             WithCreate withLoadBalancerFrontendIpConfigurations(
@@ -334,7 +339,8 @@ public interface PrivateLinkService {
          */
         interface WithEnableProxyProtocol {
             /**
-             * Specifies the enableProxyProtocol property: Whether the private link service is enabled for proxy protocol or not..
+             * Specifies the enableProxyProtocol property: Whether the private link service is enabled for proxy
+             * protocol or not..
              * 
              * @param enableProxyProtocol Whether the private link service is enabled for proxy protocol or not.
              * @return the next definition stage.
@@ -408,9 +414,11 @@ public interface PrivateLinkService {
          */
         interface WithLoadBalancerFrontendIpConfigurations {
             /**
-             * Specifies the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP configurations..
+             * Specifies the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer
+             * IP configurations..
              * 
-             * @param loadBalancerFrontendIpConfigurations An array of references to the load balancer IP configurations.
+             * @param loadBalancerFrontendIpConfigurations An array of references to the load balancer IP
+             * configurations.
              * @return the next definition stage.
              */
             Update withLoadBalancerFrontendIpConfigurations(
@@ -474,7 +482,8 @@ public interface PrivateLinkService {
          */
         interface WithEnableProxyProtocol {
             /**
-             * Specifies the enableProxyProtocol property: Whether the private link service is enabled for proxy protocol or not..
+             * Specifies the enableProxyProtocol property: Whether the private link service is enabled for proxy
+             * protocol or not..
              * 
              * @param enableProxyProtocol Whether the private link service is enabled for proxy protocol or not.
              * @return the next definition stage.

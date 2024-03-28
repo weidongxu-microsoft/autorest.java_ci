@@ -54,7 +54,8 @@ public final class ResourceSkusResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to fetch the next page of Resource Skus.
+     * Get the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to
+     * fetch the next page of Resource Skus.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class ResourceSkusResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to fetch the next page of Resource Skus.
+     * Set the nextLink property: The URI to fetch the next page of Resource Skus. Call ListNext() with this URI to
+     * fetch the next page of Resource Skus.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ResourceSkusResult object itself.
@@ -80,8 +82,8 @@ public final class ResourceSkusResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model ResourceSkusResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model ResourceSkusResult"));
         } else {
             value().forEach(e -> e.validate());
         }

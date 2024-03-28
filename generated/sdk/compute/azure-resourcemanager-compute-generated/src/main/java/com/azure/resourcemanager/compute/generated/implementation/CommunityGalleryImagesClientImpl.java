@@ -56,7 +56,8 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCommunityGalleryImages to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCommunityGalleryImages to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -231,7 +232,8 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CommunityGalleryImageInner>> listSinglePageAsync(String location,
@@ -270,7 +272,8 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CommunityGalleryImageInner>> listSinglePageAsync(String location,
@@ -374,7 +377,8 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CommunityGalleryImageInner>> listNextSinglePageAsync(String nextLink) {
@@ -402,7 +406,8 @@ public final class CommunityGalleryImagesClientImpl implements CommunityGalleryI
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Community Gallery Images operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CommunityGalleryImageInner>> listNextSinglePageAsync(String nextLink, Context context) {

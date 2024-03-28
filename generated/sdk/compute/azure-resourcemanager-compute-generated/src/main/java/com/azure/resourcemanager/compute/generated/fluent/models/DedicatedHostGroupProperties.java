@@ -82,7 +82,8 @@ public final class DedicatedHostGroupProperties {
     }
 
     /**
-     * Get the instanceView property: The dedicated host group instance view, which has the list of instance view of the dedicated hosts under the dedicated host group.
+     * Get the instanceView property: The dedicated host group instance view, which has the list of instance view of the
+     * dedicated hosts under the dedicated host group.
      * 
      * @return the instanceView value.
      */
@@ -91,7 +92,10 @@ public final class DedicatedHostGroupProperties {
     }
 
     /**
-     * Get the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01.
+     * Get the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can
+     * be placed automatically on the dedicated host group. Automatic placement means resources are allocated on
+     * dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when
+     * not provided. Minimum api-version: 2020-06-01.
      * 
      * @return the supportAutomaticPlacement value.
      */
@@ -100,7 +104,10 @@ public final class DedicatedHostGroupProperties {
     }
 
     /**
-     * Set the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can be placed automatically on the dedicated host group. Automatic placement means resources are allocated on dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when not provided. Minimum api-version: 2020-06-01.
+     * Set the supportAutomaticPlacement property: Specifies whether virtual machines or virtual machine scale sets can
+     * be placed automatically on the dedicated host group. Automatic placement means resources are allocated on
+     * dedicated hosts, that are chosen by Azure, under the dedicated host group. The value is defaulted to 'false' when
+     * not provided. Minimum api-version: 2020-06-01.
      * 
      * @param supportAutomaticPlacement the supportAutomaticPlacement value to set.
      * @return the DedicatedHostGroupProperties object itself.
@@ -111,7 +118,8 @@ public final class DedicatedHostGroupProperties {
     }
 
     /**
-     * Get the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01.
+     * Get the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum
+     * api-version: 2022-03-01.
      * 
      * @return the additionalCapabilities value.
      */
@@ -120,7 +128,8 @@ public final class DedicatedHostGroupProperties {
     }
 
     /**
-     * Set the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum api-version: 2022-03-01.
+     * Set the additionalCapabilities property: Enables or disables a capability on the dedicated host group. Minimum
+     * api-version: 2022-03-01.
      * 
      * @param additionalCapabilities the additionalCapabilities value to set.
      * @return the DedicatedHostGroupProperties object itself.

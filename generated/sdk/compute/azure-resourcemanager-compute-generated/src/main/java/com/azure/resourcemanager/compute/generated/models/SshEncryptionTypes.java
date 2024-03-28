@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The encryption type of the SSH keys to be generated. See SshEncryptionTypes for possible set of values. If not provided, will default to RSA.
+ * The encryption type of the SSH keys to be generated. See SshEncryptionTypes for possible set of values. If not
+ * provided, will default to RSA.
  */
 public final class SshEncryptionTypes extends ExpandableStringEnum<SshEncryptionTypes> {
     /**

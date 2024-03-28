@@ -53,7 +53,8 @@ public final class VirtualMachineScaleSetUpdatePublicIpAddressConfiguration {
     }
 
     /**
-     * Get the innerProperties property: Describes a virtual machines scale set IP Configuration's PublicIPAddress configuration.
+     * Get the innerProperties property: Describes a virtual machines scale set IP Configuration's PublicIPAddress
+     * configuration.
      * 
      * @return the innerProperties value.
      */

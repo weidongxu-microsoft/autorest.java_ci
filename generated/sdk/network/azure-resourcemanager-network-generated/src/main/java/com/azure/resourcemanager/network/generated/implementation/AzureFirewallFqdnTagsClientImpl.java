@@ -56,7 +56,8 @@ public final class AzureFirewallFqdnTagsClientImpl implements AzureFirewallFqdnT
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientAzureFirewallFqdnTags to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientAzureFirewallFqdnTags to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -83,7 +84,8 @@ public final class AzureFirewallFqdnTagsClientImpl implements AzureFirewallFqdnT
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Azure Firewall FQDN Tags in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the Azure Firewall FQDN Tags in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallFqdnTagInner>> listSinglePageAsync() {
@@ -112,7 +114,8 @@ public final class AzureFirewallFqdnTagsClientImpl implements AzureFirewallFqdnT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the Azure Firewall FQDN Tags in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the Azure Firewall FQDN Tags in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallFqdnTagInner>> listSinglePageAsync(Context context) {
@@ -194,7 +197,8 @@ public final class AzureFirewallFqdnTagsClientImpl implements AzureFirewallFqdnT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewallFqdnTags API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListAzureFirewallFqdnTags API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallFqdnTagInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -223,7 +227,8 @@ public final class AzureFirewallFqdnTagsClientImpl implements AzureFirewallFqdnT
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAzureFirewallFqdnTags API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListAzureFirewallFqdnTags API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureFirewallFqdnTagInner>> listAllNextSinglePageAsync(String nextLink,

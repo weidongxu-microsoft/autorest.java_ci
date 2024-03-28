@@ -91,7 +91,8 @@ public final class BalanceInner extends ProxyResource {
     }
 
     /**
-     * Get the endingBalance property: The ending balance for the billing period (for open periods this will be updated daily).
+     * Get the endingBalance property: The ending balance for the billing period (for open periods this will be updated
+     * daily).
      * 
      * @return the endingBalance value.
      */

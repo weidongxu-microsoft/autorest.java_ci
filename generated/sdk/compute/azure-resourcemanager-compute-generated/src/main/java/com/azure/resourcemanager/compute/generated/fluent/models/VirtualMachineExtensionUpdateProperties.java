@@ -80,7 +80,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Get the forceUpdateTag property: How the extension handler should be forced to update even if the extension configuration has not changed.
+     * Get the forceUpdateTag property: How the extension handler should be forced to update even if the extension
+     * configuration has not changed.
      * 
      * @return the forceUpdateTag value.
      */
@@ -89,7 +90,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Set the forceUpdateTag property: How the extension handler should be forced to update even if the extension configuration has not changed.
+     * Set the forceUpdateTag property: How the extension handler should be forced to update even if the extension
+     * configuration has not changed.
      * 
      * @param forceUpdateTag the forceUpdateTag value to set.
      * @return the VirtualMachineExtensionUpdateProperties object itself.
@@ -160,7 +162,9 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Get the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+     * Get the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one
+     * is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless
+     * redeployed, even with this property set to true.
      * 
      * @return the autoUpgradeMinorVersion value.
      */
@@ -169,7 +173,9 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Set the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+     * Set the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one
+     * is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless
+     * redeployed, even with this property set to true.
      * 
      * @param autoUpgradeMinorVersion the autoUpgradeMinorVersion value to set.
      * @return the VirtualMachineExtensionUpdateProperties object itself.
@@ -180,7 +186,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Get the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
+     * Get the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the
+     * platform if there is a newer version of the extension available.
      * 
      * @return the enableAutomaticUpgrade value.
      */
@@ -189,7 +196,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Set the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
+     * Set the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the
+     * platform if there is a newer version of the extension available.
      * 
      * @param enableAutomaticUpgrade the enableAutomaticUpgrade value to set.
      * @return the VirtualMachineExtensionUpdateProperties object itself.
@@ -220,7 +228,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Get the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
+     * Get the protectedSettings property: The extension can contain either protectedSettings or
+     * protectedSettingsFromKeyVault or no protected settings at all.
      * 
      * @return the protectedSettings value.
      */
@@ -229,7 +238,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Set the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
+     * Set the protectedSettings property: The extension can contain either protectedSettings or
+     * protectedSettingsFromKeyVault or no protected settings at all.
      * 
      * @param protectedSettings the protectedSettings value to set.
      * @return the VirtualMachineExtensionUpdateProperties object itself.
@@ -240,7 +250,9 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Get the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
+     * Get the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed
+     * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The
+     * default is false.
      * 
      * @return the suppressFailures value.
      */
@@ -249,7 +261,9 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Set the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
+     * Set the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed
+     * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The
+     * default is false.
      * 
      * @param suppressFailures the suppressFailures value to set.
      * @return the VirtualMachineExtensionUpdateProperties object itself.
@@ -260,7 +274,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Get the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
+     * Get the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference,
+     * and consumed from key vault.
      * 
      * @return the protectedSettingsFromKeyVault value.
      */
@@ -269,7 +284,8 @@ public final class VirtualMachineExtensionUpdateProperties {
     }
 
     /**
-     * Set the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
+     * Set the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference,
+     * and consumed from key vault.
      * 
      * @param protectedSettingsFromKeyVault the protectedSettingsFromKeyVault value to set.
      * @return the VirtualMachineExtensionUpdateProperties object itself.

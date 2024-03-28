@@ -65,7 +65,8 @@ public final class BlobInventoryPolicySchema {
     }
 
     /**
-     * Get the destination property: Deprecated Property from API version 2021-04-01 onwards, the required destination container name must be specified at the rule level 'policy.rule.destination'.
+     * Get the destination property: Deprecated Property from API version 2021-04-01 onwards, the required destination
+     * container name must be specified at the rule level 'policy.rule.destination'.
      * 
      * @return the destination value.
      */
@@ -120,12 +121,13 @@ public final class BlobInventoryPolicySchema {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model BlobInventoryPolicySchema"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model BlobInventoryPolicySchema"));
         }
         if (rules() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property rules in model BlobInventoryPolicySchema"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property rules in model BlobInventoryPolicySchema"));
         } else {
             rules().forEach(e -> e.validate());
         }

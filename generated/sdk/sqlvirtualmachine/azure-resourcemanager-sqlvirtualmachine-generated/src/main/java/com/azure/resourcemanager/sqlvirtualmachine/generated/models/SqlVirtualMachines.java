@@ -15,25 +15,29 @@ public interface SqlVirtualMachines {
     /**
      * Gets the list of sql virtual machines in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link PagedIterable}.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> listBySqlVmGroup(String resourceGroupName, String sqlVirtualMachineGroupName);
 
     /**
      * Gets the list of sql virtual machines in a SQL virtual machine group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with {@link PagedIterable}.
+     * @return the list of sql virtual machines in a SQL virtual machine group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<SqlVirtualMachine> listBySqlVmGroup(String resourceGroupName, String sqlVirtualMachineGroupName,
         Context context);
@@ -61,7 +65,8 @@ public interface SqlVirtualMachines {
     /**
      * Starts SQL best practices Assessment on SQL virtual machine.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -72,7 +77,8 @@ public interface SqlVirtualMachines {
     /**
      * Starts SQL best practices Assessment on SQL virtual machine.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -84,7 +90,8 @@ public interface SqlVirtualMachines {
     /**
      * Uninstalls and reinstalls the SQL IaaS Extension.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -95,7 +102,8 @@ public interface SqlVirtualMachines {
     /**
      * Uninstalls and reinstalls the SQL IaaS Extension.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -107,7 +115,8 @@ public interface SqlVirtualMachines {
     /**
      * Gets a SQL virtual machine.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param expand The child resources to include in the response.
      * @param context The context to associate with this operation.
@@ -122,7 +131,8 @@ public interface SqlVirtualMachines {
     /**
      * Gets a SQL virtual machine.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -134,7 +144,8 @@ public interface SqlVirtualMachines {
     /**
      * Deletes a SQL virtual machine.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -145,7 +156,8 @@ public interface SqlVirtualMachines {
     /**
      * Deletes a SQL virtual machine.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -157,7 +169,8 @@ public interface SqlVirtualMachines {
     /**
      * Gets all SQL virtual machines in a resource group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -168,7 +181,8 @@ public interface SqlVirtualMachines {
     /**
      * Gets all SQL virtual machines in a resource group.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

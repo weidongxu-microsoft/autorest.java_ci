@@ -190,7 +190,8 @@ public final class ShareProperties {
     }
 
     /**
-     * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
+     * Get the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
+     * SMB protocol).
      * 
      * @return the userAccessRights value.
      */
@@ -199,7 +200,8 @@ public final class ShareProperties {
     }
 
     /**
-     * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for SMB protocol).
+     * Set the userAccessRights property: Mapping of users and corresponding access rights on the share (required for
+     * SMB protocol).
      * 
      * @param userAccessRights the userAccessRights value to set.
      * @return the ShareProperties object itself.
@@ -210,7 +212,8 @@ public final class ShareProperties {
     }
 
     /**
-     * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
+     * Get the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
+     * for NFS protocol).
      * 
      * @return the clientAccessRights value.
      */
@@ -219,7 +222,8 @@ public final class ShareProperties {
     }
 
     /**
-     * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required for NFS protocol).
+     * Set the clientAccessRights property: List of IP addresses and corresponding access rights on the share(required
+     * for NFS protocol).
      * 
      * @param clientAccessRights the clientAccessRights value to set.
      * @return the ShareProperties object itself.
@@ -285,19 +289,20 @@ public final class ShareProperties {
      */
     public void validate() {
         if (shareStatus() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property shareStatus in model ShareProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property shareStatus in model ShareProperties"));
         }
         if (monitoringStatus() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property monitoringStatus in model ShareProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property monitoringStatus in model ShareProperties"));
         }
         if (azureContainerInfo() != null) {
             azureContainerInfo().validate();
         }
         if (accessProtocol() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property accessProtocol in model ShareProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property accessProtocol in model ShareProperties"));
         }
         if (userAccessRights() != null) {
             userAccessRights().forEach(e -> e.validate());

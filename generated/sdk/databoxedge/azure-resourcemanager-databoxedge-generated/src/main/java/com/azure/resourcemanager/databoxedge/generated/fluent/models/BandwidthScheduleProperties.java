@@ -132,16 +132,19 @@ public final class BandwidthScheduleProperties {
      */
     public void validate() {
         if (start() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property start in model BandwidthScheduleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property start in model BandwidthScheduleProperties"));
         }
         if (stop() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property stop in model BandwidthScheduleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property stop in model BandwidthScheduleProperties"));
         }
         if (days() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property days in model BandwidthScheduleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property days in model BandwidthScheduleProperties"));
         }
     }
 

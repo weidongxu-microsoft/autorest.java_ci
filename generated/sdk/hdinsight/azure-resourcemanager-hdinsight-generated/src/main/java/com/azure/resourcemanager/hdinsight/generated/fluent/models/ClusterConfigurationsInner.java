@@ -28,7 +28,8 @@ public final class ClusterConfigurationsInner {
     }
 
     /**
-     * Get the configurations property: The configuration object for the specified configuration for the specified cluster.
+     * Get the configurations property: The configuration object for the specified configuration for the specified
+     * cluster.
      * 
      * @return the configurations value.
      */
@@ -37,7 +38,8 @@ public final class ClusterConfigurationsInner {
     }
 
     /**
-     * Set the configurations property: The configuration object for the specified configuration for the specified cluster.
+     * Set the configurations property: The configuration object for the specified configuration for the specified
+     * cluster.
      * 
      * @param configurations the configurations value to set.
      * @return the ClusterConfigurationsInner object itself.

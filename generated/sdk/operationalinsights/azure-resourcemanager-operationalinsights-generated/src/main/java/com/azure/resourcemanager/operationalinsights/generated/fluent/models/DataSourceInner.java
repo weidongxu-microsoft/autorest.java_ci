@@ -49,7 +49,8 @@ public final class DataSourceInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: The data source properties in raw json format, each kind of data source have it's own schema.
+     * Get the properties property: The data source properties in raw json format, each kind of data source have it's
+     * own schema.
      * 
      * @return the properties value.
      */
@@ -58,7 +59,8 @@ public final class DataSourceInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: The data source properties in raw json format, each kind of data source have it's own schema.
+     * Set the properties property: The data source properties in raw json format, each kind of data source have it's
+     * own schema.
      * 
      * @param properties the properties value to set.
      * @return the DataSourceInner object itself.
@@ -135,12 +137,12 @@ public final class DataSourceInner extends ProxyResource {
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property properties in model DataSourceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property properties in model DataSourceInner"));
         }
         if (kind() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property kind in model DataSourceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property kind in model DataSourceInner"));
         }
     }
 

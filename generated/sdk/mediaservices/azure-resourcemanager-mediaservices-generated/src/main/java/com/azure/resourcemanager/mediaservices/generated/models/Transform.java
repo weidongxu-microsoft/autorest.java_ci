@@ -43,7 +43,8 @@ public interface Transform {
     SystemData systemData();
 
     /**
-     * Gets the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Gets the created property: The UTC date and time when the Transform was created, in 'YYYY-MM-DDThh:mm:ssZ'
+     * format.
      * 
      * @return the created value.
      */
@@ -57,7 +58,8 @@ public interface Transform {
     String description();
 
     /**
-     * Gets the lastModified property: The UTC date and time when the Transform was last updated, in 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Gets the lastModified property: The UTC date and time when the Transform was last updated, in
+     * 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the lastModified value.
      */
@@ -116,7 +118,8 @@ public interface Transform {
         }
 
         /**
-         * The stage of the Transform definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Transform definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithOutputs {
             /**
@@ -153,7 +156,8 @@ public interface Transform {
          */
         interface WithOutputs {
             /**
-             * Specifies the outputs property: An array of one or more TransformOutputs that the Transform should generate..
+             * Specifies the outputs property: An array of one or more TransformOutputs that the Transform should
+             * generate..
              * 
              * @param outputs An array of one or more TransformOutputs that the Transform should generate.
              * @return the next definition stage.
@@ -211,7 +215,8 @@ public interface Transform {
          */
         interface WithOutputs {
             /**
-             * Specifies the outputs property: An array of one or more TransformOutputs that the Transform should generate..
+             * Specifies the outputs property: An array of one or more TransformOutputs that the Transform should
+             * generate..
              * 
              * @param outputs An array of one or more TransformOutputs that the Transform should generate.
              * @return the next definition stage.

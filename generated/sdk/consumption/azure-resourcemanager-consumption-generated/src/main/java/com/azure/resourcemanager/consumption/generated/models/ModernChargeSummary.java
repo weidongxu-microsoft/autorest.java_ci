@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernChargeSummaryProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -19,6 +20,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ModernChargeSummary extends ChargeSummary {
     /*
+     * Specifies the kind of charge summary.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private ChargeSummaryKind kind = ChargeSummaryKind.MODERN;
+
+    /*
      * Properties for modern charge summary
      */
     @JsonProperty(value = "properties", required = true)
@@ -28,7 +36,16 @@ public final class ModernChargeSummary extends ChargeSummary {
      * Creates an instance of ModernChargeSummary class.
      */
     public ModernChargeSummary() {
-        withKind(ChargeSummaryKind.MODERN);
+    }
+
+    /**
+     * Get the kind property: Specifies the kind of charge summary.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public ChargeSummaryKind kind() {
+        return this.kind;
     }
 
     /**
@@ -166,8 +183,9 @@ public final class ModernChargeSummary extends ChargeSummary {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model ModernChargeSummary"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model ModernChargeSummary"));
         } else {
             innerProperties().validate();
         }

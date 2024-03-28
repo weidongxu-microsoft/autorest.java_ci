@@ -33,7 +33,9 @@ public interface QueueServiceProperties {
     String type();
 
     /**
-     * Gets the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service.
+     * Gets the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements
+     * in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and
+     * CORS will be disabled for the Queue service.
      * 
      * @return the cors value.
      */
@@ -77,15 +79,18 @@ public interface QueueServiceProperties {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+             * insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account
+             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the QueueServiceProperties definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the QueueServiceProperties definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithCors {
             /**
@@ -109,9 +114,13 @@ public interface QueueServiceProperties {
          */
         interface WithCors {
             /**
-             * Specifies the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service..
+             * Specifies the cors property: Specifies CORS rules for the Queue service. You can include up to five
+             * CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS
+             * rules will be deleted, and CORS will be disabled for the Queue service..
              * 
-             * @param cors Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service.
+             * @param cors Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in
+             * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted,
+             * and CORS will be disabled for the Queue service.
              * @return the next definition stage.
              */
             WithCreate withCors(CorsRules cors);
@@ -154,9 +163,13 @@ public interface QueueServiceProperties {
          */
         interface WithCors {
             /**
-             * Specifies the cors property: Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service..
+             * Specifies the cors property: Specifies CORS rules for the Queue service. You can include up to five
+             * CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS
+             * rules will be deleted, and CORS will be disabled for the Queue service..
              * 
-             * @param cors Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Queue service.
+             * @param cors Specifies CORS rules for the Queue service. You can include up to five CorsRule elements in
+             * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted,
+             * and CORS will be disabled for the Queue service.
              * @return the next definition stage.
              */
             Update withCors(CorsRules cors);

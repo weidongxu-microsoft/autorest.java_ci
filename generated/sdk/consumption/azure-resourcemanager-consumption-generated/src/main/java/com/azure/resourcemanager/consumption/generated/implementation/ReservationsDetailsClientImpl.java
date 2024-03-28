@@ -56,7 +56,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientReservationsDetails to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientReservationsDetails to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -115,14 +116,20 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listByReservationOrderSinglePageAsync(String reservationOrderId,
@@ -148,15 +155,21 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listByReservationOrderSinglePageAsync(String reservationOrderId,
@@ -182,10 +195,15 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -198,10 +216,15 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -216,10 +239,15 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -231,10 +259,15 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -248,15 +281,21 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listByReservationOrderAndReservationSinglePageAsync(
@@ -285,16 +324,22 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listByReservationOrderAndReservationSinglePageAsync(
@@ -323,11 +368,16 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -342,11 +392,16 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -362,11 +417,16 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -380,11 +440,16 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
      * @param reservationOrderId Order Id of the reservation.
      * @param reservationId Id of the reservation.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -399,18 +464,29 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
+     * reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
+     * reservation order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listSinglePageAsync(String resourceScope, String startDate,
@@ -432,19 +508,30 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
+     * reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
+     * reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listSinglePageAsync(String resourceScope, String startDate,
@@ -466,14 +553,24 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
+     * reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
+     * reservation order.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -488,9 +585,16 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -509,14 +613,24 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
+     * reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
+     * reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -531,9 +645,16 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -551,14 +672,24 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
     }
 
     /**
-     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into response size time outs.
+     * Lists the reservations details for provided date range. Note: ARM has a payload size limit of 12MB, so currently
+     * callers get 400 when the response size exceeds the ARM limit. If the data size is too large, customers may also
+     * get 504 as the API timed out preparing the data. In such cases, API call should be made with smaller date ranges
+     * or a call to Generate Reservation Details Report API should be made as it is asynchronous and will not run into
+     * response size time outs.
      * 
-     * @param resourceScope The scope associated with reservations details operations. This includes '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope (modern).
+     * @param resourceScope The scope associated with reservations details operations. This includes
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope (legacy), and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope (modern).
      * @param startDate Start date. Only applicable when querying with billing profile.
      * @param endDate End date. Only applicable when querying with billing profile.
-     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The filter supports 'le' and  'ge'. Not applicable when querying with billing profile.
-     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific reservation.
-     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific reservation order.
+     * @param filter Filter reservation details by date range. The properties/UsageDate for start date and end date. The
+     * filter supports 'le' and 'ge'. Not applicable when querying with billing profile.
+     * @param reservationId Reservation Id GUID. Only valid if reservationOrderId is also provided. Filter to a specific
+     * reservation.
+     * @param reservationOrderId Reservation Order Id GUID. Required if reservationId is provided. Filter to a specific
+     * reservation order.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -581,7 +712,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listByReservationOrderNextSinglePageAsync(String nextLink) {
@@ -611,7 +743,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listByReservationOrderNextSinglePageAsync(String nextLink,
@@ -639,7 +772,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>>
@@ -670,7 +804,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>>
@@ -698,7 +833,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listNextSinglePageAsync(String nextLink) {
@@ -726,7 +862,8 @@ public final class ReservationsDetailsClientImpl implements ReservationsDetailsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation details along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationDetailInner>> listNextSinglePageAsync(String nextLink, Context context) {

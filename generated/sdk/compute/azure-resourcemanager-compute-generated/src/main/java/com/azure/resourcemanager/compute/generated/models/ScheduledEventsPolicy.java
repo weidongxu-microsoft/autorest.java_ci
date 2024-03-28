@@ -37,7 +37,8 @@ public final class ScheduledEventsPolicy {
     }
 
     /**
-     * Get the userInitiatedRedeploy property: The configuration parameters used while creating userInitiatedRedeploy scheduled event setting creation.
+     * Get the userInitiatedRedeploy property: The configuration parameters used while creating userInitiatedRedeploy
+     * scheduled event setting creation.
      * 
      * @return the userInitiatedRedeploy value.
      */
@@ -46,7 +47,8 @@ public final class ScheduledEventsPolicy {
     }
 
     /**
-     * Set the userInitiatedRedeploy property: The configuration parameters used while creating userInitiatedRedeploy scheduled event setting creation.
+     * Set the userInitiatedRedeploy property: The configuration parameters used while creating userInitiatedRedeploy
+     * scheduled event setting creation.
      * 
      * @param userInitiatedRedeploy the userInitiatedRedeploy value to set.
      * @return the ScheduledEventsPolicy object itself.
@@ -57,7 +59,8 @@ public final class ScheduledEventsPolicy {
     }
 
     /**
-     * Get the userInitiatedReboot property: The configuration parameters used while creating userInitiatedReboot scheduled event setting creation.
+     * Get the userInitiatedReboot property: The configuration parameters used while creating userInitiatedReboot
+     * scheduled event setting creation.
      * 
      * @return the userInitiatedReboot value.
      */
@@ -66,7 +69,8 @@ public final class ScheduledEventsPolicy {
     }
 
     /**
-     * Set the userInitiatedReboot property: The configuration parameters used while creating userInitiatedReboot scheduled event setting creation.
+     * Set the userInitiatedReboot property: The configuration parameters used while creating userInitiatedReboot
+     * scheduled event setting creation.
      * 
      * @param userInitiatedReboot the userInitiatedReboot value to set.
      * @return the ScheduledEventsPolicy object itself.
@@ -77,7 +81,8 @@ public final class ScheduledEventsPolicy {
     }
 
     /**
-     * Get the scheduledEventsAdditionalPublishingTargets property: The configuration parameters used while publishing scheduledEventsAdditionalPublishingTargets.
+     * Get the scheduledEventsAdditionalPublishingTargets property: The configuration parameters used while publishing
+     * scheduledEventsAdditionalPublishingTargets.
      * 
      * @return the scheduledEventsAdditionalPublishingTargets value.
      */
@@ -86,7 +91,8 @@ public final class ScheduledEventsPolicy {
     }
 
     /**
-     * Set the scheduledEventsAdditionalPublishingTargets property: The configuration parameters used while publishing scheduledEventsAdditionalPublishingTargets.
+     * Set the scheduledEventsAdditionalPublishingTargets property: The configuration parameters used while publishing
+     * scheduledEventsAdditionalPublishingTargets.
      * 
      * @param scheduledEventsAdditionalPublishingTargets the scheduledEventsAdditionalPublishingTargets value to set.
      * @return the ScheduledEventsPolicy object itself.

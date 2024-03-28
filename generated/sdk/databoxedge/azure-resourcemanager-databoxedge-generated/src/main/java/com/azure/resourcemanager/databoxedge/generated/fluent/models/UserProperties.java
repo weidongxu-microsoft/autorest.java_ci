@@ -62,7 +62,8 @@ public final class UserProperties {
     }
 
     /**
-     * Get the shareAccessRights property: List of shares that the user has rights on. This field should not be specified during user creation.
+     * Get the shareAccessRights property: List of shares that the user has rights on. This field should not be
+     * specified during user creation.
      * 
      * @return the shareAccessRights value.
      */
@@ -103,8 +104,8 @@ public final class UserProperties {
             shareAccessRights().forEach(e -> e.validate());
         }
         if (userType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property userType in model UserProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property userType in model UserProperties"));
         }
     }
 

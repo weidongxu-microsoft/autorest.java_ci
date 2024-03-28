@@ -61,7 +61,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientCertificates to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientCertificates to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -143,7 +144,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * 
      * Description for Get all certificates for a subscription.
      * 
-     * @param filter Return only information specified in the filter (using OData syntax). For example: $filter=KeyVaultId eq 'KeyVaultId'.
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     * $filter=KeyVaultId eq 'KeyVaultId'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -173,7 +175,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * 
      * Description for Get all certificates for a subscription.
      * 
-     * @param filter Return only information specified in the filter (using OData syntax). For example: $filter=KeyVaultId eq 'KeyVaultId'.
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     * $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -204,7 +207,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * 
      * Description for Get all certificates for a subscription.
      * 
-     * @param filter Return only information specified in the filter (using OData syntax). For example: $filter=KeyVaultId eq 'KeyVaultId'.
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     * $filter=KeyVaultId eq 'KeyVaultId'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -235,7 +239,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * 
      * Description for Get all certificates for a subscription.
      * 
-     * @param filter Return only information specified in the filter (using OData syntax). For example: $filter=KeyVaultId eq 'KeyVaultId'.
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     * $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -268,7 +273,8 @@ public final class CertificatesClientImpl implements CertificatesClient {
      * 
      * Description for Get all certificates for a subscription.
      * 
-     * @param filter Return only information specified in the filter (using OData syntax). For example: $filter=KeyVaultId eq 'KeyVaultId'.
+     * @param filter Return only information specified in the filter (using OData syntax). For example:
+     * $filter=KeyVaultId eq 'KeyVaultId'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.

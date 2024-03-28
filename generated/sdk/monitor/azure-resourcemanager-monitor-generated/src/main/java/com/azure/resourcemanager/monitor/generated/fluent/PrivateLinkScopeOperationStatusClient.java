@@ -23,7 +23,8 @@ public interface PrivateLinkScopeOperationStatusClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of an azure asynchronous operation associated with a private link scope operation along with {@link Response}.
+     * @return the status of an azure asynchronous operation associated with a private link scope operation along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<OperationStatusInner> getByResourceGroupWithResponse(String resourceGroupName, String asyncOperationId,

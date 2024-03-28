@@ -54,8 +54,9 @@ public final class AvailableProvidersListInner {
      */
     public void validate() {
         if (countries() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property countries in model AvailableProvidersListInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property countries in model AvailableProvidersListInner"));
         } else {
             countries().forEach(e -> e.validate());
         }

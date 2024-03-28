@@ -184,7 +184,8 @@ public final class KubeEnvironmentInner extends Resource {
     }
 
     /**
-     * Get the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments with value as Managed.
+     * Get the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments
+     * with value as Managed.
      * 
      * @return the environmentType value.
      */
@@ -193,7 +194,8 @@ public final class KubeEnvironmentInner extends Resource {
     }
 
     /**
-     * Set the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments with value as Managed.
+     * Set the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments
+     * with value as Managed.
      * 
      * @param environmentType the environmentType value to set.
      * @return the KubeEnvironmentInner object itself.
@@ -261,7 +263,8 @@ public final class KubeEnvironmentInner extends Resource {
     }
 
     /**
-     * Get the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+     * Get the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure
+     * Dapr Instrumentation Key and VNET Configuration.
      * 
      * @return the containerAppsConfiguration value.
      */
@@ -270,7 +273,8 @@ public final class KubeEnvironmentInner extends Resource {
     }
 
     /**
-     * Set the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+     * Set the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure
+     * Dapr Instrumentation Key and VNET Configuration.
      * 
      * @param containerAppsConfiguration the containerAppsConfiguration value to set.
      * @return the KubeEnvironmentInner object itself.

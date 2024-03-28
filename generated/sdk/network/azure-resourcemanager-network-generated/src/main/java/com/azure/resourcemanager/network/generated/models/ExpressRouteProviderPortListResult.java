@@ -26,7 +26,8 @@ public interface ExpressRouteProviderPortListResult {
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteProviderPortListResultInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteProviderPortListResultInner
+     * object.
      * 
      * @return the inner object.
      */

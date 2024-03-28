@@ -131,8 +131,8 @@ public final class MetricCounter {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model MetricCounter"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model MetricCounter"));
         }
         if (dimensionFilter() != null) {
             dimensionFilter().forEach(e -> e.validate());

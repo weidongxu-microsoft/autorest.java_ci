@@ -87,7 +87,8 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
+     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1
+     * network interface.
      * 
      * @return the primary value.
      */
@@ -96,7 +97,8 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
+     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1
+     * network interface.
      * 
      * @param primary the primary value to set.
      * @return the VirtualMachineNetworkInterfaceIpConfiguration object itself.
@@ -134,7 +136,8 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Get the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.  Possible values are: 'IPv4' and 'IPv6'.
+     * Get the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether
+     * the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -143,7 +146,8 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Set the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.  Possible values are: 'IPv4' and 'IPv6'.
+     * Set the privateIpAddressVersion property: Available from Api-Version 2017-03-30 onwards, it represents whether
+     * the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4. Possible values are: 'IPv4' and 'IPv6'.
      * 
      * @param privateIpAddressVersion the privateIpAddressVersion value to set.
      * @return the VirtualMachineNetworkInterfaceIpConfiguration object itself.
@@ -182,7 +186,9 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Get the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address pools of application gateways. A virtual machine can reference backend address pools of multiple application gateways. Multiple virtual machines cannot use the same application gateway.
+     * Get the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address pools
+     * of application gateways. A virtual machine can reference backend address pools of multiple application gateways.
+     * Multiple virtual machines cannot use the same application gateway.
      * 
      * @return the applicationGatewayBackendAddressPools value.
      */
@@ -191,7 +197,9 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Set the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address pools of application gateways. A virtual machine can reference backend address pools of multiple application gateways. Multiple virtual machines cannot use the same application gateway.
+     * Set the applicationGatewayBackendAddressPools property: Specifies an array of references to backend address pools
+     * of application gateways. A virtual machine can reference backend address pools of multiple application gateways.
+     * Multiple virtual machines cannot use the same application gateway.
      * 
      * @param applicationGatewayBackendAddressPools the applicationGatewayBackendAddressPools value to set.
      * @return the VirtualMachineNetworkInterfaceIpConfiguration object itself.
@@ -206,7 +214,9 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Get the loadBalancerBackendAddressPools property: Specifies an array of references to backend address pools of load balancers. A virtual machine can reference backend address pools of one public and one internal load balancer. [Multiple virtual machines cannot use the same basic sku load balancer].
+     * Get the loadBalancerBackendAddressPools property: Specifies an array of references to backend address pools of
+     * load balancers. A virtual machine can reference backend address pools of one public and one internal load
+     * balancer. [Multiple virtual machines cannot use the same basic sku load balancer].
      * 
      * @return the loadBalancerBackendAddressPools value.
      */
@@ -215,7 +225,9 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
     }
 
     /**
-     * Set the loadBalancerBackendAddressPools property: Specifies an array of references to backend address pools of load balancers. A virtual machine can reference backend address pools of one public and one internal load balancer. [Multiple virtual machines cannot use the same basic sku load balancer].
+     * Set the loadBalancerBackendAddressPools property: Specifies an array of references to backend address pools of
+     * load balancers. A virtual machine can reference backend address pools of one public and one internal load
+     * balancer. [Multiple virtual machines cannot use the same basic sku load balancer].
      * 
      * @param loadBalancerBackendAddressPools the loadBalancerBackendAddressPools value to set.
      * @return the VirtualMachineNetworkInterfaceIpConfiguration object itself.
@@ -236,8 +248,9 @@ public final class VirtualMachineNetworkInterfaceIpConfiguration {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model VirtualMachineNetworkInterfaceIpConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model VirtualMachineNetworkInterfaceIpConfiguration"));
         }
         if (innerProperties() != null) {
             innerProperties().validate();

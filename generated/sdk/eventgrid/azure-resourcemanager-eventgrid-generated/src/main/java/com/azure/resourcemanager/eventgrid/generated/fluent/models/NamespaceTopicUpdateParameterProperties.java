@@ -26,7 +26,8 @@ public final class NamespaceTopicUpdateParameterProperties {
     }
 
     /**
-     * Get the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
+     * Get the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property
+     * default value is 1 day.
      * Min event retention duration value is 1 day and max event retention duration value is 1 day.
      * 
      * @return the eventRetentionInDays value.
@@ -36,7 +37,8 @@ public final class NamespaceTopicUpdateParameterProperties {
     }
 
     /**
-     * Set the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
+     * Set the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property
+     * default value is 1 day.
      * Min event retention duration value is 1 day and max event retention duration value is 1 day.
      * 
      * @param eventRetentionInDays the eventRetentionInDays value to set.

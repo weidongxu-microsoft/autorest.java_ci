@@ -81,7 +81,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a policy. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a policy. This name can be used to access
+     * the resource.
      * 
      * @return the name value.
      */
@@ -90,7 +91,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a policy. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a policy. This name can be used to access
+     * the resource.
      * 
      * @param name the name value to set.
      * @return the WebApplicationFirewallCustomRule object itself.
@@ -110,7 +112,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Get the priority property: Priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
+     * Get the priority property: Priority of the rule. Rules with a lower value will be evaluated before rules with a
+     * higher value.
      * 
      * @return the priority value.
      */
@@ -119,7 +122,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Set the priority property: Priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
+     * Set the priority property: Priority of the rule. Rules with a lower value will be evaluated before rules with a
+     * higher value.
      * 
      * @param priority the priority value to set.
      * @return the WebApplicationFirewallCustomRule object itself.
@@ -130,7 +134,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Get the state property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
+     * Get the state property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not
+     * specified.
      * 
      * @return the state value.
      */
@@ -139,7 +144,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Set the state property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
+     * Set the state property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not
+     * specified.
      * 
      * @param state the state value to set.
      * @return the WebApplicationFirewallCustomRule object itself.
@@ -150,7 +156,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Get the rateLimitDuration property: Duration over which Rate Limit policy will be applied. Applies only when ruleType is RateLimitRule.
+     * Get the rateLimitDuration property: Duration over which Rate Limit policy will be applied. Applies only when
+     * ruleType is RateLimitRule.
      * 
      * @return the rateLimitDuration value.
      */
@@ -159,7 +166,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Set the rateLimitDuration property: Duration over which Rate Limit policy will be applied. Applies only when ruleType is RateLimitRule.
+     * Set the rateLimitDuration property: Duration over which Rate Limit policy will be applied. Applies only when
+     * ruleType is RateLimitRule.
      * 
      * @param rateLimitDuration the rateLimitDuration value to set.
      * @return the WebApplicationFirewallCustomRule object itself.
@@ -171,7 +179,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Get the rateLimitThreshold property: Rate Limit threshold to apply in case ruleType is RateLimitRule. Must be greater than or equal to 1.
+     * Get the rateLimitThreshold property: Rate Limit threshold to apply in case ruleType is RateLimitRule. Must be
+     * greater than or equal to 1.
      * 
      * @return the rateLimitThreshold value.
      */
@@ -180,7 +189,8 @@ public final class WebApplicationFirewallCustomRule {
     }
 
     /**
-     * Set the rateLimitThreshold property: Rate Limit threshold to apply in case ruleType is RateLimitRule. Must be greater than or equal to 1.
+     * Set the rateLimitThreshold property: Rate Limit threshold to apply in case ruleType is RateLimitRule. Must be
+     * greater than or equal to 1.
      * 
      * @param rateLimitThreshold the rateLimitThreshold value to set.
      * @return the WebApplicationFirewallCustomRule object itself.
@@ -277,12 +287,14 @@ public final class WebApplicationFirewallCustomRule {
      */
     public void validate() {
         if (ruleType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleType in model WebApplicationFirewallCustomRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleType in model WebApplicationFirewallCustomRule"));
         }
         if (matchConditions() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property matchConditions in model WebApplicationFirewallCustomRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property matchConditions in model WebApplicationFirewallCustomRule"));
         } else {
             matchConditions().forEach(e -> e.validate());
         }
@@ -290,8 +302,9 @@ public final class WebApplicationFirewallCustomRule {
             groupByUserSession().forEach(e -> e.validate());
         }
         if (action() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property action in model WebApplicationFirewallCustomRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property action in model WebApplicationFirewallCustomRule"));
         }
     }
 

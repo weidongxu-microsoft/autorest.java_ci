@@ -51,7 +51,8 @@ public final class NWRuleSetVirtualNetworkRules {
     }
 
     /**
-     * Get the ignoreMissingVnetServiceEndpoint property: Value that indicates whether to ignore missing Vnet Service Endpoint.
+     * Get the ignoreMissingVnetServiceEndpoint property: Value that indicates whether to ignore missing Vnet Service
+     * Endpoint.
      * 
      * @return the ignoreMissingVnetServiceEndpoint value.
      */
@@ -60,7 +61,8 @@ public final class NWRuleSetVirtualNetworkRules {
     }
 
     /**
-     * Set the ignoreMissingVnetServiceEndpoint property: Value that indicates whether to ignore missing Vnet Service Endpoint.
+     * Set the ignoreMissingVnetServiceEndpoint property: Value that indicates whether to ignore missing Vnet Service
+     * Endpoint.
      * 
      * @param ignoreMissingVnetServiceEndpoint the ignoreMissingVnetServiceEndpoint value to set.
      * @return the NWRuleSetVirtualNetworkRules object itself.

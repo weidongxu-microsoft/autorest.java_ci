@@ -54,7 +54,8 @@ public final class WebTestListResult {
     }
 
     /**
-     * Get the nextLink property: The link to get the next part of the returned list of web tests, should the return set be too large for a single request. May be null.
+     * Get the nextLink property: The link to get the next part of the returned list of web tests, should the return set
+     * be too large for a single request. May be null.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class WebTestListResult {
     }
 
     /**
-     * Set the nextLink property: The link to get the next part of the returned list of web tests, should the return set be too large for a single request. May be null.
+     * Set the nextLink property: The link to get the next part of the returned list of web tests, should the return set
+     * be too large for a single request. May be null.
      * 
      * @param nextLink the nextLink value to set.
      * @return the WebTestListResult object itself.
@@ -80,8 +82,8 @@ public final class WebTestListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model WebTestListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model WebTestListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

@@ -59,7 +59,8 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientApplicationGroups to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for EventHubManagementClientApplicationGroups to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
@@ -121,7 +122,8 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of application groups for a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of application groups for a Namespace along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationGroupInner>> listByNamespaceSinglePageAsync(String resourceGroupName,
@@ -159,7 +161,8 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of application groups for a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of application groups for a Namespace along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationGroupInner>> listByNamespaceSinglePageAsync(String resourceGroupName,
@@ -678,7 +681,8 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Application Groups operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response from the List Application Groups operation along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationGroupInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
@@ -707,7 +711,8 @@ public final class ApplicationGroupsClientImpl implements ApplicationGroupsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the List Application Groups operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response from the List Application Groups operation along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationGroupInner>> listByNamespaceNextSinglePageAsync(String nextLink,

@@ -37,7 +37,8 @@ public final class CloudServiceRoleSku {
     }
 
     /**
-     * Get the name property: The sku name. NOTE: If the new SKU is not supported on the hardware the cloud service is currently on, you need to delete and recreate the cloud service or move back to the old sku.
+     * Get the name property: The sku name. NOTE: If the new SKU is not supported on the hardware the cloud service is
+     * currently on, you need to delete and recreate the cloud service or move back to the old sku.
      * 
      * @return the name value.
      */
@@ -46,7 +47,8 @@ public final class CloudServiceRoleSku {
     }
 
     /**
-     * Set the name property: The sku name. NOTE: If the new SKU is not supported on the hardware the cloud service is currently on, you need to delete and recreate the cloud service or move back to the old sku.
+     * Set the name property: The sku name. NOTE: If the new SKU is not supported on the hardware the cloud service is
+     * currently on, you need to delete and recreate the cloud service or move back to the old sku.
      * 
      * @param name the name value to set.
      * @return the CloudServiceRoleSku object itself.
@@ -57,7 +59,8 @@ public final class CloudServiceRoleSku {
     }
 
     /**
-     * Get the tier property: Specifies the tier of the cloud service. Possible Values are &lt;br /&gt;&lt;br /&gt; **Standard** &lt;br /&gt;&lt;br /&gt; **Basic**.
+     * Get the tier property: Specifies the tier of the cloud service. Possible Values are &lt;br /&gt;&lt;br /&gt;
+     * **Standard** &lt;br /&gt;&lt;br /&gt; **Basic**.
      * 
      * @return the tier value.
      */
@@ -66,7 +69,8 @@ public final class CloudServiceRoleSku {
     }
 
     /**
-     * Set the tier property: Specifies the tier of the cloud service. Possible Values are &lt;br /&gt;&lt;br /&gt; **Standard** &lt;br /&gt;&lt;br /&gt; **Basic**.
+     * Set the tier property: Specifies the tier of the cloud service. Possible Values are &lt;br /&gt;&lt;br /&gt;
+     * **Standard** &lt;br /&gt;&lt;br /&gt; **Basic**.
      * 
      * @param tier the tier value to set.
      * @return the CloudServiceRoleSku object itself.

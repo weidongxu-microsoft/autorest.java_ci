@@ -120,7 +120,8 @@ public interface MhsmPrivateEndpointConnection {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmPrivateEndpointConnectionInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -179,7 +180,8 @@ public interface MhsmPrivateEndpointConnection {
         }
 
         /**
-         * The stage of the MhsmPrivateEndpointConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the MhsmPrivateEndpointConnection definition which contains all the minimum required properties
+         * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithEtag, DefinitionStages.WithPrivateEndpoint,
@@ -231,7 +233,8 @@ public interface MhsmPrivateEndpointConnection {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: Managed service identity (system assigned and/or user assigned identities).
+             * Specifies the identity property: Managed service identity (system assigned and/or user assigned
+             * identities).
              * 
              * @param identity Managed service identity (system assigned and/or user assigned identities).
              * @return the next definition stage.
@@ -244,7 +247,8 @@ public interface MhsmPrivateEndpointConnection {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: Modified whenever there is a change in the state of private endpoint connection..
+             * Specifies the etag property: Modified whenever there is a change in the state of private endpoint
+             * connection..
              * 
              * @param etag Modified whenever there is a change in the state of private endpoint connection.
              * @return the next definition stage.
@@ -266,7 +270,8 @@ public interface MhsmPrivateEndpointConnection {
         }
 
         /**
-         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify privateLinkServiceConnectionState.
+         * The stage of the MhsmPrivateEndpointConnection definition allowing to specify
+         * privateLinkServiceConnectionState.
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
@@ -357,7 +362,8 @@ public interface MhsmPrivateEndpointConnection {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: Managed service identity (system assigned and/or user assigned identities).
+             * Specifies the identity property: Managed service identity (system assigned and/or user assigned
+             * identities).
              * 
              * @param identity Managed service identity (system assigned and/or user assigned identities).
              * @return the next definition stage.
@@ -370,7 +376,8 @@ public interface MhsmPrivateEndpointConnection {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: Modified whenever there is a change in the state of private endpoint connection..
+             * Specifies the etag property: Modified whenever there is a change in the state of private endpoint
+             * connection..
              * 
              * @param etag Modified whenever there is a change in the state of private endpoint connection.
              * @return the next definition stage.

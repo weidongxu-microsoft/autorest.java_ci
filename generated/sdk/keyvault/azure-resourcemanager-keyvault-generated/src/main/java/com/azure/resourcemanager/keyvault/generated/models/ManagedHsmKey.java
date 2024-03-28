@@ -92,14 +92,16 @@ public interface ManagedHsmKey {
     String keyUriWithVersion();
 
     /**
-     * Gets the rotationPolicy property: Key rotation policy in response. It will be used for both output and input. Omitted if empty.
+     * Gets the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @return the rotationPolicy value.
      */
     ManagedHsmRotationPolicy rotationPolicy();
 
     /**
-     * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input. Omitted if empty.
+     * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @return the releasePolicy value.
      */
@@ -157,7 +159,8 @@ public interface ManagedHsmKey {
         }
 
         /**
-         * The stage of the ManagedHsmKey definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ManagedHsmKey definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

@@ -32,7 +32,8 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Get the id property: Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
+     * Get the id property: Full resource id of a vnet subnet, such as
+     * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
      * 
      * @return the id value.
      */
@@ -41,7 +42,8 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Set the id property: Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
+     * Set the id property: Full resource id of a vnet subnet, such as
+     * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
      * 
      * @param id the id value to set.
      * @return the VirtualNetworkRule object itself.
@@ -52,7 +54,8 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Get the ignoreMissingVnetServiceEndpoint property: Property to specify whether NRP will ignore the check if parent subnet has serviceEndpoints configured.
+     * Get the ignoreMissingVnetServiceEndpoint property: Property to specify whether NRP will ignore the check if
+     * parent subnet has serviceEndpoints configured.
      * 
      * @return the ignoreMissingVnetServiceEndpoint value.
      */
@@ -61,7 +64,8 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Set the ignoreMissingVnetServiceEndpoint property: Property to specify whether NRP will ignore the check if parent subnet has serviceEndpoints configured.
+     * Set the ignoreMissingVnetServiceEndpoint property: Property to specify whether NRP will ignore the check if
+     * parent subnet has serviceEndpoints configured.
      * 
      * @param ignoreMissingVnetServiceEndpoint the ignoreMissingVnetServiceEndpoint value to set.
      * @return the VirtualNetworkRule object itself.
@@ -78,8 +82,8 @@ public final class VirtualNetworkRule {
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property id in model VirtualNetworkRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property id in model VirtualNetworkRule"));
         }
     }
 

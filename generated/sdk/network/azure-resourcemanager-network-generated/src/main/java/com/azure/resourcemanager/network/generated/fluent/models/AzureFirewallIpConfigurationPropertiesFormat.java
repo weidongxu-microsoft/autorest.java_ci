@@ -45,7 +45,8 @@ public final class AzureFirewallIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the privateIpAddress property: The Firewall Internal Load Balancer IP to be used as the next hop in User Defined Routes.
+     * Get the privateIpAddress property: The Firewall Internal Load Balancer IP to be used as the next hop in User
+     * Defined Routes.
      * 
      * @return the privateIpAddress value.
      */
@@ -54,7 +55,8 @@ public final class AzureFirewallIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the subnet property: Reference to the subnet resource. This resource must be named 'AzureFirewallSubnet' or 'AzureFirewallManagementSubnet'.
+     * Get the subnet property: Reference to the subnet resource. This resource must be named 'AzureFirewallSubnet' or
+     * 'AzureFirewallManagementSubnet'.
      * 
      * @return the subnet value.
      */
@@ -63,7 +65,8 @@ public final class AzureFirewallIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Set the subnet property: Reference to the subnet resource. This resource must be named 'AzureFirewallSubnet' or 'AzureFirewallManagementSubnet'.
+     * Set the subnet property: Reference to the subnet resource. This resource must be named 'AzureFirewallSubnet' or
+     * 'AzureFirewallManagementSubnet'.
      * 
      * @param subnet the subnet value to set.
      * @return the AzureFirewallIpConfigurationPropertiesFormat object itself.
@@ -74,7 +77,8 @@ public final class AzureFirewallIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the publicIpAddress property: Reference to the PublicIP resource. This field is a mandatory input if subnet is not null.
+     * Get the publicIpAddress property: Reference to the PublicIP resource. This field is a mandatory input if subnet
+     * is not null.
      * 
      * @return the publicIpAddress value.
      */
@@ -83,7 +87,8 @@ public final class AzureFirewallIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Set the publicIpAddress property: Reference to the PublicIP resource. This field is a mandatory input if subnet is not null.
+     * Set the publicIpAddress property: Reference to the PublicIP resource. This field is a mandatory input if subnet
+     * is not null.
      * 
      * @param publicIpAddress the publicIpAddress value to set.
      * @return the AzureFirewallIpConfigurationPropertiesFormat object itself.

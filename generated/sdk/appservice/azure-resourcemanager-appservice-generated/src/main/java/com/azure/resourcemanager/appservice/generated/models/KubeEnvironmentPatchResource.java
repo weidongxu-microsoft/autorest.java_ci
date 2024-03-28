@@ -171,7 +171,8 @@ public final class KubeEnvironmentPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+     * Get the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure
+     * Dapr Instrumentation Key and VNET Configuration.
      * 
      * @return the containerAppsConfiguration value.
      */
@@ -180,7 +181,8 @@ public final class KubeEnvironmentPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+     * Set the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure
+     * Dapr Instrumentation Key and VNET Configuration.
      * 
      * @param containerAppsConfiguration the containerAppsConfiguration value to set.
      * @return the KubeEnvironmentPatchResource object itself.

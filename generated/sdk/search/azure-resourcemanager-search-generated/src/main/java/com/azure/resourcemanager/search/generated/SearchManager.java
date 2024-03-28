@@ -411,7 +411,8 @@ public final class SearchManager {
     }
 
     /**
-     * Gets wrapped service client SearchManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client SearchManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client SearchManagementClient.
      */

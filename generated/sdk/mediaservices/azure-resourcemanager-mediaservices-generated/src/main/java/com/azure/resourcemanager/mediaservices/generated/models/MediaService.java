@@ -102,7 +102,8 @@ public interface MediaService {
     KeyDelivery keyDelivery();
 
     /**
-     * Gets the publicNetworkAccess property: Whether or not public network access is allowed for resources under the Media Services account.
+     * Gets the publicNetworkAccess property: Whether or not public network access is allowed for resources under the
+     * Media Services account.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -116,14 +117,16 @@ public interface MediaService {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateEndpointConnections property: The Private Endpoint Connections created for the Media Service account.
+     * Gets the privateEndpointConnections property: The Private Endpoint Connections created for the Media Service
+     * account.
      * 
      * @return the privateEndpointConnections value.
      */
     List<PrivateEndpointConnection> privateEndpointConnections();
 
     /**
-     * Gets the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
+     * Gets the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an
+     * optional property. If unspecified, a secure default value will be used.
      * 
      * @return the minimumTlsVersion value.
      */
@@ -209,7 +212,8 @@ public interface MediaService {
         }
 
         /**
-         * The stage of the MediaService definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the MediaService definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithStorageAccounts, DefinitionStages.WithStorageAuthentication,
@@ -314,9 +318,11 @@ public interface MediaService {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Whether or not public network access is allowed for resources under the Media Services account..
+             * Specifies the publicNetworkAccess property: Whether or not public network access is allowed for resources
+             * under the Media Services account..
              * 
-             * @param publicNetworkAccess Whether or not public network access is allowed for resources under the Media Services account.
+             * @param publicNetworkAccess Whether or not public network access is allowed for resources under the Media
+             * Services account.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -327,9 +333,11 @@ public interface MediaService {
          */
         interface WithMinimumTlsVersion {
             /**
-             * Specifies the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used..
+             * Specifies the minimumTlsVersion property: The minimum TLS version allowed for this account's requests.
+             * This is an optional property. If unspecified, a secure default value will be used..
              * 
-             * @param minimumTlsVersion The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
+             * @param minimumTlsVersion The minimum TLS version allowed for this account's requests. This is an optional
+             * property. If unspecified, a secure default value will be used.
              * @return the next definition stage.
              */
             WithCreate withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);
@@ -452,9 +460,11 @@ public interface MediaService {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: Whether or not public network access is allowed for resources under the Media Services account..
+             * Specifies the publicNetworkAccess property: Whether or not public network access is allowed for resources
+             * under the Media Services account..
              * 
-             * @param publicNetworkAccess Whether or not public network access is allowed for resources under the Media Services account.
+             * @param publicNetworkAccess Whether or not public network access is allowed for resources under the Media
+             * Services account.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -465,9 +475,11 @@ public interface MediaService {
          */
         interface WithMinimumTlsVersion {
             /**
-             * Specifies the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used..
+             * Specifies the minimumTlsVersion property: The minimum TLS version allowed for this account's requests.
+             * This is an optional property. If unspecified, a secure default value will be used..
              * 
-             * @param minimumTlsVersion The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
+             * @param minimumTlsVersion The minimum TLS version allowed for this account's requests. This is an optional
+             * property. If unspecified, a secure default value will be used.
              * @return the next definition stage.
              */
             Update withMinimumTlsVersion(MinimumTlsVersion minimumTlsVersion);

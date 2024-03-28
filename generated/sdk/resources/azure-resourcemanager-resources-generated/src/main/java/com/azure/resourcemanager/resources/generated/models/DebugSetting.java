@@ -25,7 +25,11 @@ public final class DebugSetting {
     }
 
     /**
-     * Get the detailLevel property: Specifies the type of information to log for debugging. The permitted values are none, requestContent, responseContent, or both requestContent and responseContent separated by a comma. The default is none. When setting this value, carefully consider the type of information you are passing in during deployment. By logging information about the request or response, you could potentially expose sensitive data that is retrieved through the deployment operations.
+     * Get the detailLevel property: Specifies the type of information to log for debugging. The permitted values are
+     * none, requestContent, responseContent, or both requestContent and responseContent separated by a comma. The
+     * default is none. When setting this value, carefully consider the type of information you are passing in during
+     * deployment. By logging information about the request or response, you could potentially expose sensitive data
+     * that is retrieved through the deployment operations.
      * 
      * @return the detailLevel value.
      */
@@ -34,7 +38,11 @@ public final class DebugSetting {
     }
 
     /**
-     * Set the detailLevel property: Specifies the type of information to log for debugging. The permitted values are none, requestContent, responseContent, or both requestContent and responseContent separated by a comma. The default is none. When setting this value, carefully consider the type of information you are passing in during deployment. By logging information about the request or response, you could potentially expose sensitive data that is retrieved through the deployment operations.
+     * Set the detailLevel property: Specifies the type of information to log for debugging. The permitted values are
+     * none, requestContent, responseContent, or both requestContent and responseContent separated by a comma. The
+     * default is none. When setting this value, carefully consider the type of information you are passing in during
+     * deployment. By logging information about the request or response, you could potentially expose sensitive data
+     * that is retrieved through the deployment operations.
      * 
      * @param detailLevel the detailLevel value to set.
      * @return the DebugSetting object itself.

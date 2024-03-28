@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -22,6 +23,13 @@ import java.time.Duration;
     @JsonSubTypes.Type(name = "#Microsoft.Media.H264Video", value = H264Video.class) })
 @Fluent
 public class Video extends Codec {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.Video";
+
     /*
      * The distance between two key frames. The value should be non-zero in the range [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source setting.
      */
@@ -44,11 +52,23 @@ public class Video extends Codec {
      * Creates an instance of Video class.
      */
     public Video() {
-        withOdataType("#Microsoft.Media.Video");
     }
 
     /**
-     * Get the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the range [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source setting.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the range
+     * [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is
+     * ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source
+     * setting.
      * 
      * @return the keyFrameInterval value.
      */
@@ -57,7 +77,10 @@ public class Video extends Codec {
     }
 
     /**
-     * Set the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the range [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source setting.
+     * Set the keyFrameInterval property: The distance between two key frames. The value should be non-zero in the range
+     * [0.5, 20] seconds, specified in ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is
+     * ignored if VideoSyncMode.Passthrough is set, where the KeyFrameInterval value will follow the input source
+     * setting.
      * 
      * @param keyFrameInterval the keyFrameInterval value to set.
      * @return the Video object itself.
@@ -68,7 +91,8 @@ public class Video extends Codec {
     }
 
     /**
-     * Get the stretchMode property: The resizing mode - how the input video will be resized to fit the desired output resolution(s). Default is AutoSize.
+     * Get the stretchMode property: The resizing mode - how the input video will be resized to fit the desired output
+     * resolution(s). Default is AutoSize.
      * 
      * @return the stretchMode value.
      */
@@ -77,7 +101,8 @@ public class Video extends Codec {
     }
 
     /**
-     * Set the stretchMode property: The resizing mode - how the input video will be resized to fit the desired output resolution(s). Default is AutoSize.
+     * Set the stretchMode property: The resizing mode - how the input video will be resized to fit the desired output
+     * resolution(s). Default is AutoSize.
      * 
      * @param stretchMode the stretchMode value to set.
      * @return the Video object itself.

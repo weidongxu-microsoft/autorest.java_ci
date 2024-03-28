@@ -199,7 +199,8 @@ public final class ExpressRouteConnectionInner extends SubResource {
     }
 
     /**
-     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @return the enablePrivateLinkFastPath value.
      */
@@ -208,7 +209,8 @@ public final class ExpressRouteConnectionInner extends SubResource {
     }
 
     /**
-     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @param enablePrivateLinkFastPath the enablePrivateLinkFastPath value to set.
      * @return the ExpressRouteConnectionInner object itself.
@@ -222,7 +224,8 @@ public final class ExpressRouteConnectionInner extends SubResource {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -231,7 +234,8 @@ public final class ExpressRouteConnectionInner extends SubResource {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the ExpressRouteConnectionInner object itself.
@@ -254,8 +258,9 @@ public final class ExpressRouteConnectionInner extends SubResource {
             innerProperties().validate();
         }
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model ExpressRouteConnectionInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model ExpressRouteConnectionInner"));
         }
     }
 

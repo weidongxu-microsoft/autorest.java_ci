@@ -104,12 +104,14 @@ public final class ImageRepositoryCredential {
      */
     public void validate() {
         if (imageRepositoryUrl() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property imageRepositoryUrl in model ImageRepositoryCredential"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property imageRepositoryUrl in model ImageRepositoryCredential"));
         }
         if (username() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property username in model ImageRepositoryCredential"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property username in model ImageRepositoryCredential"));
         }
         if (password() != null) {
             password().validate();

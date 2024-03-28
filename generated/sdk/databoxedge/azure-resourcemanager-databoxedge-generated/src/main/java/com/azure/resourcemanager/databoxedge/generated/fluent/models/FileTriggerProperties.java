@@ -80,7 +80,9 @@ public final class FileTriggerProperties {
     }
 
     /**
-     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
+     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its
+     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
+     * tag can be the name or the image URL of the module.
      * 
      * @return the customContextTag value.
      */
@@ -89,7 +91,9 @@ public final class FileTriggerProperties {
     }
 
     /**
-     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
+     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its
+     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
+     * tag can be the name or the image URL of the module.
      * 
      * @param customContextTag the customContextTag value to set.
      * @return the FileTriggerProperties object itself.
@@ -106,14 +110,15 @@ public final class FileTriggerProperties {
      */
     public void validate() {
         if (sourceInfo() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sourceInfo in model FileTriggerProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sourceInfo in model FileTriggerProperties"));
         } else {
             sourceInfo().validate();
         }
         if (sinkInfo() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sinkInfo in model FileTriggerProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sinkInfo in model FileTriggerProperties"));
         } else {
             sinkInfo().validate();
         }

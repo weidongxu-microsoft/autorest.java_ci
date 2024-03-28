@@ -96,7 +96,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Get the packageReferenceId property: Specifies the GalleryApplicationVersion resource id on the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/applications/{application}/versions/{version}.
+     * Get the packageReferenceId property: Specifies the GalleryApplicationVersion resource id on the form of
+     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/applications/{application}/versions/{version}.
      * 
      * @return the packageReferenceId value.
      */
@@ -105,7 +106,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Set the packageReferenceId property: Specifies the GalleryApplicationVersion resource id on the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/applications/{application}/versions/{version}.
+     * Set the packageReferenceId property: Specifies the GalleryApplicationVersion resource id on the form of
+     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/applications/{application}/versions/{version}.
      * 
      * @param packageReferenceId the packageReferenceId value to set.
      * @return the VMGalleryApplication object itself.
@@ -116,7 +118,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Get the configurationReference property: Optional, Specifies the uri to an azure blob that will replace the default configuration for the package if provided.
+     * Get the configurationReference property: Optional, Specifies the uri to an azure blob that will replace the
+     * default configuration for the package if provided.
      * 
      * @return the configurationReference value.
      */
@@ -125,7 +128,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Set the configurationReference property: Optional, Specifies the uri to an azure blob that will replace the default configuration for the package if provided.
+     * Set the configurationReference property: Optional, Specifies the uri to an azure blob that will replace the
+     * default configuration for the package if provided.
      * 
      * @param configurationReference the configurationReference value to set.
      * @return the VMGalleryApplication object itself.
@@ -136,7 +140,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Get the treatFailureAsDeploymentFailure property: Optional, If true, any failure for any operation in the VmApplication will fail the deployment.
+     * Get the treatFailureAsDeploymentFailure property: Optional, If true, any failure for any operation in the
+     * VmApplication will fail the deployment.
      * 
      * @return the treatFailureAsDeploymentFailure value.
      */
@@ -145,7 +150,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Set the treatFailureAsDeploymentFailure property: Optional, If true, any failure for any operation in the VmApplication will fail the deployment.
+     * Set the treatFailureAsDeploymentFailure property: Optional, If true, any failure for any operation in the
+     * VmApplication will fail the deployment.
      * 
      * @param treatFailureAsDeploymentFailure the treatFailureAsDeploymentFailure value to set.
      * @return the VMGalleryApplication object itself.
@@ -156,7 +162,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Get the enableAutomaticUpgrade property: If set to true, when a new Gallery Application version is available in PIR/SIG, it will be automatically updated for the VM/VMSS.
+     * Get the enableAutomaticUpgrade property: If set to true, when a new Gallery Application version is available in
+     * PIR/SIG, it will be automatically updated for the VM/VMSS.
      * 
      * @return the enableAutomaticUpgrade value.
      */
@@ -165,7 +172,8 @@ public final class VMGalleryApplication {
     }
 
     /**
-     * Set the enableAutomaticUpgrade property: If set to true, when a new Gallery Application version is available in PIR/SIG, it will be automatically updated for the VM/VMSS.
+     * Set the enableAutomaticUpgrade property: If set to true, when a new Gallery Application version is available in
+     * PIR/SIG, it will be automatically updated for the VM/VMSS.
      * 
      * @param enableAutomaticUpgrade the enableAutomaticUpgrade value to set.
      * @return the VMGalleryApplication object itself.
@@ -182,8 +190,9 @@ public final class VMGalleryApplication {
      */
     public void validate() {
         if (packageReferenceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property packageReferenceId in model VMGalleryApplication"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property packageReferenceId in model VMGalleryApplication"));
         }
     }
 

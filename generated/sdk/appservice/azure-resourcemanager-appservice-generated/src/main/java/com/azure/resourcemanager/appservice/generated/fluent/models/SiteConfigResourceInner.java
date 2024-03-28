@@ -274,7 +274,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the requestTracingEnabled property: &lt;code&gt;true&lt;/code&gt; if request tracing is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the requestTracingEnabled property: &lt;code&gt;true&lt;/code&gt; if request tracing is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the requestTracingEnabled value.
      */
@@ -283,7 +284,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the requestTracingEnabled property: &lt;code&gt;true&lt;/code&gt; if request tracing is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the requestTracingEnabled property: &lt;code&gt;true&lt;/code&gt; if request tracing is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param requestTracingEnabled the requestTracingEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -320,7 +322,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the remoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if remote debugging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the remoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if remote debugging is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the remoteDebuggingEnabled value.
      */
@@ -329,7 +332,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the remoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if remote debugging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the remoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if remote debugging is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param remoteDebuggingEnabled the remoteDebuggingEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -366,7 +370,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the httpLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if HTTP logging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the httpLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if HTTP logging is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the httpLoggingEnabled value.
      */
@@ -375,7 +380,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the httpLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if HTTP logging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the httpLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if HTTP logging is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param httpLoggingEnabled the httpLoggingEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -458,7 +464,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the detailedErrorLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if detailed error logging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the detailedErrorLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if detailed error logging is enabled;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the detailedErrorLoggingEnabled value.
      */
@@ -467,7 +474,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the detailedErrorLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if detailed error logging is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the detailedErrorLoggingEnabled property: &lt;code&gt;true&lt;/code&gt; if detailed error logging is enabled;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param detailedErrorLoggingEnabled the detailedErrorLoggingEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -651,7 +659,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; to use 32-bit worker process; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; to use 32-bit worker process; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the use32BitWorkerProcess value.
      */
@@ -660,7 +669,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; to use 32-bit worker process; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the use32BitWorkerProcess property: &lt;code&gt;true&lt;/code&gt; to use 32-bit worker process; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param use32BitWorkerProcess the use32BitWorkerProcess value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -674,7 +684,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the webSocketsEnabled property: &lt;code&gt;true&lt;/code&gt; if WebSocket is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the webSocketsEnabled property: &lt;code&gt;true&lt;/code&gt; if WebSocket is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the webSocketsEnabled value.
      */
@@ -683,7 +694,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the webSocketsEnabled property: &lt;code&gt;true&lt;/code&gt; if WebSocket is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the webSocketsEnabled property: &lt;code&gt;true&lt;/code&gt; if WebSocket is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param webSocketsEnabled the webSocketsEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -697,7 +709,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the alwaysOn property: &lt;code&gt;true&lt;/code&gt; if Always On is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the alwaysOn property: &lt;code&gt;true&lt;/code&gt; if Always On is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the alwaysOn value.
      */
@@ -706,7 +719,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the alwaysOn property: &lt;code&gt;true&lt;/code&gt; if Always On is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the alwaysOn property: &lt;code&gt;true&lt;/code&gt; if Always On is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param alwaysOn the alwaysOn value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -927,7 +941,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the autoHealEnabled property: &lt;code&gt;true&lt;/code&gt; if Auto Heal is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the autoHealEnabled property: &lt;code&gt;true&lt;/code&gt; if Auto Heal is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoHealEnabled value.
      */
@@ -936,7 +951,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the autoHealEnabled property: &lt;code&gt;true&lt;/code&gt; if Auto Heal is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the autoHealEnabled property: &lt;code&gt;true&lt;/code&gt; if Auto Heal is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param autoHealEnabled the autoHealEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1019,7 +1035,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
+     * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @return the vnetRouteAllEnabled value.
      */
@@ -1028,7 +1045,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
+     * Set the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
+     * Virtual Network Security Groups and User Defined Routes applied.
      * 
      * @param vnetRouteAllEnabled the vnetRouteAllEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1042,7 +1060,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned dynamically on runtime.
+     * Get the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned
+     * dynamically on runtime.
      * 
      * @return the vnetPrivatePortsCount value.
      */
@@ -1051,7 +1070,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned dynamically on runtime.
+     * Set the vnetPrivatePortsCount property: The number of private ports assigned to this app. These will be assigned
+     * dynamically on runtime.
      * 
      * @param vnetPrivatePortsCount the vnetPrivatePortsCount value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1180,7 +1200,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the localMySqlEnabled property: &lt;code&gt;true&lt;/code&gt; to enable local MySQL; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the localMySqlEnabled property: &lt;code&gt;true&lt;/code&gt; to enable local MySQL; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the localMySqlEnabled value.
      */
@@ -1189,7 +1210,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the localMySqlEnabled property: &lt;code&gt;true&lt;/code&gt; to enable local MySQL; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the localMySqlEnabled property: &lt;code&gt;true&lt;/code&gt; to enable local MySQL; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param localMySqlEnabled the localMySqlEnabled value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1295,7 +1317,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are matched.
+     * Get the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are
+     * matched.
      * 
      * @return the ipSecurityRestrictionsDefaultAction value.
      */
@@ -1304,7 +1327,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are matched.
+     * Set the ipSecurityRestrictionsDefaultAction property: Default action for main access restriction if no rules are
+     * matched.
      * 
      * @param ipSecurityRestrictionsDefaultAction the ipSecurityRestrictionsDefaultAction value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1343,7 +1367,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules are matched.
+     * Get the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules
+     * are matched.
      * 
      * @return the scmIpSecurityRestrictionsDefaultAction value.
      */
@@ -1352,7 +1377,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules are matched.
+     * Set the scmIpSecurityRestrictionsDefaultAction property: Default action for scm access restriction if no rules
+     * are matched.
      * 
      * @param scmIpSecurityRestrictionsDefaultAction the scmIpSecurityRestrictionsDefaultAction value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1459,7 +1485,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL requests for SCM site.
+     * Get the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL
+     * requests for SCM site.
      * 
      * @return the scmMinTlsVersion value.
      */
@@ -1468,7 +1495,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL requests for SCM site.
+     * Set the scmMinTlsVersion property: ScmMinTlsVersion: configures the minimum version of TLS required for SSL
+     * requests for SCM site.
      * 
      * @param scmMinTlsVersion the scmMinTlsVersion value to set.
      * @return the SiteConfigResourceInner object itself.
@@ -1603,7 +1631,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions runtime scale monitoring is enabled. When enabled,
+     * Get the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions
+     * runtime scale monitoring is enabled. When enabled,
      * the ScaleController will not monitor event sources directly, but will instead call to the
      * runtime to get scale status.
      * 
@@ -1614,7 +1643,8 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions runtime scale monitoring is enabled. When enabled,
+     * Set the functionsRuntimeScaleMonitoringEnabled property: Gets or sets a value indicating whether functions
+     * runtime scale monitoring is enabled. When enabled,
      * the ScaleController will not monitor event sources directly, but will instead call to the
      * runtime to get scale status.
      * 
@@ -1631,7 +1661,11 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux, expects tz database values https://www.iana.org/time-zones (for a quick reference see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
+     * Get the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux
+     * and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux,
+     * expects tz database values https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
      * 
      * @return the websiteTimeZone value.
      */
@@ -1640,7 +1674,11 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux, expects tz database values https://www.iana.org/time-zones (for a quick reference see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
+     * Set the websiteTimeZone property: Sets the time zone a site uses for generating timestamps. Compatible with Linux
+     * and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux,
+     * expects tz database values https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones.
      * 
      * @param websiteTimeZone the websiteTimeZone value to set.
      * @return the SiteConfigResourceInner object itself.

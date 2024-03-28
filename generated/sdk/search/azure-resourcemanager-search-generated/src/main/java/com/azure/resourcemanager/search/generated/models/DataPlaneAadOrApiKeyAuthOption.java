@@ -25,7 +25,8 @@ public final class DataPlaneAadOrApiKeyAuthOption {
     }
 
     /**
-     * Get the aadAuthFailureMode property: Describes what response the data plane API of a search service would send for requests that failed authentication.
+     * Get the aadAuthFailureMode property: Describes what response the data plane API of a search service would send
+     * for requests that failed authentication.
      * 
      * @return the aadAuthFailureMode value.
      */
@@ -34,7 +35,8 @@ public final class DataPlaneAadOrApiKeyAuthOption {
     }
 
     /**
-     * Set the aadAuthFailureMode property: Describes what response the data plane API of a search service would send for requests that failed authentication.
+     * Set the aadAuthFailureMode property: Describes what response the data plane API of a search service would send
+     * for requests that failed authentication.
      * 
      * @param aadAuthFailureMode the aadAuthFailureMode value to set.
      * @return the DataPlaneAadOrApiKeyAuthOption object itself.

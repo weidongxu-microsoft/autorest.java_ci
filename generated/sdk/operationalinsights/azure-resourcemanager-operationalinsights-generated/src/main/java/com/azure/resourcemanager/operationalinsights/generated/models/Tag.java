@@ -78,12 +78,10 @@ public final class Tag {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model Tag"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property name in model Tag"));
         }
         if (value() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property value in model Tag"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property value in model Tag"));
         }
     }
 

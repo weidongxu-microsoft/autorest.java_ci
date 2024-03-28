@@ -11,7 +11,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.P2SVpnConnectio
  */
 public interface P2SVpnConnectionHealth {
     /**
-     * Gets the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be written.
+     * Gets the sasUrl property: Returned sas url of the blob to which the p2s vpn connection detailed health will be
+     * written.
      * 
      * @return the sasUrl value.
      */

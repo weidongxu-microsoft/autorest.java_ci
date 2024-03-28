@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already in use and is therefore unavailable.
+ * The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming
+ * requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already in
+ * use and is therefore unavailable.
  */
 public final class UnavailableNameReason extends ExpandableStringEnum<UnavailableNameReason> {
     /**

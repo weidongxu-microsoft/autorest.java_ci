@@ -58,7 +58,8 @@ public final class DiskInstanceView {
     }
 
     /**
-     * Get the encryptionSettings property: Specifies the encryption settings for the OS Disk. &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+     * Get the encryptionSettings property: Specifies the encryption settings for the OS Disk. &lt;br&gt;&lt;br&gt;
+     * Minimum api-version: 2015-06-15.
      * 
      * @return the encryptionSettings value.
      */
@@ -67,7 +68,8 @@ public final class DiskInstanceView {
     }
 
     /**
-     * Set the encryptionSettings property: Specifies the encryption settings for the OS Disk. &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+     * Set the encryptionSettings property: Specifies the encryption settings for the OS Disk. &lt;br&gt;&lt;br&gt;
+     * Minimum api-version: 2015-06-15.
      * 
      * @param encryptionSettings the encryptionSettings value to set.
      * @return the DiskInstanceView object itself.

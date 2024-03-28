@@ -21,7 +21,8 @@ public interface InboundSecurityRuleOperationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -38,7 +39,8 @@ public interface InboundSecurityRuleOperationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -56,7 +58,8 @@ public interface InboundSecurityRuleOperationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -72,7 +75,8 @@ public interface InboundSecurityRuleOperationsClient {
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param ruleCollectionName The name of security rule collection.
-     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules operation.
+     * @param parameters Parameters supplied to the create or update Network Virtual Appliance Inbound Security Rules
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

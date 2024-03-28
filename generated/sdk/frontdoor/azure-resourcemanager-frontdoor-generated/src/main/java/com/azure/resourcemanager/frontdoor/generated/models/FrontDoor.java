@@ -145,7 +145,8 @@ public interface FrontDoor {
     BackendPoolsSettings backendPoolsSettings();
 
     /**
-     * Gets the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
+     * Gets the enabledState property: Operational status of the Front Door load balancer. Permitted values are
+     * 'Enabled' or 'Disabled'.
      * 
      * @return the enabledState value.
      */
@@ -231,7 +232,8 @@ public interface FrontDoor {
         }
 
         /**
-         * The stage of the FrontDoor definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the FrontDoor definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithFriendlyName, DefinitionStages.WithRoutingRules,
@@ -298,7 +300,8 @@ public interface FrontDoor {
          */
         interface WithLoadBalancingSettings {
             /**
-             * Specifies the loadBalancingSettings property: Load balancing settings associated with this Front Door instance..
+             * Specifies the loadBalancingSettings property: Load balancing settings associated with this Front Door
+             * instance..
              * 
              * @param loadBalancingSettings Load balancing settings associated with this Front Door instance.
              * @return the next definition stage.
@@ -311,7 +314,8 @@ public interface FrontDoor {
          */
         interface WithHealthProbeSettings {
             /**
-             * Specifies the healthProbeSettings property: Health probe settings associated with this Front Door instance..
+             * Specifies the healthProbeSettings property: Health probe settings associated with this Front Door
+             * instance..
              * 
              * @param healthProbeSettings Health probe settings associated with this Front Door instance.
              * @return the next definition stage.
@@ -363,9 +367,11 @@ public interface FrontDoor {
          */
         interface WithEnabledState {
             /**
-             * Specifies the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
+             * Specifies the enabledState property: Operational status of the Front Door load balancer. Permitted values
+             * are 'Enabled' or 'Disabled'.
              * 
-             * @param enabledState Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
+             * @param enabledState Operational status of the Front Door load balancer. Permitted values are 'Enabled' or
+             * 'Disabled'.
              * @return the next definition stage.
              */
             WithCreate withEnabledState(FrontDoorEnabledState enabledState);
@@ -449,7 +455,8 @@ public interface FrontDoor {
          */
         interface WithLoadBalancingSettings {
             /**
-             * Specifies the loadBalancingSettings property: Load balancing settings associated with this Front Door instance..
+             * Specifies the loadBalancingSettings property: Load balancing settings associated with this Front Door
+             * instance..
              * 
              * @param loadBalancingSettings Load balancing settings associated with this Front Door instance.
              * @return the next definition stage.
@@ -462,7 +469,8 @@ public interface FrontDoor {
          */
         interface WithHealthProbeSettings {
             /**
-             * Specifies the healthProbeSettings property: Health probe settings associated with this Front Door instance..
+             * Specifies the healthProbeSettings property: Health probe settings associated with this Front Door
+             * instance..
              * 
              * @param healthProbeSettings Health probe settings associated with this Front Door instance.
              * @return the next definition stage.
@@ -514,9 +522,11 @@ public interface FrontDoor {
          */
         interface WithEnabledState {
             /**
-             * Specifies the enabledState property: Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
+             * Specifies the enabledState property: Operational status of the Front Door load balancer. Permitted values
+             * are 'Enabled' or 'Disabled'.
              * 
-             * @param enabledState Operational status of the Front Door load balancer. Permitted values are 'Enabled' or 'Disabled'.
+             * @param enabledState Operational status of the Front Door load balancer. Permitted values are 'Enabled' or
+             * 'Disabled'.
              * @return the next definition stage.
              */
             Update withEnabledState(FrontDoorEnabledState enabledState);

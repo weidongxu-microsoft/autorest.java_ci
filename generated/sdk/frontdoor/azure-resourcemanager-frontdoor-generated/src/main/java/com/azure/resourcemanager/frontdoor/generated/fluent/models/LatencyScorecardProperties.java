@@ -139,7 +139,8 @@ public final class LatencyScorecardProperties {
     }
 
     /**
-     * Get the country property: The country associated with the Latency Scorecard. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html.
+     * Get the country property: The country associated with the Latency Scorecard. Values are country ISO codes as
+     * specified here- https://www.iso.org/iso-3166-country-codes.html.
      * 
      * @return the country value.
      */

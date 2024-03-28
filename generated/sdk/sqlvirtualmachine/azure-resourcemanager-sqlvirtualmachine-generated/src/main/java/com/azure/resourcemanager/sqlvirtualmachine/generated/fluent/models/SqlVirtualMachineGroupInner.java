@@ -139,7 +139,8 @@ public final class SqlVirtualMachineGroupInner extends Resource {
     }
 
     /**
-     * Get the clusterManagerType property: Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the OS type.
+     * Get the clusterManagerType property: Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by
+     * the scale type of the group and the OS type.
      * 
      * @return the clusterManagerType value.
      */

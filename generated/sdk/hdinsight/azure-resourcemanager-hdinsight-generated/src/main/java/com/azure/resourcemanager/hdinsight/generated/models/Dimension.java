@@ -103,7 +103,8 @@ public final class Dimension {
     }
 
     /**
-     * Get the toBeExportedForShoebox property: The flag indicates whether the metric will be exported for shoebox or not.
+     * Get the toBeExportedForShoebox property: The flag indicates whether the metric will be exported for shoebox or
+     * not.
      * 
      * @return the toBeExportedForShoebox value.
      */
@@ -112,7 +113,8 @@ public final class Dimension {
     }
 
     /**
-     * Set the toBeExportedForShoebox property: The flag indicates whether the metric will be exported for shoebox or not.
+     * Set the toBeExportedForShoebox property: The flag indicates whether the metric will be exported for shoebox or
+     * not.
      * 
      * @param toBeExportedForShoebox the toBeExportedForShoebox value to set.
      * @return the Dimension object itself.

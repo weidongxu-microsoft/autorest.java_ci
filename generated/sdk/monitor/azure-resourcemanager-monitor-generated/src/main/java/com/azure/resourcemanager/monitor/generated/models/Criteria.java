@@ -79,8 +79,8 @@ public final class Criteria {
      */
     public void validate() {
         if (metricName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property metricName in model Criteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property metricName in model Criteria"));
         }
         if (dimensions() != null) {
             dimensions().forEach(e -> e.validate());

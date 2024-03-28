@@ -6,6 +6,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -22,6 +23,13 @@ import java.time.Duration;
 @Fluent
 public final class LocationThresholdRuleCondition extends RuleCondition {
     /*
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition";
+
+    /*
      * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      */
     @JsonProperty(value = "windowSize")
@@ -37,11 +45,23 @@ public final class LocationThresholdRuleCondition extends RuleCondition {
      * Creates an instance of LocationThresholdRuleCondition class.
      */
     public LocationThresholdRuleCondition() {
-        withOdataType("Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition");
     }
 
     /**
-     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Get the odataType property: specifies the type of condition. This can be one of three types:
+     * ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the
+     * number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @return the windowSize value.
      */
@@ -50,7 +70,8 @@ public final class LocationThresholdRuleCondition extends RuleCondition {
     }
 
     /**
-     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @param windowSize the windowSize value to set.
      * @return the LocationThresholdRuleCondition object itself.

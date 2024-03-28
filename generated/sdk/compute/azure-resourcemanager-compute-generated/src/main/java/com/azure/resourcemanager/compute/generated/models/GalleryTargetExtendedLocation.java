@@ -89,7 +89,8 @@ public final class GalleryTargetExtendedLocation {
     }
 
     /**
-     * Get the extendedLocationReplicaCount property: The number of replicas of the Image Version to be created per extended location. This property is updatable.
+     * Get the extendedLocationReplicaCount property: The number of replicas of the Image Version to be created per
+     * extended location. This property is updatable.
      * 
      * @return the extendedLocationReplicaCount value.
      */
@@ -98,7 +99,8 @@ public final class GalleryTargetExtendedLocation {
     }
 
     /**
-     * Set the extendedLocationReplicaCount property: The number of replicas of the Image Version to be created per extended location. This property is updatable.
+     * Set the extendedLocationReplicaCount property: The number of replicas of the Image Version to be created per
+     * extended location. This property is updatable.
      * 
      * @param extendedLocationReplicaCount the extendedLocationReplicaCount value to set.
      * @return the GalleryTargetExtendedLocation object itself.
@@ -109,7 +111,8 @@ public final class GalleryTargetExtendedLocation {
     }
 
     /**
-     * Get the storageAccountType property: Specifies the storage account type to be used to store the image. This property is not updatable.
+     * Get the storageAccountType property: Specifies the storage account type to be used to store the image. This
+     * property is not updatable.
      * 
      * @return the storageAccountType value.
      */
@@ -118,7 +121,8 @@ public final class GalleryTargetExtendedLocation {
     }
 
     /**
-     * Set the storageAccountType property: Specifies the storage account type to be used to store the image. This property is not updatable.
+     * Set the storageAccountType property: Specifies the storage account type to be used to store the image. This
+     * property is not updatable.
      * 
      * @param storageAccountType the storageAccountType value to set.
      * @return the GalleryTargetExtendedLocation object itself.
@@ -129,7 +133,8 @@ public final class GalleryTargetExtendedLocation {
     }
 
     /**
-     * Get the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
+     * Get the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and
+     * data disks in the gallery artifact.
      * 
      * @return the encryption value.
      */
@@ -138,7 +143,8 @@ public final class GalleryTargetExtendedLocation {
     }
 
     /**
-     * Set the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and data disks in the gallery artifact.
+     * Set the encryption property: Optional. Allows users to provide customer managed keys for encrypting the OS and
+     * data disks in the gallery artifact.
      * 
      * @param encryption the encryption value to set.
      * @return the GalleryTargetExtendedLocation object itself.

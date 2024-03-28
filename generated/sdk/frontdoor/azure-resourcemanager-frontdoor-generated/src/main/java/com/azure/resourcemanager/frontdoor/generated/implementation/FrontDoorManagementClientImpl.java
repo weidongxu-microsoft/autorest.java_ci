@@ -51,12 +51,14 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = FrontDoorManagementClientBuilder.class)
 public final class FrontDoorManagementClientImpl implements FrontDoorManagementClient {
     /**
-     * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      */
     private final String subscriptionId;
 
     /**
-     * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID
+     * forms part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */
@@ -295,7 +297,8 @@ public final class FrontDoorManagementClientImpl implements FrontDoorManagementC
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * @param subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The
+     * subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
     FrontDoorManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,

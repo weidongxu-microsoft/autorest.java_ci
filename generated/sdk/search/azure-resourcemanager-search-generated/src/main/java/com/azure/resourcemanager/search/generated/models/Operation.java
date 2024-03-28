@@ -25,7 +25,8 @@ public interface Operation {
     OperationDisplay display();
 
     /**
-     * Gets the isDataAction property: Describes if the specified operation is a data plane API operation. Operations where this value is not true are supported directly by the resource provider.
+     * Gets the isDataAction property: Describes if the specified operation is a data plane API operation. Operations
+     * where this value is not true are supported directly by the resource provider.
      * 
      * @return the isDataAction value.
      */

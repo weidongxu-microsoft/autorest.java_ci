@@ -38,7 +38,8 @@ public final class CheckMhsmNameAvailabilityResultInner {
     }
 
     /**
-     * Get the nameAvailable property: A boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or is invalid and cannot be used.
+     * Get the nameAvailable property: A boolean value that indicates whether the name is available for you to use. If
+     * true, the name is available. If false, the name has already been taken or is invalid and cannot be used.
      * 
      * @return the nameAvailable value.
      */
@@ -47,7 +48,8 @@ public final class CheckMhsmNameAvailabilityResultInner {
     }
 
     /**
-     * Get the reason property: The reason that a managed hsm name could not be used. The reason element is only returned if NameAvailable is false.
+     * Get the reason property: The reason that a managed hsm name could not be used. The reason element is only
+     * returned if NameAvailable is false.
      * 
      * @return the reason value.
      */

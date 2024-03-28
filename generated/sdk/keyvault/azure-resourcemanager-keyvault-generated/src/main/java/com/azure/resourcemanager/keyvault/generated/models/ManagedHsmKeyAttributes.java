@@ -139,7 +139,9 @@ public final class ManagedHsmKeyAttributes {
     }
 
     /**
-     * Get the recoveryLevel property: The deletion recovery level currently in effect for the object. If it contains 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the retention interval.
+     * Get the recoveryLevel property: The deletion recovery level currently in effect for the object. If it contains
+     * 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can
+     * purge the object at the end of the retention interval.
      * 
      * @return the recoveryLevel value.
      */

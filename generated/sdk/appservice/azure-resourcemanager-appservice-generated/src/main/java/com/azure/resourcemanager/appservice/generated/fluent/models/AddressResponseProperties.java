@@ -65,7 +65,8 @@ public final class AddressResponseProperties {
     }
 
     /**
-     * Get the internalIpAddress property: Virtual Network internal IP address of the App Service Environment if it is in internal load-balancing mode.
+     * Get the internalIpAddress property: Virtual Network internal IP address of the App Service Environment if it is
+     * in internal load-balancing mode.
      * 
      * @return the internalIpAddress value.
      */
@@ -74,7 +75,8 @@ public final class AddressResponseProperties {
     }
 
     /**
-     * Set the internalIpAddress property: Virtual Network internal IP address of the App Service Environment if it is in internal load-balancing mode.
+     * Set the internalIpAddress property: Virtual Network internal IP address of the App Service Environment if it is
+     * in internal load-balancing mode.
      * 
      * @param internalIpAddress the internalIpAddress value to set.
      * @return the AddressResponseProperties object itself.

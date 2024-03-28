@@ -25,7 +25,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Rules Engine Configurations as paginated response with {@link PagedIterable}.
+     * @return result of the request to list Rules Engine Configurations as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RulesEngineInner> listByFrontDoor(String resourceGroupName, String frontDoorName);
@@ -39,7 +40,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Rules Engine Configurations as paginated response with {@link PagedIterable}.
+     * @return result of the request to list Rules Engine Configurations as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RulesEngineInner> listByFrontDoor(String resourceGroupName, String frontDoorName, Context context);
@@ -54,7 +56,8 @@ public interface RulesEnginesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Rules Engine Configuration with the specified name within the specified Front Door along with {@link Response}.
+     * @return a Rules Engine Configuration with the specified name within the specified Front Door along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<RulesEngineInner> getWithResponse(String resourceGroupName, String frontDoorName, String rulesEngineName,
@@ -80,11 +83,13 @@ public interface RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine Configuration.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     * Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of a rules engine configuration containing a list of rules that will run to modify the runtime behavior of the request and response.
+     * @return the {@link SyncPoller} for polling of a rules engine configuration containing a list of rules that will
+     * run to modify the runtime behavior of the request and response.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RulesEngineInner>, RulesEngineInner> beginCreateOrUpdate(String resourceGroupName,
@@ -96,12 +101,14 @@ public interface RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine Configuration.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     * Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of a rules engine configuration containing a list of rules that will run to modify the runtime behavior of the request and response.
+     * @return the {@link SyncPoller} for polling of a rules engine configuration containing a list of rules that will
+     * run to modify the runtime behavior of the request and response.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<RulesEngineInner>, RulesEngineInner> beginCreateOrUpdate(String resourceGroupName,
@@ -113,11 +120,13 @@ public interface RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine Configuration.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     * Configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a rules engine configuration containing a list of rules that will run to modify the runtime behavior of the request and response.
+     * @return a rules engine configuration containing a list of rules that will run to modify the runtime behavior of
+     * the request and response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     RulesEngineInner createOrUpdate(String resourceGroupName, String frontDoorName, String rulesEngineName,
@@ -129,12 +138,14 @@ public interface RulesEnginesClient {
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param frontDoorName Name of the Front Door which is globally unique.
      * @param rulesEngineName Name of the Rules Engine which is unique within the Front Door.
-     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine Configuration.
+     * @param rulesEngineParameters Rules Engine Configuration properties needed to create a new Rules Engine
+     * Configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a rules engine configuration containing a list of rules that will run to modify the runtime behavior of the request and response.
+     * @return a rules engine configuration containing a list of rules that will run to modify the runtime behavior of
+     * the request and response.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     RulesEngineInner createOrUpdate(String resourceGroupName, String frontDoorName, String rulesEngineName,

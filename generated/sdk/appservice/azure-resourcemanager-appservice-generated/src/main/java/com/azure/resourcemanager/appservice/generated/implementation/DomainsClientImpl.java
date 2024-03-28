@@ -74,7 +74,8 @@ public final class DomainsClientImpl implements DomainsClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientDomains to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientDomains to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -504,7 +505,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management along with {@link Response} on successful completion of {@link Mono}.
+     * @return single sign-on request information for domain management along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainControlCenterSsoRequestInner>> getControlCenterSsoRequestWithResponseAsync() {
@@ -532,7 +534,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single sign-on request information for domain management along with {@link Response} on successful completion of {@link Mono}.
+     * @return single sign-on request information for domain management along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DomainControlCenterSsoRequestInner>>
@@ -604,7 +607,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>>
@@ -641,7 +645,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>>
@@ -1259,7 +1264,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
-     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
+     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
+     * is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1297,7 +1303,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
-     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
+     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
+     * is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1354,7 +1361,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of the domain.
-     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
+     * @param forceHardDeleteDomain Specify &lt;code&gt;true&lt;/code&gt; to delete the domain immediately. The default
+     * is &lt;code&gt;false&lt;/code&gt; which deletes the domain after 24 hours.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1537,7 +1545,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>>
@@ -1577,7 +1586,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>>
@@ -1826,7 +1836,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1876,7 +1887,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1925,7 +1937,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1946,7 +1959,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -1969,7 +1983,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2128,7 +2143,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2178,7 +2194,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2227,7 +2244,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2248,7 +2266,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2270,7 +2289,8 @@ public final class DomainsClientImpl implements DomainsClient {
     /**
      * Creates an ownership identifier for a domain or updates identifier details for an existing identifier
      * 
-     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing identifier.
+     * Description for Creates an ownership identifier for a domain or updates identifier details for an existing
+     * identifier.
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param domainName Name of domain.
@@ -2596,7 +2616,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsNextSinglePageAsync(String nextLink) {
@@ -2626,7 +2647,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain name identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NameIdentifierInner>> listRecommendationsNextSinglePageAsync(String nextLink,
@@ -2711,7 +2733,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>>
@@ -2742,7 +2765,8 @@ public final class DomainsClientImpl implements DomainsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of domain ownership identifiers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DomainOwnershipIdentifierInner>>

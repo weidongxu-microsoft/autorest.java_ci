@@ -112,8 +112,9 @@ public final class AdminRuleCollectionPropertiesFormat {
      */
     public void validate() {
         if (appliesToGroups() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property appliesToGroups in model AdminRuleCollectionPropertiesFormat"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property appliesToGroups in model AdminRuleCollectionPropertiesFormat"));
         } else {
             appliesToGroups().forEach(e -> e.validate());
         }

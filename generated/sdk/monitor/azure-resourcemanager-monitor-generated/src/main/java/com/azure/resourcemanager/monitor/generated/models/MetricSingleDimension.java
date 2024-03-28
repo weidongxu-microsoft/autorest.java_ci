@@ -78,12 +78,12 @@ public final class MetricSingleDimension {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model MetricSingleDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model MetricSingleDimension"));
         }
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model MetricSingleDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model MetricSingleDimension"));
         }
     }
 

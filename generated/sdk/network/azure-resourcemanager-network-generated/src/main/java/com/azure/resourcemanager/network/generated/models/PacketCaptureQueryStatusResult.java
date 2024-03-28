@@ -55,7 +55,8 @@ public interface PacketCaptureQueryStatusResult {
     List<PcError> packetCaptureError();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureQueryStatusResultInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureQueryStatusResultInner
+     * object.
      * 
      * @return the inner object.
      */

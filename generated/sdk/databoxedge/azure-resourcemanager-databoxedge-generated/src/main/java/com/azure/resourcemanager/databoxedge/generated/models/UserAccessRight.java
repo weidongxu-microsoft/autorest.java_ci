@@ -78,12 +78,12 @@ public final class UserAccessRight {
      */
     public void validate() {
         if (userId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property userId in model UserAccessRight"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property userId in model UserAccessRight"));
         }
         if (accessType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property accessType in model UserAccessRight"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property accessType in model UserAccessRight"));
         }
     }
 

@@ -64,7 +64,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientConfigurationPolicyGroups to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientConfigurationPolicyGroups to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -129,11 +130,13 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -180,12 +183,14 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -231,7 +236,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -255,7 +261,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -282,7 +289,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -305,7 +313,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -329,7 +338,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -349,7 +359,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -370,7 +381,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -390,7 +402,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @param resourceGroupName The resource group name of the ConfigurationPolicyGroup.
      * @param vpnServerConfigurationName The name of the VpnServerConfiguration.
      * @param configurationPolicyGroupName The name of the ConfigurationPolicyGroup.
-     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a VpnServerConfiguration PolicyGroup.
+     * @param vpnServerConfigurationPolicyGroupParameters Parameters supplied to create or update a
+     * VpnServerConfiguration PolicyGroup.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -650,7 +663,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VpnServerConfigurationPolicyGroupInner>> getWithResponseAsync(String resourceGroupName,
@@ -694,7 +708,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return vpnServerConfigurationPolicyGroup Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VpnServerConfigurationPolicyGroupInner>> getWithResponseAsync(String resourceGroupName,
@@ -789,7 +804,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationPolicyGroupInner>>
@@ -830,7 +846,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationPolicyGroupInner>> listByVpnServerConfigurationSinglePageAsync(
@@ -869,7 +886,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link PagedFlux}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnServerConfigurationPolicyGroupInner>
@@ -888,7 +906,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link PagedFlux}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfigurationAsync(
@@ -906,7 +925,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfiguration(String resourceGroupName,
@@ -923,7 +943,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with {@link PagedIterable}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnServerConfigurationPolicyGroupInner> listByVpnServerConfiguration(String resourceGroupName,
@@ -941,7 +962,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationPolicyGroupInner>>
@@ -971,7 +993,8 @@ public final class ConfigurationPolicyGroupsClientImpl implements ConfigurationP
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnServerConfigurationPolicyGroups along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationPolicyGroupInner>>

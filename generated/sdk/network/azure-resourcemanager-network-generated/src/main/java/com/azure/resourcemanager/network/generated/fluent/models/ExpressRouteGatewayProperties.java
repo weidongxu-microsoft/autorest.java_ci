@@ -125,7 +125,8 @@ public final class ExpressRouteGatewayProperties {
     }
 
     /**
-     * Get the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN networks.
+     * Get the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
      * 
      * @return the allowNonVirtualWanTraffic value.
      */
@@ -134,7 +135,8 @@ public final class ExpressRouteGatewayProperties {
     }
 
     /**
-     * Set the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN networks.
+     * Set the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
      * 
      * @param allowNonVirtualWanTraffic the allowNonVirtualWanTraffic value to set.
      * @return the ExpressRouteGatewayProperties object itself.
@@ -157,8 +159,9 @@ public final class ExpressRouteGatewayProperties {
             expressRouteConnections().forEach(e -> e.validate());
         }
         if (virtualHub() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property virtualHub in model ExpressRouteGatewayProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property virtualHub in model ExpressRouteGatewayProperties"));
         } else {
             virtualHub().validate();
         }

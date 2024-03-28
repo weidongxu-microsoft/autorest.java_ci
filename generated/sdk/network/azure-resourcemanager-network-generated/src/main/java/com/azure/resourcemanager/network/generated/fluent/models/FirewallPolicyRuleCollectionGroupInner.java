@@ -56,7 +56,8 @@ public final class FirewallPolicyRuleCollectionGroupInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -65,7 +66,8 @@ public final class FirewallPolicyRuleCollectionGroupInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the FirewallPolicyRuleCollectionGroupInner object itself.
@@ -103,7 +105,8 @@ public final class FirewallPolicyRuleCollectionGroupInner extends SubResource {
     }
 
     /**
-     * Get the size property: A read-only string that represents the size of the FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
+     * Get the size property: A read-only string that represents the size of the
+     * FirewallPolicyRuleCollectionGroupProperties in MB. (ex 1.2MB).
      * 
      * @return the size value.
      */

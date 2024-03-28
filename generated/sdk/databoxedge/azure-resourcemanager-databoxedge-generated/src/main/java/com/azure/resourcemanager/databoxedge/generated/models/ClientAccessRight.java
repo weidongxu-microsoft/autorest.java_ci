@@ -78,12 +78,13 @@ public final class ClientAccessRight {
      */
     public void validate() {
         if (client() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property client in model ClientAccessRight"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property client in model ClientAccessRight"));
         }
         if (accessPermission() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property accessPermission in model ClientAccessRight"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property accessPermission in model ClientAccessRight"));
         }
     }
 

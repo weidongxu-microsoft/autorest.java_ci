@@ -109,7 +109,8 @@ public interface VpnGateway {
     Boolean enableBgpRouteTranslationForNat();
 
     /**
-     * Gets the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the VpnGateway.
+     * Gets the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the VpnGateway.
      * 
      * @return the isRoutingPreferenceInternet value.
      */
@@ -202,7 +203,8 @@ public interface VpnGateway {
         }
 
         /**
-         * The stage of the VpnGateway definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VpnGateway definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithVirtualHub,
             DefinitionStages.WithConnections, DefinitionStages.WithBgpSettings,
@@ -294,7 +296,8 @@ public interface VpnGateway {
          */
         interface WithEnableBgpRouteTranslationForNat {
             /**
-             * Specifies the enableBgpRouteTranslationForNat property: Enable BGP routes translation for NAT on this VpnGateway..
+             * Specifies the enableBgpRouteTranslationForNat property: Enable BGP routes translation for NAT on this
+             * VpnGateway..
              * 
              * @param enableBgpRouteTranslationForNat Enable BGP routes translation for NAT on this VpnGateway.
              * @return the next definition stage.
@@ -307,9 +310,11 @@ public interface VpnGateway {
          */
         interface WithIsRoutingPreferenceInternet {
             /**
-             * Specifies the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the VpnGateway..
+             * Specifies the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP
+             * Interface of the VpnGateway..
              * 
-             * @param isRoutingPreferenceInternet Enable Routing Preference property for the Public IP Interface of the VpnGateway.
+             * @param isRoutingPreferenceInternet Enable Routing Preference property for the Public IP Interface of the
+             * VpnGateway.
              * @return the next definition stage.
              */
             WithCreate withIsRoutingPreferenceInternet(Boolean isRoutingPreferenceInternet);

@@ -57,7 +57,7 @@ public final class CorsSettings {
     }
 
     /**
-     * Get the supportCredentials property: Gets or sets whether CORS requests with credentials are allowed. See 
+     * Get the supportCredentials property: Gets or sets whether CORS requests with credentials are allowed. See
      * https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Requests_with_credentials
      * for more details.
      * 
@@ -68,7 +68,7 @@ public final class CorsSettings {
     }
 
     /**
-     * Set the supportCredentials property: Gets or sets whether CORS requests with credentials are allowed. See 
+     * Set the supportCredentials property: Gets or sets whether CORS requests with credentials are allowed. See
      * https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#Requests_with_credentials
      * for more details.
      * 

@@ -84,7 +84,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the managedByExtended property: List of relative URIs containing the IDs of the VMs that have the disk attached. maxShares should be set to a value greater than one for disks to allow attaching them to multiple VMs.
+     * Get the managedByExtended property: List of relative URIs containing the IDs of the VMs that have the disk
+     * attached. maxShares should be set to a value greater than one for disks to allow attaching them to multiple VMs.
      * 
      * @return the managedByExtended value.
      */
@@ -93,7 +94,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS, Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
+     * Get the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
+     * Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
      * 
      * @return the sku value.
      */
@@ -102,7 +104,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS, Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
+     * Set the sku property: The disks sku name. Can be Standard_LRS, Premium_LRS, StandardSSD_LRS, UltraSSD_LRS,
+     * Premium_ZRS, StandardSSD_ZRS, or PremiumV2_LRS.
      * 
      * @param sku the sku value to set.
      * @return the DiskInner object itself.
@@ -133,7 +136,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the extendedLocation property: The extended location where the disk will be created. Extended location cannot be changed.
+     * Get the extendedLocation property: The extended location where the disk will be created. Extended location cannot
+     * be changed.
      * 
      * @return the extendedLocation value.
      */
@@ -142,7 +146,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the extendedLocation property: The extended location where the disk will be created. Extended location cannot be changed.
+     * Set the extendedLocation property: The extended location where the disk will be created. Extended location cannot
+     * be changed.
      * 
      * @param extendedLocation the extendedLocation value to set.
      * @return the DiskInner object itself.
@@ -235,7 +240,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the purchasePlan property: Purchase plan information for the the image from which the OS disk was created. E.g. - {name: 2019-Datacenter, publisher: MicrosoftWindowsServer, product: WindowsServer}.
+     * Get the purchasePlan property: Purchase plan information for the the image from which the OS disk was created.
+     * E.g. - {name: 2019-Datacenter, publisher: MicrosoftWindowsServer, product: WindowsServer}.
      * 
      * @return the purchasePlan value.
      */
@@ -244,7 +250,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the purchasePlan property: Purchase plan information for the the image from which the OS disk was created. E.g. - {name: 2019-Datacenter, publisher: MicrosoftWindowsServer, product: WindowsServer}.
+     * Set the purchasePlan property: Purchase plan information for the the image from which the OS disk was created.
+     * E.g. - {name: 2019-Datacenter, publisher: MicrosoftWindowsServer, product: WindowsServer}.
      * 
      * @param purchasePlan the purchasePlan value to set.
      * @return the DiskInner object itself.
@@ -258,7 +265,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was created.
+     * Get the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was
+     * created.
      * 
      * @return the supportedCapabilities value.
      */
@@ -267,7 +275,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was created.
+     * Set the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was
+     * created.
      * 
      * @param supportedCapabilities the supportedCapabilities value to set.
      * @return the DiskInner object itself.
@@ -281,7 +290,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the creationData property: Disk source information. CreationData information cannot be changed after the disk has been created.
+     * Get the creationData property: Disk source information. CreationData information cannot be changed after the disk
+     * has been created.
      * 
      * @return the creationData value.
      */
@@ -290,7 +300,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the creationData property: Disk source information. CreationData information cannot be changed after the disk has been created.
+     * Set the creationData property: Disk source information. CreationData information cannot be changed after the disk
+     * has been created.
      * 
      * @param creationData the creationData value to set.
      * @return the DiskInner object itself.
@@ -304,7 +315,10 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * Get the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the
+     * size of the disk to create. If this field is present for updates or creation with other options, it indicates a
+     * resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's
+     * size.
      * 
      * @return the diskSizeGB value.
      */
@@ -313,7 +327,10 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * Set the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the
+     * size of the disk to create. If this field is present for updates or creation with other options, it indicates a
+     * resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's
+     * size.
      * 
      * @param diskSizeGB the diskSizeGB value to set.
      * @return the DiskInner object itself.
@@ -345,7 +362,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the encryptionSettingsCollection property: Encryption settings collection used for Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Get the encryptionSettingsCollection property: Encryption settings collection used for Azure Disk Encryption, can
+     * contain multiple encryption settings per disk or snapshot.
      * 
      * @return the encryptionSettingsCollection value.
      */
@@ -354,7 +372,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the encryptionSettingsCollection property: Encryption settings collection used for Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Set the encryptionSettingsCollection property: Encryption settings collection used for Azure Disk Encryption, can
+     * contain multiple encryption settings per disk or snapshot.
      * 
      * @param encryptionSettingsCollection the encryptionSettingsCollection value to set.
      * @return the DiskInner object itself.
@@ -377,7 +396,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the diskIopsReadWrite property: The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+     * Get the diskIopsReadWrite property: The number of IOPS allowed for this disk; only settable for UltraSSD disks.
+     * One operation can transfer between 4k and 256k bytes.
      * 
      * @return the diskIopsReadWrite value.
      */
@@ -386,7 +406,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the diskIopsReadWrite property: The number of IOPS allowed for this disk; only settable for UltraSSD disks. One operation can transfer between 4k and 256k bytes.
+     * Set the diskIopsReadWrite property: The number of IOPS allowed for this disk; only settable for UltraSSD disks.
+     * One operation can transfer between 4k and 256k bytes.
      * 
      * @param diskIopsReadWrite the diskIopsReadWrite value to set.
      * @return the DiskInner object itself.
@@ -400,7 +421,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the diskMBpsReadWrite property: The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+     * Get the diskMBpsReadWrite property: The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps
+     * means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
      * 
      * @return the diskMBpsReadWrite value.
      */
@@ -409,7 +431,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the diskMBpsReadWrite property: The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+     * Set the diskMBpsReadWrite property: The bandwidth allowed for this disk; only settable for UltraSSD disks. MBps
+     * means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
      * 
      * @param diskMBpsReadWrite the diskMBpsReadWrite value to set.
      * @return the DiskInner object itself.
@@ -423,7 +446,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the diskIopsReadOnly property: The total number of IOPS that will be allowed across all VMs mounting the shared disk as ReadOnly. One operation can transfer between 4k and 256k bytes.
+     * Get the diskIopsReadOnly property: The total number of IOPS that will be allowed across all VMs mounting the
+     * shared disk as ReadOnly. One operation can transfer between 4k and 256k bytes.
      * 
      * @return the diskIopsReadOnly value.
      */
@@ -432,7 +456,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the diskIopsReadOnly property: The total number of IOPS that will be allowed across all VMs mounting the shared disk as ReadOnly. One operation can transfer between 4k and 256k bytes.
+     * Set the diskIopsReadOnly property: The total number of IOPS that will be allowed across all VMs mounting the
+     * shared disk as ReadOnly. One operation can transfer between 4k and 256k bytes.
      * 
      * @param diskIopsReadOnly the diskIopsReadOnly value to set.
      * @return the DiskInner object itself.
@@ -446,7 +471,9 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the diskMBpsReadOnly property: The total throughput (MBps) that will be allowed across all VMs mounting the shared disk as ReadOnly. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+     * Get the diskMBpsReadOnly property: The total throughput (MBps) that will be allowed across all VMs mounting the
+     * shared disk as ReadOnly. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of
+     * 10.
      * 
      * @return the diskMBpsReadOnly value.
      */
@@ -455,7 +482,9 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the diskMBpsReadOnly property: The total throughput (MBps) that will be allowed across all VMs mounting the shared disk as ReadOnly. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of 10.
+     * Set the diskMBpsReadOnly property: The total throughput (MBps) that will be allowed across all VMs mounting the
+     * shared disk as ReadOnly. MBps means millions of bytes per second - MB here uses the ISO notation, of powers of
+     * 10.
      * 
      * @param diskMBpsReadOnly the diskMBpsReadOnly value to set.
      * @return the DiskInner object itself.
@@ -478,7 +507,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @return the encryption value.
      */
@@ -487,7 +517,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Set the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @param encryption the encryption value to set.
      * @return the DiskInner object itself.
@@ -501,7 +532,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the maxShares property: The maximum number of VMs that can attach to the disk at the same time. Value greater than one indicates a disk that can be mounted on multiple VMs at the same time.
+     * Get the maxShares property: The maximum number of VMs that can attach to the disk at the same time. Value greater
+     * than one indicates a disk that can be mounted on multiple VMs at the same time.
      * 
      * @return the maxShares value.
      */
@@ -510,7 +542,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the maxShares property: The maximum number of VMs that can attach to the disk at the same time. Value greater than one indicates a disk that can be mounted on multiple VMs at the same time.
+     * Set the maxShares property: The maximum number of VMs that can attach to the disk at the same time. Value greater
+     * than one indicates a disk that can be mounted on multiple VMs at the same time.
      * 
      * @param maxShares the maxShares value to set.
      * @return the DiskInner object itself.
@@ -524,7 +557,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the shareInfo property: Details of the list of all VMs that have the disk attached. maxShares should be set to a value greater than one for disks to allow attaching them to multiple VMs.
+     * Get the shareInfo property: Details of the list of all VMs that have the disk attached. maxShares should be set
+     * to a value greater than one for disks to allow attaching them to multiple VMs.
      * 
      * @return the shareInfo value.
      */
@@ -588,7 +622,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the tier property: Performance tier of the disk (e.g, P4, S10) as described here: https://azure.microsoft.com/en-us/pricing/details/managed-disks/. Does not apply to Ultra disks.
+     * Get the tier property: Performance tier of the disk (e.g, P4, S10) as described here:
+     * https://azure.microsoft.com/en-us/pricing/details/managed-disks/. Does not apply to Ultra disks.
      * 
      * @return the tier value.
      */
@@ -597,7 +632,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the tier property: Performance tier of the disk (e.g, P4, S10) as described here: https://azure.microsoft.com/en-us/pricing/details/managed-disks/. Does not apply to Ultra disks.
+     * Set the tier property: Performance tier of the disk (e.g, P4, S10) as described here:
+     * https://azure.microsoft.com/en-us/pricing/details/managed-disks/. Does not apply to Ultra disks.
      * 
      * @param tier the tier value to set.
      * @return the DiskInner object itself.
@@ -611,7 +647,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the burstingEnabled property: Set to true to enable bursting beyond the provisioned performance target of the disk. Bursting is disabled by default. Does not apply to Ultra disks.
+     * Get the burstingEnabled property: Set to true to enable bursting beyond the provisioned performance target of the
+     * disk. Bursting is disabled by default. Does not apply to Ultra disks.
      * 
      * @return the burstingEnabled value.
      */
@@ -620,7 +657,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the burstingEnabled property: Set to true to enable bursting beyond the provisioned performance target of the disk. Bursting is disabled by default. Does not apply to Ultra disks.
+     * Set the burstingEnabled property: Set to true to enable bursting beyond the provisioned performance target of the
+     * disk. Bursting is disabled by default. Does not apply to Ultra disks.
      * 
      * @param burstingEnabled the burstingEnabled value to set.
      * @return the DiskInner object itself.
@@ -689,7 +727,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the completionPercent property: Percentage complete for the background copy when a resource is created via the CopyStart operation.
+     * Get the completionPercent property: Percentage complete for the background copy when a resource is created via
+     * the CopyStart operation.
      * 
      * @return the completionPercent value.
      */
@@ -698,7 +737,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the completionPercent property: Percentage complete for the background copy when a resource is created via the CopyStart operation.
+     * Set the completionPercent property: Percentage complete for the background copy when a resource is created via
+     * the CopyStart operation.
      * 
      * @param completionPercent the completionPercent value to set.
      * @return the DiskInner object itself.
@@ -735,7 +775,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk or snapshot.
+     * Get the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk
+     * or snapshot.
      * 
      * @return the dataAccessAuthMode value.
      */
@@ -744,7 +785,8 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk or snapshot.
+     * Set the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk
+     * or snapshot.
      * 
      * @param dataAccessAuthMode the dataAccessAuthMode value to set.
      * @return the DiskInner object itself.
@@ -758,7 +800,10 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the optimizedForFrequentAttach property: Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine.
+     * Get the optimizedForFrequentAttach property: Setting this property to true improves reliability and performance
+     * of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to
+     * another. This property should not be set for disks that are not detached and attached frequently as it causes the
+     * disks to not align with the fault domain of the virtual machine.
      * 
      * @return the optimizedForFrequentAttach value.
      */
@@ -767,7 +812,10 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Set the optimizedForFrequentAttach property: Setting this property to true improves reliability and performance of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to another. This property should not be set for disks that are not detached and attached frequently as it causes the disks to not align with the fault domain of the virtual machine.
+     * Set the optimizedForFrequentAttach property: Setting this property to true improves reliability and performance
+     * of data disks that are frequently (more than 5 times a day) by detached from one virtual machine and attached to
+     * another. This property should not be set for disks that are not detached and attached frequently as it causes the
+     * disks to not align with the fault domain of the virtual machine.
      * 
      * @param optimizedForFrequentAttach the optimizedForFrequentAttach value to set.
      * @return the DiskInner object itself.
@@ -781,7 +829,9 @@ public final class DiskInner extends Resource {
     }
 
     /**
-     * Get the lastOwnershipUpdateTime property: The UTC time when the ownership state of the disk was last changed i.e., the time the disk was last attached or detached from a VM or the time when the VM to which the disk was attached was deallocated or started.
+     * Get the lastOwnershipUpdateTime property: The UTC time when the ownership state of the disk was last changed
+     * i.e., the time the disk was last attached or detached from a VM or the time when the VM to which the disk was
+     * attached was deallocated or started.
      * 
      * @return the lastOwnershipUpdateTime value.
      */

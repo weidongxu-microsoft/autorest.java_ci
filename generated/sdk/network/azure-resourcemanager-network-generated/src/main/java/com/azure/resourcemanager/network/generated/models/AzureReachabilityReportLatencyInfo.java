@@ -52,7 +52,8 @@ public final class AzureReachabilityReportLatencyInfo {
     }
 
     /**
-     * Get the score property: The relative latency score between 1 and 100, higher values indicating a faster connection.
+     * Get the score property: The relative latency score between 1 and 100, higher values indicating a faster
+     * connection.
      * 
      * @return the score value.
      */
@@ -61,7 +62,8 @@ public final class AzureReachabilityReportLatencyInfo {
     }
 
     /**
-     * Set the score property: The relative latency score between 1 and 100, higher values indicating a faster connection.
+     * Set the score property: The relative latency score between 1 and 100, higher values indicating a faster
+     * connection.
      * 
      * @param score the score value to set.
      * @return the AzureReachabilityReportLatencyInfo object itself.

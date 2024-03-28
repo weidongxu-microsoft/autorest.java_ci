@@ -58,7 +58,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCloudServiceOperatingSystems to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCloudServiceOperatingSystems to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -115,14 +116,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OSVersionInner>> getOSVersionWithResponseAsync(String location, String osVersionName) {
@@ -149,7 +152,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
@@ -157,7 +161,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OSVersionInner>> getOSVersionWithResponseAsync(String location, String osVersionName,
@@ -184,14 +189,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service on successful completion of {@link Mono}.
+     * @return properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OSVersionInner> getOSVersionAsync(String location, String osVersionName) {
@@ -199,7 +206,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
@@ -207,7 +215,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service along with {@link Response}.
+     * @return properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OSVersionInner> getOSVersionWithResponse(String location, String osVersionName, Context context) {
@@ -215,14 +224,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS version pertains to.
      * @param osVersionName Name of the OS version.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system version that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * @return properties of a guest operating system version that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public OSVersionInner getOSVersion(String location, String osVersionName) {
@@ -230,13 +241,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this till nextLink is null to fetch all the OS versions.
+     * Gets a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this
+     * till nextLink is null to fetch all the OS versions.
      * 
      * @param location Name of the location that the OS versions pertain to.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OSVersionInner>> listOSVersionsSinglePageAsync(String location) {
@@ -262,14 +276,17 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this till nextLink is null to fetch all the OS versions.
+     * Gets a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this
+     * till nextLink is null to fetch all the OS versions.
      * 
      * @param location Name of the location that the OS versions pertain to.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OSVersionInner>> listOSVersionsSinglePageAsync(String location, Context context) {
@@ -295,13 +312,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this till nextLink is null to fetch all the OS versions.
+     * Gets a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this
+     * till nextLink is null to fetch all the OS versions.
      * 
      * @param location Name of the location that the OS versions pertain to.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
+     * @return a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OSVersionInner> listOSVersionsAsync(String location) {
@@ -310,14 +330,17 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this till nextLink is null to fetch all the OS versions.
+     * Gets a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this
+     * till nextLink is null to fetch all the OS versions.
      * 
      * @param location Name of the location that the OS versions pertain to.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
+     * @return a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OSVersionInner> listOSVersionsAsync(String location, Context context) {
@@ -326,13 +349,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this till nextLink is null to fetch all the OS versions.
+     * Gets a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this
+     * till nextLink is null to fetch all the OS versions.
      * 
      * @param location Name of the location that the OS versions pertain to.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
+     * @return a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OSVersionInner> listOSVersions(String location) {
@@ -340,14 +366,17 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this till nextLink is null to fetch all the OS versions.
+     * Gets a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS versions. Do this
+     * till nextLink is null to fetch all the OS versions.
      * 
      * @param location Name of the location that the OS versions pertain to.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system versions available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
+     * @return a list of all guest operating system versions available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OSVersionInner> listOSVersions(String location, Context context) {
@@ -355,14 +384,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS family pertains to.
      * @param osFamilyName Name of the OS family.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OSFamilyInner>> getOSFamilyWithResponseAsync(String location, String osFamilyName) {
@@ -389,7 +420,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS family pertains to.
      * @param osFamilyName Name of the OS family.
@@ -397,7 +429,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OSFamilyInner>> getOSFamilyWithResponseAsync(String location, String osFamilyName,
@@ -424,14 +457,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS family pertains to.
      * @param osFamilyName Name of the OS family.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service on successful completion of {@link Mono}.
+     * @return properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<OSFamilyInner> getOSFamilyAsync(String location, String osFamilyName) {
@@ -439,7 +474,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS family pertains to.
      * @param osFamilyName Name of the OS family.
@@ -447,7 +483,8 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service along with {@link Response}.
+     * @return properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<OSFamilyInner> getOSFamilyWithResponse(String location, String osFamilyName, Context context) {
@@ -455,14 +492,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * Gets properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      * 
      * @param location Name of the location that the OS family pertains to.
      * @param osFamilyName Name of the OS family.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of a guest operating system family that can be specified in the XML service configuration (.cscfg) for a cloud service.
+     * @return properties of a guest operating system family that can be specified in the XML service configuration
+     * (.cscfg) for a cloud service.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public OSFamilyInner getOSFamily(String location, String osFamilyName) {
@@ -470,13 +509,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this till nextLink is null to fetch all the OS Families.
+     * Gets a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this
+     * till nextLink is null to fetch all the OS Families.
      * 
      * @param location Name of the location that the OS families pertain to.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OSFamilyInner>> listOSFamiliesSinglePageAsync(String location) {
@@ -502,14 +544,17 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this till nextLink is null to fetch all the OS Families.
+     * Gets a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this
+     * till nextLink is null to fetch all the OS Families.
      * 
      * @param location Name of the location that the OS families pertain to.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<OSFamilyInner>> listOSFamiliesSinglePageAsync(String location, Context context) {
@@ -535,13 +580,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this till nextLink is null to fetch all the OS Families.
+     * Gets a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this
+     * till nextLink is null to fetch all the OS Families.
      * 
      * @param location Name of the location that the OS families pertain to.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
+     * @return a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OSFamilyInner> listOSFamiliesAsync(String location) {
@@ -550,14 +598,17 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this till nextLink is null to fetch all the OS Families.
+     * Gets a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this
+     * till nextLink is null to fetch all the OS Families.
      * 
      * @param location Name of the location that the OS families pertain to.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
+     * @return a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<OSFamilyInner> listOSFamiliesAsync(String location, Context context) {
@@ -566,13 +617,16 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this till nextLink is null to fetch all the OS Families.
+     * Gets a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this
+     * till nextLink is null to fetch all the OS Families.
      * 
      * @param location Name of the location that the OS families pertain to.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
+     * @return a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OSFamilyInner> listOSFamilies(String location) {
@@ -580,14 +634,17 @@ public final class CloudServiceOperatingSystemsClientImpl implements CloudServic
     }
 
     /**
-     * Gets a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this till nextLink is null to fetch all the OS Families.
+     * Gets a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service. Use nextLink property in the response to get the next page of OS Families. Do this
+     * till nextLink is null to fetch all the OS Families.
      * 
      * @param location Name of the location that the OS families pertain to.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all guest operating system families available to be specified in the XML service configuration (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
+     * @return a list of all guest operating system families available to be specified in the XML service configuration
+     * (.cscfg) for a cloud service as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<OSFamilyInner> listOSFamilies(String location, Context context) {

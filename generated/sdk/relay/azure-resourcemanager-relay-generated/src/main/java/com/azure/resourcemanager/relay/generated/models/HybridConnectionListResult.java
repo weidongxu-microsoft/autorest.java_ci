@@ -53,7 +53,8 @@ public final class HybridConnectionListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list hybrid connection operation.
+     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list hybrid
+     * connection operation.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class HybridConnectionListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list hybrid connection operation.
+     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list hybrid
+     * connection operation.
      * 
      * @param nextLink the nextLink value to set.
      * @return the HybridConnectionListResult object itself.

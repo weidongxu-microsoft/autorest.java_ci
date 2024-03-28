@@ -653,7 +653,8 @@ public final class MonitorManager {
     }
 
     /**
-     * Gets wrapped service client MonitorClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client MonitorClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client MonitorClient.
      */

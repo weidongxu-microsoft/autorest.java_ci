@@ -54,7 +54,8 @@ public final class CommunityGalleryImageVersionList {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of community gallery image versions. Call ListNext() with this to fetch the next page of community gallery image versions.
+     * Get the nextLink property: The URI to fetch the next page of community gallery image versions. Call ListNext()
+     * with this to fetch the next page of community gallery image versions.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class CommunityGalleryImageVersionList {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of community gallery image versions. Call ListNext() with this to fetch the next page of community gallery image versions.
+     * Set the nextLink property: The URI to fetch the next page of community gallery image versions. Call ListNext()
+     * with this to fetch the next page of community gallery image versions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the CommunityGalleryImageVersionList object itself.
@@ -80,8 +82,9 @@ public final class CommunityGalleryImageVersionList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model CommunityGalleryImageVersionList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model CommunityGalleryImageVersionList"));
         } else {
             value().forEach(e -> e.validate());
         }

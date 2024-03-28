@@ -16,7 +16,8 @@ public interface Disks {
      * Gets information about a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -29,7 +30,8 @@ public interface Disks {
      * Gets information about a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -41,7 +43,8 @@ public interface Disks {
      * Deletes a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -52,7 +55,8 @@ public interface Disks {
      * Deletes a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -107,7 +111,8 @@ public interface Disks {
      * Grants access to a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get disk access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -120,7 +125,8 @@ public interface Disks {
      * Grants access to a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get disk access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -134,7 +140,8 @@ public interface Disks {
      * Revokes access to a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -145,7 +152,8 @@ public interface Disks {
      * Revokes access to a disk.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
+     * @param diskName The name of the managed disk that is being created. The name can't be changed after the disk is
+     * created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The maximum name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

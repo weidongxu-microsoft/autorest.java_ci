@@ -106,7 +106,10 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Get the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * Get the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the
+     * size of the disk to create. If this field is present for updates or creation with other options, it indicates a
+     * resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's
+     * size.
      * 
      * @return the diskSizeGB value.
      */
@@ -115,7 +118,10 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Set the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * Set the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the
+     * size of the disk to create. If this field is present for updates or creation with other options, it indicates a
+     * resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's
+     * size.
      * 
      * @param diskSizeGB the diskSizeGB value to set.
      * @return the SnapshotUpdateProperties object itself.
@@ -126,7 +132,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Get the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Get the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can
+     * contain multiple encryption settings per disk or snapshot.
      * 
      * @return the encryptionSettingsCollection value.
      */
@@ -135,7 +142,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Set the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Set the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can
+     * contain multiple encryption settings per disk or snapshot.
      * 
      * @param encryptionSettingsCollection the encryptionSettingsCollection value to set.
      * @return the SnapshotUpdateProperties object itself.
@@ -147,7 +155,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @return the encryption value.
      */
@@ -156,7 +165,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Set the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Set the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @param encryption the encryption value to set.
      * @return the SnapshotUpdateProperties object itself.
@@ -247,7 +257,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Get the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk or snapshot.
+     * Get the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk
+     * or snapshot.
      * 
      * @return the dataAccessAuthMode value.
      */
@@ -256,7 +267,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Set the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk or snapshot.
+     * Set the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk
+     * or snapshot.
      * 
      * @param dataAccessAuthMode the dataAccessAuthMode value to set.
      * @return the SnapshotUpdateProperties object itself.
@@ -267,7 +279,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Get the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was created.
+     * Get the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was
+     * created.
      * 
      * @return the supportedCapabilities value.
      */
@@ -276,7 +289,8 @@ public final class SnapshotUpdateProperties {
     }
 
     /**
-     * Set the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was created.
+     * Set the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was
+     * created.
      * 
      * @param supportedCapabilities the supportedCapabilities value to set.
      * @return the SnapshotUpdateProperties object itself.

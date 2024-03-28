@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.IoTRoleProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -20,6 +21,13 @@ import java.util.List;
 @Fluent
 public final class IoTRole extends RoleInner {
     /*
+     * Role type.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private RoleTypes kind = RoleTypes.IOT;
+
+    /*
      * Properties specific to IoT role.
      */
     @JsonProperty(value = "properties")
@@ -29,7 +37,16 @@ public final class IoTRole extends RoleInner {
      * Creates an instance of IoTRole class.
      */
     public IoTRole() {
-        withKind(RoleTypes.IOT);
+    }
+
+    /**
+     * Get the kind property: Role type.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public RoleTypes kind() {
+        return this.kind;
     }
 
     /**

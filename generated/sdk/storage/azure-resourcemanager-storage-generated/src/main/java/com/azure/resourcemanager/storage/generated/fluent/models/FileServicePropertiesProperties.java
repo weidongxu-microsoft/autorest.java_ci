@@ -40,7 +40,9 @@ public final class FileServicePropertiesProperties {
     }
 
     /**
-     * Get the cors property: Specifies CORS rules for the File service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the File service.
+     * Get the cors property: Specifies CORS rules for the File service. You can include up to five CorsRule elements in
+     * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS
+     * will be disabled for the File service.
      * 
      * @return the cors value.
      */
@@ -49,7 +51,9 @@ public final class FileServicePropertiesProperties {
     }
 
     /**
-     * Set the cors property: Specifies CORS rules for the File service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the File service.
+     * Set the cors property: Specifies CORS rules for the File service. You can include up to five CorsRule elements in
+     * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS
+     * will be disabled for the File service.
      * 
      * @param cors the cors value to set.
      * @return the FileServicePropertiesProperties object itself.

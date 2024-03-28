@@ -34,7 +34,8 @@ public interface VirtualMachineScaleSetExtension {
     String type();
 
     /**
-     * Gets the forceUpdateTag property: If a value is provided and is different from the previous value, the extension handler will be forced to update even if the extension configuration has not changed.
+     * Gets the forceUpdateTag property: If a value is provided and is different from the previous value, the extension
+     * handler will be forced to update even if the extension configuration has not changed.
      * 
      * @return the forceUpdateTag value.
      */
@@ -62,14 +63,17 @@ public interface VirtualMachineScaleSetExtension {
     String typeHandlerVersion();
 
     /**
-     * Gets the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+     * Gets the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if
+     * one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless
+     * redeployed, even with this property set to true.
      * 
      * @return the autoUpgradeMinorVersion value.
      */
     Boolean autoUpgradeMinorVersion();
 
     /**
-     * Gets the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
+     * Gets the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the
+     * platform if there is a newer version of the extension available.
      * 
      * @return the enableAutomaticUpgrade value.
      */
@@ -83,7 +87,8 @@ public interface VirtualMachineScaleSetExtension {
     Object settings();
 
     /**
-     * Gets the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
+     * Gets the protectedSettings property: The extension can contain either protectedSettings or
+     * protectedSettingsFromKeyVault or no protected settings at all.
      * 
      * @return the protectedSettings value.
      */
@@ -97,21 +102,25 @@ public interface VirtualMachineScaleSetExtension {
     String provisioningState();
 
     /**
-     * Gets the provisionAfterExtensions property: Collection of extension names after which this extension needs to be provisioned.
+     * Gets the provisionAfterExtensions property: Collection of extension names after which this extension needs to be
+     * provisioned.
      * 
      * @return the provisionAfterExtensions value.
      */
     List<String> provisionAfterExtensions();
 
     /**
-     * Gets the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
+     * Gets the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed
+     * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The
+     * default is false.
      * 
      * @return the suppressFailures value.
      */
     Boolean suppressFailures();
 
     /**
-     * Gets the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
+     * Gets the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference,
+     * and consumed from key vault.
      * 
      * @return the protectedSettingsFromKeyVault value.
      */
@@ -125,7 +134,8 @@ public interface VirtualMachineScaleSetExtension {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetExtensionInner object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetExtensionInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -163,7 +173,8 @@ public interface VirtualMachineScaleSetExtension {
         }
 
         /**
-         * The stage of the VirtualMachineScaleSetExtension definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualMachineScaleSetExtension definition which contains all the minimum required
+         * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithForceUpdateTag,
             DefinitionStages.WithPublisher, DefinitionStages.WithTypePropertiesType,
@@ -205,9 +216,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithForceUpdateTag {
             /**
-             * Specifies the forceUpdateTag property: If a value is provided and is different from the previous value, the extension handler will be forced to update even if the extension configuration has not changed..
+             * Specifies the forceUpdateTag property: If a value is provided and is different from the previous value,
+             * the extension handler will be forced to update even if the extension configuration has not changed..
              * 
-             * @param forceUpdateTag If a value is provided and is different from the previous value, the extension handler will be forced to update even if the extension configuration has not changed.
+             * @param forceUpdateTag If a value is provided and is different from the previous value, the extension
+             * handler will be forced to update even if the extension configuration has not changed.
              * @return the next definition stage.
              */
             WithCreate withForceUpdateTag(String forceUpdateTag);
@@ -231,7 +244,8 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithTypePropertiesType {
             /**
-             * Specifies the typePropertiesType property: Specifies the type of the extension; an example is "CustomScriptExtension"..
+             * Specifies the typePropertiesType property: Specifies the type of the extension; an example is
+             * "CustomScriptExtension"..
              * 
              * @param typePropertiesType Specifies the type of the extension; an example is "CustomScriptExtension".
              * @return the next definition stage.
@@ -257,9 +271,13 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithAutoUpgradeMinorVersion {
             /**
-             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true..
+             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor
+             * version if one is available at deployment time. Once deployed, however, the extension will not upgrade
+             * minor versions unless redeployed, even with this property set to true..
              * 
-             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is
+             * available at deployment time. Once deployed, however, the extension will not upgrade minor versions
+             * unless redeployed, even with this property set to true.
              * @return the next definition stage.
              */
             WithCreate withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion);
@@ -270,9 +288,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithEnableAutomaticUpgrade {
             /**
-             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available..
+             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically
+             * upgraded by the platform if there is a newer version of the extension available..
              * 
-             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
+             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the
+             * platform if there is a newer version of the extension available.
              * @return the next definition stage.
              */
             WithCreate withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
@@ -296,9 +316,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithProtectedSettings {
             /**
-             * Specifies the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all..
+             * Specifies the protectedSettings property: The extension can contain either protectedSettings or
+             * protectedSettingsFromKeyVault or no protected settings at all..
              * 
-             * @param protectedSettings The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
+             * @param protectedSettings The extension can contain either protectedSettings or
+             * protectedSettingsFromKeyVault or no protected settings at all.
              * @return the next definition stage.
              */
             WithCreate withProtectedSettings(Object protectedSettings);
@@ -309,9 +331,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithProvisionAfterExtensions {
             /**
-             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension needs to be provisioned..
+             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension
+             * needs to be provisioned..
              * 
-             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be provisioned.
+             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be
+             * provisioned.
              * @return the next definition stage.
              */
             WithCreate withProvisionAfterExtensions(List<String> provisionAfterExtensions);
@@ -322,22 +346,29 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithSuppressFailures {
             /**
-             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false..
+             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be
+             * suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of
+             * this value). The default is false..
              * 
-             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
+             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed
+             * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value).
+             * The default is false.
              * @return the next definition stage.
              */
             WithCreate withSuppressFailures(Boolean suppressFailures);
         }
 
         /**
-         * The stage of the VirtualMachineScaleSetExtension definition allowing to specify protectedSettingsFromKeyVault.
+         * The stage of the VirtualMachineScaleSetExtension definition allowing to specify
+         * protectedSettingsFromKeyVault.
          */
         interface WithProtectedSettingsFromKeyVault {
             /**
-             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
+             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed
+             * by reference, and consumed from key vault.
              * 
-             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and consumed from key vault.
+             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and
+             * consumed from key vault.
              * @return the next definition stage.
              */
             WithCreate withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);
@@ -384,9 +415,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithForceUpdateTag {
             /**
-             * Specifies the forceUpdateTag property: If a value is provided and is different from the previous value, the extension handler will be forced to update even if the extension configuration has not changed..
+             * Specifies the forceUpdateTag property: If a value is provided and is different from the previous value,
+             * the extension handler will be forced to update even if the extension configuration has not changed..
              * 
-             * @param forceUpdateTag If a value is provided and is different from the previous value, the extension handler will be forced to update even if the extension configuration has not changed.
+             * @param forceUpdateTag If a value is provided and is different from the previous value, the extension
+             * handler will be forced to update even if the extension configuration has not changed.
              * @return the next definition stage.
              */
             Update withForceUpdateTag(String forceUpdateTag);
@@ -410,7 +443,8 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithTypePropertiesType {
             /**
-             * Specifies the typePropertiesType property: Specifies the type of the extension; an example is "CustomScriptExtension"..
+             * Specifies the typePropertiesType property: Specifies the type of the extension; an example is
+             * "CustomScriptExtension"..
              * 
              * @param typePropertiesType Specifies the type of the extension; an example is "CustomScriptExtension".
              * @return the next definition stage.
@@ -436,9 +470,13 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithAutoUpgradeMinorVersion {
             /**
-             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true..
+             * Specifies the autoUpgradeMinorVersion property: Indicates whether the extension should use a newer minor
+             * version if one is available at deployment time. Once deployed, however, the extension will not upgrade
+             * minor versions unless redeployed, even with this property set to true..
              * 
-             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is available at deployment time. Once deployed, however, the extension will not upgrade minor versions unless redeployed, even with this property set to true.
+             * @param autoUpgradeMinorVersion Indicates whether the extension should use a newer minor version if one is
+             * available at deployment time. Once deployed, however, the extension will not upgrade minor versions
+             * unless redeployed, even with this property set to true.
              * @return the next definition stage.
              */
             Update withAutoUpgradeMinorVersion(Boolean autoUpgradeMinorVersion);
@@ -449,9 +487,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithEnableAutomaticUpgrade {
             /**
-             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available..
+             * Specifies the enableAutomaticUpgrade property: Indicates whether the extension should be automatically
+             * upgraded by the platform if there is a newer version of the extension available..
              * 
-             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the platform if there is a newer version of the extension available.
+             * @param enableAutomaticUpgrade Indicates whether the extension should be automatically upgraded by the
+             * platform if there is a newer version of the extension available.
              * @return the next definition stage.
              */
             Update withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
@@ -475,9 +515,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithProtectedSettings {
             /**
-             * Specifies the protectedSettings property: The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all..
+             * Specifies the protectedSettings property: The extension can contain either protectedSettings or
+             * protectedSettingsFromKeyVault or no protected settings at all..
              * 
-             * @param protectedSettings The extension can contain either protectedSettings or protectedSettingsFromKeyVault or no protected settings at all.
+             * @param protectedSettings The extension can contain either protectedSettings or
+             * protectedSettingsFromKeyVault or no protected settings at all.
              * @return the next definition stage.
              */
             Update withProtectedSettings(Object protectedSettings);
@@ -488,9 +530,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithProvisionAfterExtensions {
             /**
-             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension needs to be provisioned..
+             * Specifies the provisionAfterExtensions property: Collection of extension names after which this extension
+             * needs to be provisioned..
              * 
-             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be provisioned.
+             * @param provisionAfterExtensions Collection of extension names after which this extension needs to be
+             * provisioned.
              * @return the next definition stage.
              */
             Update withProvisionAfterExtensions(List<String> provisionAfterExtensions);
@@ -501,9 +545,13 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithSuppressFailures {
             /**
-             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false..
+             * Specifies the suppressFailures property: Indicates whether failures stemming from the extension will be
+             * suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of
+             * this value). The default is false..
              * 
-             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed (Operational failures such as not connecting to the VM will not be suppressed regardless of this value). The default is false.
+             * @param suppressFailures Indicates whether failures stemming from the extension will be suppressed
+             * (Operational failures such as not connecting to the VM will not be suppressed regardless of this value).
+             * The default is false.
              * @return the next definition stage.
              */
             Update withSuppressFailures(Boolean suppressFailures);
@@ -514,9 +562,11 @@ public interface VirtualMachineScaleSetExtension {
          */
         interface WithProtectedSettingsFromKeyVault {
             /**
-             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed by reference, and consumed from key vault.
+             * Specifies the protectedSettingsFromKeyVault property: The extensions protected settings that are passed
+             * by reference, and consumed from key vault.
              * 
-             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and consumed from key vault.
+             * @param protectedSettingsFromKeyVault The extensions protected settings that are passed by reference, and
+             * consumed from key vault.
              * @return the next definition stage.
              */
             Update withProtectedSettingsFromKeyVault(KeyVaultSecretReference protectedSettingsFromKeyVault);

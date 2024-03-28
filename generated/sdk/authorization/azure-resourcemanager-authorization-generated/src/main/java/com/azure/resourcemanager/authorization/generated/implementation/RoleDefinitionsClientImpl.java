@@ -59,7 +59,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     }
 
     /**
-     * The interface defining all the services for AuthorizationManagementClientRoleDefinitions to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AuthorizationManagementClientRoleDefinitions to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
@@ -465,11 +466,13 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * Get all role definitions that are applicable at scope and above.
      * 
      * @param scope The scope of the role definition.
-     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
+     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
+     * well.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all role definitions that are applicable at scope and above along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleDefinitionInner>> listSinglePageAsync(String scope, String filter) {
@@ -493,12 +496,14 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * Get all role definitions that are applicable at scope and above.
      * 
      * @param scope The scope of the role definition.
-     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
+     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
+     * well.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all role definitions that are applicable at scope and above along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleDefinitionInner>> listSinglePageAsync(String scope, String filter, Context context) {
@@ -521,7 +526,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * Get all role definitions that are applicable at scope and above.
      * 
      * @param scope The scope of the role definition.
-     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
+     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
+     * well.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -551,7 +557,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * Get all role definitions that are applicable at scope and above.
      * 
      * @param scope The scope of the role definition.
-     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
+     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
+     * well.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -571,7 +578,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedIterable}.
+     * @return all role definitions that are applicable at scope and above as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RoleDefinitionInner> list(String scope) {
@@ -583,12 +591,14 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * Get all role definitions that are applicable at scope and above.
      * 
      * @param scope The scope of the role definition.
-     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as well.
+     * @param filter The filter to apply on the operation. Use atScopeAndBelow filter to search below the given scope as
+     * well.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role definitions that are applicable at scope and above as paginated response with {@link PagedIterable}.
+     * @return all role definitions that are applicable at scope and above as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<RoleDefinitionInner> list(String scope, String filter, Context context) {
@@ -598,7 +608,10 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
+     * @param roleId The fully qualified role definition ID. Use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -623,7 +636,10 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
+     * @param roleId The fully qualified role definition ID. Use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -648,7 +664,10 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
+     * @param roleId The fully qualified role definition ID. Use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -662,7 +681,10 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
+     * @param roleId The fully qualified role definition ID. Use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -677,7 +699,10 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
     /**
      * Gets a role definition by ID.
      * 
-     * @param roleId The fully qualified role definition ID. Use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role definitions.
+     * @param roleId The fully qualified role definition ID. Use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for subscription level
+     * role definitions, or /providers/Microsoft.Authorization/roleDefinitions/{roleDefinitionId} for tenant level role
+     * definitions.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -697,7 +722,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role definition list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleDefinitionInner>> listNextSinglePageAsync(String nextLink) {
@@ -725,7 +751,8 @@ public final class RoleDefinitionsClientImpl implements RoleDefinitionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role definition list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role definition list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleDefinitionInner>> listNextSinglePageAsync(String nextLink, Context context) {

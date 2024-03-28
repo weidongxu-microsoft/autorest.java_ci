@@ -145,7 +145,8 @@ public final class ApplicationInsightsComponentAnalyticsItemInner {
     }
 
     /**
-     * Get the scope property: Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Get the scope property: Enum indicating if this item definition is owned by a specific user or is shared between
+     * all users with access to the Application Insights component.
      * 
      * @return the scope value.
      */
@@ -154,7 +155,8 @@ public final class ApplicationInsightsComponentAnalyticsItemInner {
     }
 
     /**
-     * Set the scope property: Enum indicating if this item definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Set the scope property: Enum indicating if this item definition is owned by a specific user or is shared between
+     * all users with access to the Application Insights component.
      * 
      * @param scope the scope value to set.
      * @return the ApplicationInsightsComponentAnalyticsItemInner object itself.
@@ -203,7 +205,8 @@ public final class ApplicationInsightsComponentAnalyticsItemInner {
     }
 
     /**
-     * Get the properties property: A set of properties that can be defined in the context of a specific item type. Each type may have its own properties.
+     * Get the properties property: A set of properties that can be defined in the context of a specific item type. Each
+     * type may have its own properties.
      * 
      * @return the properties value.
      */
@@ -212,7 +215,8 @@ public final class ApplicationInsightsComponentAnalyticsItemInner {
     }
 
     /**
-     * Set the properties property: A set of properties that can be defined in the context of a specific item type. Each type may have its own properties.
+     * Set the properties property: A set of properties that can be defined in the context of a specific item type. Each
+     * type may have its own properties.
      * 
      * @param properties the properties value to set.
      * @return the ApplicationInsightsComponentAnalyticsItemInner object itself.

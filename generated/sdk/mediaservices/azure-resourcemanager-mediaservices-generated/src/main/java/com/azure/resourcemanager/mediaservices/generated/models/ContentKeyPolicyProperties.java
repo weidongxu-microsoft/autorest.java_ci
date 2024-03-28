@@ -49,7 +49,8 @@ public interface ContentKeyPolicyProperties {
     List<ContentKeyPolicyOption> options();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKeyPolicyPropertiesInner object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.ContentKeyPolicyPropertiesInner
+     * object.
      * 
      * @return the inner object.
      */

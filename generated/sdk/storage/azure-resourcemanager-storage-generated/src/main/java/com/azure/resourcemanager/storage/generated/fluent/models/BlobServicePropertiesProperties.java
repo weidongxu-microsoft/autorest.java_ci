@@ -78,7 +78,9 @@ public final class BlobServicePropertiesProperties {
     }
 
     /**
-     * Get the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service.
+     * Get the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in
+     * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS
+     * will be disabled for the Blob service.
      * 
      * @return the cors value.
      */
@@ -87,7 +89,9 @@ public final class BlobServicePropertiesProperties {
     }
 
     /**
-     * Set the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service.
+     * Set the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in
+     * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS
+     * will be disabled for the Blob service.
      * 
      * @param cors the cors value to set.
      * @return the BlobServicePropertiesProperties object itself.
@@ -98,7 +102,9 @@ public final class BlobServicePropertiesProperties {
     }
 
     /**
-     * Get the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions.
+     * Get the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests
+     * to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27
+     * and all more recent versions.
      * 
      * @return the defaultServiceVersion value.
      */
@@ -107,7 +113,9 @@ public final class BlobServicePropertiesProperties {
     }
 
     /**
-     * Set the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions.
+     * Set the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests
+     * to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27
+     * and all more recent versions.
      * 
      * @param defaultServiceVersion the defaultServiceVersion value to set.
      * @return the BlobServicePropertiesProperties object itself.
@@ -239,7 +247,8 @@ public final class BlobServicePropertiesProperties {
     }
 
     /**
-     * Get the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based tracking policy.
+     * Get the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based
+     * tracking policy.
      * 
      * @return the lastAccessTimeTrackingPolicy value.
      */
@@ -248,7 +257,8 @@ public final class BlobServicePropertiesProperties {
     }
 
     /**
-     * Set the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based tracking policy.
+     * Set the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based
+     * tracking policy.
      * 
      * @param lastAccessTimeTrackingPolicy the lastAccessTimeTrackingPolicy value to set.
      * @return the BlobServicePropertiesProperties object itself.

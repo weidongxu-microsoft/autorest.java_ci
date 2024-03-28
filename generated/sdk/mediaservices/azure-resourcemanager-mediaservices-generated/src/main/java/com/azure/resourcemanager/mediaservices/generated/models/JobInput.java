@@ -46,17 +46,6 @@ public class JobInput {
     }
 
     /**
-     * Set the odataType property: The discriminator for derived types.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the JobInput object itself.
-     */
-    protected JobInput withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

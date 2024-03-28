@@ -113,8 +113,8 @@ public final class MediaServiceIdentity {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model MediaServiceIdentity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model MediaServiceIdentity"));
         }
         if (userAssignedIdentities() != null) {
             userAssignedIdentities().values().forEach(e -> {

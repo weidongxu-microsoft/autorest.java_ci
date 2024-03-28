@@ -19,7 +19,8 @@ public interface StreamingEndpointSkuInfoListResult {
     List<ArmStreamingEndpointSkuInfo> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointSkuInfoListResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointSkuInfoListResultInner object.
      * 
      * @return the inner object.
      */

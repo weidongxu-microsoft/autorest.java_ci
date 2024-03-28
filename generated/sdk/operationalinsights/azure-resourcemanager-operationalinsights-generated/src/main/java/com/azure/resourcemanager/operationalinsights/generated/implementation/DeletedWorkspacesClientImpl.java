@@ -56,7 +56,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientDeletedWorkspaces to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientDeletedWorkspaces to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
@@ -83,7 +84,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a subscription, available for recovery along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return recently deleted workspaces in a subscription, available for recovery along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkspaceInner>> listSinglePageAsync() {
@@ -112,7 +114,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a subscription, available for recovery along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return recently deleted workspaces in a subscription, available for recovery along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkspaceInner>> listSinglePageAsync(Context context) {
@@ -137,7 +140,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with {@link PagedFlux}.
+     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkspaceInner> listAsync() {
@@ -151,7 +155,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with {@link PagedFlux}.
+     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkspaceInner> listAsync(Context context) {
@@ -163,7 +168,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with {@link PagedIterable}.
+     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkspaceInner> list() {
@@ -177,7 +183,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with {@link PagedIterable}.
+     * @return recently deleted workspaces in a subscription, available for recovery as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkspaceInner> list(Context context) {
@@ -191,7 +198,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a resource group, available for recovery along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return recently deleted workspaces in a resource group, available for recovery along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkspaceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -225,7 +233,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a resource group, available for recovery along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return recently deleted workspaces in a resource group, available for recovery along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkspaceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -259,7 +268,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with {@link PagedFlux}.
+     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkspaceInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -274,7 +284,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with {@link PagedFlux}.
+     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkspaceInner> listByResourceGroupAsync(String resourceGroupName, Context context) {
@@ -288,7 +299,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with {@link PagedIterable}.
+     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkspaceInner> listByResourceGroup(String resourceGroupName) {
@@ -303,7 +315,8 @@ public final class DeletedWorkspacesClientImpl implements DeletedWorkspacesClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with {@link PagedIterable}.
+     * @return recently deleted workspaces in a resource group, available for recovery as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkspaceInner> listByResourceGroup(String resourceGroupName, Context context) {

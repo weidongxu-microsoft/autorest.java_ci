@@ -27,7 +27,8 @@ public interface NetworkInterfaceIpConfigurationPropertiesFormat {
     List<VirtualNetworkTap> virtualNetworkTaps();
 
     /**
-     * Gets the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool resource.
+     * Gets the applicationGatewayBackendAddressPools property: The reference to ApplicationGatewayBackendAddressPool
+     * resource.
      * 
      * @return the applicationGatewayBackendAddressPools value.
      */
@@ -62,7 +63,8 @@ public interface NetworkInterfaceIpConfigurationPropertiesFormat {
     IpAllocationMethod privateIpAllocationMethod();
 
     /**
-     * Gets the privateIpAddressVersion property: Whether the specific IP configuration is IPv4 or IPv6. Default is IPv4.
+     * Gets the privateIpAddressVersion property: Whether the specific IP configuration is IPv4 or IPv6. Default is
+     * IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -90,7 +92,8 @@ public interface NetworkInterfaceIpConfigurationPropertiesFormat {
     PublicIpAddress publicIpAddress();
 
     /**
-     * Gets the applicationSecurityGroups property: Application security groups in which the IP configuration is included.
+     * Gets the applicationSecurityGroups property: Application security groups in which the IP configuration is
+     * included.
      * 
      * @return the applicationSecurityGroups value.
      */
@@ -111,7 +114,9 @@ public interface NetworkInterfaceIpConfigurationPropertiesFormat {
     NetworkInterfaceIpConfigurationPrivateLinkConnectionProperties privateLinkConnectionProperties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationPropertiesFormatInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.NetworkInterfaceIpConfigurationPropertiesFormatInner
+     * object.
      * 
      * @return the inner object.
      */

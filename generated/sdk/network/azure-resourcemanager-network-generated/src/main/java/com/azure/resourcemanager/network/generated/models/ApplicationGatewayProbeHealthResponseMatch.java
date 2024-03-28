@@ -52,7 +52,8 @@ public final class ApplicationGatewayProbeHealthResponseMatch {
     }
 
     /**
-     * Get the statusCodes property: Allowed ranges of healthy status codes. Default range of healthy status codes is 200-399.
+     * Get the statusCodes property: Allowed ranges of healthy status codes. Default range of healthy status codes is
+     * 200-399.
      * 
      * @return the statusCodes value.
      */
@@ -61,7 +62,8 @@ public final class ApplicationGatewayProbeHealthResponseMatch {
     }
 
     /**
-     * Set the statusCodes property: Allowed ranges of healthy status codes. Default range of healthy status codes is 200-399.
+     * Set the statusCodes property: Allowed ranges of healthy status codes. Default range of healthy status codes is
+     * 200-399.
      * 
      * @param statusCodes the statusCodes value to set.
      * @return the ApplicationGatewayProbeHealthResponseMatch object itself.

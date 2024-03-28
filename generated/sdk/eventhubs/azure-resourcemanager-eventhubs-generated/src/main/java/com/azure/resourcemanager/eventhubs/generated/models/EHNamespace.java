@@ -130,21 +130,24 @@ public interface EHNamespace {
     String metricId();
 
     /**
-     * Gets the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub namespace.
+     * Gets the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub
+     * namespace.
      * 
      * @return the isAutoInflateEnabled value.
      */
     Boolean isAutoInflateEnabled();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+     * Gets the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value
+     * should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
      * 
      * @return the maximumThroughputUnits value.
      */
@@ -158,7 +161,8 @@ public interface EHNamespace {
     Boolean kafkaEnabled();
 
     /**
-     * Gets the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
+     * Gets the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions
+     * supported availability zones.
      * 
      * @return the zoneRedundant value.
      */
@@ -272,7 +276,8 @@ public interface EHNamespace {
         }
 
         /**
-         * The stage of the EHNamespace definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the EHNamespace definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithMinimumTlsVersion, DefinitionStages.WithClusterArmId,
@@ -367,7 +372,8 @@ public interface EHNamespace {
          */
         interface WithIsAutoInflateEnabled {
             /**
-             * Specifies the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub namespace..
+             * Specifies the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for
+             * eventhub namespace..
              * 
              * @param isAutoInflateEnabled Value that indicates whether AutoInflate is enabled for eventhub namespace.
              * @return the next definition stage.
@@ -380,9 +386,11 @@ public interface EHNamespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled..
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled..
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -393,9 +401,11 @@ public interface EHNamespace {
          */
         interface WithMaximumThroughputUnits {
             /**
-             * Specifies the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+             * Specifies the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is
+             * enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
              * 
-             * @param maximumThroughputUnits Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+             * @param maximumThroughputUnits Upper limit of throughput units when AutoInflate is enabled, value should
+             * be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
              * @return the next definition stage.
              */
             WithCreate withMaximumThroughputUnits(Integer maximumThroughputUnits);
@@ -406,7 +416,8 @@ public interface EHNamespace {
          */
         interface WithKafkaEnabled {
             /**
-             * Specifies the kafkaEnabled property: Value that indicates whether Kafka is enabled for eventhub namespace..
+             * Specifies the kafkaEnabled property: Value that indicates whether Kafka is enabled for eventhub
+             * namespace..
              * 
              * @param kafkaEnabled Value that indicates whether Kafka is enabled for eventhub namespace.
              * @return the next definition stage.
@@ -419,9 +430,11 @@ public interface EHNamespace {
          */
         interface WithZoneRedundant {
             /**
-             * Specifies the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones..
+             * Specifies the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in
+             * regions supported availability zones..
              * 
-             * @param zoneRedundant Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
+             * @param zoneRedundant Enabling this property creates a Standard Event Hubs Namespace in regions supported
+             * availability zones.
              * @return the next definition stage.
              */
             WithCreate withZoneRedundant(Boolean zoneRedundant);
@@ -458,7 +471,8 @@ public interface EHNamespace {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace..
+             * Specifies the disableLocalAuth property: This property disables SAS authentication for the Event Hubs
+             * namespace..
              * 
              * @param disableLocalAuth This property disables SAS authentication for the Event Hubs namespace.
              * @return the next definition stage.
@@ -585,7 +599,8 @@ public interface EHNamespace {
          */
         interface WithIsAutoInflateEnabled {
             /**
-             * Specifies the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for eventhub namespace..
+             * Specifies the isAutoInflateEnabled property: Value that indicates whether AutoInflate is enabled for
+             * eventhub namespace..
              * 
              * @param isAutoInflateEnabled Value that indicates whether AutoInflate is enabled for eventhub namespace.
              * @return the next definition stage.
@@ -598,9 +613,11 @@ public interface EHNamespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled..
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled..
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -611,9 +628,11 @@ public interface EHNamespace {
          */
         interface WithMaximumThroughputUnits {
             /**
-             * Specifies the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+             * Specifies the maximumThroughputUnits property: Upper limit of throughput units when AutoInflate is
+             * enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
              * 
-             * @param maximumThroughputUnits Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
+             * @param maximumThroughputUnits Upper limit of throughput units when AutoInflate is enabled, value should
+             * be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true).
              * @return the next definition stage.
              */
             Update withMaximumThroughputUnits(Integer maximumThroughputUnits);
@@ -624,7 +643,8 @@ public interface EHNamespace {
          */
         interface WithKafkaEnabled {
             /**
-             * Specifies the kafkaEnabled property: Value that indicates whether Kafka is enabled for eventhub namespace..
+             * Specifies the kafkaEnabled property: Value that indicates whether Kafka is enabled for eventhub
+             * namespace..
              * 
              * @param kafkaEnabled Value that indicates whether Kafka is enabled for eventhub namespace.
              * @return the next definition stage.
@@ -637,9 +657,11 @@ public interface EHNamespace {
          */
         interface WithZoneRedundant {
             /**
-             * Specifies the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones..
+             * Specifies the zoneRedundant property: Enabling this property creates a Standard Event Hubs Namespace in
+             * regions supported availability zones..
              * 
-             * @param zoneRedundant Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
+             * @param zoneRedundant Enabling this property creates a Standard Event Hubs Namespace in regions supported
+             * availability zones.
              * @return the next definition stage.
              */
             Update withZoneRedundant(Boolean zoneRedundant);
@@ -676,7 +698,8 @@ public interface EHNamespace {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This property disables SAS authentication for the Event Hubs namespace..
+             * Specifies the disableLocalAuth property: This property disables SAS authentication for the Event Hubs
+             * namespace..
              * 
              * @param disableLocalAuth This property disables SAS authentication for the Event Hubs namespace.
              * @return the next definition stage.

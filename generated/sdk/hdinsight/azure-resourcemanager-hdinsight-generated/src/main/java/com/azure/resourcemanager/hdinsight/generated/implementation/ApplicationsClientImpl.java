@@ -65,7 +65,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
     }
 
     /**
-     * The interface defining all the services for HDInsightManagementClientApplications to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for HDInsightManagementClientApplications to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
@@ -137,7 +138,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -175,7 +177,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -279,7 +282,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the specified application along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of the specified application along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInner>> getWithResponseAsync(String resourceGroupName, String clusterName,
@@ -320,7 +324,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the specified application along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of the specified application along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationInner>> getWithResponseAsync(String resourceGroupName, String clusterName,
@@ -1032,7 +1037,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInner>> listByClusterNextSinglePageAsync(String nextLink) {
@@ -1061,7 +1067,8 @@ public final class ApplicationsClientImpl implements ApplicationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list cluster Applications along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationInner>> listByClusterNextSinglePageAsync(String nextLink, Context context) {

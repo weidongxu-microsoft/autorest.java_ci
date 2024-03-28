@@ -38,7 +38,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Get the directoryServiceOptions property: Indicates the directory service used. Note that this enum may be extended in the future.
+     * Get the directoryServiceOptions property: Indicates the directory service used. Note that this enum may be
+     * extended in the future.
      * 
      * @return the directoryServiceOptions value.
      */
@@ -47,7 +48,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Set the directoryServiceOptions property: Indicates the directory service used. Note that this enum may be extended in the future.
+     * Set the directoryServiceOptions property: Indicates the directory service used. Note that this enum may be
+     * extended in the future.
      * 
      * @param directoryServiceOptions the directoryServiceOptions value to set.
      * @return the AzureFilesIdentityBasedAuthentication object itself.
@@ -59,7 +61,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Get the activeDirectoryProperties property: Required if directoryServiceOptions are AD, optional if they are AADKERB.
+     * Get the activeDirectoryProperties property: Required if directoryServiceOptions are AD, optional if they are
+     * AADKERB.
      * 
      * @return the activeDirectoryProperties value.
      */
@@ -68,7 +71,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Set the activeDirectoryProperties property: Required if directoryServiceOptions are AD, optional if they are AADKERB.
+     * Set the activeDirectoryProperties property: Required if directoryServiceOptions are AD, optional if they are
+     * AADKERB.
      * 
      * @param activeDirectoryProperties the activeDirectoryProperties value to set.
      * @return the AzureFilesIdentityBasedAuthentication object itself.
@@ -80,7 +84,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Get the defaultSharePermission property: Default share permission for users using Kerberos authentication if RBAC role is not assigned.
+     * Get the defaultSharePermission property: Default share permission for users using Kerberos authentication if RBAC
+     * role is not assigned.
      * 
      * @return the defaultSharePermission value.
      */
@@ -89,7 +94,8 @@ public final class AzureFilesIdentityBasedAuthentication {
     }
 
     /**
-     * Set the defaultSharePermission property: Default share permission for users using Kerberos authentication if RBAC role is not assigned.
+     * Set the defaultSharePermission property: Default share permission for users using Kerberos authentication if RBAC
+     * role is not assigned.
      * 
      * @param defaultSharePermission the defaultSharePermission value to set.
      * @return the AzureFilesIdentityBasedAuthentication object itself.
@@ -107,8 +113,9 @@ public final class AzureFilesIdentityBasedAuthentication {
      */
     public void validate() {
         if (directoryServiceOptions() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property directoryServiceOptions in model AzureFilesIdentityBasedAuthentication"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property directoryServiceOptions in model AzureFilesIdentityBasedAuthentication"));
         }
         if (activeDirectoryProperties() != null) {
             activeDirectoryProperties().validate();

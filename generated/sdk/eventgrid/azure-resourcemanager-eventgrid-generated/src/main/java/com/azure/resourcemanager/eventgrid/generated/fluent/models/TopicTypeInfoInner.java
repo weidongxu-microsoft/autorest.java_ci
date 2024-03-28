@@ -224,7 +224,8 @@ public final class TopicTypeInfoInner extends ProxyResource {
     }
 
     /**
-     * Get the areRegionalAndGlobalSourcesSupported property: Flag to indicate that a topic type can support both regional or global system topics.
+     * Get the areRegionalAndGlobalSourcesSupported property: Flag to indicate that a topic type can support both
+     * regional or global system topics.
      * 
      * @return the areRegionalAndGlobalSourcesSupported value.
      */
@@ -233,7 +234,8 @@ public final class TopicTypeInfoInner extends ProxyResource {
     }
 
     /**
-     * Set the areRegionalAndGlobalSourcesSupported property: Flag to indicate that a topic type can support both regional or global system topics.
+     * Set the areRegionalAndGlobalSourcesSupported property: Flag to indicate that a topic type can support both
+     * regional or global system topics.
      * 
      * @param areRegionalAndGlobalSourcesSupported the areRegionalAndGlobalSourcesSupported value to set.
      * @return the TopicTypeInfoInner object itself.
@@ -247,7 +249,8 @@ public final class TopicTypeInfoInner extends ProxyResource {
     }
 
     /**
-     * Get the additionalEnforcedPermissions property: Permissions which are enforced for creating and updating system topics of this this topic type.
+     * Get the additionalEnforcedPermissions property: Permissions which are enforced for creating and updating system
+     * topics of this this topic type.
      * 
      * @return the additionalEnforcedPermissions value.
      */
@@ -256,7 +259,8 @@ public final class TopicTypeInfoInner extends ProxyResource {
     }
 
     /**
-     * Set the additionalEnforcedPermissions property: Permissions which are enforced for creating and updating system topics of this this topic type.
+     * Set the additionalEnforcedPermissions property: Permissions which are enforced for creating and updating system
+     * topics of this this topic type.
      * 
      * @param additionalEnforcedPermissions the additionalEnforcedPermissions value to set.
      * @return the TopicTypeInfoInner object itself.

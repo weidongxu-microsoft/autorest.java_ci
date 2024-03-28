@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
+ * Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the
+ * Metrics section of Event Hub Namespace inside Azure Portal.
  */
 public final class MetricId extends ExpandableStringEnum<MetricId> {
     /**

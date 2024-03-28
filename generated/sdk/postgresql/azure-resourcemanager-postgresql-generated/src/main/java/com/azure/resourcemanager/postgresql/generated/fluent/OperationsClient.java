@@ -20,7 +20,8 @@ public interface OperationsClient {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of resource provider operations along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of resource provider operations along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Mono<Response<OperationListResultInner>> listWithResponseAsync();

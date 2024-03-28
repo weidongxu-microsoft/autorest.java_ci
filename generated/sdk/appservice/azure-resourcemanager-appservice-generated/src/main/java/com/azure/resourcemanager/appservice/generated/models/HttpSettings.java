@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The configuration settings of the HTTP requests for authentication and authorization requests made against App Service Authentication/Authorization.
+ * The configuration settings of the HTTP requests for authentication and authorization requests made against App
+ * Service Authentication/Authorization.
  */
 @Fluent
 public final class HttpSettings {
@@ -37,7 +38,8 @@ public final class HttpSettings {
     }
 
     /**
-     * Get the requireHttps property: &lt;code&gt;false&lt;/code&gt; if the authentication/authorization responses not having the HTTPS scheme are permissible; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the requireHttps property: &lt;code&gt;false&lt;/code&gt; if the authentication/authorization responses not
+     * having the HTTPS scheme are permissible; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the requireHttps value.
      */
@@ -46,7 +48,8 @@ public final class HttpSettings {
     }
 
     /**
-     * Set the requireHttps property: &lt;code&gt;false&lt;/code&gt; if the authentication/authorization responses not having the HTTPS scheme are permissible; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the requireHttps property: &lt;code&gt;false&lt;/code&gt; if the authentication/authorization responses not
+     * having the HTTPS scheme are permissible; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param requireHttps the requireHttps value to set.
      * @return the HttpSettings object itself.

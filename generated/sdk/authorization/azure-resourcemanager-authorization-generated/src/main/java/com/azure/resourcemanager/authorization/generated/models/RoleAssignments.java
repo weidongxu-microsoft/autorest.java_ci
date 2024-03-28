@@ -36,7 +36,9 @@ public interface RoleAssignments {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,7 +63,9 @@ public interface RoleAssignments {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -205,7 +209,9 @@ public interface RoleAssignments {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -229,7 +235,9 @@ public interface RoleAssignments {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

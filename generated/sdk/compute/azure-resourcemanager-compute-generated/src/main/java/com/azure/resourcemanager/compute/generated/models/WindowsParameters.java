@@ -51,7 +51,8 @@ public final class WindowsParameters {
     }
 
     /**
-     * Get the classificationsToInclude property: The update classifications to select when installing patches for Windows.
+     * Get the classificationsToInclude property: The update classifications to select when installing patches for
+     * Windows.
      * 
      * @return the classificationsToInclude value.
      */
@@ -60,7 +61,8 @@ public final class WindowsParameters {
     }
 
     /**
-     * Set the classificationsToInclude property: The update classifications to select when installing patches for Windows.
+     * Set the classificationsToInclude property: The update classifications to select when installing patches for
+     * Windows.
      * 
      * @param classificationsToInclude the classificationsToInclude value to set.
      * @return the WindowsParameters object itself.
@@ -112,7 +114,8 @@ public final class WindowsParameters {
     }
 
     /**
-     * Get the excludeKbsRequiringReboot property: Filters out Kbs that don't have an InstallationRebootBehavior of 'NeverReboots' when this is set to true.
+     * Get the excludeKbsRequiringReboot property: Filters out Kbs that don't have an InstallationRebootBehavior of
+     * 'NeverReboots' when this is set to true.
      * 
      * @return the excludeKbsRequiringReboot value.
      */
@@ -121,7 +124,8 @@ public final class WindowsParameters {
     }
 
     /**
-     * Set the excludeKbsRequiringReboot property: Filters out Kbs that don't have an InstallationRebootBehavior of 'NeverReboots' when this is set to true.
+     * Set the excludeKbsRequiringReboot property: Filters out Kbs that don't have an InstallationRebootBehavior of
+     * 'NeverReboots' when this is set to true.
      * 
      * @param excludeKbsRequiringReboot the excludeKbsRequiringReboot value to set.
      * @return the WindowsParameters object itself.
@@ -132,7 +136,8 @@ public final class WindowsParameters {
     }
 
     /**
-     * Get the maxPatchPublishDate property: This is used to install patches that were published on or before this given max published date.
+     * Get the maxPatchPublishDate property: This is used to install patches that were published on or before this given
+     * max published date.
      * 
      * @return the maxPatchPublishDate value.
      */
@@ -141,7 +146,8 @@ public final class WindowsParameters {
     }
 
     /**
-     * Set the maxPatchPublishDate property: This is used to install patches that were published on or before this given max published date.
+     * Set the maxPatchPublishDate property: This is used to install patches that were published on or before this given
+     * max published date.
      * 
      * @param maxPatchPublishDate the maxPatchPublishDate value to set.
      * @return the WindowsParameters object itself.

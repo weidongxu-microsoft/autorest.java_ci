@@ -42,7 +42,8 @@ public final class EncryptionScopeListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of encryption scopes. Returned when total number of requested encryption scopes exceeds the maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of encryption scopes. Returned when
+     * total number of requested encryption scopes exceeds the maximum page size.
      * 
      * @return the nextLink value.
      */

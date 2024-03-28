@@ -127,8 +127,9 @@ public final class ContentKeyPolicyPropertiesInner {
      */
     public void validate() {
         if (options() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property options in model ContentKeyPolicyPropertiesInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property options in model ContentKeyPolicyPropertiesInner"));
         } else {
             options().forEach(e -> e.validate());
         }

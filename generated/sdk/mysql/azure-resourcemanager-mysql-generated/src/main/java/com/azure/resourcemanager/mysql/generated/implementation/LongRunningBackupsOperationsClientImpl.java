@@ -56,7 +56,8 @@ public final class LongRunningBackupsOperationsClientImpl implements LongRunning
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientLongRunningBackupsOperations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientLongRunningBackupsOperations to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")

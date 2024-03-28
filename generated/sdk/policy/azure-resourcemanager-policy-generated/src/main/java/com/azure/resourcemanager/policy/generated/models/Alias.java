@@ -156,7 +156,8 @@ public final class Alias {
     }
 
     /**
-     * Get the defaultMetadata property: The default alias path metadata. Applies to the default path and to any alias path that doesn't have metadata.
+     * Get the defaultMetadata property: The default alias path metadata. Applies to the default path and to any alias
+     * path that doesn't have metadata.
      * 
      * @return the defaultMetadata value.
      */

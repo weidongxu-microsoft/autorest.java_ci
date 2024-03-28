@@ -80,12 +80,14 @@ public final class BlobRestoreParameters {
      */
     public void validate() {
         if (timeToRestore() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timeToRestore in model BlobRestoreParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property timeToRestore in model BlobRestoreParameters"));
         }
         if (blobRanges() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property blobRanges in model BlobRestoreParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property blobRanges in model BlobRestoreParameters"));
         } else {
             blobRanges().forEach(e -> e.validate());
         }

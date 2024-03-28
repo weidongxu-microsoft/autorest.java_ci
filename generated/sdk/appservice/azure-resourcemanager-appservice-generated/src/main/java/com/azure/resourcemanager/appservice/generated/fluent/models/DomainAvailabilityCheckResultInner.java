@@ -58,7 +58,8 @@ public final class DomainAvailabilityCheckResultInner {
     }
 
     /**
-     * Get the available property: &lt;code&gt;true&lt;/code&gt; if domain can be purchased using CreateDomain API; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the available property: &lt;code&gt;true&lt;/code&gt; if domain can be purchased using CreateDomain API;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the available value.
      */
@@ -67,7 +68,8 @@ public final class DomainAvailabilityCheckResultInner {
     }
 
     /**
-     * Set the available property: &lt;code&gt;true&lt;/code&gt; if domain can be purchased using CreateDomain API; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the available property: &lt;code&gt;true&lt;/code&gt; if domain can be purchased using CreateDomain API;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param available the available value to set.
      * @return the DomainAvailabilityCheckResultInner object itself.
@@ -78,7 +80,9 @@ public final class DomainAvailabilityCheckResultInner {
     }
 
     /**
-     * Get the domainType property: Valid values are Regular domain: Azure will charge the full price of domain registration, SoftDeleted: Purchasing this domain will simply restore it and this operation will not cost anything.
+     * Get the domainType property: Valid values are Regular domain: Azure will charge the full price of domain
+     * registration, SoftDeleted: Purchasing this domain will simply restore it and this operation will not cost
+     * anything.
      * 
      * @return the domainType value.
      */
@@ -87,7 +91,9 @@ public final class DomainAvailabilityCheckResultInner {
     }
 
     /**
-     * Set the domainType property: Valid values are Regular domain: Azure will charge the full price of domain registration, SoftDeleted: Purchasing this domain will simply restore it and this operation will not cost anything.
+     * Set the domainType property: Valid values are Regular domain: Azure will charge the full price of domain
+     * registration, SoftDeleted: Purchasing this domain will simply restore it and this operation will not cost
+     * anything.
      * 
      * @param domainType the domainType value to set.
      * @return the DomainAvailabilityCheckResultInner object itself.

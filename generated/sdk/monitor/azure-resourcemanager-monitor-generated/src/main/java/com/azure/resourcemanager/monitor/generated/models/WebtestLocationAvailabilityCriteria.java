@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -21,6 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Microsoft.Azure.Monitor.WebtestLocationAvailabilityCriteria")
 @Fluent
 public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriteria {
+    /*
+     * specifies the type of the alert criteria.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private Odatatype odataType = Odatatype.MICROSOFT_AZURE_MONITOR_WEBTEST_LOCATION_AVAILABILITY_CRITERIA;
+
     /*
      * The Application Insights web test Id.
      */
@@ -43,7 +51,16 @@ public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriter
      * Creates an instance of WebtestLocationAvailabilityCriteria class.
      */
     public WebtestLocationAvailabilityCriteria() {
-        withOdataType(Odatatype.MICROSOFT_AZURE_MONITOR_WEBTEST_LOCATION_AVAILABILITY_CRITERIA);
+    }
+
+    /**
+     * Get the odataType property: specifies the type of the alert criteria.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public Odatatype odataType() {
+        return this.odataType;
     }
 
     /**
@@ -115,12 +132,14 @@ public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriter
     public void validate() {
         super.validate();
         if (webTestId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property webTestId in model WebtestLocationAvailabilityCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property webTestId in model WebtestLocationAvailabilityCriteria"));
         }
         if (componentId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property componentId in model WebtestLocationAvailabilityCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property componentId in model WebtestLocationAvailabilityCriteria"));
         }
     }
 

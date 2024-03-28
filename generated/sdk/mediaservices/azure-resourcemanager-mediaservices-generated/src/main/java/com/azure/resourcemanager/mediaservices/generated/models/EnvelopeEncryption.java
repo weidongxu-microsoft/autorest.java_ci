@@ -84,7 +84,8 @@ public final class EnvelopeEncryption {
     }
 
     /**
-     * Get the contentKeys property: Representing default content key for each encryption scheme and separate content keys for specific tracks.
+     * Get the contentKeys property: Representing default content key for each encryption scheme and separate content
+     * keys for specific tracks.
      * 
      * @return the contentKeys value.
      */
@@ -93,7 +94,8 @@ public final class EnvelopeEncryption {
     }
 
     /**
-     * Set the contentKeys property: Representing default content key for each encryption scheme and separate content keys for specific tracks.
+     * Set the contentKeys property: Representing default content key for each encryption scheme and separate content
+     * keys for specific tracks.
      * 
      * @param contentKeys the contentKeys value to set.
      * @return the EnvelopeEncryption object itself.
@@ -104,7 +106,12 @@ public final class EnvelopeEncryption {
     }
 
     /**
-     * Get the customKeyAcquisitionUrlTemplate property: Template for the URL of the custom service delivering keys to end user players.  Not required when using Azure Media Services for issuing keys.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
+     * Get the customKeyAcquisitionUrlTemplate property: Template for the URL of the custom service delivering keys to
+     * end user players. Not required when using Azure Media Services for issuing keys. The template supports
+     * replaceable tokens that the service will update at runtime with the value specific to the request. The currently
+     * supported token values are {AlternativeMediaId}, which is replaced with the value of
+     * StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the
+     * key being requested.
      * 
      * @return the customKeyAcquisitionUrlTemplate value.
      */
@@ -113,7 +120,12 @@ public final class EnvelopeEncryption {
     }
 
     /**
-     * Set the customKeyAcquisitionUrlTemplate property: Template for the URL of the custom service delivering keys to end user players.  Not required when using Azure Media Services for issuing keys.  The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token values are {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the key being requested.
+     * Set the customKeyAcquisitionUrlTemplate property: Template for the URL of the custom service delivering keys to
+     * end user players. Not required when using Azure Media Services for issuing keys. The template supports
+     * replaceable tokens that the service will update at runtime with the value specific to the request. The currently
+     * supported token values are {AlternativeMediaId}, which is replaced with the value of
+     * StreamingLocatorId.AlternativeMediaId, and {ContentKeyId}, which is replaced with the value of identifier of the
+     * key being requested.
      * 
      * @param customKeyAcquisitionUrlTemplate the customKeyAcquisitionUrlTemplate value to set.
      * @return the EnvelopeEncryption object itself.

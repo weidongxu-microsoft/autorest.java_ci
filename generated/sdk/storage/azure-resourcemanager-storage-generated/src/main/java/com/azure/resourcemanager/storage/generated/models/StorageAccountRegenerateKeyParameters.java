@@ -26,7 +26,8 @@ public final class StorageAccountRegenerateKeyParameters {
     }
 
     /**
-     * Get the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2, kerb1, kerb2.
+     * Get the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2,
+     * kerb1, kerb2.
      * 
      * @return the keyName value.
      */
@@ -35,7 +36,8 @@ public final class StorageAccountRegenerateKeyParameters {
     }
 
     /**
-     * Set the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2, kerb1, kerb2.
+     * Set the keyName property: The name of storage keys that want to be regenerated, possible values are key1, key2,
+     * kerb1, kerb2.
      * 
      * @param keyName the keyName value to set.
      * @return the StorageAccountRegenerateKeyParameters object itself.
@@ -52,8 +54,9 @@ public final class StorageAccountRegenerateKeyParameters {
      */
     public void validate() {
         if (keyName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property keyName in model StorageAccountRegenerateKeyParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property keyName in model StorageAccountRegenerateKeyParameters"));
         }
     }
 

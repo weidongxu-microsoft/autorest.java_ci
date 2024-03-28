@@ -26,7 +26,8 @@ public final class ImageDataDisk extends ImageDisk {
     }
 
     /**
-     * Get the lun property: Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
+     * Get the lun property: Specifies the logical unit number of the data disk. This value is used to identify data
+     * disks within the VM and therefore must be unique for each data disk attached to a VM.
      * 
      * @return the lun value.
      */
@@ -35,7 +36,8 @@ public final class ImageDataDisk extends ImageDisk {
     }
 
     /**
-     * Set the lun property: Specifies the logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM.
+     * Set the lun property: Specifies the logical unit number of the data disk. This value is used to identify data
+     * disks within the VM and therefore must be unique for each data disk attached to a VM.
      * 
      * @param lun the lun value to set.
      * @return the ImageDataDisk object itself.

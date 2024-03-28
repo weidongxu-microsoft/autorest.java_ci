@@ -39,7 +39,8 @@ public final class AuthPlatform {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
+     * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -48,7 +49,8 @@ public final class AuthPlatform {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
+     * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the AuthPlatform object itself.
@@ -59,8 +61,10 @@ public final class AuthPlatform {
     }
 
     /**
-     * Get the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the current app.
-     * The setting in this value can control the behavior of certain features in the Authentication / Authorization module.
+     * Get the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the
+     * current app.
+     * The setting in this value can control the behavior of certain features in the Authentication / Authorization
+     * module.
      * 
      * @return the runtimeVersion value.
      */
@@ -69,8 +73,10 @@ public final class AuthPlatform {
     }
 
     /**
-     * Set the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the current app.
-     * The setting in this value can control the behavior of certain features in the Authentication / Authorization module.
+     * Set the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the
+     * current app.
+     * The setting in this value can control the behavior of certain features in the Authentication / Authorization
+     * module.
      * 
      * @param runtimeVersion the runtimeVersion value to set.
      * @return the AuthPlatform object itself.

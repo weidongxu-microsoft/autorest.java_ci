@@ -18,7 +18,8 @@ public interface GenerateExpressRoutePortsLoaResult {
     String encodedContent();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.GenerateExpressRoutePortsLoaResultInner
+     * object.
      * 
      * @return the inner object.
      */

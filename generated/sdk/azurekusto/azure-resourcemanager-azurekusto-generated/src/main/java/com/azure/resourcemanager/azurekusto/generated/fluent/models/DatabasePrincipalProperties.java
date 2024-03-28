@@ -71,7 +71,8 @@ public final class DatabasePrincipalProperties {
     }
 
     /**
-     * Get the principalId property: The principal ID assigned to the database principal. It can be a user email, application ID, or security group name.
+     * Get the principalId property: The principal ID assigned to the database principal. It can be a user email,
+     * application ID, or security group name.
      * 
      * @return the principalId value.
      */
@@ -80,7 +81,8 @@ public final class DatabasePrincipalProperties {
     }
 
     /**
-     * Set the principalId property: The principal ID assigned to the database principal. It can be a user email, application ID, or security group name.
+     * Set the principalId property: The principal ID assigned to the database principal. It can be a user email,
+     * application ID, or security group name.
      * 
      * @param principalId the principalId value to set.
      * @return the DatabasePrincipalProperties object itself.
@@ -193,16 +195,19 @@ public final class DatabasePrincipalProperties {
      */
     public void validate() {
         if (principalId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property principalId in model DatabasePrincipalProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property principalId in model DatabasePrincipalProperties"));
         }
         if (role() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property role in model DatabasePrincipalProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property role in model DatabasePrincipalProperties"));
         }
         if (principalType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property principalType in model DatabasePrincipalProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property principalType in model DatabasePrincipalProperties"));
         }
     }
 

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -20,6 +21,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource")
 @Fluent
 public final class RuleManagementEventDataSource extends RuleDataSource {
+    /*
+     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource";
+
     /*
      * the event name.
      */
@@ -78,7 +86,17 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
      * Creates an instance of RuleManagementEventDataSource class.
      */
     public RuleManagementEventDataSource() {
-        withOdataType("Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource");
+    }
+
+    /**
+     * Get the odataType property: specifies the type of data source. There are two types of rule data sources:
+     * RuleMetricDataSource and RuleManagementEventDataSource.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -142,7 +160,8 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Get the operationName property: The name of the operation that should be checked for. If no name is provided, any operation will match.
+     * Get the operationName property: The name of the operation that should be checked for. If no name is provided, any
+     * operation will match.
      * 
      * @return the operationName value.
      */
@@ -151,7 +170,8 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Set the operationName property: The name of the operation that should be checked for. If no name is provided, any operation will match.
+     * Set the operationName property: The name of the operation that should be checked for. If no name is provided, any
+     * operation will match.
      * 
      * @param operationName the operationName value to set.
      * @return the RuleManagementEventDataSource object itself.
@@ -202,7 +222,8 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Get the status property: The status of the operation that should be checked for. If no status is provided, any status will match.
+     * Get the status property: The status of the operation that should be checked for. If no status is provided, any
+     * status will match.
      * 
      * @return the status value.
      */
@@ -211,7 +232,8 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     }
 
     /**
-     * Set the status property: The status of the operation that should be checked for. If no status is provided, any status will match.
+     * Set the status property: The status of the operation that should be checked for. If no status is provided, any
+     * status will match.
      * 
      * @param status the status value to set.
      * @return the RuleManagementEventDataSource object itself.

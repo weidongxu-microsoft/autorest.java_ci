@@ -50,12 +50,14 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = HDInsightManagementClientBuilder.class)
 public final class HDInsightManagementClientImpl implements HDInsightManagementClient {
     /**
-     * The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part
+     * of the URI for every service call.
      */
     private final String subscriptionId;
 
     /**
-     * Gets The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Gets The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */
@@ -294,7 +296,8 @@ public final class HDInsightManagementClientImpl implements HDInsightManagementC
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * @param subscriptionId The subscription credentials which uniquely identify Microsoft Azure subscription. The
+     * subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
     HDInsightManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,

@@ -33,7 +33,8 @@ public interface InboundEnvironmentEndpoint {
     List<String> ports();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.InboundEnvironmentEndpointInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -107,12 +107,14 @@ public final class VaultCreateOrUpdateParameters {
      */
     public void validate() {
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property location in model VaultCreateOrUpdateParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property location in model VaultCreateOrUpdateParameters"));
         }
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property properties in model VaultCreateOrUpdateParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property properties in model VaultCreateOrUpdateParameters"));
         } else {
             properties().validate();
         }

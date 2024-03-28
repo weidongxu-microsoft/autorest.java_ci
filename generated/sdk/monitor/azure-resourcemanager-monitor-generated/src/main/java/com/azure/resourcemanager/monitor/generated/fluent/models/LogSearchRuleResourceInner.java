@@ -55,7 +55,9 @@ public final class LogSearchRuleResourceInner extends Resource {
     }
 
     /**
-     * Get the kind property: Metadata used by portal/tooling/etc to render different UX experiences for resources of the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type.  If supported, the resource provider must validate and persist this value.
+     * Get the kind property: Metadata used by portal/tooling/etc to render different UX experiences for resources of
+     * the same type; e.g. ApiApps are a kind of Microsoft.Web/sites type. If supported, the resource provider must
+     * validate and persist this value.
      * 
      * @return the kind value.
      */
@@ -64,7 +66,10 @@ public final class LogSearchRuleResourceInner extends Resource {
     }
 
     /**
-     * Get the etag property: The etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal etag convention.  Entity tags are used for comparing two or more entities from the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24), If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
+     * Get the etag property: The etag field is *not* required. If it is provided in the response body, it must also be
+     * provided as a header per the normal etag convention. Entity tags are used for comparing two or more entities from
+     * the same requested resource. HTTP/1.1 uses entity tags in the etag (section 14.19), If-Match (section 14.24),
+     * If-None-Match (section 14.26), and If-Range (section 14.27) header fields.
      * 
      * @return the etag value.
      */
@@ -155,7 +160,8 @@ public final class LogSearchRuleResourceInner extends Resource {
     }
 
     /**
-     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not. The default is false.
+     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is false.
      * 
      * @return the autoMitigate value.
      */
@@ -164,7 +170,8 @@ public final class LogSearchRuleResourceInner extends Resource {
     }
 
     /**
-     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not. The default is false.
+     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is false.
      * 
      * @param autoMitigate the autoMitigate value to set.
      * @return the LogSearchRuleResourceInner object itself.
@@ -178,7 +185,8 @@ public final class LogSearchRuleResourceInner extends Resource {
     }
 
     /**
-     * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
+     * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
+     * or false.
      * 
      * @return the enabled value.
      */
@@ -187,7 +195,8 @@ public final class LogSearchRuleResourceInner extends Resource {
     }
 
     /**
-     * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
+     * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
+     * or false.
      * 
      * @param enabled the enabled value to set.
      * @return the LogSearchRuleResourceInner object itself.
@@ -294,8 +303,9 @@ public final class LogSearchRuleResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model LogSearchRuleResourceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model LogSearchRuleResourceInner"));
         } else {
             innerProperties().validate();
         }

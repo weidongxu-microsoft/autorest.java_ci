@@ -60,17 +60,6 @@ public class RoleInner extends ArmBaseModel {
     }
 
     /**
-     * Set the kind property: Role type.
-     * 
-     * @param kind the kind value to set.
-     * @return the RoleInner object itself.
-     */
-    protected RoleInner withKind(RoleTypes kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Role.
      * 
      * @return the systemData value.

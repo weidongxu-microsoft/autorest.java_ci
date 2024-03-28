@@ -47,7 +47,8 @@ public interface ComponentLinkedStorageAccounts {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentLinkedStorageAccountsInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentLinkedStorageAccountsInner object.
      * 
      * @return the inner object.
      */
@@ -85,7 +86,8 @@ public interface ComponentLinkedStorageAccounts {
         }
 
         /**
-         * The stage of the ComponentLinkedStorageAccounts definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ComponentLinkedStorageAccounts definition which contains all the minimum required properties
+         * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithLinkedStorageAccount {
             /**

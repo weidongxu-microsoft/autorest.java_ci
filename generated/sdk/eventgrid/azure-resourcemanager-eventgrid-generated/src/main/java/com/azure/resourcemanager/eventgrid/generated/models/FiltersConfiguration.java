@@ -32,7 +32,8 @@ public final class FiltersConfiguration {
     }
 
     /**
-     * Get the includedEventTypes property: A list of applicable event types that need to be part of the event subscription. If it is desired to subscribe to all default event types, set the IncludedEventTypes to null.
+     * Get the includedEventTypes property: A list of applicable event types that need to be part of the event
+     * subscription. If it is desired to subscribe to all default event types, set the IncludedEventTypes to null.
      * 
      * @return the includedEventTypes value.
      */
@@ -41,7 +42,8 @@ public final class FiltersConfiguration {
     }
 
     /**
-     * Set the includedEventTypes property: A list of applicable event types that need to be part of the event subscription. If it is desired to subscribe to all default event types, set the IncludedEventTypes to null.
+     * Set the includedEventTypes property: A list of applicable event types that need to be part of the event
+     * subscription. If it is desired to subscribe to all default event types, set the IncludedEventTypes to null.
      * 
      * @param includedEventTypes the includedEventTypes value to set.
      * @return the FiltersConfiguration object itself.

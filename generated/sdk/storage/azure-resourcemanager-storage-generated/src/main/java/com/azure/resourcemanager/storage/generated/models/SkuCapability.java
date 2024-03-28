@@ -31,7 +31,8 @@ public final class SkuCapability {
     }
 
     /**
-     * Get the name property: The name of capability, The capability information in the specified SKU, including file encryption, network ACLs, change notification, etc.
+     * Get the name property: The name of capability, The capability information in the specified SKU, including file
+     * encryption, network ACLs, change notification, etc.
      * 
      * @return the name value.
      */

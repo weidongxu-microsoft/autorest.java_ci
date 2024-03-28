@@ -59,7 +59,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientLogAnalytics to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientLogAnalytics to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -86,14 +87,16 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return logAnalytics operation status response along with {@link Response} on successful completion of {@link Mono}.
+     * @return logAnalytics operation status response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> exportRequestRateByIntervalWithResponseAsync(String location,
@@ -123,7 +126,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -131,7 +135,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return logAnalytics operation status response along with {@link Response} on successful completion of {@link Mono}.
+     * @return logAnalytics operation status response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> exportRequestRateByIntervalWithResponseAsync(String location,
@@ -160,7 +165,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -179,7 +185,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -201,7 +208,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -217,7 +225,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -234,7 +243,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -251,7 +261,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -269,7 +280,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -285,7 +297,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
     }
 
     /**
-     * Export logs that show Api requests made by this subscription in the given time window to show throttling activities.
+     * Export logs that show Api requests made by this subscription in the given time window to show throttling
+     * activities.
      * 
      * @param location The location upon which virtual-machine-sizes is queried.
      * @param parameters Parameters supplied to the LogAnalytics getRequestRateByInterval Api.
@@ -309,7 +322,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return logAnalytics operation status response along with {@link Response} on successful completion of {@link Mono}.
+     * @return logAnalytics operation status response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> exportThrottledRequestsWithResponseAsync(String location,
@@ -347,7 +361,8 @@ public final class LogAnalyticsClientImpl implements LogAnalyticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return logAnalytics operation status response along with {@link Response} on successful completion of {@link Mono}.
+     * @return logAnalytics operation status response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> exportThrottledRequestsWithResponseAsync(String location,

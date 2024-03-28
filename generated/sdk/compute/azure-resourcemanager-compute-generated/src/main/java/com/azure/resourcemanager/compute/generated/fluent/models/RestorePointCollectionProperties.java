@@ -45,7 +45,8 @@ public final class RestorePointCollectionProperties {
     }
 
     /**
-     * Get the source property: The properties of the source resource that this restore point collection is created from.
+     * Get the source property: The properties of the source resource that this restore point collection is created
+     * from.
      * 
      * @return the source value.
      */
@@ -54,7 +55,8 @@ public final class RestorePointCollectionProperties {
     }
 
     /**
-     * Set the source property: The properties of the source resource that this restore point collection is created from.
+     * Set the source property: The properties of the source resource that this restore point collection is created
+     * from.
      * 
      * @param source the source value to set.
      * @return the RestorePointCollectionProperties object itself.

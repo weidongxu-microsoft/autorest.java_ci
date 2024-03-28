@@ -86,7 +86,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App Service plan.
+     * Get the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App
+     * Service plan.
      * 
      * @return the hostingEnvironmentProfile value.
      */
@@ -95,7 +96,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App Service plan.
+     * Set the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App
+     * Service plan.
      * 
      * @param hostingEnvironmentProfile the hostingEnvironmentProfile value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -110,7 +112,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the maximumNumberOfWorkers property: Maximum number of instances that can be assigned to this App Service plan.
+     * Get the maximumNumberOfWorkers property: Maximum number of instances that can be assigned to this App Service
+     * plan.
      * 
      * @return the maximumNumberOfWorkers value.
      */
@@ -137,8 +140,10 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-     * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan.
+     * Get the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be
+     * scaled independently.
+     * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the
+     * plan.
      * 
      * @return the perSiteScaling value.
      */
@@ -147,8 +152,10 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-     * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan.
+     * Set the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be
+     * scaled independently.
+     * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the
+     * plan.
      * 
      * @param perSiteScaling the perSiteScaling value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -162,7 +169,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+     * Get the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+     * ServerFarm was ElasticPremium sku.
      * 
      * @return the elasticScaleEnabled value.
      */
@@ -171,7 +179,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+     * Set the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+     * ServerFarm was ElasticPremium sku.
      * 
      * @param elasticScaleEnabled the elasticScaleEnabled value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -185,7 +194,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+     * Get the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled
+     * App Service Plan.
      * 
      * @return the maximumElasticWorkerCount value.
      */
@@ -194,7 +204,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+     * Set the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled
+     * App Service Plan.
      * 
      * @param maximumElasticWorkerCount the maximumElasticWorkerCount value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -240,7 +251,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server farm.
+     * Get the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server
+     * farm.
      * 
      * @return the spotExpirationTime value.
      */
@@ -249,7 +261,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server farm.
+     * Set the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server
+     * farm.
      * 
      * @param spotExpirationTime the spotExpirationTime value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -295,7 +308,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Get the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the reserved value.
      */
@@ -304,7 +318,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Set the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @param reserved the reserved value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -318,7 +333,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Get the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the isXenon value.
      */
@@ -327,7 +343,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Set the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @param isXenon the isXenon value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -341,7 +358,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Get the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the hyperV value.
      */
@@ -350,7 +368,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Set the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @param hyperV the hyperV value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -419,7 +438,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service plan.
+     * Get the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service
+     * plan.
      * 
      * @return the kubeEnvironmentProfile value.
      */
@@ -428,7 +448,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service plan.
+     * Set the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service
+     * plan.
      * 
      * @param kubeEnvironmentProfile the kubeEnvironmentProfile value to set.
      * @return the AppServicePlanPatchResource object itself.
@@ -442,7 +463,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+     * Get the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability
+     * zone balancing.
      * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing.
      * 
      * @return the zoneRedundant value.
@@ -452,7 +474,8 @@ public final class AppServicePlanPatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+     * Set the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability
+     * zone balancing.
      * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing.
      * 
      * @param zoneRedundant the zoneRedundant value to set.

@@ -46,14 +46,16 @@ public interface ValidateRequest {
     String skuName();
 
     /**
-     * Gets the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the needLinuxWorkers value.
      */
     Boolean needLinuxWorkers();
 
     /**
-     * Gets the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isSpot value.
      */
@@ -67,7 +69,8 @@ public interface ValidateRequest {
     Integer capacity();
 
     /**
-     * Gets the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be created.
+     * Gets the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be
+     * created.
      * 
      * @return the hostingEnvironment value.
      */

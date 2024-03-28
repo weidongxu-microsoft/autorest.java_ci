@@ -19,14 +19,16 @@ public interface VmImagesInEdgeZoneListResult {
     List<VirtualMachineImageResource> value();
 
     /**
-     * Gets the nextLink property: The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI to fetch the next page of VmImages.
+     * Gets the nextLink property: The URI to fetch the next page of VMImages in EdgeZone. Call ListNext() with this URI
+     * to fetch the next page of VmImages.
      * 
      * @return the nextLink value.
      */
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VmImagesInEdgeZoneListResultInner object.
+     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VmImagesInEdgeZoneListResultInner
+     * object.
      * 
      * @return the inner object.
      */

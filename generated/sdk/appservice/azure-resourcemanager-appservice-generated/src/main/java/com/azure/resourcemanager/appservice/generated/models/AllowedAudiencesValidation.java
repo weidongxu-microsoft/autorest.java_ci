@@ -26,7 +26,8 @@ public final class AllowedAudiencesValidation {
     }
 
     /**
-     * Get the allowedAudiences property: The configuration settings of the allowed list of audiences from which to validate the JWT token.
+     * Get the allowedAudiences property: The configuration settings of the allowed list of audiences from which to
+     * validate the JWT token.
      * 
      * @return the allowedAudiences value.
      */
@@ -35,7 +36,8 @@ public final class AllowedAudiencesValidation {
     }
 
     /**
-     * Set the allowedAudiences property: The configuration settings of the allowed list of audiences from which to validate the JWT token.
+     * Set the allowedAudiences property: The configuration settings of the allowed list of audiences from which to
+     * validate the JWT token.
      * 
      * @param allowedAudiences the allowedAudiences value to set.
      * @return the AllowedAudiencesValidation object itself.

@@ -104,12 +104,14 @@ public final class TrackPropertyCondition {
      */
     public void validate() {
         if (property() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property property in model TrackPropertyCondition"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property property in model TrackPropertyCondition"));
         }
         if (operation() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operation in model TrackPropertyCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property operation in model TrackPropertyCondition"));
         }
     }
 

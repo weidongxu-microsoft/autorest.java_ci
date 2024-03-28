@@ -67,7 +67,8 @@ public final class QueryDataset {
     }
 
     /**
-     * Get the aggregation property: Dictionary of aggregation expression to use in the query. The key of each item in the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
+     * Get the aggregation property: Dictionary of aggregation expression to use in the query. The key of each item in
+     * the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
      * 
      * @return the aggregation value.
      */
@@ -76,7 +77,8 @@ public final class QueryDataset {
     }
 
     /**
-     * Set the aggregation property: Dictionary of aggregation expression to use in the query. The key of each item in the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
+     * Set the aggregation property: Dictionary of aggregation expression to use in the query. The key of each item in
+     * the dictionary is the alias for the aggregated column. Query can have up to 2 aggregation clauses.
      * 
      * @param aggregation the aggregation value to set.
      * @return the QueryDataset object itself.
@@ -87,7 +89,8 @@ public final class QueryDataset {
     }
 
     /**
-     * Get the grouping property: Array of group by expression to use in the query. Query can have up to 2 group by clauses.
+     * Get the grouping property: Array of group by expression to use in the query. Query can have up to 2 group by
+     * clauses.
      * 
      * @return the grouping value.
      */
@@ -96,7 +99,8 @@ public final class QueryDataset {
     }
 
     /**
-     * Set the grouping property: Array of group by expression to use in the query. Query can have up to 2 group by clauses.
+     * Set the grouping property: Array of group by expression to use in the query. Query can have up to 2 group by
+     * clauses.
      * 
      * @param grouping the grouping value to set.
      * @return the QueryDataset object itself.
@@ -107,7 +111,8 @@ public final class QueryDataset {
     }
 
     /**
-     * Get the filter property: The filter expression to use in the query. Please reference our Query API REST documentation for how to properly format the filter.
+     * Get the filter property: The filter expression to use in the query. Please reference our Query API REST
+     * documentation for how to properly format the filter.
      * 
      * @return the filter value.
      */
@@ -116,7 +121,8 @@ public final class QueryDataset {
     }
 
     /**
-     * Set the filter property: The filter expression to use in the query. Please reference our Query API REST documentation for how to properly format the filter.
+     * Set the filter property: The filter expression to use in the query. Please reference our Query API REST
+     * documentation for how to properly format the filter.
      * 
      * @param filter the filter value to set.
      * @return the QueryDataset object itself.

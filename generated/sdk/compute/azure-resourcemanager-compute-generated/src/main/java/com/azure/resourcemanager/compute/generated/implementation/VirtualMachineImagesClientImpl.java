@@ -54,7 +54,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineImages to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineImages to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -282,7 +283,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listWithResponseAsync(String location,
@@ -329,7 +331,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listWithResponseAsync(String location,
@@ -371,7 +374,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listAsync(String location, String publisherName, String offer,
@@ -397,7 +401,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along with {@link Response}.
+     * @return a list of all virtual machine image versions for the specified location, publisher, offer, and SKU along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listWithResponse(String location, String publisherName,
@@ -434,7 +439,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image offers for the specified location and publisher along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listOffersWithResponseAsync(String location,
@@ -470,7 +476,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image offers for the specified location and publisher along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listOffersWithResponseAsync(String location,
@@ -504,7 +511,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher on successful completion of {@link Mono}.
+     * @return a list of virtual machine image offers for the specified location and publisher on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listOffersAsync(String location, String publisherName) {
@@ -520,7 +528,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image offers for the specified location and publisher along with {@link Response}.
+     * @return a list of virtual machine image offers for the specified location and publisher along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listOffersWithResponse(String location,
@@ -550,7 +559,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listPublishersWithResponseAsync(String location) {
@@ -581,7 +591,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image publishers for the specified Azure location along with {@link Response}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listPublishersWithResponseAsync(String location,
@@ -611,7 +622,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image publishers for the specified Azure location on successful completion of {@link Mono}.
+     * @return a list of virtual machine image publishers for the specified Azure location on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listPublishersAsync(String location) {
@@ -657,7 +669,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listSkusWithResponseAsync(String location,
@@ -697,7 +710,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<List<VirtualMachineImageResourceInner>>> listSkusWithResponseAsync(String location,
@@ -735,7 +749,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer on successful completion of {@link Mono}.
+     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<List<VirtualMachineImageResourceInner>> listSkusAsync(String location, String publisherName,
@@ -754,7 +769,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with {@link Response}.
+     * @return a list of virtual machine image SKUs for the specified location, publisher, and offer along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<List<VirtualMachineImageResourceInner>> listSkusWithResponse(String location, String publisherName,
@@ -786,7 +802,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified edge zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified edge zone along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VmImagesInEdgeZoneListResultInner>> listByEdgeZoneWithResponseAsync(String location,
@@ -822,7 +839,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified edge zone along with {@link Response} on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified edge zone along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VmImagesInEdgeZoneListResultInner>> listByEdgeZoneWithResponseAsync(String location,
@@ -856,7 +874,8 @@ public final class VirtualMachineImagesClientImpl implements VirtualMachineImage
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machine image versions for the specified edge zone on successful completion of {@link Mono}.
+     * @return a list of all virtual machine image versions for the specified edge zone on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VmImagesInEdgeZoneListResultInner> listByEdgeZoneAsync(String location, String edgeZone) {

@@ -63,7 +63,8 @@ public interface UpdateSummary {
     OffsetDateTime deviceLastScannedDateTime();
 
     /**
-     * Gets the lastCompletedScanJobDateTime property: The time when the last scan job was completed (success/cancelled/failed) on the appliance.
+     * Gets the lastCompletedScanJobDateTime property: The time when the last scan job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @return the lastCompletedScanJobDateTime value.
      */
@@ -77,14 +78,16 @@ public interface UpdateSummary {
     OffsetDateTime lastSuccessfulScanJobTime();
 
     /**
-     * Gets the lastCompletedDownloadJobDateTime property: The time when the last Download job was completed (success/cancelled/failed) on the appliance.
+     * Gets the lastCompletedDownloadJobDateTime property: The time when the last Download job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @return the lastCompletedDownloadJobDateTime value.
      */
     OffsetDateTime lastCompletedDownloadJobDateTime();
 
     /**
-     * Gets the lastCompletedDownloadJobId property: JobId of the last ran download job.(Can be success/cancelled/failed).
+     * Gets the lastCompletedDownloadJobId property: JobId of the last ran download job.(Can be
+     * success/cancelled/failed).
      * 
      * @return the lastCompletedDownloadJobId value.
      */
@@ -98,14 +101,16 @@ public interface UpdateSummary {
     JobStatus lastDownloadJobStatus();
 
     /**
-     * Gets the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully on the appliance.
+     * Gets the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully
+     * on the appliance.
      * 
      * @return the lastSuccessfulInstallJobDateTime value.
      */
     OffsetDateTime lastSuccessfulInstallJobDateTime();
 
     /**
-     * Gets the lastCompletedInstallJobDateTime property: The time when the last Install job was completed (success/cancelled/failed) on the appliance.
+     * Gets the lastCompletedInstallJobDateTime property: The time when the last Install job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @return the lastCompletedInstallJobDateTime value.
      */
@@ -126,7 +131,8 @@ public interface UpdateSummary {
     JobStatus lastInstallJobStatus();
 
     /**
-     * Gets the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version as per the last device scan.
+     * Gets the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version
+     * as per the last device scan.
      * 
      * @return the totalNumberOfUpdatesAvailable value.
      */
@@ -147,7 +153,8 @@ public interface UpdateSummary {
     Integer totalNumberOfUpdatesPendingInstall();
 
     /**
-     * Gets the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a reboot.
+     * Gets the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
+     * reboot.
      * 
      * @return the rebootBehavior value.
      */
@@ -175,14 +182,16 @@ public interface UpdateSummary {
     String inProgressInstallJobId();
 
     /**
-     * Gets the inProgressDownloadJobStartedDateTime property: The time when the currently running download (if any) started.
+     * Gets the inProgressDownloadJobStartedDateTime property: The time when the currently running download (if any)
+     * started.
      * 
      * @return the inProgressDownloadJobStartedDateTime value.
      */
     OffsetDateTime inProgressDownloadJobStartedDateTime();
 
     /**
-     * Gets the inProgressInstallJobStartedDateTime property: The time when the currently running install (if any) started.
+     * Gets the inProgressInstallJobStartedDateTime property: The time when the currently running install (if any)
+     * started.
      * 
      * @return the inProgressInstallJobStartedDateTime value.
      */

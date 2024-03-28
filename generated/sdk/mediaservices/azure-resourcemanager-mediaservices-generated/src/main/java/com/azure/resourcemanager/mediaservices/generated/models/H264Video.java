@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -18,6 +19,13 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.H264Video")
 @Fluent
 public final class H264Video extends Video {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.H264Video";
+
     /*
      * Tells the encoder how to choose its encoding settings. The default value is Balanced.
      */
@@ -46,11 +54,21 @@ public final class H264Video extends Video {
      * Creates an instance of H264Video class.
      */
     public H264Video() {
-        withOdataType("#Microsoft.Media.H264Video");
     }
 
     /**
-     * Get the complexity property: Tells the encoder how to choose its encoding settings. The default value is Balanced.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the complexity property: Tells the encoder how to choose its encoding settings. The default value is
+     * Balanced.
      * 
      * @return the complexity value.
      */
@@ -59,7 +77,8 @@ public final class H264Video extends Video {
     }
 
     /**
-     * Set the complexity property: Tells the encoder how to choose its encoding settings. The default value is Balanced.
+     * Set the complexity property: Tells the encoder how to choose its encoding settings. The default value is
+     * Balanced.
      * 
      * @param complexity the complexity value to set.
      * @return the H264Video object itself.
@@ -110,7 +129,9 @@ public final class H264Video extends Video {
     }
 
     /**
-     * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
+     * Get the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
+     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
+     * produce a single output video.
      * 
      * @return the sceneChangeDetection value.
      */
@@ -119,7 +140,9 @@ public final class H264Video extends Video {
     }
 
     /**
-     * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
+     * Set the sceneChangeDetection property: Whether or not the encoder should insert key frames at scene changes. If
+     * not specified, the default is false. This flag should be set to true only when the encoder is being configured to
+     * produce a single output video.
      * 
      * @param sceneChangeDetection the sceneChangeDetection value to set.
      * @return the H264Video object itself.

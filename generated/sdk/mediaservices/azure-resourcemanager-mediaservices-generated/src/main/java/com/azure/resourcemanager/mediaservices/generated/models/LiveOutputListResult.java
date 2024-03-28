@@ -81,7 +81,8 @@ public final class LiveOutputListResult {
     }
 
     /**
-     * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list of live outputs.
+     * Get the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
+     * of live outputs.
      * 
      * @return the odataNextLink value.
      */
@@ -90,7 +91,8 @@ public final class LiveOutputListResult {
     }
 
     /**
-     * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list of live outputs.
+     * Set the odataNextLink property: The link to the next set of results. Not empty if value contains incomplete list
+     * of live outputs.
      * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the LiveOutputListResult object itself.

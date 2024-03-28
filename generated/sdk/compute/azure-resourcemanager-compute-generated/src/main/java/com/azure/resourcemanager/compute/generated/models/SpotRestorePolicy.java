@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies the Spot-Try-Restore properties for the virtual machine scale set. With this property customer can enable or disable automatic restore of the evicted Spot VMSS VM instances opportunistically based on capacity availability and pricing constraint.
+ * Specifies the Spot-Try-Restore properties for the virtual machine scale set. With this property customer can enable
+ * or disable automatic restore of the evicted Spot VMSS VM instances opportunistically based on capacity availability
+ * and pricing constraint.
  */
 @Fluent
 public final class SpotRestorePolicy {
@@ -31,7 +33,8 @@ public final class SpotRestorePolicy {
     }
 
     /**
-     * Get the enabled property: Enables the Spot-Try-Restore feature where evicted VMSS SPOT instances will be tried to be restored opportunistically based on capacity availability and pricing constraints.
+     * Get the enabled property: Enables the Spot-Try-Restore feature where evicted VMSS SPOT instances will be tried to
+     * be restored opportunistically based on capacity availability and pricing constraints.
      * 
      * @return the enabled value.
      */
@@ -40,7 +43,8 @@ public final class SpotRestorePolicy {
     }
 
     /**
-     * Set the enabled property: Enables the Spot-Try-Restore feature where evicted VMSS SPOT instances will be tried to be restored opportunistically based on capacity availability and pricing constraints.
+     * Set the enabled property: Enables the Spot-Try-Restore feature where evicted VMSS SPOT instances will be tried to
+     * be restored opportunistically based on capacity availability and pricing constraints.
      * 
      * @param enabled the enabled value to set.
      * @return the SpotRestorePolicy object itself.
@@ -51,7 +55,8 @@ public final class SpotRestorePolicy {
     }
 
     /**
-     * Get the restoreTimeout property: Timeout value expressed as an ISO 8601 time duration after which the platform will not try to restore the VMSS SPOT instances.
+     * Get the restoreTimeout property: Timeout value expressed as an ISO 8601 time duration after which the platform
+     * will not try to restore the VMSS SPOT instances.
      * 
      * @return the restoreTimeout value.
      */
@@ -60,7 +65,8 @@ public final class SpotRestorePolicy {
     }
 
     /**
-     * Set the restoreTimeout property: Timeout value expressed as an ISO 8601 time duration after which the platform will not try to restore the VMSS SPOT instances.
+     * Set the restoreTimeout property: Timeout value expressed as an ISO 8601 time duration after which the platform
+     * will not try to restore the VMSS SPOT instances.
      * 
      * @param restoreTimeout the restoreTimeout value to set.
      * @return the SpotRestorePolicy object itself.

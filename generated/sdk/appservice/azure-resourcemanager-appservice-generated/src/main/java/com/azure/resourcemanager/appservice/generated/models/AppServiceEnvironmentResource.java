@@ -82,7 +82,8 @@ public interface AppServiceEnvironmentResource {
     VirtualNetworkProfile virtualNetwork();
 
     /**
-     * Gets the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
+     * Gets the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
+     * for the App Service Environment.
      * 
      * @return the internalLoadBalancingMode value.
      */
@@ -131,8 +132,10 @@ public interface AppServiceEnvironmentResource {
     Integer frontEndScaleFactor();
 
     /**
-     * Gets the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer available
-     *  (most likely because NSG blocked the incoming traffic).
+     * Gets the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is
+     * no longer available
+     * (most likely because NSG blocked the incoming traffic).
      * 
      * @return the suspended value.
      */
@@ -223,7 +226,8 @@ public interface AppServiceEnvironmentResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentResourceInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -281,7 +285,8 @@ public interface AppServiceEnvironmentResource {
         }
 
         /**
-         * The stage of the AppServiceEnvironmentResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AppServiceEnvironmentResource definition which contains all the minimum required properties
+         * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithKind,
             DefinitionStages.WithVirtualNetwork, DefinitionStages.WithInternalLoadBalancingMode,
@@ -350,9 +355,11 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithInternalLoadBalancingMode {
             /**
-             * Specifies the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment..
+             * Specifies the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the
+             * Virtual Network for the App Service Environment..
              * 
-             * @param internalLoadBalancingMode Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
+             * @param internalLoadBalancingMode Specifies which endpoints to serve internally in the Virtual Network for
+             * the App Service Environment.
              * @return the next definition stage.
              */
             WithCreate withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode);
@@ -376,7 +383,8 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithIpsslAddressCount {
             /**
-             * Specifies the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service Environment..
+             * Specifies the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service
+             * Environment..
              * 
              * @param ipsslAddressCount Number of IP SSL addresses reserved for the App Service Environment.
              * @return the next definition stage.
@@ -415,7 +423,8 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithClusterSettings {
             /**
-             * Specifies the clusterSettings property: Custom settings for changing the behavior of the App Service Environment..
+             * Specifies the clusterSettings property: Custom settings for changing the behavior of the App Service
+             * Environment..
              * 
              * @param clusterSettings Custom settings for changing the behavior of the App Service Environment.
              * @return the next definition stage.
@@ -480,7 +489,8 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithCustomDnsSuffixConfiguration {
             /**
-             * Specifies the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration for ASEv3..
+             * Specifies the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration
+             * for ASEv3..
              * 
              * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
              * @return the next definition stage.
@@ -569,9 +579,11 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithInternalLoadBalancingMode {
             /**
-             * Specifies the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment..
+             * Specifies the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the
+             * Virtual Network for the App Service Environment..
              * 
-             * @param internalLoadBalancingMode Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
+             * @param internalLoadBalancingMode Specifies which endpoints to serve internally in the Virtual Network for
+             * the App Service Environment.
              * @return the next definition stage.
              */
             Update withInternalLoadBalancingMode(LoadBalancingMode internalLoadBalancingMode);
@@ -595,7 +607,8 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithIpsslAddressCount {
             /**
-             * Specifies the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service Environment..
+             * Specifies the ipsslAddressCount property: Number of IP SSL addresses reserved for the App Service
+             * Environment..
              * 
              * @param ipsslAddressCount Number of IP SSL addresses reserved for the App Service Environment.
              * @return the next definition stage.
@@ -634,7 +647,8 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithClusterSettings {
             /**
-             * Specifies the clusterSettings property: Custom settings for changing the behavior of the App Service Environment..
+             * Specifies the clusterSettings property: Custom settings for changing the behavior of the App Service
+             * Environment..
              * 
              * @param clusterSettings Custom settings for changing the behavior of the App Service Environment.
              * @return the next definition stage.
@@ -699,7 +713,8 @@ public interface AppServiceEnvironmentResource {
          */
         interface WithCustomDnsSuffixConfiguration {
             /**
-             * Specifies the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration for ASEv3..
+             * Specifies the customDnsSuffixConfiguration property: Full view of the custom domain suffix configuration
+             * for ASEv3..
              * 
              * @param customDnsSuffixConfiguration Full view of the custom domain suffix configuration for ASEv3.
              * @return the next definition stage.
@@ -743,7 +758,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * @param vnetInfo Details for the new virtual network.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
@@ -757,7 +773,8 @@ public interface AppServiceEnvironmentResource {
      * @param vnetInfo Details for the new virtual network.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
@@ -768,7 +785,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -777,7 +795,8 @@ public interface AppServiceEnvironmentResource {
     /**
      * Send a test notification that an upgrade is available for this App Service Environment.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void testUpgradeAvailableNotification();
@@ -787,7 +806,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * Description for Initiate an upgrade of an App Service Environment if one is available.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void upgrade();
@@ -799,7 +819,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void upgrade(Context context);
@@ -811,7 +832,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -822,7 +844,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * Description for Reboot all machines in an App Service Environment.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reboot();
@@ -832,7 +855,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * Description for Resume an App Service Environment.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
@@ -845,7 +869,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
@@ -856,7 +881,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * Description for Suspend an App Service Environment.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */
@@ -869,7 +895,8 @@ public interface AppServiceEnvironmentResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of App Service apps as paginated response with {@link PagedIterable}.
      */

@@ -14,18 +14,21 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.search.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsClient.
  */
 public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Gets a list of network security perimeter configurations for a search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of network security perimeter configurations for a search service as paginated response with {@link PagedIterable}.
+     * @return a list of network security perimeter configurations for a search service as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<NetworkSecurityPerimeterConfigurationInner> listByService(String resourceGroupName,
@@ -34,13 +37,15 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Gets a list of network security perimeter configurations for a search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of network security perimeter configurations for a search service as paginated response with {@link PagedIterable}.
+     * @return a list of network security perimeter configurations for a search service as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<NetworkSecurityPerimeterConfigurationInner> listByService(String resourceGroupName,
@@ -49,7 +54,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Gets a network security perimeter configuration.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param nspConfigName The network security configuration name.
      * @param context The context to associate with this operation.
@@ -65,7 +71,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Gets a network security perimeter configuration.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param nspConfigName The network security configuration name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -78,9 +85,12 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
         String nspConfigName);
 
     /**
-     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a manual resync with network security perimeter configurations by ensuring the search service carries the latest configuration.
+     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a
+     * manual resync with network security perimeter configurations by ensuring the search service carries the latest
+     * configuration.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param nspConfigName The network security configuration name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -93,9 +103,12 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
         String nspConfigName);
 
     /**
-     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a manual resync with network security perimeter configurations by ensuring the search service carries the latest configuration.
+     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a
+     * manual resync with network security perimeter configurations by ensuring the search service carries the latest
+     * configuration.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param nspConfigName The network security configuration name.
      * @param context The context to associate with this operation.
@@ -109,9 +122,12 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
         String nspConfigName, Context context);
 
     /**
-     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a manual resync with network security perimeter configurations by ensuring the search service carries the latest configuration.
+     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a
+     * manual resync with network security perimeter configurations by ensuring the search service carries the latest
+     * configuration.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param nspConfigName The network security configuration name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -122,9 +138,12 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     void reconcile(String resourceGroupName, String searchServiceName, String nspConfigName);
 
     /**
-     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a manual resync with network security perimeter configurations by ensuring the search service carries the latest configuration.
+     * Reconcile network security perimeter configuration for the Azure AI Search resource provider. This triggers a
+     * manual resync with network security perimeter configurations by ensuring the search service carries the latest
+     * configuration.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param nspConfigName The network security configuration name.
      * @param context The context to associate with this operation.

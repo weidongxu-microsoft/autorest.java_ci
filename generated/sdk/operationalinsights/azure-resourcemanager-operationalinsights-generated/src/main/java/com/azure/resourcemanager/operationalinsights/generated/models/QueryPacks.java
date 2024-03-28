@@ -18,7 +18,8 @@ public interface QueryPacks {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Log Analytics QueryPacks within a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Log Analytics QueryPacks within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<LogAnalyticsQueryPack> list();
 
@@ -29,7 +30,8 @@ public interface QueryPacks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Log Analytics QueryPacks within a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Log Analytics QueryPacks within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<LogAnalyticsQueryPack> list(Context context);
 
@@ -40,7 +42,8 @@ public interface QueryPacks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Log Analytics QueryPacks within a resource group as paginated response with {@link PagedIterable}.
+     * @return a list of Log Analytics QueryPacks within a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<LogAnalyticsQueryPack> listByResourceGroup(String resourceGroupName);
 
@@ -52,15 +55,18 @@ public interface QueryPacks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Log Analytics QueryPacks within a resource group as paginated response with {@link PagedIterable}.
+     * @return a list of Log Analytics QueryPacks within a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<LogAnalyticsQueryPack> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Creates a Log Analytics QueryPack. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
+     * Creates a Log Analytics QueryPack. Note: You cannot specify a different value for InstrumentationKey nor AppId in
+     * the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param logAnalyticsQueryPackPayload Properties that need to be specified to create or update a Log Analytics QueryPack.
+     * @param logAnalyticsQueryPackPayload Properties that need to be specified to create or update a Log Analytics
+     * QueryPack.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -71,10 +77,12 @@ public interface QueryPacks {
         LogAnalyticsQueryPackInner logAnalyticsQueryPackPayload, Context context);
 
     /**
-     * Creates a Log Analytics QueryPack. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
+     * Creates a Log Analytics QueryPack. Note: You cannot specify a different value for InstrumentationKey nor AppId in
+     * the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param logAnalyticsQueryPackPayload Properties that need to be specified to create or update a Log Analytics QueryPack.
+     * @param logAnalyticsQueryPackPayload Properties that need to be specified to create or update a Log Analytics
+     * QueryPack.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

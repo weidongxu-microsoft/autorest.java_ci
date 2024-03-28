@@ -11,7 +11,8 @@ import com.azure.resourcemanager.storage.generated.fluent.models.LeaseContainerR
  */
 public interface LeaseContainerResponse {
     /**
-     * Gets the leaseId property: Returned unique lease ID that must be included with any request to delete the container, or to renew, change, or release the lease.
+     * Gets the leaseId property: Returned unique lease ID that must be included with any request to delete the
+     * container, or to renew, change, or release the lease.
      * 
      * @return the leaseId value.
      */

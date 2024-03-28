@@ -19,7 +19,8 @@ public interface RouteFilterRule {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -54,7 +55,8 @@ public interface RouteFilterRule {
     RouteFilterRuleType routeFilterRuleType();
 
     /**
-     * Gets the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
+     * Gets the communities property: The collection for bgp community values to filter on. e.g.
+     * ['12076:5010','12076:5020'].
      * 
      * @return the communities value.
      */

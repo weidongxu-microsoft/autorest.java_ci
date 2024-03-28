@@ -41,7 +41,9 @@ public interface RoleAssignmentsClient {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -68,7 +70,9 @@ public interface RoleAssignmentsClient {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -108,8 +112,13 @@ public interface RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -124,8 +133,13 @@ public interface RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -253,7 +267,9 @@ public interface RoleAssignmentsClient {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -279,7 +295,9 @@ public interface RoleAssignmentsClient {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

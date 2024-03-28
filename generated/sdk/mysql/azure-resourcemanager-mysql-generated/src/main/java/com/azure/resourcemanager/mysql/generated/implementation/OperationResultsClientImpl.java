@@ -51,7 +51,8 @@ public final class OperationResultsClientImpl implements OperationResultsClient 
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientOperationResults to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientOperationResults to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -74,7 +75,8 @@ public final class OperationResultsClientImpl implements OperationResultsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a long running operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return the operation result for a long running operation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationStatusExtendedResultInner>> getWithResponseAsync(String locationName,
@@ -110,7 +112,8 @@ public final class OperationResultsClientImpl implements OperationResultsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the operation result for a long running operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return the operation result for a long running operation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<OperationStatusExtendedResultInner>> getWithResponseAsync(String locationName,

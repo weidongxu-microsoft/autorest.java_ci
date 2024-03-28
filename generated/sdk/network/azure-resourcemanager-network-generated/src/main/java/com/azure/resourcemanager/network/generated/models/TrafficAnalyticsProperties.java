@@ -25,7 +25,8 @@ public final class TrafficAnalyticsProperties {
     }
 
     /**
-     * Get the networkWatcherFlowAnalyticsConfiguration property: Parameters that define the configuration of traffic analytics.
+     * Get the networkWatcherFlowAnalyticsConfiguration property: Parameters that define the configuration of traffic
+     * analytics.
      * 
      * @return the networkWatcherFlowAnalyticsConfiguration value.
      */
@@ -34,7 +35,8 @@ public final class TrafficAnalyticsProperties {
     }
 
     /**
-     * Set the networkWatcherFlowAnalyticsConfiguration property: Parameters that define the configuration of traffic analytics.
+     * Set the networkWatcherFlowAnalyticsConfiguration property: Parameters that define the configuration of traffic
+     * analytics.
      * 
      * @param networkWatcherFlowAnalyticsConfiguration the networkWatcherFlowAnalyticsConfiguration value to set.
      * @return the TrafficAnalyticsProperties object itself.

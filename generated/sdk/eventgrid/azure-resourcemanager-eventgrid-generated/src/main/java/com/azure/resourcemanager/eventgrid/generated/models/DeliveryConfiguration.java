@@ -57,7 +57,8 @@ public final class DeliveryConfiguration {
     }
 
     /**
-     * Get the queue property: This property should be populated when deliveryMode is queue and represents information about the queue subscription.
+     * Get the queue property: This property should be populated when deliveryMode is queue and represents information
+     * about the queue subscription.
      * 
      * @return the queue value.
      */
@@ -66,7 +67,8 @@ public final class DeliveryConfiguration {
     }
 
     /**
-     * Set the queue property: This property should be populated when deliveryMode is queue and represents information about the queue subscription.
+     * Set the queue property: This property should be populated when deliveryMode is queue and represents information
+     * about the queue subscription.
      * 
      * @param queue the queue value to set.
      * @return the DeliveryConfiguration object itself.
@@ -77,7 +79,8 @@ public final class DeliveryConfiguration {
     }
 
     /**
-     * Get the push property: This property should be populated when deliveryMode is push and represents information about the push subscription.
+     * Get the push property: This property should be populated when deliveryMode is push and represents information
+     * about the push subscription.
      * 
      * @return the push value.
      */
@@ -86,7 +89,8 @@ public final class DeliveryConfiguration {
     }
 
     /**
-     * Set the push property: This property should be populated when deliveryMode is push and represents information about the push subscription.
+     * Set the push property: This property should be populated when deliveryMode is push and represents information
+     * about the push subscription.
      * 
      * @param push the push value to set.
      * @return the DeliveryConfiguration object itself.

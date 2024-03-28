@@ -52,8 +52,8 @@ public final class FailoverInput {
      */
     public void validate() {
         if (failoverRegion() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property failoverRegion in model FailoverInput"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property failoverRegion in model FailoverInput"));
         }
     }
 

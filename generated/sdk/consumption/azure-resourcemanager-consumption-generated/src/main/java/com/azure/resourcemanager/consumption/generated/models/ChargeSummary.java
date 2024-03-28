@@ -52,18 +52,8 @@ public class ChargeSummary extends ProxyResource {
     }
 
     /**
-     * Set the kind property: Specifies the kind of charge summary.
-     * 
-     * @param kind the kind value to set.
-     * @return the ChargeSummary object itself.
-     */
-    protected ChargeSummary withKind(ChargeSummaryKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
-     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+     * Get the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
@@ -72,7 +62,8 @@ public class ChargeSummary extends ProxyResource {
     }
 
     /**
-     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+     * Set the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      * 
      * @param etag the etag value to set.
      * @return the ChargeSummary object itself.

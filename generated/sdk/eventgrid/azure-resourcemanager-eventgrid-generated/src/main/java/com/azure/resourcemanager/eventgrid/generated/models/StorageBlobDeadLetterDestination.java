@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.StorageBlobDeadLetterDestinationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -22,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class StorageBlobDeadLetterDestination extends DeadLetterDestination {
     /*
+     * Type of the endpoint for the dead letter destination
+     */
+    @JsonTypeId
+    @JsonProperty(value = "endpointType", required = true)
+    private DeadLetterEndPointType endpointType = DeadLetterEndPointType.STORAGE_BLOB;
+
+    /*
      * The properties of the Storage Blob based deadletter destination
      */
     @JsonProperty(value = "properties")
@@ -31,7 +39,16 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
      * Creates an instance of StorageBlobDeadLetterDestination class.
      */
     public StorageBlobDeadLetterDestination() {
-        withEndpointType(DeadLetterEndPointType.STORAGE_BLOB);
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the dead letter destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public DeadLetterEndPointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -44,7 +61,8 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
     }
 
     /**
-     * Get the resourceId property: The Azure Resource ID of the storage account that is the destination of the deadletter events.
+     * Get the resourceId property: The Azure Resource ID of the storage account that is the destination of the
+     * deadletter events.
      * 
      * @return the resourceId value.
      */
@@ -53,7 +71,8 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
     }
 
     /**
-     * Set the resourceId property: The Azure Resource ID of the storage account that is the destination of the deadletter events.
+     * Set the resourceId property: The Azure Resource ID of the storage account that is the destination of the
+     * deadletter events.
      * 
      * @param resourceId the resourceId value to set.
      * @return the StorageBlobDeadLetterDestination object itself.
@@ -67,7 +86,8 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
     }
 
     /**
-     * Get the blobContainerName property: The name of the Storage blob container that is the destination of the deadletter events.
+     * Get the blobContainerName property: The name of the Storage blob container that is the destination of the
+     * deadletter events.
      * 
      * @return the blobContainerName value.
      */
@@ -76,7 +96,8 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
     }
 
     /**
-     * Set the blobContainerName property: The name of the Storage blob container that is the destination of the deadletter events.
+     * Set the blobContainerName property: The name of the Storage blob container that is the destination of the
+     * deadletter events.
      * 
      * @param blobContainerName the blobContainerName value to set.
      * @return the StorageBlobDeadLetterDestination object itself.

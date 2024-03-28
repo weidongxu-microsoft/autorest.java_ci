@@ -75,7 +75,10 @@ public final class VirtualMachineSizeInner {
     }
 
     /**
-     * Get the numberOfCores property: The number of cores supported by the virtual machine size. For Constrained vCPU capable VM sizes, this number represents the total vCPUs of quota that the VM uses. For accurate vCPU count, please refer to https://docs.microsoft.com/azure/virtual-machines/constrained-vcpu or https://docs.microsoft.com/rest/api/compute/resourceskus/list.
+     * Get the numberOfCores property: The number of cores supported by the virtual machine size. For Constrained vCPU
+     * capable VM sizes, this number represents the total vCPUs of quota that the VM uses. For accurate vCPU count,
+     * please refer to https://docs.microsoft.com/azure/virtual-machines/constrained-vcpu or
+     * https://docs.microsoft.com/rest/api/compute/resourceskus/list.
      * 
      * @return the numberOfCores value.
      */
@@ -84,7 +87,10 @@ public final class VirtualMachineSizeInner {
     }
 
     /**
-     * Set the numberOfCores property: The number of cores supported by the virtual machine size. For Constrained vCPU capable VM sizes, this number represents the total vCPUs of quota that the VM uses. For accurate vCPU count, please refer to https://docs.microsoft.com/azure/virtual-machines/constrained-vcpu or https://docs.microsoft.com/rest/api/compute/resourceskus/list.
+     * Set the numberOfCores property: The number of cores supported by the virtual machine size. For Constrained vCPU
+     * capable VM sizes, this number represents the total vCPUs of quota that the VM uses. For accurate vCPU count,
+     * please refer to https://docs.microsoft.com/azure/virtual-machines/constrained-vcpu or
+     * https://docs.microsoft.com/rest/api/compute/resourceskus/list.
      * 
      * @param numberOfCores the numberOfCores value to set.
      * @return the VirtualMachineSizeInner object itself.
@@ -155,7 +161,8 @@ public final class VirtualMachineSizeInner {
     }
 
     /**
-     * Get the maxDataDiskCount property: The maximum number of data disks that can be attached to the virtual machine size.
+     * Get the maxDataDiskCount property: The maximum number of data disks that can be attached to the virtual machine
+     * size.
      * 
      * @return the maxDataDiskCount value.
      */
@@ -164,7 +171,8 @@ public final class VirtualMachineSizeInner {
     }
 
     /**
-     * Set the maxDataDiskCount property: The maximum number of data disks that can be attached to the virtual machine size.
+     * Set the maxDataDiskCount property: The maximum number of data disks that can be attached to the virtual machine
+     * size.
      * 
      * @param maxDataDiskCount the maxDataDiskCount value to set.
      * @return the VirtualMachineSizeInner object itself.

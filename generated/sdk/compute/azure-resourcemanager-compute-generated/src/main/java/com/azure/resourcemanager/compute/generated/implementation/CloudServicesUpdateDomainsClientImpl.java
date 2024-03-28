@@ -63,7 +63,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCloudServicesUpdateDomains to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCloudServicesUpdateDomains to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -112,7 +113,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -155,7 +157,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -197,7 +200,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -218,7 +222,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -239,7 +244,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -262,7 +268,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -281,7 +288,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -301,7 +309,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -320,7 +329,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -338,7 +348,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -358,7 +369,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -374,7 +386,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param parameters The update domain object.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -388,15 +401,18 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     }
 
     /**
-     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page of update domains. Do this till nextLink is null to fetch all the update domains.
+     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
+     * of update domains. Do this till nextLink is null to fetch all the update domains.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified update domain of a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified update domain of a cloud service along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UpdateDomainInner>> getUpdateDomainWithResponseAsync(String resourceGroupName,
@@ -426,16 +442,19 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     }
 
     /**
-     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page of update domains. Do this till nextLink is null to fetch all the update domains.
+     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
+     * of update domains. Do this till nextLink is null to fetch all the update domains.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified update domain of a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified update domain of a cloud service along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UpdateDomainInner>> getUpdateDomainWithResponseAsync(String resourceGroupName,
@@ -464,11 +483,13 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     }
 
     /**
-     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page of update domains. Do this till nextLink is null to fetch all the update domains.
+     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
+     * of update domains. Do this till nextLink is null to fetch all the update domains.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -482,11 +503,13 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     }
 
     /**
-     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page of update domains. Do this till nextLink is null to fetch all the update domains.
+     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
+     * of update domains. Do this till nextLink is null to fetch all the update domains.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -500,11 +523,13 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
     }
 
     /**
-     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page of update domains. Do this till nextLink is null to fetch all the update domains.
+     * Gets the specified update domain of a cloud service. Use nextLink property in the response to get the next page
+     * of update domains. Do this till nextLink is null to fetch all the update domains.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
-     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
+     * @param updateDomain Specifies an integer value that identifies the update domain. Update domains are identified
+     * with a zero-based index: the first update domain has an ID of 0, the second has an ID of 1, and so on.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -523,7 +548,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all update domains in a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all update domains in a cloud service along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UpdateDomainInner>> listUpdateDomainsSinglePageAsync(String resourceGroupName,
@@ -563,7 +589,8 @@ public final class CloudServicesUpdateDomainsClientImpl implements CloudServices
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all update domains in a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all update domains in a cloud service along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UpdateDomainInner>> listUpdateDomainsSinglePageAsync(String resourceGroupName,

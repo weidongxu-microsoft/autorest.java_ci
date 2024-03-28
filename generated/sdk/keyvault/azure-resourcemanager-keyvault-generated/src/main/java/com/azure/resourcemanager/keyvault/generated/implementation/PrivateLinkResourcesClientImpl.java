@@ -51,7 +51,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientPrivateLinkResources to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientPrivateLinkResources to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -74,7 +75,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the key vault along with {@link Response} on successful completion of {@link Mono}.
+     * @return the private link resources supported for the key vault along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>> listByVaultWithResponseAsync(String resourceGroupName,
@@ -110,7 +112,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources supported for the key vault along with {@link Response} on successful completion of {@link Mono}.
+     * @return the private link resources supported for the key vault along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>> listByVaultWithResponseAsync(String resourceGroupName,

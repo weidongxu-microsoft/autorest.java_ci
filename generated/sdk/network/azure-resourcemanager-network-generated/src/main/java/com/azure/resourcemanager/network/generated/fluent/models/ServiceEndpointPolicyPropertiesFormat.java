@@ -57,7 +57,8 @@ public final class ServiceEndpointPolicyPropertiesFormat {
     }
 
     /**
-     * Get the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the service endpoint policy.
+     * Get the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the
+     * service endpoint policy.
      * 
      * @return the serviceEndpointPolicyDefinitions value.
      */
@@ -66,7 +67,8 @@ public final class ServiceEndpointPolicyPropertiesFormat {
     }
 
     /**
-     * Set the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the service endpoint policy.
+     * Set the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the
+     * service endpoint policy.
      * 
      * @param serviceEndpointPolicyDefinitions the serviceEndpointPolicyDefinitions value to set.
      * @return the ServiceEndpointPolicyPropertiesFormat object itself.

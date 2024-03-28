@@ -26,7 +26,9 @@ public final class VirtualMachineScaleSetReimageParameters extends VirtualMachin
     }
 
     /**
-     * Get the instanceIds property: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+     * Get the instanceIds property: The virtual machine scale set instance ids. Omitting the virtual machine scale set
+     * instance ids will result in the operation being performed on all virtual machines in the virtual machine scale
+     * set.
      * 
      * @return the instanceIds value.
      */
@@ -35,7 +37,9 @@ public final class VirtualMachineScaleSetReimageParameters extends VirtualMachin
     }
 
     /**
-     * Set the instanceIds property: The virtual machine scale set instance ids. Omitting the virtual machine scale set instance ids will result in the operation being performed on all virtual machines in the virtual machine scale set.
+     * Set the instanceIds property: The virtual machine scale set instance ids. Omitting the virtual machine scale set
+     * instance ids will result in the operation being performed on all virtual machines in the virtual machine scale
+     * set.
      * 
      * @param instanceIds the instanceIds value to set.
      * @return the VirtualMachineScaleSetReimageParameters object itself.

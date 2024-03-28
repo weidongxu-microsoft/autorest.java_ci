@@ -11,14 +11,16 @@ import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegene
  */
 public interface LocalUserRegeneratePasswordResult {
     /**
-     * Gets the sshPassword property: Auto generated password by the server for SSH authentication if hasSshPassword is set to true on the creation of local user.
+     * Gets the sshPassword property: Auto generated password by the server for SSH authentication if hasSshPassword is
+     * set to true on the creation of local user.
      * 
      * @return the sshPassword value.
      */
     String sshPassword();
 
     /**
-     * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner object.
+     * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner
+     * object.
      * 
      * @return the inner object.
      */

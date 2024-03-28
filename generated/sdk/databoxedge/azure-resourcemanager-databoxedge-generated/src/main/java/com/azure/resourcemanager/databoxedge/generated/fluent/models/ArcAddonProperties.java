@@ -193,20 +193,24 @@ public final class ArcAddonProperties {
      */
     public void validate() {
         if (subscriptionId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property subscriptionId in model ArcAddonProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property subscriptionId in model ArcAddonProperties"));
         }
         if (resourceGroupName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property resourceGroupName in model ArcAddonProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property resourceGroupName in model ArcAddonProperties"));
         }
         if (resourceName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceName in model ArcAddonProperties"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property resourceName in model ArcAddonProperties"));
         }
         if (resourceLocation() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceLocation in model ArcAddonProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property resourceLocation in model ArcAddonProperties"));
         }
     }
 

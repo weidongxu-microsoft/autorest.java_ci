@@ -39,7 +39,8 @@ public interface StorageMigrationResponse {
     String kind();
 
     /**
-     * Gets the operationId property: When server starts the migration process, it will return an operation ID identifying that particular migration operation.
+     * Gets the operationId property: When server starts the migration process, it will return an operation ID
+     * identifying that particular migration operation.
      * 
      * @return the operationId value.
      */

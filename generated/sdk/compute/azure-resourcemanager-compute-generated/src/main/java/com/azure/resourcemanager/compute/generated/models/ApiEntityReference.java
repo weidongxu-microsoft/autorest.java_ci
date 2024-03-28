@@ -25,7 +25,8 @@ public final class ApiEntityReference {
     }
 
     /**
-     * Get the id property: The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
+     * Get the id property: The ARM resource id in the form of
+     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
      * 
      * @return the id value.
      */
@@ -34,7 +35,8 @@ public final class ApiEntityReference {
     }
 
     /**
-     * Set the id property: The ARM resource id in the form of /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
+     * Set the id property: The ARM resource id in the form of
+     * /subscriptions/{SubscriptionId}/resourceGroups/{ResourceGroupName}/...
      * 
      * @param id the id value to set.
      * @return the ApiEntityReference object itself.

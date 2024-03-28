@@ -25,7 +25,8 @@ public final class NetworkManagementClientBuilder {
     private String subscriptionId;
 
     /**
-     * Sets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Sets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID
+     * forms part of the URI for every service call.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the NetworkManagementClientBuilder.

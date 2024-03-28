@@ -114,7 +114,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the backendIpConfiguration property: A reference to a private IP address defined on a network interface of a VM. Traffic sent to the frontend port of each of the frontend IP configurations is forwarded to the backend IP.
+     * Get the backendIpConfiguration property: A reference to a private IP address defined on a network interface of a
+     * VM. Traffic sent to the frontend port of each of the frontend IP configurations is forwarded to the backend IP.
      * 
      * @return the backendIpConfiguration value.
      */
@@ -143,7 +144,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
+     * Get the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique
+     * within the Load Balancer. Acceptable values range from 1 to 65534.
      * 
      * @return the frontendPort value.
      */
@@ -152,7 +154,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Set the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique within the Load Balancer. Acceptable values range from 1 to 65534.
+     * Set the frontendPort property: The port for the external endpoint. Port numbers for each rule must be unique
+     * within the Load Balancer. Acceptable values range from 1 to 65534.
      * 
      * @param frontendPort the frontendPort value to set.
      * @return the InboundNatRulePropertiesFormatInner object itself.
@@ -183,7 +186,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+     * Get the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4
+     * and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      * 
      * @return the idleTimeoutInMinutes value.
      */
@@ -192,7 +196,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Set the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4 and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
+     * Set the idleTimeoutInMinutes property: The timeout for the TCP idle connection. The value can be set between 4
+     * and 30 minutes. The default value is 4 minutes. This element is only used when the protocol is set to TCP.
      * 
      * @param idleTimeoutInMinutes the idleTimeoutInMinutes value to set.
      * @return the InboundNatRulePropertiesFormatInner object itself.
@@ -203,7 +208,9 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+     * Get the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability
+     * required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
+     * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      * 
      * @return the enableFloatingIp value.
      */
@@ -212,7 +219,9 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Set the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
+     * Set the enableFloatingIp property: Configures a virtual machine's endpoint for the floating IP capability
+     * required to configure a SQL AlwaysOn Availability Group. This setting is required when using the SQL AlwaysOn
+     * Availability Groups in SQL server. This setting can't be changed after you create the endpoint.
      * 
      * @param enableFloatingIp the enableFloatingIp value to set.
      * @return the InboundNatRulePropertiesFormatInner object itself.
@@ -223,7 +232,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
+     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
+     * connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */
@@ -232,7 +242,8 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
+     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
+     * connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @param enableTcpReset the enableTcpReset value to set.
      * @return the InboundNatRulePropertiesFormatInner object itself.
@@ -243,7 +254,9 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the frontendPortRangeStart property: The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+     * Get the frontendPortRangeStart property: The port range start for the external endpoint. This property is used
+     * together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be
+     * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
      * 
      * @return the frontendPortRangeStart value.
      */
@@ -252,7 +265,9 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Set the frontendPortRangeStart property: The port range start for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+     * Set the frontendPortRangeStart property: The port range start for the external endpoint. This property is used
+     * together with BackendAddressPool and FrontendPortRangeEnd. Individual inbound NAT rule port mappings will be
+     * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
      * 
      * @param frontendPortRangeStart the frontendPortRangeStart value to set.
      * @return the InboundNatRulePropertiesFormatInner object itself.
@@ -263,7 +278,9 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Get the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+     * Get the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used
+     * together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be
+     * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
      * 
      * @return the frontendPortRangeEnd value.
      */
@@ -272,7 +289,9 @@ public final class InboundNatRulePropertiesFormatInner {
     }
 
     /**
-     * Set the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
+     * Set the frontendPortRangeEnd property: The port range end for the external endpoint. This property is used
+     * together with BackendAddressPool and FrontendPortRangeStart. Individual inbound NAT rule port mappings will be
+     * created for each backend address from BackendAddressPool. Acceptable values range from 1 to 65534.
      * 
      * @param frontendPortRangeEnd the frontendPortRangeEnd value to set.
      * @return the InboundNatRulePropertiesFormatInner object itself.

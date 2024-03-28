@@ -66,7 +66,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientApplicationSecurityGroups to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientApplicationSecurityGroups to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -363,7 +364,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about the specified application security group along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationSecurityGroupInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -401,7 +403,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified application security group along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about the specified application security group along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationSecurityGroupInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -488,7 +491,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an application security group in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return an application security group in a resource group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -532,7 +536,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an application security group in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return an application security group in a resource group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -730,7 +735,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an application security group in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return an application security group in a resource group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationSecurityGroupInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -774,7 +780,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an application security group in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return an application security group in a resource group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationSecurityGroupInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -867,7 +874,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all application security groups in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all application security groups in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>> listSinglePageAsync() {
@@ -896,7 +904,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all application security groups in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all application security groups in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>> listSinglePageAsync(Context context) {
@@ -976,7 +985,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the application security groups in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the application security groups in a resource group along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>>
@@ -1011,7 +1021,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the application security groups in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the application security groups in a resource group along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>>
@@ -1108,7 +1119,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of application security groups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of application security groups along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1137,7 +1149,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of application security groups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of application security groups along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>> listAllNextSinglePageAsync(String nextLink,
@@ -1165,7 +1178,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of application security groups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of application security groups along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>> listNextSinglePageAsync(String nextLink) {
@@ -1193,7 +1207,8 @@ public final class ApplicationSecurityGroupsClientImpl implements ApplicationSec
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of application security groups along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of application security groups along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationSecurityGroupInner>> listNextSinglePageAsync(String nextLink,

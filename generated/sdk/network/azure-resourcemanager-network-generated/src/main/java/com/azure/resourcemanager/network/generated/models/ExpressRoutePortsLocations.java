@@ -13,7 +13,8 @@ import com.azure.core.util.Context;
  */
 public interface ExpressRoutePortsLocations {
     /**
-     * Retrieves all ExpressRoutePort peering locations. Does not return available bandwidths for each location. Available bandwidths can only be obtained when retrieving a specific peering location.
+     * Retrieves all ExpressRoutePort peering locations. Does not return available bandwidths for each location.
+     * Available bandwidths can only be obtained when retrieving a specific peering location.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -22,7 +23,8 @@ public interface ExpressRoutePortsLocations {
     PagedIterable<ExpressRoutePortsLocation> list();
 
     /**
-     * Retrieves all ExpressRoutePort peering locations. Does not return available bandwidths for each location. Available bandwidths can only be obtained when retrieving a specific peering location.
+     * Retrieves all ExpressRoutePort peering locations. Does not return available bandwidths for each location.
+     * Available bandwidths can only be obtained when retrieving a specific peering location.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -33,7 +35,8 @@ public interface ExpressRoutePortsLocations {
     PagedIterable<ExpressRoutePortsLocation> list(Context context);
 
     /**
-     * Retrieves a single ExpressRoutePort peering location, including the list of available bandwidths available at said peering location.
+     * Retrieves a single ExpressRoutePort peering location, including the list of available bandwidths available at
+     * said peering location.
      * 
      * @param locationName Name of the requested ExpressRoutePort peering location.
      * @param context The context to associate with this operation.
@@ -45,7 +48,8 @@ public interface ExpressRoutePortsLocations {
     Response<ExpressRoutePortsLocation> getWithResponse(String locationName, Context context);
 
     /**
-     * Retrieves a single ExpressRoutePort peering location, including the list of available bandwidths available at said peering location.
+     * Retrieves a single ExpressRoutePort peering location, including the list of available bandwidths available at
+     * said peering location.
      * 
      * @param locationName Name of the requested ExpressRoutePort peering location.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

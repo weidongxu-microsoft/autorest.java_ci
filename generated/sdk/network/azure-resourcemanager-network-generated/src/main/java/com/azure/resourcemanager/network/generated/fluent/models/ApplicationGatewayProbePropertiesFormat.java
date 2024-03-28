@@ -134,7 +134,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
+     * Get the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to
+     * &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
      * 
      * @return the path value.
      */
@@ -143,7 +144,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
+     * Set the path property: Relative path of probe. Valid path starts from '/'. Probe is sent to
+     * &lt;Protocol&gt;://&lt;host&gt;:&lt;port&gt;&lt;path&gt;.
      * 
      * @param path the path value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.
@@ -154,7 +156,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the interval property: The probing interval in seconds. This is the time interval between two consecutive probes. Acceptable values are from 1 second to 86400 seconds.
+     * Get the interval property: The probing interval in seconds. This is the time interval between two consecutive
+     * probes. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @return the interval value.
      */
@@ -163,7 +166,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the interval property: The probing interval in seconds. This is the time interval between two consecutive probes. Acceptable values are from 1 second to 86400 seconds.
+     * Set the interval property: The probing interval in seconds. This is the time interval between two consecutive
+     * probes. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @param interval the interval value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.
@@ -174,7 +178,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values are from 1 second to 86400 seconds.
+     * Get the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received
+     * with this timeout period. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @return the timeout value.
      */
@@ -183,7 +188,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received with this timeout period. Acceptable values are from 1 second to 86400 seconds.
+     * Set the timeout property: The probe timeout in seconds. Probe marked as failed if valid response is not received
+     * with this timeout period. Acceptable values are from 1 second to 86400 seconds.
      * 
      * @param timeout the timeout value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.
@@ -194,7 +200,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive probe failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
+     * Get the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive probe
+     * failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
      * 
      * @return the unhealthyThreshold value.
      */
@@ -203,7 +210,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive probe failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
+     * Set the unhealthyThreshold property: The probe retry count. Backend server is marked down after consecutive probe
+     * failure count reaches UnhealthyThreshold. Acceptable values are from 1 second to 20.
      * 
      * @param unhealthyThreshold the unhealthyThreshold value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.
@@ -214,7 +222,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend http settings. Default value is false.
+     * Get the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend
+     * http settings. Default value is false.
      * 
      * @return the pickHostnameFromBackendHttpSettings value.
      */
@@ -223,7 +232,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend http settings. Default value is false.
+     * Set the pickHostnameFromBackendHttpSettings property: Whether the host header should be picked from the backend
+     * http settings. Default value is false.
      * 
      * @param pickHostnameFromBackendHttpSettings the pickHostnameFromBackendHttpSettings value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.
@@ -235,7 +245,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the pickHostnameFromBackendSettings property: Whether the server name indication should be picked from the backend settings for Tls protocol. Default value is false.
+     * Get the pickHostnameFromBackendSettings property: Whether the server name indication should be picked from the
+     * backend settings for Tls protocol. Default value is false.
      * 
      * @return the pickHostnameFromBackendSettings value.
      */
@@ -244,7 +255,8 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the pickHostnameFromBackendSettings property: Whether the server name indication should be picked from the backend settings for Tls protocol. Default value is false.
+     * Set the pickHostnameFromBackendSettings property: Whether the server name indication should be picked from the
+     * backend settings for Tls protocol. Default value is false.
      * 
      * @param pickHostnameFromBackendSettings the pickHostnameFromBackendSettings value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.
@@ -305,7 +317,9 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Get the port property: Custom port which will be used for probing the backend servers. The valid value ranges from 1 to 65535. In case not set, port from http settings will be used. This property is valid for Basic, Standard_v2 and WAF_v2 only.
+     * Get the port property: Custom port which will be used for probing the backend servers. The valid value ranges
+     * from 1 to 65535. In case not set, port from http settings will be used. This property is valid for Basic,
+     * Standard_v2 and WAF_v2 only.
      * 
      * @return the port value.
      */
@@ -314,7 +328,9 @@ public final class ApplicationGatewayProbePropertiesFormat {
     }
 
     /**
-     * Set the port property: Custom port which will be used for probing the backend servers. The valid value ranges from 1 to 65535. In case not set, port from http settings will be used. This property is valid for Basic, Standard_v2 and WAF_v2 only.
+     * Set the port property: Custom port which will be used for probing the backend servers. The valid value ranges
+     * from 1 to 65535. In case not set, port from http settings will be used. This property is valid for Basic,
+     * Standard_v2 and WAF_v2 only.
      * 
      * @param port the port value to set.
      * @return the ApplicationGatewayProbePropertiesFormat object itself.

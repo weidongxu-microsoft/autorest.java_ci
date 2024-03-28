@@ -64,7 +64,8 @@ public final class ManagementPolicyRule {
     }
 
     /**
-     * Get the name property: A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
+     * Get the name property: A rule name can contain any combination of alpha numeric characters. Rule name is
+     * case-sensitive. It must be unique within a policy.
      * 
      * @return the name value.
      */
@@ -73,7 +74,8 @@ public final class ManagementPolicyRule {
     }
 
     /**
-     * Set the name property: A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
+     * Set the name property: A rule name can contain any combination of alpha numeric characters. Rule name is
+     * case-sensitive. It must be unique within a policy.
      * 
      * @param name the name value to set.
      * @return the ManagementPolicyRule object itself.
@@ -130,16 +132,17 @@ public final class ManagementPolicyRule {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model ManagementPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model ManagementPolicyRule"));
         }
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model ManagementPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model ManagementPolicyRule"));
         }
         if (definition() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property definition in model ManagementPolicyRule"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property definition in model ManagementPolicyRule"));
         } else {
             definition().validate();
         }

@@ -7,12 +7,14 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
 
 /**
- * Specifies the action to post to service when the rule condition is evaluated. The discriminator is always RuleWebhookAction in this case.
+ * Specifies the action to post to service when the rule condition is evaluated. The discriminator is always
+ * RuleWebhookAction in this case.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -22,6 +24,13 @@ import java.util.Map;
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.RuleWebhookAction")
 @Fluent
 public final class RuleWebhookAction extends RuleAction {
+    /*
+     * specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleWebhookAction";
+
     /*
      * the service uri to Post the notification when the alert activates or resolves.
      */
@@ -39,7 +48,17 @@ public final class RuleWebhookAction extends RuleAction {
      * Creates an instance of RuleWebhookAction class.
      */
     public RuleWebhookAction() {
-        withOdataType("Microsoft.Azure.Management.Insights.Models.RuleWebhookAction");
+    }
+
+    /**
+     * Get the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and
+     * RuleWebhookAction.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -63,7 +82,8 @@ public final class RuleWebhookAction extends RuleAction {
     }
 
     /**
-     * Get the properties property: the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
+     * Get the properties property: the dictionary of custom properties to include with the post operation. These data
+     * are appended to the webhook payload.
      * 
      * @return the properties value.
      */
@@ -72,7 +92,8 @@ public final class RuleWebhookAction extends RuleAction {
     }
 
     /**
-     * Set the properties property: the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
+     * Set the properties property: the dictionary of custom properties to include with the post operation. These data
+     * are appended to the webhook payload.
      * 
      * @param properties the properties value to set.
      * @return the RuleWebhookAction object itself.

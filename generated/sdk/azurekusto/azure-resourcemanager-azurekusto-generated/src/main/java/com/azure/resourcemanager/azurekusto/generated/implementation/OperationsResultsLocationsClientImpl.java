@@ -49,7 +49,8 @@ public final class OperationsResultsLocationsClientImpl implements OperationsRes
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientOperationsResultsLocations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientOperationsResultsLocations to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")

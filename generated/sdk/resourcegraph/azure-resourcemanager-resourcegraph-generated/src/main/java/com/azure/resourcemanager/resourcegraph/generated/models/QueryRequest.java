@@ -71,7 +71,8 @@ public final class QueryRequest {
     }
 
     /**
-     * Get the managementGroups property: Azure management groups against which to execute the query. Example: [ 'mg1', 'mg2' ].
+     * Get the managementGroups property: Azure management groups against which to execute the query. Example: [ 'mg1',
+     * 'mg2' ].
      * 
      * @return the managementGroups value.
      */
@@ -80,7 +81,8 @@ public final class QueryRequest {
     }
 
     /**
-     * Set the managementGroups property: Azure management groups against which to execute the query. Example: [ 'mg1', 'mg2' ].
+     * Set the managementGroups property: Azure management groups against which to execute the query. Example: [ 'mg1',
+     * 'mg2' ].
      * 
      * @param managementGroups the managementGroups value to set.
      * @return the QueryRequest object itself.
@@ -157,8 +159,8 @@ public final class QueryRequest {
      */
     public void validate() {
         if (query() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property query in model QueryRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property query in model QueryRequest"));
         }
         if (options() != null) {
             options().validate();

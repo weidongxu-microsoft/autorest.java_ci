@@ -52,8 +52,8 @@ public final class DataContainer {
      */
     public void validate() {
         if (workspace() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property workspace in model DataContainer"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property workspace in model DataContainer"));
         } else {
             workspace().validate();
         }

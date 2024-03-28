@@ -235,7 +235,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the lastCompletedScanJobDateTime property: The time when the last scan job was completed (success/cancelled/failed) on the appliance.
+     * Get the lastCompletedScanJobDateTime property: The time when the last scan job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @return the lastCompletedScanJobDateTime value.
      */
@@ -244,7 +245,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Set the lastCompletedScanJobDateTime property: The time when the last scan job was completed (success/cancelled/failed) on the appliance.
+     * Set the lastCompletedScanJobDateTime property: The time when the last scan job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @param lastCompletedScanJobDateTime the lastCompletedScanJobDateTime value to set.
      * @return the UpdateSummaryProperties object itself.
@@ -275,7 +277,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the lastCompletedDownloadJobDateTime property: The time when the last Download job was completed (success/cancelled/failed) on the appliance.
+     * Get the lastCompletedDownloadJobDateTime property: The time when the last Download job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @return the lastCompletedDownloadJobDateTime value.
      */
@@ -284,7 +287,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the lastCompletedDownloadJobId property: JobId of the last ran download job.(Can be success/cancelled/failed).
+     * Get the lastCompletedDownloadJobId property: JobId of the last ran download job.(Can be
+     * success/cancelled/failed).
      * 
      * @return the lastCompletedDownloadJobId value.
      */
@@ -302,7 +306,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully on the appliance.
+     * Get the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully
+     * on the appliance.
      * 
      * @return the lastSuccessfulInstallJobDateTime value.
      */
@@ -311,7 +316,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Set the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully on the appliance.
+     * Set the lastSuccessfulInstallJobDateTime property: The time when the Last Install job was completed successfully
+     * on the appliance.
      * 
      * @param lastSuccessfulInstallJobDateTime the lastSuccessfulInstallJobDateTime value to set.
      * @return the UpdateSummaryProperties object itself.
@@ -323,7 +329,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the lastCompletedInstallJobDateTime property: The time when the last Install job was completed (success/cancelled/failed) on the appliance.
+     * Get the lastCompletedInstallJobDateTime property: The time when the last Install job was completed
+     * (success/cancelled/failed) on the appliance.
      * 
      * @return the lastCompletedInstallJobDateTime value.
      */
@@ -350,7 +357,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version as per the last device scan.
+     * Get the totalNumberOfUpdatesAvailable property: The number of updates available for the current device version as
+     * per the last device scan.
      * 
      * @return the totalNumberOfUpdatesAvailable value.
      */
@@ -377,7 +385,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a reboot.
+     * Get the rebootBehavior property: Indicates if updates are available and at least one of the updates needs a
+     * reboot.
      * 
      * @return the rebootBehavior value.
      */
@@ -413,7 +422,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the inProgressDownloadJobStartedDateTime property: The time when the currently running download (if any) started.
+     * Get the inProgressDownloadJobStartedDateTime property: The time when the currently running download (if any)
+     * started.
      * 
      * @return the inProgressDownloadJobStartedDateTime value.
      */
@@ -422,7 +432,8 @@ public final class UpdateSummaryProperties {
     }
 
     /**
-     * Get the inProgressInstallJobStartedDateTime property: The time when the currently running install (if any) started.
+     * Get the inProgressInstallJobStartedDateTime property: The time when the currently running install (if any)
+     * started.
      * 
      * @return the inProgressInstallJobStartedDateTime value.
      */

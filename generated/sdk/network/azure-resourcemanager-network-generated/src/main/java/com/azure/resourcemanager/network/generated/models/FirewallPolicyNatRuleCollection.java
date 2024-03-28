@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -22,6 +23,14 @@ import java.util.List;
 @Fluent
 public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCollection {
     /*
+     * The type of the rule collection.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "ruleCollectionType", required = true)
+    private FirewallPolicyRuleCollectionType ruleCollectionType
+        = FirewallPolicyRuleCollectionType.FIREWALL_POLICY_NAT_RULE_COLLECTION;
+
+    /*
      * The action type of a Nat rule collection.
      */
     @JsonProperty(value = "action")
@@ -37,7 +46,16 @@ public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCol
      * Creates an instance of FirewallPolicyNatRuleCollection class.
      */
     public FirewallPolicyNatRuleCollection() {
-        withRuleCollectionType(FirewallPolicyRuleCollectionType.FIREWALL_POLICY_NAT_RULE_COLLECTION);
+    }
+
+    /**
+     * Get the ruleCollectionType property: The type of the rule collection.
+     * 
+     * @return the ruleCollectionType value.
+     */
+    @Override
+    public FirewallPolicyRuleCollectionType ruleCollectionType() {
+        return this.ruleCollectionType;
     }
 
     /**

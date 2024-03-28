@@ -52,7 +52,8 @@ public final class AttachedDatabaseConfigurationsCheckNameRequest {
     }
 
     /**
-     * Get the type property: The type of resource, for instance Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
+     * Get the type property: The type of resource, for instance
+     * Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
      * 
      * @return the type value.
      */
@@ -61,7 +62,8 @@ public final class AttachedDatabaseConfigurationsCheckNameRequest {
     }
 
     /**
-     * Set the type property: The type of resource, for instance Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
+     * Set the type property: The type of resource, for instance
+     * Microsoft.Kusto/clusters/attachedDatabaseConfigurations.
      * 
      * @param type the type value to set.
      * @return the AttachedDatabaseConfigurationsCheckNameRequest object itself.
@@ -78,8 +80,9 @@ public final class AttachedDatabaseConfigurationsCheckNameRequest {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model AttachedDatabaseConfigurationsCheckNameRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model AttachedDatabaseConfigurationsCheckNameRequest"));
         }
     }
 

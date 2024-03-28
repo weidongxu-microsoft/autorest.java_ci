@@ -23,33 +23,33 @@ import reactor.core.publisher.Mono;
  */
 public interface ServerKeysClient {
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedFlux}.
+     * @return a list of Server keys as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedFlux<ServerKeyInner> listAsync(String resourceGroupName, String serverName);
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedIterable}.
+     * @return a list of Server keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ServerKeyInner> list(String resourceGroupName, String serverName);
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -57,7 +57,7 @@ public interface ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedIterable}.
+     * @return a list of Server keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ServerKeyInner> list(String resourceGroupName, String serverName, Context context);

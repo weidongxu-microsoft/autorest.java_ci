@@ -104,16 +104,19 @@ public final class FilterTrackPropertyCondition {
      */
     public void validate() {
         if (property() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property property in model FilterTrackPropertyCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property property in model FilterTrackPropertyCondition"));
         }
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model FilterTrackPropertyCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model FilterTrackPropertyCondition"));
         }
         if (operation() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property operation in model FilterTrackPropertyCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property operation in model FilterTrackPropertyCondition"));
         }
     }
 

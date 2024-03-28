@@ -54,7 +54,8 @@ public final class CapacityReservationGroupListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of capacity reservation groups. Call ListNext() with this URI to fetch the next page of capacity reservation groups.
+     * Get the nextLink property: The URI to fetch the next page of capacity reservation groups. Call ListNext() with
+     * this URI to fetch the next page of capacity reservation groups.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class CapacityReservationGroupListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of capacity reservation groups. Call ListNext() with this URI to fetch the next page of capacity reservation groups.
+     * Set the nextLink property: The URI to fetch the next page of capacity reservation groups. Call ListNext() with
+     * this URI to fetch the next page of capacity reservation groups.
      * 
      * @param nextLink the nextLink value to set.
      * @return the CapacityReservationGroupListResult object itself.
@@ -80,8 +82,9 @@ public final class CapacityReservationGroupListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model CapacityReservationGroupListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model CapacityReservationGroupListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

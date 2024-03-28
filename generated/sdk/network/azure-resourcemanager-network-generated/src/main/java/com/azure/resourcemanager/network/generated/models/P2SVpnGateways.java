@@ -184,7 +184,8 @@ public interface P2SVpnGateways {
     P2SVpnGateway getP2SVpnConnectionHealth(String resourceGroupName, String gatewayName, Context context);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -192,13 +193,15 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      */
     P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(String resourceGroupName, String gatewayName,
         P2SVpnConnectionHealthRequest request);
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -207,7 +210,8 @@ public interface P2SVpnGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      */
     P2SVpnConnectionHealth getP2SVpnConnectionHealthDetailed(String resourceGroupName, String gatewayName,
         P2SVpnConnectionHealthRequest request, Context context);

@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -22,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration")
 @Fluent
 public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolicyConfiguration {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration";
+
     /*
      * The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
      */
@@ -62,11 +70,21 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyFairPlayConfiguration class.
      */
     public ContentKeyPolicyFairPlayConfiguration() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration");
     }
 
     /**
-     * Get the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64
+     * encoded.
      * 
      * @return the ask value.
      */
@@ -75,7 +93,8 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     }
 
     /**
-     * Set the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
+     * Set the ask property: The key that must be used as FairPlay Application Secret key. This needs to be base64
+     * encoded.
      * 
      * @param ask the ask value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
@@ -106,7 +125,8 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     }
 
     /**
-     * Get the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format (including private key).
+     * Get the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format
+     * (including private key).
      * 
      * @return the fairPlayPfx value.
      */
@@ -115,7 +135,8 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     }
 
     /**
-     * Set the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format (including private key).
+     * Set the fairPlayPfx property: The Base64 representation of FairPlay certificate in PKCS 12 (pfx) format
+     * (including private key).
      * 
      * @param fairPlayPfx the fairPlayPfx value to set.
      * @return the ContentKeyPolicyFairPlayConfiguration object itself.
@@ -196,20 +217,24 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     public void validate() {
         super.validate();
         if (ask() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ask in model ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ask in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (fairPlayPfxPassword() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property fairPlayPfxPassword in model ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property fairPlayPfxPassword in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (fairPlayPfx() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property fairPlayPfx in model ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property fairPlayPfx in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (rentalAndLeaseKeyType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property rentalAndLeaseKeyType in model ContentKeyPolicyFairPlayConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property rentalAndLeaseKeyType in model ContentKeyPolicyFairPlayConfiguration"));
         }
         if (offlineRentalConfiguration() != null) {
             offlineRentalConfiguration().validate();

@@ -32,7 +32,9 @@ public final class ActivityLogAlertLeafCondition {
     }
 
     /**
-     * Get the field property: The name of the field that this condition will examine. The possible values for this field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup', 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
+     * Get the field property: The name of the field that this condition will examine. The possible values for this
+     * field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup',
+     * 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
      * 
      * @return the field value.
      */
@@ -41,7 +43,9 @@ public final class ActivityLogAlertLeafCondition {
     }
 
     /**
-     * Set the field property: The name of the field that this condition will examine. The possible values for this field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup', 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
+     * Set the field property: The name of the field that this condition will examine. The possible values for this
+     * field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup',
+     * 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
      * 
      * @param field the field value to set.
      * @return the ActivityLogAlertLeafCondition object itself.
@@ -52,7 +56,8 @@ public final class ActivityLogAlertLeafCondition {
     }
 
     /**
-     * Get the equals property: The field value will be compared to this value (case-insensitive) to determine if the condition is met.
+     * Get the equals property: The field value will be compared to this value (case-insensitive) to determine if the
+     * condition is met.
      * 
      * @return the equals value.
      */
@@ -61,7 +66,8 @@ public final class ActivityLogAlertLeafCondition {
     }
 
     /**
-     * Set the equals property: The field value will be compared to this value (case-insensitive) to determine if the condition is met.
+     * Set the equals property: The field value will be compared to this value (case-insensitive) to determine if the
+     * condition is met.
      * 
      * @param equals the equals value to set.
      * @return the ActivityLogAlertLeafCondition object itself.
@@ -78,12 +84,14 @@ public final class ActivityLogAlertLeafCondition {
      */
     public void validate() {
         if (field() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property field in model ActivityLogAlertLeafCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property field in model ActivityLogAlertLeafCondition"));
         }
         if (equals() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property equals in model ActivityLogAlertLeafCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property equals in model ActivityLogAlertLeafCondition"));
         }
     }
 

@@ -31,7 +31,8 @@ public final class GalleryArtifactVersionFullSource extends GalleryArtifactVersi
     }
 
     /**
-     * Get the communityGalleryImageId property: The resource Id of the source Community Gallery Image.  Only required when using Community Gallery Image as a source.
+     * Get the communityGalleryImageId property: The resource Id of the source Community Gallery Image. Only required
+     * when using Community Gallery Image as a source.
      * 
      * @return the communityGalleryImageId value.
      */
@@ -40,7 +41,8 @@ public final class GalleryArtifactVersionFullSource extends GalleryArtifactVersi
     }
 
     /**
-     * Set the communityGalleryImageId property: The resource Id of the source Community Gallery Image.  Only required when using Community Gallery Image as a source.
+     * Set the communityGalleryImageId property: The resource Id of the source Community Gallery Image. Only required
+     * when using Community Gallery Image as a source.
      * 
      * @param communityGalleryImageId the communityGalleryImageId value to set.
      * @return the GalleryArtifactVersionFullSource object itself.
@@ -51,7 +53,8 @@ public final class GalleryArtifactVersionFullSource extends GalleryArtifactVersi
     }
 
     /**
-     * Get the virtualMachineId property: The resource Id of the source virtual machine.  Only required when capturing a virtual machine to source this Gallery Image Version.
+     * Get the virtualMachineId property: The resource Id of the source virtual machine. Only required when capturing a
+     * virtual machine to source this Gallery Image Version.
      * 
      * @return the virtualMachineId value.
      */
@@ -60,7 +63,8 @@ public final class GalleryArtifactVersionFullSource extends GalleryArtifactVersi
     }
 
     /**
-     * Set the virtualMachineId property: The resource Id of the source virtual machine.  Only required when capturing a virtual machine to source this Gallery Image Version.
+     * Set the virtualMachineId property: The resource Id of the source virtual machine. Only required when capturing a
+     * virtual machine to source this Gallery Image Version.
      * 
      * @param virtualMachineId the virtualMachineId value to set.
      * @return the GalleryArtifactVersionFullSource object itself.

@@ -19,7 +19,8 @@ public interface PeerExpressRouteCircuitConnection {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -40,14 +41,16 @@ public interface PeerExpressRouteCircuitConnection {
     String type();
 
     /**
-     * Gets the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit.
+     * Gets the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
+     * circuit.
      * 
      * @return the expressRouteCircuitPeering value.
      */
     SubResource expressRouteCircuitPeering();
 
     /**
-     * Gets the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+     * Gets the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
+     * the peered circuit.
      * 
      * @return the peerExpressRouteCircuitPeering value.
      */
@@ -75,21 +78,24 @@ public interface PeerExpressRouteCircuitConnection {
     String connectionName();
 
     /**
-     * Gets the authResourceGuid property: The resource guid of the authorization used for the express route circuit connection.
+     * Gets the authResourceGuid property: The resource guid of the authorization used for the express route circuit
+     * connection.
      * 
      * @return the authResourceGuid value.
      */
     String authResourceGuid();
 
     /**
-     * Gets the provisioningState property: The provisioning state of the peer express route circuit connection resource.
+     * Gets the provisioningState property: The provisioning state of the peer express route circuit connection
+     * resource.
      * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PeerExpressRouteCircuitConnectionInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -32,7 +32,8 @@ public interface HighAvailabilityValidationEstimation {
     String expectedStandbyAvailabilityZone();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner object.
+     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner
+     * object.
      * 
      * @return the inner object.
      */

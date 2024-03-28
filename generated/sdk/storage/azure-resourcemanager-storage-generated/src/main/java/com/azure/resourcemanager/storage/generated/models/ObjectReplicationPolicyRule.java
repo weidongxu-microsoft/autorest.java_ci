@@ -44,7 +44,8 @@ public final class ObjectReplicationPolicyRule {
     }
 
     /**
-     * Get the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
+     * Get the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for
+     * put policy on source account.
      * 
      * @return the ruleId value.
      */
@@ -53,7 +54,8 @@ public final class ObjectReplicationPolicyRule {
     }
 
     /**
-     * Set the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for put policy on source account.
+     * Set the ruleId property: Rule Id is auto-generated for each new rule on destination account. It is required for
+     * put policy on source account.
      * 
      * @param ruleId the ruleId value to set.
      * @return the ObjectReplicationPolicyRule object itself.
@@ -130,12 +132,14 @@ public final class ObjectReplicationPolicyRule {
      */
     public void validate() {
         if (sourceContainer() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property sourceContainer in model ObjectReplicationPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sourceContainer in model ObjectReplicationPolicyRule"));
         }
         if (destinationContainer() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property destinationContainer in model ObjectReplicationPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property destinationContainer in model ObjectReplicationPolicyRule"));
         }
         if (filters() != null) {
             filters().validate();

@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Properties to configure retention settings for the  eventhub.
+ * Properties to configure retention settings for the eventhub.
  */
 @Fluent
 public final class RetentionDescription {
@@ -57,7 +57,9 @@ public final class RetentionDescription {
     }
 
     /**
-     * Get the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue.
+     * Get the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This value is
+     * only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is
+     * Long.MaxValue.
      * 
      * @return the retentionTimeInHours value.
      */
@@ -66,7 +68,9 @@ public final class RetentionDescription {
     }
 
     /**
-     * Set the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue.
+     * Set the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This value is
+     * only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is
+     * Long.MaxValue.
      * 
      * @param retentionTimeInHours the retentionTimeInHours value to set.
      * @return the RetentionDescription object itself.
@@ -77,7 +81,10 @@ public final class RetentionDescription {
     }
 
     /**
-     * Get the tombstoneRetentionTimeInHours property: Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
+     * Get the tombstoneRetentionTimeInHours property: Number of hours to retain the tombstone markers of a compacted
+     * Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone
+     * marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid
+     * snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
      * 
      * @return the tombstoneRetentionTimeInHours value.
      */
@@ -86,7 +93,10 @@ public final class RetentionDescription {
     }
 
     /**
-     * Set the tombstoneRetentionTimeInHours property: Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
+     * Set the tombstoneRetentionTimeInHours property: Number of hours to retain the tombstone markers of a compacted
+     * Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone
+     * marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid
+     * snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
      * 
      * @param tombstoneRetentionTimeInHours the tombstoneRetentionTimeInHours value to set.
      * @return the RetentionDescription object itself.

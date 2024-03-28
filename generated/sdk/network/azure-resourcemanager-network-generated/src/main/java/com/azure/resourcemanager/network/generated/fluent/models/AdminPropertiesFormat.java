@@ -232,7 +232,9 @@ public final class AdminPropertiesFormat {
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @return the priority value.
      */
@@ -241,7 +243,9 @@ public final class AdminPropertiesFormat {
     }
 
     /**
-     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @param priority the priority value to set.
      * @return the AdminPropertiesFormat object itself.
@@ -296,8 +300,8 @@ public final class AdminPropertiesFormat {
      */
     public void validate() {
         if (protocol() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property protocol in model AdminPropertiesFormat"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property protocol in model AdminPropertiesFormat"));
         }
         if (sources() != null) {
             sources().forEach(e -> e.validate());
@@ -306,12 +310,13 @@ public final class AdminPropertiesFormat {
             destinations().forEach(e -> e.validate());
         }
         if (access() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property access in model AdminPropertiesFormat"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property access in model AdminPropertiesFormat"));
         }
         if (direction() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property direction in model AdminPropertiesFormat"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property direction in model AdminPropertiesFormat"));
         }
     }
 

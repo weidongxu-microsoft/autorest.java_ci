@@ -57,17 +57,6 @@ public class EventSubscriptionDestination {
     }
 
     /**
-     * Set the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @param endpointType the endpointType value to set.
-     * @return the EventSubscriptionDestination object itself.
-     */
-    protected EventSubscriptionDestination withEndpointType(EndpointType endpointType) {
-        this.endpointType = endpointType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

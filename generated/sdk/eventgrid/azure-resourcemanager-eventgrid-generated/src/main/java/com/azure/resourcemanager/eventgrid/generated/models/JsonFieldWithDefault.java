@@ -34,7 +34,8 @@ public final class JsonFieldWithDefault {
     }
 
     /**
-     * Get the sourceField property: Name of a field in the input event schema that's to be used as the source of a mapping.
+     * Get the sourceField property: Name of a field in the input event schema that's to be used as the source of a
+     * mapping.
      * 
      * @return the sourceField value.
      */
@@ -43,7 +44,8 @@ public final class JsonFieldWithDefault {
     }
 
     /**
-     * Set the sourceField property: Name of a field in the input event schema that's to be used as the source of a mapping.
+     * Set the sourceField property: Name of a field in the input event schema that's to be used as the source of a
+     * mapping.
      * 
      * @param sourceField the sourceField value to set.
      * @return the JsonFieldWithDefault object itself.
@@ -54,7 +56,8 @@ public final class JsonFieldWithDefault {
     }
 
     /**
-     * Get the defaultValue property: The default value to be used for mapping when a SourceField is not provided or if there's no property with the specified name in the published JSON event payload.
+     * Get the defaultValue property: The default value to be used for mapping when a SourceField is not provided or if
+     * there's no property with the specified name in the published JSON event payload.
      * 
      * @return the defaultValue value.
      */
@@ -63,7 +66,8 @@ public final class JsonFieldWithDefault {
     }
 
     /**
-     * Set the defaultValue property: The default value to be used for mapping when a SourceField is not provided or if there's no property with the specified name in the published JSON event payload.
+     * Set the defaultValue property: The default value to be used for mapping when a SourceField is not provided or if
+     * there's no property with the specified name in the published JSON event payload.
      * 
      * @param defaultValue the defaultValue value to set.
      * @return the JsonFieldWithDefault object itself.

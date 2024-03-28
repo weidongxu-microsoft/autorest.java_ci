@@ -107,7 +107,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Get the config property: Configuration of this particular favorite, which are driven by the Azure portal UX. Configuration data is a string containing valid JSON.
+     * Get the config property: Configuration of this particular favorite, which are driven by the Azure portal UX.
+     * Configuration data is a string containing valid JSON.
      * 
      * @return the config value.
      */
@@ -116,7 +117,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Set the config property: Configuration of this particular favorite, which are driven by the Azure portal UX. Configuration data is a string containing valid JSON.
+     * Set the config property: Configuration of this particular favorite, which are driven by the Azure portal UX.
+     * Configuration data is a string containing valid JSON.
      * 
      * @param config the config value to set.
      * @return the ApplicationInsightsComponentFavoriteInner object itself.
@@ -127,7 +129,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Get the version property: This instance's version of the data model. This can change as new features are added that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
+     * Get the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
      * 
      * @return the version value.
      */
@@ -136,7 +139,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Set the version property: This instance's version of the data model. This can change as new features are added that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
+     * Set the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
      * 
      * @param version the version value to set.
      * @return the ApplicationInsightsComponentFavoriteInner object itself.
@@ -156,7 +160,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Get the favoriteType property: Enum indicating if this favorite definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Get the favoriteType property: Enum indicating if this favorite definition is owned by a specific user or is
+     * shared between all users with access to the Application Insights component.
      * 
      * @return the favoriteType value.
      */
@@ -165,7 +170,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Set the favoriteType property: Enum indicating if this favorite definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Set the favoriteType property: Enum indicating if this favorite definition is owned by a specific user or is
+     * shared between all users with access to the Application Insights component.
      * 
      * @param favoriteType the favoriteType value to set.
      * @return the ApplicationInsightsComponentFavoriteInner object itself.
@@ -196,7 +202,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Get the timeModified property: Date and time in UTC of the last modification that was made to this favorite definition.
+     * Get the timeModified property: Date and time in UTC of the last modification that was made to this favorite
+     * definition.
      * 
      * @return the timeModified value.
      */
@@ -245,7 +252,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Get the isGeneratedFromTemplate property: Flag denoting wether or not this favorite was generated from a template.
+     * Get the isGeneratedFromTemplate property: Flag denoting wether or not this favorite was generated from a
+     * template.
      * 
      * @return the isGeneratedFromTemplate value.
      */
@@ -254,7 +262,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     }
 
     /**
-     * Set the isGeneratedFromTemplate property: Flag denoting wether or not this favorite was generated from a template.
+     * Set the isGeneratedFromTemplate property: Flag denoting wether or not this favorite was generated from a
+     * template.
      * 
      * @param isGeneratedFromTemplate the isGeneratedFromTemplate value to set.
      * @return the ApplicationInsightsComponentFavoriteInner object itself.

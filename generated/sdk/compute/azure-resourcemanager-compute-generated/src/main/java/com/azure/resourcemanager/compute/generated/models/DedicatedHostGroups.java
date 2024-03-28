@@ -19,7 +19,8 @@ public interface DedicatedHostGroups {
      * @param hostGroupName The name of the dedicated host group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -31,7 +32,8 @@ public interface DedicatedHostGroups {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String hostGroupName);
@@ -41,12 +43,16 @@ public interface DedicatedHostGroups {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     * views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     * group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
+     * with {@link Response}.
      */
     Response<DedicatedHostGroup> getByResourceGroupWithResponse(String resourceGroupName, String hostGroupName,
         InstanceViewTypes expand, Context context);
@@ -57,52 +63,65 @@ public interface DedicatedHostGroups {
      * @param resourceGroupName The name of the resource group.
      * @param hostGroupName The name of the dedicated host group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to.
      */
     DedicatedHostGroup getByResourceGroup(String resourceGroupName, String hostGroupName);
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
+     * to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> listByResourceGroup(String resourceGroupName);
 
     /**
-     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the specified resource group. Use the nextLink property in the response
+     * to get the next page of dedicated host groups.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
+     * next page of dedicated host groups.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> list();
 
     /**
-     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the next page of dedicated host groups.
+     * Lists all of the dedicated host groups in the subscription. Use the nextLink property in the response to get the
+     * next page of dedicated host groups.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Dedicated Host Group with resource group response as paginated response with {@link PagedIterable}.
+     * @return the List Dedicated Host Group with resource group response as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<DedicatedHostGroup> list(Context context);
 
@@ -111,9 +130,11 @@ public interface DedicatedHostGroups {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
+     * with {@link Response}.
      */
     DedicatedHostGroup getById(String id);
 
@@ -121,12 +142,16 @@ public interface DedicatedHostGroups {
      * Retrieves information about a dedicated host group.
      * 
      * @param id the resource ID.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host group.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the list of instance
+     * views of the dedicated hosts under the dedicated host group. 'UserData' is not supported for dedicated host
+     * group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along with {@link Response}.
+     * @return specifies information about the dedicated host group that the dedicated hosts should be assigned to along
+     * with {@link Response}.
      */
     Response<DedicatedHostGroup> getByIdWithResponse(String id, InstanceViewTypes expand, Context context);
 
@@ -135,7 +160,8 @@ public interface DedicatedHostGroups {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
@@ -146,7 +172,8 @@ public interface DedicatedHostGroups {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */

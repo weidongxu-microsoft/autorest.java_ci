@@ -67,7 +67,8 @@ public interface StaticSiteUserArmResource {
     String roles();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserArmResourceInner
+     * object.
      * 
      * @return the inner object.
      */

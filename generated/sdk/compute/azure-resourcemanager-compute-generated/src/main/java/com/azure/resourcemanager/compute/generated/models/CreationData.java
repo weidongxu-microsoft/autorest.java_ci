@@ -118,7 +118,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the storageAccountId property: Required if createOption is Import. The Azure Resource Manager identifier of the storage account containing the blob to import as a disk.
+     * Get the storageAccountId property: Required if createOption is Import. The Azure Resource Manager identifier of
+     * the storage account containing the blob to import as a disk.
      * 
      * @return the storageAccountId value.
      */
@@ -127,7 +128,8 @@ public final class CreationData {
     }
 
     /**
-     * Set the storageAccountId property: Required if createOption is Import. The Azure Resource Manager identifier of the storage account containing the blob to import as a disk.
+     * Set the storageAccountId property: Required if createOption is Import. The Azure Resource Manager identifier of
+     * the storage account containing the blob to import as a disk.
      * 
      * @param storageAccountId the storageAccountId value to set.
      * @return the CreationData object itself.
@@ -158,7 +160,9 @@ public final class CreationData {
     }
 
     /**
-     * Get the galleryImageReference property: Required if creating from a Gallery Image. The id/sharedGalleryImageId/communityGalleryImageId of the ImageDiskReference will be the ARM id of the shared galley image version from which to create a disk.
+     * Get the galleryImageReference property: Required if creating from a Gallery Image. The
+     * id/sharedGalleryImageId/communityGalleryImageId of the ImageDiskReference will be the ARM id of the shared galley
+     * image version from which to create a disk.
      * 
      * @return the galleryImageReference value.
      */
@@ -167,7 +171,9 @@ public final class CreationData {
     }
 
     /**
-     * Set the galleryImageReference property: Required if creating from a Gallery Image. The id/sharedGalleryImageId/communityGalleryImageId of the ImageDiskReference will be the ARM id of the shared galley image version from which to create a disk.
+     * Set the galleryImageReference property: Required if creating from a Gallery Image. The
+     * id/sharedGalleryImageId/communityGalleryImageId of the ImageDiskReference will be the ARM id of the shared galley
+     * image version from which to create a disk.
      * 
      * @param galleryImageReference the galleryImageReference value to set.
      * @return the CreationData object itself.
@@ -178,7 +184,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the sourceUri property: If createOption is Import, this is the URI of a blob to be imported into a managed disk.
+     * Get the sourceUri property: If createOption is Import, this is the URI of a blob to be imported into a managed
+     * disk.
      * 
      * @return the sourceUri value.
      */
@@ -187,7 +194,8 @@ public final class CreationData {
     }
 
     /**
-     * Set the sourceUri property: If createOption is Import, this is the URI of a blob to be imported into a managed disk.
+     * Set the sourceUri property: If createOption is Import, this is the URI of a blob to be imported into a managed
+     * disk.
      * 
      * @param sourceUri the sourceUri value to set.
      * @return the CreationData object itself.
@@ -218,7 +226,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the sourceUniqueId property: If this field is set, this is the unique id identifying the source of this resource.
+     * Get the sourceUniqueId property: If this field is set, this is the unique id identifying the source of this
+     * resource.
      * 
      * @return the sourceUniqueId value.
      */
@@ -227,7 +236,9 @@ public final class CreationData {
     }
 
     /**
-     * Get the uploadSizeBytes property: If createOption is Upload, this is the size of the contents of the upload including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).
+     * Get the uploadSizeBytes property: If createOption is Upload, this is the size of the contents of the upload
+     * including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and
+     * 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).
      * 
      * @return the uploadSizeBytes value.
      */
@@ -236,7 +247,9 @@ public final class CreationData {
     }
 
     /**
-     * Set the uploadSizeBytes property: If createOption is Upload, this is the size of the contents of the upload including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).
+     * Set the uploadSizeBytes property: If createOption is Upload, this is the size of the contents of the upload
+     * including the VHD footer. This value should be between 20972032 (20 MiB + 512 bytes for the VHD footer) and
+     * 35183298347520 bytes (32 TiB + 512 bytes for the VHD footer).
      * 
      * @param uploadSizeBytes the uploadSizeBytes value to set.
      * @return the CreationData object itself.
@@ -247,7 +260,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the logicalSectorSize property: Logical sector size in bytes for Ultra disks. Supported values are 512 ad 4096. 4096 is the default.
+     * Get the logicalSectorSize property: Logical sector size in bytes for Ultra disks. Supported values are 512 ad
+     * 4096. 4096 is the default.
      * 
      * @return the logicalSectorSize value.
      */
@@ -256,7 +270,8 @@ public final class CreationData {
     }
 
     /**
-     * Set the logicalSectorSize property: Logical sector size in bytes for Ultra disks. Supported values are 512 ad 4096. 4096 is the default.
+     * Set the logicalSectorSize property: Logical sector size in bytes for Ultra disks. Supported values are 512 ad
+     * 4096. 4096 is the default.
      * 
      * @param logicalSectorSize the logicalSectorSize value to set.
      * @return the CreationData object itself.
@@ -267,7 +282,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the securityDataUri property: If createOption is ImportSecure, this is the URI of a blob to be imported into VM guest state.
+     * Get the securityDataUri property: If createOption is ImportSecure, this is the URI of a blob to be imported into
+     * VM guest state.
      * 
      * @return the securityDataUri value.
      */
@@ -276,7 +292,8 @@ public final class CreationData {
     }
 
     /**
-     * Set the securityDataUri property: If createOption is ImportSecure, this is the URI of a blob to be imported into VM guest state.
+     * Set the securityDataUri property: If createOption is ImportSecure, this is the URI of a blob to be imported into
+     * VM guest state.
      * 
      * @param securityDataUri the securityDataUri value to set.
      * @return the CreationData object itself.
@@ -287,7 +304,9 @@ public final class CreationData {
     }
 
     /**
-     * Get the performancePlus property: Set this flag to true to get a boost on the performance target of the disk deployed, see here on the respective performance target. This flag can only be set on disk creation time and cannot be disabled after enabled.
+     * Get the performancePlus property: Set this flag to true to get a boost on the performance target of the disk
+     * deployed, see here on the respective performance target. This flag can only be set on disk creation time and
+     * cannot be disabled after enabled.
      * 
      * @return the performancePlus value.
      */
@@ -296,7 +315,9 @@ public final class CreationData {
     }
 
     /**
-     * Set the performancePlus property: Set this flag to true to get a boost on the performance target of the disk deployed, see here on the respective performance target. This flag can only be set on disk creation time and cannot be disabled after enabled.
+     * Set the performancePlus property: Set this flag to true to get a boost on the performance target of the disk
+     * deployed, see here on the respective performance target. This flag can only be set on disk creation time and
+     * cannot be disabled after enabled.
      * 
      * @param performancePlus the performancePlus value to set.
      * @return the CreationData object itself.
@@ -307,7 +328,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the elasticSanResourceId property: Required if createOption is CopyFromSanSnapshot. This is the ARM id of the source elastic san volume snapshot.
+     * Get the elasticSanResourceId property: Required if createOption is CopyFromSanSnapshot. This is the ARM id of the
+     * source elastic san volume snapshot.
      * 
      * @return the elasticSanResourceId value.
      */
@@ -316,7 +338,8 @@ public final class CreationData {
     }
 
     /**
-     * Set the elasticSanResourceId property: Required if createOption is CopyFromSanSnapshot. This is the ARM id of the source elastic san volume snapshot.
+     * Set the elasticSanResourceId property: Required if createOption is CopyFromSanSnapshot. This is the ARM id of the
+     * source elastic san volume snapshot.
      * 
      * @param elasticSanResourceId the elasticSanResourceId value to set.
      * @return the CreationData object itself.
@@ -327,7 +350,8 @@ public final class CreationData {
     }
 
     /**
-     * Get the provisionedBandwidthCopySpeed property: If this field is set on a snapshot and createOption is CopyStart, the snapshot will be copied at a quicker speed.
+     * Get the provisionedBandwidthCopySpeed property: If this field is set on a snapshot and createOption is CopyStart,
+     * the snapshot will be copied at a quicker speed.
      * 
      * @return the provisionedBandwidthCopySpeed value.
      */
@@ -336,7 +360,8 @@ public final class CreationData {
     }
 
     /**
-     * Set the provisionedBandwidthCopySpeed property: If this field is set on a snapshot and createOption is CopyStart, the snapshot will be copied at a quicker speed.
+     * Set the provisionedBandwidthCopySpeed property: If this field is set on a snapshot and createOption is CopyStart,
+     * the snapshot will be copied at a quicker speed.
      * 
      * @param provisionedBandwidthCopySpeed the provisionedBandwidthCopySpeed value to set.
      * @return the CreationData object itself.
@@ -354,8 +379,8 @@ public final class CreationData {
      */
     public void validate() {
         if (createOption() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property createOption in model CreationData"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property createOption in model CreationData"));
         }
         if (imageReference() != null) {
             imageReference().validate();

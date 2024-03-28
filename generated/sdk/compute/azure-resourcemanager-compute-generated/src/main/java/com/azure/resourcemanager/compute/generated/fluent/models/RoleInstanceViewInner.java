@@ -63,7 +63,9 @@ public final class RoleInstanceViewInner {
     }
 
     /**
-     * Get the privateId property: Specifies a unique identifier generated internally for the cloud service associated with this role instance. &lt;br /&gt;&lt;br /&gt; NOTE: If you are using Azure Diagnostics extension, this property can be used as 'DeploymentId' for querying details.
+     * Get the privateId property: Specifies a unique identifier generated internally for the cloud service associated
+     * with this role instance. &lt;br /&gt;&lt;br /&gt; NOTE: If you are using Azure Diagnostics extension, this
+     * property can be used as 'DeploymentId' for querying details.
      * 
      * @return the privateId value.
      */

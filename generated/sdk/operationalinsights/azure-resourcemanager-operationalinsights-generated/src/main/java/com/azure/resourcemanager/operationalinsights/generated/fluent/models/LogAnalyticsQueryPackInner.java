@@ -83,7 +83,9 @@ public final class LogAnalyticsQueryPackInner extends QueryPacksResource {
     }
 
     /**
-     * Get the provisioningState property: Current state of this QueryPack: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+     * Get the provisioningState property: Current state of this QueryPack: whether or not is has been provisioned
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -100,8 +102,9 @@ public final class LogAnalyticsQueryPackInner extends QueryPacksResource {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model LogAnalyticsQueryPackInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model LogAnalyticsQueryPackInner"));
         } else {
             innerProperties().validate();
         }

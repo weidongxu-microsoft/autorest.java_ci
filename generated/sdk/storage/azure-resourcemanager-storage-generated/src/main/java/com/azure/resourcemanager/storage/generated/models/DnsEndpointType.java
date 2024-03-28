@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
+ * Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single
+ * subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone
+ * identifier.
  */
 public final class DnsEndpointType extends ExpandableStringEnum<DnsEndpointType> {
     /**

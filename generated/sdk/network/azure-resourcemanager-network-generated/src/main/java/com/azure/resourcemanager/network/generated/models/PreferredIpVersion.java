@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The preferred IP version to use in test evaluation. The connection monitor may choose to use a different version depending on other parameters.
+ * The preferred IP version to use in test evaluation. The connection monitor may choose to use a different version
+ * depending on other parameters.
  */
 public final class PreferredIpVersion extends ExpandableStringEnum<PreferredIpVersion> {
     /**

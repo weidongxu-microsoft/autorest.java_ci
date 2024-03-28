@@ -72,7 +72,8 @@ public interface NamespacesClient {
     PagedIterable<EHNamespaceInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
+     * idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -87,7 +88,8 @@ public interface NamespacesClient {
         String namespaceName, EHNamespaceInner parameters);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
+     * idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -103,7 +105,8 @@ public interface NamespacesClient {
         String namespaceName, EHNamespaceInner parameters, Context context);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
+     * idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -117,7 +120,8 @@ public interface NamespacesClient {
     EHNamespaceInner createOrUpdate(String resourceGroupName, String namespaceName, EHNamespaceInner parameters);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
+     * idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -213,7 +217,8 @@ public interface NamespacesClient {
     EHNamespaceInner getByResourceGroup(String resourceGroupName, String namespaceName);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
+     * idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -229,7 +234,8 @@ public interface NamespacesClient {
         EHNamespaceInner parameters, Context context);
 
     /**
-     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is idempotent.
+     * Creates or updates a namespace. Once created, this namespace's resource manifest is immutable. This operation is
+     * idempotent.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.

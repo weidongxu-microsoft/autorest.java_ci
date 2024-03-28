@@ -96,14 +96,18 @@ public interface VirtualMachineInstanceView {
     VirtualMachineHealthStatus vmHealth();
 
     /**
-     * Gets the bootDiagnostics property: Boot Diagnostics is a debugging feature which allows you to view Console Output and Screenshot to diagnose VM status. You can easily view the output of your console log. Azure also enables you to see a screenshot of the VM from the hypervisor.
+     * Gets the bootDiagnostics property: Boot Diagnostics is a debugging feature which allows you to view Console
+     * Output and Screenshot to diagnose VM status. You can easily view the output of your console log. Azure also
+     * enables you to see a screenshot of the VM from the hypervisor.
      * 
      * @return the bootDiagnostics value.
      */
     BootDiagnosticsInstanceView bootDiagnostics();
 
     /**
-     * Gets the assignedHost property: Resource id of the dedicated host, on which the virtual machine is allocated through automatic placement, when the virtual machine is associated with a dedicated host group that has automatic placement enabled. Minimum api-version: 2020-06-01.
+     * Gets the assignedHost property: Resource id of the dedicated host, on which the virtual machine is allocated
+     * through automatic placement, when the virtual machine is associated with a dedicated host group that has
+     * automatic placement enabled. Minimum api-version: 2020-06-01.
      * 
      * @return the assignedHost value.
      */
@@ -124,7 +128,8 @@ public interface VirtualMachineInstanceView {
     VirtualMachinePatchStatus patchStatus();
 
     /**
-     * Gets the isVMInStandbyPool property: [Preview Feature] Specifies whether the VM is currently in or out of the Standby Pool.
+     * Gets the isVMInStandbyPool property: [Preview Feature] Specifies whether the VM is currently in or out of the
+     * Standby Pool.
      * 
      * @return the isVMInStandbyPool value.
      */

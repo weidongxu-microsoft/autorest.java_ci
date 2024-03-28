@@ -34,14 +34,16 @@ public interface DiagnosticSettingsResource {
     String type();
 
     /**
-     * Gets the storageAccountId property: The resource ID of the storage account to which you would like to send Diagnostic Logs.
+     * Gets the storageAccountId property: The resource ID of the storage account to which you would like to send
+     * Diagnostic Logs.
      * 
      * @return the storageAccountId value.
      */
     String storageAccountId();
 
     /**
-     * Gets the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
+     * Gets the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain
+     * backwards compatibility.
      * 
      * @return the serviceBusRuleId value.
      */
@@ -55,7 +57,8 @@ public interface DiagnosticSettingsResource {
     String eventHubAuthorizationRuleId();
 
     /**
-     * Gets the eventHubName property: The name of the event hub. If none is specified, the default event hub will be selected.
+     * Gets the eventHubName property: The name of the event hub. If none is specified, the default event hub will be
+     * selected.
      * 
      * @return the eventHubName value.
      */
@@ -76,14 +79,19 @@ public interface DiagnosticSettingsResource {
     List<LogSettings> logs();
 
     /**
-     * Gets the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+     * Gets the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to
+     * send Diagnostic Logs. Example:
+     * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
      * 
      * @return the workspaceId value.
      */
     String workspaceId();
 
     /**
-     * Gets the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
+     * Gets the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use
+     * the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
+     * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null
+     * (null is default.).
      * 
      * @return the logAnalyticsDestinationType value.
      */
@@ -126,7 +134,8 @@ public interface DiagnosticSettingsResource {
         }
 
         /**
-         * The stage of the DiagnosticSettingsResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DiagnosticSettingsResource definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithStorageAccountId, DefinitionStages.WithServiceBusRuleId,
             DefinitionStages.WithEventHubAuthorizationRuleId, DefinitionStages.WithEventHubName,
@@ -153,9 +162,11 @@ public interface DiagnosticSettingsResource {
          */
         interface WithStorageAccountId {
             /**
-             * Specifies the storageAccountId property: The resource ID of the storage account to which you would like to send Diagnostic Logs..
+             * Specifies the storageAccountId property: The resource ID of the storage account to which you would like
+             * to send Diagnostic Logs..
              * 
-             * @param storageAccountId The resource ID of the storage account to which you would like to send Diagnostic Logs.
+             * @param storageAccountId The resource ID of the storage account to which you would like to send Diagnostic
+             * Logs.
              * @return the next definition stage.
              */
             WithCreate withStorageAccountId(String storageAccountId);
@@ -166,9 +177,11 @@ public interface DiagnosticSettingsResource {
          */
         interface WithServiceBusRuleId {
             /**
-             * Specifies the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility..
+             * Specifies the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here
+             * to maintain backwards compatibility..
              * 
-             * @param serviceBusRuleId The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
+             * @param serviceBusRuleId The service bus rule Id of the diagnostic setting. This is here to maintain
+             * backwards compatibility.
              * @return the next definition stage.
              */
             WithCreate withServiceBusRuleId(String serviceBusRuleId);
@@ -179,7 +192,8 @@ public interface DiagnosticSettingsResource {
          */
         interface WithEventHubAuthorizationRuleId {
             /**
-             * Specifies the eventHubAuthorizationRuleId property: The resource Id for the event hub authorization rule..
+             * Specifies the eventHubAuthorizationRuleId property: The resource Id for the event hub authorization
+             * rule..
              * 
              * @param eventHubAuthorizationRuleId The resource Id for the event hub authorization rule.
              * @return the next definition stage.
@@ -192,9 +206,11 @@ public interface DiagnosticSettingsResource {
          */
         interface WithEventHubName {
             /**
-             * Specifies the eventHubName property: The name of the event hub. If none is specified, the default event hub will be selected..
+             * Specifies the eventHubName property: The name of the event hub. If none is specified, the default event
+             * hub will be selected..
              * 
-             * @param eventHubName The name of the event hub. If none is specified, the default event hub will be selected.
+             * @param eventHubName The name of the event hub. If none is specified, the default event hub will be
+             * selected.
              * @return the next definition stage.
              */
             WithCreate withEventHubName(String eventHubName);
@@ -231,9 +247,13 @@ public interface DiagnosticSettingsResource {
          */
         interface WithWorkspaceId {
             /**
-             * Specifies the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+             * Specifies the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you
+             * would like to send Diagnostic Logs. Example:
+             * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
              * 
-             * @param workspaceId The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+             * @param workspaceId The full ARM resource ID of the Log Analytics workspace to which you would like to
+             * send Diagnostic Logs. Example:
+             * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
              * @return the next definition stage.
              */
             WithCreate withWorkspaceId(String workspaceId);
@@ -244,9 +264,15 @@ public interface DiagnosticSettingsResource {
          */
         interface WithLogAnalyticsDestinationType {
             /**
-             * Specifies the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
+             * Specifies the logAnalyticsDestinationType property: A string indicating whether the export to Log
+             * Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type
+             * constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible
+             * values are: Dedicated and null (null is default.).
              * 
-             * @param logAnalyticsDestinationType A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
+             * @param logAnalyticsDestinationType A string indicating whether the export to Log Analytics should use the
+             * default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
+             * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and
+             * null (null is default.).
              * @return the next definition stage.
              */
             WithCreate withLogAnalyticsDestinationType(String logAnalyticsDestinationType);
@@ -291,9 +317,11 @@ public interface DiagnosticSettingsResource {
          */
         interface WithStorageAccountId {
             /**
-             * Specifies the storageAccountId property: The resource ID of the storage account to which you would like to send Diagnostic Logs..
+             * Specifies the storageAccountId property: The resource ID of the storage account to which you would like
+             * to send Diagnostic Logs..
              * 
-             * @param storageAccountId The resource ID of the storage account to which you would like to send Diagnostic Logs.
+             * @param storageAccountId The resource ID of the storage account to which you would like to send Diagnostic
+             * Logs.
              * @return the next definition stage.
              */
             Update withStorageAccountId(String storageAccountId);
@@ -304,9 +332,11 @@ public interface DiagnosticSettingsResource {
          */
         interface WithServiceBusRuleId {
             /**
-             * Specifies the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility..
+             * Specifies the serviceBusRuleId property: The service bus rule Id of the diagnostic setting. This is here
+             * to maintain backwards compatibility..
              * 
-             * @param serviceBusRuleId The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
+             * @param serviceBusRuleId The service bus rule Id of the diagnostic setting. This is here to maintain
+             * backwards compatibility.
              * @return the next definition stage.
              */
             Update withServiceBusRuleId(String serviceBusRuleId);
@@ -317,7 +347,8 @@ public interface DiagnosticSettingsResource {
          */
         interface WithEventHubAuthorizationRuleId {
             /**
-             * Specifies the eventHubAuthorizationRuleId property: The resource Id for the event hub authorization rule..
+             * Specifies the eventHubAuthorizationRuleId property: The resource Id for the event hub authorization
+             * rule..
              * 
              * @param eventHubAuthorizationRuleId The resource Id for the event hub authorization rule.
              * @return the next definition stage.
@@ -330,9 +361,11 @@ public interface DiagnosticSettingsResource {
          */
         interface WithEventHubName {
             /**
-             * Specifies the eventHubName property: The name of the event hub. If none is specified, the default event hub will be selected..
+             * Specifies the eventHubName property: The name of the event hub. If none is specified, the default event
+             * hub will be selected..
              * 
-             * @param eventHubName The name of the event hub. If none is specified, the default event hub will be selected.
+             * @param eventHubName The name of the event hub. If none is specified, the default event hub will be
+             * selected.
              * @return the next definition stage.
              */
             Update withEventHubName(String eventHubName);
@@ -369,9 +402,13 @@ public interface DiagnosticSettingsResource {
          */
         interface WithWorkspaceId {
             /**
-             * Specifies the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+             * Specifies the workspaceId property: The full ARM resource ID of the Log Analytics workspace to which you
+             * would like to send Diagnostic Logs. Example:
+             * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
              * 
-             * @param workspaceId The full ARM resource ID of the Log Analytics workspace to which you would like to send Diagnostic Logs. Example: /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
+             * @param workspaceId The full ARM resource ID of the Log Analytics workspace to which you would like to
+             * send Diagnostic Logs. Example:
+             * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.OperationalInsights/workspaces/viruela2.
              * @return the next definition stage.
              */
             Update withWorkspaceId(String workspaceId);
@@ -382,9 +419,15 @@ public interface DiagnosticSettingsResource {
          */
         interface WithLogAnalyticsDestinationType {
             /**
-             * Specifies the logAnalyticsDestinationType property: A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
+             * Specifies the logAnalyticsDestinationType property: A string indicating whether the export to Log
+             * Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type
+             * constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible
+             * values are: Dedicated and null (null is default.).
              * 
-             * @param logAnalyticsDestinationType A string indicating whether the export to Log Analytics should use the default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows: &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and null (null is default.).
+             * @param logAnalyticsDestinationType A string indicating whether the export to Log Analytics should use the
+             * default destination type, i.e. AzureDiagnostics, or use a destination type constructed as follows:
+             * &lt;normalized service identity&gt;_&lt;normalized category name&gt;. Possible values are: Dedicated and
+             * null (null is default.).
              * @return the next definition stage.
              */
             Update withLogAnalyticsDestinationType(String logAnalyticsDestinationType);

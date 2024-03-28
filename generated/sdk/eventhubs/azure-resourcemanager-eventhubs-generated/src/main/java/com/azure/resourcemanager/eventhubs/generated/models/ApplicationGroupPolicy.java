@@ -50,17 +50,6 @@ public class ApplicationGroupPolicy {
     }
 
     /**
-     * Set the type property: Application Group Policy types.
-     * 
-     * @param type the type value to set.
-     * @return the ApplicationGroupPolicy object itself.
-     */
-    protected ApplicationGroupPolicy withType(ApplicationGroupPolicyType type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
      * Get the name property: The Name of this policy.
      * 
      * @return the name value.
@@ -87,8 +76,8 @@ public class ApplicationGroupPolicy {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model ApplicationGroupPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model ApplicationGroupPolicy"));
         }
     }
 

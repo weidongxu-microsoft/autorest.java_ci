@@ -51,7 +51,8 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
     }
 
     /**
-     * The interface defining all the services for IotHubClientResourceProviderCommons to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for IotHubClientResourceProviderCommons to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "IotHubClientResource")
@@ -72,7 +73,8 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
      * 
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the number of free and paid iot hubs in the subscription along with {@link Response} on successful completion of {@link Mono}.
+     * @return the number of free and paid iot hubs in the subscription along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserSubscriptionQuotaListResultInner>> getSubscriptionQuotaWithResponseAsync() {
@@ -100,7 +102,8 @@ public final class ResourceProviderCommonsClientImpl implements ResourceProvider
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the number of free and paid iot hubs in the subscription along with {@link Response} on successful completion of {@link Mono}.
+     * @return the number of free and paid iot hubs in the subscription along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserSubscriptionQuotaListResultInner>>

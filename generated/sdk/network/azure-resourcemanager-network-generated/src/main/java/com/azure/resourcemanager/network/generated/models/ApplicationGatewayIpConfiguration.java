@@ -101,7 +101,8 @@ public final class ApplicationGatewayIpConfiguration extends SubResource {
     }
 
     /**
-     * Get the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its private address.
+     * Get the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its
+     * private address.
      * 
      * @return the subnet value.
      */
@@ -110,7 +111,8 @@ public final class ApplicationGatewayIpConfiguration extends SubResource {
     }
 
     /**
-     * Set the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its private address.
+     * Set the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its
+     * private address.
      * 
      * @param subnet the subnet value to set.
      * @return the ApplicationGatewayIpConfiguration object itself.

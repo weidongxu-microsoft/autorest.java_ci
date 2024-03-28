@@ -54,7 +54,8 @@ public final class VaultExtendedInfoesClientImpl implements VaultExtendedInfoesC
     }
 
     /**
-     * The interface defining all the services for RecoveryServicesManagementClientVaultExtendedInfoes to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for RecoveryServicesManagementClientVaultExtendedInfoes to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "RecoveryServicesMana")

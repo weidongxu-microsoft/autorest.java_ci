@@ -101,7 +101,9 @@ public final class SigningKey {
     }
 
     /**
-     * Get the securityAlgorithmType property: The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
+     * Get the securityAlgorithmType property: The security algorithm type represents the standard security algorithm
+     * number of the DNSKEY Resource Record. See:
+     * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml.
      * 
      * @return the securityAlgorithmType value.
      */

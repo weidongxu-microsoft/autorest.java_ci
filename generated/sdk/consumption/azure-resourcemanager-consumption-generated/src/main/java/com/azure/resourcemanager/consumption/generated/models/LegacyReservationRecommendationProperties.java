@@ -120,6 +120,18 @@ public class LegacyReservationRecommendationProperties {
     @JsonProperty(value = "skuProperties", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuProperty> skuProperties;
 
+    /*
+     * The last usage date used for looking back for computing the recommendation.
+     */
+    @JsonProperty(value = "lastUsageDate", access = JsonProperty.Access.WRITE_ONLY)
+    private OffsetDateTime lastUsageDate;
+
+    /*
+     * The total hours for which the cost is covered.
+     */
+    @JsonProperty(value = "totalHours", access = JsonProperty.Access.WRITE_ONLY)
+    private Integer totalHours;
+
     /**
      * Creates an instance of LegacyReservationRecommendationProperties class.
      */
@@ -134,17 +146,6 @@ public class LegacyReservationRecommendationProperties {
      */
     public String scope() {
         return this.scope;
-    }
-
-    /**
-     * Set the scope property: Shared or single recommendation.
-     * 
-     * @param scope the scope value to set.
-     * @return the LegacyReservationRecommendationProperties object itself.
-     */
-    protected LegacyReservationRecommendationProperties withScope(String scope) {
-        this.scope = scope;
-        return this;
     }
 
     /**
@@ -271,6 +272,24 @@ public class LegacyReservationRecommendationProperties {
      */
     public List<SkuProperty> skuProperties() {
         return this.skuProperties;
+    }
+
+    /**
+     * Get the lastUsageDate property: The last usage date used for looking back for computing the recommendation.
+     * 
+     * @return the lastUsageDate value.
+     */
+    public OffsetDateTime lastUsageDate() {
+        return this.lastUsageDate;
+    }
+
+    /**
+     * Get the totalHours property: The total hours for which the cost is covered.
+     * 
+     * @return the totalHours value.
+     */
+    public Integer totalHours() {
+        return this.totalHours;
     }
 
     /**

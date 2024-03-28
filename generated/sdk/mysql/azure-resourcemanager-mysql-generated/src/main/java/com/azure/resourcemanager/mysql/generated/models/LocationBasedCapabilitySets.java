@@ -19,7 +19,8 @@ public interface LocationBasedCapabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return capabilities at specified location in a given subscription as paginated response with {@link PagedIterable}.
+     * @return capabilities at specified location in a given subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Capability> list(String locationName);
 
@@ -31,7 +32,8 @@ public interface LocationBasedCapabilitySets {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return capabilities at specified location in a given subscription as paginated response with {@link PagedIterable}.
+     * @return capabilities at specified location in a given subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Capability> list(String locationName, Context context);
 

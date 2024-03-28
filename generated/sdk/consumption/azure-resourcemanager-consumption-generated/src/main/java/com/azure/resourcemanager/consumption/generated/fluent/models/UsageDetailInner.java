@@ -64,17 +64,6 @@ public class UsageDetailInner extends ProxyResource {
     }
 
     /**
-     * Set the kind property: Specifies the kind of usage details.
-     * 
-     * @param kind the kind value to set.
-     * @return the UsageDetailInner object itself.
-     */
-    protected UsageDetailInner withKind(UsageDetailsKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the etag property: The etag for the resource.
      * 
      * @return the etag value.

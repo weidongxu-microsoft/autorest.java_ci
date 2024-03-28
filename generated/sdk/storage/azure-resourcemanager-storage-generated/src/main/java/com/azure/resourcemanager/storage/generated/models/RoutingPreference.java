@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Routing preference defines the type of network, either microsoft or internet routing to be used to deliver the user data, the default option is microsoft routing.
+ * Routing preference defines the type of network, either microsoft or internet routing to be used to deliver the user
+ * data, the default option is microsoft routing.
  */
 @Fluent
 public final class RoutingPreference {
@@ -57,7 +58,8 @@ public final class RoutingPreference {
     }
 
     /**
-     * Get the publishMicrosoftEndpoints property: A boolean flag which indicates whether microsoft routing storage endpoints are to be published.
+     * Get the publishMicrosoftEndpoints property: A boolean flag which indicates whether microsoft routing storage
+     * endpoints are to be published.
      * 
      * @return the publishMicrosoftEndpoints value.
      */
@@ -66,7 +68,8 @@ public final class RoutingPreference {
     }
 
     /**
-     * Set the publishMicrosoftEndpoints property: A boolean flag which indicates whether microsoft routing storage endpoints are to be published.
+     * Set the publishMicrosoftEndpoints property: A boolean flag which indicates whether microsoft routing storage
+     * endpoints are to be published.
      * 
      * @param publishMicrosoftEndpoints the publishMicrosoftEndpoints value to set.
      * @return the RoutingPreference object itself.
@@ -77,7 +80,8 @@ public final class RoutingPreference {
     }
 
     /**
-     * Get the publishInternetEndpoints property: A boolean flag which indicates whether internet routing storage endpoints are to be published.
+     * Get the publishInternetEndpoints property: A boolean flag which indicates whether internet routing storage
+     * endpoints are to be published.
      * 
      * @return the publishInternetEndpoints value.
      */
@@ -86,7 +90,8 @@ public final class RoutingPreference {
     }
 
     /**
-     * Set the publishInternetEndpoints property: A boolean flag which indicates whether internet routing storage endpoints are to be published.
+     * Set the publishInternetEndpoints property: A boolean flag which indicates whether internet routing storage
+     * endpoints are to be published.
      * 
      * @param publishInternetEndpoints the publishInternetEndpoints value to set.
      * @return the RoutingPreference object itself.

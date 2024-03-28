@@ -136,7 +136,8 @@ public final class BastionHostPropertiesFormat {
     }
 
     /**
-     * Get the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host only.
+     * Get the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host
+     * only.
      * 
      * @return the virtualNetwork value.
      */
@@ -145,7 +146,8 @@ public final class BastionHostPropertiesFormat {
     }
 
     /**
-     * Set the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host only.
+     * Set the virtualNetwork property: Reference to an existing virtual network required for Developer Bastion Host
+     * only.
      * 
      * @param virtualNetwork the virtualNetwork value to set.
      * @return the BastionHostPropertiesFormat object itself.

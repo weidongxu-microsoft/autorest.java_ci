@@ -61,17 +61,6 @@ public class FirewallPolicyRuleCollection {
     }
 
     /**
-     * Set the ruleCollectionType property: The type of the rule collection.
-     * 
-     * @param ruleCollectionType the ruleCollectionType value to set.
-     * @return the FirewallPolicyRuleCollection object itself.
-     */
-    protected FirewallPolicyRuleCollection withRuleCollectionType(FirewallPolicyRuleCollectionType ruleCollectionType) {
-        this.ruleCollectionType = ruleCollectionType;
-        return this;
-    }
-
-    /**
      * Get the name property: The name of the rule collection.
      * 
      * @return the name value.

@@ -65,7 +65,8 @@ public interface ServiceEndpointPolicy {
     String id();
 
     /**
-     * Gets the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the service endpoint policy.
+     * Gets the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the
+     * service endpoint policy.
      * 
      * @return the serviceEndpointPolicyDefinitions value.
      */
@@ -186,7 +187,8 @@ public interface ServiceEndpointPolicy {
         }
 
         /**
-         * The stage of the ServiceEndpointPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ServiceEndpointPolicy definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithServiceEndpointPolicyDefinitions,
             DefinitionStages.WithServiceAlias, DefinitionStages.WithContextualServiceEndpointPolicies {
@@ -224,9 +226,11 @@ public interface ServiceEndpointPolicy {
          */
         interface WithServiceEndpointPolicyDefinitions {
             /**
-             * Specifies the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy definitions of the service endpoint policy..
+             * Specifies the serviceEndpointPolicyDefinitions property: A collection of service endpoint policy
+             * definitions of the service endpoint policy..
              * 
-             * @param serviceEndpointPolicyDefinitions A collection of service endpoint policy definitions of the service endpoint policy.
+             * @param serviceEndpointPolicyDefinitions A collection of service endpoint policy definitions of the
+             * service endpoint policy.
              * @return the next definition stage.
              */
             WithCreate withServiceEndpointPolicyDefinitions(
@@ -251,7 +255,8 @@ public interface ServiceEndpointPolicy {
          */
         interface WithContextualServiceEndpointPolicies {
             /**
-             * Specifies the contextualServiceEndpointPolicies property: A collection of contextual service endpoint policy..
+             * Specifies the contextualServiceEndpointPolicies property: A collection of contextual service endpoint
+             * policy..
              * 
              * @param contextualServiceEndpointPolicies A collection of contextual service endpoint policy.
              * @return the next definition stage.

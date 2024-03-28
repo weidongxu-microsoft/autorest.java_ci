@@ -11,7 +11,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.IpConfiguration
  */
 public interface IpConfigurationProfilePropertiesFormat {
     /**
-     * Gets the subnet property: The reference to the subnet resource to create a container network interface ip configuration.
+     * Gets the subnet property: The reference to the subnet resource to create a container network interface ip
+     * configuration.
      * 
      * @return the subnet value.
      */
@@ -25,7 +26,8 @@ public interface IpConfigurationProfilePropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationProfilePropertiesFormatInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationProfilePropertiesFormatInner object.
      * 
      * @return the inner object.
      */

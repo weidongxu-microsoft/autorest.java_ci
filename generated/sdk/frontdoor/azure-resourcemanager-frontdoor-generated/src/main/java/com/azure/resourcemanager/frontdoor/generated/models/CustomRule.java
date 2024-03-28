@@ -95,7 +95,8 @@ public final class CustomRule {
     }
 
     /**
-     * Get the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
+     * Get the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before
+     * rules with a higher value.
      * 
      * @return the priority value.
      */
@@ -104,7 +105,8 @@ public final class CustomRule {
     }
 
     /**
-     * Set the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before rules with a higher value.
+     * Set the priority property: Describes priority of the rule. Rules with a lower value will be evaluated before
+     * rules with a higher value.
      * 
      * @param priority the priority value to set.
      * @return the CustomRule object itself.
@@ -115,7 +117,8 @@ public final class CustomRule {
     }
 
     /**
-     * Get the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
+     * Get the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled
+     * if not specified.
      * 
      * @return the enabledState value.
      */
@@ -124,7 +127,8 @@ public final class CustomRule {
     }
 
     /**
-     * Set the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled if not specified.
+     * Set the enabledState property: Describes if the custom rule is in enabled or disabled state. Defaults to Enabled
+     * if not specified.
      * 
      * @param enabledState the enabledState value to set.
      * @return the CustomRule object itself.
@@ -261,21 +265,21 @@ public final class CustomRule {
      */
     public void validate() {
         if (ruleType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ruleType in model CustomRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ruleType in model CustomRule"));
         }
         if (groupBy() != null) {
             groupBy().forEach(e -> e.validate());
         }
         if (matchConditions() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property matchConditions in model CustomRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property matchConditions in model CustomRule"));
         } else {
             matchConditions().forEach(e -> e.validate());
         }
         if (action() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property action in model CustomRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property action in model CustomRule"));
         }
     }
 

@@ -32,7 +32,8 @@ public final class HubPublicIpAddresses {
     }
 
     /**
-     * Get the addresses property: The list of Public IP addresses associated with azure firewall or IP addresses to be retained.
+     * Get the addresses property: The list of Public IP addresses associated with azure firewall or IP addresses to be
+     * retained.
      * 
      * @return the addresses value.
      */
@@ -41,7 +42,8 @@ public final class HubPublicIpAddresses {
     }
 
     /**
-     * Set the addresses property: The list of Public IP addresses associated with azure firewall or IP addresses to be retained.
+     * Set the addresses property: The list of Public IP addresses associated with azure firewall or IP addresses to be
+     * retained.
      * 
      * @param addresses the addresses value to set.
      * @return the HubPublicIpAddresses object itself.

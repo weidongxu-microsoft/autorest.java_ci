@@ -19,7 +19,9 @@ public interface ApplicationInsightsComponentAvailableFeatures {
     List<ApplicationInsightsComponentFeature> result();
 
     /**
-     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentAvailableFeaturesInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentAvailableFeaturesInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -11,7 +11,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * A collection of event categories. Currently possible values are: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+ * A collection of event categories. Currently possible values are: Administrative, Security, ServiceHealth, Alert,
+ * Recommendation, Policy.
  */
 @Fluent
 public final class EventCategoryCollection {
@@ -54,8 +55,8 @@ public final class EventCategoryCollection {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model EventCategoryCollection"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model EventCategoryCollection"));
         } else {
             value().forEach(e -> e.validate());
         }

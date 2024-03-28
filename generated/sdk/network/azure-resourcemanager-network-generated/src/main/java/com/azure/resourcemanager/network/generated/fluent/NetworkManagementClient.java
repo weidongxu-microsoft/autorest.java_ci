@@ -12,7 +12,8 @@ import java.time.Duration;
  */
 public interface NetworkManagementClient {
     /**
-     * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Gets The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID
+     * forms part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */

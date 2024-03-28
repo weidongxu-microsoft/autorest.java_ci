@@ -32,7 +32,8 @@ public final class ExportTemplateRequest {
     }
 
     /**
-     * Get the resources property: The IDs of the resources to filter the export by. To export all resources, supply an array with single entry '*'.
+     * Get the resources property: The IDs of the resources to filter the export by. To export all resources, supply an
+     * array with single entry '*'.
      * 
      * @return the resources value.
      */
@@ -41,7 +42,8 @@ public final class ExportTemplateRequest {
     }
 
     /**
-     * Set the resources property: The IDs of the resources to filter the export by. To export all resources, supply an array with single entry '*'.
+     * Set the resources property: The IDs of the resources to filter the export by. To export all resources, supply an
+     * array with single entry '*'.
      * 
      * @param resources the resources value to set.
      * @return the ExportTemplateRequest object itself.
@@ -52,7 +54,9 @@ public final class ExportTemplateRequest {
     }
 
     /**
-     * Get the options property: The export template options. A CSV-formatted list containing zero or more of the following: 'IncludeParameterDefaultValue', 'IncludeComments', 'SkipResourceNameParameterization', 'SkipAllParameterization'.
+     * Get the options property: The export template options. A CSV-formatted list containing zero or more of the
+     * following: 'IncludeParameterDefaultValue', 'IncludeComments', 'SkipResourceNameParameterization',
+     * 'SkipAllParameterization'.
      * 
      * @return the options value.
      */
@@ -61,7 +65,9 @@ public final class ExportTemplateRequest {
     }
 
     /**
-     * Set the options property: The export template options. A CSV-formatted list containing zero or more of the following: 'IncludeParameterDefaultValue', 'IncludeComments', 'SkipResourceNameParameterization', 'SkipAllParameterization'.
+     * Set the options property: The export template options. A CSV-formatted list containing zero or more of the
+     * following: 'IncludeParameterDefaultValue', 'IncludeComments', 'SkipResourceNameParameterization',
+     * 'SkipAllParameterization'.
      * 
      * @param options the options value to set.
      * @return the ExportTemplateRequest object itself.

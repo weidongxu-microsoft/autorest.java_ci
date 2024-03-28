@@ -130,7 +130,8 @@ public final class NetworkConfigurationDiagnosticProfile {
     }
 
     /**
-     * Get the destinationPort property: Traffic destination port. Accepted values are '*' and a single port in the range (0 - 65535).
+     * Get the destinationPort property: Traffic destination port. Accepted values are '*' and a single port in the
+     * range (0 - 65535).
      * 
      * @return the destinationPort value.
      */
@@ -139,7 +140,8 @@ public final class NetworkConfigurationDiagnosticProfile {
     }
 
     /**
-     * Set the destinationPort property: Traffic destination port. Accepted values are '*' and a single port in the range (0 - 65535).
+     * Set the destinationPort property: Traffic destination port. Accepted values are '*' and a single port in the
+     * range (0 - 65535).
      * 
      * @param destinationPort the destinationPort value to set.
      * @return the NetworkConfigurationDiagnosticProfile object itself.
@@ -156,24 +158,29 @@ public final class NetworkConfigurationDiagnosticProfile {
      */
     public void validate() {
         if (direction() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property direction in model NetworkConfigurationDiagnosticProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property direction in model NetworkConfigurationDiagnosticProfile"));
         }
         if (protocol() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property protocol in model NetworkConfigurationDiagnosticProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property protocol in model NetworkConfigurationDiagnosticProfile"));
         }
         if (source() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property source in model NetworkConfigurationDiagnosticProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property source in model NetworkConfigurationDiagnosticProfile"));
         }
         if (destination() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property destination in model NetworkConfigurationDiagnosticProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property destination in model NetworkConfigurationDiagnosticProfile"));
         }
         if (destinationPort() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property destinationPort in model NetworkConfigurationDiagnosticProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property destinationPort in model NetworkConfigurationDiagnosticProfile"));
         }
     }
 

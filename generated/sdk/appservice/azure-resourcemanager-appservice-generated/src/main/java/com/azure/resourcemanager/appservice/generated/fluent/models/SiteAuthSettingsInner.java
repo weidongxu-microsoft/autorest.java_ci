@@ -47,7 +47,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
+     * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -56,7 +57,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; if the Authentication / Authorization feature is enabled
+     * for the current app; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -70,8 +72,10 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the current app.
-     * The setting in this value can control the behavior of certain features in the Authentication / Authorization module.
+     * Get the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the
+     * current app.
+     * The setting in this value can control the behavior of certain features in the Authentication / Authorization
+     * module.
      * 
      * @return the runtimeVersion value.
      */
@@ -80,8 +84,10 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the current app.
-     * The setting in this value can control the behavior of certain features in the Authentication / Authorization module.
+     * Set the runtimeVersion property: The RuntimeVersion of the Authentication / Authorization feature in use for the
+     * current app.
+     * The setting in this value can control the behavior of certain features in the Authentication / Authorization
+     * module.
      * 
      * @param runtimeVersion the runtimeVersion value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -95,7 +101,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the unauthenticatedClientAction property: The action to take when an unauthenticated client attempts to access the app.
+     * Get the unauthenticatedClientAction property: The action to take when an unauthenticated client attempts to
+     * access the app.
      * 
      * @return the unauthenticatedClientAction value.
      */
@@ -104,7 +111,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the unauthenticatedClientAction property: The action to take when an unauthenticated client attempts to access the app.
+     * Set the unauthenticatedClientAction property: The action to take when an unauthenticated client attempts to
+     * access the app.
      * 
      * @param unauthenticatedClientAction the unauthenticatedClientAction value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -119,8 +127,9 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the tokenStoreEnabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *  The default is &lt;code&gt;false&lt;/code&gt;.
+     * Get the tokenStoreEnabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security
+     * tokens that are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * The default is &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the tokenStoreEnabled value.
      */
@@ -129,8 +138,9 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the tokenStoreEnabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *  The default is &lt;code&gt;false&lt;/code&gt;.
+     * Set the tokenStoreEnabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security
+     * tokens that are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * The default is &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param tokenStoreEnabled the tokenStoreEnabled value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -144,7 +154,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or logging out of the app. Note that the query string part of the URL is ignored.
+     * Get the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or
+     * logging out of the app. Note that the query string part of the URL is ignored.
      * This is an advanced setting typically only needed by Windows Store application backends.
      * Note that URLs within the current domain are always implicitly allowed.
      * 
@@ -155,7 +166,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or logging out of the app. Note that the query string part of the URL is ignored.
+     * Set the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or
+     * logging out of the app. Note that the query string part of the URL is ignored.
      * This is an advanced setting typically only needed by Windows Store application backends.
      * Note that URLs within the current domain are always implicitly allowed.
      * 
@@ -171,7 +183,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the defaultProvider property: The default authentication provider to use when multiple providers are configured.
+     * Get the defaultProvider property: The default authentication provider to use when multiple providers are
+     * configured.
      * This setting is only needed if multiple providers are configured and the unauthenticated client
      * action is set to "RedirectToLoginPage".
      * 
@@ -182,7 +195,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the defaultProvider property: The default authentication provider to use when multiple providers are configured.
+     * Set the defaultProvider property: The default authentication provider to use when multiple providers are
+     * configured.
      * This setting is only needed if multiple providers are configured and the unauthenticated client
      * action is set to "RedirectToLoginPage".
      * 
@@ -198,7 +212,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session token can be used to
+     * Get the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session
+     * token can be used to
      * call the token refresh API. The default is 72 hours.
      * 
      * @return the tokenRefreshExtensionHours value.
@@ -208,7 +223,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session token can be used to
+     * Set the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session
+     * token can be used to
      * call the token refresh API. The default is 72 hours.
      * 
      * @param tokenRefreshExtensionHours the tokenRefreshExtensionHours value to set.
@@ -224,7 +240,7 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
 
     /**
      * Get the clientId property: The Client ID of this relying party application, known as the client_id.
-     * This setting is required for enabling OpenID Connection authentication with Azure Active Directory or 
+     * This setting is required for enabling OpenID Connection authentication with Azure Active Directory or
      * other 3rd party OpenID Connect providers.
      * More information on OpenID Connect: http://openid.net/specs/openid-connect-core-1_0.html.
      * 
@@ -236,7 +252,7 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
 
     /**
      * Set the clientId property: The Client ID of this relying party application, known as the client_id.
-     * This setting is required for enabling OpenID Connection authentication with Azure Active Directory or 
+     * This setting is required for enabling OpenID Connection authentication with Azure Active Directory or
      * other 3rd party OpenID Connect providers.
      * More information on OpenID Connect: http://openid.net/specs/openid-connect-core-1_0.html.
      * 
@@ -252,8 +268,10 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the clientSecret property: The Client Secret of this relying party application (in Azure Active Directory, this is also referred to as the Key).
-     * This setting is optional. If no client secret is configured, the OpenID Connect implicit auth flow is used to authenticate end users.
+     * Get the clientSecret property: The Client Secret of this relying party application (in Azure Active Directory,
+     * this is also referred to as the Key).
+     * This setting is optional. If no client secret is configured, the OpenID Connect implicit auth flow is used to
+     * authenticate end users.
      * Otherwise, the OpenID Connect Authorization Code Flow is used to authenticate end users.
      * More information on OpenID Connect: http://openid.net/specs/openid-connect-core-1_0.html.
      * 
@@ -264,8 +282,10 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the clientSecret property: The Client Secret of this relying party application (in Azure Active Directory, this is also referred to as the Key).
-     * This setting is optional. If no client secret is configured, the OpenID Connect implicit auth flow is used to authenticate end users.
+     * Set the clientSecret property: The Client Secret of this relying party application (in Azure Active Directory,
+     * this is also referred to as the Key).
+     * This setting is optional. If no client secret is configured, the OpenID Connect implicit auth flow is used to
+     * authenticate end users.
      * Otherwise, the OpenID Connect Authorization Code Flow is used to authenticate end users.
      * More information on OpenID Connect: http://openid.net/specs/openid-connect-core-1_0.html.
      * 
@@ -281,7 +301,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the clientSecretSettingName property: The app setting name that contains the client secret of the relying party application.
+     * Get the clientSecretSettingName property: The app setting name that contains the client secret of the relying
+     * party application.
      * 
      * @return the clientSecretSettingName value.
      */
@@ -290,7 +311,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the clientSecretSettingName property: The app setting name that contains the client secret of the relying party application.
+     * Set the clientSecretSettingName property: The app setting name that contains the client secret of the relying
+     * party application.
      * 
      * @param clientSecretSettingName the clientSecretSettingName value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -304,7 +326,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the clientSecretCertificateThumbprint property: An alternative to the client secret, that is the thumbprint of a certificate used for signing purposes. This property acts as
+     * Get the clientSecretCertificateThumbprint property: An alternative to the client secret, that is the thumbprint
+     * of a certificate used for signing purposes. This property acts as
      * a replacement for the Client Secret. It is also optional.
      * 
      * @return the clientSecretCertificateThumbprint value.
@@ -314,7 +337,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the clientSecretCertificateThumbprint property: An alternative to the client secret, that is the thumbprint of a certificate used for signing purposes. This property acts as
+     * Set the clientSecretCertificateThumbprint property: An alternative to the client secret, that is the thumbprint
+     * of a certificate used for signing purposes. This property acts as
      * a replacement for the Client Secret. It is also optional.
      * 
      * @param clientSecretCertificateThumbprint the clientSecretCertificateThumbprint value to set.
@@ -329,8 +353,10 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the issuer property: The OpenID Connect Issuer URI that represents the entity which issues access tokens for this application.
-     * When using Azure Active Directory, this value is the URI of the directory tenant, e.g. https://sts.windows.net/{tenant-guid}/.
+     * Get the issuer property: The OpenID Connect Issuer URI that represents the entity which issues access tokens for
+     * this application.
+     * When using Azure Active Directory, this value is the URI of the directory tenant, e.g.
+     * https://sts.windows.net/{tenant-guid}/.
      * This URI is a case-sensitive identifier for the token issuer.
      * More information on OpenID Connect Discovery: http://openid.net/specs/openid-connect-discovery-1_0.html.
      * 
@@ -341,8 +367,10 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the issuer property: The OpenID Connect Issuer URI that represents the entity which issues access tokens for this application.
-     * When using Azure Active Directory, this value is the URI of the directory tenant, e.g. https://sts.windows.net/{tenant-guid}/.
+     * Set the issuer property: The OpenID Connect Issuer URI that represents the entity which issues access tokens for
+     * this application.
+     * When using Azure Active Directory, this value is the URI of the directory tenant, e.g.
+     * https://sts.windows.net/{tenant-guid}/.
      * This URI is a case-sensitive identifier for the token issuer.
      * More information on OpenID Connect Discovery: http://openid.net/specs/openid-connect-discovery-1_0.html.
      * 
@@ -358,7 +386,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the validateIssuer property: Gets a value indicating whether the issuer should be a valid HTTPS url and be validated as such.
+     * Get the validateIssuer property: Gets a value indicating whether the issuer should be a valid HTTPS url and be
+     * validated as such.
      * 
      * @return the validateIssuer value.
      */
@@ -367,7 +396,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the validateIssuer property: Gets a value indicating whether the issuer should be a valid HTTPS url and be validated as such.
+     * Set the validateIssuer property: Gets a value indicating whether the issuer should be a valid HTTPS url and be
+     * validated as such.
      * 
      * @param validateIssuer the validateIssuer value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -381,7 +411,7 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by 
+     * Get the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
      * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an
      * allowed audience, regardless of this setting.
      * 
@@ -392,7 +422,7 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by 
+     * Set the allowedAudiences property: Allowed audience values to consider when validating JSON Web Tokens issued by
      * Azure Active Directory. Note that the &lt;code&gt;ClientID&lt;/code&gt; value is always considered an
      * allowed audience, regardless of this setting.
      * 
@@ -408,7 +438,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the additionalLoginParams property: Login parameters to send to the OpenID Connect authorization endpoint when
+     * Get the additionalLoginParams property: Login parameters to send to the OpenID Connect authorization endpoint
+     * when
      * a user logs in. Each parameter must be in the form "key=value".
      * 
      * @return the additionalLoginParams value.
@@ -418,7 +449,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the additionalLoginParams property: Login parameters to send to the OpenID Connect authorization endpoint when
+     * Set the additionalLoginParams property: Login parameters to send to the OpenID Connect authorization endpoint
+     * when
      * a user logs in. Each parameter must be in the form "key=value".
      * 
      * @param additionalLoginParams the additionalLoginParams value to set.
@@ -510,7 +542,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the googleClientSecretSettingName property: The app setting name that contains the client secret associated with 
+     * Get the googleClientSecretSettingName property: The app setting name that contains the client secret associated
+     * with
      * the Google web application.
      * 
      * @return the googleClientSecretSettingName value.
@@ -520,7 +553,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the googleClientSecretSettingName property: The app setting name that contains the client secret associated with 
+     * Set the googleClientSecretSettingName property: The app setting name that contains the client secret associated
+     * with
      * the Google web application.
      * 
      * @param googleClientSecretSettingName the googleClientSecretSettingName value to set.
@@ -535,7 +569,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the googleOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Google Sign-In authentication.
+     * Get the googleOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Google Sign-In
+     * authentication.
      * This setting is optional. If not specified, "openid", "profile", and "email" are used as default scopes.
      * Google Sign-In documentation: https://developers.google.com/identity/sign-in/web/.
      * 
@@ -546,7 +581,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the googleOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Google Sign-In authentication.
+     * Set the googleOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Google Sign-In
+     * authentication.
      * This setting is optional. If not specified, "openid", "profile", and "email" are used as default scopes.
      * Google Sign-In documentation: https://developers.google.com/identity/sign-in/web/.
      * 
@@ -616,7 +652,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the facebookAppSecretSettingName property: The app setting name that contains the app secret used for Facebook Login.
+     * Get the facebookAppSecretSettingName property: The app setting name that contains the app secret used for
+     * Facebook Login.
      * 
      * @return the facebookAppSecretSettingName value.
      */
@@ -625,7 +662,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the facebookAppSecretSettingName property: The app setting name that contains the app secret used for Facebook Login.
+     * Set the facebookAppSecretSettingName property: The app setting name that contains the app secret used for
+     * Facebook Login.
      * 
      * @param facebookAppSecretSettingName the facebookAppSecretSettingName value to set.
      * @return the SiteAuthSettingsInner object itself.
@@ -639,7 +677,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the facebookOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Facebook Login authentication.
+     * Get the facebookOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Facebook Login
+     * authentication.
      * This setting is optional.
      * Facebook Login documentation: https://developers.facebook.com/docs/facebook-login.
      * 
@@ -650,7 +689,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the facebookOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Facebook Login authentication.
+     * Set the facebookOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Facebook Login
+     * authentication.
      * This setting is optional.
      * Facebook Login documentation: https://developers.facebook.com/docs/facebook-login.
      * 
@@ -716,7 +756,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the gitHubClientSecretSettingName property: The app setting name that contains the client secret of the Github
+     * Get the gitHubClientSecretSettingName property: The app setting name that contains the client secret of the
+     * Github
      * app used for GitHub Login.
      * 
      * @return the gitHubClientSecretSettingName value.
@@ -726,7 +767,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the gitHubClientSecretSettingName property: The app setting name that contains the client secret of the Github
+     * Set the gitHubClientSecretSettingName property: The app setting name that contains the client secret of the
+     * Github
      * app used for GitHub Login.
      * 
      * @param gitHubClientSecretSettingName the gitHubClientSecretSettingName value to set.
@@ -741,7 +783,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the gitHubOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of GitHub Login authentication.
+     * Get the gitHubOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of GitHub Login
+     * authentication.
      * This setting is optional.
      * 
      * @return the gitHubOAuthScopes value.
@@ -751,7 +794,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the gitHubOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of GitHub Login authentication.
+     * Set the gitHubOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of GitHub Login
+     * authentication.
      * This setting is optional.
      * 
      * @param gitHubOAuthScopes the gitHubOAuthScopes value to set.
@@ -793,7 +837,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the twitterConsumerSecret property: The OAuth 1.0a consumer secret of the Twitter application used for sign-in.
+     * Get the twitterConsumerSecret property: The OAuth 1.0a consumer secret of the Twitter application used for
+     * sign-in.
      * This setting is required for enabling Twitter Sign-In.
      * Twitter Sign-In documentation: https://dev.twitter.com/web/sign-in.
      * 
@@ -804,7 +849,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the twitterConsumerSecret property: The OAuth 1.0a consumer secret of the Twitter application used for sign-in.
+     * Set the twitterConsumerSecret property: The OAuth 1.0a consumer secret of the Twitter application used for
+     * sign-in.
      * This setting is required for enabling Twitter Sign-In.
      * Twitter Sign-In documentation: https://dev.twitter.com/web/sign-in.
      * 
@@ -820,7 +866,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the twitterConsumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer secret of the Twitter
+     * Get the twitterConsumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer
+     * secret of the Twitter
      * application used for sign-in.
      * 
      * @return the twitterConsumerSecretSettingName value.
@@ -830,7 +877,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the twitterConsumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer secret of the Twitter
+     * Set the twitterConsumerSecretSettingName property: The app setting name that contains the OAuth 1.0a consumer
+     * secret of the Twitter
      * application used for sign-in.
      * 
      * @param twitterConsumerSecretSettingName the twitterConsumerSecretSettingName value to set.
@@ -845,7 +893,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the microsoftAccountClientId property: The OAuth 2.0 client ID that was created for the app used for authentication.
+     * Get the microsoftAccountClientId property: The OAuth 2.0 client ID that was created for the app used for
+     * authentication.
      * This setting is required for enabling Microsoft Account authentication.
      * Microsoft Account OAuth documentation: https://dev.onedrive.com/auth/msa_oauth.htm.
      * 
@@ -856,7 +905,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the microsoftAccountClientId property: The OAuth 2.0 client ID that was created for the app used for authentication.
+     * Set the microsoftAccountClientId property: The OAuth 2.0 client ID that was created for the app used for
+     * authentication.
      * This setting is required for enabling Microsoft Account authentication.
      * Microsoft Account OAuth documentation: https://dev.onedrive.com/auth/msa_oauth.htm.
      * 
@@ -872,7 +922,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the microsoftAccountClientSecret property: The OAuth 2.0 client secret that was created for the app used for authentication.
+     * Get the microsoftAccountClientSecret property: The OAuth 2.0 client secret that was created for the app used for
+     * authentication.
      * This setting is required for enabling Microsoft Account authentication.
      * Microsoft Account OAuth documentation: https://dev.onedrive.com/auth/msa_oauth.htm.
      * 
@@ -883,7 +934,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the microsoftAccountClientSecret property: The OAuth 2.0 client secret that was created for the app used for authentication.
+     * Set the microsoftAccountClientSecret property: The OAuth 2.0 client secret that was created for the app used for
+     * authentication.
      * This setting is required for enabling Microsoft Account authentication.
      * Microsoft Account OAuth documentation: https://dev.onedrive.com/auth/msa_oauth.htm.
      * 
@@ -899,7 +951,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the microsoftAccountClientSecretSettingName property: The app setting name containing the OAuth 2.0 client secret that was created for the
+     * Get the microsoftAccountClientSecretSettingName property: The app setting name containing the OAuth 2.0 client
+     * secret that was created for the
      * app used for authentication.
      * 
      * @return the microsoftAccountClientSecretSettingName value.
@@ -909,7 +962,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the microsoftAccountClientSecretSettingName property: The app setting name containing the OAuth 2.0 client secret that was created for the
+     * Set the microsoftAccountClientSecretSettingName property: The app setting name containing the OAuth 2.0 client
+     * secret that was created for the
      * app used for authentication.
      * 
      * @param microsoftAccountClientSecretSettingName the microsoftAccountClientSecretSettingName value to set.
@@ -925,7 +979,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the microsoftAccountOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Microsoft Account authentication.
+     * Get the microsoftAccountOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Microsoft
+     * Account authentication.
      * This setting is optional. If not specified, "wl.basic" is used as the default scope.
      * Microsoft Account Scopes and permissions documentation: https://msdn.microsoft.com/en-us/library/dn631845.aspx.
      * 
@@ -936,7 +991,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the microsoftAccountOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Microsoft Account authentication.
+     * Set the microsoftAccountOAuthScopes property: The OAuth 2.0 scopes that will be requested as part of Microsoft
+     * Account authentication.
      * This setting is optional. If not specified, "wl.basic" is used as the default scope.
      * Microsoft Account Scopes and permissions documentation: https://msdn.microsoft.com/en-us/library/dn631845.aspx.
      * 
@@ -1002,7 +1058,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the current app.
+     * Get the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
+     * current app.
      * The setting in this value can control the behavior of the control plane for Authentication / Authorization.
      * 
      * @return the configVersion value.
@@ -1012,7 +1069,8 @@ public final class SiteAuthSettingsInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the current app.
+     * Set the configVersion property: The ConfigVersion of the Authentication / Authorization feature in use for the
+     * current app.
      * The setting in this value can control the behavior of the control plane for Authentication / Authorization.
      * 
      * @param configVersion the configVersion value to set.

@@ -53,7 +53,8 @@ public final class ResourceUriList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of encrypted resources. Call ListNext() with this to fetch the next page of encrypted resources.
+     * Get the nextLink property: The uri to fetch the next page of encrypted resources. Call ListNext() with this to
+     * fetch the next page of encrypted resources.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class ResourceUriList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of encrypted resources. Call ListNext() with this to fetch the next page of encrypted resources.
+     * Set the nextLink property: The uri to fetch the next page of encrypted resources. Call ListNext() with this to
+     * fetch the next page of encrypted resources.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ResourceUriList object itself.
@@ -79,8 +81,8 @@ public final class ResourceUriList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model ResourceUriList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model ResourceUriList"));
         }
     }
 

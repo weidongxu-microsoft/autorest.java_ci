@@ -372,7 +372,8 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of AppServiceCertificateOrders. It manages AppServiceCertificateOrder, AppServiceCertificateResource.
+     * Gets the resource collection API of AppServiceCertificateOrders. It manages AppServiceCertificateOrder,
+     * AppServiceCertificateResource.
      * 
      * @return Resource collection API of AppServiceCertificateOrders.
      */
@@ -448,7 +449,8 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of AppServiceEnvironments. It manages AppServiceEnvironmentResource, RemotePrivateEndpointConnectionArmResource, WorkerPoolResource.
+     * Gets the resource collection API of AppServiceEnvironments. It manages AppServiceEnvironmentResource,
+     * RemotePrivateEndpointConnectionArmResource, WorkerPoolResource.
      * 
      * @return Resource collection API of AppServiceEnvironments.
      */
@@ -619,7 +621,9 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource, DatabaseConnection, StaticSiteUserProvidedFunctionAppArmResource, StaticSiteBasicAuthPropertiesArmResource, StaticSiteCustomDomainOverviewArmResource, StaticSiteLinkedBackendArmResource.
+     * Gets the resource collection API of StaticSites. It manages StaticSiteArmResource, DatabaseConnection,
+     * StaticSiteUserProvidedFunctionAppArmResource, StaticSiteBasicAuthPropertiesArmResource,
+     * StaticSiteCustomDomainOverviewArmResource, StaticSiteLinkedBackendArmResource.
      * 
      * @return Resource collection API of StaticSites.
      */
@@ -631,7 +635,9 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets the resource collection API of WebApps. It manages Site, Deployment, Identifier, FunctionEnvelope, HostnameBinding, HybridConnection, RelayServiceConnectionEntity, PremierAddOn, PublicCertificate, VnetInfoResource, VnetGateway.
+     * Gets the resource collection API of WebApps. It manages Site, Deployment, Identifier, FunctionEnvelope,
+     * HostnameBinding, HybridConnection, RelayServiceConnectionEntity, PremierAddOn, PublicCertificate,
+     * VnetInfoResource, VnetGateway.
      * 
      * @return Resource collection API of WebApps.
      */
@@ -755,7 +761,8 @@ public final class AppServiceManager {
     }
 
     /**
-     * Gets wrapped service client WebSiteManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client WebSiteManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client WebSiteManagementClient.
      */

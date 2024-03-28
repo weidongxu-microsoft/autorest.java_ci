@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Indication for database routing information from the data connection, by default only database routing information is allowed.
+ * Indication for database routing information from the data connection, by default only database routing information is
+ * allowed.
  */
 public final class DatabaseRouting extends ExpandableStringEnum<DatabaseRouting> {
     /**

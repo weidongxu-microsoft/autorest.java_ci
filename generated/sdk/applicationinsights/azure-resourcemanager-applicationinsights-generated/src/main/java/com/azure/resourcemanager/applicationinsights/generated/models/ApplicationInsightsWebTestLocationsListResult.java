@@ -55,8 +55,9 @@ public final class ApplicationInsightsWebTestLocationsListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model ApplicationInsightsWebTestLocationsListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model ApplicationInsightsWebTestLocationsListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

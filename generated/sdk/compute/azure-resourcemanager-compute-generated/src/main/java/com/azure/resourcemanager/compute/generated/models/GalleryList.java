@@ -54,7 +54,8 @@ public final class GalleryList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the next page of galleries.
+     * Get the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the
+     * next page of galleries.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class GalleryList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the next page of galleries.
+     * Set the nextLink property: The uri to fetch the next page of galleries. Call ListNext() with this to fetch the
+     * next page of galleries.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryList object itself.
@@ -80,8 +82,8 @@ public final class GalleryList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model GalleryList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model GalleryList"));
         } else {
             value().forEach(e -> e.validate());
         }

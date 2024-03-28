@@ -72,14 +72,16 @@ public interface Eventhub {
     OffsetDateTime updatedAt();
 
     /**
-     * Gets the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+     * Gets the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be
+     * 1 to 7 days.
      * 
      * @return the messageRetentionInDays value.
      */
     Long messageRetentionInDays();
 
     /**
-     * Gets the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions.
+     * Gets the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32
+     * partitions.
      * 
      * @return the partitionCount value.
      */
@@ -166,7 +168,8 @@ public interface Eventhub {
         }
 
         /**
-         * The stage of the Eventhub definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Eventhub definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithMessageRetentionInDays, DefinitionStages.WithPartitionCount,
             DefinitionStages.WithStatus, DefinitionStages.WithCaptureDescription,
@@ -192,9 +195,11 @@ public interface Eventhub {
          */
         interface WithMessageRetentionInDays {
             /**
-             * Specifies the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+             * Specifies the messageRetentionInDays property: Number of days to retain the events for this Event Hub,
+             * value should be 1 to 7 days.
              * 
-             * @param messageRetentionInDays Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+             * @param messageRetentionInDays Number of days to retain the events for this Event Hub, value should be 1
+             * to 7 days.
              * @return the next definition stage.
              */
             WithCreate withMessageRetentionInDays(Long messageRetentionInDays);
@@ -205,9 +210,11 @@ public interface Eventhub {
          */
         interface WithPartitionCount {
             /**
-             * Specifies the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions..
+             * Specifies the partitionCount property: Number of partitions created for the Event Hub, allowed values are
+             * from 1 to 32 partitions..
              * 
-             * @param partitionCount Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions.
+             * @param partitionCount Number of partitions created for the Event Hub, allowed values are from 1 to 32
+             * partitions.
              * @return the next definition stage.
              */
             WithCreate withPartitionCount(Long partitionCount);
@@ -290,9 +297,11 @@ public interface Eventhub {
          */
         interface WithMessageRetentionInDays {
             /**
-             * Specifies the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+             * Specifies the messageRetentionInDays property: Number of days to retain the events for this Event Hub,
+             * value should be 1 to 7 days.
              * 
-             * @param messageRetentionInDays Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+             * @param messageRetentionInDays Number of days to retain the events for this Event Hub, value should be 1
+             * to 7 days.
              * @return the next definition stage.
              */
             Update withMessageRetentionInDays(Long messageRetentionInDays);
@@ -303,9 +312,11 @@ public interface Eventhub {
          */
         interface WithPartitionCount {
             /**
-             * Specifies the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions..
+             * Specifies the partitionCount property: Number of partitions created for the Event Hub, allowed values are
+             * from 1 to 32 partitions..
              * 
-             * @param partitionCount Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions.
+             * @param partitionCount Number of partitions created for the Event Hub, allowed values are from 1 to 32
+             * partitions.
              * @return the next definition stage.
              */
             Update withPartitionCount(Long partitionCount);

@@ -111,7 +111,8 @@ public final class Backend {
     }
 
     /**
-     * Get the privateLinkAlias property: The Alias of the Private Link resource. Populating this optional field indicates that this backend is 'Private'.
+     * Get the privateLinkAlias property: The Alias of the Private Link resource. Populating this optional field
+     * indicates that this backend is 'Private'.
      * 
      * @return the privateLinkAlias value.
      */
@@ -120,7 +121,8 @@ public final class Backend {
     }
 
     /**
-     * Set the privateLinkAlias property: The Alias of the Private Link resource. Populating this optional field indicates that this backend is 'Private'.
+     * Set the privateLinkAlias property: The Alias of the Private Link resource. Populating this optional field
+     * indicates that this backend is 'Private'.
      * 
      * @param privateLinkAlias the privateLinkAlias value to set.
      * @return the Backend object itself.
@@ -131,7 +133,8 @@ public final class Backend {
     }
 
     /**
-     * Get the privateLinkResourceId property: The Resource Id of the Private Link resource. Populating this optional field indicates that this backend is 'Private'.
+     * Get the privateLinkResourceId property: The Resource Id of the Private Link resource. Populating this optional
+     * field indicates that this backend is 'Private'.
      * 
      * @return the privateLinkResourceId value.
      */
@@ -140,7 +143,8 @@ public final class Backend {
     }
 
     /**
-     * Set the privateLinkResourceId property: The Resource Id of the Private Link resource. Populating this optional field indicates that this backend is 'Private'.
+     * Set the privateLinkResourceId property: The Resource Id of the Private Link resource. Populating this optional
+     * field indicates that this backend is 'Private'.
      * 
      * @param privateLinkResourceId the privateLinkResourceId value to set.
      * @return the Backend object itself.
@@ -151,7 +155,8 @@ public final class Backend {
     }
 
     /**
-     * Get the privateLinkLocation property: The location of the Private Link resource. Required only if 'privateLinkResourceId' is populated.
+     * Get the privateLinkLocation property: The location of the Private Link resource. Required only if
+     * 'privateLinkResourceId' is populated.
      * 
      * @return the privateLinkLocation value.
      */
@@ -160,7 +165,8 @@ public final class Backend {
     }
 
     /**
-     * Set the privateLinkLocation property: The location of the Private Link resource. Required only if 'privateLinkResourceId' is populated.
+     * Set the privateLinkLocation property: The location of the Private Link resource. Required only if
+     * 'privateLinkResourceId' is populated.
      * 
      * @param privateLinkLocation the privateLinkLocation value to set.
      * @return the Backend object itself.
@@ -180,7 +186,8 @@ public final class Backend {
     }
 
     /**
-     * Get the privateLinkApprovalMessage property: A custom message to be included in the approval request to connect to the Private Link.
+     * Get the privateLinkApprovalMessage property: A custom message to be included in the approval request to connect
+     * to the Private Link.
      * 
      * @return the privateLinkApprovalMessage value.
      */
@@ -189,7 +196,8 @@ public final class Backend {
     }
 
     /**
-     * Set the privateLinkApprovalMessage property: A custom message to be included in the approval request to connect to the Private Link.
+     * Set the privateLinkApprovalMessage property: A custom message to be included in the approval request to connect
+     * to the Private Link.
      * 
      * @param privateLinkApprovalMessage the privateLinkApprovalMessage value to set.
      * @return the Backend object itself.
@@ -240,7 +248,8 @@ public final class Backend {
     }
 
     /**
-     * Get the enabledState property: Whether to enable use of this backend. Permitted values are 'Enabled' or 'Disabled'.
+     * Get the enabledState property: Whether to enable use of this backend. Permitted values are 'Enabled' or
+     * 'Disabled'.
      * 
      * @return the enabledState value.
      */
@@ -249,7 +258,8 @@ public final class Backend {
     }
 
     /**
-     * Set the enabledState property: Whether to enable use of this backend. Permitted values are 'Enabled' or 'Disabled'.
+     * Set the enabledState property: Whether to enable use of this backend. Permitted values are 'Enabled' or
+     * 'Disabled'.
      * 
      * @param enabledState the enabledState value to set.
      * @return the Backend object itself.
@@ -260,7 +270,8 @@ public final class Backend {
     }
 
     /**
-     * Get the priority property: Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy.
+     * Get the priority property: Priority to use for load balancing. Higher priorities will not be used for load
+     * balancing if any lower priority backend is healthy.
      * 
      * @return the priority value.
      */
@@ -269,7 +280,8 @@ public final class Backend {
     }
 
     /**
-     * Set the priority property: Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy.
+     * Set the priority property: Priority to use for load balancing. Higher priorities will not be used for load
+     * balancing if any lower priority backend is healthy.
      * 
      * @param priority the priority value to set.
      * @return the Backend object itself.
@@ -300,7 +312,8 @@ public final class Backend {
     }
 
     /**
-     * Get the backendHostHeader property: The value to use as the host header sent to the backend. If blank or unspecified, this defaults to the incoming host.
+     * Get the backendHostHeader property: The value to use as the host header sent to the backend. If blank or
+     * unspecified, this defaults to the incoming host.
      * 
      * @return the backendHostHeader value.
      */
@@ -309,7 +322,8 @@ public final class Backend {
     }
 
     /**
-     * Set the backendHostHeader property: The value to use as the host header sent to the backend. If blank or unspecified, this defaults to the incoming host.
+     * Set the backendHostHeader property: The value to use as the host header sent to the backend. If blank or
+     * unspecified, this defaults to the incoming host.
      * 
      * @param backendHostHeader the backendHostHeader value to set.
      * @return the Backend object itself.

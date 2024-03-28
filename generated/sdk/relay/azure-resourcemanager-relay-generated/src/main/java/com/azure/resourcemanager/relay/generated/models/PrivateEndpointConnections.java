@@ -20,7 +20,8 @@ public interface PrivateEndpointConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available PrivateEndpointConnections within a namespace as paginated response with {@link PagedIterable}.
+     * @return the available PrivateEndpointConnections within a namespace as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpointConnection> list(String resourceGroupName, String namespaceName);
 
@@ -33,7 +34,8 @@ public interface PrivateEndpointConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the available PrivateEndpointConnections within a namespace as paginated response with {@link PagedIterable}.
+     * @return the available PrivateEndpointConnections within a namespace as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PrivateEndpointConnection> list(String resourceGroupName, String namespaceName, Context context);
 

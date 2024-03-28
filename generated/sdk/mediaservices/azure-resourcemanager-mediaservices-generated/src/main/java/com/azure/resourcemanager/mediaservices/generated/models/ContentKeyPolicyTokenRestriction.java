@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -22,6 +23,13 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyTokenRestriction")
 @Fluent
 public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRestriction {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyTokenRestriction";
+
     /*
      * The token issuer.
      */
@@ -68,7 +76,16 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
      * Creates an instance of ContentKeyPolicyTokenRestriction class.
      */
     public ContentKeyPolicyTokenRestriction() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyTokenRestriction");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -223,16 +240,19 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
     public void validate() {
         super.validate();
         if (issuer() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property issuer in model ContentKeyPolicyTokenRestriction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property issuer in model ContentKeyPolicyTokenRestriction"));
         }
         if (audience() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property audience in model ContentKeyPolicyTokenRestriction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property audience in model ContentKeyPolicyTokenRestriction"));
         }
         if (primaryVerificationKey() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property primaryVerificationKey in model ContentKeyPolicyTokenRestriction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property primaryVerificationKey in model ContentKeyPolicyTokenRestriction"));
         } else {
             primaryVerificationKey().validate();
         }
@@ -243,8 +263,9 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
             requiredClaims().forEach(e -> e.validate());
         }
         if (restrictionTokenType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property restrictionTokenType in model ContentKeyPolicyTokenRestriction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property restrictionTokenType in model ContentKeyPolicyTokenRestriction"));
         }
     }
 

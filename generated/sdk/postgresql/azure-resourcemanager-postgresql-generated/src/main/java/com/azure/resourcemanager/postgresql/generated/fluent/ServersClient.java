@@ -129,7 +129,8 @@ public interface ServersClient {
     ServerInner create(String resourceGroupName, String serverName, ServerForCreate parameters, Context context);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -144,7 +145,8 @@ public interface ServersClient {
         ServerUpdateParameters parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -159,7 +161,8 @@ public interface ServersClient {
         ServerUpdateParameters parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -174,7 +177,8 @@ public interface ServersClient {
         ServerUpdateParameters parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -190,7 +194,8 @@ public interface ServersClient {
         ServerUpdateParameters parameters, Context context);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -204,7 +209,8 @@ public interface ServersClient {
     Mono<ServerInner> updateAsync(String resourceGroupName, String serverName, ServerUpdateParameters parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -218,7 +224,8 @@ public interface ServersClient {
     ServerInner update(String resourceGroupName, String serverName, ServerUpdateParameters parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.

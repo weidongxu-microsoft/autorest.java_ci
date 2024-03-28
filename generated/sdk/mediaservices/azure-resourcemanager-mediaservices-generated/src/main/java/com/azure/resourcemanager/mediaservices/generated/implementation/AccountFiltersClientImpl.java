@@ -60,7 +60,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesAccountFilters to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AzureMediaServicesAccountFilters to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesAc")
@@ -134,7 +135,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AccountFilterInner>> listSinglePageAsync(String resourceGroupName, String accountName) {
@@ -174,7 +176,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AccountFilterInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -287,7 +290,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Account Filter in the Media Services account along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of an Account Filter in the Media Services account along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccountFilterInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -330,7 +334,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of an Account Filter in the Media Services account along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of an Account Filter in the Media Services account along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AccountFilterInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -882,7 +887,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AccountFilterInner>> listNextSinglePageAsync(String nextLink) {
@@ -910,7 +916,8 @@ public final class AccountFiltersClientImpl implements AccountFiltersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a collection of AccountFilter items along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AccountFilterInner>> listNextSinglePageAsync(String nextLink, Context context) {

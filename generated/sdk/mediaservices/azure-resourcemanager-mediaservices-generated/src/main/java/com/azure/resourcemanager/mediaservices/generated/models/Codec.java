@@ -53,17 +53,6 @@ public class Codec {
     }
 
     /**
-     * Set the odataType property: The discriminator for derived types.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the Codec object itself.
-     */
-    protected Codec withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
      * Get the label property: An optional label for the codec. The label can be used to control muxing behavior.
      * 
      * @return the label value.

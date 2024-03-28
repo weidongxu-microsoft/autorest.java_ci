@@ -50,21 +50,25 @@ public interface ApplicationGroup {
     String location();
 
     /**
-     * Gets the isEnabled property: Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+     * Gets the isEnabled property: Determines if Application Group is allowed to create connection with namespace or
+     * not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no
+     * new connections will be allowed.
      * 
      * @return the isEnabled value.
      */
     Boolean isEnabled();
 
     /**
-     * Gets the clientAppGroupIdentifier property: The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+     * Gets the clientAppGroupIdentifier property: The Unique identifier for application group.Supports
+     * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
      * 
      * @return the clientAppGroupIdentifier value.
      */
     String clientAppGroupIdentifier();
 
     /**
-     * Gets the policies property: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Gets the policies property: List of group policies that define the behavior of application group. The policies
+     * can support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @return the policies value.
      */
@@ -130,7 +134,8 @@ public interface ApplicationGroup {
         }
 
         /**
-         * The stage of the ApplicationGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ApplicationGroup definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithIsEnabled, DefinitionStages.WithClientAppGroupIdentifier,
             DefinitionStages.WithPolicies {
@@ -155,9 +160,13 @@ public interface ApplicationGroup {
          */
         interface WithIsEnabled {
             /**
-             * Specifies the isEnabled property: Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+             * Specifies the isEnabled property: Determines if Application Group is allowed to create connection with
+             * namespace or not. Once the isEnabled is set to false, all the existing connections of application group
+             * gets dropped and no new connections will be allowed.
              * 
-             * @param isEnabled Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+             * @param isEnabled Determines if Application Group is allowed to create connection with namespace or not.
+             * Once the isEnabled is set to false, all the existing connections of application group gets dropped and no
+             * new connections will be allowed.
              * @return the next definition stage.
              */
             WithCreate withIsEnabled(Boolean isEnabled);
@@ -168,9 +177,11 @@ public interface ApplicationGroup {
          */
         interface WithClientAppGroupIdentifier {
             /**
-             * Specifies the clientAppGroupIdentifier property: The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+             * Specifies the clientAppGroupIdentifier property: The Unique identifier for application group.Supports
+             * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
              * 
-             * @param clientAppGroupIdentifier The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+             * @param clientAppGroupIdentifier The Unique identifier for application group.Supports
+             * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
              * @return the next definition stage.
              */
             WithCreate withClientAppGroupIdentifier(String clientAppGroupIdentifier);
@@ -181,9 +192,11 @@ public interface ApplicationGroup {
          */
         interface WithPolicies {
             /**
-             * Specifies the policies property: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic..
+             * Specifies the policies property: List of group policies that define the behavior of application group.
+             * The policies can support resource governance scenarios such as limiting ingress or egress traffic..
              * 
-             * @param policies List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
+             * @param policies List of group policies that define the behavior of application group. The policies can
+             * support resource governance scenarios such as limiting ingress or egress traffic.
              * @return the next definition stage.
              */
             WithCreate withPolicies(List<ApplicationGroupPolicy> policies);
@@ -227,9 +240,13 @@ public interface ApplicationGroup {
          */
         interface WithIsEnabled {
             /**
-             * Specifies the isEnabled property: Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+             * Specifies the isEnabled property: Determines if Application Group is allowed to create connection with
+             * namespace or not. Once the isEnabled is set to false, all the existing connections of application group
+             * gets dropped and no new connections will be allowed.
              * 
-             * @param isEnabled Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+             * @param isEnabled Determines if Application Group is allowed to create connection with namespace or not.
+             * Once the isEnabled is set to false, all the existing connections of application group gets dropped and no
+             * new connections will be allowed.
              * @return the next definition stage.
              */
             Update withIsEnabled(Boolean isEnabled);
@@ -240,9 +257,11 @@ public interface ApplicationGroup {
          */
         interface WithClientAppGroupIdentifier {
             /**
-             * Specifies the clientAppGroupIdentifier property: The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+             * Specifies the clientAppGroupIdentifier property: The Unique identifier for application group.Supports
+             * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
              * 
-             * @param clientAppGroupIdentifier The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+             * @param clientAppGroupIdentifier The Unique identifier for application group.Supports
+             * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
              * @return the next definition stage.
              */
             Update withClientAppGroupIdentifier(String clientAppGroupIdentifier);
@@ -253,9 +272,11 @@ public interface ApplicationGroup {
          */
         interface WithPolicies {
             /**
-             * Specifies the policies property: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic..
+             * Specifies the policies property: List of group policies that define the behavior of application group.
+             * The policies can support resource governance scenarios such as limiting ingress or egress traffic..
              * 
-             * @param policies List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
+             * @param policies List of group policies that define the behavior of application group. The policies can
+             * support resource governance scenarios such as limiting ingress or egress traffic.
              * @return the next definition stage.
              */
             Update withPolicies(List<ApplicationGroupPolicy> policies);

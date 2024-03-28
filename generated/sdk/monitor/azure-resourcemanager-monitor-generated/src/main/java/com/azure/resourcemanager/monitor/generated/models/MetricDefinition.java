@@ -68,7 +68,8 @@ public interface MetricDefinition {
     MetricUnit unit();
 
     /**
-     * Gets the primaryAggregationType property: the primary aggregation type value defining how to use the values for display.
+     * Gets the primaryAggregationType property: the primary aggregation type value defining how to use the values for
+     * display.
      * 
      * @return the primaryAggregationType value.
      */

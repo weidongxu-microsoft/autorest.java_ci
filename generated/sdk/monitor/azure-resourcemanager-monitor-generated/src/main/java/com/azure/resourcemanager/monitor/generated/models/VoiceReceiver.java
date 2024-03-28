@@ -38,7 +38,8 @@ public final class VoiceReceiver {
     }
 
     /**
-     * Get the name property: The name of the voice receiver. Names must be unique across all receivers within an action group.
+     * Get the name property: The name of the voice receiver. Names must be unique across all receivers within an action
+     * group.
      * 
      * @return the name value.
      */
@@ -47,7 +48,8 @@ public final class VoiceReceiver {
     }
 
     /**
-     * Set the name property: The name of the voice receiver. Names must be unique across all receivers within an action group.
+     * Set the name property: The name of the voice receiver. Names must be unique across all receivers within an action
+     * group.
      * 
      * @param name the name value to set.
      * @return the VoiceReceiver object itself.
@@ -104,16 +106,16 @@ public final class VoiceReceiver {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model VoiceReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model VoiceReceiver"));
         }
         if (countryCode() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property countryCode in model VoiceReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property countryCode in model VoiceReceiver"));
         }
         if (phoneNumber() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property phoneNumber in model VoiceReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property phoneNumber in model VoiceReceiver"));
         }
     }
 

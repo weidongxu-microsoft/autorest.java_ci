@@ -96,8 +96,9 @@ public final class KubernetesRoleResources {
             storage().validate();
         }
         if (compute() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property compute in model KubernetesRoleResources"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property compute in model KubernetesRoleResources"));
         } else {
             compute().validate();
         }

@@ -53,7 +53,8 @@ public final class WcfRelaysListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of WCF relays.
+     * Get the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of WCF
+     * relays.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class WcfRelaysListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of WCF relays.
+     * Set the nextLink property: Link to the next set of results. Not empty if value contains incomplete list of WCF
+     * relays.
      * 
      * @param nextLink the nextLink value to set.
      * @return the WcfRelaysListResult object itself.

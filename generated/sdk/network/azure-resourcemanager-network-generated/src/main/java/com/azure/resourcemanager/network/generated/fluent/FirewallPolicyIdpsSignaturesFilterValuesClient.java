@@ -12,7 +12,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.SignatureOverri
 import com.azure.resourcemanager.network.generated.models.SignatureOverridesFilterValuesQuery;
 
 /**
- * An instance of this class provides access to all the operations defined in FirewallPolicyIdpsSignaturesFilterValuesClient.
+ * An instance of this class provides access to all the operations defined in
+ * FirewallPolicyIdpsSignaturesFilterValuesClient.
  */
 public interface FirewallPolicyIdpsSignaturesFilterValuesClient {
     /**

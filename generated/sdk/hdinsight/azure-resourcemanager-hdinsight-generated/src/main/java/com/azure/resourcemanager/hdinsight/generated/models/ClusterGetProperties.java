@@ -643,8 +643,9 @@ public final class ClusterGetProperties {
      */
     public void validate() {
         if (clusterDefinition() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property clusterDefinition in model ClusterGetProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property clusterDefinition in model ClusterGetProperties"));
         } else {
             clusterDefinition().validate();
         }

@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Describes how a search service should enforce compliance if it finds objects that aren't encrypted with the customer-managed key.
+ * Describes how a search service should enforce compliance if it finds objects that aren't encrypted with the
+ * customer-managed key.
  */
 public enum SearchEncryptionWithCmk {
     /**

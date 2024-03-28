@@ -93,7 +93,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
+     * Get the primary property: Specifies the primary network interface in case the virtual machine has more than 1
+     * network interface.
      * 
      * @return the primary value.
      */
@@ -102,7 +103,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1 network interface.
+     * Set the primary property: Specifies the primary network interface in case the virtual machine has more than 1
+     * network interface.
      * 
      * @param primary the primary value to set.
      * @return the VirtualMachineScaleSetNetworkConfigurationProperties object itself.
@@ -113,7 +115,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
+     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
+     * networking-enabled.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -122,7 +125,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
+     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
+     * networking-enabled.
      * 
      * @param enableAcceleratedNetworking the enableAcceleratedNetworking value to set.
      * @return the VirtualMachineScaleSetNetworkConfigurationProperties object itself.
@@ -134,7 +138,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
+     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
+     * tracking.
      * 
      * @return the disableTcpStateTracking value.
      */
@@ -143,7 +148,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
+     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
+     * tracking.
      * 
      * @param disableTcpStateTracking the disableTcpStateTracking value to set.
      * @return the VirtualMachineScaleSetNetworkConfigurationProperties object itself.
@@ -278,7 +284,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
+     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
+     * resource.
      * 
      * @return the auxiliaryMode value.
      */
@@ -287,7 +294,8 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
     }
 
     /**
-     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
+     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
+     * resource.
      * 
      * @param auxiliaryMode the auxiliaryMode value to set.
      * @return the VirtualMachineScaleSetNetworkConfigurationProperties object itself.
@@ -329,8 +337,9 @@ public final class VirtualMachineScaleSetNetworkConfigurationProperties {
             dnsSettings().validate();
         }
         if (ipConfigurations() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ipConfigurations in model VirtualMachineScaleSetNetworkConfigurationProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ipConfigurations in model VirtualMachineScaleSetNetworkConfigurationProperties"));
         } else {
             ipConfigurations().forEach(e -> e.validate());
         }

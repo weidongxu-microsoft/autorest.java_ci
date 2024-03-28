@@ -87,7 +87,8 @@ public interface Domain {
     DomainProvisioningState provisioningState();
 
     /**
-     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this domain.
+     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * domain.
      * 
      * @return the minimumTlsVersionAllowed value.
      */
@@ -101,14 +102,16 @@ public interface Domain {
     String endpoint();
 
     /**
-     * Gets the inputSchema property: This determines the format that Event Grid should expect for incoming events published to the Event Grid Domain Resource.
+     * Gets the inputSchema property: This determines the format that Event Grid should expect for incoming events
+     * published to the Event Grid Domain Resource.
      * 
      * @return the inputSchema value.
      */
     InputSchema inputSchema();
 
     /**
-     * Gets the eventTypeInfo property: Event Type Information for the domain. This information is provided by the publisher and can be used by the 
+     * Gets the eventTypeInfo property: Event Type Information for the domain. This information is provided by the
+     * publisher and can be used by the
      * subscriber to view different types of events that are published.
      * 
      * @return the eventTypeInfo value.
@@ -116,7 +119,8 @@ public interface Domain {
     EventTypeInfo eventTypeInfo();
 
     /**
-     * Gets the inputSchemaMapping property: Information about the InputSchemaMapping which specified the info about mapping event payload.
+     * Gets the inputSchemaMapping property: Information about the InputSchemaMapping which specified the info about
+     * mapping event payload.
      * 
      * @return the inputSchemaMapping value.
      */
@@ -130,34 +134,45 @@ public interface Domain {
     String metricResourceId();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
+     * Note: These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
     List<InboundIpRule> inboundIpRules();
 
     /**
-     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the domain.
+     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the domain.
      * 
      * @return the disableLocalAuth value.
      */
     Boolean disableLocalAuth();
 
     /**
-     * Gets the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-     * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-     * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic when the first event subscription is
-     * created at the scope of the domain topic. If this property is set to false, then creating the first event subscription will require creating a domain topic
-     * by the user. The self-management mode can be used if the user wants full control of when the domain topic is created, while auto-managed mode provides the
-     * flexibility to perform less operations and manage fewer resources by the user. Also, note that in auto-managed creation mode, user is allowed to create the
+     * Gets the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism
+     * for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+     * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The
+     * default value for this property is true.
+     * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic
+     * when the first event subscription is
+     * created at the scope of the domain topic. If this property is set to false, then creating the first event
+     * subscription will require creating a domain topic
+     * by the user. The self-management mode can be used if the user wants full control of when the domain topic is
+     * created, while auto-managed mode provides the
+     * flexibility to perform less operations and manage fewer resources by the user. Also, note that in auto-managed
+     * creation mode, user is allowed to create the
      * domain topic on demand if needed.
      * 
      * @return the autoCreateTopicWithFirstSubscription value.
@@ -165,12 +180,18 @@ public interface Domain {
     Boolean autoCreateTopicWithFirstSubscription();
 
     /**
-     * Gets the autoDeleteTopicWithLastSubscription property: This Boolean is used to specify the deletion mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-     * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-     * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic when the last event subscription at the scope
-     * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the domain topic when it is no longer needed
-     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode can be used if the user wants full
-     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform less operations and manage fewer
+     * Gets the autoDeleteTopicWithLastSubscription property: This Boolean is used to specify the deletion mechanism for
+     * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+     * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false). The
+     * default value for this property is true.
+     * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic when the
+     * last event subscription at the scope
+     * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the
+     * domain topic when it is no longer needed
+     * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode
+     * can be used if the user wants full
+     * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform
+     * less operations and manage fewer
      * resources by the user.
      * 
      * @return the autoDeleteTopicWithLastSubscription value.
@@ -264,7 +285,8 @@ public interface Domain {
         }
 
         /**
-         * The stage of the Domain definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Domain definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithMinimumTlsVersionAllowed, DefinitionStages.WithInputSchema,
@@ -332,7 +354,8 @@ public interface Domain {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this domain.
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this domain.
              * 
              * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this domain.
              * @return the next definition stage.
@@ -345,9 +368,11 @@ public interface Domain {
          */
         interface WithInputSchema {
             /**
-             * Specifies the inputSchema property: This determines the format that Event Grid should expect for incoming events published to the Event Grid Domain Resource..
+             * Specifies the inputSchema property: This determines the format that Event Grid should expect for incoming
+             * events published to the Event Grid Domain Resource..
              * 
-             * @param inputSchema This determines the format that Event Grid should expect for incoming events published to the Event Grid Domain Resource.
+             * @param inputSchema This determines the format that Event Grid should expect for incoming events published
+             * to the Event Grid Domain Resource.
              * @return the next definition stage.
              */
             WithCreate withInputSchema(InputSchema inputSchema);
@@ -358,10 +383,12 @@ public interface Domain {
          */
         interface WithEventTypeInfo {
             /**
-             * Specifies the eventTypeInfo property: Event Type Information for the domain. This information is provided by the publisher and can be used by the 
+             * Specifies the eventTypeInfo property: Event Type Information for the domain. This information is provided
+             * by the publisher and can be used by the
              * subscriber to view different types of events that are published..
              * 
-             * @param eventTypeInfo Event Type Information for the domain. This information is provided by the publisher and can be used by the 
+             * @param eventTypeInfo Event Type Information for the domain. This information is provided by the publisher
+             * and can be used by the
              * subscriber to view different types of events that are published.
              * @return the next definition stage.
              */
@@ -373,9 +400,11 @@ public interface Domain {
          */
         interface WithInputSchemaMapping {
             /**
-             * Specifies the inputSchemaMapping property: Information about the InputSchemaMapping which specified the info about mapping event payload..
+             * Specifies the inputSchemaMapping property: Information about the InputSchemaMapping which specified the
+             * info about mapping event payload..
              * 
-             * @param inputSchemaMapping Information about the InputSchemaMapping which specified the info about mapping event payload.
+             * @param inputSchemaMapping Information about the InputSchemaMapping which specified the info about mapping
+             * event payload.
              * @return the next definition stage.
              */
             WithCreate withInputSchemaMapping(InputSchemaMapping inputSchemaMapping);
@@ -386,11 +415,15 @@ public interface Domain {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainProperties.InboundIpRules" /&gt;.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -401,9 +434,11 @@ public interface Domain {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
+             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+             * These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -414,9 +449,13 @@ public interface Domain {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the domain..
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
+             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
+             * allowed to publish to the domain..
              * 
-             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the domain.
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
+             * When the property is set to true, only AAD token will be used to authenticate if user is allowed to
+             * publish to the domain.
              * @return the next definition stage.
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
@@ -427,20 +466,32 @@ public interface Domain {
          */
         interface WithAutoCreateTopicWithFirstSubscription {
             /**
-             * Specifies the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic when the first event subscription is
-             * created at the scope of the domain topic. If this property is set to false, then creating the first event subscription will require creating a domain topic
-             * by the user. The self-management mode can be used if the user wants full control of when the domain topic is created, while auto-managed mode provides the
-             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in auto-managed creation mode, user is allowed to create the
+             * Specifies the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation
+             * mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain
+             * topic when the first event subscription is
+             * created at the scope of the domain topic. If this property is set to false, then creating the first event
+             * subscription will require creating a domain topic
+             * by the user. The self-management mode can be used if the user wants full control of when the domain topic
+             * is created, while auto-managed mode provides the
+             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in
+             * auto-managed creation mode, user is allowed to create the
              * domain topic on demand if needed..
              * 
-             * @param autoCreateTopicWithFirstSubscription This Boolean is used to specify the creation mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic when the first event subscription is
-             * created at the scope of the domain topic. If this property is set to false, then creating the first event subscription will require creating a domain topic
-             * by the user. The self-management mode can be used if the user wants full control of when the domain topic is created, while auto-managed mode provides the
-             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in auto-managed creation mode, user is allowed to create the
+             * @param autoCreateTopicWithFirstSubscription This Boolean is used to specify the creation mechanism for
+             * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain
+             * topic when the first event subscription is
+             * created at the scope of the domain topic. If this property is set to false, then creating the first event
+             * subscription will require creating a domain topic
+             * by the user. The self-management mode can be used if the user wants full control of when the domain topic
+             * is created, while auto-managed mode provides the
+             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in
+             * auto-managed creation mode, user is allowed to create the
              * domain topic on demand if needed.
              * @return the next definition stage.
              */
@@ -452,20 +503,32 @@ public interface Domain {
          */
         interface WithAutoDeleteTopicWithLastSubscription {
             /**
-             * Specifies the autoDeleteTopicWithLastSubscription property: This Boolean is used to specify the deletion mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic when the last event subscription at the scope
-             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the domain topic when it is no longer needed
-             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode can be used if the user wants full
-             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform less operations and manage fewer
+             * Specifies the autoDeleteTopicWithLastSubscription property: This Boolean is used to specify the deletion
+             * mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic
+             * when the last event subscription at the scope
+             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete
+             * the domain topic when it is no longer needed
+             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The
+             * self-management mode can be used if the user wants full
+             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
+             * perform less operations and manage fewer
              * resources by the user..
              * 
-             * @param autoDeleteTopicWithLastSubscription This Boolean is used to specify the deletion mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic when the last event subscription at the scope
-             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the domain topic when it is no longer needed
-             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode can be used if the user wants full
-             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform less operations and manage fewer
+             * @param autoDeleteTopicWithLastSubscription This Boolean is used to specify the deletion mechanism for
+             * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic
+             * when the last event subscription at the scope
+             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete
+             * the domain topic when it is no longer needed
+             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The
+             * self-management mode can be used if the user wants full
+             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
+             * perform less operations and manage fewer
              * resources by the user.
              * @return the next definition stage.
              */
@@ -565,11 +628,17 @@ public interface Domain {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainUpdateParameterProperties.InboundIpRules" /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainUpdateParameterProperties.InboundIpRules"
+             * /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainUpdateParameterProperties.InboundIpRules" /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.DomainUpdateParameterProperties.InboundIpRules"
+             * /&gt;.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -580,9 +649,11 @@ public interface Domain {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
+             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+             * These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -593,7 +664,8 @@ public interface Domain {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this domain.
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this domain.
              * 
              * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this domain.
              * @return the next definition stage.
@@ -606,9 +678,13 @@ public interface Domain {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the domain..
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
+             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
+             * allowed to publish to the domain..
              * 
-             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the domain.
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
+             * When the property is set to true, only AAD token will be used to authenticate if user is allowed to
+             * publish to the domain.
              * @return the next definition stage.
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);
@@ -619,20 +695,32 @@ public interface Domain {
          */
         interface WithAutoCreateTopicWithFirstSubscription {
             /**
-             * Specifies the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic when the first event subscription is
-             * created at the scope of the domain topic. If this property is set to false, then creating the first event subscription will require creating a domain topic
-             * by the user. The self-management mode can be used if the user wants full control of when the domain topic is created, while auto-managed mode provides the
-             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in auto-managed creation mode, user is allowed to create the
+             * Specifies the autoCreateTopicWithFirstSubscription property: This Boolean is used to specify the creation
+             * mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain
+             * topic when the first event subscription is
+             * created at the scope of the domain topic. If this property is set to false, then creating the first event
+             * subscription will require creating a domain topic
+             * by the user. The self-management mode can be used if the user wants full control of when the domain topic
+             * is created, while auto-managed mode provides the
+             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in
+             * auto-managed creation mode, user is allowed to create the
              * domain topic on demand if needed..
              * 
-             * @param autoCreateTopicWithFirstSubscription This Boolean is used to specify the creation mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain topic when the first event subscription is
-             * created at the scope of the domain topic. If this property is set to false, then creating the first event subscription will require creating a domain topic
-             * by the user. The self-management mode can be used if the user wants full control of when the domain topic is created, while auto-managed mode provides the
-             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in auto-managed creation mode, user is allowed to create the
+             * @param autoCreateTopicWithFirstSubscription This Boolean is used to specify the creation mechanism for
+             * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, creation of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is null or set to true, Event Grid is responsible of automatically creating the domain
+             * topic when the first event subscription is
+             * created at the scope of the domain topic. If this property is set to false, then creating the first event
+             * subscription will require creating a domain topic
+             * by the user. The self-management mode can be used if the user wants full control of when the domain topic
+             * is created, while auto-managed mode provides the
+             * flexibility to perform less operations and manage fewer resources by the user. Also, note that in
+             * auto-managed creation mode, user is allowed to create the
              * domain topic on demand if needed.
              * @return the next definition stage.
              */
@@ -644,20 +732,32 @@ public interface Domain {
          */
         interface WithAutoDeleteTopicWithLastSubscription {
             /**
-             * Specifies the autoDeleteTopicWithLastSubscription property: This Boolean is used to specify the deletion mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic when the last event subscription at the scope
-             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the domain topic when it is no longer needed
-             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode can be used if the user wants full
-             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform less operations and manage fewer
+             * Specifies the autoDeleteTopicWithLastSubscription property: This Boolean is used to specify the deletion
+             * mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic
+             * when the last event subscription at the scope
+             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete
+             * the domain topic when it is no longer needed
+             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The
+             * self-management mode can be used if the user wants full
+             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
+             * perform less operations and manage fewer
              * resources by the user..
              * 
-             * @param autoDeleteTopicWithLastSubscription This Boolean is used to specify the deletion mechanism for 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
-             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false). The default value for this property is true.
-             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic when the last event subscription at the scope
-             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete the domain topic when it is no longer needed
-             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The self-management mode can be used if the user wants full
-             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to perform less operations and manage fewer
+             * @param autoDeleteTopicWithLastSubscription This Boolean is used to specify the deletion mechanism for
+             * 'all' the Event Grid Domain Topics associated with this Event Grid Domain resource.
+             * In this context, deletion of domain topic can be auto-managed (when true) or self-managed (when false).
+             * The default value for this property is true.
+             * When this property is set to true, Event Grid is responsible of automatically deleting the domain topic
+             * when the last event subscription at the scope
+             * of the domain topic is deleted. If this property is set to false, then the user needs to manually delete
+             * the domain topic when it is no longer needed
+             * (e.g., when last event subscription is deleted and the resource needs to be cleaned up). The
+             * self-management mode can be used if the user wants full
+             * control of when the domain topic needs to be deleted, while auto-managed mode provides the flexibility to
+             * perform less operations and manage fewer
              * resources by the user.
              * @return the next definition stage.
              */

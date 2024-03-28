@@ -14,7 +14,18 @@ public interface Queries {
     /**
      * Query the usage data for scope defined.
      * 
-     * @param scope The scope associated with query and export operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for Management Group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}' for invoiceSection scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for partners.
+     * @param scope The scope associated with query and export operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     * scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     * for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for Management
+     * Group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}'
+     * for billingProfile scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     * for invoiceSection scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for partners.
      * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -27,7 +38,18 @@ public interface Queries {
     /**
      * Query the usage data for scope defined.
      * 
-     * @param scope The scope associated with query and export operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for Management Group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}' for invoiceSection scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for partners.
+     * @param scope The scope associated with query and export operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department
+     * scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}'
+     * for EnrollmentAccount scope, '/providers/Microsoft.Management/managementGroups/{managementGroupId} for Management
+     * Group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}'
+     * for billingProfile scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}/invoiceSections/{invoiceSectionId}'
+     * for invoiceSection scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/customers/{customerId}' specific for partners.
      * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -39,8 +61,10 @@ public interface Queries {
     /**
      * Query the usage data for external cloud provider type defined.
      * 
-     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations. This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated account.
-     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
+     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations.
+     * This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated account.
+     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or
+     * '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
      * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -55,8 +79,10 @@ public interface Queries {
     /**
      * Query the usage data for external cloud provider type defined.
      * 
-     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations. This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated account.
-     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
+     * @param externalCloudProviderType The external cloud provider type associated with dimension/query operations.
+     * This includes 'externalSubscriptions' for linked account and 'externalBillingAccounts' for consolidated account.
+     * @param externalCloudProviderId This can be '{externalSubscriptionId}' for linked account or
+     * '{externalBillingAccountId}' for consolidated account used with dimension/query operations.
      * @param parameters Parameters supplied to the CreateOrUpdate Query Config operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

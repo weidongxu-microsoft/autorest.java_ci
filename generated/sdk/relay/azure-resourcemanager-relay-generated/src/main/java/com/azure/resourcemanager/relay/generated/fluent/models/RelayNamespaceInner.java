@@ -178,7 +178,8 @@ public final class RelayNamespaceInner extends Resource {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -187,7 +188,8 @@ public final class RelayNamespaceInner extends Resource {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the RelayNamespaceInner object itself.

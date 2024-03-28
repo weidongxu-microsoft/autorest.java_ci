@@ -58,7 +58,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
     }
 
     /**
-     * The interface defining all the services for HDInsightManagementClientScriptActions to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for HDInsightManagementClientScriptActions to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "HDInsightManagementC")
@@ -246,7 +247,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -284,7 +286,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -388,7 +391,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the script execution detail for the given script execution ID along with {@link Response} on successful completion of {@link Mono}.
+     * @return the script execution detail for the given script execution ID along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RuntimeScriptActionDetailInner>> getExecutionDetailWithResponseAsync(String resourceGroupName,
@@ -430,7 +434,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the script execution detail for the given script execution ID along with {@link Response} on successful completion of {@link Mono}.
+     * @return the script execution detail for the given script execution ID along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RuntimeScriptActionDetailInner>> getExecutionDetailWithResponseAsync(String resourceGroupName,
@@ -523,7 +528,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status of execution operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return the async operation status of execution operation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AsyncOperationResultInner>> getExecutionAsyncOperationStatusWithResponseAsync(
@@ -564,7 +570,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the async operation status of execution operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return the async operation status of execution operation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AsyncOperationResultInner>> getExecutionAsyncOperationStatusWithResponseAsync(
@@ -657,7 +664,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterNextSinglePageAsync(String nextLink) {
@@ -686,7 +694,8 @@ public final class ScriptActionsClientImpl implements ScriptActionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the persisted script action for the cluster along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RuntimeScriptActionDetailInner>> listByClusterNextSinglePageAsync(String nextLink,

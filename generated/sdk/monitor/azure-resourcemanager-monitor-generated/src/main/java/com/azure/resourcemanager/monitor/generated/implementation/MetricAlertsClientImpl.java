@@ -61,7 +61,8 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
     }
 
     /**
-     * The interface defining all the services for MonitorClientMetricAlerts to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MonitorClientMetricAlerts to be used by the proxy service to perform
+     * REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientMetricA")
@@ -129,7 +130,8 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MetricAlertResourceInner>> listSinglePageAsync() {
@@ -158,7 +160,8 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MetricAlertResourceInner>> listSinglePageAsync(Context context) {
@@ -237,7 +240,8 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MetricAlertResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -271,7 +275,8 @@ public final class MetricAlertsClientImpl implements MetricAlertsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MetricAlertResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,

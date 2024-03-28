@@ -90,7 +90,9 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Get the previewLocator property: The identifier of the preview locator in Guid format. Specifying this at creation time allows the caller to know the preview locator url before the event is created. If omitted, the service will generate a random identifier. This value cannot be updated once the live event is created.
+     * Get the previewLocator property: The identifier of the preview locator in Guid format. Specifying this at
+     * creation time allows the caller to know the preview locator url before the event is created. If omitted, the
+     * service will generate a random identifier. This value cannot be updated once the live event is created.
      * 
      * @return the previewLocator value.
      */
@@ -99,7 +101,9 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the previewLocator property: The identifier of the preview locator in Guid format. Specifying this at creation time allows the caller to know the preview locator url before the event is created. If omitted, the service will generate a random identifier. This value cannot be updated once the live event is created.
+     * Set the previewLocator property: The identifier of the preview locator in Guid format. Specifying this at
+     * creation time allows the caller to know the preview locator url before the event is created. If omitted, the
+     * service will generate a random identifier. This value cannot be updated once the live event is created.
      * 
      * @param previewLocator the previewLocator value to set.
      * @return the LiveEventPreview object itself.
@@ -110,7 +114,8 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Get the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is specified at creation time and cannot be updated.
+     * Get the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is
+     * specified at creation time and cannot be updated.
      * 
      * @return the streamingPolicyName value.
      */
@@ -119,7 +124,8 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is specified at creation time and cannot be updated.
+     * Set the streamingPolicyName property: The name of streaming policy used for the live event preview. This value is
+     * specified at creation time and cannot be updated.
      * 
      * @param streamingPolicyName the streamingPolicyName value to set.
      * @return the LiveEventPreview object itself.
@@ -130,7 +136,10 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Get the alternativeMediaId property: An alternative media identifier associated with the streaming locator created for the preview. This value is specified at creation time and cannot be updated. The identifier can be used in the CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy specified in the StreamingPolicyName field.
+     * Get the alternativeMediaId property: An alternative media identifier associated with the streaming locator
+     * created for the preview. This value is specified at creation time and cannot be updated. The identifier can be
+     * used in the CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy
+     * specified in the StreamingPolicyName field.
      * 
      * @return the alternativeMediaId value.
      */
@@ -139,7 +148,10 @@ public final class LiveEventPreview {
     }
 
     /**
-     * Set the alternativeMediaId property: An alternative media identifier associated with the streaming locator created for the preview. This value is specified at creation time and cannot be updated. The identifier can be used in the CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy specified in the StreamingPolicyName field.
+     * Set the alternativeMediaId property: An alternative media identifier associated with the streaming locator
+     * created for the preview. This value is specified at creation time and cannot be updated. The identifier can be
+     * used in the CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy
+     * specified in the StreamingPolicyName field.
      * 
      * @param alternativeMediaId the alternativeMediaId value to set.
      * @return the LiveEventPreview object itself.

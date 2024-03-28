@@ -39,7 +39,9 @@ public final class LegalHoldInner {
     }
 
     /**
-     * Get the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+     * Get the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one
+     * existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared
+     * out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
      * 
      * @return the hasLegalHold value.
      */
@@ -68,7 +70,9 @@ public final class LegalHoldInner {
     }
 
     /**
-     * Get the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
+     * Get the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
+     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
+     * blocks cannot be modified or deleted.
      * 
      * @return the allowProtectedAppendWritesAll value.
      */
@@ -77,7 +81,9 @@ public final class LegalHoldInner {
     }
 
     /**
-     * Set the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing blocks cannot be modified or deleted.
+     * Set the allowProtectedAppendWritesAll property: When enabled, new blocks can be written to both 'Append and Bock
+     * Blobs' while maintaining legal hold protection and compliance. Only new blocks can be added and any existing
+     * blocks cannot be modified or deleted.
      * 
      * @param allowProtectedAppendWritesAll the allowProtectedAppendWritesAll value to set.
      * @return the LegalHoldInner object itself.
@@ -94,8 +100,8 @@ public final class LegalHoldInner {
      */
     public void validate() {
         if (tags() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property tags in model LegalHoldInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property tags in model LegalHoldInner"));
         }
     }
 

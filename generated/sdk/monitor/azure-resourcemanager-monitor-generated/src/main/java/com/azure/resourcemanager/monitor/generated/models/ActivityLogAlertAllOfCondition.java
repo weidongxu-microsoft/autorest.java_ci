@@ -53,8 +53,9 @@ public final class ActivityLogAlertAllOfCondition {
      */
     public void validate() {
         if (allOf() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property allOf in model ActivityLogAlertAllOfCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property allOf in model ActivityLogAlertAllOfCondition"));
         } else {
             allOf().forEach(e -> e.validate());
         }

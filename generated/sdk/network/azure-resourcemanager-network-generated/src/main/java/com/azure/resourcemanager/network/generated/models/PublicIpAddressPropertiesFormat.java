@@ -125,7 +125,8 @@ public interface PublicIpAddressPropertiesFormat {
     DeleteOptions deleteOption();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressPropertiesFormatInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PublicIpAddressPropertiesFormatInner
+     * object.
      * 
      * @return the inner object.
      */

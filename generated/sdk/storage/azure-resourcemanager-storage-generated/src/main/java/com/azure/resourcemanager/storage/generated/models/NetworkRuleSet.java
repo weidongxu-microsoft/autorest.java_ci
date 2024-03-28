@@ -51,7 +51,9 @@ public final class NetworkRuleSet {
     }
 
     /**
-     * Get the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of those traffics.
+     * Get the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values
+     * are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of
+     * those traffics.
      * 
      * @return the bypass value.
      */
@@ -60,7 +62,9 @@ public final class NetworkRuleSet {
     }
 
     /**
-     * Set the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of those traffics.
+     * Set the bypass property: Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values
+     * are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of
+     * those traffics.
      * 
      * @param bypass the bypass value to set.
      * @return the NetworkRuleSet object itself.
@@ -166,8 +170,8 @@ public final class NetworkRuleSet {
             ipRules().forEach(e -> e.validate());
         }
         if (defaultAction() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property defaultAction in model NetworkRuleSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property defaultAction in model NetworkRuleSet"));
         }
     }
 

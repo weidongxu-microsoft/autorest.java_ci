@@ -41,7 +41,8 @@ public final class AzureReachabilityReportInner {
     }
 
     /**
-     * Get the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or City.
+     * Get the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or
+     * City.
      * 
      * @return the aggregationLevel value.
      */
@@ -50,7 +51,8 @@ public final class AzureReachabilityReportInner {
     }
 
     /**
-     * Set the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or City.
+     * Set the aggregationLevel property: The aggregation level of Azure reachability report. Can be Country, State or
+     * City.
      * 
      * @param aggregationLevel the aggregationLevel value to set.
      * @return the AzureReachabilityReportInner object itself.
@@ -107,18 +109,21 @@ public final class AzureReachabilityReportInner {
      */
     public void validate() {
         if (aggregationLevel() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property aggregationLevel in model AzureReachabilityReportInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property aggregationLevel in model AzureReachabilityReportInner"));
         }
         if (providerLocation() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property providerLocation in model AzureReachabilityReportInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property providerLocation in model AzureReachabilityReportInner"));
         } else {
             providerLocation().validate();
         }
         if (reachabilityReport() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property reachabilityReport in model AzureReachabilityReportInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property reachabilityReport in model AzureReachabilityReportInner"));
         } else {
             reachabilityReport().forEach(e -> e.validate());
         }

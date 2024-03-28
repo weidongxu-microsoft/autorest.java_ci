@@ -8,7 +8,8 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The URIs that are used to perform a retrieval of a public blob, file, web or dfs object via a internet routing endpoint.
+ * The URIs that are used to perform a retrieval of a public blob, file, web or dfs object via a internet routing
+ * endpoint.
  */
 @Immutable
 public final class StorageAccountInternetEndpoints {

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -22,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolicyConfiguration {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyWidevineConfiguration";
+
+    /*
      * The Widevine template.
      */
     @JsonProperty(value = "widevineTemplate", required = true)
@@ -31,7 +39,16 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyWidevineConfiguration class.
      */
     public ContentKeyPolicyWidevineConfiguration() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyWidevineConfiguration");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -63,8 +80,9 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
     public void validate() {
         super.validate();
         if (widevineTemplate() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property widevineTemplate in model ContentKeyPolicyWidevineConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property widevineTemplate in model ContentKeyPolicyWidevineConfiguration"));
         }
     }
 

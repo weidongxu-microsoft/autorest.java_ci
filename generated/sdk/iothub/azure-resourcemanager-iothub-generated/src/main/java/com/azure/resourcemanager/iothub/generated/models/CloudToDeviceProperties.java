@@ -38,7 +38,8 @@ public final class CloudToDeviceProperties {
     }
 
     /**
-     * Get the maxDeliveryCount property: The max delivery count for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * Get the maxDeliveryCount property: The max delivery count for cloud-to-device messages in the device queue. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      * 
      * @return the maxDeliveryCount value.
      */
@@ -47,7 +48,8 @@ public final class CloudToDeviceProperties {
     }
 
     /**
-     * Set the maxDeliveryCount property: The max delivery count for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * Set the maxDeliveryCount property: The max delivery count for cloud-to-device messages in the device queue. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      * 
      * @param maxDeliveryCount the maxDeliveryCount value to set.
      * @return the CloudToDeviceProperties object itself.
@@ -58,7 +60,8 @@ public final class CloudToDeviceProperties {
     }
 
     /**
-     * Get the defaultTtlAsIso8601 property: The default time to live for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * Get the defaultTtlAsIso8601 property: The default time to live for cloud-to-device messages in the device queue.
+     * See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      * 
      * @return the defaultTtlAsIso8601 value.
      */
@@ -67,7 +70,8 @@ public final class CloudToDeviceProperties {
     }
 
     /**
-     * Set the defaultTtlAsIso8601 property: The default time to live for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * Set the defaultTtlAsIso8601 property: The default time to live for cloud-to-device messages in the device queue.
+     * See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      * 
      * @param defaultTtlAsIso8601 the defaultTtlAsIso8601 value to set.
      * @return the CloudToDeviceProperties object itself.

@@ -22,7 +22,8 @@ public interface BackendAddressPool {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within the set of backend address pools used by
+     * the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -71,7 +72,8 @@ public interface BackendAddressPool {
     List<NetworkInterfaceIpConfiguration> backendIpConfigurations();
 
     /**
-     * Gets the loadBalancingRules property: An array of references to load balancing rules that use this backend address pool.
+     * Gets the loadBalancingRules property: An array of references to load balancing rules that use this backend
+     * address pool.
      * 
      * @return the loadBalancingRules value.
      */
@@ -92,7 +94,8 @@ public interface BackendAddressPool {
     List<SubResource> outboundRules();
 
     /**
-     * Gets the inboundNatRules property: An array of references to inbound NAT rules that use this backend address pool.
+     * Gets the inboundNatRules property: An array of references to inbound NAT rules that use this backend address
+     * pool.
      * 
      * @return the inboundNatRules value.
      */
@@ -106,7 +109,8 @@ public interface BackendAddressPool {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
+     * Gets the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client
+     * and backend address.
      * 
      * @return the drainPeriodInSeconds value.
      */
@@ -186,7 +190,8 @@ public interface BackendAddressPool {
         }
 
         /**
-         * The stage of the BackendAddressPool definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the BackendAddressPool definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithLocation, DefinitionStages.WithName, DefinitionStages.WithTunnelInterfaces,
@@ -234,9 +239,11 @@ public interface BackendAddressPool {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within the set of backend address
+             * pools used by the load balancer. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within the set of backend address pools used by the
+             * load balancer. This name can be used to access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -273,9 +280,11 @@ public interface BackendAddressPool {
          */
         interface WithDrainPeriodInSeconds {
             /**
-             * Specifies the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address..
+             * Specifies the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending
+             * RESET to client and backend address..
              * 
-             * @param drainPeriodInSeconds Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
+             * @param drainPeriodInSeconds Amount of seconds Load Balancer waits for before sending RESET to client and
+             * backend address.
              * @return the next definition stage.
              */
             WithCreate withDrainPeriodInSeconds(Integer drainPeriodInSeconds);
@@ -346,9 +355,11 @@ public interface BackendAddressPool {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within the set of backend address
+             * pools used by the load balancer. This name can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within the set of backend address pools used by the load balancer. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within the set of backend address pools used by the
+             * load balancer. This name can be used to access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -385,9 +396,11 @@ public interface BackendAddressPool {
          */
         interface WithDrainPeriodInSeconds {
             /**
-             * Specifies the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending RESET to client and backend address..
+             * Specifies the drainPeriodInSeconds property: Amount of seconds Load Balancer waits for before sending
+             * RESET to client and backend address..
              * 
-             * @param drainPeriodInSeconds Amount of seconds Load Balancer waits for before sending RESET to client and backend address.
+             * @param drainPeriodInSeconds Amount of seconds Load Balancer waits for before sending RESET to client and
+             * backend address.
              * @return the next definition stage.
              */
             Update withDrainPeriodInSeconds(Integer drainPeriodInSeconds);

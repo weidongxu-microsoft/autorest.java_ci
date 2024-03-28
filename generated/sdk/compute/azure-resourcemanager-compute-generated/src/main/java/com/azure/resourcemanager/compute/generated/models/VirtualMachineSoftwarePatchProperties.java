@@ -135,7 +135,8 @@ public final class VirtualMachineSoftwarePatchProperties {
     }
 
     /**
-     * Get the activityId property: The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+     * Get the activityId property: The activity ID of the operation that produced this result. It is used to correlate
+     * across CRP and extension logs.
      * 
      * @return the activityId value.
      */

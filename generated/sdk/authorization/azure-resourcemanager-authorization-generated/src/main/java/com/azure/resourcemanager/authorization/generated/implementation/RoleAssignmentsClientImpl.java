@@ -60,7 +60,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     }
 
     /**
-     * The interface defining all the services for AuthorizationManagementClientRoleAssignments to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AuthorizationManagementClientRoleAssignments to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
@@ -197,11 +198,14 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignments for a resource along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignments for a resource along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForResourceSinglePageAsync(String resourceGroupName,
@@ -252,12 +256,15 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignments for a resource along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignments for a resource along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForResourceSinglePageAsync(String resourceGroupName,
@@ -308,7 +315,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -353,7 +362,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -399,7 +410,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get role assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -418,11 +431,14 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignments for a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignments for a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -453,12 +469,15 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignments for a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignments for a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -489,7 +508,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -521,7 +542,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -554,7 +577,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -678,8 +703,13 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -716,8 +746,13 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -754,8 +789,13 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -772,8 +812,13 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -790,8 +835,13 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Creates a role assignment.
      * 
-     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
-     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for each role assignment.
+     * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+     * example, use '/subscriptions/{subscription-id}/' for a subscription,
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+     * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+     * for a resource.
+     * @param roleAssignmentName A GUID for the role assignment to create. The name must be unique and different for
+     * each role assignment.
      * @param parameters Parameters for the role assignment.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1211,11 +1261,14 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role assignments for the subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all role assignments for the subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listSinglePageAsync(String filter) {
@@ -1240,12 +1293,15 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all role assignments for the subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all role assignments for the subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listSinglePageAsync(String filter, Context context) {
@@ -1269,7 +1325,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1296,7 +1354,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1325,7 +1385,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
     /**
      * Gets all role assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1341,7 +1403,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1370,7 +1434,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1399,7 +1465,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1431,7 +1499,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1463,7 +1533,9 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * Gets role assignments for a scope.
      * 
      * @param scope The scope of the role assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for the specified principal.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all role assignments at or
+     * above the scope. Use $filter=principalId eq {id} to return all role assignments at, above or below the scope for
+     * the specified principal.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1484,7 +1556,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForResourceNextSinglePageAsync(String nextLink) {
@@ -1513,7 +1586,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForResourceNextSinglePageAsync(String nextLink,
@@ -1541,7 +1615,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1571,7 +1646,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForResourceGroupNextSinglePageAsync(String nextLink,
@@ -1599,7 +1675,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listNextSinglePageAsync(String nextLink) {
@@ -1627,7 +1704,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1654,7 +1732,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForScopeNextSinglePageAsync(String nextLink) {
@@ -1683,7 +1762,8 @@ public final class RoleAssignmentsClientImpl implements RoleAssignmentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return role assignment list operation result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleAssignmentInner>> listForScopeNextSinglePageAsync(String nextLink, Context context) {

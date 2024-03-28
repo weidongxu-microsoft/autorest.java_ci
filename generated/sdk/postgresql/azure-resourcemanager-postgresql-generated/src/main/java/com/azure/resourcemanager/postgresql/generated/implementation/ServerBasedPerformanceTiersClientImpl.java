@@ -56,7 +56,8 @@ public final class ServerBasedPerformanceTiersClientImpl implements ServerBasedP
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientServerBasedPerformanceTiers to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientServerBasedPerformanceTiers to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")

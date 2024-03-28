@@ -12,7 +12,10 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * This is the base type that represents an advanced filter. To configure an advanced filter, do not directly instantiate an object of this class. Instead, instantiate an object of a derived class such as BoolEqualsAdvancedFilter, NumberInAdvancedFilter, StringEqualsAdvancedFilter etc. depending on the type of the key based on which you want to filter.
+ * This is the base type that represents an advanced filter. To configure an advanced filter, do not directly
+ * instantiate an object of this class. Instead, instantiate an object of a derived class such as
+ * BoolEqualsAdvancedFilter, NumberInAdvancedFilter, StringEqualsAdvancedFilter etc. depending on the type of the key
+ * based on which you want to filter.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "operatorType", defaultImpl = AdvancedFilter.class, visible = true)
 @JsonTypeName("AdvancedFilter")
@@ -59,23 +62,13 @@ public class AdvancedFilter {
     }
 
     /**
-     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
      * 
      * @return the operatorType value.
      */
     public AdvancedFilterOperatorType operatorType() {
         return this.operatorType;
-    }
-
-    /**
-     * Set the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
-     * 
-     * @param operatorType the operatorType value to set.
-     * @return the AdvancedFilter object itself.
-     */
-    protected AdvancedFilter withOperatorType(AdvancedFilterOperatorType operatorType) {
-        this.operatorType = operatorType;
-        return this;
     }
 
     /**

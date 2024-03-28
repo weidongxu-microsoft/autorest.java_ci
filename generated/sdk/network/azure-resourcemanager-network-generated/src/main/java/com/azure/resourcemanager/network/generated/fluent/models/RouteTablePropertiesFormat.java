@@ -80,7 +80,8 @@ public final class RouteTablePropertiesFormat {
     }
 
     /**
-     * Get the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table. True means disable.
+     * Get the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table.
+     * True means disable.
      * 
      * @return the disableBgpRoutePropagation value.
      */
@@ -89,7 +90,8 @@ public final class RouteTablePropertiesFormat {
     }
 
     /**
-     * Set the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table. True means disable.
+     * Set the disableBgpRoutePropagation property: Whether to disable the routes learned by BGP on that route table.
+     * True means disable.
      * 
      * @param disableBgpRoutePropagation the disableBgpRoutePropagation value to set.
      * @return the RouteTablePropertiesFormat object itself.

@@ -56,7 +56,9 @@ public interface DdosCustomPolicy {
     String id();
 
     /**
-     * Gets the resourceGuid property: The resource GUID property of the DDoS custom policy resource. It uniquely identifies the resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.
+     * Gets the resourceGuid property: The resource GUID property of the DDoS custom policy resource. It uniquely
+     * identifies the resource, even if the user changes its name or migrate the resource across subscriptions or
+     * resource groups.
      * 
      * @return the resourceGuid value.
      */
@@ -149,7 +151,8 @@ public interface DdosCustomPolicy {
         }
 
         /**
-         * The stage of the DdosCustomPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DdosCustomPolicy definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

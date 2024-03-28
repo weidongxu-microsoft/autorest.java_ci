@@ -85,7 +85,9 @@ public final class Identity {
     }
 
     /**
-     * Get the userAssignedIdentities property: Gets or sets a list of key value pairs that describe the set of User Assigned identities that will be used with this storage account. The key is the ARM resource identifier of the identity. Only 1 User Assigned identity is permitted here.
+     * Get the userAssignedIdentities property: Gets or sets a list of key value pairs that describe the set of User
+     * Assigned identities that will be used with this storage account. The key is the ARM resource identifier of the
+     * identity. Only 1 User Assigned identity is permitted here.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -94,7 +96,9 @@ public final class Identity {
     }
 
     /**
-     * Set the userAssignedIdentities property: Gets or sets a list of key value pairs that describe the set of User Assigned identities that will be used with this storage account. The key is the ARM resource identifier of the identity. Only 1 User Assigned identity is permitted here.
+     * Set the userAssignedIdentities property: Gets or sets a list of key value pairs that describe the set of User
+     * Assigned identities that will be used with this storage account. The key is the ARM resource identifier of the
+     * identity. Only 1 User Assigned identity is permitted here.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the Identity object itself.
@@ -111,8 +115,8 @@ public final class Identity {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property type in model Identity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model Identity"));
         }
         if (userAssignedIdentities() != null) {
             userAssignedIdentities().values().forEach(e -> {

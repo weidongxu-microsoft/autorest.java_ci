@@ -56,7 +56,8 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     }
 
     /**
-     * The interface defining all the services for PolicyClientDataPolicyManifests to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for PolicyClientDataPolicyManifests to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PolicyClientDataPoli")
@@ -194,9 +195,14 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
-     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If
+     * $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned
+     * list only includes all data policy manifests that have a namespace matching the provided value.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -220,9 +226,14 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
-     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If
+     * $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned
+     * list only includes all data policy manifests that have a namespace matching the provided value.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -246,9 +257,14 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
-     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If
+     * $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned
+     * list only includes all data policy manifests that have a namespace matching the provided value.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -262,7 +278,10 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -277,9 +296,14 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
-     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If
+     * $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned
+     * list only includes all data policy manifests that have a namespace matching the provided value.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -295,7 +319,10 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -310,9 +337,14 @@ public final class DataPolicyManifestsClientImpl implements DataPolicyManifestsC
     /**
      * Retrieves data policy manifests
      * 
-     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * This operation retrieves a list of all the data policy manifests that match the optional given $filter. Valid
+     * values for $filter are: "$filter=namespace eq '{0}'". If $filter is not provided, the unfiltered list includes
+     * all data policy manifests for data resource types. If $filter=namespace is provided, the returned list only
+     * includes all data policy manifests that have a namespace matching the provided value.
      * 
-     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned list only includes all data policy manifests that have a namespace matching the provided value.
+     * @param filter The filter to apply on the operation. Valid values for $filter are: "namespace eq '{value}'". If
+     * $filter is not provided, no filtering is performed. If $filter=namespace eq '{value}' is provided, the returned
+     * list only includes all data policy manifests that have a namespace matching the provided value.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

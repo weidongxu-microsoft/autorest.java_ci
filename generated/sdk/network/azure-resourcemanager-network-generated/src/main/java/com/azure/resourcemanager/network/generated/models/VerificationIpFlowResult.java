@@ -18,7 +18,8 @@ public interface VerificationIpFlowResult {
     Access access();
 
     /**
-     * Gets the ruleName property: Name of the rule. If input is not matched against any security rule, it is not displayed.
+     * Gets the ruleName property: Name of the rule. If input is not matched against any security rule, it is not
+     * displayed.
      * 
      * @return the ruleName value.
      */

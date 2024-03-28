@@ -55,7 +55,8 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientUsages to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientUsages to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -77,13 +78,15 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for
+     * compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listSinglePageAsync(String location) {
@@ -109,14 +112,16 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for
+     * compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listSinglePageAsync(String location, Context context) {
@@ -141,7 +146,8 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for
+     * compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -155,7 +161,8 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for
+     * compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @param context The context to associate with this operation.
@@ -171,7 +178,8 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for
+     * compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -185,7 +193,8 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * Gets, for the specified location, the current compute resource usage information as well as the limits for compute resources under the subscription.
+     * Gets, for the specified location, the current compute resource usage information as well as the limits for
+     * compute resources under the subscription.
      * 
      * @param location The location for which resource usage is queried.
      * @param context The context to associate with this operation.
@@ -208,7 +217,8 @@ public final class UsagesClientImpl implements UsagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listNextSinglePageAsync(String nextLink) {
@@ -236,7 +246,8 @@ public final class UsagesClientImpl implements UsagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Usages operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageInner>> listNextSinglePageAsync(String nextLink, Context context) {

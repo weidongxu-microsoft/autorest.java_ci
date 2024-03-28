@@ -131,20 +131,20 @@ public final class ContactDetails {
      */
     public void validate() {
         if (contactPerson() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property contactPerson in model ContactDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property contactPerson in model ContactDetails"));
         }
         if (companyName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property companyName in model ContactDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property companyName in model ContactDetails"));
         }
         if (phone() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property phone in model ContactDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property phone in model ContactDetails"));
         }
         if (emailList() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property emailList in model ContactDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property emailList in model ContactDetails"));
         }
     }
 

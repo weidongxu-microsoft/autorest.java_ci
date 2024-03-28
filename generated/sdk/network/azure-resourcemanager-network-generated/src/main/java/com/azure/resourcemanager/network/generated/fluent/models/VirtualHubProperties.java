@@ -348,7 +348,8 @@ public final class VirtualHubProperties {
     }
 
     /**
-     * Get the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this VirtualHub.
+     * Get the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this
+     * VirtualHub.
      * 
      * @return the virtualHubRouteTableV2S value.
      */
@@ -357,7 +358,8 @@ public final class VirtualHubProperties {
     }
 
     /**
-     * Set the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this VirtualHub.
+     * Set the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this
+     * VirtualHub.
      * 
      * @param virtualHubRouteTableV2S the virtualHubRouteTableV2S value to set.
      * @return the VirtualHubProperties object itself.

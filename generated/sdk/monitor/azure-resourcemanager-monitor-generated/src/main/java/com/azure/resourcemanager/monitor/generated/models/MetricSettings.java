@@ -64,7 +64,9 @@ public final class MetricSettings {
     }
 
     /**
-     * Get the category property: Name of a Diagnostic Metric category for a resource type this setting is applied to. To obtain the list of Diagnostic metric categories for a resource, first perform a GET diagnostic settings operation.
+     * Get the category property: Name of a Diagnostic Metric category for a resource type this setting is applied to.
+     * To obtain the list of Diagnostic metric categories for a resource, first perform a GET diagnostic settings
+     * operation.
      * 
      * @return the category value.
      */
@@ -73,7 +75,9 @@ public final class MetricSettings {
     }
 
     /**
-     * Set the category property: Name of a Diagnostic Metric category for a resource type this setting is applied to. To obtain the list of Diagnostic metric categories for a resource, first perform a GET diagnostic settings operation.
+     * Set the category property: Name of a Diagnostic Metric category for a resource type this setting is applied to.
+     * To obtain the list of Diagnostic metric categories for a resource, first perform a GET diagnostic settings
+     * operation.
      * 
      * @param category the category value to set.
      * @return the MetricSettings object itself.

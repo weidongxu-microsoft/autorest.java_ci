@@ -105,16 +105,16 @@ public final class MetricDimension {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model MetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model MetricDimension"));
         }
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model MetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property operator in model MetricDimension"));
         }
         if (values() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property values in model MetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property values in model MetricDimension"));
         }
     }
 

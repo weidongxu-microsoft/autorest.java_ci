@@ -55,7 +55,8 @@ public interface VnetInfoResource {
     String certThumbprint();
 
     /**
-     * Gets the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+     * Gets the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to
+     * authenticate a
      * Point-To-Site VPN connection.
      * 
      * @return the certBlob value.
@@ -70,14 +71,16 @@ public interface VnetInfoResource {
     List<VnetRoute> routes();
 
     /**
-     * Gets the resyncRequired property: &lt;code&gt;true&lt;/code&gt; if a resync is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the resyncRequired property: &lt;code&gt;true&lt;/code&gt; if a resync is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the resyncRequired value.
      */
     Boolean resyncRequired();
 
     /**
-     * Gets the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses.
+     * Gets the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated
+     * list of IP addresses.
      * 
      * @return the dnsServers value.
      */
@@ -130,14 +133,16 @@ public interface VnetInfoResource {
              * 
              * @param resourceGroupName Name of the resource group to which the resource belongs.
              * @param name Name of the app.
-             * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for the production slot.
+             * @param slot Name of the deployment slot. If a slot is not specified, the API will add or update
+             * connections for the production slot.
              * @return the next definition stage.
              */
             WithCreate withExistingSlot(String resourceGroupName, String name, String slot);
         }
 
         /**
-         * The stage of the VnetInfoResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VnetInfoResource definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithVnetResourceId,
             DefinitionStages.WithCertBlob, DefinitionStages.WithDnsServers, DefinitionStages.WithIsSwift {
@@ -188,10 +193,12 @@ public interface VnetInfoResource {
          */
         interface WithCertBlob {
             /**
-             * Specifies the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+             * Specifies the certBlob property: A certificate file (.cer) blob containing the public key of the private
+             * key used to authenticate a
              * Point-To-Site VPN connection..
              * 
-             * @param certBlob A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+             * @param certBlob A certificate file (.cer) blob containing the public key of the private key used to
+             * authenticate a
              * Point-To-Site VPN connection.
              * @return the next definition stage.
              */
@@ -203,9 +210,11 @@ public interface VnetInfoResource {
          */
         interface WithDnsServers {
             /**
-             * Specifies the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses..
+             * Specifies the dnsServers property: DNS servers to be used by this Virtual Network. This should be a
+             * comma-separated list of IP addresses..
              * 
-             * @param dnsServers DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses.
+             * @param dnsServers DNS servers to be used by this Virtual Network. This should be a comma-separated list
+             * of IP addresses.
              * @return the next definition stage.
              */
             WithCreate withDnsServers(String dnsServers);
@@ -288,10 +297,12 @@ public interface VnetInfoResource {
          */
         interface WithCertBlob {
             /**
-             * Specifies the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+             * Specifies the certBlob property: A certificate file (.cer) blob containing the public key of the private
+             * key used to authenticate a
              * Point-To-Site VPN connection..
              * 
-             * @param certBlob A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+             * @param certBlob A certificate file (.cer) blob containing the public key of the private key used to
+             * authenticate a
              * Point-To-Site VPN connection.
              * @return the next definition stage.
              */
@@ -303,9 +314,11 @@ public interface VnetInfoResource {
          */
         interface WithDnsServers {
             /**
-             * Specifies the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses..
+             * Specifies the dnsServers property: DNS servers to be used by this Virtual Network. This should be a
+             * comma-separated list of IP addresses..
              * 
-             * @param dnsServers DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses.
+             * @param dnsServers DNS servers to be used by this Virtual Network. This should be a comma-separated list
+             * of IP addresses.
              * @return the next definition stage.
              */
             Update withDnsServers(String dnsServers);

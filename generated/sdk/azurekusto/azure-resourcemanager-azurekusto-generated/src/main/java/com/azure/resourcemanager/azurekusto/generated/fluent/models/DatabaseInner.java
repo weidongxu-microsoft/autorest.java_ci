@@ -55,17 +55,6 @@ public class DatabaseInner extends ProxyResource {
     }
 
     /**
-     * Set the kind property: Kind of the database.
-     * 
-     * @param kind the kind value to set.
-     * @return the DatabaseInner object itself.
-     */
-    protected DatabaseInner withKind(Kind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the location property: Resource location.
      * 
      * @return the location value.

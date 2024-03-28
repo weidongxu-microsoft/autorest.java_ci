@@ -68,7 +68,9 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the template property: The template content. You use this element when you want to pass the template syntax directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string. Use either the templateLink property or the template property, but not both.
+     * Get the template property: The template content. You use this element when you want to pass the template syntax
+     * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string.
+     * Use either the templateLink property or the template property, but not both.
      * 
      * @return the template value.
      */
@@ -77,7 +79,9 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the template property: The template content. You use this element when you want to pass the template syntax directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string. Use either the templateLink property or the template property, but not both.
+     * Set the template property: The template content. You use this element when you want to pass the template syntax
+     * directly in the request rather than link to an existing template. It can be a JObject or well-formed JSON string.
+     * Use either the templateLink property or the template property, but not both.
      * 
      * @param template the template value to set.
      * @return the DeploymentProperties object itself.
@@ -88,7 +92,8 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the templateLink property: The URI of the template. Use either the templateLink property or the template property, but not both.
+     * Get the templateLink property: The URI of the template. Use either the templateLink property or the template
+     * property, but not both.
      * 
      * @return the templateLink value.
      */
@@ -97,7 +102,8 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the templateLink property: The URI of the template. Use either the templateLink property or the template property, but not both.
+     * Set the templateLink property: The URI of the template. Use either the templateLink property or the template
+     * property, but not both.
      * 
      * @param templateLink the templateLink value to set.
      * @return the DeploymentProperties object itself.
@@ -108,7 +114,10 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the parameters property: Name and value pairs that define the deployment parameters for the template. You use this element when you want to provide the parameter values directly in the request rather than link to an existing parameter file. Use either the parametersLink property or the parameters property, but not both. It can be a JObject or a well formed JSON string.
+     * Get the parameters property: Name and value pairs that define the deployment parameters for the template. You use
+     * this element when you want to provide the parameter values directly in the request rather than link to an
+     * existing parameter file. Use either the parametersLink property or the parameters property, but not both. It can
+     * be a JObject or a well formed JSON string.
      * 
      * @return the parameters value.
      */
@@ -117,7 +126,10 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the parameters property: Name and value pairs that define the deployment parameters for the template. You use this element when you want to provide the parameter values directly in the request rather than link to an existing parameter file. Use either the parametersLink property or the parameters property, but not both. It can be a JObject or a well formed JSON string.
+     * Set the parameters property: Name and value pairs that define the deployment parameters for the template. You use
+     * this element when you want to provide the parameter values directly in the request rather than link to an
+     * existing parameter file. Use either the parametersLink property or the parameters property, but not both. It can
+     * be a JObject or a well formed JSON string.
      * 
      * @param parameters the parameters value to set.
      * @return the DeploymentProperties object itself.
@@ -128,7 +140,8 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the parametersLink property: The URI of parameters file. You use this element to link to an existing parameters file. Use either the parametersLink property or the parameters property, but not both.
+     * Get the parametersLink property: The URI of parameters file. You use this element to link to an existing
+     * parameters file. Use either the parametersLink property or the parameters property, but not both.
      * 
      * @return the parametersLink value.
      */
@@ -137,7 +150,8 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the parametersLink property: The URI of parameters file. You use this element to link to an existing parameters file. Use either the parametersLink property or the parameters property, but not both.
+     * Set the parametersLink property: The URI of parameters file. You use this element to link to an existing
+     * parameters file. Use either the parametersLink property or the parameters property, but not both.
      * 
      * @param parametersLink the parametersLink value to set.
      * @return the DeploymentProperties object itself.
@@ -148,7 +162,11 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the mode property: The mode that is used to deploy resources. This value can be either Incremental or Complete. In Incremental mode, resources are deployed without deleting existing resources that are not included in the template. In Complete mode, resources are deployed and existing resources in the resource group that are not included in the template are deleted. Be careful when using Complete mode as you may unintentionally delete resources.
+     * Get the mode property: The mode that is used to deploy resources. This value can be either Incremental or
+     * Complete. In Incremental mode, resources are deployed without deleting existing resources that are not included
+     * in the template. In Complete mode, resources are deployed and existing resources in the resource group that are
+     * not included in the template are deleted. Be careful when using Complete mode as you may unintentionally delete
+     * resources.
      * 
      * @return the mode value.
      */
@@ -157,7 +175,11 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the mode property: The mode that is used to deploy resources. This value can be either Incremental or Complete. In Incremental mode, resources are deployed without deleting existing resources that are not included in the template. In Complete mode, resources are deployed and existing resources in the resource group that are not included in the template are deleted. Be careful when using Complete mode as you may unintentionally delete resources.
+     * Set the mode property: The mode that is used to deploy resources. This value can be either Incremental or
+     * Complete. In Incremental mode, resources are deployed without deleting existing resources that are not included
+     * in the template. In Complete mode, resources are deployed and existing resources in the resource group that are
+     * not included in the template are deleted. Be careful when using Complete mode as you may unintentionally delete
+     * resources.
      * 
      * @param mode the mode value to set.
      * @return the DeploymentProperties object itself.
@@ -208,7 +230,9 @@ public class DeploymentProperties {
     }
 
     /**
-     * Get the expressionEvaluationOptions property: Specifies whether template expressions are evaluated within the scope of the parent template or nested template. Only applicable to nested templates. If not specified, default value is outer.
+     * Get the expressionEvaluationOptions property: Specifies whether template expressions are evaluated within the
+     * scope of the parent template or nested template. Only applicable to nested templates. If not specified, default
+     * value is outer.
      * 
      * @return the expressionEvaluationOptions value.
      */
@@ -217,7 +241,9 @@ public class DeploymentProperties {
     }
 
     /**
-     * Set the expressionEvaluationOptions property: Specifies whether template expressions are evaluated within the scope of the parent template or nested template. Only applicable to nested templates. If not specified, default value is outer.
+     * Set the expressionEvaluationOptions property: Specifies whether template expressions are evaluated within the
+     * scope of the parent template or nested template. Only applicable to nested templates. If not specified, default
+     * value is outer.
      * 
      * @param expressionEvaluationOptions the expressionEvaluationOptions value to set.
      * @return the DeploymentProperties object itself.
@@ -241,8 +267,8 @@ public class DeploymentProperties {
             parametersLink().validate();
         }
         if (mode() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property mode in model DeploymentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property mode in model DeploymentProperties"));
         }
         if (debugSetting() != null) {
             debugSetting().validate();

@@ -63,7 +63,8 @@ public class FrontendEndpointUpdateParameters {
     }
 
     /**
-     * Get the sessionAffinityEnabledState property: Whether to allow session affinity on this host. Valid options are 'Enabled' or 'Disabled'.
+     * Get the sessionAffinityEnabledState property: Whether to allow session affinity on this host. Valid options are
+     * 'Enabled' or 'Disabled'.
      * 
      * @return the sessionAffinityEnabledState value.
      */
@@ -72,7 +73,8 @@ public class FrontendEndpointUpdateParameters {
     }
 
     /**
-     * Set the sessionAffinityEnabledState property: Whether to allow session affinity on this host. Valid options are 'Enabled' or 'Disabled'.
+     * Set the sessionAffinityEnabledState property: Whether to allow session affinity on this host. Valid options are
+     * 'Enabled' or 'Disabled'.
      * 
      * @param sessionAffinityEnabledState the sessionAffinityEnabledState value to set.
      * @return the FrontendEndpointUpdateParameters object itself.
@@ -84,7 +86,8 @@ public class FrontendEndpointUpdateParameters {
     }
 
     /**
-     * Get the sessionAffinityTtlSeconds property: UNUSED. This field will be ignored. The TTL to use in seconds for session affinity, if applicable.
+     * Get the sessionAffinityTtlSeconds property: UNUSED. This field will be ignored. The TTL to use in seconds for
+     * session affinity, if applicable.
      * 
      * @return the sessionAffinityTtlSeconds value.
      */
@@ -93,7 +96,8 @@ public class FrontendEndpointUpdateParameters {
     }
 
     /**
-     * Set the sessionAffinityTtlSeconds property: UNUSED. This field will be ignored. The TTL to use in seconds for session affinity, if applicable.
+     * Set the sessionAffinityTtlSeconds property: UNUSED. This field will be ignored. The TTL to use in seconds for
+     * session affinity, if applicable.
      * 
      * @param sessionAffinityTtlSeconds the sessionAffinityTtlSeconds value to set.
      * @return the FrontendEndpointUpdateParameters object itself.
@@ -104,7 +108,8 @@ public class FrontendEndpointUpdateParameters {
     }
 
     /**
-     * Get the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each host (if applicable).
+     * Get the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each host (if
+     * applicable).
      * 
      * @return the webApplicationFirewallPolicyLink value.
      */
@@ -113,7 +118,8 @@ public class FrontendEndpointUpdateParameters {
     }
 
     /**
-     * Set the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each host (if applicable).
+     * Set the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each host (if
+     * applicable).
      * 
      * @param webApplicationFirewallPolicyLink the webApplicationFirewallPolicyLink value to set.
      * @return the FrontendEndpointUpdateParameters object itself.

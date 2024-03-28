@@ -110,7 +110,8 @@ public final class Notification {
     }
 
     /**
-     * Get the threshold property: Threshold value associated with a notification. Notification is sent when the cost exceeded the threshold. It is always percent and has to be between 0 and 1000.
+     * Get the threshold property: Threshold value associated with a notification. Notification is sent when the cost
+     * exceeded the threshold. It is always percent and has to be between 0 and 1000.
      * 
      * @return the threshold value.
      */
@@ -119,7 +120,8 @@ public final class Notification {
     }
 
     /**
-     * Set the threshold property: Threshold value associated with a notification. Notification is sent when the cost exceeded the threshold. It is always percent and has to be between 0 and 1000.
+     * Set the threshold property: Threshold value associated with a notification. Notification is sent when the cost
+     * exceeded the threshold. It is always percent and has to be between 0 and 1000.
      * 
      * @param threshold the threshold value to set.
      * @return the Notification object itself.
@@ -130,7 +132,9 @@ public final class Notification {
     }
 
     /**
-     * Get the contactEmails property: Email addresses to send the budget notification to when the threshold is exceeded. Must have at least one contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at least one contact email specified.
+     * Get the contactEmails property: Email addresses to send the budget notification to when the threshold is
+     * exceeded. Must have at least one contact email or contact group specified at the Subscription or Resource Group
+     * scopes. All other scopes must have at least one contact email specified.
      * 
      * @return the contactEmails value.
      */
@@ -139,7 +143,9 @@ public final class Notification {
     }
 
     /**
-     * Set the contactEmails property: Email addresses to send the budget notification to when the threshold is exceeded. Must have at least one contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at least one contact email specified.
+     * Set the contactEmails property: Email addresses to send the budget notification to when the threshold is
+     * exceeded. Must have at least one contact email or contact group specified at the Subscription or Resource Group
+     * scopes. All other scopes must have at least one contact email specified.
      * 
      * @param contactEmails the contactEmails value to set.
      * @return the Notification object itself.
@@ -170,7 +176,8 @@ public final class Notification {
     }
 
     /**
-     * Get the contactGroups property: Action groups to send the budget notification to when the threshold is exceeded. Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
+     * Get the contactGroups property: Action groups to send the budget notification to when the threshold is exceeded.
+     * Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
      * 
      * @return the contactGroups value.
      */
@@ -179,7 +186,8 @@ public final class Notification {
     }
 
     /**
-     * Set the contactGroups property: Action groups to send the budget notification to when the threshold is exceeded. Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
+     * Set the contactGroups property: Action groups to send the budget notification to when the threshold is exceeded.
+     * Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
      * 
      * @param contactGroups the contactGroups value to set.
      * @return the Notification object itself.
@@ -236,16 +244,16 @@ public final class Notification {
      */
     public void validate() {
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model Notification"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property operator in model Notification"));
         }
         if (threshold() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property threshold in model Notification"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property threshold in model Notification"));
         }
         if (contactEmails() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property contactEmails in model Notification"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property contactEmails in model Notification"));
         }
     }
 

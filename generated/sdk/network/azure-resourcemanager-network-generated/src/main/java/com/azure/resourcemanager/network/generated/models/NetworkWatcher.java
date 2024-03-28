@@ -144,7 +144,8 @@ public interface NetworkWatcher {
         }
 
         /**
-         * The stage of the NetworkWatcher definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NetworkWatcher definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**
@@ -422,7 +423,8 @@ public interface NetworkWatcher {
     FlowLogInformation getFlowLogStatus(FlowLogStatusParameters parameters, Context context);
 
     /**
-     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint including another VM or an arbitrary remote server.
+     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
+     * including another VM or an arbitrary remote server.
      * 
      * @param parameters Parameters that determine how the connectivity check will be performed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -433,7 +435,8 @@ public interface NetworkWatcher {
     ConnectivityInformation checkConnectivity(ConnectivityParameters parameters);
 
     /**
-     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint including another VM or an arbitrary remote server.
+     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
+     * including another VM or an arbitrary remote server.
      * 
      * @param parameters Parameters that determine how the connectivity check will be performed.
      * @param context The context to associate with this operation.
@@ -445,7 +448,8 @@ public interface NetworkWatcher {
     ConnectivityInformation checkConnectivity(ConnectivityParameters parameters, Context context);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score for internet service providers from a specified location to Azure regions.
+     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
+     * for internet service providers from a specified location to Azure regions.
      * 
      * @param parameters Parameters that determine Azure reachability report configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -456,7 +460,8 @@ public interface NetworkWatcher {
     AzureReachabilityReport getAzureReachabilityReport(AzureReachabilityReportParameters parameters);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score for internet service providers from a specified location to Azure regions.
+     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
+     * for internet service providers from a specified location to Azure regions.
      * 
      * @param parameters Parameters that determine Azure reachability report configuration.
      * @param context The context to associate with this operation.
@@ -468,7 +473,8 @@ public interface NetworkWatcher {
     AzureReachabilityReport getAzureReachabilityReport(AzureReachabilityReportParameters parameters, Context context);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet service providers for a specified Azure region.
+     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
+     * service providers for a specified Azure region.
      * 
      * @param parameters Parameters that scope the list of available providers.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -479,7 +485,8 @@ public interface NetworkWatcher {
     AvailableProvidersList listAvailableProviders(AvailableProvidersListParameters parameters);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet service providers for a specified Azure region.
+     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
+     * service providers for a specified Azure region.
      * 
      * @param parameters Parameters that scope the list of available providers.
      * @param context The context to associate with this operation.
@@ -491,7 +498,10 @@ public interface NetworkWatcher {
     AvailableProvidersList listAvailableProviders(AvailableProvidersListParameters parameters, Context context);
 
     /**
-     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides detailed information on what security rules were applied to a specified traffic flow and the result of evaluating these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
+     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides
+     * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
+     * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
+     * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
      * 
      * @param parameters Parameters to get network configuration diagnostic.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -503,7 +513,10 @@ public interface NetworkWatcher {
         getNetworkConfigurationDiagnostic(NetworkConfigurationDiagnosticParameters parameters);
 
     /**
-     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides detailed information on what security rules were applied to a specified traffic flow and the result of evaluating these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
+     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides
+     * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
+     * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
+     * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
      * 
      * @param parameters Parameters to get network configuration diagnostic.
      * @param context The context to associate with this operation.

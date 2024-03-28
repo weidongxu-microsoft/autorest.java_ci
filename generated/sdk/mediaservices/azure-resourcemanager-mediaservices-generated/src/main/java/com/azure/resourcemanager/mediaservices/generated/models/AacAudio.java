@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -17,6 +18,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class AacAudio extends Audio {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.AacAudio";
+
+    /*
      * The encoding profile to be used when encoding audio with AAC.
      */
     @JsonProperty(value = "profile")
@@ -26,7 +34,16 @@ public final class AacAudio extends Audio {
      * Creates an instance of AacAudio class.
      */
     public AacAudio() {
-        withOdataType("#Microsoft.Media.AacAudio");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

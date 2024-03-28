@@ -51,7 +51,8 @@ public interface GalleryApplication {
     Map<String, String> tags();
 
     /**
-     * Gets the description property: The description of this gallery Application Definition resource. This property is updatable.
+     * Gets the description property: The description of this gallery Application Definition resource. This property is
+     * updatable.
      * 
      * @return the description value.
      */
@@ -79,21 +80,24 @@ public interface GalleryApplication {
     String releaseNoteUri();
 
     /**
-     * Gets the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Gets the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be
+     * used for decommissioning purposes. This property is updatable.
      * 
      * @return the endOfLifeDate value.
      */
     OffsetDateTime endOfLifeDate();
 
     /**
-     * Gets the supportedOSType property: This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+     * Gets the supportedOSType property: This property allows you to specify the supported type of the OS that
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the supportedOSType value.
      */
     OperatingSystemTypes supportedOSType();
 
     /**
-     * Gets the customActions property: A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application.
+     * Gets the customActions property: A list of custom actions that can be performed with all of the Gallery
+     * Application Versions within this Gallery Application.
      * 
      * @return the customActions value.
      */
@@ -173,14 +177,16 @@ public interface GalleryApplication {
              * Specifies resourceGroupName, galleryName.
              * 
              * @param resourceGroupName The name of the resource group.
-             * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
+             * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to
+             * be created.
              * @return the next definition stage.
              */
             WithCreate withExistingGallery(String resourceGroupName, String galleryName);
         }
 
         /**
-         * The stage of the GalleryApplication definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the GalleryApplication definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithDescription,
             DefinitionStages.WithEula, DefinitionStages.WithPrivacyStatementUri, DefinitionStages.WithReleaseNoteUri,
@@ -220,9 +226,11 @@ public interface GalleryApplication {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this gallery Application Definition resource. This property is updatable..
+             * Specifies the description property: The description of this gallery Application Definition resource. This
+             * property is updatable..
              * 
-             * @param description The description of this gallery Application Definition resource. This property is updatable.
+             * @param description The description of this gallery Application Definition resource. This property is
+             * updatable.
              * @return the next definition stage.
              */
             WithCreate withDescription(String description);
@@ -272,9 +280,11 @@ public interface GalleryApplication {
          */
         interface WithEndOfLifeDate {
             /**
-             * Specifies the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable..
+             * Specifies the endOfLifeDate property: The end of life date of the gallery Application Definition. This
+             * property can be used for decommissioning purposes. This property is updatable..
              * 
-             * @param endOfLifeDate The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable.
+             * @param endOfLifeDate The end of life date of the gallery Application Definition. This property can be
+             * used for decommissioning purposes. This property is updatable.
              * @return the next definition stage.
              */
             WithCreate withEndOfLifeDate(OffsetDateTime endOfLifeDate);
@@ -285,9 +295,11 @@ public interface GalleryApplication {
          */
         interface WithSupportedOSType {
             /**
-             * Specifies the supportedOSType property: This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+             * Specifies the supportedOSType property: This property allows you to specify the supported type of the OS
+             * that application is built for. Possible values are: **Windows,** **Linux.**.
              * 
-             * @param supportedOSType This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+             * @param supportedOSType This property allows you to specify the supported type of the OS that application
+             * is built for. Possible values are: **Windows,** **Linux.**.
              * @return the next definition stage.
              */
             WithCreate withSupportedOSType(OperatingSystemTypes supportedOSType);
@@ -298,9 +310,11 @@ public interface GalleryApplication {
          */
         interface WithCustomActions {
             /**
-             * Specifies the customActions property: A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application..
+             * Specifies the customActions property: A list of custom actions that can be performed with all of the
+             * Gallery Application Versions within this Gallery Application..
              * 
-             * @param customActions A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application.
+             * @param customActions A list of custom actions that can be performed with all of the Gallery Application
+             * Versions within this Gallery Application.
              * @return the next definition stage.
              */
             WithCreate withCustomActions(List<GalleryApplicationCustomAction> customActions);
@@ -358,9 +372,11 @@ public interface GalleryApplication {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this gallery Application Definition resource. This property is updatable..
+             * Specifies the description property: The description of this gallery Application Definition resource. This
+             * property is updatable..
              * 
-             * @param description The description of this gallery Application Definition resource. This property is updatable.
+             * @param description The description of this gallery Application Definition resource. This property is
+             * updatable.
              * @return the next definition stage.
              */
             Update withDescription(String description);
@@ -410,9 +426,11 @@ public interface GalleryApplication {
          */
         interface WithEndOfLifeDate {
             /**
-             * Specifies the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable..
+             * Specifies the endOfLifeDate property: The end of life date of the gallery Application Definition. This
+             * property can be used for decommissioning purposes. This property is updatable..
              * 
-             * @param endOfLifeDate The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable.
+             * @param endOfLifeDate The end of life date of the gallery Application Definition. This property can be
+             * used for decommissioning purposes. This property is updatable.
              * @return the next definition stage.
              */
             Update withEndOfLifeDate(OffsetDateTime endOfLifeDate);
@@ -423,9 +441,11 @@ public interface GalleryApplication {
          */
         interface WithSupportedOSType {
             /**
-             * Specifies the supportedOSType property: This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+             * Specifies the supportedOSType property: This property allows you to specify the supported type of the OS
+             * that application is built for. Possible values are: **Windows,** **Linux.**.
              * 
-             * @param supportedOSType This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+             * @param supportedOSType This property allows you to specify the supported type of the OS that application
+             * is built for. Possible values are: **Windows,** **Linux.**.
              * @return the next definition stage.
              */
             Update withSupportedOSType(OperatingSystemTypes supportedOSType);
@@ -436,9 +456,11 @@ public interface GalleryApplication {
          */
         interface WithCustomActions {
             /**
-             * Specifies the customActions property: A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application..
+             * Specifies the customActions property: A list of custom actions that can be performed with all of the
+             * Gallery Application Versions within this Gallery Application..
              * 
-             * @param customActions A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application.
+             * @param customActions A list of custom actions that can be performed with all of the Gallery Application
+             * Versions within this Gallery Application.
              * @return the next definition stage.
              */
             Update withCustomActions(List<GalleryApplicationCustomAction> customActions);

@@ -78,12 +78,14 @@ public final class ScopedDeploymentWhatIf {
      */
     public void validate() {
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property location in model ScopedDeploymentWhatIf"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property location in model ScopedDeploymentWhatIf"));
         }
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property properties in model ScopedDeploymentWhatIf"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property properties in model ScopedDeploymentWhatIf"));
         } else {
             properties().validate();
         }

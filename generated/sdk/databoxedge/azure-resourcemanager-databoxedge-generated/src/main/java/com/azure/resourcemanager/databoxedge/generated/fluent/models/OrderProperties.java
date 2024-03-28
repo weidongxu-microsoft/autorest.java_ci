@@ -156,7 +156,8 @@ public final class OrderProperties {
     }
 
     /**
-     * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it has an original or a replacement device.
+     * Get the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it
+     * has an original or a replacement device.
      * 
      * @return the deliveryTrackingInfo value.
      */
@@ -165,7 +166,8 @@ public final class OrderProperties {
     }
 
     /**
-     * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it has an original or a replacement device.
+     * Get the returnTrackingInfo property: Tracking information for the package returned from the customer whether it
+     * has an original or a replacement device.
      * 
      * @return the returnTrackingInfo value.
      */
@@ -200,8 +202,9 @@ public final class OrderProperties {
      */
     public void validate() {
         if (contactInformation() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property contactInformation in model OrderProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contactInformation in model OrderProperties"));
         } else {
             contactInformation().validate();
         }

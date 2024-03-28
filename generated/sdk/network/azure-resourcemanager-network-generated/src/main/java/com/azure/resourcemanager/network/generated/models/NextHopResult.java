@@ -25,7 +25,9 @@ public interface NextHopResult {
     String nextHopIpAddress();
 
     /**
-     * Gets the routeTableId property: The resource identifier for the route table associated with the route being returned. If the route being returned does not correspond to any user created routes then this field will be the string 'System Route'.
+     * Gets the routeTableId property: The resource identifier for the route table associated with the route being
+     * returned. If the route being returned does not correspond to any user created routes then this field will be the
+     * string 'System Route'.
      * 
      * @return the routeTableId value.
      */

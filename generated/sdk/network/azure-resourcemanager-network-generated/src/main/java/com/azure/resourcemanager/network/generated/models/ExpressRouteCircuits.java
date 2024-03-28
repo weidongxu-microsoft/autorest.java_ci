@@ -133,7 +133,8 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource group.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource
+     * group.
      */
     ExpressRouteCircuitsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
         String circuitName, String peeringName, String devicePath);
@@ -149,7 +150,8 @@ public interface ExpressRouteCircuits {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource group.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource
+     * group.
      */
     ExpressRouteCircuitsRoutesTableSummaryListResult listRoutesTableSummary(String resourceGroupName,
         String circuitName, String peeringName, String devicePath, Context context);

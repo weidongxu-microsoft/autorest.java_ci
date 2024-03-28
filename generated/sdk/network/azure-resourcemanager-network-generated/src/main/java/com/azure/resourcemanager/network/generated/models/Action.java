@@ -52,7 +52,9 @@ public final class Action {
     }
 
     /**
-     * Get the parameters property: List of parameters relevant to the action.For instance if type is drop then parameters has list of prefixes to be dropped.If type is add, parameters would have list of ASN numbers to be added.
+     * Get the parameters property: List of parameters relevant to the action.For instance if type is drop then
+     * parameters has list of prefixes to be dropped.If type is add, parameters would have list of ASN numbers to be
+     * added.
      * 
      * @return the parameters value.
      */
@@ -61,7 +63,9 @@ public final class Action {
     }
 
     /**
-     * Set the parameters property: List of parameters relevant to the action.For instance if type is drop then parameters has list of prefixes to be dropped.If type is add, parameters would have list of ASN numbers to be added.
+     * Set the parameters property: List of parameters relevant to the action.For instance if type is drop then
+     * parameters has list of prefixes to be dropped.If type is add, parameters would have list of ASN numbers to be
+     * added.
      * 
      * @param parameters the parameters value to set.
      * @return the Action object itself.

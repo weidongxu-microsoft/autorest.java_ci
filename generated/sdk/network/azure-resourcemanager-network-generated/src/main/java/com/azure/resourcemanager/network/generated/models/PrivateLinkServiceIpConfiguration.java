@@ -67,21 +67,24 @@ public interface PrivateLinkServiceIpConfiguration {
     Boolean primary();
 
     /**
-     * Gets the provisioningState property: The provisioning state of the private link service IP configuration resource.
+     * Gets the provisioningState property: The provisioning state of the private link service IP configuration
+     * resource.
      * 
      * @return the provisioningState value.
      */
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateIpAddressVersion property: Whether the specific IP configuration is IPv4 or IPv6. Default is IPv4.
+     * Gets the privateIpAddressVersion property: Whether the specific IP configuration is IPv4 or IPv6. Default is
+     * IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */
     IpVersion privateIpAddressVersion();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceIpConfigurationInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceIpConfigurationInner
+     * object.
      * 
      * @return the inner object.
      */

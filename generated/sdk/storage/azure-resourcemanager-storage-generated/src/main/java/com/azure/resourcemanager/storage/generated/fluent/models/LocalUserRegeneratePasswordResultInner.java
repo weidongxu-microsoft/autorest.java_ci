@@ -25,7 +25,8 @@ public final class LocalUserRegeneratePasswordResultInner {
     }
 
     /**
-     * Get the sshPassword property: Auto generated password by the server for SSH authentication if hasSshPassword is set to true on the creation of local user.
+     * Get the sshPassword property: Auto generated password by the server for SSH authentication if hasSshPassword is
+     * set to true on the creation of local user.
      * 
      * @return the sshPassword value.
      */

@@ -105,16 +105,16 @@ public final class Dimension {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model Dimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model Dimension"));
         }
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model Dimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property operator in model Dimension"));
         }
         if (values() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property values in model Dimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property values in model Dimension"));
         }
     }
 

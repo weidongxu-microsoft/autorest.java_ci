@@ -133,7 +133,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the exportId property: The unique ID of the export configuration inside an Application Insights component. It is auto generated when the Continuous Export configuration is created.
+     * Get the exportId property: The unique ID of the export configuration inside an Application Insights component. It
+     * is auto generated when the Continuous Export configuration is created.
      * 
      * @return the exportId value.
      */
@@ -151,7 +152,9 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the recordTypes property: This comma separated list of document types that will be exported. The possible values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
+     * Get the recordTypes property: This comma separated list of document types that will be exported. The possible
+     * values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd',
+     * 'PerformanceCounters', 'Availability', 'Messages'.
      * 
      * @return the recordTypes value.
      */
@@ -160,7 +163,9 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Set the recordTypes property: This comma separated list of document types that will be exported. The possible values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
+     * Set the recordTypes property: This comma separated list of document types that will be exported. The possible
+     * values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd',
+     * 'PerformanceCounters', 'Availability', 'Messages'.
      * 
      * @param recordTypes the recordTypes value to set.
      * @return the ApplicationInsightsComponentExportConfigurationInner object itself.
@@ -234,7 +239,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the isUserEnabled property: This will be 'true' if the Continuous Export configuration is enabled, otherwise it will be 'false'.
+     * Get the isUserEnabled property: This will be 'true' if the Continuous Export configuration is enabled, otherwise
+     * it will be 'false'.
      * 
      * @return the isUserEnabled value.
      */
@@ -273,7 +279,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the exportStatus property: This indicates current Continuous Export configuration status. The possible values are 'Preparing', 'Success', 'Failure'.
+     * Get the exportStatus property: This indicates current Continuous Export configuration status. The possible values
+     * are 'Preparing', 'Success', 'Failure'.
      * 
      * @return the exportStatus value.
      */
@@ -282,7 +289,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the lastSuccessTime property: The last time data was successfully delivered to the destination storage container for this Continuous Export configuration.
+     * Get the lastSuccessTime property: The last time data was successfully delivered to the destination storage
+     * container for this Continuous Export configuration.
      * 
      * @return the lastSuccessTime value.
      */
@@ -300,7 +308,8 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
     }
 
     /**
-     * Get the permanentErrorReason property: This is the reason the Continuous Export configuration started failing. It can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
+     * Get the permanentErrorReason property: This is the reason the Continuous Export configuration started failing. It
+     * can be 'AzureStorageNotFound' or 'AzureStorageAccessDenied'.
      * 
      * @return the permanentErrorReason value.
      */

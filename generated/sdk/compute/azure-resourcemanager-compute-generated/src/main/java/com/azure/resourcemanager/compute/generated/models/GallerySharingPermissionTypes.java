@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * This property allows you to specify the permission of sharing gallery. Possible values are: **Private,** **Groups,** **Community.**.
+ * This property allows you to specify the permission of sharing gallery. Possible values are: **Private,** **Groups,**
+ * **Community.**.
  */
 public final class GallerySharingPermissionTypes extends ExpandableStringEnum<GallerySharingPermissionTypes> {
     /**

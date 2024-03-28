@@ -39,7 +39,8 @@ public interface ServerAdministrators {
     ServerAdministratorResource get(String resourceGroupName, String serverName);
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -53,7 +54,8 @@ public interface ServerAdministrators {
         ServerAdministratorResourceInner properties);
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -98,7 +100,8 @@ public interface ServerAdministrators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link PagedIterable}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ServerAdministratorResource> list(String resourceGroupName, String serverName);
 
@@ -111,7 +114,8 @@ public interface ServerAdministrators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link PagedIterable}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ServerAdministratorResource> list(String resourceGroupName, String serverName, Context context);
 }

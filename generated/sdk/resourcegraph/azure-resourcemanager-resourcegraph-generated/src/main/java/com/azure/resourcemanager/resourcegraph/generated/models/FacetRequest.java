@@ -78,8 +78,8 @@ public final class FacetRequest {
      */
     public void validate() {
         if (expression() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property expression in model FacetRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property expression in model FacetRequest"));
         }
         if (options() != null) {
             options().validate();

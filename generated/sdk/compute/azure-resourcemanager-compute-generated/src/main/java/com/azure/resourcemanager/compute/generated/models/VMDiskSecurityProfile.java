@@ -31,7 +31,10 @@ public final class VMDiskSecurityProfile {
     }
 
     /**
-     * Get the securityEncryptionType property: Specifies the EncryptionType of the managed disk. It is set to DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, VMGuestStateOnly for encryption of just the VMGuestState blob, and NonPersistedTPM for not persisting firmware state in the VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
+     * Get the securityEncryptionType property: Specifies the EncryptionType of the managed disk. It is set to
+     * DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, VMGuestStateOnly for
+     * encryption of just the VMGuestState blob, and NonPersistedTPM for not persisting firmware state in the
+     * VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
      * 
      * @return the securityEncryptionType value.
      */
@@ -40,7 +43,10 @@ public final class VMDiskSecurityProfile {
     }
 
     /**
-     * Set the securityEncryptionType property: Specifies the EncryptionType of the managed disk. It is set to DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, VMGuestStateOnly for encryption of just the VMGuestState blob, and NonPersistedTPM for not persisting firmware state in the VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
+     * Set the securityEncryptionType property: Specifies the EncryptionType of the managed disk. It is set to
+     * DiskWithVMGuestState for encryption of the managed disk along with VMGuestState blob, VMGuestStateOnly for
+     * encryption of just the VMGuestState blob, and NonPersistedTPM for not persisting firmware state in the
+     * VMGuestState blob.. **Note:** It can be set for only Confidential VMs.
      * 
      * @param securityEncryptionType the securityEncryptionType value to set.
      * @return the VMDiskSecurityProfile object itself.
@@ -51,7 +57,8 @@ public final class VMDiskSecurityProfile {
     }
 
     /**
-     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
+     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
      * 
      * @return the diskEncryptionSet value.
      */
@@ -60,7 +67,8 @@ public final class VMDiskSecurityProfile {
     }
 
     /**
-     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
+     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed disk that is used for Customer Managed Key encrypted ConfidentialVM OS Disk and VMGuest blob.
      * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the VMDiskSecurityProfile object itself.

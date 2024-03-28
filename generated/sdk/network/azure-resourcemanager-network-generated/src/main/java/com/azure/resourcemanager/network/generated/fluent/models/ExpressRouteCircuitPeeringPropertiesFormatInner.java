@@ -490,7 +490,8 @@ public final class ExpressRouteCircuitPeeringPropertiesFormatInner {
     }
 
     /**
-     * Get the connections property: The list of circuit connections associated with Azure Private Peering for this circuit.
+     * Get the connections property: The list of circuit connections associated with Azure Private Peering for this
+     * circuit.
      * 
      * @return the connections value.
      */
@@ -499,7 +500,8 @@ public final class ExpressRouteCircuitPeeringPropertiesFormatInner {
     }
 
     /**
-     * Set the connections property: The list of circuit connections associated with Azure Private Peering for this circuit.
+     * Set the connections property: The list of circuit connections associated with Azure Private Peering for this
+     * circuit.
      * 
      * @param connections the connections value to set.
      * @return the ExpressRouteCircuitPeeringPropertiesFormatInner object itself.
@@ -511,7 +513,8 @@ public final class ExpressRouteCircuitPeeringPropertiesFormatInner {
     }
 
     /**
-     * Get the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering for this circuit.
+     * Get the peeredConnections property: The list of peered circuit connections associated with Azure Private Peering
+     * for this circuit.
      * 
      * @return the peeredConnections value.
      */

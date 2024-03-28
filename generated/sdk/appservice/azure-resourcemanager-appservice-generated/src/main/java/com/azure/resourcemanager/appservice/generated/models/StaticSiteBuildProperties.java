@@ -107,7 +107,8 @@ public final class StaticSiteBuildProperties {
     }
 
     /**
-     * Get the appArtifactLocation property: Deprecated: The path of the app artifacts after building (deprecated in favor of OutputLocation).
+     * Get the appArtifactLocation property: Deprecated: The path of the app artifacts after building (deprecated in
+     * favor of OutputLocation).
      * 
      * @return the appArtifactLocation value.
      */
@@ -116,7 +117,8 @@ public final class StaticSiteBuildProperties {
     }
 
     /**
-     * Set the appArtifactLocation property: Deprecated: The path of the app artifacts after building (deprecated in favor of OutputLocation).
+     * Set the appArtifactLocation property: Deprecated: The path of the app artifacts after building (deprecated in
+     * favor of OutputLocation).
      * 
      * @param appArtifactLocation the appArtifactLocation value to set.
      * @return the StaticSiteBuildProperties object itself.
@@ -167,7 +169,8 @@ public final class StaticSiteBuildProperties {
     }
 
     /**
-     * Get the apiBuildCommand property: A custom command to run during deployment of the Azure Functions API application.
+     * Get the apiBuildCommand property: A custom command to run during deployment of the Azure Functions API
+     * application.
      * 
      * @return the apiBuildCommand value.
      */
@@ -176,7 +179,8 @@ public final class StaticSiteBuildProperties {
     }
 
     /**
-     * Set the apiBuildCommand property: A custom command to run during deployment of the Azure Functions API application.
+     * Set the apiBuildCommand property: A custom command to run during deployment of the Azure Functions API
+     * application.
      * 
      * @param apiBuildCommand the apiBuildCommand value to set.
      * @return the StaticSiteBuildProperties object itself.

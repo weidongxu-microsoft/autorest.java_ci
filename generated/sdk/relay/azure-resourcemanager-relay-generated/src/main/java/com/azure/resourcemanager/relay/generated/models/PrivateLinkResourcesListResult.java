@@ -26,7 +26,8 @@ public interface PrivateLinkResourcesListResult {
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.relay.generated.fluent.models.PrivateLinkResourcesListResultInner object.
+     * Gets the inner com.azure.resourcemanager.relay.generated.fluent.models.PrivateLinkResourcesListResultInner
+     * object.
      * 
      * @return the inner object.
      */

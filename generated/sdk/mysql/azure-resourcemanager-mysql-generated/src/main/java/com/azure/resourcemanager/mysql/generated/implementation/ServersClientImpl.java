@@ -69,7 +69,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientServers to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientServers to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -433,7 +434,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -475,7 +477,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -517,7 +520,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -536,7 +540,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -558,7 +563,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -575,7 +581,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -593,7 +600,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -610,7 +618,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -629,7 +638,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -645,7 +655,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -1428,7 +1439,8 @@ public final class ServersClientImpl implements ServersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return high availability validation properties of a server along with {@link Response} on successful completion of {@link Mono}.
+     * @return high availability validation properties of a server along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HighAvailabilityValidationEstimationInner>> validateEstimateHighAvailabilityWithResponseAsync(
@@ -1471,7 +1483,8 @@ public final class ServersClientImpl implements ServersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return high availability validation properties of a server along with {@link Response} on successful completion of {@link Mono}.
+     * @return high availability validation properties of a server along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HighAvailabilityValidationEstimationInner>> validateEstimateHighAvailabilityWithResponseAsync(

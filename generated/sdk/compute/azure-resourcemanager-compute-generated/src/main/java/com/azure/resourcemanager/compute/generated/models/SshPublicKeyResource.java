@@ -50,7 +50,10 @@ public interface SshPublicKeyResource {
     Map<String, String> tags();
 
     /**
-     * Gets the publicKey property: SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.
+     * Gets the publicKey property: SSH public key used to authenticate to a virtual machine through ssh. If this
+     * property is not initially provided when the resource is created, the publicKey property will be populated when
+     * generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to
+     * be at least 2048-bit and in ssh-rsa format.
      * 
      * @return the publicKey value.
      */
@@ -136,7 +139,8 @@ public interface SshPublicKeyResource {
         }
 
         /**
-         * The stage of the SshPublicKeyResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SshPublicKeyResource definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPublicKey {
             /**
@@ -173,9 +177,15 @@ public interface SshPublicKeyResource {
          */
         interface WithPublicKey {
             /**
-             * Specifies the publicKey property: SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format..
+             * Specifies the publicKey property: SSH public key used to authenticate to a virtual machine through ssh.
+             * If this property is not initially provided when the resource is created, the publicKey property will be
+             * populated when generateKeyPair is called. If the public key is provided upon resource creation, the
+             * provided public key needs to be at least 2048-bit and in ssh-rsa format..
              * 
-             * @param publicKey SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.
+             * @param publicKey SSH public key used to authenticate to a virtual machine through ssh. If this property
+             * is not initially provided when the resource is created, the publicKey property will be populated when
+             * generateKeyPair is called. If the public key is provided upon resource creation, the provided public key
+             * needs to be at least 2048-bit and in ssh-rsa format.
              * @return the next definition stage.
              */
             WithCreate withPublicKey(String publicKey);
@@ -231,9 +241,15 @@ public interface SshPublicKeyResource {
          */
         interface WithPublicKey {
             /**
-             * Specifies the publicKey property: SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format..
+             * Specifies the publicKey property: SSH public key used to authenticate to a virtual machine through ssh.
+             * If this property is not initially provided when the resource is created, the publicKey property will be
+             * populated when generateKeyPair is called. If the public key is provided upon resource creation, the
+             * provided public key needs to be at least 2048-bit and in ssh-rsa format..
              * 
-             * @param publicKey SSH public key used to authenticate to a virtual machine through ssh. If this property is not initially provided when the resource is created, the publicKey property will be populated when generateKeyPair is called. If the public key is provided upon resource creation, the provided public key needs to be at least 2048-bit and in ssh-rsa format.
+             * @param publicKey SSH public key used to authenticate to a virtual machine through ssh. If this property
+             * is not initially provided when the resource is created, the publicKey property will be populated when
+             * generateKeyPair is called. If the public key is provided upon resource creation, the provided public key
+             * needs to be at least 2048-bit and in ssh-rsa format.
              * @return the next definition stage.
              */
             Update withPublicKey(String publicKey);
@@ -256,12 +272,14 @@ public interface SshPublicKeyResource {
     SshPublicKeyResource refresh(Context context);
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
      * @param parameters Parameters supplied to generate the SSH public key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response from generation of an SSH key pair along with {@link Response}.
      */
@@ -269,9 +287,11 @@ public interface SshPublicKeyResource {
         generateKeyPairWithResponse(SshGenerateKeyPairInputParameters parameters, Context context);
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return response from generation of an SSH key pair.
      */

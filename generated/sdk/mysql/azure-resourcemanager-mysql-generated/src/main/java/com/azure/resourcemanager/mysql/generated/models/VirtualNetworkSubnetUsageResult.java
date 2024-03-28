@@ -33,7 +33,8 @@ public interface VirtualNetworkSubnetUsageResult {
     List<DelegatedSubnetUsage> delegatedSubnetsUsage();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.VirtualNetworkSubnetUsageResultInner object.
+     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.VirtualNetworkSubnetUsageResultInner
+     * object.
      * 
      * @return the inner object.
      */

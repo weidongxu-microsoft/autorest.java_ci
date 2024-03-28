@@ -78,12 +78,10 @@ public final class Sku {
      */
     public void validate() {
         if (family() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property family in model Sku"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property family in model Sku"));
         }
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model Sku"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property name in model Sku"));
         }
     }
 

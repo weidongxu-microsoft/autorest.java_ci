@@ -59,7 +59,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientManagedHsmKeys to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientManagedHsmKeys to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -131,11 +132,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -176,11 +180,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -221,11 +228,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -240,11 +250,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -259,11 +272,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -281,11 +297,13 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified managed HSM along with {@link Response} on successful completion of {@link Mono}.
+     * @return the current version of the specified key from the specified managed HSM along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagedHsmKeyInner>> getWithResponseAsync(String resourceGroupName, String name,
@@ -320,12 +338,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified managed HSM along with {@link Response} on successful completion of {@link Mono}.
+     * @return the current version of the specified key from the specified managed HSM along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagedHsmKeyInner>> getWithResponseAsync(String resourceGroupName, String name,
@@ -359,11 +379,13 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified managed HSM on successful completion of {@link Mono}.
+     * @return the current version of the specified key from the specified managed HSM on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmKeyInner> getAsync(String resourceGroupName, String name, String keyName) {
@@ -375,7 +397,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -393,7 +416,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -547,12 +571,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified managed HSM along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified version of the specified key in the specified managed HSM along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagedHsmKeyInner>> getVersionWithResponseAsync(String resourceGroupName, String name,
@@ -590,13 +616,15 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified managed HSM along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified version of the specified key in the specified managed HSM along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagedHsmKeyInner>> getVersionWithResponseAsync(String resourceGroupName, String name,
@@ -633,12 +661,14 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified managed HSM on successful completion of {@link Mono}.
+     * @return the specified version of the specified key in the specified managed HSM on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ManagedHsmKeyInner> getVersionAsync(String resourceGroupName, String name, String keyName,
@@ -652,7 +682,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -671,7 +702,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -688,7 +720,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -729,7 +762,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -771,7 +805,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -788,7 +823,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -807,7 +843,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -823,7 +860,8 @@ public final class ManagedHsmKeysClientImpl implements ManagedHsmKeysClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

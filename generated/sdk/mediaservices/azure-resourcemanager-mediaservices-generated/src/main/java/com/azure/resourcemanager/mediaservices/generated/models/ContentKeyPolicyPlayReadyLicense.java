@@ -318,18 +318,21 @@ public final class ContentKeyPolicyPlayReadyLicense {
             playRight().validate();
         }
         if (licenseType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property licenseType in model ContentKeyPolicyPlayReadyLicense"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property licenseType in model ContentKeyPolicyPlayReadyLicense"));
         }
         if (contentKeyLocation() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property contentKeyLocation in model ContentKeyPolicyPlayReadyLicense"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contentKeyLocation in model ContentKeyPolicyPlayReadyLicense"));
         } else {
             contentKeyLocation().validate();
         }
         if (contentType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property contentType in model ContentKeyPolicyPlayReadyLicense"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contentType in model ContentKeyPolicyPlayReadyLicense"));
         }
     }
 

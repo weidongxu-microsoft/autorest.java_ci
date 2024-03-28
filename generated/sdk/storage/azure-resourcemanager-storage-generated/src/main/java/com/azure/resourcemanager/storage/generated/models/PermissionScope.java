@@ -38,7 +38,8 @@ public final class PermissionScope {
     }
 
     /**
-     * Get the permissions property: The permissions for the local user. Possible values include: Read (r), Write (w), Delete (d), List (l), and Create (c).
+     * Get the permissions property: The permissions for the local user. Possible values include: Read (r), Write (w),
+     * Delete (d), List (l), and Create (c).
      * 
      * @return the permissions value.
      */
@@ -47,7 +48,8 @@ public final class PermissionScope {
     }
 
     /**
-     * Set the permissions property: The permissions for the local user. Possible values include: Read (r), Write (w), Delete (d), List (l), and Create (c).
+     * Set the permissions property: The permissions for the local user. Possible values include: Read (r), Write (w),
+     * Delete (d), List (l), and Create (c).
      * 
      * @param permissions the permissions value to set.
      * @return the PermissionScope object itself.
@@ -78,7 +80,8 @@ public final class PermissionScope {
     }
 
     /**
-     * Get the resourceName property: The name of resource, normally the container name or the file share name, used by the local user.
+     * Get the resourceName property: The name of resource, normally the container name or the file share name, used by
+     * the local user.
      * 
      * @return the resourceName value.
      */
@@ -87,7 +90,8 @@ public final class PermissionScope {
     }
 
     /**
-     * Set the resourceName property: The name of resource, normally the container name or the file share name, used by the local user.
+     * Set the resourceName property: The name of resource, normally the container name or the file share name, used by
+     * the local user.
      * 
      * @param resourceName the resourceName value to set.
      * @return the PermissionScope object itself.
@@ -104,16 +108,16 @@ public final class PermissionScope {
      */
     public void validate() {
         if (permissions() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property permissions in model PermissionScope"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property permissions in model PermissionScope"));
         }
         if (service() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property service in model PermissionScope"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property service in model PermissionScope"));
         }
         if (resourceName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceName in model PermissionScope"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property resourceName in model PermissionScope"));
         }
     }
 

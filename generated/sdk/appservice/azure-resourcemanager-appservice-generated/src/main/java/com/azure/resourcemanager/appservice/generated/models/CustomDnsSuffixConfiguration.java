@@ -60,21 +60,24 @@ public interface CustomDnsSuffixConfiguration {
     String dnsSuffix();
 
     /**
-     * Gets the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used as the default SSL/TLS certificate for sites with the custom domain suffix.
+     * Gets the certificateUrl property: The URL referencing the Azure Key Vault certificate secret that should be used
+     * as the default SSL/TLS certificate for sites with the custom domain suffix.
      * 
      * @return the certificateUrl value.
      */
     String certificateUrl();
 
     /**
-     * Gets the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault certificate reference. If not specified, the system-assigned ASE identity will be used if available.
+     * Gets the keyVaultReferenceIdentity property: The user-assigned identity to use for resolving the key vault
+     * certificate reference. If not specified, the system-assigned ASE identity will be used if available.
      * 
      * @return the keyVaultReferenceIdentity value.
      */
     String keyVaultReferenceIdentity();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.CustomDnsSuffixConfigurationInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -66,7 +66,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientSubnets to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientSubnets to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -377,7 +378,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified subnet by virtual network and resource group along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SubnetInner>> getWithResponseAsync(String resourceGroupName, String virtualNetworkName,
@@ -420,7 +422,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified subnet by virtual network and resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified subnet by virtual network and resource group along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SubnetInner>> getWithResponseAsync(String resourceGroupName, String virtualNetworkName,
@@ -515,7 +518,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return subnet in a virtual network resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return subnet in a virtual network resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -565,7 +569,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return subnet in a virtual network resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return subnet in a virtual network resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -770,7 +775,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -820,7 +826,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -870,7 +877,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -892,7 +900,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -916,7 +925,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -938,7 +948,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -961,7 +972,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -980,7 +992,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1000,7 +1013,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1018,7 +1032,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent policies.
+     * @param prepareNetworkPoliciesRequestParameters Parameters supplied to prepare subnet by applying network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1037,7 +1052,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1087,7 +1103,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1137,7 +1154,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1159,7 +1177,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1183,7 +1202,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1205,7 +1225,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1228,7 +1249,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1247,7 +1269,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1267,7 +1290,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1285,7 +1309,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkName The name of the virtual network.
      * @param subnetName The name of the subnet.
-     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent policies.
+     * @param unprepareNetworkPoliciesRequestParameters Parameters supplied to unprepare subnet to remove network intent
+     * policies.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1306,7 +1331,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all subnets in a virtual network along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all subnets in a virtual network along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SubnetInner>> listSinglePageAsync(String resourceGroupName, String virtualNetworkName) {
@@ -1345,7 +1371,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all subnets in a virtual network along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all subnets in a virtual network along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SubnetInner>> listSinglePageAsync(String resourceGroupName, String virtualNetworkName,
@@ -1449,7 +1476,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network along
+     * with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SubnetInner>> listNextSinglePageAsync(String nextLink) {
@@ -1477,7 +1505,8 @@ public final class SubnetsClientImpl implements SubnetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListSubnets API service callRetrieves all subnet that belongs to a virtual network along
+     * with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SubnetInner>> listNextSinglePageAsync(String nextLink, Context context) {

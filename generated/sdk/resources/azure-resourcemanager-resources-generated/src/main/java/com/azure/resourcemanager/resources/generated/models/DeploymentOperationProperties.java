@@ -125,7 +125,8 @@ public final class DeploymentOperationProperties {
     }
 
     /**
-     * Get the statusCode property: Operation status code from the resource provider. This property may not be set if a response has not yet been received.
+     * Get the statusCode property: Operation status code from the resource provider. This property may not be set if a
+     * response has not yet been received.
      * 
      * @return the statusCode value.
      */
@@ -134,7 +135,8 @@ public final class DeploymentOperationProperties {
     }
 
     /**
-     * Get the statusMessage property: Operation status message from the resource provider. This property is optional.  It will only be provided if an error was received from the resource provider.
+     * Get the statusMessage property: Operation status message from the resource provider. This property is optional.
+     * It will only be provided if an error was received from the resource provider.
      * 
      * @return the statusMessage value.
      */

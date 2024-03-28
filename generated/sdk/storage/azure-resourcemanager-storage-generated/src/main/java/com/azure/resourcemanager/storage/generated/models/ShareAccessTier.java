@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+ * Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool.
+ * FileStorage account can choose Premium.
  */
 public final class ShareAccessTier extends ExpandableStringEnum<ShareAccessTier> {
     /**

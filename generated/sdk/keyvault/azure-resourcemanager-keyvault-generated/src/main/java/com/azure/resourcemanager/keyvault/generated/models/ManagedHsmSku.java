@@ -78,12 +78,12 @@ public final class ManagedHsmSku {
      */
     public void validate() {
         if (family() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property family in model ManagedHsmSku"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property family in model ManagedHsmSku"));
         }
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model ManagedHsmSku"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model ManagedHsmSku"));
         }
     }
 

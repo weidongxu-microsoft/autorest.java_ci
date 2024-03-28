@@ -46,7 +46,8 @@ public final class VirtualMachineScaleSetIdentity {
     }
 
     /**
-     * Get the principalId property: The principal id of virtual machine scale set identity. This property will only be provided for a system assigned identity.
+     * Get the principalId property: The principal id of virtual machine scale set identity. This property will only be
+     * provided for a system assigned identity.
      * 
      * @return the principalId value.
      */
@@ -55,7 +56,8 @@ public final class VirtualMachineScaleSetIdentity {
     }
 
     /**
-     * Get the tenantId property: The tenant id associated with the virtual machine scale set. This property will only be provided for a system assigned identity.
+     * Get the tenantId property: The tenant id associated with the virtual machine scale set. This property will only
+     * be provided for a system assigned identity.
      * 
      * @return the tenantId value.
      */
@@ -64,7 +66,9 @@ public final class VirtualMachineScaleSetIdentity {
     }
 
     /**
-     * Get the type property: The type of identity used for the virtual machine scale set. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine scale set.
+     * Get the type property: The type of identity used for the virtual machine scale set. The type 'SystemAssigned,
+     * UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None'
+     * will remove any identities from the virtual machine scale set.
      * 
      * @return the type value.
      */
@@ -73,7 +77,9 @@ public final class VirtualMachineScaleSetIdentity {
     }
 
     /**
-     * Set the type property: The type of identity used for the virtual machine scale set. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the virtual machine scale set.
+     * Set the type property: The type of identity used for the virtual machine scale set. The type 'SystemAssigned,
+     * UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None'
+     * will remove any identities from the virtual machine scale set.
      * 
      * @param type the type value to set.
      * @return the VirtualMachineScaleSetIdentity object itself.
@@ -84,7 +90,9 @@ public final class VirtualMachineScaleSetIdentity {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user identities associated with the virtual machine scale set. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Get the userAssignedIdentities property: The list of user identities associated with the virtual machine scale
+     * set. The user identity dictionary key references will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -93,7 +101,9 @@ public final class VirtualMachineScaleSetIdentity {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user identities associated with the virtual machine scale set. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Set the userAssignedIdentities property: The list of user identities associated with the virtual machine scale
+     * set. The user identity dictionary key references will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the VirtualMachineScaleSetIdentity object itself.

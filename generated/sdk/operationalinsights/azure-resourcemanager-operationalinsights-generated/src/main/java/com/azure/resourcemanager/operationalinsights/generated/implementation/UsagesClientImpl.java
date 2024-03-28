@@ -55,7 +55,8 @@ public final class UsagesClientImpl implements UsagesClient {
     }
 
     /**
-     * The interface defining all the services for OperationalInsightsManagementClientUsages to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for OperationalInsightsManagementClientUsages to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "OperationalInsightsM")
@@ -78,7 +79,8 @@ public final class UsagesClientImpl implements UsagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of usage metrics for a workspace along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of usage metrics for a workspace along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageMetricInner>> listSinglePageAsync(String resourceGroupName, String workspaceName) {
@@ -116,7 +118,8 @@ public final class UsagesClientImpl implements UsagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of usage metrics for a workspace along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of usage metrics for a workspace along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<UsageMetricInner>> listSinglePageAsync(String resourceGroupName, String workspaceName,

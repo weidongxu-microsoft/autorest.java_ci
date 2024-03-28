@@ -58,7 +58,8 @@ public final class AzureContainerInfo {
     }
 
     /**
-     * Get the containerName property: Container name (Based on the data format specified, this represents the name of Azure Files/Page blob/Block blob).
+     * Get the containerName property: Container name (Based on the data format specified, this represents the name of
+     * Azure Files/Page blob/Block blob).
      * 
      * @return the containerName value.
      */
@@ -67,7 +68,8 @@ public final class AzureContainerInfo {
     }
 
     /**
-     * Set the containerName property: Container name (Based on the data format specified, this represents the name of Azure Files/Page blob/Block blob).
+     * Set the containerName property: Container name (Based on the data format specified, this represents the name of
+     * Azure Files/Page blob/Block blob).
      * 
      * @param containerName the containerName value to set.
      * @return the AzureContainerInfo object itself.
@@ -104,16 +106,18 @@ public final class AzureContainerInfo {
      */
     public void validate() {
         if (storageAccountCredentialId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property storageAccountCredentialId in model AzureContainerInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property storageAccountCredentialId in model AzureContainerInfo"));
         }
         if (containerName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property containerName in model AzureContainerInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property containerName in model AzureContainerInfo"));
         }
         if (dataFormat() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property dataFormat in model AzureContainerInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property dataFormat in model AzureContainerInfo"));
         }
     }
 

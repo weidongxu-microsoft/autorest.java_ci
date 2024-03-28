@@ -99,7 +99,8 @@ public final class PriceSheetProperties {
     }
 
     /**
-     * Get the meterDetails property: The details about the meter. By default this is not populated, unless it's specified in $expand.
+     * Get the meterDetails property: The details about the meter. By default this is not populated, unless it's
+     * specified in $expand.
      * 
      * @return the meterDetails value.
      */

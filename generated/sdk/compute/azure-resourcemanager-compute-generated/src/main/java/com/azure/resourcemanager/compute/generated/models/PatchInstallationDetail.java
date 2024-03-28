@@ -74,7 +74,8 @@ public final class PatchInstallationDetail {
     }
 
     /**
-     * Get the version property: The version string of the package. It may conform to Semantic Versioning. Only applies to Linux.
+     * Get the version property: The version string of the package. It may conform to Semantic Versioning. Only applies
+     * to Linux.
      * 
      * @return the version value.
      */

@@ -65,7 +65,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientPolicies to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientPolicies to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -149,7 +150,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>>
@@ -184,7 +186,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>>
@@ -278,7 +281,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>> listSinglePageAsync() {
@@ -307,7 +311,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>> listSinglePageAsync(Context context) {
@@ -389,7 +394,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link Mono}.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WebApplicationFirewallPolicyInner>>
@@ -426,7 +432,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link Mono}.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WebApplicationFirewallPolicyInner>>
@@ -511,7 +518,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link Mono}.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -554,7 +562,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link Mono}.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -741,7 +750,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -749,7 +759,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link Mono}.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String policyName,
@@ -783,7 +794,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -792,7 +804,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines web application firewall policy along with {@link Response} on successful completion of {@link Mono}.
+     * @return defines web application firewall policy along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String policyName,
@@ -825,7 +838,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -845,7 +859,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -868,7 +883,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -885,7 +901,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -903,7 +920,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -921,7 +939,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -940,7 +959,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -957,7 +977,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
     }
 
     /**
-     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and resource group.
+     * Patch a specific frontdoor webApplicationFirewall policy for tags update under the specified subscription and
+     * resource group.
      * 
      * @param resourceGroupName Name of the Resource group within the Azure subscription.
      * @param policyName The name of the Web Application Firewall Policy.
@@ -1182,7 +1203,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>> listNextSinglePageAsync(String nextLink) {
@@ -1210,7 +1232,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>> listNextSinglePageAsync(String nextLink,
@@ -1238,7 +1261,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>>
@@ -1269,7 +1293,8 @@ public final class PoliciesClientImpl implements PoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return defines a list of WebApplicationFirewallPolicies along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WebApplicationFirewallPolicyInner>>

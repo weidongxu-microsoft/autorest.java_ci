@@ -56,7 +56,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientLotsOperations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientLotsOperations to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -110,7 +111,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft Customer Agreements (MCA) billing accounts.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -144,7 +146,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft Customer Agreements (MCA) billing accounts.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -179,7 +182,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft Customer Agreements (MCA) billing accounts.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -195,7 +199,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft Customer Agreements (MCA) billing accounts.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -213,7 +218,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft Customer Agreements (MCA) billing accounts.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -228,7 +234,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft Customer Agreements (MCA) billing accounts.
+     * Lists all Azure credits for a billing account or a billing profile. The API is only supported for Microsoft
+     * Customer Agreements (MCA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param billingProfileId Azure Billing Profile ID.
@@ -245,10 +252,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where
+     * key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -275,10 +285,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where
+     * key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -306,10 +319,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where
+     * key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -322,7 +338,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -338,10 +355,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where
+     * key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -356,7 +376,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -371,10 +392,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft Customer Agreements (MCA) and Direct Enterprise Agreement (EA)  billing accounts.
+     * Lists all Microsoft Azure consumption commitments for a billing account. The API is only supported for Microsoft
+     * Customer Agreements (MCA) and Direct Enterprise Agreement (EA) billing accounts.
      * 
      * @param billingAccountId BillingAccount ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where
+     * key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -388,11 +412,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -422,11 +448,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -457,11 +485,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -474,7 +504,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -491,11 +522,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -510,7 +543,8 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
@@ -526,11 +560,13 @@ public final class LotsOperationsClientImpl implements LotsOperationsClient {
     }
 
     /**
-     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner  Agreements (MPA) billing accounts.
+     * Lists all Azure credits for a customer. The API is only supported for Microsoft Partner Agreements (MPA) billing
+     * accounts.
      * 
      * @param billingAccountId BillingAccount ID.
      * @param customerId Customer ID.
-     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter the lots by Status, Source etc. The filter supports 'eq', 'lt', 'gt', 'le',
+     * 'ge', and 'and'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

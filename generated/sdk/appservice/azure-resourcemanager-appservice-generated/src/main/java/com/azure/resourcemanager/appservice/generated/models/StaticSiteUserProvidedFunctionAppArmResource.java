@@ -69,7 +69,9 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserProvidedFunctionAppArmResourceInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -108,7 +110,9 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
         }
 
         /**
-         * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition which contains all the minimum
+         * required properties for the resource to be created, but also allows for any other optional properties to be
+         * specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithFunctionAppResourceId,
             DefinitionStages.WithFunctionAppRegion, DefinitionStages.WithIsForced {
@@ -142,11 +146,13 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
         }
 
         /**
-         * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify functionAppResourceId.
+         * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify
+         * functionAppResourceId.
          */
         interface WithFunctionAppResourceId {
             /**
-             * Specifies the functionAppResourceId property: The resource id of the function app registered with the static site.
+             * Specifies the functionAppResourceId property: The resource id of the function app registered with the
+             * static site.
              * 
              * @param functionAppResourceId The resource id of the function app registered with the static site.
              * @return the next definition stage.
@@ -155,7 +161,8 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
         }
 
         /**
-         * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify functionAppRegion.
+         * The stage of the StaticSiteUserProvidedFunctionAppArmResource definition allowing to specify
+         * functionAppRegion.
          */
         interface WithFunctionAppRegion {
             /**
@@ -172,9 +179,13 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
          */
         interface WithIsForced {
             /**
-             * Specifies the isForced property: Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the function app even if an AzureStaticWebApps provider is already configured on the function app. The default is &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the isForced property: Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth
+             * configuration on the function app even if an AzureStaticWebApps provider is already configured on the
+             * function app. The default is &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the function app even if an AzureStaticWebApps provider is already configured on the function app. The default is &lt;code&gt;false&lt;/code&gt;.
+             * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on
+             * the function app even if an AzureStaticWebApps provider is already configured on the function app. The
+             * default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withIsForced(Boolean isForced);
@@ -227,11 +238,13 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
         }
 
         /**
-         * The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify functionAppResourceId.
+         * The stage of the StaticSiteUserProvidedFunctionAppArmResource update allowing to specify
+         * functionAppResourceId.
          */
         interface WithFunctionAppResourceId {
             /**
-             * Specifies the functionAppResourceId property: The resource id of the function app registered with the static site.
+             * Specifies the functionAppResourceId property: The resource id of the function app registered with the
+             * static site.
              * 
              * @param functionAppResourceId The resource id of the function app registered with the static site.
              * @return the next definition stage.
@@ -257,9 +270,13 @@ public interface StaticSiteUserProvidedFunctionAppArmResource {
          */
         interface WithIsForced {
             /**
-             * Specifies the isForced property: Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the function app even if an AzureStaticWebApps provider is already configured on the function app. The default is &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the isForced property: Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth
+             * configuration on the function app even if an AzureStaticWebApps provider is already configured on the
+             * function app. The default is &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on the function app even if an AzureStaticWebApps provider is already configured on the function app. The default is &lt;code&gt;false&lt;/code&gt;.
+             * @param isForced Specify &lt;code&gt;true&lt;/code&gt; to force the update of the auth configuration on
+             * the function app even if an AzureStaticWebApps provider is already configured on the function app. The
+             * default is &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withIsForced(Boolean isForced);

@@ -56,7 +56,8 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within the set of probes used by the load balancer. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within the set of probes used by the load
+     * balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -65,7 +66,8 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within the set of probes used by the load balancer. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within the set of probes used by the load
+     * balancer. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the ProbeInner object itself.
@@ -112,7 +114,9 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Get the protocol property: The protocol of the end point. If 'Tcp' is specified, a received ACK is required for the probe to be successful. If 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is required for the probe to be successful.
+     * Get the protocol property: The protocol of the end point. If 'Tcp' is specified, a received ACK is required for
+     * the probe to be successful. If 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is
+     * required for the probe to be successful.
      * 
      * @return the protocol value.
      */
@@ -121,7 +125,9 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Set the protocol property: The protocol of the end point. If 'Tcp' is specified, a received ACK is required for the probe to be successful. If 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is required for the probe to be successful.
+     * Set the protocol property: The protocol of the end point. If 'Tcp' is specified, a received ACK is required for
+     * the probe to be successful. If 'Http' or 'Https' is specified, a 200 OK response from the specifies URI is
+     * required for the probe to be successful.
      * 
      * @param protocol the protocol value to set.
      * @return the ProbeInner object itself.
@@ -158,7 +164,9 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Get the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for health status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.
+     * Get the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for health
+     * status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows
+     * two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.
      * 
      * @return the intervalInSeconds value.
      */
@@ -167,7 +175,9 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Set the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for health status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.
+     * Set the intervalInSeconds property: The interval, in seconds, for how frequently to probe the endpoint for health
+     * status. Typically, the interval is slightly less than half the allocated timeout period (in seconds) which allows
+     * two full probes before taking the instance out of rotation. The default value is 15, the minimum value is 5.
      * 
      * @param intervalInSeconds the intervalInSeconds value to set.
      * @return the ProbeInner object itself.
@@ -181,7 +191,9 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Get the numberOfProbes property: The number of probes where if no response, will result in stopping further traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or slower than the typical times used in Azure.
+     * Get the numberOfProbes property: The number of probes where if no response, will result in stopping further
+     * traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or
+     * slower than the typical times used in Azure.
      * 
      * @return the numberOfProbes value.
      */
@@ -190,7 +202,9 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Set the numberOfProbes property: The number of probes where if no response, will result in stopping further traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or slower than the typical times used in Azure.
+     * Set the numberOfProbes property: The number of probes where if no response, will result in stopping further
+     * traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or
+     * slower than the typical times used in Azure.
      * 
      * @param numberOfProbes the numberOfProbes value to set.
      * @return the ProbeInner object itself.
@@ -204,7 +218,10 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Get the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to be placed back in rotation.
+     * Get the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny
+     * traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this
+     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to
+     * be placed back in rotation.
      * 
      * @return the probeThreshold value.
      */
@@ -213,7 +230,10 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Set the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to be placed back in rotation.
+     * Set the probeThreshold property: The number of consecutive successful or failed probes in order to allow or deny
+     * traffic from being delivered to this endpoint. After failing the number of consecutive probes equal to this
+     * value, the endpoint will be taken out of rotation and require the same number of successful consecutive probes to
+     * be placed back in rotation.
      * 
      * @param probeThreshold the probeThreshold value to set.
      * @return the ProbeInner object itself.
@@ -227,7 +247,8 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Get the requestPath property: The URI used for requesting health status from the VM. Path is required if a protocol is set to http. Otherwise, it is not allowed. There is no default value.
+     * Get the requestPath property: The URI used for requesting health status from the VM. Path is required if a
+     * protocol is set to http. Otherwise, it is not allowed. There is no default value.
      * 
      * @return the requestPath value.
      */
@@ -236,7 +257,8 @@ public final class ProbeInner extends SubResource {
     }
 
     /**
-     * Set the requestPath property: The URI used for requesting health status from the VM. Path is required if a protocol is set to http. Otherwise, it is not allowed. There is no default value.
+     * Set the requestPath property: The URI used for requesting health status from the VM. Path is required if a
+     * protocol is set to http. Otherwise, it is not allowed. There is no default value.
      * 
      * @param requestPath the requestPath value to set.
      * @return the ProbeInner object itself.

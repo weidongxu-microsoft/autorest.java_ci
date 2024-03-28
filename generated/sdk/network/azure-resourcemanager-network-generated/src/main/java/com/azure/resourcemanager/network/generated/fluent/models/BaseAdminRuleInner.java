@@ -56,17 +56,6 @@ public class BaseAdminRuleInner extends ChildResource {
     }
 
     /**
-     * Set the kind property: Whether the rule is custom or default.
-     * 
-     * @param kind the kind value to set.
-     * @return the BaseAdminRuleInner object itself.
-     */
-    protected BaseAdminRuleInner withKind(AdminRuleKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the systemData property: The system metadata related to this resource.
      * 
      * @return the systemData value.

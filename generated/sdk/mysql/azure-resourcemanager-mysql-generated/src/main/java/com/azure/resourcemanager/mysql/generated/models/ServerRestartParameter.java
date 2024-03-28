@@ -31,7 +31,8 @@ public final class ServerRestartParameter {
     }
 
     /**
-     * Get the restartWithFailover property: Whether or not failover to standby server when restarting a server with high availability enabled.
+     * Get the restartWithFailover property: Whether or not failover to standby server when restarting a server with
+     * high availability enabled.
      * 
      * @return the restartWithFailover value.
      */
@@ -40,7 +41,8 @@ public final class ServerRestartParameter {
     }
 
     /**
-     * Set the restartWithFailover property: Whether or not failover to standby server when restarting a server with high availability enabled.
+     * Set the restartWithFailover property: Whether or not failover to standby server when restarting a server with
+     * high availability enabled.
      * 
      * @param restartWithFailover the restartWithFailover value to set.
      * @return the ServerRestartParameter object itself.

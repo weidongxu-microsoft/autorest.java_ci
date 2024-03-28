@@ -32,7 +32,8 @@ public final class Sku {
     }
 
     /**
-     * Get the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
+     * Get the name property: The SKU name. Required for account creation; optional for update. Note that in older
+     * versions, SKU name was called accountType.
      * 
      * @return the name value.
      */
@@ -41,7 +42,8 @@ public final class Sku {
     }
 
     /**
-     * Set the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
+     * Set the name property: The SKU name. Required for account creation; optional for update. Note that in older
+     * versions, SKU name was called accountType.
      * 
      * @param name the name value to set.
      * @return the Sku object itself.
@@ -67,8 +69,7 @@ public final class Sku {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model Sku"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property name in model Sku"));
         }
     }
 

@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * A NAPTR record. For more information about the NAPTR record format, see RFC 3403: https://www.rfc-editor.org/rfc/rfc3403.
+ * A NAPTR record. For more information about the NAPTR record format, see RFC 3403:
+ * https://www.rfc-editor.org/rfc/rfc3403.
  */
 @Fluent
 public final class NaptrRecord {
@@ -55,7 +56,8 @@ public final class NaptrRecord {
     }
 
     /**
-     * Get the order property: The order in which the NAPTR records MUST be processed in order to accurately represent the ordered list of rules. The ordering is from lowest to highest. Valid values: 0-65535.
+     * Get the order property: The order in which the NAPTR records MUST be processed in order to accurately represent
+     * the ordered list of rules. The ordering is from lowest to highest. Valid values: 0-65535.
      * 
      * @return the order value.
      */
@@ -64,7 +66,8 @@ public final class NaptrRecord {
     }
 
     /**
-     * Set the order property: The order in which the NAPTR records MUST be processed in order to accurately represent the ordered list of rules. The ordering is from lowest to highest. Valid values: 0-65535.
+     * Set the order property: The order in which the NAPTR records MUST be processed in order to accurately represent
+     * the ordered list of rules. The ordering is from lowest to highest. Valid values: 0-65535.
      * 
      * @param order the order value to set.
      * @return the NaptrRecord object itself.
@@ -75,7 +78,8 @@ public final class NaptrRecord {
     }
 
     /**
-     * Get the preference property: The preference specifies the order in which NAPTR records with equal 'order' values should be processed, low numbers being processed before high numbers. Valid values: 0-65535.
+     * Get the preference property: The preference specifies the order in which NAPTR records with equal 'order' values
+     * should be processed, low numbers being processed before high numbers. Valid values: 0-65535.
      * 
      * @return the preference value.
      */
@@ -84,7 +88,8 @@ public final class NaptrRecord {
     }
 
     /**
-     * Set the preference property: The preference specifies the order in which NAPTR records with equal 'order' values should be processed, low numbers being processed before high numbers. Valid values: 0-65535.
+     * Set the preference property: The preference specifies the order in which NAPTR records with equal 'order' values
+     * should be processed, low numbers being processed before high numbers. Valid values: 0-65535.
      * 
      * @param preference the preference value to set.
      * @return the NaptrRecord object itself.
@@ -95,7 +100,9 @@ public final class NaptrRecord {
     }
 
     /**
-     * Get the flags property: The flags specific to DDDS applications. Values currently defined in RFC 3404 are uppercase and lowercase letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation marks.
+     * Get the flags property: The flags specific to DDDS applications. Values currently defined in RFC 3404 are
+     * uppercase and lowercase letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation
+     * marks.
      * 
      * @return the flags value.
      */
@@ -104,7 +111,9 @@ public final class NaptrRecord {
     }
 
     /**
-     * Set the flags property: The flags specific to DDDS applications. Values currently defined in RFC 3404 are uppercase and lowercase letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation marks.
+     * Set the flags property: The flags specific to DDDS applications. Values currently defined in RFC 3404 are
+     * uppercase and lowercase letters "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation
+     * marks.
      * 
      * @param flags the flags value to set.
      * @return the NaptrRecord object itself.
@@ -135,7 +144,10 @@ public final class NaptrRecord {
     }
 
     /**
-     * Get the regexp property: The regular expression that the DDDS application uses to convert an input value into an output value. For example: an IP phone system might use a regular expression to convert a phone number that is entered by a user into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for 'regexp' or a value for 'replacement'.
+     * Get the regexp property: The regular expression that the DDDS application uses to convert an input value into an
+     * output value. For example: an IP phone system might use a regular expression to convert a phone number that is
+     * entered by a user into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for
+     * 'regexp' or a value for 'replacement'.
      * 
      * @return the regexp value.
      */
@@ -144,7 +156,10 @@ public final class NaptrRecord {
     }
 
     /**
-     * Set the regexp property: The regular expression that the DDDS application uses to convert an input value into an output value. For example: an IP phone system might use a regular expression to convert a phone number that is entered by a user into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for 'regexp' or a value for 'replacement'.
+     * Set the regexp property: The regular expression that the DDDS application uses to convert an input value into an
+     * output value. For example: an IP phone system might use a regular expression to convert a phone number that is
+     * entered by a user into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for
+     * 'regexp' or a value for 'replacement'.
      * 
      * @param regexp the regexp value to set.
      * @return the NaptrRecord object itself.
@@ -155,7 +170,10 @@ public final class NaptrRecord {
     }
 
     /**
-     * Get the replacement property: The replacement is a fully qualified domain name (FQDN) of the next domain name that you want the DDDS application to submit a DNS query for. The DDDS application replaces the input value with the value specified for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you specify a value for 'regexp', specify a dot (.) for 'replacement'.
+     * Get the replacement property: The replacement is a fully qualified domain name (FQDN) of the next domain name
+     * that you want the DDDS application to submit a DNS query for. The DDDS application replaces the input value with
+     * the value specified for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you
+     * specify a value for 'regexp', specify a dot (.) for 'replacement'.
      * 
      * @return the replacement value.
      */
@@ -164,7 +182,10 @@ public final class NaptrRecord {
     }
 
     /**
-     * Set the replacement property: The replacement is a fully qualified domain name (FQDN) of the next domain name that you want the DDDS application to submit a DNS query for. The DDDS application replaces the input value with the value specified for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you specify a value for 'regexp', specify a dot (.) for 'replacement'.
+     * Set the replacement property: The replacement is a fully qualified domain name (FQDN) of the next domain name
+     * that you want the DDDS application to submit a DNS query for. The DDDS application replaces the input value with
+     * the value specified for replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you
+     * specify a value for 'regexp', specify a dot (.) for 'replacement'.
      * 
      * @param replacement the replacement value to set.
      * @return the NaptrRecord object itself.

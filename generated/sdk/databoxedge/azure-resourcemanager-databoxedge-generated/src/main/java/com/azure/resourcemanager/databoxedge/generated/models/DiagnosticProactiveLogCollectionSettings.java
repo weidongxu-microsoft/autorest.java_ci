@@ -33,7 +33,8 @@ public interface DiagnosticProactiveLogCollectionSettings {
     String type();
 
     /**
-     * Gets the systemData property: Metadata pertaining to creation and last modification of DiagnosticProactiveLogCollectionSettings.
+     * Gets the systemData property: Metadata pertaining to creation and last modification of
+     * DiagnosticProactiveLogCollectionSettings.
      * 
      * @return the systemData value.
      */
@@ -47,7 +48,9 @@ public interface DiagnosticProactiveLogCollectionSettings {
     ProactiveDiagnosticsConsent userConsent();
 
     /**
-     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticProactiveLogCollectionSettingsInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticProactiveLogCollectionSettingsInner
+     * object.
      * 
      * @return the inner object.
      */

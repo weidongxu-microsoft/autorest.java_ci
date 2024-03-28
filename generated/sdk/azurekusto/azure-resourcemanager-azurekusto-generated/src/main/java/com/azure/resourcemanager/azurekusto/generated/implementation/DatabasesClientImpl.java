@@ -72,7 +72,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientDatabases to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientDatabases to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -186,7 +187,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -229,7 +231,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -319,11 +322,14 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param top limit the number of results.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabaseInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -358,12 +364,15 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param top limit the number of results.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabaseInner>> listByClusterSinglePageAsync(String resourceGroupName,
@@ -398,7 +407,9 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param top limit the number of results.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -435,7 +446,9 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param top limit the number of results.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -473,7 +486,9 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param top limit the number of results.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -622,7 +637,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -669,7 +685,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -715,7 +732,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -759,7 +777,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -803,7 +822,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -825,7 +845,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -865,7 +886,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -906,7 +928,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -927,7 +950,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -974,7 +998,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1020,7 +1045,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1064,7 +1090,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1108,7 +1135,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1129,7 +1157,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1169,7 +1198,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1209,7 +1239,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1451,7 +1482,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list Kusto database principals operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabasePrincipalInner>> listPrincipalsSinglePageAsync(String resourceGroupName,
@@ -1493,7 +1525,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list Kusto database principals operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabasePrincipalInner>> listPrincipalsSinglePageAsync(String resourceGroupName,
@@ -1606,7 +1639,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the list Kusto database principals operation response along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabasePrincipalListResultInner>> addPrincipalsWithResponseAsync(String resourceGroupName,
@@ -1654,7 +1688,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the list Kusto database principals operation response along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabasePrincipalListResultInner>> addPrincipalsWithResponseAsync(String resourceGroupName,
@@ -1759,7 +1794,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the list Kusto database principals operation response along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabasePrincipalListResultInner>> removePrincipalsWithResponseAsync(String resourceGroupName,
@@ -1807,7 +1843,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto database principals operation response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the list Kusto database principals operation response along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DatabasePrincipalListResultInner>> removePrincipalsWithResponseAsync(String resourceGroupName,
@@ -1911,7 +1948,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabaseInner>> listByClusterNextSinglePageAsync(String nextLink) {
@@ -1940,7 +1978,8 @@ public final class DatabasesClientImpl implements DatabasesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list Kusto databases operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DatabaseInner>> listByClusterNextSinglePageAsync(String nextLink, Context context) {

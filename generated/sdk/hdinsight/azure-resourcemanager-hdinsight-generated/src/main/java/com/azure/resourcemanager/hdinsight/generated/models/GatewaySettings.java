@@ -11,7 +11,8 @@ import com.azure.resourcemanager.hdinsight.generated.fluent.models.GatewaySettin
  */
 public interface GatewaySettings {
     /**
-     * Gets the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is enabled.
+     * Gets the isCredentialEnabled property: Indicates whether or not the gateway settings based authorization is
+     * enabled.
      * 
      * @return the isCredentialEnabled value.
      */

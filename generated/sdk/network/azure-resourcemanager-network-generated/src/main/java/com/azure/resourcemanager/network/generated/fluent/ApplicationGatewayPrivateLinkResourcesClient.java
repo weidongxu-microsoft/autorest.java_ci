@@ -11,7 +11,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner;
 
 /**
- * An instance of this class provides access to all the operations defined in ApplicationGatewayPrivateLinkResourcesClient.
+ * An instance of this class provides access to all the operations defined in
+ * ApplicationGatewayPrivateLinkResourcesClient.
  */
 public interface ApplicationGatewayPrivateLinkResourcesClient {
     /**
@@ -22,7 +23,8 @@ public interface ApplicationGatewayPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGatewayPrivateLinkResources API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListApplicationGatewayPrivateLinkResources API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationGatewayPrivateLinkResourceInner> list(String resourceGroupName,
@@ -37,7 +39,8 @@ public interface ApplicationGatewayPrivateLinkResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGatewayPrivateLinkResources API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListApplicationGatewayPrivateLinkResources API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationGatewayPrivateLinkResourceInner> list(String resourceGroupName,

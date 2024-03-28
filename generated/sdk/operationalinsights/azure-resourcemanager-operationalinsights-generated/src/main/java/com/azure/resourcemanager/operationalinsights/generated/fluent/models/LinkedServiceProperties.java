@@ -38,7 +38,8 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
+     * used for linking resources which require read access.
      * 
      * @return the resourceId value.
      */
@@ -47,7 +48,8 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
+     * used for linking resources which require read access.
      * 
      * @param resourceId the resourceId value to set.
      * @return the LinkedServiceProperties object itself.
@@ -58,7 +60,8 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Get the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+     * Get the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
+     * This should be used for linking resources which require write access.
      * 
      * @return the writeAccessResourceId value.
      */
@@ -67,7 +70,8 @@ public final class LinkedServiceProperties {
     }
 
     /**
-     * Set the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+     * Set the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
+     * This should be used for linking resources which require write access.
      * 
      * @param writeAccessResourceId the writeAccessResourceId value to set.
      * @return the LinkedServiceProperties object itself.

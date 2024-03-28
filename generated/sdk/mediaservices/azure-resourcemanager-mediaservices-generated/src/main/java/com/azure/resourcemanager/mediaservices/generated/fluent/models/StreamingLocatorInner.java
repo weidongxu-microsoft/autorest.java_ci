@@ -156,7 +156,11 @@ public final class StreamingLocatorInner extends ProxyResource {
     }
 
     /**
-     * Get the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
+     * Get the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify
+     * the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined
+     * Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly',
+     * 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and
+     * 'Predefined_MultiDrmStreaming'.
      * 
      * @return the streamingPolicyName value.
      */
@@ -165,7 +169,11 @@ public final class StreamingLocatorInner extends ProxyResource {
     }
 
     /**
-     * Set the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
+     * Set the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify
+     * the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined
+     * Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly',
+     * 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and
+     * 'Predefined_MultiDrmStreaming'.
      * 
      * @param streamingPolicyName the streamingPolicyName value to set.
      * @return the StreamingLocatorInner object itself.
@@ -179,7 +187,8 @@ public final class StreamingLocatorInner extends ProxyResource {
     }
 
     /**
-     * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator.
+     * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
+     * Locator.
      * 
      * @return the defaultContentKeyPolicyName value.
      */
@@ -188,7 +197,8 @@ public final class StreamingLocatorInner extends ProxyResource {
     }
 
     /**
-     * Set the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator.
+     * Set the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
+     * Locator.
      * 
      * @param defaultContentKeyPolicyName the defaultContentKeyPolicyName value to set.
      * @return the StreamingLocatorInner object itself.

@@ -69,7 +69,8 @@ public interface NetworkVirtualAppliances {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListNetworkVirtualAppliances API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName);
 
@@ -81,7 +82,8 @@ public interface NetworkVirtualAppliances {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListNetworkVirtualAppliances API service call as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName, Context context);
 

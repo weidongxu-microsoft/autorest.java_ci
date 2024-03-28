@@ -51,7 +51,8 @@ public final class GetOutboundRoutesParameters {
     }
 
     /**
-     * Get the connectionType property: The type of the specified connection resource like ExpressRouteConnection, HubVirtualNetworkConnection, VpnConnection and P2SConnection.
+     * Get the connectionType property: The type of the specified connection resource like ExpressRouteConnection,
+     * HubVirtualNetworkConnection, VpnConnection and P2SConnection.
      * 
      * @return the connectionType value.
      */
@@ -60,7 +61,8 @@ public final class GetOutboundRoutesParameters {
     }
 
     /**
-     * Set the connectionType property: The type of the specified connection resource like ExpressRouteConnection, HubVirtualNetworkConnection, VpnConnection and P2SConnection.
+     * Set the connectionType property: The type of the specified connection resource like ExpressRouteConnection,
+     * HubVirtualNetworkConnection, VpnConnection and P2SConnection.
      * 
      * @param connectionType the connectionType value to set.
      * @return the GetOutboundRoutesParameters object itself.

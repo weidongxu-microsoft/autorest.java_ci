@@ -9,6 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.ArcAddonProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -20,6 +21,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ArcAddon extends AddonInner {
     /*
+     * Addon type.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private AddonType kind = AddonType.ARC_FOR_KUBERNETES;
+
+    /*
      * Properties specific to Arc addon.
      */
     @JsonProperty(value = "properties", required = true)
@@ -29,7 +37,16 @@ public final class ArcAddon extends AddonInner {
      * Creates an instance of ArcAddon class.
      */
     public ArcAddon() {
-        withKind(AddonType.ARC_FOR_KUBERNETES);
+    }
+
+    /**
+     * Get the kind property: Addon type.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public AddonType kind() {
+        return this.kind;
     }
 
     /**
@@ -178,8 +195,8 @@ public final class ArcAddon extends AddonInner {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model ArcAddon"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property innerProperties in model ArcAddon"));
         } else {
             innerProperties().validate();
         }

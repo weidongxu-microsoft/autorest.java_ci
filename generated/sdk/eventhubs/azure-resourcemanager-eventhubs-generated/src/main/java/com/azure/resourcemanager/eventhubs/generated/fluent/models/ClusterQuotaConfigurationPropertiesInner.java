@@ -28,7 +28,8 @@ public final class ClusterQuotaConfigurationPropertiesInner {
     }
 
     /**
-     * Get the settings property: All possible Cluster settings - a collection of key/value paired settings which apply to quotas and configurations imposed on the cluster.
+     * Get the settings property: All possible Cluster settings - a collection of key/value paired settings which apply
+     * to quotas and configurations imposed on the cluster.
      * 
      * @return the settings value.
      */
@@ -37,7 +38,8 @@ public final class ClusterQuotaConfigurationPropertiesInner {
     }
 
     /**
-     * Set the settings property: All possible Cluster settings - a collection of key/value paired settings which apply to quotas and configurations imposed on the cluster.
+     * Set the settings property: All possible Cluster settings - a collection of key/value paired settings which apply
+     * to quotas and configurations imposed on the cluster.
      * 
      * @param settings the settings value to set.
      * @return the ClusterQuotaConfigurationPropertiesInner object itself.

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -23,6 +24,13 @@ import java.util.List;
 @JsonTypeName("DynamicThresholdCriterion")
 @Fluent
 public final class DynamicMetricCriteria extends MultiMetricCriteria {
+    /*
+     * Specifies the type of threshold criteria
+     */
+    @JsonTypeId
+    @JsonProperty(value = "criterionType", required = true)
+    private CriterionType criterionType = CriterionType.DYNAMIC_THRESHOLD_CRITERION;
+
     /*
      * The operator used to compare the metric value against the threshold.
      */
@@ -51,7 +59,16 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
      * Creates an instance of DynamicMetricCriteria class.
      */
     public DynamicMetricCriteria() {
-        withCriterionType(CriterionType.DYNAMIC_THRESHOLD_CRITERION);
+    }
+
+    /**
+     * Get the criterionType property: Specifies the type of threshold criteria.
+     * 
+     * @return the criterionType value.
+     */
+    @Override
+    public CriterionType criterionType() {
+        return this.criterionType;
     }
 
     /**
@@ -75,7 +92,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     }
 
     /**
-     * Get the alertSensitivity property: The extent of deviation required to trigger an alert. This will affect how tight the threshold is to the metric series pattern.
+     * Get the alertSensitivity property: The extent of deviation required to trigger an alert. This will affect how
+     * tight the threshold is to the metric series pattern.
      * 
      * @return the alertSensitivity value.
      */
@@ -84,7 +102,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     }
 
     /**
-     * Set the alertSensitivity property: The extent of deviation required to trigger an alert. This will affect how tight the threshold is to the metric series pattern.
+     * Set the alertSensitivity property: The extent of deviation required to trigger an alert. This will affect how
+     * tight the threshold is to the metric series pattern.
      * 
      * @param alertSensitivity the alertSensitivity value to set.
      * @return the DynamicMetricCriteria object itself.
@@ -95,7 +114,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     }
 
     /**
-     * Get the failingPeriods property: The minimum number of violations required within the selected lookback time window required to raise an alert.
+     * Get the failingPeriods property: The minimum number of violations required within the selected lookback time
+     * window required to raise an alert.
      * 
      * @return the failingPeriods value.
      */
@@ -104,7 +124,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     }
 
     /**
-     * Set the failingPeriods property: The minimum number of violations required within the selected lookback time window required to raise an alert.
+     * Set the failingPeriods property: The minimum number of violations required within the selected lookback time
+     * window required to raise an alert.
      * 
      * @param failingPeriods the failingPeriods value to set.
      * @return the DynamicMetricCriteria object itself.
@@ -115,7 +136,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     }
 
     /**
-     * Get the ignoreDataBefore property: Use this option to set the date from which to start learning the metric historical data and calculate the dynamic thresholds (in ISO8601 format).
+     * Get the ignoreDataBefore property: Use this option to set the date from which to start learning the metric
+     * historical data and calculate the dynamic thresholds (in ISO8601 format).
      * 
      * @return the ignoreDataBefore value.
      */
@@ -124,7 +146,8 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     }
 
     /**
-     * Set the ignoreDataBefore property: Use this option to set the date from which to start learning the metric historical data and calculate the dynamic thresholds (in ISO8601 format).
+     * Set the ignoreDataBefore property: Use this option to set the date from which to start learning the metric
+     * historical data and calculate the dynamic thresholds (in ISO8601 format).
      * 
      * @param ignoreDataBefore the ignoreDataBefore value to set.
      * @return the DynamicMetricCriteria object itself.
@@ -197,16 +220,18 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     public void validate() {
         super.validate();
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model DynamicMetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property operator in model DynamicMetricCriteria"));
         }
         if (alertSensitivity() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property alertSensitivity in model DynamicMetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property alertSensitivity in model DynamicMetricCriteria"));
         }
         if (failingPeriods() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property failingPeriods in model DynamicMetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property failingPeriods in model DynamicMetricCriteria"));
         } else {
             failingPeriods().validate();
         }

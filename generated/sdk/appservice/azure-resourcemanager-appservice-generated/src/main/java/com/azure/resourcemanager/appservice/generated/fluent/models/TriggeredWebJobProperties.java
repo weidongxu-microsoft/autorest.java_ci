@@ -276,7 +276,8 @@ public final class TriggeredWebJobProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * Get the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -285,7 +286,8 @@ public final class TriggeredWebJobProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * Set the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the TriggeredWebJobProperties object itself.

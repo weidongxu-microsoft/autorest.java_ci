@@ -66,7 +66,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientGalleryApplications to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientGalleryApplications to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -137,13 +138,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -186,14 +191,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -235,13 +244,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginCreateOrUpdateAsync(
@@ -258,14 +271,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginCreateOrUpdateAsync(
@@ -282,13 +299,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginCreateOrUpdate(
@@ -302,14 +323,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginCreateOrUpdate(
@@ -325,13 +350,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryApplicationInner> createOrUpdateAsync(String resourceGroupName, String galleryName,
@@ -345,14 +374,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryApplicationInner> createOrUpdateAsync(String resourceGroupName, String galleryName,
@@ -365,8 +398,11 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -383,8 +419,11 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Create or update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be created.
-     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * created.
+     * @param galleryApplicationName The name of the gallery Application Definition to be created or updated. The
+     * allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum
+     * length is 80 characters.
      * @param galleryApplication Parameters supplied to the create or update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -403,13 +442,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String galleryName,
@@ -452,14 +495,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String galleryName,
@@ -500,13 +547,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginUpdateAsync(
@@ -523,14 +574,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link PollerFlux} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginUpdateAsync(
@@ -547,13 +602,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginUpdate(
@@ -567,14 +626,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Definition that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<GalleryApplicationInner>, GalleryApplicationInner> beginUpdate(
@@ -589,13 +652,17 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryApplicationInner> updateAsync(String resourceGroupName, String galleryName,
@@ -608,14 +675,18 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryApplicationInner> updateAsync(String resourceGroupName, String galleryName,
@@ -629,8 +700,11 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -647,8 +721,11 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Update a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be updated.
-     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is 80 characters.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * updated.
+     * @param galleryApplicationName The name of the gallery Application Definition to be updated. The allowed
+     * characters are alphabets and numbers with dots, dashes, and periods allowed in the middle. The maximum length is
+     * 80 characters.
      * @param galleryApplication Parameters supplied to the update gallery Application operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -666,12 +743,14 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Retrieves information about a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be retrieved.
+     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
+     * retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryApplicationInner>> getWithResponseAsync(String resourceGroupName, String galleryName,
@@ -707,13 +786,15 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Retrieves information about a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be retrieved.
+     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
+     * retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GalleryApplicationInner>> getWithResponseAsync(String resourceGroupName, String galleryName,
@@ -748,12 +829,14 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Retrieves information about a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be retrieved.
+     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
+     * retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update on successful completion of {@link Mono}.
+     * @return specifies information about the gallery Application Definition that you want to create or update on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<GalleryApplicationInner> getAsync(String resourceGroupName, String galleryName,
@@ -766,13 +849,15 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Retrieves information about a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be retrieved.
+     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
+     * retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Definition that you want to create or update along with {@link Response}.
+     * @return specifies information about the gallery Application Definition that you want to create or update along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<GalleryApplicationInner> getWithResponse(String resourceGroupName, String galleryName,
@@ -784,7 +869,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Retrieves information about a gallery Application Definition.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be retrieved.
+     * @param galleryName The name of the Shared Application Gallery from which the Application Definitions are to be
+     * retrieved.
      * @param galleryApplicationName The name of the gallery Application Definition to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -800,7 +886,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -841,7 +928,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -882,7 +970,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -902,7 +991,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -924,7 +1014,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -941,7 +1032,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -959,7 +1051,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -976,7 +1069,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -995,7 +1089,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1010,7 +1105,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * Delete a gallery Application.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be deleted.
+     * @param galleryName The name of the Shared Application Gallery in which the Application Definition is to be
+     * deleted.
      * @param galleryApplicationName The name of the gallery Application Definition to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1026,11 +1122,13 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * List gallery Application Definitions in a gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be listed.
+     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryApplicationInner>> listByGallerySinglePageAsync(String resourceGroupName,
@@ -1064,12 +1162,14 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * List gallery Application Definitions in a gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be listed.
+     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be
+     * listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryApplicationInner>> listByGallerySinglePageAsync(String resourceGroupName,
@@ -1103,7 +1203,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * List gallery Application Definitions in a gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be listed.
+     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1119,7 +1220,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * List gallery Application Definitions in a gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be listed.
+     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be
+     * listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1137,7 +1239,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * List gallery Application Definitions in a gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be listed.
+     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1152,7 +1255,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * List gallery Application Definitions in a gallery.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be listed.
+     * @param galleryName The name of the Shared Application Gallery from which Application Definitions are to be
+     * listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1174,7 +1278,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryApplicationInner>> listByGalleryNextSinglePageAsync(String nextLink) {
@@ -1203,7 +1308,8 @@ public final class GalleryApplicationsClientImpl implements GalleryApplicationsC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Gallery Applications operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GalleryApplicationInner>> listByGalleryNextSinglePageAsync(String nextLink,

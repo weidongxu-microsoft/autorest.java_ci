@@ -52,7 +52,8 @@ public interface VirtualHub {
     String etag();
 
     /**
-     * Gets the kind property: Kind of service virtual hub. This is metadata used for the Azure portal experience for Route Server.
+     * Gets the kind property: Kind of service virtual hub. This is metadata used for the Azure portal experience for
+     * Route Server.
      * 
      * @return the kind value.
      */
@@ -136,7 +137,8 @@ public interface VirtualHub {
     String securityProviderName();
 
     /**
-     * Gets the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this VirtualHub.
+     * Gets the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this
+     * VirtualHub.
      * 
      * @return the virtualHubRouteTableV2S value.
      */
@@ -299,7 +301,8 @@ public interface VirtualHub {
         }
 
         /**
-         * The stage of the VirtualHub definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualHub definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithVirtualWan, DefinitionStages.WithVpnGateway,
@@ -409,7 +412,8 @@ public interface VirtualHub {
          */
         interface WithSecurityPartnerProvider {
             /**
-             * Specifies the securityPartnerProvider property: The securityPartnerProvider associated with this VirtualHub..
+             * Specifies the securityPartnerProvider property: The securityPartnerProvider associated with this
+             * VirtualHub..
              * 
              * @param securityPartnerProvider The securityPartnerProvider associated with this VirtualHub.
              * @return the next definition stage.
@@ -461,7 +465,8 @@ public interface VirtualHub {
          */
         interface WithVirtualHubRouteTableV2S {
             /**
-             * Specifies the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this VirtualHub..
+             * Specifies the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with
+             * this VirtualHub..
              * 
              * @param virtualHubRouteTableV2S List of all virtual hub route table v2s associated with this VirtualHub.
              * @return the next definition stage.
@@ -552,7 +557,8 @@ public interface VirtualHub {
          */
         interface WithVirtualRouterAutoScaleConfiguration {
             /**
-             * Specifies the virtualRouterAutoScaleConfiguration property: The VirtualHub Router autoscale configuration..
+             * Specifies the virtualRouterAutoScaleConfiguration property: The VirtualHub Router autoscale
+             * configuration..
              * 
              * @param virtualRouterAutoScaleConfiguration The VirtualHub Router autoscale configuration.
              * @return the next definition stage.

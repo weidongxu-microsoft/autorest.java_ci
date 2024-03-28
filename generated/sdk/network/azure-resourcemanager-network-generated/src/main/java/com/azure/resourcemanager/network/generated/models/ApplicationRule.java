@@ -6,6 +6,7 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -17,6 +18,13 @@ import java.util.List;
 @JsonTypeName("ApplicationRule")
 @Fluent
 public final class ApplicationRule extends FirewallPolicyRule {
+    /*
+     * Rule Type.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "ruleType", required = true)
+    private FirewallPolicyRuleType ruleType = FirewallPolicyRuleType.APPLICATION_RULE;
+
     /*
      * List of source IP addresses for this rule.
      */
@@ -81,7 +89,16 @@ public final class ApplicationRule extends FirewallPolicyRule {
      * Creates an instance of ApplicationRule class.
      */
     public ApplicationRule() {
-        withRuleType(FirewallPolicyRuleType.APPLICATION_RULE);
+    }
+
+    /**
+     * Get the ruleType property: Rule Type.
+     * 
+     * @return the ruleType value.
+     */
+    @Override
+    public FirewallPolicyRuleType ruleType() {
+        return this.ruleType;
     }
 
     /**

@@ -64,7 +64,8 @@ public final class ExportDefinition {
     }
 
     /**
-     * Get the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period must be provided.
+     * Get the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period
+     * must be provided.
      * 
      * @return the timeframe value.
      */
@@ -73,7 +74,8 @@ public final class ExportDefinition {
     }
 
     /**
-     * Set the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period must be provided.
+     * Set the timeframe property: The time frame for pulling data for the query. If custom, then a specific time period
+     * must be provided.
      * 
      * @param timeframe the timeframe value to set.
      * @return the ExportDefinition object itself.
@@ -130,12 +132,12 @@ public final class ExportDefinition {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model ExportDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model ExportDefinition"));
         }
         if (timeframe() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timeframe in model ExportDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property timeframe in model ExportDefinition"));
         }
         if (timePeriod() != null) {
             timePeriod().validate();

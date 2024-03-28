@@ -83,7 +83,8 @@ public final class ImportSourceProperties {
     }
 
     /**
-     * Get the sasToken property: Sas token for accessing source storage. Read and list permissions are required for sas token.
+     * Get the sasToken property: Sas token for accessing source storage. Read and list permissions are required for sas
+     * token.
      * 
      * @return the sasToken value.
      */
@@ -92,7 +93,8 @@ public final class ImportSourceProperties {
     }
 
     /**
-     * Set the sasToken property: Sas token for accessing source storage. Read and list permissions are required for sas token.
+     * Set the sasToken property: Sas token for accessing source storage. Read and list permissions are required for sas
+     * token.
      * 
      * @param sasToken the sasToken value to set.
      * @return the ImportSourceProperties object itself.

@@ -130,7 +130,8 @@ public final class PolicyDefinitionGroup {
     }
 
     /**
-     * Get the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the group.
+     * Get the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the
+     * group.
      * 
      * @return the additionalMetadataId value.
      */
@@ -139,7 +140,8 @@ public final class PolicyDefinitionGroup {
     }
 
     /**
-     * Set the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the group.
+     * Set the additionalMetadataId property: A resource ID of a resource that contains additional metadata about the
+     * group.
      * 
      * @param additionalMetadataId the additionalMetadataId value to set.
      * @return the PolicyDefinitionGroup object itself.
@@ -156,8 +158,8 @@ public final class PolicyDefinitionGroup {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model PolicyDefinitionGroup"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model PolicyDefinitionGroup"));
         }
     }
 

@@ -53,8 +53,9 @@ public final class ProactiveLogCollectionSettingsProperties {
      */
     public void validate() {
         if (userConsent() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property userConsent in model ProactiveLogCollectionSettingsProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property userConsent in model ProactiveLogCollectionSettingsProperties"));
         }
     }
 

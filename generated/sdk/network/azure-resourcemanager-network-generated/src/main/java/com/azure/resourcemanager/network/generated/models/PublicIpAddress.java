@@ -66,7 +66,8 @@ public interface PublicIpAddress {
     String etag();
 
     /**
-     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
+     * Gets the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
+     * from.
      * 
      * @return the zones value.
      */
@@ -271,7 +272,8 @@ public interface PublicIpAddress {
         }
 
         /**
-         * The stage of the PublicIpAddress definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PublicIpAddress definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithSku, DefinitionStages.WithZones, DefinitionStages.WithPublicIpAllocationMethod,
@@ -341,7 +343,8 @@ public interface PublicIpAddress {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from..
+             * Specifies the zones property: A list of availability zones denoting the IP allocated for the resource
+             * needs to come from..
              * 
              * @param zones A list of availability zones denoting the IP allocated for the resource needs to come from.
              * @return the next definition stage.
@@ -393,7 +396,8 @@ public interface PublicIpAddress {
          */
         interface WithDdosSettings {
             /**
-             * Specifies the ddosSettings property: The DDoS protection custom policy associated with the public IP address..
+             * Specifies the ddosSettings property: The DDoS protection custom policy associated with the public IP
+             * address..
              * 
              * @param ddosSettings The DDoS protection custom policy associated with the public IP address.
              * @return the next definition stage.
@@ -432,7 +436,8 @@ public interface PublicIpAddress {
          */
         interface WithPublicIpPrefix {
             /**
-             * Specifies the publicIpPrefix property: The Public IP Prefix this Public IP Address should be allocated from..
+             * Specifies the publicIpPrefix property: The Public IP Prefix this Public IP Address should be allocated
+             * from..
              * 
              * @param publicIpPrefix The Public IP Prefix this Public IP Address should be allocated from.
              * @return the next definition stage.
@@ -458,7 +463,8 @@ public interface PublicIpAddress {
          */
         interface WithServicePublicIpAddress {
             /**
-             * Specifies the servicePublicIpAddress property: The service public IP address of the public IP address resource..
+             * Specifies the servicePublicIpAddress property: The service public IP address of the public IP address
+             * resource..
              * 
              * @param servicePublicIpAddress The service public IP address of the public IP address resource.
              * @return the next definition stage.
@@ -497,7 +503,8 @@ public interface PublicIpAddress {
          */
         interface WithLinkedPublicIpAddress {
             /**
-             * Specifies the linkedPublicIpAddress property: The linked public IP address of the public IP address resource..
+             * Specifies the linkedPublicIpAddress property: The linked public IP address of the public IP address
+             * resource..
              * 
              * @param linkedPublicIpAddress The linked public IP address of the public IP address resource.
              * @return the next definition stage.
@@ -510,7 +517,8 @@ public interface PublicIpAddress {
          */
         interface WithDeleteOption {
             /**
-             * Specifies the deleteOption property: Specify what happens to the public IP address when the VM using it is deleted.
+             * Specifies the deleteOption property: Specify what happens to the public IP address when the VM using it
+             * is deleted.
              * 
              * @param deleteOption Specify what happens to the public IP address when the VM using it is deleted.
              * @return the next definition stage.

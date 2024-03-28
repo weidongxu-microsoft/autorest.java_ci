@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -16,6 +17,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.AudioTrack")
 @Fluent
 public final class AudioTrack extends TrackBase {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.AudioTrack";
+
     /*
      * The file name to the source file. This file is located in the storage container of the asset.
      */
@@ -62,11 +70,21 @@ public final class AudioTrack extends TrackBase {
      * Creates an instance of AudioTrack class.
      */
     public AudioTrack() {
-        withOdataType("#Microsoft.Media.AudioTrack");
     }
 
     /**
-     * Get the fileName property: The file name to the source file. This file is located in the storage container of the asset.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the fileName property: The file name to the source file. This file is located in the storage container of the
+     * asset.
      * 
      * @return the fileName value.
      */
@@ -75,7 +93,8 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Set the fileName property: The file name to the source file. This file is located in the storage container of the asset.
+     * Set the fileName property: The file name to the source file. This file is located in the storage container of the
+     * asset.
      * 
      * @param fileName the fileName value to set.
      * @return the AudioTrack object itself.
@@ -86,7 +105,8 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Get the displayName property: The display name of the audio track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
+     * Get the displayName property: The display name of the audio track on a video player. In HLS, this maps to the
+     * NAME attribute of EXT-X-MEDIA.
      * 
      * @return the displayName value.
      */
@@ -95,7 +115,8 @@ public final class AudioTrack extends TrackBase {
     }
 
     /**
-     * Set the displayName property: The display name of the audio track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
+     * Set the displayName property: The display name of the audio track on a video player. In HLS, this maps to the
+     * NAME attribute of EXT-X-MEDIA.
      * 
      * @param displayName the displayName value to set.
      * @return the AudioTrack object itself.

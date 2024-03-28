@@ -197,7 +197,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Get the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was created.
+     * Get the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was
+     * created.
      * 
      * @return the supportedCapabilities value.
      */
@@ -206,7 +207,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Set the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was created.
+     * Set the supportedCapabilities property: List of supported capabilities for the image from which the OS disk was
+     * created.
      * 
      * @param supportedCapabilities the supportedCapabilities value to set.
      * @return the DiskRestorePointProperties object itself.
@@ -235,7 +237,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @return the encryption value.
      */
@@ -324,7 +327,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Get the completionPercent property: Percentage complete for the background copy of disk restore point when source resource is from a different region.
+     * Get the completionPercent property: Percentage complete for the background copy of disk restore point when source
+     * resource is from a different region.
      * 
      * @return the completionPercent value.
      */
@@ -333,7 +337,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Set the completionPercent property: Percentage complete for the background copy of disk restore point when source resource is from a different region.
+     * Set the completionPercent property: Percentage complete for the background copy of disk restore point when source
+     * resource is from a different region.
      * 
      * @param completionPercent the completionPercent value to set.
      * @return the DiskRestorePointProperties object itself.
@@ -344,7 +349,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Get the replicationState property: Replication state of disk restore point when source resource is from a different region.
+     * Get the replicationState property: Replication state of disk restore point when source resource is from a
+     * different region.
      * 
      * @return the replicationState value.
      */
@@ -353,7 +359,8 @@ public final class DiskRestorePointProperties {
     }
 
     /**
-     * Get the sourceResourceLocation property: Location of source disk or source disk restore point when source resource is from a different region.
+     * Get the sourceResourceLocation property: Location of source disk or source disk restore point when source
+     * resource is from a different region.
      * 
      * @return the sourceResourceLocation value.
      */

@@ -80,7 +80,9 @@ public final class FirewallPolicyIntrusionDetectionConfiguration {
     }
 
     /**
-     * Get the privateRanges property: IDPS Private IP address ranges are used to identify traffic direction (i.e. inbound, outbound, etc.). By default, only ranges defined by IANA RFC 1918 are considered private IP addresses. To modify default ranges, specify your Private IP address ranges with this property.
+     * Get the privateRanges property: IDPS Private IP address ranges are used to identify traffic direction (i.e.
+     * inbound, outbound, etc.). By default, only ranges defined by IANA RFC 1918 are considered private IP addresses.
+     * To modify default ranges, specify your Private IP address ranges with this property.
      * 
      * @return the privateRanges value.
      */
@@ -89,7 +91,9 @@ public final class FirewallPolicyIntrusionDetectionConfiguration {
     }
 
     /**
-     * Set the privateRanges property: IDPS Private IP address ranges are used to identify traffic direction (i.e. inbound, outbound, etc.). By default, only ranges defined by IANA RFC 1918 are considered private IP addresses. To modify default ranges, specify your Private IP address ranges with this property.
+     * Set the privateRanges property: IDPS Private IP address ranges are used to identify traffic direction (i.e.
+     * inbound, outbound, etc.). By default, only ranges defined by IANA RFC 1918 are considered private IP addresses.
+     * To modify default ranges, specify your Private IP address ranges with this property.
      * 
      * @param privateRanges the privateRanges value to set.
      * @return the FirewallPolicyIntrusionDetectionConfiguration object itself.

@@ -39,7 +39,8 @@ public final class ServiceDelegationPropertiesFormat {
     }
 
     /**
-     * Get the serviceName property: The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).
+     * Get the serviceName property: The name of the service to whom the subnet should be delegated (e.g.
+     * Microsoft.Sql/servers).
      * 
      * @return the serviceName value.
      */
@@ -48,7 +49,8 @@ public final class ServiceDelegationPropertiesFormat {
     }
 
     /**
-     * Set the serviceName property: The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).
+     * Set the serviceName property: The name of the service to whom the subnet should be delegated (e.g.
+     * Microsoft.Sql/servers).
      * 
      * @param serviceName the serviceName value to set.
      * @return the ServiceDelegationPropertiesFormat object itself.

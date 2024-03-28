@@ -166,7 +166,8 @@ public final class HealthProbeSettingsModel extends SubResource {
     }
 
     /**
-     * Get the healthProbeMethod property: Configures which HTTP method to use to probe the backends defined under backendPools.
+     * Get the healthProbeMethod property: Configures which HTTP method to use to probe the backends defined under
+     * backendPools.
      * 
      * @return the healthProbeMethod value.
      */
@@ -175,7 +176,8 @@ public final class HealthProbeSettingsModel extends SubResource {
     }
 
     /**
-     * Set the healthProbeMethod property: Configures which HTTP method to use to probe the backends defined under backendPools.
+     * Set the healthProbeMethod property: Configures which HTTP method to use to probe the backends defined under
+     * backendPools.
      * 
      * @param healthProbeMethod the healthProbeMethod value to set.
      * @return the HealthProbeSettingsModel object itself.
@@ -189,7 +191,9 @@ public final class HealthProbeSettingsModel extends SubResource {
     }
 
     /**
-     * Get the enabledState property: Whether to enable health probes to be made against backends defined under backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend pool.
+     * Get the enabledState property: Whether to enable health probes to be made against backends defined under
+     * backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend
+     * pool.
      * 
      * @return the enabledState value.
      */
@@ -198,7 +202,9 @@ public final class HealthProbeSettingsModel extends SubResource {
     }
 
     /**
-     * Set the enabledState property: Whether to enable health probes to be made against backends defined under backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend pool.
+     * Set the enabledState property: Whether to enable health probes to be made against backends defined under
+     * backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend
+     * pool.
      * 
      * @param enabledState the enabledState value to set.
      * @return the HealthProbeSettingsModel object itself.

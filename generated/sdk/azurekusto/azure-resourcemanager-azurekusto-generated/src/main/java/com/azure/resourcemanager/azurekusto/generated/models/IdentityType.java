@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
+ * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created
+ * identity and a set of user-assigned identities. The type 'None' will remove all identities.
  */
 public final class IdentityType extends ExpandableStringEnum<IdentityType> {
     /**

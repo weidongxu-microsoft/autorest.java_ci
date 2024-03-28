@@ -101,8 +101,8 @@ public final class ContainerProperties {
      */
     public void validate() {
         if (dataFormat() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property dataFormat in model ContainerProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property dataFormat in model ContainerProperties"));
         }
         if (refreshDetails() != null) {
             refreshDetails().validate();

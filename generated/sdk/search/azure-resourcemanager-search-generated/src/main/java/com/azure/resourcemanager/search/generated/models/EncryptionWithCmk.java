@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a policy that determines how resources within the search service are to be encrypted with customer managed keys.
+ * Describes a policy that determines how resources within the search service are to be encrypted with customer managed
+ * keys.
  */
 @Fluent
 public final class EncryptionWithCmk {
@@ -31,7 +32,8 @@ public final class EncryptionWithCmk {
     }
 
     /**
-     * Get the enforcement property: Describes how a search service should enforce compliance if it finds objects that aren't encrypted with the customer-managed key.
+     * Get the enforcement property: Describes how a search service should enforce compliance if it finds objects that
+     * aren't encrypted with the customer-managed key.
      * 
      * @return the enforcement value.
      */
@@ -40,7 +42,8 @@ public final class EncryptionWithCmk {
     }
 
     /**
-     * Set the enforcement property: Describes how a search service should enforce compliance if it finds objects that aren't encrypted with the customer-managed key.
+     * Set the enforcement property: Describes how a search service should enforce compliance if it finds objects that
+     * aren't encrypted with the customer-managed key.
      * 
      * @param enforcement the enforcement value to set.
      * @return the EncryptionWithCmk object itself.
@@ -51,7 +54,9 @@ public final class EncryptionWithCmk {
     }
 
     /**
-     * Get the encryptionComplianceStatus property: Returns the status of search service compliance with respect to non-CMK-encrypted objects. If a service has more than one unencrypted object, and enforcement is enabled, the service is marked as noncompliant.
+     * Get the encryptionComplianceStatus property: Returns the status of search service compliance with respect to
+     * non-CMK-encrypted objects. If a service has more than one unencrypted object, and enforcement is enabled, the
+     * service is marked as noncompliant.
      * 
      * @return the encryptionComplianceStatus value.
      */

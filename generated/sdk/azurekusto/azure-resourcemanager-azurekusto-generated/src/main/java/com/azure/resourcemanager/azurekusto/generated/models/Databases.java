@@ -59,7 +59,9 @@ public interface Databases {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param clusterName The name of the Kusto cluster.
      * @param top limit the number of results.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -119,7 +121,8 @@ public interface Databases {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the CreateOrUpdate operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -150,7 +153,8 @@ public interface Databases {
      * @param clusterName The name of the Kusto cluster.
      * @param databaseName The name of the database in the Kusto cluster.
      * @param parameters The database parameters supplied to the Update operation.
-     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property allows the caller to exclude the caller from Admins list.
+     * @param callerRole By default, any user who run operation on a database become an Admin on it. This property
+     * allows the caller to exclude the caller from Admins list.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies the service artifact reference id used to set same image version for all virtual machines in the scale set when using 'latest' image version. Minimum api-version: 2022-11-01.
+ * Specifies the service artifact reference id used to set same image version for all virtual machines in the scale set
+ * when using 'latest' image version. Minimum api-version: 2022-11-01.
  */
 @Fluent
 public final class ServiceArtifactReference {
@@ -25,7 +26,8 @@ public final class ServiceArtifactReference {
     }
 
     /**
-     * Get the id property: The service artifact reference id in the form of /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/galleries/{galleryName}/serviceArtifacts/{serviceArtifactName}/vmArtifactsProfiles/{vmArtifactsProfilesName}.
+     * Get the id property: The service artifact reference id in the form of
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/galleries/{galleryName}/serviceArtifacts/{serviceArtifactName}/vmArtifactsProfiles/{vmArtifactsProfilesName}.
      * 
      * @return the id value.
      */
@@ -34,7 +36,8 @@ public final class ServiceArtifactReference {
     }
 
     /**
-     * Set the id property: The service artifact reference id in the form of /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/galleries/{galleryName}/serviceArtifacts/{serviceArtifactName}/vmArtifactsProfiles/{vmArtifactsProfilesName}.
+     * Set the id property: The service artifact reference id in the form of
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.Compute/galleries/{galleryName}/serviceArtifacts/{serviceArtifactName}/vmArtifactsProfiles/{vmArtifactsProfilesName}.
      * 
      * @param id the id value to set.
      * @return the ServiceArtifactReference object itself.

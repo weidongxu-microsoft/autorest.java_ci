@@ -196,7 +196,8 @@ public final class VpnGatewayProperties {
     }
 
     /**
-     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the VpnGateway.
+     * Get the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the VpnGateway.
      * 
      * @return the isRoutingPreferenceInternet value.
      */
@@ -205,7 +206,8 @@ public final class VpnGatewayProperties {
     }
 
     /**
-     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of the VpnGateway.
+     * Set the isRoutingPreferenceInternet property: Enable Routing Preference property for the Public IP Interface of
+     * the VpnGateway.
      * 
      * @param isRoutingPreferenceInternet the isRoutingPreferenceInternet value to set.
      * @return the VpnGatewayProperties object itself.

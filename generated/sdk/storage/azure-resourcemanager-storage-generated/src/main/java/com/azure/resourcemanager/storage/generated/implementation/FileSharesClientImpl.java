@@ -66,7 +66,8 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientFileShares to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientFileShares to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -155,11 +156,14 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional. Specified maximum number of shares that can be included in the list.
      * @param filter Optional. When specified, only share names starting with the filter will be listed.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted, snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted,
+     * snapshots. Should be passed as a string with delimiter ','.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -194,11 +198,14 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional. Specified maximum number of shares that can be included in the list.
      * @param filter Optional. When specified, only share names starting with the filter will be listed.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted, snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted,
+     * snapshots. Should be passed as a string with delimiter ','.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -235,11 +242,14 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional. Specified maximum number of shares that can be included in the list.
      * @param filter Optional. When specified, only share names starting with the filter will be listed.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted, snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted,
+     * snapshots. Should be passed as a string with delimiter ','.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -255,8 +265,10 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -274,11 +286,14 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional. Specified maximum number of shares that can be included in the list.
      * @param filter Optional. When specified, only share names starting with the filter will be listed.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted, snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted,
+     * snapshots. Should be passed as a string with delimiter ','.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -296,8 +311,10 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -314,11 +331,14 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Lists all shares.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional. Specified maximum number of shares that can be included in the list.
      * @param filter Optional. When specified, only share names starting with the filter will be listed.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted, snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: deleted,
+     * snapshots. Should be passed as a string with delimiter ','.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -332,17 +352,24 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Creates a new share under the specified account as described by request body. The share resource includes metadata and properties for that share. It does not include a list of the files contained by the share.
+     * Creates a new share under the specified account as described by request body. The share resource includes
+     * metadata and properties for that share. It does not include a list of the files contained by the share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties of the file share to create.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots.
+     * Should be passed as a string with delimiter ','.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FileShareInner>> createWithResponseAsync(String resourceGroupName, String accountName,
@@ -378,18 +405,25 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Creates a new share under the specified account as described by request body. The share resource includes metadata and properties for that share. It does not include a list of the files contained by the share.
+     * Creates a new share under the specified account as described by request body. The share resource includes
+     * metadata and properties for that share. It does not include a list of the files contained by the share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties of the file share to create.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots.
+     * Should be passed as a string with delimiter ','.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FileShareInner>> createWithResponseAsync(String resourceGroupName, String accountName,
@@ -424,16 +458,22 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Creates a new share under the specified account as described by request body. The share resource includes metadata and properties for that share. It does not include a list of the files contained by the share.
+     * Creates a new share under the specified account as described by request body. The share resource includes
+     * metadata and properties for that share. It does not include a list of the files contained by the share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties of the file share to create.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag on successful completion of {@link Mono}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FileShareInner> createAsync(String resourceGroupName, String accountName, String shareName,
@@ -444,18 +484,25 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Creates a new share under the specified account as described by request body. The share resource includes metadata and properties for that share. It does not include a list of the files contained by the share.
+     * Creates a new share under the specified account as described by request body. The share resource includes
+     * metadata and properties for that share. It does not include a list of the files contained by the share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties of the file share to create.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots. Should be passed as a string with delimiter ','.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots.
+     * Should be passed as a string with delimiter ','.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag along with {@link Response}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<FileShareInner> createWithResponse(String resourceGroupName, String accountName, String shareName,
@@ -464,11 +511,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Creates a new share under the specified account as described by request body. The share resource includes metadata and properties for that share. It does not include a list of the files contained by the share.
+     * Creates a new share under the specified account as described by request body. The share resource includes
+     * metadata and properties for that share. It does not include a list of the files contained by the share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties of the file share to create.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -484,16 +536,22 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Updates share properties as specified in request body. Properties not mentioned in the request will not be changed. Update fails if the specified share does not already exist.
+     * Updates share properties as specified in request body. Properties not mentioned in the request will not be
+     * changed. Update fails if the specified share does not already exist.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties to update for the file share.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FileShareInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
@@ -529,17 +587,23 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Updates share properties as specified in request body. Properties not mentioned in the request will not be changed. Update fails if the specified share does not already exist.
+     * Updates share properties as specified in request body. Properties not mentioned in the request will not be
+     * changed. Update fails if the specified share does not already exist.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties to update for the file share.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag along with {@link Response} on successful completion of {@link Mono}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FileShareInner>> updateWithResponseAsync(String resourceGroupName, String accountName,
@@ -574,16 +638,22 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Updates share properties as specified in request body. Properties not mentioned in the request will not be changed. Update fails if the specified share does not already exist.
+     * Updates share properties as specified in request body. Properties not mentioned in the request will not be
+     * changed. Update fails if the specified share does not already exist.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties to update for the file share.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag on successful completion of {@link Mono}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FileShareInner> updateAsync(String resourceGroupName, String accountName, String shareName,
@@ -593,17 +663,23 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Updates share properties as specified in request body. Properties not mentioned in the request will not be changed. Update fails if the specified share does not already exist.
+     * Updates share properties as specified in request body. Properties not mentioned in the request will not be
+     * changed. Update fails if the specified share does not already exist.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties to update for the file share.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return properties of the file share, including Id, resource name, resource type, Etag along with {@link Response}.
+     * @return properties of the file share, including Id, resource name, resource type, Etag along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<FileShareInner> updateWithResponse(String resourceGroupName, String accountName, String shareName,
@@ -612,11 +688,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * Updates share properties as specified in request body. Properties not mentioned in the request will not be changed. Update fails if the specified share does not already exist.
+     * Updates share properties as specified in request body. Properties not mentioned in the request will not be
+     * changed. Update fails if the specified share does not already exist.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param fileShare Properties to update for the file share.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -632,10 +713,15 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Gets properties of a specified share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: stats. Should be passed as a string with delimiter ','.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: stats. Should
+     * be passed as a string with delimiter ','.
      * @param xMsSnapshot Optional, used to retrieve properties of a snapshot.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -673,10 +759,15 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Gets properties of a specified share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: stats. Should be passed as a string with delimiter ','.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: stats. Should
+     * be passed as a string with delimiter ','.
      * @param xMsSnapshot Optional, used to retrieve properties of a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -714,9 +805,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Gets properties of a specified share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -733,10 +828,15 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Gets properties of a specified share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
-     * @param expand Optional, used to expand the properties within share's properties. Valid values are: stats. Should be passed as a string with delimiter ','.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
+     * @param expand Optional, used to expand the properties within share's properties. Valid values are: stats. Should
+     * be passed as a string with delimiter ','.
      * @param xMsSnapshot Optional, used to retrieve properties of a snapshot.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -753,9 +853,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Gets properties of a specified share.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -771,11 +875,19 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Deletes specified share under its account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param xMsSnapshot Optional, used to delete a snapshot.
-     * @param include Optional. Valid values are: snapshots, leased-snapshots, none. The default value is snapshots. For 'snapshots', the file share is deleted including all of its file share snapshots. If the file share contains leased-snapshots, the deletion fails. For 'leased-snapshots', the file share is deleted included all of its file share snapshots (leased/unleased). For 'none', the file share is deleted if it has no share snapshots. If the file share contains any snapshots (leased or unleased), the deletion fails.
+     * @param include Optional. Valid values are: snapshots, leased-snapshots, none. The default value is snapshots. For
+     * 'snapshots', the file share is deleted including all of its file share snapshots. If the file share contains
+     * leased-snapshots, the deletion fails. For 'leased-snapshots', the file share is deleted included all of its file
+     * share snapshots (leased/unleased). For 'none', the file share is deleted if it has no share snapshots. If the
+     * file share contains any snapshots (leased or unleased), the deletion fails.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -812,11 +924,19 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Deletes specified share under its account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param xMsSnapshot Optional, used to delete a snapshot.
-     * @param include Optional. Valid values are: snapshots, leased-snapshots, none. The default value is snapshots. For 'snapshots', the file share is deleted including all of its file share snapshots. If the file share contains leased-snapshots, the deletion fails. For 'leased-snapshots', the file share is deleted included all of its file share snapshots (leased/unleased). For 'none', the file share is deleted if it has no share snapshots. If the file share contains any snapshots (leased or unleased), the deletion fails.
+     * @param include Optional. Valid values are: snapshots, leased-snapshots, none. The default value is snapshots. For
+     * 'snapshots', the file share is deleted including all of its file share snapshots. If the file share contains
+     * leased-snapshots, the deletion fails. For 'leased-snapshots', the file share is deleted included all of its file
+     * share snapshots (leased/unleased). For 'none', the file share is deleted if it has no share snapshots. If the
+     * file share contains any snapshots (leased or unleased), the deletion fails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -853,9 +973,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Deletes specified share under its account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -872,11 +996,19 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Deletes specified share under its account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param xMsSnapshot Optional, used to delete a snapshot.
-     * @param include Optional. Valid values are: snapshots, leased-snapshots, none. The default value is snapshots. For 'snapshots', the file share is deleted including all of its file share snapshots. If the file share contains leased-snapshots, the deletion fails. For 'leased-snapshots', the file share is deleted included all of its file share snapshots (leased/unleased). For 'none', the file share is deleted if it has no share snapshots. If the file share contains any snapshots (leased or unleased), the deletion fails.
+     * @param include Optional. Valid values are: snapshots, leased-snapshots, none. The default value is snapshots. For
+     * 'snapshots', the file share is deleted including all of its file share snapshots. If the file share contains
+     * leased-snapshots, the deletion fails. For 'leased-snapshots', the file share is deleted included all of its file
+     * share snapshots (leased/unleased). For 'none', the file share is deleted if it has no share snapshots. If the
+     * file share contains any snapshots (leased or unleased), the deletion fails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -893,9 +1025,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Deletes specified share under its account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -910,9 +1046,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param deletedShare The deleted share to be restored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -955,9 +1095,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param deletedShare The deleted share to be restored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1000,9 +1144,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param deletedShare The deleted share to be restored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1019,9 +1167,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param deletedShare The deleted share to be restored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1038,9 +1190,13 @@ public final class FileSharesClientImpl implements FileSharesClient {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param deletedShare The deleted share to be restored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1052,11 +1208,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param xMsSnapshot Optional. Specify the snapshot time to lease a snapshot.
      * @param parameters Lease Share request body.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1096,11 +1257,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param xMsSnapshot Optional. Specify the snapshot time to lease a snapshot.
      * @param parameters Lease Share request body.
      * @param context The context to associate with this operation.
@@ -1140,11 +1306,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1159,11 +1330,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @param xMsSnapshot Optional. Specify the snapshot time to lease a snapshot.
      * @param parameters Lease Share request body.
      * @param context The context to associate with this operation.
@@ -1180,11 +1356,16 @@ public final class FileSharesClientImpl implements FileSharesClient {
     }
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param shareName The name of the file share within the specified storage account. File share names must be
+     * between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-)
+     * character must be immediately preceded and followed by a letter or number.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

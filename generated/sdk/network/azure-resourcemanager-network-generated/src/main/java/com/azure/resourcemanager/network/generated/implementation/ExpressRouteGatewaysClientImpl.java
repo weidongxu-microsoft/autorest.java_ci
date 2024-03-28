@@ -62,7 +62,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteGateways to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteGateways to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -944,7 +945,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -981,7 +983,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1018,7 +1021,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1036,7 +1040,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1057,7 +1062,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1072,7 +1078,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1089,7 +1096,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1105,7 +1113,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1122,7 +1131,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -1136,7 +1146,8 @@ public final class ExpressRouteGatewaysClientImpl implements ExpressRouteGateway
     }
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.

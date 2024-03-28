@@ -54,7 +54,8 @@ public final class VirtualMachineScaleSetListOSUpgradeHistory {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of OS Upgrade History. Call ListNext() with this to fetch the next page of history of upgrades.
+     * Get the nextLink property: The uri to fetch the next page of OS Upgrade History. Call ListNext() with this to
+     * fetch the next page of history of upgrades.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class VirtualMachineScaleSetListOSUpgradeHistory {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of OS Upgrade History. Call ListNext() with this to fetch the next page of history of upgrades.
+     * Set the nextLink property: The uri to fetch the next page of OS Upgrade History. Call ListNext() with this to
+     * fetch the next page of history of upgrades.
      * 
      * @param nextLink the nextLink value to set.
      * @return the VirtualMachineScaleSetListOSUpgradeHistory object itself.
@@ -80,8 +82,9 @@ public final class VirtualMachineScaleSetListOSUpgradeHistory {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model VirtualMachineScaleSetListOSUpgradeHistory"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model VirtualMachineScaleSetListOSUpgradeHistory"));
         } else {
             value().forEach(e -> e.validate());
         }

@@ -142,7 +142,8 @@ public interface Deployment {
         }
 
         /**
-         * The stage of the Deployment definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Deployment definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithKind, DefinitionStages.WithStatus,
             DefinitionStages.WithMessage, DefinitionStages.WithAuthor, DefinitionStages.WithDeployer,
@@ -273,7 +274,8 @@ public interface Deployment {
          */
         interface WithActive {
             /**
-             * Specifies the active property: True if deployment is currently active, false if completed and null if not started..
+             * Specifies the active property: True if deployment is currently active, false if completed and null if not
+             * started..
              * 
              * @param active True if deployment is currently active, false if completed and null if not started.
              * @return the next definition stage.

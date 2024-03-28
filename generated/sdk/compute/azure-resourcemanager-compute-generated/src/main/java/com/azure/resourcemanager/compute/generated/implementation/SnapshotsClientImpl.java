@@ -69,7 +69,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientSnapshots to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientSnapshots to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -169,7 +170,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -211,7 +213,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -253,7 +256,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -273,7 +277,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -295,7 +300,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -312,7 +318,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -330,7 +337,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -348,7 +356,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -367,7 +376,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -383,7 +393,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -401,7 +412,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -443,7 +455,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -485,7 +498,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -504,7 +518,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -526,7 +541,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -543,7 +559,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -561,7 +578,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -578,7 +596,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -597,7 +616,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -613,7 +633,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -631,7 +652,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -667,7 +689,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -703,7 +726,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -719,7 +743,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -736,7 +761,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -751,7 +777,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -785,7 +812,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -820,7 +848,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -837,7 +866,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -857,7 +887,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -872,7 +903,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -889,7 +921,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -904,7 +937,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -921,7 +955,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -935,7 +970,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -953,7 +989,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -987,7 +1024,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1079,7 +1117,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listSinglePageAsync() {
@@ -1108,7 +1147,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listSinglePageAsync(Context context) {
@@ -1185,7 +1225,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1228,7 +1269,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1271,7 +1313,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1291,7 +1334,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1313,7 +1357,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1330,7 +1375,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1348,7 +1394,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1366,7 +1413,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1385,7 +1433,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1401,7 +1450,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1419,7 +1469,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1454,7 +1505,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1489,7 +1541,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1506,7 +1559,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1526,7 +1580,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1541,7 +1596,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1558,7 +1614,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1574,7 +1631,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1591,7 +1649,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1605,7 +1664,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1625,7 +1685,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1655,7 +1716,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1683,7 +1745,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listNextSinglePageAsync(String nextLink) {
@@ -1711,7 +1774,8 @@ public final class SnapshotsClientImpl implements SnapshotsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Snapshots operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SnapshotInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -77,7 +77,8 @@ public final class MatchCondition {
     }
 
     /**
-     * Get the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies variables. Default is null.
+     * Get the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies
+     * variables. Default is null.
      * 
      * @return the selector value.
      */
@@ -86,7 +87,8 @@ public final class MatchCondition {
     }
 
     /**
-     * Set the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies variables. Default is null.
+     * Set the selector property: Match against a specific key from the QueryString, PostArgs, RequestHeader or Cookies
+     * variables. Default is null.
      * 
      * @param selector the selector value to set.
      * @return the MatchCondition object itself.
@@ -183,16 +185,16 @@ public final class MatchCondition {
      */
     public void validate() {
         if (matchVariable() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property matchVariable in model MatchCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property matchVariable in model MatchCondition"));
         }
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model MatchCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property operator in model MatchCondition"));
         }
         if (matchValue() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property matchValue in model MatchCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property matchValue in model MatchCondition"));
         }
     }
 

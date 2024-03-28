@@ -146,7 +146,8 @@ public final class SingleQueryResult {
     }
 
     /**
-     * Get the direction property: Describes in which direction signature is being enforced: 0 - OutBound, 1 - InBound, 2 - Any, 3 - Internal, 4 - InternalOutbound.
+     * Get the direction property: Describes in which direction signature is being enforced: 0 - OutBound, 1 - InBound,
+     * 2 - Any, 3 - Internal, 4 - InternalOutbound.
      * 
      * @return the direction value.
      */
@@ -155,7 +156,8 @@ public final class SingleQueryResult {
     }
 
     /**
-     * Set the direction property: Describes in which direction signature is being enforced: 0 - OutBound, 1 - InBound, 2 - Any, 3 - Internal, 4 - InternalOutbound.
+     * Set the direction property: Describes in which direction signature is being enforced: 0 - OutBound, 1 - InBound,
+     * 2 - Any, 3 - Internal, 4 - InternalOutbound.
      * 
      * @param direction the direction value to set.
      * @return the SingleQueryResult object itself.

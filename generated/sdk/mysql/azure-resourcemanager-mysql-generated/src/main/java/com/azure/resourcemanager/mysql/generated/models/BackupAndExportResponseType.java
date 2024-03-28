@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -20,6 +21,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("BackupAndExportResponse")
 @Fluent
 public final class BackupAndExportResponseType extends OperationProgressResponseType {
+    /*
+     * Identifies the type of source operation
+     */
+    @JsonTypeId
+    @JsonProperty(value = "objectType", required = true)
+    private ObjectType objectType = ObjectType.BACKUP_AND_EXPORT_RESPONSE;
+
     /*
      * Size of datasource in bytes
      */
@@ -42,7 +50,16 @@ public final class BackupAndExportResponseType extends OperationProgressResponse
      * Creates an instance of BackupAndExportResponseType class.
      */
     public BackupAndExportResponseType() {
-        withObjectType(ObjectType.BACKUP_AND_EXPORT_RESPONSE);
+    }
+
+    /**
+     * Get the objectType property: Identifies the type of source operation.
+     * 
+     * @return the objectType value.
+     */
+    @Override
+    public ObjectType objectType() {
+        return this.objectType;
     }
 
     /**
@@ -86,7 +103,8 @@ public final class BackupAndExportResponseType extends OperationProgressResponse
     }
 
     /**
-     * Get the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value pairs.
+     * Get the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value
+     * pairs.
      * 
      * @return the backupMetadata value.
      */
@@ -95,7 +113,8 @@ public final class BackupAndExportResponseType extends OperationProgressResponse
     }
 
     /**
-     * Set the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value pairs.
+     * Set the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value
+     * pairs.
      * 
      * @param backupMetadata the backupMetadata value to set.
      * @return the BackupAndExportResponseType object itself.

@@ -46,7 +46,9 @@ public final class DdosProtectionPlanPropertiesFormat {
     }
 
     /**
-     * Get the resourceGuid property: The resource GUID property of the DDoS protection plan resource. It uniquely identifies the resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.
+     * Get the resourceGuid property: The resource GUID property of the DDoS protection plan resource. It uniquely
+     * identifies the resource, even if the user changes its name or migrate the resource across subscriptions or
+     * resource groups.
      * 
      * @return the resourceGuid value.
      */
@@ -64,7 +66,8 @@ public final class DdosProtectionPlanPropertiesFormat {
     }
 
     /**
-     * Get the publicIpAddresses property: The list of public IPs associated with the DDoS protection plan resource. This list is read-only.
+     * Get the publicIpAddresses property: The list of public IPs associated with the DDoS protection plan resource.
+     * This list is read-only.
      * 
      * @return the publicIpAddresses value.
      */
@@ -73,7 +76,8 @@ public final class DdosProtectionPlanPropertiesFormat {
     }
 
     /**
-     * Get the virtualNetworks property: The list of virtual networks associated with the DDoS protection plan resource. This list is read-only.
+     * Get the virtualNetworks property: The list of virtual networks associated with the DDoS protection plan resource.
+     * This list is read-only.
      * 
      * @return the virtualNetworks value.
      */

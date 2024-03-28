@@ -56,7 +56,8 @@ public final class OutboundRuleInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within the set of outbound rules used by the load balancer. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within the set of outbound rules used by the load
+     * balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -65,7 +66,8 @@ public final class OutboundRuleInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within the set of outbound rules used by the load balancer. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within the set of outbound rules used by the load
+     * balancer. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the OutboundRuleInner object itself.
@@ -149,7 +151,8 @@ public final class OutboundRuleInner extends SubResource {
     }
 
     /**
-     * Get the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced across IPs in the backend IPs.
+     * Get the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced
+     * across IPs in the backend IPs.
      * 
      * @return the backendAddressPool value.
      */
@@ -158,7 +161,8 @@ public final class OutboundRuleInner extends SubResource {
     }
 
     /**
-     * Set the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced across IPs in the backend IPs.
+     * Set the backendAddressPool property: A reference to a pool of DIPs. Outbound traffic is randomly load balanced
+     * across IPs in the backend IPs.
      * 
      * @param backendAddressPool the backendAddressPool value to set.
      * @return the OutboundRuleInner object itself.
@@ -204,7 +208,8 @@ public final class OutboundRuleInner extends SubResource {
     }
 
     /**
-     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
+     * Get the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
+     * connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @return the enableTcpReset value.
      */
@@ -213,7 +218,8 @@ public final class OutboundRuleInner extends SubResource {
     }
 
     /**
-     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected connection termination. This element is only used when the protocol is set to TCP.
+     * Set the enableTcpReset property: Receive bidirectional TCP Reset on TCP flow idle timeout or unexpected
+     * connection termination. This element is only used when the protocol is set to TCP.
      * 
      * @param enableTcpReset the enableTcpReset value to set.
      * @return the OutboundRuleInner object itself.

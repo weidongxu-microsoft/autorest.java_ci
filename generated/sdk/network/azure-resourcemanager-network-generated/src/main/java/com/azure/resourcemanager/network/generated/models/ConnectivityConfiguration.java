@@ -150,7 +150,8 @@ public interface ConnectivityConfiguration {
         }
 
         /**
-         * The stage of the ConnectivityConfiguration definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ConnectivityConfiguration definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithConnectivityTopology,
             DefinitionStages.WithHubs, DefinitionStages.WithIsGlobal, DefinitionStages.WithAppliesToGroups,

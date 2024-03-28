@@ -92,7 +92,8 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL handshake with Front Door.
+     * Get the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL
+     * handshake with Front Door.
      * 
      * @return the minimumTlsVersion value.
      */
@@ -101,7 +102,8 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Set the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL handshake with Front Door.
+     * Set the minimumTlsVersion property: The minimum TLS version required from the clients to establish an SSL
+     * handshake with Front Door.
      * 
      * @param minimumTlsVersion the minimumTlsVersion value to set.
      * @return the CustomHttpsConfiguration object itself.
@@ -112,7 +114,8 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the innerKeyVaultCertificateSourceParameters property: KeyVault certificate source parameters (if certificateSource=AzureKeyVault).
+     * Get the innerKeyVaultCertificateSourceParameters property: KeyVault certificate source parameters (if
+     * certificateSource=AzureKeyVault).
      * 
      * @return the innerKeyVaultCertificateSourceParameters value.
      */
@@ -121,7 +124,8 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the innerFrontDoorCertificateSourceParameters property: Parameters required for enabling SSL with Front Door-managed certificates (if certificateSource=FrontDoor).
+     * Get the innerFrontDoorCertificateSourceParameters property: Parameters required for enabling SSL with Front
+     * Door-managed certificates (if certificateSource=FrontDoor).
      * 
      * @return the innerFrontDoorCertificateSourceParameters value.
      */
@@ -205,7 +209,8 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Get the certificateType property: Defines the type of the certificate used for secure connections to a frontendEndpoint.
+     * Get the certificateType property: Defines the type of the certificate used for secure connections to a
+     * frontendEndpoint.
      * 
      * @return the certificateType value.
      */
@@ -216,7 +221,8 @@ public final class CustomHttpsConfiguration {
     }
 
     /**
-     * Set the certificateType property: Defines the type of the certificate used for secure connections to a frontendEndpoint.
+     * Set the certificateType property: Defines the type of the certificate used for secure connections to a
+     * frontendEndpoint.
      * 
      * @param certificateType the certificateType value to set.
      * @return the CustomHttpsConfiguration object itself.
@@ -236,16 +242,19 @@ public final class CustomHttpsConfiguration {
      */
     public void validate() {
         if (certificateSource() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property certificateSource in model CustomHttpsConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property certificateSource in model CustomHttpsConfiguration"));
         }
         if (protocolType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property protocolType in model CustomHttpsConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property protocolType in model CustomHttpsConfiguration"));
         }
         if (minimumTlsVersion() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property minimumTlsVersion in model CustomHttpsConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property minimumTlsVersion in model CustomHttpsConfiguration"));
         }
         if (innerKeyVaultCertificateSourceParameters() != null) {
             innerKeyVaultCertificateSourceParameters().validate();

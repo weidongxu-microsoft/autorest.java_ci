@@ -165,14 +165,14 @@ public final class ServerForCreate {
             sku().validate();
         }
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property properties in model ServerForCreate"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property properties in model ServerForCreate"));
         } else {
             properties().validate();
         }
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property location in model ServerForCreate"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property location in model ServerForCreate"));
         }
     }
 

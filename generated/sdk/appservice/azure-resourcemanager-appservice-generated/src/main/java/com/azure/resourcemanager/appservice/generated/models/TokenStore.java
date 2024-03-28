@@ -45,8 +45,9 @@ public final class TokenStore {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *  The default is &lt;code&gt;false&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that
+     * are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * The default is &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -55,8 +56,9 @@ public final class TokenStore {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *  The default is &lt;code&gt;false&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; to durably store platform-specific security tokens that
+     * are obtained during login flows; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * The default is &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the TokenStore object itself.
@@ -67,7 +69,8 @@ public final class TokenStore {
     }
 
     /**
-     * Get the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session token can be used to
+     * Get the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session
+     * token can be used to
      * call the token refresh API. The default is 72 hours.
      * 
      * @return the tokenRefreshExtensionHours value.
@@ -77,7 +80,8 @@ public final class TokenStore {
     }
 
     /**
-     * Set the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session token can be used to
+     * Set the tokenRefreshExtensionHours property: The number of hours after session token expiration that a session
+     * token can be used to
      * call the token refresh API. The default is 72 hours.
      * 
      * @param tokenRefreshExtensionHours the tokenRefreshExtensionHours value to set.
@@ -109,7 +113,8 @@ public final class TokenStore {
     }
 
     /**
-     * Get the azureBlobStorage property: The configuration settings of the storage of the tokens if blob storage is used.
+     * Get the azureBlobStorage property: The configuration settings of the storage of the tokens if blob storage is
+     * used.
      * 
      * @return the azureBlobStorage value.
      */
@@ -118,7 +123,8 @@ public final class TokenStore {
     }
 
     /**
-     * Set the azureBlobStorage property: The configuration settings of the storage of the tokens if blob storage is used.
+     * Set the azureBlobStorage property: The configuration settings of the storage of the tokens if blob storage is
+     * used.
      * 
      * @param azureBlobStorage the azureBlobStorage value to set.
      * @return the TokenStore object itself.

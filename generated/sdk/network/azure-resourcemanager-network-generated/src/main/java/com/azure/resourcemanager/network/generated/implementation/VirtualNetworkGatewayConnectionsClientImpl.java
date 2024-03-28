@@ -72,7 +72,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualNetworkGatewayConnections to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualNetworkGatewayConnections to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -220,7 +221,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -265,7 +267,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -465,7 +468,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified virtual network gateway connection by resource group along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkGatewayConnectionInner>>
@@ -503,7 +507,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified virtual network gateway connection by resource group along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkGatewayConnectionInner>> getByResourceGroupWithResponseAsync(
@@ -539,7 +544,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway connection by resource group on successful completion of {@link Mono}.
+     * @return the specified virtual network gateway connection by resource group on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualNetworkGatewayConnectionInner> getByResourceGroupAsync(String resourceGroupName,
@@ -802,7 +808,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -847,7 +854,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -1037,15 +1045,18 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion of {@link Mono}.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> setSharedKeyWithResponseAsync(String resourceGroupName,
@@ -1081,16 +1092,19 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion of {@link Mono}.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> setSharedKeyWithResponseAsync(String resourceGroupName,
@@ -1124,11 +1138,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1145,11 +1161,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1168,11 +1186,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1186,11 +1206,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1206,11 +1228,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1224,11 +1248,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1244,11 +1270,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1261,11 +1289,13 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The Put VirtualNetworkGatewayConnectionSharedKey operation sets the virtual network gateway connection shared key
+     * for passed virtual network gateway connection in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection name.
-     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation throughNetwork resource provider.
+     * @param parameters Parameters supplied to the Begin Set Virtual Network Gateway connection Shared key operation
+     * throughNetwork resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1279,14 +1309,16 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.
+     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
+     * network gateway connection shared key through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion of {@link Mono}.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConnectionSharedKeyInner>> getSharedKeyWithResponseAsync(String resourceGroupName,
@@ -1316,7 +1348,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.
+     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
+     * network gateway connection shared key through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
@@ -1324,7 +1357,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion of {@link Mono}.
+     * @return response for GetConnectionSharedKey API service call along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConnectionSharedKeyInner>> getSharedKeyWithResponseAsync(String resourceGroupName,
@@ -1353,7 +1387,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.
+     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
+     * network gateway connection shared key through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
@@ -1370,7 +1405,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.
+     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
+     * network gateway connection shared key through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
@@ -1387,7 +1423,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual network gateway connection shared key through Network resource provider.
+     * The Get VirtualNetworkGatewayConnectionSharedKey operation retrieves information about the specified virtual
+     * network gateway connection shared key through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection shared key name.
@@ -1403,13 +1440,15 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.
+     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections
+     * created.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionInner>>
@@ -1437,14 +1476,16 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.
+     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections
+     * created.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionInner>>
@@ -1472,13 +1513,15 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.
+     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections
+     * created.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with {@link PagedFlux}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VirtualNetworkGatewayConnectionInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -1487,14 +1530,16 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.
+     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections
+     * created.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with {@link PagedFlux}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<VirtualNetworkGatewayConnectionInner> listByResourceGroupAsync(String resourceGroupName,
@@ -1504,13 +1549,15 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.
+     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections
+     * created.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with {@link PagedIterable}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VirtualNetworkGatewayConnectionInner> listByResourceGroup(String resourceGroupName) {
@@ -1518,14 +1565,16 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections created.
+     * The List VirtualNetworkGatewayConnections operation retrieves all the virtual network gateways connections
+     * created.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with {@link PagedIterable}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VirtualNetworkGatewayConnectionInner> listByResourceGroup(String resourceGroupName,
@@ -1534,15 +1583,19 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the virtual network connection reset shared key along with {@link Response} on successful completion of {@link Mono}.
+     * @return the virtual network connection reset shared key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetSharedKeyWithResponseAsync(String resourceGroupName,
@@ -1578,16 +1631,20 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the virtual network connection reset shared key along with {@link Response} on successful completion of {@link Mono}.
+     * @return the virtual network connection reset shared key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetSharedKeyWithResponseAsync(String resourceGroupName,
@@ -1621,11 +1678,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1643,11 +1703,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1667,11 +1730,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1686,11 +1752,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1707,11 +1776,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1725,11 +1797,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1745,11 +1820,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1762,11 +1840,14 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
     }
 
     /**
-     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared key for passed virtual network gateway connection in the specified resource group through Network resource provider.
+     * The VirtualNetworkGatewayConnectionResetSharedKey operation resets the virtual network gateway connection shared
+     * key for passed virtual network gateway connection in the specified resource group through Network resource
+     * provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The virtual network gateway connection reset shared key Name.
-     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation through network resource provider.
+     * @param parameters Parameters supplied to the begin reset virtual network gateway connection shared key operation
+     * through network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1784,7 +1865,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1826,7 +1908,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -1868,7 +1951,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1908,7 +1992,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -1948,7 +2033,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -1968,7 +2054,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2003,7 +2090,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2039,7 +2127,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2058,7 +2147,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2102,7 +2192,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2146,7 +2237,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2166,7 +2258,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2188,7 +2281,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2206,7 +2300,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2226,7 +2321,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2244,7 +2340,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2264,7 +2361,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2281,7 +2379,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway Connection.
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
@@ -2728,7 +2827,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -2756,7 +2856,8 @@ public final class VirtualNetworkGatewayConnectionsClientImpl implements Virtual
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListVirtualNetworkGatewayConnections API service call along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionInner>> listNextSinglePageAsync(String nextLink,

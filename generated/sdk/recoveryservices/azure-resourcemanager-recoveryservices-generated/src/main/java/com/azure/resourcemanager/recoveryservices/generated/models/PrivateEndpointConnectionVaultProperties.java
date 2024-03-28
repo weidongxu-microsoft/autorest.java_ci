@@ -49,7 +49,8 @@ public final class PrivateEndpointConnectionVaultProperties {
     }
 
     /**
-     * Get the id property: Format of id subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.[Service]/{resource}/{resourceName}/privateEndpointConnections/{connectionName}.
+     * Get the id property: Format of id
+     * subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.[Service]/{resource}/{resourceName}/privateEndpointConnections/{connectionName}.
      * 
      * @return the id value.
      */
@@ -76,7 +77,8 @@ public final class PrivateEndpointConnectionVaultProperties {
     }
 
     /**
-     * Get the type property: The type, which will be of the format, Microsoft.RecoveryServices/vaults/privateEndpointConnections.
+     * Get the type property: The type, which will be of the format,
+     * Microsoft.RecoveryServices/vaults/privateEndpointConnections.
      * 
      * @return the type value.
      */

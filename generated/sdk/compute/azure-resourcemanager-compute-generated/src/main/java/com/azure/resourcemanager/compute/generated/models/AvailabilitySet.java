@@ -51,7 +51,9 @@ public interface AvailabilitySet {
     Map<String, String> tags();
 
     /**
-     * Gets the sku property: Sku of the availability set, only name is required to be set. See AvailabilitySetSkuTypes for possible set of values. Use 'Aligned' for virtual machines with managed disks and 'Classic' for virtual machines with unmanaged disks. Default value is 'Classic'.
+     * Gets the sku property: Sku of the availability set, only name is required to be set. See AvailabilitySetSkuTypes
+     * for possible set of values. Use 'Aligned' for virtual machines with managed disks and 'Classic' for virtual
+     * machines with unmanaged disks. Default value is 'Classic'.
      * 
      * @return the sku value.
      */
@@ -79,7 +81,8 @@ public interface AvailabilitySet {
     List<SubResource> virtualMachines();
 
     /**
-     * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01.
+     * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
+     * availability set should be assigned to. Minimum api-version: 2018-04-01.
      * 
      * @return the proximityPlacementGroup value.
      */
@@ -172,7 +175,8 @@ public interface AvailabilitySet {
         }
 
         /**
-         * The stage of the AvailabilitySet definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AvailabilitySet definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
             DefinitionStages.WithPlatformUpdateDomainCount, DefinitionStages.WithPlatformFaultDomainCount,
@@ -211,9 +215,13 @@ public interface AvailabilitySet {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: Sku of the availability set, only name is required to be set. See AvailabilitySetSkuTypes for possible set of values. Use 'Aligned' for virtual machines with managed disks and 'Classic' for virtual machines with unmanaged disks. Default value is 'Classic'..
+             * Specifies the sku property: Sku of the availability set, only name is required to be set. See
+             * AvailabilitySetSkuTypes for possible set of values. Use 'Aligned' for virtual machines with managed disks
+             * and 'Classic' for virtual machines with unmanaged disks. Default value is 'Classic'..
              * 
-             * @param sku Sku of the availability set, only name is required to be set. See AvailabilitySetSkuTypes for possible set of values. Use 'Aligned' for virtual machines with managed disks and 'Classic' for virtual machines with unmanaged disks. Default value is 'Classic'.
+             * @param sku Sku of the availability set, only name is required to be set. See AvailabilitySetSkuTypes for
+             * possible set of values. Use 'Aligned' for virtual machines with managed disks and 'Classic' for virtual
+             * machines with unmanaged disks. Default value is 'Classic'.
              * @return the next definition stage.
              */
             WithCreate withSku(Sku sku);
@@ -250,7 +258,8 @@ public interface AvailabilitySet {
          */
         interface WithVirtualMachines {
             /**
-             * Specifies the virtualMachines property: A list of references to all virtual machines in the availability set..
+             * Specifies the virtualMachines property: A list of references to all virtual machines in the availability
+             * set..
              * 
              * @param virtualMachines A list of references to all virtual machines in the availability set.
              * @return the next definition stage.
@@ -263,9 +272,11 @@ public interface AvailabilitySet {
          */
         interface WithProximityPlacementGroup {
             /**
-             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01..
+             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
+             * that the availability set should be assigned to. Minimum api-version: 2018-04-01..
              * 
-             * @param proximityPlacementGroup Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01.
+             * @param proximityPlacementGroup Specifies information about the proximity placement group that the
+             * availability set should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -362,7 +373,8 @@ public interface AvailabilitySet {
          */
         interface WithVirtualMachines {
             /**
-             * Specifies the virtualMachines property: A list of references to all virtual machines in the availability set..
+             * Specifies the virtualMachines property: A list of references to all virtual machines in the availability
+             * set..
              * 
              * @param virtualMachines A list of references to all virtual machines in the availability set.
              * @return the next definition stage.
@@ -375,9 +387,11 @@ public interface AvailabilitySet {
          */
         interface WithProximityPlacementGroup {
             /**
-             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01..
+             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
+             * that the availability set should be assigned to. Minimum api-version: 2018-04-01..
              * 
-             * @param proximityPlacementGroup Specifies information about the proximity placement group that the availability set should be assigned to. Minimum api-version: 2018-04-01.
+             * @param proximityPlacementGroup Specifies information about the proximity placement group that the
+             * availability set should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);

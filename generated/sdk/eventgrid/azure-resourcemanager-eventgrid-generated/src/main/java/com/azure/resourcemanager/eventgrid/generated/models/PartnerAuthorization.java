@@ -33,7 +33,8 @@ public final class PartnerAuthorization {
     }
 
     /**
-     * Get the defaultMaximumExpirationTimeInDays property: Time used to validate the authorization expiration time for each authorized partner. If DefaultMaximumExpirationTimeInDays is
+     * Get the defaultMaximumExpirationTimeInDays property: Time used to validate the authorization expiration time for
+     * each authorized partner. If DefaultMaximumExpirationTimeInDays is
      * not specified, the default is 7 days. Otherwise, allowed values are between 1 and 365 days.
      * 
      * @return the defaultMaximumExpirationTimeInDays value.
@@ -43,7 +44,8 @@ public final class PartnerAuthorization {
     }
 
     /**
-     * Set the defaultMaximumExpirationTimeInDays property: Time used to validate the authorization expiration time for each authorized partner. If DefaultMaximumExpirationTimeInDays is
+     * Set the defaultMaximumExpirationTimeInDays property: Time used to validate the authorization expiration time for
+     * each authorized partner. If DefaultMaximumExpirationTimeInDays is
      * not specified, the default is 7 days. Otherwise, allowed values are between 1 and 365 days.
      * 
      * @param defaultMaximumExpirationTimeInDays the defaultMaximumExpirationTimeInDays value to set.

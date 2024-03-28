@@ -56,7 +56,8 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientServiceTagInformations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientServiceTagInformations to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -83,13 +84,16 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @param noAddressPrefixes Do not return address prefixes for the tag(s).
      * @param tagName Return tag information for a particular tag.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of service tag information resources with pagination along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceTagInformationInner>> listSinglePageAsync(String location,
@@ -118,14 +122,17 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @param noAddressPrefixes Do not return address prefixes for the tag(s).
      * @param tagName Return tag information for a particular tag.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of service tag information resources with pagination along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceTagInformationInner>> listSinglePageAsync(String location,
@@ -154,7 +161,9 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @param noAddressPrefixes Do not return address prefixes for the tag(s).
      * @param tagName Return tag information for a particular tag.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -172,7 +181,9 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -189,7 +200,9 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @param noAddressPrefixes Do not return address prefixes for the tag(s).
      * @param tagName Return tag information for a particular tag.
      * @param context The context to associate with this operation.
@@ -208,11 +221,14 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination as paginated response with {@link PagedIterable}.
+     * @return a list of service tag information resources with pagination as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServiceTagInformationInner> list(String location) {
@@ -224,14 +240,17 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
     /**
      * Gets a list of service tag information resources with pagination.
      * 
-     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you will get the list of service tags with prefix details across all regions but limited to the cloud that your subscription belongs to).
+     * @param location The location that will be used as a reference for cloud (not as a filter based on location, you
+     * will get the list of service tags with prefix details across all regions but limited to the cloud that your
+     * subscription belongs to).
      * @param noAddressPrefixes Do not return address prefixes for the tag(s).
      * @param tagName Return tag information for a particular tag.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of service tag information resources with pagination as paginated response with {@link PagedIterable}.
+     * @return a list of service tag information resources with pagination as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServiceTagInformationInner> list(String location, Boolean noAddressPrefixes, String tagName,
@@ -248,7 +267,8 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for Get ServiceTagInformation API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for Get ServiceTagInformation API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceTagInformationInner>> listNextSinglePageAsync(String nextLink) {
@@ -276,7 +296,8 @@ public final class ServiceTagInformationsClientImpl implements ServiceTagInforma
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for Get ServiceTagInformation API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for Get ServiceTagInformation API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServiceTagInformationInner>> listNextSinglePageAsync(String nextLink, Context context) {

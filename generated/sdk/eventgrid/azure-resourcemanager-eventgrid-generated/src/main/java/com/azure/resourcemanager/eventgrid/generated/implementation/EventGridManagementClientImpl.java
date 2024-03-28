@@ -70,12 +70,14 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = EventGridManagementClientBuilder.class)
 public final class EventGridManagementClientImpl implements EventGridManagementClient {
     /**
-     * Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of
+     * the URI for every service call.
      */
     private final String subscriptionId;
 
     /**
-     * Gets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Gets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */
@@ -594,7 +596,8 @@ public final class EventGridManagementClientImpl implements EventGridManagementC
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * @param subscriptionId Subscription credentials that uniquely identify a Microsoft Azure subscription. The
+     * subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
     EventGridManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,

@@ -67,7 +67,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientPacketCaptures to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientPacketCaptures to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -143,7 +144,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about packet capture session along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about packet capture session along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(String resourceGroupName,
@@ -192,7 +194,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about packet capture session along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about packet capture session along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(String resourceGroupName,
@@ -1228,7 +1231,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of packet capture sessions along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of packet capture sessions along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PacketCaptureResultInner>> listSinglePageAsync(String resourceGroupName,
@@ -1268,7 +1272,8 @@ public final class PacketCapturesClientImpl implements PacketCapturesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of packet capture sessions along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of packet capture sessions along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PacketCaptureResultInner>> listSinglePageAsync(String resourceGroupName,

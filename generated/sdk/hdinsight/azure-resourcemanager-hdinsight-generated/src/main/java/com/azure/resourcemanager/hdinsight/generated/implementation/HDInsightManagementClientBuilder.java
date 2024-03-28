@@ -25,7 +25,8 @@ public final class HDInsightManagementClientBuilder {
     private String subscriptionId;
 
     /**
-     * Sets The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Sets The subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the HDInsightManagementClientBuilder.

@@ -102,7 +102,8 @@ public final class ApplicationGatewaySslProfile extends SubResource {
     }
 
     /**
-     * Get the trustedClientCertificates property: Array of references to application gateway trusted client certificates.
+     * Get the trustedClientCertificates property: Array of references to application gateway trusted client
+     * certificates.
      * 
      * @return the trustedClientCertificates value.
      */
@@ -111,7 +112,8 @@ public final class ApplicationGatewaySslProfile extends SubResource {
     }
 
     /**
-     * Set the trustedClientCertificates property: Array of references to application gateway trusted client certificates.
+     * Set the trustedClientCertificates property: Array of references to application gateway trusted client
+     * certificates.
      * 
      * @param trustedClientCertificates the trustedClientCertificates value to set.
      * @return the ApplicationGatewaySslProfile object itself.
@@ -148,7 +150,8 @@ public final class ApplicationGatewaySslProfile extends SubResource {
     }
 
     /**
-     * Get the clientAuthConfiguration property: Client authentication configuration of the application gateway resource.
+     * Get the clientAuthConfiguration property: Client authentication configuration of the application gateway
+     * resource.
      * 
      * @return the clientAuthConfiguration value.
      */
@@ -157,7 +160,8 @@ public final class ApplicationGatewaySslProfile extends SubResource {
     }
 
     /**
-     * Set the clientAuthConfiguration property: Client authentication configuration of the application gateway resource.
+     * Set the clientAuthConfiguration property: Client authentication configuration of the application gateway
+     * resource.
      * 
      * @param clientAuthConfiguration the clientAuthConfiguration value to set.
      * @return the ApplicationGatewaySslProfile object itself.

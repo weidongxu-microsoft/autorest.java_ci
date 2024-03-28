@@ -12,7 +12,8 @@ import java.time.Duration;
  */
 public interface EventHubManagementClient {
     /**
-     * Gets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Gets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */

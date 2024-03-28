@@ -87,8 +87,9 @@ public final class CloudEdgeManagementRoleProperties {
             edgeProfile().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property roleStatus in model CloudEdgeManagementRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property roleStatus in model CloudEdgeManagementRoleProperties"));
         }
     }
 

@@ -104,7 +104,8 @@ public final class AliasPath {
     }
 
     /**
-     * Get the metadata property: The metadata of the alias path. If missing, fall back to the default metadata of the alias.
+     * Get the metadata property: The metadata of the alias path. If missing, fall back to the default metadata of the
+     * alias.
      * 
      * @return the metadata value.
      */

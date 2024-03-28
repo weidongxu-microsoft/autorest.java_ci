@@ -166,7 +166,8 @@ public final class ManagementGroupAggregatedCostProperties {
     }
 
     /**
-     * Get the includedSubscriptions property: List of subscription Guids included in the calculation of aggregated cost.
+     * Get the includedSubscriptions property: List of subscription Guids included in the calculation of aggregated
+     * cost.
      * 
      * @return the includedSubscriptions value.
      */
@@ -175,7 +176,8 @@ public final class ManagementGroupAggregatedCostProperties {
     }
 
     /**
-     * Set the includedSubscriptions property: List of subscription Guids included in the calculation of aggregated cost.
+     * Set the includedSubscriptions property: List of subscription Guids included in the calculation of aggregated
+     * cost.
      * 
      * @param includedSubscriptions the includedSubscriptions value to set.
      * @return the ManagementGroupAggregatedCostProperties object itself.
@@ -186,7 +188,8 @@ public final class ManagementGroupAggregatedCostProperties {
     }
 
     /**
-     * Get the excludedSubscriptions property: List of subscription Guids excluded from the calculation of aggregated cost.
+     * Get the excludedSubscriptions property: List of subscription Guids excluded from the calculation of aggregated
+     * cost.
      * 
      * @return the excludedSubscriptions value.
      */
@@ -195,7 +198,8 @@ public final class ManagementGroupAggregatedCostProperties {
     }
 
     /**
-     * Set the excludedSubscriptions property: List of subscription Guids excluded from the calculation of aggregated cost.
+     * Set the excludedSubscriptions property: List of subscription Guids excluded from the calculation of aggregated
+     * cost.
      * 
      * @param excludedSubscriptions the excludedSubscriptions value to set.
      * @return the ManagementGroupAggregatedCostProperties object itself.

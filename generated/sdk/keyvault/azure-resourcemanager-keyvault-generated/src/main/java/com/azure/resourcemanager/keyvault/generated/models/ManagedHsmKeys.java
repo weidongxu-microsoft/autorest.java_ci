@@ -17,7 +17,8 @@ public interface ManagedHsmKeys {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -31,7 +32,8 @@ public interface ManagedHsmKeys {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -69,7 +71,8 @@ public interface ManagedHsmKeys {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -85,7 +88,8 @@ public interface ManagedHsmKeys {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param keyVersion The version of the key to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -99,7 +103,8 @@ public interface ManagedHsmKeys {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -112,7 +117,8 @@ public interface ManagedHsmKeys {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param name The name of the Managed HSM Pool within the specified resource group.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

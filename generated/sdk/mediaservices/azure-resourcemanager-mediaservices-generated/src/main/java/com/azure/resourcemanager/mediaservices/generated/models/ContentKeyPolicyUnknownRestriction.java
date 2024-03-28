@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -19,11 +21,27 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyUnknownRestriction")
 @Immutable
 public final class ContentKeyPolicyUnknownRestriction extends ContentKeyPolicyRestriction {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyUnknownRestriction";
+
     /**
      * Creates an instance of ContentKeyPolicyUnknownRestriction class.
      */
     public ContentKeyPolicyUnknownRestriction() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyUnknownRestriction");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

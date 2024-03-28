@@ -157,7 +157,8 @@ public final class ReplicationUsageInner {
     }
 
     /**
-     * Get the recoveryServicesProviderAuthType property: The authentication type of recovery service providers in the vault.
+     * Get the recoveryServicesProviderAuthType property: The authentication type of recovery service providers in the
+     * vault.
      * 
      * @return the recoveryServicesProviderAuthType value.
      */
@@ -166,7 +167,8 @@ public final class ReplicationUsageInner {
     }
 
     /**
-     * Set the recoveryServicesProviderAuthType property: The authentication type of recovery service providers in the vault.
+     * Set the recoveryServicesProviderAuthType property: The authentication type of recovery service providers in the
+     * vault.
      * 
      * @param recoveryServicesProviderAuthType the recoveryServicesProviderAuthType value to set.
      * @return the ReplicationUsageInner object itself.

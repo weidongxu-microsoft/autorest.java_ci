@@ -128,7 +128,8 @@ public final class LotProperties {
     }
 
     /**
-     * Get the originalAmount property: The original amount of a lot, Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
+     * Get the originalAmount property: The original amount of a lot, Note: This will not be returned for Contributor
+     * Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the originalAmount value.
      */
@@ -173,7 +174,8 @@ public final class LotProperties {
     }
 
     /**
-     * Get the poNumber property: The po number of the invoice on which the lot was added. This property is not available for ConsumptionCommitment lots.
+     * Get the poNumber property: The po number of the invoice on which the lot was added. This property is not
+     * available for ConsumptionCommitment lots.
      * 
      * @return the poNumber value.
      */
@@ -218,7 +220,8 @@ public final class LotProperties {
     }
 
     /**
-     * Get the originalAmountInBillingCurrency property: The original amount of a lot in billing currency,  Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
+     * Get the originalAmountInBillingCurrency property: The original amount of a lot in billing currency, Note: This
+     * will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the originalAmountInBillingCurrency value.
      */
@@ -245,7 +248,8 @@ public final class LotProperties {
     }
 
     /**
-     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be subjected to change.
+     * Get the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
+     * subjected to change.
      * 
      * @return the isEstimatedBalance value.
      */

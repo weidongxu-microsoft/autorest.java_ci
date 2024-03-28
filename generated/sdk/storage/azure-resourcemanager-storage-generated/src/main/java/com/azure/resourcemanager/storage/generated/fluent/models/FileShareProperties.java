@@ -168,7 +168,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
+     * Get the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than
+     * or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
      * 
      * @return the shareQuota value.
      */
@@ -177,7 +178,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Set the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
+     * Set the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than
+     * or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
      * 
      * @param shareQuota the shareQuota value to set.
      * @return the FileShareProperties object itself.
@@ -188,7 +190,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the enabledProtocols property: The authentication protocol that is used for the file share. Can only be specified when creating a share.
+     * Get the enabledProtocols property: The authentication protocol that is used for the file share. Can only be
+     * specified when creating a share.
      * 
      * @return the enabledProtocols value.
      */
@@ -197,7 +200,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Set the enabledProtocols property: The authentication protocol that is used for the file share. Can only be specified when creating a share.
+     * Set the enabledProtocols property: The authentication protocol that is used for the file share. Can only be
+     * specified when creating a share.
      * 
      * @param enabledProtocols the enabledProtocols value to set.
      * @return the FileShareProperties object itself.
@@ -264,7 +268,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Get the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized
+     * (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @return the accessTier value.
      */
@@ -273,7 +278,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Set the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Set the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized
+     * (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @param accessTier the accessTier value to set.
      * @return the FileShareProperties object itself.
@@ -302,7 +308,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the shareUsageBytes property: The approximate size of the data stored on the share. Note that this value may not include all recently created or recently resized files.
+     * Get the shareUsageBytes property: The approximate size of the data stored on the share. Note that this value may
+     * not include all recently created or recently resized files.
      * 
      * @return the shareUsageBytes value.
      */
@@ -329,7 +336,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only when the share is leased.
+     * Get the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only
+     * when the share is leased.
      * 
      * @return the leaseDuration value.
      */
@@ -358,7 +366,8 @@ public final class FileShareProperties {
     }
 
     /**
-     * Get the snapshotTime property: Creation time of share snapshot returned in the response of list shares with expand param "snapshots".
+     * Get the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
+     * expand param "snapshots".
      * 
      * @return the snapshotTime value.
      */

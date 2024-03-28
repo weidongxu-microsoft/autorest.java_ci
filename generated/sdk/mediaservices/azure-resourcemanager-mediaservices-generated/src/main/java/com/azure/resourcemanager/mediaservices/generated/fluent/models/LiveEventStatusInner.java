@@ -61,7 +61,8 @@ public final class LiveEventStatusInner {
     }
 
     /**
-     * Get the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+     * Get the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for
+     * more information.
      * 
      * @return the state value.
      */
@@ -70,7 +71,8 @@ public final class LiveEventStatusInner {
     }
 
     /**
-     * Set the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+     * Set the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for
+     * more information.
      * 
      * @param state the state value to set.
      * @return the LiveEventStatusInner object itself.

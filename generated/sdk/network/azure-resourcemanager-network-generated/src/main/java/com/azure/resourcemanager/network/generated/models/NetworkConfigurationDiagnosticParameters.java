@@ -39,7 +39,8 @@ public final class NetworkConfigurationDiagnosticParameters {
     }
 
     /**
-     * Get the targetResourceId property: The ID of the target resource to perform network configuration diagnostic. Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
+     * Get the targetResourceId property: The ID of the target resource to perform network configuration diagnostic.
+     * Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
      * 
      * @return the targetResourceId value.
      */
@@ -48,7 +49,8 @@ public final class NetworkConfigurationDiagnosticParameters {
     }
 
     /**
-     * Set the targetResourceId property: The ID of the target resource to perform network configuration diagnostic. Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
+     * Set the targetResourceId property: The ID of the target resource to perform network configuration diagnostic.
+     * Valid options are VM, NetworkInterface, VMSS/NetworkInterface and Application Gateway.
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the NetworkConfigurationDiagnosticParameters object itself.
@@ -105,12 +107,14 @@ public final class NetworkConfigurationDiagnosticParameters {
      */
     public void validate() {
         if (targetResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property targetResourceId in model NetworkConfigurationDiagnosticParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property targetResourceId in model NetworkConfigurationDiagnosticParameters"));
         }
         if (profiles() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property profiles in model NetworkConfigurationDiagnosticParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property profiles in model NetworkConfigurationDiagnosticParameters"));
         } else {
             profiles().forEach(e -> e.validate());
         }

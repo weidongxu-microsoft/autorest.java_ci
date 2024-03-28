@@ -7,12 +7,14 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
 
 /**
- * Describes all the settings to be used when analyzing a video in order to detect (and optionally redact) all the faces present.
+ * Describes all the settings to be used when analyzing a video in order to detect (and optionally redact) all the faces
+ * present.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -22,6 +24,13 @@ import java.util.Map;
 @JsonTypeName("#Microsoft.Media.FaceDetectorPreset")
 @Fluent
 public final class FaceDetectorPreset extends Preset {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.FaceDetectorPreset";
+
     /*
      * Specifies the maximum resolution at which your video is analyzed. The default behavior is "SourceResolution," which will keep the input video at its original resolution when analyzed. Using "StandardDefinition" will resize input videos to standard definition while preserving the appropriate aspect ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high resolution video. It may also reduce the cost of using this component (see https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end up being too small in the resized video may not be detected.
      */
@@ -51,11 +60,27 @@ public final class FaceDetectorPreset extends Preset {
      * Creates an instance of FaceDetectorPreset class.
      */
     public FaceDetectorPreset() {
-        withOdataType("#Microsoft.Media.FaceDetectorPreset");
     }
 
     /**
-     * Get the resolution property: Specifies the maximum resolution at which your video is analyzed. The default behavior is "SourceResolution," which will keep the input video at its original resolution when analyzed. Using "StandardDefinition" will resize input videos to standard definition while preserving the appropriate aspect ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high resolution video. It may also reduce the cost of using this component (see https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end up being too small in the resized video may not be detected.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the resolution property: Specifies the maximum resolution at which your video is analyzed. The default
+     * behavior is "SourceResolution," which will keep the input video at its original resolution when analyzed. Using
+     * "StandardDefinition" will resize input videos to standard definition while preserving the appropriate aspect
+     * ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled
+     * to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high
+     * resolution video. It may also reduce the cost of using this component (see
+     * https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end
+     * up being too small in the resized video may not be detected.
      * 
      * @return the resolution value.
      */
@@ -64,7 +89,14 @@ public final class FaceDetectorPreset extends Preset {
     }
 
     /**
-     * Set the resolution property: Specifies the maximum resolution at which your video is analyzed. The default behavior is "SourceResolution," which will keep the input video at its original resolution when analyzed. Using "StandardDefinition" will resize input videos to standard definition while preserving the appropriate aspect ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high resolution video. It may also reduce the cost of using this component (see https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end up being too small in the resized video may not be detected.
+     * Set the resolution property: Specifies the maximum resolution at which your video is analyzed. The default
+     * behavior is "SourceResolution," which will keep the input video at its original resolution when analyzed. Using
+     * "StandardDefinition" will resize input videos to standard definition while preserving the appropriate aspect
+     * ratio. It will only resize if the video is of higher resolution. For example, a 1920x1080 input would be scaled
+     * to 640x360 before processing. Switching to "StandardDefinition" will reduce the time it takes to process high
+     * resolution video. It may also reduce the cost of using this component (see
+     * https://azure.microsoft.com/en-us/pricing/details/media-services/#analytics for details). However, faces that end
+     * up being too small in the resized video may not be detected.
      * 
      * @param resolution the resolution value to set.
      * @return the FaceDetectorPreset object itself.
@@ -75,7 +107,12 @@ public final class FaceDetectorPreset extends Preset {
     }
 
     /**
-     * Get the mode property: This mode provides the ability to choose between the following settings: 1) Analyze - For detection only.This mode generates a metadata JSON file marking appearances of faces throughout the video.Where possible, appearances of the same person are assigned the same ID. 2) Combined - Additionally redacts(blurs) detected faces. 3) Redact - This enables a 2-pass process, allowing for selective redaction of a subset of detected faces.It takes in the metadata file from a prior analyze pass, along with the source video, and a user-selected subset of IDs that require redaction.
+     * Get the mode property: This mode provides the ability to choose between the following settings: 1) Analyze - For
+     * detection only.This mode generates a metadata JSON file marking appearances of faces throughout the video.Where
+     * possible, appearances of the same person are assigned the same ID. 2) Combined - Additionally redacts(blurs)
+     * detected faces. 3) Redact - This enables a 2-pass process, allowing for selective redaction of a subset of
+     * detected faces.It takes in the metadata file from a prior analyze pass, along with the source video, and a
+     * user-selected subset of IDs that require redaction.
      * 
      * @return the mode value.
      */
@@ -84,7 +121,12 @@ public final class FaceDetectorPreset extends Preset {
     }
 
     /**
-     * Set the mode property: This mode provides the ability to choose between the following settings: 1) Analyze - For detection only.This mode generates a metadata JSON file marking appearances of faces throughout the video.Where possible, appearances of the same person are assigned the same ID. 2) Combined - Additionally redacts(blurs) detected faces. 3) Redact - This enables a 2-pass process, allowing for selective redaction of a subset of detected faces.It takes in the metadata file from a prior analyze pass, along with the source video, and a user-selected subset of IDs that require redaction.
+     * Set the mode property: This mode provides the ability to choose between the following settings: 1) Analyze - For
+     * detection only.This mode generates a metadata JSON file marking appearances of faces throughout the video.Where
+     * possible, appearances of the same person are assigned the same ID. 2) Combined - Additionally redacts(blurs)
+     * detected faces. 3) Redact - This enables a 2-pass process, allowing for selective redaction of a subset of
+     * detected faces.It takes in the metadata file from a prior analyze pass, along with the source video, and a
+     * user-selected subset of IDs that require redaction.
      * 
      * @param mode the mode value to set.
      * @return the FaceDetectorPreset object itself.
@@ -115,7 +157,8 @@ public final class FaceDetectorPreset extends Preset {
     }
 
     /**
-     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
+     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
+     * preset itself.
      * 
      * @return the experimentalOptions value.
      */
@@ -124,7 +167,8 @@ public final class FaceDetectorPreset extends Preset {
     }
 
     /**
-     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
+     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
+     * preset itself.
      * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the FaceDetectorPreset object itself.

@@ -46,7 +46,8 @@ public interface IpConfigurationPropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationPropertiesFormatInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.IpConfigurationPropertiesFormatInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -25,7 +25,8 @@ public interface HostingEnvironmentDiagnostics {
     String diagnosticsOutput();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.HostingEnvironmentDiagnosticsInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -23,6 +24,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ModernReservationRecommendation extends ReservationRecommendationInner {
     /*
+     * Specifies the kind of reservation recommendation.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private ReservationRecommendationKind kind = ReservationRecommendationKind.MODERN;
+
+    /*
      * Properties for modern reservation recommendation
      */
     @JsonProperty(value = "properties", required = true)
@@ -32,7 +40,16 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
      * Creates an instance of ModernReservationRecommendation class.
      */
     public ModernReservationRecommendation() {
-        withKind(ReservationRecommendationKind.MODERN);
+    }
+
+    /**
+     * Get the kind property: Specifies the kind of reservation recommendation.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public ReservationRecommendationKind kind() {
+        return this.kind;
     }
 
     /**
@@ -64,8 +81,9 @@ public final class ModernReservationRecommendation extends ReservationRecommenda
     public void validate() {
         super.validate();
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property properties in model ModernReservationRecommendation"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property properties in model ModernReservationRecommendation"));
         } else {
             properties().validate();
         }

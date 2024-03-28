@@ -20,7 +20,8 @@ public interface PrivateLinkResourcesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault as paginated response with {@link PagedIterable}.
+     * @return class which represent the stamps associated with the vault as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PrivateLinkResource> list(String resourceGroupName, String vaultName);
 
@@ -33,7 +34,8 @@ public interface PrivateLinkResourcesOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class which represent the stamps associated with the vault as paginated response with {@link PagedIterable}.
+     * @return class which represent the stamps associated with the vault as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PrivateLinkResource> list(String resourceGroupName, String vaultName, Context context);
 

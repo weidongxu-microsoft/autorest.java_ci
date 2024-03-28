@@ -18,7 +18,8 @@ public interface PrivateLinkServiceVisibility {
     Boolean visible();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateLinkServiceVisibilityInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -8,12 +8,14 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.Map;
 
 /**
- * The Audio Analyzer preset applies a pre-defined set of AI-based analysis operations, including speech transcription. Currently, the preset supports processing of content with a single audio track.
+ * The Audio Analyzer preset applies a pre-defined set of AI-based analysis operations, including speech transcription.
+ * Currently, the preset supports processing of content with a single audio track.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -24,6 +26,13 @@ import java.util.Map;
 @JsonSubTypes({ @JsonSubTypes.Type(name = "#Microsoft.Media.VideoAnalyzerPreset", value = VideoAnalyzerPreset.class) })
 @Fluent
 public class AudioAnalyzerPreset extends Preset {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.AudioAnalyzerPreset";
+
     /*
      * The language for the audio payload in the input using the BCP-47 format of 'language tag-region' (e.g: 'en-US').  If you know the language of your content, it is recommended that you specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language detection is not included in basic mode. If the language isn't specified or set to null, automatic language detection will choose the first language detected and process with the selected language for the duration of the file. It does not currently support dynamically switching between languages after the first language is detected. The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is available here: https://go.microsoft.com/fwlink/?linkid=2109463
      */
@@ -47,11 +56,28 @@ public class AudioAnalyzerPreset extends Preset {
      * Creates an instance of AudioAnalyzerPreset class.
      */
     public AudioAnalyzerPreset() {
-        withOdataType("#Microsoft.Media.AudioAnalyzerPreset");
     }
 
     /**
-     * Get the audioLanguage property: The language for the audio payload in the input using the BCP-47 format of 'language tag-region' (e.g: 'en-US').  If you know the language of your content, it is recommended that you specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language detection is not included in basic mode. If the language isn't specified or set to null, automatic language detection will choose the first language detected and process with the selected language for the duration of the file. It does not currently support dynamically switching between languages after the first language is detected. The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is available here: https://go.microsoft.com/fwlink/?linkid=2109463.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the audioLanguage property: The language for the audio payload in the input using the BCP-47 format of
+     * 'language tag-region' (e.g: 'en-US'). If you know the language of your content, it is recommended that you
+     * specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language
+     * detection is not included in basic mode. If the language isn't specified or set to null, automatic language
+     * detection will choose the first language detected and process with the selected language for the duration of the
+     * file. It does not currently support dynamically switching between languages after the first language is detected.
+     * The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection
+     * fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is
+     * available here: https://go.microsoft.com/fwlink/?linkid=2109463.
      * 
      * @return the audioLanguage value.
      */
@@ -60,7 +86,15 @@ public class AudioAnalyzerPreset extends Preset {
     }
 
     /**
-     * Set the audioLanguage property: The language for the audio payload in the input using the BCP-47 format of 'language tag-region' (e.g: 'en-US').  If you know the language of your content, it is recommended that you specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language detection is not included in basic mode. If the language isn't specified or set to null, automatic language detection will choose the first language detected and process with the selected language for the duration of the file. It does not currently support dynamically switching between languages after the first language is detected. The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is available here: https://go.microsoft.com/fwlink/?linkid=2109463.
+     * Set the audioLanguage property: The language for the audio payload in the input using the BCP-47 format of
+     * 'language tag-region' (e.g: 'en-US'). If you know the language of your content, it is recommended that you
+     * specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language
+     * detection is not included in basic mode. If the language isn't specified or set to null, automatic language
+     * detection will choose the first language detected and process with the selected language for the duration of the
+     * file. It does not currently support dynamically switching between languages after the first language is detected.
+     * The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection
+     * fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is
+     * available here: https://go.microsoft.com/fwlink/?linkid=2109463.
      * 
      * @param audioLanguage the audioLanguage value to set.
      * @return the AudioAnalyzerPreset object itself.
@@ -71,7 +105,8 @@ public class AudioAnalyzerPreset extends Preset {
     }
 
     /**
-     * Get the mode property: Determines the set of audio analysis operations to be performed. If unspecified, the Standard AudioAnalysisMode would be chosen.
+     * Get the mode property: Determines the set of audio analysis operations to be performed. If unspecified, the
+     * Standard AudioAnalysisMode would be chosen.
      * 
      * @return the mode value.
      */
@@ -80,7 +115,8 @@ public class AudioAnalyzerPreset extends Preset {
     }
 
     /**
-     * Set the mode property: Determines the set of audio analysis operations to be performed. If unspecified, the Standard AudioAnalysisMode would be chosen.
+     * Set the mode property: Determines the set of audio analysis operations to be performed. If unspecified, the
+     * Standard AudioAnalysisMode would be chosen.
      * 
      * @param mode the mode value to set.
      * @return the AudioAnalyzerPreset object itself.
@@ -91,7 +127,8 @@ public class AudioAnalyzerPreset extends Preset {
     }
 
     /**
-     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
+     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
+     * preset itself.
      * 
      * @return the experimentalOptions value.
      */
@@ -100,7 +137,8 @@ public class AudioAnalyzerPreset extends Preset {
     }
 
     /**
-     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
+     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
+     * preset itself.
      * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the AudioAnalyzerPreset object itself.

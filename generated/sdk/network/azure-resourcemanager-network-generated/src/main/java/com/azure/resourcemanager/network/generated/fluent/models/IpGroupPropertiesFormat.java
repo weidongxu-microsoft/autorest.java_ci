@@ -84,7 +84,8 @@ public final class IpGroupPropertiesFormat {
     }
 
     /**
-     * Get the firewallPolicies property: List of references to Firewall Policies resources that this IpGroups is associated with.
+     * Get the firewallPolicies property: List of references to Firewall Policies resources that this IpGroups is
+     * associated with.
      * 
      * @return the firewallPolicies value.
      */

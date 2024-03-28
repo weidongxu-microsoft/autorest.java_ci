@@ -98,7 +98,8 @@ public interface KubeEnvironment {
     String staticIp();
 
     /**
-     * Gets the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments with value as Managed.
+     * Gets the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments
+     * with value as Managed.
      * 
      * @return the environmentType value.
      */
@@ -123,7 +124,8 @@ public interface KubeEnvironment {
     AppLogsConfiguration appLogsConfiguration();
 
     /**
-     * Gets the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+     * Gets the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure
+     * Dapr Instrumentation Key and VNET Configuration.
      * 
      * @return the containerAppsConfiguration value.
      */
@@ -216,7 +218,8 @@ public interface KubeEnvironment {
         }
 
         /**
-         * The stage of the KubeEnvironment definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the KubeEnvironment definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithKind, DefinitionStages.WithInternalLoadBalancerEnabled, DefinitionStages.WithStaticIp,
@@ -309,9 +312,11 @@ public interface KubeEnvironment {
          */
         interface WithEnvironmentType {
             /**
-             * Specifies the environmentType property: Type of Kubernetes Environment. Only supported for Container App Environments with value as Managed.
+             * Specifies the environmentType property: Type of Kubernetes Environment. Only supported for Container App
+             * Environments with value as Managed.
              * 
-             * @param environmentType Type of Kubernetes Environment. Only supported for Container App Environments with value as Managed.
+             * @param environmentType Type of Kubernetes Environment. Only supported for Container App Environments with
+             * value as Managed.
              * @return the next definition stage.
              */
             WithCreate withEnvironmentType(String environmentType);
@@ -356,9 +361,11 @@ public interface KubeEnvironment {
          */
         interface WithContainerAppsConfiguration {
             /**
-             * Specifies the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+             * Specifies the containerAppsConfiguration property: Cluster configuration for Container Apps Environments
+             * to configure Dapr Instrumentation Key and VNET Configuration.
              * 
-             * @param containerAppsConfiguration Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+             * @param containerAppsConfiguration Cluster configuration for Container Apps Environments to configure Dapr
+             * Instrumentation Key and VNET Configuration.
              * @return the next definition stage.
              */
             WithCreate withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration);
@@ -462,9 +469,11 @@ public interface KubeEnvironment {
          */
         interface WithContainerAppsConfiguration {
             /**
-             * Specifies the containerAppsConfiguration property: Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+             * Specifies the containerAppsConfiguration property: Cluster configuration for Container Apps Environments
+             * to configure Dapr Instrumentation Key and VNET Configuration.
              * 
-             * @param containerAppsConfiguration Cluster configuration for Container Apps Environments to configure Dapr Instrumentation Key and VNET Configuration.
+             * @param containerAppsConfiguration Cluster configuration for Container Apps Environments to configure Dapr
+             * Instrumentation Key and VNET Configuration.
              * @return the next definition stage.
              */
             Update withContainerAppsConfiguration(ContainerAppsConfiguration containerAppsConfiguration);

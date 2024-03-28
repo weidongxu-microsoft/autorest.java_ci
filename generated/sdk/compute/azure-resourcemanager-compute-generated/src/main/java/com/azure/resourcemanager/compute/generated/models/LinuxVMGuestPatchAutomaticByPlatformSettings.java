@@ -31,7 +31,8 @@ public final class LinuxVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Get the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+     * Get the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation
+     * operations.
      * 
      * @return the rebootSetting value.
      */
@@ -40,7 +41,8 @@ public final class LinuxVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Set the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+     * Set the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation
+     * operations.
      * 
      * @param rebootSetting the rebootSetting value to set.
      * @return the LinuxVMGuestPatchAutomaticByPlatformSettings object itself.
@@ -52,7 +54,8 @@ public final class LinuxVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Get the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without accidental upgrades.
+     * Get the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without
+     * accidental upgrades.
      * 
      * @return the bypassPlatformSafetyChecksOnUserSchedule value.
      */
@@ -61,7 +64,8 @@ public final class LinuxVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Set the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without accidental upgrades.
+     * Set the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without
+     * accidental upgrades.
      * 
      * @param bypassPlatformSafetyChecksOnUserSchedule the bypassPlatformSafetyChecksOnUserSchedule value to set.
      * @return the LinuxVMGuestPatchAutomaticByPlatformSettings object itself.

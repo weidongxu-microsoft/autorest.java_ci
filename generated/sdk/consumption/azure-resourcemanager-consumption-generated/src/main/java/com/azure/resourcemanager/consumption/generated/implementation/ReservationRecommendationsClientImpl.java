@@ -56,7 +56,8 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientReservationRecommendations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientReservationRecommendations to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -82,12 +83,23 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
-     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
+     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
+     * ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines',
+     * 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB',
+     * 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default
+     * value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days',
+     * 'Last60Days'] and default value 'Last7Days'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationRecommendationInner>> listSinglePageAsync(String resourceScope,
@@ -111,13 +123,24 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
-     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
+     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
+     * ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines',
+     * 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB',
+     * 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default
+     * value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days',
+     * 'Last60Days'] and default value 'Last7Days'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationRecommendationInner>> listSinglePageAsync(String resourceScope, String filter,
@@ -140,8 +163,18 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
-     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
+     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
+     * ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines',
+     * 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB',
+     * 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default
+     * value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days',
+     * 'Last60Days'] and default value 'Last7Days'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -156,7 +189,12 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -172,8 +210,18 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
-     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
+     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
+     * ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines',
+     * 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB',
+     * 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default
+     * value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days',
+     * 'Last60Days'] and default value 'Last7Days'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -189,7 +237,12 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -204,8 +257,18 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
     /**
      * List of recommendations for purchasing reserved instances.
      * 
-     * @param resourceScope The scope associated with reservation recommendations operations. This includes '/subscriptions/{subscriptionId}/' for subscription scope, '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope, '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for billingProfile scope.
-     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines', 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB', 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days', 'Last60Days'] and default value 'Last7Days'.
+     * @param resourceScope The scope associated with reservation recommendations operations. This includes
+     * '/subscriptions/{subscriptionId}/' for subscription scope,
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resource group scope,
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for BillingAccount scope, and
+     * '/providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * billingProfile scope.
+     * @param filter May be used to filter reservationRecommendations by: properties/scope with allowed values
+     * ['Single', 'Shared'] and default value 'Single'; properties/resourceType with allowed values ['VirtualMachines',
+     * 'SQLDatabases', 'PostgreSQL', 'ManagedDisk', 'MySQL', 'RedHat', 'MariaDB', 'RedisCache', 'CosmosDB',
+     * 'SqlDataWarehouse', 'SUSELinux', 'AppService', 'BlockBlob', 'AzureDataExplorer', 'VMwareCloudSimple'] and default
+     * value 'VirtualMachines'; and properties/lookBackPeriod with allowed values ['Last7Days', 'Last30Days',
+     * 'Last60Days'] and default value 'Last7Days'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -226,7 +289,8 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationRecommendationInner>> listNextSinglePageAsync(String nextLink) {
@@ -254,7 +318,8 @@ public final class ReservationRecommendationsClientImpl implements ReservationRe
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of listing reservation recommendations along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ReservationRecommendationInner>> listNextSinglePageAsync(String nextLink,

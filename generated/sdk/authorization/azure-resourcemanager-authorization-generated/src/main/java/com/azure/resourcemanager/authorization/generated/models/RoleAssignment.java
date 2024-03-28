@@ -98,7 +98,11 @@ public interface RoleAssignment {
             /**
              * Specifies scope.
              * 
-             * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For example, use '/subscriptions/{subscription-id}/' for a subscription, '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}' for a resource.
+             * @param scope The scope of the role assignment to create. The scope can be any REST resource instance. For
+             * example, use '/subscriptions/{subscription-id}/' for a subscription,
+             * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}' for a resource group, and
+             * '/subscriptions/{subscription-id}/resourceGroups/{resource-group-name}/providers/{resource-provider}/{resource-type}/{resource-name}'
+             * for a resource.
              * @return the next definition stage.
              */
             WithRoleDefinitionId withExistingScope(String scope);
@@ -122,16 +126,19 @@ public interface RoleAssignment {
          */
         interface WithPrincipalId {
             /**
-             * Specifies the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group..
+             * Specifies the principalId property: The principal ID assigned to the role. This maps to the ID inside the
+             * Active Directory. It can point to a user, service principal, or security group..
              * 
-             * @param principalId The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
+             * @param principalId The principal ID assigned to the role. This maps to the ID inside the Active
+             * Directory. It can point to a user, service principal, or security group.
              * @return the next definition stage.
              */
             WithCreate withPrincipalId(String principalId);
         }
 
         /**
-         * The stage of the RoleAssignment definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RoleAssignment definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPrincipalType, DefinitionStages.WithCanDelegate {
             /**

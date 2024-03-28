@@ -32,7 +32,8 @@ public interface CheckNameAvailabilityOutput {
     String message();
 
     /**
-     * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner object.
+     * Gets the inner com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvailabilityOutputInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -240,7 +240,8 @@ public final class ApplicationGatewayHttpListener extends SubResource {
     }
 
     /**
-     * Get the requireServerNameIndication property: Applicable only if protocol is https. Enables SNI for multi-hosting.
+     * Get the requireServerNameIndication property: Applicable only if protocol is https. Enables SNI for
+     * multi-hosting.
      * 
      * @return the requireServerNameIndication value.
      */
@@ -249,7 +250,8 @@ public final class ApplicationGatewayHttpListener extends SubResource {
     }
 
     /**
-     * Set the requireServerNameIndication property: Applicable only if protocol is https. Enables SNI for multi-hosting.
+     * Set the requireServerNameIndication property: Applicable only if protocol is https. Enables SNI for
+     * multi-hosting.
      * 
      * @param requireServerNameIndication the requireServerNameIndication value to set.
      * @return the ApplicationGatewayHttpListener object itself.

@@ -25,7 +25,8 @@ public final class VirtualHubId {
     }
 
     /**
-     * Get the id property: The resource URI for the Virtual Hub where the ExpressRoute gateway is or will be deployed. The Virtual Hub resource and the ExpressRoute gateway resource reside in the same subscription.
+     * Get the id property: The resource URI for the Virtual Hub where the ExpressRoute gateway is or will be deployed.
+     * The Virtual Hub resource and the ExpressRoute gateway resource reside in the same subscription.
      * 
      * @return the id value.
      */
@@ -34,7 +35,8 @@ public final class VirtualHubId {
     }
 
     /**
-     * Set the id property: The resource URI for the Virtual Hub where the ExpressRoute gateway is or will be deployed. The Virtual Hub resource and the ExpressRoute gateway resource reside in the same subscription.
+     * Set the id property: The resource URI for the Virtual Hub where the ExpressRoute gateway is or will be deployed.
+     * The Virtual Hub resource and the ExpressRoute gateway resource reside in the same subscription.
      * 
      * @param id the id value to set.
      * @return the VirtualHubId object itself.

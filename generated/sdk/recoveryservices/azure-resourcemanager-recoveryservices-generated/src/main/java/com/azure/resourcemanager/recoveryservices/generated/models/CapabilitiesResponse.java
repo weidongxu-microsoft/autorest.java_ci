@@ -25,7 +25,8 @@ public interface CapabilitiesResponse {
     CapabilitiesResponseProperties properties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.CapabilitiesResponseInner object.
+     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.CapabilitiesResponseInner
+     * object.
      * 
      * @return the inner object.
      */

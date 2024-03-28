@@ -27,7 +27,9 @@ public final class LoadBalancerConfigurationProperties {
     }
 
     /**
-     * Get the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4 frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP configuration.
+     * Get the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4
+     * frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP
+     * configuration.
      * 
      * @return the frontendIpConfigurations value.
      */
@@ -36,7 +38,9 @@ public final class LoadBalancerConfigurationProperties {
     }
 
     /**
-     * Set the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4 frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP configuration.
+     * Set the frontendIpConfigurations property: Specifies the frontend IP to be used for the load balancer. Only IPv4
+     * frontend IP address is supported. Each load balancer configuration must have exactly one frontend IP
+     * configuration.
      * 
      * @param frontendIpConfigurations the frontendIpConfigurations value to set.
      * @return the LoadBalancerConfigurationProperties object itself.
@@ -54,8 +58,9 @@ public final class LoadBalancerConfigurationProperties {
      */
     public void validate() {
         if (frontendIpConfigurations() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property frontendIpConfigurations in model LoadBalancerConfigurationProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property frontendIpConfigurations in model LoadBalancerConfigurationProperties"));
         } else {
             frontendIpConfigurations().forEach(e -> e.validate());
         }

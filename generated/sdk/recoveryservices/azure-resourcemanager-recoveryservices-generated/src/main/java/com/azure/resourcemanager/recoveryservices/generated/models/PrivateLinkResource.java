@@ -33,7 +33,8 @@ public interface PrivateLinkResource {
     String type();
 
     /**
-     * Gets the groupId property: e.g. f9ad6492-33d4-4690-9999-6bfd52a0d081 (Backup) or f9ad6492-33d4-4690-9999-6bfd52a0d082 (SiteRecovery).
+     * Gets the groupId property: e.g. f9ad6492-33d4-4690-9999-6bfd52a0d081 (Backup) or
+     * f9ad6492-33d4-4690-9999-6bfd52a0d082 (SiteRecovery).
      * 
      * @return the groupId value.
      */
@@ -54,7 +55,8 @@ public interface PrivateLinkResource {
     List<String> requiredZoneNames();
 
     /**
-     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.PrivateLinkResourceInner object.
+     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.PrivateLinkResourceInner
+     * object.
      * 
      * @return the inner object.
      */

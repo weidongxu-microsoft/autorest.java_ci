@@ -32,7 +32,8 @@ public interface PrivateLinkResource {
     String type();
 
     /**
-     * Gets the properties property: Describes the properties of a supported private link resource for the Azure AI Search service.
+     * Gets the properties property: Describes the properties of a supported private link resource for the Azure AI
+     * Search service.
      * 
      * @return the properties value.
      */

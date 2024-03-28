@@ -67,7 +67,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientCloudServiceRoleInstances to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientCloudServiceRoleInstances to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -399,7 +400,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role instance from a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a role instance from a cloud service along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RoleInstanceInner>> getWithResponseAsync(String roleInstanceName, String resourceGroupName,
@@ -443,7 +445,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a role instance from a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a role instance from a cloud service along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RoleInstanceInner>> getWithResponseAsync(String roleInstanceName, String resourceGroupName,
@@ -539,7 +542,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of the role instance along with {@link Response} on successful completion of {@link Mono}.
+     * @return the instance view of the role instance along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RoleInstanceViewInner>> getInstanceViewWithResponseAsync(String roleInstanceName,
@@ -582,7 +586,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the instance view of the role instance along with {@link Response} on successful completion of {@link Mono}.
+     * @return the instance view of the role instance along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RoleInstanceViewInner>> getInstanceViewWithResponseAsync(String roleInstanceName,
@@ -669,7 +674,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -677,7 +683,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of all role instances in a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of all role instances in a cloud service along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleInstanceInner>> listSinglePageAsync(String resourceGroupName,
@@ -709,7 +716,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -718,7 +726,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of all role instances in a cloud service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of all role instances in a cloud service along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RoleInstanceInner>> listSinglePageAsync(String resourceGroupName,
@@ -750,7 +759,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -768,7 +778,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -785,7 +796,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -804,7 +816,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -820,7 +833,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next page of role instances. Do this till nextLink is null to fetch all the role instances.
+     * Gets the list of all role instances in a cloud service. Use nextLink property in the response to get the next
+     * page of role instances. Do this till nextLink is null to fetch all the role instances.
      * 
      * @param resourceGroupName Name of the resource group.
      * @param cloudServiceName Name of the cloud service.
@@ -1066,7 +1080,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1108,7 +1123,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1150,7 +1166,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1170,7 +1187,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1192,7 +1210,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1209,7 +1228,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1227,7 +1247,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1244,7 +1265,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1263,7 +1285,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1278,7 +1301,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles.
+     * The Reimage Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1294,7 +1318,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1336,7 +1362,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1378,7 +1406,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1398,7 +1428,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1420,7 +1452,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1437,7 +1471,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1455,7 +1491,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1472,7 +1510,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1491,7 +1531,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1506,7 +1548,9 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
     }
 
     /**
-     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or worker roles and initializes the storage resources that are used by them. If you do not want to initialize storage resources, you can use Reimage Role Instance.
+     * The Rebuild Role Instance asynchronous operation reinstalls the operating system on instances of web roles or
+     * worker roles and initializes the storage resources that are used by them. If you do not want to initialize
+     * storage resources, you can use Reimage Role Instance.
      * 
      * @param roleInstanceName Name of the role instance.
      * @param resourceGroupName Name of the resource group.
@@ -1530,7 +1574,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a remote desktop file for a role instance in a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a remote desktop file for a role instance in a cloud service along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BinaryData>> getRemoteDesktopFileWithResponseAsync(String roleInstanceName,
@@ -1573,7 +1618,8 @@ public final class CloudServiceRoleInstancesClientImpl implements CloudServiceRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a remote desktop file for a role instance in a cloud service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a remote desktop file for a role instance in a cloud service along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<BinaryData>> getRemoteDesktopFileWithResponseAsync(String roleInstanceName,

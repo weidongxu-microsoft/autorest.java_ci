@@ -65,7 +65,7 @@ public final class Source {
     }
 
     /**
-     * Get the authorizedResources property: List of  Resource referred into query.
+     * Get the authorizedResources property: List of Resource referred into query.
      * 
      * @return the authorizedResources value.
      */
@@ -74,7 +74,7 @@ public final class Source {
     }
 
     /**
-     * Set the authorizedResources property: List of  Resource referred into query.
+     * Set the authorizedResources property: List of Resource referred into query.
      * 
      * @param authorizedResources the authorizedResources value to set.
      * @return the Source object itself.
@@ -131,8 +131,8 @@ public final class Source {
      */
     public void validate() {
         if (dataSourceId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property dataSourceId in model Source"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property dataSourceId in model Source"));
         }
     }
 

@@ -96,7 +96,8 @@ public interface FirewallRule {
          */
         interface WithStartIpAddress {
             /**
-             * Specifies the startIpAddress property: The start IP address of the server firewall rule. Must be IPv4 format..
+             * Specifies the startIpAddress property: The start IP address of the server firewall rule. Must be IPv4
+             * format..
              * 
              * @param startIpAddress The start IP address of the server firewall rule. Must be IPv4 format.
              * @return the next definition stage.
@@ -109,7 +110,8 @@ public interface FirewallRule {
          */
         interface WithEndIpAddress {
             /**
-             * Specifies the endIpAddress property: The end IP address of the server firewall rule. Must be IPv4 format..
+             * Specifies the endIpAddress property: The end IP address of the server firewall rule. Must be IPv4
+             * format..
              * 
              * @param endIpAddress The end IP address of the server firewall rule. Must be IPv4 format.
              * @return the next definition stage.
@@ -118,7 +120,8 @@ public interface FirewallRule {
         }
 
         /**
-         * The stage of the FirewallRule definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the FirewallRule definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate {
             /**
@@ -174,7 +177,8 @@ public interface FirewallRule {
          */
         interface WithStartIpAddress {
             /**
-             * Specifies the startIpAddress property: The start IP address of the server firewall rule. Must be IPv4 format..
+             * Specifies the startIpAddress property: The start IP address of the server firewall rule. Must be IPv4
+             * format..
              * 
              * @param startIpAddress The start IP address of the server firewall rule. Must be IPv4 format.
              * @return the next definition stage.
@@ -187,7 +191,8 @@ public interface FirewallRule {
          */
         interface WithEndIpAddress {
             /**
-             * Specifies the endIpAddress property: The end IP address of the server firewall rule. Must be IPv4 format..
+             * Specifies the endIpAddress property: The end IP address of the server firewall rule. Must be IPv4
+             * format..
              * 
              * @param endIpAddress The end IP address of the server firewall rule. Must be IPv4 format.
              * @return the next definition stage.

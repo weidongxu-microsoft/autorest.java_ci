@@ -38,7 +38,8 @@ public final class ImmutableStorageWithVersioning {
     }
 
     /**
-     * Get the enabled property: This is an immutable property, when set to true it enables object level immutability at the container level.
+     * Get the enabled property: This is an immutable property, when set to true it enables object level immutability at
+     * the container level.
      * 
      * @return the enabled value.
      */
@@ -47,7 +48,8 @@ public final class ImmutableStorageWithVersioning {
     }
 
     /**
-     * Set the enabled property: This is an immutable property, when set to true it enables object level immutability at the container level.
+     * Set the enabled property: This is an immutable property, when set to true it enables object level immutability at
+     * the container level.
      * 
      * @param enabled the enabled value to set.
      * @return the ImmutableStorageWithVersioning object itself.
@@ -67,7 +69,8 @@ public final class ImmutableStorageWithVersioning {
     }
 
     /**
-     * Get the migrationState property: This property denotes the container level immutability to object level immutability migration state.
+     * Get the migrationState property: This property denotes the container level immutability to object level
+     * immutability migration state.
      * 
      * @return the migrationState value.
      */

@@ -68,7 +68,8 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Get the listenerCount property: The number of listeners for this hybrid connection. Note that min : 1 and max:25 are supported.
+     * Get the listenerCount property: The number of listeners for this hybrid connection. Note that min : 1 and max:25
+     * are supported.
      * 
      * @return the listenerCount value.
      */
@@ -77,7 +78,8 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Get the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid connection; otherwise, false.
+     * Get the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid
+     * connection; otherwise, false.
      * 
      * @return the requiresClientAuthorization value.
      */
@@ -86,7 +88,8 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Set the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid connection; otherwise, false.
+     * Set the requiresClientAuthorization property: Returns true if client authorization is needed for this hybrid
+     * connection; otherwise, false.
      * 
      * @param requiresClientAuthorization the requiresClientAuthorization value to set.
      * @return the HybridConnectionProperties object itself.
@@ -97,7 +100,9 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Get the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
+     * Get the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid
+     * connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their
+     * contact information. Also, user-defined configuration settings can be stored.
      * 
      * @return the userMetadata value.
      */
@@ -106,7 +111,9 @@ public final class HybridConnectionProperties {
     }
 
     /**
-     * Set the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
+     * Set the userMetadata property: The usermetadata is a placeholder to store user-defined string data for the hybrid
+     * connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their
+     * contact information. Also, user-defined configuration settings can be stored.
      * 
      * @param userMetadata the userMetadata value to set.
      * @return the HybridConnectionProperties object itself.

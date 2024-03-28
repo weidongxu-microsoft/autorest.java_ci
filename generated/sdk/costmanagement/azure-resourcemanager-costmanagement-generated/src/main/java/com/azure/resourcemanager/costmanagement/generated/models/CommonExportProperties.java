@@ -104,14 +104,16 @@ public class CommonExportProperties {
      */
     public void validate() {
         if (deliveryInfo() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property deliveryInfo in model CommonExportProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property deliveryInfo in model CommonExportProperties"));
         } else {
             deliveryInfo().validate();
         }
         if (definition() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property definition in model CommonExportProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property definition in model CommonExportProperties"));
         } else {
             definition().validate();
         }

@@ -74,7 +74,8 @@ public interface ScheduledQueryRules {
     /**
      * List the Log Search rules within a subscription group.
      * 
-     * @param filter The filter to apply on the operation. For more information please see https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
+     * @param filter The filter to apply on the operation. For more information please see
+     * https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -98,7 +99,8 @@ public interface ScheduledQueryRules {
      * List the Log Search rules within a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. For more information please see https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
+     * @param filter The filter to apply on the operation. For more information please see
+     * https://msdn.microsoft.com/en-us/library/azure/dn931934.aspx.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

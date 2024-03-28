@@ -104,7 +104,8 @@ public final class TopologyResource {
     }
 
     /**
-     * Get the associations property: Holds the associations the resource has with other resources in the resource group.
+     * Get the associations property: Holds the associations the resource has with other resources in the resource
+     * group.
      * 
      * @return the associations value.
      */
@@ -113,7 +114,8 @@ public final class TopologyResource {
     }
 
     /**
-     * Set the associations property: Holds the associations the resource has with other resources in the resource group.
+     * Set the associations property: Holds the associations the resource has with other resources in the resource
+     * group.
      * 
      * @param associations the associations value to set.
      * @return the TopologyResource object itself.

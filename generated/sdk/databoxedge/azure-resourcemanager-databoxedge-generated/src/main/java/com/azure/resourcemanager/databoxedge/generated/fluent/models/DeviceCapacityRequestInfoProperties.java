@@ -34,7 +34,8 @@ public final class DeviceCapacityRequestInfoProperties {
     }
 
     /**
-     * Get the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
+     * Get the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
+     * them on the appliance.
      * 
      * @return the vmPlacementQuery value.
      */
@@ -43,7 +44,8 @@ public final class DeviceCapacityRequestInfoProperties {
     }
 
     /**
-     * Set the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
+     * Set the vmPlacementQuery property: Array containing the sizes of the VMs for checking if its feasible to create
+     * them on the appliance.
      * 
      * @param vmPlacementQuery the vmPlacementQuery value to set.
      * @return the DeviceCapacityRequestInfoProperties object itself.
@@ -54,7 +56,8 @@ public final class DeviceCapacityRequestInfoProperties {
     }
 
     /**
-     * Get the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
+     * Get the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the
+     * appliance.
      * 
      * @return the vmPlacementResults value.
      */
@@ -63,7 +66,8 @@ public final class DeviceCapacityRequestInfoProperties {
     }
 
     /**
-     * Set the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
+     * Set the vmPlacementResults property: Array of the VMs of the sizes in VmSizes can be provisioned on the
+     * appliance.
      * 
      * @param vmPlacementResults the vmPlacementResults value to set.
      * @return the DeviceCapacityRequestInfoProperties object itself.
@@ -81,8 +85,9 @@ public final class DeviceCapacityRequestInfoProperties {
      */
     public void validate() {
         if (vmPlacementQuery() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property vmPlacementQuery in model DeviceCapacityRequestInfoProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property vmPlacementQuery in model DeviceCapacityRequestInfoProperties"));
         }
         if (vmPlacementResults() != null) {
             vmPlacementResults().forEach(e -> e.validate());

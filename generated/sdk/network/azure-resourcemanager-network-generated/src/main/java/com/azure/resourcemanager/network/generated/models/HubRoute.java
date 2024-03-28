@@ -51,7 +51,8 @@ public final class HubRoute {
     }
 
     /**
-     * Get the name property: The name of the Route that is unique within a RouteTable. This name can be used to access this route.
+     * Get the name property: The name of the Route that is unique within a RouteTable. This name can be used to access
+     * this route.
      * 
      * @return the name value.
      */
@@ -60,7 +61,8 @@ public final class HubRoute {
     }
 
     /**
-     * Set the name property: The name of the Route that is unique within a RouteTable. This name can be used to access this route.
+     * Set the name property: The name of the Route that is unique within a RouteTable. This name can be used to access
+     * this route.
      * 
      * @param name the name value to set.
      * @return the HubRoute object itself.
@@ -157,24 +159,24 @@ public final class HubRoute {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model HubRoute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model HubRoute"));
         }
         if (destinationType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property destinationType in model HubRoute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property destinationType in model HubRoute"));
         }
         if (destinations() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property destinations in model HubRoute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property destinations in model HubRoute"));
         }
         if (nextHopType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property nextHopType in model HubRoute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property nextHopType in model HubRoute"));
         }
         if (nextHop() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property nextHop in model HubRoute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property nextHop in model HubRoute"));
         }
     }
 

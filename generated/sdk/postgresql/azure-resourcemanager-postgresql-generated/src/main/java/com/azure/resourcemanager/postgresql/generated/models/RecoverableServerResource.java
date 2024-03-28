@@ -74,7 +74,8 @@ public interface RecoverableServerResource {
     String version();
 
     /**
-     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.RecoverableServerResourceInner object.
+     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.RecoverableServerResourceInner
+     * object.
      * 
      * @return the inner object.
      */

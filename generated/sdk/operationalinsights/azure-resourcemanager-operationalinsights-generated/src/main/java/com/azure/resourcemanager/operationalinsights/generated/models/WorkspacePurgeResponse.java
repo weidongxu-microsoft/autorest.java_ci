@@ -18,7 +18,8 @@ public interface WorkspacePurgeResponse {
     String operationId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeResponseInner object.
+     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.WorkspacePurgeResponseInner
+     * object.
      * 
      * @return the inner object.
      */

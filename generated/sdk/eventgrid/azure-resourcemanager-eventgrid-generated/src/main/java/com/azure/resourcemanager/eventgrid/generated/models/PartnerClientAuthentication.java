@@ -47,18 +47,6 @@ public class PartnerClientAuthentication {
     }
 
     /**
-     * Set the clientAuthenticationType property: Type of client authentication.
-     * 
-     * @param clientAuthenticationType the clientAuthenticationType value to set.
-     * @return the PartnerClientAuthentication object itself.
-     */
-    protected PartnerClientAuthentication
-        withClientAuthenticationType(PartnerClientAuthenticationType clientAuthenticationType) {
-        this.clientAuthenticationType = clientAuthenticationType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

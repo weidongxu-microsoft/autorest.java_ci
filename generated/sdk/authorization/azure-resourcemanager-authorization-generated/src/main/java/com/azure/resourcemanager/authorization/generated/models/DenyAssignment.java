@@ -61,7 +61,8 @@ public interface DenyAssignment {
     String scope();
 
     /**
-     * Gets the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default value is false.
+     * Gets the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
+     * value is false.
      * 
      * @return the doNotApplyToChildScopes value.
      */
@@ -82,7 +83,8 @@ public interface DenyAssignment {
     List<Principal> excludePrincipals();
 
     /**
-     * Gets the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
+     * Gets the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
+     * edited or deleted.
      * 
      * @return the isSystemProtected value.
      */

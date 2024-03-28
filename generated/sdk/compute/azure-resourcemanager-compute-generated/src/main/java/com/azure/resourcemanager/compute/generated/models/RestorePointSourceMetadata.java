@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes the properties of the Virtual Machine for which the restore point was created. The properties provided are a subset and the snapshot of the overall Virtual Machine properties captured at the time of the restore point creation.
+ * Describes the properties of the Virtual Machine for which the restore point was created. The properties provided are
+ * a subset and the snapshot of the overall Virtual Machine properties captured at the time of the restore point
+ * creation.
  */
 @Fluent
 public final class RestorePointSourceMetadata {
@@ -162,7 +164,8 @@ public final class RestorePointSourceMetadata {
     }
 
     /**
-     * Get the userData property: UserData associated with the source VM for which restore point is captured, which is a base-64 encoded value.
+     * Get the userData property: UserData associated with the source VM for which restore point is captured, which is a
+     * base-64 encoded value.
      * 
      * @return the userData value.
      */

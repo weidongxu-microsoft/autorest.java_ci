@@ -39,7 +39,8 @@ public final class Destination {
     }
 
     /**
-     * Get the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
+     * Get the resourceId property: The destination resource ID. This can be copied from the Properties entry of the
+     * destination resource in Azure.
      * 
      * @return the resourceId value.
      */
@@ -48,7 +49,8 @@ public final class Destination {
     }
 
     /**
-     * Set the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
+     * Set the resourceId property: The destination resource ID. This can be copied from the Properties entry of the
+     * destination resource in Azure.
      * 
      * @param resourceId the resourceId value to set.
      * @return the Destination object itself.
@@ -77,7 +79,8 @@ public final class Destination {
     }
 
     /**
-     * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+     * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
+     * Storage Account.
      * 
      * @return the eventHubName value.
      */
@@ -86,7 +89,8 @@ public final class Destination {
     }
 
     /**
-     * Set the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+     * Set the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
+     * Storage Account.
      * 
      * @param eventHubName the eventHubName value to set.
      * @return the Destination object itself.
@@ -106,8 +110,8 @@ public final class Destination {
      */
     public void validate() {
         if (resourceId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceId in model Destination"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property resourceId in model Destination"));
         }
         if (innerMetadata() != null) {
             innerMetadata().validate();

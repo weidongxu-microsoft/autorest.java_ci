@@ -34,7 +34,9 @@ public interface ManagementLockObject {
     String type();
 
     /**
-     * Gets the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it.
+     * Gets the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly.
+     * CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means
+     * authorized users can only read from a resource, but they can't modify or delete it.
      * 
      * @return the level value.
      */
@@ -103,16 +105,21 @@ public interface ManagementLockObject {
          */
         interface WithLevel {
             /**
-             * Specifies the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it..
+             * Specifies the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete,
+             * ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete.
+             * ReadOnly means authorized users can only read from a resource, but they can't modify or delete it..
              * 
-             * @param level The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it.
+             * @param level The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly.
+             * CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly
+             * means authorized users can only read from a resource, but they can't modify or delete it.
              * @return the next definition stage.
              */
             WithCreate withLevel(LockLevel level);
         }
 
         /**
-         * The stage of the ManagementLockObject definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ManagementLockObject definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithNotes, DefinitionStages.WithOwners {
             /**
@@ -194,9 +201,13 @@ public interface ManagementLockObject {
          */
         interface WithLevel {
             /**
-             * Specifies the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it..
+             * Specifies the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete,
+             * ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete.
+             * ReadOnly means authorized users can only read from a resource, but they can't modify or delete it..
              * 
-             * @param level The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it.
+             * @param level The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly.
+             * CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly
+             * means authorized users can only read from a resource, but they can't modify or delete it.
              * @return the next definition stage.
              */
             Update withLevel(LockLevel level);

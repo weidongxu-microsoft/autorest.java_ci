@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via Azure Portal.
+ * Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via Azure
+ * Portal.
  */
 public final class JobRetry extends ExpandableStringEnum<JobRetry> {
     /**

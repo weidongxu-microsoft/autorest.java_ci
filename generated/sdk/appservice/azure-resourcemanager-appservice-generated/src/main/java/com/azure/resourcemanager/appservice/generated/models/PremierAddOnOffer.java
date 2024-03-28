@@ -60,7 +60,8 @@ public interface PremierAddOnOffer {
     String vendor();
 
     /**
-     * Gets the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the promoCodeRequired value.
      */

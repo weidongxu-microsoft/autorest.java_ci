@@ -18,7 +18,8 @@ public interface GallerySharingProfiles {
      * @param galleryName The name of the Shared Image Gallery.
      * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery sharing profile update.
      */
@@ -32,7 +33,8 @@ public interface GallerySharingProfiles {
      * @param sharingUpdate Parameters supplied to the update gallery sharing profile.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery sharing profile update.
      */

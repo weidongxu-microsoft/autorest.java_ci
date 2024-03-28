@@ -25,7 +25,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource along with {@link Response}.
      */
@@ -40,7 +41,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource.
      */
@@ -55,7 +57,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of virtualHubRouteTableV2 Resource.
      */
@@ -73,7 +76,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of virtualHubRouteTableV2 Resource.
      */
@@ -90,7 +94,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource.
      */
@@ -107,7 +112,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param virtualHubRouteTableV2Parameters Parameters supplied to create or update VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return virtualHubRouteTableV2 Resource.
      */
@@ -122,7 +128,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -138,7 +145,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -153,7 +161,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param virtualHubName The name of the VirtualHub.
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -167,7 +176,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @param routeTableName The name of the VirtualHubRouteTableV2.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -181,7 +191,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
+     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results as paginated response
+     * with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<VirtualHubRouteTableV2Inner> list(String resourceGroupName, String virtualHubName);
@@ -195,7 +206,8 @@ public interface VirtualHubRouteTableV2SClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
+     * @return list of VirtualHubRouteTableV2s and a URL nextLink to get the next set of results as paginated response
+     * with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<VirtualHubRouteTableV2Inner> list(String resourceGroupName, String virtualHubName, Context context);

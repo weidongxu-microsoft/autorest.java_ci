@@ -90,23 +90,13 @@ public class ResourceCertificateDetails {
     }
 
     /**
-     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the
+     * polymorphic chain of types.
      * 
      * @return the authType value.
      */
     public String authType() {
         return this.authType;
-    }
-
-    /**
-     * Set the authType property: This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
-     * 
-     * @param authType the authType value to set.
-     * @return the ResourceCertificateDetails object itself.
-     */
-    protected ResourceCertificateDetails withAuthType(String authType) {
-        this.authType = authType;
-        return this;
     }
 
     /**

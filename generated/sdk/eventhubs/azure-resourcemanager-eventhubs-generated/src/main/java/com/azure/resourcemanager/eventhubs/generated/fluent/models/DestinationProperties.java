@@ -96,7 +96,9 @@ public final class DestinationProperties {
     }
 
     /**
-     * Get the archiveNameFormat property: Blob naming convention for archive, e.g. {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order.
+     * Get the archiveNameFormat property: Blob naming convention for archive, e.g.
+     * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
+     * (Namespace,EventHub .. etc) are mandatory irrespective of order.
      * 
      * @return the archiveNameFormat value.
      */
@@ -105,7 +107,9 @@ public final class DestinationProperties {
     }
 
     /**
-     * Set the archiveNameFormat property: Blob naming convention for archive, e.g. {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order.
+     * Set the archiveNameFormat property: Blob naming convention for archive, e.g.
+     * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
+     * (Namespace,EventHub .. etc) are mandatory irrespective of order.
      * 
      * @param archiveNameFormat the archiveNameFormat value to set.
      * @return the DestinationProperties object itself.

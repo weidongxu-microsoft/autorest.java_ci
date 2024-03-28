@@ -157,7 +157,8 @@ public final class DiagnosticMetricSet {
     }
 
     /**
-     * Get the values property: Collection of metric values for the selected period based on the {Microsoft.Web.Hosting.Administration.DiagnosticMetricSet.TimeGrain}.
+     * Get the values property: Collection of metric values for the selected period based on the
+     * {Microsoft.Web.Hosting.Administration.DiagnosticMetricSet.TimeGrain}.
      * 
      * @return the values value.
      */
@@ -166,7 +167,8 @@ public final class DiagnosticMetricSet {
     }
 
     /**
-     * Set the values property: Collection of metric values for the selected period based on the {Microsoft.Web.Hosting.Administration.DiagnosticMetricSet.TimeGrain}.
+     * Set the values property: Collection of metric values for the selected period based on the
+     * {Microsoft.Web.Hosting.Administration.DiagnosticMetricSet.TimeGrain}.
      * 
      * @param values the values value to set.
      * @return the DiagnosticMetricSet object itself.

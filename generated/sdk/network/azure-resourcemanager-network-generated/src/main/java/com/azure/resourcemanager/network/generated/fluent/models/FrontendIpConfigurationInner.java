@@ -63,7 +63,8 @@ public final class FrontendIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within the set of frontend IP configurations used by the load balancer. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within the set of frontend IP configurations used
+     * by the load balancer. This name can be used to access the resource.
      * 
      * @return the name value.
      */
@@ -72,7 +73,8 @@ public final class FrontendIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within the set of frontend IP configurations used by the load balancer. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within the set of frontend IP configurations used
+     * by the load balancer. This name can be used to access the resource.
      * 
      * @param name the name value to set.
      * @return the FrontendIpConfigurationInner object itself.
@@ -101,7 +103,8 @@ public final class FrontendIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Get the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
+     * Get the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
+     * from.
      * 
      * @return the zones value.
      */
@@ -110,7 +113,8 @@ public final class FrontendIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Set the zones property: A list of availability zones denoting the IP allocated for the resource needs to come from.
+     * Set the zones property: A list of availability zones denoting the IP allocated for the resource needs to come
+     * from.
      * 
      * @param zones the zones value to set.
      * @return the FrontendIpConfigurationInner object itself.
@@ -212,7 +216,8 @@ public final class FrontendIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Get the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
+     * Get the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken
+     * as IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -221,7 +226,8 @@ public final class FrontendIpConfigurationInner extends SubResource {
     }
 
     /**
-     * Set the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
+     * Set the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken
+     * as IPv4.
      * 
      * @param privateIpAddressVersion the privateIpAddressVersion value to set.
      * @return the FrontendIpConfigurationInner object itself.

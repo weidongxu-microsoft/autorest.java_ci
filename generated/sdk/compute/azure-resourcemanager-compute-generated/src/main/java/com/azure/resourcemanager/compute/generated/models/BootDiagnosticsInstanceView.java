@@ -37,7 +37,8 @@ public final class BootDiagnosticsInstanceView {
     }
 
     /**
-     * Get the consoleScreenshotBlobUri property: The console screenshot blob URI. **Note:** This will **not** be set if boot diagnostics is currently enabled with managed storage.
+     * Get the consoleScreenshotBlobUri property: The console screenshot blob URI. **Note:** This will **not** be set if
+     * boot diagnostics is currently enabled with managed storage.
      * 
      * @return the consoleScreenshotBlobUri value.
      */
@@ -46,7 +47,8 @@ public final class BootDiagnosticsInstanceView {
     }
 
     /**
-     * Get the serialConsoleLogBlobUri property: The serial console log blob Uri. **Note:** This will **not** be set if boot diagnostics is currently enabled with managed storage.
+     * Get the serialConsoleLogBlobUri property: The serial console log blob Uri. **Note:** This will **not** be set if
+     * boot diagnostics is currently enabled with managed storage.
      * 
      * @return the serialConsoleLogBlobUri value.
      */
@@ -55,7 +57,8 @@ public final class BootDiagnosticsInstanceView {
     }
 
     /**
-     * Get the status property: The boot diagnostics status information for the VM. **Note:** It will be set only if there are errors encountered in enabling boot diagnostics.
+     * Get the status property: The boot diagnostics status information for the VM. **Note:** It will be set only if
+     * there are errors encountered in enabling boot diagnostics.
      * 
      * @return the status value.
      */

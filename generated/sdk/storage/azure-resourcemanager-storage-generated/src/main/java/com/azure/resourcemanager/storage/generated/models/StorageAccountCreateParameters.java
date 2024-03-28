@@ -106,7 +106,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the location property: Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed.
+     * Get the location property: Required. Gets or sets the location of the resource. This will be one of the supported
+     * and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource
+     * cannot be changed once it is created, but if an identical geo region is specified on update, the request will
+     * succeed.
      * 
      * @return the location value.
      */
@@ -115,7 +118,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the location property: Required. Gets or sets the location of the resource. This will be one of the supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource cannot be changed once it is created, but if an identical geo region is specified on update, the request will succeed.
+     * Set the location property: Required. Gets or sets the location of the resource. This will be one of the supported
+     * and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.). The geo region of a resource
+     * cannot be changed once it is created, but if an identical geo region is specified on update, the request will
+     * succeed.
      * 
      * @param location the location value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -126,7 +132,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the extendedLocation property: Optional. Set the extended location of the resource. If not set, the storage account will be created in Azure main region. Otherwise it will be created in the specified extended location.
+     * Get the extendedLocation property: Optional. Set the extended location of the resource. If not set, the storage
+     * account will be created in Azure main region. Otherwise it will be created in the specified extended location.
      * 
      * @return the extendedLocation value.
      */
@@ -135,7 +142,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the extendedLocation property: Optional. Set the extended location of the resource. If not set, the storage account will be created in Azure main region. Otherwise it will be created in the specified extended location.
+     * Set the extendedLocation property: Optional. Set the extended location of the resource. If not set, the storage
+     * account will be created in Azure main region. Otherwise it will be created in the specified extended location.
      * 
      * @param extendedLocation the extendedLocation value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -146,7 +154,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters.
+     * Get the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used
+     * for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a
+     * resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no
+     * greater than 256 characters.
      * 
      * @return the tags value.
      */
@@ -155,7 +166,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no greater than 256 characters.
+     * Set the tags property: Gets or sets a list of key value pairs that describe the resource. These tags can be used
+     * for viewing and grouping this resource (across resource groups). A maximum of 15 tags can be provided for a
+     * resource. Each tag must have a key with a length no greater than 128 characters and a value with a length no
+     * greater than 256 characters.
      * 
      * @param tags the tags value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -195,7 +209,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet.
+     * Get the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
      * 
      * @return the allowedCopyScope value.
      */
@@ -204,7 +219,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with Private Links to the same VNet.
+     * Set the allowedCopyScope property: Restrict copy to and from Storage Accounts within an AAD tenant or with
+     * Private Links to the same VNet.
      * 
      * @param allowedCopyScope the allowedCopyScope value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -218,7 +234,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Get the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to
+     * evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled',
+     * 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -227,7 +245,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+     * Set the publicNetworkAccess property: Allow, disallow, or let Network Security Perimeter configuration to
+     * evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled',
+     * 'Disabled' or 'SecuredByPerimeter'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -287,7 +307,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the customDomain property: User domain assigned to the storage account. Name is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property.
+     * Get the customDomain property: User domain assigned to the storage account. Name is the CNAME source. Only one
+     * custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty
+     * string for the custom domain name property.
      * 
      * @return the customDomain value.
      */
@@ -296,7 +318,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the customDomain property: User domain assigned to the storage account. Name is the CNAME source. Only one custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty string for the custom domain name property.
+     * Set the customDomain property: User domain assigned to the storage account. Name is the CNAME source. Only one
+     * custom domain is supported per storage account at this time. To clear the existing custom domain, use an empty
+     * string for the custom domain name property.
      * 
      * @param customDomain the customDomain value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -356,7 +380,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type.
+     * Get the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for
+     * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it
+     * cannot be changed for the premium block blobs storage account type.
      * 
      * @return the accessTier value.
      */
@@ -365,7 +391,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it cannot be changed for the premium block blobs storage account type.
+     * Set the accessTier property: Required for storage accounts where kind = BlobStorage. The access tier is used for
+     * billing. The 'Premium' access tier is the default value for premium block blobs storage account type and it
+     * cannot be changed for the premium block blobs storage account type.
      * 
      * @param accessTier the accessTier value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -379,7 +407,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for Azure Files.
+     * Get the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for
+     * Azure Files.
      * 
      * @return the azureFilesIdentityBasedAuthentication value.
      */
@@ -388,7 +417,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for Azure Files.
+     * Set the azureFilesIdentityBasedAuthentication property: Provides the identity based authentication settings for
+     * Azure Files.
      * 
      * @param azureFilesIdentityBasedAuthentication the azureFilesIdentityBasedAuthentication value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -403,7 +433,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true. The default value is true since API version 2019-04-01.
+     * Get the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true. The
+     * default value is true since API version 2019-04-01.
      * 
      * @return the enableHttpsTrafficOnly value.
      */
@@ -412,7 +443,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true. The default value is true since API version 2019-04-01.
+     * Set the enableHttpsTrafficOnly property: Allows https traffic only to storage service if sets to true. The
+     * default value is true since API version 2019-04-01.
      * 
      * @param enableHttpsTrafficOnly the enableHttpsTrafficOnly value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -495,7 +527,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled.
+     * Get the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it
+     * is enabled.
      * 
      * @return the largeFileSharesState value.
      */
@@ -504,7 +537,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it is enabled.
+     * Set the largeFileSharesState property: Allow large file shares if sets to Enabled. It cannot be disabled once it
+     * is enabled.
      * 
      * @param largeFileSharesState the largeFileSharesState value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -518,7 +552,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the routingPreference property: Maintains information about the network routing choice opted by the user for data transfer.
+     * Get the routingPreference property: Maintains information about the network routing choice opted by the user for
+     * data transfer.
      * 
      * @return the routingPreference value.
      */
@@ -527,7 +562,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the routingPreference property: Maintains information about the network routing choice opted by the user for data transfer.
+     * Set the routingPreference property: Maintains information about the network routing choice opted by the user for
+     * data transfer.
      * 
      * @param routingPreference the routingPreference value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -541,7 +577,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property.
+     * Get the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @return the allowBlobPublicAccess value.
      */
@@ -550,7 +587,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage account. The default interpretation is false for this property.
+     * Set the allowBlobPublicAccess property: Allow or disallow public access to all blobs or containers in the storage
+     * account. The default interpretation is false for this property.
      * 
      * @param allowBlobPublicAccess the allowBlobPublicAccess value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -564,7 +602,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property.
+     * Get the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The
+     * default interpretation is TLS 1.0 for this property.
      * 
      * @return the minimumTlsVersion value.
      */
@@ -573,7 +612,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The default interpretation is TLS 1.0 for this property.
+     * Set the minimumTlsVersion property: Set the minimum TLS version to be permitted on requests to storage. The
+     * default interpretation is TLS 1.0 for this property.
      * 
      * @param minimumTlsVersion the minimumTlsVersion value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -587,7 +627,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
+     * Get the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @return the allowSharedKeyAccess value.
      */
@@ -596,7 +638,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized with the account access key via Shared Key. If false, then all requests, including shared access signatures, must be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
+     * Set the allowSharedKeyAccess property: Indicates whether the storage account permits requests to be authorized
+     * with the account access key via Shared Key. If false, then all requests, including shared access signatures, must
+     * be authorized with Azure Active Directory (Azure AD). The default value is null, which is equivalent to true.
      * 
      * @param allowSharedKeyAccess the allowSharedKeyAccess value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -633,7 +677,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default.
+     * Get the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this
+     * property to true for new or existing accounts only if object replication policies will involve storage accounts
+     * in different AAD tenants. The default interpretation is false for new accounts to follow best security practices
+     * by default.
      * 
      * @return the allowCrossTenantReplication value.
      */
@@ -642,7 +689,10 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this property to true for new or existing accounts only if object replication policies will involve storage accounts in different AAD tenants. The default interpretation is false for new accounts to follow best security practices by default.
+     * Set the allowCrossTenantReplication property: Allow or disallow cross AAD tenant object replication. Set this
+     * property to true for new or existing accounts only if object replication policies will involve storage accounts
+     * in different AAD tenants. The default interpretation is false for new accounts to follow best security practices
+     * by default.
      * 
      * @param allowCrossTenantReplication the allowCrossTenantReplication value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -656,7 +706,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property.
+     * Get the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication
+     * is OAuth or not. The default interpretation is false for this property.
      * 
      * @return the defaultToOAuthAuthentication value.
      */
@@ -665,7 +716,8 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication is OAuth or not. The default interpretation is false for this property.
+     * Set the defaultToOAuthAuthentication property: A boolean flag which indicates whether the default authentication
+     * is OAuth or not. The default interpretation is false for this property.
      * 
      * @param defaultToOAuthAuthentication the defaultToOAuthAuthentication value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -679,7 +731,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the new containers in the account by default.
+     * Get the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the
+     * account creation time. When set to true, it enables object level immutability for all the new containers in the
+     * account by default.
      * 
      * @return the immutableStorageWithVersioning value.
      */
@@ -688,7 +742,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the account creation time. When set to true, it enables object level immutability for all the new containers in the account by default.
+     * Set the immutableStorageWithVersioning property: The property is immutable and can only be set to true at the
+     * account creation time. When set to true, it enables object level immutability for all the new containers in the
+     * account by default.
      * 
      * @param immutableStorageWithVersioning the immutableStorageWithVersioning value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -703,7 +759,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Get the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
+     * Get the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @return the dnsEndpointType value.
      */
@@ -712,7 +770,9 @@ public final class StorageAccountCreateParameters {
     }
 
     /**
-     * Set the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint URL will have an alphanumeric DNS Zone identifier.
+     * Set the dnsEndpointType property: Allows you to specify the type of endpoint. Set this to AzureDNSZone to create
+     * a large number of accounts in a single subscription, which creates accounts in an Azure DNS Zone and the endpoint
+     * URL will have an alphanumeric DNS Zone identifier.
      * 
      * @param dnsEndpointType the dnsEndpointType value to set.
      * @return the StorageAccountCreateParameters object itself.
@@ -732,18 +792,21 @@ public final class StorageAccountCreateParameters {
      */
     public void validate() {
         if (sku() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sku in model StorageAccountCreateParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sku in model StorageAccountCreateParameters"));
         } else {
             sku().validate();
         }
         if (kind() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property kind in model StorageAccountCreateParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property kind in model StorageAccountCreateParameters"));
         }
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property location in model StorageAccountCreateParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property location in model StorageAccountCreateParameters"));
         }
         if (extendedLocation() != null) {
             extendedLocation().validate();

@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The IIS handler mappings used to define which handler processes HTTP requests with certain extension. 
+ * The IIS handler mappings used to define which handler processes HTTP requests with certain extension.
  * For example, it is used to configure php-cgi.exe process to handle all HTTP requests with *.php extension.
  */
 @Fluent

@@ -32,7 +32,8 @@ public interface CertificateWithNonceDescription {
     String type();
 
     /**
-     * Gets the properties property: The description of an X509 CA Certificate including the challenge nonce issued for the Proof-Of-Possession flow.
+     * Gets the properties property: The description of an X509 CA Certificate including the challenge nonce issued for
+     * the Proof-Of-Possession flow.
      * 
      * @return the properties value.
      */
@@ -46,7 +47,8 @@ public interface CertificateWithNonceDescription {
     String etag();
 
     /**
-     * Gets the inner com.azure.resourcemanager.iothub.generated.fluent.models.CertificateWithNonceDescriptionInner object.
+     * Gets the inner com.azure.resourcemanager.iothub.generated.fluent.models.CertificateWithNonceDescriptionInner
+     * object.
      * 
      * @return the inner object.
      */

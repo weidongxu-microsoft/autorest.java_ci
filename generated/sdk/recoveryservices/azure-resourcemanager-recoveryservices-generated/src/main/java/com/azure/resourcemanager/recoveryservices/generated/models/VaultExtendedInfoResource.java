@@ -67,7 +67,8 @@ public interface VaultExtendedInfoResource {
     String algorithm();
 
     /**
-     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner object.
+     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultExtendedInfoResourceInner
+     * object.
      * 
      * @return the inner object.
      */

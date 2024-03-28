@@ -39,7 +39,8 @@ public final class DomainPurchaseConsent {
     }
 
     /**
-     * Get the agreementKeys property: List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under &lt;code&gt;TopLevelDomain&lt;/code&gt; resource.
+     * Get the agreementKeys property: List of applicable legal agreement keys. This list can be retrieved using
+     * ListLegalAgreements API under &lt;code&gt;TopLevelDomain&lt;/code&gt; resource.
      * 
      * @return the agreementKeys value.
      */
@@ -48,7 +49,8 @@ public final class DomainPurchaseConsent {
     }
 
     /**
-     * Set the agreementKeys property: List of applicable legal agreement keys. This list can be retrieved using ListLegalAgreements API under &lt;code&gt;TopLevelDomain&lt;/code&gt; resource.
+     * Set the agreementKeys property: List of applicable legal agreement keys. This list can be retrieved using
+     * ListLegalAgreements API under &lt;code&gt;TopLevelDomain&lt;/code&gt; resource.
      * 
      * @param agreementKeys the agreementKeys value to set.
      * @return the DomainPurchaseConsent object itself.

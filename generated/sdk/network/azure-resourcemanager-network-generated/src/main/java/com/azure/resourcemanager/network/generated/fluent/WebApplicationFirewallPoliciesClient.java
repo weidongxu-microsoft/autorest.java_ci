@@ -24,7 +24,8 @@ public interface WebApplicationFirewallPoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with {@link PagedIterable}.
+     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<WebApplicationFirewallPolicyInner> listByResourceGroup(String resourceGroupName);
@@ -37,7 +38,8 @@ public interface WebApplicationFirewallPoliciesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with {@link PagedIterable}.
+     * @return result of the request to list WebApplicationFirewallPolicies as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<WebApplicationFirewallPolicyInner> listByResourceGroup(String resourceGroupName, Context context);

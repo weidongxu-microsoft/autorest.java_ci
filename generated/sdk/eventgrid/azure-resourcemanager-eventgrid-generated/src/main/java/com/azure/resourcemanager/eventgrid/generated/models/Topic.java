@@ -108,7 +108,8 @@ public interface Topic {
     String endpoint();
 
     /**
-     * Gets the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the publisher and can be used by the 
+     * Gets the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the
+     * publisher and can be used by the
      * subscriber to view different types of events that are published.
      * 
      * @return the eventTypeInfo value.
@@ -116,21 +117,25 @@ public interface Topic {
     EventTypeInfo eventTypeInfo();
 
     /**
-     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this topic.
+     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * topic.
      * 
      * @return the minimumTlsVersionAllowed value.
      */
     TlsVersion minimumTlsVersionAllowed();
 
     /**
-     * Gets the inputSchema property: This determines the format that Event Grid should expect for incoming events published to the topic.
+     * Gets the inputSchema property: This determines the format that Event Grid should expect for incoming events
+     * published to the topic.
      * 
      * @return the inputSchema value.
      */
     InputSchema inputSchema();
 
     /**
-     * Gets the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema.
+     * Gets the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping
+     * can be specified to map various properties of a source schema to various required properties of the
+     * EventGridEvent schema.
      * 
      * @return the inputSchemaMapping value.
      */
@@ -144,22 +149,27 @@ public interface Topic {
     String metricResourceId();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
+     * Note: These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
     List<InboundIpRule> inboundIpRules();
 
     /**
-     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic.
+     * Gets the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the topic.
      * 
      * @return the disableLocalAuth value.
      */
@@ -252,7 +262,8 @@ public interface Topic {
         }
 
         /**
-         * The stage of the Topic definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Topic definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithKind, DefinitionStages.WithExtendedLocation, DefinitionStages.WithEventTypeInfo,
@@ -346,10 +357,12 @@ public interface Topic {
          */
         interface WithEventTypeInfo {
             /**
-             * Specifies the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the publisher and can be used by the 
+             * Specifies the eventTypeInfo property: Event Type Information for the user topic. This information is
+             * provided by the publisher and can be used by the
              * subscriber to view different types of events that are published..
              * 
-             * @param eventTypeInfo Event Type Information for the user topic. This information is provided by the publisher and can be used by the 
+             * @param eventTypeInfo Event Type Information for the user topic. This information is provided by the
+             * publisher and can be used by the
              * subscriber to view different types of events that are published.
              * @return the next definition stage.
              */
@@ -361,7 +374,8 @@ public interface Topic {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this topic.
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this topic.
              * 
              * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this topic.
              * @return the next definition stage.
@@ -374,9 +388,11 @@ public interface Topic {
          */
         interface WithInputSchema {
             /**
-             * Specifies the inputSchema property: This determines the format that Event Grid should expect for incoming events published to the topic..
+             * Specifies the inputSchema property: This determines the format that Event Grid should expect for incoming
+             * events published to the topic..
              * 
-             * @param inputSchema This determines the format that Event Grid should expect for incoming events published to the topic.
+             * @param inputSchema This determines the format that Event Grid should expect for incoming events published
+             * to the topic.
              * @return the next definition stage.
              */
             WithCreate withInputSchema(InputSchema inputSchema);
@@ -387,9 +403,13 @@ public interface Topic {
          */
         interface WithInputSchemaMapping {
             /**
-             * Specifies the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema..
+             * Specifies the inputSchemaMapping property: This enables publishing using custom event schemas. An
+             * InputSchemaMapping can be specified to map various properties of a source schema to various required
+             * properties of the EventGridEvent schema..
              * 
-             * @param inputSchemaMapping This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema.
+             * @param inputSchemaMapping This enables publishing using custom event schemas. An InputSchemaMapping can
+             * be specified to map various properties of a source schema to various required properties of the
+             * EventGridEvent schema.
              * @return the next definition stage.
              */
             WithCreate withInputSchemaMapping(InputSchemaMapping inputSchemaMapping);
@@ -400,11 +420,15 @@ public interface Topic {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -415,9 +439,11 @@ public interface Topic {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
+             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+             * These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -428,9 +454,13 @@ public interface Topic {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic..
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
+             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
+             * allowed to publish to the topic..
              * 
-             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic.
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
+             * When the property is set to true, only AAD token will be used to authenticate if user is allowed to
+             * publish to the topic.
              * @return the next definition stage.
              */
             WithCreate withDisableLocalAuth(Boolean disableLocalAuth);
@@ -528,11 +558,17 @@ public interface Topic {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicUpdateParameterProperties.InboundIpRules" /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicUpdateParameterProperties.InboundIpRules"
+             * /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicUpdateParameterProperties.InboundIpRules" /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicUpdateParameterProperties.InboundIpRules"
+             * /&gt;.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -543,9 +579,11 @@ public interface Topic {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
+             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+             * These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -556,7 +594,8 @@ public interface Topic {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this domain.
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this domain.
              * 
              * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this domain.
              * @return the next definition stage.
@@ -569,9 +608,13 @@ public interface Topic {
          */
         interface WithDisableLocalAuth {
             /**
-             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic..
+             * Specifies the disableLocalAuth property: This boolean is used to enable or disable local auth. Default
+             * value is false. When the property is set to true, only AAD token will be used to authenticate if user is
+             * allowed to publish to the topic..
              * 
-             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic.
+             * @param disableLocalAuth This boolean is used to enable or disable local auth. Default value is false.
+             * When the property is set to true, only AAD token will be used to authenticate if user is allowed to
+             * publish to the topic.
              * @return the next definition stage.
              */
             Update withDisableLocalAuth(Boolean disableLocalAuth);

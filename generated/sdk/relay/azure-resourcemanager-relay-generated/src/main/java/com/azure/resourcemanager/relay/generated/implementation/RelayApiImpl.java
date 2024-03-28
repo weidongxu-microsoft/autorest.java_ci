@@ -45,12 +45,14 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = RelayApiBuilder.class)
 public final class RelayApiImpl implements RelayApi {
     /**
-     * Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part
+     * of the URI for every service call.
      */
     private final String subscriptionId;
 
     /**
-     * Gets Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Gets Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      * 
      * @return the subscriptionId value.
      */
@@ -219,7 +221,8 @@ public final class RelayApiImpl implements RelayApi {
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * @param subscriptionId Subscription credentials which uniquely identify the Microsoft Azure subscription. The
+     * subscription ID forms part of the URI for every service call.
      * @param endpoint server parameter.
      */
     RelayApiImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter, Duration defaultPollInterval,

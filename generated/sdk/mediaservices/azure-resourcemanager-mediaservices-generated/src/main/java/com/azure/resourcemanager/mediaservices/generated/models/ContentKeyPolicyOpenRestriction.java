@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -19,11 +21,27 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyOpenRestriction")
 @Immutable
 public final class ContentKeyPolicyOpenRestriction extends ContentKeyPolicyRestriction {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyOpenRestriction";
+
     /**
      * Creates an instance of ContentKeyPolicyOpenRestriction class.
      */
     public ContentKeyPolicyOpenRestriction() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyOpenRestriction");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

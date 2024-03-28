@@ -64,7 +64,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteCircuitPeerings to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteCircuitPeerings to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -347,7 +348,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified peering for the express route circuit along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified peering for the express route circuit along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitPeeringInner>> getWithResponseAsync(String resourceGroupName,
@@ -388,7 +390,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified peering for the express route circuit along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified peering for the express route circuit along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitPeeringInner>> getWithResponseAsync(String resourceGroupName,
@@ -480,7 +483,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return peering in an ExpressRouteCircuit resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return peering in an ExpressRouteCircuit resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -528,7 +532,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return peering in an ExpressRouteCircuit resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return peering in an ExpressRouteCircuit resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -737,7 +742,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified express route circuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all peerings in a specified express route circuit along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitPeeringInner>> listSinglePageAsync(String resourceGroupName,
@@ -776,7 +782,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified express route circuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all peerings in a specified express route circuit along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitPeeringInner>> listSinglePageAsync(String resourceGroupName,
@@ -881,7 +888,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCircuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCircuit
+     * along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitPeeringInner>> listNextSinglePageAsync(String nextLink) {
@@ -909,7 +917,8 @@ public final class ExpressRouteCircuitPeeringsClientImpl implements ExpressRoute
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCircuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCircuit
+     * along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitPeeringInner>> listNextSinglePageAsync(String nextLink,

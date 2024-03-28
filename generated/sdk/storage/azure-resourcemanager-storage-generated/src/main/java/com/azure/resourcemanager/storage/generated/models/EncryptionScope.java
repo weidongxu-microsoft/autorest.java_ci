@@ -34,14 +34,16 @@ public interface EncryptionScope {
     String type();
 
     /**
-     * Gets the source property: The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault.
+     * Gets the source property: The provider for the encryption scope. Possible values (case-insensitive):
+     * Microsoft.Storage, Microsoft.KeyVault.
      * 
      * @return the source value.
      */
     EncryptionScopeSource source();
 
     /**
-     * Gets the state property: The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled.
+     * Gets the state property: The state of the encryption scope. Possible values (case-insensitive): Enabled,
+     * Disabled.
      * 
      * @return the state value.
      */
@@ -62,14 +64,16 @@ public interface EncryptionScope {
     OffsetDateTime lastModifiedTime();
 
     /**
-     * Gets the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
+     * Gets the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field
+     * if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
      * 
      * @return the keyVaultProperties value.
      */
     EncryptionScopeKeyVaultProperties keyVaultProperties();
 
     /**
-     * Gets the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
+     * Gets the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a
+     * secondary layer of encryption with platform managed keys for data at rest.
      * 
      * @return the requireInfrastructureEncryption value.
      */
@@ -113,15 +117,18 @@ public interface EncryptionScope {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+             * insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account
+             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the EncryptionScope definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the EncryptionScope definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithSource, DefinitionStages.WithState,
             DefinitionStages.WithKeyVaultProperties, DefinitionStages.WithRequireInfrastructureEncryption {
@@ -146,9 +153,11 @@ public interface EncryptionScope {
          */
         interface WithSource {
             /**
-             * Specifies the source property: The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault..
+             * Specifies the source property: The provider for the encryption scope. Possible values (case-insensitive):
+             * Microsoft.Storage, Microsoft.KeyVault..
              * 
-             * @param source The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault.
+             * @param source The provider for the encryption scope. Possible values (case-insensitive):
+             * Microsoft.Storage, Microsoft.KeyVault.
              * @return the next definition stage.
              */
             WithCreate withSource(EncryptionScopeSource source);
@@ -159,9 +168,10 @@ public interface EncryptionScope {
          */
         interface WithState {
             /**
-             * Specifies the state property: The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled..
+             * Specifies the state property: The state of the encryption scope. Possible values (case-insensitive):
+             * Enabled, Disabled..
              * 
-             * @param state The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled.
+             * @param state The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
              * @return the next definition stage.
              */
             WithCreate withState(EncryptionScopeState state);
@@ -172,9 +182,11 @@ public interface EncryptionScope {
          */
         interface WithKeyVaultProperties {
             /**
-             * Specifies the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'..
+             * Specifies the keyVaultProperties property: The key vault properties for the encryption scope. This is a
+             * required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'..
              * 
-             * @param keyVaultProperties The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
+             * @param keyVaultProperties The key vault properties for the encryption scope. This is a required field if
+             * encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
              * @return the next definition stage.
              */
             WithCreate withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties);
@@ -185,9 +197,11 @@ public interface EncryptionScope {
          */
         interface WithRequireInfrastructureEncryption {
             /**
-             * Specifies the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest..
+             * Specifies the requireInfrastructureEncryption property: A boolean indicating whether or not the service
+             * applies a secondary layer of encryption with platform managed keys for data at rest..
              * 
-             * @param requireInfrastructureEncryption A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
+             * @param requireInfrastructureEncryption A boolean indicating whether or not the service applies a
+             * secondary layer of encryption with platform managed keys for data at rest.
              * @return the next definition stage.
              */
             WithCreate withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);
@@ -231,9 +245,11 @@ public interface EncryptionScope {
          */
         interface WithSource {
             /**
-             * Specifies the source property: The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault..
+             * Specifies the source property: The provider for the encryption scope. Possible values (case-insensitive):
+             * Microsoft.Storage, Microsoft.KeyVault..
              * 
-             * @param source The provider for the encryption scope. Possible values (case-insensitive):  Microsoft.Storage, Microsoft.KeyVault.
+             * @param source The provider for the encryption scope. Possible values (case-insensitive):
+             * Microsoft.Storage, Microsoft.KeyVault.
              * @return the next definition stage.
              */
             Update withSource(EncryptionScopeSource source);
@@ -244,9 +260,10 @@ public interface EncryptionScope {
          */
         interface WithState {
             /**
-             * Specifies the state property: The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled..
+             * Specifies the state property: The state of the encryption scope. Possible values (case-insensitive):
+             * Enabled, Disabled..
              * 
-             * @param state The state of the encryption scope. Possible values (case-insensitive):  Enabled, Disabled.
+             * @param state The state of the encryption scope. Possible values (case-insensitive): Enabled, Disabled.
              * @return the next definition stage.
              */
             Update withState(EncryptionScopeState state);
@@ -257,9 +274,11 @@ public interface EncryptionScope {
          */
         interface WithKeyVaultProperties {
             /**
-             * Specifies the keyVaultProperties property: The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'..
+             * Specifies the keyVaultProperties property: The key vault properties for the encryption scope. This is a
+             * required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'..
              * 
-             * @param keyVaultProperties The key vault properties for the encryption scope. This is a required field if encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
+             * @param keyVaultProperties The key vault properties for the encryption scope. This is a required field if
+             * encryption scope 'source' attribute is set to 'Microsoft.KeyVault'.
              * @return the next definition stage.
              */
             Update withKeyVaultProperties(EncryptionScopeKeyVaultProperties keyVaultProperties);
@@ -270,9 +289,11 @@ public interface EncryptionScope {
          */
         interface WithRequireInfrastructureEncryption {
             /**
-             * Specifies the requireInfrastructureEncryption property: A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest..
+             * Specifies the requireInfrastructureEncryption property: A boolean indicating whether or not the service
+             * applies a secondary layer of encryption with platform managed keys for data at rest..
              * 
-             * @param requireInfrastructureEncryption A boolean indicating whether or not the service applies a secondary layer of encryption with platform managed keys for data at rest.
+             * @param requireInfrastructureEncryption A boolean indicating whether or not the service applies a
+             * secondary layer of encryption with platform managed keys for data at rest.
              * @return the next definition stage.
              */
             Update withRequireInfrastructureEncryption(Boolean requireInfrastructureEncryption);

@@ -49,7 +49,8 @@ public final class VngClientConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -58,7 +59,8 @@ public final class VngClientConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the VngClientConnectionConfiguration object itself.
@@ -87,7 +89,8 @@ public final class VngClientConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
+     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space
+     * for P2S VpnClient.
      * 
      * @return the vpnClientAddressPool value.
      */
@@ -96,7 +99,8 @@ public final class VngClientConnectionConfiguration extends SubResource {
     }
 
     /**
-     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
+     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space
+     * for P2S VpnClient.
      * 
      * @param vpnClientAddressPool the vpnClientAddressPool value to set.
      * @return the VngClientConnectionConfiguration object itself.

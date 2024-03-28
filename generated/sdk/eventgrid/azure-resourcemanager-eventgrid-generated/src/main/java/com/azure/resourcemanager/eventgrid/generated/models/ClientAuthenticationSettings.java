@@ -26,7 +26,8 @@ public final class ClientAuthenticationSettings {
     }
 
     /**
-     * Get the alternativeAuthenticationNameSources property: Alternative authentication name sources related to client authentication settings for namespace resource.
+     * Get the alternativeAuthenticationNameSources property: Alternative authentication name sources related to client
+     * authentication settings for namespace resource.
      * 
      * @return the alternativeAuthenticationNameSources value.
      */
@@ -35,7 +36,8 @@ public final class ClientAuthenticationSettings {
     }
 
     /**
-     * Set the alternativeAuthenticationNameSources property: Alternative authentication name sources related to client authentication settings for namespace resource.
+     * Set the alternativeAuthenticationNameSources property: Alternative authentication name sources related to client
+     * authentication settings for namespace resource.
      * 
      * @param alternativeAuthenticationNameSources the alternativeAuthenticationNameSources value to set.
      * @return the ClientAuthenticationSettings object itself.

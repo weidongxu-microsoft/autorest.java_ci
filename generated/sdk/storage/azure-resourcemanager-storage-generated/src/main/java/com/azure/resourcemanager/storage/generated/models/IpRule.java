@@ -78,8 +78,8 @@ public final class IpRule {
      */
     public void validate() {
         if (ipAddressOrRange() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ipAddressOrRange in model IpRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ipAddressOrRange in model IpRule"));
         }
     }
 

@@ -64,7 +64,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
     }
 
     /**
-     * The interface defining all the services for ApplicationInsightsManagementClientWorkbooks to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ApplicationInsightsManagementClientWorkbooks to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ApplicationInsightsM")
@@ -126,11 +127,13 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
+     * false, only return summary content for workbooks.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all Workbooks defined within a specified resource group and category along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkbookInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -172,12 +175,14 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all Workbooks defined within a specified resource group and category along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkbookInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -218,11 +223,13 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
+     * false, only return summary content for workbooks.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link PagedFlux}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category,
@@ -239,7 +246,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link PagedFlux}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category) {
@@ -255,12 +263,14 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link PagedFlux}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<WorkbookInner> listByResourceGroupAsync(String resourceGroupName, CategoryType category,
@@ -277,7 +287,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link PagedIterable}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category) {
@@ -292,12 +303,14 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param category Category of workbook to return.
      * @param tags Tags presents on each workbook returned.
-     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If false, only return summary content for workbooks.
+     * @param canFetchContent Flag indicating whether or not to return the full content for each applicable workbook. If
+     * false, only return summary content for workbooks.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Workbooks defined within a specified resource group and category as paginated response with {@link PagedIterable}.
+     * @return all Workbooks defined within a specified resource group and category as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<WorkbookInner> listByResourceGroup(String resourceGroupName, CategoryType category,
@@ -314,7 +327,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single workbook by its resourceName along with {@link Response} on successful completion of {@link Mono}.
+     * @return a single workbook by its resourceName along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkbookInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -351,7 +365,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a single workbook by its resourceName along with {@link Response} on successful completion of {@link Mono}.
+     * @return a single workbook by its resourceName along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkbookInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -551,7 +566,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights workbook definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return an Application Insights workbook definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkbookInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String resourceName,
@@ -595,7 +611,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights workbook definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return an Application Insights workbook definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkbookInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String resourceName,
@@ -690,7 +707,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights workbook definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return an Application Insights workbook definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkbookInner>> updateWithResponseAsync(String resourceGroupName, String resourceName,
@@ -734,7 +752,8 @@ public final class WorkbooksClientImpl implements WorkbooksClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an Application Insights workbook definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return an Application Insights workbook definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WorkbookInner>> updateWithResponseAsync(String resourceGroupName, String resourceName,

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -19,6 +20,13 @@ import java.util.List;
 @Fluent
 public final class PngImage extends Image {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.PngImage";
+
+    /*
      * A collection of output PNG image layers to be produced by the encoder.
      */
     @JsonProperty(value = "layers")
@@ -28,7 +36,16 @@ public final class PngImage extends Image {
      * Creates an instance of PngImage class.
      */
     public PngImage() {
-        withOdataType("#Microsoft.Media.PngImage");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

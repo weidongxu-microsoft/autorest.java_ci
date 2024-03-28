@@ -117,7 +117,8 @@ public final class LoadBalancerPropertiesFormat {
     }
 
     /**
-     * Get the loadBalancingRules property: Object collection representing the load balancing rules Gets the provisioning.
+     * Get the loadBalancingRules property: Object collection representing the load balancing rules Gets the
+     * provisioning.
      * 
      * @return the loadBalancingRules value.
      */
@@ -126,7 +127,8 @@ public final class LoadBalancerPropertiesFormat {
     }
 
     /**
-     * Set the loadBalancingRules property: Object collection representing the load balancing rules Gets the provisioning.
+     * Set the loadBalancingRules property: Object collection representing the load balancing rules Gets the
+     * provisioning.
      * 
      * @param loadBalancingRules the loadBalancingRules value to set.
      * @return the LoadBalancerPropertiesFormat object itself.
@@ -157,7 +159,10 @@ public final class LoadBalancerPropertiesFormat {
     }
 
     /**
-     * Get the inboundNatRules property: Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT rules on your load balancer is mutually exclusive with defining an inbound NAT pool. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot reference an Inbound NAT pool. They have to reference individual inbound NAT rules.
+     * Get the inboundNatRules property: Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT
+     * rules on your load balancer is mutually exclusive with defining an inbound NAT pool. Inbound NAT pools are
+     * referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot
+     * reference an Inbound NAT pool. They have to reference individual inbound NAT rules.
      * 
      * @return the inboundNatRules value.
      */
@@ -166,7 +171,10 @@ public final class LoadBalancerPropertiesFormat {
     }
 
     /**
-     * Set the inboundNatRules property: Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT rules on your load balancer is mutually exclusive with defining an inbound NAT pool. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot reference an Inbound NAT pool. They have to reference individual inbound NAT rules.
+     * Set the inboundNatRules property: Collection of inbound NAT Rules used by a load balancer. Defining inbound NAT
+     * rules on your load balancer is mutually exclusive with defining an inbound NAT pool. Inbound NAT pools are
+     * referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot
+     * reference an Inbound NAT pool. They have to reference individual inbound NAT rules.
      * 
      * @param inboundNatRules the inboundNatRules value to set.
      * @return the LoadBalancerPropertiesFormat object itself.
@@ -177,7 +185,12 @@ public final class LoadBalancerPropertiesFormat {
     }
 
     /**
-     * Get the inboundNatPools property: Defines an external port range for inbound NAT to a single backend port on NICs associated with a load balancer. Inbound NAT rules are created automatically for each NIC associated with the Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Load Balancer is mutually exclusive with defining inbound NAT rules. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot reference an inbound NAT pool. They have to reference individual inbound NAT rules.
+     * Get the inboundNatPools property: Defines an external port range for inbound NAT to a single backend port on NICs
+     * associated with a load balancer. Inbound NAT rules are created automatically for each NIC associated with the
+     * Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Load Balancer is
+     * mutually exclusive with defining inbound NAT rules. Inbound NAT pools are referenced from virtual machine scale
+     * sets. NICs that are associated with individual virtual machines cannot reference an inbound NAT pool. They have
+     * to reference individual inbound NAT rules.
      * 
      * @return the inboundNatPools value.
      */
@@ -186,7 +199,12 @@ public final class LoadBalancerPropertiesFormat {
     }
 
     /**
-     * Set the inboundNatPools property: Defines an external port range for inbound NAT to a single backend port on NICs associated with a load balancer. Inbound NAT rules are created automatically for each NIC associated with the Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Load Balancer is mutually exclusive with defining inbound NAT rules. Inbound NAT pools are referenced from virtual machine scale sets. NICs that are associated with individual virtual machines cannot reference an inbound NAT pool. They have to reference individual inbound NAT rules.
+     * Set the inboundNatPools property: Defines an external port range for inbound NAT to a single backend port on NICs
+     * associated with a load balancer. Inbound NAT rules are created automatically for each NIC associated with the
+     * Load Balancer using an external port from this range. Defining an Inbound NAT pool on your Load Balancer is
+     * mutually exclusive with defining inbound NAT rules. Inbound NAT pools are referenced from virtual machine scale
+     * sets. NICs that are associated with individual virtual machines cannot reference an inbound NAT pool. They have
+     * to reference individual inbound NAT rules.
      * 
      * @param inboundNatPools the inboundNatPools value to set.
      * @return the LoadBalancerPropertiesFormat object itself.

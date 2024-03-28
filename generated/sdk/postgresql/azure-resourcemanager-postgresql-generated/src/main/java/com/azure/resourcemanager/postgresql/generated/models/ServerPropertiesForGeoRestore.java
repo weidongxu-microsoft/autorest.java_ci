@@ -7,6 +7,7 @@ package com.azure.resourcemanager.postgresql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -22,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCreate {
     /*
+     * The mode to create a new server.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "createMode", required = true)
+    private CreateMode createMode = CreateMode.GEO_RESTORE;
+
+    /*
      * The source server id to restore from.
      */
     @JsonProperty(value = "sourceServerId", required = true)
@@ -31,7 +39,16 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
      * Creates an instance of ServerPropertiesForGeoRestore class.
      */
     public ServerPropertiesForGeoRestore() {
-        withCreateMode(CreateMode.GEO_RESTORE);
+    }
+
+    /**
+     * Get the createMode property: The mode to create a new server.
+     * 
+     * @return the createMode value.
+     */
+    @Override
+    public CreateMode createMode() {
+        return this.createMode;
     }
 
     /**
@@ -118,8 +135,9 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
     public void validate() {
         super.validate();
         if (sourceServerId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property sourceServerId in model ServerPropertiesForGeoRestore"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sourceServerId in model ServerPropertiesForGeoRestore"));
         }
     }
 

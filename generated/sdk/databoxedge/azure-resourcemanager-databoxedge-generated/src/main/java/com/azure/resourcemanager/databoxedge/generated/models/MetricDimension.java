@@ -78,12 +78,12 @@ public final class MetricDimension {
      */
     public void validate() {
         if (sourceType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sourceType in model MetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sourceType in model MetricDimension"));
         }
         if (sourceName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sourceName in model MetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sourceName in model MetricDimension"));
         }
     }
 

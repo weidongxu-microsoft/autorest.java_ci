@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Preferred day of the week in UTC time to begin an upgrade. If 'Any' is selected, upgrade will proceed at any given weekday.
+ * Preferred day of the week in UTC time to begin an upgrade. If 'Any' is selected, upgrade will proceed at any given
+ * weekday.
  */
 public final class StartDayOfWeek extends ExpandableStringEnum<StartDayOfWeek> {
     /**

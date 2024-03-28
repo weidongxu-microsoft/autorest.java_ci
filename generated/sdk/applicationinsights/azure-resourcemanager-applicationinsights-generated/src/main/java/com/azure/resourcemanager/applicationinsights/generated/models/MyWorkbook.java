@@ -64,21 +64,24 @@ public interface MyWorkbook {
     String displayName();
 
     /**
-     * Gets the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+     * Gets the serializedData property: Configuration of this particular private workbook. Configuration data is a
+     * string containing valid JSON.
      * 
      * @return the serializedData value.
      */
     String serializedData();
 
     /**
-     * Gets the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+     * Gets the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked private workbook.
      * 
      * @return the version value.
      */
     String version();
 
     /**
-     * Gets the timeModified property: Date and time in UTC of the last modification that was made to this private workbook definition.
+     * Gets the timeModified property: Date and time in UTC of the last modification that was made to this private
+     * workbook definition.
      * 
      * @return the timeModified value.
      */
@@ -92,7 +95,8 @@ public interface MyWorkbook {
     String category();
 
     /**
-     * Gets the tagsPropertiesTags property: A list of 0 or more tags that are associated with this private workbook definition.
+     * Gets the tagsPropertiesTags property: A list of 0 or more tags that are associated with this private workbook
+     * definition.
      * 
      * @return the tagsPropertiesTags value.
      */
@@ -192,7 +196,8 @@ public interface MyWorkbook {
         }
 
         /**
-         * The stage of the MyWorkbook definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the MyWorkbook definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithKind, DefinitionStages.WithDisplayName, DefinitionStages.WithSerializedData,
@@ -284,9 +289,11 @@ public interface MyWorkbook {
          */
         interface WithSerializedData {
             /**
-             * Specifies the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+             * Specifies the serializedData property: Configuration of this particular private workbook. Configuration
+             * data is a string containing valid JSON.
              * 
-             * @param serializedData Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+             * @param serializedData Configuration of this particular private workbook. Configuration data is a string
+             * containing valid JSON.
              * @return the next definition stage.
              */
             WithCreate withSerializedData(String serializedData);
@@ -297,9 +304,11 @@ public interface MyWorkbook {
          */
         interface WithVersion {
             /**
-             * Specifies the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook..
+             * Specifies the version property: This instance's version of the data model. This can change as new
+             * features are added that can be marked private workbook..
              * 
-             * @param version This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+             * @param version This instance's version of the data model. This can change as new features are added that
+             * can be marked private workbook.
              * @return the next definition stage.
              */
             WithCreate withVersion(String version);
@@ -323,9 +332,11 @@ public interface MyWorkbook {
          */
         interface WithTagsPropertiesTags {
             /**
-             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this private workbook definition.
+             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this private
+             * workbook definition.
              * 
-             * @param tagsPropertiesTags A list of 0 or more tags that are associated with this private workbook definition.
+             * @param tagsPropertiesTags A list of 0 or more tags that are associated with this private workbook
+             * definition.
              * @return the next definition stage.
              */
             WithCreate withTagsPropertiesTags(List<String> tagsPropertiesTags);
@@ -422,9 +433,11 @@ public interface MyWorkbook {
          */
         interface WithSerializedData {
             /**
-             * Specifies the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+             * Specifies the serializedData property: Configuration of this particular private workbook. Configuration
+             * data is a string containing valid JSON.
              * 
-             * @param serializedData Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+             * @param serializedData Configuration of this particular private workbook. Configuration data is a string
+             * containing valid JSON.
              * @return the next definition stage.
              */
             Update withSerializedData(String serializedData);
@@ -435,9 +448,11 @@ public interface MyWorkbook {
          */
         interface WithVersion {
             /**
-             * Specifies the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook..
+             * Specifies the version property: This instance's version of the data model. This can change as new
+             * features are added that can be marked private workbook..
              * 
-             * @param version This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+             * @param version This instance's version of the data model. This can change as new features are added that
+             * can be marked private workbook.
              * @return the next definition stage.
              */
             Update withVersion(String version);
@@ -461,9 +476,11 @@ public interface MyWorkbook {
          */
         interface WithTagsPropertiesTags {
             /**
-             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this private workbook definition.
+             * Specifies the tagsPropertiesTags property: A list of 0 or more tags that are associated with this private
+             * workbook definition.
              * 
-             * @param tagsPropertiesTags A list of 0 or more tags that are associated with this private workbook definition.
+             * @param tagsPropertiesTags A list of 0 or more tags that are associated with this private workbook
+             * definition.
              * @return the next definition stage.
              */
             Update withTagsPropertiesTags(List<String> tagsPropertiesTags);

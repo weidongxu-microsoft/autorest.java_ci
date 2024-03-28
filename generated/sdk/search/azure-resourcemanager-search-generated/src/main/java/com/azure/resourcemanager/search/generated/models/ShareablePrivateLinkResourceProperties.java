@@ -8,7 +8,8 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes the properties of a resource type that has been onboarded to private link service, supported by Azure AI Search.
+ * Describes the properties of a resource type that has been onboarded to private link service, supported by Azure AI
+ * Search.
  */
 @Immutable
 public final class ShareablePrivateLinkResourceProperties {
@@ -37,7 +38,8 @@ public final class ShareablePrivateLinkResourceProperties {
     }
 
     /**
-     * Get the type property: The resource provider type for the resource that has been onboarded to private link service, supported by Azure AI Search.
+     * Get the type property: The resource provider type for the resource that has been onboarded to private link
+     * service, supported by Azure AI Search.
      * 
      * @return the type value.
      */
@@ -46,7 +48,8 @@ public final class ShareablePrivateLinkResourceProperties {
     }
 
     /**
-     * Get the groupId property: The resource provider group id for the resource that has been onboarded to private link service, supported by Azure AI Search.
+     * Get the groupId property: The resource provider group id for the resource that has been onboarded to private link
+     * service, supported by Azure AI Search.
      * 
      * @return the groupId value.
      */
@@ -55,7 +58,8 @@ public final class ShareablePrivateLinkResourceProperties {
     }
 
     /**
-     * Get the description property: The description of the resource type that has been onboarded to private link service, supported by Azure AI Search.
+     * Get the description property: The description of the resource type that has been onboarded to private link
+     * service, supported by Azure AI Search.
      * 
      * @return the description value.
      */

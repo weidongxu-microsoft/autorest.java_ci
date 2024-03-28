@@ -56,14 +56,16 @@ public interface FileShareItem {
     Map<String, String> metadata();
 
     /**
-     * Gets the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
+     * Gets the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than
+     * or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
      * 
      * @return the shareQuota value.
      */
     Integer shareQuota();
 
     /**
-     * Gets the enabledProtocols property: The authentication protocol that is used for the file share. Can only be specified when creating a share.
+     * Gets the enabledProtocols property: The authentication protocol that is used for the file share. Can only be
+     * specified when creating a share.
      * 
      * @return the enabledProtocols value.
      */
@@ -105,7 +107,8 @@ public interface FileShareItem {
     Integer remainingRetentionDays();
 
     /**
-     * Gets the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Gets the accessTier property: Access tier for specific share. GpV2 account can choose between
+     * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @return the accessTier value.
      */
@@ -126,7 +129,8 @@ public interface FileShareItem {
     String accessTierStatus();
 
     /**
-     * Gets the shareUsageBytes property: The approximate size of the data stored on the share. Note that this value may not include all recently created or recently resized files.
+     * Gets the shareUsageBytes property: The approximate size of the data stored on the share. Note that this value may
+     * not include all recently created or recently resized files.
      * 
      * @return the shareUsageBytes value.
      */
@@ -147,7 +151,8 @@ public interface FileShareItem {
     LeaseState leaseState();
 
     /**
-     * Gets the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only when the share is leased.
+     * Gets the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only
+     * when the share is leased.
      * 
      * @return the leaseDuration value.
      */
@@ -161,7 +166,8 @@ public interface FileShareItem {
     List<SignedIdentifier> signedIdentifiers();
 
     /**
-     * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with expand param "snapshots".
+     * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
+     * expand param "snapshots".
      * 
      * @return the snapshotTime value.
      */

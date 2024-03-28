@@ -46,7 +46,8 @@ public interface ReplicationUsage {
     Integer registeredServersCount();
 
     /**
-     * Gets the recoveryServicesProviderAuthType property: The authentication type of recovery service providers in the vault.
+     * Gets the recoveryServicesProviderAuthType property: The authentication type of recovery service providers in the
+     * vault.
      * 
      * @return the recoveryServicesProviderAuthType value.
      */

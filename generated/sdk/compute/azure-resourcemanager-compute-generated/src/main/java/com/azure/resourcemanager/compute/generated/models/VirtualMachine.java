@@ -54,7 +54,11 @@ public interface VirtualMachine {
     Map<String, String> tags();
 
     /**
-     * Gets the plan property: Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click **Save**.
+     * Gets the plan property: Specifies information about the marketplace image used to create the virtual machine.
+     * This element is only used for marketplace images. Before you can use a marketplace image from an API, you must
+     * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to use and
+     * then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click
+     * **Save**.
      * 
      * @return the plan value.
      */
@@ -89,14 +93,16 @@ public interface VirtualMachine {
     ExtendedLocation extendedLocation();
 
     /**
-     * Gets the managedBy property: ManagedBy is set to Virtual Machine Scale Set(VMSS) flex ARM resourceID, if the VM is part of the VMSS. This property is used by platform for internal resource group delete optimization.
+     * Gets the managedBy property: ManagedBy is set to Virtual Machine Scale Set(VMSS) flex ARM resourceID, if the VM
+     * is part of the VMSS. This property is used by platform for internal resource group delete optimization.
      * 
      * @return the managedBy value.
      */
     String managedBy();
 
     /**
-     * Gets the etag property: Etag is property returned in Create/Update/Get response of the VM, so that customer can supply it in the header to ensure optimistic updates.
+     * Gets the etag property: Etag is property returned in Create/Update/Get response of the VM, so that customer can
+     * supply it in the header to ensure optimistic updates.
      * 
      * @return the etag value.
      */
@@ -110,7 +116,8 @@ public interface VirtualMachine {
     HardwareProfile hardwareProfile();
 
     /**
-     * Gets the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+     * Gets the scheduledEventsPolicy property: Specifies Redeploy, Reboot and
+     * ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
      * 
      * @return the scheduledEventsPolicy value.
      */
@@ -124,14 +131,16 @@ public interface VirtualMachine {
     StorageProfile storageProfile();
 
     /**
-     * Gets the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the virtual machine.
+     * Gets the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the virtual
+     * machine.
      * 
      * @return the additionalCapabilities value.
      */
     AdditionalCapabilities additionalCapabilities();
 
     /**
-     * Gets the osProfile property: Specifies the operating system settings used while creating the virtual machine. Some of the settings cannot be changed once VM is provisioned.
+     * Gets the osProfile property: Specifies the operating system settings used while creating the virtual machine.
+     * Some of the settings cannot be changed once VM is provisioned.
      * 
      * @return the osProfile value.
      */
@@ -152,28 +161,42 @@ public interface VirtualMachine {
     SecurityProfile securityProfile();
 
     /**
-     * Gets the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15.
+     * Gets the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version:
+     * 2015-06-15.
      * 
      * @return the diagnosticsProfile value.
      */
     DiagnosticsProfile diagnosticsProfile();
 
     /**
-     * Gets the availabilitySet property: Specifies information about the availability set that the virtual machine should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes to maximize availability. For more information about availability sets, see [Availability sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be added to availability set at creation time. The availability set to which the VM is being added should be under the same resource group as the availability set resource. An existing VM cannot be added to an availability set. This property cannot exist along with a non-null properties.virtualMachineScaleSet reference.
+     * Gets the availabilitySet property: Specifies information about the availability set that the virtual machine
+     * should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes
+     * to maximize availability. For more information about availability sets, see [Availability sets
+     * overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on
+     * Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be
+     * added to availability set at creation time. The availability set to which the VM is being added should be under
+     * the same resource group as the availability set resource. An existing VM cannot be added to an availability set.
+     * This property cannot exist along with a non-null properties.virtualMachineScaleSet reference.
      * 
      * @return the availabilitySet value.
      */
     SubResource availabilitySet();
 
     /**
-     * Gets the virtualMachineScaleSet property: Specifies information about the virtual machine scale set that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01.
+     * Gets the virtualMachineScaleSet property: Specifies information about the virtual machine scale set that the
+     * virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are
+     * allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale
+     * set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist
+     * along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01.
      * 
      * @return the virtualMachineScaleSet value.
      */
     SubResource virtualMachineScaleSet();
 
     /**
-     * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the virtual machine should be assigned to. Minimum api-version: 2018-04-01.
+     * Gets the proximityPlacementGroup property: Specifies information about the proximity placement group that the
+     * virtual machine should be assigned to. Minimum api-version: 2018-04-01.
      * 
      * @return the proximityPlacementGroup value.
      */
@@ -187,28 +210,34 @@ public interface VirtualMachine {
     VirtualMachinePriorityTypes priority();
 
     /**
-     * Gets the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+     * Gets the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot
+     * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
+     * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the
+     * minimum api-version is 2017-10-30-preview.
      * 
      * @return the evictionPolicy value.
      */
     VirtualMachineEvictionPolicyTypes evictionPolicy();
 
     /**
-     * Gets the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine. Minimum api-version: 2019-03-01.
+     * Gets the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine. Minimum
+     * api-version: 2019-03-01.
      * 
      * @return the billingProfile value.
      */
     BillingProfile billingProfile();
 
     /**
-     * Gets the host property: Specifies information about the dedicated host that the virtual machine resides in. Minimum api-version: 2018-10-01.
+     * Gets the host property: Specifies information about the dedicated host that the virtual machine resides in.
+     * Minimum api-version: 2018-10-01.
      * 
      * @return the host value.
      */
     SubResource host();
 
     /**
-     * Gets the hostGroup property: Specifies information about the dedicated host group that the virtual machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
+     * Gets the hostGroup property: Specifies information about the dedicated host group that the virtual machine
+     * resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
      * 
      * @return the hostGroup value.
      */
@@ -229,28 +258,44 @@ public interface VirtualMachine {
     VirtualMachineInstanceView instanceView();
 
     /**
-     * Gets the licenseType property: Specifies that the image or disk that is being used was licensed on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+     * Gets the licenseType property: Specifies that the image or disk that is being used was licensed on-premises.
+     * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client
+     * &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are:
+     * &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more
+     * information, see [Azure Hybrid Use Benefit for Windows
+     * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+     * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+     * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt;
+     * Minimum api-version: 2015-06-15.
      * 
      * @return the licenseType value.
      */
     String licenseType();
 
     /**
-     * Gets the vmId property: Specifies the VM unique ID which is a 128-bits identifier that is encoded and stored in all Azure IaaS VMs SMBIOS and can be read using platform BIOS commands.
+     * Gets the vmId property: Specifies the VM unique ID which is a 128-bits identifier that is encoded and stored in
+     * all Azure IaaS VMs SMBIOS and can be read using platform BIOS commands.
      * 
      * @return the vmId value.
      */
     String vmId();
 
     /**
-     * Gets the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
+     * Gets the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The time duration
+     * should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default
+     * value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
      * 
      * @return the extensionsTimeBudget value.
      */
     String extensionsTimeBudget();
 
     /**
-     * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01.
+     * Gets the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual
+     * Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
+     * best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet'
+     * property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have
+     * 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created.
+     * Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01.
      * 
      * @return the platformFaultDomain value.
      */
@@ -264,28 +309,32 @@ public interface VirtualMachine {
     ScheduledEventsProfile scheduledEventsProfile();
 
     /**
-     * Gets the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum api-version: 2021-03-01.
+     * Gets the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any
+     * secrets in here. Minimum api-version: 2021-03-01.
      * 
      * @return the userData value.
      */
     String userData();
 
     /**
-     * Gets the capacityReservation property: Specifies information about the capacity reservation that is used to allocate virtual machine. Minimum api-version: 2021-04-01.
+     * Gets the capacityReservation property: Specifies information about the capacity reservation that is used to
+     * allocate virtual machine. Minimum api-version: 2021-04-01.
      * 
      * @return the capacityReservation value.
      */
     CapacityReservationProfile capacityReservation();
 
     /**
-     * Gets the applicationProfile property: Specifies the gallery applications that should be made available to the VM/VMSS.
+     * Gets the applicationProfile property: Specifies the gallery applications that should be made available to the
+     * VM/VMSS.
      * 
      * @return the applicationProfile value.
      */
     ApplicationProfile applicationProfile();
 
     /**
-     * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was created. Minimum api-version: 2021-11-01.
+     * Gets the timeCreated property: Specifies the time at which the Virtual Machine resource was created. Minimum
+     * api-version: 2021-11-01.
      * 
      * @return the timeCreated value.
      */
@@ -371,7 +420,8 @@ public interface VirtualMachine {
         }
 
         /**
-         * The stage of the VirtualMachine definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualMachine definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPlan,
             DefinitionStages.WithIdentity, DefinitionStages.WithZones, DefinitionStages.WithExtendedLocation,
@@ -420,9 +470,17 @@ public interface VirtualMachine {
          */
         interface WithPlan {
             /**
-             * Specifies the plan property: Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click **Save**..
+             * Specifies the plan property: Specifies information about the marketplace image used to create the virtual
+             * machine. This element is only used for marketplace images. Before you can use a marketplace image from an
+             * API, you must enable the image for programmatic use. In the Azure portal, find the marketplace image that
+             * you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required
+             * information and then click **Save**..
              * 
-             * @param plan Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click **Save**.
+             * @param plan Specifies information about the marketplace image used to create the virtual machine. This
+             * element is only used for marketplace images. Before you can use a marketplace image from an API, you must
+             * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to
+             * use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information
+             * and then click **Save**.
              * @return the next definition stage.
              */
             WithCreate withPlan(Plan plan);
@@ -485,9 +543,12 @@ public interface VirtualMachine {
          */
         interface WithScheduledEventsPolicy {
             /**
-             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine..
+             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and
+             * ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual
+             * machine..
              * 
-             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets
+             * Scheduled Event related configurations for the virtual machine.
              * @return the next definition stage.
              */
             WithCreate withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
@@ -511,9 +572,11 @@ public interface VirtualMachine {
          */
         interface WithAdditionalCapabilities {
             /**
-             * Specifies the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the virtual machine..
+             * Specifies the additionalCapabilities property: Specifies additional capabilities enabled or disabled on
+             * the virtual machine..
              * 
-             * @param additionalCapabilities Specifies additional capabilities enabled or disabled on the virtual machine.
+             * @param additionalCapabilities Specifies additional capabilities enabled or disabled on the virtual
+             * machine.
              * @return the next definition stage.
              */
             WithCreate withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
@@ -524,9 +587,11 @@ public interface VirtualMachine {
          */
         interface WithOsProfile {
             /**
-             * Specifies the osProfile property: Specifies the operating system settings used while creating the virtual machine. Some of the settings cannot be changed once VM is provisioned..
+             * Specifies the osProfile property: Specifies the operating system settings used while creating the virtual
+             * machine. Some of the settings cannot be changed once VM is provisioned..
              * 
-             * @param osProfile Specifies the operating system settings used while creating the virtual machine. Some of the settings cannot be changed once VM is provisioned.
+             * @param osProfile Specifies the operating system settings used while creating the virtual machine. Some of
+             * the settings cannot be changed once VM is provisioned.
              * @return the next definition stage.
              */
             WithCreate withOsProfile(OSProfile osProfile);
@@ -550,7 +615,8 @@ public interface VirtualMachine {
          */
         interface WithSecurityProfile {
             /**
-             * Specifies the securityProfile property: Specifies the Security related profile settings for the virtual machine..
+             * Specifies the securityProfile property: Specifies the Security related profile settings for the virtual
+             * machine..
              * 
              * @param securityProfile Specifies the Security related profile settings for the virtual machine.
              * @return the next definition stage.
@@ -563,7 +629,8 @@ public interface VirtualMachine {
          */
         interface WithDiagnosticsProfile {
             /**
-             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15..
+             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum
+             * api-version: 2015-06-15..
              * 
              * @param diagnosticsProfile Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15.
              * @return the next definition stage.
@@ -576,9 +643,27 @@ public interface VirtualMachine {
          */
         interface WithAvailabilitySet {
             /**
-             * Specifies the availabilitySet property: Specifies information about the availability set that the virtual machine should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes to maximize availability. For more information about availability sets, see [Availability sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be added to availability set at creation time. The availability set to which the VM is being added should be under the same resource group as the availability set resource. An existing VM cannot be added to an availability set. This property cannot exist along with a non-null properties.virtualMachineScaleSet reference..
+             * Specifies the availabilitySet property: Specifies information about the availability set that the virtual
+             * machine should be assigned to. Virtual machines specified in the same availability set are allocated to
+             * different nodes to maximize availability. For more information about availability sets, see [Availability
+             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             * information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can
+             * only be added to availability set at creation time. The availability set to which the VM is being added
+             * should be under the same resource group as the availability set resource. An existing VM cannot be added
+             * to an availability set. This property cannot exist along with a non-null
+             * properties.virtualMachineScaleSet reference..
              * 
-             * @param availabilitySet Specifies information about the availability set that the virtual machine should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes to maximize availability. For more information about availability sets, see [Availability sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be added to availability set at creation time. The availability set to which the VM is being added should be under the same resource group as the availability set resource. An existing VM cannot be added to an availability set. This property cannot exist along with a non-null properties.virtualMachineScaleSet reference.
+             * @param availabilitySet Specifies information about the availability set that the virtual machine should
+             * be assigned to. Virtual machines specified in the same availability set are allocated to different nodes
+             * to maximize availability. For more information about availability sets, see [Availability sets
+             * overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             * information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can
+             * only be added to availability set at creation time. The availability set to which the VM is being added
+             * should be under the same resource group as the availability set resource. An existing VM cannot be added
+             * to an availability set. This property cannot exist along with a non-null
+             * properties.virtualMachineScaleSet reference.
              * @return the next definition stage.
              */
             WithCreate withAvailabilitySet(SubResource availabilitySet);
@@ -589,9 +674,19 @@ public interface VirtualMachine {
          */
         interface WithVirtualMachineScaleSet {
             /**
-             * Specifies the virtualMachineScaleSet property: Specifies information about the virtual machine scale set that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01..
+             * Specifies the virtualMachineScaleSet property: Specifies information about the virtual machine scale set
+             * that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine
+             * scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to
+             * virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale
+             * set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum
+             * api‐version: 2019‐03‐01..
              * 
-             * @param virtualMachineScaleSet Specifies information about the virtual machine scale set that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01.
+             * @param virtualMachineScaleSet Specifies information about the virtual machine scale set that the virtual
+             * machine should be assigned to. Virtual machines specified in the same virtual machine scale set are
+             * allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual
+             * machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This
+             * property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version:
+             * 2019‐03‐01.
              * @return the next definition stage.
              */
             WithCreate withVirtualMachineScaleSet(SubResource virtualMachineScaleSet);
@@ -602,9 +697,11 @@ public interface VirtualMachine {
          */
         interface WithProximityPlacementGroup {
             /**
-             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group that the virtual machine should be assigned to. Minimum api-version: 2018-04-01..
+             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
+             * that the virtual machine should be assigned to. Minimum api-version: 2018-04-01..
              * 
-             * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual machine should be assigned to. Minimum api-version: 2018-04-01.
+             * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
+             * machine should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -615,7 +712,8 @@ public interface VirtualMachine {
          */
         interface WithPriority {
             /**
-             * Specifies the priority property: Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
+             * Specifies the priority property: Specifies the priority for the virtual machine. Minimum api-version:
+             * 2019-03-01.
              * 
              * @param priority Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
              * @return the next definition stage.
@@ -628,9 +726,15 @@ public interface VirtualMachine {
          */
         interface WithEvictionPolicy {
             /**
-             * Specifies the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview..
+             * Specifies the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine
+             * and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported
+             * and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are
+             * supported and the minimum api-version is 2017-10-30-preview..
              * 
-             * @param evictionPolicy Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+             * @param evictionPolicy Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot
+             * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
+             * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and
+             * the minimum api-version is 2017-10-30-preview.
              * @return the next definition stage.
              */
             WithCreate withEvictionPolicy(VirtualMachineEvictionPolicyTypes evictionPolicy);
@@ -641,9 +745,11 @@ public interface VirtualMachine {
          */
         interface WithBillingProfile {
             /**
-             * Specifies the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine. Minimum api-version: 2019-03-01..
+             * Specifies the billingProfile property: Specifies the billing related details of a Azure Spot virtual
+             * machine. Minimum api-version: 2019-03-01..
              * 
-             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine. Minimum api-version: 2019-03-01.
+             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine. Minimum
+             * api-version: 2019-03-01.
              * @return the next definition stage.
              */
             WithCreate withBillingProfile(BillingProfile billingProfile);
@@ -654,9 +760,11 @@ public interface VirtualMachine {
          */
         interface WithHost {
             /**
-             * Specifies the host property: Specifies information about the dedicated host that the virtual machine resides in. Minimum api-version: 2018-10-01..
+             * Specifies the host property: Specifies information about the dedicated host that the virtual machine
+             * resides in. Minimum api-version: 2018-10-01..
              * 
-             * @param host Specifies information about the dedicated host that the virtual machine resides in. Minimum api-version: 2018-10-01.
+             * @param host Specifies information about the dedicated host that the virtual machine resides in. Minimum
+             * api-version: 2018-10-01.
              * @return the next definition stage.
              */
             WithCreate withHost(SubResource host);
@@ -667,9 +775,12 @@ public interface VirtualMachine {
          */
         interface WithHostGroup {
             /**
-             * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01..
+             * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual
+             * machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum
+             * api-version: 2020-06-01..
              * 
-             * @param hostGroup Specifies information about the dedicated host group that the virtual machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
+             * @param hostGroup Specifies information about the dedicated host group that the virtual machine resides
+             * in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withHostGroup(SubResource hostGroup);
@@ -680,9 +791,26 @@ public interface VirtualMachine {
          */
         interface WithLicenseType {
             /**
-             * Specifies the licenseType property: Specifies that the image or disk that is being used was licensed on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+             * Specifies the licenseType property: Specifies that the image or disk that is being used was licensed
+             * on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are:
+             * &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible
+             * values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL)
+             * &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid
+             * Use Benefit for Windows
+             * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
+             * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              * 
-             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises.
+             * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
+             * Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server
+             * operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE)
+             * &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
+             * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
+             * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              * @return the next definition stage.
              */
             WithCreate withLicenseType(String licenseType);
@@ -693,9 +821,13 @@ public interface VirtualMachine {
          */
         interface WithExtensionsTimeBudget {
             /**
-             * Specifies the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01..
+             * Specifies the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The
+             * time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO
+             * 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01..
              * 
-             * @param extensionsTimeBudget Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
+             * @param extensionsTimeBudget Specifies the time alloted for all extensions to start. The time duration
+             * should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The
+             * default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             WithCreate withExtensionsTimeBudget(String extensionsTimeBudget);
@@ -706,9 +838,21 @@ public interface VirtualMachine {
          */
         interface WithPlatformFaultDomain {
             /**
-             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01..
+             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
+             * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
+             * fault domain that best maintains balance across available fault domains. This is applicable only if the
+             * 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is
+             * referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the
+             * Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View.
+             * Minimum api‐version: 2020‐12‐01..
              * 
-             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01.
+             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
+             * will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
+             * best maintains balance across available fault domains. This is applicable only if the
+             * 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is
+             * referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the
+             * Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View.
+             * Minimum api‐version: 2020‐12‐01.
              * @return the next definition stage.
              */
             WithCreate withPlatformFaultDomain(Integer platformFaultDomain);
@@ -732,9 +876,11 @@ public interface VirtualMachine {
          */
         interface WithUserData {
             /**
-             * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum api-version: 2021-03-01..
+             * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not
+             * pass any secrets in here. Minimum api-version: 2021-03-01..
              * 
-             * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum api-version: 2021-03-01.
+             * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets
+             * in here. Minimum api-version: 2021-03-01.
              * @return the next definition stage.
              */
             WithCreate withUserData(String userData);
@@ -745,9 +891,11 @@ public interface VirtualMachine {
          */
         interface WithCapacityReservation {
             /**
-             * Specifies the capacityReservation property: Specifies information about the capacity reservation that is used to allocate virtual machine. Minimum api-version: 2021-04-01..
+             * Specifies the capacityReservation property: Specifies information about the capacity reservation that is
+             * used to allocate virtual machine. Minimum api-version: 2021-04-01..
              * 
-             * @param capacityReservation Specifies information about the capacity reservation that is used to allocate virtual machine. Minimum api-version: 2021-04-01.
+             * @param capacityReservation Specifies information about the capacity reservation that is used to allocate
+             * virtual machine. Minimum api-version: 2021-04-01.
              * @return the next definition stage.
              */
             WithCreate withCapacityReservation(CapacityReservationProfile capacityReservation);
@@ -758,9 +906,11 @@ public interface VirtualMachine {
          */
         interface WithApplicationProfile {
             /**
-             * Specifies the applicationProfile property: Specifies the gallery applications that should be made available to the VM/VMSS..
+             * Specifies the applicationProfile property: Specifies the gallery applications that should be made
+             * available to the VM/VMSS..
              * 
-             * @param applicationProfile Specifies the gallery applications that should be made available to the VM/VMSS.
+             * @param applicationProfile Specifies the gallery applications that should be made available to the
+             * VM/VMSS.
              * @return the next definition stage.
              */
             WithCreate withApplicationProfile(ApplicationProfile applicationProfile);
@@ -771,9 +921,12 @@ public interface VirtualMachine {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
              * 
-             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -784,9 +937,12 @@ public interface VirtualMachine {
          */
         interface WithIfNoneMatch {
             /**
-             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported..
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent
+             * updating an existing record set. Other values will result in error from server as they are not
+             * supported..
              * 
-             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an
+             * existing record set. Other values will result in error from server as they are not supported.
              * @return the next definition stage.
              */
             WithCreate withIfNoneMatch(String ifNoneMatch);
@@ -851,9 +1007,17 @@ public interface VirtualMachine {
          */
         interface WithPlan {
             /**
-             * Specifies the plan property: Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click **Save**..
+             * Specifies the plan property: Specifies information about the marketplace image used to create the virtual
+             * machine. This element is only used for marketplace images. Before you can use a marketplace image from an
+             * API, you must enable the image for programmatic use. In the Azure portal, find the marketplace image that
+             * you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required
+             * information and then click **Save**..
              * 
-             * @param plan Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click **Save**.
+             * @param plan Specifies information about the marketplace image used to create the virtual machine. This
+             * element is only used for marketplace images. Before you can use a marketplace image from an API, you must
+             * enable the image for programmatic use. In the Azure portal, find the marketplace image that you want to
+             * use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information
+             * and then click **Save**.
              * @return the next definition stage.
              */
             Update withPlan(Plan plan);
@@ -903,9 +1067,12 @@ public interface VirtualMachine {
          */
         interface WithScheduledEventsPolicy {
             /**
-             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine..
+             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and
+             * ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual
+             * machine..
              * 
-             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the virtual machine.
+             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets
+             * Scheduled Event related configurations for the virtual machine.
              * @return the next definition stage.
              */
             Update withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
@@ -929,9 +1096,11 @@ public interface VirtualMachine {
          */
         interface WithAdditionalCapabilities {
             /**
-             * Specifies the additionalCapabilities property: Specifies additional capabilities enabled or disabled on the virtual machine..
+             * Specifies the additionalCapabilities property: Specifies additional capabilities enabled or disabled on
+             * the virtual machine..
              * 
-             * @param additionalCapabilities Specifies additional capabilities enabled or disabled on the virtual machine.
+             * @param additionalCapabilities Specifies additional capabilities enabled or disabled on the virtual
+             * machine.
              * @return the next definition stage.
              */
             Update withAdditionalCapabilities(AdditionalCapabilities additionalCapabilities);
@@ -942,9 +1111,11 @@ public interface VirtualMachine {
          */
         interface WithOsProfile {
             /**
-             * Specifies the osProfile property: Specifies the operating system settings used while creating the virtual machine. Some of the settings cannot be changed once VM is provisioned..
+             * Specifies the osProfile property: Specifies the operating system settings used while creating the virtual
+             * machine. Some of the settings cannot be changed once VM is provisioned..
              * 
-             * @param osProfile Specifies the operating system settings used while creating the virtual machine. Some of the settings cannot be changed once VM is provisioned.
+             * @param osProfile Specifies the operating system settings used while creating the virtual machine. Some of
+             * the settings cannot be changed once VM is provisioned.
              * @return the next definition stage.
              */
             Update withOsProfile(OSProfile osProfile);
@@ -968,7 +1139,8 @@ public interface VirtualMachine {
          */
         interface WithSecurityProfile {
             /**
-             * Specifies the securityProfile property: Specifies the Security related profile settings for the virtual machine..
+             * Specifies the securityProfile property: Specifies the Security related profile settings for the virtual
+             * machine..
              * 
              * @param securityProfile Specifies the Security related profile settings for the virtual machine.
              * @return the next definition stage.
@@ -981,7 +1153,8 @@ public interface VirtualMachine {
          */
         interface WithDiagnosticsProfile {
             /**
-             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15..
+             * Specifies the diagnosticsProfile property: Specifies the boot diagnostic settings state. Minimum
+             * api-version: 2015-06-15..
              * 
              * @param diagnosticsProfile Specifies the boot diagnostic settings state. Minimum api-version: 2015-06-15.
              * @return the next definition stage.
@@ -994,9 +1167,27 @@ public interface VirtualMachine {
          */
         interface WithAvailabilitySet {
             /**
-             * Specifies the availabilitySet property: Specifies information about the availability set that the virtual machine should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes to maximize availability. For more information about availability sets, see [Availability sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be added to availability set at creation time. The availability set to which the VM is being added should be under the same resource group as the availability set resource. An existing VM cannot be added to an availability set. This property cannot exist along with a non-null properties.virtualMachineScaleSet reference..
+             * Specifies the availabilitySet property: Specifies information about the availability set that the virtual
+             * machine should be assigned to. Virtual machines specified in the same availability set are allocated to
+             * different nodes to maximize availability. For more information about availability sets, see [Availability
+             * sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             * information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can
+             * only be added to availability set at creation time. The availability set to which the VM is being added
+             * should be under the same resource group as the availability set resource. An existing VM cannot be added
+             * to an availability set. This property cannot exist along with a non-null
+             * properties.virtualMachineScaleSet reference..
              * 
-             * @param availabilitySet Specifies information about the availability set that the virtual machine should be assigned to. Virtual machines specified in the same availability set are allocated to different nodes to maximize availability. For more information about availability sets, see [Availability sets overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can only be added to availability set at creation time. The availability set to which the VM is being added should be under the same resource group as the availability set resource. An existing VM cannot be added to an availability set. This property cannot exist along with a non-null properties.virtualMachineScaleSet reference.
+             * @param availabilitySet Specifies information about the availability set that the virtual machine should
+             * be assigned to. Virtual machines specified in the same availability set are allocated to different nodes
+             * to maximize availability. For more information about availability sets, see [Availability sets
+             * overview](https://docs.microsoft.com/azure/virtual-machines/availability-set-overview). For more
+             * information on Azure planned maintenance, see [Maintenance and updates for Virtual Machines in
+             * Azure](https://docs.microsoft.com/azure/virtual-machines/maintenance-and-updates). Currently, a VM can
+             * only be added to availability set at creation time. The availability set to which the VM is being added
+             * should be under the same resource group as the availability set resource. An existing VM cannot be added
+             * to an availability set. This property cannot exist along with a non-null
+             * properties.virtualMachineScaleSet reference.
              * @return the next definition stage.
              */
             Update withAvailabilitySet(SubResource availabilitySet);
@@ -1007,9 +1198,19 @@ public interface VirtualMachine {
          */
         interface WithVirtualMachineScaleSet {
             /**
-             * Specifies the virtualMachineScaleSet property: Specifies information about the virtual machine scale set that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01..
+             * Specifies the virtualMachineScaleSet property: Specifies information about the virtual machine scale set
+             * that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine
+             * scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to
+             * virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale
+             * set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum
+             * api‐version: 2019‐03‐01..
              * 
-             * @param virtualMachineScaleSet Specifies information about the virtual machine scale set that the virtual machine should be assigned to. Virtual machines specified in the same virtual machine scale set are allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version: 2019‐03‐01.
+             * @param virtualMachineScaleSet Specifies information about the virtual machine scale set that the virtual
+             * machine should be assigned to. Virtual machines specified in the same virtual machine scale set are
+             * allocated to different nodes to maximize availability. Currently, a VM can only be added to virtual
+             * machine scale set at creation time. An existing VM cannot be added to a virtual machine scale set. This
+             * property cannot exist along with a non-null properties.availabilitySet reference. Minimum api‐version:
+             * 2019‐03‐01.
              * @return the next definition stage.
              */
             Update withVirtualMachineScaleSet(SubResource virtualMachineScaleSet);
@@ -1020,9 +1221,11 @@ public interface VirtualMachine {
          */
         interface WithProximityPlacementGroup {
             /**
-             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group that the virtual machine should be assigned to. Minimum api-version: 2018-04-01..
+             * Specifies the proximityPlacementGroup property: Specifies information about the proximity placement group
+             * that the virtual machine should be assigned to. Minimum api-version: 2018-04-01..
              * 
-             * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual machine should be assigned to. Minimum api-version: 2018-04-01.
+             * @param proximityPlacementGroup Specifies information about the proximity placement group that the virtual
+             * machine should be assigned to. Minimum api-version: 2018-04-01.
              * @return the next definition stage.
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
@@ -1033,7 +1236,8 @@ public interface VirtualMachine {
          */
         interface WithPriority {
             /**
-             * Specifies the priority property: Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
+             * Specifies the priority property: Specifies the priority for the virtual machine. Minimum api-version:
+             * 2019-03-01.
              * 
              * @param priority Specifies the priority for the virtual machine. Minimum api-version: 2019-03-01.
              * @return the next definition stage.
@@ -1046,9 +1250,15 @@ public interface VirtualMachine {
          */
         interface WithEvictionPolicy {
             /**
-             * Specifies the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview..
+             * Specifies the evictionPolicy property: Specifies the eviction policy for the Azure Spot virtual machine
+             * and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported
+             * and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are
+             * supported and the minimum api-version is 2017-10-30-preview..
              * 
-             * @param evictionPolicy Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+             * @param evictionPolicy Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot
+             * scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum
+             * api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and
+             * the minimum api-version is 2017-10-30-preview.
              * @return the next definition stage.
              */
             Update withEvictionPolicy(VirtualMachineEvictionPolicyTypes evictionPolicy);
@@ -1059,9 +1269,11 @@ public interface VirtualMachine {
          */
         interface WithBillingProfile {
             /**
-             * Specifies the billingProfile property: Specifies the billing related details of a Azure Spot virtual machine. Minimum api-version: 2019-03-01..
+             * Specifies the billingProfile property: Specifies the billing related details of a Azure Spot virtual
+             * machine. Minimum api-version: 2019-03-01..
              * 
-             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine. Minimum api-version: 2019-03-01.
+             * @param billingProfile Specifies the billing related details of a Azure Spot virtual machine. Minimum
+             * api-version: 2019-03-01.
              * @return the next definition stage.
              */
             Update withBillingProfile(BillingProfile billingProfile);
@@ -1072,9 +1284,11 @@ public interface VirtualMachine {
          */
         interface WithHost {
             /**
-             * Specifies the host property: Specifies information about the dedicated host that the virtual machine resides in. Minimum api-version: 2018-10-01..
+             * Specifies the host property: Specifies information about the dedicated host that the virtual machine
+             * resides in. Minimum api-version: 2018-10-01..
              * 
-             * @param host Specifies information about the dedicated host that the virtual machine resides in. Minimum api-version: 2018-10-01.
+             * @param host Specifies information about the dedicated host that the virtual machine resides in. Minimum
+             * api-version: 2018-10-01.
              * @return the next definition stage.
              */
             Update withHost(SubResource host);
@@ -1085,9 +1299,12 @@ public interface VirtualMachine {
          */
         interface WithHostGroup {
             /**
-             * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01..
+             * Specifies the hostGroup property: Specifies information about the dedicated host group that the virtual
+             * machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum
+             * api-version: 2020-06-01..
              * 
-             * @param hostGroup Specifies information about the dedicated host group that the virtual machine resides in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
+             * @param hostGroup Specifies information about the dedicated host group that the virtual machine resides
+             * in. **Note:** User cannot specify both host and hostGroup properties. Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             Update withHostGroup(SubResource hostGroup);
@@ -1098,9 +1315,26 @@ public interface VirtualMachine {
          */
         interface WithLicenseType {
             /**
-             * Specifies the licenseType property: Specifies that the image or disk that is being used was licensed on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+             * Specifies the licenseType property: Specifies that the image or disk that is being used was licensed
+             * on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are:
+             * &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible
+             * values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL)
+             * &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid
+             * Use Benefit for Windows
+             * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
+             * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              * 
-             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises. &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt; Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE) &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
+             * @param licenseType Specifies that the image or disk that is being used was licensed on-premises.
+             * &lt;br&gt;&lt;br&gt; Possible values for Windows Server operating system are: &lt;br&gt;&lt;br&gt;
+             * Windows_Client &lt;br&gt;&lt;br&gt; Windows_Server &lt;br&gt;&lt;br&gt; Possible values for Linux Server
+             * operating system are: &lt;br&gt;&lt;br&gt; RHEL_BYOS (for RHEL) &lt;br&gt;&lt;br&gt; SLES_BYOS (for SUSE)
+             * &lt;br&gt;&lt;br&gt; For more information, see [Azure Hybrid Use Benefit for Windows
+             * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing)
+             * &lt;br&gt;&lt;br&gt; [Azure Hybrid Use Benefit for Linux
+             * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux)
+             * &lt;br&gt;&lt;br&gt; Minimum api-version: 2015-06-15.
              * @return the next definition stage.
              */
             Update withLicenseType(String licenseType);
@@ -1111,9 +1345,13 @@ public interface VirtualMachine {
          */
         interface WithExtensionsTimeBudget {
             /**
-             * Specifies the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01..
+             * Specifies the extensionsTimeBudget property: Specifies the time alloted for all extensions to start. The
+             * time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO
+             * 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01..
              * 
-             * @param extensionsTimeBudget Specifies the time alloted for all extensions to start. The time duration should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
+             * @param extensionsTimeBudget Specifies the time alloted for all extensions to start. The time duration
+             * should be between 15 minutes and 120 minutes (inclusive) and should be specified in ISO 8601 format. The
+             * default value is 90 minutes (PT1H30M). Minimum api-version: 2020-06-01.
              * @return the next definition stage.
              */
             Update withExtensionsTimeBudget(String extensionsTimeBudget);
@@ -1124,9 +1362,21 @@ public interface VirtualMachine {
          */
         interface WithPlatformFaultDomain {
             /**
-             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01..
+             * Specifies the platformFaultDomain property: Specifies the scale set logical fault domain into which the
+             * Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a
+             * fault domain that best maintains balance across available fault domains. This is applicable only if the
+             * 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is
+             * referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the
+             * Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View.
+             * Minimum api‐version: 2020‐12‐01..
              * 
-             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that best maintains balance across available fault domains. This is applicable only if the 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View. Minimum api‐version: 2020‐12‐01.
+             * @param platformFaultDomain Specifies the scale set logical fault domain into which the Virtual Machine
+             * will be created. By default, the Virtual Machine will by automatically assigned to a fault domain that
+             * best maintains balance across available fault domains. This is applicable only if the
+             * 'virtualMachineScaleSet' property of this Virtual Machine is set. The Virtual Machine Scale Set that is
+             * referenced, must have 'platformFaultDomainCount' greater than 1. This property cannot be updated once the
+             * Virtual Machine is created. Fault domain assignment can be viewed in the Virtual Machine Instance View.
+             * Minimum api‐version: 2020‐12‐01.
              * @return the next definition stage.
              */
             Update withPlatformFaultDomain(Integer platformFaultDomain);
@@ -1150,9 +1400,11 @@ public interface VirtualMachine {
          */
         interface WithUserData {
             /**
-             * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum api-version: 2021-03-01..
+             * Specifies the userData property: UserData for the VM, which must be base-64 encoded. Customer should not
+             * pass any secrets in here. Minimum api-version: 2021-03-01..
              * 
-             * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum api-version: 2021-03-01.
+             * @param userData UserData for the VM, which must be base-64 encoded. Customer should not pass any secrets
+             * in here. Minimum api-version: 2021-03-01.
              * @return the next definition stage.
              */
             Update withUserData(String userData);
@@ -1163,9 +1415,11 @@ public interface VirtualMachine {
          */
         interface WithCapacityReservation {
             /**
-             * Specifies the capacityReservation property: Specifies information about the capacity reservation that is used to allocate virtual machine. Minimum api-version: 2021-04-01..
+             * Specifies the capacityReservation property: Specifies information about the capacity reservation that is
+             * used to allocate virtual machine. Minimum api-version: 2021-04-01..
              * 
-             * @param capacityReservation Specifies information about the capacity reservation that is used to allocate virtual machine. Minimum api-version: 2021-04-01.
+             * @param capacityReservation Specifies information about the capacity reservation that is used to allocate
+             * virtual machine. Minimum api-version: 2021-04-01.
              * @return the next definition stage.
              */
             Update withCapacityReservation(CapacityReservationProfile capacityReservation);
@@ -1176,9 +1430,11 @@ public interface VirtualMachine {
          */
         interface WithApplicationProfile {
             /**
-             * Specifies the applicationProfile property: Specifies the gallery applications that should be made available to the VM/VMSS..
+             * Specifies the applicationProfile property: Specifies the gallery applications that should be made
+             * available to the VM/VMSS..
              * 
-             * @param applicationProfile Specifies the gallery applications that should be made available to the VM/VMSS.
+             * @param applicationProfile Specifies the gallery applications that should be made available to the
+             * VM/VMSS.
              * @return the next definition stage.
              */
             Update withApplicationProfile(ApplicationProfile applicationProfile);
@@ -1189,9 +1445,12 @@ public interface VirtualMachine {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
              * 
-             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);
@@ -1202,9 +1461,12 @@ public interface VirtualMachine {
          */
         interface WithIfNoneMatch {
             /**
-             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported..
+             * Specifies the ifNoneMatch property: Set to '*' to allow a new record set to be created, but to prevent
+             * updating an existing record set. Other values will result in error from server as they are not
+             * supported..
              * 
-             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+             * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an
+             * existing record set. Other values will result in error from server as they are not supported.
              * @return the next definition stage.
              */
             Update withIfNoneMatch(String ifNoneMatch);
@@ -1227,99 +1489,126 @@ public interface VirtualMachine {
     VirtualMachine refresh(Context context);
 
     /**
-     * Captures the VM by copying virtual hard disks of the VM and outputs a template that can be used to create similar VMs.
+     * Captures the VM by copying virtual hard disks of the VM and outputs a template that can be used to create similar
+     * VMs.
      * 
      * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return output of virtual machine capture operation.
      */
     VirtualMachineCaptureResult capture(VirtualMachineCaptureParameters parameters);
 
     /**
-     * Captures the VM by copying virtual hard disks of the VM and outputs a template that can be used to create similar VMs.
+     * Captures the VM by copying virtual hard disks of the VM and outputs a template that can be used to create similar
+     * VMs.
      * 
      * @param parameters Parameters supplied to the Capture Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return output of virtual machine capture operation.
      */
     VirtualMachineCaptureResult capture(VirtualMachineCaptureParameters parameters, Context context);
 
     /**
-     * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before invoking this operation.
+     * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before
+     * invoking this operation.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void convertToManagedDisks();
 
     /**
-     * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before invoking this operation.
+     * Converts virtual machine disks from blob-based to managed disks. Virtual machine must be stop-deallocated before
+     * invoking this operation.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void convertToManagedDisks(Context context);
 
     /**
-     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources that this virtual machine uses.
+     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
+     * that this virtual machine uses.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deallocate();
 
     /**
-     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources that this virtual machine uses.
+     * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
+     * that this virtual machine uses.
      * 
      * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deallocate(Boolean hibernate, Context context);
 
     /**
-     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer to [How to create an image of a virtual machine or VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
+     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
     Response<Void> generalizeWithResponse(Context context);
 
     /**
-     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer to [How to create an image of a virtual machine or VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
+     * Sets the OS state of the virtual machine to generalized. It is recommended to sysprep the virtual machine before
+     * performing this operation. For Windows, please refer to [Create a managed image of a generalized VM in
+     * Azure](https://docs.microsoft.com/azure/virtual-machines/windows/capture-image-resource). For Linux, please refer
+     * to [How to create an image of a virtual machine or
+     * VHD](https://docs.microsoft.com/azure/virtual-machines/linux/capture-image).
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void generalize();
 
     /**
-     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same provisioned resources. You are still charged for this virtual machine.
+     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
+     * provisioned resources. You are still charged for this virtual machine.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff();
 
     /**
-     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same provisioned resources. You are still charged for this virtual machine.
+     * The operation to power off (stop) a virtual machine. The virtual machine can be restarted with the same
+     * provisioned resources. You are still charged for this virtual machine.
      * 
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void powerOff(Boolean skipShutdown, Context context);
@@ -1327,7 +1616,8 @@ public interface VirtualMachine {
     /**
      * The operation to reapply a virtual machine's state.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reapply();
@@ -1337,7 +1627,8 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reapply(Context context);
@@ -1345,7 +1636,8 @@ public interface VirtualMachine {
     /**
      * The operation to restart a virtual machine.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart();
@@ -1355,7 +1647,8 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(Context context);
@@ -1363,7 +1656,8 @@ public interface VirtualMachine {
     /**
      * The operation to start a virtual machine.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start();
@@ -1373,7 +1667,8 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void start(Context context);
@@ -1381,7 +1676,8 @@ public interface VirtualMachine {
     /**
      * Shuts down the virtual machine, moves it to a new node, and powers it back on.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy();
@@ -1391,26 +1687,37 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy(Context context);
 
     /**
-     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The deleteOption of the OS disk should be updated accordingly before performing the reimage.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage();
 
     /**
-     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The deleteOption of the OS disk should be updated accordingly before performing the reimage.
+     * Reimages (upgrade the operating system) a virtual machine which don't have a ephemeral OS disk, for virtual
+     * machines who have a ephemeral OS disk the virtual machine is reset to initial state. NOTE: The retaining of old
+     * OS disk depends on the value of deleteOption of OS disk. If deleteOption is detach, the old OS disk will be
+     * preserved after reimage. If deleteOption is delete, the old OS disk will be deleted after reimage. The
+     * deleteOption of the OS disk should be updated accordingly before performing the reimage.
      * 
      * @param parameters Parameters supplied to the Reimage Virtual Machine operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reimage(VirtualMachineReimageParameters parameters, Context context);
@@ -1418,10 +1725,13 @@ public interface VirtualMachine {
     /**
      * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
      * 
-     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120 minutes.
+     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
+     * 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120
+     * minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response}.
      */
@@ -1431,7 +1741,8 @@ public interface VirtualMachine {
     /**
      * The operation to retrieve SAS URIs for a virtual machine's boot diagnostic logs.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the SAS URIs of the console screenshot and serial log blobs.
      */
@@ -1440,7 +1751,8 @@ public interface VirtualMachine {
     /**
      * The operation to perform maintenance on a virtual machine.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void performMaintenance();
@@ -1450,7 +1762,8 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void performMaintenance(Context context);
@@ -1460,7 +1773,8 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -1469,7 +1783,8 @@ public interface VirtualMachine {
     /**
      * The operation to simulate the eviction of spot virtual machine.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void simulateEviction();
@@ -1477,7 +1792,8 @@ public interface VirtualMachine {
     /**
      * Assess patches on the VM.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes the properties of an AssessPatches result.
      */
@@ -1488,7 +1804,8 @@ public interface VirtualMachine {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return describes the properties of an AssessPatches result.
      */
@@ -1499,7 +1816,8 @@ public interface VirtualMachine {
      * 
      * @param installPatchesInput Input for InstallPatches as directly received by the API.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the result summary of an installation operation.
      */
@@ -1511,7 +1829,8 @@ public interface VirtualMachine {
      * @param installPatchesInput Input for InstallPatches as directly received by the API.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the result summary of an installation operation.
      */
@@ -1523,7 +1842,8 @@ public interface VirtualMachine {
      * 
      * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies the storage settings for the virtual machine disks.
      */
@@ -1535,7 +1855,8 @@ public interface VirtualMachine {
      * @param parameters Parameters supplied to the attach and detach data disks operation on the virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies the storage settings for the virtual machine disks.
      */

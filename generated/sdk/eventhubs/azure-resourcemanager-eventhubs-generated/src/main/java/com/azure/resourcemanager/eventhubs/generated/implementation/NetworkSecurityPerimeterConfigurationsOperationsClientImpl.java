@@ -30,7 +30,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsOperationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsOperationsClient.
  */
 public final class NetworkSecurityPerimeterConfigurationsOperationsClientImpl
     implements NetworkSecurityPerimeterConfigurationsOperationsClient {
@@ -56,7 +57,9 @@ public final class NetworkSecurityPerimeterConfigurationsOperationsClientImpl
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientNetworkSecurityPerimeterConfigurationsOperations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for
+     * EventHubManagementClientNetworkSecurityPerimeterConfigurationsOperations to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")

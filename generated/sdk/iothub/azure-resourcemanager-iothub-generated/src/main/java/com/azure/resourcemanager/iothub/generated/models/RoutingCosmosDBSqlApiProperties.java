@@ -98,7 +98,9 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     /**
-     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Get the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
+     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
+     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @return the name value.
      */
@@ -107,7 +109,9 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     /**
-     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * Set the name property: The name that identifies this endpoint. The name can only include alphanumeric characters,
+     * periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:
+     * events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
      * 
      * @param name the name value to set.
      * @return the RoutingCosmosDBSqlApiProperties object itself.
@@ -307,7 +311,8 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     /**
-     * Get the partitionKeyName property: The name of the partition key associated with this cosmos DB sql container if one exists. This is an optional parameter.
+     * Get the partitionKeyName property: The name of the partition key associated with this cosmos DB sql container if
+     * one exists. This is an optional parameter.
      * 
      * @return the partitionKeyName value.
      */
@@ -316,7 +321,8 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     /**
-     * Set the partitionKeyName property: The name of the partition key associated with this cosmos DB sql container if one exists. This is an optional parameter.
+     * Set the partitionKeyName property: The name of the partition key associated with this cosmos DB sql container if
+     * one exists. This is an optional parameter.
      * 
      * @param partitionKeyName the partitionKeyName value to set.
      * @return the RoutingCosmosDBSqlApiProperties object itself.
@@ -327,7 +333,10 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     /**
-     * Get the partitionKeyTemplate property: The template for generating a synthetic partition key value for use with this cosmos DB sql container. The template must include at least one of the following placeholders: {iothub}, {deviceid}, {DD}, {MM}, and {YYYY}. Any one placeholder may be specified at most once, but order and non-placeholder components are arbitrary. This parameter is only required if PartitionKeyName is specified.
+     * Get the partitionKeyTemplate property: The template for generating a synthetic partition key value for use with
+     * this cosmos DB sql container. The template must include at least one of the following placeholders: {iothub},
+     * {deviceid}, {DD}, {MM}, and {YYYY}. Any one placeholder may be specified at most once, but order and
+     * non-placeholder components are arbitrary. This parameter is only required if PartitionKeyName is specified.
      * 
      * @return the partitionKeyTemplate value.
      */
@@ -336,7 +345,10 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     /**
-     * Set the partitionKeyTemplate property: The template for generating a synthetic partition key value for use with this cosmos DB sql container. The template must include at least one of the following placeholders: {iothub}, {deviceid}, {DD}, {MM}, and {YYYY}. Any one placeholder may be specified at most once, but order and non-placeholder components are arbitrary. This parameter is only required if PartitionKeyName is specified.
+     * Set the partitionKeyTemplate property: The template for generating a synthetic partition key value for use with
+     * this cosmos DB sql container. The template must include at least one of the following placeholders: {iothub},
+     * {deviceid}, {DD}, {MM}, and {YYYY}. Any one placeholder may be specified at most once, but order and
+     * non-placeholder components are arbitrary. This parameter is only required if PartitionKeyName is specified.
      * 
      * @param partitionKeyTemplate the partitionKeyTemplate value to set.
      * @return the RoutingCosmosDBSqlApiProperties object itself.
@@ -353,23 +365,27 @@ public final class RoutingCosmosDBSqlApiProperties {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model RoutingCosmosDBSqlApiProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model RoutingCosmosDBSqlApiProperties"));
         }
         if (endpointUri() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property endpointUri in model RoutingCosmosDBSqlApiProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property endpointUri in model RoutingCosmosDBSqlApiProperties"));
         }
         if (identity() != null) {
             identity().validate();
         }
         if (databaseName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property databaseName in model RoutingCosmosDBSqlApiProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property databaseName in model RoutingCosmosDBSqlApiProperties"));
         }
         if (containerName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property containerName in model RoutingCosmosDBSqlApiProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property containerName in model RoutingCosmosDBSqlApiProperties"));
         }
     }
 

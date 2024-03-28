@@ -14,7 +14,8 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateEndpointConnectionInner;
 
 /**
- * An instance of this class provides access to all the operations defined in ApplicationGatewayPrivateEndpointConnectionsClient.
+ * An instance of this class provides access to all the operations defined in
+ * ApplicationGatewayPrivateEndpointConnectionsClient.
  */
 public interface ApplicationGatewayPrivateEndpointConnectionsClient {
     /**
@@ -182,7 +183,8 @@ public interface ApplicationGatewayPrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> list(String resourceGroupName,
@@ -197,7 +199,8 @@ public interface ApplicationGatewayPrivateEndpointConnectionsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListApplicationGatewayPrivateEndpointConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationGatewayPrivateEndpointConnectionInner> list(String resourceGroupName,

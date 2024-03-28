@@ -25,7 +25,8 @@ public final class EncryptionInTransitProperties {
     }
 
     /**
-     * Get the isEncryptionInTransitEnabled property: Indicates whether or not inter cluster node communication is encrypted in transit.
+     * Get the isEncryptionInTransitEnabled property: Indicates whether or not inter cluster node communication is
+     * encrypted in transit.
      * 
      * @return the isEncryptionInTransitEnabled value.
      */
@@ -34,7 +35,8 @@ public final class EncryptionInTransitProperties {
     }
 
     /**
-     * Set the isEncryptionInTransitEnabled property: Indicates whether or not inter cluster node communication is encrypted in transit.
+     * Set the isEncryptionInTransitEnabled property: Indicates whether or not inter cluster node communication is
+     * encrypted in transit.
      * 
      * @param isEncryptionInTransitEnabled the isEncryptionInTransitEnabled value to set.
      * @return the EncryptionInTransitProperties object itself.

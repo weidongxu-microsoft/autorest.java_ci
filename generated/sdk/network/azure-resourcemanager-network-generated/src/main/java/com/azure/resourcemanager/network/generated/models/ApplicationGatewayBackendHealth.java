@@ -19,7 +19,8 @@ public interface ApplicationGatewayBackendHealth {
     List<ApplicationGatewayBackendHealthPool> backendAddressPools();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthInner
+     * object.
      * 
      * @return the inner object.
      */

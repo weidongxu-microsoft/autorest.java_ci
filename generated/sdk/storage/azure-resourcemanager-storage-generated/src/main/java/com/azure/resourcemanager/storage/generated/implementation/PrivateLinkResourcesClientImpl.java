@@ -51,7 +51,8 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientPrivateLinkResources to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientPrivateLinkResources to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -69,12 +70,15 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     /**
      * Gets the private link resources that need to be created for a storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a storage account along with {@link Response} on successful completion of {@link Mono}.
+     * @return the private link resources that need to be created for a storage account along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>>
@@ -104,13 +108,16 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     /**
      * Gets the private link resources that need to be created for a storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a storage account along with {@link Response} on successful completion of {@link Mono}.
+     * @return the private link resources that need to be created for a storage account along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<PrivateLinkResourceListResultInner>>
@@ -139,12 +146,15 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     /**
      * Gets the private link resources that need to be created for a storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the private link resources that need to be created for a storage account on successful completion of {@link Mono}.
+     * @return the private link resources that need to be created for a storage account on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PrivateLinkResourceListResultInner> listByStorageAccountAsync(String resourceGroupName,
@@ -156,8 +166,10 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     /**
      * Gets the private link resources that need to be created for a storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -173,8 +185,10 @@ public final class PrivateLinkResourcesClientImpl implements PrivateLinkResource
     /**
      * Gets the private link resources that need to be created for a storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

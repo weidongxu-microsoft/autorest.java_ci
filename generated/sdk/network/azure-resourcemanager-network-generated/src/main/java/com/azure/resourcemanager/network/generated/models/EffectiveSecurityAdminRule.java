@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.network.generated.fluent.models.AdminPropertiesFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdminRule {
     /*
+     * Whether the rule is custom or default.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private EffectiveAdminRuleKind kind = EffectiveAdminRuleKind.CUSTOM;
+
+    /*
      * Indicates the properties of the security admin rule
      */
     @JsonProperty(value = "properties")
@@ -32,7 +40,16 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
      * Creates an instance of EffectiveSecurityAdminRule class.
      */
     public EffectiveSecurityAdminRule() {
-        withKind(EffectiveAdminRuleKind.CUSTOM);
+    }
+
+    /**
+     * Get the kind property: Whether the rule is custom or default.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public EffectiveAdminRuleKind kind() {
+        return this.kind;
     }
 
     /**
@@ -252,7 +269,9 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @return the priority value.
      */
@@ -261,7 +280,9 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
     }
 
     /**
-     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Set the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @param priority the priority value to set.
      * @return the EffectiveSecurityAdminRule object itself.

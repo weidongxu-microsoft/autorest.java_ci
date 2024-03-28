@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ReadOnlyFollowingDatabaseProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -24,6 +25,13 @@ import java.time.Duration;
 @Fluent
 public final class ReadOnlyFollowingDatabase extends DatabaseInner {
     /*
+     * Kind of the database
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private Kind kind = Kind.READ_ONLY_FOLLOWING;
+
+    /*
      * The database properties.
      */
     @JsonProperty(value = "properties")
@@ -33,7 +41,16 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
      * Creates an instance of ReadOnlyFollowingDatabase class.
      */
     public ReadOnlyFollowingDatabase() {
-        withKind(Kind.READ_ONLY_FOLLOWING);
+    }
+
+    /**
+     * Get the kind property: Kind of the database.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public Kind kind() {
+        return this.kind;
     }
 
     /**
@@ -64,7 +81,8 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
+     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
+     * in TimeSpan.
      * 
      * @return the softDeletePeriod value.
      */
@@ -141,7 +159,8 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the originalDatabaseName property: The original database name, before databaseNameOverride or databaseNamePrefix where applied.
+     * Get the originalDatabaseName property: The original database name, before databaseNameOverride or
+     * databaseNamePrefix where applied.
      * 
      * @return the originalDatabaseName value.
      */
@@ -159,7 +178,8 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
+     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object
+     * contains information related to the database's suspension state.
      * 
      * @return the suspensionDetails value.
      */

@@ -53,7 +53,8 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientFirewallPolicyIdpsSignatures to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientFirewallPolicyIdpsSignatures to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -71,7 +72,8 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     }
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
@@ -114,7 +116,8 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     }
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
@@ -157,7 +160,8 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     }
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
@@ -175,7 +179,8 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     }
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.
@@ -193,7 +198,8 @@ public final class FirewallPolicyIdpsSignaturesClientImpl implements FirewallPol
     }
 
     /**
-     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is 1000.
+     * Retrieves the current status of IDPS signatures for the relevant policy. Maximal amount of returned signatures is
+     * 1000.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param firewallPolicyName The name of the Firewall Policy.

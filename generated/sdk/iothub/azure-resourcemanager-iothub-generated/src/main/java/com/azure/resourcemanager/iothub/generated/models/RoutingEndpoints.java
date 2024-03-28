@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The properties related to the custom endpoints to which your IoT hub routes messages based on the routing rules. A maximum of 10 custom endpoints are allowed across all endpoint types for paid hubs and only 1 custom endpoint is allowed across all endpoint types for free hubs.
+ * The properties related to the custom endpoints to which your IoT hub routes messages based on the routing rules. A
+ * maximum of 10 custom endpoints are allowed across all endpoint types for paid hubs and only 1 custom endpoint is
+ * allowed across all endpoint types for free hubs.
  */
 @Fluent
 public final class RoutingEndpoints {
@@ -50,7 +52,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Get the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to, based on the routing rules.
+     * Get the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to,
+     * based on the routing rules.
      * 
      * @return the serviceBusQueues value.
      */
@@ -59,7 +62,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Set the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to, based on the routing rules.
+     * Set the serviceBusQueues property: The list of Service Bus queue endpoints that IoT hub routes the messages to,
+     * based on the routing rules.
      * 
      * @param serviceBusQueues the serviceBusQueues value to set.
      * @return the RoutingEndpoints object itself.
@@ -70,7 +74,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Get the serviceBusTopics property: The list of Service Bus topic endpoints that the IoT hub routes the messages to, based on the routing rules.
+     * Get the serviceBusTopics property: The list of Service Bus topic endpoints that the IoT hub routes the messages
+     * to, based on the routing rules.
      * 
      * @return the serviceBusTopics value.
      */
@@ -79,7 +84,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Set the serviceBusTopics property: The list of Service Bus topic endpoints that the IoT hub routes the messages to, based on the routing rules.
+     * Set the serviceBusTopics property: The list of Service Bus topic endpoints that the IoT hub routes the messages
+     * to, based on the routing rules.
      * 
      * @param serviceBusTopics the serviceBusTopics value to set.
      * @return the RoutingEndpoints object itself.
@@ -90,7 +96,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Get the eventHubs property: The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not include the built-in Event Hubs endpoint.
+     * Get the eventHubs property: The list of Event Hubs endpoints that IoT hub routes messages to, based on the
+     * routing rules. This list does not include the built-in Event Hubs endpoint.
      * 
      * @return the eventHubs value.
      */
@@ -99,7 +106,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Set the eventHubs property: The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not include the built-in Event Hubs endpoint.
+     * Set the eventHubs property: The list of Event Hubs endpoints that IoT hub routes messages to, based on the
+     * routing rules. This list does not include the built-in Event Hubs endpoint.
      * 
      * @param eventHubs the eventHubs value to set.
      * @return the RoutingEndpoints object itself.
@@ -110,7 +118,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Get the storageContainers property: The list of storage container endpoints that IoT hub routes messages to, based on the routing rules.
+     * Get the storageContainers property: The list of storage container endpoints that IoT hub routes messages to,
+     * based on the routing rules.
      * 
      * @return the storageContainers value.
      */
@@ -119,7 +128,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Set the storageContainers property: The list of storage container endpoints that IoT hub routes messages to, based on the routing rules.
+     * Set the storageContainers property: The list of storage container endpoints that IoT hub routes messages to,
+     * based on the routing rules.
      * 
      * @param storageContainers the storageContainers value to set.
      * @return the RoutingEndpoints object itself.
@@ -130,7 +140,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Get the cosmosDBSqlContainers property: The list of Cosmos DB container endpoints that IoT hub routes messages to, based on the routing rules.
+     * Get the cosmosDBSqlContainers property: The list of Cosmos DB container endpoints that IoT hub routes messages
+     * to, based on the routing rules.
      * 
      * @return the cosmosDBSqlContainers value.
      */
@@ -139,7 +150,8 @@ public final class RoutingEndpoints {
     }
 
     /**
-     * Set the cosmosDBSqlContainers property: The list of Cosmos DB container endpoints that IoT hub routes messages to, based on the routing rules.
+     * Set the cosmosDBSqlContainers property: The list of Cosmos DB container endpoints that IoT hub routes messages
+     * to, based on the routing rules.
      * 
      * @param cosmosDBSqlContainers the cosmosDBSqlContainers value to set.
      * @return the RoutingEndpoints object itself.

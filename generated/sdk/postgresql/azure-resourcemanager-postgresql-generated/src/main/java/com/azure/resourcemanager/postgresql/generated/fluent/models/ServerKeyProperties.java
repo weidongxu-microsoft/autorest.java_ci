@@ -95,8 +95,9 @@ public final class ServerKeyProperties {
      */
     public void validate() {
         if (serverKeyType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property serverKeyType in model ServerKeyProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property serverKeyType in model ServerKeyProperties"));
         }
     }
 

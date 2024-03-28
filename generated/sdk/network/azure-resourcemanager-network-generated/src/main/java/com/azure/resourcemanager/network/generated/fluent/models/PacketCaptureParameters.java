@@ -73,7 +73,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Get the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently supported.
+     * Get the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently
+     * supported.
      * 
      * @return the target value.
      */
@@ -82,7 +83,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Set the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently supported.
+     * Set the target property: The ID of the targeted resource, only AzureVM and AzureVMSS as target type are currently
+     * supported.
      * 
      * @param target the target value to set.
      * @return the PacketCaptureParameters object itself.
@@ -93,7 +95,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Get the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     * Get the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If
+     * both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
      * 
      * @return the scope value.
      */
@@ -102,7 +105,8 @@ public class PacketCaptureParameters {
     }
 
     /**
-     * Set the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
+     * Set the scope property: A list of AzureVMSS instances which can be included or excluded to run packet capture. If
+     * both included and excluded are empty, then the packet capture will run on all instances of AzureVMSS.
      * 
      * @param scope the scope value to set.
      * @return the PacketCaptureParameters object itself.
@@ -239,15 +243,16 @@ public class PacketCaptureParameters {
      */
     public void validate() {
         if (target() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property target in model PacketCaptureParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property target in model PacketCaptureParameters"));
         }
         if (scope() != null) {
             scope().validate();
         }
         if (storageLocation() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property storageLocation in model PacketCaptureParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property storageLocation in model PacketCaptureParameters"));
         } else {
             storageLocation().validate();
         }

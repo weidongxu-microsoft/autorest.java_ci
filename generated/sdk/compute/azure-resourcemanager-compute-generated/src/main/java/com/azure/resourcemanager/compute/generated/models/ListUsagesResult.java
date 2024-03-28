@@ -54,7 +54,8 @@ public final class ListUsagesResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext() with this to fetch the next page of compute resource usage information.
+     * Get the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext()
+     * with this to fetch the next page of compute resource usage information.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class ListUsagesResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext() with this to fetch the next page of compute resource usage information.
+     * Set the nextLink property: The URI to fetch the next page of compute resource usage information. Call ListNext()
+     * with this to fetch the next page of compute resource usage information.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ListUsagesResult object itself.
@@ -80,8 +82,8 @@ public final class ListUsagesResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model ListUsagesResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model ListUsagesResult"));
         } else {
             value().forEach(e -> e.validate());
         }

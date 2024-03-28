@@ -42,7 +42,8 @@ public final class ListQueryKeysResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of query keys. Returned when the total number of requested query keys exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of query keys. Returned when the total
+     * number of requested query keys exceed maximum page size.
      * 
      * @return the nextLink value.
      */

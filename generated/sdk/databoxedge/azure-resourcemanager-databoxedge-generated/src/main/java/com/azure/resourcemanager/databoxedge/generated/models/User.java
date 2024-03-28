@@ -49,7 +49,8 @@ public interface User {
     AsymmetricEncryptedSecret encryptedPassword();
 
     /**
-     * Gets the shareAccessRights property: List of shares that the user has rights on. This field should not be specified during user creation.
+     * Gets the shareAccessRights property: List of shares that the user has rights on. This field should not be
+     * specified during user creation.
      * 
      * @return the shareAccessRights value.
      */
@@ -121,7 +122,8 @@ public interface User {
         }
 
         /**
-         * The stage of the User definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the User definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithEncryptedPassword {
             /**

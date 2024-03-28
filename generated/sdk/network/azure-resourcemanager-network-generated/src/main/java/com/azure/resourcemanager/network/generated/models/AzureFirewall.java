@@ -235,7 +235,8 @@ public interface AzureFirewall {
         }
 
         /**
-         * The stage of the AzureFirewall definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AzureFirewall definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones,
             DefinitionStages.WithApplicationRuleCollections, DefinitionStages.WithNatRuleCollections,
@@ -277,7 +278,8 @@ public interface AzureFirewall {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: A list of availability zones denoting where the resource needs to come from..
+             * Specifies the zones property: A list of availability zones denoting where the resource needs to come
+             * from..
              * 
              * @param zones A list of availability zones denoting where the resource needs to come from.
              * @return the next definition stage.
@@ -290,7 +292,8 @@ public interface AzureFirewall {
          */
         interface WithApplicationRuleCollections {
             /**
-             * Specifies the applicationRuleCollections property: Collection of application rule collections used by Azure Firewall..
+             * Specifies the applicationRuleCollections property: Collection of application rule collections used by
+             * Azure Firewall..
              * 
              * @param applicationRuleCollections Collection of application rule collections used by Azure Firewall.
              * @return the next definition stage.
@@ -317,7 +320,8 @@ public interface AzureFirewall {
          */
         interface WithNetworkRuleCollections {
             /**
-             * Specifies the networkRuleCollections property: Collection of network rule collections used by Azure Firewall..
+             * Specifies the networkRuleCollections property: Collection of network rule collections used by Azure
+             * Firewall..
              * 
              * @param networkRuleCollections Collection of network rule collections used by Azure Firewall.
              * @return the next definition stage.
@@ -343,7 +347,8 @@ public interface AzureFirewall {
          */
         interface WithManagementIpConfiguration {
             /**
-             * Specifies the managementIpConfiguration property: IP configuration of the Azure Firewall used for management traffic..
+             * Specifies the managementIpConfiguration property: IP configuration of the Azure Firewall used for
+             * management traffic..
              * 
              * @param managementIpConfiguration IP configuration of the Azure Firewall used for management traffic.
              * @return the next definition stage.
@@ -421,7 +426,8 @@ public interface AzureFirewall {
          */
         interface WithAdditionalProperties {
             /**
-             * Specifies the additionalProperties property: The additional properties used to further config this azure firewall..
+             * Specifies the additionalProperties property: The additional properties used to further config this azure
+             * firewall..
              * 
              * @param additionalProperties The additional properties used to further config this azure firewall.
              * @return the next definition stage.

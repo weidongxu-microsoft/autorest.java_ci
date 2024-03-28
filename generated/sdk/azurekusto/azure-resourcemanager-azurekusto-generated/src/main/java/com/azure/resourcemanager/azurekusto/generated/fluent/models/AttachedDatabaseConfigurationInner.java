@@ -74,7 +74,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Get the databaseName property: The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+     * Get the databaseName property: The name of the database which you would like to attach, use * if you want to
+     * follow all current and future databases.
      * 
      * @return the databaseName value.
      */
@@ -83,7 +84,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Set the databaseName property: The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+     * Set the databaseName property: The name of the database which you would like to attach, use * if you want to
+     * follow all current and future databases.
      * 
      * @param databaseName the databaseName value to set.
      * @return the AttachedDatabaseConfigurationInner object itself.
@@ -97,7 +99,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Get the clusterResourceId property: The resource id of the cluster where the databases you would like to attach reside.
+     * Get the clusterResourceId property: The resource id of the cluster where the databases you would like to attach
+     * reside.
      * 
      * @return the clusterResourceId value.
      */
@@ -106,7 +109,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Set the clusterResourceId property: The resource id of the cluster where the databases you would like to attach reside.
+     * Set the clusterResourceId property: The resource id of the cluster where the databases you would like to attach
+     * reside.
      * 
      * @param clusterResourceId the clusterResourceId value to set.
      * @return the AttachedDatabaseConfigurationInner object itself.
@@ -120,7 +124,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Get the attachedDatabaseNames property: The list of databases from the clusterResourceId which are currently attached to the cluster.
+     * Get the attachedDatabaseNames property: The list of databases from the clusterResourceId which are currently
+     * attached to the cluster.
      * 
      * @return the attachedDatabaseNames value.
      */
@@ -177,7 +182,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Get the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a specific database.
+     * Get the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
      * 
      * @return the databaseNameOverride value.
      */
@@ -186,7 +192,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Set the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a specific database.
+     * Set the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
      * 
      * @param databaseNameOverride the databaseNameOverride value to set.
      * @return the AttachedDatabaseConfigurationInner object itself.
@@ -200,7 +207,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Get the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+     * Get the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
      * 
      * @return the databaseNamePrefix value.
      */
@@ -209,7 +217,8 @@ public final class AttachedDatabaseConfigurationInner extends ProxyResource {
     }
 
     /**
-     * Set the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+     * Set the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
      * 
      * @param databaseNamePrefix the databaseNamePrefix value to set.
      * @return the AttachedDatabaseConfigurationInner object itself.

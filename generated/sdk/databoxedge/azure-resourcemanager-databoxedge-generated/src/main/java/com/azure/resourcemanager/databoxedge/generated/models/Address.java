@@ -208,8 +208,8 @@ public final class Address {
      */
     public void validate() {
         if (country() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property country in model Address"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property country in model Address"));
         }
     }
 

@@ -54,7 +54,10 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+     * Get the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+     * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are
+     * supported. Refer to List Microsoft.Compute SKUs in a region
+     * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
      * 
      * @return the sku value.
      */
@@ -63,7 +66,10 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Set the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+     * Set the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+     * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are
+     * supported. Refer to List Microsoft.Compute SKUs in a region
+     * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
      * 
      * @param sku the sku value to set.
      * @return the CapacityReservationInner object itself.
@@ -74,7 +80,10 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value and also should be part for the list of zones specified during the capacity reservation group creation. The zone can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same zone.
+     * Get the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value
+     * and also should be part for the list of zones specified during the capacity reservation group creation. The zone
+     * can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If
+     * provided, enforces VM/VMSS using this capacity reservation to be in same zone.
      * 
      * @return the zones value.
      */
@@ -83,7 +92,10 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Set the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value and also should be part for the list of zones specified during the capacity reservation group creation. The zone can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same zone.
+     * Set the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value
+     * and also should be part for the list of zones specified during the capacity reservation group creation. The zone
+     * can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If
+     * provided, enforces VM/VMSS using this capacity reservation to be in same zone.
      * 
      * @param zones the zones value to set.
      * @return the CapacityReservationInner object itself.
@@ -112,7 +124,8 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the reservationId property: A unique id generated and assigned to the capacity reservation by the platform which does not change throughout the lifetime of the resource.
+     * Get the reservationId property: A unique id generated and assigned to the capacity reservation by the platform
+     * which does not change throughout the lifetime of the resource.
      * 
      * @return the reservationId value.
      */
@@ -121,7 +134,10 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the platformFaultDomainCount property: Specifies the value of fault domain count that Capacity Reservation supports for requested VM size. **Note:** The fault domain count specified for a resource (like virtual machines scale set) must be less than or equal to this value if it deploys using capacity reservation. Minimum api-version: 2022-08-01.
+     * Get the platformFaultDomainCount property: Specifies the value of fault domain count that Capacity Reservation
+     * supports for requested VM size. **Note:** The fault domain count specified for a resource (like virtual machines
+     * scale set) must be less than or equal to this value if it deploys using capacity reservation. Minimum
+     * api-version: 2022-08-01.
      * 
      * @return the platformFaultDomainCount value.
      */
@@ -130,7 +146,8 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the virtualMachinesAssociated property: A list of all virtual machine resource ids that are associated with the capacity reservation.
+     * Get the virtualMachinesAssociated property: A list of all virtual machine resource ids that are associated with
+     * the capacity reservation.
      * 
      * @return the virtualMachinesAssociated value.
      */
@@ -166,7 +183,8 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the timeCreated property: Specifies the time at which the Capacity Reservation resource was created. Minimum api-version: 2021-11-01.
+     * Get the timeCreated property: Specifies the time at which the Capacity Reservation resource was created. Minimum
+     * api-version: 2021-11-01.
      * 
      * @return the timeCreated value.
      */
@@ -184,8 +202,8 @@ public final class CapacityReservationInner extends Resource {
             innerProperties().validate();
         }
         if (sku() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sku in model CapacityReservationInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sku in model CapacityReservationInner"));
         } else {
             sku().validate();
         }

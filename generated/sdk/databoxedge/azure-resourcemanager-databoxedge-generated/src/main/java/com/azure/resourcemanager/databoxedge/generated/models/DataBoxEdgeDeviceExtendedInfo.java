@@ -48,7 +48,8 @@ public interface DataBoxEdgeDeviceExtendedInfo {
     String encryptionKeyThumbprint();
 
     /**
-     * Gets the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any secret.
+     * Gets the encryptionKey property: The public part of the encryption certificate. Client uses this to encrypt any
+     * secret.
      * 
      * @return the encryptionKey value.
      */
@@ -83,7 +84,8 @@ public interface DataBoxEdgeDeviceExtendedInfo {
     String channelIntegrityKeyName();
 
     /**
-     * Gets the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key Vault.
+     * Gets the channelIntegrityKeyVersion property: The version of Channel Integrity Key stored in the Client Key
+     * Vault.
      * 
      * @return the channelIntegrityKeyVersion value.
      */
@@ -146,7 +148,8 @@ public interface DataBoxEdgeDeviceExtendedInfo {
     String cloudWitnessStorageEndpoint();
 
     /**
-     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner object.
+     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDeviceExtendedInfoInner
+     * object.
      * 
      * @return the inner object.
      */

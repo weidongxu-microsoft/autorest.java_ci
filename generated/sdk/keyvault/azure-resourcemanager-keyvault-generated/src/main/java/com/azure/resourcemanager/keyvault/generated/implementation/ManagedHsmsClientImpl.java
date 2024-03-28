@@ -71,7 +71,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientManagedHsms to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientManagedHsms to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -201,7 +202,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String name,
@@ -243,7 +245,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String name,
@@ -430,7 +433,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String name,
@@ -472,7 +476,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return resource information with extended details along with {@link Response} on successful completion of {@link Mono}.
+     * @return resource information with extended details along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String name,
@@ -962,7 +967,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param top Maximum number of results to return.
@@ -996,7 +1002,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param top Maximum number of results to return.
@@ -1031,7 +1038,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param top Maximum number of results to return.
@@ -1047,7 +1055,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1063,7 +1072,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param top Maximum number of results to return.
@@ -1081,7 +1091,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1096,7 +1107,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
     }
 
     /**
-     * The List operation gets information about the managed HSM Pools associated with the subscription and within the specified resource group.
+     * The List operation gets information about the managed HSM Pools associated with the subscription and within the
+     * specified resource group.
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param top Maximum number of results to return.
@@ -1246,7 +1258,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * 
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedSinglePageAsync() {
@@ -1274,7 +1287,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedSinglePageAsync(Context context) {
@@ -1663,7 +1677,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckMhsmNameAvailability operation response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckMhsmNameAvailabilityResultInner>>
@@ -1696,7 +1711,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the CheckMhsmNameAvailability operation response along with {@link Response} on successful completion of {@link Mono}.
+     * @return the CheckMhsmNameAvailability operation response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckMhsmNameAvailabilityResultInner>>
@@ -1891,7 +1907,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedNextSinglePageAsync(String nextLink) {
@@ -1920,7 +1937,8 @@ public final class ManagedHsmsClientImpl implements ManagedHsmsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of deleted managed HSM Pools along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DeletedManagedHsmInner>> listDeletedNextSinglePageAsync(String nextLink,

@@ -53,17 +53,6 @@ public class StaticRoutingEnrichment {
     }
 
     /**
-     * Set the valueType property: Static routing enrichment value type. For e.g. this property value can be 'String'.
-     * 
-     * @param valueType the valueType value to set.
-     * @return the StaticRoutingEnrichment object itself.
-     */
-    protected StaticRoutingEnrichment withValueType(StaticRoutingEnrichmentType valueType) {
-        this.valueType = valueType;
-        return this;
-    }
-
-    /**
      * Get the key property: Static routing enrichment key.
      * 
      * @return the key value.

@@ -19,7 +19,8 @@ public interface SignatureOverridesFilterValuesResponse {
     List<String> filterValues();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.SignatureOverridesFilterValuesResponseInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.SignatureOverridesFilterValuesResponseInner object.
      * 
      * @return the inner object.
      */

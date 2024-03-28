@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface Configurations.
+ * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface
+ * Configurations.
  */
 public final class NetworkApiVersion extends ExpandableStringEnum<NetworkApiVersion> {
     /**

@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -23,6 +24,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPolicyRestrictionTokenKey {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey";
+
+    /*
      * The raw data field of a certificate in PKCS 12 format (X509Certificate2 in .NET)
      */
     @JsonProperty(value = "rawBody", required = true)
@@ -32,7 +40,16 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
      * Creates an instance of ContentKeyPolicyX509CertificateTokenKey class.
      */
     public ContentKeyPolicyX509CertificateTokenKey() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -64,8 +81,9 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
     public void validate() {
         super.validate();
         if (rawBody() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property rawBody in model ContentKeyPolicyX509CertificateTokenKey"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property rawBody in model ContentKeyPolicyX509CertificateTokenKey"));
         }
     }
 

@@ -9,7 +9,10 @@ import com.azure.core.management.SubResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies information about the image to use. You can specify information about platform images, marketplace images, or virtual machine images. This element is required when you want to use a platform image, marketplace image, or virtual machine image, but is not used in other creation operations. NOTE: Image reference publisher and offer can only be set when you create the scale set.
+ * Specifies information about the image to use. You can specify information about platform images, marketplace images,
+ * or virtual machine images. This element is required when you want to use a platform image, marketplace image, or
+ * virtual machine image, but is not used in other creation operations. NOTE: Image reference publisher and offer can
+ * only be set when you create the scale set.
  */
 @Fluent
 public final class ImageReference extends SubResource {
@@ -82,7 +85,8 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Get the offer property: Specifies the offer of the platform image or marketplace image used to create the virtual machine.
+     * Get the offer property: Specifies the offer of the platform image or marketplace image used to create the virtual
+     * machine.
      * 
      * @return the offer value.
      */
@@ -91,7 +95,8 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Set the offer property: Specifies the offer of the platform image or marketplace image used to create the virtual machine.
+     * Set the offer property: Specifies the offer of the platform image or marketplace image used to create the virtual
+     * machine.
      * 
      * @param offer the offer value to set.
      * @return the ImageReference object itself.
@@ -122,7 +127,14 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Get the version property: Specifies the version of the platform image or marketplace image used to create the virtual machine. The allowed formats are Major.Minor.Build or 'latest'. Major, Minor, and Build are decimal numbers. Specify 'latest' to use the latest version of an image available at deploy time. Even if you use 'latest', the VM image will not automatically update after deploy time even if a new version becomes available. Please do not use field 'version' for gallery image deployment, gallery image should always use 'id' field for deployment, to use 'latest' version of gallery image, just set '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/images/{imageName}' in the 'id' field without version input.
+     * Get the version property: Specifies the version of the platform image or marketplace image used to create the
+     * virtual machine. The allowed formats are Major.Minor.Build or 'latest'. Major, Minor, and Build are decimal
+     * numbers. Specify 'latest' to use the latest version of an image available at deploy time. Even if you use
+     * 'latest', the VM image will not automatically update after deploy time even if a new version becomes available.
+     * Please do not use field 'version' for gallery image deployment, gallery image should always use 'id' field for
+     * deployment, to use 'latest' version of gallery image, just set
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/images/{imageName}'
+     * in the 'id' field without version input.
      * 
      * @return the version value.
      */
@@ -131,7 +143,14 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Set the version property: Specifies the version of the platform image or marketplace image used to create the virtual machine. The allowed formats are Major.Minor.Build or 'latest'. Major, Minor, and Build are decimal numbers. Specify 'latest' to use the latest version of an image available at deploy time. Even if you use 'latest', the VM image will not automatically update after deploy time even if a new version becomes available. Please do not use field 'version' for gallery image deployment, gallery image should always use 'id' field for deployment, to use 'latest' version of gallery image, just set '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/images/{imageName}' in the 'id' field without version input.
+     * Set the version property: Specifies the version of the platform image or marketplace image used to create the
+     * virtual machine. The allowed formats are Major.Minor.Build or 'latest'. Major, Minor, and Build are decimal
+     * numbers. Specify 'latest' to use the latest version of an image available at deploy time. Even if you use
+     * 'latest', the VM image will not automatically update after deploy time even if a new version becomes available.
+     * Please do not use field 'version' for gallery image deployment, gallery image should always use 'id' field for
+     * deployment, to use 'latest' version of gallery image, just set
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Compute/galleries/{galleryName}/images/{imageName}'
+     * in the 'id' field without version input.
      * 
      * @param version the version value to set.
      * @return the ImageReference object itself.
@@ -142,7 +161,9 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Get the exactVersion property: Specifies in decimal numbers, the version of platform image or marketplace image used to create the virtual machine. This readonly field differs from 'version', only if the value specified in 'version' field is 'latest'.
+     * Get the exactVersion property: Specifies in decimal numbers, the version of platform image or marketplace image
+     * used to create the virtual machine. This readonly field differs from 'version', only if the value specified in
+     * 'version' field is 'latest'.
      * 
      * @return the exactVersion value.
      */
@@ -151,7 +172,8 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Get the sharedGalleryImageId property: Specified the shared gallery image unique id for vm deployment. This can be fetched from shared gallery image GET call.
+     * Get the sharedGalleryImageId property: Specified the shared gallery image unique id for vm deployment. This can
+     * be fetched from shared gallery image GET call.
      * 
      * @return the sharedGalleryImageId value.
      */
@@ -160,7 +182,8 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Set the sharedGalleryImageId property: Specified the shared gallery image unique id for vm deployment. This can be fetched from shared gallery image GET call.
+     * Set the sharedGalleryImageId property: Specified the shared gallery image unique id for vm deployment. This can
+     * be fetched from shared gallery image GET call.
      * 
      * @param sharedGalleryImageId the sharedGalleryImageId value to set.
      * @return the ImageReference object itself.
@@ -171,7 +194,8 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Get the communityGalleryImageId property: Specified the community gallery image unique id for vm deployment. This can be fetched from community gallery image GET call.
+     * Get the communityGalleryImageId property: Specified the community gallery image unique id for vm deployment. This
+     * can be fetched from community gallery image GET call.
      * 
      * @return the communityGalleryImageId value.
      */
@@ -180,7 +204,8 @@ public final class ImageReference extends SubResource {
     }
 
     /**
-     * Set the communityGalleryImageId property: Specified the community gallery image unique id for vm deployment. This can be fetched from community gallery image GET call.
+     * Set the communityGalleryImageId property: Specified the community gallery image unique id for vm deployment. This
+     * can be fetched from community gallery image GET call.
      * 
      * @param communityGalleryImageId the communityGalleryImageId value to set.
      * @return the ImageReference object itself.

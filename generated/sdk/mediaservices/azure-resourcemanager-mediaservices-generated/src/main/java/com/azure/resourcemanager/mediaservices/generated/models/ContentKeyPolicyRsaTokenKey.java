@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -22,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.ContentKeyPolicyRsaTokenKey")
 @Fluent
 public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestrictionTokenKey {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyRsaTokenKey";
+
     /*
      * The RSA Parameter exponent
      */
@@ -38,7 +46,16 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
      * Creates an instance of ContentKeyPolicyRsaTokenKey class.
      */
     public ContentKeyPolicyRsaTokenKey() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyRsaTokenKey");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -90,12 +107,14 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
     public void validate() {
         super.validate();
         if (exponent() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property exponent in model ContentKeyPolicyRsaTokenKey"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property exponent in model ContentKeyPolicyRsaTokenKey"));
         }
         if (modulus() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property modulus in model ContentKeyPolicyRsaTokenKey"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property modulus in model ContentKeyPolicyRsaTokenKey"));
         }
     }
 

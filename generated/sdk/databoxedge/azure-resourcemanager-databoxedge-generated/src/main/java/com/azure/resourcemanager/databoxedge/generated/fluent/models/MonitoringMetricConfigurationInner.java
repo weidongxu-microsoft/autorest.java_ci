@@ -85,8 +85,9 @@ public final class MonitoringMetricConfigurationInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model MonitoringMetricConfigurationInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model MonitoringMetricConfigurationInner"));
         } else {
             innerProperties().validate();
         }

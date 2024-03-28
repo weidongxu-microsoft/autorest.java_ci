@@ -101,7 +101,8 @@ public interface InboundSecurityRule {
         }
 
         /**
-         * The stage of the InboundSecurityRule definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the InboundSecurityRule definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithRules {
             /**

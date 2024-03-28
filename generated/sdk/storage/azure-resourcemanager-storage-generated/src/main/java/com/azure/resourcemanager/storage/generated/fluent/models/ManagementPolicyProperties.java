@@ -43,7 +43,8 @@ public final class ManagementPolicyProperties {
     }
 
     /**
-     * Get the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * Get the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in:
+     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      * 
      * @return the policy value.
      */
@@ -52,7 +53,8 @@ public final class ManagementPolicyProperties {
     }
 
     /**
-     * Set the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * Set the policy property: The Storage Account ManagementPolicy, in JSON format. See more details in:
+     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      * 
      * @param policy the policy value to set.
      * @return the ManagementPolicyProperties object itself.
@@ -69,8 +71,9 @@ public final class ManagementPolicyProperties {
      */
     public void validate() {
         if (policy() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property policy in model ManagementPolicyProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property policy in model ManagementPolicyProperties"));
         } else {
             policy().validate();
         }

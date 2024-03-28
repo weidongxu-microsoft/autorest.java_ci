@@ -63,7 +63,8 @@ public interface Recommendation {
     String resourceId();
 
     /**
-     * Gets the resourceScope property: Name of a resource type this recommendation applies, e.g. Subscription, ServerFarm, Site.
+     * Gets the resourceScope property: Name of a resource type this recommendation applies, e.g. Subscription,
+     * ServerFarm, Site.
      * 
      * @return the resourceScope value.
      */
@@ -119,14 +120,16 @@ public interface Recommendation {
     String actionName();
 
     /**
-     * Gets the enabled property: True if this recommendation is still valid (i.e. "actionable"). False if it is invalid.
+     * Gets the enabled property: True if this recommendation is still valid (i.e. "actionable"). False if it is
+     * invalid.
      * 
      * @return the enabled value.
      */
     Integer enabled();
 
     /**
-     * Gets the states property: The list of states of this recommendation. If it's null then it should be considered "Active".
+     * Gets the states property: The list of states of this recommendation. If it's null then it should be considered
+     * "Active".
      * 
      * @return the states value.
      */
@@ -147,7 +150,8 @@ public interface Recommendation {
     OffsetDateTime endTime();
 
     /**
-     * Gets the nextNotificationTime property: When to notify this recommendation next in UTC. Null means that this will never be notified anymore.
+     * Gets the nextNotificationTime property: When to notify this recommendation next in UTC. Null means that this will
+     * never be notified anymore.
      * 
      * @return the nextNotificationTime value.
      */
@@ -161,7 +165,8 @@ public interface Recommendation {
     OffsetDateTime notificationExpirationTime();
 
     /**
-     * Gets the notifiedTime property: Last timestamp in UTC this instance was actually notified. Null means that this recommendation hasn't been notified yet.
+     * Gets the notifiedTime property: Last timestamp in UTC this instance was actually notified. Null means that this
+     * recommendation hasn't been notified yet.
      * 
      * @return the notifiedTime value.
      */

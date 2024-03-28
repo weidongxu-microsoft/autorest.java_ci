@@ -108,7 +108,8 @@ public interface DeploymentExtended {
             /**
              * Specifies resourceGroupName.
              * 
-             * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive. The resource group must already exist.
+             * @param resourceGroupName The name of the resource group to deploy the resources to. The name is case
+             * insensitive. The resource group must already exist.
              * @return the next definition stage.
              */
             WithProperties withExistingResourceGroup(String resourceGroupName);
@@ -128,7 +129,8 @@ public interface DeploymentExtended {
         }
 
         /**
-         * The stage of the DeploymentExtended definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DeploymentExtended definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithLocation, DefinitionStages.WithTags {
             /**
@@ -258,7 +260,9 @@ public interface DeploymentExtended {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resource group partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resource group partially deployed.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -271,7 +275,9 @@ public interface DeploymentExtended {
     /**
      * Cancels a currently running template deployment.
      * 
-     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resource group partially deployed.
+     * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is
+     * canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running
+     * template deployment and leaves the resource group partially deployed.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -279,7 +285,8 @@ public interface DeploymentExtended {
     void cancel();
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
+     * Manager..
      * 
      * @param parameters Parameters to validate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -290,7 +297,8 @@ public interface DeploymentExtended {
     DeploymentValidateResult validate(Deployment parameters);
 
     /**
-     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
+     * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource
+     * Manager..
      * 
      * @param parameters Parameters to validate.
      * @param context The context to associate with this operation.

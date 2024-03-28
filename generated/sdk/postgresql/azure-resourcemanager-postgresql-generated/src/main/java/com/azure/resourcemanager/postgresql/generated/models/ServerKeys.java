@@ -13,19 +13,19 @@ import com.azure.core.util.Context;
  */
 public interface ServerKeys {
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedIterable}.
+     * @return a list of Server keys as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ServerKey> list(String resourceGroupName, String serverName);
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -33,7 +33,7 @@ public interface ServerKeys {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedIterable}.
+     * @return a list of Server keys as paginated response with {@link PagedIterable}.
      */
     PagedIterable<ServerKey> list(String resourceGroupName, String serverName, Context context);
 

@@ -57,7 +57,8 @@ public interface WebTest {
     WebTestKind kind();
 
     /**
-     * Gets the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name field.
+     * Gets the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name
+     * field.
      * 
      * @return the syntheticMonitorId value.
      */
@@ -113,7 +114,8 @@ public interface WebTest {
     Boolean retryEnabled();
 
     /**
-     * Gets the locations property: A list of where to physically run the tests from to give global coverage for accessibility of your application.
+     * Gets the locations property: A list of where to physically run the tests from to give global coverage for
+     * accessibility of your application.
      * 
      * @return the locations value.
      */
@@ -127,7 +129,9 @@ public interface WebTest {
     WebTestPropertiesConfiguration configuration();
 
     /**
-     * Gets the provisioningState property: Current state of this component, whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+     * Gets the provisioningState property: Current state of this component, whether or not is has been provisioned
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -213,7 +217,8 @@ public interface WebTest {
         }
 
         /**
-         * The stage of the WebTest definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the WebTest definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithKind, DefinitionStages.WithSyntheticMonitorId,
@@ -254,7 +259,8 @@ public interface WebTest {
          */
         interface WithKind {
             /**
-             * Specifies the kind property: The kind of web test that this web test watches. Choices are ping and multistep..
+             * Specifies the kind property: The kind of web test that this web test watches. Choices are ping and
+             * multistep..
              * 
              * @param kind The kind of web test that this web test watches. Choices are ping and multistep.
              * @return the next definition stage.
@@ -267,7 +273,8 @@ public interface WebTest {
          */
         interface WithSyntheticMonitorId {
             /**
-             * Specifies the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name field..
+             * Specifies the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as
+             * the Name field..
              * 
              * @param syntheticMonitorId Unique ID of this WebTest. This is typically the same value as the Name field.
              * @return the next definition stage.
@@ -319,7 +326,8 @@ public interface WebTest {
          */
         interface WithFrequency {
             /**
-             * Specifies the frequency property: Interval in seconds between test runs for this WebTest. Default value is 300..
+             * Specifies the frequency property: Interval in seconds between test runs for this WebTest. Default value
+             * is 300..
              * 
              * @param frequency Interval in seconds between test runs for this WebTest. Default value is 300.
              * @return the next definition stage.
@@ -371,9 +379,11 @@ public interface WebTest {
          */
         interface WithLocations {
             /**
-             * Specifies the locations property: A list of where to physically run the tests from to give global coverage for accessibility of your application..
+             * Specifies the locations property: A list of where to physically run the tests from to give global
+             * coverage for accessibility of your application..
              * 
-             * @param locations A list of where to physically run the tests from to give global coverage for accessibility of your application.
+             * @param locations A list of where to physically run the tests from to give global coverage for
+             * accessibility of your application.
              * @return the next definition stage.
              */
             WithCreate withLocations(List<WebTestGeolocation> locations);

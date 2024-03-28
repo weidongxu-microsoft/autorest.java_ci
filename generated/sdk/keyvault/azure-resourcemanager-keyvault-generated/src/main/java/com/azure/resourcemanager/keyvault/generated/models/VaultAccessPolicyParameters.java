@@ -46,7 +46,8 @@ public interface VaultAccessPolicyParameters {
     VaultAccessPolicyProperties properties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.VaultAccessPolicyParametersInner object.
+     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.VaultAccessPolicyParametersInner
+     * object.
      * 
      * @return the inner object.
      */

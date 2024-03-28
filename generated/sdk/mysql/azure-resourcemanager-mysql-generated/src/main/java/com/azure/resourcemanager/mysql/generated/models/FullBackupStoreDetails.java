@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mysql.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class FullBackupStoreDetails extends BackupStoreDetails {
     /*
+     * Type of the specific object - used for deserializing
+     */
+    @JsonTypeId
+    @JsonProperty(value = "objectType", required = true)
+    private String objectType = "FullBackupStoreDetails";
+
+    /*
      * SASUriList of storage containers where backup data is to be streamed/copied.
      */
     @JsonProperty(value = "sasUriList", required = true)
@@ -32,7 +40,16 @@ public final class FullBackupStoreDetails extends BackupStoreDetails {
      * Creates an instance of FullBackupStoreDetails class.
      */
     public FullBackupStoreDetails() {
-        withObjectType("FullBackupStoreDetails");
+    }
+
+    /**
+     * Get the objectType property: Type of the specific object - used for deserializing.
+     * 
+     * @return the objectType value.
+     */
+    @Override
+    public String objectType() {
+        return this.objectType;
     }
 
     /**
@@ -64,8 +81,9 @@ public final class FullBackupStoreDetails extends BackupStoreDetails {
     public void validate() {
         super.validate();
         if (sasUriList() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sasUriList in model FullBackupStoreDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sasUriList in model FullBackupStoreDetails"));
         }
     }
 

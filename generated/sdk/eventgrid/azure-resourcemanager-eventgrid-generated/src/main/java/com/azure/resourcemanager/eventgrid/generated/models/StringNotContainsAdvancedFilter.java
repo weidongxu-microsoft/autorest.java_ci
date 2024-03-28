@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -22,6 +23,13 @@ import java.util.List;
 @Fluent
 public final class StringNotContainsAdvancedFilter extends AdvancedFilter {
     /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "operatorType", required = true)
+    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.STRING_NOT_CONTAINS;
+
+    /*
      * The set of filter values.
      */
     @JsonProperty(value = "values")
@@ -31,7 +39,17 @@ public final class StringNotContainsAdvancedFilter extends AdvancedFilter {
      * Creates an instance of StringNotContainsAdvancedFilter class.
      */
     public StringNotContainsAdvancedFilter() {
-        withOperatorType(AdvancedFilterOperatorType.STRING_NOT_CONTAINS);
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public AdvancedFilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**

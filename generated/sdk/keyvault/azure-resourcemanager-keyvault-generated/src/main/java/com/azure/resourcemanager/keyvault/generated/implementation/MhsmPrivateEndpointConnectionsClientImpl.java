@@ -66,7 +66,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientMhsmPrivateEndpointConnections to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientMhsmPrivateEndpointConnections to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -129,7 +130,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>>
@@ -167,7 +169,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>>
@@ -204,7 +207,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with {@link PagedFlux}.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MhsmPrivateEndpointConnectionInner> listByResourceAsync(String resourceGroupName, String name) {
@@ -221,7 +225,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with {@link PagedFlux}.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<MhsmPrivateEndpointConnectionInner> listByResourceAsync(String resourceGroupName, String name,
@@ -238,7 +243,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with {@link PagedIterable}.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MhsmPrivateEndpointConnectionInner> listByResource(String resourceGroupName, String name) {
@@ -254,7 +260,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with {@link PagedIterable}.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<MhsmPrivateEndpointConnectionInner> listByResource(String resourceGroupName, String name,
@@ -267,11 +274,13 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MhsmPrivateEndpointConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -307,12 +316,14 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<MhsmPrivateEndpointConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -347,11 +358,13 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool on successful completion of {@link Mono}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<MhsmPrivateEndpointConnectionInner> getAsync(String resourceGroupName, String name,
@@ -365,12 +378,14 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link Response}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<MhsmPrivateEndpointConnectionInner> getWithResponse(String resourceGroupName, String name,
@@ -383,7 +398,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -400,7 +416,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param properties The intended state of private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -447,7 +464,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param properties The intended state of private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -493,7 +511,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param properties The intended state of private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -512,7 +531,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param properties The intended state of private endpoint connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -532,7 +552,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param properties The intended state of private endpoint connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -551,11 +572,13 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String name,
@@ -591,12 +614,14 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private endpoint connection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return private endpoint connection resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> deleteWithResponseAsync(String resourceGroupName, String name,
@@ -631,7 +656,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -652,7 +678,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -675,7 +702,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -692,7 +720,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -710,7 +739,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -728,7 +758,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -747,7 +778,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -764,7 +796,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -786,7 +819,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>> listByResourceNextSinglePageAsync(String nextLink) {
@@ -815,7 +849,8 @@ public final class MhsmPrivateEndpointConnectionsClientImpl implements MhsmPriva
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of private endpoint connections associated with a managed HSM Pools along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<MhsmPrivateEndpointConnectionInner>> listByResourceNextSinglePageAsync(String nextLink,

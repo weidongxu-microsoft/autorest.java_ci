@@ -157,7 +157,8 @@ public interface ManagedHsm {
         }
 
         /**
-         * The stage of the ManagedHsm definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ManagedHsm definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithProperties {
@@ -208,7 +209,8 @@ public interface ManagedHsm {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: Managed service identity (system assigned and/or user assigned identities).
+             * Specifies the identity property: Managed service identity (system assigned and/or user assigned
+             * identities).
              * 
              * @param identity Managed service identity (system assigned and/or user assigned identities).
              * @return the next definition stage.
@@ -293,7 +295,8 @@ public interface ManagedHsm {
          */
         interface WithIdentity {
             /**
-             * Specifies the identity property: Managed service identity (system assigned and/or user assigned identities).
+             * Specifies the identity property: Managed service identity (system assigned and/or user assigned
+             * identities).
              * 
              * @param identity Managed service identity (system assigned and/or user assigned identities).
              * @return the next definition stage.

@@ -64,7 +64,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteCrossConnectionPeerings to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteCrossConnectionPeerings to be used
+     * by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -126,7 +127,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified ExpressRouteCrossConnection along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all peerings in a specified ExpressRouteCrossConnection along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionPeeringInner>> listSinglePageAsync(String resourceGroupName,
@@ -167,7 +169,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all peerings in a specified ExpressRouteCrossConnection along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all peerings in a specified ExpressRouteCrossConnection along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionPeeringInner>> listSinglePageAsync(String resourceGroupName,
@@ -501,7 +504,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified peering for the ExpressRouteCrossConnection along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified peering for the ExpressRouteCrossConnection along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCrossConnectionPeeringInner>> getWithResponseAsync(String resourceGroupName,
@@ -543,7 +547,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified peering for the ExpressRouteCrossConnection along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified peering for the ExpressRouteCrossConnection along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCrossConnectionPeeringInner>> getWithResponseAsync(String resourceGroupName,
@@ -633,11 +638,13 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return peering in an ExpressRoute Cross Connection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return peering in an ExpressRoute Cross Connection resource along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -682,12 +689,14 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return peering in an ExpressRoute Cross Connection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return peering in an ExpressRoute Cross Connection resource along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -731,7 +740,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -755,7 +765,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -781,7 +792,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -801,7 +813,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -823,7 +836,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -842,7 +856,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -864,7 +879,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -882,7 +898,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
      * @param peeringName The name of the peering.
-     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering operation.
+     * @param peeringParameters Parameters supplied to the create or update ExpressRouteCrossConnection peering
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -905,7 +922,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCrossConnection along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListPeering API service call retrieves all peerings that belong to an
+     * ExpressRouteCrossConnection along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionPeeringInner>> listNextSinglePageAsync(String nextLink) {
@@ -934,7 +952,8 @@ public final class ExpressRouteCrossConnectionPeeringsClientImpl implements Expr
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListPeering API service call retrieves all peerings that belong to an ExpressRouteCrossConnection along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListPeering API service call retrieves all peerings that belong to an
+     * ExpressRouteCrossConnection along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionPeeringInner>> listNextSinglePageAsync(String nextLink,

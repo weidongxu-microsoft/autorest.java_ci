@@ -26,7 +26,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGate
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in ApplicationGatewayWafDynamicManifestsDefaultsClient.
+ * An instance of this class provides access to all the operations defined in
+ * ApplicationGatewayWafDynamicManifestsDefaultsClient.
  */
 public final class ApplicationGatewayWafDynamicManifestsDefaultsClientImpl
     implements ApplicationGatewayWafDynamicManifestsDefaultsClient {
@@ -52,7 +53,8 @@ public final class ApplicationGatewayWafDynamicManifestsDefaultsClientImpl
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientApplicationGatewayWafDynamicManifestsDefaults to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientApplicationGatewayWafDynamicManifestsDefaults
+     * to be used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -73,7 +75,8 @@ public final class ApplicationGatewayWafDynamicManifestsDefaultsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the regional application gateway waf manifest along with {@link Response} on successful completion of {@link Mono}.
+     * @return the regional application gateway waf manifest along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationGatewayWafDynamicManifestResultInner>> getWithResponseAsync(String location) {
@@ -104,7 +107,8 @@ public final class ApplicationGatewayWafDynamicManifestsDefaultsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the regional application gateway waf manifest along with {@link Response} on successful completion of {@link Mono}.
+     * @return the regional application gateway waf manifest along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ApplicationGatewayWafDynamicManifestResultInner>> getWithResponseAsync(String location,

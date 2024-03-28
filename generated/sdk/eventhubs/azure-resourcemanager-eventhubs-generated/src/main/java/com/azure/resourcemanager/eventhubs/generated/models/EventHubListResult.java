@@ -53,7 +53,8 @@ public final class EventHubListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of EventHubs.
+     * Get the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
+     * EventHubs.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class EventHubListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of EventHubs.
+     * Set the nextLink property: Link to the next set of results. Not empty if Value contains incomplete list of
+     * EventHubs.
      * 
      * @param nextLink the nextLink value to set.
      * @return the EventHubListResult object itself.

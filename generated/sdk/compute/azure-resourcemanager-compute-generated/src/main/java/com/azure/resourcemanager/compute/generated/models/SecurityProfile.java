@@ -49,7 +49,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the uefiSettings property: Specifies the security settings like secure boot and vTPM used while creating the virtual machine. Minimum api-version: 2020-12-01.
+     * Get the uefiSettings property: Specifies the security settings like secure boot and vTPM used while creating the
+     * virtual machine. Minimum api-version: 2020-12-01.
      * 
      * @return the uefiSettings value.
      */
@@ -58,7 +59,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the uefiSettings property: Specifies the security settings like secure boot and vTPM used while creating the virtual machine. Minimum api-version: 2020-12-01.
+     * Set the uefiSettings property: Specifies the security settings like secure boot and vTPM used while creating the
+     * virtual machine. Minimum api-version: 2020-12-01.
      * 
      * @param uefiSettings the uefiSettings value to set.
      * @return the SecurityProfile object itself.
@@ -69,7 +71,10 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the encryptionAtHost property: This property can be used by user in the request to enable or disable the Host Encryption for the virtual machine or virtual machine scale set. This will enable the encryption for all the disks including Resource/Temp disk at host itself. The default behavior is: The Encryption at host will be disabled unless this property is set to true for the resource.
+     * Get the encryptionAtHost property: This property can be used by user in the request to enable or disable the Host
+     * Encryption for the virtual machine or virtual machine scale set. This will enable the encryption for all the
+     * disks including Resource/Temp disk at host itself. The default behavior is: The Encryption at host will be
+     * disabled unless this property is set to true for the resource.
      * 
      * @return the encryptionAtHost value.
      */
@@ -78,7 +83,10 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the encryptionAtHost property: This property can be used by user in the request to enable or disable the Host Encryption for the virtual machine or virtual machine scale set. This will enable the encryption for all the disks including Resource/Temp disk at host itself. The default behavior is: The Encryption at host will be disabled unless this property is set to true for the resource.
+     * Set the encryptionAtHost property: This property can be used by user in the request to enable or disable the Host
+     * Encryption for the virtual machine or virtual machine scale set. This will enable the encryption for all the
+     * disks including Resource/Temp disk at host itself. The default behavior is: The Encryption at host will be
+     * disabled unless this property is set to true for the resource.
      * 
      * @param encryptionAtHost the encryptionAtHost value to set.
      * @return the SecurityProfile object itself.
@@ -89,7 +97,9 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the securityType property: Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. The default behavior is: UefiSettings will not be enabled unless this property is set.
+     * Get the securityType property: Specifies the SecurityType of the virtual machine. It has to be set to any
+     * specified value to enable UefiSettings. The default behavior is: UefiSettings will not be enabled unless this
+     * property is set.
      * 
      * @return the securityType value.
      */
@@ -98,7 +108,9 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the securityType property: Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. The default behavior is: UefiSettings will not be enabled unless this property is set.
+     * Set the securityType property: Specifies the SecurityType of the virtual machine. It has to be set to any
+     * specified value to enable UefiSettings. The default behavior is: UefiSettings will not be enabled unless this
+     * property is set.
      * 
      * @param securityType the securityType value to set.
      * @return the SecurityProfile object itself.
@@ -109,7 +121,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the encryptionIdentity property: Specifies the Managed Identity used by ADE to get access token for keyvault operations.
+     * Get the encryptionIdentity property: Specifies the Managed Identity used by ADE to get access token for keyvault
+     * operations.
      * 
      * @return the encryptionIdentity value.
      */
@@ -118,7 +131,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the encryptionIdentity property: Specifies the Managed Identity used by ADE to get access token for keyvault operations.
+     * Set the encryptionIdentity property: Specifies the Managed Identity used by ADE to get access token for keyvault
+     * operations.
      * 
      * @param encryptionIdentity the encryptionIdentity value to set.
      * @return the SecurityProfile object itself.
@@ -129,7 +143,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2024-03-01.
+     * Get the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum
+     * api-version: 2024-03-01.
      * 
      * @return the proxyAgentSettings value.
      */
@@ -138,7 +153,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum api-version: 2024-03-01.
+     * Set the proxyAgentSettings property: Specifies ProxyAgent settings while creating the virtual machine. Minimum
+     * api-version: 2024-03-01.
      * 
      * @param proxyAgentSettings the proxyAgentSettings value to set.
      * @return the SecurityProfile object itself.

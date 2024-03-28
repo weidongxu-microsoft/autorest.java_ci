@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -22,6 +23,13 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class ImportFromStorageResponseType extends OperationProgressResponseType {
     /*
+     * Identifies the type of source operation
+     */
+    @JsonTypeId
+    @JsonProperty(value = "objectType", required = true)
+    private ObjectType objectType = ObjectType.IMPORT_FROM_STORAGE_RESPONSE;
+
+    /*
      * The estimated time of operation completion.
      */
     @JsonProperty(value = "estimatedCompletionTime")
@@ -31,7 +39,16 @@ public final class ImportFromStorageResponseType extends OperationProgressRespon
      * Creates an instance of ImportFromStorageResponseType class.
      */
     public ImportFromStorageResponseType() {
-        withObjectType(ObjectType.IMPORT_FROM_STORAGE_RESPONSE);
+    }
+
+    /**
+     * Get the objectType property: Identifies the type of source operation.
+     * 
+     * @return the objectType value.
+     */
+    @Override
+    public ObjectType objectType() {
+        return this.objectType;
     }
 
     /**

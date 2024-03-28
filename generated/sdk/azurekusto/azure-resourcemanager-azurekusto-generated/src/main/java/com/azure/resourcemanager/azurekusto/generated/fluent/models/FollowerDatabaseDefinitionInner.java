@@ -72,7 +72,8 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Get the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the follower cluster.
+     * Get the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the
+     * follower cluster.
      * 
      * @return the attachedDatabaseConfigurationName value.
      */
@@ -81,7 +82,8 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Set the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the follower cluster.
+     * Set the attachedDatabaseConfigurationName property: Resource name of the attached database configuration in the
+     * follower cluster.
      * 
      * @param attachedDatabaseConfigurationName the attachedDatabaseConfigurationName value to set.
      * @return the FollowerDatabaseDefinitionInner object itself.
@@ -93,7 +95,8 @@ public final class FollowerDatabaseDefinitionInner {
     }
 
     /**
-     * Get the databaseName property: The database name owned by this cluster that was followed. * in case following all databases.
+     * Get the databaseName property: The database name owned by this cluster that was followed. * in case following all
+     * databases.
      * 
      * @return the databaseName value.
      */
@@ -126,12 +129,14 @@ public final class FollowerDatabaseDefinitionInner {
      */
     public void validate() {
         if (clusterResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property clusterResourceId in model FollowerDatabaseDefinitionInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property clusterResourceId in model FollowerDatabaseDefinitionInner"));
         }
         if (attachedDatabaseConfigurationName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property attachedDatabaseConfigurationName in model FollowerDatabaseDefinitionInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property attachedDatabaseConfigurationName in model FollowerDatabaseDefinitionInner"));
         }
         if (tableLevelSharingProperties() != null) {
             tableLevelSharingProperties().validate();

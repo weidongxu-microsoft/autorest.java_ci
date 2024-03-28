@@ -86,7 +86,8 @@ public interface ExpressRouteGateway {
     VirtualHubId virtualHub();
 
     /**
-     * Gets the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN networks.
+     * Gets the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
      * 
      * @return the allowNonVirtualWanTraffic value.
      */
@@ -172,7 +173,8 @@ public interface ExpressRouteGateway {
         }
 
         /**
-         * The stage of the ExpressRouteGateway definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ExpressRouteGateway definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithAutoScaleConfiguration,
             DefinitionStages.WithExpressRouteConnections, DefinitionStages.WithVirtualHub,
@@ -225,7 +227,8 @@ public interface ExpressRouteGateway {
          */
         interface WithExpressRouteConnections {
             /**
-             * Specifies the expressRouteConnections property: List of ExpressRoute connections to the ExpressRoute gateway..
+             * Specifies the expressRouteConnections property: List of ExpressRoute connections to the ExpressRoute
+             * gateway..
              * 
              * @param expressRouteConnections List of ExpressRoute connections to the ExpressRoute gateway.
              * @return the next definition stage.
@@ -238,7 +241,8 @@ public interface ExpressRouteGateway {
          */
         interface WithVirtualHub {
             /**
-             * Specifies the virtualHub property: The Virtual Hub where the ExpressRoute gateway is or will be deployed..
+             * Specifies the virtualHub property: The Virtual Hub where the ExpressRoute gateway is or will be
+             * deployed..
              * 
              * @param virtualHub The Virtual Hub where the ExpressRoute gateway is or will be deployed.
              * @return the next definition stage.
@@ -251,7 +255,8 @@ public interface ExpressRouteGateway {
          */
         interface WithAllowNonVirtualWanTraffic {
             /**
-             * Specifies the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN networks..
+             * Specifies the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non
+             * Virtual WAN networks..
              * 
              * @param allowNonVirtualWanTraffic Configures this gateway to accept traffic from non Virtual WAN networks.
              * @return the next definition stage.

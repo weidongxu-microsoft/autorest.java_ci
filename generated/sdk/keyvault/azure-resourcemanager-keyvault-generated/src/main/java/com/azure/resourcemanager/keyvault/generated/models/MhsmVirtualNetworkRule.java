@@ -26,7 +26,8 @@ public final class MhsmVirtualNetworkRule {
     }
 
     /**
-     * Get the id property: Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
+     * Get the id property: Full resource id of a vnet subnet, such as
+     * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
      * 
      * @return the id value.
      */
@@ -35,7 +36,8 @@ public final class MhsmVirtualNetworkRule {
     }
 
     /**
-     * Set the id property: Full resource id of a vnet subnet, such as '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
+     * Set the id property: Full resource id of a vnet subnet, such as
+     * '/subscriptions/subid/resourceGroups/rg1/providers/Microsoft.Network/virtualNetworks/test-vnet/subnets/subnet1'.
      * 
      * @param id the id value to set.
      * @return the MhsmVirtualNetworkRule object itself.
@@ -52,8 +54,8 @@ public final class MhsmVirtualNetworkRule {
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property id in model MhsmVirtualNetworkRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property id in model MhsmVirtualNetworkRule"));
         }
     }
 

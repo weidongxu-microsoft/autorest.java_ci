@@ -69,7 +69,8 @@ public interface SubnetPropertiesFormat {
     List<PrivateEndpoint> privateEndpoints();
 
     /**
-     * Gets the ipConfigurations property: An array of references to the network interface IP configurations using subnet.
+     * Gets the ipConfigurations property: An array of references to the network interface IP configurations using
+     * subnet.
      * 
      * @return the ipConfigurations value.
      */
@@ -111,7 +112,8 @@ public interface SubnetPropertiesFormat {
     List<Delegation> delegations();
 
     /**
-     * Gets the purpose property: A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties.
+     * Gets the purpose property: A read-only string identifying the intention of use for this subnet based on
+     * delegations and other user-defined properties.
      * 
      * @return the purpose value.
      */
@@ -125,28 +127,33 @@ public interface SubnetPropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in the subnet.
+     * Gets the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point
+     * in the subnet.
      * 
      * @return the privateEndpointNetworkPolicies value.
      */
     VirtualNetworkPrivateEndpointNetworkPolicies privateEndpointNetworkPolicies();
 
     /**
-     * Gets the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link service in the subnet.
+     * Gets the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link
+     * service in the subnet.
      * 
      * @return the privateLinkServiceNetworkPolicies value.
      */
     VirtualNetworkPrivateLinkServiceNetworkPolicies privateLinkServiceNetworkPolicies();
 
     /**
-     * Gets the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network resource.
+     * Gets the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
+     * resource.
      * 
      * @return the applicationGatewayIpConfigurations value.
      */
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
-     * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
+     * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
+     * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
+     * existing subnet.
      * 
      * @return the defaultOutboundAccess value.
      */

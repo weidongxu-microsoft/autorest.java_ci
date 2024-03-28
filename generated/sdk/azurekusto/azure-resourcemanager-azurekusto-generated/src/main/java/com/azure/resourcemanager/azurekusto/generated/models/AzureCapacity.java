@@ -130,8 +130,8 @@ public final class AzureCapacity {
      */
     public void validate() {
         if (scaleType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property scaleType in model AzureCapacity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property scaleType in model AzureCapacity"));
         }
     }
 

@@ -61,7 +61,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * The interface defining all the services for DnsManagementClientRecordSets to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for DnsManagementClientRecordSets to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "DnsManagementClientR")
@@ -176,11 +177,13 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify the last-seen etag value to prevent accidentally overwriting concurrent changes.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     * the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> updateWithResponseAsync(String resourceGroupName, String zoneName,
@@ -228,12 +231,14 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify the last-seen etag value to prevent accidentally overwriting concurrent changes.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     * the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> updateWithResponseAsync(String resourceGroupName, String zoneName,
@@ -283,7 +288,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful completion of {@link Mono}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> updateAsync(String resourceGroupName, String zoneName, String relativeRecordSetName,
@@ -301,12 +307,14 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the Update operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify the last-seen etag value to prevent accidentally overwriting concurrent changes.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     * the last-seen etag value to prevent accidentally overwriting concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link Response}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecordSetInner> updateWithResponse(String resourceGroupName, String zoneName,
@@ -338,19 +346,23 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they are created when the DNS zone is created).
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will be ignored.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     * the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will be ignored.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String zoneName,
@@ -392,20 +404,24 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they are created when the DNS zone is created).
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will be ignored.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     * the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RecordSetInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String zoneName,
@@ -446,7 +462,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they are created when the DNS zone is created).
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -456,7 +473,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful completion of {@link Mono}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<RecordSetInner> createOrUpdateAsync(String resourceGroupName, String zoneName,
@@ -468,20 +486,24 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they are created when the DNS zone is created).
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
      * @param parameters Parameters supplied to the CreateOrUpdate operation.
-     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will be ignored.
+     * @param ifMatch The etag of the record set. Omit this value to always overwrite the current record set. Specify
+     * the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with {@link Response}.
+     * @return describes a DNS record set (a collection of DNS records with the same name and type) along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<RecordSetInner> createOrUpdateWithResponse(String resourceGroupName, String zoneName,
@@ -492,7 +514,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they are created when the DNS zone is created).
+     * Creates or updates a record set within a DNS zone. Record sets of type SOA can be updated but not created (they
+     * are created when the DNS zone is created).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -514,13 +537,15 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted (they are deleted when the DNS zone is deleted).
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
+     * last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -560,13 +585,15 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted (they are deleted when the DNS zone is deleted).
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
+     * last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -605,7 +632,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted (they are deleted when the DNS zone is deleted).
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -625,13 +653,15 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted (they are deleted when the DNS zone is deleted).
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param relativeRecordSetName The name of the record set, relative to the name of the zone.
      * @param recordType The type of DNS record in this record set.
-     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of the record set. Omit this value to always delete the current record set. Specify the
+     * last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -646,7 +676,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
     }
 
     /**
-     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted (they are deleted when the DNS zone is deleted).
+     * Deletes a record set from a DNS zone. This operation cannot be undone. Record sets of type SOA cannot be deleted
+     * (they are deleted when the DNS zone is deleted).
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
@@ -814,11 +845,14 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeSinglePageAsync(String resourceGroupName, String zoneName,
@@ -858,12 +892,15 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeSinglePageAsync(String resourceGroupName, String zoneName,
@@ -902,7 +939,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -944,7 +983,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -984,7 +1025,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param recordType The type of DNS record in this record set.
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1004,11 +1047,14 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneSinglePageAsync(String resourceGroupName, String zoneName,
@@ -1043,12 +1089,15 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneSinglePageAsync(String resourceGroupName, String zoneName,
@@ -1083,7 +1132,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1122,7 +1173,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1160,7 +1213,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordsetnamesuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1179,11 +1234,14 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneSinglePageAsync(String resourceGroupName,
@@ -1219,12 +1277,15 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneSinglePageAsync(String resourceGroupName,
@@ -1259,7 +1320,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1298,7 +1361,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1336,7 +1401,9 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
      * @param top The maximum number of record sets to return. If not specified, returns up to 100 record sets.
-     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set enumerations. If this parameter is specified, Enumeration will return only records that end with .&lt;recordSetNameSuffix&gt;.
+     * @param recordSetNameSuffix The suffix label of the record set name that has to be used to filter the record set
+     * enumerations. If this parameter is specified, Enumeration will return only records that end with
+     * .&lt;recordSetNameSuffix&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1359,7 +1426,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeNextSinglePageAsync(String nextLink) {
@@ -1388,7 +1456,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByTypeNextSinglePageAsync(String nextLink, Context context) {
@@ -1415,7 +1484,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneNextSinglePageAsync(String nextLink) {
@@ -1444,7 +1514,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listByDnsZoneNextSinglePageAsync(String nextLink, Context context) {
@@ -1471,7 +1542,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneNextSinglePageAsync(String nextLink) {
@@ -1500,7 +1572,8 @@ public final class RecordSetsClientImpl implements RecordSetsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a record set List operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RecordSetInner>> listAllByDnsZoneNextSinglePageAsync(String nextLink, Context context) {

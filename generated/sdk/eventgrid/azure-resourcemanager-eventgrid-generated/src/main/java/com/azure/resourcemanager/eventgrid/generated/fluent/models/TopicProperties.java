@@ -129,7 +129,8 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the publisher and can be used by the 
+     * Get the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the
+     * publisher and can be used by the
      * subscriber to view different types of events that are published.
      * 
      * @return the eventTypeInfo value.
@@ -139,7 +140,8 @@ public final class TopicProperties {
     }
 
     /**
-     * Set the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the publisher and can be used by the 
+     * Set the eventTypeInfo property: Event Type Information for the user topic. This information is provided by the
+     * publisher and can be used by the
      * subscriber to view different types of events that are published.
      * 
      * @param eventTypeInfo the eventTypeInfo value to set.
@@ -171,7 +173,8 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the inputSchema property: This determines the format that Event Grid should expect for incoming events published to the topic.
+     * Get the inputSchema property: This determines the format that Event Grid should expect for incoming events
+     * published to the topic.
      * 
      * @return the inputSchema value.
      */
@@ -180,7 +183,8 @@ public final class TopicProperties {
     }
 
     /**
-     * Set the inputSchema property: This determines the format that Event Grid should expect for incoming events published to the topic.
+     * Set the inputSchema property: This determines the format that Event Grid should expect for incoming events
+     * published to the topic.
      * 
      * @param inputSchema the inputSchema value to set.
      * @return the TopicProperties object itself.
@@ -191,7 +195,9 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema.
+     * Get the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping
+     * can be specified to map various properties of a source schema to various required properties of the
+     * EventGridEvent schema.
      * 
      * @return the inputSchemaMapping value.
      */
@@ -200,7 +206,9 @@ public final class TopicProperties {
     }
 
     /**
-     * Set the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping can be specified to map various properties of a source schema to various required properties of the EventGridEvent schema.
+     * Set the inputSchemaMapping property: This enables publishing using custom event schemas. An InputSchemaMapping
+     * can be specified to map various properties of a source schema to various required properties of the
+     * EventGridEvent schema.
      * 
      * @param inputSchemaMapping the inputSchemaMapping value to set.
      * @return the TopicProperties object itself.
@@ -220,8 +228,10 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -230,8 +240,10 @@ public final class TopicProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.TopicProperties.InboundIpRules" /&gt;.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the TopicProperties object itself.
@@ -242,7 +254,8 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
@@ -251,7 +264,8 @@ public final class TopicProperties {
     }
 
     /**
-     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @param inboundIpRules the inboundIpRules value to set.
      * @return the TopicProperties object itself.
@@ -262,7 +276,9 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic.
+     * Get the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the topic.
      * 
      * @return the disableLocalAuth value.
      */
@@ -271,7 +287,9 @@ public final class TopicProperties {
     }
 
     /**
-     * Set the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false. When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to the topic.
+     * Set the disableLocalAuth property: This boolean is used to enable or disable local auth. Default value is false.
+     * When the property is set to true, only AAD token will be used to authenticate if user is allowed to publish to
+     * the topic.
      * 
      * @param disableLocalAuth the disableLocalAuth value to set.
      * @return the TopicProperties object itself.

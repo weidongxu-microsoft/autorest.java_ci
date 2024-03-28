@@ -79,7 +79,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualNetworkGateways to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualNetworkGateways to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -338,7 +339,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -382,7 +384,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -576,7 +579,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified virtual network gateway by resource group along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkGatewayInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -614,7 +618,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified virtual network gateway by resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified virtual network gateway by resource group along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkGatewayInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -907,7 +912,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -951,7 +957,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -1142,7 +1149,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all virtual network gateways by resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all virtual network gateways by resource group along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayInner>>
@@ -1177,7 +1185,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all virtual network gateways by resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all virtual network gateways by resource group along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1272,7 +1281,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the connections in a virtual network gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the connections in a virtual network gateway along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionListEntityInner>>
@@ -1313,7 +1323,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the connections in a virtual network gateway along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the connections in a virtual network gateway along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionListEntityInner>>
@@ -1418,11 +1429,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetWithResponseAsync(String resourceGroupName,
@@ -1456,12 +1469,14 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a common class for general resource information along with {@link Response} on successful completion of {@link Mono}.
+     * @return a common class for general resource information along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> resetWithResponseAsync(String resourceGroupName,
@@ -1494,7 +1509,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1536,7 +1552,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1575,7 +1592,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1593,7 +1611,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1628,7 +1647,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1663,7 +1683,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -2127,7 +2148,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2170,7 +2192,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2213,7 +2236,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2233,7 +2257,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2255,7 +2280,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2273,7 +2299,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2292,7 +2319,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2310,7 +2338,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2329,7 +2358,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2346,7 +2376,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2364,14 +2395,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getVpnProfilePackageUrlWithResponseAsync(String resourceGroupName,
@@ -2401,7 +2434,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2409,7 +2443,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getVpnProfilePackageUrlWithResponseAsync(String resourceGroupName,
@@ -2438,14 +2473,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of pre-generated VPN profile for P2S client of the virtual network
+     * gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<String>, String> beginGetVpnProfilePackageUrlAsync(String resourceGroupName,
@@ -2457,7 +2494,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2465,7 +2503,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of pre-generated VPN profile for P2S client of the virtual network
+     * gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<String>, String> beginGetVpnProfilePackageUrlAsync(String resourceGroupName,
@@ -2478,14 +2517,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of pre-generated VPN profile for P2S client of the virtual network
+     * gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginGetVpnProfilePackageUrl(String resourceGroupName,
@@ -2494,7 +2535,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2502,7 +2544,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of pre-generated VPN profile for P2S client of the virtual network
+     * gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<String>, String> beginGetVpnProfilePackageUrl(String resourceGroupName,
@@ -2512,14 +2555,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group on successful completion of {@link Mono}.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> getVpnProfilePackageUrlAsync(String resourceGroupName, String virtualNetworkGatewayName) {
@@ -2528,7 +2573,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2536,7 +2582,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group on successful completion of {@link Mono}.
+     * @return pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<String> getVpnProfilePackageUrlAsync(String resourceGroupName, String virtualNetworkGatewayName,
@@ -2546,7 +2593,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2561,7 +2609,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -2585,7 +2634,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list BGP peer status API service call along with {@link Response} on successful completion of {@link Mono}.
+     * @return response for list BGP peer status API service call along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getBgpPeerStatusWithResponseAsync(String resourceGroupName,
@@ -2624,7 +2674,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for list BGP peer status API service call along with {@link Response} on successful completion of {@link Mono}.
+     * @return response for list BGP peer status API service call along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getBgpPeerStatusWithResponseAsync(String resourceGroupName,
@@ -2851,7 +2902,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices along with {@link Response} on successful completion of {@link Mono}.
+     * @return a xml format representation for supported vpn devices along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<String>> supportedVpnDevicesWithResponseAsync(String resourceGroupName,
@@ -2889,7 +2941,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for supported vpn devices along with {@link Response} on successful completion of {@link Mono}.
+     * @return a xml format representation for supported vpn devices along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<String>> supportedVpnDevicesWithResponseAsync(String resourceGroupName,
@@ -2966,14 +3019,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getLearnedRoutesWithResponseAsync(String resourceGroupName,
@@ -3003,7 +3058,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3011,7 +3067,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getLearnedRoutesWithResponseAsync(String resourceGroupName,
@@ -3040,7 +3097,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3060,7 +3118,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3082,7 +3141,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3098,7 +3158,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3115,7 +3176,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3132,7 +3194,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3150,7 +3213,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3165,7 +3229,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -3190,7 +3255,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getAdvertisedRoutesWithResponseAsync(String resourceGroupName,
@@ -3232,7 +3298,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of virtual network gateway routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return list of virtual network gateway routes along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getAdvertisedRoutesWithResponseAsync(String resourceGroupName,
@@ -3417,15 +3484,18 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> setVpnclientIpsecParametersWithResponseAsync(String resourceGroupName,
@@ -3462,16 +3532,19 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> setVpnclientIpsecParametersWithResponseAsync(String resourceGroupName,
@@ -3507,11 +3580,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3529,11 +3604,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3553,11 +3630,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3573,11 +3652,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3595,15 +3676,18 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnClientIPsecParametersInner> setVpnclientIpsecParametersAsync(String resourceGroupName,
@@ -3614,16 +3698,19 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnClientIPsecParametersInner> setVpnclientIpsecParametersAsync(String resourceGroupName,
@@ -3633,11 +3720,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3651,11 +3740,13 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3670,14 +3761,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getVpnclientIpsecParametersWithResponseAsync(String resourceGroupName,
@@ -3707,7 +3800,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3715,7 +3809,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getVpnclientIpsecParametersWithResponseAsync(String resourceGroupName,
@@ -3744,7 +3839,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3764,7 +3860,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3787,7 +3884,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3803,7 +3901,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3821,14 +3920,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnClientIPsecParametersInner> getVpnclientIpsecParametersAsync(String resourceGroupName,
@@ -3838,7 +3939,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3846,7 +3948,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of {@link Mono}.
+     * @return an IPSec parameters for a virtual network gateway P2S connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnClientIPsecParametersInner> getVpnclientIpsecParametersAsync(String resourceGroupName,
@@ -3856,7 +3959,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3872,7 +3976,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -3892,12 +3997,14 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script along with {@link Response} on successful completion of {@link Mono}.
+     * @return a xml format representation for vpn device configuration script along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<String>> vpnDeviceConfigurationScriptWithResponseAsync(String resourceGroupName,
@@ -3936,13 +4043,15 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a xml format representation for vpn device configuration script along with {@link Response} on successful completion of {@link Mono}.
+     * @return a xml format representation for vpn device configuration script along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<String>> vpnDeviceConfigurationScriptWithResponseAsync(String resourceGroupName,
@@ -3980,7 +4089,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -3998,7 +4108,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -4017,7 +4128,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -4538,14 +4650,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getVpnclientConnectionHealthWithResponseAsync(String resourceGroupName,
@@ -4575,7 +4689,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -4583,7 +4698,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getVpnclientConnectionHealthWithResponseAsync(String resourceGroupName,
@@ -4612,14 +4728,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of vPN client connection health detail per P2S client connection of
+     * the virtual network gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -4634,7 +4752,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -4642,7 +4761,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of vPN client connection health detail per P2S client connection of
+     * the virtual network gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -4659,14 +4779,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of vPN client connection health detail per P2S client connection of
+     * the virtual network gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -4677,7 +4799,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -4685,7 +4808,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of vPN client connection health detail per P2S client connection of
+     * the virtual network gateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -4696,14 +4820,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group on successful completion of {@link Mono}.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnClientConnectionHealthDetailListResultInner>
@@ -4713,7 +4839,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -4721,7 +4848,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group on successful completion of {@link Mono}.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VpnClientConnectionHealthDetailListResultInner>
@@ -4731,14 +4859,16 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VpnClientConnectionHealthDetailListResultInner getVpnclientConnectionHealth(String resourceGroupName,
@@ -4747,7 +4877,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
     }
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -4755,7 +4886,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VpnClientConnectionHealthDetailListResultInner getVpnclientConnectionHealth(String resourceGroupName,
@@ -5015,7 +5147,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListVirtualNetworkGateways API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -5043,7 +5176,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListVirtualNetworkGateways API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListVirtualNetworkGateways API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -5070,7 +5204,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the VirtualNetworkGatewayListConnections API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the VirtualNetworkGatewayListConnections API service call along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionListEntityInner>>
@@ -5101,7 +5236,8 @@ public final class VirtualNetworkGatewaysClientImpl implements VirtualNetworkGat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the VirtualNetworkGatewayListConnections API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the VirtualNetworkGatewayListConnections API service call along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkGatewayConnectionListEntityInner>>

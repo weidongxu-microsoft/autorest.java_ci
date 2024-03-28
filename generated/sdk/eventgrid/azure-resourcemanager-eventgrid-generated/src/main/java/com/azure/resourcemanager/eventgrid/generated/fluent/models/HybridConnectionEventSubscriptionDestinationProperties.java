@@ -33,7 +33,8 @@ public final class HybridConnectionEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event subscription.
+     * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
+     * subscription.
      * 
      * @return the resourceId value.
      */
@@ -42,7 +43,8 @@ public final class HybridConnectionEventSubscriptionDestinationProperties {
     }
 
     /**
-     * Set the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event subscription.
+     * Set the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
+     * subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the HybridConnectionEventSubscriptionDestinationProperties object itself.

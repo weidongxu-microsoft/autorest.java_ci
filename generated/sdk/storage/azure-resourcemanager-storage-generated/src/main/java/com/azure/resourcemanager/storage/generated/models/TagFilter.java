@@ -58,7 +58,8 @@ public final class TagFilter {
     }
 
     /**
-     * Get the op property: This is the comparison operator which is used for object comparison and filtering. Only == (equality operator) is currently supported.
+     * Get the op property: This is the comparison operator which is used for object comparison and filtering. Only ==
+     * (equality operator) is currently supported.
      * 
      * @return the op value.
      */
@@ -67,7 +68,8 @@ public final class TagFilter {
     }
 
     /**
-     * Set the op property: This is the comparison operator which is used for object comparison and filtering. Only == (equality operator) is currently supported.
+     * Set the op property: This is the comparison operator which is used for object comparison and filtering. Only ==
+     * (equality operator) is currently supported.
      * 
      * @param op the op value to set.
      * @return the TagFilter object itself.
@@ -78,7 +80,8 @@ public final class TagFilter {
     }
 
     /**
-     * Get the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256 characters.
+     * Get the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256
+     * characters.
      * 
      * @return the value value.
      */
@@ -87,7 +90,8 @@ public final class TagFilter {
     }
 
     /**
-     * Set the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256 characters.
+     * Set the value property: This is the filter tag value field used for tag based filtering, it can have 0 - 256
+     * characters.
      * 
      * @param value the value value to set.
      * @return the TagFilter object itself.
@@ -104,16 +108,15 @@ public final class TagFilter {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model TagFilter"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model TagFilter"));
         }
         if (op() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property op in model TagFilter"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property op in model TagFilter"));
         }
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model TagFilter"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model TagFilter"));
         }
     }
 

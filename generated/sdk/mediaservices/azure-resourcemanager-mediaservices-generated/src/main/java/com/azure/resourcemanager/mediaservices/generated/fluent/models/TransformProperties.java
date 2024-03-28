@@ -76,7 +76,8 @@ public final class TransformProperties {
     }
 
     /**
-     * Get the lastModified property: The UTC date and time when the Transform was last updated, in 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Get the lastModified property: The UTC date and time when the Transform was last updated, in
+     * 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the lastModified value.
      */
@@ -111,8 +112,8 @@ public final class TransformProperties {
      */
     public void validate() {
         if (outputs() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property outputs in model TransformProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property outputs in model TransformProperties"));
         } else {
             outputs().forEach(e -> e.validate());
         }

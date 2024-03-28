@@ -11,7 +11,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayWafDynamicManifestResultInner;
 
 /**
- * An instance of this class provides access to all the operations defined in ApplicationGatewayWafDynamicManifestsClient.
+ * An instance of this class provides access to all the operations defined in
+ * ApplicationGatewayWafDynamicManifestsClient.
  */
 public interface ApplicationGatewayWafDynamicManifestsClient {
     /**

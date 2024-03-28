@@ -68,7 +68,8 @@ public interface AseV3NetworkingConfiguration {
     List<String> internalInboundIpAddresses();
 
     /**
-     * Gets the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint connection creation on ASE.
+     * Gets the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint
+     * connection creation on ASE.
      * 
      * @return the allowNewPrivateEndpointConnections value.
      */
@@ -89,14 +90,16 @@ public interface AseV3NetworkingConfiguration {
     Boolean remoteDebugEnabled();
 
     /**
-     * Gets the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase create.
+     * Gets the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase
+     * create.
      * 
      * @return the inboundIpAddressOverride value.
      */
     String inboundIpAddressOverride();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AseV3NetworkingConfigurationInner
+     * object.
      * 
      * @return the inner object.
      */

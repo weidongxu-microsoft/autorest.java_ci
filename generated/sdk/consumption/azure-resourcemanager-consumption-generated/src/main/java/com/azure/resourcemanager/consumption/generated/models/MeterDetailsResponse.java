@@ -67,7 +67,8 @@ public final class MeterDetailsResponse {
     }
 
     /**
-     * Get the meterSubCategory property: The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute (IXP)', etc..
+     * Get the meterSubCategory property: The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute
+     * (IXP)', etc..
      * 
      * @return the meterSubCategory value.
      */
@@ -76,7 +77,8 @@ public final class MeterDetailsResponse {
     }
 
     /**
-     * Get the unitOfMeasure property: The unit in which the meter consumption is charged, for example, 'Hours', 'GB', etc.
+     * Get the unitOfMeasure property: The unit in which the meter consumption is charged, for example, 'Hours', 'GB',
+     * etc.
      * 
      * @return the unitOfMeasure value.
      */

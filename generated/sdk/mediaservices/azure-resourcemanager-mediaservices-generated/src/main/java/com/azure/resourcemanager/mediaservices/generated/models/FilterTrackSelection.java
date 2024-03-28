@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Representing a list of FilterTrackPropertyConditions to select a track.  The filters are combined using a logical AND operation.
+ * Representing a list of FilterTrackPropertyConditions to select a track. The filters are combined using a logical AND
+ * operation.
  */
 @Fluent
 public final class FilterTrackSelection {
@@ -53,8 +54,9 @@ public final class FilterTrackSelection {
      */
     public void validate() {
         if (trackSelections() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property trackSelections in model FilterTrackSelection"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property trackSelections in model FilterTrackSelection"));
         } else {
             trackSelections().forEach(e -> e.validate());
         }

@@ -19,7 +19,8 @@ public interface DiagnosticSettingsResourceCollection {
     List<DiagnosticSettingsResource> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.monitor.generated.fluent.models.DiagnosticSettingsResourceCollectionInner object.
      * 
      * @return the inner object.
      */

@@ -54,7 +54,8 @@ public final class SharedGalleryImageList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of shared gallery images. Call ListNext() with this to fetch the next page of shared gallery images.
+     * Get the nextLink property: The uri to fetch the next page of shared gallery images. Call ListNext() with this to
+     * fetch the next page of shared gallery images.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class SharedGalleryImageList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of shared gallery images. Call ListNext() with this to fetch the next page of shared gallery images.
+     * Set the nextLink property: The uri to fetch the next page of shared gallery images. Call ListNext() with this to
+     * fetch the next page of shared gallery images.
      * 
      * @param nextLink the nextLink value to set.
      * @return the SharedGalleryImageList object itself.
@@ -80,8 +82,8 @@ public final class SharedGalleryImageList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model SharedGalleryImageList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model SharedGalleryImageList"));
         } else {
             value().forEach(e -> e.validate());
         }

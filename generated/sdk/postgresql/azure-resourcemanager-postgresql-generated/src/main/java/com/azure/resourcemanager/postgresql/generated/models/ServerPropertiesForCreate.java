@@ -87,17 +87,6 @@ public class ServerPropertiesForCreate {
     }
 
     /**
-     * Set the createMode property: The mode to create a new server.
-     * 
-     * @param createMode the createMode value to set.
-     * @return the ServerPropertiesForCreate object itself.
-     */
-    protected ServerPropertiesForCreate withCreateMode(CreateMode createMode) {
-        this.createMode = createMode;
-        return this;
-    }
-
-    /**
      * Get the version property: Server version.
      * 
      * @return the version value.
@@ -178,7 +167,8 @@ public class ServerPropertiesForCreate {
     }
 
     /**
-     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -187,7 +177,8 @@ public class ServerPropertiesForCreate {
     }
 
     /**
-     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ServerPropertiesForCreate object itself.

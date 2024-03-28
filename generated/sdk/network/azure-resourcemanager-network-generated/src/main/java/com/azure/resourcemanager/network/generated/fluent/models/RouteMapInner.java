@@ -56,7 +56,8 @@ public final class RouteMapInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -92,7 +93,8 @@ public final class RouteMapInner extends SubResource {
     }
 
     /**
-     * Get the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic.
+     * Get the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound
+     * traffic.
      * 
      * @return the associatedInboundConnections value.
      */
@@ -101,7 +103,8 @@ public final class RouteMapInner extends SubResource {
     }
 
     /**
-     * Set the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound traffic.
+     * Set the associatedInboundConnections property: List of connections which have this RoutMap associated for inbound
+     * traffic.
      * 
      * @param associatedInboundConnections the associatedInboundConnections value to set.
      * @return the RouteMapInner object itself.
@@ -115,7 +118,8 @@ public final class RouteMapInner extends SubResource {
     }
 
     /**
-     * Get the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic.
+     * Get the associatedOutboundConnections property: List of connections which have this RoutMap associated for
+     * outbound traffic.
      * 
      * @return the associatedOutboundConnections value.
      */
@@ -124,7 +128,8 @@ public final class RouteMapInner extends SubResource {
     }
 
     /**
-     * Set the associatedOutboundConnections property: List of connections which have this RoutMap associated for outbound traffic.
+     * Set the associatedOutboundConnections property: List of connections which have this RoutMap associated for
+     * outbound traffic.
      * 
      * @param associatedOutboundConnections the associatedOutboundConnections value to set.
      * @return the RouteMapInner object itself.

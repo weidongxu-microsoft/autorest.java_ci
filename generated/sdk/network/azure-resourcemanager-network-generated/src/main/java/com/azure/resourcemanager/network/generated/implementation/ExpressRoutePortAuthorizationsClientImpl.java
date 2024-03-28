@@ -64,7 +64,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRoutePortAuthorizations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRoutePortAuthorizations to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -359,7 +360,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route port along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified authorization from the specified express route port along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRoutePortAuthorizationInner>> getWithResponseAsync(String resourceGroupName,
@@ -402,7 +404,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route port along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified authorization from the specified express route port along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRoutePortAuthorizationInner>> getWithResponseAsync(String resourceGroupName,
@@ -443,7 +446,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route port on successful completion of {@link Mono}.
+     * @return the specified authorization from the specified express route port on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRoutePortAuthorizationInner> getAsync(String resourceGroupName, String expressRoutePortName,
@@ -493,7 +497,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -544,7 +549,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -594,7 +600,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -617,7 +624,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -642,7 +650,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -664,7 +673,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -687,7 +697,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -707,7 +718,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -728,7 +740,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -747,7 +760,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @param resourceGroupName The name of the resource group.
      * @param expressRoutePortName The name of the express route port.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route port authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route port authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -769,7 +783,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all authorizations in an express route port along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all authorizations in an express route port along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRoutePortAuthorizationInner>> listSinglePageAsync(String resourceGroupName,
@@ -809,7 +824,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all authorizations in an express route port along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all authorizations in an express route port along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRoutePortAuthorizationInner>> listSinglePageAsync(String resourceGroupName,
@@ -917,7 +933,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port Authorization List Result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return expressRoute Port Authorization List Result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRoutePortAuthorizationInner>> listNextSinglePageAsync(String nextLink) {
@@ -945,7 +962,8 @@ public final class ExpressRoutePortAuthorizationsClientImpl implements ExpressRo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRoute Port Authorization List Result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return expressRoute Port Authorization List Result along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRoutePortAuthorizationInner>> listNextSinglePageAsync(String nextLink,

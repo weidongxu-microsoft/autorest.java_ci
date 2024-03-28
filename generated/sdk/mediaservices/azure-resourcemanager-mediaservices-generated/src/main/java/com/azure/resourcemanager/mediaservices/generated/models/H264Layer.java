@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.Duration;
 
 /**
- * Describes the settings to be used when encoding the input video into a desired output bitrate layer with the H.264 video codec.
+ * Describes the settings to be used when encoding the input video into a desired output bitrate layer with the H.264
+ * video codec.
  */
 @Fluent
 public final class H264Layer extends VideoLayer {
@@ -76,7 +77,9 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Get the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the H.264 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate for this layer.
+     * Get the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the
+     * H.264 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate
+     * for this layer.
      * 
      * @return the level value.
      */
@@ -85,7 +88,9 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Set the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the H.264 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate for this layer.
+     * Set the level property: We currently support Level up to 6.2. The value can be Auto, or a number that matches the
+     * H.264 profile. If not specified, the default is Auto, which lets the encoder choose the Level that is appropriate
+     * for this layer.
      * 
      * @param level the level value to set.
      * @return the H264Layer object itself.
@@ -96,7 +101,8 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Get the bufferWindow property: The VBV buffer window length. The value should be in ISO 8601 format. The value should be in the range [0.1-100] seconds. The default is 5 seconds (for example, PT5S).
+     * Get the bufferWindow property: The VBV buffer window length. The value should be in ISO 8601 format. The value
+     * should be in the range [0.1-100] seconds. The default is 5 seconds (for example, PT5S).
      * 
      * @return the bufferWindow value.
      */
@@ -105,7 +111,8 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Set the bufferWindow property: The VBV buffer window length. The value should be in ISO 8601 format. The value should be in the range [0.1-100] seconds. The default is 5 seconds (for example, PT5S).
+     * Set the bufferWindow property: The VBV buffer window length. The value should be in ISO 8601 format. The value
+     * should be in the range [0.1-100] seconds. The default is 5 seconds (for example, PT5S).
      * 
      * @param bufferWindow the bufferWindow value to set.
      * @return the H264Layer object itself.
@@ -116,7 +123,10 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Get the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at some point quality degradation will be noticed. Default value is 23.
+     * Get the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when
+     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values
+     * would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at
+     * some point quality degradation will be noticed. Default value is 23.
      * 
      * @return the crf value.
      */
@@ -125,7 +135,10 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Set the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at some point quality degradation will be noticed. Default value is 23.
+     * Set the crf property: The value of CRF to be used when encoding this layer. This setting takes effect when
+     * RateControlMode of video codec is set at CRF mode. The range of CRF value is between 0 and 51, where lower values
+     * would result in better quality, at the expense of higher file sizes. Higher values mean more compression, but at
+     * some point quality degradation will be noticed. Default value is 23.
      * 
      * @param crf the crf value to set.
      * @return the H264Layer object itself.
@@ -136,7 +149,8 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Get the referenceFrames property: The number of reference frames to be used when encoding this layer. If not specified, the encoder determines an appropriate number based on the encoder complexity setting.
+     * Get the referenceFrames property: The number of reference frames to be used when encoding this layer. If not
+     * specified, the encoder determines an appropriate number based on the encoder complexity setting.
      * 
      * @return the referenceFrames value.
      */
@@ -145,7 +159,8 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Set the referenceFrames property: The number of reference frames to be used when encoding this layer. If not specified, the encoder determines an appropriate number based on the encoder complexity setting.
+     * Set the referenceFrames property: The number of reference frames to be used when encoding this layer. If not
+     * specified, the encoder determines an appropriate number based on the encoder complexity setting.
      * 
      * @param referenceFrames the referenceFrames value to set.
      * @return the H264Layer object itself.
@@ -156,7 +171,8 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Get the entropyMode property: The entropy mode to be used for this layer. If not specified, the encoder chooses the mode that is appropriate for the profile and level.
+     * Get the entropyMode property: The entropy mode to be used for this layer. If not specified, the encoder chooses
+     * the mode that is appropriate for the profile and level.
      * 
      * @return the entropyMode value.
      */
@@ -165,7 +181,8 @@ public final class H264Layer extends VideoLayer {
     }
 
     /**
-     * Set the entropyMode property: The entropy mode to be used for this layer. If not specified, the encoder chooses the mode that is appropriate for the profile and level.
+     * Set the entropyMode property: The entropy mode to be used for this layer. If not specified, the encoder chooses
+     * the mode that is appropriate for the profile and level.
      * 
      * @param entropyMode the entropyMode value to set.
      * @return the H264Layer object itself.

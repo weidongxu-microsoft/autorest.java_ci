@@ -69,7 +69,8 @@ public final class AccountSasParameters {
     }
 
     /**
-     * Get the services property: The signed services accessible with the account SAS. Possible values include: Blob (b), Queue (q), Table (t), File (f).
+     * Get the services property: The signed services accessible with the account SAS. Possible values include: Blob
+     * (b), Queue (q), Table (t), File (f).
      * 
      * @return the services value.
      */
@@ -78,7 +79,8 @@ public final class AccountSasParameters {
     }
 
     /**
-     * Set the services property: The signed services accessible with the account SAS. Possible values include: Blob (b), Queue (q), Table (t), File (f).
+     * Set the services property: The signed services accessible with the account SAS. Possible values include: Blob
+     * (b), Queue (q), Table (t), File (f).
      * 
      * @param services the services value to set.
      * @return the AccountSasParameters object itself.
@@ -89,7 +91,9 @@ public final class AccountSasParameters {
     }
 
     /**
-     * Get the resourceTypes property: The signed resource types that are accessible with the account SAS. Service (s): Access to service-level APIs; Container (c): Access to container-level APIs; Object (o): Access to object-level APIs for blobs, queue messages, table entities, and files.
+     * Get the resourceTypes property: The signed resource types that are accessible with the account SAS. Service (s):
+     * Access to service-level APIs; Container (c): Access to container-level APIs; Object (o): Access to object-level
+     * APIs for blobs, queue messages, table entities, and files.
      * 
      * @return the resourceTypes value.
      */
@@ -98,7 +102,9 @@ public final class AccountSasParameters {
     }
 
     /**
-     * Set the resourceTypes property: The signed resource types that are accessible with the account SAS. Service (s): Access to service-level APIs; Container (c): Access to container-level APIs; Object (o): Access to object-level APIs for blobs, queue messages, table entities, and files.
+     * Set the resourceTypes property: The signed resource types that are accessible with the account SAS. Service (s):
+     * Access to service-level APIs; Container (c): Access to container-level APIs; Object (o): Access to object-level
+     * APIs for blobs, queue messages, table entities, and files.
      * 
      * @param resourceTypes the resourceTypes value to set.
      * @return the AccountSasParameters object itself.
@@ -109,7 +115,8 @@ public final class AccountSasParameters {
     }
 
     /**
-     * Get the permissions property: The signed permissions for the account SAS. Possible values include: Read (r), Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
+     * Get the permissions property: The signed permissions for the account SAS. Possible values include: Read (r),
+     * Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
      * 
      * @return the permissions value.
      */
@@ -118,7 +125,8 @@ public final class AccountSasParameters {
     }
 
     /**
-     * Set the permissions property: The signed permissions for the account SAS. Possible values include: Read (r), Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
+     * Set the permissions property: The signed permissions for the account SAS. Possible values include: Read (r),
+     * Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
      * 
      * @param permissions the permissions value to set.
      * @return the AccountSasParameters object itself.
@@ -235,20 +243,23 @@ public final class AccountSasParameters {
      */
     public void validate() {
         if (services() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property services in model AccountSasParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property services in model AccountSasParameters"));
         }
         if (resourceTypes() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceTypes in model AccountSasParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property resourceTypes in model AccountSasParameters"));
         }
         if (permissions() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property permissions in model AccountSasParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property permissions in model AccountSasParameters"));
         }
         if (sharedAccessExpiryTime() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property sharedAccessExpiryTime in model AccountSasParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sharedAccessExpiryTime in model AccountSasParameters"));
         }
     }
 

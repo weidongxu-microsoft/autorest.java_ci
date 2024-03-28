@@ -52,7 +52,8 @@ public final class ManagedPrivateEndpointInner extends ProxyResource {
     }
 
     /**
-     * Get the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created.
+     * Get the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private
+     * endpoint is created.
      * 
      * @return the privateLinkResourceId value.
      */
@@ -61,7 +62,8 @@ public final class ManagedPrivateEndpointInner extends ProxyResource {
     }
 
     /**
-     * Set the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created.
+     * Set the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private
+     * endpoint is created.
      * 
      * @param privateLinkResourceId the privateLinkResourceId value to set.
      * @return the ManagedPrivateEndpointInner object itself.
@@ -75,7 +77,8 @@ public final class ManagedPrivateEndpointInner extends ProxyResource {
     }
 
     /**
-     * Get the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created.
+     * Get the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is
+     * created.
      * 
      * @return the privateLinkResourceRegion value.
      */
@@ -84,7 +87,8 @@ public final class ManagedPrivateEndpointInner extends ProxyResource {
     }
 
     /**
-     * Set the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created.
+     * Set the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is
+     * created.
      * 
      * @param privateLinkResourceRegion the privateLinkResourceRegion value to set.
      * @return the ManagedPrivateEndpointInner object itself.

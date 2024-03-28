@@ -66,7 +66,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientNetworkVirtualAppliances to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientNetworkVirtualAppliances to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -363,7 +364,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified Network Virtual Appliance along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkVirtualApplianceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -402,7 +404,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified Network Virtual Appliance along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified Network Virtual Appliance along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkVirtualApplianceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -873,7 +876,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>>
@@ -908,7 +912,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>>
@@ -974,7 +979,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListNetworkVirtualAppliances API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NetworkVirtualApplianceInner> listByResourceGroup(String resourceGroupName) {
@@ -989,7 +995,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListNetworkVirtualAppliances API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NetworkVirtualApplianceInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1001,7 +1008,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Network Virtual Appliances in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all Network Virtual Appliances in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>> listSinglePageAsync() {
@@ -1030,7 +1038,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Network Virtual Appliances in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all Network Virtual Appliances in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>> listSinglePageAsync(Context context) {
@@ -1112,7 +1121,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1142,7 +1152,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1170,7 +1181,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>> listNextSinglePageAsync(String nextLink) {
@@ -1198,7 +1210,8 @@ public final class NetworkVirtualAppliancesClientImpl implements NetworkVirtualA
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListNetworkVirtualAppliances API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkVirtualApplianceInner>> listNextSinglePageAsync(String nextLink,

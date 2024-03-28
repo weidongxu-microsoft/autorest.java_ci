@@ -24,7 +24,8 @@ public interface QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Queries defined within a Log Analytics QueryPack as paginated response with {@link PagedIterable}.
+     * @return a list of Queries defined within a Log Analytics QueryPack as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<LogAnalyticsQueryPackQueryInner> list(String resourceGroupName, String queryPackName);
@@ -35,13 +36,15 @@ public interface QueriesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param top Maximum items returned in page.
-     * @param includeBody Flag indicating whether or not to return the body of each applicable query. If false, only return the query information.
+     * @param includeBody Flag indicating whether or not to return the body of each applicable query. If false, only
+     * return the query information.
      * @param skipToken Base64 encoded token used to fetch the next page of items. Default is null.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Queries defined within a Log Analytics QueryPack as paginated response with {@link PagedIterable}.
+     * @return a list of Queries defined within a Log Analytics QueryPack as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<LogAnalyticsQueryPackQueryInner> list(String resourceGroupName, String queryPackName, Long top,
@@ -56,7 +59,8 @@ public interface QueriesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Log Analytics QueryPack-Query resources as paginated response with {@link PagedIterable}.
+     * @return describes the list of Log Analytics QueryPack-Query resources as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<LogAnalyticsQueryPackQueryInner> search(String resourceGroupName, String queryPackName,
@@ -69,13 +73,15 @@ public interface QueriesClient {
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param querySearchProperties Properties by which to search queries in the given Log Analytics QueryPack.
      * @param top Maximum items returned in page.
-     * @param includeBody Flag indicating whether or not to return the body of each applicable query. If false, only return the query information.
+     * @param includeBody Flag indicating whether or not to return the body of each applicable query. If false, only
+     * return the query information.
      * @param skipToken Base64 encoded token used to fetch the next page of items. Default is null.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the list of Log Analytics QueryPack-Query resources as paginated response with {@link PagedIterable}.
+     * @return describes the list of Log Analytics QueryPack-Query resources as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<LogAnalyticsQueryPackQueryInner> search(String resourceGroupName, String queryPackName,
@@ -118,7 +124,8 @@ public interface QueriesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics QueryPack.
+     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
+     * QueryPack.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -135,7 +142,8 @@ public interface QueriesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics QueryPack.
+     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
+     * QueryPack.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -151,7 +159,8 @@ public interface QueriesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics QueryPack.
+     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
+     * QueryPack.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -168,7 +177,8 @@ public interface QueriesClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param queryPackName The name of the Log Analytics QueryPack resource.
      * @param id The id of a specific query defined in the Log Analytics QueryPack.
-     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics QueryPack.
+     * @param queryPayload Properties that need to be specified to create a new query and add it to a Log Analytics
+     * QueryPack.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

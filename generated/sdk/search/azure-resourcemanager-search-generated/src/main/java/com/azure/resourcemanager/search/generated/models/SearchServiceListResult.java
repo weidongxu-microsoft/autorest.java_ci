@@ -42,7 +42,8 @@ public final class SearchServiceListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of search services. Returned when the total number of requested search services exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of search services. Returned when the
+     * total number of requested search services exceed maximum page size.
      * 
      * @return the nextLink value.
      */

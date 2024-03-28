@@ -34,14 +34,18 @@ public interface SingleMetricBaseline {
     String name();
 
     /**
-     * Gets the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by '/'.  This may be adjusted in the future and returned back from what was originally requested.
+     * Gets the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
+     * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
+     * requested.
      * 
      * @return the timespan value.
      */
     String timespan();
 
     /**
-     * Gets the interval property: The interval (window size) for which the metric data was returned in.  This may be adjusted in the future and returned back from what was originally requested.  This is not present if a metadata request was made.
+     * Gets the interval property: The interval (window size) for which the metric data was returned in. This may be
+     * adjusted in the future and returned back from what was originally requested. This is not present if a metadata
+     * request was made.
      * 
      * @return the interval value.
      */

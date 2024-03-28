@@ -123,14 +123,16 @@ public interface ExpressRouteCircuit {
     ExpressRouteCircuitServiceProviderProperties serviceProviderProperties();
 
     /**
-     * Gets the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource.
+     * Gets the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is
+     * provisioned on an ExpressRoutePort resource.
      * 
      * @return the expressRoutePort value.
      */
     SubResource expressRoutePort();
 
     /**
-     * Gets the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource.
+     * Gets the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an
+     * ExpressRoutePort resource.
      * 
      * @return the bandwidthInGbps value.
      */
@@ -258,7 +260,8 @@ public interface ExpressRouteCircuit {
         }
 
         /**
-         * The stage of the ExpressRouteCircuit definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ExpressRouteCircuit definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
             DefinitionStages.WithAllowClassicOperations, DefinitionStages.WithCircuitProvisioningState,
@@ -340,7 +343,8 @@ public interface ExpressRouteCircuit {
          */
         interface WithServiceProviderProvisioningState {
             /**
-             * Specifies the serviceProviderProvisioningState property: The ServiceProviderProvisioningState state of the resource..
+             * Specifies the serviceProviderProvisioningState property: The ServiceProviderProvisioningState state of
+             * the resource..
              * 
              * @param serviceProviderProvisioningState The ServiceProviderProvisioningState state of the resource.
              * @return the next definition stage.
@@ -420,9 +424,11 @@ public interface ExpressRouteCircuit {
          */
         interface WithExpressRoutePort {
             /**
-             * Specifies the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource..
+             * Specifies the expressRoutePort property: The reference to the ExpressRoutePort resource when the circuit
+             * is provisioned on an ExpressRoutePort resource..
              * 
-             * @param expressRoutePort The reference to the ExpressRoutePort resource when the circuit is provisioned on an ExpressRoutePort resource.
+             * @param expressRoutePort The reference to the ExpressRoutePort resource when the circuit is provisioned on
+             * an ExpressRoutePort resource.
              * @return the next definition stage.
              */
             WithCreate withExpressRoutePort(SubResource expressRoutePort);
@@ -433,9 +439,11 @@ public interface ExpressRouteCircuit {
          */
         interface WithBandwidthInGbps {
             /**
-             * Specifies the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource..
+             * Specifies the bandwidthInGbps property: The bandwidth of the circuit when the circuit is provisioned on
+             * an ExpressRoutePort resource..
              * 
-             * @param bandwidthInGbps The bandwidth of the circuit when the circuit is provisioned on an ExpressRoutePort resource.
+             * @param bandwidthInGbps The bandwidth of the circuit when the circuit is provisioned on an
+             * ExpressRoutePort resource.
              * @return the next definition stage.
              */
             WithCreate withBandwidthInGbps(Float bandwidthInGbps);

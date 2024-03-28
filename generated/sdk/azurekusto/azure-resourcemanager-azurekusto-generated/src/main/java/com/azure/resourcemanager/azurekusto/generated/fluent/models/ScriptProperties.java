@@ -56,7 +56,8 @@ public final class ScriptProperties {
     }
 
     /**
-     * Get the scriptUrl property: The url to the KQL script blob file. Must not be used together with scriptContent property.
+     * Get the scriptUrl property: The url to the KQL script blob file. Must not be used together with scriptContent
+     * property.
      * 
      * @return the scriptUrl value.
      */
@@ -65,7 +66,8 @@ public final class ScriptProperties {
     }
 
     /**
-     * Set the scriptUrl property: The url to the KQL script blob file. Must not be used together with scriptContent property.
+     * Set the scriptUrl property: The url to the KQL script blob file. Must not be used together with scriptContent
+     * property.
      * 
      * @param scriptUrl the scriptUrl value to set.
      * @return the ScriptProperties object itself.
@@ -76,7 +78,8 @@ public final class ScriptProperties {
     }
 
     /**
-     * Get the scriptUrlSasToken property: The SaS token that provide read access to the file which contain the script. Must be provided when using scriptUrl property.
+     * Get the scriptUrlSasToken property: The SaS token that provide read access to the file which contain the script.
+     * Must be provided when using scriptUrl property.
      * 
      * @return the scriptUrlSasToken value.
      */
@@ -85,7 +88,8 @@ public final class ScriptProperties {
     }
 
     /**
-     * Set the scriptUrlSasToken property: The SaS token that provide read access to the file which contain the script. Must be provided when using scriptUrl property.
+     * Set the scriptUrlSasToken property: The SaS token that provide read access to the file which contain the script.
+     * Must be provided when using scriptUrl property.
      * 
      * @param scriptUrlSasToken the scriptUrlSasToken value to set.
      * @return the ScriptProperties object itself.
@@ -96,7 +100,8 @@ public final class ScriptProperties {
     }
 
     /**
-     * Get the scriptContent property: The script content. This property should be used when the script is provide inline and not through file in a SA. Must not be used together with scriptUrl and scriptUrlSasToken properties.
+     * Get the scriptContent property: The script content. This property should be used when the script is provide
+     * inline and not through file in a SA. Must not be used together with scriptUrl and scriptUrlSasToken properties.
      * 
      * @return the scriptContent value.
      */
@@ -105,7 +110,8 @@ public final class ScriptProperties {
     }
 
     /**
-     * Set the scriptContent property: The script content. This property should be used when the script is provide inline and not through file in a SA. Must not be used together with scriptUrl and scriptUrlSasToken properties.
+     * Set the scriptContent property: The script content. This property should be used when the script is provide
+     * inline and not through file in a SA. Must not be used together with scriptUrl and scriptUrlSasToken properties.
      * 
      * @param scriptContent the scriptContent value to set.
      * @return the ScriptProperties object itself.

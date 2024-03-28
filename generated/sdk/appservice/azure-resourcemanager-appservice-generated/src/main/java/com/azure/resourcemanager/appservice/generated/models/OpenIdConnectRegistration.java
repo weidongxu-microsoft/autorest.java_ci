@@ -77,7 +77,8 @@ public final class OpenIdConnectRegistration {
     }
 
     /**
-     * Get the openIdConnectConfiguration property: The configuration settings of the endpoints used for the custom Open ID Connect provider.
+     * Get the openIdConnectConfiguration property: The configuration settings of the endpoints used for the custom Open
+     * ID Connect provider.
      * 
      * @return the openIdConnectConfiguration value.
      */
@@ -86,7 +87,8 @@ public final class OpenIdConnectRegistration {
     }
 
     /**
-     * Set the openIdConnectConfiguration property: The configuration settings of the endpoints used for the custom Open ID Connect provider.
+     * Set the openIdConnectConfiguration property: The configuration settings of the endpoints used for the custom Open
+     * ID Connect provider.
      * 
      * @param openIdConnectConfiguration the openIdConnectConfiguration value to set.
      * @return the OpenIdConnectRegistration object itself.

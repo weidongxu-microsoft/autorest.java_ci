@@ -58,7 +58,8 @@ public final class ScaleCapacity {
     }
 
     /**
-     * Get the maximum property: the maximum number of instances for the resource. The actual maximum number of instances is limited by the cores that are available in the subscription.
+     * Get the maximum property: the maximum number of instances for the resource. The actual maximum number of
+     * instances is limited by the cores that are available in the subscription.
      * 
      * @return the maximum value.
      */
@@ -67,7 +68,8 @@ public final class ScaleCapacity {
     }
 
     /**
-     * Set the maximum property: the maximum number of instances for the resource. The actual maximum number of instances is limited by the cores that are available in the subscription.
+     * Set the maximum property: the maximum number of instances for the resource. The actual maximum number of
+     * instances is limited by the cores that are available in the subscription.
      * 
      * @param maximum the maximum value to set.
      * @return the ScaleCapacity object itself.
@@ -78,7 +80,8 @@ public final class ScaleCapacity {
     }
 
     /**
-     * Get the defaultProperty property: the number of instances that will be set if metrics are not available for evaluation. The default is only used if the current instance count is lower than the default.
+     * Get the defaultProperty property: the number of instances that will be set if metrics are not available for
+     * evaluation. The default is only used if the current instance count is lower than the default.
      * 
      * @return the defaultProperty value.
      */
@@ -87,7 +90,8 @@ public final class ScaleCapacity {
     }
 
     /**
-     * Set the defaultProperty property: the number of instances that will be set if metrics are not available for evaluation. The default is only used if the current instance count is lower than the default.
+     * Set the defaultProperty property: the number of instances that will be set if metrics are not available for
+     * evaluation. The default is only used if the current instance count is lower than the default.
      * 
      * @param defaultProperty the defaultProperty value to set.
      * @return the ScaleCapacity object itself.
@@ -104,16 +108,16 @@ public final class ScaleCapacity {
      */
     public void validate() {
         if (minimum() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property minimum in model ScaleCapacity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property minimum in model ScaleCapacity"));
         }
         if (maximum() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property maximum in model ScaleCapacity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property maximum in model ScaleCapacity"));
         }
         if (defaultProperty() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property defaultProperty in model ScaleCapacity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property defaultProperty in model ScaleCapacity"));
         }
     }
 

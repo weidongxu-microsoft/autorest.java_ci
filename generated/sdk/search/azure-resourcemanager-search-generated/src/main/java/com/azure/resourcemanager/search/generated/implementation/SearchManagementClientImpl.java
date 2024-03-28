@@ -49,12 +49,14 @@ import reactor.core.publisher.Mono;
 @ServiceClient(builder = SearchManagementClientBuilder.class)
 public final class SearchManagementClientImpl implements SearchManagementClient {
     /**
-     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
+     * Manager API or the portal.
      */
     private final String subscriptionId;
 
     /**
-     * Gets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * Gets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
+     * Manager API or the portal.
      * 
      * @return the subscriptionId value.
      */
@@ -279,7 +281,8 @@ public final class SearchManagementClientImpl implements SearchManagementClient 
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param subscriptionId The unique identifier for a Microsoft Azure subscription. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param endpoint server parameter.
      */
     SearchManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,

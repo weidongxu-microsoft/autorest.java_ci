@@ -50,7 +50,8 @@ public interface RestorePointCollection {
     Map<String, String> tags();
 
     /**
-     * Gets the source property: The properties of the source resource that this restore point collection is created from.
+     * Gets the source property: The properties of the source resource that this restore point collection is created
+     * from.
      * 
      * @return the source value.
      */
@@ -71,7 +72,8 @@ public interface RestorePointCollection {
     String restorePointCollectionId();
 
     /**
-     * Gets the restorePoints property: A list containing all restore points created under this restore point collection.
+     * Gets the restorePoints property: A list containing all restore points created under this restore point
+     * collection.
      * 
      * @return the restorePoints value.
      */
@@ -157,7 +159,8 @@ public interface RestorePointCollection {
         }
 
         /**
-         * The stage of the RestorePointCollection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RestorePointCollection definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSource {
             /**
@@ -194,7 +197,8 @@ public interface RestorePointCollection {
          */
         interface WithSource {
             /**
-             * Specifies the source property: The properties of the source resource that this restore point collection is created from..
+             * Specifies the source property: The properties of the source resource that this restore point collection
+             * is created from..
              * 
              * @param source The properties of the source resource that this restore point collection is created from.
              * @return the next definition stage.
@@ -252,7 +256,8 @@ public interface RestorePointCollection {
          */
         interface WithSource {
             /**
-             * Specifies the source property: The properties of the source resource that this restore point collection is created from..
+             * Specifies the source property: The properties of the source resource that this restore point collection
+             * is created from..
              * 
              * @param source The properties of the source resource that this restore point collection is created from.
              * @return the next definition stage.

@@ -12,7 +12,8 @@ import java.util.List;
  */
 public interface DnsResourceReferenceResult {
     /**
-     * Gets the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource references for each of the azure resource in the request.
+     * Gets the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
+     * references for each of the azure resource in the request.
      * 
      * @return the dnsResourceReferences value.
      */

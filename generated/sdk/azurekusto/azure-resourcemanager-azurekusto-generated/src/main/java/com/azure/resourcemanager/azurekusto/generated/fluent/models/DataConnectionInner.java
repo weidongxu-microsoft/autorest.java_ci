@@ -59,17 +59,6 @@ public class DataConnectionInner extends ProxyResource {
     }
 
     /**
-     * Set the kind property: Kind of the endpoint for the data connection.
-     * 
-     * @param kind the kind value to set.
-     * @return the DataConnectionInner object itself.
-     */
-    protected DataConnectionInner withKind(DataConnectionKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the location property: Resource location.
      * 
      * @return the location value.

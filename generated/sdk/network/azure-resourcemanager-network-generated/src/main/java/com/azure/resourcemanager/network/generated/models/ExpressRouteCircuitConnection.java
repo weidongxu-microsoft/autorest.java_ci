@@ -20,7 +20,8 @@ public interface ExpressRouteCircuitConnection {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -41,14 +42,16 @@ public interface ExpressRouteCircuitConnection {
     String type();
 
     /**
-     * Gets the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection.
+     * Gets the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
+     * circuit initiating connection.
      * 
      * @return the expressRouteCircuitPeering value.
      */
     SubResource expressRouteCircuitPeering();
 
     /**
-     * Gets the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+     * Gets the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
+     * the peered circuit.
      * 
      * @return the peerExpressRouteCircuitPeering value.
      */
@@ -69,7 +72,8 @@ public interface ExpressRouteCircuitConnection {
     String authorizationKey();
 
     /**
-     * Gets the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit connection.
+     * Gets the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit
+     * connection.
      * 
      * @return the ipv6CircuitConnectionConfig value.
      */
@@ -97,7 +101,8 @@ public interface ExpressRouteCircuitConnection {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCircuitConnectionInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -136,7 +141,8 @@ public interface ExpressRouteCircuitConnection {
         }
 
         /**
-         * The stage of the ExpressRouteCircuitConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ExpressRouteCircuitConnection definition which contains all the minimum required properties
+         * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithExpressRouteCircuitPeering,
             DefinitionStages.WithPeerExpressRouteCircuitPeering, DefinitionStages.WithAddressPrefix,
@@ -162,9 +168,11 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -175,9 +183,11 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithExpressRouteCircuitPeering {
             /**
-             * Specifies the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection..
+             * Specifies the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering
+             * Resource of the circuit initiating connection..
              * 
-             * @param expressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection.
+             * @param expressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the
+             * circuit initiating connection.
              * @return the next definition stage.
              */
             WithCreate withExpressRouteCircuitPeering(SubResource expressRouteCircuitPeering);
@@ -188,9 +198,11 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithPeerExpressRouteCircuitPeering {
             /**
-             * Specifies the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit..
+             * Specifies the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering
+             * Resource of the peered circuit..
              * 
-             * @param peerExpressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+             * @param peerExpressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the
+             * peered circuit.
              * @return the next definition stage.
              */
             WithCreate withPeerExpressRouteCircuitPeering(SubResource peerExpressRouteCircuitPeering);
@@ -227,7 +239,8 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithIpv6CircuitConnectionConfig {
             /**
-             * Specifies the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit connection..
+             * Specifies the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route
+             * circuit connection..
              * 
              * @param ipv6CircuitConnectionConfig IPv6 Address PrefixProperties of the express route circuit connection.
              * @return the next definition stage.
@@ -274,9 +287,11 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -287,9 +302,11 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithExpressRouteCircuitPeering {
             /**
-             * Specifies the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection..
+             * Specifies the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering
+             * Resource of the circuit initiating connection..
              * 
-             * @param expressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection.
+             * @param expressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the
+             * circuit initiating connection.
              * @return the next definition stage.
              */
             Update withExpressRouteCircuitPeering(SubResource expressRouteCircuitPeering);
@@ -300,9 +317,11 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithPeerExpressRouteCircuitPeering {
             /**
-             * Specifies the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit..
+             * Specifies the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering
+             * Resource of the peered circuit..
              * 
-             * @param peerExpressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+             * @param peerExpressRouteCircuitPeering Reference to Express Route Circuit Private Peering Resource of the
+             * peered circuit.
              * @return the next definition stage.
              */
             Update withPeerExpressRouteCircuitPeering(SubResource peerExpressRouteCircuitPeering);
@@ -339,7 +358,8 @@ public interface ExpressRouteCircuitConnection {
          */
         interface WithIpv6CircuitConnectionConfig {
             /**
-             * Specifies the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit connection..
+             * Specifies the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route
+             * circuit connection..
              * 
              * @param ipv6CircuitConnectionConfig IPv6 Address PrefixProperties of the express route circuit connection.
              * @return the next definition stage.

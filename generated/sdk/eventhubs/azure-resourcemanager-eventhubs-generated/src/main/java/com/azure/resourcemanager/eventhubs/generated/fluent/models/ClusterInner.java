@@ -126,7 +126,8 @@ public final class ClusterInner extends Resource {
     }
 
     /**
-     * Get the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by the user.
+     * Get the metricId property: The metric ID of the cluster resource. Provided by the service and not modifiable by
+     * the user.
      * 
      * @return the metricId value.
      */

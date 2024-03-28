@@ -50,7 +50,8 @@ public final class AzureFunctionReceiver {
     }
 
     /**
-     * Get the name property: The name of the azure function receiver. Names must be unique across all receivers within an action group.
+     * Get the name property: The name of the azure function receiver. Names must be unique across all receivers within
+     * an action group.
      * 
      * @return the name value.
      */
@@ -59,7 +60,8 @@ public final class AzureFunctionReceiver {
     }
 
     /**
-     * Set the name property: The name of the azure function receiver. Names must be unique across all receivers within an action group.
+     * Set the name property: The name of the azure function receiver. Names must be unique across all receivers within
+     * an action group.
      * 
      * @param name the name value to set.
      * @return the AzureFunctionReceiver object itself.
@@ -156,20 +158,23 @@ public final class AzureFunctionReceiver {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model AzureFunctionReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model AzureFunctionReceiver"));
         }
         if (functionAppResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property functionAppResourceId in model AzureFunctionReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property functionAppResourceId in model AzureFunctionReceiver"));
         }
         if (functionName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property functionName in model AzureFunctionReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property functionName in model AzureFunctionReceiver"));
         }
         if (httpTriggerUrl() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property httpTriggerUrl in model AzureFunctionReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property httpTriggerUrl in model AzureFunctionReceiver"));
         }
     }
 

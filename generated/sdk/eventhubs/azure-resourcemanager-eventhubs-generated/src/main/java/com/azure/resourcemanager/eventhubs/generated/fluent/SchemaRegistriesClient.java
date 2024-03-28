@@ -33,7 +33,9 @@ public interface SchemaRegistriesClient {
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

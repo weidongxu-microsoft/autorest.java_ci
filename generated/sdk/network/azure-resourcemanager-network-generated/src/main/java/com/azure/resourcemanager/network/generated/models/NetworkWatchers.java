@@ -336,7 +336,8 @@ public interface NetworkWatchers {
         FlowLogStatusParameters parameters, Context context);
 
     /**
-     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint including another VM or an arbitrary remote server.
+     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
+     * including another VM or an arbitrary remote server.
      * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
@@ -350,7 +351,8 @@ public interface NetworkWatchers {
         ConnectivityParameters parameters);
 
     /**
-     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint including another VM or an arbitrary remote server.
+     * Verifies the possibility of establishing a direct TCP connection from a virtual machine to a given endpoint
+     * including another VM or an arbitrary remote server.
      * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
@@ -365,7 +367,8 @@ public interface NetworkWatchers {
         ConnectivityParameters parameters, Context context);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score for internet service providers from a specified location to Azure regions.
+     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
+     * for internet service providers from a specified location to Azure regions.
      * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
@@ -379,7 +382,8 @@ public interface NetworkWatchers {
         AzureReachabilityReportParameters parameters);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score for internet service providers from a specified location to Azure regions.
+     * NOTE: This feature is currently in preview and still being tested for stability. Gets the relative latency score
+     * for internet service providers from a specified location to Azure regions.
      * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
@@ -394,7 +398,8 @@ public interface NetworkWatchers {
         AzureReachabilityReportParameters parameters, Context context);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet service providers for a specified Azure region.
+     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
+     * service providers for a specified Azure region.
      * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
@@ -408,7 +413,8 @@ public interface NetworkWatchers {
         AvailableProvidersListParameters parameters);
 
     /**
-     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet service providers for a specified Azure region.
+     * NOTE: This feature is currently in preview and still being tested for stability. Lists all available internet
+     * service providers for a specified Azure region.
      * 
      * @param resourceGroupName The name of the network watcher resource group.
      * @param networkWatcherName The name of the network watcher resource.
@@ -423,7 +429,10 @@ public interface NetworkWatchers {
         AvailableProvidersListParameters parameters, Context context);
 
     /**
-     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides detailed information on what security rules were applied to a specified traffic flow and the result of evaluating these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
+     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides
+     * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
+     * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
+     * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.
@@ -437,7 +446,10 @@ public interface NetworkWatchers {
         String networkWatcherName, NetworkConfigurationDiagnosticParameters parameters);
 
     /**
-     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides detailed information on what security rules were applied to a specified traffic flow and the result of evaluating these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
+     * Gets Network Configuration Diagnostic data to help customers understand and debug network behavior. It provides
+     * detailed information on what security rules were applied to a specified traffic flow and the result of evaluating
+     * these rules. Customers must provide details of a flow like source, destination, protocol, etc. The API returns
+     * whether traffic was allowed or denied, the rules evaluated for the specified flow and the evaluation results.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkWatcherName The name of the network watcher.

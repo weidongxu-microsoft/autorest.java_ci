@@ -235,26 +235,22 @@ public final class Metric {
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property id in model Metric"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property id in model Metric"));
         }
         if (type() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property type in model Metric"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property type in model Metric"));
         }
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model Metric"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property name in model Metric"));
         } else {
             name().validate();
         }
         if (unit() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property unit in model Metric"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property unit in model Metric"));
         }
         if (timeseries() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timeseries in model Metric"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property timeseries in model Metric"));
         } else {
             timeseries().forEach(e -> e.validate());
         }

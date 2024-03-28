@@ -53,7 +53,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     }
 
     /**
-     * The interface defining all the services for SearchManagementClientAdminKeys to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for SearchManagementClientAdminKeys to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
@@ -82,13 +83,16 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Gets the primary and secondary admin API keys for the specified Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure AI Search service along with {@link Response} on successful completion of {@link Mono}.
+     * @return the primary and secondary admin API keys for the specified Azure AI Search service along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> getWithResponseAsync(String resourceGroupName, String searchServiceName,
@@ -119,14 +123,17 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Gets the primary and secondary admin API keys for the specified Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure AI Search service along with {@link Response} on successful completion of {@link Mono}.
+     * @return the primary and secondary admin API keys for the specified Azure AI Search service along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> getWithResponseAsync(String resourceGroupName, String searchServiceName,
@@ -156,12 +163,14 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Gets the primary and secondary admin API keys for the specified Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure AI Search service on successful completion of {@link Mono}.
+     * @return the primary and secondary admin API keys for the specified Azure AI Search service on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdminKeyResultInner> getAsync(String resourceGroupName, String searchServiceName) {
@@ -173,14 +182,17 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Gets the primary and secondary admin API keys for the specified Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the primary and secondary admin API keys for the specified Azure AI Search service along with {@link Response}.
+     * @return the primary and secondary admin API keys for the specified Azure AI Search service along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AdminKeyResultInner> getWithResponse(String resourceGroupName, String searchServiceName,
@@ -191,7 +203,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Gets the primary and secondary admin API keys for the specified Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -207,14 +220,17 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service along with {@link Response} on successful completion of {@link Mono}.
+     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> regenerateWithResponseAsync(String resourceGroupName,
@@ -249,15 +265,18 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service along with {@link Response} on successful completion of {@link Mono}.
+     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminKeyResultInner>> regenerateWithResponseAsync(String resourceGroupName,
@@ -290,13 +309,15 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service on successful completion of {@link Mono}.
+     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AdminKeyResultInner> regenerateAsync(String resourceGroupName, String searchServiceName,
@@ -309,15 +330,18 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service along with {@link Response}.
+     * @return response containing the primary and secondary admin API keys for a given Azure AI Search service along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AdminKeyResultInner> regenerateWithResponse(String resourceGroupName, String searchServiceName,
@@ -329,7 +353,8 @@ public final class AdminKeysClientImpl implements AdminKeysClient {
     /**
      * Regenerates either the primary or secondary admin API key. You can only regenerate one key at a time.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param keyKind Specifies which key to regenerate. Valid values include 'primary' and 'secondary'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

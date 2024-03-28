@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -19,11 +21,28 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("IsNullOrUndefined")
 @Fluent
 public final class IsNullOrUndefinedFilter extends Filter {
+    /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "operatorType", required = true)
+    private FilterOperatorType operatorType = FilterOperatorType.IS_NULL_OR_UNDEFINED;
+
     /**
      * Creates an instance of IsNullOrUndefinedFilter class.
      */
     public IsNullOrUndefinedFilter() {
-        withOperatorType(FilterOperatorType.IS_NULL_OR_UNDEFINED);
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public FilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**

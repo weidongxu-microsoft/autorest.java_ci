@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The status of blob restore progress. Possible values are: - InProgress: Indicates that blob restore is ongoing. - Complete: Indicates that blob restore has been completed successfully. - Failed: Indicates that blob restore is failed.
+ * The status of blob restore progress. Possible values are: - InProgress: Indicates that blob restore is ongoing. -
+ * Complete: Indicates that blob restore has been completed successfully. - Failed: Indicates that blob restore is
+ * failed.
  */
 public final class BlobRestoreProgressStatus extends ExpandableStringEnum<BlobRestoreProgressStatus> {
     /**

@@ -39,7 +39,8 @@ public interface ApplicationGatewayBackendHealthServer {
     String healthProbeLog();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthServerInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthServerInner object.
      * 
      * @return the inner object.
      */

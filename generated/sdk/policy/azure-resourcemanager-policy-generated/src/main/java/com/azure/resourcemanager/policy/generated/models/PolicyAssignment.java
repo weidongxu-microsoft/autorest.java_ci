@@ -78,7 +78,8 @@ public interface PolicyAssignment {
     List<String> notScopes();
 
     /**
-     * Gets the parameters property: The parameter values for the assigned policy rule. The keys are the parameter names.
+     * Gets the parameters property: The parameter values for the assigned policy rule. The keys are the parameter
+     * names.
      * 
      * @return the parameters value.
      */
@@ -92,21 +93,24 @@ public interface PolicyAssignment {
     String description();
 
     /**
-     * Gets the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value pairs.
+     * Gets the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a
+     * collection of key value pairs.
      * 
      * @return the metadata value.
      */
     Object metadata();
 
     /**
-     * Gets the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and DoNotEnforce.
+     * Gets the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and
+     * DoNotEnforce.
      * 
      * @return the enforcementMode value.
      */
     EnforcementMode enforcementMode();
 
     /**
-     * Gets the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the policy.
+     * Gets the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the
+     * policy.
      * 
      * @return the nonComplianceMessages value.
      */
@@ -156,14 +160,19 @@ public interface PolicyAssignment {
             /**
              * Specifies scope.
              * 
-             * @param scope The scope of the policy assignment. Valid scopes are: management group (format: '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format: '/subscriptions/{subscriptionId}'), resource group (format: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
+             * @param scope The scope of the policy assignment. Valid scopes are: management group (format:
+             * '/providers/Microsoft.Management/managementGroups/{managementGroup}'), subscription (format:
+             * '/subscriptions/{subscriptionId}'), resource group (format:
+             * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}', or resource (format:
+             * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceProviderNamespace}/[{parentResourcePath}/]{resourceType}/{resourceName}'.
              * @return the next definition stage.
              */
             WithCreate withExistingScope(String scope);
         }
 
         /**
-         * The stage of the PolicyAssignment definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PolicyAssignment definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithLocation, DefinitionStages.WithIdentity,
             DefinitionStages.WithDisplayName, DefinitionStages.WithPolicyDefinitionId, DefinitionStages.WithNotScopes,
@@ -237,7 +246,8 @@ public interface PolicyAssignment {
          */
         interface WithPolicyDefinitionId {
             /**
-             * Specifies the policyDefinitionId property: The ID of the policy definition or policy set definition being assigned..
+             * Specifies the policyDefinitionId property: The ID of the policy definition or policy set definition being
+             * assigned..
              * 
              * @param policyDefinitionId The ID of the policy definition or policy set definition being assigned.
              * @return the next definition stage.
@@ -263,7 +273,8 @@ public interface PolicyAssignment {
          */
         interface WithParameters {
             /**
-             * Specifies the parameters property: The parameter values for the assigned policy rule. The keys are the parameter names..
+             * Specifies the parameters property: The parameter values for the assigned policy rule. The keys are the
+             * parameter names..
              * 
              * @param parameters The parameter values for the assigned policy rule. The keys are the parameter names.
              * @return the next definition stage.
@@ -289,9 +300,11 @@ public interface PolicyAssignment {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value pairs..
+             * Specifies the metadata property: The policy assignment metadata. Metadata is an open ended object and is
+             * typically a collection of key value pairs..
              * 
-             * @param metadata The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value pairs.
+             * @param metadata The policy assignment metadata. Metadata is an open ended object and is typically a
+             * collection of key value pairs.
              * @return the next definition stage.
              */
             WithCreate withMetadata(Object metadata);
@@ -302,9 +315,11 @@ public interface PolicyAssignment {
          */
         interface WithEnforcementMode {
             /**
-             * Specifies the enforcementMode property: The policy assignment enforcement mode. Possible values are Default and DoNotEnforce..
+             * Specifies the enforcementMode property: The policy assignment enforcement mode. Possible values are
+             * Default and DoNotEnforce..
              * 
-             * @param enforcementMode The policy assignment enforcement mode. Possible values are Default and DoNotEnforce.
+             * @param enforcementMode The policy assignment enforcement mode. Possible values are Default and
+             * DoNotEnforce.
              * @return the next definition stage.
              */
             WithCreate withEnforcementMode(EnforcementMode enforcementMode);
@@ -315,7 +330,8 @@ public interface PolicyAssignment {
          */
         interface WithNonComplianceMessages {
             /**
-             * Specifies the nonComplianceMessages property: The messages that describe why a resource is non-compliant with the policy..
+             * Specifies the nonComplianceMessages property: The messages that describe why a resource is non-compliant
+             * with the policy..
              * 
              * @param nonComplianceMessages The messages that describe why a resource is non-compliant with the policy.
              * @return the next definition stage.

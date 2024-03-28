@@ -320,7 +320,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
+     * Get the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
      * 
      * @return the enabled value.
      */
@@ -329,7 +330,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
+     * Set the enabled property: &lt;code&gt;true&lt;/code&gt; if the app is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;. Setting this value to false disables the app (takes the app offline).
      * 
      * @param enabled the enabled value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -340,7 +342,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the enabledHostNames property: Enabled hostnames for the app.Hostnames need to be assigned (see HostNames) AND enabled. Otherwise,
+     * Get the enabledHostNames property: Enabled hostnames for the app.Hostnames need to be assigned (see HostNames)
+     * AND enabled. Otherwise,
      * the app is not served on those hostnames.
      * 
      * @return the enabledHostNames value.
@@ -379,7 +382,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the serverFarmId property: Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Get the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
+     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      * 
      * @return the serverFarmId value.
      */
@@ -388,7 +392,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the serverFarmId property: Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Set the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
+     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      * 
      * @param serverFarmId the serverFarmId value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -497,7 +502,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
+     * Get the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is
+     * stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the scmSiteAlsoStopped value.
      */
@@ -506,7 +512,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
+     * Set the scmSiteAlsoStopped property: &lt;code&gt;true&lt;/code&gt; to stop SCM (KUDU) site when the app is
+     * stopped; otherwise, &lt;code&gt;false&lt;/code&gt;. The default is &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param scmSiteAlsoStopped the scmSiteAlsoStopped value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -547,7 +554,9 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity; &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
+     * Get the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity;
+     * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in the same
+     * session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the clientAffinityEnabled value.
      */
@@ -556,7 +565,9 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity; &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in the same session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
+     * Set the clientAffinityEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client affinity;
+     * &lt;code&gt;false&lt;/code&gt; to stop sending session affinity cookies, which route client requests in the same
+     * session to the same instance. Default is &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param clientAffinityEnabled the clientAffinityEnabled value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -567,7 +578,9 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is &lt;code&gt;false&lt;/code&gt;.
+     * Get the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication
+     * (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the clientCertEnabled value.
      */
@@ -576,7 +589,9 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is &lt;code&gt;false&lt;/code&gt;.
+     * Set the clientCertEnabled property: &lt;code&gt;true&lt;/code&gt; to enable client certificate authentication
+     * (TLS mutual authentication); otherwise, &lt;code&gt;false&lt;/code&gt;. Default is
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param clientCertEnabled the clientCertEnabled value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -633,8 +648,9 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *  If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
+     * Get the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
      * 
      * @return the hostNamesDisabled value.
      */
@@ -643,8 +659,9 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app; otherwise, &lt;code&gt;false&lt;/code&gt;.
-     *  If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
+     * Set the hostNamesDisabled property: &lt;code&gt;true&lt;/code&gt; to disable the public hostnames of the app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * If &lt;code&gt;true&lt;/code&gt;, the app is only accessible via API management process.
      * 
      * @param hostNamesDisabled the hostNamesDisabled value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -655,7 +672,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record for verification.
+     * Get the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
      * 
      * @return the customDomainVerificationId value.
      */
@@ -664,7 +682,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record for verification.
+     * Set the customDomainVerificationId property: Unique identifier that verifies the custom domains assigned to the
+     * app. Customer will add this id to a txt record for verification.
      * 
      * @param customDomainVerificationId the customDomainVerificationId value to set.
      * @return the SitePatchResourcePropertiesInner object itself.
@@ -675,7 +694,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the outboundIpAddresses property: List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from tenants that site can be hosted with current settings. Read-only.
+     * Get the outboundIpAddresses property: List of IP addresses that the app uses for outbound connections (e.g.
+     * database access). Includes VIPs from tenants that site can be hosted with current settings. Read-only.
      * 
      * @return the outboundIpAddresses value.
      */
@@ -684,7 +704,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the possibleOutboundIpAddresses property: List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from all tenants except dataComponent. Read-only.
+     * Get the possibleOutboundIpAddresses property: List of IP addresses that the app uses for outbound connections
+     * (e.g. database access). Includes VIPs from all tenants except dataComponent. Read-only.
      * 
      * @return the possibleOutboundIpAddresses value.
      */
@@ -781,7 +802,8 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the isDefaultContainer property: &lt;code&gt;true&lt;/code&gt; if the app is a default container; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDefaultContainer property: &lt;code&gt;true&lt;/code&gt; if the app is a default container; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDefaultContainer value.
      */
@@ -899,8 +921,10 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined by Regional VNET Integration.
-     * This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     * Get the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
+     * This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
      * @return the virtualNetworkSubnetId value.
      */
@@ -909,8 +933,10 @@ public final class SitePatchResourcePropertiesInner {
     }
 
     /**
-     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined by Regional VNET Integration.
-     * This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     * Set the virtualNetworkSubnetId property: Azure Resource Manager ID of the Virtual network and subnet to be joined
+     * by Regional VNET Integration.
+     * This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
      * @param virtualNetworkSubnetId the virtualNetworkSubnetId value to set.
      * @return the SitePatchResourcePropertiesInner object itself.

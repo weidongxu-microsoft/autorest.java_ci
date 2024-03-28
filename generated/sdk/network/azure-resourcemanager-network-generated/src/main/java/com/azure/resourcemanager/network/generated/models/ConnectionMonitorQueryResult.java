@@ -26,7 +26,8 @@ public interface ConnectionMonitorQueryResult {
     List<ConnectionStateSnapshot> states();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorQueryResultInner
+     * object.
      * 
      * @return the inner object.
      */

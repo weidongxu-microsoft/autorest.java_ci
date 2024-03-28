@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -16,11 +18,27 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.Mp4Format")
 @Fluent
 public final class Mp4Format extends MultiBitrateFormat {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.Mp4Format";
+
     /**
      * Creates an instance of Mp4Format class.
      */
     public Mp4Format() {
-        withOdataType("#Microsoft.Media.Mp4Format");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

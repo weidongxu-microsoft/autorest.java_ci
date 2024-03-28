@@ -20,14 +20,16 @@ import com.azure.resourcemanager.compute.generated.models.RestorePointCollection
  */
 public interface RestorePointCollectionsClient {
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
+     * more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
@@ -36,13 +38,15 @@ public interface RestorePointCollectionsClient {
         String restorePointCollectionName, RestorePointCollectionInner parameters, Context context);
 
     /**
-     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for more details. When updating a restore point collection, only tags may be modified.
+     * The operation to create or update the restore point collection. Please refer to https://aka.ms/RestorePoints for
+     * more details. When updating a restore point collection, only tags may be modified.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Create or Update restore point collection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters.
      */
@@ -58,7 +62,8 @@ public interface RestorePointCollectionsClient {
      * @param parameters Parameters supplied to the Update restore point collection operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
@@ -73,7 +78,8 @@ public interface RestorePointCollectionsClient {
      * @param restorePointCollectionName The name of the restore point collection.
      * @param parameters Parameters supplied to the Update restore point collection operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters.
      */
@@ -82,12 +88,14 @@ public interface RestorePointCollectionsClient {
         RestorePointCollectionUpdate parameters);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -95,13 +103,15 @@ public interface RestorePointCollectionsClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String restorePointCollectionName);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -110,25 +120,29 @@ public interface RestorePointCollectionsClient {
         Context context);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void delete(String resourceGroupName, String restorePointCollectionName);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -139,10 +153,12 @@ public interface RestorePointCollectionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all contained restore points in the restorePointCollection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
+     * contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
@@ -156,7 +172,8 @@ public interface RestorePointCollectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters.
      */
@@ -168,9 +185,11 @@ public interface RestorePointCollectionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RestorePointCollectionInner> listByResourceGroup(String resourceGroupName);
@@ -181,31 +200,41 @@ public interface RestorePointCollectionsClient {
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RestorePointCollectionInner> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
+     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
+     * collections.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RestorePointCollectionInner> list();
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
+     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
+     * collections.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<RestorePointCollectionInner> list(Context context);

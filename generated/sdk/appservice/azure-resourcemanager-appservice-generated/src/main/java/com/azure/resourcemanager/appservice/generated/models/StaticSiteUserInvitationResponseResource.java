@@ -54,7 +54,9 @@ public interface StaticSiteUserInvitationResponseResource {
     String invitationUrl();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteUserInvitationResponseResourceInner
+     * object.
      * 
      * @return the inner object.
      */

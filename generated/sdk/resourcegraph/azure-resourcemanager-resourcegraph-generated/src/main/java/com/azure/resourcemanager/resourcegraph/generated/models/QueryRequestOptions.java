@@ -49,7 +49,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Get the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well as the context of the query.
+     * Get the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well
+     * as the context of the query.
      * 
      * @return the skipToken value.
      */
@@ -58,7 +59,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Set the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well as the context of the query.
+     * Set the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well
+     * as the context of the query.
      * 
      * @param skipToken the skipToken value to set.
      * @return the QueryRequestOptions object itself.
@@ -69,7 +71,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Get the top property: The maximum number of rows that the query should return. Overrides the page size when ```$skipToken``` property is present.
+     * Get the top property: The maximum number of rows that the query should return. Overrides the page size when
+     * ```$skipToken``` property is present.
      * 
      * @return the top value.
      */
@@ -78,7 +81,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Set the top property: The maximum number of rows that the query should return. Overrides the page size when ```$skipToken``` property is present.
+     * Set the top property: The maximum number of rows that the query should return. Overrides the page size when
+     * ```$skipToken``` property is present.
      * 
      * @param top the top value to set.
      * @return the QueryRequestOptions object itself.
@@ -89,7 +93,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Get the skip property: The number of rows to skip from the beginning of the results. Overrides the next page offset when ```$skipToken``` property is present.
+     * Get the skip property: The number of rows to skip from the beginning of the results. Overrides the next page
+     * offset when ```$skipToken``` property is present.
      * 
      * @return the skip value.
      */
@@ -98,7 +103,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Set the skip property: The number of rows to skip from the beginning of the results. Overrides the next page offset when ```$skipToken``` property is present.
+     * Set the skip property: The number of rows to skip from the beginning of the results. Overrides the next page
+     * offset when ```$skipToken``` property is present.
      * 
      * @param skip the skip value to set.
      * @return the QueryRequestOptions object itself.
@@ -129,7 +135,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Get the allowPartialScopes property: Only applicable for tenant and management group level queries to decide whether to allow partial scopes for result in case the number of subscriptions exceed allowed limits.
+     * Get the allowPartialScopes property: Only applicable for tenant and management group level queries to decide
+     * whether to allow partial scopes for result in case the number of subscriptions exceed allowed limits.
      * 
      * @return the allowPartialScopes value.
      */
@@ -138,7 +145,8 @@ public final class QueryRequestOptions {
     }
 
     /**
-     * Set the allowPartialScopes property: Only applicable for tenant and management group level queries to decide whether to allow partial scopes for result in case the number of subscriptions exceed allowed limits.
+     * Set the allowPartialScopes property: Only applicable for tenant and management group level queries to decide
+     * whether to allow partial scopes for result in case the number of subscriptions exceed allowed limits.
      * 
      * @param allowPartialScopes the allowPartialScopes value to set.
      * @return the QueryRequestOptions object itself.

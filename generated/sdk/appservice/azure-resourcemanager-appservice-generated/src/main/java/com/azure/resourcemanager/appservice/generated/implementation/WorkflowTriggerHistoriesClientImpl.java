@@ -62,7 +62,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientWorkflowTriggerHistories to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientWorkflowTriggerHistories to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -117,11 +118,13 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param top The number of items to be included in the result.
-     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
+     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
+     * ClientTrackingId.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of workflow trigger histories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of workflow trigger histories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkflowTriggerHistoryInner>> listSinglePageAsync(String resourceGroupName, String name,
@@ -165,12 +168,14 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param top The number of items to be included in the result.
-     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
+     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
+     * ClientTrackingId.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of workflow trigger histories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of workflow trigger histories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkflowTriggerHistoryInner>> listSinglePageAsync(String resourceGroupName, String name,
@@ -213,7 +218,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param top The number of items to be included in the result.
-     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
+     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
+     * ClientTrackingId.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -257,7 +263,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param top The number of items to be included in the result.
-     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
+     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
+     * ClientTrackingId.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -300,7 +307,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
      * @param top The number of items to be included in the result.
-     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and ClientTrackingId.
+     * @param filter The filter to apply on the operation. Options for filters include: Status, StartTime, and
+     * ClientTrackingId.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -320,7 +328,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -368,7 +377,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -415,7 +425,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -435,7 +446,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -455,7 +467,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -475,7 +488,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -523,7 +537,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -570,7 +585,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -592,7 +608,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -616,7 +633,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -635,7 +653,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -656,7 +675,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -676,7 +696,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -697,7 +718,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -715,7 +737,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @param name Site name.
      * @param workflowName The workflow name.
      * @param triggerName The workflow trigger name.
-     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a run.
+     * @param historyName The workflow trigger history name. Corresponds to the run name for triggers that resulted in a
+     * run.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -736,7 +759,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of workflow trigger histories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of workflow trigger histories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkflowTriggerHistoryInner>> listNextSinglePageAsync(String nextLink) {
@@ -764,7 +788,8 @@ public final class WorkflowTriggerHistoriesClientImpl implements WorkflowTrigger
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of workflow trigger histories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of workflow trigger histories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WorkflowTriggerHistoryInner>> listNextSinglePageAsync(String nextLink, Context context) {

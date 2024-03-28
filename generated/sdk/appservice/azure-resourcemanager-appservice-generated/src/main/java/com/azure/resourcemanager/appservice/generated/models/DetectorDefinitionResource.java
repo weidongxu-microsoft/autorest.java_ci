@@ -67,7 +67,8 @@ public interface DetectorDefinitionResource {
     Boolean isEnabled();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionResourceInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DetectorDefinitionResourceInner
+     * object.
      * 
      * @return the inner object.
      */

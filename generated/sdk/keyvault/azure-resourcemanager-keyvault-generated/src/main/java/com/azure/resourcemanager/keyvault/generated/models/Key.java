@@ -100,14 +100,16 @@ public interface Key {
     String keyUriWithVersion();
 
     /**
-     * Gets the rotationPolicy property: Key rotation policy in response. It will be used for both output and input. Omitted if empty.
+     * Gets the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @return the rotationPolicy value.
      */
     RotationPolicy rotationPolicy();
 
     /**
-     * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input. Omitted if empty.
+     * Gets the releasePolicy property: Key release policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @return the releasePolicy value.
      */
@@ -179,7 +181,8 @@ public interface Key {
         }
 
         /**
-         * The stage of the Key definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Key definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

@@ -162,7 +162,8 @@ public final class RecommendationRuleProperties {
     }
 
     /**
-     * Get the recommendationId property: Recommendation ID of an associated recommendation object tied to the rule, if exists.
+     * Get the recommendationId property: Recommendation ID of an associated recommendation object tied to the rule, if
+     * exists.
      * If such an object doesn't exist, it is set to null.
      * 
      * @return the recommendationId value.
@@ -172,7 +173,8 @@ public final class RecommendationRuleProperties {
     }
 
     /**
-     * Set the recommendationId property: Recommendation ID of an associated recommendation object tied to the rule, if exists.
+     * Set the recommendationId property: Recommendation ID of an associated recommendation object tied to the rule, if
+     * exists.
      * If such an object doesn't exist, it is set to null.
      * 
      * @param recommendationId the recommendationId value to set.
@@ -333,7 +335,8 @@ public final class RecommendationRuleProperties {
     }
 
     /**
-     * Get the forwardLink property: Forward link to an external document associated with the rule. Applicable to dynamic rule only.
+     * Get the forwardLink property: Forward link to an external document associated with the rule. Applicable to
+     * dynamic rule only.
      * 
      * @return the forwardLink value.
      */
@@ -342,7 +345,8 @@ public final class RecommendationRuleProperties {
     }
 
     /**
-     * Set the forwardLink property: Forward link to an external document associated with the rule. Applicable to dynamic rule only.
+     * Set the forwardLink property: Forward link to an external document associated with the rule. Applicable to
+     * dynamic rule only.
      * 
      * @param forwardLink the forwardLink value to set.
      * @return the RecommendationRuleProperties object itself.

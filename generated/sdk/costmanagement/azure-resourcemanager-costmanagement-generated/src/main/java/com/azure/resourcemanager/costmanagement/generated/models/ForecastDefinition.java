@@ -76,7 +76,8 @@ public final class ForecastDefinition {
     }
 
     /**
-     * Get the timeframe property: The time frame for pulling data for the forecast. If custom, then a specific time period must be provided.
+     * Get the timeframe property: The time frame for pulling data for the forecast. If custom, then a specific time
+     * period must be provided.
      * 
      * @return the timeframe value.
      */
@@ -85,7 +86,8 @@ public final class ForecastDefinition {
     }
 
     /**
-     * Set the timeframe property: The time frame for pulling data for the forecast. If custom, then a specific time period must be provided.
+     * Set the timeframe property: The time frame for pulling data for the forecast. If custom, then a specific time
+     * period must be provided.
      * 
      * @param timeframe the timeframe value to set.
      * @return the ForecastDefinition object itself.
@@ -182,19 +184,19 @@ public final class ForecastDefinition {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model ForecastDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model ForecastDefinition"));
         }
         if (timeframe() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timeframe in model ForecastDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property timeframe in model ForecastDefinition"));
         }
         if (timePeriod() != null) {
             timePeriod().validate();
         }
         if (dataset() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property dataset in model ForecastDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property dataset in model ForecastDefinition"));
         } else {
             dataset().validate();
         }

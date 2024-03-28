@@ -142,14 +142,16 @@ public final class IoTAddonProperties {
      */
     public void validate() {
         if (ioTDeviceDetails() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ioTDeviceDetails in model IoTAddonProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ioTDeviceDetails in model IoTAddonProperties"));
         } else {
             ioTDeviceDetails().validate();
         }
         if (ioTEdgeDeviceDetails() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ioTEdgeDeviceDetails in model IoTAddonProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ioTEdgeDeviceDetails in model IoTAddonProperties"));
         } else {
             ioTEdgeDeviceDetails().validate();
         }

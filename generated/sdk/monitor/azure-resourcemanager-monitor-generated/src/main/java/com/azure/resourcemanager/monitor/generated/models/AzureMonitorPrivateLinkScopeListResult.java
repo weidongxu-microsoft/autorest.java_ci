@@ -54,7 +54,8 @@ public final class AzureMonitorPrivateLinkScopeListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to get the next set of Azure Monitor PrivateLinkScope definitions if too many PrivateLinkScopes where returned in the result set.
+     * Get the nextLink property: The URI to get the next set of Azure Monitor PrivateLinkScope definitions if too many
+     * PrivateLinkScopes where returned in the result set.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class AzureMonitorPrivateLinkScopeListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to get the next set of Azure Monitor PrivateLinkScope definitions if too many PrivateLinkScopes where returned in the result set.
+     * Set the nextLink property: The URI to get the next set of Azure Monitor PrivateLinkScope definitions if too many
+     * PrivateLinkScopes where returned in the result set.
      * 
      * @param nextLink the nextLink value to set.
      * @return the AzureMonitorPrivateLinkScopeListResult object itself.
@@ -80,8 +82,9 @@ public final class AzureMonitorPrivateLinkScopeListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model AzureMonitorPrivateLinkScopeListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model AzureMonitorPrivateLinkScopeListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

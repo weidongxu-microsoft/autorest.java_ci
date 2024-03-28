@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Defines a list of Experiments. It contains a list of Experiment objects and a URL link to get the next set of results.
+ * Defines a list of Experiments. It contains a list of Experiment objects and a URL link to get the next set of
+ * results.
  */
 @Fluent
 public final class ExperimentList {

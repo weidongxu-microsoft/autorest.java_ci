@@ -157,12 +157,13 @@ public final class WhatIfPropertyChange {
      */
     public void validate() {
         if (path() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property path in model WhatIfPropertyChange"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property path in model WhatIfPropertyChange"));
         }
         if (propertyChangeType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property propertyChangeType in model WhatIfPropertyChange"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property propertyChangeType in model WhatIfPropertyChange"));
         }
         if (children() != null) {
             children().forEach(e -> e.validate());

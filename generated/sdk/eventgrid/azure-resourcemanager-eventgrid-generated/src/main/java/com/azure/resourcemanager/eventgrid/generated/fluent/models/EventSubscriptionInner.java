@@ -79,8 +79,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Get the destination property: Information about the destination where events have to be delivered for the event subscription.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Get the destination property: Information about the destination where events have to be delivered for the event
+     * subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
+     * dead-lettering.
      * 
      * @return the destination value.
      */
@@ -89,8 +91,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Set the destination property: Information about the destination where events have to be delivered for the event subscription.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Set the destination property: Information about the destination where events have to be delivered for the event
+     * subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
+     * dead-lettering.
      * 
      * @param destination the destination value to set.
      * @return the EventSubscriptionInner object itself.
@@ -104,8 +108,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Get the deliveryWithResourceIdentity property: Information about the destination where events have to be delivered for the event subscription.
-     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Get the deliveryWithResourceIdentity property: Information about the destination where events have to be
+     * delivered for the event subscription.
+     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
+     * tokens being used during delivery / dead-lettering.
      * 
      * @return the deliveryWithResourceIdentity value.
      */
@@ -114,8 +120,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Set the deliveryWithResourceIdentity property: Information about the destination where events have to be delivered for the event subscription.
-     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Set the deliveryWithResourceIdentity property: Information about the destination where events have to be
+     * delivered for the event subscription.
+     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
+     * tokens being used during delivery / dead-lettering.
      * 
      * @param deliveryWithResourceIdentity the deliveryWithResourceIdentity value to set.
      * @return the EventSubscriptionInner object itself.
@@ -222,7 +230,8 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Get the retryPolicy property: The retry policy for events. This can be used to configure maximum number of delivery attempts and time to live for events.
+     * Get the retryPolicy property: The retry policy for events. This can be used to configure maximum number of
+     * delivery attempts and time to live for events.
      * 
      * @return the retryPolicy value.
      */
@@ -231,7 +240,8 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Set the retryPolicy property: The retry policy for events. This can be used to configure maximum number of delivery attempts and time to live for events.
+     * Set the retryPolicy property: The retry policy for events. This can be used to configure maximum number of
+     * delivery attempts and time to live for events.
      * 
      * @param retryPolicy the retryPolicy value to set.
      * @return the EventSubscriptionInner object itself.
@@ -245,8 +255,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Get the deadLetterDestination property: The dead letter destination of the event subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Get the deadLetterDestination property: The dead letter destination of the event subscription. Any event that
+     * cannot be delivered to its' destination is sent to the dead letter destination.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
+     * dead-lettering.
      * 
      * @return the deadLetterDestination value.
      */
@@ -255,8 +267,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Set the deadLetterDestination property: The dead letter destination of the event subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
-     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Set the deadLetterDestination property: The dead letter destination of the event subscription. Any event that
+     * cannot be delivered to its' destination is sent to the dead letter destination.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery /
+     * dead-lettering.
      * 
      * @param deadLetterDestination the deadLetterDestination value to set.
      * @return the EventSubscriptionInner object itself.
@@ -270,8 +284,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Get the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
-     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Get the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any event
+     * that cannot be delivered to its' destination is sent to the dead letter destination.
+     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
+     * tokens being used during delivery / dead-lettering.
      * 
      * @return the deadLetterWithResourceIdentity value.
      */
@@ -280,8 +296,10 @@ public final class EventSubscriptionInner extends ProxyResource {
     }
 
     /**
-     * Set the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
-     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Set the deadLetterWithResourceIdentity property: The dead letter destination of the event subscription. Any event
+     * that cannot be delivered to its' destination is sent to the dead letter destination.
+     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
+     * tokens being used during delivery / dead-lettering.
      * 
      * @param deadLetterWithResourceIdentity the deadLetterWithResourceIdentity value to set.
      * @return the EventSubscriptionInner object itself.

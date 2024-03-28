@@ -47,7 +47,8 @@ public interface AzureStoragePropertyDictionaryResource {
     Map<String, AzureStorageInfoValue> properties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AzureStoragePropertyDictionaryResourceInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.appservice.generated.fluent.models.AzureStoragePropertyDictionaryResourceInner object.
      * 
      * @return the inner object.
      */

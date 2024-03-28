@@ -26,7 +26,8 @@ public final class ApplicationProfile {
     }
 
     /**
-     * Get the galleryApplications property: Specifies the gallery applications that should be made available to the VM/VMSS.
+     * Get the galleryApplications property: Specifies the gallery applications that should be made available to the
+     * VM/VMSS.
      * 
      * @return the galleryApplications value.
      */
@@ -35,7 +36,8 @@ public final class ApplicationProfile {
     }
 
     /**
-     * Set the galleryApplications property: Specifies the gallery applications that should be made available to the VM/VMSS.
+     * Set the galleryApplications property: Specifies the gallery applications that should be made available to the
+     * VM/VMSS.
      * 
      * @param galleryApplications the galleryApplications value to set.
      * @return the ApplicationProfile object itself.

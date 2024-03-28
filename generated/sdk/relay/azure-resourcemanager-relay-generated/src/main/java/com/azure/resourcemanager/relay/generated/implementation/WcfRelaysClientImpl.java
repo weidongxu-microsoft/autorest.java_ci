@@ -64,7 +64,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
     }
 
     /**
-     * The interface defining all the services for RelayApiWcfRelays to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for RelayApiWcfRelays to be used by the proxy service to perform REST
+     * calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "RelayApiWcfRelays")
@@ -193,7 +194,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(String resourceGroupName,
@@ -236,7 +238,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesSinglePageAsync(String resourceGroupName,
@@ -352,7 +355,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -405,7 +409,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return single item in a List or Get AuthorizationRule operation along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> createOrUpdateAuthorizationRuleWithResponseAsync(
@@ -663,7 +668,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return authorizationRule for a WCF relay by name along with {@link Response} on successful completion of {@link Mono}.
+     * @return authorizationRule for a WCF relay by name along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(String resourceGroupName,
@@ -709,7 +715,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return authorizationRule for a WCF relay by name along with {@link Response} on successful completion of {@link Mono}.
+     * @return authorizationRule for a WCF relay by name along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AuthorizationRuleInner>> getAuthorizationRuleWithResponseAsync(String resourceGroupName,
@@ -1120,7 +1127,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WcfRelayInner>> listByNamespaceSinglePageAsync(String resourceGroupName,
@@ -1158,7 +1166,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WcfRelayInner>> listByNamespaceSinglePageAsync(String resourceGroupName,
@@ -1263,7 +1272,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WcfRelayInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -1309,7 +1319,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WcfRelayInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -1537,7 +1548,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WcfRelayInner>> getWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -1577,7 +1589,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return description of the WCF relay resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return description of the WCF relay resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<WcfRelayInner>> getWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -1666,7 +1679,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink) {
@@ -1696,7 +1710,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response from the list namespace operation along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AuthorizationRuleInner>> listAuthorizationRulesNextSinglePageAsync(String nextLink,
@@ -1724,7 +1739,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WcfRelayInner>> listByNamespaceNextSinglePageAsync(String nextLink) {
@@ -1753,7 +1769,8 @@ public final class WcfRelaysClientImpl implements WcfRelaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response of the list WCF relay operation along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<WcfRelayInner>> listByNamespaceNextSinglePageAsync(String nextLink, Context context) {

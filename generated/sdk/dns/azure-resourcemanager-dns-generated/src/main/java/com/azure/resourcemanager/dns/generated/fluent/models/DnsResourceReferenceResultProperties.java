@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The result of dns resource reference request. Returns a list of dns resource references for each of the azure resource in the request.
+ * The result of dns resource reference request. Returns a list of dns resource references for each of the azure
+ * resource in the request.
  */
 @Fluent
 public final class DnsResourceReferenceResultProperties {
@@ -27,7 +28,8 @@ public final class DnsResourceReferenceResultProperties {
     }
 
     /**
-     * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource references for each of the azure resource in the request.
+     * Get the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
+     * references for each of the azure resource in the request.
      * 
      * @return the dnsResourceReferences value.
      */
@@ -36,7 +38,8 @@ public final class DnsResourceReferenceResultProperties {
     }
 
     /**
-     * Set the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource references for each of the azure resource in the request.
+     * Set the dnsResourceReferences property: The result of dns resource reference request. A list of dns resource
+     * references for each of the azure resource in the request.
      * 
      * @param dnsResourceReferences the dnsResourceReferences value to set.
      * @return the DnsResourceReferenceResultProperties object itself.

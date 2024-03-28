@@ -64,7 +64,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientProviders to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientProviders to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -191,7 +192,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>>
@@ -219,7 +221,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>>
@@ -330,7 +333,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>>
@@ -358,7 +362,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>>
@@ -469,7 +474,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationSinglePageAsync(String location,
@@ -501,7 +507,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksForLocationSinglePageAsync(String location,
@@ -774,11 +781,13 @@ public final class ProvidersClientImpl implements ProvidersClient {
     /**
      * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
      * 
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsSinglePageAsync() {
@@ -797,13 +806,15 @@ public final class ProvidersClientImpl implements ProvidersClient {
     /**
      * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
      * 
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsSinglePageAsync(Context context) {
@@ -821,7 +832,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
     /**
      * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
      * 
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -836,7 +848,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
     /**
      * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
      * 
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -853,7 +866,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
     /**
      * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
      * 
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -867,7 +881,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
     /**
      * Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions
      * 
-     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource metric definitions.
+     * Description for Gets all available operations for the Microsoft.Web resource provider. Also exposes resource
+     * metric definitions.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1025,7 +1040,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>>
@@ -1057,7 +1073,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>>
@@ -1171,7 +1188,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>> getAvailableStacksNextSinglePageAsync(String nextLink) {
@@ -1201,7 +1219,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>> getAvailableStacksNextSinglePageAsync(String nextLink,
@@ -1229,7 +1248,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksNextSinglePageAsync(String nextLink) {
@@ -1259,7 +1279,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>> getFunctionAppStacksNextSinglePageAsync(String nextLink,
@@ -1287,7 +1308,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>>
@@ -1318,7 +1340,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Function app Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FunctionAppStackInner>>
@@ -1404,7 +1427,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsNextSinglePageAsync(String nextLink) {
@@ -1433,7 +1457,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Azure resource manager operation metadata along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CsmOperationDescriptionInner>> listOperationsNextSinglePageAsync(String nextLink,
@@ -1517,7 +1542,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>>
@@ -1548,7 +1574,8 @@ public final class ProvidersClientImpl implements ProvidersClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Application Stacks along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ApplicationStackResourceInner>>

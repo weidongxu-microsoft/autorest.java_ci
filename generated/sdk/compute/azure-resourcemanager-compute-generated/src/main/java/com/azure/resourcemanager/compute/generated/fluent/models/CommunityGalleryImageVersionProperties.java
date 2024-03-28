@@ -60,7 +60,8 @@ public final class CommunityGalleryImageVersionProperties {
     }
 
     /**
-     * Get the publishedDate property: The published date of the gallery image version Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Get the publishedDate property: The published date of the gallery image version Definition. This property can be
+     * used for decommissioning purposes. This property is updatable.
      * 
      * @return the publishedDate value.
      */
@@ -69,7 +70,8 @@ public final class CommunityGalleryImageVersionProperties {
     }
 
     /**
-     * Set the publishedDate property: The published date of the gallery image version Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Set the publishedDate property: The published date of the gallery image version Definition. This property can be
+     * used for decommissioning purposes. This property is updatable.
      * 
      * @param publishedDate the publishedDate value to set.
      * @return the CommunityGalleryImageVersionProperties object itself.
@@ -80,7 +82,8 @@ public final class CommunityGalleryImageVersionProperties {
     }
 
     /**
-     * Get the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Get the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can
+     * be used for decommissioning purposes. This property is updatable.
      * 
      * @return the endOfLifeDate value.
      */
@@ -89,7 +92,8 @@ public final class CommunityGalleryImageVersionProperties {
     }
 
     /**
-     * Set the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Set the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can
+     * be used for decommissioning purposes. This property is updatable.
      * 
      * @param endOfLifeDate the endOfLifeDate value to set.
      * @return the CommunityGalleryImageVersionProperties object itself.
@@ -100,7 +104,8 @@ public final class CommunityGalleryImageVersionProperties {
     }
 
     /**
-     * Get the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the Image Definition won't use this Image Version.
+     * Get the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
+     * Image Definition won't use this Image Version.
      * 
      * @return the excludeFromLatest value.
      */
@@ -109,7 +114,8 @@ public final class CommunityGalleryImageVersionProperties {
     }
 
     /**
-     * Set the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the Image Definition won't use this Image Version.
+     * Set the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
+     * Image Definition won't use this Image Version.
      * 
      * @param excludeFromLatest the excludeFromLatest value to set.
      * @return the CommunityGalleryImageVersionProperties object itself.

@@ -276,7 +276,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last 20 seconds.
+     * Get the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last
+     * 20 seconds.
      * 
      * @return the nonincreasingCount value.
      */
@@ -285,7 +286,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last 20 seconds.
+     * Set the nonincreasingCount property: Number of data chunks with timestamps in the past that were received in last
+     * 20 seconds.
      * 
      * @param nonincreasingCount the nonincreasingCount value to set.
      * @return the LiveEventTrackEventData object itself.
@@ -296,7 +298,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the unexpectedBitrate property: If expected and actual bitrates differ by more than allowed limit in last 20 seconds.
+     * Get the unexpectedBitrate property: If expected and actual bitrates differ by more than allowed limit in last 20
+     * seconds.
      * 
      * @return the unexpectedBitrate value.
      */
@@ -305,7 +308,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the unexpectedBitrate property: If expected and actual bitrates differ by more than allowed limit in last 20 seconds.
+     * Set the unexpectedBitrate property: If expected and actual bitrates differ by more than allowed limit in last 20
+     * seconds.
      * 
      * @param unexpectedBitrate the unexpectedBitrate value to set.
      * @return the LiveEventTrackEventData object itself.
@@ -356,7 +360,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the lastFragmentArrivalTime property: The last timestamp in UTC that a fragment arrived at the ingest endpoint.
+     * Get the lastFragmentArrivalTime property: The last timestamp in UTC that a fragment arrived at the ingest
+     * endpoint.
      * 
      * @return the lastFragmentArrivalTime value.
      */
@@ -365,7 +370,8 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the lastFragmentArrivalTime property: The last timestamp in UTC that a fragment arrived at the ingest endpoint.
+     * Set the lastFragmentArrivalTime property: The last timestamp in UTC that a fragment arrived at the ingest
+     * endpoint.
      * 
      * @param lastFragmentArrivalTime the lastFragmentArrivalTime value to set.
      * @return the LiveEventTrackEventData object itself.
@@ -376,7 +382,15 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the ingestDriftValue property: Indicates the speed of delay, in seconds-per-minute, of the incoming audio or video data during the last minute. The value is greater than zero if data is arriving to the live event slower than expected in the last minute; zero if data arrived with no delay; and "n/a" if no audio or video data was received. For example, if you have a contribution encoder sending in live content, and it is slowing down due to processing issues, or network latency, it may be only able to deliver a total of 58 seconds of audio or video in a one-minute period. This would be reported as two seconds-per-minute of drift. If the encoder is able to catch up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for breaks in the data - only data that is delayed in timestamps.
+     * Get the ingestDriftValue property: Indicates the speed of delay, in seconds-per-minute, of the incoming audio or
+     * video data during the last minute. The value is greater than zero if data is arriving to the live event slower
+     * than expected in the last minute; zero if data arrived with no delay; and "n/a" if no audio or video data was
+     * received. For example, if you have a contribution encoder sending in live content, and it is slowing down due to
+     * processing issues, or network latency, it may be only able to deliver a total of 58 seconds of audio or video in
+     * a one-minute period. This would be reported as two seconds-per-minute of drift. If the encoder is able to catch
+     * up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a
+     * disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for
+     * breaks in the data - only data that is delayed in timestamps.
      * 
      * @return the ingestDriftValue value.
      */
@@ -385,7 +399,15 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the ingestDriftValue property: Indicates the speed of delay, in seconds-per-minute, of the incoming audio or video data during the last minute. The value is greater than zero if data is arriving to the live event slower than expected in the last minute; zero if data arrived with no delay; and "n/a" if no audio or video data was received. For example, if you have a contribution encoder sending in live content, and it is slowing down due to processing issues, or network latency, it may be only able to deliver a total of 58 seconds of audio or video in a one-minute period. This would be reported as two seconds-per-minute of drift. If the encoder is able to catch up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for breaks in the data - only data that is delayed in timestamps.
+     * Set the ingestDriftValue property: Indicates the speed of delay, in seconds-per-minute, of the incoming audio or
+     * video data during the last minute. The value is greater than zero if data is arriving to the live event slower
+     * than expected in the last minute; zero if data arrived with no delay; and "n/a" if no audio or video data was
+     * received. For example, if you have a contribution encoder sending in live content, and it is slowing down due to
+     * processing issues, or network latency, it may be only able to deliver a total of 58 seconds of audio or video in
+     * a one-minute period. This would be reported as two seconds-per-minute of drift. If the encoder is able to catch
+     * up and send all 60 seconds or more of data every minute, you will see this value reported as 0. If there was a
+     * disconnection or discontinuity from the encoder, this value may still display as 0, as it does not account for
+     * breaks in the data - only data that is delayed in timestamps.
      * 
      * @param ingestDriftValue the ingestDriftValue value to set.
      * @return the LiveEventTrackEventData object itself.
@@ -396,7 +418,9 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the transcriptionState property: This value is "On" for audio track heartbeats if live transcription is turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for Live transcription. All other tracks will have an empty value.
+     * Get the transcriptionState property: This value is "On" for audio track heartbeats if live transcription is
+     * turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for
+     * Live transcription. All other tracks will have an empty value.
      * 
      * @return the transcriptionState value.
      */
@@ -405,7 +429,9 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the transcriptionState property: This value is "On" for audio track heartbeats if live transcription is turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for Live transcription. All other tracks will have an empty value.
+     * Set the transcriptionState property: This value is "On" for audio track heartbeats if live transcription is
+     * turned on, otherwise you will see an empty string. This state is only applicable to track type of "audio" for
+     * Live transcription. All other tracks will have an empty value.
      * 
      * @param transcriptionState the transcriptionState value to set.
      * @return the LiveEventTrackEventData object itself.
@@ -416,7 +442,9 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Get the transcriptionLanguage property: The language code (in BCP-47 format) of the transcription language. For example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live transcription is turned off.
+     * Get the transcriptionLanguage property: The language code (in BCP-47 format) of the transcription language. For
+     * example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live
+     * transcription is turned off.
      * 
      * @return the transcriptionLanguage value.
      */
@@ -425,7 +453,9 @@ public final class LiveEventTrackEventData {
     }
 
     /**
-     * Set the transcriptionLanguage property: The language code (in BCP-47 format) of the transcription language. For example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live transcription is turned off.
+     * Set the transcriptionLanguage property: The language code (in BCP-47 format) of the transcription language. For
+     * example, "de-de" indicates German (Germany). The value is empty for the video track heartbeats, or when live
+     * transcription is turned off.
      * 
      * @param transcriptionLanguage the transcriptionLanguage value to set.
      * @return the LiveEventTrackEventData object itself.

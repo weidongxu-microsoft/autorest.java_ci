@@ -90,7 +90,8 @@ public final class RoutingConfiguration {
     }
 
     /**
-     * Get the vnetRoutes property: List of routes that control routing from VirtualHub into a virtual network connection.
+     * Get the vnetRoutes property: List of routes that control routing from VirtualHub into a virtual network
+     * connection.
      * 
      * @return the vnetRoutes value.
      */
@@ -99,7 +100,8 @@ public final class RoutingConfiguration {
     }
 
     /**
-     * Set the vnetRoutes property: List of routes that control routing from VirtualHub into a virtual network connection.
+     * Set the vnetRoutes property: List of routes that control routing from VirtualHub into a virtual network
+     * connection.
      * 
      * @param vnetRoutes the vnetRoutes value to set.
      * @return the RoutingConfiguration object itself.
@@ -110,7 +112,8 @@ public final class RoutingConfiguration {
     }
 
     /**
-     * Get the inboundRouteMap property: The resource id of the RouteMap associated with this RoutingConfiguration for inbound learned routes.
+     * Get the inboundRouteMap property: The resource id of the RouteMap associated with this RoutingConfiguration for
+     * inbound learned routes.
      * 
      * @return the inboundRouteMap value.
      */
@@ -119,7 +122,8 @@ public final class RoutingConfiguration {
     }
 
     /**
-     * Set the inboundRouteMap property: The resource id of the RouteMap associated with this RoutingConfiguration for inbound learned routes.
+     * Set the inboundRouteMap property: The resource id of the RouteMap associated with this RoutingConfiguration for
+     * inbound learned routes.
      * 
      * @param inboundRouteMap the inboundRouteMap value to set.
      * @return the RoutingConfiguration object itself.
@@ -130,7 +134,8 @@ public final class RoutingConfiguration {
     }
 
     /**
-     * Get the outboundRouteMap property: The resource id of theRouteMap associated with this RoutingConfiguration for outbound advertised routes.
+     * Get the outboundRouteMap property: The resource id of theRouteMap associated with this RoutingConfiguration for
+     * outbound advertised routes.
      * 
      * @return the outboundRouteMap value.
      */
@@ -139,7 +144,8 @@ public final class RoutingConfiguration {
     }
 
     /**
-     * Set the outboundRouteMap property: The resource id of theRouteMap associated with this RoutingConfiguration for outbound advertised routes.
+     * Set the outboundRouteMap property: The resource id of theRouteMap associated with this RoutingConfiguration for
+     * outbound advertised routes.
      * 
      * @param outboundRouteMap the outboundRouteMap value to set.
      * @return the RoutingConfiguration object itself.

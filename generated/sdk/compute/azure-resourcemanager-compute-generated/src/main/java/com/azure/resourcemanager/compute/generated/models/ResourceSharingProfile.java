@@ -27,7 +27,9 @@ public final class ResourceSharingProfile {
     }
 
     /**
-     * Get the subscriptionIds property: Specifies an array of subscription resource IDs that capacity reservation group is shared with. **Note:** Minimum api-version: 2024-03-01. Please refer to https://aka.ms/computereservationsharing for more details.
+     * Get the subscriptionIds property: Specifies an array of subscription resource IDs that capacity reservation group
+     * is shared with. **Note:** Minimum api-version: 2024-03-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
      * 
      * @return the subscriptionIds value.
      */
@@ -36,7 +38,9 @@ public final class ResourceSharingProfile {
     }
 
     /**
-     * Set the subscriptionIds property: Specifies an array of subscription resource IDs that capacity reservation group is shared with. **Note:** Minimum api-version: 2024-03-01. Please refer to https://aka.ms/computereservationsharing for more details.
+     * Set the subscriptionIds property: Specifies an array of subscription resource IDs that capacity reservation group
+     * is shared with. **Note:** Minimum api-version: 2024-03-01. Please refer to
+     * https://aka.ms/computereservationsharing for more details.
      * 
      * @param subscriptionIds the subscriptionIds value to set.
      * @return the ResourceSharingProfile object itself.

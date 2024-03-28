@@ -107,12 +107,12 @@ public final class ScopedDeployment {
      */
     public void validate() {
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property location in model ScopedDeployment"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property location in model ScopedDeployment"));
         }
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property properties in model ScopedDeployment"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property properties in model ScopedDeployment"));
         } else {
             properties().validate();
         }

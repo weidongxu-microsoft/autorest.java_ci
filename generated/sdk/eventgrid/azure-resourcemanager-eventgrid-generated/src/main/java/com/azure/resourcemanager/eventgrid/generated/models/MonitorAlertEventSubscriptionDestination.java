@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.MonitorAlertEventSubscriptionDestinationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class MonitorAlertEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
+     * Type of the endpoint for the event subscription destination.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "endpointType", required = true)
+    private EndpointType endpointType = EndpointType.MONITOR_ALERT;
+
+    /*
      * Monitor Alert properties of the event subscription destination.
      */
     @JsonProperty(value = "properties")
@@ -32,7 +40,16 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
      * Creates an instance of MonitorAlertEventSubscriptionDestination class.
      */
     public MonitorAlertEventSubscriptionDestination() {
-        withEndpointType(EndpointType.MONITOR_ALERT);
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the event subscription destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public EndpointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -45,7 +62,8 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Get the severity property: The severity that will be attached to every Alert fired through this event subscription.
+     * Get the severity property: The severity that will be attached to every Alert fired through this event
+     * subscription.
      * This field must be provided.
      * 
      * @return the severity value.
@@ -55,7 +73,8 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Set the severity property: The severity that will be attached to every Alert fired through this event subscription.
+     * Set the severity property: The severity that will be attached to every Alert fired through this event
+     * subscription.
      * This field must be provided.
      * 
      * @param severity the severity value to set.
@@ -70,7 +89,8 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Get the description property: The description that will be attached to every Alert fired through this event subscription.
+     * Get the description property: The description that will be attached to every Alert fired through this event
+     * subscription.
      * 
      * @return the description value.
      */
@@ -79,7 +99,8 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Set the description property: The description that will be attached to every Alert fired through this event subscription.
+     * Set the description property: The description that will be attached to every Alert fired through this event
+     * subscription.
      * 
      * @param description the description value to set.
      * @return the MonitorAlertEventSubscriptionDestination object itself.
@@ -93,8 +114,10 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Get the actionGroups property: The list of ARM Ids of Action Groups that will be triggered on every Alert fired through this event subscription.
-     * Each resource ARM Id should follow this pattern: /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Insights/actionGroups/{ActionGroupName}.
+     * Get the actionGroups property: The list of ARM Ids of Action Groups that will be triggered on every Alert fired
+     * through this event subscription.
+     * Each resource ARM Id should follow this pattern:
+     * /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Insights/actionGroups/{ActionGroupName}.
      * 
      * @return the actionGroups value.
      */
@@ -103,8 +126,10 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     }
 
     /**
-     * Set the actionGroups property: The list of ARM Ids of Action Groups that will be triggered on every Alert fired through this event subscription.
-     * Each resource ARM Id should follow this pattern: /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Insights/actionGroups/{ActionGroupName}.
+     * Set the actionGroups property: The list of ARM Ids of Action Groups that will be triggered on every Alert fired
+     * through this event subscription.
+     * Each resource ARM Id should follow this pattern:
+     * /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Insights/actionGroups/{ActionGroupName}.
      * 
      * @param actionGroups the actionGroups value to set.
      * @return the MonitorAlertEventSubscriptionDestination object itself.

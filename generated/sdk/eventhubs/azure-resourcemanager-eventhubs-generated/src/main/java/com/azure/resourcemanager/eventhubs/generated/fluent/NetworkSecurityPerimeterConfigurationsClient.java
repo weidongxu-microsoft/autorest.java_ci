@@ -11,7 +11,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecurityPerimeterConfigurationListInner;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsClient.
  */
 public interface NetworkSecurityPerimeterConfigurationsClient {
     /**

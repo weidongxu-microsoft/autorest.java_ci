@@ -51,35 +51,46 @@ public interface CapacityReservation {
     Map<String, String> tags();
 
     /**
-     * Gets the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+     * Gets the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+     * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are
+     * supported. Refer to List Microsoft.Compute SKUs in a region
+     * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
      * 
      * @return the sku value.
      */
     Sku sku();
 
     /**
-     * Gets the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value and also should be part for the list of zones specified during the capacity reservation group creation. The zone can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same zone.
+     * Gets the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value
+     * and also should be part for the list of zones specified during the capacity reservation group creation. The zone
+     * can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If
+     * provided, enforces VM/VMSS using this capacity reservation to be in same zone.
      * 
      * @return the zones value.
      */
     List<String> zones();
 
     /**
-     * Gets the reservationId property: A unique id generated and assigned to the capacity reservation by the platform which does not change throughout the lifetime of the resource.
+     * Gets the reservationId property: A unique id generated and assigned to the capacity reservation by the platform
+     * which does not change throughout the lifetime of the resource.
      * 
      * @return the reservationId value.
      */
     String reservationId();
 
     /**
-     * Gets the platformFaultDomainCount property: Specifies the value of fault domain count that Capacity Reservation supports for requested VM size. **Note:** The fault domain count specified for a resource (like virtual machines scale set) must be less than or equal to this value if it deploys using capacity reservation. Minimum api-version: 2022-08-01.
+     * Gets the platformFaultDomainCount property: Specifies the value of fault domain count that Capacity Reservation
+     * supports for requested VM size. **Note:** The fault domain count specified for a resource (like virtual machines
+     * scale set) must be less than or equal to this value if it deploys using capacity reservation. Minimum
+     * api-version: 2022-08-01.
      * 
      * @return the platformFaultDomainCount value.
      */
     Integer platformFaultDomainCount();
 
     /**
-     * Gets the virtualMachinesAssociated property: A list of all virtual machine resource ids that are associated with the capacity reservation.
+     * Gets the virtualMachinesAssociated property: A list of all virtual machine resource ids that are associated with
+     * the capacity reservation.
      * 
      * @return the virtualMachinesAssociated value.
      */
@@ -107,7 +118,8 @@ public interface CapacityReservation {
     CapacityReservationInstanceView instanceView();
 
     /**
-     * Gets the timeCreated property: Specifies the time at which the Capacity Reservation resource was created. Minimum api-version: 2021-11-01.
+     * Gets the timeCreated property: Specifies the time at which the Capacity Reservation resource was created. Minimum
+     * api-version: 2021-11-01.
      * 
      * @return the timeCreated value.
      */
@@ -198,16 +210,23 @@ public interface CapacityReservation {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values..
+             * Specifies the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and
+             * capacity is required to be set. Currently VM Skus with the capability called
+             * 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a
+             * region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values..
              * 
-             * @param sku SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+             * @param sku SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+             * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to
+             * true are supported. Refer to List Microsoft.Compute SKUs in a region
+             * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
              * @return the next definition stage.
              */
             WithCreate withSku(Sku sku);
         }
 
         /**
-         * The stage of the CapacityReservation definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the CapacityReservation definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithZones {
             /**
@@ -244,9 +263,16 @@ public interface CapacityReservation {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: Availability Zone to use for this capacity reservation. The zone has to be single value and also should be part for the list of zones specified during the capacity reservation group creation. The zone can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same zone..
+             * Specifies the zones property: Availability Zone to use for this capacity reservation. The zone has to be
+             * single value and also should be part for the list of zones specified during the capacity reservation
+             * group creation. The zone can be assigned only during creation. If not provided, the reservation supports
+             * only non-zonal deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same
+             * zone..
              * 
-             * @param zones Availability Zone to use for this capacity reservation. The zone has to be single value and also should be part for the list of zones specified during the capacity reservation group creation. The zone can be assigned only during creation. If not provided, the reservation supports only non-zonal deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same zone.
+             * @param zones Availability Zone to use for this capacity reservation. The zone has to be single value and
+             * also should be part for the list of zones specified during the capacity reservation group creation. The
+             * zone can be assigned only during creation. If not provided, the reservation supports only non-zonal
+             * deployments. If provided, enforces VM/VMSS using this capacity reservation to be in same zone.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -302,9 +328,15 @@ public interface CapacityReservation {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values..
+             * Specifies the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and
+             * capacity is required to be set. Currently VM Skus with the capability called
+             * 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a
+             * region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values..
              * 
-             * @param sku SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+             * @param sku SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+             * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to
+             * true are supported. Refer to List Microsoft.Compute SKUs in a region
+             * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
              * @return the next definition stage.
              */
             Update withSku(Sku sku);

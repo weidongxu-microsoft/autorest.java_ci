@@ -75,14 +75,16 @@ public interface HybridConnection {
     Integer port();
 
     /**
-     * Gets the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus.
+     * Gets the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to
+     * authenticate to Service Bus.
      * 
      * @return the sendKeyName value.
      */
     String sendKeyName();
 
     /**
-     * Gets the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
+     * Gets the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In
+     * ARM this key will not be returned
      * normally, use the POST /listKeys API instead.
      * 
      * @return the sendKeyValue value.
@@ -90,7 +92,8 @@ public interface HybridConnection {
     String sendKeyValue();
 
     /**
-     * Gets the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
+     * Gets the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is
+     * .servicebus.windows.net.
      * 
      * @return the serviceBusSuffix value.
      */
@@ -144,7 +147,8 @@ public interface HybridConnection {
         }
 
         /**
-         * The stage of the HybridConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the HybridConnection definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithKind, DefinitionStages.WithServiceBusNamespace, DefinitionStages.WithRelayName,
@@ -249,9 +253,11 @@ public interface HybridConnection {
          */
         interface WithSendKeyName {
             /**
-             * Specifies the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus..
+             * Specifies the sendKeyName property: The name of the Service Bus key which has Send permissions. This is
+             * used to authenticate to Service Bus..
              * 
-             * @param sendKeyName The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus.
+             * @param sendKeyName The name of the Service Bus key which has Send permissions. This is used to
+             * authenticate to Service Bus.
              * @return the next definition stage.
              */
             WithCreate withSendKeyName(String sendKeyName);
@@ -262,10 +268,12 @@ public interface HybridConnection {
          */
         interface WithSendKeyValue {
             /**
-             * Specifies the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
+             * Specifies the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to
+             * Service Bus. In ARM this key will not be returned
              * normally, use the POST /listKeys API instead..
              * 
-             * @param sendKeyValue The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
+             * @param sendKeyValue The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM
+             * this key will not be returned
              * normally, use the POST /listKeys API instead.
              * @return the next definition stage.
              */
@@ -277,9 +285,11 @@ public interface HybridConnection {
          */
         interface WithServiceBusSuffix {
             /**
-             * Specifies the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
+             * Specifies the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is
+             * .servicebus.windows.net.
              * 
-             * @param serviceBusSuffix The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
+             * @param serviceBusSuffix The suffix for the service bus endpoint. By default this is
+             * .servicebus.windows.net.
              * @return the next definition stage.
              */
             WithCreate withServiceBusSuffix(String serviceBusSuffix);
@@ -376,9 +386,11 @@ public interface HybridConnection {
          */
         interface WithSendKeyName {
             /**
-             * Specifies the sendKeyName property: The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus..
+             * Specifies the sendKeyName property: The name of the Service Bus key which has Send permissions. This is
+             * used to authenticate to Service Bus..
              * 
-             * @param sendKeyName The name of the Service Bus key which has Send permissions. This is used to authenticate to Service Bus.
+             * @param sendKeyName The name of the Service Bus key which has Send permissions. This is used to
+             * authenticate to Service Bus.
              * @return the next definition stage.
              */
             Update withSendKeyName(String sendKeyName);
@@ -389,10 +401,12 @@ public interface HybridConnection {
          */
         interface WithSendKeyValue {
             /**
-             * Specifies the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
+             * Specifies the sendKeyValue property: The value of the Service Bus key. This is used to authenticate to
+             * Service Bus. In ARM this key will not be returned
              * normally, use the POST /listKeys API instead..
              * 
-             * @param sendKeyValue The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM this key will not be returned
+             * @param sendKeyValue The value of the Service Bus key. This is used to authenticate to Service Bus. In ARM
+             * this key will not be returned
              * normally, use the POST /listKeys API instead.
              * @return the next definition stage.
              */
@@ -404,9 +418,11 @@ public interface HybridConnection {
          */
         interface WithServiceBusSuffix {
             /**
-             * Specifies the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
+             * Specifies the serviceBusSuffix property: The suffix for the service bus endpoint. By default this is
+             * .servicebus.windows.net.
              * 
-             * @param serviceBusSuffix The suffix for the service bus endpoint. By default this is .servicebus.windows.net.
+             * @param serviceBusSuffix The suffix for the service bus endpoint. By default this is
+             * .servicebus.windows.net.
              * @return the next definition stage.
              */
             Update withServiceBusSuffix(String serviceBusSuffix);

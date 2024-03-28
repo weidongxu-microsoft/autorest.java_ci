@@ -8,7 +8,8 @@ import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index.
+ * Describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of
+ * an index.
  */
 @Immutable
 public final class QueryKeyInner {
@@ -31,7 +32,8 @@ public final class QueryKeyInner {
     }
 
     /**
-     * Get the name property: The name of the query API key. Query names are optional, but assigning a name can help you remember how it's used.
+     * Get the name property: The name of the query API key. Query names are optional, but assigning a name can help you
+     * remember how it's used.
      * 
      * @return the name value.
      */

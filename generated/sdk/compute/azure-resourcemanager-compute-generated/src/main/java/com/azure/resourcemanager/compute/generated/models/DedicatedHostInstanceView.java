@@ -38,7 +38,8 @@ public class DedicatedHostInstanceView {
     }
 
     /**
-     * Get the assetId property: Specifies the unique id of the dedicated physical machine on which the dedicated host resides.
+     * Get the assetId property: Specifies the unique id of the dedicated physical machine on which the dedicated host
+     * resides.
      * 
      * @return the assetId value.
      */

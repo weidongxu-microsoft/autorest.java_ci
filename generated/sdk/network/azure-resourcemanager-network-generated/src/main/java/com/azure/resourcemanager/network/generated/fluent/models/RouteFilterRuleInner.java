@@ -57,7 +57,8 @@ public final class RouteFilterRuleInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -66,7 +67,8 @@ public final class RouteFilterRuleInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the RouteFilterRuleInner object itself.
@@ -161,7 +163,8 @@ public final class RouteFilterRuleInner extends SubResource {
     }
 
     /**
-     * Get the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
+     * Get the communities property: The collection for bgp community values to filter on. e.g.
+     * ['12076:5010','12076:5020'].
      * 
      * @return the communities value.
      */
@@ -170,7 +173,8 @@ public final class RouteFilterRuleInner extends SubResource {
     }
 
     /**
-     * Set the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
+     * Set the communities property: The collection for bgp community values to filter on. e.g.
+     * ['12076:5010','12076:5020'].
      * 
      * @param communities the communities value to set.
      * @return the RouteFilterRuleInner object itself.

@@ -46,7 +46,8 @@ public interface WorkItemConfiguration {
     String configProperties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.WorkItemConfigurationInner object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.WorkItemConfigurationInner
+     * object.
      * 
      * @return the inner object.
      */

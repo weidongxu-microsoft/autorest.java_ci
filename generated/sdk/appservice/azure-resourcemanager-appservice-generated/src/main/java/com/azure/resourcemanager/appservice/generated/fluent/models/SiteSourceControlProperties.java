@@ -102,7 +102,9 @@ public final class SiteSourceControlProperties {
     }
 
     /**
-     * Get the isManualIntegration property: &lt;code&gt;true&lt;/code&gt; to limit to manual integration; &lt;code&gt;false&lt;/code&gt; to enable continuous integration (which configures webhooks into online repos like GitHub).
+     * Get the isManualIntegration property: &lt;code&gt;true&lt;/code&gt; to limit to manual integration;
+     * &lt;code&gt;false&lt;/code&gt; to enable continuous integration (which configures webhooks into online repos like
+     * GitHub).
      * 
      * @return the isManualIntegration value.
      */
@@ -111,7 +113,9 @@ public final class SiteSourceControlProperties {
     }
 
     /**
-     * Set the isManualIntegration property: &lt;code&gt;true&lt;/code&gt; to limit to manual integration; &lt;code&gt;false&lt;/code&gt; to enable continuous integration (which configures webhooks into online repos like GitHub).
+     * Set the isManualIntegration property: &lt;code&gt;true&lt;/code&gt; to limit to manual integration;
+     * &lt;code&gt;false&lt;/code&gt; to enable continuous integration (which configures webhooks into online repos like
+     * GitHub).
      * 
      * @param isManualIntegration the isManualIntegration value to set.
      * @return the SiteSourceControlProperties object itself.
@@ -142,7 +146,8 @@ public final class SiteSourceControlProperties {
     }
 
     /**
-     * Get the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the deploymentRollbackEnabled value.
      */
@@ -151,7 +156,8 @@ public final class SiteSourceControlProperties {
     }
 
     /**
-     * Set the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param deploymentRollbackEnabled the deploymentRollbackEnabled value to set.
      * @return the SiteSourceControlProperties object itself.
@@ -162,7 +168,8 @@ public final class SiteSourceControlProperties {
     }
 
     /**
-     * Get the isMercurial property: &lt;code&gt;true&lt;/code&gt; for a Mercurial repository; &lt;code&gt;false&lt;/code&gt; for a Git repository.
+     * Get the isMercurial property: &lt;code&gt;true&lt;/code&gt; for a Mercurial repository;
+     * &lt;code&gt;false&lt;/code&gt; for a Git repository.
      * 
      * @return the isMercurial value.
      */
@@ -171,7 +178,8 @@ public final class SiteSourceControlProperties {
     }
 
     /**
-     * Set the isMercurial property: &lt;code&gt;true&lt;/code&gt; for a Mercurial repository; &lt;code&gt;false&lt;/code&gt; for a Git repository.
+     * Set the isMercurial property: &lt;code&gt;true&lt;/code&gt; for a Mercurial repository;
+     * &lt;code&gt;false&lt;/code&gt; for a Git repository.
      * 
      * @param isMercurial the isMercurial value to set.
      * @return the SiteSourceControlProperties object itself.

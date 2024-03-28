@@ -61,7 +61,8 @@ public final class AssociatedWorkspace {
     }
 
     /**
-     * Get the resourceId property: Associated workspace arm resource id, in the form of: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}.
+     * Get the resourceId property: Associated workspace arm resource id, in the form of:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/workspaces/{workspaceName}.
      * 
      * @return the resourceId value.
      */

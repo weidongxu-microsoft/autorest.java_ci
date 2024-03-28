@@ -42,7 +42,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the kind property: The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+     * Get the kind property: The kind of application that this component refers to, used to customize UI. This value is
+     * a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
      * 
      * @return the kind value.
      */
@@ -51,7 +52,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the kind property: The kind of application that this component refers to, used to customize UI. This value is a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
+     * Set the kind property: The kind of application that this component refers to, used to customize UI. This value is
+     * a freeform string, values should typically be one of the following: web, ios, other, store, java, phone.
      * 
      * @param kind the kind value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -89,7 +91,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
+     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot
+     * be changed.
      * 
      * @return the applicationId value.
      */
@@ -130,7 +133,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the flowType property: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+     * Get the flowType property: Used by the Application Insights system to determine what kind of flow this component
+     * was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
      * 
      * @return the flowType value.
      */
@@ -139,7 +143,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the flowType property: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+     * Set the flowType property: Used by the Application Insights system to determine what kind of flow this component
+     * was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
      * 
      * @param flowType the flowType value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -153,7 +158,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the requestSource property: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
+     * Get the requestSource property: Describes what tool created this Application Insights component. Customers using
+     * this API should set this to the default 'rest'.
      * 
      * @return the requestSource value.
      */
@@ -162,7 +168,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the requestSource property: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
+     * Set the requestSource property: Describes what tool created this Application Insights component. Customers using
+     * this API should set this to the default 'rest'.
      * 
      * @param requestSource the requestSource value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -176,7 +183,9 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the instrumentationKey property: Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component.
+     * Get the instrumentationKey property: Application Insights Instrumentation key. A read-only value that
+     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value
+     * will be supplied upon construction of each new Application Insights component.
      * 
      * @return the instrumentationKey value.
      */
@@ -203,7 +212,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
+     * Get the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp,
+     * used for communications with HockeyApp.
      * 
      * @return the hockeyAppId value.
      */
@@ -212,7 +222,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
+     * Set the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp,
+     * used for communications with HockeyApp.
      * 
      * @param hockeyAppId the hockeyAppId value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -226,7 +237,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the hockeyAppToken property: Token used to authenticate communications with between Application Insights and HockeyApp.
+     * Get the hockeyAppToken property: Token used to authenticate communications with between Application Insights and
+     * HockeyApp.
      * 
      * @return the hockeyAppToken value.
      */
@@ -235,7 +247,9 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the provisioningState property: Current state of this component: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+     * Get the provisioningState property: Current state of this component: whether or not is has been provisioned
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -244,7 +258,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the samplingPercentage property: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
+     * Get the samplingPercentage property: Percentage of the data produced by the application being monitored that is
+     * being sampled for Application Insights telemetry.
      * 
      * @return the samplingPercentage value.
      */
@@ -253,7 +268,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the samplingPercentage property: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
+     * Set the samplingPercentage property: Percentage of the data produced by the application being monitored that is
+     * being sampled for Application Insights telemetry.
      * 
      * @param samplingPercentage the samplingPercentage value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -354,7 +370,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Get the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights ingestion.
+     * Get the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights
+     * ingestion.
      * 
      * @return the publicNetworkAccessForIngestion value.
      */
@@ -363,7 +380,8 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     /**
-     * Set the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights ingestion.
+     * Set the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights
+     * ingestion.
      * 
      * @param publicNetworkAccessForIngestion the publicNetworkAccessForIngestion value to set.
      * @return the ApplicationInsightsComponentInner object itself.
@@ -433,8 +451,9 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     public void validate() {
         super.validate();
         if (kind() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property kind in model ApplicationInsightsComponentInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property kind in model ApplicationInsightsComponentInner"));
         }
         if (innerProperties() != null) {
             innerProperties().validate();

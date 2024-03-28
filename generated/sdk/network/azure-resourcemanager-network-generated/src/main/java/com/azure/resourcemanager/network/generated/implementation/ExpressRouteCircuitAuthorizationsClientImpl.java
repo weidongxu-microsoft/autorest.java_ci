@@ -64,7 +64,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteCircuitAuthorizations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteCircuitAuthorizations to be used
+     * by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -350,7 +351,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route circuit along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified authorization from the specified express route circuit along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitAuthorizationInner>> getWithResponseAsync(String resourceGroupName,
@@ -392,7 +394,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route circuit along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified authorization from the specified express route circuit along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCircuitAuthorizationInner>> getWithResponseAsync(String resourceGroupName,
@@ -432,7 +435,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified authorization from the specified express route circuit on successful completion of {@link Mono}.
+     * @return the specified authorization from the specified express route circuit on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitAuthorizationInner> getAsync(String resourceGroupName, String circuitName,
@@ -482,11 +486,13 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return authorization in an ExpressRouteCircuit resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return authorization in an ExpressRouteCircuit resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -531,12 +537,14 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return authorization in an ExpressRouteCircuit resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return authorization in an ExpressRouteCircuit resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -580,7 +588,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -603,7 +612,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -628,7 +638,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -648,7 +659,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -671,7 +683,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -691,7 +704,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -712,7 +726,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -730,7 +745,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @param resourceGroupName The name of the resource group.
      * @param circuitName The name of the express route circuit.
      * @param authorizationName The name of the authorization.
-     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization operation.
+     * @param authorizationParameters Parameters supplied to the create or update express route circuit authorization
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -752,7 +768,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all authorizations in an express route circuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all authorizations in an express route circuit along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitAuthorizationInner>> listSinglePageAsync(String resourceGroupName,
@@ -791,7 +808,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all authorizations in an express route circuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all authorizations in an express route circuit along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitAuthorizationInner>> listSinglePageAsync(String resourceGroupName,
@@ -896,7 +914,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAuthorizations API service call retrieves all authorizations that belongs to an ExpressRouteCircuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListAuthorizations API service call retrieves all authorizations that belongs to an
+     * ExpressRouteCircuit along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitAuthorizationInner>> listNextSinglePageAsync(String nextLink) {
@@ -924,7 +943,8 @@ public final class ExpressRouteCircuitAuthorizationsClientImpl implements Expres
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListAuthorizations API service call retrieves all authorizations that belongs to an ExpressRouteCircuit along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListAuthorizations API service call retrieves all authorizations that belongs to an
+     * ExpressRouteCircuit along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCircuitAuthorizationInner>> listNextSinglePageAsync(String nextLink,

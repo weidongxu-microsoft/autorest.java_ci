@@ -38,7 +38,8 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Get the virtualNetworkResourceId property: Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     * Get the virtualNetworkResourceId property: Resource ID of a subnet, for example:
+     * /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
      * @return the virtualNetworkResourceId value.
      */
@@ -47,7 +48,8 @@ public final class VirtualNetworkRule {
     }
 
     /**
-     * Set the virtualNetworkResourceId property: Resource ID of a subnet, for example: /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
+     * Set the virtualNetworkResourceId property: Resource ID of a subnet, for example:
+     * /subscriptions/{subscriptionId}/resourceGroups/{groupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}.
      * 
      * @param virtualNetworkResourceId the virtualNetworkResourceId value to set.
      * @return the VirtualNetworkRule object itself.
@@ -104,8 +106,9 @@ public final class VirtualNetworkRule {
      */
     public void validate() {
         if (virtualNetworkResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property virtualNetworkResourceId in model VirtualNetworkRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property virtualNetworkResourceId in model VirtualNetworkRule"));
         }
     }
 

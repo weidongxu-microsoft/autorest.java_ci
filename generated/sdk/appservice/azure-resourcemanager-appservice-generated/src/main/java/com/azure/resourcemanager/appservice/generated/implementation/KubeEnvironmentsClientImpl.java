@@ -66,7 +66,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientKubeEnvironments to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientKubeEnvironments to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -150,7 +151,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listSinglePageAsync() {
@@ -180,7 +182,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listSinglePageAsync(Context context) {
@@ -272,7 +275,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -307,7 +311,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -411,7 +416,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KubeEnvironmentInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -449,7 +455,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KubeEnvironmentInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -485,7 +492,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KubeEnvironmentInner> getByResourceGroupAsync(String resourceGroupName, String name) {
@@ -540,7 +548,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String name,
@@ -585,7 +594,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String name,
@@ -628,7 +638,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return the {@link PollerFlux} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     * Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner>
@@ -651,7 +662,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return the {@link PollerFlux} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     * Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdateAsync(
@@ -674,7 +686,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return the {@link SyncPoller} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     * Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner>
@@ -694,7 +707,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of a Kubernetes cluster specialized for web workloads by Azure App Service.
+     * @return the {@link SyncPoller} for polling of a Kubernetes cluster specialized for web workloads by Azure App
+     * Service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<KubeEnvironmentInner>, KubeEnvironmentInner> beginCreateOrUpdate(
@@ -713,7 +727,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KubeEnvironmentInner> createOrUpdateAsync(String resourceGroupName, String name,
@@ -734,7 +749,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KubeEnvironmentInner> createOrUpdateAsync(String resourceGroupName, String name,
@@ -1010,7 +1026,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KubeEnvironmentInner>> updateWithResponseAsync(String resourceGroupName, String name,
@@ -1055,7 +1072,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KubeEnvironmentInner>> updateWithResponseAsync(String resourceGroupName, String name,
@@ -1098,7 +1116,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of {@link Mono}.
+     * @return a Kubernetes cluster specialized for web workloads by Azure App Service on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KubeEnvironmentInner> updateAsync(String resourceGroupName, String name,
@@ -1155,7 +1174,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1185,7 +1205,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listBySubscriptionNextSinglePageAsync(String nextLink,
@@ -1213,7 +1234,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1243,7 +1265,8 @@ public final class KubeEnvironmentsClientImpl implements KubeEnvironmentsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Kubernetes Environments along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<KubeEnvironmentInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Kind of actions which can be taken on a matched route. Add, Replace, Remove refer to parameters on the route, like community or prefix.
+ * Kind of actions which can be taken on a matched route. Add, Replace, Remove refer to parameters on the route, like
+ * community or prefix.
  */
 public final class RouteMapActionType extends ExpandableStringEnum<RouteMapActionType> {
     /**

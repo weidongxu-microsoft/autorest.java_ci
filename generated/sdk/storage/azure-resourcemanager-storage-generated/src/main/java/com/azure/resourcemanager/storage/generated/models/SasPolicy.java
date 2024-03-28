@@ -78,12 +78,12 @@ public final class SasPolicy {
      */
     public void validate() {
         if (sasExpirationPeriod() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sasExpirationPeriod in model SasPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sasExpirationPeriod in model SasPolicy"));
         }
         if (expirationAction() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property expirationAction in model SasPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property expirationAction in model SasPolicy"));
         }
     }
 

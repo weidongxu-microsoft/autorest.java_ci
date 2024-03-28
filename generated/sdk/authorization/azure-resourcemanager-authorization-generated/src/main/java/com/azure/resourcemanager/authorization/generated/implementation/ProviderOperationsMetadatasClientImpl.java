@@ -56,7 +56,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
     }
 
     /**
-     * The interface defining all the services for AuthorizationManagementClientProviderOperationsMetadatas to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AuthorizationManagementClientProviderOperationsMetadatas to be used
+     * by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AuthorizationManagem")
@@ -95,7 +96,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for the specified resource provider along with {@link Response} on successful completion of {@link Mono}.
+     * @return provider operations metadata for the specified resource provider along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProviderOperationsMetadataInner>> getWithResponseAsync(String resourceProviderNamespace,
@@ -125,7 +127,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for the specified resource provider along with {@link Response} on successful completion of {@link Mono}.
+     * @return provider operations metadata for the specified resource provider along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ProviderOperationsMetadataInner>> getWithResponseAsync(String resourceProviderNamespace,
@@ -151,7 +154,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for the specified resource provider on successful completion of {@link Mono}.
+     * @return provider operations metadata for the specified resource provider on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ProviderOperationsMetadataInner> getAsync(String resourceProviderNamespace) {
@@ -198,7 +202,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return provider operations metadata for all resource providers along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderOperationsMetadataInner>> listSinglePageAsync(String expand) {
@@ -223,7 +228,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata for all resource providers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return provider operations metadata for all resource providers along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderOperationsMetadataInner>> listSinglePageAsync(String expand, Context context) {
@@ -319,7 +325,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata list along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return provider operations metadata list along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderOperationsMetadataInner>> listNextSinglePageAsync(String nextLink) {
@@ -347,7 +354,8 @@ public final class ProviderOperationsMetadatasClientImpl implements ProviderOper
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return provider operations metadata list along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return provider operations metadata list along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ProviderOperationsMetadataInner>> listNextSinglePageAsync(String nextLink,

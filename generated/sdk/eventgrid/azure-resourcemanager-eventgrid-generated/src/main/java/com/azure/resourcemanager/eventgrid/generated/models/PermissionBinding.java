@@ -123,7 +123,8 @@ public interface PermissionBinding {
         }
 
         /**
-         * The stage of the PermissionBinding definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PermissionBinding definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithTopicSpaceName,
             DefinitionStages.WithPermission, DefinitionStages.WithClientGroupName {
@@ -161,7 +162,8 @@ public interface PermissionBinding {
          */
         interface WithTopicSpaceName {
             /**
-             * Specifies the topicSpaceName property: The name of the Topic Space resource that the permission is bound to.
+             * Specifies the topicSpaceName property: The name of the Topic Space resource that the permission is bound
+             * to.
              * The Topic space needs to be a resource under the same namespace the permission binding is a part of..
              * 
              * @param topicSpaceName The name of the Topic Space resource that the permission is bound to.
@@ -189,7 +191,8 @@ public interface PermissionBinding {
          */
         interface WithClientGroupName {
             /**
-             * Specifies the clientGroupName property: The name of the client group resource that the permission is bound to.
+             * Specifies the clientGroupName property: The name of the client group resource that the permission is
+             * bound to.
              * The client group needs to be a resource under the same namespace the permission binding is a part of..
              * 
              * @param clientGroupName The name of the client group resource that the permission is bound to.
@@ -250,7 +253,8 @@ public interface PermissionBinding {
          */
         interface WithTopicSpaceName {
             /**
-             * Specifies the topicSpaceName property: The name of the Topic Space resource that the permission is bound to.
+             * Specifies the topicSpaceName property: The name of the Topic Space resource that the permission is bound
+             * to.
              * The Topic space needs to be a resource under the same namespace the permission binding is a part of..
              * 
              * @param topicSpaceName The name of the Topic Space resource that the permission is bound to.
@@ -278,7 +282,8 @@ public interface PermissionBinding {
          */
         interface WithClientGroupName {
             /**
-             * Specifies the clientGroupName property: The name of the client group resource that the permission is bound to.
+             * Specifies the clientGroupName property: The name of the client group resource that the permission is
+             * bound to.
              * The client group needs to be a resource under the same namespace the permission binding is a part of..
              * 
              * @param clientGroupName The name of the client group resource that the permission is bound to.

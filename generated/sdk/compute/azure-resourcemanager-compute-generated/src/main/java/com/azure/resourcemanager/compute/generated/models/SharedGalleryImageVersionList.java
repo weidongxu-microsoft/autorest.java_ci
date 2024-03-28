@@ -54,7 +54,8 @@ public final class SharedGalleryImageVersionList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of shared gallery image versions. Call ListNext() with this to fetch the next page of shared gallery image versions.
+     * Get the nextLink property: The uri to fetch the next page of shared gallery image versions. Call ListNext() with
+     * this to fetch the next page of shared gallery image versions.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class SharedGalleryImageVersionList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of shared gallery image versions. Call ListNext() with this to fetch the next page of shared gallery image versions.
+     * Set the nextLink property: The uri to fetch the next page of shared gallery image versions. Call ListNext() with
+     * this to fetch the next page of shared gallery image versions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the SharedGalleryImageVersionList object itself.
@@ -80,8 +82,9 @@ public final class SharedGalleryImageVersionList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model SharedGalleryImageVersionList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model SharedGalleryImageVersionList"));
         } else {
             value().forEach(e -> e.validate());
         }

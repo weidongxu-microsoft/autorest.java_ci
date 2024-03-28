@@ -9,7 +9,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the IoT hub can failover to.
+ * The role of the region, can be either primary or secondary. The primary region is where the IoT hub is currently
+ * provisioned. The secondary region is the Azure disaster recovery (DR) paired region and also the region where the IoT
+ * hub can failover to.
  */
 public final class IotHubReplicaRoleType extends ExpandableStringEnum<IotHubReplicaRoleType> {
     /**

@@ -8,7 +8,11 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Object to define the base blob action conditions. Properties daysAfterModificationGreaterThan, daysAfterLastAccessTimeGreaterThan and daysAfterCreationGreaterThan are mutually exclusive. The daysAfterLastTierChangeGreaterThan property is only applicable for tierToArchive actions which requires daysAfterModificationGreaterThan to be set, also it cannot be used in conjunction with daysAfterLastAccessTimeGreaterThan or daysAfterCreationGreaterThan.
+ * Object to define the base blob action conditions. Properties daysAfterModificationGreaterThan,
+ * daysAfterLastAccessTimeGreaterThan and daysAfterCreationGreaterThan are mutually exclusive. The
+ * daysAfterLastTierChangeGreaterThan property is only applicable for tierToArchive actions which requires
+ * daysAfterModificationGreaterThan to be set, also it cannot be used in conjunction with
+ * daysAfterLastAccessTimeGreaterThan or daysAfterCreationGreaterThan.
  */
 @Fluent
 public final class DateAfterModification {
@@ -63,7 +67,8 @@ public final class DateAfterModification {
     }
 
     /**
-     * Get the daysAfterLastAccessTimeGreaterThan property: Value indicating the age in days after last blob access. This property can only be used in conjunction with last access time tracking policy.
+     * Get the daysAfterLastAccessTimeGreaterThan property: Value indicating the age in days after last blob access.
+     * This property can only be used in conjunction with last access time tracking policy.
      * 
      * @return the daysAfterLastAccessTimeGreaterThan value.
      */
@@ -72,7 +77,8 @@ public final class DateAfterModification {
     }
 
     /**
-     * Set the daysAfterLastAccessTimeGreaterThan property: Value indicating the age in days after last blob access. This property can only be used in conjunction with last access time tracking policy.
+     * Set the daysAfterLastAccessTimeGreaterThan property: Value indicating the age in days after last blob access.
+     * This property can only be used in conjunction with last access time tracking policy.
      * 
      * @param daysAfterLastAccessTimeGreaterThan the daysAfterLastAccessTimeGreaterThan value to set.
      * @return the DateAfterModification object itself.
@@ -83,7 +89,9 @@ public final class DateAfterModification {
     }
 
     /**
-     * Get the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier change time. This property is only applicable for tierToArchive actions and requires daysAfterModificationGreaterThan to be set for baseBlobs based actions. The blob will be archived if both the conditions are satisfied.
+     * Get the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier change
+     * time. This property is only applicable for tierToArchive actions and requires daysAfterModificationGreaterThan to
+     * be set for baseBlobs based actions. The blob will be archived if both the conditions are satisfied.
      * 
      * @return the daysAfterLastTierChangeGreaterThan value.
      */
@@ -92,7 +100,9 @@ public final class DateAfterModification {
     }
 
     /**
-     * Set the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier change time. This property is only applicable for tierToArchive actions and requires daysAfterModificationGreaterThan to be set for baseBlobs based actions. The blob will be archived if both the conditions are satisfied.
+     * Set the daysAfterLastTierChangeGreaterThan property: Value indicating the age in days after last blob tier change
+     * time. This property is only applicable for tierToArchive actions and requires daysAfterModificationGreaterThan to
+     * be set for baseBlobs based actions. The blob will be archived if both the conditions are satisfied.
      * 
      * @param daysAfterLastTierChangeGreaterThan the daysAfterLastTierChangeGreaterThan value to set.
      * @return the DateAfterModification object itself.

@@ -293,7 +293,8 @@ public final class VpnServerConfigurationInner extends Resource {
     }
 
     /**
-     * Get the radiusServerAddress property: The radius server address property of the VpnServerConfiguration resource for point to site client connection.
+     * Get the radiusServerAddress property: The radius server address property of the VpnServerConfiguration resource
+     * for point to site client connection.
      * 
      * @return the radiusServerAddress value.
      */
@@ -302,7 +303,8 @@ public final class VpnServerConfigurationInner extends Resource {
     }
 
     /**
-     * Set the radiusServerAddress property: The radius server address property of the VpnServerConfiguration resource for point to site client connection.
+     * Set the radiusServerAddress property: The radius server address property of the VpnServerConfiguration resource
+     * for point to site client connection.
      * 
      * @param radiusServerAddress the radiusServerAddress value to set.
      * @return the VpnServerConfigurationInner object itself.
@@ -316,7 +318,8 @@ public final class VpnServerConfigurationInner extends Resource {
     }
 
     /**
-     * Get the radiusServerSecret property: The radius secret property of the VpnServerConfiguration resource for point to site client connection.
+     * Get the radiusServerSecret property: The radius secret property of the VpnServerConfiguration resource for point
+     * to site client connection.
      * 
      * @return the radiusServerSecret value.
      */
@@ -325,7 +328,8 @@ public final class VpnServerConfigurationInner extends Resource {
     }
 
     /**
-     * Set the radiusServerSecret property: The radius secret property of the VpnServerConfiguration resource for point to site client connection.
+     * Set the radiusServerSecret property: The radius secret property of the VpnServerConfiguration resource for point
+     * to site client connection.
      * 
      * @param radiusServerSecret the radiusServerSecret value to set.
      * @return the VpnServerConfigurationInner object itself.
@@ -386,7 +390,8 @@ public final class VpnServerConfigurationInner extends Resource {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the VpnServerConfiguration resource. Possible values are: 'Updating', 'Deleting', and 'Failed'.
+     * Get the provisioningState property: The provisioning state of the VpnServerConfiguration resource. Possible
+     * values are: 'Updating', 'Deleting', and 'Failed'.
      * 
      * @return the provisioningState value.
      */

@@ -101,7 +101,8 @@ public interface StaticSiteArmResource {
     List<String> customDomains();
 
     /**
-     * Gets the repositoryToken property: A user's github repository token. This is used to setup the Github Actions workflow file and API secrets.
+     * Gets the repositoryToken property: A user's github repository token. This is used to setup the Github Actions
+     * workflow file and API secrets.
      * 
      * @return the repositoryToken value.
      */
@@ -122,14 +123,16 @@ public interface StaticSiteArmResource {
     List<ResponseMessageEnvelopeRemotePrivateEndpointConnection> privateEndpointConnections();
 
     /**
-     * Gets the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not allowed for a static web app.
+     * Gets the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not
+     * allowed for a static web app.
      * 
      * @return the stagingEnvironmentPolicy value.
      */
     StagingEnvironmentPolicy stagingEnvironmentPolicy();
 
     /**
-     * Gets the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Gets the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static
+     * web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the allowConfigFileUpdates value.
      */
@@ -171,21 +174,24 @@ public interface StaticSiteArmResource {
     List<StaticSiteLinkedBackend> linkedBackends();
 
     /**
-     * Gets the provider property: The provider that submitted the last deployment to the primary environment of the static site.
+     * Gets the provider property: The provider that submitted the last deployment to the primary environment of the
+     * static site.
      * 
      * @return the provider value.
      */
     String provider();
 
     /**
-     * Gets the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving traffic to the static web app.
+     * Gets the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving
+     * traffic to the static web app.
      * 
      * @return the enterpriseGradeCdnStatus value.
      */
     EnterpriseGradeCdnStatus enterpriseGradeCdnStatus();
 
     /**
-     * Gets the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * Gets the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static
+     * web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -278,7 +284,8 @@ public interface StaticSiteArmResource {
         }
 
         /**
-         * The stage of the StaticSiteArmResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the StaticSiteArmResource definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithKind, DefinitionStages.WithRepositoryUrl, DefinitionStages.WithBranch,
@@ -385,9 +392,11 @@ public interface StaticSiteArmResource {
          */
         interface WithRepositoryToken {
             /**
-             * Specifies the repositoryToken property: A user's github repository token. This is used to setup the Github Actions workflow file and API secrets..
+             * Specifies the repositoryToken property: A user's github repository token. This is used to setup the
+             * Github Actions workflow file and API secrets..
              * 
-             * @param repositoryToken A user's github repository token. This is used to setup the Github Actions workflow file and API secrets.
+             * @param repositoryToken A user's github repository token. This is used to setup the Github Actions
+             * workflow file and API secrets.
              * @return the next definition stage.
              */
             WithCreate withRepositoryToken(String repositoryToken);
@@ -411,9 +420,11 @@ public interface StaticSiteArmResource {
          */
         interface WithStagingEnvironmentPolicy {
             /**
-             * Specifies the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not allowed for a static web app..
+             * Specifies the stagingEnvironmentPolicy property: State indicating whether staging environments are
+             * allowed or not allowed for a static web app..
              * 
-             * @param stagingEnvironmentPolicy State indicating whether staging environments are allowed or not allowed for a static web app.
+             * @param stagingEnvironmentPolicy State indicating whether staging environments are allowed or not allowed
+             * for a static web app.
              * @return the next definition stage.
              */
             WithCreate withStagingEnvironmentPolicy(StagingEnvironmentPolicy stagingEnvironmentPolicy);
@@ -424,9 +435,11 @@ public interface StaticSiteArmResource {
          */
         interface WithAllowConfigFileUpdates {
             /**
-             * Specifies the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;..
+             * Specifies the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked
+             * for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;..
              * 
-             * @param allowConfigFileUpdates &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
+             * @param allowConfigFileUpdates &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web
+             * app; otherwise, &lt;code&gt;true&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withAllowConfigFileUpdates(Boolean allowConfigFileUpdates);
@@ -450,9 +463,11 @@ public interface StaticSiteArmResource {
          */
         interface WithProvider {
             /**
-             * Specifies the provider property: The provider that submitted the last deployment to the primary environment of the static site..
+             * Specifies the provider property: The provider that submitted the last deployment to the primary
+             * environment of the static site..
              * 
-             * @param provider The provider that submitted the last deployment to the primary environment of the static site.
+             * @param provider The provider that submitted the last deployment to the primary environment of the static
+             * site.
              * @return the next definition stage.
              */
             WithCreate withProvider(String provider);
@@ -463,9 +478,11 @@ public interface StaticSiteArmResource {
          */
         interface WithEnterpriseGradeCdnStatus {
             /**
-             * Specifies the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving traffic to the static web app..
+             * Specifies the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN
+             * serving traffic to the static web app..
              * 
-             * @param enterpriseGradeCdnStatus State indicating the status of the enterprise grade CDN serving traffic to the static web app.
+             * @param enterpriseGradeCdnStatus State indicating the status of the enterprise grade CDN serving traffic
+             * to the static web app.
              * @return the next definition stage.
              */
             WithCreate withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus);
@@ -476,9 +493,11 @@ public interface StaticSiteArmResource {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string..
+             * Specifies the publicNetworkAccess property: State indicating whether public traffic are allowed or not
+             * for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string..
              * 
-             * @param publicNetworkAccess State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+             * @param publicNetworkAccess State indicating whether public traffic are allowed or not for a static web
+             * app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(String publicNetworkAccess);
@@ -563,9 +582,11 @@ public interface StaticSiteArmResource {
          */
         interface WithRepositoryToken {
             /**
-             * Specifies the repositoryToken property: A user's github repository token. This is used to setup the Github Actions workflow file and API secrets..
+             * Specifies the repositoryToken property: A user's github repository token. This is used to setup the
+             * Github Actions workflow file and API secrets..
              * 
-             * @param repositoryToken A user's github repository token. This is used to setup the Github Actions workflow file and API secrets.
+             * @param repositoryToken A user's github repository token. This is used to setup the Github Actions
+             * workflow file and API secrets.
              * @return the next definition stage.
              */
             Update withRepositoryToken(String repositoryToken);
@@ -589,9 +610,11 @@ public interface StaticSiteArmResource {
          */
         interface WithStagingEnvironmentPolicy {
             /**
-             * Specifies the stagingEnvironmentPolicy property: State indicating whether staging environments are allowed or not allowed for a static web app..
+             * Specifies the stagingEnvironmentPolicy property: State indicating whether staging environments are
+             * allowed or not allowed for a static web app..
              * 
-             * @param stagingEnvironmentPolicy State indicating whether staging environments are allowed or not allowed for a static web app.
+             * @param stagingEnvironmentPolicy State indicating whether staging environments are allowed or not allowed
+             * for a static web app.
              * @return the next definition stage.
              */
             Update withStagingEnvironmentPolicy(StagingEnvironmentPolicy stagingEnvironmentPolicy);
@@ -602,9 +625,11 @@ public interface StaticSiteArmResource {
          */
         interface WithAllowConfigFileUpdates {
             /**
-             * Specifies the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;..
+             * Specifies the allowConfigFileUpdates property: &lt;code&gt;false&lt;/code&gt; if config file is locked
+             * for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;..
              * 
-             * @param allowConfigFileUpdates &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web app; otherwise, &lt;code&gt;true&lt;/code&gt;.
+             * @param allowConfigFileUpdates &lt;code&gt;false&lt;/code&gt; if config file is locked for this static web
+             * app; otherwise, &lt;code&gt;true&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withAllowConfigFileUpdates(Boolean allowConfigFileUpdates);
@@ -628,9 +653,11 @@ public interface StaticSiteArmResource {
          */
         interface WithProvider {
             /**
-             * Specifies the provider property: The provider that submitted the last deployment to the primary environment of the static site..
+             * Specifies the provider property: The provider that submitted the last deployment to the primary
+             * environment of the static site..
              * 
-             * @param provider The provider that submitted the last deployment to the primary environment of the static site.
+             * @param provider The provider that submitted the last deployment to the primary environment of the static
+             * site.
              * @return the next definition stage.
              */
             Update withProvider(String provider);
@@ -641,9 +668,11 @@ public interface StaticSiteArmResource {
          */
         interface WithEnterpriseGradeCdnStatus {
             /**
-             * Specifies the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN serving traffic to the static web app..
+             * Specifies the enterpriseGradeCdnStatus property: State indicating the status of the enterprise grade CDN
+             * serving traffic to the static web app..
              * 
-             * @param enterpriseGradeCdnStatus State indicating the status of the enterprise grade CDN serving traffic to the static web app.
+             * @param enterpriseGradeCdnStatus State indicating the status of the enterprise grade CDN serving traffic
+             * to the static web app.
              * @return the next definition stage.
              */
             Update withEnterpriseGradeCdnStatus(EnterpriseGradeCdnStatus enterpriseGradeCdnStatus);
@@ -654,9 +683,11 @@ public interface StaticSiteArmResource {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string..
+             * Specifies the publicNetworkAccess property: State indicating whether public traffic are allowed or not
+             * for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string..
              * 
-             * @param publicNetworkAccess State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+             * @param publicNetworkAccess State indicating whether public traffic are allowed or not for a static web
+             * app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(String publicNetworkAccess);
@@ -686,7 +717,8 @@ public interface StaticSiteArmResource {
      * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return static sites user roles invitation link resource along with {@link Response}.
      */
@@ -700,7 +732,8 @@ public interface StaticSiteArmResource {
      * 
      * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return static sites user roles invitation link resource.
      */
@@ -712,7 +745,8 @@ public interface StaticSiteArmResource {
      * 
      * Description for Detaches a static site.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void detachStaticSite();
@@ -724,7 +758,8 @@ public interface StaticSiteArmResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void detachStaticSite(Context context);
@@ -736,7 +771,8 @@ public interface StaticSiteArmResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource along with {@link Response}.
      */
@@ -747,7 +783,8 @@ public interface StaticSiteArmResource {
      * 
      * Description for Gets the application settings of a static site.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource.
      */
@@ -760,7 +797,8 @@ public interface StaticSiteArmResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string list resource along with {@link Response}.
      */
@@ -771,7 +809,8 @@ public interface StaticSiteArmResource {
      * 
      * Description for Lists the roles configured for the static site.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string list resource.
      */
@@ -784,7 +823,8 @@ public interface StaticSiteArmResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource along with {@link Response}.
      */
@@ -795,7 +835,8 @@ public interface StaticSiteArmResource {
      * 
      * Description for Gets the application settings of a static site.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource.
      */
@@ -808,7 +849,8 @@ public interface StaticSiteArmResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource along with {@link Response}.
      */
@@ -819,7 +861,8 @@ public interface StaticSiteArmResource {
      * 
      * Description for Lists the secrets for an existing static site.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return string dictionary resource.
      */
@@ -833,7 +876,8 @@ public interface StaticSiteArmResource {
      * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -847,7 +891,8 @@ public interface StaticSiteArmResource {
      * 
      * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void resetStaticSiteApiKey(StaticSiteResetPropertiesArmResource resetPropertiesEnvelope);
@@ -855,7 +900,8 @@ public interface StaticSiteArmResource {
     /**
      * Returns details of database connections for a static site.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of static site database connections as paginated response with {@link PagedIterable}.
      */
@@ -866,7 +912,8 @@ public interface StaticSiteArmResource {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return collection of static site database connections as paginated response with {@link PagedIterable}.
      */
@@ -877,9 +924,11 @@ public interface StaticSiteArmResource {
      * 
      * Description for Deploys zipped content to a static site.
      * 
-     * @param staticSiteZipDeploymentEnvelope A JSON representation of the StaticSiteZipDeployment properties. See example.
+     * @param staticSiteZipDeploymentEnvelope A JSON representation of the StaticSiteZipDeployment properties. See
+     * example.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope);
@@ -889,10 +938,12 @@ public interface StaticSiteArmResource {
      * 
      * Description for Deploys zipped content to a static site.
      * 
-     * @param staticSiteZipDeploymentEnvelope A JSON representation of the StaticSiteZipDeployment properties. See example.
+     * @param staticSiteZipDeploymentEnvelope A JSON representation of the StaticSiteZipDeployment properties. See
+     * example.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void createZipDeploymentForStaticSite(StaticSiteZipDeploymentArmResource staticSiteZipDeploymentEnvelope,

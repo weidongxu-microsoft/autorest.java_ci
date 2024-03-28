@@ -9,7 +9,8 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * IoT edge agent details is optional, this will be used for download system Agent module while bootstrapping IoT Role if specified.
+ * IoT edge agent details is optional, this will be used for download system Agent module while bootstrapping IoT Role
+ * if specified.
  */
 @Fluent
 public final class IoTEdgeAgentInfo {
@@ -104,12 +105,12 @@ public final class IoTEdgeAgentInfo {
      */
     public void validate() {
         if (imageName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property imageName in model IoTEdgeAgentInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property imageName in model IoTEdgeAgentInfo"));
         }
         if (tag() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property tag in model IoTEdgeAgentInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property tag in model IoTEdgeAgentInfo"));
         }
         if (imageRepository() != null) {
             imageRepository().validate();

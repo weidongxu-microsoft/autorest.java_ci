@@ -78,12 +78,12 @@ public final class BlobRestoreRange {
      */
     public void validate() {
         if (startRange() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property startRange in model BlobRestoreRange"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property startRange in model BlobRestoreRange"));
         }
         if (endRange() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property endRange in model BlobRestoreRange"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property endRange in model BlobRestoreRange"));
         }
     }
 

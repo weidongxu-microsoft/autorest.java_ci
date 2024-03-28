@@ -105,16 +105,17 @@ public final class EnrichmentProperties {
      */
     public void validate() {
         if (key() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property key in model EnrichmentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property key in model EnrichmentProperties"));
         }
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model EnrichmentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model EnrichmentProperties"));
         }
         if (endpointNames() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property endpointNames in model EnrichmentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property endpointNames in model EnrichmentProperties"));
         }
     }
 

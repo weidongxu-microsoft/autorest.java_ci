@@ -84,7 +84,8 @@ public final class VirtualApplication {
     }
 
     /**
-     * Get the preloadEnabled property: &lt;code&gt;true&lt;/code&gt; if preloading is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the preloadEnabled property: &lt;code&gt;true&lt;/code&gt; if preloading is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the preloadEnabled value.
      */
@@ -93,7 +94,8 @@ public final class VirtualApplication {
     }
 
     /**
-     * Set the preloadEnabled property: &lt;code&gt;true&lt;/code&gt; if preloading is enabled; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the preloadEnabled property: &lt;code&gt;true&lt;/code&gt; if preloading is enabled; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param preloadEnabled the preloadEnabled value to set.
      * @return the VirtualApplication object itself.

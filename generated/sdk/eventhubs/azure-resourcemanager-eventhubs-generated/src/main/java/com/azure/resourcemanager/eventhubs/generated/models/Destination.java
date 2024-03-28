@@ -79,7 +79,8 @@ public final class Destination {
     }
 
     /**
-     * Get the innerProperties property: Properties describing the storage account, blob container and archive name format for capture destination.
+     * Get the innerProperties property: Properties describing the storage account, blob container and archive name
+     * format for capture destination.
      * 
      * @return the innerProperties value.
      */
@@ -134,7 +135,9 @@ public final class Destination {
     }
 
     /**
-     * Get the archiveNameFormat property: Blob naming convention for archive, e.g. {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order.
+     * Get the archiveNameFormat property: Blob naming convention for archive, e.g.
+     * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
+     * (Namespace,EventHub .. etc) are mandatory irrespective of order.
      * 
      * @return the archiveNameFormat value.
      */
@@ -143,7 +146,9 @@ public final class Destination {
     }
 
     /**
-     * Set the archiveNameFormat property: Blob naming convention for archive, e.g. {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters (Namespace,EventHub .. etc) are mandatory irrespective of order.
+     * Set the archiveNameFormat property: Blob naming convention for archive, e.g.
+     * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
+     * (Namespace,EventHub .. etc) are mandatory irrespective of order.
      * 
      * @param archiveNameFormat the archiveNameFormat value to set.
      * @return the Destination object itself.

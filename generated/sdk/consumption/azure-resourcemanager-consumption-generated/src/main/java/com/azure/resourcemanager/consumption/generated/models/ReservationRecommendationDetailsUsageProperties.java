@@ -50,7 +50,8 @@ public final class ReservationRecommendationDetailsUsageProperties {
     }
 
     /**
-     * Get the firstConsumptionDate property: The first usage date used for looking back for computing the recommendation.
+     * Get the firstConsumptionDate property: The first usage date used for looking back for computing the
+     * recommendation.
      * 
      * @return the firstConsumptionDate value.
      */
@@ -77,7 +78,8 @@ public final class ReservationRecommendationDetailsUsageProperties {
     }
 
     /**
-     * Get the usageData property: The breakdown of historical resource usage.  The values are in the order of usage between the firstConsumptionDate and the lastConsumptionDate.
+     * Get the usageData property: The breakdown of historical resource usage. The values are in the order of usage
+     * between the firstConsumptionDate and the lastConsumptionDate.
      * 
      * @return the usageData value.
      */

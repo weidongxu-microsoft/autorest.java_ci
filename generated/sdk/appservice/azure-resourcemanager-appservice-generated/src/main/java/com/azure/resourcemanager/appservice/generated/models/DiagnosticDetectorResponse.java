@@ -98,7 +98,8 @@ public interface DiagnosticDetectorResponse {
     ResponseMetadata responseMetadata();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticDetectorResponseInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.DiagnosticDetectorResponseInner
+     * object.
      * 
      * @return the inner object.
      */

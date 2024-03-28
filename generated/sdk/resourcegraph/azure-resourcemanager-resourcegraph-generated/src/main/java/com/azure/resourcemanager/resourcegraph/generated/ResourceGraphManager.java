@@ -279,7 +279,8 @@ public final class ResourceGraphManager {
     }
 
     /**
-     * Gets wrapped service client ResourceGraphClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client ResourceGraphClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client ResourceGraphClient.
      */

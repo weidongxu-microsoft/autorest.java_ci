@@ -230,7 +230,8 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: property to enable or disable resource provider inbound network traffic from public clients.
+     * Get the publicNetworkAccess property: property to enable or disable resource provider inbound network traffic
+     * from public clients.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -239,7 +240,8 @@ public final class VaultProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: property to enable or disable resource provider inbound network traffic from public clients.
+     * Set the publicNetworkAccess property: property to enable or disable resource provider inbound network traffic
+     * from public clients.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the VaultProperties object itself.
@@ -339,7 +341,8 @@ public final class VaultProperties {
     }
 
     /**
-     * Get the bcdrSecurityLevel property: Security levels of Recovery Services Vault for business continuity and disaster recovery.
+     * Get the bcdrSecurityLevel property: Security levels of Recovery Services Vault for business continuity and
+     * disaster recovery.
      * 
      * @return the bcdrSecurityLevel value.
      */

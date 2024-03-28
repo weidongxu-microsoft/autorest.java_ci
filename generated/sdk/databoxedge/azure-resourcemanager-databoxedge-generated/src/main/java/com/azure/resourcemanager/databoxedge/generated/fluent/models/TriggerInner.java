@@ -56,17 +56,6 @@ public class TriggerInner extends ArmBaseModel {
     }
 
     /**
-     * Set the kind property: Trigger Kind.
-     * 
-     * @param kind the kind value to set.
-     * @return the TriggerInner object itself.
-     */
-    protected TriggerInner withKind(TriggerEventType kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Trigger.
      * 
      * @return the systemData value.

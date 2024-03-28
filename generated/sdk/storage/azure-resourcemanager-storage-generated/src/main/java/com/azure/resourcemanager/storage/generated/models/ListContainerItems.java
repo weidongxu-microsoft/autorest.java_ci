@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response schema. Contains list of blobs returned, and if paging is requested or required, a URL to next page of containers.
+ * Response schema. Contains list of blobs returned, and if paging is requested or required, a URL to next page of
+ * containers.
  */
 @Immutable
 public final class ListContainerItems {
@@ -42,7 +43,8 @@ public final class ListContainerItems {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of containers. Returned when total number of requested containers exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of containers. Returned when total
+     * number of requested containers exceed maximum page size.
      * 
      * @return the nextLink value.
      */

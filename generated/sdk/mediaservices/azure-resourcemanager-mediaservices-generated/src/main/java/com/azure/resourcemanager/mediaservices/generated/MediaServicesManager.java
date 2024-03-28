@@ -587,7 +587,8 @@ public final class MediaServicesManager {
     }
 
     /**
-     * Gets wrapped service client AzureMediaServices providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client AzureMediaServices providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client AzureMediaServices.
      */

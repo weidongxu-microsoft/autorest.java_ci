@@ -70,7 +70,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineRunCommands to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineRunCommands to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -165,7 +166,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RunCommandDocumentBaseInner>> listSinglePageAsync(String location) {
@@ -198,7 +200,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RunCommandDocumentBaseInner>> listSinglePageAsync(String location, Context context) {
@@ -289,7 +292,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specific run command for a subscription in a location along with {@link Response} on successful completion of {@link Mono}.
+     * @return specific run command for a subscription in a location along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RunCommandDocumentInner>> getWithResponseAsync(String location, String commandId) {
@@ -324,7 +328,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specific run command for a subscription in a location along with {@link Response} on successful completion of {@link Mono}.
+     * @return specific run command for a subscription in a location along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RunCommandDocumentInner>> getWithResponseAsync(String location, String commandId,
@@ -406,7 +411,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vmName,
@@ -453,7 +459,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vmName,
@@ -661,7 +668,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmName,
@@ -708,7 +716,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmName,
@@ -1136,7 +1145,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineRunCommandInner>> getByVirtualMachineWithResponseAsync(String resourceGroupName,
@@ -1178,7 +1188,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a Virtual Machine run command along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineRunCommandInner>> getByVirtualMachineWithResponseAsync(String resourceGroupName,
@@ -1274,7 +1285,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>>
@@ -1314,7 +1326,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>>
@@ -1442,7 +1455,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RunCommandDocumentBaseInner>> listNextSinglePageAsync(String nextLink) {
@@ -1470,7 +1484,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RunCommandDocumentBaseInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1497,7 +1512,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>>
@@ -1528,7 +1544,8 @@ public final class VirtualMachineRunCommandsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List run command operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List run command operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineRunCommandInner>> listByVirtualMachineNextSinglePageAsync(String nextLink,

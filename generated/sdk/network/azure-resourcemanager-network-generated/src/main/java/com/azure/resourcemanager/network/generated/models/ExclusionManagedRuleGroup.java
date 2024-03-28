@@ -53,7 +53,8 @@ public final class ExclusionManagedRuleGroup {
     }
 
     /**
-     * Get the rules property: List of rules that will be excluded. If none specified, all rules in the group will be excluded.
+     * Get the rules property: List of rules that will be excluded. If none specified, all rules in the group will be
+     * excluded.
      * 
      * @return the rules value.
      */
@@ -62,7 +63,8 @@ public final class ExclusionManagedRuleGroup {
     }
 
     /**
-     * Set the rules property: List of rules that will be excluded. If none specified, all rules in the group will be excluded.
+     * Set the rules property: List of rules that will be excluded. If none specified, all rules in the group will be
+     * excluded.
      * 
      * @param rules the rules value to set.
      * @return the ExclusionManagedRuleGroup object itself.
@@ -79,8 +81,9 @@ public final class ExclusionManagedRuleGroup {
      */
     public void validate() {
         if (ruleGroupName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleGroupName in model ExclusionManagedRuleGroup"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleGroupName in model ExclusionManagedRuleGroup"));
         }
         if (rules() != null) {
             rules().forEach(e -> e.validate());

@@ -408,7 +408,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the partNumber property: Part Number of the service used. Can be used to join with the price sheet. Not available for marketplace.
+     * Get the partNumber property: Part Number of the service used. Can be used to join with the price sheet. Not
+     * available for marketplace.
      * 
      * @return the partNumber value.
      */
@@ -417,7 +418,9 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the meterId property: The meter id (GUID). Not available for marketplace. For reserved instance this represents the primary meter for which the reservation was purchased. For the actual VM Size for which the reservation is purchased see productOrderName.
+     * Get the meterId property: The meter id (GUID). Not available for marketplace. For reserved instance this
+     * represents the primary meter for which the reservation was purchased. For the actual VM Size for which the
+     * reservation is purchased see productOrderName.
      * 
      * @return the meterId value.
      */
@@ -426,7 +429,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the meterDetails property: The details about the meter. By default this is not populated, unless it's specified in $expand.
+     * Get the meterDetails property: The details about the meter. By default this is not populated, unless it's
+     * specified in $expand.
      * 
      * @return the meterDetails value.
      */
@@ -489,7 +493,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the usage or was purchased. This value is not provided for marketplace usage.
+     * Get the consumedService property: Consumed service name. Name of the azure resource provider that emits the usage
+     * or was purchased. This value is not provided for marketplace usage.
      * 
      * @return the consumedService value.
      */
@@ -534,7 +539,9 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the additionalInfo property: Additional details of this usage item. By default this is not populated, unless it's specified in $expand. Use this field to get usage line item specific details such as the actual VM Size (ServiceType) or the ratio in which the reservation discount is applied.
+     * Get the additionalInfo property: Additional details of this usage item. By default this is not populated, unless
+     * it's specified in $expand. Use this field to get usage line item specific details such as the actual VM Size
+     * (ServiceType) or the ratio in which the reservation discount is applied.
      * 
      * @return the additionalInfo value.
      */
@@ -552,7 +559,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the costCenter property: The cost center of this department if it is a department and a cost center is provided.
+     * Get the costCenter property: The cost center of this department if it is a department and a cost center is
+     * provided.
      * 
      * @return the costCenter value.
      */
@@ -570,7 +578,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the reservationId property: ARM resource id of the reservation. Only applies to records relevant to reservations.
+     * Get the reservationId property: ARM resource id of the reservation. Only applies to records relevant to
+     * reservations.
      * 
      * @return the reservationId value.
      */
@@ -579,7 +588,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the reservationName property: User provided display name of the reservation. Last known name for a particular day is populated in the daily data. Only applies to records relevant to reservations.
+     * Get the reservationName property: User provided display name of the reservation. Last known name for a particular
+     * day is populated in the daily data. Only applies to records relevant to reservations.
      * 
      * @return the reservationName value.
      */
@@ -624,7 +634,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the term property: Term (in months). 1 month for monthly recurring purchase. 12 months for a 1 year reservation. 36 months for a 3 year reservation.
+     * Get the term property: Term (in months). 1 month for monthly recurring purchase. 12 months for a 1 year
+     * reservation. 36 months for a 3 year reservation.
      * 
      * @return the term value.
      */
@@ -660,7 +671,8 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the chargeType property: Indicates a charge represents credits, usage, a Marketplace purchase, a reservation fee, or a refund.
+     * Get the chargeType property: Indicates a charge represents credits, usage, a Marketplace purchase, a reservation
+     * fee, or a refund.
      * 
      * @return the chargeType value.
      */
@@ -669,7 +681,9 @@ public final class LegacyUsageDetailProperties {
     }
 
     /**
-     * Get the frequency property: Indicates how frequently this charge will occur. OneTime for purchases which only happen once, Monthly for fees which recur every month, and UsageBased for charges based on how much a service is used.
+     * Get the frequency property: Indicates how frequently this charge will occur. OneTime for purchases which only
+     * happen once, Monthly for fees which recur every month, and UsageBased for charges based on how much a service is
+     * used.
      * 
      * @return the frequency value.
      */

@@ -51,7 +51,9 @@ public final class CaptureIdentity {
     }
 
     /**
-     * Get the userAssignedIdentity property: ARM ID of Managed User Identity. This property is required is the type is UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace will be used.
+     * Get the userAssignedIdentity property: ARM ID of Managed User Identity. This property is required is the type is
+     * UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace
+     * will be used.
      * 
      * @return the userAssignedIdentity value.
      */
@@ -60,7 +62,9 @@ public final class CaptureIdentity {
     }
 
     /**
-     * Set the userAssignedIdentity property: ARM ID of Managed User Identity. This property is required is the type is UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace will be used.
+     * Set the userAssignedIdentity property: ARM ID of Managed User Identity. This property is required is the type is
+     * UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace
+     * will be used.
      * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the CaptureIdentity object itself.

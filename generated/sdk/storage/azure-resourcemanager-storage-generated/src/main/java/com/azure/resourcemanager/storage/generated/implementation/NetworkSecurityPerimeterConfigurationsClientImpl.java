@@ -37,7 +37,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsClient.
  */
 public final class NetworkSecurityPerimeterConfigurationsClientImpl
     implements NetworkSecurityPerimeterConfigurationsClient {
@@ -63,7 +64,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientNetworkSecurityPerimeterConfigurations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientNetworkSecurityPerimeterConfigurations to be
+     * used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -101,12 +103,15 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets list of effective NetworkSecurityPerimeterConfiguration for storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityPerimeterConfigurationInner>>
@@ -138,13 +143,16 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets list of effective NetworkSecurityPerimeterConfiguration for storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityPerimeterConfigurationInner>>
@@ -176,12 +184,15 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets list of effective NetworkSecurityPerimeterConfiguration for storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with {@link PagedFlux}.
+     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NetworkSecurityPerimeterConfigurationInner> listAsync(String resourceGroupName,
@@ -192,13 +203,16 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets list of effective NetworkSecurityPerimeterConfiguration for storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with {@link PagedFlux}.
+     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NetworkSecurityPerimeterConfigurationInner> listAsync(String resourceGroupName,
@@ -209,12 +223,15 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets list of effective NetworkSecurityPerimeterConfiguration for storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with {@link PagedIterable}.
+     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NetworkSecurityPerimeterConfigurationInner> list(String resourceGroupName,
@@ -225,13 +242,16 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets list of effective NetworkSecurityPerimeterConfiguration for storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with {@link PagedIterable}.
+     * @return list of effective NetworkSecurityPerimeterConfiguration for storage account as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NetworkSecurityPerimeterConfigurationInner> list(String resourceGroupName, String accountName,
@@ -242,13 +262,16 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets effective NetworkSecurityPerimeterConfiguration for association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return effective NetworkSecurityPerimeterConfiguration for association along with {@link Response} on successful completion of {@link Mono}.
+     * @return effective NetworkSecurityPerimeterConfiguration for association along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityPerimeterConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -283,14 +306,17 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets effective NetworkSecurityPerimeterConfiguration for association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return effective NetworkSecurityPerimeterConfiguration for association along with {@link Response} on successful completion of {@link Mono}.
+     * @return effective NetworkSecurityPerimeterConfiguration for association along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityPerimeterConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -323,8 +349,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets effective NetworkSecurityPerimeterConfiguration for association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -341,8 +369,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets effective NetworkSecurityPerimeterConfiguration for association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -360,8 +390,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Gets effective NetworkSecurityPerimeterConfiguration for association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -378,8 +410,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -419,8 +453,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -459,8 +495,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -479,8 +517,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -501,8 +541,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -519,8 +561,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -539,8 +583,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -557,8 +603,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -577,8 +625,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -593,8 +643,10 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Refreshes any information about the association.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param networkSecurityPerimeterConfigurationName The name for Network Security Perimeter configuration.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

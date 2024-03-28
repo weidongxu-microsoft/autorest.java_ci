@@ -103,7 +103,8 @@ public interface TriggeredWebJob {
     Boolean usingSdk();
 
     /**
-     * Gets the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * Gets the publicNetworkAccess property: Property to allow or block all public traffic. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
      * 
      * @return the publicNetworkAccess value.
      */

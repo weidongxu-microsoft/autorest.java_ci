@@ -9,7 +9,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * This class represent a single filter object that defines a multidimensional set. The dimensions of this set are Regions, ClusterFlavors, NodeTypes and ClusterVersions. The constraint should be defined based on the following: FilterMode (Exclude vs Include), VMSizes (the vm sizes in affect of exclusion/inclusion) and the ordering of the Filters. Later filters override previous settings if conflicted.
+ * This class represent a single filter object that defines a multidimensional set. The dimensions of this set are
+ * Regions, ClusterFlavors, NodeTypes and ClusterVersions. The constraint should be defined based on the following:
+ * FilterMode (Exclude vs Include), VMSizes (the vm sizes in affect of exclusion/inclusion) and the ordering of the
+ * Filters. Later filters override previous settings if conflicted.
  */
 @Fluent
 public final class VmSizeCompatibilityFilterV2 {
@@ -74,7 +77,8 @@ public final class VmSizeCompatibilityFilterV2 {
     }
 
     /**
-     * Get the filterMode property: The filtering mode. Effectively this can enabling or disabling the VM sizes in a particular set.
+     * Get the filterMode property: The filtering mode. Effectively this can enabling or disabling the VM sizes in a
+     * particular set.
      * 
      * @return the filterMode value.
      */
@@ -83,7 +87,8 @@ public final class VmSizeCompatibilityFilterV2 {
     }
 
     /**
-     * Set the filterMode property: The filtering mode. Effectively this can enabling or disabling the VM sizes in a particular set.
+     * Set the filterMode property: The filtering mode. Effectively this can enabling or disabling the VM sizes in a
+     * particular set.
      * 
      * @param filterMode the filterMode value to set.
      * @return the VmSizeCompatibilityFilterV2 object itself.
@@ -214,7 +219,8 @@ public final class VmSizeCompatibilityFilterV2 {
     }
 
     /**
-     * Get the espApplied property: Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for non-ESP, null or empty string or others mean for both.
+     * Get the espApplied property: Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for
+     * non-ESP, null or empty string or others mean for both.
      * 
      * @return the espApplied value.
      */
@@ -223,7 +229,8 @@ public final class VmSizeCompatibilityFilterV2 {
     }
 
     /**
-     * Set the espApplied property: Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for non-ESP, null or empty string or others mean for both.
+     * Set the espApplied property: Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for
+     * non-ESP, null or empty string or others mean for both.
      * 
      * @param espApplied the espApplied value to set.
      * @return the VmSizeCompatibilityFilterV2 object itself.
@@ -234,7 +241,8 @@ public final class VmSizeCompatibilityFilterV2 {
     }
 
     /**
-     * Get the computeIsolationSupported property: Whether support compute isolation. 'true' means only for ComputeIsolationEnabled, 'false' means only for regular cluster.
+     * Get the computeIsolationSupported property: Whether support compute isolation. 'true' means only for
+     * ComputeIsolationEnabled, 'false' means only for regular cluster.
      * 
      * @return the computeIsolationSupported value.
      */
@@ -243,7 +251,8 @@ public final class VmSizeCompatibilityFilterV2 {
     }
 
     /**
-     * Set the computeIsolationSupported property: Whether support compute isolation. 'true' means only for ComputeIsolationEnabled, 'false' means only for regular cluster.
+     * Set the computeIsolationSupported property: Whether support compute isolation. 'true' means only for
+     * ComputeIsolationEnabled, 'false' means only for regular cluster.
      * 
      * @param computeIsolationSupported the computeIsolationSupported value to set.
      * @return the VmSizeCompatibilityFilterV2 object itself.

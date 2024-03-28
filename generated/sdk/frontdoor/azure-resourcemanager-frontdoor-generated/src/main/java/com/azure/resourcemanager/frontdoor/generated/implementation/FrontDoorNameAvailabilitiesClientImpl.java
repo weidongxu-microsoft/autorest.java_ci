@@ -52,7 +52,8 @@ public final class FrontDoorNameAvailabilitiesClientImpl implements FrontDoorNam
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientFrontDoorNameAvailabilities to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientFrontDoorNameAvailabilities to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -74,7 +75,8 @@ public final class FrontDoorNameAvailabilitiesClientImpl implements FrontDoorNam
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API along with {@link Response} on successful completion of {@link Mono}.
+     * @return output of check name availability API along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityOutputInner>>
@@ -105,7 +107,8 @@ public final class FrontDoorNameAvailabilitiesClientImpl implements FrontDoorNam
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return output of check name availability API along with {@link Response} on successful completion of {@link Mono}.
+     * @return output of check name availability API along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameAvailabilityOutputInner>>

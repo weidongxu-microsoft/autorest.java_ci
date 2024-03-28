@@ -129,8 +129,8 @@ public final class OrderStatus {
      */
     public void validate() {
         if (status() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property status in model OrderStatus"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property status in model OrderStatus"));
         }
         if (trackingInformation() != null) {
             trackingInformation().validate();

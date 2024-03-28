@@ -133,7 +133,8 @@ public final class LocalUserProperties {
     }
 
     /**
-     * Get the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key.
+     * Get the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared
+     * key.
      * 
      * @return the hasSharedKey value.
      */
@@ -142,7 +143,8 @@ public final class LocalUserProperties {
     }
 
     /**
-     * Set the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key.
+     * Set the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared
+     * key.
      * 
      * @param hasSharedKey the hasSharedKey value to set.
      * @return the LocalUserProperties object itself.
@@ -173,7 +175,8 @@ public final class LocalUserProperties {
     }
 
     /**
-     * Get the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password.
+     * Get the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH
+     * password.
      * 
      * @return the hasSshPassword value.
      */
@@ -182,7 +185,8 @@ public final class LocalUserProperties {
     }
 
     /**
-     * Set the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password.
+     * Set the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH
+     * password.
      * 
      * @param hasSshPassword the hasSshPassword value to set.
      * @return the LocalUserProperties object itself.

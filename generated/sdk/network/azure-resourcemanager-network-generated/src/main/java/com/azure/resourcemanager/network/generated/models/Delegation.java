@@ -55,7 +55,8 @@ public final class Delegation extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a subnet. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a subnet. This name can be used to access
+     * the resource.
      * 
      * @return the name value.
      */
@@ -64,7 +65,8 @@ public final class Delegation extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a subnet. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a subnet. This name can be used to access
+     * the resource.
      * 
      * @param name the name value to set.
      * @return the Delegation object itself.
@@ -113,7 +115,8 @@ public final class Delegation extends SubResource {
     }
 
     /**
-     * Get the serviceName property: The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).
+     * Get the serviceName property: The name of the service to whom the subnet should be delegated (e.g.
+     * Microsoft.Sql/servers).
      * 
      * @return the serviceName value.
      */
@@ -122,7 +125,8 @@ public final class Delegation extends SubResource {
     }
 
     /**
-     * Set the serviceName property: The name of the service to whom the subnet should be delegated (e.g. Microsoft.Sql/servers).
+     * Set the serviceName property: The name of the service to whom the subnet should be delegated (e.g.
+     * Microsoft.Sql/servers).
      * 
      * @param serviceName the serviceName value to set.
      * @return the Delegation object itself.

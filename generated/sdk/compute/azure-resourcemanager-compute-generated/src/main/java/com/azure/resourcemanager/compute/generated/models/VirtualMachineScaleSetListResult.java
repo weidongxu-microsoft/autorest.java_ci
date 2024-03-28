@@ -54,7 +54,8 @@ public final class VirtualMachineScaleSetListResult {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of Virtual Machine Scale Sets. Call ListNext() with this to fetch the next page of VMSS.
+     * Get the nextLink property: The uri to fetch the next page of Virtual Machine Scale Sets. Call ListNext() with
+     * this to fetch the next page of VMSS.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class VirtualMachineScaleSetListResult {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of Virtual Machine Scale Sets. Call ListNext() with this to fetch the next page of VMSS.
+     * Set the nextLink property: The uri to fetch the next page of Virtual Machine Scale Sets. Call ListNext() with
+     * this to fetch the next page of VMSS.
      * 
      * @param nextLink the nextLink value to set.
      * @return the VirtualMachineScaleSetListResult object itself.
@@ -80,8 +82,9 @@ public final class VirtualMachineScaleSetListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model VirtualMachineScaleSetListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model VirtualMachineScaleSetListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

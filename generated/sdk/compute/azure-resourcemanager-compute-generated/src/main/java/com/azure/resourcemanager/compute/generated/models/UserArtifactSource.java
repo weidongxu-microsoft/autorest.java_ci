@@ -52,7 +52,8 @@ public final class UserArtifactSource {
     }
 
     /**
-     * Get the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
+     * Get the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a
+     * readable storage page blob.
      * 
      * @return the defaultConfigurationLink value.
      */
@@ -61,7 +62,8 @@ public final class UserArtifactSource {
     }
 
     /**
-     * Set the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a readable storage page blob.
+     * Set the defaultConfigurationLink property: Optional. The defaultConfigurationLink of the artifact, must be a
+     * readable storage page blob.
      * 
      * @param defaultConfigurationLink the defaultConfigurationLink value to set.
      * @return the UserArtifactSource object itself.
@@ -78,8 +80,8 @@ public final class UserArtifactSource {
      */
     public void validate() {
         if (mediaLink() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property mediaLink in model UserArtifactSource"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property mediaLink in model UserArtifactSource"));
         }
     }
 

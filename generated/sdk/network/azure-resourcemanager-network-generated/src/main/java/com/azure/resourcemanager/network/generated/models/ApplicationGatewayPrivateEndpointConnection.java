@@ -46,14 +46,16 @@ public interface ApplicationGatewayPrivateEndpointConnection {
     PrivateEndpoint privateEndpoint();
 
     /**
-     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
+     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
+     * connection between service consumer and provider.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
     PrivateLinkServiceConnectionState privateLinkServiceConnectionState();
 
     /**
-     * Gets the provisioningState property: The provisioning state of the application gateway private endpoint connection resource.
+     * Gets the provisioningState property: The provisioning state of the application gateway private endpoint
+     * connection resource.
      * 
      * @return the provisioningState value.
      */
@@ -67,7 +69,9 @@ public interface ApplicationGatewayPrivateEndpointConnection {
     String linkIdentifier();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateEndpointConnectionInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateEndpointConnectionInner
+     * object.
      * 
      * @return the inner object.
      */

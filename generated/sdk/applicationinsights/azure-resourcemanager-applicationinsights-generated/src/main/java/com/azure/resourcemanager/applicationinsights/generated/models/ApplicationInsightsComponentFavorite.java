@@ -19,14 +19,16 @@ public interface ApplicationInsightsComponentFavorite {
     String name();
 
     /**
-     * Gets the config property: Configuration of this particular favorite, which are driven by the Azure portal UX. Configuration data is a string containing valid JSON.
+     * Gets the config property: Configuration of this particular favorite, which are driven by the Azure portal UX.
+     * Configuration data is a string containing valid JSON.
      * 
      * @return the config value.
      */
     String config();
 
     /**
-     * Gets the version property: This instance's version of the data model. This can change as new features are added that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
+     * Gets the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
      * 
      * @return the version value.
      */
@@ -40,7 +42,8 @@ public interface ApplicationInsightsComponentFavorite {
     String favoriteId();
 
     /**
-     * Gets the favoriteType property: Enum indicating if this favorite definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Gets the favoriteType property: Enum indicating if this favorite definition is owned by a specific user or is
+     * shared between all users with access to the Application Insights component.
      * 
      * @return the favoriteType value.
      */
@@ -54,7 +57,8 @@ public interface ApplicationInsightsComponentFavorite {
     String sourceType();
 
     /**
-     * Gets the timeModified property: Date and time in UTC of the last modification that was made to this favorite definition.
+     * Gets the timeModified property: Date and time in UTC of the last modification that was made to this favorite
+     * definition.
      * 
      * @return the timeModified value.
      */
@@ -75,7 +79,8 @@ public interface ApplicationInsightsComponentFavorite {
     String category();
 
     /**
-     * Gets the isGeneratedFromTemplate property: Flag denoting wether or not this favorite was generated from a template.
+     * Gets the isGeneratedFromTemplate property: Flag denoting wether or not this favorite was generated from a
+     * template.
      * 
      * @return the isGeneratedFromTemplate value.
      */
@@ -89,7 +94,9 @@ public interface ApplicationInsightsComponentFavorite {
     String userId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentFavoriteInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.applicationinsights.generated.fluent.models.ApplicationInsightsComponentFavoriteInner
+     * object.
      * 
      * @return the inner object.
      */

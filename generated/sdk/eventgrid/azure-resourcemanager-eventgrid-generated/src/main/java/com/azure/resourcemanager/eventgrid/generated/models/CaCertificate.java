@@ -122,7 +122,8 @@ public interface CaCertificate {
         }
 
         /**
-         * The stage of the CaCertificate definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the CaCertificate definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithEncodedCertificate {
             /**
@@ -159,7 +160,8 @@ public interface CaCertificate {
          */
         interface WithEncodedCertificate {
             /**
-             * Specifies the encodedCertificate property: Base64 encoded PEM (Privacy Enhanced Mail) format certificate data..
+             * Specifies the encodedCertificate property: Base64 encoded PEM (Privacy Enhanced Mail) format certificate
+             * data..
              * 
              * @param encodedCertificate Base64 encoded PEM (Privacy Enhanced Mail) format certificate data.
              * @return the next definition stage.
@@ -217,7 +219,8 @@ public interface CaCertificate {
          */
         interface WithEncodedCertificate {
             /**
-             * Specifies the encodedCertificate property: Base64 encoded PEM (Privacy Enhanced Mail) format certificate data..
+             * Specifies the encodedCertificate property: Base64 encoded PEM (Privacy Enhanced Mail) format certificate
+             * data..
              * 
              * @param encodedCertificate Base64 encoded PEM (Privacy Enhanced Mail) format certificate data.
              * @return the next definition stage.

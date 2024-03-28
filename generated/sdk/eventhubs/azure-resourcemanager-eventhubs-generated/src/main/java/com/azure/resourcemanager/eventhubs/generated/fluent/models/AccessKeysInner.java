@@ -70,7 +70,8 @@ public final class AccessKeysInner {
     }
 
     /**
-     * Get the secondaryConnectionString property: Secondary connection string of the created namespace AuthorizationRule.
+     * Get the secondaryConnectionString property: Secondary connection string of the created namespace
+     * AuthorizationRule.
      * 
      * @return the secondaryConnectionString value.
      */
@@ -88,7 +89,7 @@ public final class AccessKeysInner {
     }
 
     /**
-     * Get the aliasSecondaryConnectionString property: Secondary  connection string of the alias if GEO DR is enabled.
+     * Get the aliasSecondaryConnectionString property: Secondary connection string of the alias if GEO DR is enabled.
      * 
      * @return the aliasSecondaryConnectionString value.
      */

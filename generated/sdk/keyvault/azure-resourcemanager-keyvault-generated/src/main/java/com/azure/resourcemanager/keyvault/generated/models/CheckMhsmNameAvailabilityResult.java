@@ -11,14 +11,16 @@ import com.azure.resourcemanager.keyvault.generated.fluent.models.CheckMhsmNameA
  */
 public interface CheckMhsmNameAvailabilityResult {
     /**
-     * Gets the nameAvailable property: A boolean value that indicates whether the name is available for you to use. If true, the name is available. If false, the name has already been taken or is invalid and cannot be used.
+     * Gets the nameAvailable property: A boolean value that indicates whether the name is available for you to use. If
+     * true, the name is available. If false, the name has already been taken or is invalid and cannot be used.
      * 
      * @return the nameAvailable value.
      */
     Boolean nameAvailable();
 
     /**
-     * Gets the reason property: The reason that a managed hsm name could not be used. The reason element is only returned if NameAvailable is false.
+     * Gets the reason property: The reason that a managed hsm name could not be used. The reason element is only
+     * returned if NameAvailable is false.
      * 
      * @return the reason value.
      */
@@ -32,7 +34,8 @@ public interface CheckMhsmNameAvailabilityResult {
     String message();
 
     /**
-     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.CheckMhsmNameAvailabilityResultInner object.
+     * Gets the inner com.azure.resourcemanager.keyvault.generated.fluent.models.CheckMhsmNameAvailabilityResultInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -91,7 +91,8 @@ public final class AutoscaleProfile {
     }
 
     /**
-     * Get the rules property: the collection of rules that provide the triggers and parameters for the scaling action. A maximum of 10 rules can be specified.
+     * Get the rules property: the collection of rules that provide the triggers and parameters for the scaling action.
+     * A maximum of 10 rules can be specified.
      * 
      * @return the rules value.
      */
@@ -100,7 +101,8 @@ public final class AutoscaleProfile {
     }
 
     /**
-     * Set the rules property: the collection of rules that provide the triggers and parameters for the scaling action. A maximum of 10 rules can be specified.
+     * Set the rules property: the collection of rules that provide the triggers and parameters for the scaling action.
+     * A maximum of 10 rules can be specified.
      * 
      * @param rules the rules value to set.
      * @return the AutoscaleProfile object itself.
@@ -111,7 +113,8 @@ public final class AutoscaleProfile {
     }
 
     /**
-     * Get the fixedDate property: the specific date-time for the profile. This element is not used if the Recurrence element is used.
+     * Get the fixedDate property: the specific date-time for the profile. This element is not used if the Recurrence
+     * element is used.
      * 
      * @return the fixedDate value.
      */
@@ -120,7 +123,8 @@ public final class AutoscaleProfile {
     }
 
     /**
-     * Set the fixedDate property: the specific date-time for the profile. This element is not used if the Recurrence element is used.
+     * Set the fixedDate property: the specific date-time for the profile. This element is not used if the Recurrence
+     * element is used.
      * 
      * @param fixedDate the fixedDate value to set.
      * @return the AutoscaleProfile object itself.
@@ -131,7 +135,8 @@ public final class AutoscaleProfile {
     }
 
     /**
-     * Get the recurrence property: the repeating times at which this profile begins. This element is not used if the FixedDate element is used.
+     * Get the recurrence property: the repeating times at which this profile begins. This element is not used if the
+     * FixedDate element is used.
      * 
      * @return the recurrence value.
      */
@@ -140,7 +145,8 @@ public final class AutoscaleProfile {
     }
 
     /**
-     * Set the recurrence property: the repeating times at which this profile begins. This element is not used if the FixedDate element is used.
+     * Set the recurrence property: the repeating times at which this profile begins. This element is not used if the
+     * FixedDate element is used.
      * 
      * @param recurrence the recurrence value to set.
      * @return the AutoscaleProfile object itself.
@@ -157,18 +163,18 @@ public final class AutoscaleProfile {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model AutoscaleProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model AutoscaleProfile"));
         }
         if (capacity() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property capacity in model AutoscaleProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property capacity in model AutoscaleProfile"));
         } else {
             capacity().validate();
         }
         if (rules() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property rules in model AutoscaleProfile"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property rules in model AutoscaleProfile"));
         } else {
             rules().forEach(e -> e.validate());
         }

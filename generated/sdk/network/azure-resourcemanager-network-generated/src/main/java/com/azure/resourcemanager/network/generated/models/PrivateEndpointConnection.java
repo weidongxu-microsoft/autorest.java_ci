@@ -18,7 +18,8 @@ public interface PrivateEndpointConnection {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -46,7 +47,8 @@ public interface PrivateEndpointConnection {
     PrivateEndpoint privateEndpoint();
 
     /**
-     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
+     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
+     * connection between service consumer and provider.
      * 
      * @return the privateLinkServiceConnectionState value.
      */

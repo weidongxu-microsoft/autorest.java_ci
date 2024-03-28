@@ -594,7 +594,8 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
      * @param serializerAdapter The serializer to serialize an object into a string.
      * @param defaultPollInterval The default poll interval for long-running operation.
      * @param environment The Azure environment.
-     * @param subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
+     * @param subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g.
+     * 00000000-0000-0000-0000-000000000000).
      * @param endpoint server parameter.
      */
     WebSiteManagementClientImpl(HttpPipeline httpPipeline, SerializerAdapter serializerAdapter,

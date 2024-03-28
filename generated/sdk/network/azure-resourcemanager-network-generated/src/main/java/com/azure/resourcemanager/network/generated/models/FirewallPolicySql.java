@@ -25,7 +25,8 @@ public final class FirewallPolicySql {
     }
 
     /**
-     * Get the allowSqlRedirect property: A flag to indicate if SQL Redirect traffic filtering is enabled. Turning on the flag requires no rule using port 11000-11999.
+     * Get the allowSqlRedirect property: A flag to indicate if SQL Redirect traffic filtering is enabled. Turning on
+     * the flag requires no rule using port 11000-11999.
      * 
      * @return the allowSqlRedirect value.
      */
@@ -34,7 +35,8 @@ public final class FirewallPolicySql {
     }
 
     /**
-     * Set the allowSqlRedirect property: A flag to indicate if SQL Redirect traffic filtering is enabled. Turning on the flag requires no rule using port 11000-11999.
+     * Set the allowSqlRedirect property: A flag to indicate if SQL Redirect traffic filtering is enabled. Turning on
+     * the flag requires no rule using port 11000-11999.
      * 
      * @param allowSqlRedirect the allowSqlRedirect value to set.
      * @return the FirewallPolicySql object itself.

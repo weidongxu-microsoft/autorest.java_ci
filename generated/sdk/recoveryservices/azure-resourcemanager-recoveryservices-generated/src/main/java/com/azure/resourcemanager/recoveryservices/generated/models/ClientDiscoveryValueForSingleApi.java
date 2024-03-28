@@ -25,7 +25,8 @@ public interface ClientDiscoveryValueForSingleApi {
     ClientDiscoveryDisplay display();
 
     /**
-     * Gets the origin property: The intended executor of the operation;governs the display of the operation in the RBAC UX and the audit logs UX.
+     * Gets the origin property: The intended executor of the operation;governs the display of the operation in the RBAC
+     * UX and the audit logs UX.
      * 
      * @return the origin value.
      */
@@ -39,7 +40,8 @@ public interface ClientDiscoveryValueForSingleApi {
     ClientDiscoveryForProperties properties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.ClientDiscoveryValueForSingleApiInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.recoveryservices.generated.fluent.models.ClientDiscoveryValueForSingleApiInner object.
      * 
      * @return the inner object.
      */

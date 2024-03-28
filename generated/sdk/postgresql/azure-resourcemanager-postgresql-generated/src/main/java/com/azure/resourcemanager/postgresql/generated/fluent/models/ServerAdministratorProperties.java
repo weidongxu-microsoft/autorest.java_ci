@@ -132,20 +132,24 @@ public final class ServerAdministratorProperties {
      */
     public void validate() {
         if (administratorType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property administratorType in model ServerAdministratorProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property administratorType in model ServerAdministratorProperties"));
         }
         if (login() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property login in model ServerAdministratorProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property login in model ServerAdministratorProperties"));
         }
         if (sid() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sid in model ServerAdministratorProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sid in model ServerAdministratorProperties"));
         }
         if (tenantId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property tenantId in model ServerAdministratorProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property tenantId in model ServerAdministratorProperties"));
         }
     }
 

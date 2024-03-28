@@ -59,7 +59,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientConsumerGroups to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for EventHubManagementClientConsumerGroups to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
@@ -125,7 +126,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return single item in List or Get Consumer group operation along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -177,7 +179,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return single item in List or Get Consumer group operation along with {@link Response} on successful completion of {@link Mono}.
+     * @return single item in List or Get Consumer group operation along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -432,7 +435,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group along with {@link Response} on successful completion of {@link Mono}.
+     * @return a description for the specified consumer group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> getWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -478,7 +482,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a description for the specified consumer group along with {@link Response} on successful completion of {@link Mono}.
+     * @return a description for the specified consumer group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ConsumerGroupInner>> getWithResponseAsync(String resourceGroupName, String namespaceName,
@@ -569,17 +574,21 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the consumer groups in a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the consumer groups in a Namespace along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubSinglePageAsync(String resourceGroupName,
@@ -612,18 +621,22 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the consumer groups in a Namespace along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the consumer groups in a Namespace along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubSinglePageAsync(String resourceGroupName,
@@ -656,12 +669,15 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -677,7 +693,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -698,12 +715,15 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -720,7 +740,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
@@ -739,12 +760,15 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
     }
 
     /**
-     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the Namespace.
+     * Gets all the consumer groups in a Namespace. An empty feed is returned if no consumer group exists in the
+     * Namespace.
      * 
      * @param resourceGroupName Name of the resource group within the azure subscription.
      * @param namespaceName The Namespace name.
      * @param eventHubName The Event Hub name.
-     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting point to use for subsequent calls.
+     * @param skip Skip is only used if a previous operation returned a partial result. If a previous response contains
+     * a nextLink element, the value of the nextLink element will include a skip parameter that specifies a starting
+     * point to use for subsequent calls.
      * @param top May be used to limit the number of results to the most recent N usageDetails.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -768,7 +792,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result to the List Consumer Group operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the result to the List Consumer Group operation along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubNextSinglePageAsync(String nextLink) {
@@ -797,7 +822,8 @@ public final class ConsumerGroupsClientImpl implements ConsumerGroupsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result to the List Consumer Group operation along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the result to the List Consumer Group operation along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ConsumerGroupInner>> listByEventHubNextSinglePageAsync(String nextLink,

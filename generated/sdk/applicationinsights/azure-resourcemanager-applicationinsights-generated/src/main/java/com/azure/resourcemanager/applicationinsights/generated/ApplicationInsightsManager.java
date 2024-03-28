@@ -529,7 +529,8 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets the resource collection API of ComponentLinkedStorageAccountsOperations. It manages ComponentLinkedStorageAccounts.
+     * Gets the resource collection API of ComponentLinkedStorageAccountsOperations. It manages
+     * ComponentLinkedStorageAccounts.
      * 
      * @return Resource collection API of ComponentLinkedStorageAccountsOperations.
      */
@@ -542,7 +543,8 @@ public final class ApplicationInsightsManager {
     }
 
     /**
-     * Gets wrapped service client ApplicationInsightsManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client ApplicationInsightsManagementClient providing direct access to the underlying
+     * auto-generated API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client ApplicationInsightsManagementClient.
      */

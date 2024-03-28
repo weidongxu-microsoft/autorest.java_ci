@@ -81,7 +81,8 @@ public final class PrivateLinkServiceConnectionProperties {
     }
 
     /**
-     * Get the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint should connect to.
+     * Get the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint
+     * should connect to.
      * 
      * @return the groupIds value.
      */
@@ -90,7 +91,8 @@ public final class PrivateLinkServiceConnectionProperties {
     }
 
     /**
-     * Set the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint should connect to.
+     * Set the groupIds property: The ID(s) of the group(s) obtained from the remote resource that this private endpoint
+     * should connect to.
      * 
      * @param groupIds the groupIds value to set.
      * @return the PrivateLinkServiceConnectionProperties object itself.
@@ -101,7 +103,8 @@ public final class PrivateLinkServiceConnectionProperties {
     }
 
     /**
-     * Get the requestMessage property: A message passed to the owner of the remote resource with this connection request. Restricted to 140 chars.
+     * Get the requestMessage property: A message passed to the owner of the remote resource with this connection
+     * request. Restricted to 140 chars.
      * 
      * @return the requestMessage value.
      */
@@ -110,7 +113,8 @@ public final class PrivateLinkServiceConnectionProperties {
     }
 
     /**
-     * Set the requestMessage property: A message passed to the owner of the remote resource with this connection request. Restricted to 140 chars.
+     * Set the requestMessage property: A message passed to the owner of the remote resource with this connection
+     * request. Restricted to 140 chars.
      * 
      * @param requestMessage the requestMessage value to set.
      * @return the PrivateLinkServiceConnectionProperties object itself.
@@ -121,7 +125,8 @@ public final class PrivateLinkServiceConnectionProperties {
     }
 
     /**
-     * Get the privateLinkServiceConnectionState property: A collection of read-only information about the state of the connection to the remote resource.
+     * Get the privateLinkServiceConnectionState property: A collection of read-only information about the state of the
+     * connection to the remote resource.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -130,7 +135,8 @@ public final class PrivateLinkServiceConnectionProperties {
     }
 
     /**
-     * Set the privateLinkServiceConnectionState property: A collection of read-only information about the state of the connection to the remote resource.
+     * Set the privateLinkServiceConnectionState property: A collection of read-only information about the state of the
+     * connection to the remote resource.
      * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateLinkServiceConnectionProperties object itself.

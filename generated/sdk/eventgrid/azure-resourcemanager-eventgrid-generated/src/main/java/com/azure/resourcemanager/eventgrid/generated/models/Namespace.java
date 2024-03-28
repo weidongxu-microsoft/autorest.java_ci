@@ -102,10 +102,11 @@ public interface Namespace {
     TopicSpacesConfiguration topicSpacesConfiguration();
 
     /**
-     * Gets the isZoneRedundant property: This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy capability or not. If this
+     * Gets the isZoneRedundant property: This is an optional property and it allows the user to specify if the
+     * namespace resource supports zone-redundancy capability or not. If this
      * property is not specified explicitly by the user, its default value depends on the following conditions:
-     *     a. For Availability Zones enabled regions - The default property value would be true.
-     *     b. For non-Availability Zones enabled regions - The default property value would be false.
+     * a. For Availability Zones enabled regions - The default property value would be true.
+     * b. For non-Availability Zones enabled regions - The default property value would be false.
      * Once specified, this property cannot be updated.
      * 
      * @return the isZoneRedundant value.
@@ -113,22 +114,27 @@ public interface Namespace {
     Boolean isZoneRedundant();
 
     /**
-     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" /&gt;.
+     * Gets the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it
+     * is enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules"
+     * /&gt;.
      * 
      * @return the publicNetworkAccess value.
      */
     PublicNetworkAccess publicNetworkAccess();
 
     /**
-     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Gets the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs.
+     * Note: These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
     List<InboundIpRule> inboundIpRules();
 
     /**
-     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this namespace. Only TLS version 1.2 is supported.
+     * Gets the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * namespace. Only TLS version 1.2 is supported.
      * 
      * @return the minimumTlsVersionAllowed value.
      */
@@ -214,7 +220,8 @@ public interface Namespace {
         }
 
         /**
-         * The stage of the Namespace definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Namespace definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithIdentity,
             DefinitionStages.WithPrivateEndpointConnections, DefinitionStages.WithTopicsConfiguration,
@@ -307,7 +314,8 @@ public interface Namespace {
          */
         interface WithTopicSpacesConfiguration {
             /**
-             * Specifies the topicSpacesConfiguration property: Topic spaces configuration information for the namespace resource.
+             * Specifies the topicSpacesConfiguration property: Topic spaces configuration information for the namespace
+             * resource.
              * 
              * @param topicSpacesConfiguration Topic spaces configuration information for the namespace resource.
              * @return the next definition stage.
@@ -320,16 +328,18 @@ public interface Namespace {
          */
         interface WithIsZoneRedundant {
             /**
-             * Specifies the isZoneRedundant property: This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy capability or not. If this
+             * Specifies the isZoneRedundant property: This is an optional property and it allows the user to specify if
+             * the namespace resource supports zone-redundancy capability or not. If this
              * property is not specified explicitly by the user, its default value depends on the following conditions:
-             *     a. For Availability Zones enabled regions - The default property value would be true.
-             *     b. For non-Availability Zones enabled regions - The default property value would be false.
+             * a. For Availability Zones enabled regions - The default property value would be true.
+             * b. For non-Availability Zones enabled regions - The default property value would be false.
              * Once specified, this property cannot be updated..
              * 
-             * @param isZoneRedundant This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy capability or not. If this
+             * @param isZoneRedundant This is an optional property and it allows the user to specify if the namespace
+             * resource supports zone-redundancy capability or not. If this
              * property is not specified explicitly by the user, its default value depends on the following conditions:
-             *     a. For Availability Zones enabled regions - The default property value would be true.
-             *     b. For non-Availability Zones enabled regions - The default property value would be false.
+             * a. For Availability Zones enabled regions - The default property value would be true.
+             * b. For non-Availability Zones enabled regions - The default property value would be false.
              * Once specified, this property cannot be updated.
              * @return the next definition stage.
              */
@@ -341,11 +351,17 @@ public interface Namespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules"
+             * /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled.
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules"
+             * /&gt;.
              * @return the next definition stage.
              */
             WithCreate withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -356,9 +372,11 @@ public interface Namespace {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
+             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+             * These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             WithCreate withInboundIpRules(List<InboundIpRule> inboundIpRules);
@@ -369,9 +387,11 @@ public interface Namespace {
          */
         interface WithMinimumTlsVersionAllowed {
             /**
-             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this namespace. Only TLS version 1.2 is supported..
+             * Specifies the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish
+             * to this namespace. Only TLS version 1.2 is supported..
              * 
-             * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this namespace. Only TLS version 1.2 is supported.
+             * @param minimumTlsVersionAllowed Minimum TLS version of the publisher allowed to publish to this
+             * namespace. Only TLS version 1.2 is supported.
              * @return the next definition stage.
              */
             WithCreate withMinimumTlsVersionAllowed(TlsVersion minimumTlsVersionAllowed);
@@ -455,7 +475,8 @@ public interface Namespace {
          */
         interface WithTopicSpacesConfiguration {
             /**
-             * Specifies the topicSpacesConfiguration property: Topic spaces configuration properties that can be updated..
+             * Specifies the topicSpacesConfiguration property: Topic spaces configuration properties that can be
+             * updated..
              * 
              * @param topicSpacesConfiguration Topic spaces configuration properties that can be updated.
              * @return the next definition stage.
@@ -468,11 +489,17 @@ public interface Namespace {
          */
         interface WithPublicNetworkAccess {
             /**
-             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceUpdateParameterProperties.InboundIpRules" /&gt;.
+             * Specifies the publicNetworkAccess property: This determines if traffic is allowed over public network. By
+             * default it is enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceUpdateParameterProperties.InboundIpRules"
+             * /&gt;.
              * 
-             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is enabled. 
-             * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceUpdateParameterProperties.InboundIpRules" /&gt;.
+             * @param publicNetworkAccess This determines if traffic is allowed over public network. By default it is
+             * enabled.
+             * You can further restrict to specific IPs by configuring &lt;seealso
+             * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceUpdateParameterProperties.InboundIpRules"
+             * /&gt;.
              * @return the next definition stage.
              */
             Update withPublicNetworkAccess(PublicNetworkAccess publicNetworkAccess);
@@ -483,9 +510,11 @@ public interface Namespace {
          */
         interface WithInboundIpRules {
             /**
-             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
+             * Specifies the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of
+             * all IPs. Note: These are considered only if PublicNetworkAccess is enabled..
              * 
-             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+             * @param inboundIpRules This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+             * These are considered only if PublicNetworkAccess is enabled.
              * @return the next definition stage.
              */
             Update withInboundIpRules(List<InboundIpRule> inboundIpRules);

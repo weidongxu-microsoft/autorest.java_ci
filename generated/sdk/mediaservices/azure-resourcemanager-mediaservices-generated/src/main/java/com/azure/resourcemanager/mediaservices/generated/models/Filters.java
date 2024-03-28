@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Describes all the filtering operations, such as de-interlacing, rotation etc. that are to be applied to the input media before encoding.
+ * Describes all the filtering operations, such as de-interlacing, rotation etc. that are to be applied to the input
+ * media before encoding.
  */
 @Fluent
 public final class Filters {
@@ -76,7 +77,8 @@ public final class Filters {
     }
 
     /**
-     * Get the rotation property: The rotation, if any, to be applied to the input video, before it is encoded. Default is Auto.
+     * Get the rotation property: The rotation, if any, to be applied to the input video, before it is encoded. Default
+     * is Auto.
      * 
      * @return the rotation value.
      */
@@ -85,7 +87,8 @@ public final class Filters {
     }
 
     /**
-     * Set the rotation property: The rotation, if any, to be applied to the input video, before it is encoded. Default is Auto.
+     * Set the rotation property: The rotation, if any, to be applied to the input video, before it is encoded. Default
+     * is Auto.
      * 
      * @param rotation the rotation value to set.
      * @return the Filters object itself.
@@ -156,7 +159,8 @@ public final class Filters {
     }
 
     /**
-     * Get the overlays property: The properties of overlays to be applied to the input video. These could be audio, image or video overlays.
+     * Get the overlays property: The properties of overlays to be applied to the input video. These could be audio,
+     * image or video overlays.
      * 
      * @return the overlays value.
      */
@@ -165,7 +169,8 @@ public final class Filters {
     }
 
     /**
-     * Set the overlays property: The properties of overlays to be applied to the input video. These could be audio, image or video overlays.
+     * Set the overlays property: The properties of overlays to be applied to the input video. These could be audio,
+     * image or video overlays.
      * 
      * @param overlays the overlays value to set.
      * @return the Filters object itself.

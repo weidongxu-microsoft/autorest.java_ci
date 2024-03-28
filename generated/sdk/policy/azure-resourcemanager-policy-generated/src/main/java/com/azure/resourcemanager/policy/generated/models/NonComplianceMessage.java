@@ -9,7 +9,8 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * A message that describes why a resource is non-compliant with the policy. This is shown in 'deny' error messages and on resource's non-compliant compliance results.
+ * A message that describes why a resource is non-compliant with the policy. This is shown in 'deny' error messages and
+ * on resource's non-compliant compliance results.
  */
 @Fluent
 public final class NonComplianceMessage {
@@ -32,7 +33,8 @@ public final class NonComplianceMessage {
     }
 
     /**
-     * Get the message property: A message that describes why a resource is non-compliant with the policy. This is shown in 'deny' error messages and on resource's non-compliant compliance results.
+     * Get the message property: A message that describes why a resource is non-compliant with the policy. This is shown
+     * in 'deny' error messages and on resource's non-compliant compliance results.
      * 
      * @return the message value.
      */
@@ -41,7 +43,8 @@ public final class NonComplianceMessage {
     }
 
     /**
-     * Set the message property: A message that describes why a resource is non-compliant with the policy. This is shown in 'deny' error messages and on resource's non-compliant compliance results.
+     * Set the message property: A message that describes why a resource is non-compliant with the policy. This is shown
+     * in 'deny' error messages and on resource's non-compliant compliance results.
      * 
      * @param message the message value to set.
      * @return the NonComplianceMessage object itself.
@@ -52,7 +55,9 @@ public final class NonComplianceMessage {
     }
 
     /**
-     * Get the policyDefinitionReferenceId property: The policy definition reference ID within a policy set definition the message is intended for. This is only applicable if the policy assignment assigns a policy set definition. If this is not provided the message applies to all policies assigned by this policy assignment.
+     * Get the policyDefinitionReferenceId property: The policy definition reference ID within a policy set definition
+     * the message is intended for. This is only applicable if the policy assignment assigns a policy set definition. If
+     * this is not provided the message applies to all policies assigned by this policy assignment.
      * 
      * @return the policyDefinitionReferenceId value.
      */
@@ -61,7 +66,9 @@ public final class NonComplianceMessage {
     }
 
     /**
-     * Set the policyDefinitionReferenceId property: The policy definition reference ID within a policy set definition the message is intended for. This is only applicable if the policy assignment assigns a policy set definition. If this is not provided the message applies to all policies assigned by this policy assignment.
+     * Set the policyDefinitionReferenceId property: The policy definition reference ID within a policy set definition
+     * the message is intended for. This is only applicable if the policy assignment assigns a policy set definition. If
+     * this is not provided the message applies to all policies assigned by this policy assignment.
      * 
      * @param policyDefinitionReferenceId the policyDefinitionReferenceId value to set.
      * @return the NonComplianceMessage object itself.
@@ -78,8 +85,8 @@ public final class NonComplianceMessage {
      */
     public void validate() {
         if (message() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property message in model NonComplianceMessage"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property message in model NonComplianceMessage"));
         }
     }
 

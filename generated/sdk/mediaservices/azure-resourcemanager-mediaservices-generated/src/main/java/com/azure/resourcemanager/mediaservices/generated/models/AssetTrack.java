@@ -93,7 +93,8 @@ public interface AssetTrack {
         }
 
         /**
-         * The stage of the AssetTrack definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AssetTrack definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTrack {
             /**
@@ -189,7 +190,10 @@ public interface AssetTrack {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
+     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
+     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
+     * reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -199,7 +203,10 @@ public interface AssetTrack {
     /**
      * Update the track data
      * 
-     * Update the track data. Call this API after any changes are made to the track data stored in the asset container. For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset, viewers will not see the new version of the captions unless this API is called. Note, the changes may not be reflected immediately. CDN cache may also need to be purged if applicable.
+     * Update the track data. Call this API after any changes are made to the track data stored in the asset container.
+     * For example, you have modified the WebVTT captions file in the Azure blob storage container for the asset,
+     * viewers will not see the new version of the captions unless this API is called. Note, the changes may not be
+     * reflected immediately. CDN cache may also need to be purged if applicable.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

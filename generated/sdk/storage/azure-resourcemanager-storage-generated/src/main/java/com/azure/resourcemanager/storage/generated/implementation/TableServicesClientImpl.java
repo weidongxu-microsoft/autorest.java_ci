@@ -54,7 +54,8 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientTableServices to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientTableServices to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -93,8 +94,10 @@ public final class TableServicesClientImpl implements TableServicesClient {
     /**
      * List all table services for the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -127,8 +130,10 @@ public final class TableServicesClientImpl implements TableServicesClient {
     /**
      * List all table services for the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -162,8 +167,10 @@ public final class TableServicesClientImpl implements TableServicesClient {
     /**
      * List all table services for the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -177,8 +184,10 @@ public final class TableServicesClientImpl implements TableServicesClient {
     /**
      * List all table services for the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -194,8 +203,10 @@ public final class TableServicesClientImpl implements TableServicesClient {
     /**
      * List all table services for the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -207,15 +218,20 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules can be specified.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     * CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of a storage account’s Table service along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableServicePropertiesInner>> setServicePropertiesWithResponseAsync(String resourceGroupName,
@@ -250,16 +266,21 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules can be specified.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     * CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of a storage account’s Table service along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableServicePropertiesInner>> setServicePropertiesWithResponseAsync(String resourceGroupName,
@@ -293,11 +314,15 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules can be specified.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     * CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -311,11 +336,15 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules can be specified.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     * CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -329,11 +358,15 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Sets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules can be specified.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param parameters The properties of a storage account’s Table service, only properties for Storage Analytics and
+     * CORS (Cross-Origin Resource Sharing) rules can be specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -346,14 +379,18 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableServicePropertiesInner>> getServicePropertiesWithResponseAsync(String resourceGroupName,
@@ -383,15 +420,19 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<TableServicePropertiesInner>> getServicePropertiesWithResponseAsync(String resourceGroupName,
@@ -419,14 +460,18 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules on successful completion of {@link Mono}.
+     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<TableServicePropertiesInner> getServicePropertiesAsync(String resourceGroupName, String accountName) {
@@ -435,15 +480,19 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules along with {@link Response}.
+     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<TableServicePropertiesInner> getServicePropertiesWithResponse(String resourceGroupName,
@@ -452,14 +501,18 @@ public final class TableServicesClientImpl implements TableServicesClient {
     }
 
     /**
-     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * Gets the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS (Cross-Origin Resource Sharing) rules.
+     * @return the properties of a storage account’s Table service, including properties for Storage Analytics and CORS
+     * (Cross-Origin Resource Sharing) rules.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public TableServicePropertiesInner getServiceProperties(String resourceGroupName, String accountName) {

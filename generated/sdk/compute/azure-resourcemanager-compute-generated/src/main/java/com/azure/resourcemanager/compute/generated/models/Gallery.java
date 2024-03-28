@@ -172,7 +172,8 @@ public interface Gallery {
         }
 
         /**
-         * The stage of the Gallery definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Gallery definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithDescription, DefinitionStages.WithIdentifier,
@@ -211,7 +212,8 @@ public interface Gallery {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this Shared Image Gallery resource. This property is updatable..
+             * Specifies the description property: The description of this Shared Image Gallery resource. This property
+             * is updatable..
              * 
              * @param description The description of this Shared Image Gallery resource. This property is updatable.
              * @return the next definition stage.
@@ -250,7 +252,8 @@ public interface Gallery {
          */
         interface WithSoftDeletePolicy {
             /**
-             * Specifies the softDeletePolicy property: Contains information about the soft deletion policy of the gallery..
+             * Specifies the softDeletePolicy property: Contains information about the soft deletion policy of the
+             * gallery..
              * 
              * @param softDeletePolicy Contains information about the soft deletion policy of the gallery.
              * @return the next definition stage.
@@ -309,7 +312,8 @@ public interface Gallery {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this Shared Image Gallery resource. This property is updatable..
+             * Specifies the description property: The description of this Shared Image Gallery resource. This property
+             * is updatable..
              * 
              * @param description The description of this Shared Image Gallery resource. This property is updatable.
              * @return the next definition stage.
@@ -348,7 +352,8 @@ public interface Gallery {
          */
         interface WithSoftDeletePolicy {
             /**
-             * Specifies the softDeletePolicy property: Contains information about the soft deletion policy of the gallery..
+             * Specifies the softDeletePolicy property: Contains information about the soft deletion policy of the
+             * gallery..
              * 
              * @param softDeletePolicy Contains information about the soft deletion policy of the gallery.
              * @return the next definition stage.

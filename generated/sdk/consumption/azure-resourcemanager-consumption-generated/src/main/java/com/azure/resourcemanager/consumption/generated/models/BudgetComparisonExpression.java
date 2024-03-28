@@ -105,16 +105,19 @@ public final class BudgetComparisonExpression {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model BudgetComparisonExpression"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property name in model BudgetComparisonExpression"));
         }
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model BudgetComparisonExpression"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property operator in model BudgetComparisonExpression"));
         }
         if (values() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property values in model BudgetComparisonExpression"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property values in model BudgetComparisonExpression"));
         }
     }
 

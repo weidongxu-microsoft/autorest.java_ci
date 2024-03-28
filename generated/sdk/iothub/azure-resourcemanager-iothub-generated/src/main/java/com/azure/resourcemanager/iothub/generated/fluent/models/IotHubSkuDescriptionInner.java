@@ -95,14 +95,15 @@ public final class IotHubSkuDescriptionInner {
      */
     public void validate() {
         if (sku() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sku in model IotHubSkuDescriptionInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sku in model IotHubSkuDescriptionInner"));
         } else {
             sku().validate();
         }
         if (capacity() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property capacity in model IotHubSkuDescriptionInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property capacity in model IotHubSkuDescriptionInner"));
         } else {
             capacity().validate();
         }

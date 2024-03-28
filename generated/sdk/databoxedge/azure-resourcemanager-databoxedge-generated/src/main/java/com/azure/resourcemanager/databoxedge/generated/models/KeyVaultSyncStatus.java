@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * For changing or to initiate the resync to key-vault set the status to KeyVaultSyncPending, rest of the status will not be applicable.
+ * For changing or to initiate the resync to key-vault set the status to KeyVaultSyncPending, rest of the status will
+ * not be applicable.
  */
 public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncStatus> {
     /**

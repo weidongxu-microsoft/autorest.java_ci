@@ -114,7 +114,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the organizationalUnitDN property: The organizational unit within the Active Directory to place the cluster and service accounts.
+     * Get the organizationalUnitDN property: The organizational unit within the Active Directory to place the cluster
+     * and service accounts.
      * 
      * @return the organizationalUnitDN value.
      */
@@ -123,7 +124,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the organizationalUnitDN property: The organizational unit within the Active Directory to place the cluster and service accounts.
+     * Set the organizationalUnitDN property: The organizational unit within the Active Directory to place the cluster
+     * and service accounts.
      * 
      * @param organizationalUnitDN the organizationalUnitDN value to set.
      * @return the SecurityProfile object itself.
@@ -234,7 +236,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Get the msiResourceId property: User assigned identity that has permissions to read and create cluster-related artifacts in the user's AADDS.
+     * Get the msiResourceId property: User assigned identity that has permissions to read and create cluster-related
+     * artifacts in the user's AADDS.
      * 
      * @return the msiResourceId value.
      */
@@ -243,7 +246,8 @@ public final class SecurityProfile {
     }
 
     /**
-     * Set the msiResourceId property: User assigned identity that has permissions to read and create cluster-related artifacts in the user's AADDS.
+     * Set the msiResourceId property: User assigned identity that has permissions to read and create cluster-related
+     * artifacts in the user's AADDS.
      * 
      * @param msiResourceId the msiResourceId value to set.
      * @return the SecurityProfile object itself.

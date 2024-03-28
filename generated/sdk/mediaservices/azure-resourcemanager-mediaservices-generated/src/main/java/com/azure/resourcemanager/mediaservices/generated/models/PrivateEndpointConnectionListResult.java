@@ -19,7 +19,8 @@ public interface PrivateEndpointConnectionListResult {
     List<PrivateEndpointConnection> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateEndpointConnectionListResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateEndpointConnectionListResultInner object.
      * 
      * @return the inner object.
      */

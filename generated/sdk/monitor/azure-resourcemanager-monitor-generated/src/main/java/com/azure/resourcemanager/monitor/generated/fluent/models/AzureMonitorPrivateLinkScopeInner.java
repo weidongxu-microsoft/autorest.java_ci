@@ -56,7 +56,9 @@ public final class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesRe
     }
 
     /**
-     * Get the provisioningState property: Current state of this PrivateLinkScope: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Provisioning ,Succeeded, Canceled and Failed.
+     * Get the provisioningState property: Current state of this PrivateLinkScope: whether or not is has been
+     * provisioned within the resource group it is defined. Users cannot change this value but are able to read from it.
+     * Values will include Provisioning ,Succeeded, Canceled and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -82,8 +84,9 @@ public final class AzureMonitorPrivateLinkScopeInner extends PrivateLinkScopesRe
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model AzureMonitorPrivateLinkScopeInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model AzureMonitorPrivateLinkScopeInner"));
         } else {
             innerProperties().validate();
         }

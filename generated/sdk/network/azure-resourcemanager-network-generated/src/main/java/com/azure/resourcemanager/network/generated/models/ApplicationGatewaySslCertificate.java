@@ -147,7 +147,8 @@ public final class ApplicationGatewaySslCertificate extends SubResource {
     }
 
     /**
-     * Get the publicCertData property: Base-64 encoded Public cert data corresponding to pfx specified in data. Only applicable in GET request.
+     * Get the publicCertData property: Base-64 encoded Public cert data corresponding to pfx specified in data. Only
+     * applicable in GET request.
      * 
      * @return the publicCertData value.
      */
@@ -156,7 +157,8 @@ public final class ApplicationGatewaySslCertificate extends SubResource {
     }
 
     /**
-     * Get the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate' object stored in KeyVault.
+     * Get the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate'
+     * object stored in KeyVault.
      * 
      * @return the keyVaultSecretId value.
      */
@@ -165,7 +167,8 @@ public final class ApplicationGatewaySslCertificate extends SubResource {
     }
 
     /**
-     * Set the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate' object stored in KeyVault.
+     * Set the keyVaultSecretId property: Secret Id of (base-64 encoded unencrypted pfx) 'Secret' or 'Certificate'
+     * object stored in KeyVault.
      * 
      * @param keyVaultSecretId the keyVaultSecretId value to set.
      * @return the ApplicationGatewaySslCertificate object itself.

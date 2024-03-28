@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -17,6 +18,14 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction")
 @Fluent
 public final class AlertingAction extends Action {
+    /*
+     * Specifies the action. Supported values - AlertingAction, LogToMetricAction
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType
+        = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction";
+
     /*
      * Severity of the alert
      */
@@ -45,8 +54,16 @@ public final class AlertingAction extends Action {
      * Creates an instance of AlertingAction class.
      */
     public AlertingAction() {
-        withOdataType(
-            "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction");
+    }
+
+    /**
+     * Get the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -138,15 +155,15 @@ public final class AlertingAction extends Action {
     public void validate() {
         super.validate();
         if (severity() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property severity in model AlertingAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property severity in model AlertingAction"));
         }
         if (aznsAction() != null) {
             aznsAction().validate();
         }
         if (trigger() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property trigger in model AlertingAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property trigger in model AlertingAction"));
         } else {
             trigger().validate();
         }

@@ -54,7 +54,8 @@ public final class DedicatedHostListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of dedicated hosts. Call ListNext() with this URI to fetch the next page of dedicated hosts.
+     * Get the nextLink property: The URI to fetch the next page of dedicated hosts. Call ListNext() with this URI to
+     * fetch the next page of dedicated hosts.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class DedicatedHostListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of dedicated hosts. Call ListNext() with this URI to fetch the next page of dedicated hosts.
+     * Set the nextLink property: The URI to fetch the next page of dedicated hosts. Call ListNext() with this URI to
+     * fetch the next page of dedicated hosts.
      * 
      * @param nextLink the nextLink value to set.
      * @return the DedicatedHostListResult object itself.
@@ -80,8 +82,8 @@ public final class DedicatedHostListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model DedicatedHostListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model DedicatedHostListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

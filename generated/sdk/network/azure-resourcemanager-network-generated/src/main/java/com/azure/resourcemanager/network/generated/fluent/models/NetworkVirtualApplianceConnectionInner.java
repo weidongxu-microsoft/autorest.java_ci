@@ -197,7 +197,8 @@ public final class NetworkVirtualApplianceConnectionInner extends SubResource {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -206,7 +207,8 @@ public final class NetworkVirtualApplianceConnectionInner extends SubResource {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the NetworkVirtualApplianceConnectionInner object itself.

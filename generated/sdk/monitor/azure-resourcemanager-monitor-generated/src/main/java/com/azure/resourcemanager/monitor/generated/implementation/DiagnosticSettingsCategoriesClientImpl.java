@@ -52,7 +52,8 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
     }
 
     /**
-     * The interface defining all the services for MonitorClientDiagnosticSettingsCategories to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MonitorClientDiagnosticSettingsCategories to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientDiagnos")
@@ -83,7 +84,8 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic settings category for the specified resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the diagnostic settings category for the specified resource along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsCategoryResourceInner>> getWithResponseAsync(String resourceUri,
@@ -115,7 +117,8 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the diagnostic settings category for the specified resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return the diagnostic settings category for the specified resource along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsCategoryResourceInner>> getWithResponseAsync(String resourceUri,
@@ -190,7 +193,8 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents a collection of diagnostic setting category resources along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>>
@@ -217,7 +221,8 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents a collection of diagnostic setting category resources along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticSettingsCategoryResourceCollectionInner>> listWithResponseAsync(String resourceUri,
@@ -242,7 +247,8 @@ public final class DiagnosticSettingsCategoriesClientImpl implements DiagnosticS
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of diagnostic setting category resources on successful completion of {@link Mono}.
+     * @return represents a collection of diagnostic setting category resources on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<DiagnosticSettingsCategoryResourceCollectionInner> listAsync(String resourceUri) {

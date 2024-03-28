@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /**
- * The configuration settings of each of the identity providers used to configure App Service Authentication/Authorization.
+ * The configuration settings of each of the identity providers used to configure App Service
+ * Authentication/Authorization.
  */
 @Fluent
 public final class IdentityProviders {
@@ -237,7 +238,8 @@ public final class IdentityProviders {
     }
 
     /**
-     * Get the customOpenIdConnectProviders property: The map of the name of the alias of each custom Open ID Connect provider to the
+     * Get the customOpenIdConnectProviders property: The map of the name of the alias of each custom Open ID Connect
+     * provider to the
      * configuration settings of the custom Open ID Connect provider.
      * 
      * @return the customOpenIdConnectProviders value.
@@ -247,7 +249,8 @@ public final class IdentityProviders {
     }
 
     /**
-     * Set the customOpenIdConnectProviders property: The map of the name of the alias of each custom Open ID Connect provider to the
+     * Set the customOpenIdConnectProviders property: The map of the name of the alias of each custom Open ID Connect
+     * provider to the
      * configuration settings of the custom Open ID Connect provider.
      * 
      * @param customOpenIdConnectProviders the customOpenIdConnectProviders value to set.

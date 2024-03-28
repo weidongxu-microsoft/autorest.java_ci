@@ -66,7 +66,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualNetworkTaps to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualNetworkTaps to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -350,7 +351,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about the specified virtual network tap along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkTapInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -387,7 +389,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about the specified virtual network tap along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about the specified virtual network tap along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualNetworkTapInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -836,7 +839,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listSinglePageAsync() {
@@ -865,7 +869,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listSinglePageAsync(Context context) {
@@ -945,7 +950,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -979,7 +985,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the VirtualNetworkTaps in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1075,7 +1082,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1104,7 +1112,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listAllNextSinglePageAsync(String nextLink, Context context) {
@@ -1131,7 +1140,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1161,7 +1171,8 @@ public final class VirtualNetworkTapsClientImpl implements VirtualNetworkTapsCli
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListVirtualNetworkTap API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkTapInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

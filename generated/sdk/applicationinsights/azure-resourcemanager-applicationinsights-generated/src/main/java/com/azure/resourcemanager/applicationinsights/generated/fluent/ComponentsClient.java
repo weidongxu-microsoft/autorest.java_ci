@@ -24,7 +24,8 @@ public interface ComponentsClient {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Application Insights components within a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Application Insights components within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationInsightsComponentInner> list();
@@ -36,7 +37,8 @@ public interface ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Application Insights components within a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of all Application Insights components within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationInsightsComponentInner> list(Context context);
@@ -48,7 +50,8 @@ public interface ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Application Insights components within a resource group as paginated response with {@link PagedIterable}.
+     * @return a list of Application Insights components within a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationInsightsComponentInner> listByResourceGroup(String resourceGroupName);
@@ -61,7 +64,8 @@ public interface ComponentsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Application Insights components within a resource group as paginated response with {@link PagedIterable}.
+     * @return a list of Application Insights components within a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ApplicationInsightsComponentInner> listByResourceGroup(String resourceGroupName, Context context);
@@ -121,7 +125,8 @@ public interface ComponentsClient {
     ApplicationInsightsComponentInner getByResourceGroup(String resourceGroupName, String resourceName);
 
     /**
-     * Creates (or updates) an Application Insights component. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) an Application Insights component. Note: You cannot specify a different value for
+     * InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
@@ -137,7 +142,8 @@ public interface ComponentsClient {
         String resourceName, ApplicationInsightsComponentInner insightProperties, Context context);
 
     /**
-     * Creates (or updates) an Application Insights component. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
+     * Creates (or updates) an Application Insights component. Note: You cannot specify a different value for
+     * InstrumentationKey nor AppId in the Put operation.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
@@ -185,7 +191,10 @@ public interface ComponentsClient {
     /**
      * Purges data in an Application Insights component by a set of user-defined filters.
      * 
-     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the execution of purge requests by sending a single command whose predicate includes all user identities that require purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge request to verify that the results are expected.
+     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the
+     * execution of purge requests by sending a single command whose predicate includes all user identities that require
+     * purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge
+     * request to verify that the results are expected.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.
@@ -203,7 +212,10 @@ public interface ComponentsClient {
     /**
      * Purges data in an Application Insights component by a set of user-defined filters.
      * 
-     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the execution of purge requests by sending a single command whose predicate includes all user identities that require purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge request to verify that the results are expected.
+     * In order to manage system resources, purge requests are throttled at 50 requests per hour. You should batch the
+     * execution of purge requests by sending a single command whose predicate includes all user identities that require
+     * purging. Use the in operator to specify multiple identities. You should run the query prior to using for a purge
+     * request to verify that the results are expected.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param resourceName The name of the Application Insights component resource.

@@ -76,7 +76,9 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Get the lun property: The logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto assigned.
+     * Get the lun property: The logical unit number of the data disk. This value is used to identify data disks within
+     * the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto
+     * assigned.
      * 
      * @return the lun value.
      */
@@ -85,7 +87,9 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Set the lun property: The logical unit number of the data disk. This value is used to identify data disks within the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto assigned.
+     * Set the lun property: The logical unit number of the data disk. This value is used to identify data disks within
+     * the VM and therefore must be unique for each data disk attached to a VM. If not specified, lun would be auto
+     * assigned.
      * 
      * @param lun the lun value to set.
      * @return the DataDisksToAttach object itself.
@@ -96,7 +100,8 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Get the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,** **ReadWrite.** The defaulting behavior is: **None for Standard storage. ReadOnly for Premium storage.**.
+     * Get the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,**
+     * **ReadWrite.** The defaulting behavior is: **None for Standard storage. ReadOnly for Premium storage.**.
      * 
      * @return the caching value.
      */
@@ -105,7 +110,8 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Set the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,** **ReadWrite.** The defaulting behavior is: **None for Standard storage. ReadOnly for Premium storage.**.
+     * Set the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,**
+     * **ReadWrite.** The defaulting behavior is: **None for Standard storage. ReadOnly for Premium storage.**.
      * 
      * @param caching the caching value to set.
      * @return the DataDisksToAttach object itself.
@@ -116,7 +122,9 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Get the deleteOption property: Specifies whether data disk should be deleted or detached upon VM deletion. Possible values are: **Delete.** If this value is used, the data disk is deleted when VM is deleted. **Detach.** If this value is used, the data disk is retained after VM is deleted. The default value is set to **Detach**.
+     * Get the deleteOption property: Specifies whether data disk should be deleted or detached upon VM deletion.
+     * Possible values are: **Delete.** If this value is used, the data disk is deleted when VM is deleted. **Detach.**
+     * If this value is used, the data disk is retained after VM is deleted. The default value is set to **Detach**.
      * 
      * @return the deleteOption value.
      */
@@ -125,7 +133,9 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Set the deleteOption property: Specifies whether data disk should be deleted or detached upon VM deletion. Possible values are: **Delete.** If this value is used, the data disk is deleted when VM is deleted. **Detach.** If this value is used, the data disk is retained after VM is deleted. The default value is set to **Detach**.
+     * Set the deleteOption property: Specifies whether data disk should be deleted or detached upon VM deletion.
+     * Possible values are: **Delete.** If this value is used, the data disk is deleted when VM is deleted. **Detach.**
+     * If this value is used, the data disk is retained after VM is deleted. The default value is set to **Detach**.
      * 
      * @param deleteOption the deleteOption value to set.
      * @return the DataDisksToAttach object itself.
@@ -136,7 +146,8 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk.
+     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed disk.
      * 
      * @return the diskEncryptionSet value.
      */
@@ -145,7 +156,8 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk.
+     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed disk.
      * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the DataDisksToAttach object itself.
@@ -156,7 +168,8 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Get the writeAcceleratorEnabled property: Specifies whether writeAccelerator should be enabled or disabled on the disk.
+     * Get the writeAcceleratorEnabled property: Specifies whether writeAccelerator should be enabled or disabled on the
+     * disk.
      * 
      * @return the writeAcceleratorEnabled value.
      */
@@ -165,7 +178,8 @@ public final class DataDisksToAttach {
     }
 
     /**
-     * Set the writeAcceleratorEnabled property: Specifies whether writeAccelerator should be enabled or disabled on the disk.
+     * Set the writeAcceleratorEnabled property: Specifies whether writeAccelerator should be enabled or disabled on the
+     * disk.
      * 
      * @param writeAcceleratorEnabled the writeAcceleratorEnabled value to set.
      * @return the DataDisksToAttach object itself.
@@ -182,8 +196,8 @@ public final class DataDisksToAttach {
      */
     public void validate() {
         if (diskId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property diskId in model DataDisksToAttach"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property diskId in model DataDisksToAttach"));
         }
         if (diskEncryptionSet() != null) {
             diskEncryptionSet().validate();

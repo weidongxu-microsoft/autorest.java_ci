@@ -51,7 +51,8 @@ public final class SshPublicKey {
     }
 
     /**
-     * Get the key property: Ssh public key base64 encoded. The format should be: '&lt;keyType&gt; &lt;keyData&gt;', e.g. ssh-rsa AAAABBBB.
+     * Get the key property: Ssh public key base64 encoded. The format should be: '&lt;keyType&gt; &lt;keyData&gt;',
+     * e.g. ssh-rsa AAAABBBB.
      * 
      * @return the key value.
      */
@@ -60,7 +61,8 @@ public final class SshPublicKey {
     }
 
     /**
-     * Set the key property: Ssh public key base64 encoded. The format should be: '&lt;keyType&gt; &lt;keyData&gt;', e.g. ssh-rsa AAAABBBB.
+     * Set the key property: Ssh public key base64 encoded. The format should be: '&lt;keyType&gt; &lt;keyData&gt;',
+     * e.g. ssh-rsa AAAABBBB.
      * 
      * @param key the key value to set.
      * @return the SshPublicKey object itself.

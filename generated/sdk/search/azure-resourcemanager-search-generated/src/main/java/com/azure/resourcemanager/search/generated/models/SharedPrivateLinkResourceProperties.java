@@ -115,7 +115,9 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Get the resourceRegion property: Optional. Can be used to specify the Azure Resource Manager location of the resource for which a shared private link is being created. This is only required for those resources whose DNS configuration are regional (such as Azure Kubernetes Service).
+     * Get the resourceRegion property: Optional. Can be used to specify the Azure Resource Manager location of the
+     * resource for which a shared private link is being created. This is only required for those resources whose DNS
+     * configuration are regional (such as Azure Kubernetes Service).
      * 
      * @return the resourceRegion value.
      */
@@ -124,7 +126,9 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Set the resourceRegion property: Optional. Can be used to specify the Azure Resource Manager location of the resource for which a shared private link is being created. This is only required for those resources whose DNS configuration are regional (such as Azure Kubernetes Service).
+     * Set the resourceRegion property: Optional. Can be used to specify the Azure Resource Manager location of the
+     * resource for which a shared private link is being created. This is only required for those resources whose DNS
+     * configuration are regional (such as Azure Kubernetes Service).
      * 
      * @param resourceRegion the resourceRegion value to set.
      * @return the SharedPrivateLinkResourceProperties object itself.
@@ -135,7 +139,8 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Get the status property: Status of the shared private link resource. Valid values are Pending, Approved, Rejected or Disconnected.
+     * Get the status property: Status of the shared private link resource. Valid values are Pending, Approved, Rejected
+     * or Disconnected.
      * 
      * @return the status value.
      */
@@ -144,7 +149,8 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Set the status property: Status of the shared private link resource. Valid values are Pending, Approved, Rejected or Disconnected.
+     * Set the status property: Status of the shared private link resource. Valid values are Pending, Approved, Rejected
+     * or Disconnected.
      * 
      * @param status the status value to set.
      * @return the SharedPrivateLinkResourceProperties object itself.
@@ -155,7 +161,8 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed, Succeeded or Incomplete.
+     * Get the provisioningState property: The provisioning state of the shared private link resource. Valid values are
+     * Updating, Deleting, Failed, Succeeded or Incomplete.
      * 
      * @return the provisioningState value.
      */
@@ -164,7 +171,8 @@ public final class SharedPrivateLinkResourceProperties {
     }
 
     /**
-     * Set the provisioningState property: The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed, Succeeded or Incomplete.
+     * Set the provisioningState property: The provisioning state of the shared private link resource. Valid values are
+     * Updating, Deleting, Failed, Succeeded or Incomplete.
      * 
      * @param provisioningState the provisioningState value to set.
      * @return the SharedPrivateLinkResourceProperties object itself.

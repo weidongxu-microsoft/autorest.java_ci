@@ -58,7 +58,8 @@ public final class KeysClientImpl implements KeysClient {
     }
 
     /**
-     * The interface defining all the services for KeyVaultManagementClientKeys to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KeyVaultManagementClientKeys to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KeyVaultManagementCl")
@@ -129,11 +130,14 @@ public final class KeysClientImpl implements KeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -174,11 +178,14 @@ public final class KeysClientImpl implements KeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -219,11 +226,14 @@ public final class KeysClientImpl implements KeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -238,11 +248,14 @@ public final class KeysClientImpl implements KeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -257,11 +270,14 @@ public final class KeysClientImpl implements KeysClient {
     }
 
     /**
-     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is returned without any write operations being performed. This API does not create subsequent versions, and does not update existing keys.
+     * Creates the first version of a new key if it does not exist. If it already exists, then the existing key is
+     * returned without any write operations being performed. This API does not create subsequent versions, and does not
+     * update existing keys.
      * 
      * @param resourceGroupName The name of the resource group which contains the specified key vault.
      * @param vaultName The name of the key vault which contains the key to be created.
-     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of running the service. The value provided should not include personally identifiable or sensitive information.
+     * @param keyName The name of the key to be created. The value you provide may be copied globally for the purpose of
+     * running the service. The value provided should not include personally identifiable or sensitive information.
      * @param parameters The parameters used to create the specified key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -283,7 +299,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault along with {@link Response} on successful completion of {@link Mono}.
+     * @return the current version of the specified key from the specified key vault along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getWithResponseAsync(String resourceGroupName, String vaultName, String keyName) {
@@ -322,7 +339,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault along with {@link Response} on successful completion of {@link Mono}.
+     * @return the current version of the specified key from the specified key vault along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getWithResponseAsync(String resourceGroupName, String vaultName, String keyName,
@@ -360,7 +378,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the current version of the specified key from the specified key vault on successful completion of {@link Mono}.
+     * @return the current version of the specified key from the specified key vault on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> getAsync(String resourceGroupName, String vaultName, String keyName) {
@@ -550,7 +569,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getVersionWithResponseAsync(String resourceGroupName, String vaultName,
@@ -594,7 +614,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified version of the specified key in the specified key vault along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<KeyInner>> getVersionWithResponseAsync(String resourceGroupName, String vaultName,
@@ -636,7 +657,8 @@ public final class KeysClientImpl implements KeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified version of the specified key in the specified key vault on successful completion of {@link Mono}.
+     * @return the specified version of the specified key in the specified key vault on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<KeyInner> getVersionAsync(String resourceGroupName, String vaultName, String keyName,

@@ -132,7 +132,8 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Get the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of access.
+     * Get the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of
+     * access.
      * 
      * @return the publicAccess value.
      */
@@ -141,7 +142,8 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Set the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of access.
+     * Set the publicAccess property: Specifies whether data in the container may be accessed publicly and the level of
+     * access.
      * 
      * @param publicAccess the publicAccess value to set.
      * @return the BlobContainerInner object itself.
@@ -182,7 +184,8 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Get the leaseDuration property: Specifies whether the lease on a container is of infinite or fixed duration, only when the container is leased.
+     * Get the leaseDuration property: Specifies whether the lease on a container is of infinite or fixed duration, only
+     * when the container is leased.
      * 
      * @return the leaseDuration value.
      */
@@ -232,7 +235,9 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Get the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+     * Get the hasLegalHold property: The hasLegalHold public property is set to true by SRP if there are at least one
+     * existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared
+     * out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
      * 
      * @return the hasLegalHold value.
      */
@@ -241,7 +246,9 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Get the hasImmutabilityPolicy property: The hasImmutabilityPolicy public property is set to true by SRP if ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false by SRP if ImmutabilityPolicy has not been created for this container.
+     * Get the hasImmutabilityPolicy property: The hasImmutabilityPolicy public property is set to true by SRP if
+     * ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false
+     * by SRP if ImmutabilityPolicy has not been created for this container.
      * 
      * @return the hasImmutabilityPolicy value.
      */
@@ -250,7 +257,9 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Get the immutableStorageWithVersioning property: The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
+     * Get the immutableStorageWithVersioning property: The object level immutability property of the container. The
+     * property is immutable and can only be set to true at the container creation time. Existing containers must
+     * undergo a migration process.
      * 
      * @return the immutableStorageWithVersioning value.
      */
@@ -261,7 +270,9 @@ public final class BlobContainerInner extends AzureEntityResource {
     }
 
     /**
-     * Set the immutableStorageWithVersioning property: The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
+     * Set the immutableStorageWithVersioning property: The object level immutability property of the container. The
+     * property is immutable and can only be set to true at the container creation time. Existing containers must
+     * undergo a migration process.
      * 
      * @param immutableStorageWithVersioning the immutableStorageWithVersioning value to set.
      * @return the BlobContainerInner object itself.

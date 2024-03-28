@@ -99,7 +99,8 @@ public interface PrivateEndpointConnection {
         }
 
         /**
-         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithPrivateEndpoint, DefinitionStages.WithPrivateLinkServiceConnectionState {
@@ -137,7 +138,8 @@ public interface PrivateEndpointConnection {
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
-             * Specifies the privateLinkServiceConnectionState property: Connection state of the private endpoint connection..
+             * Specifies the privateLinkServiceConnectionState property: Connection state of the private endpoint
+             * connection..
              * 
              * @param privateLinkServiceConnectionState Connection state of the private endpoint connection.
              * @return the next definition stage.
@@ -196,7 +198,8 @@ public interface PrivateEndpointConnection {
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
-             * Specifies the privateLinkServiceConnectionState property: Connection state of the private endpoint connection..
+             * Specifies the privateLinkServiceConnectionState property: Connection state of the private endpoint
+             * connection..
              * 
              * @param privateLinkServiceConnectionState Connection state of the private endpoint connection.
              * @return the next definition stage.

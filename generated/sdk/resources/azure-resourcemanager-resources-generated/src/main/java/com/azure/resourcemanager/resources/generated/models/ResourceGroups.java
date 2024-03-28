@@ -38,7 +38,8 @@ public interface ResourceGroups {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -50,10 +51,12 @@ public interface ResourceGroups {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
      * 
      * @param resourceGroupName The name of the resource group to delete. The name is case insensitive.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
+     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -122,7 +125,8 @@ public interface ResourceGroups {
     /**
      * Gets all the resource groups for a subscription.
      * 
-     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
+     * @param filter The filter to apply on the operation.&lt;br&gt;&lt;br&gt;You can filter by tag names and values.
+     * For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'.
      * @param top The number of results to return. If null is passed, returns all resource groups.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -158,7 +162,8 @@ public interface ResourceGroups {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -170,10 +175,12 @@ public interface ResourceGroups {
     /**
      * Deletes a resource group.
      * 
-     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
+     * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of
+     * its template deployments and currently stored operations.
      * 
      * @param id the resource ID.
-     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
+     * @param forceDeletionTypes The resource types you want to force delete. Currently, only the following is
+     * supported: forceDeletionTypes=Microsoft.Compute/virtualMachines,Microsoft.Compute/virtualMachineScaleSets.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

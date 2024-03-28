@@ -122,7 +122,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage account events.
+     * Get the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage account
+     * events.
      * 
      * @return the eventGridResourceId value.
      */
@@ -131,7 +132,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage account events.
+     * Set the eventGridResourceId property: The resource ID of the event grid that is subscribed to the storage account
+     * events.
      * 
      * @param eventGridResourceId the eventGridResourceId value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -182,7 +184,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the tableName property: The table where the data should be ingested. Optionally the table information can be added to each message.
+     * Get the tableName property: The table where the data should be ingested. Optionally the table information can be
+     * added to each message.
      * 
      * @return the tableName value.
      */
@@ -191,7 +194,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the tableName property: The table where the data should be ingested. Optionally the table information can be added to each message.
+     * Set the tableName property: The table where the data should be ingested. Optionally the table information can be
+     * added to each message.
      * 
      * @param tableName the tableName value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -202,7 +206,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
+     * Get the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping
+     * information can be added to each message.
      * 
      * @return the mappingRuleName value.
      */
@@ -211,7 +216,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
+     * Set the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping
+     * information can be added to each message.
      * 
      * @param mappingRuleName the mappingRuleName value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -222,7 +228,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the dataFormat property: The data format of the message. Optionally the data format can be added to each message.
+     * Get the dataFormat property: The data format of the message. Optionally the data format can be added to each
+     * message.
      * 
      * @return the dataFormat value.
      */
@@ -231,7 +238,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the dataFormat property: The data format of the message. Optionally the data format can be added to each message.
+     * Set the dataFormat property: The data format of the message. Optionally the data format can be added to each
+     * message.
      * 
      * @param dataFormat the dataFormat value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -242,7 +250,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the ignoreFirstRecord property: A Boolean value that, if set to true, indicates that ingestion should ignore the first record of every file.
+     * Get the ignoreFirstRecord property: A Boolean value that, if set to true, indicates that ingestion should ignore
+     * the first record of every file.
      * 
      * @return the ignoreFirstRecord value.
      */
@@ -251,7 +260,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the ignoreFirstRecord property: A Boolean value that, if set to true, indicates that ingestion should ignore the first record of every file.
+     * Set the ignoreFirstRecord property: A Boolean value that, if set to true, indicates that ingestion should ignore
+     * the first record of every file.
      * 
      * @param ignoreFirstRecord the ignoreFirstRecord value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -282,7 +292,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub and storage account.
+     * Get the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub and storage account.
      * 
      * @return the managedIdentityResourceId value.
      */
@@ -291,7 +302,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub and storage account.
+     * Set the managedIdentityResourceId property: The resource ID of a managed identity (system or user assigned) to be
+     * used to authenticate with event hub and storage account.
      * 
      * @param managedIdentityResourceId the managedIdentityResourceId value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -311,7 +323,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Get the databaseRouting property: Indication for database routing information from the data connection, by default only database routing information is allowed.
+     * Get the databaseRouting property: Indication for database routing information from the data connection, by
+     * default only database routing information is allowed.
      * 
      * @return the databaseRouting value.
      */
@@ -320,7 +333,8 @@ public final class EventGridConnectionProperties {
     }
 
     /**
-     * Set the databaseRouting property: Indication for database routing information from the data connection, by default only database routing information is allowed.
+     * Set the databaseRouting property: Indication for database routing information from the data connection, by
+     * default only database routing information is allowed.
      * 
      * @param databaseRouting the databaseRouting value to set.
      * @return the EventGridConnectionProperties object itself.
@@ -346,16 +360,19 @@ public final class EventGridConnectionProperties {
      */
     public void validate() {
         if (storageAccountResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property storageAccountResourceId in model EventGridConnectionProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property storageAccountResourceId in model EventGridConnectionProperties"));
         }
         if (eventHubResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property eventHubResourceId in model EventGridConnectionProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property eventHubResourceId in model EventGridConnectionProperties"));
         }
         if (consumerGroup() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property consumerGroup in model EventGridConnectionProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property consumerGroup in model EventGridConnectionProperties"));
         }
     }
 

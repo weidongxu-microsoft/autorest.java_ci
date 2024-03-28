@@ -32,7 +32,8 @@ public interface IntelligencePack {
     String displayName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.IntelligencePackInner object.
+     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.IntelligencePackInner
+     * object.
      * 
      * @return the inner object.
      */

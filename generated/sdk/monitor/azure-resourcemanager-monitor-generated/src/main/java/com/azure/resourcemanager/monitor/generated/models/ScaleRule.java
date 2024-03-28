@@ -78,14 +78,14 @@ public final class ScaleRule {
      */
     public void validate() {
         if (metricTrigger() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property metricTrigger in model ScaleRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property metricTrigger in model ScaleRule"));
         } else {
             metricTrigger().validate();
         }
         if (scaleAction() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property scaleAction in model ScaleRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property scaleAction in model ScaleRule"));
         } else {
             scaleAction().validate();
         }

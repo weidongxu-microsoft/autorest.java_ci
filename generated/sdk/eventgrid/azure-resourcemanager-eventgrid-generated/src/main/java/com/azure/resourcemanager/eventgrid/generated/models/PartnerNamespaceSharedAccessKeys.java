@@ -25,7 +25,8 @@ public interface PartnerNamespaceSharedAccessKeys {
     String key2();
 
     /**
-     * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceSharedAccessKeysInner object.
+     * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerNamespaceSharedAccessKeysInner
+     * object.
      * 
      * @return the inner object.
      */

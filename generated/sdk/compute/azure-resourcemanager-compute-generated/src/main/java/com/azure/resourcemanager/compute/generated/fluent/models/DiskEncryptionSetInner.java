@@ -39,7 +39,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Get the identity property: The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks.
+     * Get the identity property: The managed identity for the disk encryption set. It should be given permission on the
+     * key vault before it can be used to encrypt disks.
      * 
      * @return the identity value.
      */
@@ -48,7 +49,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Set the identity property: The managed identity for the disk encryption set. It should be given permission on the key vault before it can be used to encrypt disks.
+     * Set the identity property: The managed identity for the disk encryption set. It should be given permission on the
+     * key vault before it can be used to encrypt disks.
      * 
      * @param identity the identity value to set.
      * @return the DiskEncryptionSetInner object itself.
@@ -132,7 +134,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Get the previousKeys property: A readonly collection of key vault keys previously used by this disk encryption set while a key rotation is in progress. It will be empty if there is no ongoing key rotation.
+     * Get the previousKeys property: A readonly collection of key vault keys previously used by this disk encryption
+     * set while a key rotation is in progress. It will be empty if there is no ongoing key rotation.
      * 
      * @return the previousKeys value.
      */
@@ -150,7 +153,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Get the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
+     * Get the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk
+     * encryption set to the latest key version.
      * 
      * @return the rotationToLatestKeyVersionEnabled value.
      */
@@ -159,7 +163,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Set the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk encryption set to the latest key version.
+     * Set the rotationToLatestKeyVersionEnabled property: Set this flag to true to enable auto-updating of this disk
+     * encryption set to the latest key version.
      * 
      * @param rotationToLatestKeyVersionEnabled the rotationToLatestKeyVersionEnabled value to set.
      * @return the DiskEncryptionSetInner object itself.
@@ -182,7 +187,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Get the autoKeyRotationError property: The error that was encountered during auto-key rotation. If an error is present, then auto-key rotation will not be attempted until the error on this disk encryption set is fixed.
+     * Get the autoKeyRotationError property: The error that was encountered during auto-key rotation. If an error is
+     * present, then auto-key rotation will not be attempted until the error on this disk encryption set is fixed.
      * 
      * @return the autoKeyRotationError value.
      */
@@ -191,7 +197,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Get the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
+     * Get the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant.
+     * Setting the value to 'None' will clear the property.
      * 
      * @return the federatedClientId value.
      */
@@ -200,7 +207,8 @@ public final class DiskEncryptionSetInner extends Resource {
     }
 
     /**
-     * Set the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
+     * Set the federatedClientId property: Multi-tenant application client id to access key vault in a different tenant.
+     * Setting the value to 'None' will clear the property.
      * 
      * @param federatedClientId the federatedClientId value to set.
      * @return the DiskEncryptionSetInner object itself.

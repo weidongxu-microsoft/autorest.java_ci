@@ -48,7 +48,8 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Get the resourceId property: Azure Resource Manager identifier of the resource whose onboarding status is being represented.
+     * Get the resourceId property: Azure Resource Manager identifier of the resource whose onboarding status is being
+     * represented.
      * 
      * @return the resourceId value.
      */
@@ -57,7 +58,8 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Set the resourceId property: Azure Resource Manager identifier of the resource whose onboarding status is being represented.
+     * Set the resourceId property: Azure Resource Manager identifier of the resource whose onboarding status is being
+     * represented.
      * 
      * @param resourceId the resourceId value to set.
      * @return the VMInsightsOnboardingStatusProperties object itself.
@@ -68,7 +70,8 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Get the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * Get the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g.,
+     * resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
      * 
      * @return the onboardingStatus value.
      */
@@ -77,7 +80,8 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Set the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * Set the onboardingStatus property: The onboarding status for the resource. Note that, a higher level scope, e.g.,
+     * resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
      * 
      * @param onboardingStatus the onboardingStatus value to set.
      * @return the VMInsightsOnboardingStatusProperties object itself.
@@ -88,7 +92,9 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Get the dataStatus property: The status of VM Insights data from the resource. When reported as `present` the data array will contain information about the data containers to which data for the specified resource is being routed.
+     * Get the dataStatus property: The status of VM Insights data from the resource. When reported as `present` the
+     * data array will contain information about the data containers to which data for the specified resource is being
+     * routed.
      * 
      * @return the dataStatus value.
      */
@@ -97,7 +103,9 @@ public final class VMInsightsOnboardingStatusProperties {
     }
 
     /**
-     * Set the dataStatus property: The status of VM Insights data from the resource. When reported as `present` the data array will contain information about the data containers to which data for the specified resource is being routed.
+     * Set the dataStatus property: The status of VM Insights data from the resource. When reported as `present` the
+     * data array will contain information about the data containers to which data for the specified resource is being
+     * routed.
      * 
      * @param dataStatus the dataStatus value to set.
      * @return the VMInsightsOnboardingStatusProperties object itself.
@@ -134,16 +142,19 @@ public final class VMInsightsOnboardingStatusProperties {
      */
     public void validate() {
         if (resourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property resourceId in model VMInsightsOnboardingStatusProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property resourceId in model VMInsightsOnboardingStatusProperties"));
         }
         if (onboardingStatus() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property onboardingStatus in model VMInsightsOnboardingStatusProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property onboardingStatus in model VMInsightsOnboardingStatusProperties"));
         }
         if (dataStatus() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property dataStatus in model VMInsightsOnboardingStatusProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property dataStatus in model VMInsightsOnboardingStatusProperties"));
         }
         if (data() != null) {
             data().forEach(e -> e.validate());

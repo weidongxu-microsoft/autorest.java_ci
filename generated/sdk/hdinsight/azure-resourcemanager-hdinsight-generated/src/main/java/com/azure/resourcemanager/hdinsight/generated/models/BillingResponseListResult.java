@@ -26,7 +26,8 @@ public interface BillingResponseListResult {
     List<String> vmSizesWithEncryptionAtHost();
 
     /**
-     * Gets the vmSizeFilters property: The virtual machine filtering mode. Effectively this can enabling or disabling the virtual machine sizes in a particular set.
+     * Gets the vmSizeFilters property: The virtual machine filtering mode. Effectively this can enabling or disabling
+     * the virtual machine sizes in a particular set.
      * 
      * @return the vmSizeFilters value.
      */

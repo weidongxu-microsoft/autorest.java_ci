@@ -80,18 +80,8 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Set the endpointType property: Type of the endpoint for the partner destination.
-     * 
-     * @param endpointType the endpointType value to set.
-     * @return the PartnerDestinationInfo object itself.
-     */
-    protected PartnerDestinationInfo withEndpointType(PartnerEndpointType endpointType) {
-        this.endpointType = endpointType;
-        return this;
-    }
-
-    /**
-     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated with the channel will be
+     * Get the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated
+     * with the channel will be
      * created under this Azure subscription.
      * 
      * @return the azureSubscriptionId value.
@@ -101,7 +91,8 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated with the channel will be
+     * Set the azureSubscriptionId property: Azure subscription ID of the subscriber. The partner destination associated
+     * with the channel will be
      * created under this Azure subscription.
      * 
      * @param azureSubscriptionId the azureSubscriptionId value to set.
@@ -113,7 +104,8 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Get the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated with the channel will be
+     * Get the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated
+     * with the channel will be
      * created under this resource group.
      * 
      * @return the resourceGroupName value.
@@ -123,7 +115,8 @@ public class PartnerDestinationInfo {
     }
 
     /**
-     * Set the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated with the channel will be
+     * Set the resourceGroupName property: Azure Resource Group of the subscriber. The partner destination associated
+     * with the channel will be
      * created under this resource group.
      * 
      * @param resourceGroupName the resourceGroupName value to set.

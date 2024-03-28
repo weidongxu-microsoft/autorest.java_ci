@@ -63,7 +63,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientAvailabilitySets to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientAvailabilitySets to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -159,7 +160,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailabilitySetInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -203,7 +205,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailabilitySetInner>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -245,7 +248,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AvailabilitySetInner> createOrUpdateAsync(String resourceGroupName, String availabilitySetName,
@@ -264,7 +268,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AvailabilitySetInner> createOrUpdateWithResponse(String resourceGroupName,
@@ -298,7 +303,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailabilitySetInner>> updateWithResponseAsync(String resourceGroupName,
@@ -342,7 +348,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailabilitySetInner>> updateWithResponseAsync(String resourceGroupName,
@@ -384,7 +391,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AvailabilitySetInner> updateAsync(String resourceGroupName, String availabilitySetName,
@@ -403,7 +411,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AvailabilitySetInner> updateWithResponse(String resourceGroupName, String availabilitySetName,
@@ -554,7 +563,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailabilitySetInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -592,7 +602,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AvailabilitySetInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -628,7 +639,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to on successful completion of {@link Mono}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<AvailabilitySetInner> getByResourceGroupAsync(String resourceGroupName, String availabilitySetName) {
@@ -645,7 +657,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the availability set that the virtual machine should be assigned to along with {@link Response}.
+     * @return specifies information about the availability set that the virtual machine should be assigned to along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<AvailabilitySetInner> getByResourceGroupWithResponse(String resourceGroupName,
@@ -675,7 +688,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listSinglePageAsync(String expand) {
@@ -705,7 +719,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listSinglePageAsync(String expand, Context context) {
@@ -806,7 +821,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -840,7 +856,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -928,14 +945,16 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
+     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing
+     * availability set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineSizeInner>> listAvailableSizesSinglePageAsync(String resourceGroupName,
@@ -967,7 +986,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
+     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing
+     * availability set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
@@ -975,7 +995,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineSizeInner>> listAvailableSizesSinglePageAsync(String resourceGroupName,
@@ -1007,7 +1028,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
+     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing
+     * availability set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
@@ -1023,7 +1045,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
+     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing
+     * availability set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
@@ -1041,7 +1064,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
+     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing
+     * availability set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
@@ -1057,7 +1081,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
     }
 
     /**
-     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing availability set.
+     * Lists all available virtual machine sizes that can be used to create a new virtual machine in an existing
+     * availability set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param availabilitySetName The name of the availability set.
@@ -1082,7 +1107,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1112,7 +1138,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listBySubscriptionNextSinglePageAsync(String nextLink,
@@ -1140,7 +1167,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listNextSinglePageAsync(String nextLink) {
@@ -1168,7 +1196,8 @@ public final class AvailabilitySetsClientImpl implements AvailabilitySetsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Availability Set operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AvailabilitySetInner>> listNextSinglePageAsync(String nextLink, Context context) {

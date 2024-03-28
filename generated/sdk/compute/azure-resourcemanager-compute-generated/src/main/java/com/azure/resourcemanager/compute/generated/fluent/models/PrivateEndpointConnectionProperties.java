@@ -50,7 +50,8 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection between DiskAccess and Virtual Network.
+     * Get the privateLinkServiceConnectionState property: A collection of information about the state of the connection
+     * between DiskAccess and Virtual Network.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -59,7 +60,8 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection between DiskAccess and Virtual Network.
+     * Set the privateLinkServiceConnectionState property: A collection of information about the state of the connection
+     * between DiskAccess and Virtual Network.
      * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
@@ -89,8 +91,9 @@ public final class PrivateEndpointConnectionProperties {
             privateEndpoint().validate();
         }
         if (privateLinkServiceConnectionState() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property privateLinkServiceConnectionState in model PrivateEndpointConnectionProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property privateLinkServiceConnectionState in model PrivateEndpointConnectionProperties"));
         } else {
             privateLinkServiceConnectionState().validate();
         }

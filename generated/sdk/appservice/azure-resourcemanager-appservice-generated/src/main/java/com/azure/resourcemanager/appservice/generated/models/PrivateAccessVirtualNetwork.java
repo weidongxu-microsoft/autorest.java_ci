@@ -104,7 +104,8 @@ public final class PrivateAccessVirtualNetwork {
     }
 
     /**
-     * Get the subnets property: A List of subnets that access is allowed to on this Virtual Network. An empty array (but not null) is interpreted to mean that all subnets are allowed within this Virtual Network.
+     * Get the subnets property: A List of subnets that access is allowed to on this Virtual Network. An empty array
+     * (but not null) is interpreted to mean that all subnets are allowed within this Virtual Network.
      * 
      * @return the subnets value.
      */
@@ -113,7 +114,8 @@ public final class PrivateAccessVirtualNetwork {
     }
 
     /**
-     * Set the subnets property: A List of subnets that access is allowed to on this Virtual Network. An empty array (but not null) is interpreted to mean that all subnets are allowed within this Virtual Network.
+     * Set the subnets property: A List of subnets that access is allowed to on this Virtual Network. An empty array
+     * (but not null) is interpreted to mean that all subnets are allowed within this Virtual Network.
      * 
      * @param subnets the subnets value to set.
      * @return the PrivateAccessVirtualNetwork object itself.

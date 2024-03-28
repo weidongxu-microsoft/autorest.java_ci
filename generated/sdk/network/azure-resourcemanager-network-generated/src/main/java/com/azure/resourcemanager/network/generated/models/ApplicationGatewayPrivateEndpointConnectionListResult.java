@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListApplicationGatewayPrivateEndpointConnection API service call. Gets all private endpoint connections for an application gateway.
+ * Response for ListApplicationGatewayPrivateEndpointConnection API service call. Gets all private endpoint connections
+ * for an application gateway.
  */
 @Fluent
 public final class ApplicationGatewayPrivateEndpointConnectionListResult {

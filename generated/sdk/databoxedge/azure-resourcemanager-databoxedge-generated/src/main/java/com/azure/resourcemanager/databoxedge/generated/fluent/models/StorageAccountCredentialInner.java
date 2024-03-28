@@ -124,7 +124,8 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     }
 
     /**
-     * Get the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
+     * Get the connectionString property: Connection string for the storage account. Use this string if username and
+     * account key are not specified.
      * 
      * @return the connectionString value.
      */
@@ -133,7 +134,8 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     }
 
     /**
-     * Set the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
+     * Set the connectionString property: Connection string for the storage account. Use this string if username and
+     * account key are not specified.
      * 
      * @param connectionString the connectionString value to set.
      * @return the StorageAccountCredentialInner object itself.
@@ -247,8 +249,9 @@ public final class StorageAccountCredentialInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model StorageAccountCredentialInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model StorageAccountCredentialInner"));
         } else {
             innerProperties().validate();
         }

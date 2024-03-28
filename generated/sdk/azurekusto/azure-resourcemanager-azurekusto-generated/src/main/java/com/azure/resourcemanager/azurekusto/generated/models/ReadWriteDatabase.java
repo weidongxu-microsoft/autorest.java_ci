@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ReadWriteDatabaseProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -20,6 +21,13 @@ import java.time.Duration;
 @Fluent
 public final class ReadWriteDatabase extends DatabaseInner {
     /*
+     * Kind of the database
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private Kind kind = Kind.READ_WRITE;
+
+    /*
      * The database properties.
      */
     @JsonProperty(value = "properties")
@@ -29,7 +37,16 @@ public final class ReadWriteDatabase extends DatabaseInner {
      * Creates an instance of ReadWriteDatabase class.
      */
     public ReadWriteDatabase() {
-        withKind(Kind.READ_WRITE);
+    }
+
+    /**
+     * Get the kind property: Kind of the database.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public Kind kind() {
+        return this.kind;
     }
 
     /**
@@ -60,7 +77,8 @@ public final class ReadWriteDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
+     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
+     * in TimeSpan.
      * 
      * @return the softDeletePeriod value.
      */
@@ -69,7 +87,8 @@ public final class ReadWriteDatabase extends DatabaseInner {
     }
 
     /**
-     * Set the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
+     * Set the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
+     * in TimeSpan.
      * 
      * @param softDeletePeriod the softDeletePeriod value to set.
      * @return the ReadWriteDatabase object itself.
@@ -147,7 +166,8 @@ public final class ReadWriteDatabase extends DatabaseInner {
     }
 
     /**
-     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
+     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object
+     * contains information related to the database's suspension state.
      * 
      * @return the suspensionDetails value.
      */

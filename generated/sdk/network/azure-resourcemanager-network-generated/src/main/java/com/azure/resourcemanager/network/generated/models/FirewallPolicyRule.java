@@ -58,17 +58,6 @@ public class FirewallPolicyRule {
     }
 
     /**
-     * Set the ruleType property: Rule Type.
-     * 
-     * @param ruleType the ruleType value to set.
-     * @return the FirewallPolicyRule object itself.
-     */
-    protected FirewallPolicyRule withRuleType(FirewallPolicyRuleType ruleType) {
-        this.ruleType = ruleType;
-        return this;
-    }
-
-    /**
      * Get the name property: Name of the rule.
      * 
      * @return the name value.

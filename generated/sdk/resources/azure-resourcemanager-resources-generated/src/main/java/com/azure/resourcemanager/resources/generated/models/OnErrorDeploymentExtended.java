@@ -46,7 +46,8 @@ public final class OnErrorDeploymentExtended {
     }
 
     /**
-     * Get the type property: The deployment on error behavior type. Possible values are LastSuccessful and SpecificDeployment.
+     * Get the type property: The deployment on error behavior type. Possible values are LastSuccessful and
+     * SpecificDeployment.
      * 
      * @return the type value.
      */
@@ -55,7 +56,8 @@ public final class OnErrorDeploymentExtended {
     }
 
     /**
-     * Set the type property: The deployment on error behavior type. Possible values are LastSuccessful and SpecificDeployment.
+     * Set the type property: The deployment on error behavior type. Possible values are LastSuccessful and
+     * SpecificDeployment.
      * 
      * @param type the type value to set.
      * @return the OnErrorDeploymentExtended object itself.

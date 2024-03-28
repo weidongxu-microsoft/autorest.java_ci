@@ -98,7 +98,8 @@ public final class EventhubInner extends ProxyResource {
     }
 
     /**
-     * Get the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+     * Get the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be
+     * 1 to 7 days.
      * 
      * @return the messageRetentionInDays value.
      */
@@ -107,7 +108,8 @@ public final class EventhubInner extends ProxyResource {
     }
 
     /**
-     * Set the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be 1 to 7 days.
+     * Set the messageRetentionInDays property: Number of days to retain the events for this Event Hub, value should be
+     * 1 to 7 days.
      * 
      * @param messageRetentionInDays the messageRetentionInDays value to set.
      * @return the EventhubInner object itself.
@@ -121,7 +123,8 @@ public final class EventhubInner extends ProxyResource {
     }
 
     /**
-     * Get the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions.
+     * Get the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32
+     * partitions.
      * 
      * @return the partitionCount value.
      */
@@ -130,7 +133,8 @@ public final class EventhubInner extends ProxyResource {
     }
 
     /**
-     * Set the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32 partitions.
+     * Set the partitionCount property: Number of partitions created for the Event Hub, allowed values are from 1 to 32
+     * partitions.
      * 
      * @param partitionCount the partitionCount value to set.
      * @return the EventhubInner object itself.

@@ -18,7 +18,8 @@ public interface ExpressRouteCrossConnectionPeering {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -109,7 +110,8 @@ public interface ExpressRouteCrossConnectionPeering {
     ExpressRouteCircuitPeeringConfig microsoftPeeringConfig();
 
     /**
-     * Gets the provisioningState property: The provisioning state of the express route cross connection peering resource.
+     * Gets the provisioningState property: The provisioning state of the express route cross connection peering
+     * resource.
      * 
      * @return the provisioningState value.
      */
@@ -137,7 +139,8 @@ public interface ExpressRouteCrossConnectionPeering {
     Ipv6ExpressRouteCircuitPeeringConfig ipv6PeeringConfig();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ExpressRouteCrossConnectionPeeringInner
+     * object.
      * 
      * @return the inner object.
      */

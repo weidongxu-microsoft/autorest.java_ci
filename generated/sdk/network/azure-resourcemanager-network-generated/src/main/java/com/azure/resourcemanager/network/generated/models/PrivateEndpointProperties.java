@@ -19,7 +19,8 @@ public interface PrivateEndpointProperties {
     Subnet subnet();
 
     /**
-     * Gets the networkInterfaces property: An array of references to the network interfaces created for this private endpoint.
+     * Gets the networkInterfaces property: An array of references to the network interfaces created for this private
+     * endpoint.
      * 
      * @return the networkInterfaces value.
      */
@@ -33,14 +34,16 @@ public interface PrivateEndpointProperties {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the privateLinkServiceConnections property: A grouping of information about the connection to the remote resource.
+     * Gets the privateLinkServiceConnections property: A grouping of information about the connection to the remote
+     * resource.
      * 
      * @return the privateLinkServiceConnections value.
      */
     List<PrivateLinkServiceConnection> privateLinkServiceConnections();
 
     /**
-     * Gets the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the remote resource. Used when the network admin does not have access to approve connections to the remote resource.
+     * Gets the manualPrivateLinkServiceConnections property: A grouping of information about the connection to the
+     * remote resource. Used when the network admin does not have access to approve connections to the remote resource.
      * 
      * @return the manualPrivateLinkServiceConnections value.
      */
@@ -54,21 +57,24 @@ public interface PrivateEndpointProperties {
     List<CustomDnsConfigPropertiesFormat> customDnsConfigs();
 
     /**
-     * Gets the applicationSecurityGroups property: Application security groups in which the private endpoint IP configuration is included.
+     * Gets the applicationSecurityGroups property: Application security groups in which the private endpoint IP
+     * configuration is included.
      * 
      * @return the applicationSecurityGroups value.
      */
     List<ApplicationSecurityGroup> applicationSecurityGroups();
 
     /**
-     * Gets the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map to the First Party Service's endpoints.
+     * Gets the ipConfigurations property: A list of IP configurations of the private endpoint. This will be used to map
+     * to the First Party Service's endpoints.
      * 
      * @return the ipConfigurations value.
      */
     List<PrivateEndpointIpConfiguration> ipConfigurations();
 
     /**
-     * Gets the customNetworkInterfaceName property: The custom name of the network interface attached to the private endpoint.
+     * Gets the customNetworkInterfaceName property: The custom name of the network interface attached to the private
+     * endpoint.
      * 
      * @return the customNetworkInterfaceName value.
      */

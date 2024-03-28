@@ -78,7 +78,8 @@ public final class NetworkManagerDeploymentStatusParameter {
     }
 
     /**
-     * Get the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well as the context of the query.
+     * Get the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well
+     * as the context of the query.
      * 
      * @return the skipToken value.
      */
@@ -87,7 +88,8 @@ public final class NetworkManagerDeploymentStatusParameter {
     }
 
     /**
-     * Set the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well as the context of the query.
+     * Set the skipToken property: Continuation token for pagination, capturing the next page size and offset, as well
+     * as the context of the query.
      * 
      * @param skipToken the skipToken value to set.
      * @return the NetworkManagerDeploymentStatusParameter object itself.

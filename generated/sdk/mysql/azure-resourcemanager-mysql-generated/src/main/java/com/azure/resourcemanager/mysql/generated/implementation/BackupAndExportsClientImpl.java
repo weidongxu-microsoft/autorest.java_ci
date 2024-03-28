@@ -59,7 +59,8 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientBackupAndExports to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientBackupAndExports to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -93,7 +94,8 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(String resourceGroupName, String serverName,
@@ -136,7 +138,8 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents BackupAndExport API Response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createWithResponseAsync(String resourceGroupName, String serverName,
@@ -326,7 +329,8 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ValidateBackupResponseInner>> validateBackupWithResponseAsync(String resourceGroupName,
@@ -363,7 +367,8 @@ public final class BackupAndExportsClientImpl implements BackupAndExportsClient 
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents ValidateBackup API Response along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ValidateBackupResponseInner>> validateBackupWithResponseAsync(String resourceGroupName,

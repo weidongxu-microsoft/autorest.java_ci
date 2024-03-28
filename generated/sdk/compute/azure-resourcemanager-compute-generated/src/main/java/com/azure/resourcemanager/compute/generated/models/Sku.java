@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a virtual machine scale set sku. NOTE: If the new VM SKU is not supported on the hardware the scale set is currently on, you need to deallocate the VMs in the scale set before you modify the SKU name.
+ * Describes a virtual machine scale set sku. NOTE: If the new VM SKU is not supported on the hardware the scale set is
+ * currently on, you need to deallocate the VMs in the scale set before you modify the SKU name.
  */
 @Fluent
 public final class Sku {
@@ -57,7 +58,8 @@ public final class Sku {
     }
 
     /**
-     * Get the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
+     * Get the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible
+     * Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
      * 
      * @return the tier value.
      */
@@ -66,7 +68,8 @@ public final class Sku {
     }
 
     /**
-     * Set the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
+     * Set the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible
+     * Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
      * 
      * @param tier the tier value to set.
      * @return the Sku object itself.

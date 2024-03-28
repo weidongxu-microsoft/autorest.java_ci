@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * This property allows you to specify the type of sharing group. Possible values are: **Subscriptions,** **AADTenants.**.
+ * This property allows you to specify the type of sharing group. Possible values are: **Subscriptions,**
+ * **AADTenants.**.
  */
 public final class SharingProfileGroupTypes extends ExpandableStringEnum<SharingProfileGroupTypes> {
     /**

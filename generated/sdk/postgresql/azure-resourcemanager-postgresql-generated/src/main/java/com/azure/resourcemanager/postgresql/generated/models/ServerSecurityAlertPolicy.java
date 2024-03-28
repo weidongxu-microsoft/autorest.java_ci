@@ -41,7 +41,8 @@ public interface ServerSecurityAlertPolicy {
     ServerSecurityAlertPolicyState state();
 
     /**
-     * Gets the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+     * Gets the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
+     * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
      * 
      * @return the disabledAlerts value.
      */
@@ -62,14 +63,16 @@ public interface ServerSecurityAlertPolicy {
     Boolean emailAccountAdmins();
 
     /**
-     * Gets the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+     * Gets the storageEndpoint property: Specifies the blob storage endpoint (e.g.
+     * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
      * 
      * @return the storageEndpoint value.
      */
     String storageEndpoint();
 
     /**
-     * Gets the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account.
+     * Gets the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
+     * account.
      * 
      * @return the storageAccountAccessKey value.
      */
@@ -90,7 +93,8 @@ public interface ServerSecurityAlertPolicy {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.ServerSecurityAlertPolicyInner object.
+     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.ServerSecurityAlertPolicyInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -128,7 +132,8 @@ public interface ServerSecurityAlertPolicy {
         }
 
         /**
-         * The stage of the ServerSecurityAlertPolicy definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the ServerSecurityAlertPolicy definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithState, DefinitionStages.WithDisabledAlerts,
             DefinitionStages.WithEmailAddresses, DefinitionStages.WithEmailAccountAdmins,
@@ -168,9 +173,11 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithDisabledAlerts {
             /**
-             * Specifies the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+             * Specifies the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values
+             * are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
              * 
-             * @param disabledAlerts Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+             * @param disabledAlerts Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection,
+             * Sql_Injection_Vulnerability, Access_Anomaly.
              * @return the next definition stage.
              */
             WithCreate withDisabledAlerts(List<String> disabledAlerts);
@@ -181,7 +188,8 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithEmailAddresses {
             /**
-             * Specifies the emailAddresses property: Specifies an array of e-mail addresses to which the alert is sent..
+             * Specifies the emailAddresses property: Specifies an array of e-mail addresses to which the alert is
+             * sent..
              * 
              * @param emailAddresses Specifies an array of e-mail addresses to which the alert is sent.
              * @return the next definition stage.
@@ -194,7 +202,8 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithEmailAccountAdmins {
             /**
-             * Specifies the emailAccountAdmins property: Specifies that the alert is sent to the account administrators..
+             * Specifies the emailAccountAdmins property: Specifies that the alert is sent to the account
+             * administrators..
              * 
              * @param emailAccountAdmins Specifies that the alert is sent to the account administrators.
              * @return the next definition stage.
@@ -207,9 +216,11 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithStorageEndpoint {
             /**
-             * Specifies the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs..
+             * Specifies the storageEndpoint property: Specifies the blob storage endpoint (e.g.
+             * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs..
              * 
-             * @param storageEndpoint Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+             * @param storageEndpoint Specifies the blob storage endpoint (e.g.
+             * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
              * @return the next definition stage.
              */
             WithCreate withStorageEndpoint(String storageEndpoint);
@@ -220,9 +231,11 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithStorageAccountAccessKey {
             /**
-             * Specifies the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account..
+             * Specifies the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection
+             * audit storage account..
              * 
-             * @param storageAccountAccessKey Specifies the identifier key of the Threat Detection audit storage account.
+             * @param storageAccountAccessKey Specifies the identifier key of the Threat Detection audit storage
+             * account.
              * @return the next definition stage.
              */
             WithCreate withStorageAccountAccessKey(String storageAccountAccessKey);
@@ -233,7 +246,8 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithRetentionDays {
             /**
-             * Specifies the retentionDays property: Specifies the number of days to keep in the Threat Detection audit logs..
+             * Specifies the retentionDays property: Specifies the number of days to keep in the Threat Detection audit
+             * logs..
              * 
              * @param retentionDays Specifies the number of days to keep in the Threat Detection audit logs.
              * @return the next definition stage.
@@ -293,9 +307,11 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithDisabledAlerts {
             /**
-             * Specifies the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+             * Specifies the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values
+             * are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
              * 
-             * @param disabledAlerts Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+             * @param disabledAlerts Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection,
+             * Sql_Injection_Vulnerability, Access_Anomaly.
              * @return the next definition stage.
              */
             Update withDisabledAlerts(List<String> disabledAlerts);
@@ -306,7 +322,8 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithEmailAddresses {
             /**
-             * Specifies the emailAddresses property: Specifies an array of e-mail addresses to which the alert is sent..
+             * Specifies the emailAddresses property: Specifies an array of e-mail addresses to which the alert is
+             * sent..
              * 
              * @param emailAddresses Specifies an array of e-mail addresses to which the alert is sent.
              * @return the next definition stage.
@@ -319,7 +336,8 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithEmailAccountAdmins {
             /**
-             * Specifies the emailAccountAdmins property: Specifies that the alert is sent to the account administrators..
+             * Specifies the emailAccountAdmins property: Specifies that the alert is sent to the account
+             * administrators..
              * 
              * @param emailAccountAdmins Specifies that the alert is sent to the account administrators.
              * @return the next definition stage.
@@ -332,9 +350,11 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithStorageEndpoint {
             /**
-             * Specifies the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs..
+             * Specifies the storageEndpoint property: Specifies the blob storage endpoint (e.g.
+             * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs..
              * 
-             * @param storageEndpoint Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+             * @param storageEndpoint Specifies the blob storage endpoint (e.g.
+             * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
              * @return the next definition stage.
              */
             Update withStorageEndpoint(String storageEndpoint);
@@ -345,9 +365,11 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithStorageAccountAccessKey {
             /**
-             * Specifies the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account..
+             * Specifies the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection
+             * audit storage account..
              * 
-             * @param storageAccountAccessKey Specifies the identifier key of the Threat Detection audit storage account.
+             * @param storageAccountAccessKey Specifies the identifier key of the Threat Detection audit storage
+             * account.
              * @return the next definition stage.
              */
             Update withStorageAccountAccessKey(String storageAccountAccessKey);
@@ -358,7 +380,8 @@ public interface ServerSecurityAlertPolicy {
          */
         interface WithRetentionDays {
             /**
-             * Specifies the retentionDays property: Specifies the number of days to keep in the Threat Detection audit logs..
+             * Specifies the retentionDays property: Specifies the number of days to keep in the Threat Detection audit
+             * logs..
              * 
              * @param retentionDays Specifies the number of days to keep in the Threat Detection audit logs.
              * @return the next definition stage.

@@ -34,21 +34,24 @@ public interface SharedGalleryImageVersion {
     String uniqueId();
 
     /**
-     * Gets the publishedDate property: The published date of the gallery image version Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Gets the publishedDate property: The published date of the gallery image version Definition. This property can be
+     * used for decommissioning purposes. This property is updatable.
      * 
      * @return the publishedDate value.
      */
     OffsetDateTime publishedDate();
 
     /**
-     * Gets the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Gets the endOfLifeDate property: The end of life date of the gallery image version Definition. This property can
+     * be used for decommissioning purposes. This property is updatable.
      * 
      * @return the endOfLifeDate value.
      */
     OffsetDateTime endOfLifeDate();
 
     /**
-     * Gets the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the Image Definition won't use this Image Version.
+     * Gets the excludeFromLatest property: If set to true, Virtual Machines deployed from the latest version of the
+     * Image Definition won't use this Image Version.
      * 
      * @return the excludeFromLatest value.
      */

@@ -26,7 +26,8 @@ public interface ServiceAssociationLinksListResult {
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ServiceAssociationLinksListResultInner
+     * object.
      * 
      * @return the inner object.
      */

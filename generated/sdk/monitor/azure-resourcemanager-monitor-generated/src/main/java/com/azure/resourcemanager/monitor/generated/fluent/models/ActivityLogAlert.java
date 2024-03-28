@@ -53,7 +53,8 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Get the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
+     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @return the scopes value.
      */
@@ -62,7 +63,8 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
+     * Set the scopes property: A list of resourceIds that will be used as prefixes. The alert will only apply to
+     * activityLogs with resourceIds that fall under one of these prefixes. This list must include at least one item.
      * 
      * @param scopes the scopes value to set.
      * @return the ActivityLogAlert object itself.
@@ -73,7 +75,8 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
+     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
+     * enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -82,7 +85,8 @@ public final class ActivityLogAlert {
     }
 
     /**
-     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
+     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
+     * enabled, then none of its actions will be activated.
      * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlert object itself.
@@ -159,18 +163,18 @@ public final class ActivityLogAlert {
      */
     public void validate() {
         if (scopes() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property scopes in model ActivityLogAlert"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property scopes in model ActivityLogAlert"));
         }
         if (condition() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property condition in model ActivityLogAlert"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property condition in model ActivityLogAlert"));
         } else {
             condition().validate();
         }
         if (actions() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property actions in model ActivityLogAlert"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property actions in model ActivityLogAlert"));
         } else {
             actions().validate();
         }

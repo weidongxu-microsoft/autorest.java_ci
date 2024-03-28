@@ -7,6 +7,7 @@ package com.azure.resourcemanager.recoveryservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -22,6 +23,13 @@ import java.time.OffsetDateTime;
 @JsonTypeName("AccessControlService")
 @Fluent
 public final class ResourceCertificateAndAcsDetails extends ResourceCertificateDetails {
+    /*
+     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "authType", required = true)
+    private String authType = "AccessControlService";
+
     /*
      * ACS namespace name - tenant for our service.
      */
@@ -44,7 +52,17 @@ public final class ResourceCertificateAndAcsDetails extends ResourceCertificateD
      * Creates an instance of ResourceCertificateAndAcsDetails class.
      */
     public ResourceCertificateAndAcsDetails() {
-        withAuthType("AccessControlService");
+    }
+
+    /**
+     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the
+     * polymorphic chain of types.
+     * 
+     * @return the authType value.
+     */
+    @Override
+    public String authType() {
+        return this.authType;
     }
 
     /**
@@ -188,16 +206,19 @@ public final class ResourceCertificateAndAcsDetails extends ResourceCertificateD
     public void validate() {
         super.validate();
         if (globalAcsNamespace() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property globalAcsNamespace in model ResourceCertificateAndAcsDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property globalAcsNamespace in model ResourceCertificateAndAcsDetails"));
         }
         if (globalAcsHostname() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property globalAcsHostname in model ResourceCertificateAndAcsDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property globalAcsHostname in model ResourceCertificateAndAcsDetails"));
         }
         if (globalAcsRPRealm() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property globalAcsRPRealm in model ResourceCertificateAndAcsDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property globalAcsRPRealm in model ResourceCertificateAndAcsDetails"));
         }
     }
 

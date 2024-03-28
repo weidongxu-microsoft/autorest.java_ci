@@ -69,7 +69,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientExpressRouteCrossConnections to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientExpressRouteCrossConnections to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -173,7 +174,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>> listSinglePageAsync() {
@@ -202,7 +204,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>> listSinglePageAsync(Context context) {
@@ -227,7 +230,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedFlux}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ExpressRouteCrossConnectionInner> listAsync() {
@@ -241,7 +245,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedFlux}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ExpressRouteCrossConnectionInner> listAsync(Context context) {
@@ -254,7 +259,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ExpressRouteCrossConnectionInner> list() {
@@ -268,7 +274,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ExpressRouteCrossConnectionInner> list(Context context) {
@@ -282,7 +289,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>>
@@ -317,7 +325,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>>
@@ -351,7 +360,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedFlux}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ExpressRouteCrossConnectionInner> listByResourceGroupAsync(String resourceGroupName) {
@@ -367,7 +377,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedFlux}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ExpressRouteCrossConnectionInner> listByResourceGroupAsync(String resourceGroupName,
@@ -383,7 +394,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ExpressRouteCrossConnectionInner> listByResourceGroup(String resourceGroupName) {
@@ -398,7 +410,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call as paginated response with {@link PagedIterable}.
+     * @return response for ListExpressRouteCrossConnection API service call as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ExpressRouteCrossConnectionInner> listByResourceGroup(String resourceGroupName,
@@ -414,7 +427,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return details about the specified ExpressRouteCrossConnection along with {@link Response} on successful completion of {@link Mono}.
+     * @return details about the specified ExpressRouteCrossConnection along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCrossConnectionInner>>
@@ -452,7 +466,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return details about the specified ExpressRouteCrossConnection along with {@link Response} on successful completion of {@link Mono}.
+     * @return details about the specified ExpressRouteCrossConnection along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCrossConnectionInner>>
@@ -538,7 +553,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -582,7 +598,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -780,7 +797,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCrossConnectionInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -826,7 +844,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return expressRouteCrossConnection resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ExpressRouteCrossConnectionInner>> updateTagsWithResponseAsync(String resourceGroupName,
@@ -925,7 +944,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route cross connection in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route cross connection in a resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listArpTableWithResponseAsync(String resourceGroupName,
@@ -972,7 +992,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route cross connection in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route cross connection in a resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listArpTableWithResponseAsync(String resourceGroupName,
@@ -1016,7 +1037,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express route cross connection in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1042,7 +1064,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express route cross connection in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised ARP table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1068,7 +1091,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express route cross connection in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1089,7 +1113,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express route cross connection in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1110,7 +1135,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route cross connection in a resource group on successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route cross connection in a resource group
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsArpTableListResultInner> listArpTableAsync(String resourceGroupName,
@@ -1130,7 +1156,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route cross connection in a resource group on successful completion of {@link Mono}.
+     * @return the currently advertised ARP table associated with the express route cross connection in a resource group
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsArpTableListResultInner> listArpTableAsync(String resourceGroupName,
@@ -1149,7 +1176,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route cross connection in a resource group.
+     * @return the currently advertised ARP table associated with the express route cross connection in a resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ExpressRouteCircuitsArpTableListResultInner listArpTable(String resourceGroupName,
@@ -1168,7 +1196,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised ARP table associated with the express route cross connection in a resource group.
+     * @return the currently advertised ARP table associated with the express route cross connection in a resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ExpressRouteCircuitsArpTableListResultInner listArpTable(String resourceGroupName,
@@ -1186,7 +1215,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the route table summary associated with the express route cross connection in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the route table summary associated with the express route cross connection in a resource group along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableSummaryWithResponseAsync(String resourceGroupName,
@@ -1233,7 +1263,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the route table summary associated with the express route cross connection in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the route table summary associated with the express route cross connection in a resource group along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableSummaryWithResponseAsync(String resourceGroupName,
@@ -1277,7 +1308,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the route table summary associated with the express route cross connection in a resource group.
+     * @return the {@link PollerFlux} for polling of the route table summary associated with the express route cross
+     * connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1304,7 +1336,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the route table summary associated with the express route cross connection in a resource group.
+     * @return the {@link PollerFlux} for polling of the route table summary associated with the express route cross
+     * connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1331,7 +1364,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the route table summary associated with the express route cross connection in a resource group.
+     * @return the {@link SyncPoller} for polling of the route table summary associated with the express route cross
+     * connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1353,7 +1387,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the route table summary associated with the express route cross connection in a resource group.
+     * @return the {@link SyncPoller} for polling of the route table summary associated with the express route cross
+     * connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1375,7 +1410,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the route table summary associated with the express route cross connection in a resource group on successful completion of {@link Mono}.
+     * @return the route table summary associated with the express route cross connection in a resource group on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner> listRoutesTableSummaryAsync(
@@ -1395,7 +1431,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the route table summary associated with the express route cross connection in a resource group on successful completion of {@link Mono}.
+     * @return the route table summary associated with the express route cross connection in a resource group on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCrossConnectionsRoutesTableSummaryListResultInner> listRoutesTableSummaryAsync(
@@ -1443,7 +1480,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1452,7 +1490,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route cross connection in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route cross connection in a resource
+     * group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableWithResponseAsync(String resourceGroupName,
@@ -1489,7 +1528,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1499,7 +1539,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route cross connection in a resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route cross connection in a resource
+     * group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listRoutesTableWithResponseAsync(String resourceGroupName,
@@ -1534,7 +1575,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1543,7 +1585,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express route cross connection in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1559,7 +1602,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1569,7 +1613,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express route cross connection in a resource group.
+     * @return the {@link PollerFlux} for polling of the currently advertised routes table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private
@@ -1586,7 +1631,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1595,7 +1641,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express route cross connection in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1607,7 +1654,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1617,7 +1665,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express route cross connection in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express
+     * route cross connection in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public
@@ -1629,7 +1678,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1638,7 +1688,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route cross connection in a resource group on successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route cross connection in a resource
+     * group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsRoutesTableListResultInner> listRoutesTableAsync(String resourceGroupName,
@@ -1648,7 +1699,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1658,7 +1710,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route cross connection in a resource group on successful completion of {@link Mono}.
+     * @return the currently advertised routes table associated with the express route cross connection in a resource
+     * group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<ExpressRouteCircuitsRoutesTableListResultInner> listRoutesTableAsync(String resourceGroupName,
@@ -1669,7 +1722,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1678,7 +1732,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route cross connection in a resource group.
+     * @return the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ExpressRouteCircuitsRoutesTableListResultInner listRoutesTable(String resourceGroupName,
@@ -1687,7 +1742,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
     }
 
     /**
-     * Gets the currently advertised routes table associated with the express route cross connection in a resource group.
+     * Gets the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param crossConnectionName The name of the ExpressRouteCrossConnection.
@@ -1697,7 +1753,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table associated with the express route cross connection in a resource group.
+     * @return the currently advertised routes table associated with the express route cross connection in a resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public ExpressRouteCircuitsRoutesTableListResultInner listRoutesTable(String resourceGroupName,
@@ -1714,7 +1771,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -1742,7 +1800,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>> listNextSinglePageAsync(String nextLink,
@@ -1770,7 +1829,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>>
@@ -1801,7 +1861,8 @@ public final class ExpressRouteCrossConnectionsClientImpl implements ExpressRout
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListExpressRouteCrossConnection API service call along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ExpressRouteCrossConnectionInner>>

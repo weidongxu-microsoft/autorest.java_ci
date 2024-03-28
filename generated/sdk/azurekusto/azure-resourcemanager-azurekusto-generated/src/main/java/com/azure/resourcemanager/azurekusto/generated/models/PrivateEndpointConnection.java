@@ -76,7 +76,8 @@ public interface PrivateEndpointConnection {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.PrivateEndpointConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.PrivateEndpointConnectionInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -114,7 +115,8 @@ public interface PrivateEndpointConnection {
         }
 
         /**
-         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPrivateLinkServiceConnectionState {
             /**
@@ -138,7 +140,8 @@ public interface PrivateEndpointConnection {
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
-             * Specifies the privateLinkServiceConnectionState property: Connection State of the Private Endpoint Connection..
+             * Specifies the privateLinkServiceConnectionState property: Connection State of the Private Endpoint
+             * Connection..
              * 
              * @param privateLinkServiceConnectionState Connection State of the Private Endpoint Connection.
              * @return the next definition stage.
@@ -184,7 +187,8 @@ public interface PrivateEndpointConnection {
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
-             * Specifies the privateLinkServiceConnectionState property: Connection State of the Private Endpoint Connection..
+             * Specifies the privateLinkServiceConnectionState property: Connection State of the Private Endpoint
+             * Connection..
              * 
              * @param privateLinkServiceConnectionState Connection State of the Private Endpoint Connection.
              * @return the next definition stage.

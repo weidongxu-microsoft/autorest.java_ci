@@ -11,7 +11,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInformat
  */
 public interface FlowLogInformation {
     /**
-     * Gets the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics (optional) .
+     * Gets the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics
+     * (optional) .
      * 
      * @return the targetResourceId value.
      */

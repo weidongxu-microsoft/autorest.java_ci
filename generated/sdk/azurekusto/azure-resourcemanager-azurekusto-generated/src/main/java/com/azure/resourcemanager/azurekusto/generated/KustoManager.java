@@ -66,7 +66,8 @@ import java.util.stream.Collectors;
 
 /**
  * Entry point to KustoManager.
- * The Azure Kusto management API provides a RESTful set of web services that interact with Azure Kusto services to manage your clusters and databases. The API enables you to create, update, and delete clusters and databases.
+ * The Azure Kusto management API provides a RESTful set of web services that interact with Azure Kusto services to
+ * manage your clusters and databases. The API enables you to create, update, and delete clusters and databases.
  */
 public final class KustoManager {
     private Clusters clusters;
@@ -510,7 +511,8 @@ public final class KustoManager {
     }
 
     /**
-     * Gets wrapped service client KustoManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client KustoManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client KustoManagementClient.
      */

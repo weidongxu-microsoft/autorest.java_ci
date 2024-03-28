@@ -47,7 +47,8 @@ public interface BackupRequest {
     String backupName();
 
     /**
-     * Gets the enabled property: True if the backup schedule is enabled (must be included in that case), false if the backup schedule should be disabled.
+     * Gets the enabled property: True if the backup schedule is enabled (must be included in that case), false if the
+     * backup schedule should be disabled.
      * 
      * @return the enabled value.
      */

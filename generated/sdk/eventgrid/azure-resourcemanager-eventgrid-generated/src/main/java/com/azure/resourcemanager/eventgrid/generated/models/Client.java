@@ -49,7 +49,8 @@ public interface Client {
     String description();
 
     /**
-     * Gets the authenticationName property: The name presented by the client for authentication. The default value is the name of the resource.
+     * Gets the authenticationName property: The name presented by the client for authentication. The default value is
+     * the name of the resource.
      * 
      * @return the authenticationName value.
      */
@@ -131,7 +132,8 @@ public interface Client {
         }
 
         /**
-         * The stage of the Client definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Client definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithAuthenticationName,
             DefinitionStages.WithClientCertificateAuthentication, DefinitionStages.WithState,
@@ -170,9 +172,11 @@ public interface Client {
          */
         interface WithAuthenticationName {
             /**
-             * Specifies the authenticationName property: The name presented by the client for authentication. The default value is the name of the resource..
+             * Specifies the authenticationName property: The name presented by the client for authentication. The
+             * default value is the name of the resource..
              * 
-             * @param authenticationName The name presented by the client for authentication. The default value is the name of the resource.
+             * @param authenticationName The name presented by the client for authentication. The default value is the
+             * name of the resource.
              * @return the next definition stage.
              */
             WithCreate withAuthenticationName(String authenticationName);
@@ -183,7 +187,8 @@ public interface Client {
          */
         interface WithClientCertificateAuthentication {
             /**
-             * Specifies the clientCertificateAuthentication property: The client certificate authentication information..
+             * Specifies the clientCertificateAuthentication property: The client certificate authentication
+             * information..
              * 
              * @param clientCertificateAuthentication The client certificate authentication information.
              * @return the next definition stage.
@@ -210,7 +215,8 @@ public interface Client {
          */
         interface WithAttributes {
             /**
-             * Specifies the attributes property: Attributes for the client. Supported values are int, bool, string, string[].
+             * Specifies the attributes property: Attributes for the client. Supported values are int, bool, string,
+             * string[].
              * Example:
              * "attributes": { "room": "345", "floor": 12, "deviceTypes": ["Fan", "Light"] }.
              * 
@@ -273,9 +279,11 @@ public interface Client {
          */
         interface WithAuthenticationName {
             /**
-             * Specifies the authenticationName property: The name presented by the client for authentication. The default value is the name of the resource..
+             * Specifies the authenticationName property: The name presented by the client for authentication. The
+             * default value is the name of the resource..
              * 
-             * @param authenticationName The name presented by the client for authentication. The default value is the name of the resource.
+             * @param authenticationName The name presented by the client for authentication. The default value is the
+             * name of the resource.
              * @return the next definition stage.
              */
             Update withAuthenticationName(String authenticationName);
@@ -286,7 +294,8 @@ public interface Client {
          */
         interface WithClientCertificateAuthentication {
             /**
-             * Specifies the clientCertificateAuthentication property: The client certificate authentication information..
+             * Specifies the clientCertificateAuthentication property: The client certificate authentication
+             * information..
              * 
              * @param clientCertificateAuthentication The client certificate authentication information.
              * @return the next definition stage.
@@ -312,7 +321,8 @@ public interface Client {
          */
         interface WithAttributes {
             /**
-             * Specifies the attributes property: Attributes for the client. Supported values are int, bool, string, string[].
+             * Specifies the attributes property: Attributes for the client. Supported values are int, bool, string,
+             * string[].
              * Example:
              * "attributes": { "room": "345", "floor": 12, "deviceTypes": ["Fan", "Light"] }.
              * 

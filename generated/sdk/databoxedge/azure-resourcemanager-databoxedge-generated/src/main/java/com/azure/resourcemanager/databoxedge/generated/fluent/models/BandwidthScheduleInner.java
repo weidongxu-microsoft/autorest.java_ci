@@ -154,8 +154,9 @@ public final class BandwidthScheduleInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model BandwidthScheduleInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model BandwidthScheduleInner"));
         } else {
             innerProperties().validate();
         }

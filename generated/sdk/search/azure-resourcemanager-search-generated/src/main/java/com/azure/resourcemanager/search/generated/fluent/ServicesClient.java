@@ -22,10 +22,16 @@ import java.util.UUID;
  */
 public interface ServicesClient {
     /**
-     * Creates or updates a search service in the given resource group. If the search service already exists, all properties will be updated with the given values.
+     * Creates or updates a search service in the given resource group. If the search service already exists, all
+     * properties will be updated with the given values.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must
+     * only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot
+     * contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be
+     * globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot
+     * change the service name after the service is created.
      * @param serviceParam The definition of the search service to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -37,12 +43,19 @@ public interface ServicesClient {
         String searchServiceName, SearchServiceInner serviceParam);
 
     /**
-     * Creates or updates a search service in the given resource group. If the search service already exists, all properties will be updated with the given values.
+     * Creates or updates a search service in the given resource group. If the search service already exists, all
+     * properties will be updated with the given values.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must
+     * only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot
+     * contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be
+     * globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot
+     * change the service name after the service is created.
      * @param serviceParam The definition of the search service to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -54,10 +67,16 @@ public interface ServicesClient {
         String searchServiceName, SearchServiceInner serviceParam, UUID clientRequestId, Context context);
 
     /**
-     * Creates or updates a search service in the given resource group. If the search service already exists, all properties will be updated with the given values.
+     * Creates or updates a search service in the given resource group. If the search service already exists, all
+     * properties will be updated with the given values.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must
+     * only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot
+     * contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be
+     * globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot
+     * change the service name after the service is created.
      * @param serviceParam The definition of the search service to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -69,12 +88,19 @@ public interface ServicesClient {
         SearchServiceInner serviceParam);
 
     /**
-     * Creates or updates a search service in the given resource group. If the search service already exists, all properties will be updated with the given values.
+     * Creates or updates a search service in the given resource group. If the search service already exists, all
+     * properties will be updated with the given values.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
-     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot change the service name after the service is created.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
+     * @param searchServiceName The name of the Azure AI Search service to create or update. Search service names must
+     * only contain lowercase letters, digits or dashes, cannot use dash as the first two or last one characters, cannot
+     * contain consecutive dashes, and must be between 2 and 60 characters in length. Search service names must be
+     * globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net). You cannot
+     * change the service name after the service is created.
      * @param serviceParam The definition of the search service to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -88,10 +114,12 @@ public interface ServicesClient {
     /**
      * Updates an existing search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service to update.
      * @param serviceParam The definition of the search service to update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -105,7 +133,8 @@ public interface ServicesClient {
     /**
      * Updates an existing search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service to update.
      * @param serviceParam The definition of the search service to update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -119,9 +148,11 @@ public interface ServicesClient {
     /**
      * Gets the search service with the given name in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -135,7 +166,8 @@ public interface ServicesClient {
     /**
      * Gets the search service with the given name in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -148,9 +180,11 @@ public interface ServicesClient {
     /**
      * Deletes a search service in the given resource group, along with its associated resources.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -164,7 +198,8 @@ public interface ServicesClient {
     /**
      * Deletes a search service in the given resource group, along with its associated resources.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -176,11 +211,13 @@ public interface ServicesClient {
     /**
      * Gets a list of all Search services in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Search services in the given resource group as paginated response with {@link PagedIterable}.
+     * @return a list of all Search services in the given resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<SearchServiceInner> listByResourceGroup(String resourceGroupName);
@@ -188,13 +225,16 @@ public interface ServicesClient {
     /**
      * Gets a list of all Search services in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all Search services in the given resource group as paginated response with {@link PagedIterable}.
+     * @return a list of all Search services in the given resource group as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<SearchServiceInner> listByResourceGroup(String resourceGroupName, UUID clientRequestId,
@@ -213,7 +253,8 @@ public interface ServicesClient {
     /**
      * Gets a list of all Search services in the given subscription.
      * 
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -224,10 +265,12 @@ public interface ServicesClient {
     PagedIterable<SearchServiceInner> list(UUID clientRequestId, Context context);
 
     /**
-     * Checks whether or not the given search service name is available for use. Search service names must be globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
+     * Checks whether or not the given search service name is available for use. Search service names must be globally
+     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      * 
      * @param checkNameAvailabilityInput The resource name and type to check.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -239,7 +282,8 @@ public interface ServicesClient {
         CheckNameAvailabilityInput checkNameAvailabilityInput, UUID clientRequestId, Context context);
 
     /**
-     * Checks whether or not the given search service name is available for use. Search service names must be globally unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
+     * Checks whether or not the given search service name is available for use. Search service names must be globally
+     * unique since they are part of the service URI (https://&lt;name&gt;.search.windows.net).
      * 
      * @param checkNameAvailabilityInput The resource name and type to check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

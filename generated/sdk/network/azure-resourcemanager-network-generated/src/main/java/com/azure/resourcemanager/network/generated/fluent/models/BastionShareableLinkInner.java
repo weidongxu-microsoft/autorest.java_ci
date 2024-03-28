@@ -83,7 +83,8 @@ public final class BastionShareableLinkInner {
     }
 
     /**
-     * Get the message property: Optional field indicating the warning or error message related to the vm in case of partial failure.
+     * Get the message property: Optional field indicating the warning or error message related to the vm in case of
+     * partial failure.
      * 
      * @return the message value.
      */
@@ -98,8 +99,8 @@ public final class BastionShareableLinkInner {
      */
     public void validate() {
         if (vm() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property vm in model BastionShareableLinkInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property vm in model BastionShareableLinkInner"));
         } else {
             vm().validate();
         }

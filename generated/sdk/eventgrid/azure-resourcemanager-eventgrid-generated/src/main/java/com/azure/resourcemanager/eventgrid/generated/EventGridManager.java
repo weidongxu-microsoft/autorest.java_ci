@@ -752,7 +752,8 @@ public final class EventGridManager {
     }
 
     /**
-     * Gets wrapped service client EventGridManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client EventGridManagementClient providing direct access to the underlying auto-generated
+     * API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client EventGridManagementClient.
      */

@@ -55,7 +55,8 @@ public final class ManagedHsmKeyRotationPolicyAttributes {
     }
 
     /**
-     * Get the expiryTime property: The expiration time for the new key version. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
+     * Get the expiryTime property: The expiration time for the new key version. It should be in ISO8601 format. Eg:
+     * 'P90D', 'P1Y'.
      * 
      * @return the expiryTime value.
      */
@@ -64,7 +65,8 @@ public final class ManagedHsmKeyRotationPolicyAttributes {
     }
 
     /**
-     * Set the expiryTime property: The expiration time for the new key version. It should be in ISO8601 format. Eg: 'P90D', 'P1Y'.
+     * Set the expiryTime property: The expiration time for the new key version. It should be in ISO8601 format. Eg:
+     * 'P90D', 'P1Y'.
      * 
      * @param expiryTime the expiryTime value to set.
      * @return the ManagedHsmKeyRotationPolicyAttributes object itself.

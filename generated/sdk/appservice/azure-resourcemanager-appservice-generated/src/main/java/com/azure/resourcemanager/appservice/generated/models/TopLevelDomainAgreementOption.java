@@ -31,7 +31,8 @@ public final class TopLevelDomainAgreementOption {
     }
 
     /**
-     * Get the includePrivacy property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include agreements for domain privacy as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the includePrivacy property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include
+     * agreements for domain privacy as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the includePrivacy value.
      */
@@ -40,7 +41,8 @@ public final class TopLevelDomainAgreementOption {
     }
 
     /**
-     * Set the includePrivacy property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include agreements for domain privacy as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the includePrivacy property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include
+     * agreements for domain privacy as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param includePrivacy the includePrivacy value to set.
      * @return the TopLevelDomainAgreementOption object itself.
@@ -51,7 +53,8 @@ public final class TopLevelDomainAgreementOption {
     }
 
     /**
-     * Get the forTransfer property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include agreements for domain transfer as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the forTransfer property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include
+     * agreements for domain transfer as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the forTransfer value.
      */
@@ -60,7 +63,8 @@ public final class TopLevelDomainAgreementOption {
     }
 
     /**
-     * Set the forTransfer property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include agreements for domain transfer as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the forTransfer property: If &lt;code&gt;true&lt;/code&gt;, then the list of agreements will include
+     * agreements for domain transfer as well; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param forTransfer the forTransfer value to set.
      * @return the TopLevelDomainAgreementOption object itself.

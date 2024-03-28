@@ -67,7 +67,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientServers to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientServers to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
@@ -368,7 +369,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -410,7 +412,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -452,7 +455,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -471,7 +475,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -493,7 +498,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -510,7 +516,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -528,7 +535,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -546,7 +554,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -565,7 +574,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -581,7 +591,8 @@ public final class ServersClientImpl implements ServersClient {
     }
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.

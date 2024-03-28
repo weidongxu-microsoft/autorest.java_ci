@@ -25,7 +25,9 @@ public final class VirtualMachineScaleSetHardwareProfile {
     }
 
     /**
-     * Get the vmSizeProperties property: Specifies the properties for customizing the size of the virtual machine. Minimum api-version: 2021-11-01. Please follow the instructions in [VM Customization](https://aka.ms/vmcustomization) for more details.
+     * Get the vmSizeProperties property: Specifies the properties for customizing the size of the virtual machine.
+     * Minimum api-version: 2021-11-01. Please follow the instructions in [VM
+     * Customization](https://aka.ms/vmcustomization) for more details.
      * 
      * @return the vmSizeProperties value.
      */
@@ -34,7 +36,9 @@ public final class VirtualMachineScaleSetHardwareProfile {
     }
 
     /**
-     * Set the vmSizeProperties property: Specifies the properties for customizing the size of the virtual machine. Minimum api-version: 2021-11-01. Please follow the instructions in [VM Customization](https://aka.ms/vmcustomization) for more details.
+     * Set the vmSizeProperties property: Specifies the properties for customizing the size of the virtual machine.
+     * Minimum api-version: 2021-11-01. Please follow the instructions in [VM
+     * Customization](https://aka.ms/vmcustomization) for more details.
      * 
      * @param vmSizeProperties the vmSizeProperties value to set.
      * @return the VirtualMachineScaleSetHardwareProfile object itself.

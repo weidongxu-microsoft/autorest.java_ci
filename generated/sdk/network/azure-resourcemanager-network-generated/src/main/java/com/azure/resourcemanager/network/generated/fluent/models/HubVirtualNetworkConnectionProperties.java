@@ -139,7 +139,8 @@ public final class HubVirtualNetworkConnectionProperties {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -148,7 +149,8 @@ public final class HubVirtualNetworkConnectionProperties {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the HubVirtualNetworkConnectionProperties object itself.

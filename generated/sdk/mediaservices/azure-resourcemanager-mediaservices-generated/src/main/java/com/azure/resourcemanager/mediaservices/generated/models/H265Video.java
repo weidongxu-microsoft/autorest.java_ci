@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -18,6 +19,13 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.H265Video")
 @Fluent
 public final class H265Video extends Video {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.H265Video";
+
     /*
      * Specifies whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
      */
@@ -40,11 +48,22 @@ public final class H265Video extends Video {
      * Creates an instance of H265Video class.
      */
     public H265Video() {
-        withOdataType("#Microsoft.Media.H265Video");
     }
 
     /**
-     * Get the sceneChangeDetection property: Specifies whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the sceneChangeDetection property: Specifies whether or not the encoder should insert key frames at scene
+     * changes. If not specified, the default is false. This flag should be set to true only when the encoder is being
+     * configured to produce a single output video.
      * 
      * @return the sceneChangeDetection value.
      */
@@ -53,7 +72,9 @@ public final class H265Video extends Video {
     }
 
     /**
-     * Set the sceneChangeDetection property: Specifies whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
+     * Set the sceneChangeDetection property: Specifies whether or not the encoder should insert key frames at scene
+     * changes. If not specified, the default is false. This flag should be set to true only when the encoder is being
+     * configured to produce a single output video.
      * 
      * @param sceneChangeDetection the sceneChangeDetection value to set.
      * @return the H265Video object itself.
@@ -64,7 +85,9 @@ public final class H265Video extends Video {
     }
 
     /**
-     * Get the complexity property: Tells the encoder how to choose its encoding settings.  Quality will provide for a higher compression ratio but at a higher cost and longer compute time.  Speed will produce a relatively larger file but is faster and more economical. The default value is Balanced.
+     * Get the complexity property: Tells the encoder how to choose its encoding settings. Quality will provide for a
+     * higher compression ratio but at a higher cost and longer compute time. Speed will produce a relatively larger
+     * file but is faster and more economical. The default value is Balanced.
      * 
      * @return the complexity value.
      */
@@ -73,7 +96,9 @@ public final class H265Video extends Video {
     }
 
     /**
-     * Set the complexity property: Tells the encoder how to choose its encoding settings.  Quality will provide for a higher compression ratio but at a higher cost and longer compute time.  Speed will produce a relatively larger file but is faster and more economical. The default value is Balanced.
+     * Set the complexity property: Tells the encoder how to choose its encoding settings. Quality will provide for a
+     * higher compression ratio but at a higher cost and longer compute time. Speed will produce a relatively larger
+     * file but is faster and more economical. The default value is Balanced.
      * 
      * @param complexity the complexity value to set.
      * @return the H265Video object itself.

@@ -27,7 +27,8 @@ public interface PrivateLinkServicesClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -41,7 +42,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -54,7 +56,8 @@ public interface PrivateLinkServicesClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -67,7 +70,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -81,7 +85,8 @@ public interface PrivateLinkServicesClient {
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private link service by resource group along with {@link Response}.
      */
@@ -95,7 +100,8 @@ public interface PrivateLinkServicesClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private link service by resource group.
      */
@@ -109,7 +115,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of private link service resource.
      */
@@ -125,7 +132,8 @@ public interface PrivateLinkServicesClient {
      * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of private link service resource.
      */
@@ -140,7 +148,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param parameters Parameters supplied to the create or update private link service operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return private link service resource.
      */
@@ -156,7 +165,8 @@ public interface PrivateLinkServicesClient {
      * @param parameters Parameters supplied to the create or update private link service operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return private link service resource.
      */
@@ -169,7 +179,8 @@ public interface PrivateLinkServicesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private link services in a resource group as paginated response with {@link PagedIterable}.
      */
@@ -182,7 +193,8 @@ public interface PrivateLinkServicesClient {
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private link services in a resource group as paginated response with {@link PagedIterable}.
      */
@@ -192,7 +204,8 @@ public interface PrivateLinkServicesClient {
     /**
      * Gets all private link service in a subscription.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private link service in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -204,7 +217,8 @@ public interface PrivateLinkServicesClient {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return all private link service in a subscription as paginated response with {@link PagedIterable}.
      */
@@ -220,9 +234,11 @@ public interface PrivateLinkServicesClient {
      * @param expand Expands referenced resources.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specific private end point connection by specific private link service in the resource group along with {@link Response}.
+     * @return the specific private end point connection by specific private link service in the resource group along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<PrivateEndpointConnectionInner> getPrivateEndpointConnectionWithResponse(String resourceGroupName,
@@ -235,7 +251,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specific private end point connection by specific private link service in the resource group.
      */
@@ -252,7 +269,8 @@ public interface PrivateLinkServicesClient {
      * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return privateEndpointConnection resource along with {@link Response}.
      */
@@ -268,7 +286,8 @@ public interface PrivateLinkServicesClient {
      * @param peConnectionName The name of the private end point connection.
      * @param parameters Parameters supplied to approve or reject the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return privateEndpointConnection resource.
      */
@@ -283,7 +302,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -299,7 +319,8 @@ public interface PrivateLinkServicesClient {
      * @param peConnectionName The name of the private end point connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -314,7 +335,8 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param peConnectionName The name of the private end point connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -328,7 +350,8 @@ public interface PrivateLinkServicesClient {
      * @param peConnectionName The name of the private end point connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -341,9 +364,11 @@ public interface PrivateLinkServicesClient {
      * @param resourceGroupName The name of the resource group.
      * @param serviceName The name of the private link service.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private end point connections for a specific private link service as paginated response with {@link PagedIterable}.
+     * @return all private end point connections for a specific private link service as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PrivateEndpointConnectionInner> listPrivateEndpointConnections(String resourceGroupName,
@@ -356,9 +381,11 @@ public interface PrivateLinkServicesClient {
      * @param serviceName The name of the private link service.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all private end point connections for a specific private link service as paginated response with {@link PagedIterable}.
+     * @return all private end point connections for a specific private link service as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PrivateEndpointConnectionInner> listPrivateEndpointConnections(String resourceGroupName,
@@ -372,7 +399,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service
+     * call.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -387,7 +415,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service
+     * call.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -432,7 +461,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service
+     * call.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -449,7 +479,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service call.
+     * @return the {@link SyncPoller} for polling of response for the CheckPrivateLinkServiceVisibility API service
+     * call.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<PrivateLinkServiceVisibilityInner>, PrivateLinkServiceVisibilityInner>
@@ -488,47 +519,54 @@ public interface PrivateLinkServicesClient {
         String resourceGroupName, CheckPrivateLinkServiceVisibilityRequest parameters, Context context);
 
     /**
-     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.
+     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this
+     * subscription in this region.
      * 
      * @param location The location of the domain name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved as paginated response with {@link PagedIterable}.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AutoApprovedPrivateLinkServiceInner> listAutoApprovedPrivateLinkServices(String location);
 
     /**
-     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.
+     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this
+     * subscription in this region.
      * 
      * @param location The location of the domain name.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved as paginated response with {@link PagedIterable}.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AutoApprovedPrivateLinkServiceInner> listAutoApprovedPrivateLinkServices(String location,
         Context context);
 
     /**
-     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.
+     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this
+     * subscription in this region.
      * 
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved as paginated response with {@link PagedIterable}.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AutoApprovedPrivateLinkServiceInner>
         listAutoApprovedPrivateLinkServicesByResourceGroup(String location, String resourceGroupName);
 
     /**
-     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this subscription in this region.
+     * Returns all of the private link service ids that can be linked to a Private Endpoint with auto approved in this
+     * subscription in this region.
      * 
      * @param location The location of the domain name.
      * @param resourceGroupName The name of the resource group.
@@ -536,7 +574,8 @@ public interface PrivateLinkServicesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return an array of private link service id that can be linked to a private end point with auto approved as paginated response with {@link PagedIterable}.
+     * @return an array of private link service id that can be linked to a private end point with auto approved as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<AutoApprovedPrivateLinkServiceInner>

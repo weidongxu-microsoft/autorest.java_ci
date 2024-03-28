@@ -149,10 +149,11 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Get the isZoneRedundant property: This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy capability or not. If this
+     * Get the isZoneRedundant property: This is an optional property and it allows the user to specify if the namespace
+     * resource supports zone-redundancy capability or not. If this
      * property is not specified explicitly by the user, its default value depends on the following conditions:
-     *     a. For Availability Zones enabled regions - The default property value would be true.
-     *     b. For non-Availability Zones enabled regions - The default property value would be false.
+     * a. For Availability Zones enabled regions - The default property value would be true.
+     * b. For non-Availability Zones enabled regions - The default property value would be false.
      * Once specified, this property cannot be updated.
      * 
      * @return the isZoneRedundant value.
@@ -162,10 +163,11 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Set the isZoneRedundant property: This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy capability or not. If this
+     * Set the isZoneRedundant property: This is an optional property and it allows the user to specify if the namespace
+     * resource supports zone-redundancy capability or not. If this
      * property is not specified explicitly by the user, its default value depends on the following conditions:
-     *     a. For Availability Zones enabled regions - The default property value would be true.
-     *     b. For non-Availability Zones enabled regions - The default property value would be false.
+     * a. For Availability Zones enabled regions - The default property value would be true.
+     * b. For non-Availability Zones enabled regions - The default property value would be false.
      * Once specified, this property cannot be updated.
      * 
      * @param isZoneRedundant the isZoneRedundant value to set.
@@ -177,8 +179,11 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" /&gt;.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules"
+     * /&gt;.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -187,8 +192,11 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
-     * You can further restrict to specific IPs by configuring &lt;seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" /&gt;.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
+     * You can further restrict to specific IPs by configuring &lt;seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules"
+     * /&gt;.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the NamespaceProperties object itself.
@@ -199,7 +207,8 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Get the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @return the inboundIpRules value.
      */
@@ -208,7 +217,8 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * Set the inboundIpRules property: This can be used to restrict traffic from specific IPs instead of all IPs. Note:
+     * These are considered only if PublicNetworkAccess is enabled.
      * 
      * @param inboundIpRules the inboundIpRules value to set.
      * @return the NamespaceProperties object itself.
@@ -219,7 +229,8 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this namespace. Only TLS version 1.2 is supported.
+     * Get the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * namespace. Only TLS version 1.2 is supported.
      * 
      * @return the minimumTlsVersionAllowed value.
      */
@@ -228,7 +239,8 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this namespace. Only TLS version 1.2 is supported.
+     * Set the minimumTlsVersionAllowed property: Minimum TLS version of the publisher allowed to publish to this
+     * namespace. Only TLS version 1.2 is supported.
      * 
      * @param minimumTlsVersionAllowed the minimumTlsVersionAllowed value to set.
      * @return the NamespaceProperties object itself.

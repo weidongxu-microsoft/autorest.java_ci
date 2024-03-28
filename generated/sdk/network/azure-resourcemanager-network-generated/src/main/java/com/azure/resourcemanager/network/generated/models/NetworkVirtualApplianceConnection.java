@@ -68,14 +68,16 @@ public interface NetworkVirtualApplianceConnection {
     Boolean enableInternetSecurity();
 
     /**
-     * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Gets the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
     RoutingConfiguration routingConfiguration();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceConnectionInner
+     * object.
      * 
      * @return the inner object.
      */

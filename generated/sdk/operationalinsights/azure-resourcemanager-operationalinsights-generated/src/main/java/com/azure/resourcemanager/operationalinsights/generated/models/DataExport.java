@@ -69,7 +69,8 @@ public interface DataExport {
     String lastModifiedDate();
 
     /**
-     * Gets the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
+     * Gets the resourceId property: The destination resource ID. This can be copied from the Properties entry of the
+     * destination resource in Azure.
      * 
      * @return the resourceId value.
      */
@@ -83,7 +84,8 @@ public interface DataExport {
     Type typePropertiesType();
 
     /**
-     * Gets the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+     * Gets the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
+     * Storage Account.
      * 
      * @return the eventHubName value.
      */
@@ -135,7 +137,8 @@ public interface DataExport {
         }
 
         /**
-         * The stage of the DataExport definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DataExport definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDataExportId, DefinitionStages.WithTableNames,
             DefinitionStages.WithEnable, DefinitionStages.WithCreatedDate, DefinitionStages.WithLastModifiedDate,
@@ -174,7 +177,8 @@ public interface DataExport {
          */
         interface WithTableNames {
             /**
-             * Specifies the tableNames property: An array of tables to export, for example: [“Heartbeat, SecurityEvent”]..
+             * Specifies the tableNames property: An array of tables to export, for example: [“Heartbeat,
+             * SecurityEvent”]..
              * 
              * @param tableNames An array of tables to export, for example: [“Heartbeat, SecurityEvent”].
              * @return the next definition stage.
@@ -226,9 +230,11 @@ public interface DataExport {
          */
         interface WithResourceId {
             /**
-             * Specifies the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure..
+             * Specifies the resourceId property: The destination resource ID. This can be copied from the Properties
+             * entry of the destination resource in Azure..
              * 
-             * @param resourceId The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
+             * @param resourceId The destination resource ID. This can be copied from the Properties entry of the
+             * destination resource in Azure.
              * @return the next definition stage.
              */
             WithCreate withResourceId(String resourceId);
@@ -239,9 +245,11 @@ public interface DataExport {
          */
         interface WithEventHubName {
             /**
-             * Specifies the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account..
+             * Specifies the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when
+             * destination is Storage Account..
              * 
-             * @param eventHubName Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+             * @param eventHubName Optional. Allows to define an Event Hub name. Not applicable when destination is
+             * Storage Account.
              * @return the next definition stage.
              */
             WithCreate withEventHubName(String eventHubName);
@@ -299,7 +307,8 @@ public interface DataExport {
          */
         interface WithTableNames {
             /**
-             * Specifies the tableNames property: An array of tables to export, for example: [“Heartbeat, SecurityEvent”]..
+             * Specifies the tableNames property: An array of tables to export, for example: [“Heartbeat,
+             * SecurityEvent”]..
              * 
              * @param tableNames An array of tables to export, for example: [“Heartbeat, SecurityEvent”].
              * @return the next definition stage.
@@ -351,9 +360,11 @@ public interface DataExport {
          */
         interface WithResourceId {
             /**
-             * Specifies the resourceId property: The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure..
+             * Specifies the resourceId property: The destination resource ID. This can be copied from the Properties
+             * entry of the destination resource in Azure..
              * 
-             * @param resourceId The destination resource ID. This can be copied from the Properties entry of the destination resource in Azure.
+             * @param resourceId The destination resource ID. This can be copied from the Properties entry of the
+             * destination resource in Azure.
              * @return the next definition stage.
              */
             Update withResourceId(String resourceId);
@@ -364,9 +375,11 @@ public interface DataExport {
          */
         interface WithEventHubName {
             /**
-             * Specifies the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account..
+             * Specifies the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when
+             * destination is Storage Account..
              * 
-             * @param eventHubName Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+             * @param eventHubName Optional. Allows to define an Event Hub name. Not applicable when destination is
+             * Storage Account.
              * @return the next definition stage.
              */
             Update withEventHubName(String eventHubName);

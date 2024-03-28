@@ -166,7 +166,8 @@ public final class MetricSpecification {
     }
 
     /**
-     * Get the aggregationType property: The metric aggregation type. Possible values include: 'Average', 'Count', 'Total'.
+     * Get the aggregationType property: The metric aggregation type. Possible values include: 'Average', 'Count',
+     * 'Total'.
      * 
      * @return the aggregationType value.
      */
@@ -175,7 +176,8 @@ public final class MetricSpecification {
     }
 
     /**
-     * Set the aggregationType property: The metric aggregation type. Possible values include: 'Average', 'Count', 'Total'.
+     * Set the aggregationType property: The metric aggregation type. Possible values include: 'Average', 'Count',
+     * 'Total'.
      * 
      * @param aggregationType the aggregationType value to set.
      * @return the MetricSpecification object itself.

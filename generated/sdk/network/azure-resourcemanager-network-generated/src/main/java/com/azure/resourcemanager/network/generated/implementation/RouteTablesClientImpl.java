@@ -66,7 +66,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientRouteTables to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientRouteTables to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -844,7 +845,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all route tables in a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -878,7 +880,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all route tables in a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -970,7 +973,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all route tables in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listSinglePageAsync() {
@@ -999,7 +1003,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all route tables in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all route tables in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listSinglePageAsync(Context context) {
@@ -1081,7 +1086,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listNextSinglePageAsync(String nextLink) {
@@ -1109,7 +1115,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1136,7 +1143,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listAllNextSinglePageAsync(String nextLink) {
@@ -1165,7 +1173,8 @@ public final class RouteTablesClientImpl implements RouteTablesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListRouteTable API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<RouteTableInner>> listAllNextSinglePageAsync(String nextLink, Context context) {

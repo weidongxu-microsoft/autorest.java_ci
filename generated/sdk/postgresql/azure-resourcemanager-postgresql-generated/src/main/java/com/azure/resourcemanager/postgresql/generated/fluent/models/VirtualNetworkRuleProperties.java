@@ -59,7 +59,8 @@ public final class VirtualNetworkRuleProperties {
     }
 
     /**
-     * Get the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled.
+     * Get the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet
+     * service endpoint enabled.
      * 
      * @return the ignoreMissingVnetServiceEndpoint value.
      */
@@ -68,7 +69,8 @@ public final class VirtualNetworkRuleProperties {
     }
 
     /**
-     * Set the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet service endpoint enabled.
+     * Set the ignoreMissingVnetServiceEndpoint property: Create firewall rule before the virtual network has vnet
+     * service endpoint enabled.
      * 
      * @param ignoreMissingVnetServiceEndpoint the ignoreMissingVnetServiceEndpoint value to set.
      * @return the VirtualNetworkRuleProperties object itself.
@@ -94,8 +96,9 @@ public final class VirtualNetworkRuleProperties {
      */
     public void validate() {
         if (virtualNetworkSubnetId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property virtualNetworkSubnetId in model VirtualNetworkRuleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property virtualNetworkSubnetId in model VirtualNetworkRuleProperties"));
         }
     }
 

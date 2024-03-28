@@ -64,7 +64,8 @@ public final class PeerExpressRouteCircuitConnectionPropertiesFormat {
     }
 
     /**
-     * Get the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit.
+     * Get the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
+     * circuit.
      * 
      * @return the expressRouteCircuitPeering value.
      */
@@ -73,7 +74,8 @@ public final class PeerExpressRouteCircuitConnectionPropertiesFormat {
     }
 
     /**
-     * Set the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit.
+     * Set the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
+     * circuit.
      * 
      * @param expressRouteCircuitPeering the expressRouteCircuitPeering value to set.
      * @return the PeerExpressRouteCircuitConnectionPropertiesFormat object itself.
@@ -85,7 +87,8 @@ public final class PeerExpressRouteCircuitConnectionPropertiesFormat {
     }
 
     /**
-     * Get the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+     * Get the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
+     * the peered circuit.
      * 
      * @return the peerExpressRouteCircuitPeering value.
      */
@@ -94,7 +97,8 @@ public final class PeerExpressRouteCircuitConnectionPropertiesFormat {
     }
 
     /**
-     * Set the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+     * Set the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
+     * the peered circuit.
      * 
      * @param peerExpressRouteCircuitPeering the peerExpressRouteCircuitPeering value to set.
      * @return the PeerExpressRouteCircuitConnectionPropertiesFormat object itself.
@@ -155,7 +159,8 @@ public final class PeerExpressRouteCircuitConnectionPropertiesFormat {
     }
 
     /**
-     * Get the authResourceGuid property: The resource guid of the authorization used for the express route circuit connection.
+     * Get the authResourceGuid property: The resource guid of the authorization used for the express route circuit
+     * connection.
      * 
      * @return the authResourceGuid value.
      */
@@ -164,7 +169,8 @@ public final class PeerExpressRouteCircuitConnectionPropertiesFormat {
     }
 
     /**
-     * Set the authResourceGuid property: The resource guid of the authorization used for the express route circuit connection.
+     * Set the authResourceGuid property: The resource guid of the authorization used for the express route circuit
+     * connection.
      * 
      * @param authResourceGuid the authResourceGuid value to set.
      * @return the PeerExpressRouteCircuitConnectionPropertiesFormat object itself.

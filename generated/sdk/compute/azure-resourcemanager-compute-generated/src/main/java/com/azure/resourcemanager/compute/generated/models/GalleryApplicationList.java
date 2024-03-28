@@ -54,7 +54,8 @@ public final class GalleryApplicationList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery. Call ListNext() with this to fetch the next page of gallery Application Definitions.
+     * Get the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery.
+     * Call ListNext() with this to fetch the next page of gallery Application Definitions.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class GalleryApplicationList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery. Call ListNext() with this to fetch the next page of gallery Application Definitions.
+     * Set the nextLink property: The uri to fetch the next page of Application Definitions in the Application Gallery.
+     * Call ListNext() with this to fetch the next page of gallery Application Definitions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryApplicationList object itself.
@@ -80,8 +82,8 @@ public final class GalleryApplicationList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model GalleryApplicationList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model GalleryApplicationList"));
         } else {
             value().forEach(e -> e.validate());
         }

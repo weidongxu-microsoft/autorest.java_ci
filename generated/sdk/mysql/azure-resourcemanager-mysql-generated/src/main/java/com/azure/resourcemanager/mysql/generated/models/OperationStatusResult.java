@@ -97,7 +97,8 @@ public class OperationStatusResult {
     }
 
     /**
-     * Get the resourceId property: Fully qualified ID of the resource against which the original async operation was started.
+     * Get the resourceId property: Fully qualified ID of the resource against which the original async operation was
+     * started.
      * 
      * @return the resourceId value.
      */
@@ -252,8 +253,8 @@ public class OperationStatusResult {
      */
     public void validate() {
         if (status() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property status in model OperationStatusResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property status in model OperationStatusResult"));
         }
         if (operations() != null) {
             operations().forEach(e -> e.validate());

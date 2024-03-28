@@ -54,7 +54,8 @@ public final class CloudServiceRoleListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of resources. Do this till nextLink is null to fetch all the resources.
+     * Get the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of
+     * resources. Do this till nextLink is null to fetch all the resources.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class CloudServiceRoleListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of resources. Do this till nextLink is null to fetch all the resources.
+     * Set the nextLink property: The URI to fetch the next page of resources. Use this to get the next page of
+     * resources. Do this till nextLink is null to fetch all the resources.
      * 
      * @param nextLink the nextLink value to set.
      * @return the CloudServiceRoleListResult object itself.
@@ -80,8 +82,9 @@ public final class CloudServiceRoleListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model CloudServiceRoleListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model CloudServiceRoleListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

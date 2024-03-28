@@ -71,7 +71,8 @@ public interface LocalUser {
     String sid();
 
     /**
-     * Gets the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key.
+     * Gets the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared
+     * key.
      * 
      * @return the hasSharedKey value.
      */
@@ -85,7 +86,8 @@ public interface LocalUser {
     Boolean hasSshKey();
 
     /**
-     * Gets the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password.
+     * Gets the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH
+     * password.
      * 
      * @return the hasSshPassword value.
      */
@@ -129,15 +131,18 @@ public interface LocalUser {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+             * insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account
+             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the LocalUser definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LocalUser definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPermissionScopes, DefinitionStages.WithHomeDirectory,
             DefinitionStages.WithSshAuthorizedKeys, DefinitionStages.WithHasSharedKey, DefinitionStages.WithHasSshKey,
@@ -202,7 +207,8 @@ public interface LocalUser {
          */
         interface WithHasSharedKey {
             /**
-             * Specifies the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key..
+             * Specifies the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove
+             * existing shared key..
              * 
              * @param hasSharedKey Indicates whether shared key exists. Set it to false to remove existing shared key.
              * @return the next definition stage.
@@ -215,7 +221,8 @@ public interface LocalUser {
          */
         interface WithHasSshKey {
             /**
-             * Specifies the hasSshKey property: Indicates whether ssh key exists. Set it to false to remove existing SSH key..
+             * Specifies the hasSshKey property: Indicates whether ssh key exists. Set it to false to remove existing
+             * SSH key..
              * 
              * @param hasSshKey Indicates whether ssh key exists. Set it to false to remove existing SSH key.
              * @return the next definition stage.
@@ -228,9 +235,11 @@ public interface LocalUser {
          */
         interface WithHasSshPassword {
             /**
-             * Specifies the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password..
+             * Specifies the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove
+             * existing SSH password..
              * 
-             * @param hasSshPassword Indicates whether ssh password exists. Set it to false to remove existing SSH password.
+             * @param hasSshPassword Indicates whether ssh password exists. Set it to false to remove existing SSH
+             * password.
              * @return the next definition stage.
              */
             WithCreate withHasSshPassword(Boolean hasSshPassword);
@@ -314,7 +323,8 @@ public interface LocalUser {
          */
         interface WithHasSharedKey {
             /**
-             * Specifies the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove existing shared key..
+             * Specifies the hasSharedKey property: Indicates whether shared key exists. Set it to false to remove
+             * existing shared key..
              * 
              * @param hasSharedKey Indicates whether shared key exists. Set it to false to remove existing shared key.
              * @return the next definition stage.
@@ -327,7 +337,8 @@ public interface LocalUser {
          */
         interface WithHasSshKey {
             /**
-             * Specifies the hasSshKey property: Indicates whether ssh key exists. Set it to false to remove existing SSH key..
+             * Specifies the hasSshKey property: Indicates whether ssh key exists. Set it to false to remove existing
+             * SSH key..
              * 
              * @param hasSshKey Indicates whether ssh key exists. Set it to false to remove existing SSH key.
              * @return the next definition stage.
@@ -340,9 +351,11 @@ public interface LocalUser {
          */
         interface WithHasSshPassword {
             /**
-             * Specifies the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove existing SSH password..
+             * Specifies the hasSshPassword property: Indicates whether ssh password exists. Set it to false to remove
+             * existing SSH password..
              * 
-             * @param hasSshPassword Indicates whether ssh password exists. Set it to false to remove existing SSH password.
+             * @param hasSshPassword Indicates whether ssh password exists. Set it to false to remove existing SSH
+             * password.
              * @return the next definition stage.
              */
             Update withHasSshPassword(Boolean hasSshPassword);

@@ -15,7 +15,8 @@ import com.azure.resourcemanager.eventgrid.generated.fluent.models.NetworkSecuri
 import com.azure.resourcemanager.eventgrid.generated.models.NetworkSecurityPerimeterResourceType;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsClient.
  */
 public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
@@ -62,7 +63,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -82,7 +84,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -103,7 +106,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -123,7 +127,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -152,7 +157,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedIterable}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response
+     * with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<NetworkSecurityPerimeterConfigurationInner> list(String resourceGroupName,
@@ -170,7 +176,8 @@ public interface NetworkSecurityPerimeterConfigurationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedIterable}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response
+     * with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<NetworkSecurityPerimeterConfigurationInner> list(String resourceGroupName,

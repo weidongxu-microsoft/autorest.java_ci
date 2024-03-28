@@ -44,7 +44,8 @@ public final class SmsReceiver {
     }
 
     /**
-     * Get the name property: The name of the SMS receiver. Names must be unique across all receivers within an action group.
+     * Get the name property: The name of the SMS receiver. Names must be unique across all receivers within an action
+     * group.
      * 
      * @return the name value.
      */
@@ -53,7 +54,8 @@ public final class SmsReceiver {
     }
 
     /**
-     * Set the name property: The name of the SMS receiver. Names must be unique across all receivers within an action group.
+     * Set the name property: The name of the SMS receiver. Names must be unique across all receivers within an action
+     * group.
      * 
      * @param name the name value to set.
      * @return the SmsReceiver object itself.
@@ -119,16 +121,16 @@ public final class SmsReceiver {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model SmsReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model SmsReceiver"));
         }
         if (countryCode() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property countryCode in model SmsReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property countryCode in model SmsReceiver"));
         }
         if (phoneNumber() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property phoneNumber in model SmsReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property phoneNumber in model SmsReceiver"));
         }
     }
 

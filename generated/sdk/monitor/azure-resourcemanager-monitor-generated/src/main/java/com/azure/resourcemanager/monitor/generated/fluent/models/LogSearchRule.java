@@ -150,7 +150,8 @@ public final class LogSearchRule {
     }
 
     /**
-     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not. The default is false.
+     * Get the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is false.
      * 
      * @return the autoMitigate value.
      */
@@ -159,7 +160,8 @@ public final class LogSearchRule {
     }
 
     /**
-     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not. The default is false.
+     * Set the autoMitigate property: The flag that indicates whether the alert should be automatically resolved or not.
+     * The default is false.
      * 
      * @param autoMitigate the autoMitigate value to set.
      * @return the LogSearchRule object itself.
@@ -170,7 +172,8 @@ public final class LogSearchRule {
     }
 
     /**
-     * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
+     * Get the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
+     * or false.
      * 
      * @return the enabled value.
      */
@@ -179,7 +182,8 @@ public final class LogSearchRule {
     }
 
     /**
-     * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true or false.
+     * Set the enabled property: The flag which indicates whether the Log Search rule is enabled. Value should be true
+     * or false.
      * 
      * @param enabled the enabled value to set.
      * @return the LogSearchRule object itself.
@@ -274,8 +278,8 @@ public final class LogSearchRule {
      */
     public void validate() {
         if (source() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property source in model LogSearchRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property source in model LogSearchRule"));
         } else {
             source().validate();
         }
@@ -283,8 +287,8 @@ public final class LogSearchRule {
             schedule().validate();
         }
         if (action() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property action in model LogSearchRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property action in model LogSearchRule"));
         } else {
             action().validate();
         }

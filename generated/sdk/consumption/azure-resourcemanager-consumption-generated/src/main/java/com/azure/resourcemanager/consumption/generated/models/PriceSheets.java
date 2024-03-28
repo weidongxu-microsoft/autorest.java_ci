@@ -14,8 +14,11 @@ public interface PriceSheets {
     /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
      * 
-     * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields are not included when returning price sheet.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
+     * are not included when returning price sheet.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -35,11 +38,15 @@ public interface PriceSheets {
     PriceSheetResult get();
 
     /**
-     * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only for May 1, 2014 or later.
+     * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
+     * for May 1, 2014 or later.
      * 
      * @param billingPeriodName Billing Period Name.
-     * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields are not included when returning price sheet.
-     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.
+     * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
+     * are not included when returning price sheet.
+     * @param skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param top May be used to limit the number of results to the top N results.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -51,7 +58,8 @@ public interface PriceSheets {
         Integer top, Context context);
 
     /**
-     * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only for May 1, 2014 or later.
+     * Get the price sheet for a scope by subscriptionId and billing period. Price sheet is available via this API only
+     * for May 1, 2014 or later.
      * 
      * @param billingPeriodName Billing Period Name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

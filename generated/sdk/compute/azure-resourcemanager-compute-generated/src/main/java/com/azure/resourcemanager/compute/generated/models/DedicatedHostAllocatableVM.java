@@ -51,7 +51,8 @@ public final class DedicatedHostAllocatableVM {
     }
 
     /**
-     * Get the count property: Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining capacity.
+     * Get the count property: Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining
+     * capacity.
      * 
      * @return the count value.
      */
@@ -60,7 +61,8 @@ public final class DedicatedHostAllocatableVM {
     }
 
     /**
-     * Set the count property: Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining capacity.
+     * Set the count property: Maximum number of VMs of size vmSize that can fit in the dedicated host's remaining
+     * capacity.
      * 
      * @param count the count value to set.
      * @return the DedicatedHostAllocatableVM object itself.

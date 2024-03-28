@@ -125,7 +125,8 @@ public interface BackupItem {
     OffsetDateTime finishedTimestamp();
 
     /**
-     * Gets the correlationId property: Unique correlation identifier. Please use this along with the timestamp while communicating with Azure support.
+     * Gets the correlationId property: Unique correlation identifier. Please use this along with the timestamp while
+     * communicating with Azure support.
      * 
      * @return the correlationId value.
      */

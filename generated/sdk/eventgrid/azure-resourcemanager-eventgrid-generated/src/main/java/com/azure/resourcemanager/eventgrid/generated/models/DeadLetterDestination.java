@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * Information about the dead letter destination for an event subscription. To configure a deadletter destination, do not directly instantiate an object of this class. Instead, instantiate an object of a derived class. Currently, StorageBlobDeadLetterDestination is the only class that derives from this class.
+ * Information about the dead letter destination for an event subscription. To configure a deadletter destination, do
+ * not directly instantiate an object of this class. Instead, instantiate an object of a derived class. Currently,
+ * StorageBlobDeadLetterDestination is the only class that derives from this class.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -44,17 +46,6 @@ public class DeadLetterDestination {
      */
     public DeadLetterEndPointType endpointType() {
         return this.endpointType;
-    }
-
-    /**
-     * Set the endpointType property: Type of the endpoint for the dead letter destination.
-     * 
-     * @param endpointType the endpointType value to set.
-     * @return the DeadLetterDestination object itself.
-     */
-    protected DeadLetterDestination withEndpointType(DeadLetterEndPointType endpointType) {
-        this.endpointType = endpointType;
-        return this;
     }
 
     /**

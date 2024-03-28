@@ -51,7 +51,8 @@ public final class GalleryDiskImageSource extends GalleryArtifactVersionSource {
     }
 
     /**
-     * Get the storageAccountId property: The Storage Account Id that contains the vhd blob being used as a source for this artifact version.
+     * Get the storageAccountId property: The Storage Account Id that contains the vhd blob being used as a source for
+     * this artifact version.
      * 
      * @return the storageAccountId value.
      */
@@ -60,7 +61,8 @@ public final class GalleryDiskImageSource extends GalleryArtifactVersionSource {
     }
 
     /**
-     * Set the storageAccountId property: The Storage Account Id that contains the vhd blob being used as a source for this artifact version.
+     * Set the storageAccountId property: The Storage Account Id that contains the vhd blob being used as a source for
+     * this artifact version.
      * 
      * @param storageAccountId the storageAccountId value to set.
      * @return the GalleryDiskImageSource object itself.

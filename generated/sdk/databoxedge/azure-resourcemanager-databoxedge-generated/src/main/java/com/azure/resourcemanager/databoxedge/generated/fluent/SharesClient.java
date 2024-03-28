@@ -25,7 +25,8 @@ public interface SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ShareInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName);
@@ -39,7 +40,8 @@ public interface SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with {@link PagedIterable}.
+     * @return collection of all the shares on the Data Box Edge/Gateway device as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<ShareInner> listByDataBoxEdgeDevice(String deviceName, String resourceGroupName, Context context);
@@ -83,7 +85,7 @@ public interface SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a share on the  Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a share on the Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ShareInner>, ShareInner> beginCreateOrUpdate(String deviceName, String name,
@@ -100,7 +102,7 @@ public interface SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a share on the  Data Box Edge/Gateway device.
+     * @return the {@link SyncPoller} for polling of represents a share on the Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ShareInner>, ShareInner> beginCreateOrUpdate(String deviceName, String name,
@@ -116,7 +118,7 @@ public interface SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the  Data Box Edge/Gateway device.
+     * @return represents a share on the Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ShareInner createOrUpdate(String deviceName, String name, String resourceGroupName, ShareInner share);
@@ -132,7 +134,7 @@ public interface SharesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a share on the  Data Box Edge/Gateway device.
+     * @return represents a share on the Data Box Edge/Gateway device.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ShareInner createOrUpdate(String deviceName, String name, String resourceGroupName, ShareInner share,

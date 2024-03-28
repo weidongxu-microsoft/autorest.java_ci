@@ -47,17 +47,6 @@ public class BackupStoreDetails {
     }
 
     /**
-     * Set the objectType property: Type of the specific object - used for deserializing.
-     * 
-     * @param objectType the objectType value to set.
-     * @return the BackupStoreDetails object itself.
-     */
-    protected BackupStoreDetails withObjectType(String objectType) {
-        this.objectType = objectType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

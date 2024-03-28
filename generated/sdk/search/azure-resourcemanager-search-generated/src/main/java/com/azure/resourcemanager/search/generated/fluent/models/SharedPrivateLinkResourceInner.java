@@ -27,7 +27,8 @@ public final class SharedPrivateLinkResourceInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service.
+     * Get the properties property: Describes the properties of a shared private link resource managed by the Azure AI
+     * Search service.
      * 
      * @return the properties value.
      */
@@ -36,7 +37,8 @@ public final class SharedPrivateLinkResourceInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: Describes the properties of a shared private link resource managed by the Azure AI Search service.
+     * Set the properties property: Describes the properties of a shared private link resource managed by the Azure AI
+     * Search service.
      * 
      * @param properties the properties value to set.
      * @return the SharedPrivateLinkResourceInner object itself.

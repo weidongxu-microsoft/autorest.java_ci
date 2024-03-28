@@ -186,7 +186,8 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     }
 
     /**
-     * Get the rotationPolicy property: Key rotation policy in response. It will be used for both output and input. Omitted if empty.
+     * Get the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @return the rotationPolicy value.
      */
@@ -195,7 +196,8 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     }
 
     /**
-     * Set the rotationPolicy property: Key rotation policy in response. It will be used for both output and input. Omitted if empty.
+     * Set the rotationPolicy property: Key rotation policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @param rotationPolicy the rotationPolicy value to set.
      * @return the ManagedHsmKeyInner object itself.
@@ -209,7 +211,8 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     }
 
     /**
-     * Get the releasePolicy property: Key release policy in response. It will be used for both output and input. Omitted if empty.
+     * Get the releasePolicy property: Key release policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @return the releasePolicy value.
      */
@@ -218,7 +221,8 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     }
 
     /**
-     * Set the releasePolicy property: Key release policy in response. It will be used for both output and input. Omitted if empty.
+     * Set the releasePolicy property: Key release policy in response. It will be used for both output and input.
+     * Omitted if empty.
      * 
      * @param releasePolicy the releasePolicy value to set.
      * @return the ManagedHsmKeyInner object itself.
@@ -240,8 +244,9 @@ public final class ManagedHsmKeyInner extends ProxyResourceWithoutSystemData {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model ManagedHsmKeyInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model ManagedHsmKeyInner"));
         } else {
             innerProperties().validate();
         }

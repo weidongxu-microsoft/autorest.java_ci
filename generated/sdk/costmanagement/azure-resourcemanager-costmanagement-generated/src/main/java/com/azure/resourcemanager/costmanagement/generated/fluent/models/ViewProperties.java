@@ -122,7 +122,20 @@ public final class ViewProperties {
     }
 
     /**
-     * Get the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope.
+     * Get the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
+     * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     * EnrollmentAccount scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group
+     * scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
+     * ExternalBillingAccount scope, and
+     * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription
+     * scope.
      * 
      * @return the scope value.
      */
@@ -131,7 +144,20 @@ public final class ViewProperties {
     }
 
     /**
-     * Set the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}' for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for EnrollmentAccount scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for BillingProfile scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for ExternalBillingAccount scope, and '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription scope.
+     * Set the scope property: Cost Management scope to save the view on. This includes 'subscriptions/{subscriptionId}'
+     * for subscription scope, 'subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}' for resourceGroup
+     * scope, 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}' for Billing Account scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/departments/{departmentId}' for Department scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/enrollmentAccounts/{enrollmentAccountId}' for
+     * EnrollmentAccount scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/billingProfiles/{billingProfileId}' for
+     * BillingProfile scope,
+     * 'providers/Microsoft.Billing/billingAccounts/{billingAccountId}/invoiceSections/{invoiceSectionId}' for
+     * InvoiceSection scope, 'providers/Microsoft.Management/managementGroups/{managementGroupId}' for Management Group
+     * scope, '/providers/Microsoft.CostManagement/externalBillingAccounts/{externalBillingAccountName}' for
+     * ExternalBillingAccount scope, and
+     * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription
+     * scope.
      * 
      * @param scope the scope value to set.
      * @return the ViewProperties object itself.
@@ -287,7 +313,9 @@ public final class ViewProperties {
     }
 
     /**
-     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
+     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * differentiated based on dates.
      * 
      * @return the type value.
      */
@@ -296,7 +324,9 @@ public final class ViewProperties {
     }
 
     /**
-     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
+     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * differentiated based on dates.
      * 
      * @param type the type value to set.
      * @return the ViewProperties object itself.
@@ -310,7 +340,8 @@ public final class ViewProperties {
     }
 
     /**
-     * Get the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided.
+     * Get the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
+     * period must be provided.
      * 
      * @return the timeframe value.
      */
@@ -319,7 +350,8 @@ public final class ViewProperties {
     }
 
     /**
-     * Set the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided.
+     * Set the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
+     * period must be provided.
      * 
      * @param timeframe the timeframe value to set.
      * @return the ViewProperties object itself.

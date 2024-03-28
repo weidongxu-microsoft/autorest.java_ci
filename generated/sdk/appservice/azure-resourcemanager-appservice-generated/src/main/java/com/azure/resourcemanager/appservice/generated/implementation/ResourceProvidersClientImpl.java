@@ -83,7 +83,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientResourceProviders to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientResourceProviders to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -308,7 +309,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity along with {@link Response} on successful completion of {@link Mono}.
+     * @return user credentials used for publishing activity along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserInner>> getPublishingUserWithResponseAsync() {
@@ -332,7 +334,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity along with {@link Response} on successful completion of {@link Mono}.
+     * @return user credentials used for publishing activity along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserInner>> getPublishingUserWithResponseAsync(Context context) {
@@ -398,7 +401,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity along with {@link Response} on successful completion of {@link Mono}.
+     * @return user credentials used for publishing activity along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserInner>> updatePublishingUserWithResponseAsync(UserInner userDetails) {
@@ -428,7 +432,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return user credentials used for publishing activity along with {@link Response} on successful completion of {@link Mono}.
+     * @return user credentials used for publishing activity along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<UserInner>> updatePublishingUserWithResponseAsync(UserInner userDetails, Context context) {
@@ -998,7 +1003,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information regarding availability of a resource name along with {@link Response} on successful completion of {@link Mono}.
+     * @return information regarding availability of a resource name along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceNameAvailabilityInner>>
@@ -1033,7 +1039,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information regarding availability of a resource name along with {@link Response} on successful completion of {@link Mono}.
+     * @return information regarding availability of a resource name along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ResourceNameAvailabilityInner>>
@@ -1114,7 +1121,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom hostnames under this subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return custom hostnames under this subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CustomHostnameSitesInner>> listCustomHostnameSitesSinglePageAsync(String hostname) {
@@ -1143,7 +1151,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return custom hostnames under this subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return custom hostnames under this subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CustomHostnameSitesInner>> listCustomHostnameSitesSinglePageAsync(String hostname,
@@ -1467,13 +1476,17 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Description for Get a list of available geographical regions.
      * 
      * @param sku Name of SKU used to filter the regions.
-     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux workers.
-     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Xenon workers.
-     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux Consumption Workers.
+     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Linux workers.
+     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Xenon workers.
+     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions
+     * that support Linux Consumption Workers.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GeoRegionInner>> listGeoRegionsSinglePageAsync(SkuName sku, Boolean linuxWorkersEnabled,
@@ -1502,14 +1515,18 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Description for Get a list of available geographical regions.
      * 
      * @param sku Name of SKU used to filter the regions.
-     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux workers.
-     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Xenon workers.
-     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux Consumption Workers.
+     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Linux workers.
+     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Xenon workers.
+     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions
+     * that support Linux Consumption Workers.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GeoRegionInner>> listGeoRegionsSinglePageAsync(SkuName sku, Boolean linuxWorkersEnabled,
@@ -1536,9 +1553,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Description for Get a list of available geographical regions.
      * 
      * @param sku Name of SKU used to filter the regions.
-     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux workers.
-     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Xenon workers.
-     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux Consumption Workers.
+     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Linux workers.
+     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Xenon workers.
+     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions
+     * that support Linux Consumption Workers.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1576,9 +1596,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Description for Get a list of available geographical regions.
      * 
      * @param sku Name of SKU used to filter the regions.
-     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux workers.
-     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Xenon workers.
-     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux Consumption Workers.
+     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Linux workers.
+     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Xenon workers.
+     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions
+     * that support Linux Consumption Workers.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1617,9 +1640,12 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * Description for Get a list of available geographical regions.
      * 
      * @param sku Name of SKU used to filter the regions.
-     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux workers.
-     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Xenon workers.
-     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that support Linux Consumption Workers.
+     * @param linuxWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Linux workers.
+     * @param xenonWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions that
+     * support Xenon workers.
+     * @param linuxDynamicWorkersEnabled Specify &lt;code&gt;true&lt;/code&gt; if you want to filter to only regions
+     * that support Linux Consumption Workers.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -1783,7 +1809,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * 
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PremierAddOnOfferInner>> listPremierAddOnOffersSinglePageAsync() {
@@ -1813,7 +1840,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PremierAddOnOfferInner>> listPremierAddOnOffersSinglePageAsync(Context context) {
@@ -1994,15 +2022,18 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
      * 
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Security Group rules.
      * 
      * @param parameters VNET information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a class that describes the reason for a validation failure along with {@link Response} on successful completion of {@link Mono}.
+     * @return a class that describes the reason for a validation failure along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetValidationFailureDetailsInner>>
@@ -2028,16 +2059,19 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
      * 
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Security Group rules.
      * 
      * @param parameters VNET information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a class that describes the reason for a validation failure along with {@link Response} on successful completion of {@link Mono}.
+     * @return a class that describes the reason for a validation failure along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetValidationFailureDetailsInner>>
@@ -2062,9 +2096,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
      * 
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Security Group rules.
      * 
      * @param parameters VNET information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2079,9 +2115,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
      * 
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Security Group rules.
      * 
      * @param parameters VNET information.
      * @param context The context to associate with this operation.
@@ -2097,9 +2135,11 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group
+     * rules.
      * 
-     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network Security Group rules.
+     * Description for Verifies if this VNET is compatible with an App Service Environment by analyzing the Network
+     * Security Group rules.
      * 
      * @param parameters VNET information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2254,7 +2294,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the result of resource validation along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes the result of resource validation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ValidateResponseInner>> validateWithResponseAsync(String resourceGroupName,
@@ -2295,7 +2336,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes the result of resource validation along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes the result of resource validation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ValidateResponseInner>> validateWithResponseAsync(String resourceGroupName,
@@ -2634,7 +2676,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of custom hostname sites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of custom hostname sites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CustomHostnameSitesInner>> listCustomHostnameSitesNextSinglePageAsync(String nextLink) {
@@ -2664,7 +2707,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of custom hostname sites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of custom hostname sites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<CustomHostnameSitesInner>> listCustomHostnameSitesNextSinglePageAsync(String nextLink,
@@ -2748,7 +2792,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GeoRegionInner>> listGeoRegionsNextSinglePageAsync(String nextLink) {
@@ -2777,7 +2822,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of geographical regions along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<GeoRegionInner>> listGeoRegionsNextSinglePageAsync(String nextLink, Context context) {
@@ -2863,7 +2909,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PremierAddOnOfferInner>> listPremierAddOnOffersNextSinglePageAsync(String nextLink) {
@@ -2893,7 +2940,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of premier add-on offers along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<PremierAddOnOfferInner>> listPremierAddOnOffersNextSinglePageAsync(String nextLink,

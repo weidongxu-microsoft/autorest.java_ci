@@ -104,7 +104,8 @@ public final class GrantAccessData {
     }
 
     /**
-     * Get the fileFormat property: Used to specify the file format when making request for SAS on a VHDX file format snapshot.
+     * Get the fileFormat property: Used to specify the file format when making request for SAS on a VHDX file format
+     * snapshot.
      * 
      * @return the fileFormat value.
      */
@@ -113,7 +114,8 @@ public final class GrantAccessData {
     }
 
     /**
-     * Set the fileFormat property: Used to specify the file format when making request for SAS on a VHDX file format snapshot.
+     * Set the fileFormat property: Used to specify the file format when making request for SAS on a VHDX file format
+     * snapshot.
      * 
      * @param fileFormat the fileFormat value to set.
      * @return the GrantAccessData object itself.
@@ -130,8 +132,8 @@ public final class GrantAccessData {
      */
     public void validate() {
         if (access() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property access in model GrantAccessData"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property access in model GrantAccessData"));
         }
     }
 

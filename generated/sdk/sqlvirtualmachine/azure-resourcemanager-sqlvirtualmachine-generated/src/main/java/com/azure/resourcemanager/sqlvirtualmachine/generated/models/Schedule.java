@@ -89,7 +89,8 @@ public final class Schedule {
     }
 
     /**
-     * Get the monthlyOccurrence property: Occurrence of the DayOfWeek day within a month to schedule assessment. Takes values: 1,2,3,4 and -1. Use -1 for last DayOfWeek day of the month.
+     * Get the monthlyOccurrence property: Occurrence of the DayOfWeek day within a month to schedule assessment. Takes
+     * values: 1,2,3,4 and -1. Use -1 for last DayOfWeek day of the month.
      * 
      * @return the monthlyOccurrence value.
      */
@@ -98,7 +99,8 @@ public final class Schedule {
     }
 
     /**
-     * Set the monthlyOccurrence property: Occurrence of the DayOfWeek day within a month to schedule assessment. Takes values: 1,2,3,4 and -1. Use -1 for last DayOfWeek day of the month.
+     * Set the monthlyOccurrence property: Occurrence of the DayOfWeek day within a month to schedule assessment. Takes
+     * values: 1,2,3,4 and -1. Use -1 for last DayOfWeek day of the month.
      * 
      * @param monthlyOccurrence the monthlyOccurrence value to set.
      * @return the Schedule object itself.

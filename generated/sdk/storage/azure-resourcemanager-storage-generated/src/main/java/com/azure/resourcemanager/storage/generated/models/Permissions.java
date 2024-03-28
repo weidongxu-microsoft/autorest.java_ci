@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The signed permissions for the account SAS. Possible values include: Read (r), Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
+ * The signed permissions for the account SAS. Possible values include: Read (r), Write (w), Delete (d), List (l), Add
+ * (a), Create (c), Update (u) and Process (p).
  */
 public final class Permissions extends ExpandableStringEnum<Permissions> {
     /**

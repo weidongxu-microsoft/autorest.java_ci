@@ -69,7 +69,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if not specified.
+     * Get the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if
+     * not specified.
      * 
      * @return the enabledState value.
      */
@@ -78,7 +79,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Set the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if not specified.
+     * Set the enabledState property: Describes if the policy is in enabled or disabled state. Defaults to Enabled if
+     * not specified.
      * 
      * @param enabledState the enabledState value to set.
      * @return the PolicySettings object itself.
@@ -129,7 +131,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the customBlockResponseStatusCode property: If the action type is block, customer can override the response status code.
+     * Get the customBlockResponseStatusCode property: If the action type is block, customer can override the response
+     * status code.
      * 
      * @return the customBlockResponseStatusCode value.
      */
@@ -138,7 +141,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Set the customBlockResponseStatusCode property: If the action type is block, customer can override the response status code.
+     * Set the customBlockResponseStatusCode property: If the action type is block, customer can override the response
+     * status code.
      * 
      * @param customBlockResponseStatusCode the customBlockResponseStatusCode value to set.
      * @return the PolicySettings object itself.
@@ -149,7 +153,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the customBlockResponseBody property: If the action type is block, customer can override the response body. The body must be specified in base64 encoding.
+     * Get the customBlockResponseBody property: If the action type is block, customer can override the response body.
+     * The body must be specified in base64 encoding.
      * 
      * @return the customBlockResponseBody value.
      */
@@ -158,7 +163,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Set the customBlockResponseBody property: If the action type is block, customer can override the response body. The body must be specified in base64 encoding.
+     * Set the customBlockResponseBody property: If the action type is block, customer can override the response body.
+     * The body must be specified in base64 encoding.
      * 
      * @param customBlockResponseBody the customBlockResponseBody value to set.
      * @return the PolicySettings object itself.
@@ -189,7 +195,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the javascriptChallengeExpirationInMinutes property: Defines the JavaScript challenge cookie validity lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
+     * Get the javascriptChallengeExpirationInMinutes property: Defines the JavaScript challenge cookie validity
+     * lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
      * 
      * @return the javascriptChallengeExpirationInMinutes value.
      */
@@ -198,7 +205,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Set the javascriptChallengeExpirationInMinutes property: Defines the JavaScript challenge cookie validity lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
+     * Set the javascriptChallengeExpirationInMinutes property: Defines the JavaScript challenge cookie validity
+     * lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
      * 
      * @param javascriptChallengeExpirationInMinutes the javascriptChallengeExpirationInMinutes value to set.
      * @return the PolicySettings object itself.
@@ -209,7 +217,8 @@ public final class PolicySettings {
     }
 
     /**
-     * Get the innerLogScrubbing property: Defines rules that scrub sensitive fields in the Web Application Firewall logs.
+     * Get the innerLogScrubbing property: Defines rules that scrub sensitive fields in the Web Application Firewall
+     * logs.
      * 
      * @return the innerLogScrubbing value.
      */

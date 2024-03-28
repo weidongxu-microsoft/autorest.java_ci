@@ -20,7 +20,8 @@ public interface Certificates {
      * @param resourceName The name of the IoT hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the JSON-serialized array of Certificate objects along with {@link Response}.
      */
@@ -35,7 +36,8 @@ public interface Certificates {
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the JSON-serialized array of Certificate objects.
      */
@@ -51,7 +53,8 @@ public interface Certificates {
      * @param certificateName The name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate along with {@link Response}.
      */
@@ -67,7 +70,8 @@ public interface Certificates {
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate.
      */
@@ -84,7 +88,8 @@ public interface Certificates {
      * @param ifMatch ETag of the Certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -101,7 +106,8 @@ public interface Certificates {
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String resourceName, String certificateName, String ifMatch);
@@ -109,7 +115,8 @@ public interface Certificates {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
+     * certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -117,7 +124,8 @@ public interface Certificates {
      * @param ifMatch ETag of the Certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate along with {@link Response}.
      */
@@ -127,14 +135,16 @@ public interface Certificates {
     /**
      * Generate verification code for proof of possession flow.
      * 
-     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf certificate.
+     * Generates verification code for proof of possession flow. The verification code will be used to generate a leaf
+     * certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param certificateName The name of the certificate.
      * @param ifMatch ETag of the Certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate.
      */
@@ -144,7 +154,8 @@ public interface Certificates {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
+     * certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -153,7 +164,8 @@ public interface Certificates {
      * @param certificateVerificationBody The name of the certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate along with {@link Response}.
      */
@@ -164,7 +176,8 @@ public interface Certificates {
     /**
      * Verify certificate's private key possession.
      * 
-     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded certificate.
+     * Verifies the certificate's private key possession by providing the leaf cert issued by the verifying pre uploaded
+     * certificate.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -172,7 +185,8 @@ public interface Certificates {
      * @param ifMatch ETag of the Certificate.
      * @param certificateVerificationBody The name of the certificate.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate.
      */
@@ -186,7 +200,8 @@ public interface Certificates {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate along with {@link Response}.
      */
@@ -200,7 +215,8 @@ public interface Certificates {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the X509 Certificate along with {@link Response}.
      */
@@ -213,7 +229,8 @@ public interface Certificates {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
@@ -227,7 +244,8 @@ public interface Certificates {
      * @param ifMatch ETag of the Certificate.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */

@@ -93,14 +93,16 @@ public interface AppServicePlan {
     String subscription();
 
     /**
-     * Gets the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App Service plan.
+     * Gets the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App
+     * Service plan.
      * 
      * @return the hostingEnvironmentProfile value.
      */
     HostingEnvironmentProfile hostingEnvironmentProfile();
 
     /**
-     * Gets the maximumNumberOfWorkers property: Maximum number of instances that can be assigned to this App Service plan.
+     * Gets the maximumNumberOfWorkers property: Maximum number of instances that can be assigned to this App Service
+     * plan.
      * 
      * @return the maximumNumberOfWorkers value.
      */
@@ -121,22 +123,26 @@ public interface AppServicePlan {
     String geoRegion();
 
     /**
-     * Gets the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-     * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan.
+     * Gets the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be
+     * scaled independently.
+     * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the
+     * plan.
      * 
      * @return the perSiteScaling value.
      */
     Boolean perSiteScaling();
 
     /**
-     * Gets the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+     * Gets the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+     * ServerFarm was ElasticPremium sku.
      * 
      * @return the elasticScaleEnabled value.
      */
     Boolean elasticScaleEnabled();
 
     /**
-     * Gets the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+     * Gets the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled
+     * App Service Plan.
      * 
      * @return the maximumElasticWorkerCount value.
      */
@@ -157,7 +163,8 @@ public interface AppServicePlan {
     Boolean isSpot();
 
     /**
-     * Gets the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server farm.
+     * Gets the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server
+     * farm.
      * 
      * @return the spotExpirationTime value.
      */
@@ -178,21 +185,24 @@ public interface AppServicePlan {
     String resourceGroup();
 
     /**
-     * Gets the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Gets the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the reserved value.
      */
     Boolean reserved();
 
     /**
-     * Gets the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Gets the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the isXenon value.
      */
     Boolean isXenon();
 
     /**
-     * Gets the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+     * Gets the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+     * &lt;code&gt;false&lt;/code&gt; otherwise.
      * 
      * @return the hyperV value.
      */
@@ -220,14 +230,16 @@ public interface AppServicePlan {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service plan.
+     * Gets the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service
+     * plan.
      * 
      * @return the kubeEnvironmentProfile value.
      */
     KubeEnvironmentProfile kubeEnvironmentProfile();
 
     /**
-     * Gets the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+     * Gets the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform
+     * availability zone balancing.
      * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing.
      * 
      * @return the zoneRedundant value.
@@ -314,7 +326,8 @@ public interface AppServicePlan {
         }
 
         /**
-         * The stage of the AppServicePlan definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AppServicePlan definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
             DefinitionStages.WithExtendedLocation, DefinitionStages.WithKind, DefinitionStages.WithWorkerTierName,
@@ -411,9 +424,11 @@ public interface AppServicePlan {
          */
         interface WithHostingEnvironmentProfile {
             /**
-             * Specifies the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the App Service plan..
+             * Specifies the hostingEnvironmentProfile property: Specification for the App Service Environment to use
+             * for the App Service plan..
              * 
-             * @param hostingEnvironmentProfile Specification for the App Service Environment to use for the App Service plan.
+             * @param hostingEnvironmentProfile Specification for the App Service Environment to use for the App Service
+             * plan.
              * @return the next definition stage.
              */
             WithCreate withHostingEnvironmentProfile(HostingEnvironmentProfile hostingEnvironmentProfile);
@@ -424,11 +439,15 @@ public interface AppServicePlan {
          */
         interface WithPerSiteScaling {
             /**
-             * Specifies the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan..
+             * Specifies the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App
+             * Service plan can be scaled independently.
+             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of
+             * the plan..
              * 
-             * @param perSiteScaling If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan.
+             * @param perSiteScaling If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be
+             * scaled independently.
+             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of
+             * the plan.
              * @return the next definition stage.
              */
             WithCreate withPerSiteScaling(Boolean perSiteScaling);
@@ -439,9 +458,11 @@ public interface AppServicePlan {
          */
         interface WithElasticScaleEnabled {
             /**
-             * Specifies the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+             * Specifies the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will
+             * scale as if the ServerFarm was ElasticPremium sku.
              * 
-             * @param elasticScaleEnabled ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+             * @param elasticScaleEnabled ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+             * ServerFarm was ElasticPremium sku.
              * @return the next definition stage.
              */
             WithCreate withElasticScaleEnabled(Boolean elasticScaleEnabled);
@@ -452,9 +473,11 @@ public interface AppServicePlan {
          */
         interface WithMaximumElasticWorkerCount {
             /**
-             * Specifies the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+             * Specifies the maximumElasticWorkerCount property: Maximum number of total workers allowed for this
+             * ElasticScaleEnabled App Service Plan.
              * 
-             * @param maximumElasticWorkerCount Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+             * @param maximumElasticWorkerCount Maximum number of total workers allowed for this ElasticScaleEnabled App
+             * Service Plan.
              * @return the next definition stage.
              */
             WithCreate withMaximumElasticWorkerCount(Integer maximumElasticWorkerCount);
@@ -465,7 +488,8 @@ public interface AppServicePlan {
          */
         interface WithIsSpot {
             /**
-             * Specifies the isSpot property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan owns spot instances..
+             * Specifies the isSpot property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan owns spot
+             * instances..
              * 
              * @param isSpot If &lt;code&gt;true&lt;/code&gt;, this App Service Plan owns spot instances.
              * @return the next definition stage.
@@ -478,7 +502,8 @@ public interface AppServicePlan {
          */
         interface WithSpotExpirationTime {
             /**
-             * Specifies the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server farm..
+             * Specifies the spotExpirationTime property: The time when the server farm expires. Valid only if it is a
+             * spot server farm..
              * 
              * @param spotExpirationTime The time when the server farm expires. Valid only if it is a spot server farm.
              * @return the next definition stage.
@@ -504,9 +529,11 @@ public interface AppServicePlan {
          */
         interface WithReserved {
             /**
-             * Specifies the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise..
+             * Specifies the reserved property: If Linux app service plan &lt;code&gt;true&lt;/code&gt;,
+             * &lt;code&gt;false&lt;/code&gt; otherwise..
              * 
-             * @param reserved If Linux app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+             * @param reserved If Linux app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt;
+             * otherwise.
              * @return the next definition stage.
              */
             WithCreate withReserved(Boolean reserved);
@@ -517,9 +544,11 @@ public interface AppServicePlan {
          */
         interface WithIsXenon {
             /**
-             * Specifies the isXenon property: Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise..
+             * Specifies the isXenon property: Obsolete: If Hyper-V container app service plan
+             * &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise..
              * 
-             * @param isXenon Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+             * @param isXenon Obsolete: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+             * &lt;code&gt;false&lt;/code&gt; otherwise.
              * @return the next definition stage.
              */
             WithCreate withIsXenon(Boolean isXenon);
@@ -530,9 +559,11 @@ public interface AppServicePlan {
          */
         interface WithHyperV {
             /**
-             * Specifies the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise..
+             * Specifies the hyperV property: If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+             * &lt;code&gt;false&lt;/code&gt; otherwise..
              * 
-             * @param hyperV If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;, &lt;code&gt;false&lt;/code&gt; otherwise.
+             * @param hyperV If Hyper-V container app service plan &lt;code&gt;true&lt;/code&gt;,
+             * &lt;code&gt;false&lt;/code&gt; otherwise.
              * @return the next definition stage.
              */
             WithCreate withHyperV(Boolean hyperV);
@@ -569,9 +600,11 @@ public interface AppServicePlan {
          */
         interface WithKubeEnvironmentProfile {
             /**
-             * Specifies the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service plan..
+             * Specifies the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for
+             * the App Service plan..
              * 
-             * @param kubeEnvironmentProfile Specification for the Kubernetes Environment to use for the App Service plan.
+             * @param kubeEnvironmentProfile Specification for the Kubernetes Environment to use for the App Service
+             * plan.
              * @return the next definition stage.
              */
             WithCreate withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile);
@@ -582,10 +615,12 @@ public interface AppServicePlan {
          */
         interface WithZoneRedundant {
             /**
-             * Specifies the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+             * Specifies the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will
+             * perform availability zone balancing.
              * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing..
              * 
-             * @param zoneRedundant If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+             * @param zoneRedundant If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability
+             * zone balancing.
              * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing.
              * @return the next definition stage.
              */
@@ -659,11 +694,15 @@ public interface AppServicePlan {
          */
         interface WithPerSiteScaling {
             /**
-             * Specifies the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan..
+             * Specifies the perSiteScaling property: If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App
+             * Service plan can be scaled independently.
+             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of
+             * the plan..
              * 
-             * @param perSiteScaling If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be scaled independently.
-             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of the plan.
+             * @param perSiteScaling If &lt;code&gt;true&lt;/code&gt;, apps assigned to this App Service plan can be
+             * scaled independently.
+             * If &lt;code&gt;false&lt;/code&gt;, apps assigned to this App Service plan will scale to all instances of
+             * the plan.
              * @return the next definition stage.
              */
             Update withPerSiteScaling(Boolean perSiteScaling);
@@ -674,9 +713,11 @@ public interface AppServicePlan {
          */
         interface WithElasticScaleEnabled {
             /**
-             * Specifies the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+             * Specifies the elasticScaleEnabled property: ServerFarm supports ElasticScale. Apps in this plan will
+             * scale as if the ServerFarm was ElasticPremium sku.
              * 
-             * @param elasticScaleEnabled ServerFarm supports ElasticScale. Apps in this plan will scale as if the ServerFarm was ElasticPremium sku.
+             * @param elasticScaleEnabled ServerFarm supports ElasticScale. Apps in this plan will scale as if the
+             * ServerFarm was ElasticPremium sku.
              * @return the next definition stage.
              */
             Update withElasticScaleEnabled(Boolean elasticScaleEnabled);
@@ -687,9 +728,11 @@ public interface AppServicePlan {
          */
         interface WithMaximumElasticWorkerCount {
             /**
-             * Specifies the maximumElasticWorkerCount property: Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+             * Specifies the maximumElasticWorkerCount property: Maximum number of total workers allowed for this
+             * ElasticScaleEnabled App Service Plan.
              * 
-             * @param maximumElasticWorkerCount Maximum number of total workers allowed for this ElasticScaleEnabled App Service Plan.
+             * @param maximumElasticWorkerCount Maximum number of total workers allowed for this ElasticScaleEnabled App
+             * Service Plan.
              * @return the next definition stage.
              */
             Update withMaximumElasticWorkerCount(Integer maximumElasticWorkerCount);
@@ -700,7 +743,8 @@ public interface AppServicePlan {
          */
         interface WithIsSpot {
             /**
-             * Specifies the isSpot property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan owns spot instances..
+             * Specifies the isSpot property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan owns spot
+             * instances..
              * 
              * @param isSpot If &lt;code&gt;true&lt;/code&gt;, this App Service Plan owns spot instances.
              * @return the next definition stage.
@@ -713,7 +757,8 @@ public interface AppServicePlan {
          */
         interface WithSpotExpirationTime {
             /**
-             * Specifies the spotExpirationTime property: The time when the server farm expires. Valid only if it is a spot server farm..
+             * Specifies the spotExpirationTime property: The time when the server farm expires. Valid only if it is a
+             * spot server farm..
              * 
              * @param spotExpirationTime The time when the server farm expires. Valid only if it is a spot server farm.
              * @return the next definition stage.
@@ -765,9 +810,11 @@ public interface AppServicePlan {
          */
         interface WithKubeEnvironmentProfile {
             /**
-             * Specifies the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for the App Service plan..
+             * Specifies the kubeEnvironmentProfile property: Specification for the Kubernetes Environment to use for
+             * the App Service plan..
              * 
-             * @param kubeEnvironmentProfile Specification for the Kubernetes Environment to use for the App Service plan.
+             * @param kubeEnvironmentProfile Specification for the Kubernetes Environment to use for the App Service
+             * plan.
              * @return the next definition stage.
              */
             Update withKubeEnvironmentProfile(KubeEnvironmentProfile kubeEnvironmentProfile);
@@ -778,10 +825,12 @@ public interface AppServicePlan {
          */
         interface WithZoneRedundant {
             /**
-             * Specifies the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+             * Specifies the zoneRedundant property: If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will
+             * perform availability zone balancing.
              * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing..
              * 
-             * @param zoneRedundant If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability zone balancing.
+             * @param zoneRedundant If &lt;code&gt;true&lt;/code&gt;, this App Service Plan will perform availability
+             * zone balancing.
              * If &lt;code&gt;false&lt;/code&gt;, this App Service Plan will not perform availability zone balancing.
              * @return the next definition stage.
              */
@@ -809,10 +858,13 @@ public interface AppServicePlan {
      * 
      * Description for Restart all apps in an App Service plan.
      * 
-     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts and reprovisions the apps.
+     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
+     * settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts
+     * and reprovisions the apps.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -823,7 +875,8 @@ public interface AppServicePlan {
      * 
      * Description for Restart all apps in an App Service plan.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restartWebApps();

@@ -59,7 +59,8 @@ public final class RoleAssignmentCreateParameters {
     }
 
     /**
-     * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
+     * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
+     * Directory. It can point to a user, service principal, or security group.
      * 
      * @return the principalId value.
      */
@@ -68,7 +69,8 @@ public final class RoleAssignmentCreateParameters {
     }
 
     /**
-     * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
+     * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
+     * Directory. It can point to a user, service principal, or security group.
      * 
      * @param principalId the principalId value to set.
      * @return the RoleAssignmentCreateParameters object itself.
@@ -134,8 +136,9 @@ public final class RoleAssignmentCreateParameters {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model RoleAssignmentCreateParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model RoleAssignmentCreateParameters"));
         } else {
             innerProperties().validate();
         }

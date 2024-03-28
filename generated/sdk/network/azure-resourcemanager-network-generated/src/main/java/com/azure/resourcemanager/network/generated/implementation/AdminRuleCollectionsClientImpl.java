@@ -64,7 +64,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientAdminRuleCollections to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientAdminRuleCollections to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -132,12 +133,16 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     * server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdminRuleCollectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -178,13 +183,17 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     * server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdminRuleCollectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -225,8 +234,11 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     * server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -267,8 +279,11 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     * server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -291,7 +306,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security admin configuration rule collection list result as paginated response with {@link PagedIterable}.
+     * @return security admin configuration rule collection list result as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AdminRuleCollectionInner> list(String resourceGroupName, String networkManagerName,
@@ -307,13 +323,17 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param resourceGroupName The name of the resource group.
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     * server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security admin configuration rule collection list result as paginated response with {@link PagedIterable}.
+     * @return security admin configuration rule collection list result as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AdminRuleCollectionInner> list(String resourceGroupName, String networkManagerName,
@@ -332,7 +352,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security admin configuration rule collection along with {@link Response} on successful completion of {@link Mono}.
+     * @return a network manager security admin configuration rule collection along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminRuleCollectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -380,7 +401,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a network manager security admin configuration rule collection along with {@link Response} on successful completion of {@link Mono}.
+     * @return a network manager security admin configuration rule collection along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdminRuleCollectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -653,7 +675,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -702,7 +725,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -751,7 +775,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -795,7 +820,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -840,7 +866,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -863,7 +890,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -905,7 +933,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -944,7 +973,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @param networkManagerName The name of the network manager.
      * @param configurationName The name of the network manager Security Configuration.
      * @param ruleCollectionName The name of the network manager security Configuration rule collection.
-     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been deployed, the service will do a cleanup deployment in the background, prior to the delete.
+     * @param force Deletes the resource even if it is part of a deployed configuration. If the configuration has been
+     * deployed, the service will do a cleanup deployment in the background, prior to the delete.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -966,7 +996,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdminRuleCollectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -994,7 +1025,8 @@ public final class AdminRuleCollectionsClientImpl implements AdminRuleCollection
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return security admin configuration rule collection list result along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdminRuleCollectionInner>> listNextSinglePageAsync(String nextLink, Context context) {

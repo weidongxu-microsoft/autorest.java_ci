@@ -50,7 +50,8 @@ public final class EventHubProperties {
     }
 
     /**
-     * Get the retentionTimeInDays property: The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+     * Get the retentionTimeInDays property: The retention time for device-to-cloud messages in days. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
      * 
      * @return the retentionTimeInDays value.
      */
@@ -59,7 +60,8 @@ public final class EventHubProperties {
     }
 
     /**
-     * Set the retentionTimeInDays property: The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+     * Set the retentionTimeInDays property: The retention time for device-to-cloud messages in days. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
      * 
      * @param retentionTimeInDays the retentionTimeInDays value to set.
      * @return the EventHubProperties object itself.
@@ -70,7 +72,9 @@ public final class EventHubProperties {
     }
 
     /**
-     * Get the partitionCount property: The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+     * Get the partitionCount property: The number of partitions for receiving device-to-cloud messages in the Event
+     * Hub-compatible endpoint. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
      * 
      * @return the partitionCount value.
      */
@@ -79,7 +83,9 @@ public final class EventHubProperties {
     }
 
     /**
-     * Set the partitionCount property: The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+     * Set the partitionCount property: The number of partitions for receiving device-to-cloud messages in the Event
+     * Hub-compatible endpoint. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
      * 
      * @param partitionCount the partitionCount value to set.
      * @return the EventHubProperties object itself.

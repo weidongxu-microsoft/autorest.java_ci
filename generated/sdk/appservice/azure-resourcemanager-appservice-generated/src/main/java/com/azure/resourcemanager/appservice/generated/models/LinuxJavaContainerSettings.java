@@ -86,7 +86,8 @@ public final class LinuxJavaContainerSettings {
     }
 
     /**
-     * Get the isPreview property: &lt;code&gt;true&lt;/code&gt; if the stack is in preview; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isPreview property: &lt;code&gt;true&lt;/code&gt; if the stack is in preview; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isPreview value.
      */
@@ -95,7 +96,8 @@ public final class LinuxJavaContainerSettings {
     }
 
     /**
-     * Get the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if the stack is deprecated; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if the stack is deprecated; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDeprecated value.
      */
@@ -104,7 +106,8 @@ public final class LinuxJavaContainerSettings {
     }
 
     /**
-     * Get the isHidden property: &lt;code&gt;true&lt;/code&gt; if the stack should be hidden; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isHidden property: &lt;code&gt;true&lt;/code&gt; if the stack should be hidden; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isHidden value.
      */
@@ -122,7 +125,8 @@ public final class LinuxJavaContainerSettings {
     }
 
     /**
-     * Get the isAutoUpdate property: &lt;code&gt;true&lt;/code&gt; if the stack version is auto-updated; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isAutoUpdate property: &lt;code&gt;true&lt;/code&gt; if the stack version is auto-updated; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isAutoUpdate value.
      */
@@ -131,7 +135,8 @@ public final class LinuxJavaContainerSettings {
     }
 
     /**
-     * Get the isEarlyAccess property: &lt;code&gt;true&lt;/code&gt; if the minor version is early-access; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isEarlyAccess property: &lt;code&gt;true&lt;/code&gt; if the minor version is early-access; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isEarlyAccess value.
      */

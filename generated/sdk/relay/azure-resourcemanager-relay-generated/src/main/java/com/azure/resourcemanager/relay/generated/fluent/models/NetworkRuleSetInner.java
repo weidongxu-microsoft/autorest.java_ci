@@ -55,7 +55,8 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Get the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or not.
+     * Get the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
+     * not.
      * 
      * @return the trustedServiceAccessEnabled value.
      */
@@ -64,7 +65,8 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Set the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or not.
+     * Set the trustedServiceAccessEnabled property: Value that indicates whether Trusted Service Access is Enabled or
+     * not.
      * 
      * @param trustedServiceAccessEnabled the trustedServiceAccessEnabled value to set.
      * @return the NetworkRuleSetInner object itself.
@@ -101,7 +103,8 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -110,7 +113,8 @@ public final class NetworkRuleSetInner extends ProxyResource {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the NetworkRuleSetInner object itself.

@@ -66,7 +66,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientDiagnostics to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientDiagnostics to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -379,7 +380,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -419,7 +421,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -539,7 +542,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Detector along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorResponseInner>> getHostingEnvironmentDetectorResponseWithResponseAsync(
@@ -586,7 +590,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Detector along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorResponseInner>> getHostingEnvironmentDetectorResponseWithResponseAsync(
@@ -698,7 +703,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -738,7 +744,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -855,7 +862,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Detector along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorResponseInner>> getSiteDetectorResponseWithResponseAsync(String resourceGroupName,
@@ -901,7 +909,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Detector along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorResponseInner>> getSiteDetectorResponseWithResponseAsync(String resourceGroupName,
@@ -1013,7 +1022,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -1053,7 +1063,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -1169,7 +1180,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticCategoryInner>> getSiteDiagnosticCategoryWithResponseAsync(String resourceGroupName,
@@ -1213,7 +1225,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticCategoryInner>> getSiteDiagnosticCategoryWithResponseAsync(String resourceGroupName,
@@ -1315,7 +1328,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesSinglePageAsync(String resourceGroupName,
@@ -1360,7 +1374,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesSinglePageAsync(String resourceGroupName,
@@ -1646,7 +1661,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticAnalysisInner>> executeSiteAnalysisWithResponseAsync(String resourceGroupName,
@@ -1698,7 +1714,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticAnalysisInner>> executeSiteAnalysisWithResponseAsync(String resourceGroupName,
@@ -1818,7 +1835,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>>
@@ -1863,7 +1881,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>> listSiteDetectorsSinglePageAsync(
@@ -1989,7 +2008,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return aRM resource for a detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorDefinitionResourceInner>> getSiteDetectorWithResponseAsync(String resourceGroupName,
@@ -2037,7 +2057,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return aRM resource for a detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorDefinitionResourceInner>> getSiteDetectorWithResponseAsync(String resourceGroupName,
@@ -2149,7 +2170,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticDetectorResponseInner>> executeSiteDetectorWithResponseAsync(
@@ -2201,7 +2223,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticDetectorResponseInner>> executeSiteDetectorWithResponseAsync(
@@ -2321,7 +2344,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -2365,7 +2389,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>> listSiteDetectorResponsesSlotSinglePageAsync(
@@ -2493,7 +2518,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Detector along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorResponseInner>> getSiteDetectorResponseSlotWithResponseAsync(String resourceGroupName,
@@ -2544,7 +2570,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Detector along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Detector along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorResponseInner>> getSiteDetectorResponseSlotWithResponseAsync(String resourceGroupName,
@@ -2663,7 +2690,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -2708,7 +2736,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>> listSiteDiagnosticCategoriesSlotSinglePageAsync(
@@ -2833,7 +2862,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticCategoryInner>> getSiteDiagnosticCategorySlotWithResponseAsync(
@@ -2881,7 +2911,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticCategoryInner>> getSiteDiagnosticCategorySlotWithResponseAsync(
@@ -2990,7 +3021,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesSlotSinglePageAsync(String resourceGroupName,
@@ -3040,7 +3072,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesSlotSinglePageAsync(String resourceGroupName,
@@ -3347,7 +3380,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticAnalysisInner>> executeSiteAnalysisSlotWithResponseAsync(String resourceGroupName,
@@ -3403,7 +3437,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a diagnostic analysis done on an application along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticAnalysisInner>> executeSiteAnalysisSlotWithResponseAsync(String resourceGroupName,
@@ -3530,7 +3565,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>> listSiteDetectorsSlotSinglePageAsync(
@@ -3580,7 +3616,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>> listSiteDetectorsSlotSinglePageAsync(
@@ -3716,7 +3753,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return aRM resource for a detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorDefinitionResourceInner>> getSiteDetectorSlotWithResponseAsync(
@@ -3768,7 +3806,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return aRM resource for a detector definition along with {@link Response} on successful completion of {@link Mono}.
+     * @return aRM resource for a detector definition along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DetectorDefinitionResourceInner>> getSiteDetectorSlotWithResponseAsync(
@@ -3888,7 +3927,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticDetectorResponseInner>> executeSiteDetectorSlotWithResponseAsync(
@@ -3944,7 +3984,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing Response from Diagnostic Detectors along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<DiagnosticDetectorResponseInner>> executeSiteDetectorSlotWithResponseAsync(
@@ -4068,7 +4109,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -4099,7 +4141,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -4127,7 +4170,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>> listSiteDetectorResponsesNextSinglePageAsync(String nextLink) {
@@ -4157,7 +4201,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>> listSiteDetectorResponsesNextSinglePageAsync(String nextLink,
@@ -4185,7 +4230,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -4215,7 +4261,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -4243,7 +4290,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesNextSinglePageAsync(String nextLink) {
@@ -4272,7 +4320,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesNextSinglePageAsync(String nextLink,
@@ -4300,7 +4349,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>> listSiteDetectorsNextSinglePageAsync(String nextLink) {
@@ -4329,7 +4379,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>> listSiteDetectorsNextSinglePageAsync(String nextLink,
@@ -4357,7 +4408,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>>
@@ -4387,7 +4439,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of detector responses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of detector responses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorResponseInner>> listSiteDetectorResponsesSlotNextSinglePageAsync(String nextLink,
@@ -4415,7 +4468,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -4446,7 +4500,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Categories along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DiagnosticCategoryInner>>
@@ -4474,7 +4529,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesSlotNextSinglePageAsync(String nextLink) {
@@ -4504,7 +4560,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Analyses along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AnalysisDefinitionInner>> listSiteAnalysesSlotNextSinglePageAsync(String nextLink,
@@ -4532,7 +4589,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>>
@@ -4563,7 +4621,8 @@ public final class DiagnosticsClientImpl implements DiagnosticsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of Diagnostic Detectors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<DetectorDefinitionResourceInner>>

@@ -18,13 +18,16 @@ public interface IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
+     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -35,14 +38,17 @@ public interface IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
+     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -53,13 +59,16 @@ public interface IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
+     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -68,14 +77,17 @@ public interface IotHubsClient {
     /**
      * Manually initiate a failover for the IoT Hub to its secondary region
      * 
-     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see https://aka.ms/manualfailover.
+     * Manually initiate a failover for the IoT Hub to its secondary region. To learn more, see
+     * https://aka.ms/manualfailover.
      * 
      * @param iotHubName Name of the IoT hub to failover.
      * @param resourceGroupName Name of the resource group containing the IoT hub resource.
-     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
+     * @param failoverInput Region to failover to. Must be the Azure paired region. Get the value from the secondary
+     * location in the locations property. To learn more, see https://aka.ms/manualfailover/region.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)

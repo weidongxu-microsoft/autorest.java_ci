@@ -52,8 +52,9 @@ public final class ClusterMigrateRequest {
      */
     public void validate() {
         if (clusterResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property clusterResourceId in model ClusterMigrateRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property clusterResourceId in model ClusterMigrateRequest"));
         }
     }
 

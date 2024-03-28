@@ -74,7 +74,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesLiveEvents to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AzureMediaServicesLiveEvents to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesLi")
@@ -2098,7 +2099,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2140,7 +2143,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2182,7 +2187,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2203,7 +2210,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2227,7 +2236,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2246,7 +2257,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2266,7 +2279,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2285,7 +2300,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2305,7 +2322,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2322,7 +2341,9 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -2348,7 +2369,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStatusInner>> listGetStatusSinglePageAsync(String resourceGroupName,
@@ -2402,7 +2424,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return status telemetry of a live event along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStatusInner>> listGetStatusSinglePageAsync(String resourceGroupName,
@@ -2533,7 +2556,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStreamEventInner>> listGetStreamEventsSinglePageAsync(String resourceGroupName,
@@ -2588,7 +2612,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return stream events telemetry of a live event along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventStreamEventInner>> listGetStreamEventsSinglePageAsync(String resourceGroupName,
@@ -2721,7 +2746,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventTrackEventInner>> listGetTrackIngestHeartbeatsSinglePageAsync(
@@ -2777,7 +2803,8 @@ public final class LiveEventsClientImpl implements LiveEventsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return track ingest heartbeat events telemetry of a live event along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LiveEventTrackEventInner>> listGetTrackIngestHeartbeatsSinglePageAsync(

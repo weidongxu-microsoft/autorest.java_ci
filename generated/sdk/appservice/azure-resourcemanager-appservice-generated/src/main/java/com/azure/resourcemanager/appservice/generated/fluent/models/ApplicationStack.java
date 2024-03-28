@@ -157,7 +157,8 @@ public final class ApplicationStack {
     }
 
     /**
-     * Get the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDeprecated value.
      */
@@ -166,7 +167,8 @@ public final class ApplicationStack {
     }
 
     /**
-     * Set the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the isDeprecated property: &lt;code&gt;true&lt;/code&gt; if this is the stack is deprecated; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isDeprecated the isDeprecated value to set.
      * @return the ApplicationStack object itself.

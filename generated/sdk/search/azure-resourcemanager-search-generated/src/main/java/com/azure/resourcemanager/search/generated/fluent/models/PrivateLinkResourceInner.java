@@ -27,7 +27,8 @@ public final class PrivateLinkResourceInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: Describes the properties of a supported private link resource for the Azure AI Search service.
+     * Get the properties property: Describes the properties of a supported private link resource for the Azure AI
+     * Search service.
      * 
      * @return the properties value.
      */

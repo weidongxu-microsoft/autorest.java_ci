@@ -79,7 +79,8 @@ public final class ReportConfigDataset {
     }
 
     /**
-     * Get the configuration property: Has configuration information for the data in the report. The configuration will be ignored if aggregation and grouping are provided.
+     * Get the configuration property: Has configuration information for the data in the report. The configuration will
+     * be ignored if aggregation and grouping are provided.
      * 
      * @return the configuration value.
      */
@@ -88,7 +89,8 @@ public final class ReportConfigDataset {
     }
 
     /**
-     * Set the configuration property: Has configuration information for the data in the report. The configuration will be ignored if aggregation and grouping are provided.
+     * Set the configuration property: Has configuration information for the data in the report. The configuration will
+     * be ignored if aggregation and grouping are provided.
      * 
      * @param configuration the configuration value to set.
      * @return the ReportConfigDataset object itself.
@@ -99,7 +101,8 @@ public final class ReportConfigDataset {
     }
 
     /**
-     * Get the aggregation property: Dictionary of aggregation expression to use in the report. The key of each item in the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
+     * Get the aggregation property: Dictionary of aggregation expression to use in the report. The key of each item in
+     * the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
      * 
      * @return the aggregation value.
      */
@@ -108,7 +111,8 @@ public final class ReportConfigDataset {
     }
 
     /**
-     * Set the aggregation property: Dictionary of aggregation expression to use in the report. The key of each item in the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
+     * Set the aggregation property: Dictionary of aggregation expression to use in the report. The key of each item in
+     * the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
      * 
      * @param aggregation the aggregation value to set.
      * @return the ReportConfigDataset object itself.
@@ -119,7 +123,8 @@ public final class ReportConfigDataset {
     }
 
     /**
-     * Get the grouping property: Array of group by expression to use in the report. Report can have up to 2 group by clauses.
+     * Get the grouping property: Array of group by expression to use in the report. Report can have up to 2 group by
+     * clauses.
      * 
      * @return the grouping value.
      */
@@ -128,7 +133,8 @@ public final class ReportConfigDataset {
     }
 
     /**
-     * Set the grouping property: Array of group by expression to use in the report. Report can have up to 2 group by clauses.
+     * Set the grouping property: Array of group by expression to use in the report. Report can have up to 2 group by
+     * clauses.
      * 
      * @param grouping the grouping value to set.
      * @return the ReportConfigDataset object itself.

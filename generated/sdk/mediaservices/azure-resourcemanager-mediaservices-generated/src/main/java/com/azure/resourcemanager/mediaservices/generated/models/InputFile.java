@@ -6,17 +6,25 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * An InputDefinition for a single file.  TrackSelections are scoped to the file specified.
+ * An InputDefinition for a single file. TrackSelections are scoped to the file specified.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = InputFile.class, visible = true)
 @JsonTypeName("#Microsoft.Media.InputFile")
 @Fluent
 public final class InputFile extends InputDefinition {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.InputFile";
+
     /*
      * Name of the file that this input definition applies to.
      */
@@ -27,7 +35,16 @@ public final class InputFile extends InputDefinition {
      * Creates an instance of InputFile class.
      */
     public InputFile() {
-        withOdataType("#Microsoft.Media.InputFile");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

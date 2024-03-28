@@ -6,6 +6,7 @@ package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.UUID;
@@ -23,6 +24,13 @@ import java.util.UUID;
 public final class ModernSingleScopeReservationRecommendationProperties
     extends ModernReservationRecommendationProperties {
     /*
+     * Shared or single recommendation.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "scope", required = true)
+    private String scope = "Single";
+
+    /*
      * Subscription ID associated with single scoped recommendation.
      */
     @JsonProperty(value = "subscriptionId", access = JsonProperty.Access.WRITE_ONLY)
@@ -32,7 +40,16 @@ public final class ModernSingleScopeReservationRecommendationProperties
      * Creates an instance of ModernSingleScopeReservationRecommendationProperties class.
      */
     public ModernSingleScopeReservationRecommendationProperties() {
-        withScope("Single");
+    }
+
+    /**
+     * Get the scope property: Shared or single recommendation.
+     * 
+     * @return the scope value.
+     */
+    @Override
+    public String scope() {
+        return this.scope;
     }
 
     /**

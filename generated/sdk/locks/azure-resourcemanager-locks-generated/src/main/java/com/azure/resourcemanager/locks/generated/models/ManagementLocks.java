@@ -16,7 +16,8 @@ public interface ManagementLocks {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -31,7 +32,8 @@ public interface ManagementLocks {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the lock.
      * @param lockName The name of lock to delete.
@@ -70,7 +72,11 @@ public interface ManagementLocks {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use
+     * '/subscriptions/{subscriptionId}' for subscriptions,
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
+     * for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @param context The context to associate with this operation.
@@ -85,7 +91,11 @@ public interface ManagementLocks {
     /**
      * Create or update a management lock by scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use
+     * '/subscriptions/{subscriptionId}' for subscriptions,
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
+     * for resources.
      * @param lockName The name of lock.
      * @param parameters Create or update management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -147,15 +157,18 @@ public interface ManagementLocks {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
+     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
+     * roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a  management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a management lock.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -169,15 +182,18 @@ public interface ManagementLocks {
     /**
      * Creates or updates a management lock at the resource level or any level below the resource.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
+     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
+     * roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource to lock.
      * @param resourceProviderNamespace The resource provider namespace of the resource to lock.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource to lock.
      * @param resourceName The name of the resource to lock.
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
-     * @param parameters Parameters for creating or updating a  management lock.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     * %, &amp;, :, \, ?, /, or any control characters.
+     * @param parameters Parameters for creating or updating a management lock.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -190,7 +206,8 @@ public interface ManagementLocks {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -210,7 +227,8 @@ public interface ManagementLocks {
     /**
      * Deletes the management lock of a resource or any level below the resource.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param resourceGroupName The name of the resource group containing the resource with the lock to delete.
      * @param resourceProviderNamespace The resource provider namespace of the resource with the lock to delete.
@@ -264,9 +282,12 @@ public interface ManagementLocks {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
+     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
+     * roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     * %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -280,9 +301,12 @@ public interface ManagementLocks {
     /**
      * Creates or updates a management lock at the subscription level.
      * 
-     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks,
+     * you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in
+     * roles, only Owner and User Access Administrator are granted those actions.
      * 
-     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt; %, &amp;, :, \, ?, /, or any control characters.
+     * @param lockName The name of lock. The lock name can be a maximum of 260 characters. It cannot contain &lt;, &gt;
+     * %, &amp;, :, \, ?, /, or any control characters.
      * @param parameters The management lock parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -294,7 +318,8 @@ public interface ManagementLocks {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @param context The context to associate with this operation.
@@ -308,7 +333,8 @@ public interface ManagementLocks {
     /**
      * Deletes the management lock at the subscription level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param lockName The name of lock to delete.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -367,7 +393,8 @@ public interface ManagementLocks {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -375,7 +402,8 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedIterable}.
+     * @return all the management locks for a resource or any level below resource as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName);
@@ -383,7 +411,8 @@ public interface ManagementLocks {
     /**
      * Gets all the management locks for a resource or any level below resource.
      * 
-     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case insensitive.
+     * @param resourceGroupName The name of the resource group containing the locked resource. The name is case
+     * insensitive.
      * @param resourceProviderNamespace The namespace of the resource provider.
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the locked resource.
@@ -393,7 +422,8 @@ public interface ManagementLocks {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the management locks for a resource or any level below resource as paginated response with {@link PagedIterable}.
+     * @return all the management locks for a resource or any level below resource as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<ManagementLockObject> listAtResourceLevel(String resourceGroupName, String resourceProviderNamespace,
         String parentResourcePath, String resourceType, String resourceName, String filter, Context context);
@@ -422,7 +452,11 @@ public interface ManagementLocks {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use
+     * '/subscriptions/{subscriptionId}' for subscriptions,
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
+     * for resources.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -433,7 +467,11 @@ public interface ManagementLocks {
     /**
      * Gets all the management locks for a scope.
      * 
-     * @param scope The scope for the lock. When providing a scope for the assignment, use '/subscriptions/{subscriptionId}' for subscriptions, '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}' for resources.
+     * @param scope The scope for the lock. When providing a scope for the assignment, use
+     * '/subscriptions/{subscriptionId}' for subscriptions,
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}' for resource groups, and
+     * '/subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePathIfPresent}/{resourceType}/{resourceName}'
+     * for resources.
      * @param filter The filter to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -469,7 +507,8 @@ public interface ManagementLocks {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -481,7 +520,8 @@ public interface ManagementLocks {
     /**
      * Deletes a management lock at the resource group level.
      * 
-     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
+     * To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/*
+     * actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
      * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.

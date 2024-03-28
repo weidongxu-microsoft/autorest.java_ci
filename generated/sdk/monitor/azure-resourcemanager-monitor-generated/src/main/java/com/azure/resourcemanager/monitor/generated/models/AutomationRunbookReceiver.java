@@ -62,7 +62,8 @@ public final class AutomationRunbookReceiver {
     }
 
     /**
-     * Get the automationAccountId property: The Azure automation account Id which holds this runbook and authenticate to Azure resource.
+     * Get the automationAccountId property: The Azure automation account Id which holds this runbook and authenticate
+     * to Azure resource.
      * 
      * @return the automationAccountId value.
      */
@@ -71,7 +72,8 @@ public final class AutomationRunbookReceiver {
     }
 
     /**
-     * Set the automationAccountId property: The Azure automation account Id which holds this runbook and authenticate to Azure resource.
+     * Set the automationAccountId property: The Azure automation account Id which holds this runbook and authenticate
+     * to Azure resource.
      * 
      * @param automationAccountId the automationAccountId value to set.
      * @return the AutomationRunbookReceiver object itself.
@@ -208,16 +210,19 @@ public final class AutomationRunbookReceiver {
      */
     public void validate() {
         if (automationAccountId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property automationAccountId in model AutomationRunbookReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property automationAccountId in model AutomationRunbookReceiver"));
         }
         if (runbookName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property runbookName in model AutomationRunbookReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property runbookName in model AutomationRunbookReceiver"));
         }
         if (webhookResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property webhookResourceId in model AutomationRunbookReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property webhookResourceId in model AutomationRunbookReceiver"));
         }
     }
 

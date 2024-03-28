@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Name of the format. Valid values are: 
+ * Name of the format. Valid values are:
  * FileZilla3
  * WebDeploy -- default
  * Ftp.

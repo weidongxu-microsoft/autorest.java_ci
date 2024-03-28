@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * This is used to express the source of an input schema mapping for a single target field in the Event Grid Event schema. This is currently used in the mappings for the 'id', 'topic' and 'eventtime' properties. This represents a field in the input event schema.
+ * This is used to express the source of an input schema mapping for a single target field in the Event Grid Event
+ * schema. This is currently used in the mappings for the 'id', 'topic' and 'eventtime' properties. This represents a
+ * field in the input event schema.
  */
 @Fluent
 public final class JsonField {
@@ -25,7 +27,8 @@ public final class JsonField {
     }
 
     /**
-     * Get the sourceField property: Name of a field in the input event schema that's to be used as the source of a mapping.
+     * Get the sourceField property: Name of a field in the input event schema that's to be used as the source of a
+     * mapping.
      * 
      * @return the sourceField value.
      */
@@ -34,7 +37,8 @@ public final class JsonField {
     }
 
     /**
-     * Set the sourceField property: Name of a field in the input event schema that's to be used as the source of a mapping.
+     * Set the sourceField property: Name of a field in the input event schema that's to be used as the source of a
+     * mapping.
      * 
      * @param sourceField the sourceField value to set.
      * @return the JsonField object itself.

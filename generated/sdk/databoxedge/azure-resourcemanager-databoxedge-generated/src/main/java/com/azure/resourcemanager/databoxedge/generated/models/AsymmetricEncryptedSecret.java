@@ -58,7 +58,8 @@ public final class AsymmetricEncryptedSecret {
     }
 
     /**
-     * Get the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is unencrypted, it will be null.
+     * Get the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is
+     * unencrypted, it will be null.
      * 
      * @return the encryptionCertThumbprint value.
      */
@@ -67,7 +68,8 @@ public final class AsymmetricEncryptedSecret {
     }
 
     /**
-     * Set the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is unencrypted, it will be null.
+     * Set the encryptionCertThumbprint property: Thumbprint certificate used to encrypt \"Value\". If the value is
+     * unencrypted, it will be null.
      * 
      * @param encryptionCertThumbprint the encryptionCertThumbprint value to set.
      * @return the AsymmetricEncryptedSecret object itself.
@@ -104,12 +106,14 @@ public final class AsymmetricEncryptedSecret {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model AsymmetricEncryptedSecret"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property value in model AsymmetricEncryptedSecret"));
         }
         if (encryptionAlgorithm() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property encryptionAlgorithm in model AsymmetricEncryptedSecret"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property encryptionAlgorithm in model AsymmetricEncryptedSecret"));
         }
     }
 

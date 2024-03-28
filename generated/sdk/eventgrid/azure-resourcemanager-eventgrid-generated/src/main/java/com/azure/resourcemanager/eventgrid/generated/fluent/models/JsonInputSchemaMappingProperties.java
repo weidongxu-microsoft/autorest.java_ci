@@ -10,7 +10,8 @@ import com.azure.resourcemanager.eventgrid.generated.models.JsonFieldWithDefault
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * This can be used to map properties of a source schema (or default values, for certain supported properties) to properties of the EventGridEvent schema.
+ * This can be used to map properties of a source schema (or default values, for certain supported properties) to
+ * properties of the EventGridEvent schema.
  */
 @Fluent
 public final class JsonInputSchemaMappingProperties {

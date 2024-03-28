@@ -48,7 +48,8 @@ public interface FrontendEndpoint {
     CustomHttpsProvisioningState customHttpsProvisioningState();
 
     /**
-     * Gets the customHttpsProvisioningSubstate property: Provisioning substate shows the progress of custom HTTPS enabling/disabling process step by step.
+     * Gets the customHttpsProvisioningSubstate property: Provisioning substate shows the progress of custom HTTPS
+     * enabling/disabling process step by step.
      * 
      * @return the customHttpsProvisioningSubstate value.
      */
@@ -69,21 +70,24 @@ public interface FrontendEndpoint {
     String hostname();
 
     /**
-     * Gets the sessionAffinityEnabledState property: Whether to allow session affinity on this host. Valid options are 'Enabled' or 'Disabled'.
+     * Gets the sessionAffinityEnabledState property: Whether to allow session affinity on this host. Valid options are
+     * 'Enabled' or 'Disabled'.
      * 
      * @return the sessionAffinityEnabledState value.
      */
     SessionAffinityEnabledState sessionAffinityEnabledState();
 
     /**
-     * Gets the sessionAffinityTtlSeconds property: UNUSED. This field will be ignored. The TTL to use in seconds for session affinity, if applicable.
+     * Gets the sessionAffinityTtlSeconds property: UNUSED. This field will be ignored. The TTL to use in seconds for
+     * session affinity, if applicable.
      * 
      * @return the sessionAffinityTtlSeconds value.
      */
     Integer sessionAffinityTtlSeconds();
 
     /**
-     * Gets the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each host (if applicable).
+     * Gets the webApplicationFirewallPolicyLink property: Defines the Web Application Firewall policy for each host (if
+     * applicable).
      * 
      * @return the webApplicationFirewallPolicyLink value.
      */

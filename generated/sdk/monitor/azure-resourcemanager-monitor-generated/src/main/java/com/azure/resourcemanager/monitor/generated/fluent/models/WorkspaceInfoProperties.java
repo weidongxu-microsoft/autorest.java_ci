@@ -52,8 +52,9 @@ public final class WorkspaceInfoProperties {
      */
     public void validate() {
         if (customerId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property customerId in model WorkspaceInfoProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property customerId in model WorkspaceInfoProperties"));
         }
     }
 

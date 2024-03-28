@@ -129,7 +129,8 @@ public final class OpenIdConnectConfig {
     }
 
     /**
-     * Get the wellKnownOpenIdConfiguration property: The endpoint that contains all the configuration endpoints for the provider.
+     * Get the wellKnownOpenIdConfiguration property: The endpoint that contains all the configuration endpoints for the
+     * provider.
      * 
      * @return the wellKnownOpenIdConfiguration value.
      */
@@ -138,7 +139,8 @@ public final class OpenIdConnectConfig {
     }
 
     /**
-     * Set the wellKnownOpenIdConfiguration property: The endpoint that contains all the configuration endpoints for the provider.
+     * Set the wellKnownOpenIdConfiguration property: The endpoint that contains all the configuration endpoints for the
+     * provider.
      * 
      * @param wellKnownOpenIdConfiguration the wellKnownOpenIdConfiguration value to set.
      * @return the OpenIdConnectConfig object itself.

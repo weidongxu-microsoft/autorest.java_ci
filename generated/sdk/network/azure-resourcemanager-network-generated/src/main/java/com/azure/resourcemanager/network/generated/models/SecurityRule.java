@@ -21,7 +21,8 @@ public interface SecurityRule {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -56,21 +57,25 @@ public interface SecurityRule {
     SecurityRuleProtocol protocol();
 
     /**
-     * Gets the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
+     * Gets the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*'
+     * can also be used to match all ports.
      * 
      * @return the sourcePortRange value.
      */
     String sourcePortRange();
 
     /**
-     * Gets the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
+     * Gets the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535.
+     * Asterisk '*' can also be used to match all ports.
      * 
      * @return the destinationPortRange value.
      */
     String destinationPortRange();
 
     /**
-     * Gets the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from.
+     * Gets the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all
+     * source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
+     * is an ingress rule, specifies where network traffic originates from.
      * 
      * @return the sourceAddressPrefix value.
      */
@@ -91,7 +96,9 @@ public interface SecurityRule {
     List<ApplicationSecurityGroup> sourceApplicationSecurityGroups();
 
     /**
-     * Gets the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
+     * Gets the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range.
+     * Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
+     * and 'Internet' can also be used.
      * 
      * @return the destinationAddressPrefix value.
      */
@@ -133,14 +140,17 @@ public interface SecurityRule {
     SecurityRuleAccess access();
 
     /**
-     * Gets the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Gets the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @return the priority value.
      */
     int priority();
 
     /**
-     * Gets the direction property: The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic.
+     * Gets the direction property: The direction of the rule. The direction specifies if rule will be evaluated on
+     * incoming or outgoing traffic.
      * 
      * @return the direction value.
      */
@@ -199,7 +209,8 @@ public interface SecurityRule {
         }
 
         /**
-         * The stage of the SecurityRule definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SecurityRule definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithDescription, DefinitionStages.WithProtocol, DefinitionStages.WithSourcePortRange,
@@ -230,9 +241,11 @@ public interface SecurityRule {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -282,9 +295,11 @@ public interface SecurityRule {
          */
         interface WithSourcePortRange {
             /**
-             * Specifies the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports..
+             * Specifies the sourcePortRange property: The source port or range. Integer or range between 0 and 65535.
+             * Asterisk '*' can also be used to match all ports..
              * 
-             * @param sourcePortRange The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
+             * @param sourcePortRange The source port or range. Integer or range between 0 and 65535. Asterisk '*' can
+             * also be used to match all ports.
              * @return the next definition stage.
              */
             WithCreate withSourcePortRange(String sourcePortRange);
@@ -295,9 +310,11 @@ public interface SecurityRule {
          */
         interface WithDestinationPortRange {
             /**
-             * Specifies the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports..
+             * Specifies the destinationPortRange property: The destination port or range. Integer or range between 0
+             * and 65535. Asterisk '*' can also be used to match all ports..
              * 
-             * @param destinationPortRange The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
+             * @param destinationPortRange The destination port or range. Integer or range between 0 and 65535. Asterisk
+             * '*' can also be used to match all ports.
              * @return the next definition stage.
              */
             WithCreate withDestinationPortRange(String destinationPortRange);
@@ -308,9 +325,13 @@ public interface SecurityRule {
          */
         interface WithSourceAddressPrefix {
             /**
-             * Specifies the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from..
+             * Specifies the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to
+             * match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also
+             * be used. If this is an ingress rule, specifies where network traffic originates from..
              * 
-             * @param sourceAddressPrefix The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from.
+             * @param sourceAddressPrefix The CIDR or source IP range. Asterisk '*' can also be used to match all source
+             * IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
+             * is an ingress rule, specifies where network traffic originates from.
              * @return the next definition stage.
              */
             WithCreate withSourceAddressPrefix(String sourceAddressPrefix);
@@ -334,7 +355,8 @@ public interface SecurityRule {
          */
         interface WithSourceApplicationSecurityGroups {
             /**
-             * Specifies the sourceApplicationSecurityGroups property: The application security group specified as source..
+             * Specifies the sourceApplicationSecurityGroups property: The application security group specified as
+             * source..
              * 
              * @param sourceApplicationSecurityGroups The application security group specified as source.
              * @return the next definition stage.
@@ -348,9 +370,13 @@ public interface SecurityRule {
          */
         interface WithDestinationAddressPrefix {
             /**
-             * Specifies the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used..
+             * Specifies the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP
+             * range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
+             * 'AzureLoadBalancer' and 'Internet' can also be used..
              * 
-             * @param destinationAddressPrefix The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
+             * @param destinationAddressPrefix The destination address prefix. CIDR or destination IP range. Asterisk
+             * '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
+             * and 'Internet' can also be used.
              * @return the next definition stage.
              */
             WithCreate withDestinationAddressPrefix(String destinationAddressPrefix);
@@ -361,7 +387,8 @@ public interface SecurityRule {
          */
         interface WithDestinationAddressPrefixes {
             /**
-             * Specifies the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination IP ranges..
+             * Specifies the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination
+             * IP ranges..
              * 
              * @param destinationAddressPrefixes The destination address prefixes. CIDR or destination IP ranges.
              * @return the next definition stage.
@@ -374,7 +401,8 @@ public interface SecurityRule {
          */
         interface WithDestinationApplicationSecurityGroups {
             /**
-             * Specifies the destinationApplicationSecurityGroups property: The application security group specified as destination..
+             * Specifies the destinationApplicationSecurityGroups property: The application security group specified as
+             * destination..
              * 
              * @param destinationApplicationSecurityGroups The application security group specified as destination.
              * @return the next definition stage.
@@ -427,9 +455,13 @@ public interface SecurityRule {
          */
         interface WithPriority {
             /**
-             * Specifies the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule..
+             * Specifies the priority property: The priority of the rule. The value can be between 100 and 4096. The
+             * priority number must be unique for each rule in the collection. The lower the priority number, the higher
+             * the priority of the rule..
              * 
-             * @param priority The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+             * @param priority The priority of the rule. The value can be between 100 and 4096. The priority number must
+             * be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+             * rule.
              * @return the next definition stage.
              */
             WithCreate withPriority(int priority);
@@ -440,9 +472,11 @@ public interface SecurityRule {
          */
         interface WithDirection {
             /**
-             * Specifies the direction property: The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic..
+             * Specifies the direction property: The direction of the rule. The direction specifies if rule will be
+             * evaluated on incoming or outgoing traffic..
              * 
-             * @param direction The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic.
+             * @param direction The direction of the rule. The direction specifies if rule will be evaluated on incoming
+             * or outgoing traffic.
              * @return the next definition stage.
              */
             WithCreate withDirection(SecurityRuleDirection direction);
@@ -491,9 +525,11 @@ public interface SecurityRule {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -543,9 +579,11 @@ public interface SecurityRule {
          */
         interface WithSourcePortRange {
             /**
-             * Specifies the sourcePortRange property: The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports..
+             * Specifies the sourcePortRange property: The source port or range. Integer or range between 0 and 65535.
+             * Asterisk '*' can also be used to match all ports..
              * 
-             * @param sourcePortRange The source port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
+             * @param sourcePortRange The source port or range. Integer or range between 0 and 65535. Asterisk '*' can
+             * also be used to match all ports.
              * @return the next definition stage.
              */
             Update withSourcePortRange(String sourcePortRange);
@@ -556,9 +594,11 @@ public interface SecurityRule {
          */
         interface WithDestinationPortRange {
             /**
-             * Specifies the destinationPortRange property: The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports..
+             * Specifies the destinationPortRange property: The destination port or range. Integer or range between 0
+             * and 65535. Asterisk '*' can also be used to match all ports..
              * 
-             * @param destinationPortRange The destination port or range. Integer or range between 0 and 65535. Asterisk '*' can also be used to match all ports.
+             * @param destinationPortRange The destination port or range. Integer or range between 0 and 65535. Asterisk
+             * '*' can also be used to match all ports.
              * @return the next definition stage.
              */
             Update withDestinationPortRange(String destinationPortRange);
@@ -569,9 +609,13 @@ public interface SecurityRule {
          */
         interface WithSourceAddressPrefix {
             /**
-             * Specifies the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from..
+             * Specifies the sourceAddressPrefix property: The CIDR or source IP range. Asterisk '*' can also be used to
+             * match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also
+             * be used. If this is an ingress rule, specifies where network traffic originates from..
              * 
-             * @param sourceAddressPrefix The CIDR or source IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this is an ingress rule, specifies where network traffic originates from.
+             * @param sourceAddressPrefix The CIDR or source IP range. Asterisk '*' can also be used to match all source
+             * IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used. If this
+             * is an ingress rule, specifies where network traffic originates from.
              * @return the next definition stage.
              */
             Update withSourceAddressPrefix(String sourceAddressPrefix);
@@ -595,7 +639,8 @@ public interface SecurityRule {
          */
         interface WithSourceApplicationSecurityGroups {
             /**
-             * Specifies the sourceApplicationSecurityGroups property: The application security group specified as source..
+             * Specifies the sourceApplicationSecurityGroups property: The application security group specified as
+             * source..
              * 
              * @param sourceApplicationSecurityGroups The application security group specified as source.
              * @return the next definition stage.
@@ -609,9 +654,13 @@ public interface SecurityRule {
          */
         interface WithDestinationAddressPrefix {
             /**
-             * Specifies the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used..
+             * Specifies the destinationAddressPrefix property: The destination address prefix. CIDR or destination IP
+             * range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork',
+             * 'AzureLoadBalancer' and 'Internet' can also be used..
              * 
-             * @param destinationAddressPrefix The destination address prefix. CIDR or destination IP range. Asterisk '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer' and 'Internet' can also be used.
+             * @param destinationAddressPrefix The destination address prefix. CIDR or destination IP range. Asterisk
+             * '*' can also be used to match all source IPs. Default tags such as 'VirtualNetwork', 'AzureLoadBalancer'
+             * and 'Internet' can also be used.
              * @return the next definition stage.
              */
             Update withDestinationAddressPrefix(String destinationAddressPrefix);
@@ -622,7 +671,8 @@ public interface SecurityRule {
          */
         interface WithDestinationAddressPrefixes {
             /**
-             * Specifies the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination IP ranges..
+             * Specifies the destinationAddressPrefixes property: The destination address prefixes. CIDR or destination
+             * IP ranges..
              * 
              * @param destinationAddressPrefixes The destination address prefixes. CIDR or destination IP ranges.
              * @return the next definition stage.
@@ -635,7 +685,8 @@ public interface SecurityRule {
          */
         interface WithDestinationApplicationSecurityGroups {
             /**
-             * Specifies the destinationApplicationSecurityGroups property: The application security group specified as destination..
+             * Specifies the destinationApplicationSecurityGroups property: The application security group specified as
+             * destination..
              * 
              * @param destinationApplicationSecurityGroups The application security group specified as destination.
              * @return the next definition stage.
@@ -688,9 +739,13 @@ public interface SecurityRule {
          */
         interface WithPriority {
             /**
-             * Specifies the priority property: The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule..
+             * Specifies the priority property: The priority of the rule. The value can be between 100 and 4096. The
+             * priority number must be unique for each rule in the collection. The lower the priority number, the higher
+             * the priority of the rule..
              * 
-             * @param priority The priority of the rule. The value can be between 100 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+             * @param priority The priority of the rule. The value can be between 100 and 4096. The priority number must
+             * be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+             * rule.
              * @return the next definition stage.
              */
             Update withPriority(int priority);
@@ -701,9 +756,11 @@ public interface SecurityRule {
          */
         interface WithDirection {
             /**
-             * Specifies the direction property: The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic..
+             * Specifies the direction property: The direction of the rule. The direction specifies if rule will be
+             * evaluated on incoming or outgoing traffic..
              * 
-             * @param direction The direction of the rule. The direction specifies if rule will be evaluated on incoming or outgoing traffic.
+             * @param direction The direction of the rule. The direction specifies if rule will be evaluated on incoming
+             * or outgoing traffic.
              * @return the next definition stage.
              */
             Update withDirection(SecurityRuleDirection direction);

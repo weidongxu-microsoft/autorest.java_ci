@@ -64,10 +64,10 @@ public final class TopicSpaceProperties {
 
     /**
      * Get the topicTemplates property: The topic filters in the topic space.
-     * Example: "topicTemplates": [ 
-     *               "devices/foo/bar",
-     *               "devices/topic1/+",
-     *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+     * Example: "topicTemplates": [
+     * "devices/foo/bar",
+     * "devices/topic1/+",
+     * "devices/${principal.name}/${principal.attributes.keyName}" ].
      * 
      * @return the topicTemplates value.
      */
@@ -77,10 +77,10 @@ public final class TopicSpaceProperties {
 
     /**
      * Set the topicTemplates property: The topic filters in the topic space.
-     * Example: "topicTemplates": [ 
-     *               "devices/foo/bar",
-     *               "devices/topic1/+",
-     *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+     * Example: "topicTemplates": [
+     * "devices/foo/bar",
+     * "devices/topic1/+",
+     * "devices/${principal.name}/${principal.attributes.keyName}" ].
      * 
      * @param topicTemplates the topicTemplates value to set.
      * @return the TopicSpaceProperties object itself.

@@ -69,7 +69,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVpnGateways to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVpnGateways to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -1761,7 +1762,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1795,7 +1797,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1887,7 +1890,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listSinglePageAsync() {
@@ -1916,7 +1920,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listSinglePageAsync(Context context) {
@@ -1998,7 +2003,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2028,7 +2034,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -2056,7 +2063,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -2084,7 +2092,8 @@ public final class VpnGatewaysClientImpl implements VpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {

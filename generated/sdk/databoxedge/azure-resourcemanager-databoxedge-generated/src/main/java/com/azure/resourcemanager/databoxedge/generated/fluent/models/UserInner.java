@@ -79,7 +79,8 @@ public final class UserInner extends ArmBaseModel {
     }
 
     /**
-     * Get the shareAccessRights property: List of shares that the user has rights on. This field should not be specified during user creation.
+     * Get the shareAccessRights property: List of shares that the user has rights on. This field should not be
+     * specified during user creation.
      * 
      * @return the shareAccessRights value.
      */
@@ -119,8 +120,8 @@ public final class UserInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model UserInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property innerProperties in model UserInner"));
         } else {
             innerProperties().validate();
         }

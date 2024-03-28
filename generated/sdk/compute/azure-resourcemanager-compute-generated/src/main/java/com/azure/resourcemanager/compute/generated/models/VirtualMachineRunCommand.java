@@ -71,7 +71,8 @@ public interface VirtualMachineRunCommand {
     List<RunCommandInputParameter> protectedParameters();
 
     /**
-     * Gets the asyncExecution property: Optional. If set to true, provisioning will complete as soon as the script starts and will not wait for script to complete.
+     * Gets the asyncExecution property: Optional. If set to true, provisioning will complete as soon as the script
+     * starts and will not wait for script to complete.
      * 
      * @return the asyncExecution value.
      */
@@ -99,35 +100,52 @@ public interface VirtualMachineRunCommand {
     Integer timeoutInSeconds();
 
     /**
-     * Gets the outputBlobUri property: Specifies the Azure storage blob where script output stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer outputBlobManagedIdentity parameter.
+     * Gets the outputBlobUri property: Specifies the Azure storage blob where script output stream will be uploaded.
+     * Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the
+     * blob. Refer outputBlobManagedIdentity parameter.
      * 
      * @return the outputBlobUri value.
      */
     String outputBlobUri();
 
     /**
-     * Gets the errorBlobUri property: Specifies the Azure storage blob where script error stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer errorBlobManagedIdentity parameter.
+     * Gets the errorBlobUri property: Specifies the Azure storage blob where script error stream will be uploaded. Use
+     * a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob.
+     * Refer errorBlobManagedIdentity parameter.
      * 
      * @return the errorBlobUri value.
      */
     String errorBlobUri();
 
     /**
-     * Gets the outputBlobManagedIdentity property: User-assigned managed identity that has access to outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
+     * Gets the outputBlobManagedIdentity property: User-assigned managed identity that has access to outputBlobUri
+     * storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given
+     * access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned
+     * identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer
+     * https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
      * 
      * @return the outputBlobManagedIdentity value.
      */
     RunCommandManagedIdentity outputBlobManagedIdentity();
 
     /**
-     * Gets the errorBlobManagedIdentity property: User-assigned managed identity that has access to errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
+     * Gets the errorBlobManagedIdentity property: User-assigned managed identity that has access to errorBlobUri
+     * storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given
+     * access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned
+     * identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer
+     * https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
      * 
      * @return the errorBlobManagedIdentity value.
      */
     RunCommandManagedIdentity errorBlobManagedIdentity();
 
     /**
-     * Gets the provisioningState property: The provisioning state, which only appears in the response. If treatFailureAsDeploymentFailure set to true, any failure in the script will fail the deployment and ProvisioningState will be marked as Failed. If treatFailureAsDeploymentFailure set to false, ProvisioningState would only reflect whether the run command was run or not by the extensions platform, it would not indicate whether script failed in case of script failures. See instance view of run command in case of script failures to see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
+     * Gets the provisioningState property: The provisioning state, which only appears in the response. If
+     * treatFailureAsDeploymentFailure set to true, any failure in the script will fail the deployment and
+     * ProvisioningState will be marked as Failed. If treatFailureAsDeploymentFailure set to false, ProvisioningState
+     * would only reflect whether the run command was run or not by the extensions platform, it would not indicate
+     * whether script failed in case of script failures. See instance view of run command in case of script failures to
+     * see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
      * 
      * @return the provisioningState value.
      */
@@ -141,7 +159,11 @@ public interface VirtualMachineRunCommand {
     VirtualMachineRunCommandInstanceView instanceView();
 
     /**
-     * Gets the treatFailureAsDeploymentFailure property: Optional. If set to true, any failure in the script will fail the deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only reflect whether the run command was run or not by the extensions platform, it would not indicate whether script failed in case of script failures. See instance view of run command in case of script failures to see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
+     * Gets the treatFailureAsDeploymentFailure property: Optional. If set to true, any failure in the script will fail
+     * the deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only
+     * reflect whether the run command was run or not by the extensions platform, it would not indicate whether script
+     * failed in case of script failures. See instance view of run command in case of script failures to see
+     * executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
      * 
      * @return the treatFailureAsDeploymentFailure value.
      */
@@ -228,7 +250,8 @@ public interface VirtualMachineRunCommand {
         }
 
         /**
-         * The stage of the VirtualMachineRunCommand definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualMachineRunCommand definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSource,
             DefinitionStages.WithParameters, DefinitionStages.WithProtectedParameters,
@@ -309,9 +332,11 @@ public interface VirtualMachineRunCommand {
          */
         interface WithAsyncExecution {
             /**
-             * Specifies the asyncExecution property: Optional. If set to true, provisioning will complete as soon as the script starts and will not wait for script to complete..
+             * Specifies the asyncExecution property: Optional. If set to true, provisioning will complete as soon as
+             * the script starts and will not wait for script to complete..
              * 
-             * @param asyncExecution Optional. If set to true, provisioning will complete as soon as the script starts and will not wait for script to complete.
+             * @param asyncExecution Optional. If set to true, provisioning will complete as soon as the script starts
+             * and will not wait for script to complete.
              * @return the next definition stage.
              */
             WithCreate withAsyncExecution(Boolean asyncExecution);
@@ -335,7 +360,8 @@ public interface VirtualMachineRunCommand {
          */
         interface WithRunAsPassword {
             /**
-             * Specifies the runAsPassword property: Specifies the user account password on the VM when executing the run command..
+             * Specifies the runAsPassword property: Specifies the user account password on the VM when executing the
+             * run command..
              * 
              * @param runAsPassword Specifies the user account password on the VM when executing the run command.
              * @return the next definition stage.
@@ -361,9 +387,13 @@ public interface VirtualMachineRunCommand {
          */
         interface WithOutputBlobUri {
             /**
-             * Specifies the outputBlobUri property: Specifies the Azure storage blob where script output stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer outputBlobManagedIdentity parameter. .
+             * Specifies the outputBlobUri property: Specifies the Azure storage blob where script output stream will be
+             * uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM
+             * access to the blob. Refer outputBlobManagedIdentity parameter. .
              * 
-             * @param outputBlobUri Specifies the Azure storage blob where script output stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer outputBlobManagedIdentity parameter.
+             * @param outputBlobUri Specifies the Azure storage blob where script output stream will be uploaded. Use a
+             * SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the
+             * blob. Refer outputBlobManagedIdentity parameter.
              * @return the next definition stage.
              */
             WithCreate withOutputBlobUri(String outputBlobUri);
@@ -374,9 +404,13 @@ public interface VirtualMachineRunCommand {
          */
         interface WithErrorBlobUri {
             /**
-             * Specifies the errorBlobUri property: Specifies the Azure storage blob where script error stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer errorBlobManagedIdentity parameter..
+             * Specifies the errorBlobUri property: Specifies the Azure storage blob where script error stream will be
+             * uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM
+             * access to the blob. Refer errorBlobManagedIdentity parameter..
              * 
-             * @param errorBlobUri Specifies the Azure storage blob where script error stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer errorBlobManagedIdentity parameter.
+             * @param errorBlobUri Specifies the Azure storage blob where script error stream will be uploaded. Use a
+             * SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the
+             * blob. Refer errorBlobManagedIdentity parameter.
              * @return the next definition stage.
              */
             WithCreate withErrorBlobUri(String errorBlobUri);
@@ -387,9 +421,17 @@ public interface VirtualMachineRunCommand {
          */
         interface WithOutputBlobManagedIdentity {
             /**
-             * Specifies the outputBlobManagedIdentity property: User-assigned managed identity that has access to outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
+             * Specifies the outputBlobManagedIdentity property: User-assigned managed identity that has access to
+             * outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed
+             * identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment.
+             * In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed
+             * identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
              * 
-             * @param outputBlobManagedIdentity User-assigned managed identity that has access to outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
+             * @param outputBlobManagedIdentity User-assigned managed identity that has access to outputBlobUri storage
+             * blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given
+             * access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned
+             * identity, make sure you add it under VM's identity. For more info on managed identity and Run Command,
+             * refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
              * @return the next definition stage.
              */
             WithCreate withOutputBlobManagedIdentity(RunCommandManagedIdentity outputBlobManagedIdentity);
@@ -400,9 +442,17 @@ public interface VirtualMachineRunCommand {
          */
         interface WithErrorBlobManagedIdentity {
             /**
-             * Specifies the errorBlobManagedIdentity property: User-assigned managed identity that has access to errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
+             * Specifies the errorBlobManagedIdentity property: User-assigned managed identity that has access to
+             * errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed
+             * identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment.
+             * In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed
+             * identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
              * 
-             * @param errorBlobManagedIdentity User-assigned managed identity that has access to errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
+             * @param errorBlobManagedIdentity User-assigned managed identity that has access to errorBlobUri storage
+             * blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given
+             * access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned
+             * identity, make sure you add it under VM's identity. For more info on managed identity and Run Command,
+             * refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
              * @return the next definition stage.
              */
             WithCreate withErrorBlobManagedIdentity(RunCommandManagedIdentity errorBlobManagedIdentity);
@@ -413,9 +463,18 @@ public interface VirtualMachineRunCommand {
          */
         interface WithTreatFailureAsDeploymentFailure {
             /**
-             * Specifies the treatFailureAsDeploymentFailure property: Optional. If set to true, any failure in the script will fail the deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only reflect whether the run command was run or not by the extensions platform, it would not indicate whether script failed in case of script failures. See instance view of run command in case of script failures to see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results .
+             * Specifies the treatFailureAsDeploymentFailure property: Optional. If set to true, any failure in the
+             * script will fail the deployment and ProvisioningState will be marked as Failed. If set to false,
+             * ProvisioningState would only reflect whether the run command was run or not by the extensions platform,
+             * it would not indicate whether script failed in case of script failures. See instance view of run command
+             * in case of script failures to see executionMessage, output, error:
+             * https://aka.ms/runcommandmanaged#get-execution-status-and-results .
              * 
-             * @param treatFailureAsDeploymentFailure Optional. If set to true, any failure in the script will fail the deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only reflect whether the run command was run or not by the extensions platform, it would not indicate whether script failed in case of script failures. See instance view of run command in case of script failures to see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
+             * @param treatFailureAsDeploymentFailure Optional. If set to true, any failure in the script will fail the
+             * deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only
+             * reflect whether the run command was run or not by the extensions platform, it would not indicate whether
+             * script failed in case of script failures. See instance view of run command in case of script failures to
+             * see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
              * @return the next definition stage.
              */
             WithCreate withTreatFailureAsDeploymentFailure(Boolean treatFailureAsDeploymentFailure);
@@ -514,9 +573,11 @@ public interface VirtualMachineRunCommand {
          */
         interface WithAsyncExecution {
             /**
-             * Specifies the asyncExecution property: Optional. If set to true, provisioning will complete as soon as the script starts and will not wait for script to complete..
+             * Specifies the asyncExecution property: Optional. If set to true, provisioning will complete as soon as
+             * the script starts and will not wait for script to complete..
              * 
-             * @param asyncExecution Optional. If set to true, provisioning will complete as soon as the script starts and will not wait for script to complete.
+             * @param asyncExecution Optional. If set to true, provisioning will complete as soon as the script starts
+             * and will not wait for script to complete.
              * @return the next definition stage.
              */
             Update withAsyncExecution(Boolean asyncExecution);
@@ -540,7 +601,8 @@ public interface VirtualMachineRunCommand {
          */
         interface WithRunAsPassword {
             /**
-             * Specifies the runAsPassword property: Specifies the user account password on the VM when executing the run command..
+             * Specifies the runAsPassword property: Specifies the user account password on the VM when executing the
+             * run command..
              * 
              * @param runAsPassword Specifies the user account password on the VM when executing the run command.
              * @return the next definition stage.
@@ -566,9 +628,13 @@ public interface VirtualMachineRunCommand {
          */
         interface WithOutputBlobUri {
             /**
-             * Specifies the outputBlobUri property: Specifies the Azure storage blob where script output stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer outputBlobManagedIdentity parameter. .
+             * Specifies the outputBlobUri property: Specifies the Azure storage blob where script output stream will be
+             * uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM
+             * access to the blob. Refer outputBlobManagedIdentity parameter. .
              * 
-             * @param outputBlobUri Specifies the Azure storage blob where script output stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer outputBlobManagedIdentity parameter.
+             * @param outputBlobUri Specifies the Azure storage blob where script output stream will be uploaded. Use a
+             * SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the
+             * blob. Refer outputBlobManagedIdentity parameter.
              * @return the next definition stage.
              */
             Update withOutputBlobUri(String outputBlobUri);
@@ -579,9 +645,13 @@ public interface VirtualMachineRunCommand {
          */
         interface WithErrorBlobUri {
             /**
-             * Specifies the errorBlobUri property: Specifies the Azure storage blob where script error stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer errorBlobManagedIdentity parameter..
+             * Specifies the errorBlobUri property: Specifies the Azure storage blob where script error stream will be
+             * uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM
+             * access to the blob. Refer errorBlobManagedIdentity parameter..
              * 
-             * @param errorBlobUri Specifies the Azure storage blob where script error stream will be uploaded. Use a SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the blob. Refer errorBlobManagedIdentity parameter.
+             * @param errorBlobUri Specifies the Azure storage blob where script error stream will be uploaded. Use a
+             * SAS URI with read, append, create, write access OR use managed identity to provide the VM access to the
+             * blob. Refer errorBlobManagedIdentity parameter.
              * @return the next definition stage.
              */
             Update withErrorBlobUri(String errorBlobUri);
@@ -592,9 +662,17 @@ public interface VirtualMachineRunCommand {
          */
         interface WithOutputBlobManagedIdentity {
             /**
-             * Specifies the outputBlobManagedIdentity property: User-assigned managed identity that has access to outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
+             * Specifies the outputBlobManagedIdentity property: User-assigned managed identity that has access to
+             * outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed
+             * identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment.
+             * In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed
+             * identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
              * 
-             * @param outputBlobManagedIdentity User-assigned managed identity that has access to outputBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
+             * @param outputBlobManagedIdentity User-assigned managed identity that has access to outputBlobUri storage
+             * blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given
+             * access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned
+             * identity, make sure you add it under VM's identity. For more info on managed identity and Run Command,
+             * refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
              * @return the next definition stage.
              */
             Update withOutputBlobManagedIdentity(RunCommandManagedIdentity outputBlobManagedIdentity);
@@ -605,9 +683,17 @@ public interface VirtualMachineRunCommand {
          */
         interface WithErrorBlobManagedIdentity {
             /**
-             * Specifies the errorBlobManagedIdentity property: User-assigned managed identity that has access to errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
+             * Specifies the errorBlobManagedIdentity property: User-assigned managed identity that has access to
+             * errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed
+             * identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment.
+             * In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed
+             * identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged .
              * 
-             * @param errorBlobManagedIdentity User-assigned managed identity that has access to errorBlobUri storage blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned identity, make sure you add it under VM's identity. For more info on managed identity and Run Command, refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
+             * @param errorBlobManagedIdentity User-assigned managed identity that has access to errorBlobUri storage
+             * blob. Use an empty object in case of system-assigned identity. Make sure managed identity has been given
+             * access to blob's container with 'Storage Blob Data Contributor' role assignment. In case of user-assigned
+             * identity, make sure you add it under VM's identity. For more info on managed identity and Run Command,
+             * refer https://aka.ms/ManagedIdentity and https://aka.ms/RunCommandManaged.
              * @return the next definition stage.
              */
             Update withErrorBlobManagedIdentity(RunCommandManagedIdentity errorBlobManagedIdentity);
@@ -618,9 +704,18 @@ public interface VirtualMachineRunCommand {
          */
         interface WithTreatFailureAsDeploymentFailure {
             /**
-             * Specifies the treatFailureAsDeploymentFailure property: Optional. If set to true, any failure in the script will fail the deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only reflect whether the run command was run or not by the extensions platform, it would not indicate whether script failed in case of script failures. See instance view of run command in case of script failures to see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results .
+             * Specifies the treatFailureAsDeploymentFailure property: Optional. If set to true, any failure in the
+             * script will fail the deployment and ProvisioningState will be marked as Failed. If set to false,
+             * ProvisioningState would only reflect whether the run command was run or not by the extensions platform,
+             * it would not indicate whether script failed in case of script failures. See instance view of run command
+             * in case of script failures to see executionMessage, output, error:
+             * https://aka.ms/runcommandmanaged#get-execution-status-and-results .
              * 
-             * @param treatFailureAsDeploymentFailure Optional. If set to true, any failure in the script will fail the deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only reflect whether the run command was run or not by the extensions platform, it would not indicate whether script failed in case of script failures. See instance view of run command in case of script failures to see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
+             * @param treatFailureAsDeploymentFailure Optional. If set to true, any failure in the script will fail the
+             * deployment and ProvisioningState will be marked as Failed. If set to false, ProvisioningState would only
+             * reflect whether the run command was run or not by the extensions platform, it would not indicate whether
+             * script failed in case of script failures. See instance view of run command in case of script failures to
+             * see executionMessage, output, error: https://aka.ms/runcommandmanaged#get-execution-status-and-results.
              * @return the next definition stage.
              */
             Update withTreatFailureAsDeploymentFailure(Boolean treatFailureAsDeploymentFailure);

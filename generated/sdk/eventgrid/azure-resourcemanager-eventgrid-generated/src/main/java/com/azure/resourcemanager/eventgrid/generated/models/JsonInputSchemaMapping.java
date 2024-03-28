@@ -7,11 +7,13 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.JsonInputSchemaMappingProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * This enables publishing to Event Grid using a custom input schema. This can be used to map properties from a custom input JSON schema to the Event Grid event schema.
+ * This enables publishing to Event Grid using a custom input schema. This can be used to map properties from a custom
+ * input JSON schema to the Event Grid event schema.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -22,6 +24,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class JsonInputSchemaMapping extends InputSchemaMapping {
     /*
+     * Type of the custom mapping
+     */
+    @JsonTypeId
+    @JsonProperty(value = "inputSchemaMappingType", required = true)
+    private InputSchemaMappingType inputSchemaMappingType = InputSchemaMappingType.JSON;
+
+    /*
      * JSON Properties of the input schema mapping
      */
     @JsonProperty(value = "properties")
@@ -31,7 +40,16 @@ public final class JsonInputSchemaMapping extends InputSchemaMapping {
      * Creates an instance of JsonInputSchemaMapping class.
      */
     public JsonInputSchemaMapping() {
-        withInputSchemaMappingType(InputSchemaMappingType.JSON);
+    }
+
+    /**
+     * Get the inputSchemaMappingType property: Type of the custom mapping.
+     * 
+     * @return the inputSchemaMappingType value.
+     */
+    @Override
+    public InputSchemaMappingType inputSchemaMappingType() {
+        return this.inputSchemaMappingType;
     }
 
     /**

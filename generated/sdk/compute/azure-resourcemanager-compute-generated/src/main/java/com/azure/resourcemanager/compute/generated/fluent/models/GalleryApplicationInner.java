@@ -58,7 +58,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Get the description property: The description of this gallery Application Definition resource. This property is updatable.
+     * Get the description property: The description of this gallery Application Definition resource. This property is
+     * updatable.
      * 
      * @return the description value.
      */
@@ -67,7 +68,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Set the description property: The description of this gallery Application Definition resource. This property is updatable.
+     * Set the description property: The description of this gallery Application Definition resource. This property is
+     * updatable.
      * 
      * @param description the description value to set.
      * @return the GalleryApplicationInner object itself.
@@ -150,7 +152,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Get the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Get the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be
+     * used for decommissioning purposes. This property is updatable.
      * 
      * @return the endOfLifeDate value.
      */
@@ -159,7 +162,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Set the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Set the endOfLifeDate property: The end of life date of the gallery Application Definition. This property can be
+     * used for decommissioning purposes. This property is updatable.
      * 
      * @param endOfLifeDate the endOfLifeDate value to set.
      * @return the GalleryApplicationInner object itself.
@@ -173,7 +177,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Get the supportedOSType property: This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+     * Get the supportedOSType property: This property allows you to specify the supported type of the OS that
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the supportedOSType value.
      */
@@ -182,7 +187,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Set the supportedOSType property: This property allows you to specify the supported type of the OS that application is built for. Possible values are: **Windows,** **Linux.**.
+     * Set the supportedOSType property: This property allows you to specify the supported type of the OS that
+     * application is built for. Possible values are: **Windows,** **Linux.**.
      * 
      * @param supportedOSType the supportedOSType value to set.
      * @return the GalleryApplicationInner object itself.
@@ -196,7 +202,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Get the customActions property: A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application.
+     * Get the customActions property: A list of custom actions that can be performed with all of the Gallery
+     * Application Versions within this Gallery Application.
      * 
      * @return the customActions value.
      */
@@ -205,7 +212,8 @@ public final class GalleryApplicationInner extends Resource {
     }
 
     /**
-     * Set the customActions property: A list of custom actions that can be performed with all of the Gallery Application Versions within this Gallery Application.
+     * Set the customActions property: A list of custom actions that can be performed with all of the Gallery
+     * Application Versions within this Gallery Application.
      * 
      * @param customActions the customActions value to set.
      * @return the GalleryApplicationInner object itself.

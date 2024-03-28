@@ -221,7 +221,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the purchasePlan property: Purchase plan information for the image from which the source disk for the snapshot was originally created.
+     * Get the purchasePlan property: Purchase plan information for the image from which the source disk for the
+     * snapshot was originally created.
      * 
      * @return the purchasePlan value.
      */
@@ -230,7 +231,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the purchasePlan property: Purchase plan information for the image from which the source disk for the snapshot was originally created.
+     * Set the purchasePlan property: Purchase plan information for the image from which the source disk for the
+     * snapshot was originally created.
      * 
      * @param purchasePlan the purchasePlan value to set.
      * @return the SnapshotProperties object itself.
@@ -241,7 +243,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the supportedCapabilities property: List of supported capabilities for the image from which the source disk from the snapshot was originally created.
+     * Get the supportedCapabilities property: List of supported capabilities for the image from which the source disk
+     * from the snapshot was originally created.
      * 
      * @return the supportedCapabilities value.
      */
@@ -250,7 +253,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the supportedCapabilities property: List of supported capabilities for the image from which the source disk from the snapshot was originally created.
+     * Set the supportedCapabilities property: List of supported capabilities for the image from which the source disk
+     * from the snapshot was originally created.
      * 
      * @param supportedCapabilities the supportedCapabilities value to set.
      * @return the SnapshotProperties object itself.
@@ -261,7 +265,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the creationData property: Disk source information. CreationData information cannot be changed after the disk has been created.
+     * Get the creationData property: Disk source information. CreationData information cannot be changed after the disk
+     * has been created.
      * 
      * @return the creationData value.
      */
@@ -270,7 +275,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the creationData property: Disk source information. CreationData information cannot be changed after the disk has been created.
+     * Set the creationData property: Disk source information. CreationData information cannot be changed after the disk
+     * has been created.
      * 
      * @param creationData the creationData value to set.
      * @return the SnapshotProperties object itself.
@@ -281,7 +287,10 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * Get the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the
+     * size of the disk to create. If this field is present for updates or creation with other options, it indicates a
+     * resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's
+     * size.
      * 
      * @return the diskSizeGB value.
      */
@@ -290,7 +299,10 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * Set the diskSizeGB property: If creationData.createOption is Empty, this field is mandatory and it indicates the
+     * size of the disk to create. If this field is present for updates or creation with other options, it indicates a
+     * resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's
+     * size.
      * 
      * @param diskSizeGB the diskSizeGB value to set.
      * @return the SnapshotProperties object itself.
@@ -328,7 +340,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Get the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can
+     * contain multiple encryption settings per disk or snapshot.
      * 
      * @return the encryptionSettingsCollection value.
      */
@@ -337,7 +350,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Set the encryptionSettingsCollection property: Encryption settings collection used be Azure Disk Encryption, can
+     * contain multiple encryption settings per disk or snapshot.
      * 
      * @param encryptionSettingsCollection the encryptionSettingsCollection value to set.
      * @return the SnapshotProperties object itself.
@@ -358,7 +372,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the incremental property: Whether a snapshot is incremental. Incremental snapshots on the same disk occupy less space than full snapshots and can be diffed.
+     * Get the incremental property: Whether a snapshot is incremental. Incremental snapshots on the same disk occupy
+     * less space than full snapshots and can be diffed.
      * 
      * @return the incremental value.
      */
@@ -367,7 +382,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the incremental property: Whether a snapshot is incremental. Incremental snapshots on the same disk occupy less space than full snapshots and can be diffed.
+     * Set the incremental property: Whether a snapshot is incremental. Incremental snapshots on the same disk occupy
+     * less space than full snapshots and can be diffed.
      * 
      * @param incremental the incremental value to set.
      * @return the SnapshotProperties object itself.
@@ -378,7 +394,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the incrementalSnapshotFamilyId property: Incremental snapshots for a disk share an incremental snapshot family id. The Get Page Range Diff API can only be called on incremental snapshots with the same family id.
+     * Get the incrementalSnapshotFamilyId property: Incremental snapshots for a disk share an incremental snapshot
+     * family id. The Get Page Range Diff API can only be called on incremental snapshots with the same family id.
      * 
      * @return the incrementalSnapshotFamilyId value.
      */
@@ -387,7 +404,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Get the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @return the encryption value.
      */
@@ -396,7 +414,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys or platform managed keys.
+     * Set the encryption property: Encryption property can be used to encrypt data at rest with customer managed keys
+     * or platform managed keys.
      * 
      * @param encryption the encryption value to set.
      * @return the SnapshotProperties object itself.
@@ -507,7 +526,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the completionPercent property: Percentage complete for the background copy when a resource is created via the CopyStart operation.
+     * Get the completionPercent property: Percentage complete for the background copy when a resource is created via
+     * the CopyStart operation.
      * 
      * @return the completionPercent value.
      */
@@ -516,7 +536,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the completionPercent property: Percentage complete for the background copy when a resource is created via the CopyStart operation.
+     * Set the completionPercent property: Percentage complete for the background copy when a resource is created via
+     * the CopyStart operation.
      * 
      * @param completionPercent the completionPercent value to set.
      * @return the SnapshotProperties object itself.
@@ -527,7 +548,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the copyCompletionError property: Indicates the error details if the background copy of a resource created via the CopyStart operation fails.
+     * Get the copyCompletionError property: Indicates the error details if the background copy of a resource created
+     * via the CopyStart operation fails.
      * 
      * @return the copyCompletionError value.
      */
@@ -536,7 +558,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the copyCompletionError property: Indicates the error details if the background copy of a resource created via the CopyStart operation fails.
+     * Set the copyCompletionError property: Indicates the error details if the background copy of a resource created
+     * via the CopyStart operation fails.
      * 
      * @param copyCompletionError the copyCompletionError value to set.
      * @return the SnapshotProperties object itself.
@@ -547,7 +570,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Get the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk or snapshot.
+     * Get the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk
+     * or snapshot.
      * 
      * @return the dataAccessAuthMode value.
      */
@@ -556,7 +580,8 @@ public final class SnapshotProperties {
     }
 
     /**
-     * Set the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk or snapshot.
+     * Set the dataAccessAuthMode property: Additional authentication requirements when exporting or uploading to a disk
+     * or snapshot.
      * 
      * @param dataAccessAuthMode the dataAccessAuthMode value to set.
      * @return the SnapshotProperties object itself.
@@ -579,8 +604,9 @@ public final class SnapshotProperties {
             supportedCapabilities().validate();
         }
         if (creationData() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property creationData in model SnapshotProperties"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property creationData in model SnapshotProperties"));
         } else {
             creationData().validate();
         }

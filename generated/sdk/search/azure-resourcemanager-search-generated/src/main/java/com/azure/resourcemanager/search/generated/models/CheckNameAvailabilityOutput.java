@@ -18,14 +18,17 @@ public interface CheckNameAvailabilityOutput {
     Boolean isNameAvailable();
 
     /**
-     * Gets the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates that the name is already in use and is therefore unavailable.
+     * Gets the reason property: The reason why the name is not available. 'Invalid' indicates the name provided does
+     * not match the naming requirements (incorrect length, unsupported characters, etc.). 'AlreadyExists' indicates
+     * that the name is already in use and is therefore unavailable.
      * 
      * @return the reason value.
      */
     UnavailableNameReason reason();
 
     /**
-     * Gets the message property: A message that explains why the name is invalid and provides resource naming requirements. Available only if 'Invalid' is returned in the 'reason' property.
+     * Gets the message property: A message that explains why the name is invalid and provides resource naming
+     * requirements. Available only if 'Invalid' is returned in the 'reason' property.
      * 
      * @return the message value.
      */

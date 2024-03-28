@@ -53,7 +53,8 @@ public final class TransformCollection {
     }
 
     /**
-     * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many results to return in one response).
+     * Get the odataNextLink property: A link to the next page of the collection (when the collection contains too many
+     * results to return in one response).
      * 
      * @return the odataNextLink value.
      */
@@ -62,7 +63,8 @@ public final class TransformCollection {
     }
 
     /**
-     * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many results to return in one response).
+     * Set the odataNextLink property: A link to the next page of the collection (when the collection contains too many
+     * results to return in one response).
      * 
      * @param odataNextLink the odataNextLink value to set.
      * @return the TransformCollection object itself.

@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * This property defines the creation time based filtering condition. Blob Inventory schema parameter 'Creation-Time' is mandatory with this filter.
+ * This property defines the creation time based filtering condition. Blob Inventory schema parameter 'Creation-Time' is
+ * mandatory with this filter.
  */
 @Fluent
 public final class BlobInventoryCreationTime {
@@ -25,7 +26,8 @@ public final class BlobInventoryCreationTime {
     }
 
     /**
-     * Get the lastNDays property: When set the policy filters the objects that are created in the last N days. Where N is an integer value between 1 to 36500.
+     * Get the lastNDays property: When set the policy filters the objects that are created in the last N days. Where N
+     * is an integer value between 1 to 36500.
      * 
      * @return the lastNDays value.
      */
@@ -34,7 +36,8 @@ public final class BlobInventoryCreationTime {
     }
 
     /**
-     * Set the lastNDays property: When set the policy filters the objects that are created in the last N days. Where N is an integer value between 1 to 36500.
+     * Set the lastNDays property: When set the policy filters the objects that are created in the last N days. Where N
+     * is an integer value between 1 to 36500.
      * 
      * @param lastNDays the lastNDays value to set.
      * @return the BlobInventoryCreationTime object itself.

@@ -166,24 +166,28 @@ public final class KubernetesRoleProperties {
      */
     public void validate() {
         if (hostPlatform() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property hostPlatform in model KubernetesRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property hostPlatform in model KubernetesRoleProperties"));
         }
         if (kubernetesClusterInfo() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property kubernetesClusterInfo in model KubernetesRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property kubernetesClusterInfo in model KubernetesRoleProperties"));
         } else {
             kubernetesClusterInfo().validate();
         }
         if (kubernetesRoleResources() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property kubernetesRoleResources in model KubernetesRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property kubernetesRoleResources in model KubernetesRoleProperties"));
         } else {
             kubernetesRoleResources().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property roleStatus in model KubernetesRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property roleStatus in model KubernetesRoleProperties"));
         }
     }
 

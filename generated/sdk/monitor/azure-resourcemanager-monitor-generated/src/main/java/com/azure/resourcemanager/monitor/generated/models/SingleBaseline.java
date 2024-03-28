@@ -105,16 +105,16 @@ public final class SingleBaseline {
      */
     public void validate() {
         if (sensitivity() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sensitivity in model SingleBaseline"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sensitivity in model SingleBaseline"));
         }
         if (lowThresholds() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property lowThresholds in model SingleBaseline"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property lowThresholds in model SingleBaseline"));
         }
         if (highThresholds() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property highThresholds in model SingleBaseline"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property highThresholds in model SingleBaseline"));
         }
     }
 

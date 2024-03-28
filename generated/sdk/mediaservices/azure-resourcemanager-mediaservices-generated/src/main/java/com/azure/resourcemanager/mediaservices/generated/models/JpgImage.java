@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -18,6 +19,13 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.JpgImage")
 @Fluent
 public final class JpgImage extends Image {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.JpgImage";
+
     /*
      * A collection of output JPEG image layers to be produced by the encoder.
      */
@@ -34,7 +42,16 @@ public final class JpgImage extends Image {
      * Creates an instance of JpgImage class.
      */
     public JpgImage() {
-        withOdataType("#Microsoft.Media.JpgImage");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -58,7 +75,10 @@ public final class JpgImage extends Image {
     }
 
     /**
-     * Get the spriteColumn property: Sets the number of columns used in thumbnail sprite image.  The number of rows are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
+     * Get the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows are
+     * automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
+     * sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image
+     * resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
      * 
      * @return the spriteColumn value.
      */
@@ -67,7 +87,10 @@ public final class JpgImage extends Image {
     }
 
     /**
-     * Set the spriteColumn property: Sets the number of columns used in thumbnail sprite image.  The number of rows are automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
+     * Set the spriteColumn property: Sets the number of columns used in thumbnail sprite image. The number of rows are
+     * automatically calculated and a VTT file is generated with the coordinate mappings for each thumbnail in the
+     * sprite. Note: this value should be a positive integer and a proper value is recommended so that the output image
+     * resolution will not go beyond JPEG maximum pixel resolution limit 65535x65535.
      * 
      * @param spriteColumn the spriteColumn value to set.
      * @return the JpgImage object itself.

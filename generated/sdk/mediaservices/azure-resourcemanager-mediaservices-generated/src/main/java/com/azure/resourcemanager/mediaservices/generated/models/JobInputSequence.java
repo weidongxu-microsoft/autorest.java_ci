@@ -6,12 +6,14 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * A Sequence contains an ordered list of Clips where each clip is a JobInput.  The Sequence will be treated as a single input.
+ * A Sequence contains an ordered list of Clips where each clip is a JobInput. The Sequence will be treated as a single
+ * input.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -22,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class JobInputSequence extends JobInput {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.JobInputSequence";
+
+    /*
      * JobInputs that make up the timeline.
      */
     @JsonProperty(value = "inputs")
@@ -31,7 +40,16 @@ public final class JobInputSequence extends JobInput {
      * Creates an instance of JobInputSequence class.
      */
     public JobInputSequence() {
-        withOdataType("#Microsoft.Media.JobInputSequence");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

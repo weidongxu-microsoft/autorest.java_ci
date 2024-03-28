@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities.
+ * The type of identity used for the cluster. The type 'SystemAssigned, UserAssigned' includes both an implicitly
+ * created identity and a set of user assigned identities.
  */
 public final class ResourceIdentityType extends ExpandableStringEnum<ResourceIdentityType> {
     /**

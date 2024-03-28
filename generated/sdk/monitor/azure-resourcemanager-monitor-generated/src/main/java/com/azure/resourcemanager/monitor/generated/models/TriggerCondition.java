@@ -104,8 +104,9 @@ public final class TriggerCondition {
      */
     public void validate() {
         if (thresholdOperator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property thresholdOperator in model TriggerCondition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property thresholdOperator in model TriggerCondition"));
         }
         if (metricTrigger() != null) {
             metricTrigger().validate();

@@ -32,7 +32,8 @@ public final class ForecastSpend {
     }
 
     /**
-     * Get the amount property: The forecasted cost for the total time period which is being tracked by the budget. This value is only provided if the budget contains a forecast alert type.
+     * Get the amount property: The forecasted cost for the total time period which is being tracked by the budget. This
+     * value is only provided if the budget contains a forecast alert type.
      * 
      * @return the amount value.
      */

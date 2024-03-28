@@ -523,7 +523,8 @@ public final class ConsumptionManager {
     }
 
     /**
-     * Gets wrapped service client ConsumptionManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client ConsumptionManagementClient providing direct access to the underlying auto-generated
+     * API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client ConsumptionManagementClient.
      */

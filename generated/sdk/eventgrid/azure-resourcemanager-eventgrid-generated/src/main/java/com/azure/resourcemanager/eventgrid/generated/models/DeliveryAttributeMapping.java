@@ -55,17 +55,6 @@ public class DeliveryAttributeMapping {
     }
 
     /**
-     * Set the type property: Type of the delivery attribute or header name.
-     * 
-     * @param type the type value to set.
-     * @return the DeliveryAttributeMapping object itself.
-     */
-    protected DeliveryAttributeMapping withType(DeliveryAttributeMappingType type) {
-        this.type = type;
-        return this;
-    }
-
-    /**
      * Get the name property: Name of the delivery attribute or header.
      * 
      * @return the name value.

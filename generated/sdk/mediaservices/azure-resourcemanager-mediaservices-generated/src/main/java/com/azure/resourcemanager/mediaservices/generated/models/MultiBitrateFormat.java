@@ -7,12 +7,15 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * Describes the properties for producing a collection of GOP aligned multi-bitrate files. The default behavior is to produce one output file for each video layer which is muxed together with all the audios. The exact output files produced can be controlled by specifying the outputFiles collection.
+ * Describes the properties for producing a collection of GOP aligned multi-bitrate files. The default behavior is to
+ * produce one output file for each video layer which is muxed together with all the audios. The exact output files
+ * produced can be controlled by specifying the outputFiles collection.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -26,6 +29,13 @@ import java.util.List;
 @Fluent
 public class MultiBitrateFormat extends Format {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.MultiBitrateFormat";
+
+    /*
      * The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be muxed together .
      */
     @JsonProperty(value = "outputFiles")
@@ -35,11 +45,21 @@ public class MultiBitrateFormat extends Format {
      * Creates an instance of MultiBitrateFormat class.
      */
     public MultiBitrateFormat() {
-        withOdataType("#Microsoft.Media.MultiBitrateFormat");
     }
 
     /**
-     * Get the outputFiles property: The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be muxed together .
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the outputFiles property: The list of output files to produce. Each entry in the list is a set of audio and
+     * video layer labels to be muxed together .
      * 
      * @return the outputFiles value.
      */
@@ -48,7 +68,8 @@ public class MultiBitrateFormat extends Format {
     }
 
     /**
-     * Set the outputFiles property: The list of output files to produce.  Each entry in the list is a set of audio and video layer labels to be muxed together .
+     * Set the outputFiles property: The list of output files to produce. Each entry in the list is a set of audio and
+     * video layer labels to be muxed together .
      * 
      * @param outputFiles the outputFiles value to set.
      * @return the MultiBitrateFormat object itself.

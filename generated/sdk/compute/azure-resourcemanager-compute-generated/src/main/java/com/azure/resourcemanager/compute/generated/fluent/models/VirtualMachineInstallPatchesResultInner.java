@@ -97,7 +97,9 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the status property: The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings.".
+     * Get the status property: The overall success or failure status of the operation. It remains "InProgress" until
+     * the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or
+     * "CompletedWithWarnings.".
      * 
      * @return the status value.
      */
@@ -106,7 +108,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the installationActivityId property: The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+     * Get the installationActivityId property: The activity ID of the operation that produced this result. It is used
+     * to correlate across CRP and extension logs.
      * 
      * @return the installationActivityId value.
      */
@@ -124,7 +127,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the maintenanceWindowExceeded property: Whether the operation ran out of time before it completed all its intended actions.
+     * Get the maintenanceWindowExceeded property: Whether the operation ran out of time before it completed all its
+     * intended actions.
      * 
      * @return the maintenanceWindowExceeded value.
      */
@@ -133,7 +137,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the excludedPatchCount property: The number of patches that were not installed due to the user blocking their installation.
+     * Get the excludedPatchCount property: The number of patches that were not installed due to the user blocking their
+     * installation.
      * 
      * @return the excludedPatchCount value.
      */
@@ -142,7 +147,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the notSelectedPatchCount property: The number of patches that were detected as available for install, but did not meet the operation's criteria.
+     * Get the notSelectedPatchCount property: The number of patches that were detected as available for install, but
+     * did not meet the operation's criteria.
      * 
      * @return the notSelectedPatchCount value.
      */
@@ -151,7 +157,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the pendingPatchCount property: The number of patches that were identified as meeting the installation criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
+     * Get the pendingPatchCount property: The number of patches that were identified as meeting the installation
+     * criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
      * 
      * @return the pendingPatchCount value.
      */
@@ -169,7 +176,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the failedPatchCount property: The number of patches that could not be installed due to some issue. See errors for details.
+     * Get the failedPatchCount property: The number of patches that could not be installed due to some issue. See
+     * errors for details.
      * 
      * @return the failedPatchCount value.
      */
@@ -196,7 +204,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     }
 
     /**
-     * Get the error property: The errors that were encountered during execution of the operation. The details array contains the list of them.
+     * Get the error property: The errors that were encountered during execution of the operation. The details array
+     * contains the list of them.
      * 
      * @return the error value.
      */

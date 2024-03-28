@@ -135,8 +135,8 @@ public final class MecRoleProperties {
             connectionString().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property roleStatus in model MecRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property roleStatus in model MecRoleProperties"));
         }
     }
 

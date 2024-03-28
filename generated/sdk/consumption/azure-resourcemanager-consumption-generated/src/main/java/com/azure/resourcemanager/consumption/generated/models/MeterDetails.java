@@ -92,7 +92,8 @@ public final class MeterDetails {
     }
 
     /**
-     * Get the meterSubCategory property: The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute (IXP)', etc..
+     * Get the meterSubCategory property: The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute
+     * (IXP)', etc..
      * 
      * @return the meterSubCategory value.
      */

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,14 @@ import java.util.List;
 @Fluent
 public final class LogToMetricAction extends Action {
     /*
+     * Specifies the action. Supported values - AlertingAction, LogToMetricAction
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType
+        = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction";
+
+    /*
      * Criteria of Metric
      */
     @JsonProperty(value = "criteria", required = true)
@@ -32,8 +41,16 @@ public final class LogToMetricAction extends Action {
      * Creates an instance of LogToMetricAction class.
      */
     public LogToMetricAction() {
-        withOdataType(
-            "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction");
+    }
+
+    /**
+     * Get the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -65,8 +82,8 @@ public final class LogToMetricAction extends Action {
     public void validate() {
         super.validate();
         if (criteria() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property criteria in model LogToMetricAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property criteria in model LogToMetricAction"));
         } else {
             criteria().forEach(e -> e.validate());
         }

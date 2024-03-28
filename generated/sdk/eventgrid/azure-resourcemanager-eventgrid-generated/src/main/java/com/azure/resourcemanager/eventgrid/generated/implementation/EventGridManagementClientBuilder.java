@@ -25,7 +25,8 @@ public final class EventGridManagementClientBuilder {
     private String subscriptionId;
 
     /**
-     * Sets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
+     * Sets Subscription credentials that uniquely identify a Microsoft Azure subscription. The subscription ID forms
+     * part of the URI for every service call.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the EventGridManagementClientBuilder.

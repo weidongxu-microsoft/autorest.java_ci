@@ -46,7 +46,8 @@ public interface HubIpConfigurationPropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationPropertiesFormatInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.HubIpConfigurationPropertiesFormatInner
+     * object.
      * 
      * @return the inner object.
      */

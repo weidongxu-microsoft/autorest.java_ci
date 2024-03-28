@@ -121,7 +121,8 @@ public final class ResourceSkuInner {
     }
 
     /**
-     * Get the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
+     * Get the tier property: Specifies the tier of virtual machines in a scale set.&lt;br /&gt;&lt;br /&gt; Possible
+     * Values:&lt;br /&gt;&lt;br /&gt; **Standard**&lt;br /&gt;&lt;br /&gt; **Basic**.
      * 
      * @return the tier value.
      */
@@ -175,7 +176,8 @@ public final class ResourceSkuInner {
     }
 
     /**
-     * Get the locationInfo property: A list of locations and availability zones in those locations where the SKU is available.
+     * Get the locationInfo property: A list of locations and availability zones in those locations where the SKU is
+     * available.
      * 
      * @return the locationInfo value.
      */
@@ -211,7 +213,8 @@ public final class ResourceSkuInner {
     }
 
     /**
-     * Get the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
+     * Get the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
+     * no restrictions.
      * 
      * @return the restrictions value.
      */

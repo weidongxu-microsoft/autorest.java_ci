@@ -70,7 +70,9 @@ import java.util.stream.Collectors;
 
 /**
  * Entry point to PostgreSqlManager.
- * The Microsoft Azure management API provides create, read, update, and delete functionality for Azure PostgreSQL resources including servers, databases, firewall rules, VNET rules, security alert policies, log files and configurations with new business model.
+ * The Microsoft Azure management API provides create, read, update, and delete functionality for Azure PostgreSQL
+ * resources including servers, databases, firewall rules, VNET rules, security alert policies, log files and
+ * configurations with new business model.
  */
 public final class PostgreSqlManager {
     private Servers servers;
@@ -541,7 +543,8 @@ public final class PostgreSqlManager {
     }
 
     /**
-     * Gets wrapped service client PostgreSqlManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client PostgreSqlManagementClient providing direct access to the underlying auto-generated
+     * API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client PostgreSqlManagementClient.
      */

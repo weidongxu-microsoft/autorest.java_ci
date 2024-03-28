@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.IotHubConnectionProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -21,6 +22,13 @@ import java.util.List;
 @Fluent
 public final class IotHubDataConnection extends DataConnectionInner {
     /*
+     * Kind of the endpoint for the data connection
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private DataConnectionKind kind = DataConnectionKind.IOT_HUB;
+
+    /*
      * The Iot Hub data connection properties.
      */
     @JsonProperty(value = "properties")
@@ -30,7 +38,16 @@ public final class IotHubDataConnection extends DataConnectionInner {
      * Creates an instance of IotHubDataConnection class.
      */
     public IotHubDataConnection() {
-        withKind(DataConnectionKind.IOT_HUB);
+    }
+
+    /**
+     * Get the kind property: Kind of the endpoint for the data connection.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public DataConnectionKind kind() {
+        return this.kind;
     }
 
     /**
@@ -98,7 +115,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the tableName property: The table where the data should be ingested. Optionally the table information can be added to each message.
+     * Get the tableName property: The table where the data should be ingested. Optionally the table information can be
+     * added to each message.
      * 
      * @return the tableName value.
      */
@@ -107,7 +125,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the tableName property: The table where the data should be ingested. Optionally the table information can be added to each message.
+     * Set the tableName property: The table where the data should be ingested. Optionally the table information can be
+     * added to each message.
      * 
      * @param tableName the tableName value to set.
      * @return the IotHubDataConnection object itself.
@@ -121,7 +140,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
+     * Get the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping
+     * information can be added to each message.
      * 
      * @return the mappingRuleName value.
      */
@@ -130,7 +150,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
+     * Set the mappingRuleName property: The mapping rule to be used to ingest the data. Optionally the mapping
+     * information can be added to each message.
      * 
      * @param mappingRuleName the mappingRuleName value to set.
      * @return the IotHubDataConnection object itself.
@@ -144,7 +165,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the dataFormat property: The data format of the message. Optionally the data format can be added to each message.
+     * Get the dataFormat property: The data format of the message. Optionally the data format can be added to each
+     * message.
      * 
      * @return the dataFormat value.
      */
@@ -153,7 +175,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the dataFormat property: The data format of the message. Optionally the data format can be added to each message.
+     * Set the dataFormat property: The data format of the message. Optionally the data format can be added to each
+     * message.
      * 
      * @param dataFormat the dataFormat value to set.
      * @return the IotHubDataConnection object itself.
@@ -213,7 +236,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the databaseRouting property: Indication for database routing information from the data connection, by default only database routing information is allowed.
+     * Get the databaseRouting property: Indication for database routing information from the data connection, by
+     * default only database routing information is allowed.
      * 
      * @return the databaseRouting value.
      */
@@ -222,7 +246,8 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the databaseRouting property: Indication for database routing information from the data connection, by default only database routing information is allowed.
+     * Set the databaseRouting property: Indication for database routing information from the data connection, by
+     * default only database routing information is allowed.
      * 
      * @param databaseRouting the databaseRouting value to set.
      * @return the IotHubDataConnection object itself.
@@ -236,7 +261,9 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Get the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period.
+     * Get the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
      * 
      * @return the retrievalStartDate value.
      */
@@ -245,7 +272,9 @@ public final class IotHubDataConnection extends DataConnectionInner {
     }
 
     /**
-     * Set the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period.
+     * Set the retrievalStartDate property: When defined, the data connection retrieves existing Event hub events
+     * created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its
+     * retention period.
      * 
      * @param retrievalStartDate the retrievalStartDate value to set.
      * @return the IotHubDataConnection object itself.

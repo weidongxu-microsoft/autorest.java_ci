@@ -40,14 +40,18 @@ public interface BlobServiceProperties {
     Sku sku();
 
     /**
-     * Gets the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service.
+     * Gets the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements
+     * in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and
+     * CORS will be disabled for the Blob service.
      * 
      * @return the cors value.
      */
     CorsRules cors();
 
     /**
-     * Gets the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions.
+     * Gets the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests
+     * to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27
+     * and all more recent versions.
      * 
      * @return the defaultServiceVersion value.
      */
@@ -96,7 +100,8 @@ public interface BlobServiceProperties {
     DeleteRetentionPolicy containerDeleteRetentionPolicy();
 
     /**
-     * Gets the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based tracking policy.
+     * Gets the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based
+     * tracking policy.
      * 
      * @return the lastAccessTimeTrackingPolicy value.
      */
@@ -140,15 +145,18 @@ public interface BlobServiceProperties {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+             * insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account
+             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the BlobServiceProperties definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the BlobServiceProperties definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithCors, DefinitionStages.WithDefaultServiceVersion,
             DefinitionStages.WithDeleteRetentionPolicy, DefinitionStages.WithIsVersioningEnabled,
@@ -176,9 +184,13 @@ public interface BlobServiceProperties {
          */
         interface WithCors {
             /**
-             * Specifies the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service..
+             * Specifies the cors property: Specifies CORS rules for the Blob service. You can include up to five
+             * CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS
+             * rules will be deleted, and CORS will be disabled for the Blob service..
              * 
-             * @param cors Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service.
+             * @param cors Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in
+             * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted,
+             * and CORS will be disabled for the Blob service.
              * @return the next definition stage.
              */
             WithCreate withCors(CorsRules cors);
@@ -189,9 +201,13 @@ public interface BlobServiceProperties {
          */
         interface WithDefaultServiceVersion {
             /**
-             * Specifies the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions..
+             * Specifies the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use
+             * for requests to the Blob service if an incoming request’s version is not specified. Possible values
+             * include version 2008-10-27 and all more recent versions..
              * 
-             * @param defaultServiceVersion DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions.
+             * @param defaultServiceVersion DefaultServiceVersion indicates the default version to use for requests to
+             * the Blob service if an incoming request’s version is not specified. Possible values include version
+             * 2008-10-27 and all more recent versions.
              * @return the next definition stage.
              */
             WithCreate withDefaultServiceVersion(String defaultServiceVersion);
@@ -228,7 +244,8 @@ public interface BlobServiceProperties {
          */
         interface WithAutomaticSnapshotPolicyEnabled {
             /**
-             * Specifies the automaticSnapshotPolicyEnabled property: Deprecated in favor of isVersioningEnabled property..
+             * Specifies the automaticSnapshotPolicyEnabled property: Deprecated in favor of isVersioningEnabled
+             * property..
              * 
              * @param automaticSnapshotPolicyEnabled Deprecated in favor of isVersioningEnabled property.
              * @return the next definition stage.
@@ -267,7 +284,8 @@ public interface BlobServiceProperties {
          */
         interface WithContainerDeleteRetentionPolicy {
             /**
-             * Specifies the containerDeleteRetentionPolicy property: The blob service properties for container soft delete..
+             * Specifies the containerDeleteRetentionPolicy property: The blob service properties for container soft
+             * delete..
              * 
              * @param containerDeleteRetentionPolicy The blob service properties for container soft delete.
              * @return the next definition stage.
@@ -280,9 +298,11 @@ public interface BlobServiceProperties {
          */
         interface WithLastAccessTimeTrackingPolicy {
             /**
-             * Specifies the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based tracking policy..
+             * Specifies the lastAccessTimeTrackingPolicy property: The blob service property to configure last access
+             * time based tracking policy..
              * 
-             * @param lastAccessTimeTrackingPolicy The blob service property to configure last access time based tracking policy.
+             * @param lastAccessTimeTrackingPolicy The blob service property to configure last access time based
+             * tracking policy.
              * @return the next definition stage.
              */
             WithCreate withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy);
@@ -328,9 +348,13 @@ public interface BlobServiceProperties {
          */
         interface WithCors {
             /**
-             * Specifies the cors property: Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service..
+             * Specifies the cors property: Specifies CORS rules for the Blob service. You can include up to five
+             * CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS
+             * rules will be deleted, and CORS will be disabled for the Blob service..
              * 
-             * @param cors Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted, and CORS will be disabled for the Blob service.
+             * @param cors Specifies CORS rules for the Blob service. You can include up to five CorsRule elements in
+             * the request. If no CorsRule elements are included in the request body, all CORS rules will be deleted,
+             * and CORS will be disabled for the Blob service.
              * @return the next definition stage.
              */
             Update withCors(CorsRules cors);
@@ -341,9 +365,13 @@ public interface BlobServiceProperties {
          */
         interface WithDefaultServiceVersion {
             /**
-             * Specifies the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions..
+             * Specifies the defaultServiceVersion property: DefaultServiceVersion indicates the default version to use
+             * for requests to the Blob service if an incoming request’s version is not specified. Possible values
+             * include version 2008-10-27 and all more recent versions..
              * 
-             * @param defaultServiceVersion DefaultServiceVersion indicates the default version to use for requests to the Blob service if an incoming request’s version is not specified. Possible values include version 2008-10-27 and all more recent versions.
+             * @param defaultServiceVersion DefaultServiceVersion indicates the default version to use for requests to
+             * the Blob service if an incoming request’s version is not specified. Possible values include version
+             * 2008-10-27 and all more recent versions.
              * @return the next definition stage.
              */
             Update withDefaultServiceVersion(String defaultServiceVersion);
@@ -380,7 +408,8 @@ public interface BlobServiceProperties {
          */
         interface WithAutomaticSnapshotPolicyEnabled {
             /**
-             * Specifies the automaticSnapshotPolicyEnabled property: Deprecated in favor of isVersioningEnabled property..
+             * Specifies the automaticSnapshotPolicyEnabled property: Deprecated in favor of isVersioningEnabled
+             * property..
              * 
              * @param automaticSnapshotPolicyEnabled Deprecated in favor of isVersioningEnabled property.
              * @return the next definition stage.
@@ -419,7 +448,8 @@ public interface BlobServiceProperties {
          */
         interface WithContainerDeleteRetentionPolicy {
             /**
-             * Specifies the containerDeleteRetentionPolicy property: The blob service properties for container soft delete..
+             * Specifies the containerDeleteRetentionPolicy property: The blob service properties for container soft
+             * delete..
              * 
              * @param containerDeleteRetentionPolicy The blob service properties for container soft delete.
              * @return the next definition stage.
@@ -432,9 +462,11 @@ public interface BlobServiceProperties {
          */
         interface WithLastAccessTimeTrackingPolicy {
             /**
-             * Specifies the lastAccessTimeTrackingPolicy property: The blob service property to configure last access time based tracking policy..
+             * Specifies the lastAccessTimeTrackingPolicy property: The blob service property to configure last access
+             * time based tracking policy..
              * 
-             * @param lastAccessTimeTrackingPolicy The blob service property to configure last access time based tracking policy.
+             * @param lastAccessTimeTrackingPolicy The blob service property to configure last access time based
+             * tracking policy.
              * @return the next definition stage.
              */
             Update withLastAccessTimeTrackingPolicy(LastAccessTimeTrackingPolicy lastAccessTimeTrackingPolicy);

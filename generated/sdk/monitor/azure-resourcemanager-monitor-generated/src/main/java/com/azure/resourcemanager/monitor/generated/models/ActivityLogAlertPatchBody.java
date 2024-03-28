@@ -64,7 +64,8 @@ public final class ActivityLogAlertPatchBody {
     }
 
     /**
-     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
+     * Get the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
+     * enabled, then none of its actions will be activated.
      * 
      * @return the enabled value.
      */
@@ -73,7 +74,8 @@ public final class ActivityLogAlertPatchBody {
     }
 
     /**
-     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its actions will be activated.
+     * Set the enabled property: Indicates whether this activity log alert is enabled. If an activity log alert is not
+     * enabled, then none of its actions will be activated.
      * 
      * @param enabled the enabled value to set.
      * @return the ActivityLogAlertPatchBody object itself.

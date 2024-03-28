@@ -38,7 +38,8 @@ public final class DatabasePrincipalAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Get the principalId property: The principal ID assigned to the database principal. It can be a user email, application ID, or security group name.
+     * Get the principalId property: The principal ID assigned to the database principal. It can be a user email,
+     * application ID, or security group name.
      * 
      * @return the principalId value.
      */
@@ -47,7 +48,8 @@ public final class DatabasePrincipalAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Set the principalId property: The principal ID assigned to the database principal. It can be a user email, application ID, or security group name.
+     * Set the principalId property: The principal ID assigned to the database principal. It can be a user email,
+     * application ID, or security group name.
      * 
      * @param principalId the principalId value to set.
      * @return the DatabasePrincipalAssignmentInner object itself.

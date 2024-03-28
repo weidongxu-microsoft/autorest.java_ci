@@ -35,7 +35,8 @@ public interface PolicySetDefinition {
     String type();
 
     /**
-     * Gets the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
+     * Gets the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom,
+     * and Static.
      * 
      * @return the policyType value.
      */
@@ -56,14 +57,16 @@ public interface PolicySetDefinition {
     String description();
 
     /**
-     * Gets the metadata property: The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+     * Gets the metadata property: The policy set definition metadata. Metadata is an open ended object and is typically
+     * a collection of key value pairs.
      * 
      * @return the metadata value.
      */
     Object metadata();
 
     /**
-     * Gets the parameters property: The policy set definition parameters that can be used in policy definition references.
+     * Gets the parameters property: The policy set definition parameters that can be used in policy definition
+     * references.
      * 
      * @return the parameters value.
      */
@@ -77,7 +80,8 @@ public interface PolicySetDefinition {
     List<PolicyDefinitionReference> policyDefinitions();
 
     /**
-     * Gets the policyDefinitionGroups property: The metadata describing groups of policy definition references within the policy set definition.
+     * Gets the policyDefinitionGroups property: The metadata describing groups of policy definition references within
+     * the policy set definition.
      * 
      * @return the policyDefinitionGroups value.
      */
@@ -107,7 +111,8 @@ public interface PolicySetDefinition {
         }
 
         /**
-         * The stage of the PolicySetDefinition definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PolicySetDefinition definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPolicyType, DefinitionStages.WithDisplayName,
             DefinitionStages.WithDescription, DefinitionStages.WithMetadata, DefinitionStages.WithParameters,
@@ -133,9 +138,11 @@ public interface PolicySetDefinition {
          */
         interface WithPolicyType {
             /**
-             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static..
+             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified,
+             * BuiltIn, Custom, and Static..
              * 
-             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
+             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and
+             * Static.
              * @return the next definition stage.
              */
             WithCreate withPolicyType(PolicyType policyType);
@@ -172,9 +179,11 @@ public interface PolicySetDefinition {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs..
+             * Specifies the metadata property: The policy set definition metadata. Metadata is an open ended object and
+             * is typically a collection of key value pairs..
              * 
-             * @param metadata The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+             * @param metadata The policy set definition metadata. Metadata is an open ended object and is typically a
+             * collection of key value pairs.
              * @return the next definition stage.
              */
             WithCreate withMetadata(Object metadata);
@@ -185,7 +194,8 @@ public interface PolicySetDefinition {
          */
         interface WithParameters {
             /**
-             * Specifies the parameters property: The policy set definition parameters that can be used in policy definition references..
+             * Specifies the parameters property: The policy set definition parameters that can be used in policy
+             * definition references..
              * 
              * @param parameters The policy set definition parameters that can be used in policy definition references.
              * @return the next definition stage.
@@ -211,9 +221,11 @@ public interface PolicySetDefinition {
          */
         interface WithPolicyDefinitionGroups {
             /**
-             * Specifies the policyDefinitionGroups property: The metadata describing groups of policy definition references within the policy set definition..
+             * Specifies the policyDefinitionGroups property: The metadata describing groups of policy definition
+             * references within the policy set definition..
              * 
-             * @param policyDefinitionGroups The metadata describing groups of policy definition references within the policy set definition.
+             * @param policyDefinitionGroups The metadata describing groups of policy definition references within the
+             * policy set definition.
              * @return the next definition stage.
              */
             WithCreate withPolicyDefinitionGroups(List<PolicyDefinitionGroup> policyDefinitionGroups);
@@ -258,9 +270,11 @@ public interface PolicySetDefinition {
          */
         interface WithPolicyType {
             /**
-             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static..
+             * Specifies the policyType property: The type of policy definition. Possible values are NotSpecified,
+             * BuiltIn, Custom, and Static..
              * 
-             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and Static.
+             * @param policyType The type of policy definition. Possible values are NotSpecified, BuiltIn, Custom, and
+             * Static.
              * @return the next definition stage.
              */
             Update withPolicyType(PolicyType policyType);
@@ -297,9 +311,11 @@ public interface PolicySetDefinition {
          */
         interface WithMetadata {
             /**
-             * Specifies the metadata property: The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs..
+             * Specifies the metadata property: The policy set definition metadata. Metadata is an open ended object and
+             * is typically a collection of key value pairs..
              * 
-             * @param metadata The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+             * @param metadata The policy set definition metadata. Metadata is an open ended object and is typically a
+             * collection of key value pairs.
              * @return the next definition stage.
              */
             Update withMetadata(Object metadata);
@@ -310,7 +326,8 @@ public interface PolicySetDefinition {
          */
         interface WithParameters {
             /**
-             * Specifies the parameters property: The policy set definition parameters that can be used in policy definition references..
+             * Specifies the parameters property: The policy set definition parameters that can be used in policy
+             * definition references..
              * 
              * @param parameters The policy set definition parameters that can be used in policy definition references.
              * @return the next definition stage.
@@ -336,9 +353,11 @@ public interface PolicySetDefinition {
          */
         interface WithPolicyDefinitionGroups {
             /**
-             * Specifies the policyDefinitionGroups property: The metadata describing groups of policy definition references within the policy set definition..
+             * Specifies the policyDefinitionGroups property: The metadata describing groups of policy definition
+             * references within the policy set definition..
              * 
-             * @param policyDefinitionGroups The metadata describing groups of policy definition references within the policy set definition.
+             * @param policyDefinitionGroups The metadata describing groups of policy definition references within the
+             * policy set definition.
              * @return the next definition stage.
              */
             Update withPolicyDefinitionGroups(List<PolicyDefinitionGroup> policyDefinitionGroups);

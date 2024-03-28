@@ -104,7 +104,9 @@ public final class ResourceNameAvailabilityRequest {
     }
 
     /**
-     * Get the environmentId property: Azure Resource Manager ID of the customer's selected Container Apps Environment on which to host the Function app. This must be of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     * Get the environmentId property: Azure Resource Manager ID of the customer's selected Container Apps Environment
+     * on which to host the Function app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
      * 
      * @return the environmentId value.
      */
@@ -113,7 +115,9 @@ public final class ResourceNameAvailabilityRequest {
     }
 
     /**
-     * Set the environmentId property: Azure Resource Manager ID of the customer's selected Container Apps Environment on which to host the Function app. This must be of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
+     * Set the environmentId property: Azure Resource Manager ID of the customer's selected Container Apps Environment
+     * on which to host the Function app. This must be of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}.
      * 
      * @param environmentId the environmentId value to set.
      * @return the ResourceNameAvailabilityRequest object itself.
@@ -130,12 +134,14 @@ public final class ResourceNameAvailabilityRequest {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model ResourceNameAvailabilityRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model ResourceNameAvailabilityRequest"));
         }
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property type in model ResourceNameAvailabilityRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property type in model ResourceNameAvailabilityRequest"));
         }
     }
 

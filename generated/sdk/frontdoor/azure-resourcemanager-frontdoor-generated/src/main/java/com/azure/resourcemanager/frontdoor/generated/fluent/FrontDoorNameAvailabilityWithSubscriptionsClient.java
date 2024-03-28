@@ -12,7 +12,8 @@ import com.azure.resourcemanager.frontdoor.generated.fluent.models.CheckNameAvai
 import com.azure.resourcemanager.frontdoor.generated.models.CheckNameAvailabilityInput;
 
 /**
- * An instance of this class provides access to all the operations defined in FrontDoorNameAvailabilityWithSubscriptionsClient.
+ * An instance of this class provides access to all the operations defined in
+ * FrontDoorNameAvailabilityWithSubscriptionsClient.
  */
 public interface FrontDoorNameAvailabilityWithSubscriptionsClient {
     /**

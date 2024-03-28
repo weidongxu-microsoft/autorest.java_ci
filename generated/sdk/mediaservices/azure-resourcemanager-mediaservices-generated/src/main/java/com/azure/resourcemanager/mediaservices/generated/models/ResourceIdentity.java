@@ -31,7 +31,8 @@ public final class ResourceIdentity {
     }
 
     /**
-     * Get the userAssignedIdentity property: The user assigned managed identity's ARM ID to use when accessing a resource.
+     * Get the userAssignedIdentity property: The user assigned managed identity's ARM ID to use when accessing a
+     * resource.
      * 
      * @return the userAssignedIdentity value.
      */
@@ -40,7 +41,8 @@ public final class ResourceIdentity {
     }
 
     /**
-     * Set the userAssignedIdentity property: The user assigned managed identity's ARM ID to use when accessing a resource.
+     * Set the userAssignedIdentity property: The user assigned managed identity's ARM ID to use when accessing a
+     * resource.
      * 
      * @param userAssignedIdentity the userAssignedIdentity value to set.
      * @return the ResourceIdentity object itself.
@@ -51,7 +53,8 @@ public final class ResourceIdentity {
     }
 
     /**
-     * Get the useSystemAssignedIdentity property: Indicates whether to use System Assigned Managed Identity. Mutual exclusive with User Assigned Managed Identity.
+     * Get the useSystemAssignedIdentity property: Indicates whether to use System Assigned Managed Identity. Mutual
+     * exclusive with User Assigned Managed Identity.
      * 
      * @return the useSystemAssignedIdentity value.
      */
@@ -60,7 +63,8 @@ public final class ResourceIdentity {
     }
 
     /**
-     * Set the useSystemAssignedIdentity property: Indicates whether to use System Assigned Managed Identity. Mutual exclusive with User Assigned Managed Identity.
+     * Set the useSystemAssignedIdentity property: Indicates whether to use System Assigned Managed Identity. Mutual
+     * exclusive with User Assigned Managed Identity.
      * 
      * @param useSystemAssignedIdentity the useSystemAssignedIdentity value to set.
      * @return the ResourceIdentity object itself.

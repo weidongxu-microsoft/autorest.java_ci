@@ -67,28 +67,32 @@ public interface LiveEvent {
     String description();
 
     /**
-     * Gets the input property: Live event input settings. It defines how the live event receives input from a contribution encoder.
+     * Gets the input property: Live event input settings. It defines how the live event receives input from a
+     * contribution encoder.
      * 
      * @return the input value.
      */
     LiveEventInput input();
 
     /**
-     * Gets the preview property: Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output.
+     * Gets the preview property: Live event preview settings. Preview allows live event producers to preview the live
+     * streaming content without creating any live output.
      * 
      * @return the preview value.
      */
     LiveEventPreview preview();
 
     /**
-     * Gets the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used.
+     * Gets the encoding property: Encoding settings for the live event. It configures whether a live encoder is used
+     * for the live event and settings for the live encoder if it is used.
      * 
      * @return the encoding value.
      */
     LiveEventEncoding encoding();
 
     /**
-     * Gets the transcriptions property: Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
+     * Gets the transcriptions property: Live transcription settings for the live event. See
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
      * 
      * @return the transcriptions value.
      */
@@ -102,7 +106,8 @@ public interface LiveEvent {
     String provisioningState();
 
     /**
-     * Gets the resourceState property: The resource state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+     * Gets the resourceState property: The resource state of the live event. See
+     * https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
      * 
      * @return the resourceState value.
      */
@@ -116,21 +121,26 @@ public interface LiveEvent {
     CrossSiteAccessPolicies crossSiteAccessPolicies();
 
     /**
-     * Gets the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+     * Gets the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event
+     * preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
      * 
      * @return the useStaticHostname value.
      */
     Boolean useStaticHostname();
 
     /**
-     * Gets the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center.
+     * Gets the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first
+     * part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
+     * combination of this prefix, the media service account name and a short code for the Azure Media Services data
+     * center.
      * 
      * @return the hostnamePrefix value.
      */
     String hostnamePrefix();
 
     /**
-     * Gets the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
+     * Gets the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time
+     * and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
      * 
      * @return the streamOptions value.
      */
@@ -231,7 +241,8 @@ public interface LiveEvent {
         }
 
         /**
-         * The stage of the LiveEvent definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LiveEvent definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithDescription, DefinitionStages.WithInput,
@@ -285,9 +296,11 @@ public interface LiveEvent {
          */
         interface WithInput {
             /**
-             * Specifies the input property: Live event input settings. It defines how the live event receives input from a contribution encoder..
+             * Specifies the input property: Live event input settings. It defines how the live event receives input
+             * from a contribution encoder..
              * 
-             * @param input Live event input settings. It defines how the live event receives input from a contribution encoder.
+             * @param input Live event input settings. It defines how the live event receives input from a contribution
+             * encoder.
              * @return the next definition stage.
              */
             WithCreate withInput(LiveEventInput input);
@@ -298,9 +311,11 @@ public interface LiveEvent {
          */
         interface WithPreview {
             /**
-             * Specifies the preview property: Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output..
+             * Specifies the preview property: Live event preview settings. Preview allows live event producers to
+             * preview the live streaming content without creating any live output..
              * 
-             * @param preview Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output.
+             * @param preview Live event preview settings. Preview allows live event producers to preview the live
+             * streaming content without creating any live output.
              * @return the next definition stage.
              */
             WithCreate withPreview(LiveEventPreview preview);
@@ -311,9 +326,11 @@ public interface LiveEvent {
          */
         interface WithEncoding {
             /**
-             * Specifies the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used..
+             * Specifies the encoding property: Encoding settings for the live event. It configures whether a live
+             * encoder is used for the live event and settings for the live encoder if it is used..
              * 
-             * @param encoding Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used.
+             * @param encoding Encoding settings for the live event. It configures whether a live encoder is used for
+             * the live event and settings for the live encoder if it is used.
              * @return the next definition stage.
              */
             WithCreate withEncoding(LiveEventEncoding encoding);
@@ -324,9 +341,13 @@ public interface LiveEvent {
          */
         interface WithTranscriptions {
             /**
-             * Specifies the transcriptions property: Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature..
+             * Specifies the transcriptions property: Live transcription settings for the live event. See
+             * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription
+             * feature..
              * 
-             * @param transcriptions Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
+             * @param transcriptions Live transcription settings for the live event. See
+             * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription
+             * feature.
              * @return the next definition stage.
              */
             WithCreate withTranscriptions(List<LiveEventTranscription> transcriptions);
@@ -350,9 +371,12 @@ public interface LiveEvent {
          */
         interface WithUseStaticHostname {
             /**
-             * Specifies the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+             * Specifies the useStaticHostname property: Specifies whether a static hostname would be assigned to the
+             * live event preview and ingest endpoints. This value can only be updated if the live event is in Standby
+             * state.
              * 
-             * @param useStaticHostname Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+             * @param useStaticHostname Specifies whether a static hostname would be assigned to the live event preview
+             * and ingest endpoints. This value can only be updated if the live event is in Standby state.
              * @return the next definition stage.
              */
             WithCreate withUseStaticHostname(Boolean useStaticHostname);
@@ -363,9 +387,15 @@ public interface LiveEvent {
          */
         interface WithHostnamePrefix {
             /**
-             * Specifies the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center..
+             * Specifies the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix
+             * specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The
+             * final hostname would be a combination of this prefix, the media service account name and a short code for
+             * the Azure Media Services data center..
              * 
-             * @param hostnamePrefix When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center.
+             * @param hostnamePrefix When useStaticHostname is set to true, the hostnamePrefix specifies the first part
+             * of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
+             * combination of this prefix, the media service account name and a short code for the Azure Media Services
+             * data center.
              * @return the next definition stage.
              */
             WithCreate withHostnamePrefix(String hostnamePrefix);
@@ -376,9 +406,12 @@ public interface LiveEvent {
          */
         interface WithStreamOptions {
             /**
-             * Specifies the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'..
+             * Specifies the streamOptions property: The options to use for the LiveEvent. This value is specified at
+             * creation time and cannot be updated. The valid values for the array entry values are 'Default' and
+             * 'LowLatency'..
              * 
-             * @param streamOptions The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
+             * @param streamOptions The options to use for the LiveEvent. This value is specified at creation time and
+             * cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
              * @return the next definition stage.
              */
             WithCreate withStreamOptions(List<StreamOptionsFlag> streamOptions);
@@ -389,7 +422,8 @@ public interface LiveEvent {
          */
         interface WithAutoStart {
             /**
-             * Specifies the autoStart property: The flag indicates if the resource should be automatically started on creation..
+             * Specifies the autoStart property: The flag indicates if the resource should be automatically started on
+             * creation..
              * 
              * @param autoStart The flag indicates if the resource should be automatically started on creation.
              * @return the next definition stage.
@@ -463,9 +497,11 @@ public interface LiveEvent {
          */
         interface WithInput {
             /**
-             * Specifies the input property: Live event input settings. It defines how the live event receives input from a contribution encoder..
+             * Specifies the input property: Live event input settings. It defines how the live event receives input
+             * from a contribution encoder..
              * 
-             * @param input Live event input settings. It defines how the live event receives input from a contribution encoder.
+             * @param input Live event input settings. It defines how the live event receives input from a contribution
+             * encoder.
              * @return the next definition stage.
              */
             Update withInput(LiveEventInput input);
@@ -476,9 +512,11 @@ public interface LiveEvent {
          */
         interface WithPreview {
             /**
-             * Specifies the preview property: Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output..
+             * Specifies the preview property: Live event preview settings. Preview allows live event producers to
+             * preview the live streaming content without creating any live output..
              * 
-             * @param preview Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output.
+             * @param preview Live event preview settings. Preview allows live event producers to preview the live
+             * streaming content without creating any live output.
              * @return the next definition stage.
              */
             Update withPreview(LiveEventPreview preview);
@@ -489,9 +527,11 @@ public interface LiveEvent {
          */
         interface WithEncoding {
             /**
-             * Specifies the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used..
+             * Specifies the encoding property: Encoding settings for the live event. It configures whether a live
+             * encoder is used for the live event and settings for the live encoder if it is used..
              * 
-             * @param encoding Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used.
+             * @param encoding Encoding settings for the live event. It configures whether a live encoder is used for
+             * the live event and settings for the live encoder if it is used.
              * @return the next definition stage.
              */
             Update withEncoding(LiveEventEncoding encoding);
@@ -502,9 +542,13 @@ public interface LiveEvent {
          */
         interface WithTranscriptions {
             /**
-             * Specifies the transcriptions property: Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature..
+             * Specifies the transcriptions property: Live transcription settings for the live event. See
+             * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription
+             * feature..
              * 
-             * @param transcriptions Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
+             * @param transcriptions Live transcription settings for the live event. See
+             * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription
+             * feature.
              * @return the next definition stage.
              */
             Update withTranscriptions(List<LiveEventTranscription> transcriptions);
@@ -528,9 +572,12 @@ public interface LiveEvent {
          */
         interface WithUseStaticHostname {
             /**
-             * Specifies the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+             * Specifies the useStaticHostname property: Specifies whether a static hostname would be assigned to the
+             * live event preview and ingest endpoints. This value can only be updated if the live event is in Standby
+             * state.
              * 
-             * @param useStaticHostname Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+             * @param useStaticHostname Specifies whether a static hostname would be assigned to the live event preview
+             * and ingest endpoints. This value can only be updated if the live event is in Standby state.
              * @return the next definition stage.
              */
             Update withUseStaticHostname(Boolean useStaticHostname);
@@ -541,9 +588,15 @@ public interface LiveEvent {
          */
         interface WithHostnamePrefix {
             /**
-             * Specifies the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center..
+             * Specifies the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix
+             * specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The
+             * final hostname would be a combination of this prefix, the media service account name and a short code for
+             * the Azure Media Services data center..
              * 
-             * @param hostnamePrefix When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center.
+             * @param hostnamePrefix When useStaticHostname is set to true, the hostnamePrefix specifies the first part
+             * of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
+             * combination of this prefix, the media service account name and a short code for the Azure Media Services
+             * data center.
              * @return the next definition stage.
              */
             Update withHostnamePrefix(String hostnamePrefix);
@@ -554,9 +607,12 @@ public interface LiveEvent {
          */
         interface WithStreamOptions {
             /**
-             * Specifies the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'..
+             * Specifies the streamOptions property: The options to use for the LiveEvent. This value is specified at
+             * creation time and cannot be updated. The valid values for the array entry values are 'Default' and
+             * 'LowLatency'..
              * 
-             * @param streamOptions The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
+             * @param streamOptions The options to use for the LiveEvent. This value is specified at creation time and
+             * cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
              * @return the next definition stage.
              */
             Update withStreamOptions(List<StreamOptionsFlag> streamOptions);
@@ -650,7 +706,9 @@ public interface LiveEvent {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -660,7 +718,9 @@ public interface LiveEvent {
     /**
      * Reset Live Event
      * 
-     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and will be started again. All assets used by the live outputs and streaming locators created on these assets are unaffected.
+     * Resets an existing live event. All live outputs for the live event are deleted and the live event is stopped and
+     * will be started again. All assets used by the live outputs and streaming locators created on these assets are
+     * unaffected.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

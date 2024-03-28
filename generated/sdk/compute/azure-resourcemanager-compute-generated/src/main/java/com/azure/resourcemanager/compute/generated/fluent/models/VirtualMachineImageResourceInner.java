@@ -89,7 +89,9 @@ public class VirtualMachineImageResourceInner extends SubResource {
     }
 
     /**
-     * Get the tags property: Specifies the tags that are assigned to the virtual machine. For more information about using tags, see [Using tags to organize your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
+     * Get the tags property: Specifies the tags that are assigned to the virtual machine. For more information about
+     * using tags, see [Using tags to organize your Azure
+     * resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
      * 
      * @return the tags value.
      */
@@ -98,7 +100,9 @@ public class VirtualMachineImageResourceInner extends SubResource {
     }
 
     /**
-     * Set the tags property: Specifies the tags that are assigned to the virtual machine. For more information about using tags, see [Using tags to organize your Azure resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
+     * Set the tags property: Specifies the tags that are assigned to the virtual machine. For more information about
+     * using tags, see [Using tags to organize your Azure
+     * resources](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-using-tags.md).
      * 
      * @param tags the tags value to set.
      * @return the VirtualMachineImageResourceInner object itself.
@@ -144,12 +148,14 @@ public class VirtualMachineImageResourceInner extends SubResource {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model VirtualMachineImageResourceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model VirtualMachineImageResourceInner"));
         }
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property location in model VirtualMachineImageResourceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property location in model VirtualMachineImageResourceInner"));
         }
         if (extendedLocation() != null) {
             extendedLocation().validate();

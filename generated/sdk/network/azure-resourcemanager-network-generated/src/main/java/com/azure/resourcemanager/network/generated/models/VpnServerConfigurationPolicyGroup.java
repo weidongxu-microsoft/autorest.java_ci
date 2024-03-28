@@ -28,7 +28,8 @@ public interface VpnServerConfigurationPolicyGroup {
     String etag();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -84,7 +85,8 @@ public interface VpnServerConfigurationPolicyGroup {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationPolicyGroupInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationPolicyGroupInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -122,7 +124,8 @@ public interface VpnServerConfigurationPolicyGroup {
         }
 
         /**
-         * The stage of the VpnServerConfigurationPolicyGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VpnServerConfigurationPolicyGroup definition which contains all the minimum required
+         * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithIsDefault,
             DefinitionStages.WithPriority, DefinitionStages.WithPolicyMembers {
@@ -147,9 +150,11 @@ public interface VpnServerConfigurationPolicyGroup {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -232,9 +237,11 @@ public interface VpnServerConfigurationPolicyGroup {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);

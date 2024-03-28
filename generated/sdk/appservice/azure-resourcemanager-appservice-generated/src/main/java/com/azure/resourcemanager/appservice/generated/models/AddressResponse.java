@@ -47,7 +47,8 @@ public interface AddressResponse {
     String serviceIpAddress();
 
     /**
-     * Gets the internalIpAddress property: Virtual Network internal IP address of the App Service Environment if it is in internal load-balancing mode.
+     * Gets the internalIpAddress property: Virtual Network internal IP address of the App Service Environment if it is
+     * in internal load-balancing mode.
      * 
      * @return the internalIpAddress value.
      */

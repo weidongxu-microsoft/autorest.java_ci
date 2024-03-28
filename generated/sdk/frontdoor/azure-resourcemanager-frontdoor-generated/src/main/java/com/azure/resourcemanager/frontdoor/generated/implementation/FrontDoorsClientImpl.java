@@ -67,7 +67,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
     }
 
     /**
-     * The interface defining all the services for FrontDoorManagementClientFrontDoors to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for FrontDoorManagementClientFrontDoors to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "FrontDoorManagementC")
@@ -150,7 +151,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listSinglePageAsync() {
@@ -179,7 +181,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listSinglePageAsync(Context context) {
@@ -259,7 +262,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -293,7 +297,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -388,7 +393,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FrontDoorInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -425,7 +431,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
+     * with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<FrontDoorInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -460,7 +467,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group on successful completion of {@link Mono}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FrontDoorInner> getByResourceGroupAsync(String resourceGroupName, String frontDoorName) {
@@ -477,7 +485,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<FrontDoorInner> getByResourceGroupWithResponse(String resourceGroupName, String frontDoorName,
@@ -509,7 +518,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there along with {@link Response} on successful completion of {@link Mono}.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -553,7 +563,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there along with {@link Response} on successful completion of {@link Mono}.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -595,7 +606,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return the {@link PollerFlux} for polling of front Door represents a collection of backend endpoints to route
+     * traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdateAsync(String resourceGroupName,
@@ -616,7 +628,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return the {@link PollerFlux} for polling of front Door represents a collection of backend endpoints to route
+     * traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdateAsync(String resourceGroupName,
@@ -637,7 +650,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route
+     * traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(String resourceGroupName,
@@ -655,7 +669,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route
+     * traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(String resourceGroupName,
@@ -673,7 +688,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there on successful completion of {@link Mono}.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FrontDoorInner> createOrUpdateAsync(String resourceGroupName, String frontDoorName,
@@ -692,7 +708,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there on successful completion of {@link Mono}.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<FrontDoorInner> createOrUpdateAsync(String resourceGroupName, String frontDoorName,
@@ -710,7 +727,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public FrontDoorInner createOrUpdate(String resourceGroupName, String frontDoorName,
@@ -728,7 +746,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public FrontDoorInner createOrUpdate(String resourceGroupName, String frontDoorName,
@@ -1089,7 +1108,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listNextSinglePageAsync(String nextLink) {
@@ -1117,7 +1137,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1144,7 +1165,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1174,7 +1196,8 @@ public final class FrontDoorsClientImpl implements FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list Front Doors along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<FrontDoorInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

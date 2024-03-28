@@ -89,7 +89,8 @@ public final class ExpressRouteCircuitRoutesTable {
     }
 
     /**
-     * Get the locPrf property: Local preference value as set with the set local-preference route-map configuration command.
+     * Get the locPrf property: Local preference value as set with the set local-preference route-map configuration
+     * command.
      * 
      * @return the locPrf value.
      */
@@ -98,7 +99,8 @@ public final class ExpressRouteCircuitRoutesTable {
     }
 
     /**
-     * Set the locPrf property: Local preference value as set with the set local-preference route-map configuration command.
+     * Set the locPrf property: Local preference value as set with the set local-preference route-map configuration
+     * command.
      * 
      * @param locPrf the locPrf value to set.
      * @return the ExpressRouteCircuitRoutesTable object itself.

@@ -19,7 +19,8 @@ public interface DataConnectionValidationListResult {
     List<DataConnectionValidationResult> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionValidationListResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.azurekusto.generated.fluent.models.DataConnectionValidationListResultInner object.
      * 
      * @return the inner object.
      */

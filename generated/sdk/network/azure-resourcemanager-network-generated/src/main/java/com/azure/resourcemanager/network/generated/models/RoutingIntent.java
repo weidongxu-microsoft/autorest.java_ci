@@ -20,7 +20,8 @@ public interface RoutingIntent {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -100,7 +101,8 @@ public interface RoutingIntent {
         }
 
         /**
-         * The stage of the RoutingIntent definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the RoutingIntent definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithRoutingPolicies {
             /**
@@ -124,9 +126,11 @@ public interface RoutingIntent {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -182,9 +186,11 @@ public interface RoutingIntent {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);

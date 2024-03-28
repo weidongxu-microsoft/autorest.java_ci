@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -24,6 +25,13 @@ import java.util.Map;
 @JsonTypeName("#Microsoft.Media.StandardEncoderPreset")
 @Fluent
 public final class StandardEncoderPreset extends Preset {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.StandardEncoderPreset";
+
     /*
      * Dictionary containing key value pairs for parameters not exposed in the preset itself
      */
@@ -53,11 +61,21 @@ public final class StandardEncoderPreset extends Preset {
      * Creates an instance of StandardEncoderPreset class.
      */
     public StandardEncoderPreset() {
-        withOdataType("#Microsoft.Media.StandardEncoderPreset");
     }
 
     /**
-     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
+     * preset itself.
      * 
      * @return the experimentalOptions value.
      */
@@ -66,7 +84,8 @@ public final class StandardEncoderPreset extends Preset {
     }
 
     /**
-     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the preset itself.
+     * Set the experimentalOptions property: Dictionary containing key value pairs for parameters not exposed in the
+     * preset itself.
      * 
      * @param experimentalOptions the experimentalOptions value to set.
      * @return the StandardEncoderPreset object itself.
@@ -148,14 +167,14 @@ public final class StandardEncoderPreset extends Preset {
             filters().validate();
         }
         if (codecs() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property codecs in model StandardEncoderPreset"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property codecs in model StandardEncoderPreset"));
         } else {
             codecs().forEach(e -> e.validate());
         }
         if (formats() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property formats in model StandardEncoderPreset"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property formats in model StandardEncoderPreset"));
         } else {
             formats().forEach(e -> e.validate());
         }

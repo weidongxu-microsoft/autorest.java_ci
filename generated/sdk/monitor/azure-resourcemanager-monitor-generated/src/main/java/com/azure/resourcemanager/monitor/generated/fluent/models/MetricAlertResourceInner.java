@@ -152,7 +152,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format.
+     * Get the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration
+     * format.
      * 
      * @return the evaluationFrequency value.
      */
@@ -161,7 +162,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format.
+     * Set the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration
+     * format.
      * 
      * @param evaluationFrequency the evaluationFrequency value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -175,7 +177,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
+     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold.
      * 
      * @return the windowSize value.
      */
@@ -184,7 +187,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
+     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold.
      * 
      * @param windowSize the windowSize value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -198,7 +202,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * Get the targetResourceType property: the resource type of the target resource(s) on which the alert is
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      * 
      * @return the targetResourceType value.
      */
@@ -207,7 +212,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * Set the targetResourceType property: the resource type of the target resource(s) on which the alert is
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      * 
      * @param targetResourceType the targetResourceType value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -221,7 +227,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * Get the targetResourceRegion property: the region of the target resource(s) on which the alert is
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      * 
      * @return the targetResourceRegion value.
      */
@@ -230,7 +237,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * Set the targetResourceRegion property: the region of the target resource(s) on which the alert is
+     * created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
      * 
      * @param targetResourceRegion the targetResourceRegion value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -267,7 +275,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true.
+     * Get the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The
+     * default is true.
      * 
      * @return the autoMitigate value.
      */
@@ -276,7 +285,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true.
+     * Set the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The
+     * default is true.
      * 
      * @param autoMitigate the autoMitigate value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -290,7 +300,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @return the actions value.
      */
@@ -299,7 +310,8 @@ public final class MetricAlertResourceInner extends Resource {
     }
 
     /**
-     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @param actions the actions value to set.
      * @return the MetricAlertResourceInner object itself.
@@ -337,8 +349,9 @@ public final class MetricAlertResourceInner extends Resource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model MetricAlertResourceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model MetricAlertResourceInner"));
         } else {
             innerProperties().validate();
         }

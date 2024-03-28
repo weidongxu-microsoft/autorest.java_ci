@@ -39,7 +39,8 @@ public interface TopLevelDomain {
     String kind();
 
     /**
-     * Gets the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the privacy value.
      */

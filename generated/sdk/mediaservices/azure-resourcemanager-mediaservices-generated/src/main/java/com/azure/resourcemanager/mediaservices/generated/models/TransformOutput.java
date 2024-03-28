@@ -38,7 +38,10 @@ public final class TransformOutput {
     }
 
     /**
-     * Get the onError property: A Transform can define more than one outputs. This property defines what the service should do when one output fails - either continue to produce other outputs, or, stop the other outputs. The overall Job state will not reflect failures of outputs that are specified with 'ContinueJob'. The default is 'StopProcessingJob'.
+     * Get the onError property: A Transform can define more than one outputs. This property defines what the service
+     * should do when one output fails - either continue to produce other outputs, or, stop the other outputs. The
+     * overall Job state will not reflect failures of outputs that are specified with 'ContinueJob'. The default is
+     * 'StopProcessingJob'.
      * 
      * @return the onError value.
      */
@@ -47,7 +50,10 @@ public final class TransformOutput {
     }
 
     /**
-     * Set the onError property: A Transform can define more than one outputs. This property defines what the service should do when one output fails - either continue to produce other outputs, or, stop the other outputs. The overall Job state will not reflect failures of outputs that are specified with 'ContinueJob'. The default is 'StopProcessingJob'.
+     * Set the onError property: A Transform can define more than one outputs. This property defines what the service
+     * should do when one output fails - either continue to produce other outputs, or, stop the other outputs. The
+     * overall Job state will not reflect failures of outputs that are specified with 'ContinueJob'. The default is
+     * 'StopProcessingJob'.
      * 
      * @param onError the onError value to set.
      * @return the TransformOutput object itself.
@@ -58,7 +64,8 @@ public final class TransformOutput {
     }
 
     /**
-     * Get the relativePriority property: Sets the relative priority of the TransformOutputs within a Transform. This sets the priority that the service uses for processing TransformOutputs. The default priority is Normal.
+     * Get the relativePriority property: Sets the relative priority of the TransformOutputs within a Transform. This
+     * sets the priority that the service uses for processing TransformOutputs. The default priority is Normal.
      * 
      * @return the relativePriority value.
      */
@@ -67,7 +74,8 @@ public final class TransformOutput {
     }
 
     /**
-     * Set the relativePriority property: Sets the relative priority of the TransformOutputs within a Transform. This sets the priority that the service uses for processing TransformOutputs. The default priority is Normal.
+     * Set the relativePriority property: Sets the relative priority of the TransformOutputs within a Transform. This
+     * sets the priority that the service uses for processing TransformOutputs. The default priority is Normal.
      * 
      * @param relativePriority the relativePriority value to set.
      * @return the TransformOutput object itself.
@@ -78,7 +86,8 @@ public final class TransformOutput {
     }
 
     /**
-     * Get the preset property: Preset that describes the operations that will be used to modify, transcode, or extract insights from the source file to generate the output.
+     * Get the preset property: Preset that describes the operations that will be used to modify, transcode, or extract
+     * insights from the source file to generate the output.
      * 
      * @return the preset value.
      */
@@ -87,7 +96,8 @@ public final class TransformOutput {
     }
 
     /**
-     * Set the preset property: Preset that describes the operations that will be used to modify, transcode, or extract insights from the source file to generate the output.
+     * Set the preset property: Preset that describes the operations that will be used to modify, transcode, or extract
+     * insights from the source file to generate the output.
      * 
      * @param preset the preset value to set.
      * @return the TransformOutput object itself.
@@ -104,8 +114,8 @@ public final class TransformOutput {
      */
     public void validate() {
         if (preset() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property preset in model TransformOutput"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property preset in model TransformOutput"));
         } else {
             preset().validate();
         }

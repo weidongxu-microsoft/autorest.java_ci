@@ -117,7 +117,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the overwrite property: &lt;code&gt;true&lt;/code&gt; to overwrite destination app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the overwrite property: &lt;code&gt;true&lt;/code&gt; to overwrite destination app; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the overwrite value.
      */
@@ -126,7 +127,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the overwrite property: &lt;code&gt;true&lt;/code&gt; to overwrite destination app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the overwrite property: &lt;code&gt;true&lt;/code&gt; to overwrite destination app; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param overwrite the overwrite value to set.
      * @return the CloningInfo object itself.
@@ -137,7 +139,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the cloneCustomHostNames property: &lt;code&gt;true&lt;/code&gt; to clone custom hostnames from source app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the cloneCustomHostNames property: &lt;code&gt;true&lt;/code&gt; to clone custom hostnames from source app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the cloneCustomHostNames value.
      */
@@ -146,7 +149,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the cloneCustomHostNames property: &lt;code&gt;true&lt;/code&gt; to clone custom hostnames from source app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the cloneCustomHostNames property: &lt;code&gt;true&lt;/code&gt; to clone custom hostnames from source app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param cloneCustomHostNames the cloneCustomHostNames value to set.
      * @return the CloningInfo object itself.
@@ -157,7 +161,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the cloneSourceControl property: &lt;code&gt;true&lt;/code&gt; to clone source control from source app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the cloneSourceControl property: &lt;code&gt;true&lt;/code&gt; to clone source control from source app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the cloneSourceControl value.
      */
@@ -166,7 +171,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the cloneSourceControl property: &lt;code&gt;true&lt;/code&gt; to clone source control from source app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the cloneSourceControl property: &lt;code&gt;true&lt;/code&gt; to clone source control from source app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param cloneSourceControl the cloneSourceControl value to set.
      * @return the CloningInfo object itself.
@@ -177,9 +183,11 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the sourceWebAppId property: ARM resource ID of the source app. App resource ID is of the form 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
+     * Get the sourceWebAppId property: ARM resource ID of the source app. App resource ID is of the form
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
+     * for other slots.
      * 
      * @return the sourceWebAppId value.
      */
@@ -188,9 +196,11 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the sourceWebAppId property: ARM resource ID of the source app. App resource ID is of the form 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
+     * Set the sourceWebAppId property: ARM resource ID of the source app. App resource ID is of the form
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
+     * for other slots.
      * 
      * @param sourceWebAppId the sourceWebAppId value to set.
      * @return the CloningInfo object itself.
@@ -241,7 +251,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these settings override the settings cloned 
+     * Get the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these settings
+     * override the settings cloned
      * from source app. Otherwise, application settings from source app are retained.
      * 
      * @return the appSettingsOverrides value.
@@ -251,7 +262,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these settings override the settings cloned 
+     * Set the appSettingsOverrides property: Application setting overrides for cloned app. If specified, these settings
+     * override the settings cloned
      * from source app. Otherwise, application settings from source app are retained.
      * 
      * @param appSettingsOverrides the appSettingsOverrides value to set.
@@ -263,7 +275,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source and destination app.
+     * Get the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source and
+     * destination app.
      * 
      * @return the configureLoadBalancing value.
      */
@@ -272,7 +285,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source and destination app.
+     * Set the configureLoadBalancing property: &lt;code&gt;true&lt;/code&gt; to configure load balancing for source and
+     * destination app.
      * 
      * @param configureLoadBalancing the configureLoadBalancing value to set.
      * @return the CloningInfo object itself.
@@ -283,7 +297,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the trafficManagerProfileId property: ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form 
+     * Get the trafficManagerProfileId property: ARM resource ID of the Traffic Manager profile to use, if it exists.
+     * Traffic Manager resource ID is of the form
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}.
      * 
      * @return the trafficManagerProfileId value.
@@ -293,7 +308,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the trafficManagerProfileId property: ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form 
+     * Set the trafficManagerProfileId property: ARM resource ID of the Traffic Manager profile to use, if it exists.
+     * Traffic Manager resource ID is of the form
      * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}.
      * 
      * @param trafficManagerProfileId the trafficManagerProfileId value to set.
@@ -305,7 +321,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Get the trafficManagerProfileName property: Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.
+     * Get the trafficManagerProfileName property: Name of Traffic Manager profile to create. This is only needed if
+     * Traffic Manager profile does not already exist.
      * 
      * @return the trafficManagerProfileName value.
      */
@@ -314,7 +331,8 @@ public final class CloningInfo {
     }
 
     /**
-     * Set the trafficManagerProfileName property: Name of Traffic Manager profile to create. This is only needed if Traffic Manager profile does not already exist.
+     * Set the trafficManagerProfileName property: Name of Traffic Manager profile to create. This is only needed if
+     * Traffic Manager profile does not already exist.
      * 
      * @param trafficManagerProfileName the trafficManagerProfileName value to set.
      * @return the CloningInfo object itself.
@@ -331,8 +349,8 @@ public final class CloningInfo {
      */
     public void validate() {
         if (sourceWebAppId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sourceWebAppId in model CloningInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property sourceWebAppId in model CloningInfo"));
         }
     }
 

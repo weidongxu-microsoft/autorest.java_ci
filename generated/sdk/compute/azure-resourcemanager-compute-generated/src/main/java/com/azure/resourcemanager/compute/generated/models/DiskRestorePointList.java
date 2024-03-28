@@ -54,7 +54,8 @@ public final class DiskRestorePointList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of disk restore points. Call ListNext() with this to fetch the next page of disk restore points.
+     * Get the nextLink property: The uri to fetch the next page of disk restore points. Call ListNext() with this to
+     * fetch the next page of disk restore points.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class DiskRestorePointList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of disk restore points. Call ListNext() with this to fetch the next page of disk restore points.
+     * Set the nextLink property: The uri to fetch the next page of disk restore points. Call ListNext() with this to
+     * fetch the next page of disk restore points.
      * 
      * @param nextLink the nextLink value to set.
      * @return the DiskRestorePointList object itself.
@@ -80,8 +82,8 @@ public final class DiskRestorePointList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model DiskRestorePointList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model DiskRestorePointList"));
         } else {
             value().forEach(e -> e.validate());
         }

@@ -37,7 +37,8 @@ public final class FirewallPolicyIntrusionDetection {
     }
 
     /**
-     * Get the mode property: Intrusion detection general state. When attached to a parent policy, the firewall's effective IDPS mode is the stricter mode of the two.
+     * Get the mode property: Intrusion detection general state. When attached to a parent policy, the firewall's
+     * effective IDPS mode is the stricter mode of the two.
      * 
      * @return the mode value.
      */
@@ -46,7 +47,8 @@ public final class FirewallPolicyIntrusionDetection {
     }
 
     /**
-     * Set the mode property: Intrusion detection general state. When attached to a parent policy, the firewall's effective IDPS mode is the stricter mode of the two.
+     * Set the mode property: Intrusion detection general state. When attached to a parent policy, the firewall's
+     * effective IDPS mode is the stricter mode of the two.
      * 
      * @param mode the mode value to set.
      * @return the FirewallPolicyIntrusionDetection object itself.
@@ -57,7 +59,8 @@ public final class FirewallPolicyIntrusionDetection {
     }
 
     /**
-     * Get the profile property: IDPS profile name. When attached to a parent policy, the firewall's effective profile is the profile name of the parent policy.
+     * Get the profile property: IDPS profile name. When attached to a parent policy, the firewall's effective profile
+     * is the profile name of the parent policy.
      * 
      * @return the profile value.
      */
@@ -66,7 +69,8 @@ public final class FirewallPolicyIntrusionDetection {
     }
 
     /**
-     * Set the profile property: IDPS profile name. When attached to a parent policy, the firewall's effective profile is the profile name of the parent policy.
+     * Set the profile property: IDPS profile name. When attached to a parent policy, the firewall's effective profile
+     * is the profile name of the parent policy.
      * 
      * @param profile the profile value to set.
      * @return the FirewallPolicyIntrusionDetection object itself.

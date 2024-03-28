@@ -72,7 +72,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientP2SVpnGateways to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientP2SVpnGateways to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -1001,7 +1002,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1035,7 +1037,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1127,7 +1130,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listSinglePageAsync() {
@@ -1156,7 +1160,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listSinglePageAsync(Context context) {
@@ -1443,7 +1448,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of {@link Mono}.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generateVpnProfileWithResponseAsync(String resourceGroupName,
@@ -1486,7 +1492,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of {@link Mono}.
+     * @return vpn Profile Response for package generation along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> generateVpnProfileWithResponseAsync(String resourceGroupName,
@@ -1676,7 +1683,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthWithResponseAsync(String resourceGroupName,
@@ -1713,7 +1721,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthWithResponseAsync(String resourceGroupName,
@@ -1748,7 +1757,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of the connection health of P2S clients of the virtual wan
+     * P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner>
@@ -1768,7 +1778,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of the connection health of P2S clients of the virtual wan
+     * P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner>
@@ -1788,7 +1799,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan
+     * P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner>
@@ -1805,7 +1817,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the connection health of P2S clients of the virtual wan
+     * P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnGatewayInner>, P2SVpnGatewayInner>
@@ -1821,7 +1834,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on successful completion of {@link Mono}.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> getP2SVpnConnectionHealthAsync(String resourceGroupName, String gatewayName) {
@@ -1838,7 +1852,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on successful completion of {@link Mono}.
+     * @return the connection health of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnGatewayInner> getP2SVpnConnectionHealthAsync(String resourceGroupName, String gatewayName,
@@ -1879,7 +1894,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -1887,7 +1903,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthDetailedWithResponseAsync(
@@ -1921,7 +1938,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -1930,7 +1948,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getP2SVpnConnectionHealthDetailedWithResponseAsync(
@@ -1963,7 +1982,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -1971,7 +1991,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of the sas url to get the connection health detail of P2S clients of
+     * the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -1985,7 +2006,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -1994,7 +2016,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link PollerFlux} for polling of the sas url to get the connection health detail of P2S clients of
+     * the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2009,7 +2032,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -2017,7 +2041,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of
+     * the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2028,7 +2053,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -2037,7 +2063,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the {@link SyncPoller} for polling of the sas url to get the connection health detail of P2S clients of
+     * the virtual wan P2SVpnGateway in the specified resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<P2SVpnConnectionHealthInner>, P2SVpnConnectionHealthInner>
@@ -2048,7 +2075,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -2056,7 +2084,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on successful completion of {@link Mono}.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnConnectionHealthInner> getP2SVpnConnectionHealthDetailedAsync(String resourceGroupName,
@@ -2066,7 +2095,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -2075,7 +2105,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group on successful completion of {@link Mono}.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<P2SVpnConnectionHealthInner> getP2SVpnConnectionHealthDetailedAsync(String resourceGroupName,
@@ -2085,7 +2116,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -2093,7 +2125,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public P2SVpnConnectionHealthInner getP2SVpnConnectionHealthDetailed(String resourceGroupName, String gatewayName,
@@ -2102,7 +2135,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
     }
 
     /**
-     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * Gets the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param gatewayName The name of the P2SVpnGateway.
@@ -2111,7 +2145,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the specified resource group.
+     * @return the sas url to get the connection health detail of P2S clients of the virtual wan P2SVpnGateway in the
+     * specified resource group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public P2SVpnConnectionHealthInner getP2SVpnConnectionHealthDetailed(String resourceGroupName, String gatewayName,
@@ -2364,7 +2399,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -2394,7 +2430,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -2422,7 +2459,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listNextSinglePageAsync(String nextLink) {
@@ -2450,7 +2488,8 @@ public final class P2SVpnGatewaysClientImpl implements P2SVpnGatewaysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list P2SVpnGateways along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<P2SVpnGatewayInner>> listNextSinglePageAsync(String nextLink, Context context) {

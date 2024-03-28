@@ -52,18 +52,16 @@ public class Format {
     }
 
     /**
-     * Set the odataType property: The discriminator for derived types.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the Format object itself.
-     */
-    protected Format withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
-     * Get the filenamePattern property: The file naming pattern used for the creation of output files. The following macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long, the base name of input video files will be used. If the length of base name of the input video file exceeds 32 characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the filename.
+     * Get the filenamePattern property: The file naming pattern used for the creation of output files. The following
+     * macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video
+     * file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long,
+     * the base name of input video files will be used. If the length of base name of the input video file exceeds 32
+     * characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate
+     * extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for
+     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1).
+     * {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video
+     * codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the
+     * filename.
      * 
      * @return the filenamePattern value.
      */
@@ -72,7 +70,16 @@ public class Format {
     }
 
     /**
-     * Set the filenamePattern property: The file naming pattern used for the creation of output files. The following macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long, the base name of input video files will be used. If the length of base name of the input video file exceeds 32 characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1). {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the filename.
+     * Set the filenamePattern property: The file naming pattern used for the creation of output files. The following
+     * macros are supported in the file name: {Basename} - An expansion macro that will use the name of the input video
+     * file. If the base name(the file suffix is not included) of the input video file is less than 32 characters long,
+     * the base name of input video files will be used. If the length of base name of the input video file exceeds 32
+     * characters, the base name is truncated to the first 32 characters in total length. {Extension} - The appropriate
+     * extension for this format. {Label} - The label assigned to the codec/layer. {Index} - A unique index for
+     * thumbnails. Only applicable to thumbnails. {AudioStream} - string "Audio" plus audio stream number(start from 1).
+     * {Bitrate} - The audio/video bitrate in kbps. Not applicable to thumbnails. {Codec} - The type of the audio/video
+     * codec. {Resolution} - The video resolution. Any unsubstituted macros will be collapsed and removed from the
+     * filename.
      * 
      * @param filenamePattern the filenamePattern value to set.
      * @return the Format object itself.
@@ -89,8 +96,8 @@ public class Format {
      */
     public void validate() {
         if (filenamePattern() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property filenamePattern in model Format"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property filenamePattern in model Format"));
         }
     }
 

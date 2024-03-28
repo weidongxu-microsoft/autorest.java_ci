@@ -114,7 +114,8 @@ public interface NetworkGroup {
         }
 
         /**
-         * The stage of the NetworkGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NetworkGroup definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithIfMatch {
             /**
@@ -151,9 +152,12 @@ public interface NetworkGroup {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
              * 
-             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -209,9 +213,12 @@ public interface NetworkGroup {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes..
+             * Specifies the ifMatch property: The ETag of the transformation. Omit this value to always overwrite the
+             * current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent
+             * changes..
              * 
-             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+             * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource.
+             * Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);

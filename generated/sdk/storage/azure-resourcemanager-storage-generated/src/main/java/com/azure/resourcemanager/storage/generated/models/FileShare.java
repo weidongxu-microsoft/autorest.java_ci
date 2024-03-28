@@ -58,14 +58,16 @@ public interface FileShare {
     Map<String, String> metadata();
 
     /**
-     * Gets the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
+     * Gets the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than
+     * or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
      * 
      * @return the shareQuota value.
      */
     Integer shareQuota();
 
     /**
-     * Gets the enabledProtocols property: The authentication protocol that is used for the file share. Can only be specified when creating a share.
+     * Gets the enabledProtocols property: The authentication protocol that is used for the file share. Can only be
+     * specified when creating a share.
      * 
      * @return the enabledProtocols value.
      */
@@ -107,7 +109,8 @@ public interface FileShare {
     Integer remainingRetentionDays();
 
     /**
-     * Gets the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+     * Gets the accessTier property: Access tier for specific share. GpV2 account can choose between
+     * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
      * 
      * @return the accessTier value.
      */
@@ -128,7 +131,8 @@ public interface FileShare {
     String accessTierStatus();
 
     /**
-     * Gets the shareUsageBytes property: The approximate size of the data stored on the share. Note that this value may not include all recently created or recently resized files.
+     * Gets the shareUsageBytes property: The approximate size of the data stored on the share. Note that this value may
+     * not include all recently created or recently resized files.
      * 
      * @return the shareUsageBytes value.
      */
@@ -149,7 +153,8 @@ public interface FileShare {
     LeaseState leaseState();
 
     /**
-     * Gets the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only when the share is leased.
+     * Gets the leaseDuration property: Specifies whether the lease on a share is of infinite or fixed duration, only
+     * when the share is leased.
      * 
      * @return the leaseDuration value.
      */
@@ -163,7 +168,8 @@ public interface FileShare {
     List<SignedIdentifier> signedIdentifiers();
 
     /**
-     * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with expand param "snapshots".
+     * Gets the snapshotTime property: Creation time of share snapshot returned in the response of list shares with
+     * expand param "snapshots".
      * 
      * @return the snapshotTime value.
      */
@@ -207,15 +213,18 @@ public interface FileShare {
             /**
              * Specifies resourceGroupName, accountName.
              * 
-             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-             * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+             * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+             * insensitive.
+             * @param accountName The name of the storage account within the specified resource group. Storage account
+             * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
             WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
         }
 
         /**
-         * The stage of the FileShare definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the FileShare definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithMetadata, DefinitionStages.WithShareQuota,
             DefinitionStages.WithEnabledProtocols, DefinitionStages.WithRootSquash, DefinitionStages.WithAccessTier,
@@ -254,9 +263,11 @@ public interface FileShare {
          */
         interface WithShareQuota {
             /**
-             * Specifies the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400..
+             * Specifies the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0,
+             * and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400..
              * 
-             * @param shareQuota The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
+             * @param shareQuota The maximum size of the share, in gigabytes. Must be greater than 0, and less than or
+             * equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
              * @return the next definition stage.
              */
             WithCreate withShareQuota(Integer shareQuota);
@@ -267,9 +278,11 @@ public interface FileShare {
          */
         interface WithEnabledProtocols {
             /**
-             * Specifies the enabledProtocols property: The authentication protocol that is used for the file share. Can only be specified when creating a share..
+             * Specifies the enabledProtocols property: The authentication protocol that is used for the file share. Can
+             * only be specified when creating a share..
              * 
-             * @param enabledProtocols The authentication protocol that is used for the file share. Can only be specified when creating a share.
+             * @param enabledProtocols The authentication protocol that is used for the file share. Can only be
+             * specified when creating a share.
              * @return the next definition stage.
              */
             WithCreate withEnabledProtocols(EnabledProtocols enabledProtocols);
@@ -293,9 +306,11 @@ public interface FileShare {
          */
         interface WithAccessTier {
             /**
-             * Specifies the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium..
+             * Specifies the accessTier property: Access tier for specific share. GpV2 account can choose between
+             * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium..
              * 
-             * @param accessTier Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+             * @param accessTier Access tier for specific share. GpV2 account can choose between TransactionOptimized
+             * (default), Hot, and Cool. FileStorage account can choose Premium.
              * @return the next definition stage.
              */
             WithCreate withAccessTier(ShareAccessTier accessTier);
@@ -319,9 +334,11 @@ public interface FileShare {
          */
         interface WithExpand {
             /**
-             * Specifies the expand property: Optional, used to expand the properties within share's properties. Valid values are: snapshots. Should be passed as a string with delimiter ','.
+             * Specifies the expand property: Optional, used to expand the properties within share's properties. Valid
+             * values are: snapshots. Should be passed as a string with delimiter ','.
              * 
-             * @param expand Optional, used to expand the properties within share's properties. Valid values are: snapshots. Should be passed as a string with delimiter ','.
+             * @param expand Optional, used to expand the properties within share's properties. Valid values are:
+             * snapshots. Should be passed as a string with delimiter ','.
              * @return the next definition stage.
              */
             WithCreate withExpand(String expand);
@@ -378,9 +395,11 @@ public interface FileShare {
          */
         interface WithShareQuota {
             /**
-             * Specifies the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400..
+             * Specifies the shareQuota property: The maximum size of the share, in gigabytes. Must be greater than 0,
+             * and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400..
              * 
-             * @param shareQuota The maximum size of the share, in gigabytes. Must be greater than 0, and less than or equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
+             * @param shareQuota The maximum size of the share, in gigabytes. Must be greater than 0, and less than or
+             * equal to 5TB (5120). For Large File Shares, the maximum size is 102400.
              * @return the next definition stage.
              */
             Update withShareQuota(Integer shareQuota);
@@ -404,9 +423,11 @@ public interface FileShare {
          */
         interface WithAccessTier {
             /**
-             * Specifies the accessTier property: Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium..
+             * Specifies the accessTier property: Access tier for specific share. GpV2 account can choose between
+             * TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium..
              * 
-             * @param accessTier Access tier for specific share. GpV2 account can choose between TransactionOptimized (default), Hot, and Cool. FileStorage account can choose Premium.
+             * @param accessTier Access tier for specific share. GpV2 account can choose between TransactionOptimized
+             * (default), Hot, and Cool. FileStorage account can choose Premium.
              * @return the next definition stage.
              */
             Update withAccessTier(ShareAccessTier accessTier);
@@ -464,7 +485,8 @@ public interface FileShare {
     void restore(DeletedShare deletedShare);
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
      * @param xMsSnapshot Optional. Specify the snapshot time to lease a snapshot.
      * @param parameters Lease Share request body.
@@ -477,7 +499,8 @@ public interface FileShare {
     Response<LeaseShareResponse> leaseWithResponse(String xMsSnapshot, LeaseShareRequest parameters, Context context);
 
     /**
-     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can be 15 to 60 seconds, or can be infinite.
+     * The Lease Share operation establishes and manages a lock on a share for delete operations. The lock duration can
+     * be 15 to 60 seconds, or can be infinite.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

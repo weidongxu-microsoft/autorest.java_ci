@@ -25,7 +25,8 @@ public final class ValidateBackupResponseProperties {
     }
 
     /**
-     * Get the numberOfContainers property: Estimated no of storage containers required for resource data to be backed up.
+     * Get the numberOfContainers property: Estimated no of storage containers required for resource data to be backed
+     * up.
      * 
      * @return the numberOfContainers value.
      */
@@ -34,7 +35,8 @@ public final class ValidateBackupResponseProperties {
     }
 
     /**
-     * Set the numberOfContainers property: Estimated no of storage containers required for resource data to be backed up.
+     * Set the numberOfContainers property: Estimated no of storage containers required for resource data to be backed
+     * up.
      * 
      * @param numberOfContainers the numberOfContainers value to set.
      * @return the ValidateBackupResponseProperties object itself.

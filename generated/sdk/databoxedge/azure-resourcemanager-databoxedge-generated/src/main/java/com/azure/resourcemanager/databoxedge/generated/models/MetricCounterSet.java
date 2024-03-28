@@ -53,8 +53,8 @@ public final class MetricCounterSet {
      */
     public void validate() {
         if (counters() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property counters in model MetricCounterSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property counters in model MetricCounterSet"));
         } else {
             counters().forEach(e -> e.validate());
         }

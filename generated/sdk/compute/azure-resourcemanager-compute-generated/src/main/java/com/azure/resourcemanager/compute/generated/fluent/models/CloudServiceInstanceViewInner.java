@@ -75,7 +75,9 @@ public final class CloudServiceInstanceViewInner {
     }
 
     /**
-     * Get the privateIds property: Specifies a list of unique identifiers generated internally for the cloud service. &lt;br /&gt;&lt;br /&gt; NOTE: If you are using Azure Diagnostics extension, this property can be used as 'DeploymentId' for querying details.
+     * Get the privateIds property: Specifies a list of unique identifiers generated internally for the cloud service.
+     * &lt;br /&gt;&lt;br /&gt; NOTE: If you are using Azure Diagnostics extension, this property can be used as
+     * 'DeploymentId' for querying details.
      * 
      * @return the privateIds value.
      */

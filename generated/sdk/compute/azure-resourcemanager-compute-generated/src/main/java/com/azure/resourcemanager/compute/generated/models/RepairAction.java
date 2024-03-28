@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Type of repair action (replace, restart, reimage) that will be used for repairing unhealthy virtual machines in the scale set. Default value is replace.
+ * Type of repair action (replace, restart, reimage) that will be used for repairing unhealthy virtual machines in the
+ * scale set. Default value is replace.
  */
 public final class RepairAction extends ExpandableStringEnum<RepairAction> {
     /**

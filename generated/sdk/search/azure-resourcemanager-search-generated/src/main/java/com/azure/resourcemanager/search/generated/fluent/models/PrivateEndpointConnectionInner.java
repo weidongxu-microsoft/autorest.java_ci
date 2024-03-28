@@ -27,7 +27,8 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
     }
 
     /**
-     * Get the properties property: Describes the properties of an existing private endpoint connection to the Azure AI Search service.
+     * Get the properties property: Describes the properties of an existing private endpoint connection to the Azure AI
+     * Search service.
      * 
      * @return the properties value.
      */
@@ -36,7 +37,8 @@ public final class PrivateEndpointConnectionInner extends ProxyResource {
     }
 
     /**
-     * Set the properties property: Describes the properties of an existing private endpoint connection to the Azure AI Search service.
+     * Set the properties property: Describes the properties of an existing private endpoint connection to the Azure AI
+     * Search service.
      * 
      * @param properties the properties value to set.
      * @return the PrivateEndpointConnectionInner object itself.

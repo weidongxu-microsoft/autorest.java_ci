@@ -193,7 +193,8 @@ public interface NatGateway {
         }
 
         /**
-         * The stage of the NatGateway definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NatGateway definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithZones,
             DefinitionStages.WithIdleTimeoutInMinutes, DefinitionStages.WithPublicIpAddresses,
@@ -245,7 +246,8 @@ public interface NatGateway {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: A list of availability zones denoting the zone in which Nat Gateway should be deployed..
+             * Specifies the zones property: A list of availability zones denoting the zone in which Nat Gateway should
+             * be deployed..
              * 
              * @param zones A list of availability zones denoting the zone in which Nat Gateway should be deployed.
              * @return the next definition stage.
@@ -271,7 +273,8 @@ public interface NatGateway {
          */
         interface WithPublicIpAddresses {
             /**
-             * Specifies the publicIpAddresses property: An array of public ip addresses associated with the nat gateway resource..
+             * Specifies the publicIpAddresses property: An array of public ip addresses associated with the nat gateway
+             * resource..
              * 
              * @param publicIpAddresses An array of public ip addresses associated with the nat gateway resource.
              * @return the next definition stage.
@@ -284,7 +287,8 @@ public interface NatGateway {
          */
         interface WithPublicIpPrefixes {
             /**
-             * Specifies the publicIpPrefixes property: An array of public ip prefixes associated with the nat gateway resource..
+             * Specifies the publicIpPrefixes property: An array of public ip prefixes associated with the nat gateway
+             * resource..
              * 
              * @param publicIpPrefixes An array of public ip prefixes associated with the nat gateway resource.
              * @return the next definition stage.

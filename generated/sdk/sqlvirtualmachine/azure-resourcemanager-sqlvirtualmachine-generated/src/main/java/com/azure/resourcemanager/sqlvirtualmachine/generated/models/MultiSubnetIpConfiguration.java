@@ -52,7 +52,8 @@ public final class MultiSubnetIpConfiguration {
     }
 
     /**
-     * Get the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the availability group listener.
+     * Get the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the
+     * availability group listener.
      * 
      * @return the sqlVirtualMachineInstance value.
      */
@@ -61,7 +62,8 @@ public final class MultiSubnetIpConfiguration {
     }
 
     /**
-     * Set the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the availability group listener.
+     * Set the sqlVirtualMachineInstance property: SQL virtual machine instance resource id that are enrolled into the
+     * availability group listener.
      * 
      * @param sqlVirtualMachineInstance the sqlVirtualMachineInstance value to set.
      * @return the MultiSubnetIpConfiguration object itself.
@@ -78,14 +80,16 @@ public final class MultiSubnetIpConfiguration {
      */
     public void validate() {
         if (privateIpAddress() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property privateIpAddress in model MultiSubnetIpConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property privateIpAddress in model MultiSubnetIpConfiguration"));
         } else {
             privateIpAddress().validate();
         }
         if (sqlVirtualMachineInstance() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property sqlVirtualMachineInstance in model MultiSubnetIpConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sqlVirtualMachineInstance in model MultiSubnetIpConfiguration"));
         }
     }
 

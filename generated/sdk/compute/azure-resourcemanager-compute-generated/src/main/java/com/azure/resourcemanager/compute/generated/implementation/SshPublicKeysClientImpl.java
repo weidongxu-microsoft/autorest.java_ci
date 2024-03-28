@@ -64,7 +64,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientSshPublicKeys to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientSshPublicKeys to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -154,11 +155,13 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next
+     * page of SSH public keys.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listSinglePageAsync() {
@@ -181,13 +184,15 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next
+     * page of SSH public keys.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listSinglePageAsync(Context context) {
@@ -208,7 +213,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next
+     * page of SSH public keys.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -221,7 +227,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next
+     * page of SSH public keys.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -236,7 +243,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next
+     * page of SSH public keys.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -248,7 +256,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the subscription. Use the nextLink property in the response to get the next
+     * page of SSH public keys.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -262,13 +271,15 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to
+     * get the next page of SSH public keys.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>>
@@ -296,14 +307,16 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to
+     * get the next page of SSH public keys.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -331,7 +344,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to
+     * get the next page of SSH public keys.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -346,7 +360,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to
+     * get the next page of SSH public keys.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
@@ -362,7 +377,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to
+     * get the next page of SSH public keys.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -376,7 +392,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to get the next page of SSH public keys.
+     * Lists all of the SSH public keys in the specified resource group. Use the nextLink property in the response to
+     * get the next page of SSH public keys.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
@@ -399,7 +416,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the SSH public key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyResourceInner>> createWithResponseAsync(String resourceGroupName,
@@ -443,7 +461,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the SSH public key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyResourceInner>> createWithResponseAsync(String resourceGroupName,
@@ -538,7 +557,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the SSH public key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyResourceInner>> updateWithResponseAsync(String resourceGroupName,
@@ -582,7 +602,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the SSH public key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyResourceInner>> updateWithResponseAsync(String resourceGroupName,
@@ -794,7 +815,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the SSH public key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyResourceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -832,7 +854,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the SSH public key along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies information about the SSH public key along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyResourceInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -909,7 +932,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -917,7 +941,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response from generation of an SSH key pair along with {@link Response} on successful completion of {@link Mono}.
+     * @return response from generation of an SSH key pair along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyGenerateKeyPairResultInner>> generateKeyPairWithResponseAsync(
@@ -950,7 +975,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -959,7 +985,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response from generation of an SSH key pair along with {@link Response} on successful completion of {@link Mono}.
+     * @return response from generation of an SSH key pair along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SshPublicKeyGenerateKeyPairResultInner>> generateKeyPairWithResponseAsync(
@@ -992,7 +1019,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -1010,7 +1038,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -1028,7 +1057,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
     }
 
     /**
-     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key. The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
+     * Generates and returns a public/private key pair and populates the SSH public key resource with the public key.
+     * The length of the key will be 3072 bits. This operation can only be performed once per SSH public key resource.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param sshPublicKeyName The name of the SSH public key.
@@ -1052,7 +1082,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -1082,7 +1113,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listBySubscriptionNextSinglePageAsync(String nextLink,
@@ -1110,7 +1142,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1140,7 +1173,8 @@ public final class SshPublicKeysClientImpl implements SshPublicKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list SSH public keys operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SshPublicKeyResourceInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

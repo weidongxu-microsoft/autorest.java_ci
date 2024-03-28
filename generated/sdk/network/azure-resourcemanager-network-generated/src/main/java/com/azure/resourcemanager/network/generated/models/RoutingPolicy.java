@@ -59,7 +59,8 @@ public final class RoutingPolicy {
     }
 
     /**
-     * Get the destinations property: List of all destinations which this routing policy is applicable to (for example: Internet, PrivateTraffic).
+     * Get the destinations property: List of all destinations which this routing policy is applicable to (for example:
+     * Internet, PrivateTraffic).
      * 
      * @return the destinations value.
      */
@@ -68,7 +69,8 @@ public final class RoutingPolicy {
     }
 
     /**
-     * Set the destinations property: List of all destinations which this routing policy is applicable to (for example: Internet, PrivateTraffic).
+     * Set the destinations property: List of all destinations which this routing policy is applicable to (for example:
+     * Internet, PrivateTraffic).
      * 
      * @param destinations the destinations value to set.
      * @return the RoutingPolicy object itself.
@@ -105,16 +107,16 @@ public final class RoutingPolicy {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model RoutingPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model RoutingPolicy"));
         }
         if (destinations() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property destinations in model RoutingPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property destinations in model RoutingPolicy"));
         }
         if (nextHop() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property nextHop in model RoutingPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property nextHop in model RoutingPolicy"));
         }
     }
 

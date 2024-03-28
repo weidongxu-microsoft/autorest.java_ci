@@ -67,7 +67,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientAttachedDatabaseConfigurations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientAttachedDatabaseConfigurations to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -132,7 +133,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -175,7 +177,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -267,7 +270,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list attached database configurations operation response along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AttachedDatabaseConfigurationInner>>
@@ -305,7 +309,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list attached database configurations operation response along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AttachedDatabaseConfigurationInner>>
@@ -342,7 +347,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response as paginated response with {@link PagedFlux}.
+     * @return the list attached database configurations operation response as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AttachedDatabaseConfigurationInner> listByClusterAsync(String resourceGroupName,
@@ -359,7 +365,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response as paginated response with {@link PagedFlux}.
+     * @return the list attached database configurations operation response as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<AttachedDatabaseConfigurationInner> listByClusterAsync(String resourceGroupName,
@@ -375,7 +382,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response as paginated response with {@link PagedIterable}.
+     * @return the list attached database configurations operation response as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AttachedDatabaseConfigurationInner> listByCluster(String resourceGroupName,
@@ -392,7 +400,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list attached database configurations operation response as paginated response with {@link PagedIterable}.
+     * @return the list attached database configurations operation response as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<AttachedDatabaseConfigurationInner> listByCluster(String resourceGroupName, String clusterName,
@@ -409,7 +418,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AttachedDatabaseConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -451,7 +461,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AttachedDatabaseConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -545,7 +556,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -593,7 +605,8 @@ public final class AttachedDatabaseConfigurationsClientImpl implements AttachedD
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing an attached database configuration along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing an attached database configuration along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,

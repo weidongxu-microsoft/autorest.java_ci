@@ -257,7 +257,8 @@ public final class DomainPatchResourceProperties {
     }
 
     /**
-     * Get the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the privacy value.
      */
@@ -266,7 +267,8 @@ public final class DomainPatchResourceProperties {
     }
 
     /**
-     * Set the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the privacy property: &lt;code&gt;true&lt;/code&gt; if domain privacy is enabled for this domain; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param privacy the privacy value to set.
      * @return the DomainPatchResourceProperties object itself.
@@ -304,7 +306,8 @@ public final class DomainPatchResourceProperties {
     }
 
     /**
-     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoRenew value.
      */
@@ -313,7 +316,8 @@ public final class DomainPatchResourceProperties {
     }
 
     /**
-     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the domain should be automatically renewed;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param autoRenew the autoRenew value to set.
      * @return the DomainPatchResourceProperties object itself.
@@ -324,8 +328,10 @@ public final class DomainPatchResourceProperties {
     }
 
     /**
-     * Get the readyForDnsRecordManagement property: &lt;code&gt;true&lt;/code&gt; if Azure can assign this domain to App Service apps; otherwise, &lt;code&gt;false&lt;/code&gt;. This value will be &lt;code&gt;true&lt;/code&gt; if domain registration status is active and 
-     *  it is hosted on name servers Azure has programmatic access to.
+     * Get the readyForDnsRecordManagement property: &lt;code&gt;true&lt;/code&gt; if Azure can assign this domain to
+     * App Service apps; otherwise, &lt;code&gt;false&lt;/code&gt;. This value will be &lt;code&gt;true&lt;/code&gt; if
+     * domain registration status is active and
+     * it is hosted on name servers Azure has programmatic access to.
      * 
      * @return the readyForDnsRecordManagement value.
      */
@@ -458,26 +464,30 @@ public final class DomainPatchResourceProperties {
      */
     public void validate() {
         if (contactAdmin() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property contactAdmin in model DomainPatchResourceProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contactAdmin in model DomainPatchResourceProperties"));
         } else {
             contactAdmin().validate();
         }
         if (contactBilling() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property contactBilling in model DomainPatchResourceProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contactBilling in model DomainPatchResourceProperties"));
         } else {
             contactBilling().validate();
         }
         if (contactRegistrant() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property contactRegistrant in model DomainPatchResourceProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contactRegistrant in model DomainPatchResourceProperties"));
         } else {
             contactRegistrant().validate();
         }
         if (contactTech() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property contactTech in model DomainPatchResourceProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property contactTech in model DomainPatchResourceProperties"));
         } else {
             contactTech().validate();
         }
@@ -485,8 +495,9 @@ public final class DomainPatchResourceProperties {
             managedHostNames().forEach(e -> e.validate());
         }
         if (consent() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property consent in model DomainPatchResourceProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property consent in model DomainPatchResourceProperties"));
         } else {
             consent().validate();
         }

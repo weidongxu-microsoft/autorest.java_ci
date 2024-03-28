@@ -83,7 +83,8 @@ public final class PrivateLinkServiceProperties {
     }
 
     /**
-     * Get the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP configurations.
+     * Get the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP
+     * configurations.
      * 
      * @return the loadBalancerFrontendIpConfigurations value.
      */
@@ -92,7 +93,8 @@ public final class PrivateLinkServiceProperties {
     }
 
     /**
-     * Set the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP configurations.
+     * Set the loadBalancerFrontendIpConfigurations property: An array of references to the load balancer IP
+     * configurations.
      * 
      * @param loadBalancerFrontendIpConfigurations the loadBalancerFrontendIpConfigurations value to set.
      * @return the PrivateLinkServiceProperties object itself.
@@ -125,7 +127,8 @@ public final class PrivateLinkServiceProperties {
     }
 
     /**
-     * Get the networkInterfaces property: An array of references to the network interfaces created for this private link service.
+     * Get the networkInterfaces property: An array of references to the network interfaces created for this private
+     * link service.
      * 
      * @return the networkInterfaces value.
      */

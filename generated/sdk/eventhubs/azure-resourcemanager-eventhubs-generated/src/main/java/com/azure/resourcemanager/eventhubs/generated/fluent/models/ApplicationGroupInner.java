@@ -68,7 +68,9 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Get the isEnabled property: Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+     * Get the isEnabled property: Determines if Application Group is allowed to create connection with namespace or
+     * not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no
+     * new connections will be allowed.
      * 
      * @return the isEnabled value.
      */
@@ -77,7 +79,9 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Set the isEnabled property: Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no new connections will be allowed.
+     * Set the isEnabled property: Determines if Application Group is allowed to create connection with namespace or
+     * not. Once the isEnabled is set to false, all the existing connections of application group gets dropped and no
+     * new connections will be allowed.
      * 
      * @param isEnabled the isEnabled value to set.
      * @return the ApplicationGroupInner object itself.
@@ -91,7 +95,8 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Get the clientAppGroupIdentifier property: The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+     * Get the clientAppGroupIdentifier property: The Unique identifier for application group.Supports
+     * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
      * 
      * @return the clientAppGroupIdentifier value.
      */
@@ -100,7 +105,8 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Set the clientAppGroupIdentifier property: The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
+     * Set the clientAppGroupIdentifier property: The Unique identifier for application group.Supports
+     * SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid).
      * 
      * @param clientAppGroupIdentifier the clientAppGroupIdentifier value to set.
      * @return the ApplicationGroupInner object itself.
@@ -114,7 +120,8 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Get the policies property: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Get the policies property: List of group policies that define the behavior of application group. The policies can
+     * support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @return the policies value.
      */
@@ -123,7 +130,8 @@ public final class ApplicationGroupInner extends ProxyResource {
     }
 
     /**
-     * Set the policies property: List of group policies that define the behavior of application group. The policies can support resource governance scenarios such as limiting ingress or egress traffic.
+     * Set the policies property: List of group policies that define the behavior of application group. The policies can
+     * support resource governance scenarios such as limiting ingress or egress traffic.
      * 
      * @param policies the policies value to set.
      * @return the ApplicationGroupInner object itself.

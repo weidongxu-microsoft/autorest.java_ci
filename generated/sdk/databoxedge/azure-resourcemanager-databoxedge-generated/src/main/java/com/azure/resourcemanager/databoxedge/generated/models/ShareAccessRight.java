@@ -78,12 +78,12 @@ public final class ShareAccessRight {
      */
     public void validate() {
         if (shareId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property shareId in model ShareAccessRight"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property shareId in model ShareAccessRight"));
         }
         if (accessType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property accessType in model ShareAccessRight"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property accessType in model ShareAccessRight"));
         }
     }
 

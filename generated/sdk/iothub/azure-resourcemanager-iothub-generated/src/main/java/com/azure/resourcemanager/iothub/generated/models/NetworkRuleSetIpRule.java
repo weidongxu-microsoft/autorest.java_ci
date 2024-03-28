@@ -104,12 +104,13 @@ public final class NetworkRuleSetIpRule {
      */
     public void validate() {
         if (filterName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property filterName in model NetworkRuleSetIpRule"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property filterName in model NetworkRuleSetIpRule"));
         }
         if (ipMask() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ipMask in model NetworkRuleSetIpRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ipMask in model NetworkRuleSetIpRule"));
         }
     }
 

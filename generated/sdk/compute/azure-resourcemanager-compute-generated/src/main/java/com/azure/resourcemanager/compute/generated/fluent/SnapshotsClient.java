@@ -24,7 +24,8 @@ public interface SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -39,7 +40,8 @@ public interface SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -55,7 +57,8 @@ public interface SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -69,7 +72,8 @@ public interface SnapshotsClient {
      * Creates or updates a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Put disk operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -85,7 +89,8 @@ public interface SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -100,7 +105,8 @@ public interface SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -116,7 +122,8 @@ public interface SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -130,7 +137,8 @@ public interface SnapshotsClient {
      * Updates (patches) a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param snapshot Snapshot object supplied in the body of the Patch snapshot operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -145,7 +153,8 @@ public interface SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -160,7 +169,8 @@ public interface SnapshotsClient {
      * Gets information about a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -173,7 +183,8 @@ public interface SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -186,7 +197,8 @@ public interface SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -200,7 +212,8 @@ public interface SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -212,7 +225,8 @@ public interface SnapshotsClient {
      * Deletes a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -272,7 +286,8 @@ public interface SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -287,7 +302,8 @@ public interface SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -303,7 +319,8 @@ public interface SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -317,7 +334,8 @@ public interface SnapshotsClient {
      * Grants access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param grantAccessData Access data object supplied in the body of the get snapshot access operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -333,7 +351,8 @@ public interface SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -346,7 +365,8 @@ public interface SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -361,7 +381,8 @@ public interface SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -373,7 +394,8 @@ public interface SnapshotsClient {
      * Revokes access to a snapshot.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
+     * @param snapshotName The name of the snapshot that is being created. The name can't be changed after the snapshot
+     * is created. Supported characters for the name are a-z, A-Z, 0-9, _ and -. The max name length is 80 characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

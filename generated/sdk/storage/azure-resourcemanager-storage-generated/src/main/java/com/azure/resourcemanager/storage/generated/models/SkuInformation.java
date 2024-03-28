@@ -12,7 +12,8 @@ import java.util.List;
  */
 public interface SkuInformation {
     /**
-     * Gets the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
+     * Gets the name property: The SKU name. Required for account creation; optional for update. Note that in older
+     * versions, SKU name was called accountType.
      * 
      * @return the name value.
      */
@@ -40,21 +41,24 @@ public interface SkuInformation {
     Kind kind();
 
     /**
-     * Gets the locations property: The set of locations that the SKU is available. This will be supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
+     * Gets the locations property: The set of locations that the SKU is available. This will be supported and
+     * registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
      * 
      * @return the locations value.
      */
     List<String> locations();
 
     /**
-     * Gets the capabilities property: The capability information in the specified SKU, including file encryption, network ACLs, change notification, etc.
+     * Gets the capabilities property: The capability information in the specified SKU, including file encryption,
+     * network ACLs, change notification, etc.
      * 
      * @return the capabilities value.
      */
     List<SkuCapability> capabilities();
 
     /**
-     * Gets the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
+     * Gets the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
+     * no restrictions.
      * 
      * @return the restrictions value.
      */

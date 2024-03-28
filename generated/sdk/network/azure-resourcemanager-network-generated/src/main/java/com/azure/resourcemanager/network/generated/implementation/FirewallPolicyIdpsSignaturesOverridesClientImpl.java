@@ -30,7 +30,8 @@ import com.azure.resourcemanager.network.generated.fluent.models.SignaturesOverr
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in FirewallPolicyIdpsSignaturesOverridesClient.
+ * An instance of this class provides access to all the operations defined in
+ * FirewallPolicyIdpsSignaturesOverridesClient.
  */
 public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
     implements FirewallPolicyIdpsSignaturesOverridesClient {
@@ -56,7 +57,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientFirewallPolicyIdpsSignaturesOverrides to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientFirewallPolicyIdpsSignaturesOverrides to be
+     * used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -113,7 +115,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful completion of {@link Mono}.
+     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesInner>> patchWithResponseAsync(String resourceGroupName,
@@ -157,7 +160,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful completion of {@link Mono}.
+     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesInner>> patchWithResponseAsync(String resourceGroupName,
@@ -252,7 +256,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful completion of {@link Mono}.
+     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesInner>> putWithResponseAsync(String resourceGroupName,
@@ -296,7 +301,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful completion of {@link Mono}.
+     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesInner>> putWithResponseAsync(String resourceGroupName,
@@ -390,7 +396,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful completion of {@link Mono}.
+     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesInner>> getWithResponseAsync(String resourceGroupName,
@@ -428,7 +435,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful completion of {@link Mono}.
+     * @return contains all specific policy signatures overrides for the IDPS along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesInner>> getWithResponseAsync(String resourceGroupName,
@@ -512,7 +520,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an object containing an array with a single item along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes an object containing an array with a single item along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesListInner>> listWithResponseAsync(String resourceGroupName,
@@ -550,7 +559,8 @@ public final class FirewallPolicyIdpsSignaturesOverridesClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an object containing an array with a single item along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes an object containing an array with a single item along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SignaturesOverridesListInner>> listWithResponseAsync(String resourceGroupName,

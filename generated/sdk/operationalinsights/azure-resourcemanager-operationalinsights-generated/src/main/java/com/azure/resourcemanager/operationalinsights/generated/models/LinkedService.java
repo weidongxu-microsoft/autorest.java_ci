@@ -41,14 +41,16 @@ public interface LinkedService {
     Map<String, String> tags();
 
     /**
-     * Gets the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+     * Gets the resourceId property: The resource id of the resource that will be linked to the workspace. This should
+     * be used for linking resources which require read access.
      * 
      * @return the resourceId value.
      */
     String resourceId();
 
     /**
-     * Gets the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+     * Gets the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
+     * This should be used for linking resources which require write access.
      * 
      * @return the writeAccessResourceId value.
      */
@@ -107,7 +109,8 @@ public interface LinkedService {
         }
 
         /**
-         * The stage of the LinkedService definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LinkedService definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithResourceId,
             DefinitionStages.WithWriteAccessResourceId, DefinitionStages.WithProvisioningState {
@@ -145,9 +148,11 @@ public interface LinkedService {
          */
         interface WithResourceId {
             /**
-             * Specifies the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+             * Specifies the resourceId property: The resource id of the resource that will be linked to the workspace.
+             * This should be used for linking resources which require read access.
              * 
-             * @param resourceId The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+             * @param resourceId The resource id of the resource that will be linked to the workspace. This should be
+             * used for linking resources which require read access.
              * @return the next definition stage.
              */
             WithCreate withResourceId(String resourceId);
@@ -158,9 +163,11 @@ public interface LinkedService {
          */
         interface WithWriteAccessResourceId {
             /**
-             * Specifies the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+             * Specifies the writeAccessResourceId property: The resource id of the resource that will be linked to the
+             * workspace. This should be used for linking resources which require write access.
              * 
-             * @param writeAccessResourceId The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+             * @param writeAccessResourceId The resource id of the resource that will be linked to the workspace. This
+             * should be used for linking resources which require write access.
              * @return the next definition stage.
              */
             WithCreate withWriteAccessResourceId(String writeAccessResourceId);
@@ -230,9 +237,11 @@ public interface LinkedService {
          */
         interface WithResourceId {
             /**
-             * Specifies the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+             * Specifies the resourceId property: The resource id of the resource that will be linked to the workspace.
+             * This should be used for linking resources which require read access.
              * 
-             * @param resourceId The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+             * @param resourceId The resource id of the resource that will be linked to the workspace. This should be
+             * used for linking resources which require read access.
              * @return the next definition stage.
              */
             Update withResourceId(String resourceId);
@@ -243,9 +252,11 @@ public interface LinkedService {
          */
         interface WithWriteAccessResourceId {
             /**
-             * Specifies the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+             * Specifies the writeAccessResourceId property: The resource id of the resource that will be linked to the
+             * workspace. This should be used for linking resources which require write access.
              * 
-             * @param writeAccessResourceId The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+             * @param writeAccessResourceId The resource id of the resource that will be linked to the workspace. This
+             * should be used for linking resources which require write access.
              * @return the next definition stage.
              */
             Update withWriteAccessResourceId(String writeAccessResourceId);

@@ -16,7 +16,8 @@ public interface ClassicAdministrators {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription as paginated response with {@link PagedIterable}.
+     * @return service administrator, account administrator, and co-administrators for the subscription as paginated
+     * response with {@link PagedIterable}.
      */
     PagedIterable<ClassicAdministrator> list();
 
@@ -27,7 +28,8 @@ public interface ClassicAdministrators {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return service administrator, account administrator, and co-administrators for the subscription as paginated response with {@link PagedIterable}.
+     * @return service administrator, account administrator, and co-administrators for the subscription as paginated
+     * response with {@link PagedIterable}.
      */
     PagedIterable<ClassicAdministrator> list(Context context);
 }

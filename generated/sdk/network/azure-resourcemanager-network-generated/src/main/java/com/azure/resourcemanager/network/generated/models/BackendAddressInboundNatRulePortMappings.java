@@ -19,7 +19,8 @@ public interface BackendAddressInboundNatRulePortMappings {
     List<InboundNatRulePortMapping> inboundNatRulePortMappings();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.BackendAddressInboundNatRulePortMappingsInner object.
      * 
      * @return the inner object.
      */

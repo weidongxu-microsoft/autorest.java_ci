@@ -61,7 +61,8 @@ public interface AppServiceEnvironmentPatchResource {
     VirtualNetworkProfile virtualNetwork();
 
     /**
-     * Gets the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
+     * Gets the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
+     * for the App Service Environment.
      * 
      * @return the internalLoadBalancingMode value.
      */
@@ -110,8 +111,10 @@ public interface AppServiceEnvironmentPatchResource {
     Integer frontEndScaleFactor();
 
     /**
-     * Gets the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer available
-     *  (most likely because NSG blocked the incoming traffic).
+     * Gets the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is
+     * no longer available
+     * (most likely because NSG blocked the incoming traffic).
      * 
      * @return the suspended value.
      */
@@ -181,7 +184,8 @@ public interface AppServiceEnvironmentPatchResource {
     UpgradeAvailability upgradeAvailability();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentPatchResourceInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceEnvironmentPatchResourceInner object.
      * 
      * @return the inner object.
      */

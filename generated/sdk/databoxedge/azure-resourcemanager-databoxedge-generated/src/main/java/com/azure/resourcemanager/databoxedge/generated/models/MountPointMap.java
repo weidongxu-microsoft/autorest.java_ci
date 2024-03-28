@@ -112,8 +112,8 @@ public final class MountPointMap {
      */
     public void validate() {
         if (shareId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property shareId in model MountPointMap"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property shareId in model MountPointMap"));
         }
     }
 

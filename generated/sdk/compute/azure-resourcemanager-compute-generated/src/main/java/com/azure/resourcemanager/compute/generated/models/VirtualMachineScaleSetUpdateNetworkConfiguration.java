@@ -54,7 +54,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Get the innerProperties property: Describes a virtual machine scale set updatable network profile's IP configuration.Use this object for updating network profile's IP Configuration.
+     * Get the innerProperties property: Describes a virtual machine scale set updatable network profile's IP
+     * configuration.Use this object for updating network profile's IP Configuration.
      * 
      * @return the innerProperties value.
      */
@@ -86,7 +87,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
+     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
+     * networking-enabled.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -95,7 +97,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
+     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
+     * networking-enabled.
      * 
      * @param enableAcceleratedNetworking the enableAcceleratedNetworking value to set.
      * @return the VirtualMachineScaleSetUpdateNetworkConfiguration object itself.
@@ -110,7 +113,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
+     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
+     * tracking.
      * 
      * @return the disableTcpStateTracking value.
      */
@@ -119,7 +123,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
+     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
+     * tracking.
      * 
      * @param disableTcpStateTracking the disableTcpStateTracking value to set.
      * @return the VirtualMachineScaleSetUpdateNetworkConfiguration object itself.
@@ -274,7 +279,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
+     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
+     * resource.
      * 
      * @return the auxiliaryMode value.
      */
@@ -283,7 +289,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfiguration {
     }
 
     /**
-     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
+     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
+     * resource.
      * 
      * @param auxiliaryMode the auxiliaryMode value to set.
      * @return the VirtualMachineScaleSetUpdateNetworkConfiguration object itself.

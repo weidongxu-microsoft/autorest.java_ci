@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed, Succeeded or Incomplete.
+ * The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed, Succeeded or
+ * Incomplete.
  */
 public final class SharedPrivateLinkResourceProvisioningState
     extends ExpandableStringEnum<SharedPrivateLinkResourceProvisioningState> {

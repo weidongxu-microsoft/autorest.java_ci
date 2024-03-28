@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Describes the transcription tracks in the output of a live event, generated using speech-to-text transcription. This property is reserved for future use, any value set on this property will be ignored.
+ * Describes the transcription tracks in the output of a live event, generated using speech-to-text transcription. This
+ * property is reserved for future use, any value set on this property will be ignored.
  */
 @Fluent
 public final class LiveEventTranscription {
@@ -38,7 +39,10 @@ public final class LiveEventTranscription {
     }
 
     /**
-     * Get the language property: Specifies the language (locale) to be used for speech-to-text transcription – it should match the spoken language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the list of supported languages.
+     * Get the language property: Specifies the language (locale) to be used for speech-to-text transcription – it
+     * should match the spoken language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the
+     * list of supported languages.
      * 
      * @return the language value.
      */
@@ -47,7 +51,10 @@ public final class LiveEventTranscription {
     }
 
     /**
-     * Set the language property: Specifies the language (locale) to be used for speech-to-text transcription – it should match the spoken language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the list of supported languages.
+     * Set the language property: Specifies the language (locale) to be used for speech-to-text transcription – it
+     * should match the spoken language in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the
+     * list of supported languages.
      * 
      * @param language the language value to set.
      * @return the LiveEventTranscription object itself.
@@ -58,7 +65,9 @@ public final class LiveEventTranscription {
     }
 
     /**
-     * Get the inputTrackSelection property: Provides a mechanism to select the audio track in the input live feed, to which speech-to-text transcription is applied. This property is reserved for future use, any value set on this property will be ignored.
+     * Get the inputTrackSelection property: Provides a mechanism to select the audio track in the input live feed, to
+     * which speech-to-text transcription is applied. This property is reserved for future use, any value set on this
+     * property will be ignored.
      * 
      * @return the inputTrackSelection value.
      */
@@ -67,7 +76,9 @@ public final class LiveEventTranscription {
     }
 
     /**
-     * Set the inputTrackSelection property: Provides a mechanism to select the audio track in the input live feed, to which speech-to-text transcription is applied. This property is reserved for future use, any value set on this property will be ignored.
+     * Set the inputTrackSelection property: Provides a mechanism to select the audio track in the input live feed, to
+     * which speech-to-text transcription is applied. This property is reserved for future use, any value set on this
+     * property will be ignored.
      * 
      * @param inputTrackSelection the inputTrackSelection value to set.
      * @return the LiveEventTranscription object itself.
@@ -78,7 +89,9 @@ public final class LiveEventTranscription {
     }
 
     /**
-     * Get the outputTranscriptionTrack property: Describes a transcription track in the output of a live event, generated using speech-to-text transcription. This property is reserved for future use, any value set on this property will be ignored.
+     * Get the outputTranscriptionTrack property: Describes a transcription track in the output of a live event,
+     * generated using speech-to-text transcription. This property is reserved for future use, any value set on this
+     * property will be ignored.
      * 
      * @return the outputTranscriptionTrack value.
      */
@@ -87,7 +100,9 @@ public final class LiveEventTranscription {
     }
 
     /**
-     * Set the outputTranscriptionTrack property: Describes a transcription track in the output of a live event, generated using speech-to-text transcription. This property is reserved for future use, any value set on this property will be ignored.
+     * Set the outputTranscriptionTrack property: Describes a transcription track in the output of a live event,
+     * generated using speech-to-text transcription. This property is reserved for future use, any value set on this
+     * property will be ignored.
      * 
      * @param outputTranscriptionTrack the outputTranscriptionTrack value to set.
      * @return the LiveEventTranscription object itself.

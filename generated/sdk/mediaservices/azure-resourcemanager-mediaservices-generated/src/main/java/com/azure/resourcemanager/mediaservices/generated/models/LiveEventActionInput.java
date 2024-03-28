@@ -25,7 +25,8 @@ public final class LiveEventActionInput {
     }
 
     /**
-     * Get the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
+     * Get the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live
+     * event is being stopped. Deleting live outputs do not delete the underlying assets.
      * 
      * @return the removeOutputsOnStop value.
      */
@@ -34,7 +35,8 @@ public final class LiveEventActionInput {
     }
 
     /**
-     * Set the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live event is being stopped. Deleting live outputs do not delete the underlying assets.
+     * Set the removeOutputsOnStop property: The flag indicates whether live outputs are automatically deleted when live
+     * event is being stopped. Deleting live outputs do not delete the underlying assets.
      * 
      * @param removeOutputsOnStop the removeOutputsOnStop value to set.
      * @return the LiveEventActionInput object itself.

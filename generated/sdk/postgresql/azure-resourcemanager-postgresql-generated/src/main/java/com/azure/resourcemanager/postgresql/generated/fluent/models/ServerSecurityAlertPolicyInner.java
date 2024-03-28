@@ -60,7 +60,8 @@ public final class ServerSecurityAlertPolicyInner extends ProxyResource {
     }
 
     /**
-     * Get the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+     * Get the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
+     * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
      * 
      * @return the disabledAlerts value.
      */
@@ -69,7 +70,8 @@ public final class ServerSecurityAlertPolicyInner extends ProxyResource {
     }
 
     /**
-     * Set the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
+     * Set the disabledAlerts property: Specifies an array of alerts that are disabled. Allowed values are:
+     * Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly.
      * 
      * @param disabledAlerts the disabledAlerts value to set.
      * @return the ServerSecurityAlertPolicyInner object itself.
@@ -129,7 +131,8 @@ public final class ServerSecurityAlertPolicyInner extends ProxyResource {
     }
 
     /**
-     * Get the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+     * Get the storageEndpoint property: Specifies the blob storage endpoint (e.g.
+     * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
      * 
      * @return the storageEndpoint value.
      */
@@ -138,7 +141,8 @@ public final class ServerSecurityAlertPolicyInner extends ProxyResource {
     }
 
     /**
-     * Set the storageEndpoint property: Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+     * Set the storageEndpoint property: Specifies the blob storage endpoint (e.g.
+     * https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
      * 
      * @param storageEndpoint the storageEndpoint value to set.
      * @return the ServerSecurityAlertPolicyInner object itself.
@@ -152,7 +156,8 @@ public final class ServerSecurityAlertPolicyInner extends ProxyResource {
     }
 
     /**
-     * Get the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account.
+     * Get the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
+     * account.
      * 
      * @return the storageAccountAccessKey value.
      */
@@ -161,7 +166,8 @@ public final class ServerSecurityAlertPolicyInner extends ProxyResource {
     }
 
     /**
-     * Set the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage account.
+     * Set the storageAccountAccessKey property: Specifies the identifier key of the Threat Detection audit storage
+     * account.
      * 
      * @param storageAccountAccessKey the storageAccountAccessKey value to set.
      * @return the ServerSecurityAlertPolicyInner object itself.

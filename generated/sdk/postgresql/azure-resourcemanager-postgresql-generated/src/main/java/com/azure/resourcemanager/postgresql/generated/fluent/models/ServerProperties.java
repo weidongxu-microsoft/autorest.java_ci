@@ -119,7 +119,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+     * Get the administratorLogin property: The administrator's login name of a server. Can only be specified when the
+     * server is being created (and is required for creation).
      * 
      * @return the administratorLogin value.
      */
@@ -128,7 +129,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+     * Set the administratorLogin property: The administrator's login name of a server. Can only be specified when the
+     * server is being created (and is required for creation).
      * 
      * @param administratorLogin the administratorLogin value to set.
      * @return the ServerProperties object itself.
@@ -199,7 +201,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the byokEnforcement property: Status showing whether the server data encryption is enabled with customer-managed keys.
+     * Get the byokEnforcement property: Status showing whether the server data encryption is enabled with
+     * customer-managed keys.
      * 
      * @return the byokEnforcement value.
      */
@@ -368,7 +371,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -377,7 +381,8 @@ public final class ServerProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ServerProperties object itself.

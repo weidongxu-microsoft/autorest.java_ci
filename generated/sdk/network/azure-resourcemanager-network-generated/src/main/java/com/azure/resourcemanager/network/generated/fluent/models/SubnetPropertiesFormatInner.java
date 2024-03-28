@@ -299,7 +299,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the ipConfigurations property: An array of references to the network interface IP configurations using subnet.
+     * Get the ipConfigurations property: An array of references to the network interface IP configurations using
+     * subnet.
      * 
      * @return the ipConfigurations value.
      */
@@ -375,7 +376,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the purpose property: A read-only string identifying the intention of use for this subnet based on delegations and other user-defined properties.
+     * Get the purpose property: A read-only string identifying the intention of use for this subnet based on
+     * delegations and other user-defined properties.
      * 
      * @return the purpose value.
      */
@@ -393,7 +395,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in the subnet.
+     * Get the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in
+     * the subnet.
      * 
      * @return the privateEndpointNetworkPolicies value.
      */
@@ -402,7 +405,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Set the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in the subnet.
+     * Set the privateEndpointNetworkPolicies property: Enable or Disable apply network policies on private end point in
+     * the subnet.
      * 
      * @param privateEndpointNetworkPolicies the privateEndpointNetworkPolicies value to set.
      * @return the SubnetPropertiesFormatInner object itself.
@@ -414,7 +418,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link service in the subnet.
+     * Get the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link
+     * service in the subnet.
      * 
      * @return the privateLinkServiceNetworkPolicies value.
      */
@@ -423,7 +428,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Set the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link service in the subnet.
+     * Set the privateLinkServiceNetworkPolicies property: Enable or Disable apply network policies on private link
+     * service in the subnet.
      * 
      * @param privateLinkServiceNetworkPolicies the privateLinkServiceNetworkPolicies value to set.
      * @return the SubnetPropertiesFormatInner object itself.
@@ -435,7 +441,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network resource.
+     * Get the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
+     * resource.
      * 
      * @return the applicationGatewayIpConfigurations value.
      */
@@ -444,7 +451,8 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Set the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network resource.
+     * Set the applicationGatewayIpConfigurations property: Application gateway IP configurations of virtual network
+     * resource.
      * 
      * @param applicationGatewayIpConfigurations the applicationGatewayIpConfigurations value to set.
      * @return the SubnetPropertiesFormatInner object itself.
@@ -456,7 +464,9 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Get the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
+     * Get the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
+     * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
+     * existing subnet.
      * 
      * @return the defaultOutboundAccess value.
      */
@@ -465,7 +475,9 @@ public final class SubnetPropertiesFormatInner {
     }
 
     /**
-     * Set the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
+     * Set the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
+     * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
+     * existing subnet.
      * 
      * @param defaultOutboundAccess the defaultOutboundAccess value to set.
      * @return the SubnetPropertiesFormatInner object itself.

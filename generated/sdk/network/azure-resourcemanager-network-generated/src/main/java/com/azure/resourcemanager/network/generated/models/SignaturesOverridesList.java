@@ -12,7 +12,8 @@ import java.util.List;
  */
 public interface SignaturesOverridesList {
     /**
-     * Gets the value property: Describes a list consisting exactly one item describing the policy's signature override status.
+     * Gets the value property: Describes a list consisting exactly one item describing the policy's signature override
+     * status.
      * 
      * @return the value value.
      */

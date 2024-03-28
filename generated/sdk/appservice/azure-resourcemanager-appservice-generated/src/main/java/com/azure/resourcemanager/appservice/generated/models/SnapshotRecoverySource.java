@@ -53,9 +53,11 @@ public final class SnapshotRecoverySource {
     }
 
     /**
-     * Get the id property: ARM resource ID of the source app. 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
+     * Get the id property: ARM resource ID of the source app.
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
+     * for other slots.
      * 
      * @return the id value.
      */
@@ -64,9 +66,11 @@ public final class SnapshotRecoverySource {
     }
 
     /**
-     * Set the id property: ARM resource ID of the source app. 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
+     * Set the id property: ARM resource ID of the source app.
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName}
+     * for other slots.
      * 
      * @param id the id value to set.
      * @return the SnapshotRecoverySource object itself.

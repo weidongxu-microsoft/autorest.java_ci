@@ -37,7 +37,8 @@ public final class CustomOpenIdConnectProvider {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the custom Open ID provider provider should not be enabled; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the custom Open ID provider provider should not be
+     * enabled; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -46,7 +47,8 @@ public final class CustomOpenIdConnectProvider {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the custom Open ID provider provider should not be enabled; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the custom Open ID provider provider should not be
+     * enabled; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the CustomOpenIdConnectProvider object itself.
@@ -57,7 +59,8 @@ public final class CustomOpenIdConnectProvider {
     }
 
     /**
-     * Get the registration property: The configuration settings of the app registration for the custom Open ID Connect provider.
+     * Get the registration property: The configuration settings of the app registration for the custom Open ID Connect
+     * provider.
      * 
      * @return the registration value.
      */
@@ -66,7 +69,8 @@ public final class CustomOpenIdConnectProvider {
     }
 
     /**
-     * Set the registration property: The configuration settings of the app registration for the custom Open ID Connect provider.
+     * Set the registration property: The configuration settings of the app registration for the custom Open ID Connect
+     * provider.
      * 
      * @param registration the registration value to set.
      * @return the CustomOpenIdConnectProvider object itself.

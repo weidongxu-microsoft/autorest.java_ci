@@ -18,7 +18,8 @@ public interface PrivateEndpointConnectionProperties {
     PrivateEndpoint privateEndpoint();
 
     /**
-     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
+     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
+     * connection between service consumer and provider.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -46,7 +47,8 @@ public interface PrivateEndpointConnectionProperties {
     String privateEndpointLocation();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionPropertiesInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PrivateEndpointConnectionPropertiesInner
+     * object.
      * 
      * @return the inner object.
      */

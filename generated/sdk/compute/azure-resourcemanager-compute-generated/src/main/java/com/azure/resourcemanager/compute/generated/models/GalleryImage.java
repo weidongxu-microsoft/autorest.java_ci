@@ -51,7 +51,8 @@ public interface GalleryImage {
     Map<String, String> tags();
 
     /**
-     * Gets the description property: The description of this gallery image definition resource. This property is updatable.
+     * Gets the description property: The description of this gallery image definition resource. This property is
+     * updatable.
      * 
      * @return the description value.
      */
@@ -79,28 +80,32 @@ public interface GalleryImage {
     String releaseNoteUri();
 
     /**
-     * Gets the osType property: This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+     * Gets the osType property: This property allows you to specify the type of the OS that is included in the disk
+     * when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
      * 
      * @return the osType value.
      */
     OperatingSystemTypes osType();
 
     /**
-     * Gets the osState property: This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
+     * Gets the osState property: This property allows the user to specify whether the virtual machines created under
+     * this image are 'Generalized' or 'Specialized'.
      * 
      * @return the osState value.
      */
     OperatingSystemStateTypes osState();
 
     /**
-     * Gets the hyperVGeneration property: The hypervisor generation of the Virtual Machine. Applicable to OS disks only.
+     * Gets the hyperVGeneration property: The hypervisor generation of the Virtual Machine. Applicable to OS disks
+     * only.
      * 
      * @return the hyperVGeneration value.
      */
     HyperVGeneration hyperVGeneration();
 
     /**
-     * Gets the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
+     * Gets the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used
+     * for decommissioning purposes. This property is updatable.
      * 
      * @return the endOfLifeDate value.
      */
@@ -114,7 +119,8 @@ public interface GalleryImage {
     GalleryImageIdentifier identifier();
 
     /**
-     * Gets the recommended property: The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
+     * Gets the recommended property: The properties describe the recommended machine configuration for this Image
+     * Definition. These properties are updatable.
      * 
      * @return the recommended value.
      */
@@ -128,7 +134,8 @@ public interface GalleryImage {
     Disallowed disallowed();
 
     /**
-     * Gets the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace images.
+     * Gets the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace
+     * images.
      * 
      * @return the purchasePlan value.
      */
@@ -238,7 +245,8 @@ public interface GalleryImage {
         }
 
         /**
-         * The stage of the GalleryImage definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the GalleryImage definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithDescription, DefinitionStages.WithEula,
@@ -280,7 +288,8 @@ public interface GalleryImage {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this gallery image definition resource. This property is updatable..
+             * Specifies the description property: The description of this gallery image definition resource. This
+             * property is updatable..
              * 
              * @param description The description of this gallery image definition resource. This property is updatable.
              * @return the next definition stage.
@@ -332,9 +341,11 @@ public interface GalleryImage {
          */
         interface WithOsType {
             /**
-             * Specifies the osType property: This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+             * Specifies the osType property: This property allows you to specify the type of the OS that is included in
+             * the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
              * 
-             * @param osType This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+             * @param osType This property allows you to specify the type of the OS that is included in the disk when
+             * creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
              * @return the next definition stage.
              */
             WithCreate withOsType(OperatingSystemTypes osType);
@@ -345,9 +356,11 @@ public interface GalleryImage {
          */
         interface WithOsState {
             /**
-             * Specifies the osState property: This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'..
+             * Specifies the osState property: This property allows the user to specify whether the virtual machines
+             * created under this image are 'Generalized' or 'Specialized'..
              * 
-             * @param osState This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
+             * @param osState This property allows the user to specify whether the virtual machines created under this
+             * image are 'Generalized' or 'Specialized'.
              * @return the next definition stage.
              */
             WithCreate withOsState(OperatingSystemStateTypes osState);
@@ -358,7 +371,8 @@ public interface GalleryImage {
          */
         interface WithHyperVGeneration {
             /**
-             * Specifies the hyperVGeneration property: The hypervisor generation of the Virtual Machine. Applicable to OS disks only..
+             * Specifies the hyperVGeneration property: The hypervisor generation of the Virtual Machine. Applicable to
+             * OS disks only..
              * 
              * @param hyperVGeneration The hypervisor generation of the Virtual Machine. Applicable to OS disks only.
              * @return the next definition stage.
@@ -371,9 +385,11 @@ public interface GalleryImage {
          */
         interface WithEndOfLifeDate {
             /**
-             * Specifies the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable..
+             * Specifies the endOfLifeDate property: The end of life date of the gallery image definition. This property
+             * can be used for decommissioning purposes. This property is updatable..
              * 
-             * @param endOfLifeDate The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
+             * @param endOfLifeDate The end of life date of the gallery image definition. This property can be used for
+             * decommissioning purposes. This property is updatable.
              * @return the next definition stage.
              */
             WithCreate withEndOfLifeDate(OffsetDateTime endOfLifeDate);
@@ -397,9 +413,11 @@ public interface GalleryImage {
          */
         interface WithRecommended {
             /**
-             * Specifies the recommended property: The properties describe the recommended machine configuration for this Image Definition. These properties are updatable..
+             * Specifies the recommended property: The properties describe the recommended machine configuration for
+             * this Image Definition. These properties are updatable..
              * 
-             * @param recommended The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
+             * @param recommended The properties describe the recommended machine configuration for this Image
+             * Definition. These properties are updatable.
              * @return the next definition stage.
              */
             WithCreate withRecommended(RecommendedMachineConfiguration recommended);
@@ -423,9 +441,11 @@ public interface GalleryImage {
          */
         interface WithPurchasePlan {
             /**
-             * Specifies the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace images..
+             * Specifies the purchasePlan property: Describes the gallery image definition purchase plan. This is used
+             * by marketplace images..
              * 
-             * @param purchasePlan Describes the gallery image definition purchase plan. This is used by marketplace images.
+             * @param purchasePlan Describes the gallery image definition purchase plan. This is used by marketplace
+             * images.
              * @return the next definition stage.
              */
             WithCreate withPurchasePlan(ImagePurchasePlan purchasePlan);
@@ -511,7 +531,8 @@ public interface GalleryImage {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: The description of this gallery image definition resource. This property is updatable..
+             * Specifies the description property: The description of this gallery image definition resource. This
+             * property is updatable..
              * 
              * @param description The description of this gallery image definition resource. This property is updatable.
              * @return the next definition stage.
@@ -563,9 +584,11 @@ public interface GalleryImage {
          */
         interface WithOsType {
             /**
-             * Specifies the osType property: This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+             * Specifies the osType property: This property allows you to specify the type of the OS that is included in
+             * the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
              * 
-             * @param osType This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
+             * @param osType This property allows you to specify the type of the OS that is included in the disk when
+             * creating a VM from a managed image. Possible values are: **Windows,** **Linux.**.
              * @return the next definition stage.
              */
             Update withOsType(OperatingSystemTypes osType);
@@ -576,9 +599,11 @@ public interface GalleryImage {
          */
         interface WithOsState {
             /**
-             * Specifies the osState property: This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'..
+             * Specifies the osState property: This property allows the user to specify whether the virtual machines
+             * created under this image are 'Generalized' or 'Specialized'..
              * 
-             * @param osState This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
+             * @param osState This property allows the user to specify whether the virtual machines created under this
+             * image are 'Generalized' or 'Specialized'.
              * @return the next definition stage.
              */
             Update withOsState(OperatingSystemStateTypes osState);
@@ -589,7 +614,8 @@ public interface GalleryImage {
          */
         interface WithHyperVGeneration {
             /**
-             * Specifies the hyperVGeneration property: The hypervisor generation of the Virtual Machine. Applicable to OS disks only..
+             * Specifies the hyperVGeneration property: The hypervisor generation of the Virtual Machine. Applicable to
+             * OS disks only..
              * 
              * @param hyperVGeneration The hypervisor generation of the Virtual Machine. Applicable to OS disks only.
              * @return the next definition stage.
@@ -602,9 +628,11 @@ public interface GalleryImage {
          */
         interface WithEndOfLifeDate {
             /**
-             * Specifies the endOfLifeDate property: The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable..
+             * Specifies the endOfLifeDate property: The end of life date of the gallery image definition. This property
+             * can be used for decommissioning purposes. This property is updatable..
              * 
-             * @param endOfLifeDate The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
+             * @param endOfLifeDate The end of life date of the gallery image definition. This property can be used for
+             * decommissioning purposes. This property is updatable.
              * @return the next definition stage.
              */
             Update withEndOfLifeDate(OffsetDateTime endOfLifeDate);
@@ -628,9 +656,11 @@ public interface GalleryImage {
          */
         interface WithRecommended {
             /**
-             * Specifies the recommended property: The properties describe the recommended machine configuration for this Image Definition. These properties are updatable..
+             * Specifies the recommended property: The properties describe the recommended machine configuration for
+             * this Image Definition. These properties are updatable..
              * 
-             * @param recommended The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
+             * @param recommended The properties describe the recommended machine configuration for this Image
+             * Definition. These properties are updatable.
              * @return the next definition stage.
              */
             Update withRecommended(RecommendedMachineConfiguration recommended);
@@ -654,9 +684,11 @@ public interface GalleryImage {
          */
         interface WithPurchasePlan {
             /**
-             * Specifies the purchasePlan property: Describes the gallery image definition purchase plan. This is used by marketplace images..
+             * Specifies the purchasePlan property: Describes the gallery image definition purchase plan. This is used
+             * by marketplace images..
              * 
-             * @param purchasePlan Describes the gallery image definition purchase plan. This is used by marketplace images.
+             * @param purchasePlan Describes the gallery image definition purchase plan. This is used by marketplace
+             * images.
              * @return the next definition stage.
              */
             Update withPurchasePlan(ImagePurchasePlan purchasePlan);

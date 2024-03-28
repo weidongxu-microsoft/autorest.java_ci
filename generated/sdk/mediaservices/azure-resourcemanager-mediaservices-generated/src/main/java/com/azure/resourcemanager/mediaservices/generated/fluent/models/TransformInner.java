@@ -13,7 +13,9 @@ import java.time.OffsetDateTime;
 import java.util.List;
 
 /**
- * A Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights. After the Transform is created, it can be applied to input media by creating Jobs.
+ * A Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by
+ * transcoding or by extracting insights. After the Transform is created, it can be applied to input media by creating
+ * Jobs.
  */
 @Fluent
 public final class TransformInner extends ProxyResource {
@@ -86,7 +88,8 @@ public final class TransformInner extends ProxyResource {
     }
 
     /**
-     * Get the lastModified property: The UTC date and time when the Transform was last updated, in 'YYYY-MM-DDThh:mm:ssZ' format.
+     * Get the lastModified property: The UTC date and time when the Transform was last updated, in
+     * 'YYYY-MM-DDThh:mm:ssZ' format.
      * 
      * @return the lastModified value.
      */

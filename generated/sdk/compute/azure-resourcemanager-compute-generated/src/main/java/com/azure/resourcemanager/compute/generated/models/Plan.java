@@ -8,7 +8,10 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies information about the marketplace image used to create the virtual machine. This element is only used for marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic use.  In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy programmatically, Get Started -&gt;**. Enter any required information and then click **Save**.
+ * Specifies information about the marketplace image used to create the virtual machine. This element is only used for
+ * marketplace images. Before you can use a marketplace image from an API, you must enable the image for programmatic
+ * use. In the Azure portal, find the marketplace image that you want to use and then click **Want to deploy
+ * programmatically, Get Started -&gt;**. Enter any required information and then click **Save**.
  */
 @Fluent
 public final class Plan {
@@ -83,7 +86,8 @@ public final class Plan {
     }
 
     /**
-     * Get the product property: Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
+     * Get the product property: Specifies the product of the image from the marketplace. This is the same value as
+     * Offer under the imageReference element.
      * 
      * @return the product value.
      */
@@ -92,7 +96,8 @@ public final class Plan {
     }
 
     /**
-     * Set the product property: Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
+     * Set the product property: Specifies the product of the image from the marketplace. This is the same value as
+     * Offer under the imageReference element.
      * 
      * @param product the product value to set.
      * @return the Plan object itself.

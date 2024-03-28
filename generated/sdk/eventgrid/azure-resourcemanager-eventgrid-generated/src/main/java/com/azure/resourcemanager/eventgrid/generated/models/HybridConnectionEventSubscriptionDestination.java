@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.HybridConnectionEventSubscriptionDestinationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class HybridConnectionEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
+     * Type of the endpoint for the event subscription destination.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "endpointType", required = true)
+    private EndpointType endpointType = EndpointType.HYBRID_CONNECTION;
+
+    /*
      * Hybrid connection Properties of the event subscription destination.
      */
     @JsonProperty(value = "properties")
@@ -32,7 +40,16 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
      * Creates an instance of HybridConnectionEventSubscriptionDestination class.
      */
     public HybridConnectionEventSubscriptionDestination() {
-        withEndpointType(EndpointType.HYBRID_CONNECTION);
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the event subscription destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public EndpointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -45,7 +62,8 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
     }
 
     /**
-     * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event subscription.
+     * Get the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
+     * subscription.
      * 
      * @return the resourceId value.
      */
@@ -54,7 +72,8 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
     }
 
     /**
-     * Set the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event subscription.
+     * Set the resourceId property: The Azure Resource ID of an hybrid connection that is the destination of an event
+     * subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the HybridConnectionEventSubscriptionDestination object itself.

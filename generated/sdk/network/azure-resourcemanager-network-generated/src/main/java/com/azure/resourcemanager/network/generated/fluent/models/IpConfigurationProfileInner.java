@@ -101,7 +101,8 @@ public final class IpConfigurationProfileInner extends SubResource {
     }
 
     /**
-     * Get the subnet property: The reference to the subnet resource to create a container network interface ip configuration.
+     * Get the subnet property: The reference to the subnet resource to create a container network interface ip
+     * configuration.
      * 
      * @return the subnet value.
      */
@@ -110,7 +111,8 @@ public final class IpConfigurationProfileInner extends SubResource {
     }
 
     /**
-     * Set the subnet property: The reference to the subnet resource to create a container network interface ip configuration.
+     * Set the subnet property: The reference to the subnet resource to create a container network interface ip
+     * configuration.
      * 
      * @param subnet the subnet value to set.
      * @return the IpConfigurationProfileInner object itself.

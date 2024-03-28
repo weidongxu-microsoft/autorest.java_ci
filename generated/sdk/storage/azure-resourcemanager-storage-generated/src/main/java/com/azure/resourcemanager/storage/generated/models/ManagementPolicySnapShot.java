@@ -109,7 +109,8 @@ public final class ManagementPolicySnapShot {
     }
 
     /**
-     * Get the tierToHot property: The function to tier blobs to hot storage. This action can only be used with Premium Block Blob Storage Accounts.
+     * Get the tierToHot property: The function to tier blobs to hot storage. This action can only be used with Premium
+     * Block Blob Storage Accounts.
      * 
      * @return the tierToHot value.
      */
@@ -118,7 +119,8 @@ public final class ManagementPolicySnapShot {
     }
 
     /**
-     * Set the tierToHot property: The function to tier blobs to hot storage. This action can only be used with Premium Block Blob Storage Accounts.
+     * Set the tierToHot property: The function to tier blobs to hot storage. This action can only be used with Premium
+     * Block Blob Storage Accounts.
      * 
      * @param tierToHot the tierToHot value to set.
      * @return the ManagementPolicySnapShot object itself.

@@ -69,7 +69,8 @@ public final class VirtualHubBgpConnectionsClientImpl implements VirtualHubBgpCo
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualHubBgpConnections to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualHubBgpConnections to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -899,7 +900,8 @@ public final class VirtualHubBgpConnectionsClientImpl implements VirtualHubBgpCo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listLearnedRoutesWithResponseAsync(String resourceGroupName,
@@ -940,7 +942,8 @@ public final class VirtualHubBgpConnectionsClientImpl implements VirtualHubBgpCo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listLearnedRoutesWithResponseAsync(String resourceGroupName,
@@ -1132,7 +1135,8 @@ public final class VirtualHubBgpConnectionsClientImpl implements VirtualHubBgpCo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listAdvertisedRoutesWithResponseAsync(String resourceGroupName,
@@ -1173,7 +1177,8 @@ public final class VirtualHubBgpConnectionsClientImpl implements VirtualHubBgpCo
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful completion of {@link Mono}.
+     * @return map from virtual router instance to list of peer routes along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> listAdvertisedRoutesWithResponseAsync(String resourceGroupName,

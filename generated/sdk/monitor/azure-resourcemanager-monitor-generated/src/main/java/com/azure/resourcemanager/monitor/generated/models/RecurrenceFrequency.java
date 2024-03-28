@@ -8,7 +8,9 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
+ * the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each
+ * week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the
+ * week. The frequency property specifies that the schedule is repeated weekly.
  */
 public enum RecurrenceFrequency {
     /**

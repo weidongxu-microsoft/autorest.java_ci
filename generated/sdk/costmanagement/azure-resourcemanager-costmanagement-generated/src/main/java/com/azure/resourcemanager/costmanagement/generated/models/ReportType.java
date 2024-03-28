@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
+ * The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast
+ * represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
  */
 public final class ReportType extends ExpandableStringEnum<ReportType> {
     /**

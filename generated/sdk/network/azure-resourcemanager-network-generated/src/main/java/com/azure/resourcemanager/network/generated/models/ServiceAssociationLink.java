@@ -55,7 +55,8 @@ public final class ServiceAssociationLink extends SubResource {
     }
 
     /**
-     * Get the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: Name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -64,7 +65,8 @@ public final class ServiceAssociationLink extends SubResource {
     }
 
     /**
-     * Set the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: Name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the ServiceAssociationLink object itself.

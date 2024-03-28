@@ -106,21 +106,24 @@ public interface ManagementGroupAggregatedCostResult {
     List<ManagementGroupAggregatedCostResult> children();
 
     /**
-     * Gets the includedSubscriptions property: List of subscription Guids included in the calculation of aggregated cost.
+     * Gets the includedSubscriptions property: List of subscription Guids included in the calculation of aggregated
+     * cost.
      * 
      * @return the includedSubscriptions value.
      */
     List<String> includedSubscriptions();
 
     /**
-     * Gets the excludedSubscriptions property: List of subscription Guids excluded from the calculation of aggregated cost.
+     * Gets the excludedSubscriptions property: List of subscription Guids excluded from the calculation of aggregated
+     * cost.
      * 
      * @return the excludedSubscriptions value.
      */
     List<String> excludedSubscriptions();
 
     /**
-     * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.ManagementGroupAggregatedCostResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.consumption.generated.fluent.models.ManagementGroupAggregatedCostResultInner object.
      * 
      * @return the inner object.
      */

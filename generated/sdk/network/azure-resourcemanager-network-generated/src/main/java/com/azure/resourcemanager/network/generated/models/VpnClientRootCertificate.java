@@ -49,7 +49,8 @@ public final class VpnClientRootCertificate extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -58,7 +59,8 @@ public final class VpnClientRootCertificate extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the VpnClientRootCertificate object itself.
@@ -125,8 +127,9 @@ public final class VpnClientRootCertificate extends SubResource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model VpnClientRootCertificate"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model VpnClientRootCertificate"));
         } else {
             innerProperties().validate();
         }

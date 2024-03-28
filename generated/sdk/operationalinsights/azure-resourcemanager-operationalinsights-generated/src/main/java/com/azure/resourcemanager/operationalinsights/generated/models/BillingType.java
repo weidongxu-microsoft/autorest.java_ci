@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Configures whether billing will be only on the cluster or each workspace will be billed by its proportional use. This does not change the overall billing, only how it will be distributed. Default value is 'Cluster'.
+ * Configures whether billing will be only on the cluster or each workspace will be billed by its proportional use. This
+ * does not change the overall billing, only how it will be distributed. Default value is 'Cluster'.
  */
 public final class BillingType extends ExpandableStringEnum<BillingType> {
     /**

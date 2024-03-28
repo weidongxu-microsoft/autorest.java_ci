@@ -157,7 +157,8 @@ public final class MetricValue {
     }
 
     /**
-     * Get the count property: The number of samples in the time range. Can be used to determine the number of values that contributed to the average value.
+     * Get the count property: The number of samples in the time range. Can be used to determine the number of values
+     * that contributed to the average value.
      * 
      * @return the count value.
      */
@@ -166,7 +167,8 @@ public final class MetricValue {
     }
 
     /**
-     * Set the count property: The number of samples in the time range. Can be used to determine the number of values that contributed to the average value.
+     * Set the count property: The number of samples in the time range. Can be used to determine the number of values
+     * that contributed to the average value.
      * 
      * @param count the count value to set.
      * @return the MetricValue object itself.
@@ -183,8 +185,8 @@ public final class MetricValue {
      */
     public void validate() {
         if (timestamp() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timestamp in model MetricValue"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property timestamp in model MetricValue"));
         }
     }
 

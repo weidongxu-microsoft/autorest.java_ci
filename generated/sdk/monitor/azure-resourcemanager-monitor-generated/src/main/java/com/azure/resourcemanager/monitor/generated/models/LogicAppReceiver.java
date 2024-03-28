@@ -44,7 +44,8 @@ public final class LogicAppReceiver {
     }
 
     /**
-     * Get the name property: The name of the logic app receiver. Names must be unique across all receivers within an action group.
+     * Get the name property: The name of the logic app receiver. Names must be unique across all receivers within an
+     * action group.
      * 
      * @return the name value.
      */
@@ -53,7 +54,8 @@ public final class LogicAppReceiver {
     }
 
     /**
-     * Set the name property: The name of the logic app receiver. Names must be unique across all receivers within an action group.
+     * Set the name property: The name of the logic app receiver. Names must be unique across all receivers within an
+     * action group.
      * 
      * @param name the name value to set.
      * @return the LogicAppReceiver object itself.
@@ -130,16 +132,16 @@ public final class LogicAppReceiver {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model LogicAppReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model LogicAppReceiver"));
         }
         if (resourceId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceId in model LogicAppReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property resourceId in model LogicAppReceiver"));
         }
         if (callbackUrl() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property callbackUrl in model LogicAppReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property callbackUrl in model LogicAppReceiver"));
         }
     }
 

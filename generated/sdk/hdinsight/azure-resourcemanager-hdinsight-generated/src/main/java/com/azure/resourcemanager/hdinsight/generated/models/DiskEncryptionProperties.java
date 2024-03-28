@@ -55,7 +55,8 @@ public final class DiskEncryptionProperties {
     }
 
     /**
-     * Get the vaultUri property: Base key vault URI where the customers key is located eg. https://myvault.vault.azure.net.
+     * Get the vaultUri property: Base key vault URI where the customers key is located eg.
+     * https://myvault.vault.azure.net.
      * 
      * @return the vaultUri value.
      */
@@ -64,7 +65,8 @@ public final class DiskEncryptionProperties {
     }
 
     /**
-     * Set the vaultUri property: Base key vault URI where the customers key is located eg. https://myvault.vault.azure.net.
+     * Set the vaultUri property: Base key vault URI where the customers key is located eg.
+     * https://myvault.vault.azure.net.
      * 
      * @param vaultUri the vaultUri value to set.
      * @return the DiskEncryptionProperties object itself.

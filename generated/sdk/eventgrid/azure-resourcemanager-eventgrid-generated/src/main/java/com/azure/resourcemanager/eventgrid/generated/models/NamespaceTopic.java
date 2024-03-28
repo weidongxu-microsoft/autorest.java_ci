@@ -56,14 +56,16 @@ public interface NamespaceTopic {
     PublisherType publisherType();
 
     /**
-     * Gets the inputSchema property: This determines the format that is expected for incoming events published to the topic.
+     * Gets the inputSchema property: This determines the format that is expected for incoming events published to the
+     * topic.
      * 
      * @return the inputSchema value.
      */
     EventInputSchema inputSchema();
 
     /**
-     * Gets the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
+     * Gets the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property
+     * default value is 1 day.
      * Min event retention duration value is 1 day and max event retention duration value is 1 day.
      * 
      * @return the eventRetentionInDays value.
@@ -116,7 +118,8 @@ public interface NamespaceTopic {
         }
 
         /**
-         * The stage of the NamespaceTopic definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NamespaceTopic definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithPublisherType, DefinitionStages.WithInputSchema,
             DefinitionStages.WithEventRetentionInDays {
@@ -154,9 +157,11 @@ public interface NamespaceTopic {
          */
         interface WithInputSchema {
             /**
-             * Specifies the inputSchema property: This determines the format that is expected for incoming events published to the topic..
+             * Specifies the inputSchema property: This determines the format that is expected for incoming events
+             * published to the topic..
              * 
-             * @param inputSchema This determines the format that is expected for incoming events published to the topic.
+             * @param inputSchema This determines the format that is expected for incoming events published to the
+             * topic.
              * @return the next definition stage.
              */
             WithCreate withInputSchema(EventInputSchema inputSchema);
@@ -167,10 +172,12 @@ public interface NamespaceTopic {
          */
         interface WithEventRetentionInDays {
             /**
-             * Specifies the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
+             * Specifies the eventRetentionInDays property: Event retention for the namespace topic expressed in days.
+             * The property default value is 1 day.
              * Min event retention duration value is 1 day and max event retention duration value is 1 day..
              * 
-             * @param eventRetentionInDays Event retention for the namespace topic expressed in days. The property default value is 1 day.
+             * @param eventRetentionInDays Event retention for the namespace topic expressed in days. The property
+             * default value is 1 day.
              * Min event retention duration value is 1 day and max event retention duration value is 1 day.
              * @return the next definition stage.
              */
@@ -214,10 +221,12 @@ public interface NamespaceTopic {
          */
         interface WithEventRetentionInDays {
             /**
-             * Specifies the eventRetentionInDays property: Event retention for the namespace topic expressed in days. The property default value is 1 day.
+             * Specifies the eventRetentionInDays property: Event retention for the namespace topic expressed in days.
+             * The property default value is 1 day.
              * Min event retention duration value is 1 day and max event retention duration value is 1 day..
              * 
-             * @param eventRetentionInDays Event retention for the namespace topic expressed in days. The property default value is 1 day.
+             * @param eventRetentionInDays Event retention for the namespace topic expressed in days. The property
+             * default value is 1 day.
              * Min event retention duration value is 1 day and max event retention duration value is 1 day.
              * @return the next definition stage.
              */

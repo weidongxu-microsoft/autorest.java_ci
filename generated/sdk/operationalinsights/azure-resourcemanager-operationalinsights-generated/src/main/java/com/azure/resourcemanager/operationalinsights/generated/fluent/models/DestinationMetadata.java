@@ -25,7 +25,8 @@ public final class DestinationMetadata {
     }
 
     /**
-     * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+     * Get the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
+     * Storage Account.
      * 
      * @return the eventHubName value.
      */
@@ -34,7 +35,8 @@ public final class DestinationMetadata {
     }
 
     /**
-     * Set the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is Storage Account.
+     * Set the eventHubName property: Optional. Allows to define an Event Hub name. Not applicable when destination is
+     * Storage Account.
      * 
      * @param eventHubName the eventHubName value to set.
      * @return the DestinationMetadata object itself.

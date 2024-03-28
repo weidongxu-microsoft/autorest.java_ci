@@ -26,7 +26,8 @@ public final class StaticSiteCustomDomainRequestPropertiesArmResource extends Pr
     }
 
     /**
-     * Get the innerProperties property: StaticSiteCustomDomainRequestPropertiesARMResource resource specific properties.
+     * Get the innerProperties property: StaticSiteCustomDomainRequestPropertiesARMResource resource specific
+     * properties.
      * 
      * @return the innerProperties value.
      */

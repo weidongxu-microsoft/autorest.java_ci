@@ -62,7 +62,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientLocalUsersOperations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientLocalUsersOperations to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -126,12 +127,15 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List the local users associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list storage account local users along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalUserInner>> listSinglePageAsync(String resourceGroupName, String accountName) {
@@ -162,13 +166,16 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List the local users associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list storage account local users along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalUserInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -200,8 +207,10 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List the local users associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -215,8 +224,10 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List the local users associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -231,8 +242,10 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List the local users associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -246,8 +259,10 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List the local users associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -262,13 +277,17 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Get the local user of the storage account by username.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user of the storage account by username along with {@link Response} on successful completion of {@link Mono}.
+     * @return the local user of the storage account by username along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalUserInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -301,14 +320,18 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Get the local user of the storage account by username.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user of the storage account by username along with {@link Response} on successful completion of {@link Mono}.
+     * @return the local user of the storage account by username along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalUserInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -340,9 +363,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Get the local user of the storage account by username.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -357,9 +383,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Get the local user of the storage account by username.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -375,9 +404,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Get the local user of the storage account by username.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -391,14 +423,18 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Create or update the properties of a local user associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param properties The local user associated with a storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user associated with the storage accounts along with {@link Response} on successful completion of {@link Mono}.
+     * @return the local user associated with the storage accounts along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalUserInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String accountName,
@@ -436,15 +472,19 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Create or update the properties of a local user associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param properties The local user associated with a storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the local user associated with the storage accounts along with {@link Response} on successful completion of {@link Mono}.
+     * @return the local user associated with the storage accounts along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalUserInner>> createOrUpdateWithResponseAsync(String resourceGroupName, String accountName,
@@ -481,9 +521,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Create or update the properties of a local user associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param properties The local user associated with a storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -500,9 +543,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Create or update the properties of a local user associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param properties The local user associated with a storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -519,9 +565,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Create or update the properties of a local user associated with the storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param properties The local user associated with a storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -538,9 +587,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Deletes the local user associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -577,9 +629,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Deletes the local user associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -616,9 +671,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Deletes the local user associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -632,9 +690,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Deletes the local user associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -650,9 +711,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Deletes the local user associated with the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -665,9 +729,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List SSH authorized keys and shared key of the local user.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -704,9 +771,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List SSH authorized keys and shared key of the local user.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -743,9 +813,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List SSH authorized keys and shared key of the local user.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -760,9 +833,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List SSH authorized keys and shared key of the local user.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -778,9 +854,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * List SSH authorized keys and shared key of the local user.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -794,13 +873,17 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Regenerate the local user SSH password.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the secrets of Storage Account Local User along with {@link Response} on successful completion of {@link Mono}.
+     * @return the secrets of Storage Account Local User along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalUserRegeneratePasswordResultInner>>
@@ -833,14 +916,18 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Regenerate the local user SSH password.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the secrets of Storage Account Local User along with {@link Response} on successful completion of {@link Mono}.
+     * @return the secrets of Storage Account Local User along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<LocalUserRegeneratePasswordResultInner>> regeneratePasswordWithResponseAsync(
@@ -872,9 +959,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Regenerate the local user SSH password.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -890,9 +980,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Regenerate the local user SSH password.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -908,9 +1001,12 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     /**
      * Regenerate the local user SSH password.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be unique only within the storage account.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param username The name of local user. The username must contain lowercase letters and numbers only. It must be
+     * unique only within the storage account.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

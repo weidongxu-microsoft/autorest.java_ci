@@ -40,7 +40,8 @@ public interface VaultCertificateResponse {
     ResourceCertificateDetails properties();
 
     /**
-     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultCertificateResponseInner object.
+     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.VaultCertificateResponseInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -78,7 +79,8 @@ public interface VaultCertificateResponse {
         }
 
         /**
-         * The stage of the VaultCertificateResponse definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VaultCertificateResponse definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithProperties {
             /**

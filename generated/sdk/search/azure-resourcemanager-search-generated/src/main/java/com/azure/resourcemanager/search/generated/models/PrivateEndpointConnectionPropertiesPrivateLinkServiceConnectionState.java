@@ -37,7 +37,8 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     }
 
     /**
-     * Get the status property: Status of the the private link service connection. Valid values are Pending, Approved, Rejected, or Disconnected.
+     * Get the status property: Status of the the private link service connection. Valid values are Pending, Approved,
+     * Rejected, or Disconnected.
      * 
      * @return the status value.
      */
@@ -46,7 +47,8 @@ public final class PrivateEndpointConnectionPropertiesPrivateLinkServiceConnecti
     }
 
     /**
-     * Set the status property: Status of the the private link service connection. Valid values are Pending, Approved, Rejected, or Disconnected.
+     * Set the status property: Status of the the private link service connection. Valid values are Pending, Approved,
+     * Rejected, or Disconnected.
      * 
      * @param status the status value to set.
      * @return the PrivateEndpointConnectionPropertiesPrivateLinkServiceConnectionState object itself.

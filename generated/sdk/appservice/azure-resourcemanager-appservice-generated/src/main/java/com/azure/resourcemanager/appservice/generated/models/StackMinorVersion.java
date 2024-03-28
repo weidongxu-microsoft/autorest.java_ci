@@ -83,7 +83,8 @@ public final class StackMinorVersion {
     }
 
     /**
-     * Get the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default minor version; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default minor version; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isDefault value.
      */
@@ -92,7 +93,8 @@ public final class StackMinorVersion {
     }
 
     /**
-     * Set the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default minor version; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the isDefault property: &lt;code&gt;true&lt;/code&gt; if this is the default minor version; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isDefault the isDefault value to set.
      * @return the StackMinorVersion object itself.
@@ -103,7 +105,8 @@ public final class StackMinorVersion {
     }
 
     /**
-     * Get the isRemoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if this supports Remote Debugging, otherwise &lt;code&gt;false&lt;/code&gt;.
+     * Get the isRemoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if this supports Remote Debugging,
+     * otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isRemoteDebuggingEnabled value.
      */
@@ -112,7 +115,8 @@ public final class StackMinorVersion {
     }
 
     /**
-     * Set the isRemoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if this supports Remote Debugging, otherwise &lt;code&gt;false&lt;/code&gt;.
+     * Set the isRemoteDebuggingEnabled property: &lt;code&gt;true&lt;/code&gt; if this supports Remote Debugging,
+     * otherwise &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isRemoteDebuggingEnabled the isRemoteDebuggingEnabled value to set.
      * @return the StackMinorVersion object itself.

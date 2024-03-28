@@ -11,7 +11,8 @@ import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
  */
 public interface QueryKey {
     /**
-     * Gets the name property: The name of the query API key. Query names are optional, but assigning a name can help you remember how it's used.
+     * Gets the name property: The name of the query API key. Query names are optional, but assigning a name can help
+     * you remember how it's used.
      * 
      * @return the name value.
      */

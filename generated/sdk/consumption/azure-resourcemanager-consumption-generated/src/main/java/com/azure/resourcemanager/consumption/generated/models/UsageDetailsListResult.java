@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of listing usage details. It contains a list of available usage details in reverse chronological order by billing period.
+ * Result of listing usage details. It contains a list of available usage details in reverse chronological order by
+ * billing period.
  */
 @Immutable
 public final class UsageDetailsListResult {

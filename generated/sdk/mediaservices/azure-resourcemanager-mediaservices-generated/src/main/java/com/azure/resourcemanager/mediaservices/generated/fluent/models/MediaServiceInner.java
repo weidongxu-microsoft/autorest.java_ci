@@ -207,7 +207,8 @@ public final class MediaServiceInner extends Resource {
     }
 
     /**
-     * Get the publicNetworkAccess property: Whether or not public network access is allowed for resources under the Media Services account.
+     * Get the publicNetworkAccess property: Whether or not public network access is allowed for resources under the
+     * Media Services account.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -216,7 +217,8 @@ public final class MediaServiceInner extends Resource {
     }
 
     /**
-     * Set the publicNetworkAccess property: Whether or not public network access is allowed for resources under the Media Services account.
+     * Set the publicNetworkAccess property: Whether or not public network access is allowed for resources under the
+     * Media Services account.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the MediaServiceInner object itself.
@@ -239,7 +241,8 @@ public final class MediaServiceInner extends Resource {
     }
 
     /**
-     * Get the privateEndpointConnections property: The Private Endpoint Connections created for the Media Service account.
+     * Get the privateEndpointConnections property: The Private Endpoint Connections created for the Media Service
+     * account.
      * 
      * @return the privateEndpointConnections value.
      */
@@ -248,7 +251,8 @@ public final class MediaServiceInner extends Resource {
     }
 
     /**
-     * Get the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
+     * Get the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an
+     * optional property. If unspecified, a secure default value will be used.
      * 
      * @return the minimumTlsVersion value.
      */
@@ -257,7 +261,8 @@ public final class MediaServiceInner extends Resource {
     }
 
     /**
-     * Set the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
+     * Set the minimumTlsVersion property: The minimum TLS version allowed for this account's requests. This is an
+     * optional property. If unspecified, a secure default value will be used.
      * 
      * @param minimumTlsVersion the minimumTlsVersion value to set.
      * @return the MediaServiceInner object itself.

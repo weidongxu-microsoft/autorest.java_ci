@@ -130,12 +130,12 @@ public final class IoTDeviceInfo {
      */
     public void validate() {
         if (deviceId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property deviceId in model IoTDeviceInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property deviceId in model IoTDeviceInfo"));
         }
         if (ioTHostHub() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ioTHostHub in model IoTDeviceInfo"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ioTHostHub in model IoTDeviceInfo"));
         }
         if (authentication() != null) {
             authentication().validate();

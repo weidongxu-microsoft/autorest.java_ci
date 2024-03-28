@@ -66,7 +66,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientAdvancedThreatProtectionSettings to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientAdvancedThreatProtectionSettings to be used by
+     * the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -130,7 +131,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of {@link Mono}.
+     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdvancedThreatProtectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -172,7 +174,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of {@link Mono}.
+     * @return a server's Advanced Threat Protection state along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AdvancedThreatProtectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -266,7 +269,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String serverName,
@@ -314,7 +318,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String serverName,
@@ -528,7 +533,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updatePutWithResponseAsync(String resourceGroupName, String serverName,
@@ -576,7 +582,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of {@link Mono}.
+     * @return a server's Advanced Threat Protection along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updatePutWithResponseAsync(String resourceGroupName, String serverName,
@@ -790,7 +797,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -829,7 +837,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of server's Advanced Threat Protection states along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -934,7 +943,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -962,7 +972,8 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of the server's Advanced Threat Protection configurations along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AdvancedThreatProtectionInner>> listNextSinglePageAsync(String nextLink,

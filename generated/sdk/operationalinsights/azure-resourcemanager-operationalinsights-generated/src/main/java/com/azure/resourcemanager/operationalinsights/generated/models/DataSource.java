@@ -34,7 +34,8 @@ public interface DataSource {
     String type();
 
     /**
-     * Gets the properties property: The data source properties in raw json format, each kind of data source have it's own schema.
+     * Gets the properties property: The data source properties in raw json format, each kind of data source have it's
+     * own schema.
      * 
      * @return the properties value.
      */
@@ -111,9 +112,11 @@ public interface DataSource {
          */
         interface WithProperties {
             /**
-             * Specifies the properties property: The data source properties in raw json format, each kind of data source have it's own schema..
+             * Specifies the properties property: The data source properties in raw json format, each kind of data
+             * source have it's own schema..
              * 
-             * @param properties The data source properties in raw json format, each kind of data source have it's own schema.
+             * @param properties The data source properties in raw json format, each kind of data source have it's own
+             * schema.
              * @return the next definition stage.
              */
             WithKind withProperties(Object properties);
@@ -133,7 +136,8 @@ public interface DataSource {
         }
 
         /**
-         * The stage of the DataSource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DataSource definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithEtag {
             /**
@@ -229,9 +233,11 @@ public interface DataSource {
          */
         interface WithProperties {
             /**
-             * Specifies the properties property: The data source properties in raw json format, each kind of data source have it's own schema..
+             * Specifies the properties property: The data source properties in raw json format, each kind of data
+             * source have it's own schema..
              * 
-             * @param properties The data source properties in raw json format, each kind of data source have it's own schema.
+             * @param properties The data source properties in raw json format, each kind of data source have it's own
+             * schema.
              * @return the next definition stage.
              */
             Update withProperties(Object properties);

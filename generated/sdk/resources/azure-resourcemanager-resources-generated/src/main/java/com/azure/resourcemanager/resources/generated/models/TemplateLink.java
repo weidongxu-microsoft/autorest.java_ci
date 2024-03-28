@@ -83,7 +83,8 @@ public final class TemplateLink {
     }
 
     /**
-     * Get the relativePath property: Applicable only if this template link references a Template Spec. This relativePath property can optionally be used to reference a Template Spec artifact by path.
+     * Get the relativePath property: Applicable only if this template link references a Template Spec. This
+     * relativePath property can optionally be used to reference a Template Spec artifact by path.
      * 
      * @return the relativePath value.
      */
@@ -92,7 +93,8 @@ public final class TemplateLink {
     }
 
     /**
-     * Set the relativePath property: Applicable only if this template link references a Template Spec. This relativePath property can optionally be used to reference a Template Spec artifact by path.
+     * Set the relativePath property: Applicable only if this template link references a Template Spec. This
+     * relativePath property can optionally be used to reference a Template Spec artifact by path.
      * 
      * @param relativePath the relativePath value to set.
      * @return the TemplateLink object itself.

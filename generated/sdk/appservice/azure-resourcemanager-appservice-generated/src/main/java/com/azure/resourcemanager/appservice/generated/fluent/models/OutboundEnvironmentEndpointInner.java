@@ -33,7 +33,8 @@ public final class OutboundEnvironmentEndpointInner {
     }
 
     /**
-     * Get the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
+     * Get the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,
+     * Azure SQL Database, and Azure Active Directory.
      * 
      * @return the category value.
      */
@@ -42,7 +43,8 @@ public final class OutboundEnvironmentEndpointInner {
     }
 
     /**
-     * Set the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
+     * Set the category property: The type of service accessed by the App Service Environment, e.g., Azure Storage,
+     * Azure SQL Database, and Azure Active Directory.
      * 
      * @param category the category value to set.
      * @return the OutboundEnvironmentEndpointInner object itself.

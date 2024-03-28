@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -20,11 +22,27 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public final class ModernSharedScopeReservationRecommendationProperties
     extends ModernReservationRecommendationProperties {
+    /*
+     * Shared or single recommendation.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "scope", required = true)
+    private String scope = "Shared";
+
     /**
      * Creates an instance of ModernSharedScopeReservationRecommendationProperties class.
      */
     public ModernSharedScopeReservationRecommendationProperties() {
-        withScope("Shared");
+    }
+
+    /**
+     * Get the scope property: Shared or single recommendation.
+     * 
+     * @return the scope value.
+     */
+    @Override
+    public String scope() {
+        return this.scope;
     }
 
     /**

@@ -41,7 +41,8 @@ public final class FlowLogInformationInner {
     }
 
     /**
-     * Get the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics (optional) .
+     * Get the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics
+     * (optional) .
      * 
      * @return the targetResourceId value.
      */
@@ -50,7 +51,8 @@ public final class FlowLogInformationInner {
     }
 
     /**
-     * Set the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics (optional) .
+     * Set the targetResourceId property: The ID of the resource to configure for flow log and traffic analytics
+     * (optional) .
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the FlowLogInformationInner object itself.
@@ -189,12 +191,14 @@ public final class FlowLogInformationInner {
      */
     public void validate() {
         if (targetResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property targetResourceId in model FlowLogInformationInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property targetResourceId in model FlowLogInformationInner"));
         }
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model FlowLogInformationInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model FlowLogInformationInner"));
         } else {
             innerProperties().validate();
         }

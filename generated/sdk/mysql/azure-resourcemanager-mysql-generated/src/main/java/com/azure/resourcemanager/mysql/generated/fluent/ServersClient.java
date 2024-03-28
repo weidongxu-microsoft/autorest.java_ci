@@ -82,7 +82,8 @@ public interface ServersClient {
     ServerInner create(String resourceGroupName, String serverName, ServerInner parameters, Context context);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -97,7 +98,8 @@ public interface ServersClient {
         ServerForUpdate parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -113,7 +115,8 @@ public interface ServersClient {
         ServerForUpdate parameters, Context context);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -127,7 +130,8 @@ public interface ServersClient {
     ServerInner update(String resourceGroupName, String serverName, ServerForUpdate parameters);
 
     /**
-     * Updates an existing server. The request body can contain one to many of the properties present in the normal server definition.
+     * Updates an existing server. The request body can contain one to many of the properties present in the normal
+     * server definition.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.

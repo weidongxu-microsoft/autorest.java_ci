@@ -79,7 +79,8 @@ public final class HostCapacity {
     }
 
     /**
-     * Get the effectiveAvailableMemoryMbOnHost property: The available memory on the host accounting for VM placement size and any host VM reservations.
+     * Get the effectiveAvailableMemoryMbOnHost property: The available memory on the host accounting for VM placement
+     * size and any host VM reservations.
      * 
      * @return the effectiveAvailableMemoryMbOnHost value.
      */
@@ -88,7 +89,8 @@ public final class HostCapacity {
     }
 
     /**
-     * Set the effectiveAvailableMemoryMbOnHost property: The available memory on the host accounting for VM placement size and any host VM reservations.
+     * Set the effectiveAvailableMemoryMbOnHost property: The available memory on the host accounting for VM placement
+     * size and any host VM reservations.
      * 
      * @param effectiveAvailableMemoryMbOnHost the effectiveAvailableMemoryMbOnHost value to set.
      * @return the HostCapacity object itself.
@@ -99,7 +101,8 @@ public final class HostCapacity {
     }
 
     /**
-     * Get the availableGpuCount property: The available amount of GPUs on the host to use after accounting for GPUS used by reservations on the host.
+     * Get the availableGpuCount property: The available amount of GPUs on the host to use after accounting for GPUS
+     * used by reservations on the host.
      * 
      * @return the availableGpuCount value.
      */
@@ -108,7 +111,8 @@ public final class HostCapacity {
     }
 
     /**
-     * Set the availableGpuCount property: The available amount of GPUs on the host to use after accounting for GPUS used by reservations on the host.
+     * Set the availableGpuCount property: The available amount of GPUs on the host to use after accounting for GPUS
+     * used by reservations on the host.
      * 
      * @param availableGpuCount the availableGpuCount value to set.
      * @return the HostCapacity object itself.

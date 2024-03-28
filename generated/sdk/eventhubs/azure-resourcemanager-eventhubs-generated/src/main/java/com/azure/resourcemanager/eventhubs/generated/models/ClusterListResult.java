@@ -53,7 +53,8 @@ public final class ClusterListResult {
     }
 
     /**
-     * Get the nextLink property: Link to the next set of results. Empty unless the value parameter contains an incomplete list of Event Hubs Clusters.
+     * Get the nextLink property: Link to the next set of results. Empty unless the value parameter contains an
+     * incomplete list of Event Hubs Clusters.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class ClusterListResult {
     }
 
     /**
-     * Set the nextLink property: Link to the next set of results. Empty unless the value parameter contains an incomplete list of Event Hubs Clusters.
+     * Set the nextLink property: Link to the next set of results. Empty unless the value parameter contains an
+     * incomplete list of Event Hubs Clusters.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ClusterListResult object itself.

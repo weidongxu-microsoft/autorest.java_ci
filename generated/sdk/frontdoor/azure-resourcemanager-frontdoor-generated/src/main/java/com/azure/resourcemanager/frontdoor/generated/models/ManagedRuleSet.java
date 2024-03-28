@@ -157,12 +157,12 @@ public final class ManagedRuleSet {
      */
     public void validate() {
         if (ruleSetType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ruleSetType in model ManagedRuleSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ruleSetType in model ManagedRuleSet"));
         }
         if (ruleSetVersion() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ruleSetVersion in model ManagedRuleSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ruleSetVersion in model ManagedRuleSet"));
         }
         if (exclusions() != null) {
             exclusions().forEach(e -> e.validate());

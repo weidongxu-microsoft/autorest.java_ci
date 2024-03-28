@@ -19,7 +19,8 @@ public interface NetworkConfigurationDiagnosticResponse {
     List<NetworkConfigurationDiagnosticResult> results();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkConfigurationDiagnosticResponseInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.NetworkConfigurationDiagnosticResponseInner object.
      * 
      * @return the inner object.
      */

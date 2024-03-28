@@ -60,7 +60,8 @@ public interface Node {
     String nodeDisplayName();
 
     /**
-     * Gets the nodeFriendlySoftwareVersion property: Friendly software version name that is currently installed on the node.
+     * Gets the nodeFriendlySoftwareVersion property: Friendly software version name that is currently installed on the
+     * node.
      * 
      * @return the nodeFriendlySoftwareVersion value.
      */

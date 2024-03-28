@@ -19,7 +19,8 @@ public interface VpnServerConfigurationsResponse {
     List<String> vpnServerConfigurationResourceIds();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationsResponseInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnServerConfigurationsResponseInner
+     * object.
      * 
      * @return the inner object.
      */

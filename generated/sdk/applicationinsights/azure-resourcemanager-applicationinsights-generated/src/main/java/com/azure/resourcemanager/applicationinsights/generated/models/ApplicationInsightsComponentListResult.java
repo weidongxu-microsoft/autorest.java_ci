@@ -54,7 +54,8 @@ public final class ApplicationInsightsComponentListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to get the next set of Application Insights component definitions if too many components where returned in the result set.
+     * Get the nextLink property: The URI to get the next set of Application Insights component definitions if too many
+     * components where returned in the result set.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class ApplicationInsightsComponentListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to get the next set of Application Insights component definitions if too many components where returned in the result set.
+     * Set the nextLink property: The URI to get the next set of Application Insights component definitions if too many
+     * components where returned in the result set.
      * 
      * @param nextLink the nextLink value to set.
      * @return the ApplicationInsightsComponentListResult object itself.
@@ -80,8 +82,9 @@ public final class ApplicationInsightsComponentListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model ApplicationInsightsComponentListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model ApplicationInsightsComponentListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

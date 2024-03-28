@@ -101,7 +101,9 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Get the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content length that can be archived in the asset for this live output. This also sets the maximum content length for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
+     * Get the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
+     * length that can be archived in the asset for this live output. This also sets the maximum content length for the
+     * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
      * 
      * @return the archiveWindowLength value.
      */
@@ -110,7 +112,9 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Set the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content length that can be archived in the asset for this live output. This also sets the maximum content length for the rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
+     * Set the archiveWindowLength property: ISO 8601 time between 1 minute to 25 hours to indicate the maximum content
+     * length that can be archived in the asset for this live output. This also sets the maximum content length for the
+     * rewind window. For example, use PT1H30M to indicate 1 hour and 30 minutes of archive window.
      * 
      * @param archiveWindowLength the archiveWindowLength value to set.
      * @return the LiveOutputInner object itself.
@@ -124,7 +128,11 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Get the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to control seek-able window length during Live. The service won't use this property once LiveOutput stops. The archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event enables LL.
+     * Get the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to
+     * control seek-able window length during Live. The service won't use this property once LiveOutput stops. The
+     * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
+     * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
+     * enables LL.
      * 
      * @return the rewindWindowLength value.
      */
@@ -133,7 +141,11 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Set the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to control seek-able window length during Live. The service won't use this property once LiveOutput stops. The archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event enables LL.
+     * Set the rewindWindowLength property: ISO 8601 time between 1 minute to the duration of archiveWindowLength to
+     * control seek-able window length during Live. The service won't use this property once LiveOutput stops. The
+     * archived VOD will have full content with original ArchiveWindowLength. For example, use PT1H30M to indicate 1
+     * hour and 30 minutes of rewind window length. Service will use implicit default value 30m only if Live Event
+     * enables LL.
      * 
      * @param rewindWindowLength the rewindWindowLength value to set.
      * @return the LiveOutputInner object itself.
@@ -147,7 +159,8 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Get the manifestName property: The manifest file name. If not provided, the service will generate one automatically.
+     * Get the manifestName property: The manifest file name. If not provided, the service will generate one
+     * automatically.
      * 
      * @return the manifestName value.
      */
@@ -156,7 +169,8 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Set the manifestName property: The manifest file name. If not provided, the service will generate one automatically.
+     * Set the manifestName property: The manifest file name. If not provided, the service will generate one
+     * automatically.
      * 
      * @param manifestName the manifestName value to set.
      * @return the LiveOutputInner object itself.
@@ -193,7 +207,8 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Get the outputSnapTime property: The initial timestamp that the live output will start at, any content before this value will not be archived.
+     * Get the outputSnapTime property: The initial timestamp that the live output will start at, any content before
+     * this value will not be archived.
      * 
      * @return the outputSnapTime value.
      */
@@ -202,7 +217,8 @@ public final class LiveOutputInner extends ProxyResource {
     }
 
     /**
-     * Set the outputSnapTime property: The initial timestamp that the live output will start at, any content before this value will not be archived.
+     * Set the outputSnapTime property: The initial timestamp that the live output will start at, any content before
+     * this value will not be archived.
      * 
      * @param outputSnapTime the outputSnapTime value to set.
      * @return the LiveOutputInner object itself.

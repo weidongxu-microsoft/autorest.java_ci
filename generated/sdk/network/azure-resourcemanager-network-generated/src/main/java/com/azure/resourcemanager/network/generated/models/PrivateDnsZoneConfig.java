@@ -33,7 +33,8 @@ public final class PrivateDnsZoneConfig {
     }
 
     /**
-     * Get the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: Name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -42,7 +43,8 @@ public final class PrivateDnsZoneConfig {
     }
 
     /**
-     * Set the name property: Name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: Name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the PrivateDnsZoneConfig object itself.
@@ -85,7 +87,8 @@ public final class PrivateDnsZoneConfig {
     }
 
     /**
-     * Get the recordSets property: A collection of information regarding a recordSet, holding information to identify private resources.
+     * Get the recordSets property: A collection of information regarding a recordSet, holding information to identify
+     * private resources.
      * 
      * @return the recordSets value.
      */

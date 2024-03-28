@@ -49,17 +49,6 @@ public class OperationProgressResponseType {
     }
 
     /**
-     * Set the objectType property: Identifies the type of source operation.
-     * 
-     * @param objectType the objectType value to set.
-     * @return the OperationProgressResponseType object itself.
-     */
-    protected OperationProgressResponseType withObjectType(ObjectType objectType) {
-        this.objectType = objectType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

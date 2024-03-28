@@ -244,7 +244,8 @@ public final class NetworkInterfaceInner extends Resource {
     }
 
     /**
-     * Get the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports encryption.
+     * Get the vnetEncryptionSupported property: Whether the virtual machine this nic is attached to supports
+     * encryption.
      * 
      * @return the vnetEncryptionSupported value.
      */
@@ -253,7 +254,8 @@ public final class NetworkInterfaceInner extends Resource {
     }
 
     /**
-     * Get the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking. Not applicable to VM sizes which require accelerated networking.
+     * Get the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
+     * Not applicable to VM sizes which require accelerated networking.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -262,7 +264,8 @@ public final class NetworkInterfaceInner extends Resource {
     }
 
     /**
-     * Set the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking. Not applicable to VM sizes which require accelerated networking.
+     * Set the enableAcceleratedNetworking property: If the network interface is configured for accelerated networking.
+     * Not applicable to VM sizes which require accelerated networking.
      * 
      * @param enableAcceleratedNetworking the enableAcceleratedNetworking value to set.
      * @return the NetworkInterfaceInner object itself.
@@ -331,7 +334,8 @@ public final class NetworkInterfaceInner extends Resource {
     }
 
     /**
-     * Get the dscpConfiguration property: A reference to the dscp configuration to which the network interface is linked.
+     * Get the dscpConfiguration property: A reference to the dscp configuration to which the network interface is
+     * linked.
      * 
      * @return the dscpConfiguration value.
      */

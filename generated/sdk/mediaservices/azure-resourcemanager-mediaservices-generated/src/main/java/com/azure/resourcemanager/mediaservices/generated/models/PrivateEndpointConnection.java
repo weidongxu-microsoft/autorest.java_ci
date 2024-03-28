@@ -40,7 +40,8 @@ public interface PrivateEndpointConnection {
     PrivateEndpoint privateEndpoint();
 
     /**
-     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider.
+     * Gets the privateLinkServiceConnectionState property: A collection of information about the state of the
+     * connection between service consumer and provider.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -61,7 +62,8 @@ public interface PrivateEndpointConnection {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateEndpointConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateEndpointConnectionInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -99,7 +101,8 @@ public interface PrivateEndpointConnection {
         }
 
         /**
-         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PrivateEndpointConnection definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithPrivateEndpoint, DefinitionStages.WithPrivateLinkServiceConnectionState {
@@ -137,9 +140,11 @@ public interface PrivateEndpointConnection {
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
-             * Specifies the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider..
+             * Specifies the privateLinkServiceConnectionState property: A collection of information about the state of
+             * the connection between service consumer and provider..
              * 
-             * @param privateLinkServiceConnectionState A collection of information about the state of the connection between service consumer and provider.
+             * @param privateLinkServiceConnectionState A collection of information about the state of the connection
+             * between service consumer and provider.
              * @return the next definition stage.
              */
             WithCreate withPrivateLinkServiceConnectionState(
@@ -196,9 +201,11 @@ public interface PrivateEndpointConnection {
          */
         interface WithPrivateLinkServiceConnectionState {
             /**
-             * Specifies the privateLinkServiceConnectionState property: A collection of information about the state of the connection between service consumer and provider..
+             * Specifies the privateLinkServiceConnectionState property: A collection of information about the state of
+             * the connection between service consumer and provider..
              * 
-             * @param privateLinkServiceConnectionState A collection of information about the state of the connection between service consumer and provider.
+             * @param privateLinkServiceConnectionState A collection of information about the state of the connection
+             * between service consumer and provider.
              * @return the next definition stage.
              */
             Update withPrivateLinkServiceConnectionState(

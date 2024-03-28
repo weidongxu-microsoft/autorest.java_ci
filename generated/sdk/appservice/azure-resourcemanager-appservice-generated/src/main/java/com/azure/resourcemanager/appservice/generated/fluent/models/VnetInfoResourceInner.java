@@ -77,7 +77,8 @@ public final class VnetInfoResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+     * Get the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to
+     * authenticate a
      * Point-To-Site VPN connection.
      * 
      * @return the certBlob value.
@@ -87,7 +88,8 @@ public final class VnetInfoResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to authenticate a 
+     * Set the certBlob property: A certificate file (.cer) blob containing the public key of the private key used to
+     * authenticate a
      * Point-To-Site VPN connection.
      * 
      * @param certBlob the certBlob value to set.
@@ -111,7 +113,8 @@ public final class VnetInfoResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the resyncRequired property: &lt;code&gt;true&lt;/code&gt; if a resync is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the resyncRequired property: &lt;code&gt;true&lt;/code&gt; if a resync is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the resyncRequired value.
      */
@@ -120,7 +123,8 @@ public final class VnetInfoResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses.
+     * Get the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated
+     * list of IP addresses.
      * 
      * @return the dnsServers value.
      */
@@ -129,7 +133,8 @@ public final class VnetInfoResourceInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated list of IP addresses.
+     * Set the dnsServers property: DNS servers to be used by this Virtual Network. This should be a comma-separated
+     * list of IP addresses.
      * 
      * @param dnsServers the dnsServers value to set.
      * @return the VnetInfoResourceInner object itself.

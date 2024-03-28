@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet.
+ * Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in
+ * the vnet.
  */
 public final class AdminState extends ExpandableStringEnum<AdminState> {
     /**

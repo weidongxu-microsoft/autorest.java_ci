@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.network.generated.fluent.models.DefaultAdminPropertiesFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -24,6 +25,13 @@ import java.util.List;
 @Fluent
 public final class ActiveDefaultSecurityAdminRule extends ActiveBaseSecurityAdminRule {
     /*
+     * Whether the rule is custom or default.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private EffectiveAdminRuleKind kind = EffectiveAdminRuleKind.DEFAULT;
+
+    /*
      * Indicates the properties of the default security admin rule
      */
     @JsonProperty(value = "properties")
@@ -33,7 +41,16 @@ public final class ActiveDefaultSecurityAdminRule extends ActiveBaseSecurityAdmi
      * Creates an instance of ActiveDefaultSecurityAdminRule class.
      */
     public ActiveDefaultSecurityAdminRule() {
-        withKind(EffectiveAdminRuleKind.DEFAULT);
+    }
+
+    /**
+     * Get the kind property: Whether the rule is custom or default.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public EffectiveAdminRuleKind kind() {
+        return this.kind;
     }
 
     /**
@@ -196,7 +213,9 @@ public final class ActiveDefaultSecurityAdminRule extends ActiveBaseSecurityAdmi
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @return the priority value.
      */

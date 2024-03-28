@@ -25,7 +25,8 @@ public final class SoftDeletePolicy {
     }
 
     /**
-     * Get the isSoftDeleteEnabled property: Enables soft-deletion for resources in this gallery, allowing them to be recovered within retention time.
+     * Get the isSoftDeleteEnabled property: Enables soft-deletion for resources in this gallery, allowing them to be
+     * recovered within retention time.
      * 
      * @return the isSoftDeleteEnabled value.
      */
@@ -34,7 +35,8 @@ public final class SoftDeletePolicy {
     }
 
     /**
-     * Set the isSoftDeleteEnabled property: Enables soft-deletion for resources in this gallery, allowing them to be recovered within retention time.
+     * Set the isSoftDeleteEnabled property: Enables soft-deletion for resources in this gallery, allowing them to be
+     * recovered within retention time.
      * 
      * @param isSoftDeleteEnabled the isSoftDeleteEnabled value to set.
      * @return the SoftDeletePolicy object itself.

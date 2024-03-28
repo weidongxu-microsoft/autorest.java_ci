@@ -75,7 +75,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along with {@link Response}.
+     * @return a Front Door with the specified Front Door name under the specified subscription and resource group along
+     * with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<FrontDoorInner> getByResourceGroupWithResponse(String resourceGroupName, String frontDoorName,
@@ -103,7 +104,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route
+     * traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(String resourceGroupName,
@@ -119,7 +121,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return the {@link SyncPoller} for polling of front Door represents a collection of backend endpoints to route
+     * traffic to along with rules that specify how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<FrontDoorInner>, FrontDoorInner> beginCreateOrUpdate(String resourceGroupName,
@@ -134,7 +137,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     FrontDoorInner createOrUpdate(String resourceGroupName, String frontDoorName, FrontDoorInner frontDoorParameters);
@@ -149,7 +153,8 @@ public interface FrontDoorsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify how traffic is sent there.
+     * @return front Door represents a collection of backend endpoints to route traffic to along with rules that specify
+     * how traffic is sent there.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     FrontDoorInner createOrUpdate(String resourceGroupName, String frontDoorName, FrontDoorInner frontDoorParameters,

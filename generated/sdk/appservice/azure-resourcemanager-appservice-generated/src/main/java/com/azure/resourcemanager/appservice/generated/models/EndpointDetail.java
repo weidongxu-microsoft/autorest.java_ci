@@ -83,7 +83,8 @@ public final class EndpointDetail {
     }
 
     /**
-     * Get the latency property: The time in milliseconds it takes for a TCP connection to be created from the App Service Environment to this IpAddress at this Port.
+     * Get the latency property: The time in milliseconds it takes for a TCP connection to be created from the App
+     * Service Environment to this IpAddress at this Port.
      * 
      * @return the latency value.
      */
@@ -92,7 +93,8 @@ public final class EndpointDetail {
     }
 
     /**
-     * Set the latency property: The time in milliseconds it takes for a TCP connection to be created from the App Service Environment to this IpAddress at this Port.
+     * Set the latency property: The time in milliseconds it takes for a TCP connection to be created from the App
+     * Service Environment to this IpAddress at this Port.
      * 
      * @param latency the latency value to set.
      * @return the EndpointDetail object itself.
@@ -103,7 +105,8 @@ public final class EndpointDetail {
     }
 
     /**
-     * Get the isAccessible property: Whether it is possible to create a TCP connection from the App Service Environment to this IpAddress at this Port.
+     * Get the isAccessible property: Whether it is possible to create a TCP connection from the App Service Environment
+     * to this IpAddress at this Port.
      * 
      * @return the isAccessible value.
      */
@@ -112,7 +115,8 @@ public final class EndpointDetail {
     }
 
     /**
-     * Set the isAccessible property: Whether it is possible to create a TCP connection from the App Service Environment to this IpAddress at this Port.
+     * Set the isAccessible property: Whether it is possible to create a TCP connection from the App Service Environment
+     * to this IpAddress at this Port.
      * 
      * @param isAccessible the isAccessible value to set.
      * @return the EndpointDetail object itself.

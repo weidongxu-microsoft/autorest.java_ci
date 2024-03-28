@@ -61,7 +61,8 @@ public final class ContainerNetworkInterfaceConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the containerNetworkInterfaces property: A list of container network interfaces created from this container network interface configuration.
+     * Get the containerNetworkInterfaces property: A list of container network interfaces created from this container
+     * network interface configuration.
      * 
      * @return the containerNetworkInterfaces value.
      */
@@ -70,7 +71,8 @@ public final class ContainerNetworkInterfaceConfigurationPropertiesFormat {
     }
 
     /**
-     * Set the containerNetworkInterfaces property: A list of container network interfaces created from this container network interface configuration.
+     * Set the containerNetworkInterfaces property: A list of container network interfaces created from this container
+     * network interface configuration.
      * 
      * @param containerNetworkInterfaces the containerNetworkInterfaces value to set.
      * @return the ContainerNetworkInterfaceConfigurationPropertiesFormat object itself.
@@ -82,7 +84,8 @@ public final class ContainerNetworkInterfaceConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the container network interface configuration resource.
+     * Get the provisioningState property: The provisioning state of the container network interface configuration
+     * resource.
      * 
      * @return the provisioningState value.
      */

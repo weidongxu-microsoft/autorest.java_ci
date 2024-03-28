@@ -7,6 +7,7 @@ package com.azure.resourcemanager.recoveryservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
@@ -22,6 +23,13 @@ import java.time.OffsetDateTime;
 @JsonTypeName("AzureActiveDirectory")
 @Fluent
 public final class ResourceCertificateAndAadDetails extends ResourceCertificateDetails {
+    /*
+     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "authType", required = true)
+    private String authType = "AzureActiveDirectory";
+
     /*
      * AAD tenant authority.
      */
@@ -68,7 +76,17 @@ public final class ResourceCertificateAndAadDetails extends ResourceCertificateD
      * Creates an instance of ResourceCertificateAndAadDetails class.
      */
     public ResourceCertificateAndAadDetails() {
-        withAuthType("AzureActiveDirectory");
+    }
+
+    /**
+     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the
+     * polymorphic chain of types.
+     * 
+     * @return the authType value.
+     */
+    @Override
+    public String authType() {
+        return this.authType;
     }
 
     /**
@@ -293,24 +311,29 @@ public final class ResourceCertificateAndAadDetails extends ResourceCertificateD
     public void validate() {
         super.validate();
         if (aadAuthority() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property aadAuthority in model ResourceCertificateAndAadDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property aadAuthority in model ResourceCertificateAndAadDetails"));
         }
         if (aadTenantId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property aadTenantId in model ResourceCertificateAndAadDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property aadTenantId in model ResourceCertificateAndAadDetails"));
         }
         if (servicePrincipalClientId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property servicePrincipalClientId in model ResourceCertificateAndAadDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property servicePrincipalClientId in model ResourceCertificateAndAadDetails"));
         }
         if (servicePrincipalObjectId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property servicePrincipalObjectId in model ResourceCertificateAndAadDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property servicePrincipalObjectId in model ResourceCertificateAndAadDetails"));
         }
         if (azureManagementEndpointAudience() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property azureManagementEndpointAudience in model ResourceCertificateAndAadDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property azureManagementEndpointAudience in model ResourceCertificateAndAadDetails"));
         }
     }
 

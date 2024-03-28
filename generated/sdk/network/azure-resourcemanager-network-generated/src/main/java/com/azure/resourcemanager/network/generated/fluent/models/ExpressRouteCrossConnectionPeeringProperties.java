@@ -303,7 +303,8 @@ public final class ExpressRouteCrossConnectionPeeringProperties {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the express route cross connection peering resource.
+     * Get the provisioningState property: The provisioning state of the express route cross connection peering
+     * resource.
      * 
      * @return the provisioningState value.
      */

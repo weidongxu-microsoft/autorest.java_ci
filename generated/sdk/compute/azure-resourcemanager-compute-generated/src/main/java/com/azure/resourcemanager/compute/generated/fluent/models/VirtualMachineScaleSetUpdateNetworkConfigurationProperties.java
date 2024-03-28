@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Describes a virtual machine scale set updatable network profile's IP configuration.Use this object for updating network profile's IP Configuration.
+ * Describes a virtual machine scale set updatable network profile's IP configuration.Use this object for updating
+ * network profile's IP Configuration.
  */
 @Fluent
 public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
@@ -112,7 +113,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
     }
 
     /**
-     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
+     * Get the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
+     * networking-enabled.
      * 
      * @return the enableAcceleratedNetworking value.
      */
@@ -121,7 +123,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
     }
 
     /**
-     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated networking-enabled.
+     * Set the enableAcceleratedNetworking property: Specifies whether the network interface is accelerated
+     * networking-enabled.
      * 
      * @param enableAcceleratedNetworking the enableAcceleratedNetworking value to set.
      * @return the VirtualMachineScaleSetUpdateNetworkConfigurationProperties object itself.
@@ -133,7 +136,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
     }
 
     /**
-     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
+     * Get the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
+     * tracking.
      * 
      * @return the disableTcpStateTracking value.
      */
@@ -142,7 +146,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
     }
 
     /**
-     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state tracking.
+     * Set the disableTcpStateTracking property: Specifies whether the network interface is disabled for tcp state
+     * tracking.
      * 
      * @param disableTcpStateTracking the disableTcpStateTracking value to set.
      * @return the VirtualMachineScaleSetUpdateNetworkConfigurationProperties object itself.
@@ -278,7 +283,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
     }
 
     /**
-     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
+     * Get the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
+     * resource.
      * 
      * @return the auxiliaryMode value.
      */
@@ -287,7 +293,8 @@ public final class VirtualMachineScaleSetUpdateNetworkConfigurationProperties {
     }
 
     /**
-     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface resource.
+     * Set the auxiliaryMode property: Specifies whether the Auxiliary mode is enabled for the Network Interface
+     * resource.
      * 
      * @param auxiliaryMode the auxiliaryMode value to set.
      * @return the VirtualMachineScaleSetUpdateNetworkConfigurationProperties object itself.

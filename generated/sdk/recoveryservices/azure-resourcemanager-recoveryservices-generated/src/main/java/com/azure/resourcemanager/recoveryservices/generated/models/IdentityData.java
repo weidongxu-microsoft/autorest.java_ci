@@ -65,7 +65,8 @@ public final class IdentityData {
     }
 
     /**
-     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
+     * Get the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
+     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      * 
      * @return the type value.
      */
@@ -74,7 +75,8 @@ public final class IdentityData {
     }
 
     /**
-     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
+     * Set the type property: The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both
+     * an implicitly created identity and a set of user-assigned identities. The type 'None' will remove any identities.
      * 
      * @param type the type value to set.
      * @return the IdentityData object itself.
@@ -85,7 +87,9 @@ public final class IdentityData {
     }
 
     /**
-     * Get the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Get the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The
+     * user-assigned identity dictionary keys will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -94,7 +98,9 @@ public final class IdentityData {
     }
 
     /**
-     * Set the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The user-assigned identity dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * Set the userAssignedIdentities property: The list of user-assigned identities associated with the resource. The
+     * user-assigned identity dictionary keys will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the IdentityData object itself.
@@ -111,8 +117,8 @@ public final class IdentityData {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model IdentityData"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model IdentityData"));
         }
         if (userAssignedIdentities() != null) {
             userAssignedIdentities().values().forEach(e -> {

@@ -68,14 +68,16 @@ public interface VirtualNetwork {
     String id();
 
     /**
-     * Gets the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by subnets.
+     * Gets the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by
+     * subnets.
      * 
      * @return the addressSpace value.
      */
     AddressSpace addressSpace();
 
     /**
-     * Gets the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network.
+     * Gets the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in
+     * the virtual network.
      * 
      * @return the dhcpOptions value.
      */
@@ -117,14 +119,16 @@ public interface VirtualNetwork {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource.
+     * Gets the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources
+     * in the virtual network. It requires a DDoS protection plan associated with the resource.
      * 
      * @return the enableDdosProtection value.
      */
     Boolean enableDdosProtection();
 
     /**
-     * Gets the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual network.
+     * Gets the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual
+     * network.
      * 
      * @return the enableVmProtection value.
      */
@@ -138,14 +142,16 @@ public interface VirtualNetwork {
     SubResource ddosProtectionPlan();
 
     /**
-     * Gets the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.
+     * Gets the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a
+     * prefix in this VNET.
      * 
      * @return the bgpCommunities value.
      */
     VirtualNetworkBgpCommunities bgpCommunities();
 
     /**
-     * Gets the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet.
+     * Gets the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption
+     * is allowed in encrypted VNet.
      * 
      * @return the encryption value.
      */
@@ -245,7 +251,8 @@ public interface VirtualNetwork {
         }
 
         /**
-         * The stage of the VirtualNetwork definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualNetwork definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation, DefinitionStages.WithAddressSpace,
@@ -300,9 +307,11 @@ public interface VirtualNetwork {
          */
         interface WithAddressSpace {
             /**
-             * Specifies the addressSpace property: The AddressSpace that contains an array of IP address ranges that can be used by subnets..
+             * Specifies the addressSpace property: The AddressSpace that contains an array of IP address ranges that
+             * can be used by subnets..
              * 
-             * @param addressSpace The AddressSpace that contains an array of IP address ranges that can be used by subnets.
+             * @param addressSpace The AddressSpace that contains an array of IP address ranges that can be used by
+             * subnets.
              * @return the next definition stage.
              */
             WithCreate withAddressSpace(AddressSpace addressSpace);
@@ -313,9 +322,11 @@ public interface VirtualNetwork {
          */
         interface WithDhcpOptions {
             /**
-             * Specifies the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network..
+             * Specifies the dhcpOptions property: The dhcpOptions that contains an array of DNS servers available to
+             * VMs deployed in the virtual network..
              * 
-             * @param dhcpOptions The dhcpOptions that contains an array of DNS servers available to VMs deployed in the virtual network.
+             * @param dhcpOptions The dhcpOptions that contains an array of DNS servers available to VMs deployed in the
+             * virtual network.
              * @return the next definition stage.
              */
             WithCreate withDhcpOptions(DhcpOptions dhcpOptions);
@@ -365,9 +376,12 @@ public interface VirtualNetwork {
          */
         interface WithEnableDdosProtection {
             /**
-             * Specifies the enableDdosProtection property: Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource..
+             * Specifies the enableDdosProtection property: Indicates if DDoS protection is enabled for all the
+             * protected resources in the virtual network. It requires a DDoS protection plan associated with the
+             * resource..
              * 
-             * @param enableDdosProtection Indicates if DDoS protection is enabled for all the protected resources in the virtual network. It requires a DDoS protection plan associated with the resource.
+             * @param enableDdosProtection Indicates if DDoS protection is enabled for all the protected resources in
+             * the virtual network. It requires a DDoS protection plan associated with the resource.
              * @return the next definition stage.
              */
             WithCreate withEnableDdosProtection(Boolean enableDdosProtection);
@@ -378,9 +392,11 @@ public interface VirtualNetwork {
          */
         interface WithEnableVmProtection {
             /**
-             * Specifies the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in the virtual network..
+             * Specifies the enableVmProtection property: Indicates if VM protection is enabled for all the subnets in
+             * the virtual network..
              * 
-             * @param enableVmProtection Indicates if VM protection is enabled for all the subnets in the virtual network.
+             * @param enableVmProtection Indicates if VM protection is enabled for all the subnets in the virtual
+             * network.
              * @return the next definition stage.
              */
             WithCreate withEnableVmProtection(Boolean enableVmProtection);
@@ -404,9 +420,11 @@ public interface VirtualNetwork {
          */
         interface WithBgpCommunities {
             /**
-             * Specifies the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET..
+             * Specifies the bgpCommunities property: Bgp Communities sent over ExpressRoute with each route
+             * corresponding to a prefix in this VNET..
              * 
-             * @param bgpCommunities Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in this VNET.
+             * @param bgpCommunities Bgp Communities sent over ExpressRoute with each route corresponding to a prefix in
+             * this VNET.
              * @return the next definition stage.
              */
             WithCreate withBgpCommunities(VirtualNetworkBgpCommunities bgpCommunities);
@@ -417,9 +435,11 @@ public interface VirtualNetwork {
          */
         interface WithEncryption {
             /**
-             * Specifies the encryption property: Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet..
+             * Specifies the encryption property: Indicates if encryption is enabled on virtual network and if VM
+             * without encryption is allowed in encrypted VNet..
              * 
-             * @param encryption Indicates if encryption is enabled on virtual network and if VM without encryption is allowed in encrypted VNet.
+             * @param encryption Indicates if encryption is enabled on virtual network and if VM without encryption is
+             * allowed in encrypted VNet.
              * @return the next definition stage.
              */
             WithCreate withEncryption(VirtualNetworkEncryption encryption);
@@ -504,7 +524,8 @@ public interface VirtualNetwork {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with {@link PagedIterable}.
+     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus();
 
@@ -517,7 +538,8 @@ public interface VirtualNetwork {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with {@link PagedIterable}.
+     * @return the Ddos Protection Status of all IP Addresses under the Virtual Network as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<PublicIpDdosProtectionStatusResult> listDdosProtectionStatus(Integer top, String skipToken,
         Context context);

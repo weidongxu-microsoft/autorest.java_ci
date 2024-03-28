@@ -64,7 +64,8 @@ public final class BlobInventoryPolicyRule {
     }
 
     /**
-     * Get the name property: A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
+     * Get the name property: A rule name can contain any combination of alpha numeric characters. Rule name is
+     * case-sensitive. It must be unique within a policy.
      * 
      * @return the name value.
      */
@@ -73,7 +74,8 @@ public final class BlobInventoryPolicyRule {
     }
 
     /**
-     * Set the name property: A rule name can contain any combination of alpha numeric characters. Rule name is case-sensitive. It must be unique within a policy.
+     * Set the name property: A rule name can contain any combination of alpha numeric characters. Rule name is
+     * case-sensitive. It must be unique within a policy.
      * 
      * @param name the name value to set.
      * @return the BlobInventoryPolicyRule object itself.
@@ -130,16 +132,18 @@ public final class BlobInventoryPolicyRule {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model BlobInventoryPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model BlobInventoryPolicyRule"));
         }
         if (destination() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property destination in model BlobInventoryPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property destination in model BlobInventoryPolicyRule"));
         }
         if (definition() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property definition in model BlobInventoryPolicyRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property definition in model BlobInventoryPolicyRule"));
         } else {
             definition().validate();
         }

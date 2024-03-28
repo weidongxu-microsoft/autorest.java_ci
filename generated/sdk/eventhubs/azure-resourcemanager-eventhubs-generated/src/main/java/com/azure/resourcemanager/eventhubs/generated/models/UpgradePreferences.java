@@ -31,7 +31,8 @@ public final class UpgradePreferences {
     }
 
     /**
-     * Get the startDayOfWeek property: Preferred day of the week in UTC time to begin an upgrade. If 'Any' is selected, upgrade will proceed at any given weekday.
+     * Get the startDayOfWeek property: Preferred day of the week in UTC time to begin an upgrade. If 'Any' is selected,
+     * upgrade will proceed at any given weekday.
      * 
      * @return the startDayOfWeek value.
      */
@@ -40,7 +41,8 @@ public final class UpgradePreferences {
     }
 
     /**
-     * Set the startDayOfWeek property: Preferred day of the week in UTC time to begin an upgrade. If 'Any' is selected, upgrade will proceed at any given weekday.
+     * Set the startDayOfWeek property: Preferred day of the week in UTC time to begin an upgrade. If 'Any' is selected,
+     * upgrade will proceed at any given weekday.
      * 
      * @param startDayOfWeek the startDayOfWeek value to set.
      * @return the UpgradePreferences object itself.

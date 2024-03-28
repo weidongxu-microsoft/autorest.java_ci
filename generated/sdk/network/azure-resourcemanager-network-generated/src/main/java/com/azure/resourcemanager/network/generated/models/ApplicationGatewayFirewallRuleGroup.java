@@ -105,12 +105,14 @@ public final class ApplicationGatewayFirewallRuleGroup {
      */
     public void validate() {
         if (ruleGroupName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleGroupName in model ApplicationGatewayFirewallRuleGroup"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleGroupName in model ApplicationGatewayFirewallRuleGroup"));
         }
         if (rules() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property rules in model ApplicationGatewayFirewallRuleGroup"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property rules in model ApplicationGatewayFirewallRuleGroup"));
         } else {
             rules().forEach(e -> e.validate());
         }

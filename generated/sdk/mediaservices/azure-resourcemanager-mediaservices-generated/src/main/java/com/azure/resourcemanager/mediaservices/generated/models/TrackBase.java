@@ -46,17 +46,6 @@ public class TrackBase {
     }
 
     /**
-     * Set the odataType property: The discriminator for derived types.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the TrackBase object itself.
-     */
-    protected TrackBase withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

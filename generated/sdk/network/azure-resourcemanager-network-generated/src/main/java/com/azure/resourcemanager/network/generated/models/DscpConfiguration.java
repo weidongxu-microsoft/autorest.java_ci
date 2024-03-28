@@ -213,7 +213,8 @@ public interface DscpConfiguration {
         }
 
         /**
-         * The stage of the DscpConfiguration definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DscpConfiguration definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithMarkings,
             DefinitionStages.WithSourceIpRanges, DefinitionStages.WithDestinationIpRanges,

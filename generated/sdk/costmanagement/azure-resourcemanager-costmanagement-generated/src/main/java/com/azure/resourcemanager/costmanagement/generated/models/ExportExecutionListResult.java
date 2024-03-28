@@ -19,7 +19,8 @@ public interface ExportExecutionListResult {
     List<ExportExecution> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner object.
+     * Gets the inner com.azure.resourcemanager.costmanagement.generated.fluent.models.ExportExecutionListResultInner
+     * object.
      * 
      * @return the inner object.
      */

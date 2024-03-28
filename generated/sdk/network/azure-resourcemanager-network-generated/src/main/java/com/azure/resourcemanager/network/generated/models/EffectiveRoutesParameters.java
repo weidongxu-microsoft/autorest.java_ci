@@ -51,7 +51,8 @@ public final class EffectiveRoutesParameters {
     }
 
     /**
-     * Get the virtualWanResourceType property: The type of the specified resource like RouteTable, ExpressRouteConnection, HubVirtualNetworkConnection, VpnConnection and P2SConnection.
+     * Get the virtualWanResourceType property: The type of the specified resource like RouteTable,
+     * ExpressRouteConnection, HubVirtualNetworkConnection, VpnConnection and P2SConnection.
      * 
      * @return the virtualWanResourceType value.
      */
@@ -60,7 +61,8 @@ public final class EffectiveRoutesParameters {
     }
 
     /**
-     * Set the virtualWanResourceType property: The type of the specified resource like RouteTable, ExpressRouteConnection, HubVirtualNetworkConnection, VpnConnection and P2SConnection.
+     * Set the virtualWanResourceType property: The type of the specified resource like RouteTable,
+     * ExpressRouteConnection, HubVirtualNetworkConnection, VpnConnection and P2SConnection.
      * 
      * @param virtualWanResourceType the virtualWanResourceType value to set.
      * @return the EffectiveRoutesParameters object itself.

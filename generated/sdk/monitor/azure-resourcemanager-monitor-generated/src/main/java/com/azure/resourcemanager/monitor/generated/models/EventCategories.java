@@ -12,22 +12,28 @@ import com.azure.core.util.Context;
  */
 public interface EventCategories {
     /**
-     * Get the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+     * Get the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
+     * includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy as paginated response with {@link PagedIterable}.
+     * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
+     * includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy as paginated
+     * response with {@link PagedIterable}.
      */
     PagedIterable<LocalizableString> list();
 
     /**
-     * Get the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
+     * Get the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
+     * includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy as paginated response with {@link PagedIterable}.
+     * @return the list of available event categories supported in the Activity Logs Service.&lt;br&gt;The current list
+     * includes the following: Administrative, Security, ServiceHealth, Alert, Recommendation, Policy as paginated
+     * response with {@link PagedIterable}.
      */
     PagedIterable<LocalizableString> list(Context context);
 }

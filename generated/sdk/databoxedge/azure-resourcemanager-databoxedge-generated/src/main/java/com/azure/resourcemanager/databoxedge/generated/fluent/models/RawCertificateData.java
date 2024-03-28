@@ -79,8 +79,8 @@ public final class RawCertificateData {
      */
     public void validate() {
         if (certificate() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property certificate in model RawCertificateData"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property certificate in model RawCertificateData"));
         }
     }
 

@@ -44,7 +44,10 @@ public final class CapacityReservationUpdate extends UpdateResource {
     }
 
     /**
-     * Get the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+     * Get the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+     * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are
+     * supported. Refer to List Microsoft.Compute SKUs in a region
+     * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
      * 
      * @return the sku value.
      */
@@ -53,7 +56,10 @@ public final class CapacityReservationUpdate extends UpdateResource {
     }
 
     /**
-     * Set the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are supported. Refer to List Microsoft.Compute SKUs in a region (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
+     * Set the sku property: SKU of the resource for which capacity needs be reserved. The SKU name and capacity is
+     * required to be set. Currently VM Skus with the capability called 'CapacityReservationSupported' set to true are
+     * supported. Refer to List Microsoft.Compute SKUs in a region
+     * (https://docs.microsoft.com/rest/api/compute/resourceskus/list) for supported values.
      * 
      * @param sku the sku value to set.
      * @return the CapacityReservationUpdate object itself.
@@ -73,7 +79,8 @@ public final class CapacityReservationUpdate extends UpdateResource {
     }
 
     /**
-     * Get the reservationId property: A unique id generated and assigned to the capacity reservation by the platform which does not change throughout the lifetime of the resource.
+     * Get the reservationId property: A unique id generated and assigned to the capacity reservation by the platform
+     * which does not change throughout the lifetime of the resource.
      * 
      * @return the reservationId value.
      */
@@ -82,7 +89,10 @@ public final class CapacityReservationUpdate extends UpdateResource {
     }
 
     /**
-     * Get the platformFaultDomainCount property: Specifies the value of fault domain count that Capacity Reservation supports for requested VM size. **Note:** The fault domain count specified for a resource (like virtual machines scale set) must be less than or equal to this value if it deploys using capacity reservation. Minimum api-version: 2022-08-01.
+     * Get the platformFaultDomainCount property: Specifies the value of fault domain count that Capacity Reservation
+     * supports for requested VM size. **Note:** The fault domain count specified for a resource (like virtual machines
+     * scale set) must be less than or equal to this value if it deploys using capacity reservation. Minimum
+     * api-version: 2022-08-01.
      * 
      * @return the platformFaultDomainCount value.
      */
@@ -91,7 +101,8 @@ public final class CapacityReservationUpdate extends UpdateResource {
     }
 
     /**
-     * Get the virtualMachinesAssociated property: A list of all virtual machine resource ids that are associated with the capacity reservation.
+     * Get the virtualMachinesAssociated property: A list of all virtual machine resource ids that are associated with
+     * the capacity reservation.
      * 
      * @return the virtualMachinesAssociated value.
      */
@@ -127,7 +138,8 @@ public final class CapacityReservationUpdate extends UpdateResource {
     }
 
     /**
-     * Get the timeCreated property: Specifies the time at which the Capacity Reservation resource was created. Minimum api-version: 2021-11-01.
+     * Get the timeCreated property: Specifies the time at which the Capacity Reservation resource was created. Minimum
+     * api-version: 2021-11-01.
      * 
      * @return the timeCreated value.
      */

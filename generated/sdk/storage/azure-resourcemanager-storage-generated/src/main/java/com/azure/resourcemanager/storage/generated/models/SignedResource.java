@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The signed services accessible with the service SAS. Possible values include: Blob (b), Container (c), File (f), Share (s).
+ * The signed services accessible with the service SAS. Possible values include: Blob (b), Container (c), File (f),
+ * Share (s).
  */
 public final class SignedResource extends ExpandableStringEnum<SignedResource> {
     /**

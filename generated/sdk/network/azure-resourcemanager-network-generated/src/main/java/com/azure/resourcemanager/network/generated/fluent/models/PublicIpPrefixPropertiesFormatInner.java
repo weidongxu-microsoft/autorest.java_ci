@@ -163,7 +163,8 @@ public final class PublicIpPrefixPropertiesFormatInner {
     }
 
     /**
-     * Get the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration associated with the public IP prefix.
+     * Get the loadBalancerFrontendIpConfiguration property: The reference to load balancer frontend IP configuration
+     * associated with the public IP prefix.
      * 
      * @return the loadBalancerFrontendIpConfiguration value.
      */

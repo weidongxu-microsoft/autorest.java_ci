@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -22,6 +23,13 @@ import java.time.Duration;
 @JsonTypeName("Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition")
 @Fluent
 public final class ThresholdRuleCondition extends RuleCondition {
+    /*
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     */
+    @JsonTypeId
+    @JsonProperty(value = "odata.type", required = true)
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition";
+
     /*
      * the operator used to compare the data and the threshold.
      */
@@ -50,7 +58,18 @@ public final class ThresholdRuleCondition extends RuleCondition {
      * Creates an instance of ThresholdRuleCondition class.
      */
     public ThresholdRuleCondition() {
-        withOdataType("Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition");
+    }
+
+    /**
+     * Get the odataType property: specifies the type of condition. This can be one of three types:
+     * ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the
+     * number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -94,7 +113,8 @@ public final class ThresholdRuleCondition extends RuleCondition {
     }
 
     /**
-     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @return the windowSize value.
      */
@@ -103,7 +123,8 @@ public final class ThresholdRuleCondition extends RuleCondition {
     }
 
     /**
-     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
      * 
      * @param windowSize the windowSize value to set.
      * @return the ThresholdRuleCondition object itself.
@@ -114,7 +135,8 @@ public final class ThresholdRuleCondition extends RuleCondition {
     }
 
     /**
-     * Get the timeAggregation property: the time aggregation operator. How the data that are collected should be combined over time. The default value is the PrimaryAggregationType of the Metric.
+     * Get the timeAggregation property: the time aggregation operator. How the data that are collected should be
+     * combined over time. The default value is the PrimaryAggregationType of the Metric.
      * 
      * @return the timeAggregation value.
      */
@@ -123,7 +145,8 @@ public final class ThresholdRuleCondition extends RuleCondition {
     }
 
     /**
-     * Set the timeAggregation property: the time aggregation operator. How the data that are collected should be combined over time. The default value is the PrimaryAggregationType of the Metric.
+     * Set the timeAggregation property: the time aggregation operator. How the data that are collected should be
+     * combined over time. The default value is the PrimaryAggregationType of the Metric.
      * 
      * @param timeAggregation the timeAggregation value to set.
      * @return the ThresholdRuleCondition object itself.
@@ -151,8 +174,9 @@ public final class ThresholdRuleCondition extends RuleCondition {
     public void validate() {
         super.validate();
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model ThresholdRuleCondition"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property operator in model ThresholdRuleCondition"));
         }
     }
 

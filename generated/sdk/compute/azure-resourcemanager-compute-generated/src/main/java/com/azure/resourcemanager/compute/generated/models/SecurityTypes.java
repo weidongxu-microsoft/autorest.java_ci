@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings. The default behavior is: UefiSettings will not be enabled unless this property is set.
+ * Specifies the SecurityType of the virtual machine. It has to be set to any specified value to enable UefiSettings.
+ * The default behavior is: UefiSettings will not be enabled unless this property is set.
  */
 public final class SecurityTypes extends ExpandableStringEnum<SecurityTypes> {
     /**

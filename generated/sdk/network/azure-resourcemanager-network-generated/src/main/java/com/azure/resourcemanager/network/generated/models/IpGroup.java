@@ -79,7 +79,8 @@ public interface IpGroup {
     List<SubResource> firewalls();
 
     /**
-     * Gets the firewallPolicies property: List of references to Firewall Policies resources that this IpGroups is associated with.
+     * Gets the firewallPolicies property: List of references to Firewall Policies resources that this IpGroups is
+     * associated with.
      * 
      * @return the firewallPolicies value.
      */
@@ -165,7 +166,8 @@ public interface IpGroup {
         }
 
         /**
-         * The stage of the IpGroup definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the IpGroup definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIpAddresses {
             /**

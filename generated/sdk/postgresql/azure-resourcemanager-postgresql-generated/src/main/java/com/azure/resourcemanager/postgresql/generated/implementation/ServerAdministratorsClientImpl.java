@@ -64,7 +64,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientServerAdministrators to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientServerAdministrators to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
@@ -115,7 +116,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a AAD server administrator along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about a AAD server administrator along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Mono<Response<ServerAdministratorResourceInner>> getWithResponseAsync(String resourceGroupName,
@@ -152,7 +154,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about a AAD server administrator along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about a AAD server administrator along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ServerAdministratorResourceInner>> getWithResponseAsync(String resourceGroupName,
@@ -227,7 +230,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -235,7 +239,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a and external administrator to be created along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents a and external administrator to be created along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String serverName,
@@ -269,7 +274,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -278,7 +284,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a and external administrator to be created along with {@link Response} on successful completion of {@link Mono}.
+     * @return represents a and external administrator to be created along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -311,7 +318,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -333,7 +341,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -357,7 +366,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -374,7 +384,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -393,7 +404,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -411,7 +423,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -430,7 +443,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -447,7 +461,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
     }
 
     /**
-     * Creates or update active directory administrator on an existing server. The update action will overwrite the existing administrator.
+     * Creates or update active directory administrator on an existing server. The update action will overwrite the
+     * existing administrator.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -673,7 +688,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a list Active Directory Administrators request along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerAdministratorResourceInner>> listSinglePageAsync(String resourceGroupName,
@@ -712,7 +728,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the response to a list Active Directory Administrators request along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerAdministratorResourceInner>> listSinglePageAsync(String resourceGroupName,
@@ -750,7 +767,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link PagedFlux}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedFlux<ServerAdministratorResourceInner> listAsync(String resourceGroupName, String serverName) {
@@ -766,7 +784,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link PagedFlux}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServerAdministratorResourceInner> listAsync(String resourceGroupName, String serverName,
@@ -782,7 +801,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link PagedIterable}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServerAdministratorResourceInner> list(String resourceGroupName, String serverName) {
@@ -798,7 +818,8 @@ public final class ServerAdministratorsClientImpl implements ServerAdministrator
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the response to a list Active Directory Administrators request as paginated response with {@link PagedIterable}.
+     * @return the response to a list Active Directory Administrators request as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServerAdministratorResourceInner> list(String resourceGroupName, String serverName,

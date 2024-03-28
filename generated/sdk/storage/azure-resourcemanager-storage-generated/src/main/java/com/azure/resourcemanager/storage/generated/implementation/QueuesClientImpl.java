@@ -60,7 +60,8 @@ public final class QueuesClientImpl implements QueuesClient {
     }
 
     /**
-     * The interface defining all the services for StorageManagementClientQueues to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for StorageManagementClientQueues to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "StorageManagementCli")
@@ -124,9 +125,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -169,9 +174,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -214,9 +223,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -233,9 +246,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -252,9 +269,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -270,9 +291,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -315,9 +340,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -360,9 +389,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -379,9 +412,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -398,9 +435,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Creates a new queue with the specified queue name, under the specified account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param queue Queue properties and metadata to be created with.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -416,13 +457,18 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists along with {@link Response} on successful completion of {@link Mono}.
+     * @return the queue with the specified queue name, under the specified account if it exists along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageQueueInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -455,14 +501,19 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists along with {@link Response} on successful completion of {@link Mono}.
+     * @return the queue with the specified queue name, under the specified account if it exists along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<StorageQueueInner>> getWithResponseAsync(String resourceGroupName, String accountName,
@@ -494,13 +545,18 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists on successful completion of {@link Mono}.
+     * @return the queue with the specified queue name, under the specified account if it exists on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<StorageQueueInner> getAsync(String resourceGroupName, String accountName, String queueName) {
@@ -511,14 +567,19 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the queue with the specified queue name, under the specified account if it exists along with {@link Response}.
+     * @return the queue with the specified queue name, under the specified account if it exists along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<StorageQueueInner> getWithResponse(String resourceGroupName, String accountName, String queueName,
@@ -529,9 +590,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -545,9 +610,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Deletes the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -584,9 +653,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Deletes the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -623,9 +696,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Deletes the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -639,9 +716,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Deletes the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -657,9 +738,13 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Deletes the queue with the specified queue name, under the specified account if it exists.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
-     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an alphanumeric character and it cannot have two consecutive dash(-) characters.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param queueName A queue name must be unique within a storage account and must be between 3 and 63 characters.The
+     * name must comprise of lowercase alphanumeric and dash(-) characters only, it should begin and end with an
+     * alphanumeric character and it cannot have two consecutive dash(-) characters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -672,14 +757,18 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional, a maximum number of queues that should be included in a list queue response.
-     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be listed.
+     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all the queues under the specified storage account along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ListQueueInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -711,15 +800,19 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional, a maximum number of queues that should be included in a list queue response.
-     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be listed.
+     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be
+     * listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all the queues under the specified storage account along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ListQueueInner>> listSinglePageAsync(String resourceGroupName, String accountName,
@@ -751,14 +844,18 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional, a maximum number of queues that should be included in a list queue response.
-     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be listed.
+     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account as paginated response with {@link PagedFlux}.
+     * @return a list of all the queues under the specified storage account as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ListQueueInner> listAsync(String resourceGroupName, String accountName, String maxpagesize,
@@ -770,12 +867,15 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account as paginated response with {@link PagedFlux}.
+     * @return a list of all the queues under the specified storage account as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ListQueueInner> listAsync(String resourceGroupName, String accountName) {
@@ -788,15 +888,19 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional, a maximum number of queues that should be included in a list queue response.
-     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be listed.
+     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be
+     * listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account as paginated response with {@link PagedFlux}.
+     * @return a list of all the queues under the specified storage account as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ListQueueInner> listAsync(String resourceGroupName, String accountName, String maxpagesize,
@@ -808,12 +912,15 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account as paginated response with {@link PagedIterable}.
+     * @return a list of all the queues under the specified storage account as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ListQueueInner> list(String resourceGroupName, String accountName) {
@@ -825,15 +932,19 @@ public final class QueuesClientImpl implements QueuesClient {
     /**
      * Gets a list of all the queues under the specified storage account.
      * 
-     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
-     * @param accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional, a maximum number of queues that should be included in a list queue response.
-     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be listed.
+     * @param filter Optional, When specified, only the queues with a name starting with the given filter will be
+     * listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the queues under the specified storage account as paginated response with {@link PagedIterable}.
+     * @return a list of all the queues under the specified storage account as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ListQueueInner> list(String resourceGroupName, String accountName, String maxpagesize,

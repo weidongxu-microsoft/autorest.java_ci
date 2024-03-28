@@ -37,7 +37,8 @@ public final class DiskEncryptionSettings {
     }
 
     /**
-     * Get the diskEncryptionKey property: Specifies the location of the disk encryption key, which is a Key Vault Secret.
+     * Get the diskEncryptionKey property: Specifies the location of the disk encryption key, which is a Key Vault
+     * Secret.
      * 
      * @return the diskEncryptionKey value.
      */
@@ -46,7 +47,8 @@ public final class DiskEncryptionSettings {
     }
 
     /**
-     * Set the diskEncryptionKey property: Specifies the location of the disk encryption key, which is a Key Vault Secret.
+     * Set the diskEncryptionKey property: Specifies the location of the disk encryption key, which is a Key Vault
+     * Secret.
      * 
      * @param diskEncryptionKey the diskEncryptionKey value to set.
      * @return the DiskEncryptionSettings object itself.

@@ -80,7 +80,8 @@ import java.util.stream.Collectors;
 
 /**
  * Entry point to MySqlManager.
- * The Microsoft Azure management API provides create, read, update, and delete functionality for Azure MySQL resources including servers, databases, firewall rules, VNET rules, log files and configurations with new business model.
+ * The Microsoft Azure management API provides create, read, update, and delete functionality for Azure MySQL resources
+ * including servers, databases, firewall rules, VNET rules, log files and configurations with new business model.
  */
 public final class MySqlManager {
     private AzureADAdministrators azureADAdministrators;
@@ -624,7 +625,8 @@ public final class MySqlManager {
     }
 
     /**
-     * Gets wrapped service client MySqlManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client MySqlManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client MySqlManagementClient.
      */

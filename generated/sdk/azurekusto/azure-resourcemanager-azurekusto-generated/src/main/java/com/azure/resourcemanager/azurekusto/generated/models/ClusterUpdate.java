@@ -423,7 +423,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Get the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
+     * Get the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled,
+     * only private endpoint connection to the cluster is allowed.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -432,7 +433,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Set the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled, only private endpoint connection to the cluster is allowed.
+     * Set the publicNetworkAccess property: Public network access to the cluster is enabled by default. When disabled,
+     * only private endpoint connection to the cluster is allowed.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ClusterUpdate object itself.
@@ -515,7 +517,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Get the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days).
+     * Get the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped
+     * (due to lack of data or no activity for many days).
      * 
      * @return the enableAutoStop value.
      */
@@ -524,7 +527,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Set the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped (due to lack of data or no activity for many days).
+     * Set the enableAutoStop property: A boolean value that indicates if the cluster could be automatically stopped
+     * (due to lack of data or no activity for many days).
      * 
      * @param enableAutoStop the enableAutoStop value to set.
      * @return the ClusterUpdate object itself.
@@ -538,7 +542,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Get the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the restrictOutboundNetworkAccess value.
      */
@@ -547,7 +552,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Set the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access.  Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the restrictOutboundNetworkAccess property: Whether or not to restrict outbound network access. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @param restrictOutboundNetworkAccess the restrictOutboundNetworkAccess value to set.
      * @return the ClusterUpdate object itself.
@@ -584,7 +590,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Get the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
+     * Get the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4
+     * and IPv6).
      * 
      * @return the publicIpType value.
      */
@@ -593,7 +600,8 @@ public final class ClusterUpdate extends ProxyResource {
     }
 
     /**
-     * Set the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4 and IPv6).
+     * Set the publicIpType property: Indicates what public IP type to create - IPv4 (default), or DualStack (both IPv4
+     * and IPv6).
      * 
      * @param publicIpType the publicIpType value to set.
      * @return the ClusterUpdate object itself.

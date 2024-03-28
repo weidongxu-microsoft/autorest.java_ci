@@ -147,7 +147,8 @@ public final class StorageAccountProperties {
     }
 
     /**
-     * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to Cloud.
+     * Get the containerCount property: The Container Count. Present only for Storage Accounts with DataPolicy set to
+     * Cloud.
      * 
      * @return the containerCount value.
      */
@@ -162,8 +163,9 @@ public final class StorageAccountProperties {
      */
     public void validate() {
         if (dataPolicy() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property dataPolicy in model StorageAccountProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property dataPolicy in model StorageAccountProperties"));
         }
     }
 

@@ -74,7 +74,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetVMs to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientVirtualMachineScaleSetVMs to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -560,7 +561,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -600,7 +602,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -640,7 +643,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -660,7 +664,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -682,7 +687,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -699,7 +705,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -717,7 +724,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -734,7 +742,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -753,7 +762,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -768,7 +778,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is only supported for managed disks.
+     * Allows you to re-image all the disks ( including data disks ) in the a VM scale set instance. This operation is
+     * only supported for managed disks.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1010,7 +1021,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1050,7 +1062,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1090,7 +1103,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1110,7 +1124,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1132,7 +1147,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1149,7 +1165,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1167,7 +1184,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1184,7 +1202,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1203,7 +1222,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1218,7 +1238,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
+     * Deallocates a specific virtual machine in a VM scale set. Shuts down the virtual machine and releases the compute
+     * resources it uses. You are not billed for the compute resources of this virtual machine once it is deallocated.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -1240,12 +1261,15 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a virtual machine scale set virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a virtual machine scale set virtual machine along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmScaleSetName,
@@ -1289,13 +1313,16 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a virtual machine scale set virtual machine along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a virtual machine scale set virtual machine along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vmScaleSetName,
@@ -1338,8 +1365,10 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1387,8 +1416,10 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1435,8 +1466,10 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1459,8 +1492,10 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1501,8 +1536,10 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1544,8 +1581,10 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param vmScaleSetName The name of the VM scale set where the extension should be create or updated.
      * @param instanceId The instance ID of the virtual machine.
      * @param parameters Parameters supplied to the Update Virtual Machine Scale Sets VM operation.
-     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify the last-seen ETag value to prevent accidentally overwriting concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record set. Other values will result in error from server as they are not supported.
+     * @param ifMatch The ETag of the transformation. Omit this value to always overwrite the current resource. Specify
+     * the last-seen ETag value to prevent accidentally overwriting concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow a new record set to be created, but to prevent updating an existing record
+     * set. Other values will result in error from server as they are not supported.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1565,7 +1604,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1606,7 +1646,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1647,7 +1688,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1689,7 +1731,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1730,7 +1773,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1750,7 +1794,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1787,7 +1832,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1823,7 +1869,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in Preview).
+     * @param forceDeletion Optional parameter to force delete a virtual machine from a VM scale set. (Feature in
+     * Preview).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1841,11 +1888,13 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of
+     * the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine from a VM scale set along with {@link Response} on successful completion of {@link Mono}.
+     * @return a virtual machine from a VM scale set along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineScaleSetVMInner>> getWithResponseAsync(String resourceGroupName,
@@ -1882,12 +1931,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of
+     * the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a virtual machine from a VM scale set along with {@link Response} on successful completion of {@link Mono}.
+     * @return a virtual machine from a VM scale set along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineScaleSetVMInner>> getWithResponseAsync(String resourceGroupName,
@@ -1942,7 +1993,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
+     * @param expand The expand expression to apply on the operation. 'InstanceView' will retrieve the instance view of
+     * the virtual machine. 'UserData' will retrieve the UserData of the virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -1981,7 +2033,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a virtual machine from a VM scale set along with {@link Response} on successful completion of {@link Mono}.
+     * @return the status of a virtual machine from a VM scale set along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineScaleSetVMInstanceViewInner>>
@@ -2022,7 +2075,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of a virtual machine from a VM scale set along with {@link Response} on successful completion of {@link Mono}.
+     * @return the status of a virtual machine from a VM scale set along with {@link Response} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VirtualMachineScaleSetVMInstanceViewInner>> getInstanceViewWithResponseAsync(
@@ -2110,13 +2164,15 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the VM scale set.
-     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code, 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
+     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code,
+     * 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
      * @param select The list parameters. Allowed values are 'instanceView', 'instanceView/statuses'.
      * @param expand The expand expression to apply to the operation. Allowed values are 'instanceView'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machines in a VM scale sets along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all virtual machines in a VM scale sets along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetVMInner>> listSinglePageAsync(String resourceGroupName,
@@ -2153,14 +2209,16 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the VM scale set.
-     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code, 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
+     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code,
+     * 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
      * @param select The list parameters. Allowed values are 'instanceView', 'instanceView/statuses'.
      * @param expand The expand expression to apply to the operation. Allowed values are 'instanceView'.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all virtual machines in a VM scale sets along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all virtual machines in a VM scale sets along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetVMInner>> listSinglePageAsync(String resourceGroupName,
@@ -2196,7 +2254,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the VM scale set.
-     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code, 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
+     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code,
+     * 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
      * @param select The list parameters. Allowed values are 'instanceView', 'instanceView/statuses'.
      * @param expand The expand expression to apply to the operation. Allowed values are 'instanceView'.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2238,7 +2297,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the VM scale set.
-     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code, 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
+     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code,
+     * 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
      * @param select The list parameters. Allowed values are 'instanceView', 'instanceView/statuses'.
      * @param expand The expand expression to apply to the operation. Allowed values are 'instanceView'.
      * @param context The context to associate with this operation.
@@ -2279,7 +2339,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the VM scale set.
-     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code, 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
+     * @param filter The filter to apply to the operation. Allowed values are 'startswith(instanceView/statuses/code,
+     * 'PowerState') eq true', 'properties/latestModelApplied eq true', 'properties/latestModelApplied eq false'.
      * @param select The list parameters. Allowed values are 'instanceView', 'instanceView/statuses'.
      * @param expand The expand expression to apply to the operation. Allowed values are 'instanceView'.
      * @param context The context to associate with this operation.
@@ -2296,12 +2357,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2337,12 +2400,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2378,12 +2443,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2399,7 +2466,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -2420,12 +2488,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2443,7 +2513,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -2461,12 +2532,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2481,12 +2554,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2500,7 +2575,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -2518,12 +2594,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2538,7 +2616,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
@@ -2554,12 +2633,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
     }
 
     /**
-     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting charged for the resources. Instead, use deallocate to release resources and avoid charges.
+     * Power off (stop) a virtual machine in a VM scale set. Note that resources are still attached and you are getting
+     * charged for the resources. Instead, use deallocate to release resources and avoid charges.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
+     * @param skipShutdown The parameter to request non-graceful VM shutdown. True value for this flag indicates
+     * non-graceful shutdown whereas false indicates otherwise. Default value for this flag is false if not specified.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -3246,11 +3327,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120 minutes.
+     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
+     * 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120
+     * minutes.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response} on successful completion of {@link Mono}.
+     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RetrieveBootDiagnosticsDataResultInner>> retrieveBootDiagnosticsDataWithResponseAsync(
@@ -3288,12 +3372,15 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120 minutes.
+     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
+     * 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120
+     * minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response} on successful completion of {@link Mono}.
+     * @return the SAS URIs of the console screenshot and serial log blobs along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<RetrieveBootDiagnosticsDataResultInner>> retrieveBootDiagnosticsDataWithResponseAsync(
@@ -3349,7 +3436,9 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120 minutes.
+     * @param sasUriExpirationTimeInMinutes Expiration duration in minutes for the SAS URIs with a value between 1 to
+     * 1440 minutes. **Note:** If not specified, SAS URIs will be generated with a default expiration duration of 120
+     * minutes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -3745,11 +3834,13 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies the storage settings for the virtual machine disks along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies the storage settings for the virtual machine disks along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> attachDetachDataDisksWithResponseAsync(String resourceGroupName,
@@ -3791,12 +3882,14 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies the storage settings for the virtual machine disks along with {@link Response} on successful completion of {@link Mono}.
+     * @return specifies the storage settings for the virtual machine disks along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> attachDetachDataDisksWithResponseAsync(String resourceGroupName,
@@ -3837,7 +3930,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3858,7 +3952,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -3882,7 +3977,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3901,7 +3997,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -3922,7 +4019,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3941,7 +4039,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -3962,7 +4061,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3980,7 +4080,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @param resourceGroupName The name of the resource group.
      * @param vmScaleSetName The name of the VM scale set.
      * @param instanceId The instance ID of the virtual machine.
-     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale Sets VM.
+     * @param parameters Parameters supplied to the attach and detach data disks operation on a Virtual Machine Scale
+     * Sets VM.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -4255,7 +4356,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine Scale Set VMs operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine Scale Set VMs operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetVMInner>> listNextSinglePageAsync(String nextLink) {
@@ -4283,7 +4385,8 @@ public final class VirtualMachineScaleSetVMsClientImpl implements VirtualMachine
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Virtual Machine Scale Set VMs operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Virtual Machine Scale Set VMs operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualMachineScaleSetVMInner>> listNextSinglePageAsync(String nextLink,

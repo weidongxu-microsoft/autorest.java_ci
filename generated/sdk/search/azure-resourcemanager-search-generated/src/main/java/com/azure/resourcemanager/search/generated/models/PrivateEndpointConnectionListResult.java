@@ -42,7 +42,8 @@ public final class PrivateEndpointConnectionListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of private endpoint connections. Returned when the total number of requested private endpoint connections exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of private endpoint connections.
+     * Returned when the total number of requested private endpoint connections exceed maximum page size.
      * 
      * @return the nextLink value.
      */

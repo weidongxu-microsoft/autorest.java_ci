@@ -5,6 +5,8 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -20,11 +22,27 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Immutable
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
     extends ContentKeyPolicyPlayReadyContentKeyLocation {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader";
+
     /**
      * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader class.
      */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

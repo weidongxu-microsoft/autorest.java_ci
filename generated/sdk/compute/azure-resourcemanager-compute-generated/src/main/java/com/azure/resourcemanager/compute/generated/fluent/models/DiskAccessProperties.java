@@ -39,7 +39,8 @@ public final class DiskAccessProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: A readonly collection of private endpoint connections created on the disk. Currently only one endpoint connection is supported.
+     * Get the privateEndpointConnections property: A readonly collection of private endpoint connections created on the
+     * disk. Currently only one endpoint connection is supported.
      * 
      * @return the privateEndpointConnections value.
      */

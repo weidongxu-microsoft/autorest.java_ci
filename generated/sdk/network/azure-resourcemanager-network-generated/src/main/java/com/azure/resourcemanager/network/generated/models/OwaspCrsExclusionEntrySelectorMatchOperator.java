@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * When matchVariable is a collection, operate on the selector to specify which elements in the collection this exclusion applies to.
+ * When matchVariable is a collection, operate on the selector to specify which elements in the collection this
+ * exclusion applies to.
  */
 public final class OwaspCrsExclusionEntrySelectorMatchOperator
     extends ExpandableStringEnum<OwaspCrsExclusionEntrySelectorMatchOperator> {

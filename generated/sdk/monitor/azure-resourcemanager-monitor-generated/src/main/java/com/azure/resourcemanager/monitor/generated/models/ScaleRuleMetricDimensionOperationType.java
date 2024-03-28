@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being equal to any of the values. 'NotEquals' being not equal to all of the values.
+ * the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being equal to any of the values.
+ * 'NotEquals' being not equal to all of the values.
  */
 public final class ScaleRuleMetricDimensionOperationType
     extends ExpandableStringEnum<ScaleRuleMetricDimensionOperationType> {

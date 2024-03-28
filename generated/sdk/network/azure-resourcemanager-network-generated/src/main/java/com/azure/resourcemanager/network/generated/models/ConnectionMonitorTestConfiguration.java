@@ -128,7 +128,8 @@ public final class ConnectionMonitorTestConfiguration {
     }
 
     /**
-     * Get the preferredIpVersion property: The preferred IP version to use in test evaluation. The connection monitor may choose to use a different version depending on other parameters.
+     * Get the preferredIpVersion property: The preferred IP version to use in test evaluation. The connection monitor
+     * may choose to use a different version depending on other parameters.
      * 
      * @return the preferredIpVersion value.
      */
@@ -137,7 +138,8 @@ public final class ConnectionMonitorTestConfiguration {
     }
 
     /**
-     * Set the preferredIpVersion property: The preferred IP version to use in test evaluation. The connection monitor may choose to use a different version depending on other parameters.
+     * Set the preferredIpVersion property: The preferred IP version to use in test evaluation. The connection monitor
+     * may choose to use a different version depending on other parameters.
      * 
      * @param preferredIpVersion the preferredIpVersion value to set.
      * @return the ConnectionMonitorTestConfiguration object itself.
@@ -236,12 +238,14 @@ public final class ConnectionMonitorTestConfiguration {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model ConnectionMonitorTestConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model ConnectionMonitorTestConfiguration"));
         }
         if (protocol() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property protocol in model ConnectionMonitorTestConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property protocol in model ConnectionMonitorTestConfiguration"));
         }
         if (httpConfiguration() != null) {
             httpConfiguration().validate();

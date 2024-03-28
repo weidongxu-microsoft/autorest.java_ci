@@ -42,7 +42,8 @@ public final class QuotaUsagesListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of quota usages. Returned when the total number of requested quota usages exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of quota usages. Returned when the
+     * total number of requested quota usages exceed maximum page size.
      * 
      * @return the nextLink value.
      */

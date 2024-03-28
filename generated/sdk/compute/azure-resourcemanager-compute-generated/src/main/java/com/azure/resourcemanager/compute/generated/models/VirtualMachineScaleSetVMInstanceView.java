@@ -68,7 +68,9 @@ public interface VirtualMachineScaleSetVMInstanceView {
     VirtualMachineHealthStatus vmHealth();
 
     /**
-     * Gets the bootDiagnostics property: Boot Diagnostics is a debugging feature which allows you to view Console Output and Screenshot to diagnose VM status. You can easily view the output of your console log. Azure also enables you to see a screenshot of the VM from the hypervisor.
+     * Gets the bootDiagnostics property: Boot Diagnostics is a debugging feature which allows you to view Console
+     * Output and Screenshot to diagnose VM status. You can easily view the output of your console log. Azure also
+     * enables you to see a screenshot of the VM from the hypervisor.
      * 
      * @return the bootDiagnostics value.
      */
@@ -82,21 +84,28 @@ public interface VirtualMachineScaleSetVMInstanceView {
     List<InstanceViewStatus> statuses();
 
     /**
-     * Gets the assignedHost property: Resource id of the dedicated host, on which the virtual machine is allocated through automatic placement, when the virtual machine is associated with a dedicated host group that has automatic placement enabled. Minimum api-version: 2020-06-01.
+     * Gets the assignedHost property: Resource id of the dedicated host, on which the virtual machine is allocated
+     * through automatic placement, when the virtual machine is associated with a dedicated host group that has
+     * automatic placement enabled. Minimum api-version: 2020-06-01.
      * 
      * @return the assignedHost value.
      */
     String assignedHost();
 
     /**
-     * Gets the placementGroupId property: The placement group in which the VM is running. If the VM is deallocated it will not have a placementGroupId.
+     * Gets the placementGroupId property: The placement group in which the VM is running. If the VM is deallocated it
+     * will not have a placementGroupId.
      * 
      * @return the placementGroupId value.
      */
     String placementGroupId();
 
     /**
-     * Gets the computerName property: Specifies the host OS name of the virtual machine. &lt;br&gt;&lt;br&gt; This name cannot be updated after the VM is created. &lt;br&gt;&lt;br&gt; **Max-length (Windows):** 15 characters &lt;br&gt;&lt;br&gt; **Max-length (Linux):** 64 characters. &lt;br&gt;&lt;br&gt; For naming conventions and restrictions see [Azure infrastructure services implementation guidelines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-infrastructure-subscription-accounts-guidelines?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#1-naming-conventions).
+     * Gets the computerName property: Specifies the host OS name of the virtual machine. &lt;br&gt;&lt;br&gt; This name
+     * cannot be updated after the VM is created. &lt;br&gt;&lt;br&gt; **Max-length (Windows):** 15 characters
+     * &lt;br&gt;&lt;br&gt; **Max-length (Linux):** 64 characters. &lt;br&gt;&lt;br&gt; For naming conventions and
+     * restrictions see [Azure infrastructure services implementation
+     * guidelines](https://docs.microsoft.com/azure/virtual-machines/virtual-machines-linux-infrastructure-subscription-accounts-guidelines?toc=%2fazure%2fvirtual-machines%2flinux%2ftoc.json#1-naming-conventions).
      * 
      * @return the computerName value.
      */
@@ -124,7 +133,8 @@ public interface VirtualMachineScaleSetVMInstanceView {
     HyperVGeneration hyperVGeneration();
 
     /**
-     * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.compute.generated.fluent.models.VirtualMachineScaleSetVMInstanceViewInner object.
      * 
      * @return the inner object.
      */

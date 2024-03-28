@@ -187,7 +187,8 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
+     * Get the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
+     * for the App Service Environment.
      * 
      * @return the internalLoadBalancingMode value.
      */
@@ -196,7 +197,8 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network for the App Service Environment.
+     * Set the internalLoadBalancingMode property: Specifies which endpoints to serve internally in the Virtual Network
+     * for the App Service Environment.
      * 
      * @param internalLoadBalancingMode the internalLoadBalancingMode value to set.
      * @return the AppServiceEnvironmentInner object itself.
@@ -305,8 +307,10 @@ public final class AppServiceEnvironmentInner {
     }
 
     /**
-     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise, &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer available
-     *  (most likely because NSG blocked the incoming traffic).
+     * Get the suspended property: &lt;code&gt;true&lt;/code&gt; if the App Service Environment is suspended; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;. The environment can be suspended, e.g. when the management endpoint is no longer
+     * available
+     * (most likely because NSG blocked the incoming traffic).
      * 
      * @return the suspended value.
      */
@@ -481,8 +485,9 @@ public final class AppServiceEnvironmentInner {
      */
     public void validate() {
         if (virtualNetwork() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property virtualNetwork in model AppServiceEnvironmentInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property virtualNetwork in model AppServiceEnvironmentInner"));
         } else {
             virtualNetwork().validate();
         }

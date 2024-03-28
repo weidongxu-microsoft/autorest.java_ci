@@ -18,9 +18,11 @@ public interface MhsmPrivateEndpointConnections {
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with {@link PagedIterable}.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<MhsmPrivateEndpointConnection> listByResource(String resourceGroupName, String name);
 
@@ -31,9 +33,11 @@ public interface MhsmPrivateEndpointConnections {
      * @param name Name of the managed HSM Pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with {@link PagedIterable}.
+     * @return list of private endpoint connections associated with a managed HSM Pools as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<MhsmPrivateEndpointConnection> listByResource(String resourceGroupName, String name, Context context);
 
@@ -42,12 +46,15 @@ public interface MhsmPrivateEndpointConnections {
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link Response}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with
+     * {@link Response}.
      */
     Response<MhsmPrivateEndpointConnection> getWithResponse(String resourceGroupName, String name,
         String privateEndpointConnectionName, Context context);
@@ -57,9 +64,11 @@ public interface MhsmPrivateEndpointConnections {
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the specified private endpoint connection associated with the managed HSM Pool.
      */
@@ -70,7 +79,8 @@ public interface MhsmPrivateEndpointConnections {
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -83,7 +93,8 @@ public interface MhsmPrivateEndpointConnections {
      * 
      * @param resourceGroupName Name of the resource group that contains the managed HSM pool.
      * @param name Name of the managed HSM Pool.
-     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm pool.
+     * @param privateEndpointConnectionName Name of the private endpoint connection associated with the managed hsm
+     * pool.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -98,9 +109,11 @@ public interface MhsmPrivateEndpointConnections {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link Response}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with
+     * {@link Response}.
      */
     MhsmPrivateEndpointConnection getById(String id);
 
@@ -110,9 +123,11 @@ public interface MhsmPrivateEndpointConnections {
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.keyvault.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified private endpoint connection associated with the managed HSM Pool along with {@link Response}.
+     * @return the specified private endpoint connection associated with the managed HSM Pool along with
+     * {@link Response}.
      */
     Response<MhsmPrivateEndpointConnection> getByIdWithResponse(String id, Context context);
 

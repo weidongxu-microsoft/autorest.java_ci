@@ -53,7 +53,9 @@ public interface SiteSourceControl {
     String branch();
 
     /**
-     * Gets the isManualIntegration property: &lt;code&gt;true&lt;/code&gt; to limit to manual integration; &lt;code&gt;false&lt;/code&gt; to enable continuous integration (which configures webhooks into online repos like GitHub).
+     * Gets the isManualIntegration property: &lt;code&gt;true&lt;/code&gt; to limit to manual integration;
+     * &lt;code&gt;false&lt;/code&gt; to enable continuous integration (which configures webhooks into online repos like
+     * GitHub).
      * 
      * @return the isManualIntegration value.
      */
@@ -67,14 +69,16 @@ public interface SiteSourceControl {
     Boolean isGitHubAction();
 
     /**
-     * Gets the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the deploymentRollbackEnabled property: &lt;code&gt;true&lt;/code&gt; to enable deployment rollback;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the deploymentRollbackEnabled value.
      */
     Boolean deploymentRollbackEnabled();
 
     /**
-     * Gets the isMercurial property: &lt;code&gt;true&lt;/code&gt; for a Mercurial repository; &lt;code&gt;false&lt;/code&gt; for a Git repository.
+     * Gets the isMercurial property: &lt;code&gt;true&lt;/code&gt; for a Mercurial repository;
+     * &lt;code&gt;false&lt;/code&gt; for a Git repository.
      * 
      * @return the isMercurial value.
      */

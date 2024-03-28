@@ -38,7 +38,8 @@ public final class VirtualMachinePatchStatus {
     }
 
     /**
-     * Get the availablePatchSummary property: The available patch summary of the latest assessment operation for the virtual machine.
+     * Get the availablePatchSummary property: The available patch summary of the latest assessment operation for the
+     * virtual machine.
      * 
      * @return the availablePatchSummary value.
      */
@@ -47,7 +48,8 @@ public final class VirtualMachinePatchStatus {
     }
 
     /**
-     * Set the availablePatchSummary property: The available patch summary of the latest assessment operation for the virtual machine.
+     * Set the availablePatchSummary property: The available patch summary of the latest assessment operation for the
+     * virtual machine.
      * 
      * @param availablePatchSummary the availablePatchSummary value to set.
      * @return the VirtualMachinePatchStatus object itself.
@@ -58,7 +60,8 @@ public final class VirtualMachinePatchStatus {
     }
 
     /**
-     * Get the lastPatchInstallationSummary property: The installation summary of the latest installation operation for the virtual machine.
+     * Get the lastPatchInstallationSummary property: The installation summary of the latest installation operation for
+     * the virtual machine.
      * 
      * @return the lastPatchInstallationSummary value.
      */
@@ -67,7 +70,8 @@ public final class VirtualMachinePatchStatus {
     }
 
     /**
-     * Set the lastPatchInstallationSummary property: The installation summary of the latest installation operation for the virtual machine.
+     * Set the lastPatchInstallationSummary property: The installation summary of the latest installation operation for
+     * the virtual machine.
      * 
      * @param lastPatchInstallationSummary the lastPatchInstallationSummary value to set.
      * @return the VirtualMachinePatchStatus object itself.

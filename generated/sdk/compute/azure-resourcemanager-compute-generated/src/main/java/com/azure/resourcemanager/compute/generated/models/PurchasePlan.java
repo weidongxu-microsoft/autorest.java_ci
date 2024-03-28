@@ -78,7 +78,8 @@ public final class PurchasePlan {
     }
 
     /**
-     * Get the product property: Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
+     * Get the product property: Specifies the product of the image from the marketplace. This is the same value as
+     * Offer under the imageReference element.
      * 
      * @return the product value.
      */
@@ -87,7 +88,8 @@ public final class PurchasePlan {
     }
 
     /**
-     * Set the product property: Specifies the product of the image from the marketplace. This is the same value as Offer under the imageReference element.
+     * Set the product property: Specifies the product of the image from the marketplace. This is the same value as
+     * Offer under the imageReference element.
      * 
      * @param product the product value to set.
      * @return the PurchasePlan object itself.
@@ -104,16 +106,16 @@ public final class PurchasePlan {
      */
     public void validate() {
         if (publisher() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property publisher in model PurchasePlan"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property publisher in model PurchasePlan"));
         }
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model PurchasePlan"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model PurchasePlan"));
         }
         if (product() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property product in model PurchasePlan"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property product in model PurchasePlan"));
         }
     }
 

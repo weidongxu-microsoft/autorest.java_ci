@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -27,6 +28,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class AudioTrackDescriptor extends TrackDescriptor {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.AudioTrackDescriptor";
+
+    /*
      * Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
      */
     @JsonProperty(value = "channelMapping")
@@ -36,11 +44,21 @@ public class AudioTrackDescriptor extends TrackDescriptor {
      * Creates an instance of AudioTrackDescriptor class.
      */
     public AudioTrackDescriptor() {
-        withOdataType("#Microsoft.Media.AudioTrackDescriptor");
     }
 
     /**
-     * Get the channelMapping property: Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
+     * tracks into stereo or multi-channel audio tracks.
      * 
      * @return the channelMapping value.
      */
@@ -49,7 +67,8 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     }
 
     /**
-     * Set the channelMapping property: Optional designation for single channel audio tracks.  Can be used to combine the tracks into stereo or multi-channel audio tracks.
+     * Set the channelMapping property: Optional designation for single channel audio tracks. Can be used to combine the
+     * tracks into stereo or multi-channel audio tracks.
      * 
      * @param channelMapping the channelMapping value to set.
      * @return the AudioTrackDescriptor object itself.

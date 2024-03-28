@@ -24,13 +24,19 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be created.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version operation.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be created.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryApplicationVersionInner>, GalleryApplicationVersionInner> beginCreateOrUpdate(
@@ -42,14 +48,20 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be created.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version operation.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be created.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryApplicationVersionInner>, GalleryApplicationVersionInner> beginCreateOrUpdate(
@@ -62,11 +74,16 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be created.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version operation.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be created.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version
+     * operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery Application Version that you want to create or update.
      */
@@ -80,12 +97,17 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be created.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
-     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version operation.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be created.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be created. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationVersion Parameters supplied to the create or update gallery Application Version
+     * operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery Application Version that you want to create or update.
      */
@@ -99,13 +121,18 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be updated.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be updated.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @param galleryApplicationVersion Parameters supplied to the update gallery Application Version operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryApplicationVersionInner>, GalleryApplicationVersionInner> beginUpdate(
@@ -117,14 +144,19 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be updated.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be updated.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @param galleryApplicationVersion Parameters supplied to the update gallery Application Version operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that you want to create or update.
+     * @return the {@link SyncPoller} for polling of specifies information about the gallery Application Version that
+     * you want to create or update.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<GalleryApplicationVersionInner>, GalleryApplicationVersionInner> beginUpdate(
@@ -137,11 +169,15 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be updated.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be updated.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @param galleryApplicationVersion Parameters supplied to the update gallery Application Version operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery Application Version that you want to create or update.
      */
@@ -154,12 +190,16 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is to be updated.
-     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version is
+     * to be updated.
+     * @param galleryApplicationVersionName The name of the gallery Application Version to be updated. Needs to follow
+     * semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a
+     * 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @param galleryApplicationVersion Parameters supplied to the update gallery Application Version operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery Application Version that you want to create or update.
      */
@@ -173,14 +213,17 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version resides.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
+     * resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be retrieved.
      * @param expand The expand expression to apply on the operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return specifies information about the gallery Application Version that you want to create or update along with {@link Response}.
+     * @return specifies information about the gallery Application Version that you want to create or update along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<GalleryApplicationVersionInner> getWithResponse(String resourceGroupName, String galleryName,
@@ -192,10 +235,12 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version resides.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
+     * resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be retrieved.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return specifies information about the gallery Application Version that you want to create or update.
      */
@@ -208,10 +253,12 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version resides.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
+     * resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -224,11 +271,13 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version resides.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
+     * resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link SyncPoller} for polling of long-running operation.
      */
@@ -241,10 +290,12 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version resides.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
+     * resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -256,11 +307,13 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version resides.
+     * @param galleryApplicationName The name of the gallery Application Definition in which the Application Version
+     * resides.
      * @param galleryApplicationVersionName The name of the gallery Application Version to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
@@ -272,9 +325,11 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the Shared Application Gallery Application Definition from which the Application Versions are to be listed.
+     * @param galleryApplicationName The name of the Shared Application Gallery Application Definition from which the
+     * Application Versions are to be listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Gallery Application version operation response as paginated response with {@link PagedIterable}.
      */
@@ -287,10 +342,12 @@ public interface GalleryApplicationVersionsClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param galleryName The name of the Shared Application Gallery in which the Application Definition resides.
-     * @param galleryApplicationName The name of the Shared Application Gallery Application Definition from which the Application Versions are to be listed.
+     * @param galleryApplicationName The name of the Shared Application Gallery Application Definition from which the
+     * Application Versions are to be listed.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the List Gallery Application version operation response as paginated response with {@link PagedIterable}.
      */

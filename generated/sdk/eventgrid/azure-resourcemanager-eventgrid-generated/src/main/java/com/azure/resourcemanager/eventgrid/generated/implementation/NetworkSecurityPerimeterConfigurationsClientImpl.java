@@ -38,7 +38,8 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsClient.
  */
 public final class NetworkSecurityPerimeterConfigurationsClientImpl
     implements NetworkSecurityPerimeterConfigurationsClient {
@@ -64,7 +65,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     }
 
     /**
-     * The interface defining all the services for EventGridManagementClientNetworkSecurityPerimeterConfigurations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for EventGridManagementClientNetworkSecurityPerimeterConfigurations to be
+     * used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventGridManagementC")
@@ -118,7 +120,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific network security perimeter configuration with a topic or domain along with {@link Response} on successful completion of {@link Mono}.
+     * @return a specific network security perimeter configuration with a topic or domain along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityPerimeterConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -171,7 +174,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific network security perimeter configuration with a topic or domain along with {@link Response} on successful completion of {@link Mono}.
+     * @return a specific network security perimeter configuration with a topic or domain along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityPerimeterConfigurationInner>> getWithResponseAsync(String resourceGroupName,
@@ -221,7 +225,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a specific network security perimeter configuration with a topic or domain on successful completion of {@link Mono}.
+     * @return a specific network security perimeter configuration with a topic or domain on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityPerimeterConfigurationInner> getAsync(String resourceGroupName,
@@ -281,7 +286,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -291,7 +297,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network security perimeter configuration along with {@link Response} on successful completion of {@link Mono}.
+     * @return network security perimeter configuration along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> reconcileWithResponseAsync(String resourceGroupName,
@@ -333,7 +340,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -344,7 +352,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return network security perimeter configuration along with {@link Response} on successful completion of {@link Mono}.
+     * @return network security perimeter configuration along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> reconcileWithResponseAsync(String resourceGroupName,
@@ -384,7 +393,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -412,7 +422,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -442,7 +453,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -466,7 +478,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -492,7 +505,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -515,7 +529,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -539,7 +554,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -561,7 +577,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     /**
      * Reconcile a specific network security perimeter configuration for a given network security perimeter association.
      * 
-     * Reconcile a specific network security perimeter configuration for a given network security perimeter association with a topic or domain.
+     * Reconcile a specific network security perimeter configuration for a given network security perimeter association
+     * with a topic or domain.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param resourceType The type of the resource. This can be either \'topics\' or \'domains\'.
@@ -593,7 +610,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all network security perimeter configurations associated with a topic or domain along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityPerimeterConfigurationInner>> listSinglePageAsync(
@@ -637,7 +655,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all network security perimeter configurations associated with a topic or domain along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<NetworkSecurityPerimeterConfigurationInner>> listSinglePageAsync(
@@ -681,7 +700,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedFlux}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response
+     * with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NetworkSecurityPerimeterConfigurationInner> listAsync(String resourceGroupName,
@@ -701,7 +721,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedFlux}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response
+     * with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<NetworkSecurityPerimeterConfigurationInner> listAsync(String resourceGroupName,
@@ -720,7 +741,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedIterable}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response
+     * with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NetworkSecurityPerimeterConfigurationInner> list(String resourceGroupName,
@@ -740,7 +762,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all network security perimeter configurations associated with a topic or domain as paginated response with {@link PagedIterable}.
+     * @return all network security perimeter configurations associated with a topic or domain as paginated response
+     * with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<NetworkSecurityPerimeterConfigurationInner> list(String resourceGroupName,

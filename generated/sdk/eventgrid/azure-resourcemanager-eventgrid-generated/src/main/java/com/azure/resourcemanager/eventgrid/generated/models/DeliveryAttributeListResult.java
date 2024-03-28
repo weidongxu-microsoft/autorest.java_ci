@@ -19,7 +19,8 @@ public interface DeliveryAttributeListResult {
     List<DeliveryAttributeMapping> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner object.
+     * Gets the inner com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -9,6 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.FileTriggerProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -20,6 +21,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class FileEventTrigger extends TriggerInner {
     /*
+     * Trigger Kind.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private TriggerEventType kind = TriggerEventType.FILE_EVENT;
+
+    /*
      * File trigger properties.
      */
     @JsonProperty(value = "properties", required = true)
@@ -29,7 +37,16 @@ public final class FileEventTrigger extends TriggerInner {
      * Creates an instance of FileEventTrigger class.
      */
     public FileEventTrigger() {
-        withKind(TriggerEventType.FILE_EVENT);
+    }
+
+    /**
+     * Get the kind property: Trigger Kind.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public TriggerEventType kind() {
+        return this.kind;
     }
 
     /**
@@ -88,7 +105,9 @@ public final class FileEventTrigger extends TriggerInner {
     }
 
     /**
-     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
+     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its
+     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
+     * tag can be the name or the image URL of the module.
      * 
      * @return the customContextTag value.
      */
@@ -97,7 +116,9 @@ public final class FileEventTrigger extends TriggerInner {
     }
 
     /**
-     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
+     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its
+     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
+     * tag can be the name or the image URL of the module.
      * 
      * @param customContextTag the customContextTag value to set.
      * @return the FileEventTrigger object itself.
@@ -119,8 +140,9 @@ public final class FileEventTrigger extends TriggerInner {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model FileEventTrigger"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model FileEventTrigger"));
         } else {
             innerProperties().validate();
         }

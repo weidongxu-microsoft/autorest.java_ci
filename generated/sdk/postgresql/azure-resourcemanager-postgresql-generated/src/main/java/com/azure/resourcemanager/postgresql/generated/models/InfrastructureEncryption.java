@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Add a second layer of encryption for your data using new encryption algorithm which gives additional data protection. Value is optional but if passed in, must be 'Disabled' or 'Enabled'.
+ * Add a second layer of encryption for your data using new encryption algorithm which gives additional data protection.
+ * Value is optional but if passed in, must be 'Disabled' or 'Enabled'.
  */
 public final class InfrastructureEncryption extends ExpandableStringEnum<InfrastructureEncryption> {
     /**

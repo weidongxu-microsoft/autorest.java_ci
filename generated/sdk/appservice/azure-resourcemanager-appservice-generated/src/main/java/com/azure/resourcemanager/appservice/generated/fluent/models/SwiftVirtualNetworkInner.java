@@ -44,7 +44,8 @@ public final class SwiftVirtualNetworkInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web App will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
+     * Get the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web App
+     * will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
      * 
      * @return the subnetResourceId value.
      */
@@ -53,7 +54,8 @@ public final class SwiftVirtualNetworkInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web App will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
+     * Set the subnetResourceId property: The Virtual Network subnet's resource ID. This is the subnet that this Web App
+     * will join. This subnet must have a delegation to Microsoft.Web/serverFarms defined first.
      * 
      * @param subnetResourceId the subnetResourceId value to set.
      * @return the SwiftVirtualNetworkInner object itself.
@@ -67,7 +69,8 @@ public final class SwiftVirtualNetworkInner extends ProxyOnlyResource {
     }
 
     /**
-     * Get the swiftSupported property: A flag that specifies if the scale unit this Web App is on supports Swift integration.
+     * Get the swiftSupported property: A flag that specifies if the scale unit this Web App is on supports Swift
+     * integration.
      * 
      * @return the swiftSupported value.
      */
@@ -76,7 +79,8 @@ public final class SwiftVirtualNetworkInner extends ProxyOnlyResource {
     }
 
     /**
-     * Set the swiftSupported property: A flag that specifies if the scale unit this Web App is on supports Swift integration.
+     * Set the swiftSupported property: A flag that specifies if the scale unit this Web App is on supports Swift
+     * integration.
      * 
      * @param swiftSupported the swiftSupported value to set.
      * @return the SwiftVirtualNetworkInner object itself.

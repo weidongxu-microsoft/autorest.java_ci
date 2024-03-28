@@ -69,7 +69,8 @@ public class LogAnalyticsInputBase {
     }
 
     /**
-     * Get the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+     * Get the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes
+     * output logs to.
      * 
      * @return the blobContainerSasUri value.
      */
@@ -78,7 +79,8 @@ public class LogAnalyticsInputBase {
     }
 
     /**
-     * Set the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes output logs to.
+     * Set the blobContainerSasUri property: SAS Uri of the logging blob container to which LogAnalytics Api writes
+     * output logs to.
      * 
      * @param blobContainerSasUri the blobContainerSasUri value to set.
      * @return the LogAnalyticsInputBase object itself.
@@ -235,16 +237,17 @@ public class LogAnalyticsInputBase {
      */
     public void validate() {
         if (blobContainerSasUri() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property blobContainerSasUri in model LogAnalyticsInputBase"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property blobContainerSasUri in model LogAnalyticsInputBase"));
         }
         if (fromTime() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property fromTime in model LogAnalyticsInputBase"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property fromTime in model LogAnalyticsInputBase"));
         }
         if (toTime() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property toTime in model LogAnalyticsInputBase"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property toTime in model LogAnalyticsInputBase"));
         }
     }
 

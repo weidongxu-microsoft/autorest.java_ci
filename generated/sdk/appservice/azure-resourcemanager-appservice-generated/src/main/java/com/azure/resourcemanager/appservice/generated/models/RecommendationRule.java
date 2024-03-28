@@ -62,7 +62,8 @@ public interface RecommendationRule {
     String message();
 
     /**
-     * Gets the recommendationId property: Recommendation ID of an associated recommendation object tied to the rule, if exists.
+     * Gets the recommendationId property: Recommendation ID of an associated recommendation object tied to the rule, if
+     * exists.
      * If such an object doesn't exist, it is set to null.
      * 
      * @return the recommendationId value.
@@ -126,7 +127,8 @@ public interface RecommendationRule {
     String bladeName();
 
     /**
-     * Gets the forwardLink property: Forward link to an external document associated with the rule. Applicable to dynamic rule only.
+     * Gets the forwardLink property: Forward link to an external document associated with the rule. Applicable to
+     * dynamic rule only.
      * 
      * @return the forwardLink value.
      */

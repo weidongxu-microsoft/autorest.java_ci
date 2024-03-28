@@ -53,7 +53,8 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
+     * 3 and 100 characters in length and use alphanumeric letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -70,7 +71,8 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
+     * 3 and 100 characters in length and use alphanumeric letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -85,7 +87,8 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
+     * between 3 and 100 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -102,7 +105,8 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
+     * between 3 and 100 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -120,7 +124,8 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param eventSubscriptionName Name of the event subscription to be deleted. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted. Event subscription names must be
+     * between 3 and 100 characters in length and use alphanumeric letters only.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -134,7 +139,8 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param eventSubscriptionName Name of the event subscription to be deleted. Event subscription names must be between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted. Event subscription names must be
+     * between 3 and 100 characters in length and use alphanumeric letters only.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -230,8 +236,13 @@ public interface DomainEventSubscriptions {
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param domainName Name of the domain.
-     * @param filter The query used to filter the search results using OData syntax. Filtering is permitted on the 'name' property only and with limited number of OData operations. These operations are: the 'contains' function as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
-     * @param top The number of results to return per page for the list operation. Valid range for top parameter is 1 to 100. If not specified, the default number of results to be returned is 20 items per page.
+     * @param filter The query used to filter the search results using OData syntax. Filtering is permitted on the
+     * 'name' property only and with limited number of OData operations. These operations are: the 'contains' function
+     * as well as the following logical operations: not, and, or, eq (for equal), and ne (for not equal). No arithmetic
+     * operations are supported. The following is a valid filter example: $filter=contains(namE, 'PATTERN') and name ne
+     * 'PATTERN-1'. The following is not a valid filter example: $filter=location eq 'westus'.
+     * @param top The number of results to return per page for the list operation. Valid range for top parameter is 1 to
+     * 100. If not specified, the default number of results to be returned is 20 items per page.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

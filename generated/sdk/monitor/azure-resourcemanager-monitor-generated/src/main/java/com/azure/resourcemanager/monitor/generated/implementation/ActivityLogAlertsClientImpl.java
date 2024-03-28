@@ -61,7 +61,8 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
     }
 
     /**
-     * The interface defining all the services for MonitorClientActivityLogAlerts to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MonitorClientActivityLogAlerts to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientActivit")
@@ -659,7 +660,8 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all activity log alerts in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActivityLogAlertResourceInner>> listSinglePageAsync() {
@@ -688,7 +690,8 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all activity log alerts in a subscription along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActivityLogAlertResourceInner>> listSinglePageAsync(Context context) {
@@ -767,7 +770,8 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all activity log alerts in a resource group along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActivityLogAlertResourceInner>>
@@ -802,7 +806,8 @@ public final class ActivityLogAlertsClientImpl implements ActivityLogAlertsClien
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all activity log alerts in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all activity log alerts in a resource group along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ActivityLogAlertResourceInner>>

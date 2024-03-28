@@ -55,7 +55,8 @@ public interface FrontendIpConfigurationPropertiesFormat {
     IpAllocationMethod privateIpAllocationMethod();
 
     /**
-     * Gets the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken as IPv4.
+     * Gets the privateIpAddressVersion property: Whether the specific ipconfiguration is IPv4 or IPv6. Default is taken
+     * as IPv4.
      * 
      * @return the privateIpAddressVersion value.
      */
@@ -97,7 +98,8 @@ public interface FrontendIpConfigurationPropertiesFormat {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationPropertiesFormatInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.FrontendIpConfigurationPropertiesFormatInner object.
      * 
      * @return the inner object.
      */

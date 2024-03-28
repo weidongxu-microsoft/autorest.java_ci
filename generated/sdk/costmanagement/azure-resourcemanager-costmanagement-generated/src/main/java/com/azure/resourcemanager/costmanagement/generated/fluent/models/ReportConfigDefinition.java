@@ -54,7 +54,9 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
+     * Get the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * differentiated based on dates.
      * 
      * @return the type value.
      */
@@ -63,7 +65,9 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be differentiated based on dates.
+     * Set the type property: The type of the report. Usage represents actual usage, forecast represents forecasted data
+     * and UsageAndForecast represents both usage and forecasted data. Actual usage and forecasted data can be
+     * differentiated based on dates.
      * 
      * @param type the type value to set.
      * @return the ReportConfigDefinition object itself.
@@ -74,7 +78,8 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Get the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided.
+     * Get the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
+     * period must be provided.
      * 
      * @return the timeframe value.
      */
@@ -83,7 +88,8 @@ public final class ReportConfigDefinition {
     }
 
     /**
-     * Set the timeframe property: The time frame for pulling data for the report. If custom, then a specific time period must be provided.
+     * Set the timeframe property: The time frame for pulling data for the report. If custom, then a specific time
+     * period must be provided.
      * 
      * @param timeframe the timeframe value to set.
      * @return the ReportConfigDefinition object itself.
@@ -149,12 +155,13 @@ public final class ReportConfigDefinition {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model ReportConfigDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model ReportConfigDefinition"));
         }
         if (timeframe() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timeframe in model ReportConfigDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property timeframe in model ReportConfigDefinition"));
         }
         if (timePeriod() != null) {
             timePeriod().validate();

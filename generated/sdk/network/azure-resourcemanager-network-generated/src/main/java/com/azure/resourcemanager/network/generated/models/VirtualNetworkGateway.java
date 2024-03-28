@@ -96,7 +96,8 @@ public interface VirtualNetworkGateway {
     VpnType vpnType();
 
     /**
-     * Gets the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if gatewayType is not VPN.
+     * Gets the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if
+     * gatewayType is not VPN.
      * 
      * @return the vpnGatewayGeneration value.
      */
@@ -110,7 +111,8 @@ public interface VirtualNetworkGateway {
     Boolean enableBgp();
 
     /**
-     * Gets the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections or not.
+     * Gets the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections
+     * or not.
      * 
      * @return the enablePrivateIpAddress value.
      */
@@ -131,28 +133,32 @@ public interface VirtualNetworkGateway {
     Boolean disableIpSecReplayProtection();
 
     /**
-     * Gets the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of removing existing default site setting.
+     * Gets the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local
+     * network site having default routes. Assign Null value in case of removing existing default site setting.
      * 
      * @return the gatewayDefaultSite value.
      */
     SubResource gatewayDefaultSite();
 
     /**
-     * Gets the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network gateway.
+     * Gets the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected
+     * for Virtual network gateway.
      * 
      * @return the sku value.
      */
     VirtualNetworkGatewaySku sku();
 
     /**
-     * Gets the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
+     * Gets the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents
+     * the P2S VpnClient configurations.
      * 
      * @return the vpnClientConfiguration value.
      */
     VpnClientConfiguration vpnClientConfiguration();
 
     /**
-     * Gets the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+     * Gets the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup
+     * resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
      * 
      * @return the virtualNetworkGatewayPolicyGroups value.
      */
@@ -166,7 +172,8 @@ public interface VirtualNetworkGateway {
     BgpSettings bgpSettings();
 
     /**
-     * Gets the customRoutes property: The reference to the address space resource which represents the custom routes address space specified by the customer for virtual network gateway and VpnClient.
+     * Gets the customRoutes property: The reference to the address space resource which represents the custom routes
+     * address space specified by the customer for virtual network gateway and VpnClient.
      * 
      * @return the customRoutes value.
      */
@@ -194,14 +201,16 @@ public interface VirtualNetworkGateway {
     Boolean enableDnsForwarding();
 
     /**
-     * Gets the inboundDnsForwardingEndpoint property: The IP address allocated by the gateway to which dns requests can be sent.
+     * Gets the inboundDnsForwardingEndpoint property: The IP address allocated by the gateway to which dns requests can
+     * be sent.
      * 
      * @return the inboundDnsForwardingEndpoint value.
      */
     String inboundDnsForwardingEndpoint();
 
     /**
-     * Gets the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local gateway is associated with the customer vnet.
+     * Gets the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local
+     * gateway is associated with the customer vnet.
      * 
      * @return the vNetExtendedLocationResourceId value.
      */
@@ -222,21 +231,24 @@ public interface VirtualNetworkGateway {
     Boolean enableBgpRouteTranslationForNat();
 
     /**
-     * Gets the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN networks.
+     * Gets the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN
+     * networks.
      * 
      * @return the allowVirtualWanTraffic value.
      */
     Boolean allowVirtualWanTraffic();
 
     /**
-     * Gets the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN.
+     * Gets the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual
+     * Networks. This configuration does not support connectivity to Azure Virtual WAN.
      * 
      * @return the allowRemoteVnetTraffic value.
      */
     Boolean allowRemoteVnetTraffic();
 
     /**
-     * Gets the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet.
+     * Gets the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are
+     * multiple Express Route Gateways in the vnet.
      * 
      * @return the adminState value.
      */
@@ -322,7 +334,8 @@ public interface VirtualNetworkGateway {
         }
 
         /**
-         * The stage of the VirtualNetworkGateway definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualNetworkGateway definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
             DefinitionStages.WithAutoScaleConfiguration, DefinitionStages.WithIpConfigurations,
@@ -434,9 +447,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithVpnGatewayGeneration {
             /**
-             * Specifies the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None if gatewayType is not VPN..
+             * Specifies the vpnGatewayGeneration property: The generation for this VirtualNetworkGateway. Must be None
+             * if gatewayType is not VPN..
              * 
-             * @param vpnGatewayGeneration The generation for this VirtualNetworkGateway. Must be None if gatewayType is not VPN.
+             * @param vpnGatewayGeneration The generation for this VirtualNetworkGateway. Must be None if gatewayType is
+             * not VPN.
              * @return the next definition stage.
              */
             WithCreate withVpnGatewayGeneration(VpnGatewayGeneration vpnGatewayGeneration);
@@ -460,9 +475,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithEnablePrivateIpAddress {
             /**
-             * Specifies the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for connections or not..
+             * Specifies the enablePrivateIpAddress property: Whether private IP needs to be enabled on this gateway for
+             * connections or not..
              * 
-             * @param enablePrivateIpAddress Whether private IP needs to be enabled on this gateway for connections or not.
+             * @param enablePrivateIpAddress Whether private IP needs to be enabled on this gateway for connections or
+             * not.
              * @return the next definition stage.
              */
             WithCreate withEnablePrivateIpAddress(Boolean enablePrivateIpAddress);
@@ -499,9 +516,12 @@ public interface VirtualNetworkGateway {
          */
         interface WithGatewayDefaultSite {
             /**
-             * Specifies the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of removing existing default site setting..
+             * Specifies the gatewayDefaultSite property: The reference to the LocalNetworkGateway resource which
+             * represents local network site having default routes. Assign Null value in case of removing existing
+             * default site setting..
              * 
-             * @param gatewayDefaultSite The reference to the LocalNetworkGateway resource which represents local network site having default routes. Assign Null value in case of removing existing default site setting.
+             * @param gatewayDefaultSite The reference to the LocalNetworkGateway resource which represents local
+             * network site having default routes. Assign Null value in case of removing existing default site setting.
              * @return the next definition stage.
              */
             WithCreate withGatewayDefaultSite(SubResource gatewayDefaultSite);
@@ -512,9 +532,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network gateway..
+             * Specifies the sku property: The reference to the VirtualNetworkGatewaySku resource which represents the
+             * SKU selected for Virtual network gateway..
              * 
-             * @param sku The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for Virtual network gateway.
+             * @param sku The reference to the VirtualNetworkGatewaySku resource which represents the SKU selected for
+             * Virtual network gateway.
              * @return the next definition stage.
              */
             WithCreate withSku(VirtualNetworkGatewaySku sku);
@@ -525,9 +547,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithVpnClientConfiguration {
             /**
-             * Specifies the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which represents the P2S VpnClient configurations..
+             * Specifies the vpnClientConfiguration property: The reference to the VpnClientConfiguration resource which
+             * represents the P2S VpnClient configurations..
              * 
-             * @param vpnClientConfiguration The reference to the VpnClientConfiguration resource which represents the P2S VpnClient configurations.
+             * @param vpnClientConfiguration The reference to the VpnClientConfiguration resource which represents the
+             * P2S VpnClient configurations.
              * @return the next definition stage.
              */
             WithCreate withVpnClientConfiguration(VpnClientConfiguration vpnClientConfiguration);
@@ -538,9 +562,12 @@ public interface VirtualNetworkGateway {
          */
         interface WithVirtualNetworkGatewayPolicyGroups {
             /**
-             * Specifies the virtualNetworkGatewayPolicyGroups property: The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway..
+             * Specifies the virtualNetworkGatewayPolicyGroups property: The reference to the
+             * VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup
+             * for the gateway..
              * 
-             * @param virtualNetworkGatewayPolicyGroups The reference to the VirtualNetworkGatewayPolicyGroup resource which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
+             * @param virtualNetworkGatewayPolicyGroups The reference to the VirtualNetworkGatewayPolicyGroup resource
+             * which represents the available VirtualNetworkGatewayPolicyGroup for the gateway.
              * @return the next definition stage.
              */
             WithCreate withVirtualNetworkGatewayPolicyGroups(
@@ -565,9 +592,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithCustomRoutes {
             /**
-             * Specifies the customRoutes property: The reference to the address space resource which represents the custom routes address space specified by the customer for virtual network gateway and VpnClient..
+             * Specifies the customRoutes property: The reference to the address space resource which represents the
+             * custom routes address space specified by the customer for virtual network gateway and VpnClient..
              * 
-             * @param customRoutes The reference to the address space resource which represents the custom routes address space specified by the customer for virtual network gateway and VpnClient.
+             * @param customRoutes The reference to the address space resource which represents the custom routes
+             * address space specified by the customer for virtual network gateway and VpnClient.
              * @return the next definition stage.
              */
             WithCreate withCustomRoutes(AddressSpace customRoutes);
@@ -591,9 +620,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithVNetExtendedLocationResourceId {
             /**
-             * Specifies the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway of type local gateway is associated with the customer vnet..
+             * Specifies the vNetExtendedLocationResourceId property: Customer vnet resource id. VirtualNetworkGateway
+             * of type local gateway is associated with the customer vnet..
              * 
-             * @param vNetExtendedLocationResourceId Customer vnet resource id. VirtualNetworkGateway of type local gateway is associated with the customer vnet.
+             * @param vNetExtendedLocationResourceId Customer vnet resource id. VirtualNetworkGateway of type local
+             * gateway is associated with the customer vnet.
              * @return the next definition stage.
              */
             WithCreate withVNetExtendedLocationResourceId(String vNetExtendedLocationResourceId);
@@ -630,7 +661,8 @@ public interface VirtualNetworkGateway {
          */
         interface WithAllowVirtualWanTraffic {
             /**
-             * Specifies the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote Virtual WAN networks..
+             * Specifies the allowVirtualWanTraffic property: Configures this gateway to accept traffic from remote
+             * Virtual WAN networks..
              * 
              * @param allowVirtualWanTraffic Configures this gateway to accept traffic from remote Virtual WAN networks.
              * @return the next definition stage.
@@ -643,9 +675,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithAllowRemoteVnetTraffic {
             /**
-             * Specifies the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN..
+             * Specifies the allowRemoteVnetTraffic property: Configure this gateway to accept traffic from other Azure
+             * Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN..
              * 
-             * @param allowRemoteVnetTraffic Configure this gateway to accept traffic from other Azure Virtual Networks. This configuration does not support connectivity to Azure Virtual WAN.
+             * @param allowRemoteVnetTraffic Configure this gateway to accept traffic from other Azure Virtual Networks.
+             * This configuration does not support connectivity to Azure Virtual WAN.
              * @return the next definition stage.
              */
             WithCreate withAllowRemoteVnetTraffic(Boolean allowRemoteVnetTraffic);
@@ -656,9 +690,11 @@ public interface VirtualNetworkGateway {
          */
         interface WithAdminState {
             /**
-             * Specifies the adminState property: Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet.
+             * Specifies the adminState property: Property to indicate if the Express Route Gateway serves traffic when
+             * there are multiple Express Route Gateways in the vnet.
              * 
-             * @param adminState Property to indicate if the Express Route Gateway serves traffic when there are multiple Express Route Gateways in the vnet.
+             * @param adminState Property to indicate if the Express Route Gateway serves traffic when there are
+             * multiple Express Route Gateways in the vnet.
              * @return the next definition stage.
              */
             WithCreate withAdminState(AdminState adminState);
@@ -737,7 +773,8 @@ public interface VirtualNetworkGateway {
     /**
      * Resets the primary of the virtual network gateway in the specified resource group.
      * 
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -788,7 +825,8 @@ public interface VirtualNetworkGateway {
     String generatevpnclientpackage(VpnClientParameters parameters, Context context);
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -799,7 +837,8 @@ public interface VirtualNetworkGateway {
     String generateVpnProfile(VpnClientParameters parameters);
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param parameters Parameters supplied to the generate virtual network gateway VPN client package operation.
      * @param context The context to associate with this operation.
@@ -811,7 +850,8 @@ public interface VirtualNetworkGateway {
     String generateVpnProfile(VpnClientParameters parameters, Context context);
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -820,7 +860,8 @@ public interface VirtualNetworkGateway {
     String getVpnProfilePackageUrl();
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -872,7 +913,8 @@ public interface VirtualNetworkGateway {
     String supportedVpnDevices();
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -881,7 +923,8 @@ public interface VirtualNetworkGateway {
     GatewayRouteListResult getLearnedRoutes();
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -892,9 +935,11 @@ public interface VirtualNetworkGateway {
     GatewayRouteListResult getLearnedRoutes(Context context);
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -903,9 +948,11 @@ public interface VirtualNetworkGateway {
     VpnClientIPsecParameters setVpnclientIpsecParameters(VpnClientIPsecParametersInner vpnclientIpsecParams);
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -916,7 +963,8 @@ public interface VirtualNetworkGateway {
         Context context);
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -925,7 +973,8 @@ public interface VirtualNetworkGateway {
     VpnClientIPsecParameters getVpnclientIpsecParameters();
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -938,7 +987,8 @@ public interface VirtualNetworkGateway {
     /**
      * Starts packet capture on virtual network gateway in the specified resource group.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -950,7 +1000,8 @@ public interface VirtualNetworkGateway {
      * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -961,7 +1012,8 @@ public interface VirtualNetworkGateway {
      * 
      * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -973,29 +1025,34 @@ public interface VirtualNetworkGateway {
      * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
     String stopPacketCapture(VpnPacketCaptureStopParameters parameters, Context context);
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group.
      */
     VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth();
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group.
      */
     VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(Context context);
 

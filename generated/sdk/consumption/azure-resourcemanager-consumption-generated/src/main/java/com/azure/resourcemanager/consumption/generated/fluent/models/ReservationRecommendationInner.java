@@ -80,17 +80,6 @@ public class ReservationRecommendationInner extends ProxyResource {
     }
 
     /**
-     * Set the kind property: Specifies the kind of reservation recommendation.
-     * 
-     * @param kind the kind value to set.
-     * @return the ReservationRecommendationInner object itself.
-     */
-    protected ReservationRecommendationInner withKind(ReservationRecommendationKind kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the etag property: The etag for the resource.
      * 
      * @return the etag value.

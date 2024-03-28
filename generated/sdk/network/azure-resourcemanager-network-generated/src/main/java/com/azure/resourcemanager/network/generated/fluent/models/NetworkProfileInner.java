@@ -108,7 +108,8 @@ public final class NetworkProfileInner extends Resource {
     }
 
     /**
-     * Get the containerNetworkInterfaceConfigurations property: List of chid container network interface configurations.
+     * Get the containerNetworkInterfaceConfigurations property: List of chid container network interface
+     * configurations.
      * 
      * @return the containerNetworkInterfaceConfigurations value.
      */
@@ -117,7 +118,8 @@ public final class NetworkProfileInner extends Resource {
     }
 
     /**
-     * Set the containerNetworkInterfaceConfigurations property: List of chid container network interface configurations.
+     * Set the containerNetworkInterfaceConfigurations property: List of chid container network interface
+     * configurations.
      * 
      * @param containerNetworkInterfaceConfigurations the containerNetworkInterfaceConfigurations value to set.
      * @return the NetworkProfileInner object itself.

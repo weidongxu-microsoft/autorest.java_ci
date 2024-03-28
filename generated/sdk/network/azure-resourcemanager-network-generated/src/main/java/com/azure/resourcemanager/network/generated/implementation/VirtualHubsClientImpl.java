@@ -72,7 +72,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVirtualHubs to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVirtualHubs to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -889,7 +890,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -923,7 +925,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1015,7 +1018,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listSinglePageAsync() {
@@ -1044,7 +1048,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listSinglePageAsync(Context context) {
@@ -1126,7 +1131,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the effective routes configured for the Virtual Hub resource or the specified resource  along with {@link Response} on successful completion of {@link Mono}.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getEffectiveVirtualHubRoutesWithResponseAsync(String resourceGroupName,
@@ -1168,7 +1174,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the effective routes configured for the Virtual Hub resource or the specified resource  along with {@link Response} on successful completion of {@link Mono}.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getEffectiveVirtualHubRoutesWithResponseAsync(String resourceGroupName,
@@ -1207,7 +1214,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the specified resource.
+     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the
+     * specified resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualHubEffectiveRouteListInner>, VirtualHubEffectiveRouteListInner>
@@ -1228,7 +1236,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the specified resource.
+     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the
+     * specified resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualHubEffectiveRouteListInner>, VirtualHubEffectiveRouteListInner>
@@ -1251,7 +1260,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the specified resource.
+     * @return the {@link PollerFlux} for polling of the effective routes configured for the Virtual Hub resource or the
+     * specified resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VirtualHubEffectiveRouteListInner>, VirtualHubEffectiveRouteListInner>
@@ -1273,7 +1283,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the effective routes configured for the Virtual Hub resource or the specified resource.
+     * @return the {@link SyncPoller} for polling of the effective routes configured for the Virtual Hub resource or the
+     * specified resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualHubEffectiveRouteListInner>, VirtualHubEffectiveRouteListInner>
@@ -1293,7 +1304,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the effective routes configured for the Virtual Hub resource or the specified resource.
+     * @return the {@link SyncPoller} for polling of the effective routes configured for the Virtual Hub resource or the
+     * specified resource.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VirtualHubEffectiveRouteListInner>, VirtualHubEffectiveRouteListInner>
@@ -1314,7 +1326,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the effective routes configured for the Virtual Hub resource or the specified resource  on successful completion of {@link Mono}.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualHubEffectiveRouteListInner> getEffectiveVirtualHubRoutesAsync(String resourceGroupName,
@@ -1332,7 +1345,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the effective routes configured for the Virtual Hub resource or the specified resource  on successful completion of {@link Mono}.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualHubEffectiveRouteListInner> getEffectiveVirtualHubRoutesAsync(String resourceGroupName,
@@ -1353,7 +1367,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the effective routes configured for the Virtual Hub resource or the specified resource  on successful completion of {@link Mono}.
+     * @return the effective routes configured for the Virtual Hub resource or the specified resource on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VirtualHubEffectiveRouteListInner> getEffectiveVirtualHubRoutesAsync(String resourceGroupName,
@@ -1407,7 +1422,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the inbound routes configured for the Virtual Hub on a particular connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection along with {@link Response}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getInboundRoutesWithResponseAsync(String resourceGroupName,
@@ -1451,7 +1467,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the inbound routes configured for the Virtual Hub on a particular connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection along with {@link Response}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getInboundRoutesWithResponseAsync(String resourceGroupName,
@@ -1493,7 +1510,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the inbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link PollerFlux} for polling of the inbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1516,7 +1534,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the inbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link PollerFlux} for polling of the inbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1539,7 +1558,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the inbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link SyncPoller} for polling of the inbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1559,7 +1579,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the inbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link SyncPoller} for polling of the inbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1578,7 +1599,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the inbound routes configured for the Virtual Hub on a particular connection on successful completion of {@link Mono}.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveRouteMapRouteListInner> getInboundRoutesAsync(String resourceGroupName, String virtualHubName,
@@ -1597,7 +1619,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the inbound routes configured for the Virtual Hub on a particular connection on successful completion of {@link Mono}.
+     * @return the inbound routes configured for the Virtual Hub on a particular connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveRouteMapRouteListInner> getInboundRoutesAsync(String resourceGroupName, String virtualHubName,
@@ -1650,7 +1673,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the outbound routes configured for the Virtual Hub on a particular connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection along with {@link Response}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getOutboundRoutesWithResponseAsync(String resourceGroupName,
@@ -1695,7 +1719,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the outbound routes configured for the Virtual Hub on a particular connection along with {@link Response} on successful completion of {@link Mono}.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection along with {@link Response}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> getOutboundRoutesWithResponseAsync(String resourceGroupName,
@@ -1737,7 +1762,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the outbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link PollerFlux} for polling of the outbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1760,7 +1786,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of the outbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link PollerFlux} for polling of the outbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1783,7 +1810,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the outbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link SyncPoller} for polling of the outbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1803,7 +1831,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the outbound routes configured for the Virtual Hub on a particular connection.
+     * @return the {@link SyncPoller} for polling of the outbound routes configured for the Virtual Hub on a particular
+     * connection.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<EffectiveRouteMapRouteListInner>, EffectiveRouteMapRouteListInner>
@@ -1822,7 +1851,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the outbound routes configured for the Virtual Hub on a particular connection on successful completion of {@link Mono}.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveRouteMapRouteListInner> getOutboundRoutesAsync(String resourceGroupName,
@@ -1841,7 +1871,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the outbound routes configured for the Virtual Hub on a particular connection on successful completion of {@link Mono}.
+     * @return the outbound routes configured for the Virtual Hub on a particular connection on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EffectiveRouteMapRouteListInner> getOutboundRoutesAsync(String resourceGroupName,
@@ -1895,7 +1926,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1925,7 +1957,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1953,7 +1986,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listNextSinglePageAsync(String nextLink) {
@@ -1981,7 +2015,8 @@ public final class VirtualHubsClientImpl implements VirtualHubsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VirtualHubs along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualHubInner>> listNextSinglePageAsync(String nextLink, Context context) {

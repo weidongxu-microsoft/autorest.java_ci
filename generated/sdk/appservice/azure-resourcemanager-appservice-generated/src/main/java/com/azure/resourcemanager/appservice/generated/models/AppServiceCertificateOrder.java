@@ -103,7 +103,8 @@ public interface AppServiceCertificateOrder {
     CertificateProductType productType();
 
     /**
-     * Gets the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed
+     * when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the autoRenew value.
      */
@@ -173,14 +174,16 @@ public interface AppServiceCertificateOrder {
     OffsetDateTime expirationTime();
 
     /**
-     * Gets the isPrivateKeyExternal property: &lt;code&gt;true&lt;/code&gt; if private key is external; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the isPrivateKeyExternal property: &lt;code&gt;true&lt;/code&gt; if private key is external; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isPrivateKeyExternal value.
      */
     Boolean isPrivateKeyExternal();
 
     /**
-     * Gets the appServiceCertificateNotRenewableReasons property: Reasons why App Service Certificate is not renewable at the current moment.
+     * Gets the appServiceCertificateNotRenewableReasons property: Reasons why App Service Certificate is not renewable
+     * at the current moment.
      * 
      * @return the appServiceCertificateNotRenewableReasons value.
      */
@@ -222,7 +225,8 @@ public interface AppServiceCertificateOrder {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.AppServiceCertificateOrderInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -280,7 +284,8 @@ public interface AppServiceCertificateOrder {
         }
 
         /**
-         * The stage of the AppServiceCertificateOrder definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AppServiceCertificateOrder definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithKind, DefinitionStages.WithCertificates,
@@ -398,9 +403,11 @@ public interface AppServiceCertificateOrder {
          */
         interface WithAutoRenew {
             /**
-             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be
+             * automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it
+             * expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             WithCreate withAutoRenew(Boolean autoRenew);
@@ -482,9 +489,11 @@ public interface AppServiceCertificateOrder {
          */
         interface WithAutoRenew {
             /**
-             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;..
+             * Specifies the autoRenew property: &lt;code&gt;true&lt;/code&gt; if the certificate should be
+             * automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;..
              * 
-             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
+             * @param autoRenew &lt;code&gt;true&lt;/code&gt; if the certificate should be automatically renewed when it
+             * expires; otherwise, &lt;code&gt;false&lt;/code&gt;.
              * @return the next definition stage.
              */
             Update withAutoRenew(Boolean autoRenew);
@@ -514,7 +523,8 @@ public interface AppServiceCertificateOrder {
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -527,7 +537,8 @@ public interface AppServiceCertificateOrder {
      * 
      * @param reissueCertificateOrderRequest Parameters for the reissue.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void reissue(ReissueCertificateOrderRequest reissueCertificateOrderRequest);
@@ -540,7 +551,8 @@ public interface AppServiceCertificateOrder {
      * @param renewCertificateOrderRequest Renew parameters.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -553,7 +565,8 @@ public interface AppServiceCertificateOrder {
      * 
      * @param renewCertificateOrderRequest Renew parameters.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void renew(RenewCertificateOrderRequest renewCertificateOrderRequest);
@@ -565,7 +578,8 @@ public interface AppServiceCertificateOrder {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -576,7 +590,8 @@ public interface AppServiceCertificateOrder {
      * 
      * Description for Resend certificate email.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void resendEmail();
@@ -584,12 +599,14 @@ public interface AppServiceCertificateOrder {
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * order.
      * 
      * @param nameIdentifier Email address.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -598,37 +615,53 @@ public interface AppServiceCertificateOrder {
     /**
      * Resend domain verification email to customer for this certificate order
      * 
-     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate order.
+     * Resend domain verification ownership email containing steps on how to verify a domain for a given certificate
+     * order.
      * 
      * @param nameIdentifier Email address.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void resendRequestEmails(NameIdentifierInner nameIdentifier);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate. 
+     * This method is used to obtain the site seal information for an issued certificate.
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
+     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
+     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
+     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
+     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
+     * times.
      * 
      * @param siteSealRequest Site seal request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site seal along with {@link Response}.
      */
     Response<SiteSeal> retrieveSiteSealWithResponse(SiteSealRequest siteSealRequest, Context context);
 
     /**
-     * This method is used to obtain the site seal information for an issued certificate. 
+     * This method is used to obtain the site seal information for an issued certificate.
      * 
-     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that the certificate purchaser can embed on their web site to show their visitors information about their SSL certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal images are expected to be static images and hosted by the reseller, to minimize delays for customer page load times.
+     * This method is used to obtain the site seal information for an issued certificate. A site seal is a graphic that
+     * the certificate purchaser can embed on their web site to show their visitors information about their SSL
+     * certificate. If a web site visitor clicks on the site seal image, a pop-up page is displayed that contains
+     * detailed information about the SSL certificate. The site seal token is used to link the site seal graphic image
+     * to the appropriate certificate details pop-up page display when a user clicks on the site seal. The site seal
+     * images are expected to be static images and hosted by the reseller, to minimize delays for customer page load
+     * times.
      * 
      * @param siteSealRequest Site seal request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return site seal.
      */
@@ -641,7 +674,8 @@ public interface AppServiceCertificateOrder {
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the {@link Response}.
      */
@@ -652,7 +686,8 @@ public interface AppServiceCertificateOrder {
      * 
      * Description for Verify domain ownership for this certificate order.
      * 
-     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void verifyDomainOwnership();

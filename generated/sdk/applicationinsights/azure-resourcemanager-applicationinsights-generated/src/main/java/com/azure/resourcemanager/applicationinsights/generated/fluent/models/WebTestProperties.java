@@ -90,7 +90,8 @@ public final class WebTestProperties {
     }
 
     /**
-     * Get the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name field.
+     * Get the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name
+     * field.
      * 
      * @return the syntheticMonitorId value.
      */
@@ -99,7 +100,8 @@ public final class WebTestProperties {
     }
 
     /**
-     * Set the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name field.
+     * Set the syntheticMonitorId property: Unique ID of this WebTest. This is typically the same value as the Name
+     * field.
      * 
      * @param syntheticMonitorId the syntheticMonitorId value to set.
      * @return the WebTestProperties object itself.
@@ -250,7 +252,8 @@ public final class WebTestProperties {
     }
 
     /**
-     * Get the locations property: A list of where to physically run the tests from to give global coverage for accessibility of your application.
+     * Get the locations property: A list of where to physically run the tests from to give global coverage for
+     * accessibility of your application.
      * 
      * @return the locations value.
      */
@@ -259,7 +262,8 @@ public final class WebTestProperties {
     }
 
     /**
-     * Set the locations property: A list of where to physically run the tests from to give global coverage for accessibility of your application.
+     * Set the locations property: A list of where to physically run the tests from to give global coverage for
+     * accessibility of your application.
      * 
      * @param locations the locations value to set.
      * @return the WebTestProperties object itself.
@@ -290,7 +294,9 @@ public final class WebTestProperties {
     }
 
     /**
-     * Get the provisioningState property: Current state of this component, whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+     * Get the provisioningState property: Current state of this component, whether or not is has been provisioned
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -305,20 +311,21 @@ public final class WebTestProperties {
      */
     public void validate() {
         if (syntheticMonitorId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property syntheticMonitorId in model WebTestProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property syntheticMonitorId in model WebTestProperties"));
         }
         if (webTestName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property webTestName in model WebTestProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property webTestName in model WebTestProperties"));
         }
         if (webTestKind() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property webTestKind in model WebTestProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property webTestKind in model WebTestProperties"));
         }
         if (locations() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property locations in model WebTestProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property locations in model WebTestProperties"));
         } else {
             locations().forEach(e -> e.validate());
         }

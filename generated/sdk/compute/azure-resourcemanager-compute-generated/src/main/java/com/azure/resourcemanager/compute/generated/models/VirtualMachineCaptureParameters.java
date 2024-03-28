@@ -78,7 +78,8 @@ public final class VirtualMachineCaptureParameters {
     }
 
     /**
-     * Get the overwriteVhds property: Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+     * Get the overwriteVhds property: Specifies whether to overwrite the destination virtual hard disk, in case of
+     * conflict.
      * 
      * @return the overwriteVhds value.
      */
@@ -87,7 +88,8 @@ public final class VirtualMachineCaptureParameters {
     }
 
     /**
-     * Set the overwriteVhds property: Specifies whether to overwrite the destination virtual hard disk, in case of conflict.
+     * Set the overwriteVhds property: Specifies whether to overwrite the destination virtual hard disk, in case of
+     * conflict.
      * 
      * @param overwriteVhds the overwriteVhds value to set.
      * @return the VirtualMachineCaptureParameters object itself.
@@ -104,12 +106,14 @@ public final class VirtualMachineCaptureParameters {
      */
     public void validate() {
         if (vhdPrefix() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property vhdPrefix in model VirtualMachineCaptureParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property vhdPrefix in model VirtualMachineCaptureParameters"));
         }
         if (destinationContainerName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property destinationContainerName in model VirtualMachineCaptureParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property destinationContainerName in model VirtualMachineCaptureParameters"));
         }
     }
 

@@ -231,18 +231,20 @@ public final class IoTRoleProperties {
      */
     public void validate() {
         if (hostPlatform() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property hostPlatform in model IoTRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property hostPlatform in model IoTRoleProperties"));
         }
         if (ioTDeviceDetails() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ioTDeviceDetails in model IoTRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ioTDeviceDetails in model IoTRoleProperties"));
         } else {
             ioTDeviceDetails().validate();
         }
         if (ioTEdgeDeviceDetails() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ioTEdgeDeviceDetails in model IoTRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ioTEdgeDeviceDetails in model IoTRoleProperties"));
         } else {
             ioTEdgeDeviceDetails().validate();
         }
@@ -256,8 +258,8 @@ public final class IoTRoleProperties {
             computeResource().validate();
         }
         if (roleStatus() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property roleStatus in model IoTRoleProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property roleStatus in model IoTRoleProperties"));
         }
     }
 

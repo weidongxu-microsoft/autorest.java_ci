@@ -58,7 +58,8 @@ public final class WorkspaceSku {
     }
 
     /**
-     * Get the capacityReservationLevel property: The capacity reservation level in GB for this workspace, when CapacityReservation sku is selected.
+     * Get the capacityReservationLevel property: The capacity reservation level in GB for this workspace, when
+     * CapacityReservation sku is selected.
      * 
      * @return the capacityReservationLevel value.
      */
@@ -67,7 +68,8 @@ public final class WorkspaceSku {
     }
 
     /**
-     * Set the capacityReservationLevel property: The capacity reservation level in GB for this workspace, when CapacityReservation sku is selected.
+     * Set the capacityReservationLevel property: The capacity reservation level in GB for this workspace, when
+     * CapacityReservation sku is selected.
      * 
      * @param capacityReservationLevel the capacityReservationLevel value to set.
      * @return the WorkspaceSku object itself.
@@ -93,8 +95,8 @@ public final class WorkspaceSku {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model WorkspaceSku"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model WorkspaceSku"));
         }
     }
 

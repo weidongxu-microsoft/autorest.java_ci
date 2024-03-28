@@ -131,7 +131,8 @@ public final class StorageAccountCredentialProperties {
     }
 
     /**
-     * Get the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
+     * Get the connectionString property: Connection string for the storage account. Use this string if username and
+     * account key are not specified.
      * 
      * @return the connectionString value.
      */
@@ -140,7 +141,8 @@ public final class StorageAccountCredentialProperties {
     }
 
     /**
-     * Set the connectionString property: Connection string for the storage account. Use this string if username and account key are not specified.
+     * Set the connectionString property: Connection string for the storage account. Use this string if username and
+     * account key are not specified.
      * 
      * @param connectionString the connectionString value to set.
      * @return the StorageAccountCredentialProperties object itself.
@@ -237,19 +239,22 @@ public final class StorageAccountCredentialProperties {
      */
     public void validate() {
         if (alias() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property alias in model StorageAccountCredentialProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property alias in model StorageAccountCredentialProperties"));
         }
         if (accountKey() != null) {
             accountKey().validate();
         }
         if (sslStatus() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property sslStatus in model StorageAccountCredentialProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sslStatus in model StorageAccountCredentialProperties"));
         }
         if (accountType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property accountType in model StorageAccountCredentialProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property accountType in model StorageAccountCredentialProperties"));
         }
     }
 

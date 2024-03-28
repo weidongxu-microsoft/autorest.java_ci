@@ -25,7 +25,8 @@ public interface ApplicationGatewayBackendHealthOnDemand {
     ApplicationGatewayBackendHealthHttpSettings backendHealthHttpSettings();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthOnDemandInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayBackendHealthOnDemandInner object.
      * 
      * @return the inner object.
      */

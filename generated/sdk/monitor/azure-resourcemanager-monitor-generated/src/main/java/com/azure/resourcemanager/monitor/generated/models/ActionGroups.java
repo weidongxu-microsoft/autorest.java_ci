@@ -106,7 +106,8 @@ public interface ActionGroups {
     PagedIterable<ActionGroupResource> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
+     * is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.
@@ -121,7 +122,8 @@ public interface ActionGroups {
         EnableRequest enableRequest, Context context);
 
     /**
-     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation is only supported for Email or SMS receivers.
+     * Enable a receiver in an action group. This changes the receiver's status from Disabled to Enabled. This operation
+     * is only supported for Email or SMS receivers.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param actionGroupName The name of the action group.

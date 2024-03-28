@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.UUID;
 
 /**
- * An identity that have access to the key vault. All identities in the array must use the same tenant ID as the key vault's tenant ID.
+ * An identity that have access to the key vault. All identities in the array must use the same tenant ID as the key
+ * vault's tenant ID.
  */
 @Fluent
 public final class AccessPolicyEntry {
@@ -45,7 +46,8 @@ public final class AccessPolicyEntry {
     }
 
     /**
-     * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
+     * Get the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
+     * to the key vault.
      * 
      * @return the tenantId value.
      */
@@ -54,7 +56,8 @@ public final class AccessPolicyEntry {
     }
 
     /**
-     * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
+     * Set the tenantId property: The Azure Active Directory tenant ID that should be used for authenticating requests
+     * to the key vault.
      * 
      * @param tenantId the tenantId value to set.
      * @return the AccessPolicyEntry object itself.
@@ -65,7 +68,8 @@ public final class AccessPolicyEntry {
     }
 
     /**
-     * Get the objectId property: The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
+     * Get the objectId property: The object ID of a user, service principal or security group in the Azure Active
+     * Directory tenant for the vault. The object ID must be unique for the list of access policies.
      * 
      * @return the objectId value.
      */
@@ -74,7 +78,8 @@ public final class AccessPolicyEntry {
     }
 
     /**
-     * Set the objectId property: The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
+     * Set the objectId property: The object ID of a user, service principal or security group in the Azure Active
+     * Directory tenant for the vault. The object ID must be unique for the list of access policies.
      * 
      * @param objectId the objectId value to set.
      * @return the AccessPolicyEntry object itself.
@@ -85,7 +90,7 @@ public final class AccessPolicyEntry {
     }
 
     /**
-     * Get the applicationId property:  Application ID of the client making request on behalf of a principal.
+     * Get the applicationId property: Application ID of the client making request on behalf of a principal.
      * 
      * @return the applicationId value.
      */
@@ -94,7 +99,7 @@ public final class AccessPolicyEntry {
     }
 
     /**
-     * Set the applicationId property:  Application ID of the client making request on behalf of a principal.
+     * Set the applicationId property: Application ID of the client making request on behalf of a principal.
      * 
      * @param applicationId the applicationId value to set.
      * @return the AccessPolicyEntry object itself.
@@ -131,16 +136,16 @@ public final class AccessPolicyEntry {
      */
     public void validate() {
         if (tenantId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property tenantId in model AccessPolicyEntry"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property tenantId in model AccessPolicyEntry"));
         }
         if (objectId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property objectId in model AccessPolicyEntry"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property objectId in model AccessPolicyEntry"));
         }
         if (permissions() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property permissions in model AccessPolicyEntry"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property permissions in model AccessPolicyEntry"));
         } else {
             permissions().validate();
         }

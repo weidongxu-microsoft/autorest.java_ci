@@ -71,7 +71,8 @@ public final class VirtualHubInner extends Resource {
     }
 
     /**
-     * Get the kind property: Kind of service virtual hub. This is metadata used for the Azure portal experience for Route Server.
+     * Get the kind property: Kind of service virtual hub. This is metadata used for the Azure portal experience for
+     * Route Server.
      * 
      * @return the kind value.
      */
@@ -334,7 +335,8 @@ public final class VirtualHubInner extends Resource {
     }
 
     /**
-     * Get the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this VirtualHub.
+     * Get the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this
+     * VirtualHub.
      * 
      * @return the virtualHubRouteTableV2S value.
      */
@@ -343,7 +345,8 @@ public final class VirtualHubInner extends Resource {
     }
 
     /**
-     * Set the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this VirtualHub.
+     * Set the virtualHubRouteTableV2S property: List of all virtual hub route table v2s associated with this
+     * VirtualHub.
      * 
      * @param virtualHubRouteTableV2S the virtualHubRouteTableV2S value to set.
      * @return the VirtualHubInner object itself.

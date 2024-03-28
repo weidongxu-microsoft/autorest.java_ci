@@ -54,7 +54,8 @@ public final class DiskList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next page of disks.
+     * Get the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next
+     * page of disks.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class DiskList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next page of disks.
+     * Set the nextLink property: The uri to fetch the next page of disks. Call ListNext() with this to fetch the next
+     * page of disks.
      * 
      * @param nextLink the nextLink value to set.
      * @return the DiskList object itself.
@@ -80,8 +82,8 @@ public final class DiskList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property value in model DiskList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model DiskList"));
         } else {
             value().forEach(e -> e.validate());
         }

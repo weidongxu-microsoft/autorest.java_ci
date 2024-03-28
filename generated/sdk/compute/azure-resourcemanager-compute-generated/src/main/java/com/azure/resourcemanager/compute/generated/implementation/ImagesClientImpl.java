@@ -65,7 +65,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientImages to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientImages to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -149,7 +150,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source user image virtual hard disk along with {@link Response} on successful completion of {@link Mono}.
+     * @return the source user image virtual hard disk along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String imageName,
@@ -192,7 +194,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source user image virtual hard disk along with {@link Response} on successful completion of {@link Mono}.
+     * @return the source user image virtual hard disk along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String imageName,
@@ -380,7 +383,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source user image virtual hard disk along with {@link Response} on successful completion of {@link Mono}.
+     * @return the source user image virtual hard disk along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String imageName,
@@ -423,7 +427,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the source user image virtual hard disk along with {@link Response} on successful completion of {@link Mono}.
+     * @return the source user image virtual hard disk along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String imageName,
@@ -926,13 +931,15 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of images under a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of images under a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -959,14 +966,16 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of images under a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of images under a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -994,7 +1003,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1009,7 +1019,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
@@ -1025,7 +1036,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1039,7 +1051,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of images under a resource group. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
@@ -1054,11 +1067,13 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of Images in the subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of Images in the subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listSinglePageAsync() {
@@ -1081,13 +1096,15 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of Images in the subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of Images in the subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listSinglePageAsync(Context context) {
@@ -1108,7 +1125,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1120,7 +1138,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1135,7 +1154,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1147,7 +1167,8 @@ public final class ImagesClientImpl implements ImagesClient {
     }
 
     /**
-     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of Images. Do this till nextLink is null to fetch all the Images.
+     * Gets the list of Images in the subscription. Use nextLink property in the response to get the next page of
+     * Images. Do this till nextLink is null to fetch all the Images.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1169,7 +1190,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Image operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Image operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1199,7 +1221,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Image operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Image operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
@@ -1226,7 +1249,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Image operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Image operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listNextSinglePageAsync(String nextLink) {
@@ -1254,7 +1278,8 @@ public final class ImagesClientImpl implements ImagesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Image operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Image operation response along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ImageInner>> listNextSinglePageAsync(String nextLink, Context context) {

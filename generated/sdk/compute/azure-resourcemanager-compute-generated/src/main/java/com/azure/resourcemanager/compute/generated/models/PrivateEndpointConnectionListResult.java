@@ -53,7 +53,8 @@ public final class PrivateEndpointConnectionListResult {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of snapshots. Call ListNext() with this to fetch the next page of snapshots.
+     * Get the nextLink property: The uri to fetch the next page of snapshots. Call ListNext() with this to fetch the
+     * next page of snapshots.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class PrivateEndpointConnectionListResult {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of snapshots. Call ListNext() with this to fetch the next page of snapshots.
+     * Set the nextLink property: The uri to fetch the next page of snapshots. Call ListNext() with this to fetch the
+     * next page of snapshots.
      * 
      * @param nextLink the nextLink value to set.
      * @return the PrivateEndpointConnectionListResult object itself.

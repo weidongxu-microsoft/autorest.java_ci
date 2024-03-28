@@ -51,7 +51,8 @@ public final class NspProvisioningIssue {
     }
 
     /**
-     * Get the properties property: The properties to describe any issues with provisioning network security perimeters to a search service.
+     * Get the properties property: The properties to describe any issues with provisioning network security perimeters
+     * to a search service.
      * 
      * @return the properties value.
      */
@@ -60,7 +61,8 @@ public final class NspProvisioningIssue {
     }
 
     /**
-     * Set the properties property: The properties to describe any issues with provisioning network security perimeters to a search service.
+     * Set the properties property: The properties to describe any issues with provisioning network security perimeters
+     * to a search service.
      * 
      * @param properties the properties value to set.
      * @return the NspProvisioningIssue object itself.

@@ -44,7 +44,8 @@ public final class SnapshotRestoreRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Get the snapshotTime property: Point in time in which the app restore should be done, formatted as a DateTime string.
+     * Get the snapshotTime property: Point in time in which the app restore should be done, formatted as a DateTime
+     * string.
      * 
      * @return the snapshotTime value.
      */
@@ -53,7 +54,8 @@ public final class SnapshotRestoreRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Set the snapshotTime property: Point in time in which the app restore should be done, formatted as a DateTime string.
+     * Set the snapshotTime property: Point in time in which the app restore should be done, formatted as a DateTime
+     * string.
      * 
      * @param snapshotTime the snapshotTime value to set.
      * @return the SnapshotRestoreRequest object itself.
@@ -92,7 +94,8 @@ public final class SnapshotRestoreRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Get the overwrite property: If &lt;code&gt;true&lt;/code&gt; the restore operation can overwrite source app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the overwrite property: If &lt;code&gt;true&lt;/code&gt; the restore operation can overwrite source app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the overwrite value.
      */
@@ -101,7 +104,8 @@ public final class SnapshotRestoreRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Set the overwrite property: If &lt;code&gt;true&lt;/code&gt; the restore operation can overwrite source app; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the overwrite property: If &lt;code&gt;true&lt;/code&gt; the restore operation can overwrite source app;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param overwrite the overwrite value to set.
      * @return the SnapshotRestoreRequest object itself.
@@ -138,7 +142,8 @@ public final class SnapshotRestoreRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Get the ignoreConflictingHostNames property: If true, custom hostname conflicts will be ignored when recovering to a target web app.
+     * Get the ignoreConflictingHostNames property: If true, custom hostname conflicts will be ignored when recovering
+     * to a target web app.
      * This setting is only necessary when RecoverConfiguration is enabled.
      * 
      * @return the ignoreConflictingHostNames value.
@@ -148,7 +153,8 @@ public final class SnapshotRestoreRequest extends ProxyOnlyResource {
     }
 
     /**
-     * Set the ignoreConflictingHostNames property: If true, custom hostname conflicts will be ignored when recovering to a target web app.
+     * Set the ignoreConflictingHostNames property: If true, custom hostname conflicts will be ignored when recovering
+     * to a target web app.
      * This setting is only necessary when RecoverConfiguration is enabled.
      * 
      * @param ignoreConflictingHostNames the ignoreConflictingHostNames value to set.

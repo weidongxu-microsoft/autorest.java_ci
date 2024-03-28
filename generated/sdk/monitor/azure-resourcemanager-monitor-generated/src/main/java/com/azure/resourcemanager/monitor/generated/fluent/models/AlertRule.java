@@ -172,7 +172,8 @@ public final class AlertRule {
     }
 
     /**
-     * Get the action property: action that is performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Get the action property: action that is performed when the alert rule becomes active, and when an alert condition
+     * is resolved.
      * 
      * @return the action value.
      */
@@ -181,7 +182,8 @@ public final class AlertRule {
     }
 
     /**
-     * Set the action property: action that is performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Set the action property: action that is performed when the alert rule becomes active, and when an alert condition
+     * is resolved.
      * 
      * @param action the action value to set.
      * @return the AlertRule object itself.
@@ -192,7 +194,8 @@ public final class AlertRule {
     }
 
     /**
-     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @return the actions value.
      */
@@ -201,7 +204,8 @@ public final class AlertRule {
     }
 
     /**
-     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @param actions the actions value to set.
      * @return the AlertRule object itself.
@@ -227,12 +231,12 @@ public final class AlertRule {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model AlertRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model AlertRule"));
         }
         if (condition() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property condition in model AlertRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property condition in model AlertRule"));
         } else {
             condition().validate();
         }

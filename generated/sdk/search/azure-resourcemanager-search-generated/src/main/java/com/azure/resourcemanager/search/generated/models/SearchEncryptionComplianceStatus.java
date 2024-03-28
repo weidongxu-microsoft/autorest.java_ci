@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Returns the status of search service compliance with respect to non-CMK-encrypted objects. If a service has more than one unencrypted object, and enforcement is enabled, the service is marked as noncompliant.
+ * Returns the status of search service compliance with respect to non-CMK-encrypted objects. If a service has more than
+ * one unencrypted object, and enforcement is enabled, the service is marked as noncompliant.
  */
 public enum SearchEncryptionComplianceStatus {
     /**

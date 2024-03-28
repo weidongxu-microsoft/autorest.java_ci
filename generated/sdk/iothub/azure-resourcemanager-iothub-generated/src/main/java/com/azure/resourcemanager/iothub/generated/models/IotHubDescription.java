@@ -52,7 +52,8 @@ public interface IotHubDescription {
     Map<String, String> tags();
 
     /**
-     * Gets the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
+     * Gets the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be
+     * provided as a header per the normal ETag convention.
      * 
      * @return the etag value.
      */
@@ -179,7 +180,8 @@ public interface IotHubDescription {
         }
 
         /**
-         * The stage of the IotHubDescription definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the IotHubDescription definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithEtag,
             DefinitionStages.WithProperties, DefinitionStages.WithIdentity, DefinitionStages.WithIfMatch {
@@ -217,9 +219,11 @@ public interface IotHubDescription {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention..
+             * Specifies the etag property: The Etag field is *not* required. If it is provided in the response body, it
+             * must also be provided as a header per the normal ETag convention..
              * 
-             * @param etag The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header per the normal ETag convention.
+             * @param etag The Etag field is *not* required. If it is provided in the response body, it must also be
+             * provided as a header per the normal ETag convention.
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
@@ -256,9 +260,11 @@ public interface IotHubDescription {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub..
+             * Specifies the ifMatch property: ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub.
+             * Required to update an existing IoT Hub..
              * 
-             * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+             * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update
+             * an existing IoT Hub.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -326,78 +332,104 @@ public interface IotHubDescription {
     IotHubDescription refresh(Context context);
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the security metadata for an IoT hub as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SharedAccessSignatureAuthorizationRule> listKeys();
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the security metadata for an IoT hub as paginated response with {@link PagedIterable}.
      */
     PagedIterable<SharedAccessSignatureAuthorizationRule> listKeys(Context context);
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the Job Response object along with {@link Response}.
      */
     Response<JobResponse> exportDevicesWithResponse(ExportDevicesRequest exportDevicesParameters, Context context);
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param exportDevicesParameters The parameters that specify the export devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the Job Response object.
      */
     JobResponse exportDevices(ExportDevicesRequest exportDevicesParameters);
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param importDevicesParameters The parameters that specify the import devices operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the Job Response object along with {@link Response}.
      */
     Response<JobResponse> importDevicesWithResponse(ImportDevicesRequest importDevicesParameters, Context context);
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param importDevicesParameters The parameters that specify the import devices operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException thrown if the request is rejected
+     * by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the properties of the Job Response object.
      */

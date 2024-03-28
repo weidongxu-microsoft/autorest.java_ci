@@ -62,7 +62,8 @@ public final class VpnClientConnectionHealth {
     }
 
     /**
-     * Get the vpnClientConnectionsCount property: The total of p2s vpn clients connected at this time to this P2SVpnGateway.
+     * Get the vpnClientConnectionsCount property: The total of p2s vpn clients connected at this time to this
+     * P2SVpnGateway.
      * 
      * @return the vpnClientConnectionsCount value.
      */
@@ -71,7 +72,8 @@ public final class VpnClientConnectionHealth {
     }
 
     /**
-     * Set the vpnClientConnectionsCount property: The total of p2s vpn clients connected at this time to this P2SVpnGateway.
+     * Set the vpnClientConnectionsCount property: The total of p2s vpn clients connected at this time to this
+     * P2SVpnGateway.
      * 
      * @param vpnClientConnectionsCount the vpnClientConnectionsCount value to set.
      * @return the VpnClientConnectionHealth object itself.

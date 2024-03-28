@@ -179,7 +179,8 @@ public final class ExpressRouteGatewayInner extends Resource {
     }
 
     /**
-     * Get the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN networks.
+     * Get the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
      * 
      * @return the allowNonVirtualWanTraffic value.
      */
@@ -188,7 +189,8 @@ public final class ExpressRouteGatewayInner extends Resource {
     }
 
     /**
-     * Set the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN networks.
+     * Set the allowNonVirtualWanTraffic property: Configures this gateway to accept traffic from non Virtual WAN
+     * networks.
      * 
      * @param allowNonVirtualWanTraffic the allowNonVirtualWanTraffic value to set.
      * @return the ExpressRouteGatewayInner object itself.

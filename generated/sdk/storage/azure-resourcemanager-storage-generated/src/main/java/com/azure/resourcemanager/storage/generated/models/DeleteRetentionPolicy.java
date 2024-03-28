@@ -57,7 +57,8 @@ public final class DeleteRetentionPolicy {
     }
 
     /**
-     * Get the days property: Indicates the number of days that the deleted item should be retained. The minimum specified value can be 1 and the maximum value can be 365.
+     * Get the days property: Indicates the number of days that the deleted item should be retained. The minimum
+     * specified value can be 1 and the maximum value can be 365.
      * 
      * @return the days value.
      */
@@ -66,7 +67,8 @@ public final class DeleteRetentionPolicy {
     }
 
     /**
-     * Set the days property: Indicates the number of days that the deleted item should be retained. The minimum specified value can be 1 and the maximum value can be 365.
+     * Set the days property: Indicates the number of days that the deleted item should be retained. The minimum
+     * specified value can be 1 and the maximum value can be 365.
      * 
      * @param days the days value to set.
      * @return the DeleteRetentionPolicy object itself.
@@ -77,7 +79,9 @@ public final class DeleteRetentionPolicy {
     }
 
     /**
-     * Get the allowPermanentDelete property: This property when set to true allows deletion of the soft deleted blob versions and snapshots. This property cannot be used blob restore policy. This property only applies to blob service and does not apply to containers or file share.
+     * Get the allowPermanentDelete property: This property when set to true allows deletion of the soft deleted blob
+     * versions and snapshots. This property cannot be used blob restore policy. This property only applies to blob
+     * service and does not apply to containers or file share.
      * 
      * @return the allowPermanentDelete value.
      */
@@ -86,7 +90,9 @@ public final class DeleteRetentionPolicy {
     }
 
     /**
-     * Set the allowPermanentDelete property: This property when set to true allows deletion of the soft deleted blob versions and snapshots. This property cannot be used blob restore policy. This property only applies to blob service and does not apply to containers or file share.
+     * Set the allowPermanentDelete property: This property when set to true allows deletion of the soft deleted blob
+     * versions and snapshots. This property cannot be used blob restore policy. This property only applies to blob
+     * service and does not apply to containers or file share.
      * 
      * @param allowPermanentDelete the allowPermanentDelete value to set.
      * @return the DeleteRetentionPolicy object itself.

@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * Represents a container on the  Data Box Edge/Gateway device.
+ * Represents a container on the Data Box Edge/Gateway device.
  */
 @Fluent
 public final class ContainerInner extends ArmBaseModel {
@@ -114,8 +114,8 @@ public final class ContainerInner extends ArmBaseModel {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model ContainerInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property innerProperties in model ContainerInner"));
         } else {
             innerProperties().validate();
         }

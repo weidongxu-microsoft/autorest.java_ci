@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
+ * Allow, disallow, or let Network Security Perimeter configuration to evaluate public network access to Storage
+ * Account. Value is optional but if passed in, must be 'Enabled', 'Disabled' or 'SecuredByPerimeter'.
  */
 public final class PublicNetworkAccess extends ExpandableStringEnum<PublicNetworkAccess> {
     /**

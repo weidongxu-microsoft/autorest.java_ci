@@ -7,17 +7,26 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.OffsetDateTime;
 
 /**
- * Specifies the clip time as a Utc time position in the media file.  The Utc time can point to a different position depending on whether the media file starts from a timestamp of zero or not.
+ * Specifies the clip time as a Utc time position in the media file. The Utc time can point to a different position
+ * depending on whether the media file starts from a timestamp of zero or not.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = UtcClipTime.class, visible = true)
 @JsonTypeName("#Microsoft.Media.UtcClipTime")
 @Fluent
 public final class UtcClipTime extends ClipTime {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.UtcClipTime";
+
     /*
      * The time position on the timeline of the input media based on Utc time.
      */
@@ -28,7 +37,16 @@ public final class UtcClipTime extends ClipTime {
      * Creates an instance of UtcClipTime class.
      */
     public UtcClipTime() {
-        withOdataType("#Microsoft.Media.UtcClipTime");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -60,8 +78,8 @@ public final class UtcClipTime extends ClipTime {
     public void validate() {
         super.validate();
         if (time() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property time in model UtcClipTime"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property time in model UtcClipTime"));
         }
     }
 

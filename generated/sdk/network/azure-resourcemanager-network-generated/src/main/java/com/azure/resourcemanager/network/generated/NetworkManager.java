@@ -1048,7 +1048,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of ExpressRouteCircuitAuthorizations. It manages ExpressRouteCircuitAuthorization.
+     * Gets the resource collection API of ExpressRouteCircuitAuthorizations. It manages
+     * ExpressRouteCircuitAuthorization.
      * 
      * @return Resource collection API of ExpressRouteCircuitAuthorizations.
      */
@@ -1226,7 +1227,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of FirewallPolicyRuleCollectionGroups. It manages FirewallPolicyRuleCollectionGroup.
+     * Gets the resource collection API of FirewallPolicyRuleCollectionGroups. It manages
+     * FirewallPolicyRuleCollectionGroup.
      * 
      * @return Resource collection API of FirewallPolicyRuleCollectionGroups.
      */
@@ -1441,7 +1443,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets the resource collection API of NetworkInterfaceTapConfigurations. It manages NetworkInterfaceTapConfiguration.
+     * Gets the resource collection API of NetworkInterfaceTapConfigurations. It manages
+     * NetworkInterfaceTapConfiguration.
      * 
      * @return Resource collection API of NetworkInterfaceTapConfigurations.
      */
@@ -2421,7 +2424,8 @@ public final class NetworkManager {
     }
 
     /**
-     * Gets wrapped service client NetworkManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client NetworkManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client NetworkManagementClient.
      */

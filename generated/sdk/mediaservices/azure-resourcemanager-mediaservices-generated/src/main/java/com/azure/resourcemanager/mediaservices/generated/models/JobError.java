@@ -77,7 +77,8 @@ public final class JobError {
     }
 
     /**
-     * Get the retry property: Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via Azure Portal.
+     * Get the retry property: Indicates that it may be possible to retry the Job. If retry is unsuccessful, please
+     * contact Azure support via Azure Portal.
      * 
      * @return the retry value.
      */

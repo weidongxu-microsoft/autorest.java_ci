@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * Gets the reason that a storage account name could not be used. The Reason element is only returned if NameAvailable is false.
+ * Gets the reason that a storage account name could not be used. The Reason element is only returned if NameAvailable
+ * is false.
  */
 public enum Reason {
     /**

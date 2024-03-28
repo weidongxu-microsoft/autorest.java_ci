@@ -65,7 +65,8 @@ public final class RoleAssignmentProperties {
     }
 
     /**
-     * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
+     * Get the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
+     * Directory. It can point to a user, service principal, or security group.
      * 
      * @return the principalId value.
      */
@@ -74,7 +75,8 @@ public final class RoleAssignmentProperties {
     }
 
     /**
-     * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user, service principal, or security group.
+     * Set the principalId property: The principal ID assigned to the role. This maps to the ID inside the Active
+     * Directory. It can point to a user, service principal, or security group.
      * 
      * @param principalId the principalId value to set.
      * @return the RoleAssignmentProperties object itself.
@@ -131,12 +133,14 @@ public final class RoleAssignmentProperties {
      */
     public void validate() {
         if (roleDefinitionId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property roleDefinitionId in model RoleAssignmentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property roleDefinitionId in model RoleAssignmentProperties"));
         }
         if (principalId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property principalId in model RoleAssignmentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property principalId in model RoleAssignmentProperties"));
         }
     }
 

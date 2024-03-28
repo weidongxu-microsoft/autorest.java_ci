@@ -89,7 +89,8 @@ public final class MyWorkbookProperties {
     }
 
     /**
-     * Get the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+     * Get the serializedData property: Configuration of this particular private workbook. Configuration data is a
+     * string containing valid JSON.
      * 
      * @return the serializedData value.
      */
@@ -98,7 +99,8 @@ public final class MyWorkbookProperties {
     }
 
     /**
-     * Set the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+     * Set the serializedData property: Configuration of this particular private workbook. Configuration data is a
+     * string containing valid JSON.
      * 
      * @param serializedData the serializedData value to set.
      * @return the MyWorkbookProperties object itself.
@@ -109,7 +111,8 @@ public final class MyWorkbookProperties {
     }
 
     /**
-     * Get the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+     * Get the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked private workbook.
      * 
      * @return the version value.
      */
@@ -118,7 +121,8 @@ public final class MyWorkbookProperties {
     }
 
     /**
-     * Set the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+     * Set the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked private workbook.
      * 
      * @param version the version value to set.
      * @return the MyWorkbookProperties object itself.
@@ -129,7 +133,8 @@ public final class MyWorkbookProperties {
     }
 
     /**
-     * Get the timeModified property: Date and time in UTC of the last modification that was made to this private workbook definition.
+     * Get the timeModified property: Date and time in UTC of the last modification that was made to this private
+     * workbook definition.
      * 
      * @return the timeModified value.
      */
@@ -213,16 +218,18 @@ public final class MyWorkbookProperties {
      */
     public void validate() {
         if (displayName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property displayName in model MyWorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property displayName in model MyWorkbookProperties"));
         }
         if (serializedData() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property serializedData in model MyWorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property serializedData in model MyWorkbookProperties"));
         }
         if (category() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property category in model MyWorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property category in model MyWorkbookProperties"));
         }
     }
 

@@ -515,7 +515,8 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Get the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
+     * Get the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
      * 
      * @return the gatewayCustomBgpIpAddresses value.
      */
@@ -524,7 +525,8 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Set the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
+     * Set the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
      * 
      * @param gatewayCustomBgpIpAddresses the gatewayCustomBgpIpAddresses value to set.
      * @return the VirtualNetworkGatewayConnectionPropertiesFormatInner object itself.
@@ -658,7 +660,8 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Get the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @return the enablePrivateLinkFastPath value.
      */
@@ -667,7 +670,8 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
     }
 
     /**
-     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Set the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @param enablePrivateLinkFastPath the enablePrivateLinkFastPath value to set.
      * @return the VirtualNetworkGatewayConnectionPropertiesFormatInner object itself.
@@ -685,8 +689,9 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
      */
     public void validate() {
         if (virtualNetworkGateway1() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property virtualNetworkGateway1 in model VirtualNetworkGatewayConnectionPropertiesFormatInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property virtualNetworkGateway1 in model VirtualNetworkGatewayConnectionPropertiesFormatInner"));
         } else {
             virtualNetworkGateway1().validate();
         }
@@ -697,8 +702,9 @@ public final class VirtualNetworkGatewayConnectionPropertiesFormatInner {
             localNetworkGateway2().validate();
         }
         if (connectionType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property connectionType in model VirtualNetworkGatewayConnectionPropertiesFormatInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property connectionType in model VirtualNetworkGatewayConnectionPropertiesFormatInner"));
         }
         if (tunnelConnectionStatus() != null) {
             tunnelConnectionStatus().forEach(e -> e.validate());

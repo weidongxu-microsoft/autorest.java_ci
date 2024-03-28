@@ -7,6 +7,7 @@ package com.azure.resourcemanager.monitor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class MetricCriteria extends MultiMetricCriteria {
     /*
+     * Specifies the type of threshold criteria
+     */
+    @JsonTypeId
+    @JsonProperty(value = "criterionType", required = true)
+    private CriterionType criterionType = CriterionType.STATIC_THRESHOLD_CRITERION;
+
+    /*
      * the criteria operator.
      */
     @JsonProperty(value = "operator", required = true)
@@ -38,7 +46,16 @@ public final class MetricCriteria extends MultiMetricCriteria {
      * Creates an instance of MetricCriteria class.
      */
     public MetricCriteria() {
-        withCriterionType(CriterionType.STATIC_THRESHOLD_CRITERION);
+    }
+
+    /**
+     * Get the criterionType property: Specifies the type of threshold criteria.
+     * 
+     * @return the criterionType value.
+     */
+    @Override
+    public CriterionType criterionType() {
+        return this.criterionType;
     }
 
     /**
@@ -144,8 +161,8 @@ public final class MetricCriteria extends MultiMetricCriteria {
     public void validate() {
         super.validate();
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model MetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property operator in model MetricCriteria"));
         }
     }
 

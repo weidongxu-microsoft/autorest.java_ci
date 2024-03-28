@@ -57,7 +57,8 @@ public final class NetworkTraceInner {
     }
 
     /**
-     * Get the status property: Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed).
+     * Get the status property: Current status of the network trace operation, same as Operation.Status
+     * (InProgress/Succeeded/Failed).
      * 
      * @return the status value.
      */
@@ -66,7 +67,8 @@ public final class NetworkTraceInner {
     }
 
     /**
-     * Set the status property: Current status of the network trace operation, same as Operation.Status (InProgress/Succeeded/Failed).
+     * Set the status property: Current status of the network trace operation, same as Operation.Status
+     * (InProgress/Succeeded/Failed).
      * 
      * @param status the status value to set.
      * @return the NetworkTraceInner object itself.

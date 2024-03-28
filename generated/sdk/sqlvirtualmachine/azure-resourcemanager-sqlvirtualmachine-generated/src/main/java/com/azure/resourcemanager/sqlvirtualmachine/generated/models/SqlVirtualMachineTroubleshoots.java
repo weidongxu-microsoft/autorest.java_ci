@@ -14,7 +14,8 @@ public interface SqlVirtualMachineTroubleshoots {
     /**
      * Starts SQL virtual machine troubleshooting.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param parameters The SQL virtual machine troubleshooting entity.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -28,7 +29,8 @@ public interface SqlVirtualMachineTroubleshoots {
     /**
      * Starts SQL virtual machine troubleshooting.
      * 
-     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
      * @param sqlVirtualMachineName Name of the SQL virtual machine.
      * @param parameters The SQL virtual machine troubleshooting entity.
      * @param context The context to associate with this operation.

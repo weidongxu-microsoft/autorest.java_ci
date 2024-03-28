@@ -9,6 +9,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.PeriodicTimerProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -24,6 +25,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class PeriodicTimerEventTrigger extends TriggerInner {
     /*
+     * Trigger Kind.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private TriggerEventType kind = TriggerEventType.PERIODIC_TIMER_EVENT;
+
+    /*
      * Periodic timer trigger properties.
      */
     @JsonProperty(value = "properties", required = true)
@@ -33,7 +41,16 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
      * Creates an instance of PeriodicTimerEventTrigger class.
      */
     public PeriodicTimerEventTrigger() {
-        withKind(TriggerEventType.PERIODIC_TIMER_EVENT);
+    }
+
+    /**
+     * Get the kind property: Trigger Kind.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public TriggerEventType kind() {
+        return this.kind;
     }
 
     /**
@@ -92,7 +109,9 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     }
 
     /**
-     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
+     * Get the customContextTag property: A custom context tag typically used to correlate the trigger against its
+     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
+     * tag can be the name or the image URL of the module.
      * 
      * @return the customContextTag value.
      */
@@ -101,7 +120,9 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     }
 
     /**
-     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of the module.
+     * Set the customContextTag property: A custom context tag typically used to correlate the trigger against its
+     * usage. For example, if a periodic timer trigger is intended for certain specific IoT modules in the device, the
+     * tag can be the name or the image URL of the module.
      * 
      * @param customContextTag the customContextTag value to set.
      * @return the PeriodicTimerEventTrigger object itself.
@@ -123,8 +144,9 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     public void validate() {
         super.validate();
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model PeriodicTimerEventTrigger"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model PeriodicTimerEventTrigger"));
         } else {
             innerProperties().validate();
         }

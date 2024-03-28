@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a single certificate reference in a Key Vault, and where the certificate should reside on the role instance.
+ * Describes a single certificate reference in a Key Vault, and where the certificate should reside on the role
+ * instance.
  */
 @Fluent
 public final class CloudServiceVaultCertificate {
@@ -25,7 +26,8 @@ public final class CloudServiceVaultCertificate {
     }
 
     /**
-     * Get the certificateUrl property: This is the URL of a certificate that has been uploaded to Key Vault as a secret.
+     * Get the certificateUrl property: This is the URL of a certificate that has been uploaded to Key Vault as a
+     * secret.
      * 
      * @return the certificateUrl value.
      */
@@ -34,7 +36,8 @@ public final class CloudServiceVaultCertificate {
     }
 
     /**
-     * Set the certificateUrl property: This is the URL of a certificate that has been uploaded to Key Vault as a secret.
+     * Set the certificateUrl property: This is the URL of a certificate that has been uploaded to Key Vault as a
+     * secret.
      * 
      * @param certificateUrl the certificateUrl value to set.
      * @return the CloudServiceVaultCertificate object itself.

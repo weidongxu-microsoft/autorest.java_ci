@@ -86,14 +86,16 @@ public interface AlertRuleResource {
     RuleCondition condition();
 
     /**
-     * Gets the action property: action that is performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Gets the action property: action that is performed when the alert rule becomes active, and when an alert
+     * condition is resolved.
      * 
      * @return the action value.
      */
     RuleAction action();
 
     /**
-     * Gets the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Gets the actions property: the array of actions that are performed when the alert rule becomes active, and when
+     * an alert condition is resolved.
      * 
      * @return the actions value.
      */
@@ -226,7 +228,8 @@ public interface AlertRuleResource {
         }
 
         /**
-         * The stage of the AlertRuleResource definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AlertRuleResource definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithDescription,
             DefinitionStages.WithProvisioningState, DefinitionStages.WithAction, DefinitionStages.WithActions {
@@ -264,7 +267,8 @@ public interface AlertRuleResource {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: the description of the alert rule that will be included in the alert email..
+             * Specifies the description property: the description of the alert rule that will be included in the alert
+             * email..
              * 
              * @param description the description of the alert rule that will be included in the alert email.
              * @return the next definition stage.
@@ -290,9 +294,11 @@ public interface AlertRuleResource {
          */
         interface WithAction {
             /**
-             * Specifies the action property: action that is performed when the alert rule becomes active, and when an alert condition is resolved..
+             * Specifies the action property: action that is performed when the alert rule becomes active, and when an
+             * alert condition is resolved..
              * 
-             * @param action action that is performed when the alert rule becomes active, and when an alert condition is resolved.
+             * @param action action that is performed when the alert rule becomes active, and when an alert condition is
+             * resolved.
              * @return the next definition stage.
              */
             WithCreate withAction(RuleAction action);
@@ -303,9 +309,11 @@ public interface AlertRuleResource {
          */
         interface WithActions {
             /**
-             * Specifies the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved..
+             * Specifies the actions property: the array of actions that are performed when the alert rule becomes
+             * active, and when an alert condition is resolved..
              * 
-             * @param actions the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+             * @param actions the array of actions that are performed when the alert rule becomes active, and when an
+             * alert condition is resolved.
              * @return the next definition stage.
              */
             WithCreate withActions(List<RuleAction> actions);
@@ -376,7 +384,8 @@ public interface AlertRuleResource {
          */
         interface WithDescription {
             /**
-             * Specifies the description property: the description of the alert rule that will be included in the alert email..
+             * Specifies the description property: the description of the alert rule that will be included in the alert
+             * email..
              * 
              * @param description the description of the alert rule that will be included in the alert email.
              * @return the next definition stage.
@@ -428,9 +437,11 @@ public interface AlertRuleResource {
          */
         interface WithAction {
             /**
-             * Specifies the action property: action that is performed when the alert rule becomes active, and when an alert condition is resolved..
+             * Specifies the action property: action that is performed when the alert rule becomes active, and when an
+             * alert condition is resolved..
              * 
-             * @param action action that is performed when the alert rule becomes active, and when an alert condition is resolved.
+             * @param action action that is performed when the alert rule becomes active, and when an alert condition is
+             * resolved.
              * @return the next definition stage.
              */
             Update withAction(RuleAction action);
@@ -441,9 +452,11 @@ public interface AlertRuleResource {
          */
         interface WithActions {
             /**
-             * Specifies the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved..
+             * Specifies the actions property: the array of actions that are performed when the alert rule becomes
+             * active, and when an alert condition is resolved..
              * 
-             * @param actions the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+             * @param actions the array of actions that are performed when the alert rule becomes active, and when an
+             * alert condition is resolved.
              * @return the next definition stage.
              */
             Update withActions(List<RuleAction> actions);

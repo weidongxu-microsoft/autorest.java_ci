@@ -78,8 +78,8 @@ public final class TableSignedIdentifier {
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property id in model TableSignedIdentifier"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property id in model TableSignedIdentifier"));
         }
         if (accessPolicy() != null) {
             accessPolicy().validate();

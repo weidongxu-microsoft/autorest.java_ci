@@ -220,7 +220,8 @@ public interface ExpressRouteGatewaysClient {
     ExpressRouteGatewayInner getByResourceGroup(String resourceGroupName, String expressRouteGatewayName);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -233,7 +234,8 @@ public interface ExpressRouteGatewaysClient {
     SyncPoller<PollResult<Void>, Void> beginDelete(String resourceGroupName, String expressRouteGatewayName);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -248,7 +250,8 @@ public interface ExpressRouteGatewaysClient {
         Context context);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.
@@ -260,7 +263,8 @@ public interface ExpressRouteGatewaysClient {
     void delete(String resourceGroupName, String expressRouteGatewayName);
 
     /**
-     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be deleted when there are no connection subresources.
+     * Deletes the specified ExpressRoute gateway in a resource group. An ExpressRoute gateway resource can only be
+     * deleted when there are no connection subresources.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param expressRouteGatewayName The name of the ExpressRoute gateway.

@@ -7,12 +7,14 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
 
 /**
- * Specifies the clip time as an absolute time position in the media file.  The absolute time can point to a different position depending on whether the media file starts from a timestamp of zero or not.
+ * Specifies the clip time as an absolute time position in the media file. The absolute time can point to a different
+ * position depending on whether the media file starts from a timestamp of zero or not.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -23,6 +25,13 @@ import java.time.Duration;
 @Fluent
 public final class AbsoluteClipTime extends ClipTime {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.AbsoluteClipTime";
+
+    /*
      * The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for 30 seconds.
      */
     @JsonProperty(value = "time", required = true)
@@ -32,11 +41,21 @@ public final class AbsoluteClipTime extends ClipTime {
      * Creates an instance of AbsoluteClipTime class.
      */
     public AbsoluteClipTime() {
-        withOdataType("#Microsoft.Media.AbsoluteClipTime");
     }
 
     /**
-     * Get the time property: The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for 30 seconds.
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the time property: The time position on the timeline of the input media. It is usually specified as an
+     * ISO8601 period. e.g PT30S for 30 seconds.
      * 
      * @return the time value.
      */
@@ -45,7 +64,8 @@ public final class AbsoluteClipTime extends ClipTime {
     }
 
     /**
-     * Set the time property: The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for 30 seconds.
+     * Set the time property: The time position on the timeline of the input media. It is usually specified as an
+     * ISO8601 period. e.g PT30S for 30 seconds.
      * 
      * @param time the time value to set.
      * @return the AbsoluteClipTime object itself.
@@ -64,8 +84,8 @@ public final class AbsoluteClipTime extends ClipTime {
     public void validate() {
         super.validate();
         if (time() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property time in model AbsoluteClipTime"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property time in model AbsoluteClipTime"));
         }
     }
 

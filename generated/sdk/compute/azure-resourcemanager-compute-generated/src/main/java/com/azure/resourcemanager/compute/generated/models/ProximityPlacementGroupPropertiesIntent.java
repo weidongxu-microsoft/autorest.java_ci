@@ -26,7 +26,8 @@ public final class ProximityPlacementGroupPropertiesIntent {
     }
 
     /**
-     * Get the vmSizes property: Specifies possible sizes of virtual machines that can be created in the proximity placement group.
+     * Get the vmSizes property: Specifies possible sizes of virtual machines that can be created in the proximity
+     * placement group.
      * 
      * @return the vmSizes value.
      */
@@ -35,7 +36,8 @@ public final class ProximityPlacementGroupPropertiesIntent {
     }
 
     /**
-     * Set the vmSizes property: Specifies possible sizes of virtual machines that can be created in the proximity placement group.
+     * Set the vmSizes property: Specifies possible sizes of virtual machines that can be created in the proximity
+     * placement group.
      * 
      * @param vmSizes the vmSizes value to set.
      * @return the ProximityPlacementGroupPropertiesIntent object itself.

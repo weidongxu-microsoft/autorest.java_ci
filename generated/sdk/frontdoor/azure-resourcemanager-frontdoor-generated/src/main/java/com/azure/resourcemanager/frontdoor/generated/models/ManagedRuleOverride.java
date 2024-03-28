@@ -65,7 +65,8 @@ public final class ManagedRuleOverride {
     }
 
     /**
-     * Get the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to Disabled if not specified.
+     * Get the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to
+     * Disabled if not specified.
      * 
      * @return the enabledState value.
      */
@@ -74,7 +75,8 @@ public final class ManagedRuleOverride {
     }
 
     /**
-     * Set the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to Disabled if not specified.
+     * Set the enabledState property: Describes if the managed rule is in enabled or disabled state. Defaults to
+     * Disabled if not specified.
      * 
      * @param enabledState the enabledState value to set.
      * @return the ManagedRuleOverride object itself.
@@ -131,8 +133,8 @@ public final class ManagedRuleOverride {
      */
     public void validate() {
         if (ruleId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ruleId in model ManagedRuleOverride"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property ruleId in model ManagedRuleOverride"));
         }
         if (exclusions() != null) {
             exclusions().forEach(e -> e.validate());

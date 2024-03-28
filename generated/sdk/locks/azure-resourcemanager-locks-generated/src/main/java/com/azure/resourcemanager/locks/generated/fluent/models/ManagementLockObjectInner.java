@@ -39,7 +39,9 @@ public final class ManagementLockObjectInner extends ProxyResource {
     }
 
     /**
-     * Get the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it.
+     * Get the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly.
+     * CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means
+     * authorized users can only read from a resource, but they can't modify or delete it.
      * 
      * @return the level value.
      */
@@ -48,7 +50,9 @@ public final class ManagementLockObjectInner extends ProxyResource {
     }
 
     /**
-     * Set the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly. CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means authorized users can only read from a resource, but they can't modify or delete it.
+     * Set the level property: The level of the lock. Possible values are: NotSpecified, CanNotDelete, ReadOnly.
+     * CanNotDelete means authorized users are able to read and modify the resources, but not delete. ReadOnly means
+     * authorized users can only read from a resource, but they can't modify or delete it.
      * 
      * @param level the level value to set.
      * @return the ManagementLockObjectInner object itself.
@@ -114,8 +118,9 @@ public final class ManagementLockObjectInner extends ProxyResource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model ManagementLockObjectInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model ManagementLockObjectInner"));
         } else {
             innerProperties().validate();
         }

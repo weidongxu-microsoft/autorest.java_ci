@@ -53,7 +53,8 @@ public final class DeletedAccountInner extends ProxyResource {
     }
 
     /**
-     * Get the restoreReference property: Can be used to attempt recovering this deleted account via PutStorageAccount API.
+     * Get the restoreReference property: Can be used to attempt recovering this deleted account via PutStorageAccount
+     * API.
      * 
      * @return the restoreReference value.
      */

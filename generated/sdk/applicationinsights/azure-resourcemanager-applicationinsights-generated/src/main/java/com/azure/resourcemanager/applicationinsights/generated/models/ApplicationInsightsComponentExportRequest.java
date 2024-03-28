@@ -73,7 +73,9 @@ public final class ApplicationInsightsComponentExportRequest {
     }
 
     /**
-     * Get the recordTypes property: The document types to be exported, as comma separated values. Allowed values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
+     * Get the recordTypes property: The document types to be exported, as comma separated values. Allowed values
+     * include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd',
+     * 'PerformanceCounters', 'Availability', 'Messages'.
      * 
      * @return the recordTypes value.
      */
@@ -82,7 +84,9 @@ public final class ApplicationInsightsComponentExportRequest {
     }
 
     /**
-     * Set the recordTypes property: The document types to be exported, as comma separated values. Allowed values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
+     * Set the recordTypes property: The document types to be exported, as comma separated values. Allowed values
+     * include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd',
+     * 'PerformanceCounters', 'Availability', 'Messages'.
      * 
      * @param recordTypes the recordTypes value to set.
      * @return the ApplicationInsightsComponentExportRequest object itself.
@@ -113,7 +117,8 @@ public final class ApplicationInsightsComponentExportRequest {
     }
 
     /**
-     * Get the destinationAddress property: The SAS URL for the destination storage container. It must grant write permission.
+     * Get the destinationAddress property: The SAS URL for the destination storage container. It must grant write
+     * permission.
      * 
      * @return the destinationAddress value.
      */
@@ -122,7 +127,8 @@ public final class ApplicationInsightsComponentExportRequest {
     }
 
     /**
-     * Set the destinationAddress property: The SAS URL for the destination storage container. It must grant write permission.
+     * Set the destinationAddress property: The SAS URL for the destination storage container. It must grant write
+     * permission.
      * 
      * @param destinationAddress the destinationAddress value to set.
      * @return the ApplicationInsightsComponentExportRequest object itself.
@@ -133,7 +139,8 @@ public final class ApplicationInsightsComponentExportRequest {
     }
 
     /**
-     * Get the isEnabled property: Set to 'true' to create a Continuous Export configuration as enabled, otherwise set it to 'false'.
+     * Get the isEnabled property: Set to 'true' to create a Continuous Export configuration as enabled, otherwise set
+     * it to 'false'.
      * 
      * @return the isEnabled value.
      */
@@ -142,7 +149,8 @@ public final class ApplicationInsightsComponentExportRequest {
     }
 
     /**
-     * Set the isEnabled property: Set to 'true' to create a Continuous Export configuration as enabled, otherwise set it to 'false'.
+     * Set the isEnabled property: Set to 'true' to create a Continuous Export configuration as enabled, otherwise set
+     * it to 'false'.
      * 
      * @param isEnabled the isEnabled value to set.
      * @return the ApplicationInsightsComponentExportRequest object itself.

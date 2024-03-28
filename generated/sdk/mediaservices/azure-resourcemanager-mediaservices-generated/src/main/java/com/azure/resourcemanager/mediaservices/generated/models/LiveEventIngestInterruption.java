@@ -85,7 +85,8 @@ public final class LiveEventIngestInterruption {
     }
 
     /**
-     * Get the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour and 30 minutes.
+     * Get the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour
+     * and 30 minutes.
      * 
      * @return the duration value.
      */
@@ -94,7 +95,8 @@ public final class LiveEventIngestInterruption {
     }
 
     /**
-     * Set the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour and 30 minutes.
+     * Set the duration property: Duration of interruption in ISO 8601 time. For example, use PT1H30M to indicate 1 hour
+     * and 30 minutes.
      * 
      * @param duration the duration value to set.
      * @return the LiveEventIngestInterruption object itself.

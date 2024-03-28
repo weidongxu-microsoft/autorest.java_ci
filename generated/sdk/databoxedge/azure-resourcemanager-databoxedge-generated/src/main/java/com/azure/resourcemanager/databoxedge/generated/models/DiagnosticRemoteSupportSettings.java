@@ -48,7 +48,8 @@ public interface DiagnosticRemoteSupportSettings {
     List<RemoteSupportSettings> remoteSupportSettingsList();
 
     /**
-     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticRemoteSupportSettingsInner object.
+     * Gets the inner com.azure.resourcemanager.databoxedge.generated.fluent.models.DiagnosticRemoteSupportSettingsInner
+     * object.
      * 
      * @return the inner object.
      */

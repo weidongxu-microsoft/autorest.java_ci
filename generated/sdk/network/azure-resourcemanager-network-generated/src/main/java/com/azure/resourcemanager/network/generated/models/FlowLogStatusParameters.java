@@ -26,7 +26,8 @@ public final class FlowLogStatusParameters {
     }
 
     /**
-     * Get the targetResourceId property: The target resource where getting the flow log and traffic analytics (optional) status.
+     * Get the targetResourceId property: The target resource where getting the flow log and traffic analytics
+     * (optional) status.
      * 
      * @return the targetResourceId value.
      */
@@ -35,7 +36,8 @@ public final class FlowLogStatusParameters {
     }
 
     /**
-     * Set the targetResourceId property: The target resource where getting the flow log and traffic analytics (optional) status.
+     * Set the targetResourceId property: The target resource where getting the flow log and traffic analytics
+     * (optional) status.
      * 
      * @param targetResourceId the targetResourceId value to set.
      * @return the FlowLogStatusParameters object itself.
@@ -52,8 +54,9 @@ public final class FlowLogStatusParameters {
      */
     public void validate() {
         if (targetResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property targetResourceId in model FlowLogStatusParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property targetResourceId in model FlowLogStatusParameters"));
         }
     }
 

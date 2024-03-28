@@ -38,7 +38,8 @@ public final class ExportSchedule {
     }
 
     /**
-     * Get the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled execution is paused.
+     * Get the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled
+     * execution is paused.
      * 
      * @return the status value.
      */
@@ -47,7 +48,8 @@ public final class ExportSchedule {
     }
 
     /**
-     * Set the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled execution is paused.
+     * Set the status property: The status of the schedule. Whether active or not. If inactive, the export's scheduled
+     * execution is paused.
      * 
      * @param status the status value to set.
      * @return the ExportSchedule object itself.
@@ -78,7 +80,8 @@ public final class ExportSchedule {
     }
 
     /**
-     * Get the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If present, the end date must be greater than start date.
+     * Get the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If
+     * present, the end date must be greater than start date.
      * 
      * @return the recurrencePeriod value.
      */
@@ -87,7 +90,8 @@ public final class ExportSchedule {
     }
 
     /**
-     * Set the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If present, the end date must be greater than start date.
+     * Set the recurrencePeriod property: Has start and end date of the recurrence. The start date must be in future. If
+     * present, the end date must be greater than start date.
      * 
      * @param recurrencePeriod the recurrencePeriod value to set.
      * @return the ExportSchedule object itself.
@@ -104,8 +108,8 @@ public final class ExportSchedule {
      */
     public void validate() {
         if (recurrence() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property recurrence in model ExportSchedule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property recurrence in model ExportSchedule"));
         }
         if (recurrencePeriod() != null) {
             recurrencePeriod().validate();

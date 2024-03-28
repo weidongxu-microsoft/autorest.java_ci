@@ -25,7 +25,8 @@ public final class TopLevelDomainProperties {
     }
 
     /**
-     * Get the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the privacy value.
      */
@@ -34,7 +35,8 @@ public final class TopLevelDomainProperties {
     }
 
     /**
-     * Set the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the privacy property: If &lt;code&gt;true&lt;/code&gt;, then the top level domain supports domain privacy;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param privacy the privacy value to set.
      * @return the TopLevelDomainProperties object itself.

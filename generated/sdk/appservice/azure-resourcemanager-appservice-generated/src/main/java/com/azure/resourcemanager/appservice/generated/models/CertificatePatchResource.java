@@ -216,7 +216,8 @@ public final class CertificatePatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the certificate.
+     * Get the hostingEnvironmentProfile property: Specification for the App Service Environment to use for the
+     * certificate.
      * 
      * @return the hostingEnvironmentProfile value.
      */
@@ -280,7 +281,8 @@ public final class CertificatePatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Get the serverFarmId property: Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Get the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
+     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      * 
      * @return the serverFarmId value.
      */
@@ -289,7 +291,8 @@ public final class CertificatePatchResource extends ProxyOnlyResource {
     }
 
     /**
-     * Set the serverFarmId property: Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Set the serverFarmId property: Resource ID of the associated App Service plan, formatted as:
+     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      * 
      * @param serverFarmId the serverFarmId value to set.
      * @return the CertificatePatchResource object itself.

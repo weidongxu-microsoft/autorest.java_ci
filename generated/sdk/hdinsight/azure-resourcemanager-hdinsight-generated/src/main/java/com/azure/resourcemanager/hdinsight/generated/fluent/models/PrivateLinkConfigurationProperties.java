@@ -41,7 +41,8 @@ public final class PrivateLinkConfigurationProperties {
     }
 
     /**
-     * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * Get the groupId property: The HDInsight private linkable sub-resource name to apply the private link
+     * configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      * 
      * @return the groupId value.
      */
@@ -50,7 +51,8 @@ public final class PrivateLinkConfigurationProperties {
     }
 
     /**
-     * Set the groupId property: The HDInsight private linkable sub-resource name to apply the private link configuration to. For example, 'headnode', 'gateway', 'edgenode'.
+     * Set the groupId property: The HDInsight private linkable sub-resource name to apply the private link
+     * configuration to. For example, 'headnode', 'gateway', 'edgenode'.
      * 
      * @param groupId the groupId value to set.
      * @return the PrivateLinkConfigurationProperties object itself.
@@ -61,7 +63,8 @@ public final class PrivateLinkConfigurationProperties {
     }
 
     /**
-     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the response.
+     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the
+     * response.
      * 
      * @return the provisioningState value.
      */
@@ -96,12 +99,14 @@ public final class PrivateLinkConfigurationProperties {
      */
     public void validate() {
         if (groupId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property groupId in model PrivateLinkConfigurationProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property groupId in model PrivateLinkConfigurationProperties"));
         }
         if (ipConfigurations() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ipConfigurations in model PrivateLinkConfigurationProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ipConfigurations in model PrivateLinkConfigurationProperties"));
         } else {
             ipConfigurations().forEach(e -> e.validate());
         }

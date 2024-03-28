@@ -54,7 +54,8 @@ public final class GalleryImageVersionList {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to fetch the next page of gallery image versions.
+     * Get the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to
+     * fetch the next page of gallery image versions.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class GalleryImageVersionList {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to fetch the next page of gallery image versions.
+     * Set the nextLink property: The uri to fetch the next page of gallery image versions. Call ListNext() with this to
+     * fetch the next page of gallery image versions.
      * 
      * @param nextLink the nextLink value to set.
      * @return the GalleryImageVersionList object itself.
@@ -80,8 +82,8 @@ public final class GalleryImageVersionList {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model GalleryImageVersionList"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model GalleryImageVersionList"));
         } else {
             value().forEach(e -> e.validate());
         }

@@ -43,7 +43,8 @@ public final class PrivateDnsZoneGroupPropertiesFormat {
     }
 
     /**
-     * Get the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone group.
+     * Get the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone
+     * group.
      * 
      * @return the privateDnsZoneConfigs value.
      */
@@ -52,7 +53,8 @@ public final class PrivateDnsZoneGroupPropertiesFormat {
     }
 
     /**
-     * Set the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone group.
+     * Set the privateDnsZoneConfigs property: A collection of private dns zone configurations of the private dns zone
+     * group.
      * 
      * @param privateDnsZoneConfigs the privateDnsZoneConfigs value to set.
      * @return the PrivateDnsZoneGroupPropertiesFormat object itself.

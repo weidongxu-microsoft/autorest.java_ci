@@ -26,7 +26,8 @@ public interface SearchGetSchemaResponse {
     List<SearchSchemaValue> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.SearchGetSchemaResponseInner object.
+     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.SearchGetSchemaResponseInner
+     * object.
      * 
      * @return the inner object.
      */

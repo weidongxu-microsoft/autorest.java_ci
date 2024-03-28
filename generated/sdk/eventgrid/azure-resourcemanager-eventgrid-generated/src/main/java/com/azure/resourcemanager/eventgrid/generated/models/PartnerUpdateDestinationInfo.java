@@ -47,17 +47,6 @@ public class PartnerUpdateDestinationInfo {
     }
 
     /**
-     * Set the endpointType property: Type of the endpoint for the partner destination.
-     * 
-     * @param endpointType the endpointType value to set.
-     * @return the PartnerUpdateDestinationInfo object itself.
-     */
-    protected PartnerUpdateDestinationInfo withEndpointType(PartnerEndpointType endpointType) {
-        this.endpointType = endpointType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

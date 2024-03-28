@@ -16,15 +16,18 @@ public interface QueryKeys {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index along with {@link Response}.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs
+     * collection of an index along with {@link Response}.
      */
     Response<QueryKey> createWithResponse(String resourceGroupName, String searchServiceName, String name,
         UUID clientRequestId, Context context);
@@ -32,50 +35,60 @@ public interface QueryKeys {
     /**
      * Generates a new query key for the specified search service. You can create up to 50 query keys per service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param name The name of the new query API key.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs collection of an index.
+     * @return describes an API key for a given Azure AI Search service that conveys read-only permissions on the docs
+     * collection of an index.
      */
     QueryKey create(String resourceGroupName, String searchServiceName, String name);
 
     /**
      * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedIterable}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<QueryKey> listBySearchService(String resourceGroupName, String searchServiceName);
 
     /**
      * Returns the list of query API keys for the given Azure AI Search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing the query API keys for a given Azure AI Search service as paginated response with {@link PagedIterable}.
+     * @return response containing the query API keys for a given Azure AI Search service as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<QueryKey> listBySearchService(String resourceGroupName, String searchServiceName,
         UUID clientRequestId, Context context);
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
+     * a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -86,9 +99,11 @@ public interface QueryKeys {
         UUID clientRequestId, Context context);
 
     /**
-     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating a query key is to delete and then recreate it.
+     * Deletes the specified query key. Unlike admin keys, query keys are not regenerated. The process for regenerating
+     * a query key is to delete and then recreate it.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @param key The query key to be deleted. Query keys are identified by value, not by name.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

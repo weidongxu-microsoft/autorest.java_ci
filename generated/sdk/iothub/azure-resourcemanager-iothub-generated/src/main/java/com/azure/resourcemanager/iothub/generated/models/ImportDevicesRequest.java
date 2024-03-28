@@ -148,7 +148,8 @@ public final class ImportDevicesRequest {
     }
 
     /**
-     * Get the authenticationType property: Specifies authentication type being used for connecting to the storage account.
+     * Get the authenticationType property: Specifies authentication type being used for connecting to the storage
+     * account.
      * 
      * @return the authenticationType value.
      */
@@ -157,7 +158,8 @@ public final class ImportDevicesRequest {
     }
 
     /**
-     * Set the authenticationType property: Specifies authentication type being used for connecting to the storage account.
+     * Set the authenticationType property: Specifies authentication type being used for connecting to the storage
+     * account.
      * 
      * @param authenticationType the authenticationType value to set.
      * @return the ImportDevicesRequest object itself.
@@ -208,7 +210,8 @@ public final class ImportDevicesRequest {
     }
 
     /**
-     * Get the configurationsBlobName property: The blob name to be used when importing configurations from the provided input blob container.
+     * Get the configurationsBlobName property: The blob name to be used when importing configurations from the provided
+     * input blob container.
      * 
      * @return the configurationsBlobName value.
      */
@@ -217,7 +220,8 @@ public final class ImportDevicesRequest {
     }
 
     /**
-     * Set the configurationsBlobName property: The blob name to be used when importing configurations from the provided input blob container.
+     * Set the configurationsBlobName property: The blob name to be used when importing configurations from the provided
+     * input blob container.
      * 
      * @param configurationsBlobName the configurationsBlobName value to set.
      * @return the ImportDevicesRequest object itself.
@@ -234,12 +238,14 @@ public final class ImportDevicesRequest {
      */
     public void validate() {
         if (inputBlobContainerUri() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property inputBlobContainerUri in model ImportDevicesRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property inputBlobContainerUri in model ImportDevicesRequest"));
         }
         if (outputBlobContainerUri() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property outputBlobContainerUri in model ImportDevicesRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property outputBlobContainerUri in model ImportDevicesRequest"));
         }
         if (identity() != null) {
             identity().validate();

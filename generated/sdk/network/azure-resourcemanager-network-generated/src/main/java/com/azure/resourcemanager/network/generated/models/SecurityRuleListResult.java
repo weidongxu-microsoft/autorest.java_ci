@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Response for ListSecurityRule API service call. Retrieves all security rules that belongs to a network security group.
+ * Response for ListSecurityRule API service call. Retrieves all security rules that belongs to a network security
+ * group.
  */
 @Fluent
 public final class SecurityRuleListResult {

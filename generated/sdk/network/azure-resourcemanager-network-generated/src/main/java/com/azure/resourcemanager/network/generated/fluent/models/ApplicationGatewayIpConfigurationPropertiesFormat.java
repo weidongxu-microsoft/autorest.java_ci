@@ -33,7 +33,8 @@ public final class ApplicationGatewayIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Get the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its private address.
+     * Get the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its
+     * private address.
      * 
      * @return the subnet value.
      */
@@ -42,7 +43,8 @@ public final class ApplicationGatewayIpConfigurationPropertiesFormat {
     }
 
     /**
-     * Set the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its private address.
+     * Set the subnet property: Reference to the subnet resource. A subnet from where application gateway gets its
+     * private address.
      * 
      * @param subnet the subnet value to set.
      * @return the ApplicationGatewayIpConfigurationPropertiesFormat object itself.

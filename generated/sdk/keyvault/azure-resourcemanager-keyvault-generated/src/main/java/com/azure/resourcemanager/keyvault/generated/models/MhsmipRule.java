@@ -26,7 +26,8 @@ public final class MhsmipRule {
     }
 
     /**
-     * Get the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
+     * Get the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or
+     * '124.56.78.0/24' (all addresses that start with 124.56.78).
      * 
      * @return the value value.
      */
@@ -35,7 +36,8 @@ public final class MhsmipRule {
     }
 
     /**
-     * Set the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or '124.56.78.0/24' (all addresses that start with 124.56.78).
+     * Set the value property: An IPv4 address range in CIDR notation, such as '124.56.78.91' (simple IP address) or
+     * '124.56.78.0/24' (all addresses that start with 124.56.78).
      * 
      * @param value the value value to set.
      * @return the MhsmipRule object itself.
@@ -52,8 +54,8 @@ public final class MhsmipRule {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model MhsmipRule"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property value in model MhsmipRule"));
         }
     }
 

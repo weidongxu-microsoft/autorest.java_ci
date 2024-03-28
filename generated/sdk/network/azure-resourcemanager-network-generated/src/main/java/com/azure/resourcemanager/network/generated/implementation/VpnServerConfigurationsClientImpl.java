@@ -66,7 +66,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVpnServerConfigurations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVpnServerConfigurations to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -885,7 +886,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>>
@@ -920,7 +922,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>>
@@ -985,7 +988,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnServerConfigurationInner> listByResourceGroup(String resourceGroupName) {
@@ -1000,7 +1004,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnServerConfigurationInner> listByResourceGroup(String resourceGroupName, Context context) {
@@ -1012,7 +1017,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>> listSinglePageAsync() {
@@ -1041,7 +1047,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>> listSinglePageAsync(Context context) {
@@ -1093,7 +1100,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnServerConfigurationInner> list() {
@@ -1107,7 +1115,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations as paginated response with {@link PagedIterable}.
+     * @return result of the request to list all VpnServerConfigurations as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<VpnServerConfigurationInner> list(Context context) {
@@ -1123,7 +1132,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1153,7 +1163,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -1181,7 +1192,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>> listNextSinglePageAsync(String nextLink) {
@@ -1209,7 +1221,8 @@ public final class VpnServerConfigurationsClientImpl implements VpnServerConfigu
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list all VpnServerConfigurations along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnServerConfigurationInner>> listNextSinglePageAsync(String nextLink, Context context) {

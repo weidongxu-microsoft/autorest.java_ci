@@ -32,7 +32,9 @@ public final class Recurrence {
     }
 
     /**
-     * Get the frequency property: the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
+     * Get the frequency property: the recurrence frequency. How often the schedule profile should take effect. This
+     * value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule,
+     * set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
      * 
      * @return the frequency value.
      */
@@ -41,7 +43,9 @@ public final class Recurrence {
     }
 
     /**
-     * Set the frequency property: the recurrence frequency. How often the schedule profile should take effect. This value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule, set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
+     * Set the frequency property: the recurrence frequency. How often the schedule profile should take effect. This
+     * value must be Week, meaning each week will have the same set of profiles. For example, to set a daily schedule,
+     * set **schedule** to every day of the week. The frequency property specifies that the schedule is repeated weekly.
      * 
      * @param frequency the frequency value to set.
      * @return the Recurrence object itself.
@@ -78,12 +82,12 @@ public final class Recurrence {
      */
     public void validate() {
         if (frequency() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property frequency in model Recurrence"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property frequency in model Recurrence"));
         }
         if (schedule() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property schedule in model Recurrence"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property schedule in model Recurrence"));
         } else {
             schedule().validate();
         }

@@ -53,17 +53,6 @@ public class RouteConfiguration {
     }
 
     /**
-     * Set the odataType property: The &#064;odata.type property.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the RouteConfiguration object itself.
-     */
-    protected RouteConfiguration withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

@@ -148,7 +148,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
+     * Get the applicationId property: The unique ID of your application. This field mirrors the 'Name' field and cannot
+     * be changed.
      * 
      * @return the applicationId value.
      */
@@ -186,7 +187,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the flowType property: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+     * Get the flowType property: Used by the Application Insights system to determine what kind of flow this component
+     * was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
      * 
      * @return the flowType value.
      */
@@ -195,7 +197,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Set the flowType property: Used by the Application Insights system to determine what kind of flow this component was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
+     * Set the flowType property: Used by the Application Insights system to determine what kind of flow this component
+     * was created by. This is to be set to 'Bluefield' when creating/updating a component via the REST API.
      * 
      * @param flowType the flowType value to set.
      * @return the ApplicationInsightsComponentProperties object itself.
@@ -206,7 +209,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the requestSource property: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
+     * Get the requestSource property: Describes what tool created this Application Insights component. Customers using
+     * this API should set this to the default 'rest'.
      * 
      * @return the requestSource value.
      */
@@ -215,7 +219,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Set the requestSource property: Describes what tool created this Application Insights component. Customers using this API should set this to the default 'rest'.
+     * Set the requestSource property: Describes what tool created this Application Insights component. Customers using
+     * this API should set this to the default 'rest'.
      * 
      * @param requestSource the requestSource value to set.
      * @return the ApplicationInsightsComponentProperties object itself.
@@ -226,7 +231,9 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the instrumentationKey property: Application Insights Instrumentation key. A read-only value that applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new Application Insights component.
+     * Get the instrumentationKey property: Application Insights Instrumentation key. A read-only value that
+     * applications can use to identify the destination for all telemetry sent to Azure Application Insights. This value
+     * will be supplied upon construction of each new Application Insights component.
      * 
      * @return the instrumentationKey value.
      */
@@ -253,7 +260,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
+     * Get the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp,
+     * used for communications with HockeyApp.
      * 
      * @return the hockeyAppId value.
      */
@@ -262,7 +270,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Set the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp, used for communications with HockeyApp.
+     * Set the hockeyAppId property: The unique application ID created when a new application is added to HockeyApp,
+     * used for communications with HockeyApp.
      * 
      * @param hockeyAppId the hockeyAppId value to set.
      * @return the ApplicationInsightsComponentProperties object itself.
@@ -273,7 +282,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the hockeyAppToken property: Token used to authenticate communications with between Application Insights and HockeyApp.
+     * Get the hockeyAppToken property: Token used to authenticate communications with between Application Insights and
+     * HockeyApp.
      * 
      * @return the hockeyAppToken value.
      */
@@ -282,7 +292,9 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the provisioningState property: Current state of this component: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+     * Get the provisioningState property: Current state of this component: whether or not is has been provisioned
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -291,7 +303,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the samplingPercentage property: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
+     * Get the samplingPercentage property: Percentage of the data produced by the application being monitored that is
+     * being sampled for Application Insights telemetry.
      * 
      * @return the samplingPercentage value.
      */
@@ -300,7 +313,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Set the samplingPercentage property: Percentage of the data produced by the application being monitored that is being sampled for Application Insights telemetry.
+     * Set the samplingPercentage property: Percentage of the data produced by the application being monitored that is
+     * being sampled for Application Insights telemetry.
      * 
      * @param samplingPercentage the samplingPercentage value to set.
      * @return the ApplicationInsightsComponentProperties object itself.
@@ -389,7 +403,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Get the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights ingestion.
+     * Get the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights
+     * ingestion.
      * 
      * @return the publicNetworkAccessForIngestion value.
      */
@@ -398,7 +413,8 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     /**
-     * Set the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights ingestion.
+     * Set the publicNetworkAccessForIngestion property: The network access type for accessing Application Insights
+     * ingestion.
      * 
      * @param publicNetworkAccessForIngestion the publicNetworkAccessForIngestion value to set.
      * @return the ApplicationInsightsComponentProperties object itself.
@@ -457,8 +473,9 @@ public final class ApplicationInsightsComponentProperties {
      */
     public void validate() {
         if (applicationType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property applicationType in model ApplicationInsightsComponentProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property applicationType in model ApplicationInsightsComponentProperties"));
         }
         if (privateLinkScopedResources() != null) {
             privateLinkScopedResources().forEach(e -> e.validate());

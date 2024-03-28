@@ -171,7 +171,8 @@ public final class WorkspaceInner extends Resource {
     }
 
     /**
-     * Get the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
+     * Get the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See
+     * pricing tiers documentation for details.
      * 
      * @return the retentionInDays value.
      */
@@ -180,7 +181,8 @@ public final class WorkspaceInner extends Resource {
     }
 
     /**
-     * Set the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
+     * Set the retentionInDays property: The workspace data retention in days. Allowed values are per pricing plan. See
+     * pricing tiers documentation for details.
      * 
      * @param retentionInDays the retentionInDays value to set.
      * @return the WorkspaceInner object itself.
@@ -336,7 +338,9 @@ public final class WorkspaceInner extends Resource {
     }
 
     /**
-     * Get the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     * Get the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
      * 
      * @return the defaultDataCollectionRuleResourceId value.
      */
@@ -345,7 +349,9 @@ public final class WorkspaceInner extends Resource {
     }
 
     /**
-     * Set the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     * Set the defaultDataCollectionRuleResourceId property: The resource ID of the default Data Collection Rule to use
+     * for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
      * 
      * @param defaultDataCollectionRuleResourceId the defaultDataCollectionRuleResourceId value to set.
      * @return the WorkspaceInner object itself.

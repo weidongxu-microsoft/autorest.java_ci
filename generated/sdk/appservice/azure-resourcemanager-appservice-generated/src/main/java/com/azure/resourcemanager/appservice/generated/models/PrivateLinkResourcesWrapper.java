@@ -19,7 +19,8 @@ public interface PrivateLinkResourcesWrapper {
     List<PrivateLinkResource> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.PrivateLinkResourcesWrapperInner
+     * object.
      * 
      * @return the inner object.
      */

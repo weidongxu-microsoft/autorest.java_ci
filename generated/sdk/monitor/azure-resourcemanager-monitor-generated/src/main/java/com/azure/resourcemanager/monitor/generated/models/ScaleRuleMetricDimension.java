@@ -59,7 +59,8 @@ public final class ScaleRuleMetricDimension {
     }
 
     /**
-     * Get the operator property: the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being equal to any of the values. 'NotEquals' being not equal to all of the values.
+     * Get the operator property: the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being
+     * equal to any of the values. 'NotEquals' being not equal to all of the values.
      * 
      * @return the operator value.
      */
@@ -68,7 +69,8 @@ public final class ScaleRuleMetricDimension {
     }
 
     /**
-     * Set the operator property: the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being equal to any of the values. 'NotEquals' being not equal to all of the values.
+     * Set the operator property: the dimension operator. Only 'Equals' and 'NotEquals' are supported. 'Equals' being
+     * equal to any of the values. 'NotEquals' being not equal to all of the values.
      * 
      * @param operator the operator value to set.
      * @return the ScaleRuleMetricDimension object itself.
@@ -105,16 +107,19 @@ public final class ScaleRuleMetricDimension {
      */
     public void validate() {
         if (dimensionName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property dimensionName in model ScaleRuleMetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property dimensionName in model ScaleRuleMetricDimension"));
         }
         if (operator() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operator in model ScaleRuleMetricDimension"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property operator in model ScaleRuleMetricDimension"));
         }
         if (values() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property values in model ScaleRuleMetricDimension"));
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property values in model ScaleRuleMetricDimension"));
         }
     }
 

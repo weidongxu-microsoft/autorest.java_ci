@@ -118,12 +118,12 @@ public final class ErrorDetails {
      */
     public void validate() {
         if (code() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property code in model ErrorDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property code in model ErrorDetails"));
         }
         if (message() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property message in model ErrorDetails"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property message in model ErrorDetails"));
         }
     }
 

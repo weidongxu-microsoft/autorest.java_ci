@@ -204,7 +204,8 @@ public interface Marketplace {
     String costCenter();
 
     /**
-     * Gets the additionalProperties property: Additional details of this usage item. By default this is not populated, unless it's specified in $expand.
+     * Gets the additionalProperties property: Additional details of this usage item. By default this is not populated,
+     * unless it's specified in $expand.
      * 
      * @return the additionalProperties value.
      */

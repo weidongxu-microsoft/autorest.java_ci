@@ -50,7 +50,7 @@ public final class GalleryApplicationCustomActionParameter {
     }
 
     /**
-     * Get the name property: The name of the custom action.  Must be unique within the Gallery Application Version.
+     * Get the name property: The name of the custom action. Must be unique within the Gallery Application Version.
      * 
      * @return the name value.
      */
@@ -59,7 +59,7 @@ public final class GalleryApplicationCustomActionParameter {
     }
 
     /**
-     * Set the name property: The name of the custom action.  Must be unique within the Gallery Application Version.
+     * Set the name property: The name of the custom action. Must be unique within the Gallery Application Version.
      * 
      * @param name the name value to set.
      * @return the GalleryApplicationCustomActionParameter object itself.
@@ -90,7 +90,8 @@ public final class GalleryApplicationCustomActionParameter {
     }
 
     /**
-     * Get the type property: Specifies the type of the custom action parameter. Possible values are: String, ConfigurationDataBlob or LogOutputBlob.
+     * Get the type property: Specifies the type of the custom action parameter. Possible values are: String,
+     * ConfigurationDataBlob or LogOutputBlob.
      * 
      * @return the type value.
      */
@@ -99,7 +100,8 @@ public final class GalleryApplicationCustomActionParameter {
     }
 
     /**
-     * Set the type property: Specifies the type of the custom action parameter. Possible values are: String, ConfigurationDataBlob or LogOutputBlob.
+     * Set the type property: Specifies the type of the custom action parameter. Possible values are: String,
+     * ConfigurationDataBlob or LogOutputBlob.
      * 
      * @param type the type value to set.
      * @return the GalleryApplicationCustomActionParameter object itself.
@@ -110,7 +112,7 @@ public final class GalleryApplicationCustomActionParameter {
     }
 
     /**
-     * Get the defaultValue property: The default value of the parameter.  Only applies to string types.
+     * Get the defaultValue property: The default value of the parameter. Only applies to string types.
      * 
      * @return the defaultValue value.
      */
@@ -119,7 +121,7 @@ public final class GalleryApplicationCustomActionParameter {
     }
 
     /**
-     * Set the defaultValue property: The default value of the parameter.  Only applies to string types.
+     * Set the defaultValue property: The default value of the parameter. Only applies to string types.
      * 
      * @param defaultValue the defaultValue value to set.
      * @return the GalleryApplicationCustomActionParameter object itself.
@@ -156,8 +158,9 @@ public final class GalleryApplicationCustomActionParameter {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property name in model GalleryApplicationCustomActionParameter"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model GalleryApplicationCustomActionParameter"));
         }
     }
 

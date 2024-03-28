@@ -68,7 +68,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
     }
 
     /**
-     * The interface defining all the services for KustoManagementClientManagedPrivateEndpoints to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for KustoManagementClientManagedPrivateEndpoints to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "KustoManagementClien")
@@ -146,7 +147,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -189,7 +191,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the result returned from a check name availability request along with {@link Response} on successful completion of {@link Mono}.
+     * @return the result returned from a check name availability request along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<CheckNameResultInner>> checkNameAvailabilityWithResponseAsync(String resourceGroupName,
@@ -281,7 +284,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list managed private endpoints operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list managed private endpoints operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedPrivateEndpointInner>> listSinglePageAsync(String resourceGroupName,
@@ -319,7 +323,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list managed private endpoints operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list managed private endpoints operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ManagedPrivateEndpointInner>> listSinglePageAsync(String resourceGroupName,
@@ -556,7 +561,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a managed private endpoint along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a managed private endpoint along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -604,7 +610,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a managed private endpoint along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a managed private endpoint along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -818,7 +825,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a managed private endpoint along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a managed private endpoint along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,
@@ -866,7 +874,8 @@ public final class ManagedPrivateEndpointsClientImpl implements ManagedPrivateEn
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return class representing a managed private endpoint along with {@link Response} on successful completion of {@link Mono}.
+     * @return class representing a managed private endpoint along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String clusterName,

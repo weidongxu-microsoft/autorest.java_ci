@@ -8,7 +8,9 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies the target splits for Spot and Regular priority VMs within a scale set with flexible orchestration mode. With this property the customer is able to specify the base number of regular priority VMs created as the VMSS flex instance scales out and the split between Spot and Regular priority VMs after this base target has been reached.
+ * Specifies the target splits for Spot and Regular priority VMs within a scale set with flexible orchestration mode.
+ * With this property the customer is able to specify the base number of regular priority VMs created as the VMSS flex
+ * instance scales out and the split between Spot and Regular priority VMs after this base target has been reached.
  */
 @Fluent
 public final class PriorityMixPolicy {
@@ -31,7 +33,8 @@ public final class PriorityMixPolicy {
     }
 
     /**
-     * Get the baseRegularPriorityCount property: The base number of regular priority VMs that will be created in this scale set as it scales out.
+     * Get the baseRegularPriorityCount property: The base number of regular priority VMs that will be created in this
+     * scale set as it scales out.
      * 
      * @return the baseRegularPriorityCount value.
      */
@@ -40,7 +43,8 @@ public final class PriorityMixPolicy {
     }
 
     /**
-     * Set the baseRegularPriorityCount property: The base number of regular priority VMs that will be created in this scale set as it scales out.
+     * Set the baseRegularPriorityCount property: The base number of regular priority VMs that will be created in this
+     * scale set as it scales out.
      * 
      * @param baseRegularPriorityCount the baseRegularPriorityCount value to set.
      * @return the PriorityMixPolicy object itself.
@@ -51,7 +55,8 @@ public final class PriorityMixPolicy {
     }
 
     /**
-     * Get the regularPriorityPercentageAboveBase property: The percentage of VM instances, after the base regular priority count has been reached, that are expected to use regular priority.
+     * Get the regularPriorityPercentageAboveBase property: The percentage of VM instances, after the base regular
+     * priority count has been reached, that are expected to use regular priority.
      * 
      * @return the regularPriorityPercentageAboveBase value.
      */
@@ -60,7 +65,8 @@ public final class PriorityMixPolicy {
     }
 
     /**
-     * Set the regularPriorityPercentageAboveBase property: The percentage of VM instances, after the base regular priority count has been reached, that are expected to use regular priority.
+     * Set the regularPriorityPercentageAboveBase property: The percentage of VM instances, after the base regular
+     * priority count has been reached, that are expected to use regular priority.
      * 
      * @param regularPriorityPercentageAboveBase the regularPriorityPercentageAboveBase value to set.
      * @return the PriorityMixPolicy object itself.

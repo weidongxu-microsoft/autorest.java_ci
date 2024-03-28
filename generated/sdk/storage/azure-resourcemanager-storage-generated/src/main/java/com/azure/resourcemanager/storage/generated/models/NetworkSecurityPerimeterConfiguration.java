@@ -76,7 +76,8 @@ public interface NetworkSecurityPerimeterConfiguration {
     NetworkSecurityPerimeterConfigurationPropertiesProfile profile();
 
     /**
-     * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.storage.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner object.
      * 
      * @return the inner object.
      */

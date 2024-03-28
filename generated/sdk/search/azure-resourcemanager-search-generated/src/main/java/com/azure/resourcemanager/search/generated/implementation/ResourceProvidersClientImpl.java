@@ -52,7 +52,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
     }
 
     /**
-     * The interface defining all the services for SearchManagementClientResourceProviders to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for SearchManagementClientResourceProviders to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
@@ -72,11 +73,13 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
      * @param skuName The unique SKU name that identifies a billable tier.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the quota usage for a search sku in the given subscription along with {@link Response} on successful completion of {@link Mono}.
+     * @return the quota usage for a search sku in the given subscription along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QuotaUsageResultInner>> usageBySubscriptionSkuWithResponseAsync(String location,
@@ -107,12 +110,14 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
      * @param skuName The unique SKU name that identifies a billable tier.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the quota usage for a search sku in the given subscription along with {@link Response} on successful completion of {@link Mono}.
+     * @return the quota usage for a search sku in the given subscription along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<QuotaUsageResultInner>> usageBySubscriptionSkuWithResponseAsync(String location,
@@ -159,7 +164,8 @@ public final class ResourceProvidersClientImpl implements ResourceProvidersClien
      * 
      * @param location The unique location name for a Microsoft Azure geographic region.
      * @param skuName The unique SKU name that identifies a billable tier.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.

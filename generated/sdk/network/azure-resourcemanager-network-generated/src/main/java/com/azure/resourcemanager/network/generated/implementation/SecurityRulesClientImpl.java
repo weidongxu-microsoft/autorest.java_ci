@@ -64,7 +64,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientSecurityRules to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientSecurityRules to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -762,7 +763,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all security rules in a network security group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all security rules in a network security group along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityRuleInner>> listSinglePageAsync(String resourceGroupName,
@@ -802,7 +804,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all security rules in a network security group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all security rules in a network security group along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityRuleInner>> listSinglePageAsync(String resourceGroupName,
@@ -908,7 +911,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityRule API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListSecurityRule API service call along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityRuleInner>> listNextSinglePageAsync(String nextLink) {
@@ -936,7 +940,8 @@ public final class SecurityRulesClientImpl implements SecurityRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for ListSecurityRule API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for ListSecurityRule API service call along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SecurityRuleInner>> listNextSinglePageAsync(String nextLink, Context context) {

@@ -116,7 +116,9 @@ public final class SingleMetricBaselineInner {
     }
 
     /**
-     * Get the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by '/'.  This may be adjusted in the future and returned back from what was originally requested.
+     * Get the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
+     * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
+     * requested.
      * 
      * @return the timespan value.
      */
@@ -125,7 +127,9 @@ public final class SingleMetricBaselineInner {
     }
 
     /**
-     * Set the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes concatenated, separated by '/'.  This may be adjusted in the future and returned back from what was originally requested.
+     * Set the timespan property: The timespan for which the data was retrieved. Its value consists of two datetimes
+     * concatenated, separated by '/'. This may be adjusted in the future and returned back from what was originally
+     * requested.
      * 
      * @param timespan the timespan value to set.
      * @return the SingleMetricBaselineInner object itself.
@@ -139,7 +143,9 @@ public final class SingleMetricBaselineInner {
     }
 
     /**
-     * Get the interval property: The interval (window size) for which the metric data was returned in.  This may be adjusted in the future and returned back from what was originally requested.  This is not present if a metadata request was made.
+     * Get the interval property: The interval (window size) for which the metric data was returned in. This may be
+     * adjusted in the future and returned back from what was originally requested. This is not present if a metadata
+     * request was made.
      * 
      * @return the interval value.
      */
@@ -148,7 +154,9 @@ public final class SingleMetricBaselineInner {
     }
 
     /**
-     * Set the interval property: The interval (window size) for which the metric data was returned in.  This may be adjusted in the future and returned back from what was originally requested.  This is not present if a metadata request was made.
+     * Set the interval property: The interval (window size) for which the metric data was returned in. This may be
+     * adjusted in the future and returned back from what was originally requested. This is not present if a metadata
+     * request was made.
      * 
      * @param interval the interval value to set.
      * @return the SingleMetricBaselineInner object itself.
@@ -214,20 +222,21 @@ public final class SingleMetricBaselineInner {
      */
     public void validate() {
         if (id() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property id in model SingleMetricBaselineInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property id in model SingleMetricBaselineInner"));
         }
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model SingleMetricBaselineInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model SingleMetricBaselineInner"));
         }
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model SingleMetricBaselineInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model SingleMetricBaselineInner"));
         }
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model SingleMetricBaselineInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model SingleMetricBaselineInner"));
         } else {
             innerProperties().validate();
         }

@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * This determines the format that Event Grid should expect for incoming events published to the Event Grid Domain Resource.
+ * This determines the format that Event Grid should expect for incoming events published to the Event Grid Domain
+ * Resource.
  */
 public final class InputSchema extends ExpandableStringEnum<InputSchema> {
     /**

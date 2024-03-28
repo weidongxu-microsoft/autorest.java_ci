@@ -189,7 +189,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the caller property: the email address of the user who has performed the operation, the UPN claim or SPN claim based on availability.
+     * Get the caller property: the email address of the user who has performed the operation, the UPN claim or SPN
+     * claim based on availability.
      * 
      * @return the caller value.
      */
@@ -207,7 +208,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the id property: the Id of this event as required by ARM for RBAC. It contains the EventDataID and a timestamp information.
+     * Get the id property: the Id of this event as required by ARM for RBAC. It contains the EventDataID and a
+     * timestamp information.
      * 
      * @return the id value.
      */
@@ -225,7 +227,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the correlationId property: the correlation Id, usually a GUID in the string format. The correlation Id is shared among the events that belong to the same uber operation.
+     * Get the correlationId property: the correlation Id, usually a GUID in the string format. The correlation Id is
+     * shared among the events that belong to the same uber operation.
      * 
      * @return the correlationId value.
      */
@@ -234,7 +237,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the eventName property: the event name. This value should not be confused with OperationName. For practical purposes, OperationName might be more appealing to end users.
+     * Get the eventName property: the event name. This value should not be confused with OperationName. For practical
+     * purposes, OperationName might be more appealing to end users.
      * 
      * @return the eventName value.
      */
@@ -252,7 +256,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the httpRequest property: the HTTP request info. Usually includes the 'clientRequestId', 'clientIpAddress' (IP address of the user who initiated the event) and 'method' (HTTP method e.g. PUT).
+     * Get the httpRequest property: the HTTP request info. Usually includes the 'clientRequestId', 'clientIpAddress'
+     * (IP address of the user who initiated the event) and 'method' (HTTP method e.g. PUT).
      * 
      * @return the httpRequest value.
      */
@@ -306,7 +311,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the operationId property: It is usually a GUID shared among the events corresponding to single operation. This value should not be confused with EventName.
+     * Get the operationId property: It is usually a GUID shared among the events corresponding to single operation.
+     * This value should not be confused with EventName.
      * 
      * @return the operationId value.
      */
@@ -324,7 +330,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the properties property: the set of &lt;Key, Value&gt; pairs (usually a Dictionary&lt;String, String&gt;) that includes details about the event.
+     * Get the properties property: the set of &lt;Key, Value&gt; pairs (usually a Dictionary&lt;String, String&gt;)
+     * that includes details about the event.
      * 
      * @return the properties value.
      */
@@ -333,7 +340,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the status property: a string describing the status of the operation. Some typical values are: Started, In progress, Succeeded, Failed, Resolved.
+     * Get the status property: a string describing the status of the operation. Some typical values are: Started, In
+     * progress, Succeeded, Failed, Resolved.
      * 
      * @return the status value.
      */
@@ -342,7 +350,11 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the subStatus property: the event sub status. Most of the time, when included, this captures the HTTP status code of the REST call. Common values are: OK (HTTP Status Code: 200), Created (HTTP Status Code: 201), Accepted (HTTP Status Code: 202), No Content (HTTP Status Code: 204), Bad Request(HTTP Status Code: 400), Not Found (HTTP Status Code: 404), Conflict (HTTP Status Code: 409), Internal Server Error (HTTP Status Code: 500), Service Unavailable (HTTP Status Code:503), Gateway Timeout (HTTP Status Code: 504).
+     * Get the subStatus property: the event sub status. Most of the time, when included, this captures the HTTP status
+     * code of the REST call. Common values are: OK (HTTP Status Code: 200), Created (HTTP Status Code: 201), Accepted
+     * (HTTP Status Code: 202), No Content (HTTP Status Code: 204), Bad Request(HTTP Status Code: 400), Not Found (HTTP
+     * Status Code: 404), Conflict (HTTP Status Code: 409), Internal Server Error (HTTP Status Code: 500), Service
+     * Unavailable (HTTP Status Code:503), Gateway Timeout (HTTP Status Code: 504).
      * 
      * @return the subStatus value.
      */
@@ -351,7 +363,8 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the eventTimestamp property: the timestamp of when the event was generated by the Azure service processing the request corresponding the event. It in ISO 8601 format.
+     * Get the eventTimestamp property: the timestamp of when the event was generated by the Azure service processing
+     * the request corresponding the event. It in ISO 8601 format.
      * 
      * @return the eventTimestamp value.
      */
@@ -360,7 +373,9 @@ public final class EventDataInner {
     }
 
     /**
-     * Get the submissionTimestamp property: the timestamp of when the event became available for querying via this API. It is in ISO 8601 format. This value should not be confused eventTimestamp. As there might be a delay between the occurrence time of the event, and the time that the event is submitted to the Azure logging infrastructure.
+     * Get the submissionTimestamp property: the timestamp of when the event became available for querying via this API.
+     * It is in ISO 8601 format. This value should not be confused eventTimestamp. As there might be a delay between the
+     * occurrence time of the event, and the time that the event is submitted to the Azure logging infrastructure.
      * 
      * @return the submissionTimestamp value.
      */

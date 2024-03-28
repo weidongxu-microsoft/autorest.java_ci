@@ -98,7 +98,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
+     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space
+     * for P2S VpnClient.
      * 
      * @return the vpnClientAddressPool value.
      */
@@ -107,7 +108,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
+     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space
+     * for P2S VpnClient.
      * 
      * @param vpnClientAddressPool the vpnClientAddressPool value to set.
      * @return the VpnClientConfiguration object itself.
@@ -220,7 +222,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the radiusServerAddress property: The radius server address property of the VirtualNetworkGateway resource for vpn client connection.
+     * Get the radiusServerAddress property: The radius server address property of the VirtualNetworkGateway resource
+     * for vpn client connection.
      * 
      * @return the radiusServerAddress value.
      */
@@ -229,7 +232,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the radiusServerAddress property: The radius server address property of the VirtualNetworkGateway resource for vpn client connection.
+     * Set the radiusServerAddress property: The radius server address property of the VirtualNetworkGateway resource
+     * for vpn client connection.
      * 
      * @param radiusServerAddress the radiusServerAddress value to set.
      * @return the VpnClientConfiguration object itself.
@@ -240,7 +244,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the radiusServerSecret property: The radius secret property of the VirtualNetworkGateway resource for vpn client connection.
+     * Get the radiusServerSecret property: The radius secret property of the VirtualNetworkGateway resource for vpn
+     * client connection.
      * 
      * @return the radiusServerSecret value.
      */
@@ -249,7 +254,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the radiusServerSecret property: The radius secret property of the VirtualNetworkGateway resource for vpn client connection.
+     * Set the radiusServerSecret property: The radius secret property of the VirtualNetworkGateway resource for vpn
+     * client connection.
      * 
      * @param radiusServerSecret the radiusServerSecret value to set.
      * @return the VpnClientConfiguration object itself.
@@ -280,7 +286,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the aadTenant property: The AADTenant property of the VirtualNetworkGateway resource for vpn client connection used for AAD authentication.
+     * Get the aadTenant property: The AADTenant property of the VirtualNetworkGateway resource for vpn client
+     * connection used for AAD authentication.
      * 
      * @return the aadTenant value.
      */
@@ -289,7 +296,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the aadTenant property: The AADTenant property of the VirtualNetworkGateway resource for vpn client connection used for AAD authentication.
+     * Set the aadTenant property: The AADTenant property of the VirtualNetworkGateway resource for vpn client
+     * connection used for AAD authentication.
      * 
      * @param aadTenant the aadTenant value to set.
      * @return the VpnClientConfiguration object itself.
@@ -300,7 +308,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the aadAudience property: The AADAudience property of the VirtualNetworkGateway resource for vpn client connection used for AAD authentication.
+     * Get the aadAudience property: The AADAudience property of the VirtualNetworkGateway resource for vpn client
+     * connection used for AAD authentication.
      * 
      * @return the aadAudience value.
      */
@@ -309,7 +318,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the aadAudience property: The AADAudience property of the VirtualNetworkGateway resource for vpn client connection used for AAD authentication.
+     * Set the aadAudience property: The AADAudience property of the VirtualNetworkGateway resource for vpn client
+     * connection used for AAD authentication.
      * 
      * @param aadAudience the aadAudience value to set.
      * @return the VpnClientConfiguration object itself.
@@ -320,7 +330,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the aadIssuer property: The AADIssuer property of the VirtualNetworkGateway resource for vpn client connection used for AAD authentication.
+     * Get the aadIssuer property: The AADIssuer property of the VirtualNetworkGateway resource for vpn client
+     * connection used for AAD authentication.
      * 
      * @return the aadIssuer value.
      */
@@ -329,7 +340,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the aadIssuer property: The AADIssuer property of the VirtualNetworkGateway resource for vpn client connection used for AAD authentication.
+     * Set the aadIssuer property: The AADIssuer property of the VirtualNetworkGateway resource for vpn client
+     * connection used for AAD authentication.
      * 
      * @param aadIssuer the aadIssuer value to set.
      * @return the VpnClientConfiguration object itself.
@@ -340,7 +352,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Get the vngClientConnectionConfigurations property: per ip address pool connection policy for virtual network gateway P2S client.
+     * Get the vngClientConnectionConfigurations property: per ip address pool connection policy for virtual network
+     * gateway P2S client.
      * 
      * @return the vngClientConnectionConfigurations value.
      */
@@ -349,7 +362,8 @@ public final class VpnClientConfiguration {
     }
 
     /**
-     * Set the vngClientConnectionConfigurations property: per ip address pool connection policy for virtual network gateway P2S client.
+     * Set the vngClientConnectionConfigurations property: per ip address pool connection policy for virtual network
+     * gateway P2S client.
      * 
      * @param vngClientConnectionConfigurations the vngClientConnectionConfigurations value to set.
      * @return the VpnClientConfiguration object itself.

@@ -56,7 +56,8 @@ public final class BgpServiceCommunitiesClientImpl implements BgpServiceCommunit
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientBgpServiceCommunities to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientBgpServiceCommunities to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -83,7 +84,8 @@ public final class BgpServiceCommunitiesClientImpl implements BgpServiceCommunit
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the available bgp service communities along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the available bgp service communities along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BgpServiceCommunityInner>> listSinglePageAsync() {
@@ -112,7 +114,8 @@ public final class BgpServiceCommunitiesClientImpl implements BgpServiceCommunit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the available bgp service communities along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the available bgp service communities along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BgpServiceCommunityInner>> listSinglePageAsync(Context context) {
@@ -194,7 +197,8 @@ public final class BgpServiceCommunitiesClientImpl implements BgpServiceCommunit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListServiceCommunity API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListServiceCommunity API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BgpServiceCommunityInner>> listNextSinglePageAsync(String nextLink) {
@@ -222,7 +226,8 @@ public final class BgpServiceCommunitiesClientImpl implements BgpServiceCommunit
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListServiceCommunity API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListServiceCommunity API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<BgpServiceCommunityInner>> listNextSinglePageAsync(String nextLink, Context context) {

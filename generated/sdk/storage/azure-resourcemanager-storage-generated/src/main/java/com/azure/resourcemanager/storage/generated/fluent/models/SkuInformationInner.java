@@ -68,7 +68,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
+     * Get the name property: The SKU name. Required for account creation; optional for update. Note that in older
+     * versions, SKU name was called accountType.
      * 
      * @return the name value.
      */
@@ -77,7 +78,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Set the name property: The SKU name. Required for account creation; optional for update. Note that in older versions, SKU name was called accountType.
+     * Set the name property: The SKU name. Required for account creation; optional for update. Note that in older
+     * versions, SKU name was called accountType.
      * 
      * @param name the name value to set.
      * @return the SkuInformationInner object itself.
@@ -115,7 +117,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the locations property: The set of locations that the SKU is available. This will be supported and registered Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
+     * Get the locations property: The set of locations that the SKU is available. This will be supported and registered
+     * Azure Geo Regions (e.g. West US, East US, Southeast Asia, etc.).
      * 
      * @return the locations value.
      */
@@ -124,7 +127,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the capabilities property: The capability information in the specified SKU, including file encryption, network ACLs, change notification, etc.
+     * Get the capabilities property: The capability information in the specified SKU, including file encryption,
+     * network ACLs, change notification, etc.
      * 
      * @return the capabilities value.
      */
@@ -133,7 +137,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Get the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
+     * Get the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
+     * no restrictions.
      * 
      * @return the restrictions value.
      */
@@ -142,7 +147,8 @@ public final class SkuInformationInner {
     }
 
     /**
-     * Set the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are no restrictions.
+     * Set the restrictions property: The restrictions because of which SKU cannot be used. This is empty if there are
+     * no restrictions.
      * 
      * @param restrictions the restrictions value to set.
      * @return the SkuInformationInner object itself.
@@ -159,8 +165,8 @@ public final class SkuInformationInner {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model SkuInformationInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model SkuInformationInner"));
         }
         if (capabilities() != null) {
             capabilities().forEach(e -> e.validate());

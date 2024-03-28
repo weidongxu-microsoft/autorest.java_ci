@@ -59,7 +59,8 @@ public interface VirtualNetworkTap {
     String id();
 
     /**
-     * Gets the networkInterfaceTapConfigurations property: Specifies the list of resource IDs for the network interface IP configuration that needs to be tapped.
+     * Gets the networkInterfaceTapConfigurations property: Specifies the list of resource IDs for the network interface
+     * IP configuration that needs to be tapped.
      * 
      * @return the networkInterfaceTapConfigurations value.
      */
@@ -80,14 +81,16 @@ public interface VirtualNetworkTap {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the destinationNetworkInterfaceIpConfiguration property: The reference to the private IP Address of the collector nic that will receive the tap.
+     * Gets the destinationNetworkInterfaceIpConfiguration property: The reference to the private IP Address of the
+     * collector nic that will receive the tap.
      * 
      * @return the destinationNetworkInterfaceIpConfiguration value.
      */
     NetworkInterfaceIpConfiguration destinationNetworkInterfaceIpConfiguration();
 
     /**
-     * Gets the destinationLoadBalancerFrontEndIpConfiguration property: The reference to the private IP address on the internal Load Balancer that will receive the tap.
+     * Gets the destinationLoadBalancerFrontEndIpConfiguration property: The reference to the private IP address on the
+     * internal Load Balancer that will receive the tap.
      * 
      * @return the destinationLoadBalancerFrontEndIpConfiguration value.
      */
@@ -180,7 +183,8 @@ public interface VirtualNetworkTap {
         }
 
         /**
-         * The stage of the VirtualNetworkTap definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualNetworkTap definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithDestinationNetworkInterfaceIpConfiguration,
@@ -219,9 +223,11 @@ public interface VirtualNetworkTap {
          */
         interface WithDestinationNetworkInterfaceIpConfiguration {
             /**
-             * Specifies the destinationNetworkInterfaceIpConfiguration property: The reference to the private IP Address of the collector nic that will receive the tap..
+             * Specifies the destinationNetworkInterfaceIpConfiguration property: The reference to the private IP
+             * Address of the collector nic that will receive the tap..
              * 
-             * @param destinationNetworkInterfaceIpConfiguration The reference to the private IP Address of the collector nic that will receive the tap.
+             * @param destinationNetworkInterfaceIpConfiguration The reference to the private IP Address of the
+             * collector nic that will receive the tap.
              * @return the next definition stage.
              */
             WithCreate withDestinationNetworkInterfaceIpConfiguration(
@@ -229,13 +235,16 @@ public interface VirtualNetworkTap {
         }
 
         /**
-         * The stage of the VirtualNetworkTap definition allowing to specify destinationLoadBalancerFrontEndIpConfiguration.
+         * The stage of the VirtualNetworkTap definition allowing to specify
+         * destinationLoadBalancerFrontEndIpConfiguration.
          */
         interface WithDestinationLoadBalancerFrontEndIpConfiguration {
             /**
-             * Specifies the destinationLoadBalancerFrontEndIpConfiguration property: The reference to the private IP address on the internal Load Balancer that will receive the tap..
+             * Specifies the destinationLoadBalancerFrontEndIpConfiguration property: The reference to the private IP
+             * address on the internal Load Balancer that will receive the tap..
              * 
-             * @param destinationLoadBalancerFrontEndIpConfiguration The reference to the private IP address on the internal Load Balancer that will receive the tap.
+             * @param destinationLoadBalancerFrontEndIpConfiguration The reference to the private IP address on the
+             * internal Load Balancer that will receive the tap.
              * @return the next definition stage.
              */
             WithCreate withDestinationLoadBalancerFrontEndIpConfiguration(

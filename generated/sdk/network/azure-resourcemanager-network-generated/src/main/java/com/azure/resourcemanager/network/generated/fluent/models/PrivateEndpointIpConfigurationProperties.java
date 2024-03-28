@@ -37,7 +37,8 @@ public final class PrivateEndpointIpConfigurationProperties {
     }
 
     /**
-     * Get the groupId property: The ID of a group obtained from the remote resource that this private endpoint should connect to.
+     * Get the groupId property: The ID of a group obtained from the remote resource that this private endpoint should
+     * connect to.
      * 
      * @return the groupId value.
      */
@@ -46,7 +47,8 @@ public final class PrivateEndpointIpConfigurationProperties {
     }
 
     /**
-     * Set the groupId property: The ID of a group obtained from the remote resource that this private endpoint should connect to.
+     * Set the groupId property: The ID of a group obtained from the remote resource that this private endpoint should
+     * connect to.
      * 
      * @param groupId the groupId value to set.
      * @return the PrivateEndpointIpConfigurationProperties object itself.
@@ -57,7 +59,8 @@ public final class PrivateEndpointIpConfigurationProperties {
     }
 
     /**
-     * Get the memberName property: The member name of a group obtained from the remote resource that this private endpoint should connect to.
+     * Get the memberName property: The member name of a group obtained from the remote resource that this private
+     * endpoint should connect to.
      * 
      * @return the memberName value.
      */
@@ -66,7 +69,8 @@ public final class PrivateEndpointIpConfigurationProperties {
     }
 
     /**
-     * Set the memberName property: The member name of a group obtained from the remote resource that this private endpoint should connect to.
+     * Set the memberName property: The member name of a group obtained from the remote resource that this private
+     * endpoint should connect to.
      * 
      * @param memberName the memberName value to set.
      * @return the PrivateEndpointIpConfigurationProperties object itself.

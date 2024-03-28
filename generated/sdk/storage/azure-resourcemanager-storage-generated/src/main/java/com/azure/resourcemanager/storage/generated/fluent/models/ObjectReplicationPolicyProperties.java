@@ -71,7 +71,8 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Get the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
+     * Get the sourceAccount property: Required. Source account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      * 
      * @return the sourceAccount value.
      */
@@ -80,7 +81,8 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Set the sourceAccount property: Required. Source account name. It should be full resource id if allowCrossTenantReplication set to false.
+     * Set the sourceAccount property: Required. Source account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      * 
      * @param sourceAccount the sourceAccount value to set.
      * @return the ObjectReplicationPolicyProperties object itself.
@@ -91,7 +93,8 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Get the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
+     * Get the destinationAccount property: Required. Destination account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      * 
      * @return the destinationAccount value.
      */
@@ -100,7 +103,8 @@ public final class ObjectReplicationPolicyProperties {
     }
 
     /**
-     * Set the destinationAccount property: Required. Destination account name. It should be full resource id if allowCrossTenantReplication set to false.
+     * Set the destinationAccount property: Required. Destination account name. It should be full resource id if
+     * allowCrossTenantReplication set to false.
      * 
      * @param destinationAccount the destinationAccount value to set.
      * @return the ObjectReplicationPolicyProperties object itself.
@@ -137,12 +141,14 @@ public final class ObjectReplicationPolicyProperties {
      */
     public void validate() {
         if (sourceAccount() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property sourceAccount in model ObjectReplicationPolicyProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sourceAccount in model ObjectReplicationPolicyProperties"));
         }
         if (destinationAccount() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property destinationAccount in model ObjectReplicationPolicyProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property destinationAccount in model ObjectReplicationPolicyProperties"));
         }
         if (rules() != null) {
             rules().forEach(e -> e.validate());

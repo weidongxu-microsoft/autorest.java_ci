@@ -160,7 +160,8 @@ public final class ValidateRequestInner {
     }
 
     /**
-     * Get the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the needLinuxWorkers value.
      */
@@ -169,7 +170,8 @@ public final class ValidateRequestInner {
     }
 
     /**
-     * Set the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the needLinuxWorkers property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Linux workers;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param needLinuxWorkers the needLinuxWorkers value to set.
      * @return the ValidateRequestInner object itself.
@@ -183,7 +185,8 @@ public final class ValidateRequestInner {
     }
 
     /**
-     * Get the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isSpot value.
      */
@@ -192,7 +195,8 @@ public final class ValidateRequestInner {
     }
 
     /**
-     * Set the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the isSpot property: &lt;code&gt;true&lt;/code&gt; if App Service plan is for Spot instances; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param isSpot the isSpot value to set.
      * @return the ValidateRequestInner object itself.
@@ -229,7 +233,8 @@ public final class ValidateRequestInner {
     }
 
     /**
-     * Get the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be created.
+     * Get the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be
+     * created.
      * 
      * @return the hostingEnvironment value.
      */
@@ -238,7 +243,8 @@ public final class ValidateRequestInner {
     }
 
     /**
-     * Set the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be created.
+     * Set the hostingEnvironment property: Name of App Service Environment where app or App Service plan should be
+     * created.
      * 
      * @param hostingEnvironment the hostingEnvironment value to set.
      * @return the ValidateRequestInner object itself.
@@ -442,20 +448,21 @@ public final class ValidateRequestInner {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model ValidateRequestInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model ValidateRequestInner"));
         }
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model ValidateRequestInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model ValidateRequestInner"));
         }
         if (location() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property location in model ValidateRequestInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property location in model ValidateRequestInner"));
         }
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerProperties in model ValidateRequestInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model ValidateRequestInner"));
         } else {
             innerProperties().validate();
         }

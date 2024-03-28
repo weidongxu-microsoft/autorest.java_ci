@@ -51,7 +51,8 @@ public final class AzureActiveDirectory {
     }
 
     /**
-     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Azure Active Directory provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the enabled property: &lt;code&gt;false&lt;/code&gt; if the Azure Active Directory provider should not be
+     * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the enabled value.
      */
@@ -60,7 +61,8 @@ public final class AzureActiveDirectory {
     }
 
     /**
-     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the Azure Active Directory provider should not be enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the enabled property: &lt;code&gt;false&lt;/code&gt; if the Azure Active Directory provider should not be
+     * enabled despite the set registration; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param enabled the enabled value to set.
      * @return the AzureActiveDirectory object itself.
@@ -131,7 +133,8 @@ public final class AzureActiveDirectory {
     }
 
     /**
-     * Get the isAutoProvisioned property: Gets a value indicating whether the Azure AD configuration was auto-provisioned using 1st party tooling.
+     * Get the isAutoProvisioned property: Gets a value indicating whether the Azure AD configuration was
+     * auto-provisioned using 1st party tooling.
      * This is an internal flag primarily intended to support the Azure Management Portal. Users should not
      * read or write to this property.
      * 
@@ -142,7 +145,8 @@ public final class AzureActiveDirectory {
     }
 
     /**
-     * Set the isAutoProvisioned property: Gets a value indicating whether the Azure AD configuration was auto-provisioned using 1st party tooling.
+     * Set the isAutoProvisioned property: Gets a value indicating whether the Azure AD configuration was
+     * auto-provisioned using 1st party tooling.
      * This is an internal flag primarily intended to support the Azure Management Portal. Users should not
      * read or write to this property.
      * 

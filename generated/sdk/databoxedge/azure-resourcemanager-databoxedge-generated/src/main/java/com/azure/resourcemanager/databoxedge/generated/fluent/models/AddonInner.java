@@ -56,17 +56,6 @@ public class AddonInner extends ArmBaseModel {
     }
 
     /**
-     * Set the kind property: Addon type.
-     * 
-     * @param kind the kind value to set.
-     * @return the AddonInner object itself.
-     */
-    protected AddonInner withKind(AddonType kind) {
-        this.kind = kind;
-        return this;
-    }
-
-    /**
      * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
      * 
      * @return the systemData value.

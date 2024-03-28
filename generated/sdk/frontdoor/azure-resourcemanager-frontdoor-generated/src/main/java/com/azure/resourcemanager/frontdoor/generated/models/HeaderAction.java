@@ -78,7 +78,8 @@ public final class HeaderAction {
     }
 
     /**
-     * Get the value property: The value to update the given header name with. This value is not used if the actionType is Delete.
+     * Get the value property: The value to update the given header name with. This value is not used if the actionType
+     * is Delete.
      * 
      * @return the value value.
      */
@@ -87,7 +88,8 @@ public final class HeaderAction {
     }
 
     /**
-     * Set the value property: The value to update the given header name with. This value is not used if the actionType is Delete.
+     * Set the value property: The value to update the given header name with. This value is not used if the actionType
+     * is Delete.
      * 
      * @param value the value value to set.
      * @return the HeaderAction object itself.
@@ -104,12 +106,12 @@ public final class HeaderAction {
      */
     public void validate() {
         if (headerActionType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property headerActionType in model HeaderAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property headerActionType in model HeaderAction"));
         }
         if (headerName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property headerName in model HeaderAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property headerName in model HeaderAction"));
         }
     }
 

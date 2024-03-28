@@ -67,7 +67,8 @@ public final class MhsmGeoReplicatedRegionInner {
     }
 
     /**
-     * Get the isPrimary property: A boolean value that indicates whether the region is the primary region or a secondary region.
+     * Get the isPrimary property: A boolean value that indicates whether the region is the primary region or a
+     * secondary region.
      * 
      * @return the isPrimary value.
      */
@@ -76,7 +77,8 @@ public final class MhsmGeoReplicatedRegionInner {
     }
 
     /**
-     * Set the isPrimary property: A boolean value that indicates whether the region is the primary region or a secondary region.
+     * Set the isPrimary property: A boolean value that indicates whether the region is the primary region or a
+     * secondary region.
      * 
      * @param isPrimary the isPrimary value to set.
      * @return the MhsmGeoReplicatedRegionInner object itself.

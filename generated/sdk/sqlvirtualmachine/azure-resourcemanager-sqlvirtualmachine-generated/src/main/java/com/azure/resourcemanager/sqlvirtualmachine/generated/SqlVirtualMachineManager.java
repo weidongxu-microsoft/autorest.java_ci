@@ -44,7 +44,9 @@ import java.util.stream.Collectors;
 
 /**
  * Entry point to SqlVirtualMachineManager.
- * The SQL virtual machine management API provides a RESTful set of web APIs that interact with Azure Compute, Network &amp; Storage services to manage your SQL Server virtual machine. The API enables users to create, delete and retrieve a SQL virtual machine, SQL virtual machine group or availability group listener.
+ * The SQL virtual machine management API provides a RESTful set of web APIs that interact with Azure Compute, Network
+ * &amp; Storage services to manage your SQL Server virtual machine. The API enables users to create, delete and
+ * retrieve a SQL virtual machine, SQL virtual machine group or availability group listener.
  */
 public final class SqlVirtualMachineManager {
     private AvailabilityGroupListeners availabilityGroupListeners;
@@ -331,7 +333,8 @@ public final class SqlVirtualMachineManager {
     }
 
     /**
-     * Gets wrapped service client SqlVirtualMachineManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client SqlVirtualMachineManagementClient providing direct access to the underlying
+     * auto-generated API implementation, based on Azure REST API.
      * 
      * @return Wrapped service client SqlVirtualMachineManagementClient.
      */

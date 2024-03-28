@@ -121,7 +121,8 @@ public interface AzureADAdministrator {
         }
 
         /**
-         * The stage of the AzureADAdministrator definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AzureADAdministrator definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithAdministratorType, DefinitionStages.WithLogin,
             DefinitionStages.WithSid, DefinitionStages.WithTenantId, DefinitionStages.WithIdentityResourceId {

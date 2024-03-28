@@ -39,7 +39,8 @@ public interface SharedAccessSignatureAuthorizationRule {
     AccessRights rights();
 
     /**
-     * Gets the inner com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSignatureAuthorizationRuleInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSignatureAuthorizationRuleInner object.
      * 
      * @return the inner object.
      */

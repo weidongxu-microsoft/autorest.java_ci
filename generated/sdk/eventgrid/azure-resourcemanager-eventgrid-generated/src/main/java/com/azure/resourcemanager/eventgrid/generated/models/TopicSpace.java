@@ -50,10 +50,10 @@ public interface TopicSpace {
 
     /**
      * Gets the topicTemplates property: The topic filters in the topic space.
-     * Example: "topicTemplates": [ 
-     *               "devices/foo/bar",
-     *               "devices/topic1/+",
-     *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+     * Example: "topicTemplates": [
+     * "devices/foo/bar",
+     * "devices/topic1/+",
+     * "devices/${principal.name}/${principal.attributes.keyName}" ].
      * 
      * @return the topicTemplates value.
      */
@@ -112,7 +112,8 @@ public interface TopicSpace {
         }
 
         /**
-         * The stage of the TopicSpace definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the TopicSpace definition which contains all the minimum required properties for the resource to
+         * be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithTopicTemplates {
             /**
@@ -150,16 +151,16 @@ public interface TopicSpace {
         interface WithTopicTemplates {
             /**
              * Specifies the topicTemplates property: The topic filters in the topic space.
-             * Example: "topicTemplates": [ 
-             *               "devices/foo/bar",
-             *               "devices/topic1/+",
-             *               "devices/${principal.name}/${principal.attributes.keyName}" ]..
+             * Example: "topicTemplates": [
+             * "devices/foo/bar",
+             * "devices/topic1/+",
+             * "devices/${principal.name}/${principal.attributes.keyName}" ]..
              * 
              * @param topicTemplates The topic filters in the topic space.
-             * Example: "topicTemplates": [ 
-             *               "devices/foo/bar",
-             *               "devices/topic1/+",
-             *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+             * Example: "topicTemplates": [
+             * "devices/foo/bar",
+             * "devices/topic1/+",
+             * "devices/${principal.name}/${principal.attributes.keyName}" ].
              * @return the next definition stage.
              */
             WithCreate withTopicTemplates(List<String> topicTemplates);
@@ -216,16 +217,16 @@ public interface TopicSpace {
         interface WithTopicTemplates {
             /**
              * Specifies the topicTemplates property: The topic filters in the topic space.
-             * Example: "topicTemplates": [ 
-             *               "devices/foo/bar",
-             *               "devices/topic1/+",
-             *               "devices/${principal.name}/${principal.attributes.keyName}" ]..
+             * Example: "topicTemplates": [
+             * "devices/foo/bar",
+             * "devices/topic1/+",
+             * "devices/${principal.name}/${principal.attributes.keyName}" ]..
              * 
              * @param topicTemplates The topic filters in the topic space.
-             * Example: "topicTemplates": [ 
-             *               "devices/foo/bar",
-             *               "devices/topic1/+",
-             *               "devices/${principal.name}/${principal.attributes.keyName}" ].
+             * Example: "topicTemplates": [
+             * "devices/foo/bar",
+             * "devices/topic1/+",
+             * "devices/${principal.name}/${principal.attributes.keyName}" ].
              * @return the next definition stage.
              */
             Update withTopicTemplates(List<String> topicTemplates);

@@ -53,7 +53,8 @@ public final class ManagedRuleGroupOverride {
     }
 
     /**
-     * Get the rules property: List of rules that will be disabled. If none specified, all rules in the group will be disabled.
+     * Get the rules property: List of rules that will be disabled. If none specified, all rules in the group will be
+     * disabled.
      * 
      * @return the rules value.
      */
@@ -62,7 +63,8 @@ public final class ManagedRuleGroupOverride {
     }
 
     /**
-     * Set the rules property: List of rules that will be disabled. If none specified, all rules in the group will be disabled.
+     * Set the rules property: List of rules that will be disabled. If none specified, all rules in the group will be
+     * disabled.
      * 
      * @param rules the rules value to set.
      * @return the ManagedRuleGroupOverride object itself.
@@ -79,8 +81,9 @@ public final class ManagedRuleGroupOverride {
      */
     public void validate() {
         if (ruleGroupName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleGroupName in model ManagedRuleGroupOverride"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleGroupName in model ManagedRuleGroupOverride"));
         }
         if (rules() != null) {
             rules().forEach(e -> e.validate());

@@ -9,7 +9,11 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Specifies the mode of VM Guest Patching to IaaS virtual machine or virtual machines associated to virtual machine scale set with OrchestrationMode as Flexible.&lt;br /&gt;&lt;br /&gt; Possible values are:&lt;br /&gt;&lt;br /&gt; **ImageDefault** - The virtual machine's default patching configuration is used. &lt;br /&gt;&lt;br /&gt; **AutomaticByPlatform** - The virtual machine will be automatically updated by the platform. The property provisionVMAgent must be true.
+ * Specifies the mode of VM Guest Patching to IaaS virtual machine or virtual machines associated to virtual machine
+ * scale set with OrchestrationMode as Flexible.&lt;br /&gt;&lt;br /&gt; Possible values are:&lt;br /&gt;&lt;br /&gt;
+ * **ImageDefault** - The virtual machine's default patching configuration is used. &lt;br /&gt;&lt;br /&gt;
+ * **AutomaticByPlatform** - The virtual machine will be automatically updated by the platform. The property
+ * provisionVMAgent must be true.
  */
 public final class LinuxVMGuestPatchMode extends ExpandableStringEnum<LinuxVMGuestPatchMode> {
     /**

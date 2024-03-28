@@ -35,7 +35,8 @@ public final class SharingUpdateInner {
     }
 
     /**
-     * Get the operationType property: This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**.
+     * Get the operationType property: This property allows you to specify the operation type of gallery sharing update.
+     * Possible values are: **Add,** **Remove,** **Reset.**.
      * 
      * @return the operationType value.
      */
@@ -44,7 +45,8 @@ public final class SharingUpdateInner {
     }
 
     /**
-     * Set the operationType property: This property allows you to specify the operation type of gallery sharing update. Possible values are: **Add,** **Remove,** **Reset.**.
+     * Set the operationType property: This property allows you to specify the operation type of gallery sharing update.
+     * Possible values are: **Add,** **Remove,** **Reset.**.
      * 
      * @param operationType the operationType value to set.
      * @return the SharingUpdateInner object itself.
@@ -81,8 +83,9 @@ public final class SharingUpdateInner {
      */
     public void validate() {
         if (operationType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property operationType in model SharingUpdateInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property operationType in model SharingUpdateInner"));
         }
         if (groups() != null) {
             groups().forEach(e -> e.validate());

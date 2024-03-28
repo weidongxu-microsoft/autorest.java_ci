@@ -12,7 +12,9 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * By default, Event Grid expects events to be in the Event Grid event schema. Specifying an input schema mapping enables publishing to Event Grid using a custom input schema. Currently, the only supported type of InputSchemaMapping is 'JsonInputSchemaMapping'.
+ * By default, Event Grid expects events to be in the Event Grid event schema. Specifying an input schema mapping
+ * enables publishing to Event Grid using a custom input schema. Currently, the only supported type of
+ * InputSchemaMapping is 'JsonInputSchemaMapping'.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -44,17 +46,6 @@ public class InputSchemaMapping {
      */
     public InputSchemaMappingType inputSchemaMappingType() {
         return this.inputSchemaMappingType;
-    }
-
-    /**
-     * Set the inputSchemaMappingType property: Type of the custom mapping.
-     * 
-     * @param inputSchemaMappingType the inputSchemaMappingType value to set.
-     * @return the InputSchemaMapping object itself.
-     */
-    protected InputSchemaMapping withInputSchemaMappingType(InputSchemaMappingType inputSchemaMappingType) {
-        this.inputSchemaMappingType = inputSchemaMappingType;
-        return this;
     }
 
     /**

@@ -53,7 +53,8 @@ public final class NetworkManagerDeploymentStatusListResultInner {
     }
 
     /**
-     * Get the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
+     * Get the skipToken property: When present, the value can be passed to a subsequent query call (together with the
+     * same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @return the skipToken value.
      */
@@ -62,7 +63,8 @@ public final class NetworkManagerDeploymentStatusListResultInner {
     }
 
     /**
-     * Set the skipToken property: When present, the value can be passed to a subsequent query call (together with the same query and scopes used in the current request) to retrieve the next page of data.
+     * Set the skipToken property: When present, the value can be passed to a subsequent query call (together with the
+     * same query and scopes used in the current request) to retrieve the next page of data.
      * 
      * @param skipToken the skipToken value to set.
      * @return the NetworkManagerDeploymentStatusListResultInner object itself.

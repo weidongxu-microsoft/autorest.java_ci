@@ -204,7 +204,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express
+     * route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitsArpTableListResultInner>, ExpressRouteCircuitsArpTableListResultInner>
@@ -221,7 +222,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised ARP table associated with the express
+     * route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitsArpTableListResultInner>, ExpressRouteCircuitsArpTableListResultInner>
@@ -271,7 +273,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express
+     * route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitsRoutesTableListResultInner>, ExpressRouteCircuitsRoutesTableListResultInner>
@@ -288,7 +291,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table associated with the express
+     * route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitsRoutesTableListResultInner>, ExpressRouteCircuitsRoutesTableListResultInner>
@@ -338,7 +342,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the
+     * express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitsRoutesTableSummaryListResultInner>, ExpressRouteCircuitsRoutesTableSummaryListResultInner>
@@ -356,7 +361,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the express route circuit in a resource group.
+     * @return the {@link SyncPoller} for polling of the currently advertised routes table summary associated with the
+     * express route circuit in a resource group.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     SyncPoller<PollResult<ExpressRouteCircuitsRoutesTableSummaryListResultInner>, ExpressRouteCircuitsRoutesTableSummaryListResultInner>
@@ -373,7 +379,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource group.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ExpressRouteCircuitsRoutesTableSummaryListResultInner listRoutesTableSummary(String resourceGroupName,
@@ -390,7 +397,8 @@ public interface ExpressRouteCircuitsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the currently advertised routes table summary associated with the express route circuit in a resource group.
+     * @return the currently advertised routes table summary associated with the express route circuit in a resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     ExpressRouteCircuitsRoutesTableSummaryListResultInner listRoutesTableSummary(String resourceGroupName,

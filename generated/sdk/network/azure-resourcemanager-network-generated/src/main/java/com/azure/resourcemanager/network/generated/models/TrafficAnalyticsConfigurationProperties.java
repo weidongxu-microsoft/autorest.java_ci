@@ -129,7 +129,8 @@ public final class TrafficAnalyticsConfigurationProperties {
     }
 
     /**
-     * Get the trafficAnalyticsInterval property: The interval in minutes which would decide how frequently TA service should do flow analytics.
+     * Get the trafficAnalyticsInterval property: The interval in minutes which would decide how frequently TA service
+     * should do flow analytics.
      * 
      * @return the trafficAnalyticsInterval value.
      */
@@ -138,7 +139,8 @@ public final class TrafficAnalyticsConfigurationProperties {
     }
 
     /**
-     * Set the trafficAnalyticsInterval property: The interval in minutes which would decide how frequently TA service should do flow analytics.
+     * Set the trafficAnalyticsInterval property: The interval in minutes which would decide how frequently TA service
+     * should do flow analytics.
      * 
      * @param trafficAnalyticsInterval the trafficAnalyticsInterval value to set.
      * @return the TrafficAnalyticsConfigurationProperties object itself.

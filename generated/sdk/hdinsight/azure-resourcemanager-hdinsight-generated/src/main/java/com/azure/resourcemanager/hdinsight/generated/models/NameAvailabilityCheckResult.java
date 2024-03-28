@@ -32,7 +32,8 @@ public interface NameAvailabilityCheckResult {
     String message();
 
     /**
-     * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.NameAvailabilityCheckResultInner object.
+     * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.NameAvailabilityCheckResultInner
+     * object.
      * 
      * @return the inner object.
      */

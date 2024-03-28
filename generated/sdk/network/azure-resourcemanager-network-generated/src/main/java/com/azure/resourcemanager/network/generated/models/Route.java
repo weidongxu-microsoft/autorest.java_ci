@@ -19,7 +19,8 @@ public interface Route {
     String id();
 
     /**
-     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Gets the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -54,7 +55,8 @@ public interface Route {
     RouteNextHopType nextHopType();
 
     /**
-     * Gets the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
+     * Gets the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only
+     * allowed in routes where the next hop type is VirtualAppliance.
      * 
      * @return the nextHopIpAddress value.
      */
@@ -68,7 +70,8 @@ public interface Route {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes regardless of LPM.
+     * Gets the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes
+     * regardless of LPM.
      * 
      * @return the hasBgpOverride value.
      */
@@ -120,7 +123,8 @@ public interface Route {
         }
 
         /**
-         * The stage of the Route definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Route definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithAddressPrefix, DefinitionStages.WithNextHopType, DefinitionStages.WithNextHopIpAddress,
@@ -146,9 +150,11 @@ public interface Route {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             WithCreate withName(String name);
@@ -198,9 +204,11 @@ public interface Route {
          */
         interface WithNextHopIpAddress {
             /**
-             * Specifies the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance..
+             * Specifies the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values
+             * are only allowed in routes where the next hop type is VirtualAppliance..
              * 
-             * @param nextHopIpAddress The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
+             * @param nextHopIpAddress The IP address packets should be forwarded to. Next hop values are only allowed
+             * in routes where the next hop type is VirtualAppliance.
              * @return the next definition stage.
              */
             WithCreate withNextHopIpAddress(String nextHopIpAddress);
@@ -211,9 +219,11 @@ public interface Route {
          */
         interface WithHasBgpOverride {
             /**
-             * Specifies the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes regardless of LPM..
+             * Specifies the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP
+             * routes regardless of LPM..
              * 
-             * @param hasBgpOverride A value indicating whether this route overrides overlapping BGP routes regardless of LPM.
+             * @param hasBgpOverride A value indicating whether this route overrides overlapping BGP routes regardless
+             * of LPM.
              * @return the next definition stage.
              */
             WithCreate withHasBgpOverride(Boolean hasBgpOverride);
@@ -257,9 +267,11 @@ public interface Route {
          */
         interface WithName {
             /**
-             * Specifies the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource..
+             * Specifies the name property: The name of the resource that is unique within a resource group. This name
+             * can be used to access the resource..
              * 
-             * @param name The name of the resource that is unique within a resource group. This name can be used to access the resource.
+             * @param name The name of the resource that is unique within a resource group. This name can be used to
+             * access the resource.
              * @return the next definition stage.
              */
             Update withName(String name);
@@ -309,9 +321,11 @@ public interface Route {
          */
         interface WithNextHopIpAddress {
             /**
-             * Specifies the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance..
+             * Specifies the nextHopIpAddress property: The IP address packets should be forwarded to. Next hop values
+             * are only allowed in routes where the next hop type is VirtualAppliance..
              * 
-             * @param nextHopIpAddress The IP address packets should be forwarded to. Next hop values are only allowed in routes where the next hop type is VirtualAppliance.
+             * @param nextHopIpAddress The IP address packets should be forwarded to. Next hop values are only allowed
+             * in routes where the next hop type is VirtualAppliance.
              * @return the next definition stage.
              */
             Update withNextHopIpAddress(String nextHopIpAddress);
@@ -322,9 +336,11 @@ public interface Route {
          */
         interface WithHasBgpOverride {
             /**
-             * Specifies the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP routes regardless of LPM..
+             * Specifies the hasBgpOverride property: A value indicating whether this route overrides overlapping BGP
+             * routes regardless of LPM..
              * 
-             * @param hasBgpOverride A value indicating whether this route overrides overlapping BGP routes regardless of LPM.
+             * @param hasBgpOverride A value indicating whether this route overrides overlapping BGP routes regardless
+             * of LPM.
              * @return the next definition stage.
              */
             Update withHasBgpOverride(Boolean hasBgpOverride);

@@ -60,7 +60,8 @@ public final class JobsClientImpl implements JobsClient {
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesJobs to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AzureMediaServicesJobs to be used by the proxy service to perform
+     * REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesJo")
@@ -818,7 +819,8 @@ public final class JobsClientImpl implements JobsClient {
     /**
      * Update Job
      * 
-     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is Queued or Scheduled and depending on the timing the priority update may be ignored.
+     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is
+     * Queued or Scheduled and depending on the timing the priority update may be ignored.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -870,7 +872,8 @@ public final class JobsClientImpl implements JobsClient {
     /**
      * Update Job
      * 
-     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is Queued or Scheduled and depending on the timing the priority update may be ignored.
+     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is
+     * Queued or Scheduled and depending on the timing the priority update may be ignored.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -922,7 +925,8 @@ public final class JobsClientImpl implements JobsClient {
     /**
      * Update Job
      * 
-     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is Queued or Scheduled and depending on the timing the priority update may be ignored.
+     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is
+     * Queued or Scheduled and depending on the timing the priority update may be ignored.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -944,7 +948,8 @@ public final class JobsClientImpl implements JobsClient {
     /**
      * Update Job
      * 
-     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is Queued or Scheduled and depending on the timing the priority update may be ignored.
+     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is
+     * Queued or Scheduled and depending on the timing the priority update may be ignored.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
@@ -967,7 +972,8 @@ public final class JobsClientImpl implements JobsClient {
     /**
      * Update Job
      * 
-     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is Queued or Scheduled and depending on the timing the priority update may be ignored.
+     * Update is only supported for description and priority. Updating Priority will take effect when the Job state is
+     * Queued or Scheduled and depending on the timing the priority update may be ignored.
      * 
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.

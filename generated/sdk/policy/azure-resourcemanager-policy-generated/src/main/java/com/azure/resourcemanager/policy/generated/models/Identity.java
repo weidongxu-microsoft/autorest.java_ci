@@ -55,7 +55,8 @@ public final class Identity {
     }
 
     /**
-     * Get the type property: The identity type. This is the only required field when adding a system assigned identity to a resource.
+     * Get the type property: The identity type. This is the only required field when adding a system assigned identity
+     * to a resource.
      * 
      * @return the type value.
      */
@@ -64,7 +65,8 @@ public final class Identity {
     }
 
     /**
-     * Set the type property: The identity type. This is the only required field when adding a system assigned identity to a resource.
+     * Set the type property: The identity type. This is the only required field when adding a system assigned identity
+     * to a resource.
      * 
      * @param type the type value to set.
      * @return the Identity object itself.

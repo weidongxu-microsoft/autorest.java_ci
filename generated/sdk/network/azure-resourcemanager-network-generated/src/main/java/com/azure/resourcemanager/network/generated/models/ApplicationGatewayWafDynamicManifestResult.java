@@ -54,7 +54,8 @@ public interface ApplicationGatewayWafDynamicManifestResult {
     String ruleSetVersion();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayWafDynamicManifestResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayWafDynamicManifestResultInner object.
      * 
      * @return the inner object.
      */

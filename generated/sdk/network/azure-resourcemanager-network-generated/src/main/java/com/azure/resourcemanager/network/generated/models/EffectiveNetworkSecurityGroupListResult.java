@@ -26,7 +26,8 @@ public interface EffectiveNetworkSecurityGroupListResult {
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.EffectiveNetworkSecurityGroupListResultInner object.
      * 
      * @return the inner object.
      */

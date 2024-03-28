@@ -90,7 +90,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * The interface defining all the services for IotHubClientIotHubResources to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for IotHubClientIotHubResources to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "IotHubClientIotHubRe")
@@ -388,7 +389,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the non-security related metadata of an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return the non-security related metadata of an IoT hub along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IotHubDescriptionInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -426,7 +428,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the non-security related metadata of an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return the non-security related metadata of an IoT hub along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IotHubDescriptionInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -509,12 +512,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -555,12 +562,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -601,12 +612,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -625,7 +640,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -649,12 +667,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -675,7 +697,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -696,12 +721,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -719,12 +748,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -740,7 +773,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -761,12 +797,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -783,7 +823,10 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -803,12 +846,16 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     /**
      * Create or update the metadata of an IoT hub.
      * 
-     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub metadata and security metadata, and then combine them with the modified values in a new body to update the IoT hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to default, which may lead to unexpected behavior.
+     * Create or update the metadata of an Iot hub. The usual pattern to modify a property is to retrieve the IoT hub
+     * metadata and security metadata, and then combine them with the modified values in a new body to update the IoT
+     * hub. If certain properties are missing in the JSON, updating IoT Hub may cause these values to fallback to
+     * default, which may lead to unexpected behavior.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @param iotHubDescription The IoT hub metadata and security metadata.
-     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an existing IoT Hub.
+     * @param ifMatch ETag of the IoT Hub. Do not specify for creating a brand new IoT Hub. Required to update an
+     * existing IoT Hub.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -1302,7 +1349,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * 
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the IoT hubs in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the IoT hubs in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listSinglePageAsync() {
@@ -1332,7 +1380,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the IoT hubs in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the IoT hubs in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listSinglePageAsync(Context context) {
@@ -1424,7 +1473,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the IoT hubs in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the IoT hubs in a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -1459,7 +1509,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all the IoT hubs in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all the IoT hubs in a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1691,7 +1742,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of valid SKUs for an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of valid SKUs for an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubSkuDescriptionInner>> getValidSkusSinglePageAsync(String resourceGroupName,
@@ -1731,7 +1783,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of valid SKUs for an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of valid SKUs for an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubSkuDescriptionInner>> getValidSkusSinglePageAsync(String resourceGroupName,
@@ -1845,7 +1898,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub along
+     * with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventHubConsumerGroupInfoInner>> listEventHubConsumerGroupsSinglePageAsync(
@@ -1891,7 +1945,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub along
+     * with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventHubConsumerGroupInfoInner>> listEventHubConsumerGroupsSinglePageAsync(
@@ -1935,7 +1990,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as paginated response with {@link PagedFlux}.
+     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as
+     * paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventHubConsumerGroupInfoInner> listEventHubConsumerGroupsAsync(String resourceGroupName,
@@ -1957,7 +2013,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as paginated response with {@link PagedFlux}.
+     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as
+     * paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<EventHubConsumerGroupInfoInner> listEventHubConsumerGroupsAsync(String resourceGroupName,
@@ -1978,7 +2035,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as paginated response with {@link PagedIterable}.
+     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EventHubConsumerGroupInfoInner> listEventHubConsumerGroups(String resourceGroupName,
@@ -1999,7 +2057,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as paginated response with {@link PagedIterable}.
+     * @return a list of the consumer groups in the Event Hub-compatible device-to-cloud endpoint in an IoT hub as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<EventHubConsumerGroupInfoInner> listEventHubConsumerGroups(String resourceGroupName,
@@ -2020,7 +2079,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventHubConsumerGroupInfoInner>> getEventHubConsumerGroupWithResponseAsync(
@@ -2068,7 +2128,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventHubConsumerGroupInfoInner>> getEventHubConsumerGroupWithResponseAsync(
@@ -2114,7 +2175,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub on successful completion of {@link Mono}.
+     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<EventHubConsumerGroupInfoInner> getEventHubConsumerGroupAsync(String resourceGroupName,
@@ -2136,7 +2198,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with {@link Response}.
+     * @return a consumer group from the Event Hub-compatible device-to-cloud endpoint for an IoT hub along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<EventHubConsumerGroupInfoInner> getEventHubConsumerGroupWithResponse(String resourceGroupName,
@@ -2179,7 +2242,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the EventHubConsumerGroupInfo object along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of the EventHubConsumerGroupInfo object along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventHubConsumerGroupInfoInner>> createEventHubConsumerGroupWithResponseAsync(
@@ -2235,7 +2299,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the EventHubConsumerGroupInfo object along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of the EventHubConsumerGroupInfo object along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<EventHubConsumerGroupInfoInner>> createEventHubConsumerGroupWithResponseAsync(
@@ -2503,16 +2568,19 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the jobs in an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all the jobs in an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<JobResponseInner>> listJobsSinglePageAsync(String resourceGroupName,
@@ -2542,9 +2610,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2552,7 +2622,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all the jobs in an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all the jobs in an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<JobResponseInner>> listJobsSinglePageAsync(String resourceGroupName, String resourceName,
@@ -2582,9 +2653,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2600,9 +2673,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2619,9 +2694,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2636,9 +2713,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get a list of all the jobs in an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get a list of all the jobs in an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2654,9 +2733,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2664,7 +2745,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a job from an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of a job from an IoT hub along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobResponseInner>> getJobWithResponseAsync(String resourceGroupName, String resourceName,
@@ -2695,9 +2777,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2706,7 +2790,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of a job from an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of a job from an IoT hub along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobResponseInner>> getJobWithResponseAsync(String resourceGroupName, String resourceName,
@@ -2736,9 +2821,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2755,9 +2842,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2775,9 +2864,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry
      * 
-     * Get the details of a job from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
+     * Get the details of a job from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -2802,7 +2893,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the quota metrics for an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the quota metrics for an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubQuotaMetricInfoInner>> getQuotaMetricsSinglePageAsync(String resourceGroupName,
@@ -2842,7 +2934,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the quota metrics for an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the quota metrics for an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubQuotaMetricInfoInner>> getQuotaMetricsSinglePageAsync(String resourceGroupName,
@@ -2955,7 +3048,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the health for routing endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the health for routing endpoints along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointHealthDataInner>> getEndpointHealthSinglePageAsync(String resourceGroupName,
@@ -2996,7 +3090,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the health for routing endpoints along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the health for routing endpoints along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointHealthDataInner>> getEndpointHealthSinglePageAsync(String resourceGroupName,
@@ -3104,11 +3199,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * 
      * Check if an IoT hub name is available.
      * 
-     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to check.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     * check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties indicating whether a given IoT hub name is available along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties indicating whether a given IoT hub name is available along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IotHubNameAvailabilityInfoInner>>
@@ -3139,12 +3236,14 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * 
      * Check if an IoT hub name is available.
      * 
-     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to check.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     * check.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties indicating whether a given IoT hub name is available along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties indicating whether a given IoT hub name is available along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IotHubNameAvailabilityInfoInner>>
@@ -3174,11 +3273,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * 
      * Check if an IoT hub name is available.
      * 
-     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to check.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     * check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties indicating whether a given IoT hub name is available on successful completion of {@link Mono}.
+     * @return the properties indicating whether a given IoT hub name is available on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<IotHubNameAvailabilityInfoInner> checkNameAvailabilityAsync(OperationInputs operationInputs) {
@@ -3190,7 +3291,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * 
      * Check if an IoT hub name is available.
      * 
-     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to check.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     * check.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
@@ -3208,7 +3310,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * 
      * Check if an IoT hub name is available.
      * 
-     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to check.
+     * @param operationInputs Set the name parameter in the OperationInputs structure to the name of the IoT hub to
+     * check.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -3511,16 +3614,19 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the security metadata for an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the security metadata for an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedAccessSignatureAuthorizationRuleInner>>
@@ -3551,9 +3657,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3561,7 +3669,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the security metadata for an IoT hub along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the security metadata for an IoT hub along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedAccessSignatureAuthorizationRuleInner>>
@@ -3591,9 +3700,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3610,9 +3721,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3630,9 +3743,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3648,9 +3763,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get the security metadata for an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get the security metadata for an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3667,9 +3784,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3677,7 +3796,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared access policy by name from an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return a shared access policy by name from an IoT hub along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedAccessSignatureAuthorizationRuleInner>>
@@ -3708,9 +3828,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3719,7 +3841,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared access policy by name from an IoT hub along with {@link Response} on successful completion of {@link Mono}.
+     * @return a shared access policy by name from an IoT hub along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedAccessSignatureAuthorizationRuleInner>> getKeysForKeyNameWithResponseAsync(
@@ -3749,9 +3872,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3769,9 +3894,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3789,9 +3916,11 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security
      * 
-     * Get a shared access policy by name from an IoT hub. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
+     * Get a shared access policy by name from an IoT hub. For more information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-security.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3808,9 +3937,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3818,7 +3951,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Job Response object along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of the Job Response object along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobResponseInner>> exportDevicesWithResponseAsync(String resourceGroupName,
@@ -3853,9 +3987,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3864,7 +4002,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Job Response object along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of the Job Response object along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobResponseInner>> exportDevicesWithResponseAsync(String resourceGroupName,
@@ -3897,9 +4036,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3917,9 +4060,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3938,9 +4085,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Exports all the device identities in the IoT hub identity registry to an Azure Storage blob container. For more
+     * information, see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3958,9 +4109,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -3968,7 +4123,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Job Response object along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of the Job Response object along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobResponseInner>> importDevicesWithResponseAsync(String resourceGroupName,
@@ -4003,9 +4159,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -4014,7 +4174,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the properties of the Job Response object along with {@link Response} on successful completion of {@link Mono}.
+     * @return the properties of the Job Response object along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<JobResponseInner>> importDevicesWithResponseAsync(String resourceGroupName,
@@ -4047,9 +4208,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -4067,9 +4232,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -4088,9 +4257,13 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
     }
 
     /**
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities
      * 
-     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
+     * Import, update, or delete device identities in the IoT hub identity registry from a blob. For more information,
+     * see:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-identity-registry#import-and-export-device-identities.
      * 
      * @param resourceGroupName The name of the resource group that contains the IoT hub.
      * @param resourceName The name of the IoT hub.
@@ -4116,7 +4289,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listBySubscriptionNextSinglePageAsync(String nextLink) {
@@ -4146,7 +4320,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listBySubscriptionNextSinglePageAsync(String nextLink,
@@ -4174,7 +4349,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -4204,7 +4380,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubDescription objects with a next link along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubDescriptionInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -4232,7 +4409,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubSkuDescription objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubSkuDescription objects with a next link along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubSkuDescriptionInner>> getValidSkusNextSinglePageAsync(String nextLink) {
@@ -4261,7 +4439,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubSkuDescription objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubSkuDescription objects with a next link along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubSkuDescriptionInner>> getValidSkusNextSinglePageAsync(String nextLink,
@@ -4289,7 +4468,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of Event Hub-compatible consumer group names with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of Event Hub-compatible consumer group names with a next link along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventHubConsumerGroupInfoInner>>
@@ -4320,7 +4500,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of Event Hub-compatible consumer group names with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of Event Hub-compatible consumer group names with a next link along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EventHubConsumerGroupInfoInner>>
@@ -4348,7 +4529,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of JobResponse objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of JobResponse objects with a next link along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<JobResponseInner>> listJobsNextSinglePageAsync(String nextLink) {
@@ -4377,7 +4559,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of JobResponse objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of JobResponse objects with a next link along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<JobResponseInner>> listJobsNextSinglePageAsync(String nextLink, Context context) {
@@ -4404,7 +4587,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubQuotaMetricInfo objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubQuotaMetricInfo objects with a next link along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubQuotaMetricInfoInner>> getQuotaMetricsNextSinglePageAsync(String nextLink) {
@@ -4433,7 +4617,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of IotHubQuotaMetricInfo objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of IotHubQuotaMetricInfo objects with a next link along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IotHubQuotaMetricInfoInner>> getQuotaMetricsNextSinglePageAsync(String nextLink,
@@ -4461,7 +4646,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of EndpointHealthData objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of EndpointHealthData objects with a next link along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointHealthDataInner>> getEndpointHealthNextSinglePageAsync(String nextLink) {
@@ -4490,7 +4676,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the JSON-serialized array of EndpointHealthData objects with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the JSON-serialized array of EndpointHealthData objects with a next link along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<EndpointHealthDataInner>> getEndpointHealthNextSinglePageAsync(String nextLink,
@@ -4518,7 +4705,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of shared access policies with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of shared access policies with a next link along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedAccessSignatureAuthorizationRuleInner>>
@@ -4549,7 +4737,8 @@ public final class IotHubResourcesClientImpl implements IotHubResourcesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ErrorDetailsException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of shared access policies with a next link along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the list of shared access policies with a next link along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedAccessSignatureAuthorizationRuleInner>>

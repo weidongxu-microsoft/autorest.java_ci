@@ -67,7 +67,8 @@ public final class DeletedAppRestoreRequestProperties {
     }
 
     /**
-     * Get the recoverConfiguration property: If true, deleted site configuration, in addition to content, will be restored.
+     * Get the recoverConfiguration property: If true, deleted site configuration, in addition to content, will be
+     * restored.
      * 
      * @return the recoverConfiguration value.
      */
@@ -76,7 +77,8 @@ public final class DeletedAppRestoreRequestProperties {
     }
 
     /**
-     * Set the recoverConfiguration property: If true, deleted site configuration, in addition to content, will be restored.
+     * Set the recoverConfiguration property: If true, deleted site configuration, in addition to content, will be
+     * restored.
      * 
      * @param recoverConfiguration the recoverConfiguration value to set.
      * @return the DeletedAppRestoreRequestProperties object itself.
@@ -87,7 +89,7 @@ public final class DeletedAppRestoreRequestProperties {
     }
 
     /**
-     * Get the snapshotTime property: Point in time to restore the deleted app from, formatted as a DateTime string. 
+     * Get the snapshotTime property: Point in time to restore the deleted app from, formatted as a DateTime string.
      * If unspecified, default value is the time that the app was deleted.
      * 
      * @return the snapshotTime value.
@@ -97,7 +99,7 @@ public final class DeletedAppRestoreRequestProperties {
     }
 
     /**
-     * Set the snapshotTime property: Point in time to restore the deleted app from, formatted as a DateTime string. 
+     * Set the snapshotTime property: Point in time to restore the deleted app from, formatted as a DateTime string.
      * If unspecified, default value is the time that the app was deleted.
      * 
      * @param snapshotTime the snapshotTime value to set.

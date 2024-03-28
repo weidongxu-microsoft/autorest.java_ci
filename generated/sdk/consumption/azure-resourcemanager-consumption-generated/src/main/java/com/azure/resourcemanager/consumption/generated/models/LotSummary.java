@@ -33,14 +33,16 @@ public interface LotSummary {
     String type();
 
     /**
-     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+     * Gets the etag property: eTag of the resource. To handle concurrent update scenario, this field will be used to
+     * determine whether the user is updating the latest version or not.
      * 
      * @return the etag value.
      */
     String etag();
 
     /**
-     * Gets the originalAmount property: The original amount of a lot, Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
+     * Gets the originalAmount property: The original amount of a lot, Note: This will not be returned for Contributor
+     * Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the originalAmount value.
      */
@@ -75,7 +77,8 @@ public interface LotSummary {
     OffsetDateTime expirationDate();
 
     /**
-     * Gets the poNumber property: The po number of the invoice on which the lot was added. This property is not available for ConsumptionCommitment lots.
+     * Gets the poNumber property: The po number of the invoice on which the lot was added. This property is not
+     * available for ConsumptionCommitment lots.
      * 
      * @return the poNumber value.
      */
@@ -110,7 +113,8 @@ public interface LotSummary {
     String billingCurrency();
 
     /**
-     * Gets the originalAmountInBillingCurrency property: The original amount of a lot in billing currency,  Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
+     * Gets the originalAmountInBillingCurrency property: The original amount of a lot in billing currency, Note: This
+     * will not be returned for Contributor Organization Type in Multi-Entity consumption commitment.
      * 
      * @return the originalAmountInBillingCurrency value.
      */
@@ -131,7 +135,8 @@ public interface LotSummary {
     Reseller reseller();
 
     /**
-     * Gets the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be subjected to change.
+     * Gets the isEstimatedBalance property: If true, the listed details are based on an estimation and it will be
+     * subjected to change.
      * 
      * @return the isEstimatedBalance value.
      */

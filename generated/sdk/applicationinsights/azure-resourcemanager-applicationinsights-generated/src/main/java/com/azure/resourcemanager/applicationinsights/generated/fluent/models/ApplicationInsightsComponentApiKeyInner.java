@@ -56,7 +56,8 @@ public final class ApplicationInsightsComponentApiKeyInner {
     }
 
     /**
-     * Get the id property: The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is created.
+     * Get the id property: The unique ID of the API key inside an Application Insights component. It is auto generated
+     * when the API key is created.
      * 
      * @return the id value.
      */

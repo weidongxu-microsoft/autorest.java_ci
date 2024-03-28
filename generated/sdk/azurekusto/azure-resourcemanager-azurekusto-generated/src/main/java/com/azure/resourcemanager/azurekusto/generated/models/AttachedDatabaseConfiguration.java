@@ -49,21 +49,24 @@ public interface AttachedDatabaseConfiguration {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the databaseName property: The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+     * Gets the databaseName property: The name of the database which you would like to attach, use * if you want to
+     * follow all current and future databases.
      * 
      * @return the databaseName value.
      */
     String databaseName();
 
     /**
-     * Gets the clusterResourceId property: The resource id of the cluster where the databases you would like to attach reside.
+     * Gets the clusterResourceId property: The resource id of the cluster where the databases you would like to attach
+     * reside.
      * 
      * @return the clusterResourceId value.
      */
     String clusterResourceId();
 
     /**
-     * Gets the attachedDatabaseNames property: The list of databases from the clusterResourceId which are currently attached to the cluster.
+     * Gets the attachedDatabaseNames property: The list of databases from the clusterResourceId which are currently
+     * attached to the cluster.
      * 
      * @return the attachedDatabaseNames value.
      */
@@ -84,14 +87,16 @@ public interface AttachedDatabaseConfiguration {
     TableLevelSharingProperties tableLevelSharingProperties();
 
     /**
-     * Gets the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a specific database.
+     * Gets the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a
+     * specific database.
      * 
      * @return the databaseNameOverride value.
      */
     String databaseNameOverride();
 
     /**
-     * Gets the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+     * Gets the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire
+     * cluster, that prefix would be added to all of the databases original names from leader cluster.
      * 
      * @return the databaseNamePrefix value.
      */
@@ -119,7 +124,8 @@ public interface AttachedDatabaseConfiguration {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.AttachedDatabaseConfigurationInner object.
+     * Gets the inner com.azure.resourcemanager.azurekusto.generated.fluent.models.AttachedDatabaseConfigurationInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -157,7 +163,8 @@ public interface AttachedDatabaseConfiguration {
         }
 
         /**
-         * The stage of the AttachedDatabaseConfiguration definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AttachedDatabaseConfiguration definition which contains all the minimum required properties
+         * for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithLocation, DefinitionStages.WithDatabaseName,
             DefinitionStages.WithClusterResourceId, DefinitionStages.WithDefaultPrincipalsModificationKind,
@@ -205,9 +212,11 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithDatabaseName {
             /**
-             * Specifies the databaseName property: The name of the database which you would like to attach, use * if you want to follow all current and future databases..
+             * Specifies the databaseName property: The name of the database which you would like to attach, use * if
+             * you want to follow all current and future databases..
              * 
-             * @param databaseName The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+             * @param databaseName The name of the database which you would like to attach, use * if you want to follow
+             * all current and future databases.
              * @return the next definition stage.
              */
             WithCreate withDatabaseName(String databaseName);
@@ -218,16 +227,19 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithClusterResourceId {
             /**
-             * Specifies the clusterResourceId property: The resource id of the cluster where the databases you would like to attach reside..
+             * Specifies the clusterResourceId property: The resource id of the cluster where the databases you would
+             * like to attach reside..
              * 
-             * @param clusterResourceId The resource id of the cluster where the databases you would like to attach reside.
+             * @param clusterResourceId The resource id of the cluster where the databases you would like to attach
+             * reside.
              * @return the next definition stage.
              */
             WithCreate withClusterResourceId(String clusterResourceId);
         }
 
         /**
-         * The stage of the AttachedDatabaseConfiguration definition allowing to specify defaultPrincipalsModificationKind.
+         * The stage of the AttachedDatabaseConfiguration definition allowing to specify
+         * defaultPrincipalsModificationKind.
          */
         interface WithDefaultPrincipalsModificationKind {
             /**
@@ -258,9 +270,11 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithDatabaseNameOverride {
             /**
-             * Specifies the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a specific database..
+             * Specifies the databaseNameOverride property: Overrides the original database name. Relevant only when
+             * attaching to a specific database..
              * 
-             * @param databaseNameOverride Overrides the original database name. Relevant only when attaching to a specific database.
+             * @param databaseNameOverride Overrides the original database name. Relevant only when attaching to a
+             * specific database.
              * @return the next definition stage.
              */
             WithCreate withDatabaseNameOverride(String databaseNameOverride);
@@ -271,9 +285,12 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithDatabaseNamePrefix {
             /**
-             * Specifies the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster..
+             * Specifies the databaseNamePrefix property: Adds a prefix to the attached databases name. When following
+             * an entire cluster, that prefix would be added to all of the databases original names from leader
+             * cluster..
              * 
-             * @param databaseNamePrefix Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+             * @param databaseNamePrefix Adds a prefix to the attached databases name. When following an entire cluster,
+             * that prefix would be added to all of the databases original names from leader cluster.
              * @return the next definition stage.
              */
             WithCreate withDatabaseNamePrefix(String databaseNamePrefix);
@@ -318,9 +335,11 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithDatabaseName {
             /**
-             * Specifies the databaseName property: The name of the database which you would like to attach, use * if you want to follow all current and future databases..
+             * Specifies the databaseName property: The name of the database which you would like to attach, use * if
+             * you want to follow all current and future databases..
              * 
-             * @param databaseName The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+             * @param databaseName The name of the database which you would like to attach, use * if you want to follow
+             * all current and future databases.
              * @return the next definition stage.
              */
             Update withDatabaseName(String databaseName);
@@ -331,9 +350,11 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithClusterResourceId {
             /**
-             * Specifies the clusterResourceId property: The resource id of the cluster where the databases you would like to attach reside..
+             * Specifies the clusterResourceId property: The resource id of the cluster where the databases you would
+             * like to attach reside..
              * 
-             * @param clusterResourceId The resource id of the cluster where the databases you would like to attach reside.
+             * @param clusterResourceId The resource id of the cluster where the databases you would like to attach
+             * reside.
              * @return the next definition stage.
              */
             Update withClusterResourceId(String clusterResourceId);
@@ -371,9 +392,11 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithDatabaseNameOverride {
             /**
-             * Specifies the databaseNameOverride property: Overrides the original database name. Relevant only when attaching to a specific database..
+             * Specifies the databaseNameOverride property: Overrides the original database name. Relevant only when
+             * attaching to a specific database..
              * 
-             * @param databaseNameOverride Overrides the original database name. Relevant only when attaching to a specific database.
+             * @param databaseNameOverride Overrides the original database name. Relevant only when attaching to a
+             * specific database.
              * @return the next definition stage.
              */
             Update withDatabaseNameOverride(String databaseNameOverride);
@@ -384,9 +407,12 @@ public interface AttachedDatabaseConfiguration {
          */
         interface WithDatabaseNamePrefix {
             /**
-             * Specifies the databaseNamePrefix property: Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster..
+             * Specifies the databaseNamePrefix property: Adds a prefix to the attached databases name. When following
+             * an entire cluster, that prefix would be added to all of the databases original names from leader
+             * cluster..
              * 
-             * @param databaseNamePrefix Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+             * @param databaseNamePrefix Adds a prefix to the attached databases name. When following an entire cluster,
+             * that prefix would be added to all of the databases original names from leader cluster.
              * @return the next definition stage.
              */
             Update withDatabaseNamePrefix(String databaseNamePrefix);

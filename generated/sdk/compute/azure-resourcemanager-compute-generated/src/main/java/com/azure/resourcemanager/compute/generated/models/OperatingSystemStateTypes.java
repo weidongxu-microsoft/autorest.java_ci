@@ -8,7 +8,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
- * This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
+ * This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or
+ * 'Specialized'.
  */
 public enum OperatingSystemStateTypes {
     /**

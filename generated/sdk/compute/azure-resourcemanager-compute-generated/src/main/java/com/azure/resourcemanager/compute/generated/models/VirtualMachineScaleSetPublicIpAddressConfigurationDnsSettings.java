@@ -32,7 +32,8 @@ public final class VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings
     }
 
     /**
-     * Get the domainNameLabel property: The Domain name label.The concatenation of the domain name label and vm index will be the domain name labels of the PublicIPAddress resources that will be created.
+     * Get the domainNameLabel property: The Domain name label.The concatenation of the domain name label and vm index
+     * will be the domain name labels of the PublicIPAddress resources that will be created.
      * 
      * @return the domainNameLabel value.
      */
@@ -41,7 +42,8 @@ public final class VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings
     }
 
     /**
-     * Set the domainNameLabel property: The Domain name label.The concatenation of the domain name label and vm index will be the domain name labels of the PublicIPAddress resources that will be created.
+     * Set the domainNameLabel property: The Domain name label.The concatenation of the domain name label and vm index
+     * will be the domain name labels of the PublicIPAddress resources that will be created.
      * 
      * @param domainNameLabel the domainNameLabel value to set.
      * @return the VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings object itself.
@@ -52,7 +54,9 @@ public final class VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings
     }
 
     /**
-     * Get the domainNameLabelScope property: The Domain name label scope.The concatenation of the hashed domain name label that generated according to the policy from domain name label scope and vm index will be the domain name labels of the PublicIPAddress resources that will be created.
+     * Get the domainNameLabelScope property: The Domain name label scope.The concatenation of the hashed domain name
+     * label that generated according to the policy from domain name label scope and vm index will be the domain name
+     * labels of the PublicIPAddress resources that will be created.
      * 
      * @return the domainNameLabelScope value.
      */
@@ -61,7 +65,9 @@ public final class VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings
     }
 
     /**
-     * Set the domainNameLabelScope property: The Domain name label scope.The concatenation of the hashed domain name label that generated according to the policy from domain name label scope and vm index will be the domain name labels of the PublicIPAddress resources that will be created.
+     * Set the domainNameLabelScope property: The Domain name label scope.The concatenation of the hashed domain name
+     * label that generated according to the policy from domain name label scope and vm index will be the domain name
+     * labels of the PublicIPAddress resources that will be created.
      * 
      * @param domainNameLabelScope the domainNameLabelScope value to set.
      * @return the VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings object itself.
@@ -79,8 +85,9 @@ public final class VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings
      */
     public void validate() {
         if (domainNameLabel() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property domainNameLabel in model VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property domainNameLabel in model VirtualMachineScaleSetPublicIpAddressConfigurationDnsSettings"));
         }
     }
 

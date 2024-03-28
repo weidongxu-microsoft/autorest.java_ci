@@ -26,7 +26,9 @@ public final class CapacityReservationProfile {
     }
 
     /**
-     * Get the capacityReservationGroup property: Specifies the capacity reservation group resource id that should be used for allocating the virtual machine or scaleset vm instances provided enough capacity has been reserved. Please refer to https://aka.ms/CapacityReservation for more details.
+     * Get the capacityReservationGroup property: Specifies the capacity reservation group resource id that should be
+     * used for allocating the virtual machine or scaleset vm instances provided enough capacity has been reserved.
+     * Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @return the capacityReservationGroup value.
      */
@@ -35,7 +37,9 @@ public final class CapacityReservationProfile {
     }
 
     /**
-     * Set the capacityReservationGroup property: Specifies the capacity reservation group resource id that should be used for allocating the virtual machine or scaleset vm instances provided enough capacity has been reserved. Please refer to https://aka.ms/CapacityReservation for more details.
+     * Set the capacityReservationGroup property: Specifies the capacity reservation group resource id that should be
+     * used for allocating the virtual machine or scaleset vm instances provided enough capacity has been reserved.
+     * Please refer to https://aka.ms/CapacityReservation for more details.
      * 
      * @param capacityReservationGroup the capacityReservationGroup value to set.
      * @return the CapacityReservationProfile object itself.

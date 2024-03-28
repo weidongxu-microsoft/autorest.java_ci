@@ -31,7 +31,8 @@ public final class ShareablePrivateLinkResourceType {
     }
 
     /**
-     * Get the name property: The name of the resource type that has been onboarded to private link service, supported by Azure AI Search.
+     * Get the name property: The name of the resource type that has been onboarded to private link service, supported
+     * by Azure AI Search.
      * 
      * @return the name value.
      */
@@ -40,7 +41,8 @@ public final class ShareablePrivateLinkResourceType {
     }
 
     /**
-     * Get the properties property: Describes the properties of a resource type that has been onboarded to private link service, supported by Azure AI Search.
+     * Get the properties property: Describes the properties of a resource type that has been onboarded to private link
+     * service, supported by Azure AI Search.
      * 
      * @return the properties value.
      */

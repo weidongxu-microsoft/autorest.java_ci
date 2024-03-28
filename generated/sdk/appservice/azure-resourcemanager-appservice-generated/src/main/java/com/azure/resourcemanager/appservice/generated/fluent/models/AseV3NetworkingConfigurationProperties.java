@@ -104,7 +104,8 @@ public final class AseV3NetworkingConfigurationProperties {
     }
 
     /**
-     * Get the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint connection creation on ASE.
+     * Get the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint
+     * connection creation on ASE.
      * 
      * @return the allowNewPrivateEndpointConnections value.
      */
@@ -113,7 +114,8 @@ public final class AseV3NetworkingConfigurationProperties {
     }
 
     /**
-     * Set the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint connection creation on ASE.
+     * Set the allowNewPrivateEndpointConnections property: Property to enable and disable new private endpoint
+     * connection creation on ASE.
      * 
      * @param allowNewPrivateEndpointConnections the allowNewPrivateEndpointConnections value to set.
      * @return the AseV3NetworkingConfigurationProperties object itself.
@@ -165,7 +167,8 @@ public final class AseV3NetworkingConfigurationProperties {
     }
 
     /**
-     * Get the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase create.
+     * Get the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase
+     * create.
      * 
      * @return the inboundIpAddressOverride value.
      */
@@ -174,7 +177,8 @@ public final class AseV3NetworkingConfigurationProperties {
     }
 
     /**
-     * Set the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase create.
+     * Set the inboundIpAddressOverride property: Customer provided Inbound IP Address. Only able to be set on Ase
+     * create.
      * 
      * @param inboundIpAddressOverride the inboundIpAddressOverride value to set.
      * @return the AseV3NetworkingConfigurationProperties object itself.

@@ -65,7 +65,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVpnSites to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVpnSites to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -842,7 +843,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -876,7 +878,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -968,7 +971,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listSinglePageAsync() {
@@ -997,7 +1001,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listSinglePageAsync(Context context) {
@@ -1079,7 +1084,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1109,7 +1115,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listByResourceGroupNextSinglePageAsync(String nextLink, Context context) {
@@ -1136,7 +1143,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listNextSinglePageAsync(String nextLink) {
@@ -1164,7 +1172,8 @@ public final class VpnSitesClientImpl implements VpnSitesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return result of the request to list VpnSites along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VpnSiteInner>> listNextSinglePageAsync(String nextLink, Context context) {

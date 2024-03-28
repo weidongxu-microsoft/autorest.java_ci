@@ -36,7 +36,14 @@ public interface DenyAssignments {
      * @param parentResourcePath The parent resource identity.
      * @param resourceType The resource type of the resource.
      * @param resourceName The name of the resource to get deny assignments for.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. This filter is different from the principalId filter as it returns not only those deny assignments that contain the specified principal is the Principals list but also those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -61,7 +68,14 @@ public interface DenyAssignments {
      * Gets deny assignments for a resource group.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. This filter is different from the principalId filter as it returns not only those deny assignments that contain the specified principal is the Principals list but also those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -82,7 +96,14 @@ public interface DenyAssignments {
     /**
      * Gets all deny assignments for the subscription.
      * 
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. This filter is different from the principalId filter as it returns not only those deny assignments that contain the specified principal is the Principals list but also those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -119,7 +140,10 @@ public interface DenyAssignments {
     /**
      * Gets a deny assignment by ID.
      * 
-     * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny assignments.
+     * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -131,7 +155,10 @@ public interface DenyAssignments {
     /**
      * Gets a deny assignment by ID.
      * 
-     * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format, /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny assignments.
+     * @param denyAssignmentId The fully qualified deny assignment ID. For example, use the format,
+     * /subscriptions/{guid}/providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for subscription level
+     * deny assignments, or /providers/Microsoft.Authorization/denyAssignments/{denyAssignmentId} for tenant level deny
+     * assignments.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -154,7 +181,14 @@ public interface DenyAssignments {
      * Gets deny assignments for a scope.
      * 
      * @param scope The scope of the deny assignments.
-     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and below the scope for the specified principal. This filter is different from the principalId filter as it returns not only those deny assignments that contain the specified principal is the Principals list but also those deny assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
+     * @param filter The filter to apply on the operation. Use $filter=atScope() to return all deny assignments at or
+     * above the scope. Use $filter=denyAssignmentName eq '{name}' to search deny assignments by name at specified
+     * scope. Use $filter=principalId eq '{id}' to return all deny assignments at, above and below the scope for the
+     * specified principal. Use $filter=gdprExportPrincipalId eq '{id}' to return all deny assignments at, above and
+     * below the scope for the specified principal. This filter is different from the principalId filter as it returns
+     * not only those deny assignments that contain the specified principal is the Principals list but also those deny
+     * assignments that contain the specified principal is the ExcludePrincipals list. Additionally, when
+     * gdprExportPrincipalId filter is used, only the deny assignment name and description properties are returned.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

@@ -19,7 +19,8 @@ public interface NetworkVirtualApplianceConnections {
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
+     * PUT operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -34,7 +35,8 @@ public interface NetworkVirtualApplianceConnections {
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of the Network Virtual Appliance.
      * @param connectionName The name of the NVA connection.
-     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection PUT operation.
+     * @param networkVirtualApplianceConnectionParameters Parameters supplied in an NetworkVirtualApplianceConnection
+     * PUT operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

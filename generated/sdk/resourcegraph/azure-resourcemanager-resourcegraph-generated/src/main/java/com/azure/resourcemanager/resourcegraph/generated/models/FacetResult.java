@@ -7,6 +7,7 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -17,6 +18,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("FacetResult")
 @Fluent
 public final class FacetResult extends Facet {
+    /*
+     * Result type
+     */
+    @JsonTypeId
+    @JsonProperty(value = "resultType", required = true)
+    private String resultType = "FacetResult";
+
     /*
      * Number of total records in the facet results.
      */
@@ -39,7 +47,16 @@ public final class FacetResult extends Facet {
      * Creates an instance of FacetResult class.
      */
     public FacetResult() {
-        withResultType("FacetResult");
+    }
+
+    /**
+     * Get the resultType property: Result type.
+     * 
+     * @return the resultType value.
+     */
+    @Override
+    public String resultType() {
+        return this.resultType;
     }
 
     /**
@@ -83,7 +100,8 @@ public final class FacetResult extends Facet {
     }
 
     /**
-     * Get the data property: A JObject array or Table containing the desired facets. Only present if the facet is valid.
+     * Get the data property: A JObject array or Table containing the desired facets. Only present if the facet is
+     * valid.
      * 
      * @return the data value.
      */
@@ -92,7 +110,8 @@ public final class FacetResult extends Facet {
     }
 
     /**
-     * Set the data property: A JObject array or Table containing the desired facets. Only present if the facet is valid.
+     * Set the data property: A JObject array or Table containing the desired facets. Only present if the facet is
+     * valid.
      * 
      * @param data the data value to set.
      * @return the FacetResult object itself.
@@ -120,8 +139,8 @@ public final class FacetResult extends Facet {
     public void validate() {
         super.validate();
         if (data() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property data in model FacetResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property data in model FacetResult"));
         }
     }
 

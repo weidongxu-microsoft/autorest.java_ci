@@ -25,7 +25,8 @@ public final class EventGridAndResourceGraph {
     }
 
     /**
-     * Get the enable property: Specifies if event grid and resource graph is enabled for Scheduled event related configurations.
+     * Get the enable property: Specifies if event grid and resource graph is enabled for Scheduled event related
+     * configurations.
      * 
      * @return the enable value.
      */
@@ -34,7 +35,8 @@ public final class EventGridAndResourceGraph {
     }
 
     /**
-     * Set the enable property: Specifies if event grid and resource graph is enabled for Scheduled event related configurations.
+     * Set the enable property: Specifies if event grid and resource graph is enabled for Scheduled event related
+     * configurations.
      * 
      * @param enable the enable value to set.
      * @return the EventGridAndResourceGraph object itself.

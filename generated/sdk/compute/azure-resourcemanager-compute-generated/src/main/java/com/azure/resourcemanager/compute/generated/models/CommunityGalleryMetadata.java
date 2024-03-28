@@ -131,7 +131,8 @@ public final class CommunityGalleryMetadata {
     }
 
     /**
-     * Get the privacyStatementUri property: The link for the privacy statement of this community gallery from the gallery publisher.
+     * Get the privacyStatementUri property: The link for the privacy statement of this community gallery from the
+     * gallery publisher.
      * 
      * @return the privacyStatementUri value.
      */
@@ -140,7 +141,8 @@ public final class CommunityGalleryMetadata {
     }
 
     /**
-     * Set the privacyStatementUri property: The link for the privacy statement of this community gallery from the gallery publisher.
+     * Set the privacyStatementUri property: The link for the privacy statement of this community gallery from the
+     * gallery publisher.
      * 
      * @param privacyStatementUri the privacyStatementUri value to set.
      * @return the CommunityGalleryMetadata object itself.
@@ -157,12 +159,14 @@ public final class CommunityGalleryMetadata {
      */
     public void validate() {
         if (publisherContact() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property publisherContact in model CommunityGalleryMetadata"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property publisherContact in model CommunityGalleryMetadata"));
         }
         if (publicNames() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property publicNames in model CommunityGalleryMetadata"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property publicNames in model CommunityGalleryMetadata"));
         }
     }
 

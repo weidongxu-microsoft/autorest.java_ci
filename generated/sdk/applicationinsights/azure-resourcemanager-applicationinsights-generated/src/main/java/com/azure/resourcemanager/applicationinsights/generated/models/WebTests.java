@@ -19,7 +19,8 @@ public interface WebTests {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Application Insights web tests defined within a specified resource group as paginated response with {@link PagedIterable}.
+     * @return all Application Insights web tests defined within a specified resource group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<WebTest> listByResourceGroup(String resourceGroupName);
 
@@ -31,7 +32,8 @@ public interface WebTests {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Application Insights web tests defined within a specified resource group as paginated response with {@link PagedIterable}.
+     * @return all Application Insights web tests defined within a specified resource group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<WebTest> listByResourceGroup(String resourceGroupName, Context context);
 
@@ -89,7 +91,8 @@ public interface WebTests {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Application Insights web test alerts definitions within a subscription as paginated response with {@link PagedIterable}.
+     * @return all Application Insights web test alerts definitions within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<WebTest> list();
 
@@ -100,7 +103,8 @@ public interface WebTests {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Application Insights web test alerts definitions within a subscription as paginated response with {@link PagedIterable}.
+     * @return all Application Insights web test alerts definitions within a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<WebTest> list(Context context);
 
@@ -112,7 +116,8 @@ public interface WebTests {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Application Insights web tests defined for the specified component as paginated response with {@link PagedIterable}.
+     * @return all Application Insights web tests defined for the specified component as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<WebTest> listByComponent(String componentName, String resourceGroupName);
 
@@ -125,7 +130,8 @@ public interface WebTests {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all Application Insights web tests defined for the specified component as paginated response with {@link PagedIterable}.
+     * @return all Application Insights web tests defined for the specified component as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<WebTest> listByComponent(String componentName, String resourceGroupName, Context context);
 

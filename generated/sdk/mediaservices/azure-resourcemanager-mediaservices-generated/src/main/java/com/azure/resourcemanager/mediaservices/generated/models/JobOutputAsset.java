@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -18,6 +19,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class JobOutputAsset extends JobOutput {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.JobOutputAsset";
+
+    /*
      * The name of the output Asset.
      */
     @JsonProperty(value = "assetName", required = true)
@@ -27,7 +35,16 @@ public final class JobOutputAsset extends JobOutput {
      * Creates an instance of JobOutputAsset class.
      */
     public JobOutputAsset() {
-        withOdataType("#Microsoft.Media.JobOutputAsset");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -77,8 +94,8 @@ public final class JobOutputAsset extends JobOutput {
     public void validate() {
         super.validate();
         if (assetName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property assetName in model JobOutputAsset"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property assetName in model JobOutputAsset"));
         }
     }
 

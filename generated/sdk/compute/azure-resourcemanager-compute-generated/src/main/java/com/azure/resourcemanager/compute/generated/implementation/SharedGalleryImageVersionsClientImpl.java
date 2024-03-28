@@ -57,7 +57,8 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
     }
 
     /**
-     * The interface defining all the services for ComputeManagementClientSharedGalleryImageVersions to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ComputeManagementClientSharedGalleryImageVersions to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ComputeManagementCli")
@@ -97,12 +98,14 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @param sharedTo The query parameter to decide what shared galleries to fetch when doing listing operations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageVersionInner>> listSinglePageAsync(String location,
@@ -141,13 +144,15 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @param sharedTo The query parameter to decide what shared galleries to fetch when doing listing operations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageVersionInner>> listSinglePageAsync(String location,
@@ -186,7 +191,8 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @param sharedTo The query parameter to decide what shared galleries to fetch when doing listing operations.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -205,7 +211,8 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -224,7 +231,8 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @param sharedTo The query parameter to decide what shared galleries to fetch when doing listing operations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -245,11 +253,13 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Image versions operation response as paginated response with {@link PagedIterable}.
+     * @return the List Shared Gallery Image versions operation response as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SharedGalleryImageVersionInner> list(String location, String galleryUniqueName,
@@ -263,13 +273,15 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
      * @param sharedTo The query parameter to decide what shared galleries to fetch when doing listing operations.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Image versions operation response as paginated response with {@link PagedIterable}.
+     * @return the List Shared Gallery Image versions operation response as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SharedGalleryImageVersionInner> list(String location, String galleryUniqueName,
@@ -282,12 +294,16 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
-     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
+     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
+     * version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit
+     * integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image version by subscription id or tenant id along with {@link Response} on successful completion of {@link Mono}.
+     * @return a shared gallery image version by subscription id or tenant id along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedGalleryImageVersionInner>> getWithResponseAsync(String location,
@@ -328,13 +344,17 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
-     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
+     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
+     * version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit
+     * integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a shared gallery image version by subscription id or tenant id along with {@link Response} on successful completion of {@link Mono}.
+     * @return a shared gallery image version by subscription id or tenant id along with {@link Response} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedGalleryImageVersionInner>> getWithResponseAsync(String location,
@@ -374,8 +394,11 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
-     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
+     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
+     * version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit
+     * integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -393,8 +416,11 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
-     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
+     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
+     * version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit
+     * integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -413,8 +439,11 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * 
      * @param location Resource location.
      * @param galleryUniqueName The unique name of the Shared Gallery.
-     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be listed.
-     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
+     * @param galleryImageName The name of the Shared Gallery Image Definition from which the Image Versions are to be
+     * listed.
+     * @param galleryImageVersionName The name of the gallery image version to be created. Needs to follow semantic
+     * version name pattern: The allowed characters are digit and period. Digits must be within the range of a 32-bit
+     * integer. Format: &lt;MajorVersion&gt;.&lt;MinorVersion&gt;.&lt;Patch&gt;.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -436,7 +465,8 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageVersionInner>> listNextSinglePageAsync(String nextLink) {
@@ -464,7 +494,8 @@ public final class SharedGalleryImageVersionsClientImpl implements SharedGallery
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return the List Shared Gallery Image versions operation response along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedGalleryImageVersionInner>> listNextSinglePageAsync(String nextLink,

@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.time.Duration;
@@ -17,6 +18,13 @@ import java.time.Duration;
 @JsonTypeName("#Microsoft.Media.VideoOverlay")
 @Fluent
 public final class VideoOverlay extends Overlay {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.VideoOverlay";
+
     /*
      * The location in the input video where the overlay is applied.
      */
@@ -39,7 +47,16 @@ public final class VideoOverlay extends Overlay {
      * Creates an instance of VideoOverlay class.
      */
     public VideoOverlay() {
-        withOdataType("#Microsoft.Media.VideoOverlay");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -63,7 +80,8 @@ public final class VideoOverlay extends Overlay {
     }
 
     /**
-     * Get the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0 which mean the overlay is opaque.
+     * Get the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0
+     * which mean the overlay is opaque.
      * 
      * @return the opacity value.
      */
@@ -72,7 +90,8 @@ public final class VideoOverlay extends Overlay {
     }
 
     /**
-     * Set the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0 which mean the overlay is opaque.
+     * Set the opacity property: The opacity of the overlay. This is a value in the range [0 - 1.0]. Default is 1.0
+     * which mean the overlay is opaque.
      * 
      * @param opacity the opacity value to set.
      * @return the VideoOverlay object itself.

@@ -519,7 +519,8 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions. It manages VirtualMachineScaleSetVMExtension.
+     * Gets the resource collection API of VirtualMachineScaleSetVMExtensions. It manages
+     * VirtualMachineScaleSetVMExtension.
      * 
      * @return Resource collection API of VirtualMachineScaleSetVMExtensions.
      */
@@ -1053,7 +1054,8 @@ public final class ComputeManager {
     }
 
     /**
-     * Gets wrapped service client ComputeManagementClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client ComputeManagementClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client ComputeManagementClient.
      */

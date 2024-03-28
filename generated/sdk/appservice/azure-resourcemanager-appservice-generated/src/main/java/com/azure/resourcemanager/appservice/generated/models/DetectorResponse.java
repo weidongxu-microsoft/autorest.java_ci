@@ -61,7 +61,8 @@ public interface DetectorResponse {
     Status status();
 
     /**
-     * Gets the dataProvidersMetadata property: Additional configuration for different data providers to be used by the UI.
+     * Gets the dataProvidersMetadata property: Additional configuration for different data providers to be used by the
+     * UI.
      * 
      * @return the dataProvidersMetadata value.
      */

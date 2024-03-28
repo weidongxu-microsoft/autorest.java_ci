@@ -124,7 +124,8 @@ public interface AdminRuleCollection {
         }
 
         /**
-         * The stage of the AdminRuleCollection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AdminRuleCollection definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithDescription, DefinitionStages.WithAppliesToGroups {
             /**

@@ -166,7 +166,8 @@ public final class ServerUpdateParametersProperties {
     }
 
     /**
-     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Get the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -175,7 +176,8 @@ public final class ServerUpdateParametersProperties {
     }
 
     /**
-     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'.
+     * Set the publicNetworkAccess property: Whether or not public network access is allowed for this server. Value is
+     * optional but if passed in, must be 'Enabled' or 'Disabled'.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the ServerUpdateParametersProperties object itself.

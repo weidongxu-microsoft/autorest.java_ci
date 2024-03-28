@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * Result of the request to list Rules Engine Configurations. It contains a list of RulesEngine objects and a URL link to get the next set of results.
+ * Result of the request to list Rules Engine Configurations. It contains a list of RulesEngine objects and a URL link
+ * to get the next set of results.
  */
 @Fluent
 public final class RulesEngineListResult {

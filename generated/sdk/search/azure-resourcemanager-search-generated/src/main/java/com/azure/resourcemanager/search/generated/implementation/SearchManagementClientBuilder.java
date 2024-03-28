@@ -25,7 +25,8 @@ public final class SearchManagementClientBuilder {
     private String subscriptionId;
 
     /**
-     * Sets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * Sets The unique identifier for a Microsoft Azure subscription. You can obtain this value from the Azure Resource
+     * Manager API or the portal.
      * 
      * @param subscriptionId the subscriptionId value.
      * @return the SearchManagementClientBuilder.

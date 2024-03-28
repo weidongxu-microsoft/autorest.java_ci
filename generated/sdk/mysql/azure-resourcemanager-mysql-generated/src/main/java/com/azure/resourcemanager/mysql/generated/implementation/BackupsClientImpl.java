@@ -56,7 +56,8 @@ public final class BackupsClientImpl implements BackupsClient {
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientBackups to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientBackups to be used by the proxy service to
+     * perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")

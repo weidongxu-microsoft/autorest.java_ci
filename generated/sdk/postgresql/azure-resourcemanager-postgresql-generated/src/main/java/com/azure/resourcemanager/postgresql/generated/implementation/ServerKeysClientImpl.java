@@ -64,7 +64,8 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientServerKeys to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientServerKeys to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
@@ -117,14 +118,14 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of Server keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerKeyInner>> listSinglePageAsync(String resourceGroupName, String serverName) {
@@ -154,7 +155,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -162,7 +163,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of Server keys along with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerKeyInner>> listSinglePageAsync(String resourceGroupName, String serverName,
@@ -193,14 +194,14 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedFlux}.
+     * @return a list of Server keys as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedFlux<ServerKeyInner> listAsync(String resourceGroupName, String serverName) {
@@ -209,7 +210,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -217,7 +218,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedFlux}.
+     * @return a list of Server keys as paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<ServerKeyInner> listAsync(String resourceGroupName, String serverName, Context context) {
@@ -226,14 +227,14 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedIterable}.
+     * @return a list of Server keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServerKeyInner> list(String resourceGroupName, String serverName) {
@@ -241,7 +242,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
     }
 
     /**
-     * Gets a list of  Server keys.
+     * Gets a list of Server keys.
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param serverName The name of the server.
@@ -249,7 +250,7 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of  Server keys as paginated response with {@link PagedIterable}.
+     * @return a list of Server keys as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<ServerKeyInner> list(String resourceGroupName, String serverName, Context context) {
@@ -867,7 +868,8 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of PostgreSQL Server keys along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of PostgreSQL Server keys along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerKeyInner>> listNextSinglePageAsync(String nextLink) {
@@ -895,7 +897,8 @@ public final class ServerKeysClientImpl implements ServerKeysClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of PostgreSQL Server keys along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of PostgreSQL Server keys along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<ServerKeyInner>> listNextSinglePageAsync(String nextLink, Context context) {

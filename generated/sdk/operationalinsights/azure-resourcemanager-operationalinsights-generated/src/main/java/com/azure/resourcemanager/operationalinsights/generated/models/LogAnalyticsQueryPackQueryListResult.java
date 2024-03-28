@@ -54,7 +54,8 @@ public final class LogAnalyticsQueryPackQueryListResult {
     }
 
     /**
-     * Get the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many QueryPack-Queries where returned in the result set.
+     * Get the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many
+     * QueryPack-Queries where returned in the result set.
      * 
      * @return the nextLink value.
      */
@@ -63,7 +64,8 @@ public final class LogAnalyticsQueryPackQueryListResult {
     }
 
     /**
-     * Set the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many QueryPack-Queries where returned in the result set.
+     * Set the nextLink property: The URI to get the next set of Log Analytics QueryPack definitions if too many
+     * QueryPack-Queries where returned in the result set.
      * 
      * @param nextLink the nextLink value to set.
      * @return the LogAnalyticsQueryPackQueryListResult object itself.
@@ -80,8 +82,9 @@ public final class LogAnalyticsQueryPackQueryListResult {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property value in model LogAnalyticsQueryPackQueryListResult"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model LogAnalyticsQueryPackQueryListResult"));
         } else {
             value().forEach(e -> e.validate());
         }

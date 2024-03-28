@@ -55,8 +55,9 @@ public final class MonitoringMetricConfigurationProperties {
      */
     public void validate() {
         if (metricConfigurations() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property metricConfigurations in model MonitoringMetricConfigurationProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property metricConfigurations in model MonitoringMetricConfigurationProperties"));
         } else {
             metricConfigurations().forEach(e -> e.validate());
         }

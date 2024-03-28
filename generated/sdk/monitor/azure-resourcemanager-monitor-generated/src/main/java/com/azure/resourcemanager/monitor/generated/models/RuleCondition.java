@@ -49,7 +49,9 @@ public class RuleCondition {
     }
 
     /**
-     * Get the odataType property: specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * Get the odataType property: specifies the type of condition. This can be one of three types:
+     * ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the
+     * number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
      * 
      * @return the odataType value.
      */
@@ -58,18 +60,8 @@ public class RuleCondition {
     }
 
     /**
-     * Set the odataType property: specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
-     * 
-     * @param odataType the odataType value to set.
-     * @return the RuleCondition object itself.
-     */
-    protected RuleCondition withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
-     * Get the dataSource property: the resource from which the rule collects its data. For this type dataSource will always be of type RuleMetricDataSource.
+     * Get the dataSource property: the resource from which the rule collects its data. For this type dataSource will
+     * always be of type RuleMetricDataSource.
      * 
      * @return the dataSource value.
      */
@@ -78,7 +70,8 @@ public class RuleCondition {
     }
 
     /**
-     * Set the dataSource property: the resource from which the rule collects its data. For this type dataSource will always be of type RuleMetricDataSource.
+     * Set the dataSource property: the resource from which the rule collects its data. For this type dataSource will
+     * always be of type RuleMetricDataSource.
      * 
      * @param dataSource the dataSource value to set.
      * @return the RuleCondition object itself.

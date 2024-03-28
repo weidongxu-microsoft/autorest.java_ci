@@ -152,7 +152,8 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
     }
 
     /**
-     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @return the publicNetworkAccess value.
      */
@@ -161,7 +162,8 @@ public final class RelayUpdateParameters extends ResourceNamespacePatch {
     }
 
     /**
-     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is enabled.
+     * Set the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
+     * enabled.
      * 
      * @param publicNetworkAccess the publicNetworkAccess value to set.
      * @return the RelayUpdateParameters object itself.

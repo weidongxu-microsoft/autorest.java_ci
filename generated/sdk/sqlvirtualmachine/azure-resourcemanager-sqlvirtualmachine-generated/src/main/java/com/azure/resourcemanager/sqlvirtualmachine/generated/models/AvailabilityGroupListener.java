@@ -56,7 +56,8 @@ public interface AvailabilityGroupListener {
     String availabilityGroupName();
 
     /**
-     * Gets the loadBalancerConfigurations property: List of load balancer configurations for an availability group listener.
+     * Gets the loadBalancerConfigurations property: List of load balancer configurations for an availability group
+     * listener.
      * 
      * @return the loadBalancerConfigurations value.
      */
@@ -70,7 +71,8 @@ public interface AvailabilityGroupListener {
     List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations();
 
     /**
-     * Gets the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not exist.
+     * Gets the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not
+     * exist.
      * 
      * @return the createDefaultAvailabilityGroupIfNotExist value.
      */
@@ -98,7 +100,8 @@ public interface AvailabilityGroupListener {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.AvailabilityGroupListenerInner object.
+     * Gets the inner com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.AvailabilityGroupListenerInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -128,7 +131,8 @@ public interface AvailabilityGroupListener {
             /**
              * Specifies resourceGroupName, sqlVirtualMachineGroupName.
              * 
-             * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from the Azure Resource Manager API or the portal.
+             * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value
+             * from the Azure Resource Manager API or the portal.
              * @param sqlVirtualMachineGroupName Name of the SQL virtual machine group.
              * @return the next definition stage.
              */
@@ -136,7 +140,8 @@ public interface AvailabilityGroupListener {
         }
 
         /**
-         * The stage of the AvailabilityGroupListener definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the AvailabilityGroupListener definition which contains all the minimum required properties for
+         * the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithAvailabilityGroupName,
             DefinitionStages.WithLoadBalancerConfigurations, DefinitionStages.WithMultiSubnetIpConfigurations,
@@ -176,9 +181,11 @@ public interface AvailabilityGroupListener {
          */
         interface WithLoadBalancerConfigurations {
             /**
-             * Specifies the loadBalancerConfigurations property: List of load balancer configurations for an availability group listener..
+             * Specifies the loadBalancerConfigurations property: List of load balancer configurations for an
+             * availability group listener..
              * 
-             * @param loadBalancerConfigurations List of load balancer configurations for an availability group listener.
+             * @param loadBalancerConfigurations List of load balancer configurations for an availability group
+             * listener.
              * @return the next definition stage.
              */
             WithCreate withLoadBalancerConfigurations(List<LoadBalancerConfiguration> loadBalancerConfigurations);
@@ -189,7 +196,8 @@ public interface AvailabilityGroupListener {
          */
         interface WithMultiSubnetIpConfigurations {
             /**
-             * Specifies the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG listener..
+             * Specifies the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG
+             * listener..
              * 
              * @param multiSubnetIpConfigurations List of multi subnet IP configurations for an AG listener.
              * @return the next definition stage.
@@ -198,11 +206,13 @@ public interface AvailabilityGroupListener {
         }
 
         /**
-         * The stage of the AvailabilityGroupListener definition allowing to specify createDefaultAvailabilityGroupIfNotExist.
+         * The stage of the AvailabilityGroupListener definition allowing to specify
+         * createDefaultAvailabilityGroupIfNotExist.
          */
         interface WithCreateDefaultAvailabilityGroupIfNotExist {
             /**
-             * Specifies the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not exist..
+             * Specifies the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if
+             * it does not exist..
              * 
              * @param createDefaultAvailabilityGroupIfNotExist Create a default availability group if it does not exist.
              * @return the next definition stage.
@@ -288,9 +298,11 @@ public interface AvailabilityGroupListener {
          */
         interface WithLoadBalancerConfigurations {
             /**
-             * Specifies the loadBalancerConfigurations property: List of load balancer configurations for an availability group listener..
+             * Specifies the loadBalancerConfigurations property: List of load balancer configurations for an
+             * availability group listener..
              * 
-             * @param loadBalancerConfigurations List of load balancer configurations for an availability group listener.
+             * @param loadBalancerConfigurations List of load balancer configurations for an availability group
+             * listener.
              * @return the next definition stage.
              */
             Update withLoadBalancerConfigurations(List<LoadBalancerConfiguration> loadBalancerConfigurations);
@@ -301,7 +313,8 @@ public interface AvailabilityGroupListener {
          */
         interface WithMultiSubnetIpConfigurations {
             /**
-             * Specifies the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG listener..
+             * Specifies the multiSubnetIpConfigurations property: List of multi subnet IP configurations for an AG
+             * listener..
              * 
              * @param multiSubnetIpConfigurations List of multi subnet IP configurations for an AG listener.
              * @return the next definition stage.
@@ -310,11 +323,13 @@ public interface AvailabilityGroupListener {
         }
 
         /**
-         * The stage of the AvailabilityGroupListener update allowing to specify createDefaultAvailabilityGroupIfNotExist.
+         * The stage of the AvailabilityGroupListener update allowing to specify
+         * createDefaultAvailabilityGroupIfNotExist.
          */
         interface WithCreateDefaultAvailabilityGroupIfNotExist {
             /**
-             * Specifies the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if it does not exist..
+             * Specifies the createDefaultAvailabilityGroupIfNotExist property: Create a default availability group if
+             * it does not exist..
              * 
              * @param createDefaultAvailabilityGroupIfNotExist Create a default availability group if it does not exist.
              * @return the next definition stage.

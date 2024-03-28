@@ -102,7 +102,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the input property: Live event input settings. It defines how the live event receives input from a contribution encoder.
+     * Get the input property: Live event input settings. It defines how the live event receives input from a
+     * contribution encoder.
      * 
      * @return the input value.
      */
@@ -111,7 +112,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the input property: Live event input settings. It defines how the live event receives input from a contribution encoder.
+     * Set the input property: Live event input settings. It defines how the live event receives input from a
+     * contribution encoder.
      * 
      * @param input the input value to set.
      * @return the LiveEventInner object itself.
@@ -125,7 +127,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the preview property: Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output.
+     * Get the preview property: Live event preview settings. Preview allows live event producers to preview the live
+     * streaming content without creating any live output.
      * 
      * @return the preview value.
      */
@@ -134,7 +137,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the preview property: Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output.
+     * Set the preview property: Live event preview settings. Preview allows live event producers to preview the live
+     * streaming content without creating any live output.
      * 
      * @param preview the preview value to set.
      * @return the LiveEventInner object itself.
@@ -148,7 +152,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used.
+     * Get the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for
+     * the live event and settings for the live encoder if it is used.
      * 
      * @return the encoding value.
      */
@@ -157,7 +162,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used.
+     * Set the encoding property: Encoding settings for the live event. It configures whether a live encoder is used for
+     * the live event and settings for the live encoder if it is used.
      * 
      * @param encoding the encoding value to set.
      * @return the LiveEventInner object itself.
@@ -171,7 +177,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the transcriptions property: Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
+     * Get the transcriptions property: Live transcription settings for the live event. See
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
      * 
      * @return the transcriptions value.
      */
@@ -180,7 +187,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the transcriptions property: Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
+     * Set the transcriptions property: Live transcription settings for the live event. See
+     * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
      * 
      * @param transcriptions the transcriptions value to set.
      * @return the LiveEventInner object itself.
@@ -203,7 +211,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the resourceState property: The resource state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+     * Get the resourceState property: The resource state of the live event. See
+     * https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
      * 
      * @return the resourceState value.
      */
@@ -235,7 +244,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+     * Get the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event
+     * preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
      * 
      * @return the useStaticHostname value.
      */
@@ -244,7 +254,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
+     * Set the useStaticHostname property: Specifies whether a static hostname would be assigned to the live event
+     * preview and ingest endpoints. This value can only be updated if the live event is in Standby state.
      * 
      * @param useStaticHostname the useStaticHostname value to set.
      * @return the LiveEventInner object itself.
@@ -258,7 +269,10 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center.
+     * Get the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first
+     * part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
+     * combination of this prefix, the media service account name and a short code for the Azure Media Services data
+     * center.
      * 
      * @return the hostnamePrefix value.
      */
@@ -267,7 +281,10 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center.
+     * Set the hostnamePrefix property: When useStaticHostname is set to true, the hostnamePrefix specifies the first
+     * part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a
+     * combination of this prefix, the media service account name and a short code for the Azure Media Services data
+     * center.
      * 
      * @param hostnamePrefix the hostnamePrefix value to set.
      * @return the LiveEventInner object itself.
@@ -281,7 +298,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Get the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
+     * Get the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time
+     * and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
      * 
      * @return the streamOptions value.
      */
@@ -290,7 +308,8 @@ public final class LiveEventInner extends Resource {
     }
 
     /**
-     * Set the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
+     * Set the streamOptions property: The options to use for the LiveEvent. This value is specified at creation time
+     * and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
      * 
      * @param streamOptions the streamOptions value to set.
      * @return the LiveEventInner object itself.

@@ -37,7 +37,10 @@ public final class UpgradePolicy {
     }
 
     /**
-     * Get the mode property: Specifies the mode of an upgrade to virtual machines in the scale set.&lt;br /&gt;&lt;br /&gt; Possible values are:&lt;br /&gt;&lt;br /&gt; **Manual** - You  control the application of updates to virtual machines in the scale set. You do this by using the manualUpgrade action.&lt;br /&gt;&lt;br /&gt; **Automatic** - All virtual machines in the scale set are  automatically updated at the same time.
+     * Get the mode property: Specifies the mode of an upgrade to virtual machines in the scale set.&lt;br /&gt;&lt;br
+     * /&gt; Possible values are:&lt;br /&gt;&lt;br /&gt; **Manual** - You control the application of updates to virtual
+     * machines in the scale set. You do this by using the manualUpgrade action.&lt;br /&gt;&lt;br /&gt; **Automatic** -
+     * All virtual machines in the scale set are automatically updated at the same time.
      * 
      * @return the mode value.
      */
@@ -46,7 +49,10 @@ public final class UpgradePolicy {
     }
 
     /**
-     * Set the mode property: Specifies the mode of an upgrade to virtual machines in the scale set.&lt;br /&gt;&lt;br /&gt; Possible values are:&lt;br /&gt;&lt;br /&gt; **Manual** - You  control the application of updates to virtual machines in the scale set. You do this by using the manualUpgrade action.&lt;br /&gt;&lt;br /&gt; **Automatic** - All virtual machines in the scale set are  automatically updated at the same time.
+     * Set the mode property: Specifies the mode of an upgrade to virtual machines in the scale set.&lt;br /&gt;&lt;br
+     * /&gt; Possible values are:&lt;br /&gt;&lt;br /&gt; **Manual** - You control the application of updates to virtual
+     * machines in the scale set. You do this by using the manualUpgrade action.&lt;br /&gt;&lt;br /&gt; **Automatic** -
+     * All virtual machines in the scale set are automatically updated at the same time.
      * 
      * @param mode the mode value to set.
      * @return the UpgradePolicy object itself.

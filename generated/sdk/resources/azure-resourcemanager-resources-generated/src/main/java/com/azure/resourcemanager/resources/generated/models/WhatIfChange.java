@@ -157,12 +157,12 @@ public final class WhatIfChange {
      */
     public void validate() {
         if (resourceId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property resourceId in model WhatIfChange"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property resourceId in model WhatIfChange"));
         }
         if (changeType() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property changeType in model WhatIfChange"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property changeType in model WhatIfChange"));
         }
         if (delta() != null) {
             delta().forEach(e -> e.validate());

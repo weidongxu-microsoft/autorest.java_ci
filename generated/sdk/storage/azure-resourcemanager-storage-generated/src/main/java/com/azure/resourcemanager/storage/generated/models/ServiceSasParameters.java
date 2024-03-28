@@ -149,7 +149,8 @@ public final class ServiceSasParameters {
     }
 
     /**
-     * Get the resource property: The signed services accessible with the service SAS. Possible values include: Blob (b), Container (c), File (f), Share (s).
+     * Get the resource property: The signed services accessible with the service SAS. Possible values include: Blob
+     * (b), Container (c), File (f), Share (s).
      * 
      * @return the resource value.
      */
@@ -158,7 +159,8 @@ public final class ServiceSasParameters {
     }
 
     /**
-     * Set the resource property: The signed services accessible with the service SAS. Possible values include: Blob (b), Container (c), File (f), Share (s).
+     * Set the resource property: The signed services accessible with the service SAS. Possible values include: Blob
+     * (b), Container (c), File (f), Share (s).
      * 
      * @param resource the resource value to set.
      * @return the ServiceSasParameters object itself.
@@ -169,7 +171,8 @@ public final class ServiceSasParameters {
     }
 
     /**
-     * Get the permissions property: The signed permissions for the service SAS. Possible values include: Read (r), Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
+     * Get the permissions property: The signed permissions for the service SAS. Possible values include: Read (r),
+     * Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
      * 
      * @return the permissions value.
      */
@@ -178,7 +181,8 @@ public final class ServiceSasParameters {
     }
 
     /**
-     * Set the permissions property: The signed permissions for the service SAS. Possible values include: Read (r), Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
+     * Set the permissions property: The signed permissions for the service SAS. Possible values include: Read (r),
+     * Write (w), Delete (d), List (l), Add (a), Create (c), Update (u) and Process (p).
      * 
      * @param permissions the permissions value to set.
      * @return the ServiceSasParameters object itself.
@@ -269,7 +273,8 @@ public final class ServiceSasParameters {
     }
 
     /**
-     * Get the identifier property: A unique value up to 64 characters in length that correlates to an access policy specified for the container, queue, or table.
+     * Get the identifier property: A unique value up to 64 characters in length that correlates to an access policy
+     * specified for the container, queue, or table.
      * 
      * @return the identifier value.
      */
@@ -278,7 +283,8 @@ public final class ServiceSasParameters {
     }
 
     /**
-     * Set the identifier property: A unique value up to 64 characters in length that correlates to an access policy specified for the container, queue, or table.
+     * Set the identifier property: A unique value up to 64 characters in length that correlates to an access policy
+     * specified for the container, queue, or table.
      * 
      * @param identifier the identifier value to set.
      * @return the ServiceSasParameters object itself.
@@ -495,8 +501,9 @@ public final class ServiceSasParameters {
      */
     public void validate() {
         if (canonicalizedResource() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property canonicalizedResource in model ServiceSasParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property canonicalizedResource in model ServiceSasParameters"));
         }
     }
 

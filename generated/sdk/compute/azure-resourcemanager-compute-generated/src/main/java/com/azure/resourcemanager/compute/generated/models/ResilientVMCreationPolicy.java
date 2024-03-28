@@ -25,7 +25,8 @@ public final class ResilientVMCreationPolicy {
     }
 
     /**
-     * Get the enabled property: Specifies whether resilient VM creation should be enabled on the virtual machine scale set. The default value is false.
+     * Get the enabled property: Specifies whether resilient VM creation should be enabled on the virtual machine scale
+     * set. The default value is false.
      * 
      * @return the enabled value.
      */
@@ -34,7 +35,8 @@ public final class ResilientVMCreationPolicy {
     }
 
     /**
-     * Set the enabled property: Specifies whether resilient VM creation should be enabled on the virtual machine scale set. The default value is false.
+     * Set the enabled property: Specifies whether resilient VM creation should be enabled on the virtual machine scale
+     * set. The default value is false.
      * 
      * @param enabled the enabled value to set.
      * @return the ResilientVMCreationPolicy object itself.

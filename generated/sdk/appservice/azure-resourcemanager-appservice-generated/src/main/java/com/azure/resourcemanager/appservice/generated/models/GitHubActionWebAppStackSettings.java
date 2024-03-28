@@ -31,7 +31,8 @@ public final class GitHubActionWebAppStackSettings {
     }
 
     /**
-     * Get the isSupported property: &lt;code&gt;true&lt;/code&gt; if GitHub Actions is supported for the stack; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the isSupported property: &lt;code&gt;true&lt;/code&gt; if GitHub Actions is supported for the stack;
+     * otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isSupported value.
      */

@@ -13,7 +13,8 @@ import java.util.List;
  */
 public interface LiveEventStatus {
     /**
-     * Gets the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
+     * Gets the state property: Current state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for
+     * more information.
      * 
      * @return the state value.
      */

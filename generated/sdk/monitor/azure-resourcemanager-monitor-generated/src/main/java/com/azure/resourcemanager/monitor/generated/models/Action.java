@@ -49,17 +49,6 @@ public class Action {
     }
 
     /**
-     * Set the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the Action object itself.
-     */
-    protected Action withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

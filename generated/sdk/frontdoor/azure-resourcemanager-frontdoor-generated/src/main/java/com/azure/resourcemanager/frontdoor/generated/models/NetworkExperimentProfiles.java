@@ -17,7 +17,8 @@ public interface NetworkExperimentProfiles {
      * 
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles under a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of Network Experiment Profiles under a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Profile> list();
 
@@ -28,7 +29,8 @@ public interface NetworkExperimentProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles under a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of Network Experiment Profiles under a subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<Profile> list(Context context);
 
@@ -39,7 +41,8 @@ public interface NetworkExperimentProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles within a resource group under a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of Network Experiment Profiles within a resource group under a subscription as paginated response
+     * with {@link PagedIterable}.
      */
     PagedIterable<Profile> listByResourceGroup(String resourceGroupName);
 
@@ -51,7 +54,8 @@ public interface NetworkExperimentProfiles {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of Network Experiment Profiles within a resource group under a subscription as paginated response with {@link PagedIterable}.
+     * @return a list of Network Experiment Profiles within a resource group under a subscription as paginated response
+     * with {@link PagedIterable}.
      */
     PagedIterable<Profile> listByResourceGroup(String resourceGroupName, Context context);
 

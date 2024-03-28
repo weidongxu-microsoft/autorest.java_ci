@@ -10,7 +10,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * The Storage Account ManagementPolicies Rules. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+ * The Storage Account ManagementPolicies Rules. See more details in:
+ * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
  */
 @Fluent
 public final class ManagementPolicySchema {
@@ -27,7 +28,8 @@ public final class ManagementPolicySchema {
     }
 
     /**
-     * Get the rules property: The Storage Account ManagementPolicies Rules. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * Get the rules property: The Storage Account ManagementPolicies Rules. See more details in:
+     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      * 
      * @return the rules value.
      */
@@ -36,7 +38,8 @@ public final class ManagementPolicySchema {
     }
 
     /**
-     * Set the rules property: The Storage Account ManagementPolicies Rules. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * Set the rules property: The Storage Account ManagementPolicies Rules. See more details in:
+     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      * 
      * @param rules the rules value to set.
      * @return the ManagementPolicySchema object itself.
@@ -53,8 +56,8 @@ public final class ManagementPolicySchema {
      */
     public void validate() {
         if (rules() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property rules in model ManagementPolicySchema"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property rules in model ManagementPolicySchema"));
         } else {
             rules().forEach(e -> e.validate());
         }

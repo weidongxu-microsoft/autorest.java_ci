@@ -66,7 +66,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientIpAllocations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientIpAllocations to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -357,7 +358,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified IpAllocation by resource group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpAllocationInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -396,7 +398,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the specified IpAllocation by resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the specified IpAllocation by resource group along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<IpAllocationInner>> getByResourceGroupWithResponseAsync(String resourceGroupName,
@@ -853,7 +856,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpAllocations in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all IpAllocations in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listSinglePageAsync() {
@@ -882,7 +886,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpAllocations in a subscription along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all IpAllocations in a subscription along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listSinglePageAsync(Context context) {
@@ -962,7 +967,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpAllocations in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all IpAllocations in a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -996,7 +1002,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return all IpAllocations in a resource group along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return all IpAllocations in a resource group along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -1092,7 +1099,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listNextSinglePageAsync(String nextLink) {
@@ -1120,7 +1128,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -1147,7 +1156,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -1177,7 +1187,8 @@ public final class IpAllocationsClientImpl implements IpAllocationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response for the ListIpAllocations API service call along with {@link PagedResponse} on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<IpAllocationInner>> listByResourceGroupNextSinglePageAsync(String nextLink,

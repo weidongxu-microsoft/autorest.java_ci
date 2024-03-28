@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Allows you to configure the encoder settings to control the balance between speed and quality. Example: set Complexity as Speed for faster encoding but less compression efficiency.
+ * Allows you to configure the encoder settings to control the balance between speed and quality. Example: set
+ * Complexity as Speed for faster encoding but less compression efficiency.
  */
 public final class Complexity extends ExpandableStringEnum<Complexity> {
     /**

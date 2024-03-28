@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 
 /**
- * Statistics related to replication for storage account's Blob, Table, Queue and File services. It is only available when geo-redundant replication is enabled for the storage account.
+ * Statistics related to replication for storage account's Blob, Table, Queue and File services. It is only available
+ * when geo-redundant replication is enabled for the storage account.
  */
 @Immutable
 public final class GeoReplicationStats {
@@ -56,7 +57,10 @@ public final class GeoReplicationStats {
     }
 
     /**
-     * Get the status property: The status of the secondary location. Possible values are: - Live: Indicates that the secondary location is active and operational. - Bootstrap: Indicates initial synchronization from the primary location to the secondary location is in progress.This typically occurs when replication is first enabled. - Unavailable: Indicates that the secondary location is temporarily unavailable.
+     * Get the status property: The status of the secondary location. Possible values are: - Live: Indicates that the
+     * secondary location is active and operational. - Bootstrap: Indicates initial synchronization from the primary
+     * location to the secondary location is in progress.This typically occurs when replication is first enabled. -
+     * Unavailable: Indicates that the secondary location is temporarily unavailable.
      * 
      * @return the status value.
      */
@@ -65,7 +69,10 @@ public final class GeoReplicationStats {
     }
 
     /**
-     * Get the lastSyncTime property: All primary writes preceding this UTC date/time value are guaranteed to be available for read operations. Primary writes following this point in time may or may not be available for reads. Element may be default value if value of LastSyncTime is not available, this can happen if secondary is offline or we are in bootstrap.
+     * Get the lastSyncTime property: All primary writes preceding this UTC date/time value are guaranteed to be
+     * available for read operations. Primary writes following this point in time may or may not be available for reads.
+     * Element may be default value if value of LastSyncTime is not available, this can happen if secondary is offline
+     * or we are in bootstrap.
      * 
      * @return the lastSyncTime value.
      */
@@ -74,7 +81,8 @@ public final class GeoReplicationStats {
     }
 
     /**
-     * Get the canFailover property: A boolean flag which indicates whether or not account failover is supported for the account.
+     * Get the canFailover property: A boolean flag which indicates whether or not account failover is supported for the
+     * account.
      * 
      * @return the canFailover value.
      */
@@ -83,7 +91,8 @@ public final class GeoReplicationStats {
     }
 
     /**
-     * Get the canPlannedFailover property: A boolean flag which indicates whether or not planned account failover is supported for the account.
+     * Get the canPlannedFailover property: A boolean flag which indicates whether or not planned account failover is
+     * supported for the account.
      * 
      * @return the canPlannedFailover value.
      */
@@ -92,7 +101,8 @@ public final class GeoReplicationStats {
     }
 
     /**
-     * Get the postFailoverRedundancy property: The redundancy type of the account after an account failover is performed.
+     * Get the postFailoverRedundancy property: The redundancy type of the account after an account failover is
+     * performed.
      * 
      * @return the postFailoverRedundancy value.
      */
@@ -101,7 +111,8 @@ public final class GeoReplicationStats {
     }
 
     /**
-     * Get the postPlannedFailoverRedundancy property: The redundancy type of the account after a planned account failover is performed.
+     * Get the postPlannedFailoverRedundancy property: The redundancy type of the account after a planned account
+     * failover is performed.
      * 
      * @return the postPlannedFailoverRedundancy value.
      */

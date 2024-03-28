@@ -40,23 +40,13 @@ public class RuleAction {
     }
 
     /**
-     * Get the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
+     * Get the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and
+     * RuleWebhookAction.
      * 
      * @return the odataType value.
      */
     public String odataType() {
         return this.odataType;
-    }
-
-    /**
-     * Set the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the RuleAction object itself.
-     */
-    protected RuleAction withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
     }
 
     /**

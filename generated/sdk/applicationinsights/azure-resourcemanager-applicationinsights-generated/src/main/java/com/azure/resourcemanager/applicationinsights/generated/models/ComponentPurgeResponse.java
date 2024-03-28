@@ -18,7 +18,8 @@ public interface ComponentPurgeResponse {
     String operationId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeResponseInner object.
+     * Gets the inner com.azure.resourcemanager.applicationinsights.generated.fluent.models.ComponentPurgeResponseInner
+     * object.
      * 
      * @return the inner object.
      */

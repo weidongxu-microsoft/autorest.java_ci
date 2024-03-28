@@ -52,7 +52,8 @@ public final class VerificationIpFlowResultInner {
     }
 
     /**
-     * Get the ruleName property: Name of the rule. If input is not matched against any security rule, it is not displayed.
+     * Get the ruleName property: Name of the rule. If input is not matched against any security rule, it is not
+     * displayed.
      * 
      * @return the ruleName value.
      */
@@ -61,7 +62,8 @@ public final class VerificationIpFlowResultInner {
     }
 
     /**
-     * Set the ruleName property: Name of the rule. If input is not matched against any security rule, it is not displayed.
+     * Set the ruleName property: Name of the rule. If input is not matched against any security rule, it is not
+     * displayed.
      * 
      * @param ruleName the ruleName value to set.
      * @return the VerificationIpFlowResultInner object itself.

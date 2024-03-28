@@ -96,7 +96,8 @@ public interface TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
+     * as by transcoding or by extracting insights along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TransformInner> createOrUpdateWithResponse(String resourceGroupName, String accountName,
@@ -114,7 +115,8 @@ public interface TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
+     * as by transcoding or by extracting insights.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     TransformInner createOrUpdate(String resourceGroupName, String accountName, String transformName,
@@ -166,7 +168,8 @@ public interface TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights along with {@link Response}.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
+     * as by transcoding or by extracting insights along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     Response<TransformInner> updateWithResponse(String resourceGroupName, String accountName, String transformName,
@@ -184,7 +187,8 @@ public interface TransformsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such as by transcoding or by extracting insights.
+     * @return a Transform encapsulates the rules or instructions for generating desired outputs from input media, such
+     * as by transcoding or by extracting insights.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     TransformInner update(String resourceGroupName, String accountName, String transformName,

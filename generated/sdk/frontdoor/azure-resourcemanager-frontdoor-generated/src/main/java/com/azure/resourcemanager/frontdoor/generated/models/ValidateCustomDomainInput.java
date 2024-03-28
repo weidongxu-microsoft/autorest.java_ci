@@ -52,8 +52,9 @@ public final class ValidateCustomDomainInput {
      */
     public void validate() {
         if (hostname() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property hostname in model ValidateCustomDomainInput"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property hostname in model ValidateCustomDomainInput"));
         }
     }
 

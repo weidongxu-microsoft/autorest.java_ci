@@ -78,12 +78,13 @@ public final class DeletedShare {
      */
     public void validate() {
         if (deletedShareName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property deletedShareName in model DeletedShare"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property deletedShareName in model DeletedShare"));
         }
         if (deletedShareVersion() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property deletedShareVersion in model DeletedShare"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property deletedShareVersion in model DeletedShare"));
         }
     }
 

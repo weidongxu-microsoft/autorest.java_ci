@@ -211,7 +211,8 @@ public final class Schema {
     }
 
     /**
-     * Get the tableSubType property: The subtype describes what APIs can be used to interact with the table, and what features are available against it.
+     * Get the tableSubType property: The subtype describes what APIs can be used to interact with the table, and what
+     * features are available against it.
      * 
      * @return the tableSubType value.
      */

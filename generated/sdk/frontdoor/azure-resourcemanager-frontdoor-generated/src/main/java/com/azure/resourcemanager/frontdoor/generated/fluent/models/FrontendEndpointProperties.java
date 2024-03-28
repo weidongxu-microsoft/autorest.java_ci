@@ -72,7 +72,8 @@ public final class FrontendEndpointProperties extends FrontendEndpointUpdatePara
     }
 
     /**
-     * Get the customHttpsProvisioningSubstate property: Provisioning substate shows the progress of custom HTTPS enabling/disabling process step by step.
+     * Get the customHttpsProvisioningSubstate property: Provisioning substate shows the progress of custom HTTPS
+     * enabling/disabling process step by step.
      * 
      * @return the customHttpsProvisioningSubstate value.
      */

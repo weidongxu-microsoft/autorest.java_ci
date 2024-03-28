@@ -22,7 +22,8 @@ public interface PrivateEndpointConnections {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of private endpoint connection associated with the specified storage account along with {@link Response}.
+     * @return list of private endpoint connection associated with the specified storage account along with
+     * {@link Response}.
      */
     Response<PrivateEndpointConnectionListResult> listWithResponse(String resourceGroupName, String accountName,
         Context context);

@@ -52,7 +52,8 @@ public final class StorageAccountSkuConversionStatus {
     }
 
     /**
-     * Get the targetSkuName property: This property represents the target sku name to which the account sku is being converted asynchronously.
+     * Get the targetSkuName property: This property represents the target sku name to which the account sku is being
+     * converted asynchronously.
      * 
      * @return the targetSkuName value.
      */
@@ -61,7 +62,8 @@ public final class StorageAccountSkuConversionStatus {
     }
 
     /**
-     * Set the targetSkuName property: This property represents the target sku name to which the account sku is being converted asynchronously.
+     * Set the targetSkuName property: This property represents the target sku name to which the account sku is being
+     * converted asynchronously.
      * 
      * @param targetSkuName the targetSkuName value to set.
      * @return the StorageAccountSkuConversionStatus object itself.

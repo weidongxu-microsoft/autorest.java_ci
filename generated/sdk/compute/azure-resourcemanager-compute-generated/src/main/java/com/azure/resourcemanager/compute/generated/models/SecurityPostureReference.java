@@ -33,7 +33,8 @@ public final class SecurityPostureReference {
     }
 
     /**
-     * Get the id property: The security posture reference id in the form of /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{major.*}|latest.
+     * Get the id property: The security posture reference id in the form of
+     * /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{major.*}|latest.
      * 
      * @return the id value.
      */
@@ -42,7 +43,8 @@ public final class SecurityPostureReference {
     }
 
     /**
-     * Set the id property: The security posture reference id in the form of /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{major.*}|latest.
+     * Set the id property: The security posture reference id in the form of
+     * /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{major.*}|latest.
      * 
      * @param id the id value to set.
      * @return the SecurityPostureReference object itself.
@@ -53,7 +55,8 @@ public final class SecurityPostureReference {
     }
 
     /**
-     * Get the excludeExtensions property: List of virtual machine extensions to exclude when applying the Security Posture.
+     * Get the excludeExtensions property: List of virtual machine extensions to exclude when applying the Security
+     * Posture.
      * 
      * @return the excludeExtensions value.
      */
@@ -62,7 +65,8 @@ public final class SecurityPostureReference {
     }
 
     /**
-     * Set the excludeExtensions property: List of virtual machine extensions to exclude when applying the Security Posture.
+     * Set the excludeExtensions property: List of virtual machine extensions to exclude when applying the Security
+     * Posture.
      * 
      * @param excludeExtensions the excludeExtensions value to set.
      * @return the SecurityPostureReference object itself.

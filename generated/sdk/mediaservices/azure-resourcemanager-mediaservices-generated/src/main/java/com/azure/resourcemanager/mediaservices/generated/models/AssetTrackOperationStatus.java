@@ -55,7 +55,8 @@ public interface AssetTrackOperationStatus {
     ManagementError error();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetTrackOperationStatusInner object.
+     * Gets the inner com.azure.resourcemanager.mediaservices.generated.fluent.models.AssetTrackOperationStatusInner
+     * object.
      * 
      * @return the inner object.
      */

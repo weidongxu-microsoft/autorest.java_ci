@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an identity created by the system and a set of user assigned identities. The type 'None' will remove all identities from the service.
+ * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an identity created
+ * by the system and a set of user assigned identities. The type 'None' will remove all identities from the service.
  */
 public final class IdentityType extends ExpandableStringEnum<IdentityType> {
     /**

@@ -41,7 +41,8 @@ public interface ClusterCreateValidationResult {
     List<AaddsResourceDetails> aaddsResourcesDetails();
 
     /**
-     * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterCreateValidationResultInner object.
+     * Gets the inner com.azure.resourcemanager.hdinsight.generated.fluent.models.ClusterCreateValidationResultInner
+     * object.
      * 
      * @return the inner object.
      */

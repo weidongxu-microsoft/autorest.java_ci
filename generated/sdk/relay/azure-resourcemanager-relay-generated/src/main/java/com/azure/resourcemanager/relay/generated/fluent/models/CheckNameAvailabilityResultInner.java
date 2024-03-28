@@ -47,7 +47,8 @@ public final class CheckNameAvailabilityResultInner {
     }
 
     /**
-     * Get the nameAvailable property: Value indicating namespace is available. Returns true if the namespace is available; otherwise, false.
+     * Get the nameAvailable property: Value indicating namespace is available. Returns true if the namespace is
+     * available; otherwise, false.
      * 
      * @return the nameAvailable value.
      */
@@ -56,7 +57,8 @@ public final class CheckNameAvailabilityResultInner {
     }
 
     /**
-     * Set the nameAvailable property: Value indicating namespace is available. Returns true if the namespace is available; otherwise, false.
+     * Set the nameAvailable property: Value indicating namespace is available. Returns true if the namespace is
+     * available; otherwise, false.
      * 
      * @param nameAvailable the nameAvailable value to set.
      * @return the CheckNameAvailabilityResultInner object itself.

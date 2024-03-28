@@ -51,7 +51,8 @@ public final class OperationStatusesClientImpl implements OperationStatusesClien
     }
 
     /**
-     * The interface defining all the services for AzureMediaServicesOperationStatuses to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for AzureMediaServicesOperationStatuses to be used by the proxy service
+     * to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "AzureMediaServicesOp")

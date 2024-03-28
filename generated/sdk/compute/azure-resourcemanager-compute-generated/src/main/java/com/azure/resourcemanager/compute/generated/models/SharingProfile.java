@@ -38,7 +38,8 @@ public final class SharingProfile {
     }
 
     /**
-     * Get the permissions property: This property allows you to specify the permission of sharing gallery. Possible values are: **Private,** **Groups,** **Community.**.
+     * Get the permissions property: This property allows you to specify the permission of sharing gallery. Possible
+     * values are: **Private,** **Groups,** **Community.**.
      * 
      * @return the permissions value.
      */
@@ -47,7 +48,8 @@ public final class SharingProfile {
     }
 
     /**
-     * Set the permissions property: This property allows you to specify the permission of sharing gallery. Possible values are: **Private,** **Groups,** **Community.**.
+     * Set the permissions property: This property allows you to specify the permission of sharing gallery. Possible
+     * values are: **Private,** **Groups,** **Community.**.
      * 
      * @param permissions the permissions value to set.
      * @return the SharingProfile object itself.
@@ -67,7 +69,8 @@ public final class SharingProfile {
     }
 
     /**
-     * Get the communityGalleryInfo property: Information of community gallery if current gallery is shared to community.
+     * Get the communityGalleryInfo property: Information of community gallery if current gallery is shared to
+     * community.
      * 
      * @return the communityGalleryInfo value.
      */
@@ -76,7 +79,8 @@ public final class SharingProfile {
     }
 
     /**
-     * Set the communityGalleryInfo property: Information of community gallery if current gallery is shared to community.
+     * Set the communityGalleryInfo property: Information of community gallery if current gallery is shared to
+     * community.
      * 
      * @param communityGalleryInfo the communityGalleryInfo value to set.
      * @return the SharingProfile object itself.

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
@@ -23,6 +24,13 @@ import java.util.List;
 @Fluent
 public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPolicyConfiguration {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration";
+
+    /*
      * The PlayReady licenses.
      */
     @JsonProperty(value = "licenses", required = true)
@@ -38,7 +46,16 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
      * Creates an instance of ContentKeyPolicyPlayReadyConfiguration class.
      */
     public ContentKeyPolicyPlayReadyConfiguration() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -90,8 +107,9 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
     public void validate() {
         super.validate();
         if (licenses() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property licenses in model ContentKeyPolicyPlayReadyConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property licenses in model ContentKeyPolicyPlayReadyConfiguration"));
         } else {
             licenses().forEach(e -> e.validate());
         }

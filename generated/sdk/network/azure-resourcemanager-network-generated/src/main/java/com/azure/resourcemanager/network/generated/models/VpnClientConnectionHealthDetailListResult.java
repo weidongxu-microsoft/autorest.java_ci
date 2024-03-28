@@ -19,7 +19,8 @@ public interface VpnClientConnectionHealthDetailListResult {
     List<VpnClientConnectionHealthDetail> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnClientConnectionHealthDetailListResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.VpnClientConnectionHealthDetailListResultInner object.
      * 
      * @return the inner object.
      */

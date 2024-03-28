@@ -102,7 +102,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Get the serializedData property: Configuration of this particular workbook. Configuration data is a string containing valid JSON.
+     * Get the serializedData property: Configuration of this particular workbook. Configuration data is a string
+     * containing valid JSON.
      * 
      * @return the serializedData value.
      */
@@ -111,7 +112,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Set the serializedData property: Configuration of this particular workbook. Configuration data is a string containing valid JSON.
+     * Set the serializedData property: Configuration of this particular workbook. Configuration data is a string
+     * containing valid JSON.
      * 
      * @param serializedData the serializedData value to set.
      * @return the WorkbookProperties object itself.
@@ -122,7 +124,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Get the version property: This instance's version of the data model. This can change as new features are added that can be marked workbook.
+     * Get the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked workbook.
      * 
      * @return the version value.
      */
@@ -131,7 +134,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Set the version property: This instance's version of the data model. This can change as new features are added that can be marked workbook.
+     * Set the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked workbook.
      * 
      * @param version the version value to set.
      * @return the WorkbookProperties object itself.
@@ -162,7 +166,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Get the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Get the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
+     * shared between all users with access to the Application Insights component.
      * 
      * @return the sharedTypeKind value.
      */
@@ -171,7 +176,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Set the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Set the sharedTypeKind property: Enum indicating if this workbook definition is owned by a specific user or is
+     * shared between all users with access to the Application Insights component.
      * 
      * @param sharedTypeKind the sharedTypeKind value to set.
      * @return the WorkbookProperties object itself.
@@ -182,7 +188,8 @@ public final class WorkbookProperties {
     }
 
     /**
-     * Get the timeModified property: Date and time in UTC of the last modification that was made to this workbook definition.
+     * Get the timeModified property: Date and time in UTC of the last modification that was made to this workbook
+     * definition.
      * 
      * @return the timeModified value.
      */
@@ -277,28 +284,30 @@ public final class WorkbookProperties {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model WorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model WorkbookProperties"));
         }
         if (serializedData() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property serializedData in model WorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property serializedData in model WorkbookProperties"));
         }
         if (workbookId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property workbookId in model WorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property workbookId in model WorkbookProperties"));
         }
         if (sharedTypeKind() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property sharedTypeKind in model WorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property sharedTypeKind in model WorkbookProperties"));
         }
         if (category() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property category in model WorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property category in model WorkbookProperties"));
         }
         if (userId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property userId in model WorkbookProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property userId in model WorkbookProperties"));
         }
     }
 

@@ -12,7 +12,8 @@ import com.azure.resourcemanager.mysql.generated.fluent.models.NameAvailabilityI
 import com.azure.resourcemanager.mysql.generated.models.NameAvailabilityRequest;
 
 /**
- * An instance of this class provides access to all the operations defined in CheckNameAvailabilityWithoutLocationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * CheckNameAvailabilityWithoutLocationsClient.
  */
 public interface CheckNameAvailabilityWithoutLocationsClient {
     /**

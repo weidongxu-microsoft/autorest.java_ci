@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details.
+ * ConsistencyMode of the RestorePoint. Can be specified in the input while creating a restore point. For now, only
+ * CrashConsistent is accepted as a valid input. Please refer to https://aka.ms/RestorePoints for more details.
  */
 public final class ConsistencyModeTypes extends ExpandableStringEnum<ConsistencyModeTypes> {
     /**

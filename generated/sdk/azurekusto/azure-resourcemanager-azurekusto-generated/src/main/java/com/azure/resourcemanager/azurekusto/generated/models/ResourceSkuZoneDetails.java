@@ -41,7 +41,8 @@ public final class ResourceSkuZoneDetails {
     }
 
     /**
-     * Get the capabilities property: A list of capabilities that are available for the SKU in the specified list of zones.
+     * Get the capabilities property: A list of capabilities that are available for the SKU in the specified list of
+     * zones.
      * 
      * @return the capabilities value.
      */

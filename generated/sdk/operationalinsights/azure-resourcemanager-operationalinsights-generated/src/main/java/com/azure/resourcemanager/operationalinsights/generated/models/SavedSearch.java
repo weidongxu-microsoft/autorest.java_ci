@@ -34,7 +34,8 @@ public interface SavedSearch {
     String type();
 
     /**
-     * Gets the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify the current Etag.
+     * Gets the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify
+     * the current Etag.
      * 
      * @return the etag value.
      */
@@ -69,7 +70,10 @@ public interface SavedSearch {
     String functionAlias();
 
     /**
-     * Gets the functionParameters property: The optional function parameters if query serves as a function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more examples and proper syntax please refer to https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
+     * Gets the functionParameters property: The optional function parameters if query serves as a function. Value
+     * should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
+     * more examples and proper syntax please refer to
+     * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
      * 
      * @return the functionParameters value.
      */
@@ -140,7 +144,8 @@ public interface SavedSearch {
          */
         interface WithCategory {
             /**
-             * Specifies the category property: The category of the saved search. This helps the user to find a saved search faster. .
+             * Specifies the category property: The category of the saved search. This helps the user to find a saved
+             * search faster. .
              * 
              * @param category The category of the saved search. This helps the user to find a saved search faster.
              * @return the next definition stage.
@@ -175,7 +180,8 @@ public interface SavedSearch {
         }
 
         /**
-         * The stage of the SavedSearch definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the SavedSearch definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithEtag,
             DefinitionStages.WithFunctionAlias, DefinitionStages.WithFunctionParameters, DefinitionStages.WithVersion {
@@ -213,9 +219,11 @@ public interface SavedSearch {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify the current Etag.
+             * Specifies the etag property: The ETag of the saved search. To override an existing saved search, use "*"
+             * or specify the current Etag.
              * 
-             * @param etag The ETag of the saved search. To override an existing saved search, use "*" or specify the current Etag.
+             * @param etag The ETag of the saved search. To override an existing saved search, use "*" or specify the
+             * current Etag.
              * @return the next definition stage.
              */
             WithCreate withEtag(String etag);
@@ -239,9 +247,15 @@ public interface SavedSearch {
          */
         interface WithFunctionParameters {
             /**
-             * Specifies the functionParameters property: The optional function parameters if query serves as a function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more examples and proper syntax please refer to https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions..
+             * Specifies the functionParameters property: The optional function parameters if query serves as a
+             * function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2
+             * = default_value2'. For more examples and proper syntax please refer to
+             * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions..
              * 
-             * @param functionParameters The optional function parameters if query serves as a function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more examples and proper syntax please refer to https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
+             * @param functionParameters The optional function parameters if query serves as a function. Value should be
+             * in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
+             * more examples and proper syntax please refer to
+             * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
              * @return the next definition stage.
              */
             WithCreate withFunctionParameters(String functionParameters);
@@ -252,7 +266,8 @@ public interface SavedSearch {
          */
         interface WithVersion {
             /**
-             * Specifies the version property: The version number of the query language. The current version is 2 and is the default..
+             * Specifies the version property: The version number of the query language. The current version is 2 and is
+             * the default..
              * 
              * @param version The version number of the query language. The current version is 2 and is the default.
              * @return the next definition stage.
@@ -312,9 +327,11 @@ public interface SavedSearch {
          */
         interface WithEtag {
             /**
-             * Specifies the etag property: The ETag of the saved search. To override an existing saved search, use "*" or specify the current Etag.
+             * Specifies the etag property: The ETag of the saved search. To override an existing saved search, use "*"
+             * or specify the current Etag.
              * 
-             * @param etag The ETag of the saved search. To override an existing saved search, use "*" or specify the current Etag.
+             * @param etag The ETag of the saved search. To override an existing saved search, use "*" or specify the
+             * current Etag.
              * @return the next definition stage.
              */
             Update withEtag(String etag);
@@ -325,7 +342,8 @@ public interface SavedSearch {
          */
         interface WithCategory {
             /**
-             * Specifies the category property: The category of the saved search. This helps the user to find a saved search faster. .
+             * Specifies the category property: The category of the saved search. This helps the user to find a saved
+             * search faster. .
              * 
              * @param category The category of the saved search. This helps the user to find a saved search faster.
              * @return the next definition stage.
@@ -377,9 +395,15 @@ public interface SavedSearch {
          */
         interface WithFunctionParameters {
             /**
-             * Specifies the functionParameters property: The optional function parameters if query serves as a function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more examples and proper syntax please refer to https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions..
+             * Specifies the functionParameters property: The optional function parameters if query serves as a
+             * function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2
+             * = default_value2'. For more examples and proper syntax please refer to
+             * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions..
              * 
-             * @param functionParameters The optional function parameters if query serves as a function. Value should be in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more examples and proper syntax please refer to https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
+             * @param functionParameters The optional function parameters if query serves as a function. Value should be
+             * in the following format: 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For
+             * more examples and proper syntax please refer to
+             * https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
              * @return the next definition stage.
              */
             Update withFunctionParameters(String functionParameters);
@@ -390,7 +414,8 @@ public interface SavedSearch {
          */
         interface WithVersion {
             /**
-             * Specifies the version property: The version number of the query language. The current version is 2 and is the default..
+             * Specifies the version property: The version number of the query language. The current version is 2 and is
+             * the default..
              * 
              * @param version The version number of the query language. The current version is 2 and is the default.
              * @return the next definition stage.

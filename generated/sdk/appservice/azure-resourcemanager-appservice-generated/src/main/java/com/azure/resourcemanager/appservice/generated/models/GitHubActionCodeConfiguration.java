@@ -51,7 +51,8 @@ public final class GitHubActionCodeConfiguration {
     }
 
     /**
-     * Get the runtimeVersion property: Runtime version is used to determine what build version to set in the workflow file.
+     * Get the runtimeVersion property: Runtime version is used to determine what build version to set in the workflow
+     * file.
      * 
      * @return the runtimeVersion value.
      */
@@ -60,7 +61,8 @@ public final class GitHubActionCodeConfiguration {
     }
 
     /**
-     * Set the runtimeVersion property: Runtime version is used to determine what build version to set in the workflow file.
+     * Set the runtimeVersion property: Runtime version is used to determine what build version to set in the workflow
+     * file.
      * 
      * @param runtimeVersion the runtimeVersion value to set.
      * @return the GitHubActionCodeConfiguration object itself.

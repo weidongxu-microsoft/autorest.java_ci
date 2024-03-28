@@ -26,7 +26,8 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkSecuri
 import reactor.core.publisher.Mono;
 
 /**
- * An instance of this class provides access to all the operations defined in NetworkSecurityPerimeterConfigurationsClient.
+ * An instance of this class provides access to all the operations defined in
+ * NetworkSecurityPerimeterConfigurationsClient.
  */
 public final class NetworkSecurityPerimeterConfigurationsClientImpl
     implements NetworkSecurityPerimeterConfigurationsClient {
@@ -52,7 +53,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
     }
 
     /**
-     * The interface defining all the services for EventHubManagementClientNetworkSecurityPerimeterConfigurations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for EventHubManagementClientNetworkSecurityPerimeterConfigurations to be
+     * used by the proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "EventHubManagementCl")
@@ -75,7 +77,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response} on successful completion of {@link Mono}.
+     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityPerimeterConfigurationListInner>>
@@ -111,7 +114,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response} on successful completion of {@link Mono}.
+     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace along with {@link Response} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<NetworkSecurityPerimeterConfigurationListInner>>
@@ -145,7 +149,8 @@ public final class NetworkSecurityPerimeterConfigurationsClientImpl
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace on successful completion of {@link Mono}.
+     * @return list of current NetworkSecurityPerimeterConfiguration for Namespace on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<NetworkSecurityPerimeterConfigurationListInner> listAsync(String resourceGroupName,

@@ -64,7 +64,8 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Get the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
+     * Get the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify
+     * which elements in the collection this rule applies to.
      * 
      * @return the selectorMatchOperator value.
      */
@@ -73,7 +74,8 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Set the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify which elements in the collection this rule applies to.
+     * Set the selectorMatchOperator property: When matchVariable is a collection, operate on the selector to specify
+     * which elements in the collection this rule applies to.
      * 
      * @param selectorMatchOperator the selectorMatchOperator value to set.
      * @return the WebApplicationFirewallScrubbingRules object itself.
@@ -85,7 +87,8 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Get the selector property: When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
+     * Get the selector property: When matchVariable is a collection, operator used to specify which elements in the
+     * collection this rule applies to.
      * 
      * @return the selector value.
      */
@@ -94,7 +97,8 @@ public final class WebApplicationFirewallScrubbingRules {
     }
 
     /**
-     * Set the selector property: When matchVariable is a collection, operator used to specify which elements in the collection this rule applies to.
+     * Set the selector property: When matchVariable is a collection, operator used to specify which elements in the
+     * collection this rule applies to.
      * 
      * @param selector the selector value to set.
      * @return the WebApplicationFirewallScrubbingRules object itself.
@@ -131,12 +135,14 @@ public final class WebApplicationFirewallScrubbingRules {
      */
     public void validate() {
         if (matchVariable() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property matchVariable in model WebApplicationFirewallScrubbingRules"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property matchVariable in model WebApplicationFirewallScrubbingRules"));
         }
         if (selectorMatchOperator() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property selectorMatchOperator in model WebApplicationFirewallScrubbingRules"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property selectorMatchOperator in model WebApplicationFirewallScrubbingRules"));
         }
     }
 

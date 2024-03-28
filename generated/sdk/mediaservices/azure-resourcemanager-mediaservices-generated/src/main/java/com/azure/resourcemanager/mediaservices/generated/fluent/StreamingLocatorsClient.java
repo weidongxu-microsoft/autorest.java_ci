@@ -40,7 +40,8 @@ public interface StreamingLocatorsClient {
      * @param resourceGroupName The name of the resource group within the Azure subscription.
      * @param accountName The Media Services account name.
      * @param filter Restricts the set of items returned.
-     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The service returns the number of available items up to but not greater than the specified value n.
+     * @param top Specifies a non-negative integer n that limits the number of items returned from a collection. The
+     * service returns the number of available items up to but not greater than the specified value n.
      * @param orderby Specifies the key by which the result collection should be ordered.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.

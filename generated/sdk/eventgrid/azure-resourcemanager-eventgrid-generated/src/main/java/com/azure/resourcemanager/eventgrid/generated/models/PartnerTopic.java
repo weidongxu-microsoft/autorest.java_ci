@@ -88,7 +88,8 @@ public interface PartnerTopic {
     EventTypeInfo eventTypeInfo();
 
     /**
-     * Gets the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires while the partner topic is still never activated,
+     * Gets the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires
+     * while the partner topic is still never activated,
      * the partner topic and corresponding event channel are deleted.
      * 
      * @return the expirationTimeIfNotActivatedUtc value.
@@ -110,7 +111,8 @@ public interface PartnerTopic {
     PartnerTopicActivationState activationState();
 
     /**
-     * Gets the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the publisher/partner to show custom description for the customer partner topic.
+     * Gets the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the
+     * publisher/partner to show custom description for the customer partner topic.
      * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the customer.
      * 
      * @return the partnerTopicFriendlyDescription value.
@@ -118,7 +120,8 @@ public interface PartnerTopic {
     String partnerTopicFriendlyDescription();
 
     /**
-     * Gets the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber.
+     * Gets the messageForActivation property: Context or helpful message that can be used during the approval process
+     * by the subscriber.
      * 
      * @return the messageForActivation value.
      */
@@ -204,7 +207,8 @@ public interface PartnerTopic {
         }
 
         /**
-         * The stage of the PartnerTopic definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the PartnerTopic definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithPartnerRegistrationImmutableId, DefinitionStages.WithSource,
@@ -258,7 +262,8 @@ public interface PartnerTopic {
          */
         interface WithPartnerRegistrationImmutableId {
             /**
-             * Specifies the partnerRegistrationImmutableId property: The immutableId of the corresponding partner registration..
+             * Specifies the partnerRegistrationImmutableId property: The immutableId of the corresponding partner
+             * registration..
              * 
              * @param partnerRegistrationImmutableId The immutableId of the corresponding partner registration.
              * @return the next definition stage.
@@ -271,7 +276,8 @@ public interface PartnerTopic {
          */
         interface WithSource {
             /**
-             * Specifies the source property: Source associated with this partner topic. This represents a unique partner resource..
+             * Specifies the source property: Source associated with this partner topic. This represents a unique
+             * partner resource..
              * 
              * @param source Source associated with this partner topic. This represents a unique partner resource.
              * @return the next definition stage.
@@ -297,10 +303,12 @@ public interface PartnerTopic {
          */
         interface WithExpirationTimeIfNotActivatedUtc {
             /**
-             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this timer expires while the partner topic is still never activated,
+             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the partner topic. If this
+             * timer expires while the partner topic is still never activated,
              * the partner topic and corresponding event channel are deleted..
              * 
-             * @param expirationTimeIfNotActivatedUtc Expiration time of the partner topic. If this timer expires while the partner topic is still never activated,
+             * @param expirationTimeIfNotActivatedUtc Expiration time of the partner topic. If this timer expires while
+             * the partner topic is still never activated,
              * the partner topic and corresponding event channel are deleted.
              * @return the next definition stage.
              */
@@ -325,11 +333,15 @@ public interface PartnerTopic {
          */
         interface WithPartnerTopicFriendlyDescription {
             /**
-             * Specifies the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be set by the publisher/partner to show custom description for the customer partner topic.
-             * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the customer..
+             * Specifies the partnerTopicFriendlyDescription property: Friendly description about the topic. This can be
+             * set by the publisher/partner to show custom description for the customer partner topic.
+             * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the
+             * customer..
              * 
-             * @param partnerTopicFriendlyDescription Friendly description about the topic. This can be set by the publisher/partner to show custom description for the customer partner topic.
-             * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the customer.
+             * @param partnerTopicFriendlyDescription Friendly description about the topic. This can be set by the
+             * publisher/partner to show custom description for the customer partner topic.
+             * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the
+             * customer.
              * @return the next definition stage.
              */
             WithCreate withPartnerTopicFriendlyDescription(String partnerTopicFriendlyDescription);
@@ -340,9 +352,11 @@ public interface PartnerTopic {
          */
         interface WithMessageForActivation {
             /**
-             * Specifies the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber..
+             * Specifies the messageForActivation property: Context or helpful message that can be used during the
+             * approval process by the subscriber..
              * 
-             * @param messageForActivation Context or helpful message that can be used during the approval process by the subscriber.
+             * @param messageForActivation Context or helpful message that can be used during the approval process by
+             * the subscriber.
              * @return the next definition stage.
              */
             WithCreate withMessageForActivation(String messageForActivation);

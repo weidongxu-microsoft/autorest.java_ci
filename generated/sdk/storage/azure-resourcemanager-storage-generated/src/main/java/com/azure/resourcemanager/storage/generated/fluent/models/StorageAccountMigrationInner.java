@@ -11,7 +11,8 @@ import com.azure.resourcemanager.storage.generated.models.SkuName;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * The parameters or status associated with an ongoing or enqueued storage account migration in order to update its current SKU or region.
+ * The parameters or status associated with an ongoing or enqueued storage account migration in order to update its
+ * current SKU or region.
  */
 @Fluent
 public final class StorageAccountMigrationInner {
@@ -96,7 +97,8 @@ public final class StorageAccountMigrationInner {
     }
 
     /**
-     * Get the innerStorageAccountMigrationDetails property: The properties of a storage account’s ongoing or enqueued migration.
+     * Get the innerStorageAccountMigrationDetails property: The properties of a storage account’s ongoing or enqueued
+     * migration.
      * 
      * @return the innerStorageAccountMigrationDetails value.
      */
@@ -169,8 +171,9 @@ public final class StorageAccountMigrationInner {
      */
     public void validate() {
         if (innerStorageAccountMigrationDetails() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property innerStorageAccountMigrationDetails in model StorageAccountMigrationInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerStorageAccountMigrationDetails in model StorageAccountMigrationInner"));
         } else {
             innerStorageAccountMigrationDetails().validate();
         }

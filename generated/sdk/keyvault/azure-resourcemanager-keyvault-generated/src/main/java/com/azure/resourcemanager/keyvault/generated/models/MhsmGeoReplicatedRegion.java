@@ -25,7 +25,8 @@ public interface MhsmGeoReplicatedRegion {
     GeoReplicationRegionProvisioningState provisioningState();
 
     /**
-     * Gets the isPrimary property: A boolean value that indicates whether the region is the primary region or a secondary region.
+     * Gets the isPrimary property: A boolean value that indicates whether the region is the primary region or a
+     * secondary region.
      * 
      * @return the isPrimary value.
      */

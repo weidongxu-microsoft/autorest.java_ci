@@ -98,17 +98,6 @@ public class MultiMetricCriteria {
     }
 
     /**
-     * Set the criterionType property: Specifies the type of threshold criteria.
-     * 
-     * @param criterionType the criterionType value to set.
-     * @return the MultiMetricCriteria object itself.
-     */
-    protected MultiMetricCriteria withCriterionType(CriterionType criterionType) {
-        this.criterionType = criterionType;
-        return this;
-    }
-
-    /**
      * Get the name property: Name of the criteria.
      * 
      * @return the name value.
@@ -209,7 +198,8 @@ public class MultiMetricCriteria {
     }
 
     /**
-     * Get the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be skipped.
+     * Get the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted,
+     * by causing the metric validation to be skipped.
      * 
      * @return the skipMetricValidation value.
      */
@@ -218,7 +208,8 @@ public class MultiMetricCriteria {
     }
 
     /**
-     * Set the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted, by causing the metric validation to be skipped.
+     * Set the skipMetricValidation property: Allows creating an alert rule on a custom metric that isn't yet emitted,
+     * by causing the metric validation to be skipped.
      * 
      * @param skipMetricValidation the skipMetricValidation value to set.
      * @return the MultiMetricCriteria object itself.
@@ -264,16 +255,17 @@ public class MultiMetricCriteria {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model MultiMetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model MultiMetricCriteria"));
         }
         if (metricName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property metricName in model MultiMetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property metricName in model MultiMetricCriteria"));
         }
         if (timeAggregation() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timeAggregation in model MultiMetricCriteria"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property timeAggregation in model MultiMetricCriteria"));
         }
         if (dimensions() != null) {
             dimensions().forEach(e -> e.validate());

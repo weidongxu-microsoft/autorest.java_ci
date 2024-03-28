@@ -68,7 +68,8 @@ public interface ReservationRecommendation {
     String sku();
 
     /**
-     * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner object.
+     * Gets the inner com.azure.resourcemanager.consumption.generated.fluent.models.ReservationRecommendationInner
+     * object.
      * 
      * @return the inner object.
      */

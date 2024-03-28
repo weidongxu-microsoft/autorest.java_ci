@@ -82,7 +82,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
     }
 
     /**
-     * The interface defining all the services for WebSiteManagementClientAppServicePlans to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for WebSiteManagementClientAppServicePlans to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "WebSiteManagementCli")
@@ -403,12 +404,14 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * Description for Get all App Service plans for a subscription.
      * 
-     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
-     *  Retrieval of all properties may increase the API latency.
+     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
+     * &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
+     * Retrieval of all properties may increase the API latency.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listSinglePageAsync(Boolean detailed) {
@@ -434,13 +437,15 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * Description for Get all App Service plans for a subscription.
      * 
-     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
-     *  Retrieval of all properties may increase the API latency.
+     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
+     * &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
+     * Retrieval of all properties may increase the API latency.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listSinglePageAsync(Boolean detailed, Context context) {
@@ -466,8 +471,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * Description for Get all App Service plans for a subscription.
      * 
-     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
-     *  Retrieval of all properties may increase the API latency.
+     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
+     * &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
+     * Retrieval of all properties may increase the API latency.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -498,8 +504,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * Description for Get all App Service plans for a subscription.
      * 
-     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
-     *  Retrieval of all properties may increase the API latency.
+     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
+     * &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
+     * Retrieval of all properties may increase the API latency.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -532,8 +539,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * Description for Get all App Service plans for a subscription.
      * 
-     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
-     *  Retrieval of all properties may increase the API latency.
+     * @param detailed Specify &lt;code&gt;true&lt;/code&gt; to return all App Service plan properties. The default is
+     * &lt;code&gt;false&lt;/code&gt;, which returns a subset of the properties.
+     * Retrieval of all properties may increase the API latency.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -554,7 +562,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -589,7 +598,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -2246,7 +2256,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsSinglePageAsync(String resourceGroupName,
@@ -2286,7 +2297,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsSinglePageAsync(String resourceGroupName,
@@ -2396,7 +2408,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts and reprovisions the apps.
+     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
+     * settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts
+     * and reprovisions the apps.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2434,7 +2448,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts and reprovisions the apps.
+     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
+     * settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts
+     * and reprovisions the apps.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2490,7 +2506,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts and reprovisions the apps.
+     * @param softRestart Specify &lt;code&gt;true&lt;/code&gt; to perform a soft restart, applies the configuration
+     * settings and restarts the apps if necessary. The default is &lt;code&gt;false&lt;/code&gt;, which always restarts
+     * and reprovisions the apps.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2527,7 +2545,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list.
+     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the
+     * resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list
+     * contains web apps from the start of the list.
      * @param filter Supported filter: $filter=state eq running. Returns only web apps that are currently running.
      * @param top List page size. If specified, results are paged.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2569,7 +2589,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list.
+     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the
+     * resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list
+     * contains web apps from the start of the list.
      * @param filter Supported filter: $filter=state eq running. Returns only web apps that are currently running.
      * @param top List page size. If specified, results are paged.
      * @param context The context to associate with this operation.
@@ -2612,7 +2634,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list.
+     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the
+     * resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list
+     * contains web apps from the start of the list.
      * @param filter Supported filter: $filter=state eq running. Returns only web apps that are currently running.
      * @param top List page size. If specified, results are paged.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -2655,7 +2679,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list.
+     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the
+     * resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list
+     * contains web apps from the start of the list.
      * @param filter Supported filter: $filter=state eq running. Returns only web apps that are currently running.
      * @param top List page size. If specified, results are paged.
      * @param context The context to associate with this operation.
@@ -2699,7 +2725,9 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the App Service plan.
-     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list.
+     * @param skipToken Skip to a web app in the list of webapps associated with app service plan. If specified, the
+     * resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list
+     * contains web apps from the start of the list.
      * @param filter Supported filter: $filter=state eq running. Returns only web apps that are currently running.
      * @param top List page size. If specified, results are paged.
      * @param context The context to associate with this operation.
@@ -2847,7 +2875,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
+     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2887,7 +2916,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
+     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -2928,7 +2958,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
+     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2966,7 +2997,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
+     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3005,7 +3037,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of App Service Plan.
-     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
+     * @param filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example:
+     * $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
@@ -3157,7 +3190,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return virtual Network information ARM resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarmWithResponseAsync(String resourceGroupName,
@@ -3200,7 +3234,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network information ARM resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return virtual Network information ARM resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetInfoResourceInner>> getVnetFromServerFarmWithResponseAsync(String resourceGroupName,
@@ -3302,7 +3337,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> getVnetGatewayWithResponseAsync(String resourceGroupName, String name,
@@ -3348,7 +3384,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> getVnetGatewayWithResponseAsync(String resourceGroupName, String name,
@@ -3454,7 +3491,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> updateVnetGatewayWithResponseAsync(String resourceGroupName, String name,
@@ -3508,7 +3546,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of {@link Mono}.
+     * @return the Virtual Network gateway contract along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetGatewayInner>> updateVnetGatewayWithResponseAsync(String resourceGroupName, String name,
@@ -3923,7 +3962,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link Response} on successful completion of {@link Mono}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> createOrUpdateVnetRouteWithResponseAsync(String resourceGroupName,
@@ -3977,7 +4017,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link Response} on successful completion of {@link Mono}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> createOrUpdateVnetRouteWithResponseAsync(String resourceGroupName,
@@ -4028,7 +4069,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network on successful completion of {@link Mono}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetRouteInner> createOrUpdateVnetRouteAsync(String resourceGroupName, String name, String vnetName,
@@ -4052,7 +4094,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link Response}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetRouteInner> createOrUpdateVnetRouteWithResponse(String resourceGroupName, String name,
@@ -4252,7 +4295,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link Response} on successful completion of {@link Mono}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> updateVnetRouteWithResponseAsync(String resourceGroupName, String name,
@@ -4306,7 +4350,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link Response} on successful completion of {@link Mono}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<VnetRouteInner>> updateVnetRouteWithResponseAsync(String resourceGroupName, String name,
@@ -4357,7 +4402,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network on successful completion of {@link Mono}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network on successful
+     * completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VnetRouteInner> updateVnetRouteAsync(String resourceGroupName, String name, String vnetName,
@@ -4381,7 +4427,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws ManagementException thrown if the request is rejected by server on status code 400, 404.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return virtual Network route contract used to pass routing information for a Virtual Network along with {@link Response}.
+     * @return virtual Network route contract used to pass routing information for a Virtual Network along with
+     * {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<VnetRouteInner> updateVnetRouteWithResponse(String resourceGroupName, String name, String vnetName,
@@ -4558,7 +4605,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listNextSinglePageAsync(String nextLink) {
@@ -4586,7 +4634,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listNextSinglePageAsync(String nextLink, Context context) {
@@ -4613,7 +4662,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupNextSinglePageAsync(String nextLink) {
@@ -4643,7 +4693,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of App Service plans along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AppServicePlanInner>> listByResourceGroupNextSinglePageAsync(String nextLink,
@@ -4728,7 +4779,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsNextSinglePageAsync(String nextLink) {
@@ -4758,7 +4810,8 @@ public final class AppServicePlansClientImpl implements AppServicePlansClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws DefaultErrorResponseErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return collection of hostname bindings along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HybridConnectionInner>> listHybridConnectionsNextSinglePageAsync(String nextLink,

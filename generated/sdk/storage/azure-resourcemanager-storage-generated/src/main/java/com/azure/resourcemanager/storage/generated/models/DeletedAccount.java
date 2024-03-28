@@ -46,7 +46,8 @@ public interface DeletedAccount {
     String location();
 
     /**
-     * Gets the restoreReference property: Can be used to attempt recovering this deleted account via PutStorageAccount API.
+     * Gets the restoreReference property: Can be used to attempt recovering this deleted account via PutStorageAccount
+     * API.
      * 
      * @return the restoreReference value.
      */

@@ -18,7 +18,8 @@ public interface CheckNameAvailabilityResult {
     String message();
 
     /**
-     * Gets the nameAvailable property: Value indicating namespace is available. Returns true if the namespace is available; otherwise, false.
+     * Gets the nameAvailable property: Value indicating namespace is available. Returns true if the namespace is
+     * available; otherwise, false.
      * 
      * @return the nameAvailable value.
      */

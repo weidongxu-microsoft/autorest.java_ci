@@ -25,7 +25,8 @@ public final class ScheduledEventsAdditionalPublishingTargets {
     }
 
     /**
-     * Get the eventGridAndResourceGraph property: The configuration parameters used while creating eventGridAndResourceGraph Scheduled Event setting.
+     * Get the eventGridAndResourceGraph property: The configuration parameters used while creating
+     * eventGridAndResourceGraph Scheduled Event setting.
      * 
      * @return the eventGridAndResourceGraph value.
      */
@@ -34,7 +35,8 @@ public final class ScheduledEventsAdditionalPublishingTargets {
     }
 
     /**
-     * Set the eventGridAndResourceGraph property: The configuration parameters used while creating eventGridAndResourceGraph Scheduled Event setting.
+     * Set the eventGridAndResourceGraph property: The configuration parameters used while creating
+     * eventGridAndResourceGraph Scheduled Event setting.
      * 
      * @param eventGridAndResourceGraph the eventGridAndResourceGraph value to set.
      * @return the ScheduledEventsAdditionalPublishingTargets object itself.

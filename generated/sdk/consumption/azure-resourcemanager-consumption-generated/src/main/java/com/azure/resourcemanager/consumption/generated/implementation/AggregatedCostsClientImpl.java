@@ -51,7 +51,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
     }
 
     /**
-     * The interface defining all the services for ConsumptionManagementClientAggregatedCosts to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for ConsumptionManagementClientAggregatedCosts to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "ConsumptionManagemen")
@@ -79,11 +80,14 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
      * 
      * @param managementGroupId Azure Management Group ID.
-     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
+     * time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
+     * 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>>
@@ -107,12 +111,15 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
      * 
      * @param managementGroupId Azure Management Group ID.
-     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
+     * time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
+     * 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>>
@@ -151,7 +158,9 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * Provides the aggregate cost of a management group and all child management groups by current billing period.
      * 
      * @param managementGroupId Azure Management Group ID.
-     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
+     * @param filter May be used to filter aggregated cost by properties/usageStart (Utc time), properties/usageEnd (Utc
+     * time). The filter supports 'eq', 'lt', 'gt', 'le', 'ge', and 'and'. It does not currently support 'ne', 'or', or
+     * 'not'. Tag filter is a key value pair string where key and value is separated by a colon (:).
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -187,7 +196,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>>
@@ -220,7 +230,8 @@ public final class AggregatedCostsClientImpl implements AggregatedCostsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a management group aggregated cost resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return a management group aggregated cost resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<ManagementGroupAggregatedCostResultInner>>

@@ -51,7 +51,8 @@ public final class ManagedPrivateEndpointProperties {
     }
 
     /**
-     * Get the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created.
+     * Get the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private
+     * endpoint is created.
      * 
      * @return the privateLinkResourceId value.
      */
@@ -60,7 +61,8 @@ public final class ManagedPrivateEndpointProperties {
     }
 
     /**
-     * Set the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private endpoint is created.
+     * Set the privateLinkResourceId property: The ARM resource ID of the resource for which the managed private
+     * endpoint is created.
      * 
      * @param privateLinkResourceId the privateLinkResourceId value to set.
      * @return the ManagedPrivateEndpointProperties object itself.
@@ -71,7 +73,8 @@ public final class ManagedPrivateEndpointProperties {
     }
 
     /**
-     * Get the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created.
+     * Get the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is
+     * created.
      * 
      * @return the privateLinkResourceRegion value.
      */
@@ -80,7 +83,8 @@ public final class ManagedPrivateEndpointProperties {
     }
 
     /**
-     * Set the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is created.
+     * Set the privateLinkResourceRegion property: The region of the resource to which the managed private endpoint is
+     * created.
      * 
      * @param privateLinkResourceRegion the privateLinkResourceRegion value to set.
      * @return the ManagedPrivateEndpointProperties object itself.
@@ -146,12 +150,14 @@ public final class ManagedPrivateEndpointProperties {
      */
     public void validate() {
         if (privateLinkResourceId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property privateLinkResourceId in model ManagedPrivateEndpointProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property privateLinkResourceId in model ManagedPrivateEndpointProperties"));
         }
         if (groupId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property groupId in model ManagedPrivateEndpointProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property groupId in model ManagedPrivateEndpointProperties"));
         }
     }
 

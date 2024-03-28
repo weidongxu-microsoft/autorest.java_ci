@@ -32,7 +32,8 @@ public interface CheckNameAvailabilityResult {
     String message();
 
     /**
-     * Gets the inner com.azure.resourcemanager.recoveryservices.generated.fluent.models.CheckNameAvailabilityResultInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.recoveryservices.generated.fluent.models.CheckNameAvailabilityResultInner object.
      * 
      * @return the inner object.
      */

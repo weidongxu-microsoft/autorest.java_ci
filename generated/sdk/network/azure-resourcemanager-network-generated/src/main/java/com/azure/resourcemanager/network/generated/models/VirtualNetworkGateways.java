@@ -129,7 +129,8 @@ public interface VirtualNetworkGateways {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature enabled gateway.
+     * @param gatewayVip Virtual network gateway vip address supplied to the begin reset of the active-active feature
+     * enabled gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -192,7 +193,8 @@ public interface VirtualNetworkGateways {
         VpnClientParameters parameters, Context context);
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -206,7 +208,8 @@ public interface VirtualNetworkGateways {
         VpnClientParameters parameters);
 
     /**
-     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for IKEV2 and radius based authentication.
+     * Generates VPN profile for P2S client of the virtual network gateway in the specified resource group. Used for
+     * IKEV2 and radius based authentication.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -221,7 +224,8 @@ public interface VirtualNetworkGateways {
         VpnClientParameters parameters, Context context);
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -233,7 +237,8 @@ public interface VirtualNetworkGateways {
     String getVpnProfilePackageUrl(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
-     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The profile needs to be generated first using generateVpnProfile.
+     * Gets pre-generated VPN profile for P2S client of the virtual network gateway in the specified resource group. The
+     * profile needs to be generated first using generateVpnProfile.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -299,7 +304,8 @@ public interface VirtualNetworkGateways {
     String supportedVpnDevices(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -311,7 +317,8 @@ public interface VirtualNetworkGateways {
     GatewayRouteListResult getLearnedRoutes(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
-     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from BGP peers.
+     * This operation retrieves a list of routes the virtual network gateway has learned, including routes learned from
+     * BGP peers.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -353,11 +360,13 @@ public interface VirtualNetworkGateways {
         Context context);
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -367,11 +376,13 @@ public interface VirtualNetworkGateways {
         VpnClientIPsecParametersInner vpnclientIpsecParams);
 
     /**
-     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Set VpnclientIpsecParameters operation sets the vpnclient ipsec policy for P2S client of virtual network
+     * gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
-     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network Gateway P2S client operation through Network resource provider.
+     * @param vpnclientIpsecParams Parameters supplied to the Begin Set vpnclient ipsec parameters of Virtual Network
+     * Gateway P2S client operation through Network resource provider.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -382,7 +393,8 @@ public interface VirtualNetworkGateways {
         VpnClientIPsecParametersInner vpnclientIpsecParams, Context context);
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -394,7 +406,8 @@ public interface VirtualNetworkGateways {
     VpnClientIPsecParameters getVpnclientIpsecParameters(String resourceGroupName, String virtualNetworkGatewayName);
 
     /**
-     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client of virtual network gateway in the specified resource group through Network resource provider.
+     * The Get VpnclientIpsecParameters operation retrieves information about the vpnclient ipsec policy for P2S client
+     * of virtual network gateway in the specified resource group through Network resource provider.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The virtual network gateway name.
@@ -411,7 +424,8 @@ public interface VirtualNetworkGateways {
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -426,7 +440,8 @@ public interface VirtualNetworkGateways {
      * Gets a xml format representation for vpn device configuration script.
      * 
      * @param resourceGroupName The name of the resource group.
-     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the configuration script is generated.
+     * @param virtualNetworkGatewayConnectionName The name of the virtual network gateway connection for which the
+     * configuration script is generated.
      * @param parameters Parameters supplied to the generate vpn device script operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -442,7 +457,8 @@ public interface VirtualNetworkGateways {
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -456,7 +472,8 @@ public interface VirtualNetworkGateways {
      * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -470,7 +487,8 @@ public interface VirtualNetworkGateways {
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -485,7 +503,8 @@ public interface VirtualNetworkGateways {
      * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -493,20 +512,23 @@ public interface VirtualNetworkGateways {
         VpnPacketCaptureStopParameters parameters, Context context);
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group.
      */
     VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(String resourceGroupName,
         String virtualNetworkGatewayName);
 
     /**
-     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * Get VPN client connection health detail per P2S client connection of the virtual network gateway in the specified
+     * resource group.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualNetworkGatewayName The name of the virtual network gateway.
@@ -514,7 +536,8 @@ public interface VirtualNetworkGateways {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the specified resource group.
+     * @return vPN client connection health detail per P2S client connection of the virtual network gateway in the
+     * specified resource group.
      */
     VpnClientConnectionHealthDetailListResult getVpnclientConnectionHealth(String resourceGroupName,
         String virtualNetworkGatewayName, Context context);

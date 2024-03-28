@@ -27,7 +27,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses on a cloud service level as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listCloudServicePublicIpAddresses(String resourceGroupName,
@@ -42,7 +43,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a cloud service level as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses on a cloud service level as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listCloudServicePublicIpAddresses(String resourceGroupName,
@@ -59,7 +61,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
@@ -77,7 +80,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses in a role instance IP configuration in a cloud service as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listCloudServiceRoleInstancePublicIpAddresses(String resourceGroupName,
@@ -409,7 +413,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetPublicIpAddresses(String resourceGroupName,
@@ -424,14 +429,16 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses on a virtual machine scale set level as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetPublicIpAddresses(String resourceGroupName,
         String virtualMachineScaleSetName, Context context);
 
     /**
-     * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set.
+     * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale
+     * set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
@@ -441,7 +448,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
+     * scale set as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,
@@ -449,7 +457,8 @@ public interface PublicIpAddressesClient {
         String ipConfigurationName);
 
     /**
-     * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set.
+     * Gets information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale
+     * set.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param virtualMachineScaleSetName The name of the virtual machine scale set.
@@ -460,7 +469,8 @@ public interface PublicIpAddressesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine scale set as paginated response with {@link PagedIterable}.
+     * @return information about all public IP addresses in a virtual machine IP configuration in a virtual machine
+     * scale set as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<PublicIpAddressInner> listVirtualMachineScaleSetVMPublicIpAddresses(String resourceGroupName,

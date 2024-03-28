@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MecRoleProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -19,6 +20,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class MecRole extends RoleInner {
     /*
+     * Role type.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "kind", required = true)
+    private RoleTypes kind = RoleTypes.MEC;
+
+    /*
      * Properties specific to MEC role.
      */
     @JsonProperty(value = "properties")
@@ -28,7 +36,16 @@ public final class MecRole extends RoleInner {
      * Creates an instance of MecRole class.
      */
     public MecRole() {
-        withKind(RoleTypes.MEC);
+    }
+
+    /**
+     * Get the kind property: Role type.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public RoleTypes kind() {
+        return this.kind;
     }
 
     /**

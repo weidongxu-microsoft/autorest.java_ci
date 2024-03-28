@@ -8,7 +8,8 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Specifies additional settings to be applied when patch mode AutomaticByPlatform is selected in Windows patch settings.
+ * Specifies additional settings to be applied when patch mode AutomaticByPlatform is selected in Windows patch
+ * settings.
  */
 @Fluent
 public final class WindowsVMGuestPatchAutomaticByPlatformSettings {
@@ -31,7 +32,8 @@ public final class WindowsVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Get the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+     * Get the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation
+     * operations.
      * 
      * @return the rebootSetting value.
      */
@@ -40,7 +42,8 @@ public final class WindowsVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Set the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation operations.
+     * Set the rebootSetting property: Specifies the reboot setting for all AutomaticByPlatform patch installation
+     * operations.
      * 
      * @param rebootSetting the rebootSetting value to set.
      * @return the WindowsVMGuestPatchAutomaticByPlatformSettings object itself.
@@ -52,7 +55,8 @@ public final class WindowsVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Get the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without accidental upgrades.
+     * Get the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without
+     * accidental upgrades.
      * 
      * @return the bypassPlatformSafetyChecksOnUserSchedule value.
      */
@@ -61,7 +65,8 @@ public final class WindowsVMGuestPatchAutomaticByPlatformSettings {
     }
 
     /**
-     * Set the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without accidental upgrades.
+     * Set the bypassPlatformSafetyChecksOnUserSchedule property: Enables customer to schedule patching without
+     * accidental upgrades.
      * 
      * @param bypassPlatformSafetyChecksOnUserSchedule the bypassPlatformSafetyChecksOnUserSchedule value to set.
      * @return the WindowsVMGuestPatchAutomaticByPlatformSettings object itself.

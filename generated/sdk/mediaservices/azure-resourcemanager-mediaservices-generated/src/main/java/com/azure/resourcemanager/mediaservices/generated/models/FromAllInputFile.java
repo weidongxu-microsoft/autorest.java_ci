@@ -5,12 +5,16 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.List;
 
 /**
- * An InputDefinition that looks across all of the files provided to select tracks specified by the IncludedTracks property. Generally used with the AudioTrackByAttribute and VideoTrackByAttribute to allow selection of a single track across a set of input files.
+ * An InputDefinition that looks across all of the files provided to select tracks specified by the IncludedTracks
+ * property. Generally used with the AudioTrackByAttribute and VideoTrackByAttribute to allow selection of a single
+ * track across a set of input files.
  */
 @JsonTypeInfo(
     use = JsonTypeInfo.Id.NAME,
@@ -20,11 +24,27 @@ import java.util.List;
 @JsonTypeName("#Microsoft.Media.FromAllInputFile")
 @Fluent
 public final class FromAllInputFile extends InputDefinition {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.FromAllInputFile";
+
     /**
      * Creates an instance of FromAllInputFile class.
      */
     public FromAllInputFile() {
-        withOdataType("#Microsoft.Media.FromAllInputFile");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

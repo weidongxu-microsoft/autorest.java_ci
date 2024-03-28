@@ -53,7 +53,8 @@ public final class ApplicationGatewayFirewallDisabledRuleGroup {
     }
 
     /**
-     * Get the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be disabled.
+     * Get the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be
+     * disabled.
      * 
      * @return the rules value.
      */
@@ -62,7 +63,8 @@ public final class ApplicationGatewayFirewallDisabledRuleGroup {
     }
 
     /**
-     * Set the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be disabled.
+     * Set the rules property: The list of rules that will be disabled. If null, all rules of the rule group will be
+     * disabled.
      * 
      * @param rules the rules value to set.
      * @return the ApplicationGatewayFirewallDisabledRuleGroup object itself.
@@ -79,8 +81,9 @@ public final class ApplicationGatewayFirewallDisabledRuleGroup {
      */
     public void validate() {
         if (ruleGroupName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleGroupName in model ApplicationGatewayFirewallDisabledRuleGroup"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleGroupName in model ApplicationGatewayFirewallDisabledRuleGroup"));
         }
     }
 

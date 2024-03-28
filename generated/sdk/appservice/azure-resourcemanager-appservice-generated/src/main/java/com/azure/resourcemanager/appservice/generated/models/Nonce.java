@@ -31,7 +31,8 @@ public final class Nonce {
     }
 
     /**
-     * Get the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Get the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while
+     * completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @return the validateNonce value.
      */
@@ -40,7 +41,8 @@ public final class Nonce {
     }
 
     /**
-     * Set the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
+     * Set the validateNonce property: &lt;code&gt;false&lt;/code&gt; if the nonce should not be validated while
+     * completing the login flow; otherwise, &lt;code&gt;true&lt;/code&gt;.
      * 
      * @param validateNonce the validateNonce value to set.
      * @return the Nonce object itself.

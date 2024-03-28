@@ -59,7 +59,8 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Get the applyToBuiltInEventHubEndpoint property: If True, then Network Rule Set is also applied to BuiltIn EventHub EndPoint of IotHub.
+     * Get the applyToBuiltInEventHubEndpoint property: If True, then Network Rule Set is also applied to BuiltIn
+     * EventHub EndPoint of IotHub.
      * 
      * @return the applyToBuiltInEventHubEndpoint value.
      */
@@ -68,7 +69,8 @@ public final class NetworkRuleSetProperties {
     }
 
     /**
-     * Set the applyToBuiltInEventHubEndpoint property: If True, then Network Rule Set is also applied to BuiltIn EventHub EndPoint of IotHub.
+     * Set the applyToBuiltInEventHubEndpoint property: If True, then Network Rule Set is also applied to BuiltIn
+     * EventHub EndPoint of IotHub.
      * 
      * @param applyToBuiltInEventHubEndpoint the applyToBuiltInEventHubEndpoint value to set.
      * @return the NetworkRuleSetProperties object itself.
@@ -105,8 +107,9 @@ public final class NetworkRuleSetProperties {
      */
     public void validate() {
         if (ipRules() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property ipRules in model NetworkRuleSetProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ipRules in model NetworkRuleSetProperties"));
         } else {
             ipRules().forEach(e -> e.validate());
         }

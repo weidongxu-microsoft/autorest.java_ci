@@ -101,7 +101,8 @@ public final class ReadOnlyFollowingDatabaseProperties {
     }
 
     /**
-     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries in TimeSpan.
+     * Get the softDeletePeriod property: The time the data should be kept before it stops being accessible to queries
+     * in TimeSpan.
      * 
      * @return the softDeletePeriod value.
      */
@@ -175,7 +176,8 @@ public final class ReadOnlyFollowingDatabaseProperties {
     }
 
     /**
-     * Get the originalDatabaseName property: The original database name, before databaseNameOverride or databaseNamePrefix where applied.
+     * Get the originalDatabaseName property: The original database name, before databaseNameOverride or
+     * databaseNamePrefix where applied.
      * 
      * @return the originalDatabaseName value.
      */
@@ -193,7 +195,8 @@ public final class ReadOnlyFollowingDatabaseProperties {
     }
 
     /**
-     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
+     * Get the suspensionDetails property: The database suspension details. If the database is suspended, this object
+     * contains information related to the database's suspension state.
      * 
      * @return the suspensionDetails value.
      */

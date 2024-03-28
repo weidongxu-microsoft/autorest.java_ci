@@ -158,19 +158,19 @@ public final class TimeSeriesBaseline {
      */
     public void validate() {
         if (aggregation() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property aggregation in model TimeSeriesBaseline"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property aggregation in model TimeSeriesBaseline"));
         }
         if (dimensions() != null) {
             dimensions().forEach(e -> e.validate());
         }
         if (timestamps() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property timestamps in model TimeSeriesBaseline"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property timestamps in model TimeSeriesBaseline"));
         }
         if (data() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property data in model TimeSeriesBaseline"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property data in model TimeSeriesBaseline"));
         } else {
             data().forEach(e -> e.validate());
         }

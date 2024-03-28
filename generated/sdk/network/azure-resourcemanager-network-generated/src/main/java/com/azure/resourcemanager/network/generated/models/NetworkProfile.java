@@ -64,7 +64,8 @@ public interface NetworkProfile {
     List<ContainerNetworkInterface> containerNetworkInterfaces();
 
     /**
-     * Gets the containerNetworkInterfaceConfigurations property: List of chid container network interface configurations.
+     * Gets the containerNetworkInterfaceConfigurations property: List of chid container network interface
+     * configurations.
      * 
      * @return the containerNetworkInterfaceConfigurations value.
      */
@@ -164,7 +165,8 @@ public interface NetworkProfile {
         }
 
         /**
-         * The stage of the NetworkProfile definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the NetworkProfile definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate
             extends DefinitionStages.WithTags, DefinitionStages.WithContainerNetworkInterfaceConfigurations {
@@ -202,7 +204,8 @@ public interface NetworkProfile {
          */
         interface WithContainerNetworkInterfaceConfigurations {
             /**
-             * Specifies the containerNetworkInterfaceConfigurations property: List of chid container network interface configurations..
+             * Specifies the containerNetworkInterfaceConfigurations property: List of chid container network interface
+             * configurations..
              * 
              * @param containerNetworkInterfaceConfigurations List of chid container network interface configurations.
              * @return the next definition stage.

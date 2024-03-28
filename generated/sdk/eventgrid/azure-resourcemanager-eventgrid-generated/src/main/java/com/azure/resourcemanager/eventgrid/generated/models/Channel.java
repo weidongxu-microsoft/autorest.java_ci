@@ -50,21 +50,25 @@ public interface Channel {
     ChannelType channelType();
 
     /**
-     * Gets the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel.
+     * Gets the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and
+     * represents information about the partner topic resource corresponding to the channel.
      * 
      * @return the partnerTopicInfo value.
      */
     PartnerTopicInfo partnerTopicInfo();
 
     /**
-     * Gets the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel.
+     * Gets the partnerDestinationInfo property: This property should be populated when channelType is
+     * PartnerDestination and represents information about the partner destination resource corresponding to the
+     * channel.
      * 
      * @return the partnerDestinationInfo value.
      */
     PartnerDestinationInfo partnerDestinationInfo();
 
     /**
-     * Gets the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber.
+     * Gets the messageForActivation property: Context or helpful message that can be used during the approval process
+     * by the subscriber.
      * 
      * @return the messageForActivation value.
      */
@@ -85,7 +89,8 @@ public interface Channel {
     ReadinessState readinessState();
 
     /**
-     * Gets the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+     * Gets the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while
+     * the corresponding partner topic is never activated,
      * the channel and corresponding partner topic are deleted.
      * 
      * @return the expirationTimeIfNotActivatedUtc value.
@@ -138,7 +143,8 @@ public interface Channel {
         }
 
         /**
-         * The stage of the Channel definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Channel definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithChannelType, DefinitionStages.WithPartnerTopicInfo,
             DefinitionStages.WithPartnerDestinationInfo, DefinitionStages.WithMessageForActivation,
@@ -165,7 +171,8 @@ public interface Channel {
          */
         interface WithChannelType {
             /**
-             * Specifies the channelType property: The type of the event channel which represents the direction flow of events..
+             * Specifies the channelType property: The type of the event channel which represents the direction flow of
+             * events..
              * 
              * @param channelType The type of the event channel which represents the direction flow of events.
              * @return the next definition stage.
@@ -178,9 +185,11 @@ public interface Channel {
          */
         interface WithPartnerTopicInfo {
             /**
-             * Specifies the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel..
+             * Specifies the partnerTopicInfo property: This property should be populated when channelType is
+             * PartnerTopic and represents information about the partner topic resource corresponding to the channel..
              * 
-             * @param partnerTopicInfo This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel.
+             * @param partnerTopicInfo This property should be populated when channelType is PartnerTopic and represents
+             * information about the partner topic resource corresponding to the channel.
              * @return the next definition stage.
              */
             WithCreate withPartnerTopicInfo(PartnerTopicInfo partnerTopicInfo);
@@ -191,9 +200,12 @@ public interface Channel {
          */
         interface WithPartnerDestinationInfo {
             /**
-             * Specifies the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel..
+             * Specifies the partnerDestinationInfo property: This property should be populated when channelType is
+             * PartnerDestination and represents information about the partner destination resource corresponding to the
+             * channel..
              * 
-             * @param partnerDestinationInfo This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel.
+             * @param partnerDestinationInfo This property should be populated when channelType is PartnerDestination
+             * and represents information about the partner destination resource corresponding to the channel.
              * @return the next definition stage.
              */
             WithCreate withPartnerDestinationInfo(PartnerDestinationInfo partnerDestinationInfo);
@@ -204,9 +216,11 @@ public interface Channel {
          */
         interface WithMessageForActivation {
             /**
-             * Specifies the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber..
+             * Specifies the messageForActivation property: Context or helpful message that can be used during the
+             * approval process by the subscriber..
              * 
-             * @param messageForActivation Context or helpful message that can be used during the approval process by the subscriber.
+             * @param messageForActivation Context or helpful message that can be used during the approval process by
+             * the subscriber.
              * @return the next definition stage.
              */
             WithCreate withMessageForActivation(String messageForActivation);
@@ -243,10 +257,12 @@ public interface Channel {
          */
         interface WithExpirationTimeIfNotActivatedUtc {
             /**
-             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer
+             * expires while the corresponding partner topic is never activated,
              * the channel and corresponding partner topic are deleted..
              * 
-             * @param expirationTimeIfNotActivatedUtc Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+             * @param expirationTimeIfNotActivatedUtc Expiration time of the channel. If this timer expires while the
+             * corresponding partner topic is never activated,
              * the channel and corresponding partner topic are deleted.
              * @return the next definition stage.
              */
@@ -293,7 +309,8 @@ public interface Channel {
          */
         interface WithChannelType {
             /**
-             * Specifies the channelType property: The type of the event channel which represents the direction flow of events..
+             * Specifies the channelType property: The type of the event channel which represents the direction flow of
+             * events..
              * 
              * @param channelType The type of the event channel which represents the direction flow of events.
              * @return the next definition stage.
@@ -306,9 +323,11 @@ public interface Channel {
          */
         interface WithPartnerTopicInfo {
             /**
-             * Specifies the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel..
+             * Specifies the partnerTopicInfo property: This property should be populated when channelType is
+             * PartnerTopic and represents information about the partner topic resource corresponding to the channel..
              * 
-             * @param partnerTopicInfo This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel.
+             * @param partnerTopicInfo This property should be populated when channelType is PartnerTopic and represents
+             * information about the partner topic resource corresponding to the channel.
              * @return the next definition stage.
              */
             Update withPartnerTopicInfo(PartnerTopicInfo partnerTopicInfo);
@@ -319,9 +338,12 @@ public interface Channel {
          */
         interface WithPartnerDestinationInfo {
             /**
-             * Specifies the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel..
+             * Specifies the partnerDestinationInfo property: This property should be populated when channelType is
+             * PartnerDestination and represents information about the partner destination resource corresponding to the
+             * channel..
              * 
-             * @param partnerDestinationInfo This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel.
+             * @param partnerDestinationInfo This property should be populated when channelType is PartnerDestination
+             * and represents information about the partner destination resource corresponding to the channel.
              * @return the next definition stage.
              */
             Update withPartnerDestinationInfo(PartnerDestinationInfo partnerDestinationInfo);
@@ -332,9 +354,11 @@ public interface Channel {
          */
         interface WithMessageForActivation {
             /**
-             * Specifies the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber..
+             * Specifies the messageForActivation property: Context or helpful message that can be used during the
+             * approval process by the subscriber..
              * 
-             * @param messageForActivation Context or helpful message that can be used during the approval process by the subscriber.
+             * @param messageForActivation Context or helpful message that can be used during the approval process by
+             * the subscriber.
              * @return the next definition stage.
              */
             Update withMessageForActivation(String messageForActivation);
@@ -371,10 +395,12 @@ public interface Channel {
          */
         interface WithExpirationTimeIfNotActivatedUtc {
             /**
-             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+             * Specifies the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer
+             * expires while the corresponding partner topic is never activated,
              * the channel and corresponding partner topic are deleted..
              * 
-             * @param expirationTimeIfNotActivatedUtc Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+             * @param expirationTimeIfNotActivatedUtc Expiration time of the channel. If this timer expires while the
+             * corresponding partner topic is never activated,
              * the channel and corresponding partner topic are deleted.
              * @return the next definition stage.
              */

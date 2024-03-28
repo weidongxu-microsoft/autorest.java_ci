@@ -132,7 +132,8 @@ public final class MyWorkbookInner extends MyWorkbookResource {
     }
 
     /**
-     * Get the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+     * Get the serializedData property: Configuration of this particular private workbook. Configuration data is a
+     * string containing valid JSON.
      * 
      * @return the serializedData value.
      */
@@ -141,7 +142,8 @@ public final class MyWorkbookInner extends MyWorkbookResource {
     }
 
     /**
-     * Set the serializedData property: Configuration of this particular private workbook. Configuration data is a string containing valid JSON.
+     * Set the serializedData property: Configuration of this particular private workbook. Configuration data is a
+     * string containing valid JSON.
      * 
      * @param serializedData the serializedData value to set.
      * @return the MyWorkbookInner object itself.
@@ -155,7 +157,8 @@ public final class MyWorkbookInner extends MyWorkbookResource {
     }
 
     /**
-     * Get the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+     * Get the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked private workbook.
      * 
      * @return the version value.
      */
@@ -164,7 +167,8 @@ public final class MyWorkbookInner extends MyWorkbookResource {
     }
 
     /**
-     * Set the version property: This instance's version of the data model. This can change as new features are added that can be marked private workbook.
+     * Set the version property: This instance's version of the data model. This can change as new features are added
+     * that can be marked private workbook.
      * 
      * @param version the version value to set.
      * @return the MyWorkbookInner object itself.
@@ -178,7 +182,8 @@ public final class MyWorkbookInner extends MyWorkbookResource {
     }
 
     /**
-     * Get the timeModified property: Date and time in UTC of the last modification that was made to this private workbook definition.
+     * Get the timeModified property: Date and time in UTC of the last modification that was made to this private
+     * workbook definition.
      * 
      * @return the timeModified value.
      */

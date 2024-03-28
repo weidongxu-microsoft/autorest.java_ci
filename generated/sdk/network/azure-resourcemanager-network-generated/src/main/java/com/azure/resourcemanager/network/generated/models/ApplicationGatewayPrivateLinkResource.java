@@ -61,7 +61,8 @@ public interface ApplicationGatewayPrivateLinkResource {
     List<String> requiredZoneNames();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.network.generated.fluent.models.ApplicationGatewayPrivateLinkResourceInner object.
      * 
      * @return the inner object.
      */

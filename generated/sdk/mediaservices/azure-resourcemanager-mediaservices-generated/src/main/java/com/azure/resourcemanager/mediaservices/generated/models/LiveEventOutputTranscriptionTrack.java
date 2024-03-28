@@ -9,7 +9,8 @@ import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Describes a transcription track in the output of a live event, generated using speech-to-text transcription. This property is reserved for future use, any value set on this property will be ignored.
+ * Describes a transcription track in the output of a live event, generated using speech-to-text transcription. This
+ * property is reserved for future use, any value set on this property will be ignored.
  */
 @Fluent
 public final class LiveEventOutputTranscriptionTrack {
@@ -26,7 +27,8 @@ public final class LiveEventOutputTranscriptionTrack {
     }
 
     /**
-     * Get the trackName property: The output track name. This property is reserved for future use, any value set on this property will be ignored.
+     * Get the trackName property: The output track name. This property is reserved for future use, any value set on
+     * this property will be ignored.
      * 
      * @return the trackName value.
      */
@@ -35,7 +37,8 @@ public final class LiveEventOutputTranscriptionTrack {
     }
 
     /**
-     * Set the trackName property: The output track name. This property is reserved for future use, any value set on this property will be ignored.
+     * Set the trackName property: The output track name. This property is reserved for future use, any value set on
+     * this property will be ignored.
      * 
      * @param trackName the trackName value to set.
      * @return the LiveEventOutputTranscriptionTrack object itself.
@@ -52,8 +55,9 @@ public final class LiveEventOutputTranscriptionTrack {
      */
     public void validate() {
         if (trackName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property trackName in model LiveEventOutputTranscriptionTrack"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property trackName in model LiveEventOutputTranscriptionTrack"));
         }
     }
 

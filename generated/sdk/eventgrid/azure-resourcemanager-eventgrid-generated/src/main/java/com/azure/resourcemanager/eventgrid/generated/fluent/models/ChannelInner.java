@@ -80,7 +80,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Get the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel.
+     * Get the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and
+     * represents information about the partner topic resource corresponding to the channel.
      * 
      * @return the partnerTopicInfo value.
      */
@@ -89,7 +90,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Set the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel.
+     * Set the partnerTopicInfo property: This property should be populated when channelType is PartnerTopic and
+     * represents information about the partner topic resource corresponding to the channel.
      * 
      * @param partnerTopicInfo the partnerTopicInfo value to set.
      * @return the ChannelInner object itself.
@@ -103,7 +105,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Get the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel.
+     * Get the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination
+     * and represents information about the partner destination resource corresponding to the channel.
      * 
      * @return the partnerDestinationInfo value.
      */
@@ -112,7 +115,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Set the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel.
+     * Set the partnerDestinationInfo property: This property should be populated when channelType is PartnerDestination
+     * and represents information about the partner destination resource corresponding to the channel.
      * 
      * @param partnerDestinationInfo the partnerDestinationInfo value to set.
      * @return the ChannelInner object itself.
@@ -126,7 +130,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Get the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber.
+     * Get the messageForActivation property: Context or helpful message that can be used during the approval process by
+     * the subscriber.
      * 
      * @return the messageForActivation value.
      */
@@ -135,7 +140,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Set the messageForActivation property: Context or helpful message that can be used during the approval process by the subscriber.
+     * Set the messageForActivation property: Context or helpful message that can be used during the approval process by
+     * the subscriber.
      * 
      * @param messageForActivation the messageForActivation value to set.
      * @return the ChannelInner object itself.
@@ -195,7 +201,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Get the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+     * Get the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the
+     * corresponding partner topic is never activated,
      * the channel and corresponding partner topic are deleted.
      * 
      * @return the expirationTimeIfNotActivatedUtc value.
@@ -205,7 +212,8 @@ public final class ChannelInner extends ProxyResource {
     }
 
     /**
-     * Set the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the corresponding partner topic is never activated,
+     * Set the expirationTimeIfNotActivatedUtc property: Expiration time of the channel. If this timer expires while the
+     * corresponding partner topic is never activated,
      * the channel and corresponding partner topic are deleted.
      * 
      * @param expirationTimeIfNotActivatedUtc the expirationTimeIfNotActivatedUtc value to set.

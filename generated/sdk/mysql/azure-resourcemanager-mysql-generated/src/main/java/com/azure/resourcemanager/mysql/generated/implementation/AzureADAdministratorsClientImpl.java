@@ -65,7 +65,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientAzureADAdministrators to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientAzureADAdministrators to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -614,7 +615,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about an azure ad administrator along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about an azure ad administrator along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureADAdministratorInner>> getWithResponseAsync(String resourceGroupName, String serverName,
@@ -656,7 +658,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return information about an azure ad administrator along with {@link Response} on successful completion of {@link Mono}.
+     * @return information about an azure ad administrator along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<AzureADAdministratorInner>> getWithResponseAsync(String resourceGroupName, String serverName,
@@ -748,7 +751,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureADAdministratorInner>> listByServerSinglePageAsync(String resourceGroupName,
@@ -787,7 +791,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureADAdministratorInner>> listByServerSinglePageAsync(String resourceGroupName,
@@ -892,7 +897,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureADAdministratorInner>> listByServerNextSinglePageAsync(String nextLink) {
@@ -921,7 +927,8 @@ public final class AzureADAdministratorsClientImpl implements AzureADAdministrat
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a List of azure ad administrators along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AzureADAdministratorInner>> listByServerNextSinglePageAsync(String nextLink,

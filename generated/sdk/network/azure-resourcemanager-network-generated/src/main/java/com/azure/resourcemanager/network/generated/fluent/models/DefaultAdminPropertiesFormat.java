@@ -180,7 +180,9 @@ public final class DefaultAdminPropertiesFormat {
     }
 
     /**
-     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number must be unique for each rule in the collection. The lower the priority number, the higher the priority of the rule.
+     * Get the priority property: The priority of the rule. The value can be between 1 and 4096. The priority number
+     * must be unique for each rule in the collection. The lower the priority number, the higher the priority of the
+     * rule.
      * 
      * @return the priority value.
      */

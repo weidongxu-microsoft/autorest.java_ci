@@ -92,7 +92,8 @@ public final class IpConfiguration {
     }
 
     /**
-     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the response.
+     * Get the provisioningState property: The private link configuration provisioning state, which only appears in the
+     * response.
      * 
      * @return the provisioningState value.
      */
@@ -199,8 +200,8 @@ public final class IpConfiguration {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model IpConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model IpConfiguration"));
         }
         if (innerProperties() != null) {
             innerProperties().validate();

@@ -51,7 +51,8 @@ public interface DedicatedHost {
     Map<String, String> tags();
 
     /**
-     * Gets the sku property: SKU of the dedicated host for Hardware Generation and VM family. Only name is required to be set. List Microsoft.Compute SKUs for a list of possible values.
+     * Gets the sku property: SKU of the dedicated host for Hardware Generation and VM family. Only name is required to
+     * be set. List Microsoft.Compute SKUs for a list of possible values.
      * 
      * @return the sku value.
      */
@@ -65,14 +66,16 @@ public interface DedicatedHost {
     Integer platformFaultDomain();
 
     /**
-     * Gets the autoReplaceOnFailure property: Specifies whether the dedicated host should be replaced automatically in case of a failure. The value is defaulted to 'true' when not provided.
+     * Gets the autoReplaceOnFailure property: Specifies whether the dedicated host should be replaced automatically in
+     * case of a failure. The value is defaulted to 'true' when not provided.
      * 
      * @return the autoReplaceOnFailure value.
      */
     Boolean autoReplaceOnFailure();
 
     /**
-     * Gets the hostId property: A unique id generated and assigned to the dedicated host by the platform. Does not change throughout the lifetime of the host.
+     * Gets the hostId property: A unique id generated and assigned to the dedicated host by the platform. Does not
+     * change throughout the lifetime of the host.
      * 
      * @return the hostId value.
      */
@@ -86,7 +89,9 @@ public interface DedicatedHost {
     List<SubResourceReadOnly> virtualMachines();
 
     /**
-     * Gets the licenseType property: Specifies the software license type that will be applied to the VMs deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The default value is: **None.**.
+     * Gets the licenseType property: Specifies the software license type that will be applied to the VMs deployed on
+     * the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The
+     * default value is: **None.**.
      * 
      * @return the licenseType value.
      */
@@ -114,7 +119,8 @@ public interface DedicatedHost {
     DedicatedHostInstanceView instanceView();
 
     /**
-     * Gets the timeCreated property: Specifies the time at which the Dedicated Host resource was created. Minimum api-version: 2021-11-01.
+     * Gets the timeCreated property: Specifies the time at which the Dedicated Host resource was created. Minimum
+     * api-version: 2021-11-01.
      * 
      * @return the timeCreated value.
      */
@@ -205,16 +211,19 @@ public interface DedicatedHost {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: SKU of the dedicated host for Hardware Generation and VM family. Only name is required to be set. List Microsoft.Compute SKUs for a list of possible values..
+             * Specifies the sku property: SKU of the dedicated host for Hardware Generation and VM family. Only name is
+             * required to be set. List Microsoft.Compute SKUs for a list of possible values..
              * 
-             * @param sku SKU of the dedicated host for Hardware Generation and VM family. Only name is required to be set. List Microsoft.Compute SKUs for a list of possible values.
+             * @param sku SKU of the dedicated host for Hardware Generation and VM family. Only name is required to be
+             * set. List Microsoft.Compute SKUs for a list of possible values.
              * @return the next definition stage.
              */
             WithCreate withSku(Sku sku);
         }
 
         /**
-         * The stage of the DedicatedHost definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the DedicatedHost definition which contains all the minimum required properties for the resource
+         * to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithPlatformFaultDomain,
             DefinitionStages.WithAutoReplaceOnFailure, DefinitionStages.WithLicenseType {
@@ -252,7 +261,8 @@ public interface DedicatedHost {
          */
         interface WithPlatformFaultDomain {
             /**
-             * Specifies the platformFaultDomain property: Fault domain of the dedicated host within a dedicated host group..
+             * Specifies the platformFaultDomain property: Fault domain of the dedicated host within a dedicated host
+             * group..
              * 
              * @param platformFaultDomain Fault domain of the dedicated host within a dedicated host group.
              * @return the next definition stage.
@@ -265,9 +275,11 @@ public interface DedicatedHost {
          */
         interface WithAutoReplaceOnFailure {
             /**
-             * Specifies the autoReplaceOnFailure property: Specifies whether the dedicated host should be replaced automatically in case of a failure. The value is defaulted to 'true' when not provided..
+             * Specifies the autoReplaceOnFailure property: Specifies whether the dedicated host should be replaced
+             * automatically in case of a failure. The value is defaulted to 'true' when not provided..
              * 
-             * @param autoReplaceOnFailure Specifies whether the dedicated host should be replaced automatically in case of a failure. The value is defaulted to 'true' when not provided.
+             * @param autoReplaceOnFailure Specifies whether the dedicated host should be replaced automatically in case
+             * of a failure. The value is defaulted to 'true' when not provided.
              * @return the next definition stage.
              */
             WithCreate withAutoReplaceOnFailure(Boolean autoReplaceOnFailure);
@@ -278,9 +290,13 @@ public interface DedicatedHost {
          */
         interface WithLicenseType {
             /**
-             * Specifies the licenseType property: Specifies the software license type that will be applied to the VMs deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The default value is: **None.**.
+             * Specifies the licenseType property: Specifies the software license type that will be applied to the VMs
+             * deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,**
+             * **Windows_Server_Perpetual.** The default value is: **None.**.
              * 
-             * @param licenseType Specifies the software license type that will be applied to the VMs deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The default value is: **None.**.
+             * @param licenseType Specifies the software license type that will be applied to the VMs deployed on the
+             * dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.**
+             * The default value is: **None.**.
              * @return the next definition stage.
              */
             WithCreate withLicenseType(DedicatedHostLicenseTypes licenseType);
@@ -337,9 +353,13 @@ public interface DedicatedHost {
          */
         interface WithSku {
             /**
-             * Specifies the sku property: [List all available dedicated host sizes for resizing] (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only used to scale up DedicatedHost. Only name is required to be set. .
+             * Specifies the sku property: [List all available dedicated host sizes for resizing]
+             * (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only
+             * used to scale up DedicatedHost. Only name is required to be set. .
              * 
-             * @param sku [List all available dedicated host sizes for resizing] (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only used to scale up DedicatedHost. Only name is required to be set.
+             * @param sku [List all available dedicated host sizes for resizing]
+             * (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only
+             * used to scale up DedicatedHost. Only name is required to be set.
              * @return the next definition stage.
              */
             Update withSku(Sku sku);
@@ -350,7 +370,8 @@ public interface DedicatedHost {
          */
         interface WithPlatformFaultDomain {
             /**
-             * Specifies the platformFaultDomain property: Fault domain of the dedicated host within a dedicated host group..
+             * Specifies the platformFaultDomain property: Fault domain of the dedicated host within a dedicated host
+             * group..
              * 
              * @param platformFaultDomain Fault domain of the dedicated host within a dedicated host group.
              * @return the next definition stage.
@@ -363,9 +384,11 @@ public interface DedicatedHost {
          */
         interface WithAutoReplaceOnFailure {
             /**
-             * Specifies the autoReplaceOnFailure property: Specifies whether the dedicated host should be replaced automatically in case of a failure. The value is defaulted to 'true' when not provided..
+             * Specifies the autoReplaceOnFailure property: Specifies whether the dedicated host should be replaced
+             * automatically in case of a failure. The value is defaulted to 'true' when not provided..
              * 
-             * @param autoReplaceOnFailure Specifies whether the dedicated host should be replaced automatically in case of a failure. The value is defaulted to 'true' when not provided.
+             * @param autoReplaceOnFailure Specifies whether the dedicated host should be replaced automatically in case
+             * of a failure. The value is defaulted to 'true' when not provided.
              * @return the next definition stage.
              */
             Update withAutoReplaceOnFailure(Boolean autoReplaceOnFailure);
@@ -376,9 +399,13 @@ public interface DedicatedHost {
          */
         interface WithLicenseType {
             /**
-             * Specifies the licenseType property: Specifies the software license type that will be applied to the VMs deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The default value is: **None.**.
+             * Specifies the licenseType property: Specifies the software license type that will be applied to the VMs
+             * deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,**
+             * **Windows_Server_Perpetual.** The default value is: **None.**.
              * 
-             * @param licenseType Specifies the software license type that will be applied to the VMs deployed on the dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.** The default value is: **None.**.
+             * @param licenseType Specifies the software license type that will be applied to the VMs deployed on the
+             * dedicated host. Possible values are: **None,** **Windows_Server_Hybrid,** **Windows_Server_Perpetual.**
+             * The default value is: **None.**.
              * @return the next definition stage.
              */
             Update withLicenseType(DedicatedHostLicenseTypes licenseType);
@@ -401,37 +428,53 @@ public interface DedicatedHost {
     DedicatedHost refresh(Context context);
 
     /**
-     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
+     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
+     * Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart();
 
     /**
-     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Restart the dedicated host. The operation will complete successfully once the dedicated host has restarted and is
+     * running. To determine the health of VMs deployed on the dedicated host after the restart check the Resource
+     * Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restart(Context context);
 
     /**
-     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy();
 
     /**
-     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check the Resource Health Center in the Azure Portal. Please refer to https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
+     * Redeploy the dedicated host. The operation will complete successfully once the dedicated host has migrated to a
+     * new node and is running. To determine the health of VMs deployed on the dedicated host after the redeploy check
+     * the Resource Health Center in the Azure Portal. Please refer to
+     * https://docs.microsoft.com/azure/service-health/resource-health-overview for more details.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void redeploy(Context context);

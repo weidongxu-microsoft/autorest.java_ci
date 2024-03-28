@@ -65,7 +65,8 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * The interface defining all the services for SearchManagementClientSharedPrivateLinkResources to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for SearchManagementClientSharedPrivateLinkResources to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "SearchManagementClie")
@@ -127,17 +128,22 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a shared private link resource managed by the Azure AI Search service along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a shared private link resource managed by the Azure AI Search service along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -178,18 +184,23 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a shared private link resource managed by the Azure AI Search service along with {@link Response} on successful completion of {@link Mono}.
+     * @return describes a shared private link resource managed by the Azure AI Search service along with
+     * {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -229,17 +240,22 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of describes a shared private link resource managed by the Azure AI Search service.
+     * @return the {@link PollerFlux} for polling of describes a shared private link resource managed by the Azure AI
+     * Search service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner>
@@ -254,16 +270,20 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of describes a shared private link resource managed by the Azure AI Search service.
+     * @return the {@link PollerFlux} for polling of describes a shared private link resource managed by the Azure AI
+     * Search service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner>
@@ -278,18 +298,23 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of describes a shared private link resource managed by the Azure AI Search service.
+     * @return the {@link PollerFlux} for polling of describes a shared private link resource managed by the Azure AI
+     * Search service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner>
@@ -305,16 +330,20 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of describes a shared private link resource managed by the Azure AI Search service.
+     * @return the {@link SyncPoller} for polling of describes a shared private link resource managed by the Azure AI
+     * Search service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner> beginCreateOrUpdate(
@@ -328,18 +357,23 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of describes a shared private link resource managed by the Azure AI Search service.
+     * @return the {@link SyncPoller} for polling of describes a shared private link resource managed by the Azure AI
+     * Search service.
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<SharedPrivateLinkResourceInner>, SharedPrivateLinkResourceInner> beginCreateOrUpdate(
@@ -352,17 +386,22 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a shared private link resource managed by the Azure AI Search service on successful completion of {@link Mono}.
+     * @return describes a shared private link resource managed by the Azure AI Search service on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> createOrUpdateAsync(String resourceGroupName, String searchServiceName,
@@ -373,16 +412,20 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a shared private link resource managed by the Azure AI Search service on successful completion of {@link Mono}.
+     * @return describes a shared private link resource managed by the Azure AI Search service on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> createOrUpdateAsync(String resourceGroupName, String searchServiceName,
@@ -393,18 +436,23 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return describes a shared private link resource managed by the Azure AI Search service on successful completion of {@link Mono}.
+     * @return describes a shared private link resource managed by the Azure AI Search service on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> createOrUpdateAsync(String resourceGroupName, String searchServiceName,
@@ -415,11 +463,14 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -435,13 +486,17 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     }
 
     /**
-     * Initiates the creation or update of a shared private link resource managed by the search service in the given resource group.
+     * Initiates the creation or update of a shared private link resource managed by the search service in the given
+     * resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @param sharedPrivateLinkResource The definition of the shared private link resource to create or update.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -459,14 +514,18 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets the details of the shared private link resource managed by the search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedPrivateLinkResourceInner>> getWithResponseAsync(String resourceGroupName,
@@ -502,15 +561,19 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets the details of the shared private link resource managed by the search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource group along with {@link Response} on successful completion of {@link Mono}.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     * along with {@link Response} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<SharedPrivateLinkResourceInner>> getWithResponseAsync(String resourceGroupName,
@@ -545,13 +608,16 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets the details of the shared private link resource managed by the search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource group on successful completion of {@link Mono}.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<SharedPrivateLinkResourceInner> getAsync(String resourceGroupName, String searchServiceName,
@@ -564,15 +630,19 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets the details of the shared private link resource managed by the search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource group along with {@link Response}.
+     * @return the details of the shared private link resource managed by the search service in the given resource group
+     * along with {@link Response}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public Response<SharedPrivateLinkResourceInner> getWithResponse(String resourceGroupName, String searchServiceName,
@@ -584,13 +654,16 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets the details of the shared private link resource managed by the search service in the given resource group.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the details of the shared private link resource managed by the search service in the given resource group.
+     * @return the details of the shared private link resource managed by the search service in the given resource
+     * group.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public SharedPrivateLinkResourceInner get(String resourceGroupName, String searchServiceName,
@@ -603,10 +676,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -646,10 +722,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -689,10 +768,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -710,9 +792,11 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -731,10 +815,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -754,9 +841,11 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -774,10 +863,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -796,10 +888,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -816,9 +911,11 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -836,10 +933,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -856,9 +956,11 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -872,10 +974,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Initiates the deletion of the shared private link resource from the search service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search service within the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param sharedPrivateLinkResourceName The name of the shared private link resource managed by the Azure AI Search
+     * service within the specified resource group.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -891,13 +996,16 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all shared private link resources managed by the given service along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceSinglePageAsync(String resourceGroupName,
@@ -931,14 +1039,17 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of all shared private link resources managed by the given service along with {@link PagedResponse}
+     * on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceSinglePageAsync(String resourceGroupName,
@@ -971,13 +1082,16 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service as paginated response with {@link PagedFlux}.
+     * @return a list of all shared private link resources managed by the given service as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SharedPrivateLinkResourceInner> listByServiceAsync(String resourceGroupName,
@@ -990,12 +1104,14 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service as paginated response with {@link PagedFlux}.
+     * @return a list of all shared private link resources managed by the given service as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SharedPrivateLinkResourceInner> listByServiceAsync(String resourceGroupName,
@@ -1009,14 +1125,17 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service as paginated response with {@link PagedFlux}.
+     * @return a list of all shared private link resources managed by the given service as paginated response with
+     * {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<SharedPrivateLinkResourceInner> listByServiceAsync(String resourceGroupName,
@@ -1029,12 +1148,14 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service as paginated response with {@link PagedIterable}.
+     * @return a list of all shared private link resources managed by the given service as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SharedPrivateLinkResourceInner> listByService(String resourceGroupName,
@@ -1046,14 +1167,17 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
     /**
      * Gets a list of all shared private link resources managed by the given service.
      * 
-     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this value from the Azure Resource Manager API or the portal.
+     * @param resourceGroupName The name of the resource group within the current subscription. You can obtain this
+     * value from the Azure Resource Manager API or the portal.
      * @param searchServiceName The name of the Azure AI Search service associated with the specified resource group.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of all shared private link resources managed by the given service as paginated response with {@link PagedIterable}.
+     * @return a list of all shared private link resources managed by the given service as paginated response with
+     * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<SharedPrivateLinkResourceInner> listByService(String resourceGroupName,
@@ -1067,11 +1191,13 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @param nextLink The URL to get the next list of items
      * 
      * The nextLink parameter.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of shared private link resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response containing a list of shared private link resources along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceNextSinglePageAsync(String nextLink,
@@ -1097,12 +1223,14 @@ public final class SharedPrivateLinkResourcesClientImpl implements SharedPrivate
      * @param nextLink The URL to get the next list of items
      * 
      * The nextLink parameter.
-     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be included in response information as a way to track the request.
+     * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
+     * included in response information as a way to track the request.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return response containing a list of shared private link resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return response containing a list of shared private link resources along with {@link PagedResponse} on
+     * successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<SharedPrivateLinkResourceInner>> listByServiceNextSinglePageAsync(String nextLink,

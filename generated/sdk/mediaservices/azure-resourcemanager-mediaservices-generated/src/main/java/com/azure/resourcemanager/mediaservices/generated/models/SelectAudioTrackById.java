@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -21,6 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class SelectAudioTrackById extends AudioTrackDescriptor {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.SelectAudioTrackById";
+
+    /*
      * Track identifier to select
      */
     @JsonProperty(value = "trackId", required = true)
@@ -30,7 +38,16 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
      * Creates an instance of SelectAudioTrackById class.
      */
     public SelectAudioTrackById() {
-        withOdataType("#Microsoft.Media.SelectAudioTrackById");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**

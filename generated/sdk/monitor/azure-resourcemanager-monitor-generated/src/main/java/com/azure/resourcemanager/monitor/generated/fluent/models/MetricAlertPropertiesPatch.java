@@ -182,7 +182,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Get the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format.
+     * Get the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration
+     * format.
      * 
      * @return the evaluationFrequency value.
      */
@@ -191,7 +192,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Set the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration format.
+     * Set the evaluationFrequency property: how often the metric alert is evaluated represented in ISO 8601 duration
+     * format.
      * 
      * @param evaluationFrequency the evaluationFrequency value to set.
      * @return the MetricAlertPropertiesPatch object itself.
@@ -202,7 +204,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
+     * Get the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold.
      * 
      * @return the windowSize value.
      */
@@ -211,7 +214,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
+     * Set the windowSize property: the period of time (in ISO 8601 duration format) that is used to monitor alert
+     * activity based on the threshold.
      * 
      * @param windowSize the windowSize value to set.
      * @return the MetricAlertPropertiesPatch object itself.
@@ -222,7 +226,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Get the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * Get the targetResourceType property: the resource type of the target resource(s) on which the alert is
+     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
      * 
      * @return the targetResourceType value.
      */
@@ -231,7 +236,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Set the targetResourceType property: the resource type of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * Set the targetResourceType property: the resource type of the target resource(s) on which the alert is
+     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
      * 
      * @param targetResourceType the targetResourceType value to set.
      * @return the MetricAlertPropertiesPatch object itself.
@@ -242,7 +248,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Get the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * Get the targetResourceRegion property: the region of the target resource(s) on which the alert is
+     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
      * 
      * @return the targetResourceRegion value.
      */
@@ -251,7 +258,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Set the targetResourceRegion property: the region of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * Set the targetResourceRegion property: the region of the target resource(s) on which the alert is
+     * created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
      * 
      * @param targetResourceRegion the targetResourceRegion value to set.
      * @return the MetricAlertPropertiesPatch object itself.
@@ -282,7 +290,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Get the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true.
+     * Get the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The
+     * default is true.
      * 
      * @return the autoMitigate value.
      */
@@ -291,7 +300,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Set the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The default is true.
+     * Set the autoMitigate property: the flag that indicates whether the alert should be auto resolved or not. The
+     * default is true.
      * 
      * @param autoMitigate the autoMitigate value to set.
      * @return the MetricAlertPropertiesPatch object itself.
@@ -302,7 +312,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Get the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @return the actions value.
      */
@@ -311,7 +322,8 @@ public final class MetricAlertPropertiesPatch {
     }
 
     /**
-     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * Set the actions property: the array of actions that are performed when the alert rule becomes active, and when an
+     * alert condition is resolved.
      * 
      * @param actions the actions value to set.
      * @return the MetricAlertPropertiesPatch object itself.

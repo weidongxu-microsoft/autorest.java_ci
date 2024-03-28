@@ -14,7 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
 
 /**
- * The source user image virtual hard disk. The virtual hard disk will be copied before being attached to the virtual machine. If SourceImage is provided, the destination virtual hard drive must not exist.
+ * The source user image virtual hard disk. The virtual hard disk will be copied before being attached to the virtual
+ * machine. If SourceImage is provided, the destination virtual hard drive must not exist.
  */
 @Fluent
 public final class ImageInner extends Resource {
@@ -139,7 +140,10 @@ public final class ImageInner extends Resource {
     }
 
     /**
-     * Get the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource.
+     * Get the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the
+     * image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if
+     * the source is managed resource like disk or snapshot, we may require the user to specify the property if we
+     * cannot deduce it from the source managed resource.
      * 
      * @return the hyperVGeneration value.
      */
@@ -148,7 +152,10 @@ public final class ImageInner extends Resource {
     }
 
     /**
-     * Set the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if the source is managed resource like disk or snapshot, we may require the user to specify the property if we cannot deduce it from the source managed resource.
+     * Set the hyperVGeneration property: Specifies the HyperVGenerationType of the VirtualMachine created from the
+     * image. From API Version 2019-03-01 if the image source is a blob, then we need the user to specify the value, if
+     * the source is managed resource like disk or snapshot, we may require the user to specify the property if we
+     * cannot deduce it from the source managed resource.
      * 
      * @param hyperVGeneration the hyperVGeneration value to set.
      * @return the ImageInner object itself.

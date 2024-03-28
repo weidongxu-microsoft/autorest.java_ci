@@ -54,8 +54,9 @@ public final class MetricDefinitionCollection {
      */
     public void validate() {
         if (value() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property value in model MetricDefinitionCollection"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property value in model MetricDefinitionCollection"));
         } else {
             value().forEach(e -> e.validate());
         }

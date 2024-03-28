@@ -69,8 +69,9 @@ public final class BlobInventoryPolicyProperties {
      */
     public void validate() {
         if (policy() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property policy in model BlobInventoryPolicyProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property policy in model BlobInventoryPolicyProperties"));
         } else {
             policy().validate();
         }

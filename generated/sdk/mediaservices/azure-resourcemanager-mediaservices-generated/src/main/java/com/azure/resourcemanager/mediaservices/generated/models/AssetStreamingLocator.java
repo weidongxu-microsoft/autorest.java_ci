@@ -132,7 +132,8 @@ public final class AssetStreamingLocator {
     }
 
     /**
-     * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator.
+     * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
+     * Locator.
      * 
      * @return the defaultContentKeyPolicyName value.
      */

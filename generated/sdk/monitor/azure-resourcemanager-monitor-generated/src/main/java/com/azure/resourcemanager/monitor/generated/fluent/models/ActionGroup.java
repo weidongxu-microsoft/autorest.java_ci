@@ -123,7 +123,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
+     * Get the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
+     * none of its receivers will receive communications.
      * 
      * @return the enabled value.
      */
@@ -132,7 +133,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
+     * Set the enabled property: Indicates whether this action group is enabled. If an action group is not enabled, then
+     * none of its receivers will receive communications.
      * 
      * @param enabled the enabled value to set.
      * @return the ActionGroup object itself.
@@ -243,7 +245,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Get the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action group.
+     * Get the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action
+     * group.
      * 
      * @return the automationRunbookReceivers value.
      */
@@ -252,7 +255,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Set the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action group.
+     * Set the automationRunbookReceivers property: The list of AutomationRunbook receivers that are part of this action
+     * group.
      * 
      * @param automationRunbookReceivers the automationRunbookReceivers value to set.
      * @return the ActionGroup object itself.
@@ -323,7 +327,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Get the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
+     * Get the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are
+     * Azure RBAC roles and only built-in roles are supported.
      * 
      * @return the armRoleReceivers value.
      */
@@ -332,7 +337,8 @@ public final class ActionGroup {
     }
 
     /**
-     * Set the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
+     * Set the armRoleReceivers property: The list of ARM role receivers that are part of this action group. Roles are
+     * Azure RBAC roles and only built-in roles are supported.
      * 
      * @param armRoleReceivers the armRoleReceivers value to set.
      * @return the ActionGroup object itself.
@@ -349,8 +355,8 @@ public final class ActionGroup {
      */
     public void validate() {
         if (groupShortName() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property groupShortName in model ActionGroup"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property groupShortName in model ActionGroup"));
         }
         if (emailReceivers() != null) {
             emailReceivers().forEach(e -> e.validate());

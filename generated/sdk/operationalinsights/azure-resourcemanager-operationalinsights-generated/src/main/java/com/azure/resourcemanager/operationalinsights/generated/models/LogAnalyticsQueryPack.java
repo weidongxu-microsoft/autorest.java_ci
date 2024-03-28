@@ -71,7 +71,9 @@ public interface LogAnalyticsQueryPack {
     OffsetDateTime timeModified();
 
     /**
-     * Gets the provisioningState property: Current state of this QueryPack: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled, and Failed.
+     * Gets the provisioningState property: Current state of this QueryPack: whether or not is has been provisioned
+     * within the resource group it is defined. Users cannot change this value but are able to read from it. Values will
+     * include Succeeded, Deploying, Canceled, and Failed.
      * 
      * @return the provisioningState value.
      */
@@ -99,7 +101,8 @@ public interface LogAnalyticsQueryPack {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.LogAnalyticsQueryPackInner object.
+     * Gets the inner com.azure.resourcemanager.operationalinsights.generated.fluent.models.LogAnalyticsQueryPackInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -157,7 +160,8 @@ public interface LogAnalyticsQueryPack {
         }
 
         /**
-         * The stage of the LogAnalyticsQueryPack definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the LogAnalyticsQueryPack definition which contains all the minimum required properties for the
+         * resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags {
             /**

@@ -42,7 +42,8 @@ public final class StorageAccountListResult {
     }
 
     /**
-     * Get the nextLink property: Request URL that can be used to query next page of storage accounts. Returned when total number of requested storage accounts exceed maximum page size.
+     * Get the nextLink property: Request URL that can be used to query next page of storage accounts. Returned when
+     * total number of requested storage accounts exceed maximum page size.
      * 
      * @return the nextLink value.
      */

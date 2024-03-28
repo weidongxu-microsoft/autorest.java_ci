@@ -8,7 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Restore Settings  of the vault.
+ * Restore Settings of the vault.
  */
 @Fluent
 public final class RestoreSettings {

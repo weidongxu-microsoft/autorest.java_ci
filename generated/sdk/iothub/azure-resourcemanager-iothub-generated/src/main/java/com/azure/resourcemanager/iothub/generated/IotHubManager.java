@@ -363,7 +363,8 @@ public final class IotHubManager {
     }
 
     /**
-     * Gets wrapped service client IotHubClient providing direct access to the underlying auto-generated API implementation, based on Azure REST API.
+     * Gets wrapped service client IotHubClient providing direct access to the underlying auto-generated API
+     * implementation, based on Azure REST API.
      * 
      * @return Wrapped service client IotHubClient.
      */

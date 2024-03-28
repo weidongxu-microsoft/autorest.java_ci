@@ -19,7 +19,8 @@ public interface VirtualHubEffectiveRouteList {
     List<VirtualHubEffectiveRoute> value();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualHubEffectiveRouteListInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualHubEffectiveRouteListInner
+     * object.
      * 
      * @return the inner object.
      */

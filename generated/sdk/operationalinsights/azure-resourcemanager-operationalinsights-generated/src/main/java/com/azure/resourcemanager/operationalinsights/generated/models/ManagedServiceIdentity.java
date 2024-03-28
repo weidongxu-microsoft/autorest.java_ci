@@ -48,7 +48,8 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the principalId property: The service principal ID of the system assigned identity. This property will only be provided for a system assigned identity.
+     * Get the principalId property: The service principal ID of the system assigned identity. This property will only
+     * be provided for a system assigned identity.
      * 
      * @return the principalId value.
      */
@@ -57,7 +58,8 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the tenantId property: The tenant ID of the system assigned identity. This property will only be provided for a system assigned identity.
+     * Get the tenantId property: The tenant ID of the system assigned identity. This property will only be provided for
+     * a system assigned identity.
      * 
      * @return the tenantId value.
      */
@@ -66,7 +68,8 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the type property: Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
+     * Get the type property: Type of managed service identity (where both SystemAssigned and UserAssigned types are
+     * allowed).
      * 
      * @return the type value.
      */
@@ -75,7 +78,8 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Set the type property: Type of managed service identity (where both SystemAssigned and UserAssigned types are allowed).
+     * Set the type property: Type of managed service identity (where both SystemAssigned and UserAssigned types are
+     * allowed).
      * 
      * @param type the type value to set.
      * @return the ManagedServiceIdentity object itself.
@@ -86,7 +90,10 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Get the userAssignedIdentities property: The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+     * Get the userAssignedIdentities property: The set of user assigned identities associated with the resource. The
+     * userAssignedIdentities dictionary keys will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}.
+     * The dictionary values can be empty objects ({}) in requests.
      * 
      * @return the userAssignedIdentities value.
      */
@@ -95,7 +102,10 @@ public final class ManagedServiceIdentity {
     }
 
     /**
-     * Set the userAssignedIdentities property: The set of user assigned identities associated with the resource. The userAssignedIdentities dictionary keys will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}. The dictionary values can be empty objects ({}) in requests.
+     * Set the userAssignedIdentities property: The set of user assigned identities associated with the resource. The
+     * userAssignedIdentities dictionary keys will be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}.
+     * The dictionary values can be empty objects ({}) in requests.
      * 
      * @param userAssignedIdentities the userAssignedIdentities value to set.
      * @return the ManagedServiceIdentity object itself.
@@ -112,8 +122,8 @@ public final class ManagedServiceIdentity {
      */
     public void validate() {
         if (type() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property type in model ManagedServiceIdentity"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property type in model ManagedServiceIdentity"));
         }
         if (userAssignedIdentities() != null) {
             userAssignedIdentities().values().forEach(e -> {

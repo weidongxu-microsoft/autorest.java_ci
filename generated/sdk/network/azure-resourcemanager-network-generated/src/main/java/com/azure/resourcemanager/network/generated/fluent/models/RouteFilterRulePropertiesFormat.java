@@ -88,7 +88,8 @@ public final class RouteFilterRulePropertiesFormat {
     }
 
     /**
-     * Get the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
+     * Get the communities property: The collection for bgp community values to filter on. e.g.
+     * ['12076:5010','12076:5020'].
      * 
      * @return the communities value.
      */
@@ -97,7 +98,8 @@ public final class RouteFilterRulePropertiesFormat {
     }
 
     /**
-     * Set the communities property: The collection for bgp community values to filter on. e.g. ['12076:5010','12076:5020'].
+     * Set the communities property: The collection for bgp community values to filter on. e.g.
+     * ['12076:5010','12076:5020'].
      * 
      * @param communities the communities value to set.
      * @return the RouteFilterRulePropertiesFormat object itself.
@@ -123,16 +125,19 @@ public final class RouteFilterRulePropertiesFormat {
      */
     public void validate() {
         if (access() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property access in model RouteFilterRulePropertiesFormat"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property access in model RouteFilterRulePropertiesFormat"));
         }
         if (routeFilterRuleType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property routeFilterRuleType in model RouteFilterRulePropertiesFormat"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property routeFilterRuleType in model RouteFilterRulePropertiesFormat"));
         }
         if (communities() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property communities in model RouteFilterRulePropertiesFormat"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property communities in model RouteFilterRulePropertiesFormat"));
         }
     }
 

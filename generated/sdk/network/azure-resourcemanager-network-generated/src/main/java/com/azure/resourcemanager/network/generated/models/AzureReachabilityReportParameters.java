@@ -158,18 +158,21 @@ public final class AzureReachabilityReportParameters {
      */
     public void validate() {
         if (providerLocation() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property providerLocation in model AzureReachabilityReportParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property providerLocation in model AzureReachabilityReportParameters"));
         } else {
             providerLocation().validate();
         }
         if (startTime() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property startTime in model AzureReachabilityReportParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property startTime in model AzureReachabilityReportParameters"));
         }
         if (endTime() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property endTime in model AzureReachabilityReportParameters"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property endTime in model AzureReachabilityReportParameters"));
         }
     }
 

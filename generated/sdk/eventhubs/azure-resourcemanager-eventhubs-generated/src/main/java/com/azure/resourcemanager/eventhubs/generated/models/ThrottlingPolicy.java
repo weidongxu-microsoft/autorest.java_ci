@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventhubs.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -17,6 +18,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("ThrottlingPolicy")
 @Fluent
 public final class ThrottlingPolicy extends ApplicationGroupPolicy {
+    /*
+     * Application Group Policy types
+     */
+    @JsonTypeId
+    @JsonProperty(value = "type", required = true)
+    private ApplicationGroupPolicyType type = ApplicationGroupPolicyType.THROTTLING_POLICY;
+
     /*
      * The Threshold limit above which the application group will be throttled.Rate limit is always per second.
      */
@@ -33,11 +41,21 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
      * Creates an instance of ThrottlingPolicy class.
      */
     public ThrottlingPolicy() {
-        withType(ApplicationGroupPolicyType.THROTTLING_POLICY);
     }
 
     /**
-     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate limit is always per second.
+     * Get the type property: Application Group Policy types.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public ApplicationGroupPolicyType type() {
+        return this.type;
+    }
+
+    /**
+     * Get the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
+     * limit is always per second.
      * 
      * @return the rateLimitThreshold value.
      */
@@ -46,7 +64,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate limit is always per second.
+     * Set the rateLimitThreshold property: The Threshold limit above which the application group will be throttled.Rate
+     * limit is always per second.
      * 
      * @param rateLimitThreshold the rateLimitThreshold value to set.
      * @return the ThrottlingPolicy object itself.
@@ -57,7 +76,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Get the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
+     * Get the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by
+     * hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
      * 
      * @return the metricId value.
      */
@@ -66,7 +86,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     }
 
     /**
-     * Set the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
+     * Set the metricId property: Metric Id on which the throttle limit should be set, MetricId can be discovered by
+     * hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal.
      * 
      * @param metricId the metricId value to set.
      * @return the ThrottlingPolicy object itself.
@@ -94,8 +115,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     public void validate() {
         super.validate();
         if (metricId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property metricId in model ThrottlingPolicy"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property metricId in model ThrottlingPolicy"));
         }
     }
 

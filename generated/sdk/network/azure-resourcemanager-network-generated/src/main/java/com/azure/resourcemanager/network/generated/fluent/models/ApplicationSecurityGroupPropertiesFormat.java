@@ -32,7 +32,9 @@ public final class ApplicationSecurityGroupPropertiesFormat {
     }
 
     /**
-     * Get the resourceGuid property: The resource GUID property of the application security group resource. It uniquely identifies a resource, even if the user changes its name or migrate the resource across subscriptions or resource groups.
+     * Get the resourceGuid property: The resource GUID property of the application security group resource. It uniquely
+     * identifies a resource, even if the user changes its name or migrate the resource across subscriptions or resource
+     * groups.
      * 
      * @return the resourceGuid value.
      */

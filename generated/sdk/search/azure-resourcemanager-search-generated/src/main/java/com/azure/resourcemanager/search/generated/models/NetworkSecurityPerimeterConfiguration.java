@@ -68,7 +68,8 @@ public interface NetworkSecurityPerimeterConfiguration {
     List<NspProvisioningIssue> provisioningIssues();
 
     /**
-     * Gets the inner com.azure.resourcemanager.search.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner object.
+     * Gets the inner
+     * com.azure.resourcemanager.search.generated.fluent.models.NetworkSecurityPerimeterConfigurationInner object.
      * 
      * @return the inner object.
      */

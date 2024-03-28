@@ -13,24 +13,28 @@ import com.azure.core.util.Context;
  */
 public interface RestorePointCollections {
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByResourceGroup(String resourceGroupName, String restorePointCollectionName);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the Restore Point Collection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void delete(String resourceGroupName, String restorePointCollectionName, Context context);
@@ -40,10 +44,12 @@ public interface RestorePointCollections {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all contained restore points in the restorePointCollection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
+     * contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
@@ -56,7 +62,8 @@ public interface RestorePointCollections {
      * @param resourceGroupName The name of the resource group.
      * @param restorePointCollectionName The name of the restore point collection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters.
      */
@@ -67,9 +74,11 @@ public interface RestorePointCollections {
      * 
      * @param resourceGroupName The name of the resource group.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<RestorePointCollection> listByResourceGroup(String resourceGroupName);
 
@@ -79,29 +88,39 @@ public interface RestorePointCollections {
      * @param resourceGroupName The name of the resource group.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in a resource group as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in a resource group as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<RestorePointCollection> listByResourceGroup(String resourceGroupName, Context context);
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
+     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
+     * collections.
      * 
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<RestorePointCollection> list();
 
     /**
-     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the next page of restore point collections. Do this till nextLink is not null to fetch all the restore point collections.
+     * Gets the list of restore point collections in the subscription. Use nextLink property in the response to get the
+     * next page of restore point collections. Do this till nextLink is not null to fetch all the restore point
+     * collections.
      * 
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the list of restore point collections in the subscription as paginated response with {@link PagedIterable}.
+     * @return the list of restore point collections in the subscription as paginated response with
+     * {@link PagedIterable}.
      */
     PagedIterable<RestorePointCollection> list(Context context);
 
@@ -110,7 +129,8 @@ public interface RestorePointCollections {
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
@@ -120,10 +140,12 @@ public interface RestorePointCollections {
      * The operation to get the restore point collection.
      * 
      * @param id the resource ID.
-     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all contained restore points in the restorePointCollection.
+     * @param expand The expand expression to apply on the operation. If expand=restorePoints, server will return all
+     * contained restore points in the restorePointCollection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return create or update Restore Point collection parameters along with {@link Response}.
      */
@@ -131,22 +153,26 @@ public interface RestorePointCollections {
         Context context);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param id the resource ID.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteById(String id);
 
     /**
-     * The operation to delete the restore point collection. This operation will also delete all the contained restore points.
+     * The operation to delete the restore point collection. This operation will also delete all the contained restore
+     * points.
      * 
      * @param id the resource ID.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void deleteByIdWithResponse(String id, Context context);

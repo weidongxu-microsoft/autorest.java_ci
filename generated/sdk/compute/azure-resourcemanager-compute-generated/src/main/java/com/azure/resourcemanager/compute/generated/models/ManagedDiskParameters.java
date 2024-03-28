@@ -38,7 +38,8 @@ public final class ManagedDiskParameters extends SubResource {
     }
 
     /**
-     * Get the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
+     * Get the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS
+     * can only be used with data disks, it cannot be used with OS Disk.
      * 
      * @return the storageAccountType value.
      */
@@ -47,7 +48,8 @@ public final class ManagedDiskParameters extends SubResource {
     }
 
     /**
-     * Set the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
+     * Set the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS
+     * can only be used with data disks, it cannot be used with OS Disk.
      * 
      * @param storageAccountType the storageAccountType value to set.
      * @return the ManagedDiskParameters object itself.
@@ -58,7 +60,8 @@ public final class ManagedDiskParameters extends SubResource {
     }
 
     /**
-     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk.
+     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed disk.
      * 
      * @return the diskEncryptionSet value.
      */
@@ -67,7 +70,8 @@ public final class ManagedDiskParameters extends SubResource {
     }
 
     /**
-     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed disk.
+     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed disk.
      * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the ManagedDiskParameters object itself.

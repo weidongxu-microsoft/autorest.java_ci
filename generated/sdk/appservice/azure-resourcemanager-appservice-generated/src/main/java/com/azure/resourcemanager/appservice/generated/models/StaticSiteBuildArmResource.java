@@ -111,7 +111,8 @@ public interface StaticSiteBuildArmResource {
     List<DatabaseConnectionOverview> databaseConnections();
 
     /**
-     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner object.
+     * Gets the inner com.azure.resourcemanager.appservice.generated.fluent.models.StaticSiteBuildArmResourceInner
+     * object.
      * 
      * @return the inner object.
      */

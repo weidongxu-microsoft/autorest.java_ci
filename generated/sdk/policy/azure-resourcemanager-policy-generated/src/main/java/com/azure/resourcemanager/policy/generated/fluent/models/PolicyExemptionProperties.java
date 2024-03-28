@@ -85,7 +85,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
+     * Get the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
+     * assignment is an assignment of a policy set definition.
      * 
      * @return the policyDefinitionReferenceIds value.
      */
@@ -94,7 +95,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
+     * Set the policyDefinitionReferenceIds property: The policy definition reference ID list when the associated policy
+     * assignment is an assignment of a policy set definition.
      * 
      * @param policyDefinitionReferenceIds the policyDefinitionReferenceIds value to set.
      * @return the PolicyExemptionProperties object itself.
@@ -125,7 +127,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Get the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
+     * Get the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the
+     * policy exemption.
      * 
      * @return the expiresOn value.
      */
@@ -134,7 +137,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Set the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the policy exemption.
+     * Set the expiresOn property: The expiration date and time (in UTC ISO 8601 format yyyy-MM-ddTHH:mm:ssZ) of the
+     * policy exemption.
      * 
      * @param expiresOn the expiresOn value to set.
      * @return the PolicyExemptionProperties object itself.
@@ -185,7 +189,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Get the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs.
+     * Get the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a
+     * collection of key value pairs.
      * 
      * @return the metadata value.
      */
@@ -194,7 +199,8 @@ public final class PolicyExemptionProperties {
     }
 
     /**
-     * Set the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a collection of key value pairs.
+     * Set the metadata property: The policy exemption metadata. Metadata is an open ended object and is typically a
+     * collection of key value pairs.
      * 
      * @param metadata the metadata value to set.
      * @return the PolicyExemptionProperties object itself.
@@ -211,12 +217,14 @@ public final class PolicyExemptionProperties {
      */
     public void validate() {
         if (policyAssignmentId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property policyAssignmentId in model PolicyExemptionProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property policyAssignmentId in model PolicyExemptionProperties"));
         }
         if (exemptionCategory() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property exemptionCategory in model PolicyExemptionProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property exemptionCategory in model PolicyExemptionProperties"));
         }
     }
 

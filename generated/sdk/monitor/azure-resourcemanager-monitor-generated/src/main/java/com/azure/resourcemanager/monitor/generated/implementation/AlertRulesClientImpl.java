@@ -61,7 +61,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
     }
 
     /**
-     * The interface defining all the services for MonitorClientAlertRules to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MonitorClientAlertRules to be used by the proxy service to perform
+     * REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MonitorClientAlertRu")
@@ -640,7 +641,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName) {
@@ -674,7 +676,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listByResourceGroupSinglePageAsync(String resourceGroupName,
@@ -764,7 +767,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listSinglePageAsync() {
@@ -793,7 +797,8 @@ public final class AlertRulesClientImpl implements AlertRulesClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return represents a collection of alert rule resources along with {@link PagedResponse} on successful completion
+     * of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<AlertRuleResourceInner>> listSinglePageAsync(Context context) {

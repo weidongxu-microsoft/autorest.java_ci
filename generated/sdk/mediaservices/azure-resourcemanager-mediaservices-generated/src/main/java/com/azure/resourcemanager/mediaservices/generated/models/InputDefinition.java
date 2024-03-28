@@ -53,18 +53,8 @@ public class InputDefinition {
     }
 
     /**
-     * Set the odataType property: The discriminator for derived types.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the InputDefinition object itself.
-     */
-    protected InputDefinition withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
-    }
-
-    /**
-     * Get the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks in the input.
+     * Get the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks
+     * in the input.
      * 
      * @return the includedTracks value.
      */
@@ -73,7 +63,8 @@ public class InputDefinition {
     }
 
     /**
-     * Set the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks in the input.
+     * Set the includedTracks property: The list of TrackDescriptors which define the metadata and selection of tracks
+     * in the input.
      * 
      * @param includedTracks the includedTracks value to set.
      * @return the InputDefinition object itself.

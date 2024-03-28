@@ -36,8 +36,10 @@ public interface DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     * DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -66,8 +68,10 @@ public interface DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
-     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing DNSSEC configuration. Other values will be ignored.
+     * @param ifMatch The etag of the DNSSEC configuration. Omit this value to always overwrite the DNSSEC
+     * configuration. Specify the last-seen etag value to prevent accidentally overwriting any concurrent changes.
+     * @param ifNoneMatch Set to '*' to allow this DNSSEC configuration to be created, but to prevent updating existing
+     * DNSSEC configuration. Other values will be ignored.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -96,7 +100,8 @@ public interface DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -124,7 +129,8 @@ public interface DnssecConfigsClient {
      * 
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param zoneName The name of the DNS zone (without a terminating dot).
-     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration. Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
+     * @param ifMatch The etag of this DNSSEC configuration. Omit this value to always delete the DNSSEC configuration.
+     * Specify the last-seen etag value to prevent accidentally deleting any concurrent changes.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

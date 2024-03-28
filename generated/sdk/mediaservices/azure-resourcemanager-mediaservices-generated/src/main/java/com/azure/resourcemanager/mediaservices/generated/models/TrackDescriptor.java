@@ -12,7 +12,8 @@ import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * Base type for all TrackDescriptor types, which define the metadata and selection for tracks that should be processed by a Job.
+ * Base type for all TrackDescriptor types, which define the metadata and selection for tracks that should be processed
+ * by a Job.
  */
 @JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = TrackDescriptor.class, visible = true)
 @JsonTypeName("TrackDescriptor")
@@ -42,17 +43,6 @@ public class TrackDescriptor {
      */
     public String odataType() {
         return this.odataType;
-    }
-
-    /**
-     * Set the odataType property: The discriminator for derived types.
-     * 
-     * @param odataType the odataType value to set.
-     * @return the TrackDescriptor object itself.
-     */
-    protected TrackDescriptor withOdataType(String odataType) {
-        this.odataType = odataType;
-        return this;
     }
 
     /**

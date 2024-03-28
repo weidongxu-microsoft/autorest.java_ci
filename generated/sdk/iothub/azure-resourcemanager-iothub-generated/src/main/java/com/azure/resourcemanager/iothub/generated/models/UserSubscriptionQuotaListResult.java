@@ -26,7 +26,8 @@ public interface UserSubscriptionQuotaListResult {
     String nextLink();
 
     /**
-     * Gets the inner com.azure.resourcemanager.iothub.generated.fluent.models.UserSubscriptionQuotaListResultInner object.
+     * Gets the inner com.azure.resourcemanager.iothub.generated.fluent.models.UserSubscriptionQuotaListResultInner
+     * object.
      * 
      * @return the inner object.
      */

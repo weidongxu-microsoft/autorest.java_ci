@@ -192,7 +192,8 @@ public interface FlowLog {
         }
 
         /**
-         * The stage of the FlowLog definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the FlowLog definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithTargetResourceId,
             DefinitionStages.WithStorageId, DefinitionStages.WithEnabled, DefinitionStages.WithRetentionPolicy,
@@ -296,7 +297,8 @@ public interface FlowLog {
          */
         interface WithFlowAnalyticsConfiguration {
             /**
-             * Specifies the flowAnalyticsConfiguration property: Parameters that define the configuration of traffic analytics..
+             * Specifies the flowAnalyticsConfiguration property: Parameters that define the configuration of traffic
+             * analytics..
              * 
              * @param flowAnalyticsConfiguration Parameters that define the configuration of traffic analytics.
              * @return the next definition stage.

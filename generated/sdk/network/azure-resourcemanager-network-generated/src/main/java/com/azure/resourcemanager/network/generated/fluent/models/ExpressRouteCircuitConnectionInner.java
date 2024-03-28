@@ -56,7 +56,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -65,7 +66,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the ExpressRouteCircuitConnectionInner object itself.
@@ -103,7 +105,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection.
+     * Get the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
+     * circuit initiating connection.
      * 
      * @return the expressRouteCircuitPeering value.
      */
@@ -112,7 +115,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the circuit initiating connection.
+     * Set the expressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the
+     * circuit initiating connection.
      * 
      * @param expressRouteCircuitPeering the expressRouteCircuitPeering value to set.
      * @return the ExpressRouteCircuitConnectionInner object itself.
@@ -126,7 +130,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+     * Get the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
+     * the peered circuit.
      * 
      * @return the peerExpressRouteCircuitPeering value.
      */
@@ -135,7 +140,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of the peered circuit.
+     * Set the peerExpressRouteCircuitPeering property: Reference to Express Route Circuit Private Peering Resource of
+     * the peered circuit.
      * 
      * @param peerExpressRouteCircuitPeering the peerExpressRouteCircuitPeering value to set.
      * @return the ExpressRouteCircuitConnectionInner object itself.
@@ -196,7 +202,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Get the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit connection.
+     * Get the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit
+     * connection.
      * 
      * @return the ipv6CircuitConnectionConfig value.
      */
@@ -205,7 +212,8 @@ public final class ExpressRouteCircuitConnectionInner extends SubResource {
     }
 
     /**
-     * Set the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit connection.
+     * Set the ipv6CircuitConnectionConfig property: IPv6 Address PrefixProperties of the express route circuit
+     * connection.
      * 
      * @param ipv6CircuitConnectionConfig the ipv6CircuitConnectionConfig value to set.
      * @return the ExpressRouteCircuitConnectionInner object itself.

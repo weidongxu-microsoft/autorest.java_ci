@@ -59,7 +59,8 @@ public final class RunCommandInput {
     }
 
     /**
-     * Get the script property: Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+     * Get the script property: Optional. The script to be executed. When this value is given, the given script will
+     * override the default script of the command.
      * 
      * @return the script value.
      */
@@ -68,7 +69,8 @@ public final class RunCommandInput {
     }
 
     /**
-     * Set the script property: Optional. The script to be executed.  When this value is given, the given script will override the default script of the command.
+     * Set the script property: Optional. The script to be executed. When this value is given, the given script will
+     * override the default script of the command.
      * 
      * @param script the script value to set.
      * @return the RunCommandInput object itself.
@@ -105,8 +107,8 @@ public final class RunCommandInput {
      */
     public void validate() {
         if (commandId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property commandId in model RunCommandInput"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property commandId in model RunCommandInput"));
         }
         if (parameters() != null) {
             parameters().forEach(e -> e.validate());

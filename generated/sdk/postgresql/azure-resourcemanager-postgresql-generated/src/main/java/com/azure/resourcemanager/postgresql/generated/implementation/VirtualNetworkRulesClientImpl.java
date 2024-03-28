@@ -64,7 +64,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
     }
 
     /**
-     * The interface defining all the services for PostgreSqlManagementClientVirtualNetworkRules to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for PostgreSqlManagementClientVirtualNetworkRules to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "PostgreSqlManagement")
@@ -743,7 +744,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual network rules in a server along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of virtual network rules in a server along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listByServerSinglePageAsync(String resourceGroupName,
@@ -782,7 +784,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual network rules in a server along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of virtual network rules in a server along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listByServerSinglePageAsync(String resourceGroupName,
@@ -887,7 +890,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual network rules along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of virtual network rules along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listByServerNextSinglePageAsync(String nextLink) {
@@ -916,7 +920,8 @@ public final class VirtualNetworkRulesClientImpl implements VirtualNetworkRulesC
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return a list of virtual network rules along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return a list of virtual network rules along with {@link PagedResponse} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<VirtualNetworkRuleInner>> listByServerNextSinglePageAsync(String nextLink,

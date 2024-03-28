@@ -43,7 +43,8 @@ public final class Rectangle {
     }
 
     /**
-     * Get the left property: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Get the left property: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or
+     * relative to the size of the video (For example, 50%).
      * 
      * @return the left value.
      */
@@ -52,7 +53,8 @@ public final class Rectangle {
     }
 
     /**
-     * Set the left property: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Set the left property: The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or
+     * relative to the size of the video (For example, 50%).
      * 
      * @param left the left value to set.
      * @return the Rectangle object itself.
@@ -63,7 +65,8 @@ public final class Rectangle {
     }
 
     /**
-     * Get the top property: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Get the top property: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or
+     * relative to the size of the video (For example, 50%).
      * 
      * @return the top value.
      */
@@ -72,7 +75,8 @@ public final class Rectangle {
     }
 
     /**
-     * Set the top property: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Set the top property: The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or
+     * relative to the size of the video (For example, 50%).
      * 
      * @param top the top value to set.
      * @return the Rectangle object itself.
@@ -83,7 +87,8 @@ public final class Rectangle {
     }
 
     /**
-     * Get the width property: The width of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Get the width property: The width of the rectangular region in pixels. This can be absolute pixel value (e.g
+     * 100), or relative to the size of the video (For example, 50%).
      * 
      * @return the width value.
      */
@@ -92,7 +97,8 @@ public final class Rectangle {
     }
 
     /**
-     * Set the width property: The width of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Set the width property: The width of the rectangular region in pixels. This can be absolute pixel value (e.g
+     * 100), or relative to the size of the video (For example, 50%).
      * 
      * @param width the width value to set.
      * @return the Rectangle object itself.
@@ -103,7 +109,8 @@ public final class Rectangle {
     }
 
     /**
-     * Get the height property: The height of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Get the height property: The height of the rectangular region in pixels. This can be absolute pixel value (e.g
+     * 100), or relative to the size of the video (For example, 50%).
      * 
      * @return the height value.
      */
@@ -112,7 +119,8 @@ public final class Rectangle {
     }
 
     /**
-     * Set the height property: The height of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the size of the video (For example, 50%).
+     * Set the height property: The height of the rectangular region in pixels. This can be absolute pixel value (e.g
+     * 100), or relative to the size of the video (For example, 50%).
      * 
      * @param height the height value to set.
      * @return the Rectangle object itself.

@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -23,6 +24,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRestrictionTokenKey {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicySymmetricTokenKey";
+
+    /*
      * The key value of the key
      */
     @JsonProperty(value = "keyValue", required = true)
@@ -32,7 +40,16 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
      * Creates an instance of ContentKeyPolicySymmetricTokenKey class.
      */
     public ContentKeyPolicySymmetricTokenKey() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicySymmetricTokenKey");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -64,8 +81,9 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
     public void validate() {
         super.validate();
         if (keyValue() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property keyValue in model ContentKeyPolicySymmetricTokenKey"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property keyValue in model ContentKeyPolicySymmetricTokenKey"));
         }
     }
 

@@ -158,16 +158,19 @@ public final class ApplicationGatewayFirewallManifestRuleSet {
      */
     public void validate() {
         if (ruleSetType() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleSetType in model ApplicationGatewayFirewallManifestRuleSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleSetType in model ApplicationGatewayFirewallManifestRuleSet"));
         }
         if (ruleSetVersion() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleSetVersion in model ApplicationGatewayFirewallManifestRuleSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleSetVersion in model ApplicationGatewayFirewallManifestRuleSet"));
         }
         if (ruleGroups() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property ruleGroups in model ApplicationGatewayFirewallManifestRuleSet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property ruleGroups in model ApplicationGatewayFirewallManifestRuleSet"));
         } else {
             ruleGroups().forEach(e -> e.validate());
         }

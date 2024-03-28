@@ -122,7 +122,8 @@ public class ImageDisk {
     }
 
     /**
-     * Get the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,** **ReadWrite.** The default values are: **None for Standard storage. ReadOnly for Premium storage.**.
+     * Get the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,**
+     * **ReadWrite.** The default values are: **None for Standard storage. ReadOnly for Premium storage.**.
      * 
      * @return the caching value.
      */
@@ -131,7 +132,8 @@ public class ImageDisk {
     }
 
     /**
-     * Set the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,** **ReadWrite.** The default values are: **None for Standard storage. ReadOnly for Premium storage.**.
+     * Set the caching property: Specifies the caching requirements. Possible values are: **None,** **ReadOnly,**
+     * **ReadWrite.** The default values are: **None for Standard storage. ReadOnly for Premium storage.**.
      * 
      * @param caching the caching value to set.
      * @return the ImageDisk object itself.
@@ -142,7 +144,8 @@ public class ImageDisk {
     }
 
     /**
-     * Get the diskSizeGB property: Specifies the size of empty data disks in gigabytes. This element can be used to overwrite the name of the disk in a virtual machine image. This value cannot be larger than 1023 GB.
+     * Get the diskSizeGB property: Specifies the size of empty data disks in gigabytes. This element can be used to
+     * overwrite the name of the disk in a virtual machine image. This value cannot be larger than 1023 GB.
      * 
      * @return the diskSizeGB value.
      */
@@ -151,7 +154,8 @@ public class ImageDisk {
     }
 
     /**
-     * Set the diskSizeGB property: Specifies the size of empty data disks in gigabytes. This element can be used to overwrite the name of the disk in a virtual machine image. This value cannot be larger than 1023 GB.
+     * Set the diskSizeGB property: Specifies the size of empty data disks in gigabytes. This element can be used to
+     * overwrite the name of the disk in a virtual machine image. This value cannot be larger than 1023 GB.
      * 
      * @param diskSizeGB the diskSizeGB value to set.
      * @return the ImageDisk object itself.
@@ -162,7 +166,8 @@ public class ImageDisk {
     }
 
     /**
-     * Get the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
+     * Get the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS
+     * can only be used with data disks, it cannot be used with OS Disk.
      * 
      * @return the storageAccountType value.
      */
@@ -171,7 +176,8 @@ public class ImageDisk {
     }
 
     /**
-     * Set the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS can only be used with data disks, it cannot be used with OS Disk.
+     * Set the storageAccountType property: Specifies the storage account type for the managed disk. NOTE: UltraSSD_LRS
+     * can only be used with data disks, it cannot be used with OS Disk.
      * 
      * @param storageAccountType the storageAccountType value to set.
      * @return the ImageDisk object itself.
@@ -182,7 +188,8 @@ public class ImageDisk {
     }
 
     /**
-     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed image disk.
+     * Get the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed image disk.
      * 
      * @return the diskEncryptionSet value.
      */
@@ -191,7 +198,8 @@ public class ImageDisk {
     }
 
     /**
-     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the managed image disk.
+     * Set the diskEncryptionSet property: Specifies the customer managed disk encryption set resource id for the
+     * managed image disk.
      * 
      * @param diskEncryptionSet the diskEncryptionSet value to set.
      * @return the ImageDisk object itself.

@@ -50,7 +50,8 @@ public final class GetPrivateDnsZoneSuffixesClientImpl implements GetPrivateDnsZ
     }
 
     /**
-     * The interface defining all the services for MySqlManagementClientGetPrivateDnsZoneSuffixes to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for MySqlManagementClientGetPrivateDnsZoneSuffixes to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "MySqlManagementClien")
@@ -68,7 +69,8 @@ public final class GetPrivateDnsZoneSuffixesClientImpl implements GetPrivateDnsZ
      * 
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private DNS zone suffix in the cloud along with {@link Response} on successful completion of {@link Mono}.
+     * @return private DNS zone suffix in the cloud along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GetPrivateDnsZoneSuffixResponseInner>> executeWithResponseAsync() {
@@ -89,7 +91,8 @@ public final class GetPrivateDnsZoneSuffixesClientImpl implements GetPrivateDnsZ
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return private DNS zone suffix in the cloud along with {@link Response} on successful completion of {@link Mono}.
+     * @return private DNS zone suffix in the cloud along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<GetPrivateDnsZoneSuffixResponseInner>> executeWithResponseAsync(Context context) {

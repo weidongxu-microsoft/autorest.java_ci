@@ -49,7 +49,8 @@ public final class HubVirtualNetworkConnectionInner extends SubResource {
     }
 
     /**
-     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Get the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @return the name value.
      */
@@ -58,7 +59,8 @@ public final class HubVirtualNetworkConnectionInner extends SubResource {
     }
 
     /**
-     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to access the resource.
+     * Set the name property: The name of the resource that is unique within a resource group. This name can be used to
+     * access the resource.
      * 
      * @param name the name value to set.
      * @return the HubVirtualNetworkConnectionInner object itself.
@@ -180,7 +182,8 @@ public final class HubVirtualNetworkConnectionInner extends SubResource {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -189,7 +192,8 @@ public final class HubVirtualNetworkConnectionInner extends SubResource {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the HubVirtualNetworkConnectionInner object itself.

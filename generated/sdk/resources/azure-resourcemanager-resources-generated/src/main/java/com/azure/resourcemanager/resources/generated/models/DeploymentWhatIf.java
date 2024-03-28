@@ -78,8 +78,8 @@ public final class DeploymentWhatIf {
      */
     public void validate() {
         if (properties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property properties in model DeploymentWhatIf"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property properties in model DeploymentWhatIf"));
         } else {
             properties().validate();
         }

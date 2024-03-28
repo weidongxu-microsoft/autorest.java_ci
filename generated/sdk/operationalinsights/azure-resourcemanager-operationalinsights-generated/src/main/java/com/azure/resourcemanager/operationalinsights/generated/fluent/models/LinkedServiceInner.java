@@ -66,7 +66,8 @@ public final class LinkedServiceInner extends ProxyResource {
     }
 
     /**
-     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+     * Get the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
+     * used for linking resources which require read access.
      * 
      * @return the resourceId value.
      */
@@ -75,7 +76,8 @@ public final class LinkedServiceInner extends ProxyResource {
     }
 
     /**
-     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require read access.
+     * Set the resourceId property: The resource id of the resource that will be linked to the workspace. This should be
+     * used for linking resources which require read access.
      * 
      * @param resourceId the resourceId value to set.
      * @return the LinkedServiceInner object itself.
@@ -89,7 +91,8 @@ public final class LinkedServiceInner extends ProxyResource {
     }
 
     /**
-     * Get the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+     * Get the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
+     * This should be used for linking resources which require write access.
      * 
      * @return the writeAccessResourceId value.
      */
@@ -98,7 +101,8 @@ public final class LinkedServiceInner extends ProxyResource {
     }
 
     /**
-     * Set the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace. This should be used for linking resources which require write access.
+     * Set the writeAccessResourceId property: The resource id of the resource that will be linked to the workspace.
+     * This should be used for linking resources which require write access.
      * 
      * @param writeAccessResourceId the writeAccessResourceId value to set.
      * @return the LinkedServiceInner object itself.
@@ -141,8 +145,9 @@ public final class LinkedServiceInner extends ProxyResource {
      */
     public void validate() {
         if (innerProperties() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property innerProperties in model LinkedServiceInner"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property innerProperties in model LinkedServiceInner"));
         } else {
             innerProperties().validate();
         }

@@ -52,17 +52,6 @@ public class Facet {
     }
 
     /**
-     * Set the resultType property: Result type.
-     * 
-     * @param resultType the resultType value to set.
-     * @return the Facet object itself.
-     */
-    protected Facet withResultType(String resultType) {
-        this.resultType = resultType;
-        return this;
-    }
-
-    /**
      * Get the expression property: Facet expression, same as in the corresponding facet request.
      * 
      * @return the expression value.
@@ -89,8 +78,8 @@ public class Facet {
      */
     public void validate() {
         if (expression() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property expression in model Facet"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property expression in model Facet"));
         }
     }
 

@@ -90,7 +90,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
+     * Get the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
+     * is broken, in seconds, between 0 and 60.
      * 
      * @return the breakPeriod value.
      */
@@ -99,7 +100,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it is broken, in seconds, between 0 and 60.
+     * Set the breakPeriod property: Optional. For a break action, proposed duration the lease should continue before it
+     * is broken, in seconds, between 0 and 60.
      * 
      * @param breakPeriod the breakPeriod value to set.
      * @return the LeaseShareRequest object itself.
@@ -110,7 +112,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Get the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
+     * Get the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or
+     * negative one (-1) for a lease that never expires.
      * 
      * @return the leaseDuration value.
      */
@@ -119,7 +122,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Set the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or negative one (-1) for a lease that never expires.
+     * Set the leaseDuration property: Required for acquire. Specifies the duration of the lease, in seconds, or
+     * negative one (-1) for a lease that never expires.
      * 
      * @param leaseDuration the leaseDuration value to set.
      * @return the LeaseShareRequest object itself.
@@ -130,7 +134,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Get the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string format.
+     * Get the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string
+     * format.
      * 
      * @return the proposedLeaseId value.
      */
@@ -139,7 +144,8 @@ public final class LeaseShareRequest {
     }
 
     /**
-     * Set the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string format.
+     * Set the proposedLeaseId property: Optional for acquire, required for change. Proposed lease ID, in a GUID string
+     * format.
      * 
      * @param proposedLeaseId the proposedLeaseId value to set.
      * @return the LeaseShareRequest object itself.
@@ -156,8 +162,8 @@ public final class LeaseShareRequest {
      */
     public void validate() {
         if (action() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property action in model LeaseShareRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property action in model LeaseShareRequest"));
         }
     }
 

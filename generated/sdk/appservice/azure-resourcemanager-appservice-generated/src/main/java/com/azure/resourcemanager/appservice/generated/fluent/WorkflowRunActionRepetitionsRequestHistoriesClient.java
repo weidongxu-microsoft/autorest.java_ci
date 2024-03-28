@@ -12,7 +12,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.appservice.generated.fluent.models.RequestHistoryInner;
 
 /**
- * An instance of this class provides access to all the operations defined in WorkflowRunActionRepetitionsRequestHistoriesClient.
+ * An instance of this class provides access to all the operations defined in
+ * WorkflowRunActionRepetitionsRequestHistoriesClient.
  */
 public interface WorkflowRunActionRepetitionsRequestHistoriesClient {
     /**

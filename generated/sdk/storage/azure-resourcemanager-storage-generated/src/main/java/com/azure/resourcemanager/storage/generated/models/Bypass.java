@@ -9,7 +9,8 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values are any combination of Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of those traffics.
+ * Specifies whether traffic is bypassed for Logging/Metrics/AzureServices. Possible values are any combination of
+ * Logging|Metrics|AzureServices (For example, "Logging, Metrics"), or None to bypass none of those traffics.
  */
 public final class Bypass extends ExpandableStringEnum<Bypass> {
     /**

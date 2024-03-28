@@ -104,7 +104,8 @@ public final class VirtualNetworkConfiguration {
     }
 
     /**
-     * Get the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will be removed from the subnet.
+     * Get the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will
+     * be removed from the subnet.
      * 
      * @return the state value.
      */
@@ -113,7 +114,8 @@ public final class VirtualNetworkConfiguration {
     }
 
     /**
-     * Set the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will be removed from the subnet.
+     * Set the state property: When enabled, the cluster is deployed into the configured subnet, when disabled it will
+     * be removed from the subnet.
      * 
      * @param state the state value to set.
      * @return the VirtualNetworkConfiguration object itself.
@@ -130,16 +132,19 @@ public final class VirtualNetworkConfiguration {
      */
     public void validate() {
         if (subnetId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property subnetId in model VirtualNetworkConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property subnetId in model VirtualNetworkConfiguration"));
         }
         if (enginePublicIpId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property enginePublicIpId in model VirtualNetworkConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property enginePublicIpId in model VirtualNetworkConfiguration"));
         }
         if (dataManagementPublicIpId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property dataManagementPublicIpId in model VirtualNetworkConfiguration"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property dataManagementPublicIpId in model VirtualNetworkConfiguration"));
         }
     }
 

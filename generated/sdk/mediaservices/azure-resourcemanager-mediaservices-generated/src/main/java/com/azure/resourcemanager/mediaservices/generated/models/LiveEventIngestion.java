@@ -111,7 +111,8 @@ public final class LiveEventIngestion {
     }
 
     /**
-     * Get the endReason property: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No Ingestion.
+     * Get the endReason property: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No
+     * Ingestion.
      * 
      * @return the endReason value.
      */
@@ -120,7 +121,8 @@ public final class LiveEventIngestion {
     }
 
     /**
-     * Set the endReason property: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No Ingestion.
+     * Set the endReason property: Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No
+     * Ingestion.
      * 
      * @param endReason the endReason value to set.
      * @return the LiveEventIngestion object itself.

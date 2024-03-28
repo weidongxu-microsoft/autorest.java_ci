@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -21,6 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment {
     /*
+     * Static routing enrichment value type. For e.g. this property value can be 'String'.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "valueType", required = true)
+    private StaticRoutingEnrichmentType valueType = StaticRoutingEnrichmentType.STRING;
+
+    /*
      * String type routing enrichment value.
      */
     @JsonProperty(value = "value")
@@ -30,7 +38,16 @@ public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment
      * Creates an instance of StaticStringRoutingEnrichment class.
      */
     public StaticStringRoutingEnrichment() {
-        withValueType(StaticRoutingEnrichmentType.STRING);
+    }
+
+    /**
+     * Get the valueType property: Static routing enrichment value type. For e.g. this property value can be 'String'.
+     * 
+     * @return the valueType value.
+     */
+    @Override
+    public StaticRoutingEnrichmentType valueType() {
+        return this.valueType;
     }
 
     /**

@@ -7,6 +7,7 @@ package com.azure.resourcemanager.frontdoor.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -21,6 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration")
 @Fluent
 public final class ForwardingConfiguration extends RouteConfiguration {
+    /*
+     * The @odata.type property.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration";
+
     /*
      * A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
      */
@@ -49,11 +57,21 @@ public final class ForwardingConfiguration extends RouteConfiguration {
      * Creates an instance of ForwardingConfiguration class.
      */
     public ForwardingConfiguration() {
-        withOdataType("#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration");
     }
 
     /**
-     * Get the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
+     * Get the odataType property: The &#064;odata.type property.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
+    }
+
+    /**
+     * Get the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
+     * empty to use incoming path.
      * 
      * @return the customForwardingPath value.
      */
@@ -62,7 +80,8 @@ public final class ForwardingConfiguration extends RouteConfiguration {
     }
 
     /**
-     * Set the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
+     * Set the customForwardingPath property: A custom path used to rewrite resource paths matched by this rule. Leave
+     * empty to use incoming path.
      * 
      * @param customForwardingPath the customForwardingPath value to set.
      * @return the ForwardingConfiguration object itself.

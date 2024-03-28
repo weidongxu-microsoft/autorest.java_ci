@@ -60,7 +60,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
+     * Get the vpnClientAddressPool property: The reference to the address space resource which represents Address space
+     * for P2S VpnClient.
      * 
      * @return the vpnClientAddressPool value.
      */
@@ -69,7 +70,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space for P2S VpnClient.
+     * Set the vpnClientAddressPool property: The reference to the address space resource which represents Address space
+     * for P2S VpnClient.
      * 
      * @param vpnClientAddressPool the vpnClientAddressPool value to set.
      * @return the P2SConnectionConfigurationProperties object itself.
@@ -80,7 +82,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Get the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @return the routingConfiguration value.
      */
@@ -89,7 +92,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route tables on this connection.
+     * Set the routingConfiguration property: The Routing Configuration indicating the associated and propagated route
+     * tables on this connection.
      * 
      * @param routingConfiguration the routingConfiguration value to set.
      * @return the P2SConnectionConfigurationProperties object itself.
@@ -100,7 +104,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Get the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on for the P2S Connections or not.
+     * Get the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on
+     * for the P2S Connections or not.
      * 
      * @return the enableInternetSecurity value.
      */
@@ -109,7 +114,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Set the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on for the P2S Connections or not.
+     * Set the enableInternetSecurity property: Flag indicating whether the enable internet security flag is turned on
+     * for the P2S Connections or not.
      * 
      * @param enableInternetSecurity the enableInternetSecurity value to set.
      * @return the P2SConnectionConfigurationProperties object itself.
@@ -120,7 +126,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Get the configurationPolicyGroupAssociations property: List of Configuration Policy Groups that this P2SConnectionConfiguration is attached to.
+     * Get the configurationPolicyGroupAssociations property: List of Configuration Policy Groups that this
+     * P2SConnectionConfiguration is attached to.
      * 
      * @return the configurationPolicyGroupAssociations value.
      */
@@ -129,7 +136,8 @@ public final class P2SConnectionConfigurationProperties {
     }
 
     /**
-     * Get the previousConfigurationPolicyGroupAssociations property: List of previous Configuration Policy Groups that this P2SConnectionConfiguration was attached to.
+     * Get the previousConfigurationPolicyGroupAssociations property: List of previous Configuration Policy Groups that
+     * this P2SConnectionConfiguration was attached to.
      * 
      * @return the previousConfigurationPolicyGroupAssociations value.
      */

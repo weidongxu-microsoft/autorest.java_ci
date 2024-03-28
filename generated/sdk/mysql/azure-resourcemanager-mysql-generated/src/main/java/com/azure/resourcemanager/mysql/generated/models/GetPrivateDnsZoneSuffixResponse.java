@@ -18,7 +18,8 @@ public interface GetPrivateDnsZoneSuffixResponse {
     String privateDnsZoneSuffix();
 
     /**
-     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.GetPrivateDnsZoneSuffixResponseInner object.
+     * Gets the inner com.azure.resourcemanager.mysql.generated.fluent.models.GetPrivateDnsZoneSuffixResponseInner
+     * object.
      * 
      * @return the inner object.
      */

@@ -64,7 +64,8 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Get the privateLinkServiceConnectionState property: Describes the current state of an existing Azure Private Link service connection to the private endpoint.
+     * Get the privateLinkServiceConnectionState property: Describes the current state of an existing Azure Private Link
+     * service connection to the private endpoint.
      * 
      * @return the privateLinkServiceConnectionState value.
      */
@@ -73,7 +74,8 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Set the privateLinkServiceConnectionState property: Describes the current state of an existing Azure Private Link service connection to the private endpoint.
+     * Set the privateLinkServiceConnectionState property: Describes the current state of an existing Azure Private Link
+     * service connection to the private endpoint.
      * 
      * @param privateLinkServiceConnectionState the privateLinkServiceConnectionState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.
@@ -105,7 +107,8 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Get the provisioningState property: The provisioning state of the private link service connection. Valid values are Updating, Deleting, Failed, Succeeded, Incomplete, or Canceled.
+     * Get the provisioningState property: The provisioning state of the private link service connection. Valid values
+     * are Updating, Deleting, Failed, Succeeded, Incomplete, or Canceled.
      * 
      * @return the provisioningState value.
      */
@@ -114,7 +117,8 @@ public final class PrivateEndpointConnectionProperties {
     }
 
     /**
-     * Set the provisioningState property: The provisioning state of the private link service connection. Valid values are Updating, Deleting, Failed, Succeeded, Incomplete, or Canceled.
+     * Set the provisioningState property: The provisioning state of the private link service connection. Valid values
+     * are Updating, Deleting, Failed, Succeeded, Incomplete, or Canceled.
      * 
      * @param provisioningState the provisioningState value to set.
      * @return the PrivateEndpointConnectionProperties object itself.

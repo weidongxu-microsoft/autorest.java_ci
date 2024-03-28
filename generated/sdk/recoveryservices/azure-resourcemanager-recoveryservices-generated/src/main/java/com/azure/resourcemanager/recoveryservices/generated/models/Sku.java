@@ -50,7 +50,9 @@ public final class Sku {
     }
 
     /**
-     * Get the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig.
+     * Get the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do
+     * not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the
+     * backupstorageconfig.
      * 
      * @return the name value.
      */
@@ -59,7 +61,9 @@ public final class Sku {
     }
 
     /**
-     * Set the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the backupstorageconfig.
+     * Set the name property: Name of SKU is RS0 (Recovery Services 0th version) and the tier is standard tier. They do
+     * not have affect on backend storage redundancy or any other vault settings. To manage storage redundancy, use the
+     * backupstorageconfig.
      * 
      * @param name the name value to set.
      * @return the Sku object itself.
@@ -156,8 +160,7 @@ public final class Sku {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER
-                .logExceptionAsError(new IllegalArgumentException("Missing required property name in model Sku"));
+            throw LOGGER.atError().log(new IllegalArgumentException("Missing required property name in model Sku"));
         }
     }
 

@@ -53,7 +53,7 @@ public interface StampCapacity {
     WorkerSizeOptions workerSize();
 
     /**
-     * Gets the workerSizeId property: Size ID of machines: 
+     * Gets the workerSizeId property: Size ID of machines:
      * 0 - Small
      * 1 - Medium
      * 2 - Large.
@@ -71,7 +71,8 @@ public interface StampCapacity {
     Boolean excludeFromCapacityAllocation();
 
     /**
-     * Gets the isApplicableForAllComputeModes property: &lt;code&gt;true&lt;/code&gt; if capacity is applicable for all apps; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Gets the isApplicableForAllComputeModes property: &lt;code&gt;true&lt;/code&gt; if capacity is applicable for all
+     * apps; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the isApplicableForAllComputeModes value.
      */

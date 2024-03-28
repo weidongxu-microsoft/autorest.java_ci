@@ -78,8 +78,9 @@ public final class ManagementPolicyDefinition {
      */
     public void validate() {
         if (actions() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property actions in model ManagementPolicyDefinition"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property actions in model ManagementPolicyDefinition"));
         } else {
             actions().validate();
         }

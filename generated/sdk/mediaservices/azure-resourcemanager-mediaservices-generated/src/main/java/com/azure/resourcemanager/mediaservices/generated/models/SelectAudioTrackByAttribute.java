@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -21,6 +22,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("#Microsoft.Media.SelectAudioTrackByAttribute")
 @Fluent
 public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
+    /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.SelectAudioTrackByAttribute";
+
     /*
      * The TrackAttribute to filter the tracks by.
      */
@@ -43,7 +51,16 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
      * Creates an instance of SelectAudioTrackByAttribute class.
      */
     public SelectAudioTrackByAttribute() {
-        withOdataType("#Microsoft.Media.SelectAudioTrackByAttribute");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -67,7 +84,8 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Get the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the tracks.
+     * Get the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the
+     * tracks.
      * 
      * @return the filter value.
      */
@@ -76,7 +94,8 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Set the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the tracks.
+     * Set the filter property: The type of AttributeFilter to apply to the TrackAttribute in order to select the
+     * tracks.
      * 
      * @param filter the filter value to set.
      * @return the SelectAudioTrackByAttribute object itself.
@@ -87,7 +106,8 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Get the filterValue property: The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property.
+     * Get the filterValue property: The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is
+     * specified for the Filter property.
      * 
      * @return the filterValue value.
      */
@@ -96,7 +116,8 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     }
 
     /**
-     * Set the filterValue property: The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property.
+     * Set the filterValue property: The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is
+     * specified for the Filter property.
      * 
      * @param filterValue the filterValue value to set.
      * @return the SelectAudioTrackByAttribute object itself.
@@ -124,12 +145,14 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     public void validate() {
         super.validate();
         if (attribute() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property attribute in model SelectAudioTrackByAttribute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property attribute in model SelectAudioTrackByAttribute"));
         }
         if (filter() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property filter in model SelectAudioTrackByAttribute"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property filter in model SelectAudioTrackByAttribute"));
         }
     }
 

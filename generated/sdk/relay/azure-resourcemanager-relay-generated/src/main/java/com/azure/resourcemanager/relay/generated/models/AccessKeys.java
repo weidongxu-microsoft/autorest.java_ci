@@ -18,7 +18,8 @@ public interface AccessKeys {
     String primaryConnectionString();
 
     /**
-     * Gets the secondaryConnectionString property: Secondary connection string of the created namespace authorization rule.
+     * Gets the secondaryConnectionString property: Secondary connection string of the created namespace authorization
+     * rule.
      * 
      * @return the secondaryConnectionString value.
      */

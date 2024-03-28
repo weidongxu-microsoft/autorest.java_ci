@@ -7,6 +7,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import java.util.UUID;
@@ -24,6 +25,13 @@ import java.util.UUID;
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier
     extends ContentKeyPolicyPlayReadyContentKeyLocation {
     /*
+     * The discriminator for derived types.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "@odata.type", required = true)
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier";
+
+    /*
      * The content key ID.
      */
     @JsonProperty(value = "keyId", required = true)
@@ -33,7 +41,16 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifie
      * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier class.
      */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier() {
-        withOdataType("#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier");
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -65,8 +82,9 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifie
     public void validate() {
         super.validate();
         if (keyId() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property keyId in model ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property keyId in model ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier"));
         }
     }
 

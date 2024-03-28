@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PartnerEventSubscriptionDestinationProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
@@ -22,6 +23,13 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class PartnerEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
+     * Type of the endpoint for the event subscription destination.
+     */
+    @JsonTypeId
+    @JsonProperty(value = "endpointType", required = true)
+    private EndpointType endpointType = EndpointType.PARTNER_DESTINATION;
+
+    /*
      * Partner Destination Properties of the event subscription destination.
      */
     @JsonProperty(value = "properties")
@@ -31,7 +39,16 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
      * Creates an instance of PartnerEventSubscriptionDestination class.
      */
     public PartnerEventSubscriptionDestination() {
-        withEndpointType(EndpointType.PARTNER_DESTINATION);
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the event subscription destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public EndpointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -44,7 +61,8 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Get the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an event subscription.
+     * Get the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an
+     * event subscription.
      * 
      * @return the resourceId value.
      */
@@ -53,7 +71,8 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
     }
 
     /**
-     * Set the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an event subscription.
+     * Set the resourceId property: The Azure Resource Id that represents the endpoint of a Partner Destination of an
+     * event subscription.
      * 
      * @param resourceId the resourceId value to set.
      * @return the PartnerEventSubscriptionDestination object itself.

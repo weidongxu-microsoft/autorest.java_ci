@@ -45,7 +45,7 @@ public final class GalleryApplicationCustomAction {
     }
 
     /**
-     * Get the name property: The name of the custom action.  Must be unique within the Gallery Application Version.
+     * Get the name property: The name of the custom action. Must be unique within the Gallery Application Version.
      * 
      * @return the name value.
      */
@@ -54,7 +54,7 @@ public final class GalleryApplicationCustomAction {
     }
 
     /**
-     * Set the name property: The name of the custom action.  Must be unique within the Gallery Application Version.
+     * Set the name property: The name of the custom action. Must be unique within the Gallery Application Version.
      * 
      * @param name the name value to set.
      * @return the GalleryApplicationCustomAction object itself.
@@ -131,12 +131,14 @@ public final class GalleryApplicationCustomAction {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model GalleryApplicationCustomAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property name in model GalleryApplicationCustomAction"));
         }
         if (script() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property script in model GalleryApplicationCustomAction"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property script in model GalleryApplicationCustomAction"));
         }
         if (parameters() != null) {
             parameters().forEach(e -> e.validate());

@@ -64,7 +64,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientHubVirtualNetworkConnections to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientHubVirtualNetworkConnections to be used by the
+     * proxy service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")
@@ -126,11 +127,13 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -175,12 +178,14 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName,
@@ -223,7 +228,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -246,7 +252,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -271,7 +278,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -293,7 +301,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -316,7 +325,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -335,7 +345,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -356,7 +367,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -375,7 +387,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @param resourceGroupName The resource group name of the HubVirtualNetworkConnection.
      * @param virtualHubName The name of the VirtualHub.
      * @param connectionName The name of the HubVirtualNetworkConnection.
-     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network connection.
+     * @param hubVirtualNetworkConnectionParameters Parameters supplied to create or update a hub virtual network
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -623,7 +636,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HubVirtualNetworkConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -664,7 +678,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of {@link Mono}.
+     * @return hubVirtualNetworkConnection Resource along with {@link Response} on successful completion of
+     * {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<HubVirtualNetworkConnectionInner>> getWithResponseAsync(String resourceGroupName,
@@ -755,7 +770,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubVirtualNetworkConnectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -794,7 +810,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubVirtualNetworkConnectionInner>> listSinglePageAsync(String resourceGroupName,
@@ -832,7 +849,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated response with {@link PagedFlux}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated
+     * response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<HubVirtualNetworkConnectionInner> listAsync(String resourceGroupName, String virtualHubName) {
@@ -849,7 +867,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated response with {@link PagedFlux}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated
+     * response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<HubVirtualNetworkConnectionInner> listAsync(String resourceGroupName, String virtualHubName,
@@ -866,7 +885,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated
+     * response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<HubVirtualNetworkConnectionInner> list(String resourceGroupName, String virtualHubName) {
@@ -882,7 +902,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated response with {@link PagedIterable}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results as paginated
+     * response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<HubVirtualNetworkConnectionInner> list(String resourceGroupName, String virtualHubName,
@@ -899,7 +920,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubVirtualNetworkConnectionInner>> listNextSinglePageAsync(String nextLink) {
@@ -927,7 +949,8 @@ public final class HubVirtualNetworkConnectionsClientImpl implements HubVirtualN
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with {@link PagedResponse} on successful completion of {@link Mono}.
+     * @return list of HubVirtualNetworkConnections and a URL nextLink to get the next set of results along with
+     * {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<HubVirtualNetworkConnectionInner>> listNextSinglePageAsync(String nextLink,

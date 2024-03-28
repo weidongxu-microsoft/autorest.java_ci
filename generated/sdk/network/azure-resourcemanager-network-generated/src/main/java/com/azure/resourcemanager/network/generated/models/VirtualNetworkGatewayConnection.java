@@ -186,7 +186,8 @@ public interface VirtualNetworkGatewayConnection {
     Boolean enableBgp();
 
     /**
-     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
+     * Gets the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway
+     * Connection.
      * 
      * @return the gatewayCustomBgpIpAddresses value.
      */
@@ -242,7 +243,8 @@ public interface VirtualNetworkGatewayConnection {
     Boolean expressRouteGatewayBypass();
 
     /**
-     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+     * Gets the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links.
+     * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
      * 
      * @return the enablePrivateLinkFastPath value.
      */
@@ -270,7 +272,8 @@ public interface VirtualNetworkGatewayConnection {
     String resourceGroupName();
 
     /**
-     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionInner object.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkGatewayConnectionInner
+     * object.
      * 
      * @return the inner object.
      */
@@ -355,7 +358,8 @@ public interface VirtualNetworkGatewayConnection {
         }
 
         /**
-         * The stage of the VirtualNetworkGatewayConnection definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the VirtualNetworkGatewayConnection definition which contains all the minimum required
+         * properties for the resource to be created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithAuthorizationKey,
             DefinitionStages.WithVirtualNetworkGateway2, DefinitionStages.WithLocalNetworkGateway2,
@@ -556,9 +560,11 @@ public interface VirtualNetworkGatewayConnection {
          */
         interface WithGatewayCustomBgpIpAddresses {
             /**
-             * Specifies the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection..
+             * Specifies the gatewayCustomBgpIpAddresses property: GatewayCustomBgpIpAddresses to be used for virtual
+             * network gateway Connection..
              * 
-             * @param gatewayCustomBgpIpAddresses GatewayCustomBgpIpAddresses to be used for virtual network gateway Connection.
+             * @param gatewayCustomBgpIpAddresses GatewayCustomBgpIpAddresses to be used for virtual network gateway
+             * Connection.
              * @return the next definition stage.
              */
             WithCreate withGatewayCustomBgpIpAddresses(
@@ -579,7 +585,8 @@ public interface VirtualNetworkGatewayConnection {
         }
 
         /**
-         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify usePolicyBasedTrafficSelectors.
+         * The stage of the VirtualNetworkGatewayConnection definition allowing to specify
+         * usePolicyBasedTrafficSelectors.
          */
         interface WithUsePolicyBasedTrafficSelectors {
             /**
@@ -609,7 +616,8 @@ public interface VirtualNetworkGatewayConnection {
          */
         interface WithTrafficSelectorPolicies {
             /**
-             * Specifies the trafficSelectorPolicies property: The Traffic Selector Policies to be considered by this connection..
+             * Specifies the trafficSelectorPolicies property: The Traffic Selector Policies to be considered by this
+             * connection..
              * 
              * @param trafficSelectorPolicies The Traffic Selector Policies to be considered by this connection.
              * @return the next definition stage.
@@ -635,9 +643,11 @@ public interface VirtualNetworkGatewayConnection {
          */
         interface WithEnablePrivateLinkFastPath {
             /**
-             * Specifies the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled..
+             * Specifies the enablePrivateLinkFastPath property: Bypass the ExpressRoute gateway when accessing
+             * private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled..
              * 
-             * @param enablePrivateLinkFastPath Bypass the ExpressRoute gateway when accessing private-links. ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
+             * @param enablePrivateLinkFastPath Bypass the ExpressRoute gateway when accessing private-links.
+             * ExpressRoute FastPath (expressRouteGatewayBypass) must be enabled.
              * @return the next definition stage.
              */
             WithCreate withEnablePrivateLinkFastPath(Boolean enablePrivateLinkFastPath);
@@ -707,7 +717,8 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Starts packet capture on virtual network gateway connection in the specified resource group.
      * 
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -716,10 +727,12 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Starts packet capture on virtual network gateway connection in the specified resource group.
      * 
-     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to start packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -728,9 +741,11 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Stops packet capture on virtual network gateway connection in the specified resource group.
      * 
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */
@@ -739,10 +754,12 @@ public interface VirtualNetworkGatewayConnection {
     /**
      * Stops packet capture on virtual network gateway connection in the specified resource group.
      * 
-     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway connection.
+     * @param parameters Virtual network gateway packet capture parameters supplied to stop packet capture on gateway
+     * connection.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by server.
+     * @throws com.azure.resourcemanager.network.generated.models.ErrorException thrown if the request is rejected by
+     * server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return the response.
      */

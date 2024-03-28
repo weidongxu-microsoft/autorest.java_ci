@@ -98,7 +98,8 @@ public final class Login {
     }
 
     /**
-     * Get the preserveUrlFragmentsForLogins property: &lt;code&gt;true&lt;/code&gt; if the fragments from the request are preserved after the login request is made; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the preserveUrlFragmentsForLogins property: &lt;code&gt;true&lt;/code&gt; if the fragments from the request
+     * are preserved after the login request is made; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the preserveUrlFragmentsForLogins value.
      */
@@ -107,7 +108,8 @@ public final class Login {
     }
 
     /**
-     * Set the preserveUrlFragmentsForLogins property: &lt;code&gt;true&lt;/code&gt; if the fragments from the request are preserved after the login request is made; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the preserveUrlFragmentsForLogins property: &lt;code&gt;true&lt;/code&gt; if the fragments from the request
+     * are preserved after the login request is made; otherwise, &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param preserveUrlFragmentsForLogins the preserveUrlFragmentsForLogins value to set.
      * @return the Login object itself.
@@ -118,7 +120,8 @@ public final class Login {
     }
 
     /**
-     * Get the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or logging out of the app. Note that the query string part of the URL is ignored.
+     * Get the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or
+     * logging out of the app. Note that the query string part of the URL is ignored.
      * This is an advanced setting typically only needed by Windows Store application backends.
      * Note that URLs within the current domain are always implicitly allowed.
      * 
@@ -129,7 +132,8 @@ public final class Login {
     }
 
     /**
-     * Set the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or logging out of the app. Note that the query string part of the URL is ignored.
+     * Set the allowedExternalRedirectUrls property: External URLs that can be redirected to as part of logging in or
+     * logging out of the app. Note that the query string part of the URL is ignored.
      * This is an advanced setting typically only needed by Windows Store application backends.
      * Note that URLs within the current domain are always implicitly allowed.
      * 

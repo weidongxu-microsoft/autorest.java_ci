@@ -90,14 +90,16 @@ public interface Order {
     String serialNumber();
 
     /**
-     * Gets the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it has an original or a replacement device.
+     * Gets the deliveryTrackingInfo property: Tracking information for the package delivered to the customer whether it
+     * has an original or a replacement device.
      * 
      * @return the deliveryTrackingInfo value.
      */
     List<TrackingInfo> deliveryTrackingInfo();
 
     /**
-     * Gets the returnTrackingInfo property: Tracking information for the package returned from the customer whether it has an original or a replacement device.
+     * Gets the returnTrackingInfo property: Tracking information for the package returned from the customer whether it
+     * has an original or a replacement device.
      * 
      * @return the returnTrackingInfo value.
      */

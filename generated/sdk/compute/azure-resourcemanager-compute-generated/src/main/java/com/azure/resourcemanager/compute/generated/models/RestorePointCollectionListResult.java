@@ -53,7 +53,8 @@ public final class RestorePointCollectionListResult {
     }
 
     /**
-     * Get the nextLink property: The uri to fetch the next page of RestorePointCollections. Call ListNext() with this to fetch the next page of RestorePointCollections.
+     * Get the nextLink property: The uri to fetch the next page of RestorePointCollections. Call ListNext() with this
+     * to fetch the next page of RestorePointCollections.
      * 
      * @return the nextLink value.
      */
@@ -62,7 +63,8 @@ public final class RestorePointCollectionListResult {
     }
 
     /**
-     * Set the nextLink property: The uri to fetch the next page of RestorePointCollections. Call ListNext() with this to fetch the next page of RestorePointCollections.
+     * Set the nextLink property: The uri to fetch the next page of RestorePointCollections. Call ListNext() with this
+     * to fetch the next page of RestorePointCollections.
      * 
      * @param nextLink the nextLink value to set.
      * @return the RestorePointCollectionListResult object itself.

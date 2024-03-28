@@ -140,7 +140,8 @@ public final class PremierAddOnOfferProperties {
     }
 
     /**
-     * Get the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Get the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @return the promoCodeRequired value.
      */
@@ -149,7 +150,8 @@ public final class PremierAddOnOfferProperties {
     }
 
     /**
-     * Set the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise, &lt;code&gt;false&lt;/code&gt;.
+     * Set the promoCodeRequired property: &lt;code&gt;true&lt;/code&gt; if promotion code is required; otherwise,
+     * &lt;code&gt;false&lt;/code&gt;.
      * 
      * @param promoCodeRequired the promoCodeRequired value to set.
      * @return the PremierAddOnOfferProperties object itself.

@@ -38,7 +38,8 @@ public final class ArmRoleReceiver {
     }
 
     /**
-     * Get the name property: The name of the arm role receiver. Names must be unique across all receivers within an action group.
+     * Get the name property: The name of the arm role receiver. Names must be unique across all receivers within an
+     * action group.
      * 
      * @return the name value.
      */
@@ -47,7 +48,8 @@ public final class ArmRoleReceiver {
     }
 
     /**
-     * Set the name property: The name of the arm role receiver. Names must be unique across all receivers within an action group.
+     * Set the name property: The name of the arm role receiver. Names must be unique across all receivers within an
+     * action group.
      * 
      * @param name the name value to set.
      * @return the ArmRoleReceiver object itself.
@@ -104,12 +106,12 @@ public final class ArmRoleReceiver {
      */
     public void validate() {
         if (name() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property name in model ArmRoleReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model ArmRoleReceiver"));
         }
         if (roleId() == null) {
-            throw LOGGER.logExceptionAsError(
-                new IllegalArgumentException("Missing required property roleId in model ArmRoleReceiver"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property roleId in model ArmRoleReceiver"));
         }
     }
 

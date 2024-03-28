@@ -12,7 +12,8 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkManagerConnectionInner;
 
 /**
- * An instance of this class provides access to all the operations defined in ManagementGroupNetworkManagerConnectionsClient.
+ * An instance of this class provides access to all the operations defined in
+ * ManagementGroupNetworkManagerConnectionsClient.
  */
 public interface ManagementGroupNetworkManagerConnectionsClient {
     /**
@@ -116,8 +117,11 @@ public interface ManagementGroupNetworkManagerConnectionsClient {
      * List all network manager connections created by this management group.
      * 
      * @param managementGroupId The management group Id which uniquely identify the Microsoft Azure management group.
-     * @param top An optional query parameter which specifies the maximum number of records to be returned by the server.
-     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
+     * @param top An optional query parameter which specifies the maximum number of records to be returned by the
+     * server.
+     * @param skipToken SkipToken is only used if a previous operation returned a partial result. If a previous response
+     * contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies
+     * a starting point to use for subsequent calls.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.

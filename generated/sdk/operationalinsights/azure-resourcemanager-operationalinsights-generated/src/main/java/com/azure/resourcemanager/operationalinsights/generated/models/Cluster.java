@@ -78,14 +78,17 @@ public interface Cluster {
     ClusterEntityStatus provisioningState();
 
     /**
-     * Gets the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
+     * Gets the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property
+     * can not be modified after cluster creation. Default value is 'true'.
      * 
      * @return the isDoubleEncryptionEnabled value.
      */
     Boolean isDoubleEncryptionEnabled();
 
     /**
-     * Gets the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
+     * Gets the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can
+     * be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be
+     * modified after cluster creation. Default value is 'true' if region supports Availability Zones.
      * 
      * @return the isAvailabilityZonesEnabled value.
      */
@@ -213,7 +216,8 @@ public interface Cluster {
         }
 
         /**
-         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be created, but also allows for any other optional properties to be specified.
+         * The stage of the Cluster definition which contains all the minimum required properties for the resource to be
+         * created, but also allows for any other optional properties to be specified.
          */
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithSku,
             DefinitionStages.WithIsDoubleEncryptionEnabled, DefinitionStages.WithIsAvailabilityZonesEnabled,
@@ -279,9 +283,11 @@ public interface Cluster {
          */
         interface WithIsDoubleEncryptionEnabled {
             /**
-             * Specifies the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
+             * Specifies the isDoubleEncryptionEnabled property: Configures whether cluster will use double encryption.
+             * This Property can not be modified after cluster creation. Default value is 'true'.
              * 
-             * @param isDoubleEncryptionEnabled Configures whether cluster will use double encryption. This Property can not be modified after cluster creation. Default value is 'true'.
+             * @param isDoubleEncryptionEnabled Configures whether cluster will use double encryption. This Property can
+             * not be modified after cluster creation. Default value is 'true'.
              * @return the next definition stage.
              */
             WithCreate withIsDoubleEncryptionEnabled(Boolean isDoubleEncryptionEnabled);
@@ -292,9 +298,14 @@ public interface Cluster {
          */
         interface WithIsAvailabilityZonesEnabled {
             /**
-             * Specifies the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones..
+             * Specifies the isAvailabilityZonesEnabled property: Sets whether the cluster will support availability
+             * zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This
+             * Property can not be modified after cluster creation. Default value is 'true' if region supports
+             * Availability Zones..
              * 
-             * @param isAvailabilityZonesEnabled Sets whether the cluster will support availability zones. This can be set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
+             * @param isAvailabilityZonesEnabled Sets whether the cluster will support availability zones. This can be
+             * set as true only in regions where Azure Data Explorer support Availability Zones. This Property can not
+             * be modified after cluster creation. Default value is 'true' if region supports Availability Zones.
              * @return the next definition stage.
              */
             WithCreate withIsAvailabilityZonesEnabled(Boolean isAvailabilityZonesEnabled);
@@ -331,7 +342,8 @@ public interface Cluster {
          */
         interface WithAssociatedWorkspaces {
             /**
-             * Specifies the associatedWorkspaces property: The list of Log Analytics workspaces associated with the cluster.
+             * Specifies the associatedWorkspaces property: The list of Log Analytics workspaces associated with the
+             * cluster.
              * 
              * @param associatedWorkspaces The list of Log Analytics workspaces associated with the cluster.
              * @return the next definition stage.

@@ -64,7 +64,8 @@ public final class PartnerConfigurationUpdateParameters {
     }
 
     /**
-     * Get the defaultMaximumExpirationTimeInDays property: The default time used to validate the maximum expiration time for each authorized partners in days. Allowed values ar between 1 and 365 days.
+     * Get the defaultMaximumExpirationTimeInDays property: The default time used to validate the maximum expiration
+     * time for each authorized partners in days. Allowed values ar between 1 and 365 days.
      * 
      * @return the defaultMaximumExpirationTimeInDays value.
      */
@@ -73,7 +74,8 @@ public final class PartnerConfigurationUpdateParameters {
     }
 
     /**
-     * Set the defaultMaximumExpirationTimeInDays property: The default time used to validate the maximum expiration time for each authorized partners in days. Allowed values ar between 1 and 365 days.
+     * Set the defaultMaximumExpirationTimeInDays property: The default time used to validate the maximum expiration
+     * time for each authorized partners in days. Allowed values ar between 1 and 365 days.
      * 
      * @param defaultMaximumExpirationTimeInDays the defaultMaximumExpirationTimeInDays value to set.
      * @return the PartnerConfigurationUpdateParameters object itself.

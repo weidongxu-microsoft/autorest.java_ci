@@ -57,7 +57,8 @@ public final class VpnSitesConfigurationsClientImpl implements VpnSitesConfigura
     }
 
     /**
-     * The interface defining all the services for NetworkManagementClientVpnSitesConfigurations to be used by the proxy service to perform REST calls.
+     * The interface defining all the services for NetworkManagementClientVpnSitesConfigurations to be used by the proxy
+     * service to perform REST calls.
      */
     @Host("{$host}")
     @ServiceInterface(name = "NetworkManagementCli")

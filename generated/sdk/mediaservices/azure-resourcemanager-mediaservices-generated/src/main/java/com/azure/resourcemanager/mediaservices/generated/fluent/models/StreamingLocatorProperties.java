@@ -173,7 +173,11 @@ public final class StreamingLocatorProperties {
     }
 
     /**
-     * Get the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
+     * Get the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify
+     * the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined
+     * Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly',
+     * 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and
+     * 'Predefined_MultiDrmStreaming'.
      * 
      * @return the streamingPolicyName value.
      */
@@ -182,7 +186,11 @@ public final class StreamingLocatorProperties {
     }
 
     /**
-     * Set the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'.
+     * Set the streamingPolicyName property: Name of the Streaming Policy used by this Streaming Locator. Either specify
+     * the name of Streaming Policy you created or use one of the predefined Streaming Policies. The predefined
+     * Streaming Policies available are: 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly',
+     * 'Predefined_DownloadAndClearStreaming', 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and
+     * 'Predefined_MultiDrmStreaming'.
      * 
      * @param streamingPolicyName the streamingPolicyName value to set.
      * @return the StreamingLocatorProperties object itself.
@@ -193,7 +201,8 @@ public final class StreamingLocatorProperties {
     }
 
     /**
-     * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator.
+     * Get the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
+     * Locator.
      * 
      * @return the defaultContentKeyPolicyName value.
      */
@@ -202,7 +211,8 @@ public final class StreamingLocatorProperties {
     }
 
     /**
-     * Set the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming Locator.
+     * Set the defaultContentKeyPolicyName property: Name of the default ContentKeyPolicy used by this Streaming
+     * Locator.
      * 
      * @param defaultContentKeyPolicyName the defaultContentKeyPolicyName value to set.
      * @return the StreamingLocatorProperties object itself.
@@ -279,12 +289,14 @@ public final class StreamingLocatorProperties {
      */
     public void validate() {
         if (assetName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property assetName in model StreamingLocatorProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property assetName in model StreamingLocatorProperties"));
         }
         if (streamingPolicyName() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property streamingPolicyName in model StreamingLocatorProperties"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property streamingPolicyName in model StreamingLocatorProperties"));
         }
         if (contentKeys() != null) {
             contentKeys().forEach(e -> e.validate());

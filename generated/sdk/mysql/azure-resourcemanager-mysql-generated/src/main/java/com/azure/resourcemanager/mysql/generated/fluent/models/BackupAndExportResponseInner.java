@@ -230,7 +230,8 @@ public final class BackupAndExportResponseInner extends ProxyResource {
     }
 
     /**
-     * Get the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value pairs.
+     * Get the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value
+     * pairs.
      * 
      * @return the backupMetadata value.
      */
@@ -239,7 +240,8 @@ public final class BackupAndExportResponseInner extends ProxyResource {
     }
 
     /**
-     * Set the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value pairs.
+     * Set the backupMetadata property: Metadata related to backup to be stored for restoring resource in key-value
+     * pairs.
      * 
      * @param backupMetadata the backupMetadata value to set.
      * @return the BackupAndExportResponseInner object itself.

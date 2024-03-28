@@ -61,7 +61,8 @@ public interface ServerAdministratorResource {
     UUID tenantId();
 
     /**
-     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.ServerAdministratorResourceInner object.
+     * Gets the inner com.azure.resourcemanager.postgresql.generated.fluent.models.ServerAdministratorResourceInner
+     * object.
      * 
      * @return the inner object.
      */

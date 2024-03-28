@@ -63,8 +63,9 @@ public final class BackupAndExportRequest extends BackupRequestBase {
     public void validate() {
         super.validate();
         if (targetDetails() == null) {
-            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
-                "Missing required property targetDetails in model BackupAndExportRequest"));
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property targetDetails in model BackupAndExportRequest"));
         } else {
             targetDetails().validate();
         }

@@ -150,7 +150,8 @@ public final class DenyAssignmentProperties {
     }
 
     /**
-     * Get the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default value is false.
+     * Get the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
+     * value is false.
      * 
      * @return the doNotApplyToChildScopes value.
      */
@@ -159,7 +160,8 @@ public final class DenyAssignmentProperties {
     }
 
     /**
-     * Set the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default value is false.
+     * Set the doNotApplyToChildScopes property: Determines if the deny assignment applies to child scopes. Default
+     * value is false.
      * 
      * @param doNotApplyToChildScopes the doNotApplyToChildScopes value to set.
      * @return the DenyAssignmentProperties object itself.
@@ -210,7 +212,8 @@ public final class DenyAssignmentProperties {
     }
 
     /**
-     * Get the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
+     * Get the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
+     * edited or deleted.
      * 
      * @return the isSystemProtected value.
      */
@@ -219,7 +222,8 @@ public final class DenyAssignmentProperties {
     }
 
     /**
-     * Set the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
+     * Set the isSystemProtected property: Specifies whether this deny assignment was created by Azure and cannot be
+     * edited or deleted.
      * 
      * @param isSystemProtected the isSystemProtected value to set.
      * @return the DenyAssignmentProperties object itself.
