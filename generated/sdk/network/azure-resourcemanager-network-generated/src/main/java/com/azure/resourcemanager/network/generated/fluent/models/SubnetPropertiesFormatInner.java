@@ -12,6 +12,7 @@ import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.ResourceNavigationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
+import com.azure.resourcemanager.network.generated.models.SharingScope;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -135,6 +136,12 @@ public final class SubnetPropertiesFormatInner {
      */
     @JsonProperty(value = "applicationGatewayIPConfigurations")
     private List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations;
+
+    /*
+     * Set this property to Tenant to allow sharing subnet with other subscriptions in your AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can only be set if subnet is empty.
+     */
+    @JsonProperty(value = "sharingScope")
+    private SharingScope sharingScope;
 
     /*
      * Set this property to false to disable default outbound connectivity for all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an existing subnet.
@@ -460,6 +467,30 @@ public final class SubnetPropertiesFormatInner {
     public SubnetPropertiesFormatInner withApplicationGatewayIpConfigurations(
         List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations) {
         this.applicationGatewayIpConfigurations = applicationGatewayIpConfigurations;
+        return this;
+    }
+
+    /**
+     * Get the sharingScope property: Set this property to Tenant to allow sharing subnet with other subscriptions in
+     * your AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can only
+     * be set if subnet is empty.
+     * 
+     * @return the sharingScope value.
+     */
+    public SharingScope sharingScope() {
+        return this.sharingScope;
+    }
+
+    /**
+     * Set the sharingScope property: Set this property to Tenant to allow sharing subnet with other subscriptions in
+     * your AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can only
+     * be set if subnet is empty.
+     * 
+     * @param sharingScope the sharingScope value to set.
+     * @return the SubnetPropertiesFormatInner object itself.
+     */
+    public SubnetPropertiesFormatInner withSharingScope(SharingScope sharingScope) {
+        this.sharingScope = sharingScope;
         return this;
     }
 

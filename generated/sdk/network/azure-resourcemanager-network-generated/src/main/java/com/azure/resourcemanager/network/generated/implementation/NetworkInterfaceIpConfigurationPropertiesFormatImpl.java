@@ -91,6 +91,10 @@ public final class NetworkInterfaceIpConfigurationPropertiesFormatImpl
         return this.innerModel().privateIpAddress();
     }
 
+    public Integer privateIpAddressPrefixLength() {
+        return this.innerModel().privateIpAddressPrefixLength();
+    }
+
     public IpAllocationMethod privateIpAllocationMethod() {
         return this.innerModel().privateIpAllocationMethod();
     }

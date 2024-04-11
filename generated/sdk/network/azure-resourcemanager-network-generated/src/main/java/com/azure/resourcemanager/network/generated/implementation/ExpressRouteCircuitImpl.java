@@ -140,6 +140,10 @@ public final class ExpressRouteCircuitImpl
         return this.innerModel().authorizationStatus();
     }
 
+    public Boolean enableDirectPortRateLimit() {
+        return this.innerModel().enableDirectPortRateLimit();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -325,6 +329,11 @@ public final class ExpressRouteCircuitImpl
 
     public ExpressRouteCircuitImpl withAuthorizationKey(String authorizationKey) {
         this.innerModel().withAuthorizationKey(authorizationKey);
+        return this;
+    }
+
+    public ExpressRouteCircuitImpl withEnableDirectPortRateLimit(Boolean enableDirectPortRateLimit) {
+        this.innerModel().withEnableDirectPortRateLimit(enableDirectPortRateLimit);
         return this;
     }
 

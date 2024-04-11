@@ -10,6 +10,7 @@ import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.models.DelegationProperties;
 import com.azure.resourcemanager.network.generated.models.InternetIngressPublicIpsProperties;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
+import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliancePropertiesFormatNetworkProfile;
 import com.azure.resourcemanager.network.generated.models.PartnerManagedResourceProperties;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualApplianceAdditionalNicProperties;
@@ -309,6 +310,30 @@ public final class NetworkVirtualApplianceInner extends Resource {
      */
     public List<VirtualApplianceNicProperties> virtualApplianceNics() {
         return this.innerProperties() == null ? null : this.innerProperties().virtualApplianceNics();
+    }
+
+    /**
+     * Get the networkProfile property: Network Profile containing configurations for Public and Private NIC.
+     * 
+     * @return the networkProfile value.
+     */
+    public NetworkVirtualAppliancePropertiesFormatNetworkProfile networkProfile() {
+        return this.innerProperties() == null ? null : this.innerProperties().networkProfile();
+    }
+
+    /**
+     * Set the networkProfile property: Network Profile containing configurations for Public and Private NIC.
+     * 
+     * @param networkProfile the networkProfile value to set.
+     * @return the NetworkVirtualApplianceInner object itself.
+     */
+    public NetworkVirtualApplianceInner
+        withNetworkProfile(NetworkVirtualAppliancePropertiesFormatNetworkProfile networkProfile) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new NetworkVirtualAppliancePropertiesFormat();
+        }
+        this.innerProperties().withNetworkProfile(networkProfile);
+        return this;
     }
 
     /**

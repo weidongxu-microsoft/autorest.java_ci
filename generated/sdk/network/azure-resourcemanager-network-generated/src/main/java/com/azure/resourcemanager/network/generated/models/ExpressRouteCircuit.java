@@ -181,6 +181,14 @@ public interface ExpressRouteCircuit {
     String authorizationStatus();
 
     /**
+     * Gets the enableDirectPortRateLimit property: Flag denoting rate-limiting status of the ExpressRoute direct-port
+     * circuit.
+     * 
+     * @return the enableDirectPortRateLimit value.
+     */
+    Boolean enableDirectPortRateLimit();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -263,13 +271,14 @@ public interface ExpressRouteCircuit {
          * The stage of the ExpressRouteCircuit definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
-            DefinitionStages.WithAllowClassicOperations, DefinitionStages.WithCircuitProvisioningState,
-            DefinitionStages.WithServiceProviderProvisioningState, DefinitionStages.WithAuthorizations,
-            DefinitionStages.WithPeerings, DefinitionStages.WithServiceKey, DefinitionStages.WithServiceProviderNotes,
-            DefinitionStages.WithServiceProviderProperties, DefinitionStages.WithExpressRoutePort,
-            DefinitionStages.WithBandwidthInGbps, DefinitionStages.WithGatewayManagerEtag,
-            DefinitionStages.WithGlobalReachEnabled, DefinitionStages.WithAuthorizationKey {
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithAllowClassicOperations,
+            DefinitionStages.WithCircuitProvisioningState, DefinitionStages.WithServiceProviderProvisioningState,
+            DefinitionStages.WithAuthorizations, DefinitionStages.WithPeerings, DefinitionStages.WithServiceKey,
+            DefinitionStages.WithServiceProviderNotes, DefinitionStages.WithServiceProviderProperties,
+            DefinitionStages.WithExpressRoutePort, DefinitionStages.WithBandwidthInGbps,
+            DefinitionStages.WithGatewayManagerEtag, DefinitionStages.WithGlobalReachEnabled,
+            DefinitionStages.WithAuthorizationKey, DefinitionStages.WithEnableDirectPortRateLimit {
             /**
              * Executes the create request.
              * 
@@ -486,6 +495,21 @@ public interface ExpressRouteCircuit {
              * @return the next definition stage.
              */
             WithCreate withAuthorizationKey(String authorizationKey);
+        }
+
+        /**
+         * The stage of the ExpressRouteCircuit definition allowing to specify enableDirectPortRateLimit.
+         */
+        interface WithEnableDirectPortRateLimit {
+            /**
+             * Specifies the enableDirectPortRateLimit property: Flag denoting rate-limiting status of the ExpressRoute
+             * direct-port circuit..
+             * 
+             * @param enableDirectPortRateLimit Flag denoting rate-limiting status of the ExpressRoute direct-port
+             * circuit.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableDirectPortRateLimit(Boolean enableDirectPortRateLimit);
         }
     }
 

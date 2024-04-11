@@ -99,6 +99,22 @@ public interface PacketCaptureResult {
     List<PacketCaptureFilter> filters();
 
     /**
+     * Gets the continuousCapture property: This continuous capture is a nullable boolean, which can hold 'null', 'true'
+     * or 'false' value. If we do not pass this parameter, it would be consider as 'null', default value is 'null'.
+     * 
+     * @return the continuousCapture value.
+     */
+    Boolean continuousCapture();
+
+    /**
+     * Gets the captureSettings property: The capture setting holds the 'FileCount', 'FileSizeInBytes',
+     * 'SessionTimeLimitInSeconds' values.
+     * 
+     * @return the captureSettings value.
+     */
+    PacketCaptureSettings captureSettings();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureResultInner object.
      * 
      * @return the inner object.

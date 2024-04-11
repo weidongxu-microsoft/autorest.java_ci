@@ -151,6 +151,15 @@ public interface SubnetPropertiesFormat {
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
+     * Gets the sharingScope property: Set this property to Tenant to allow sharing subnet with other subscriptions in
+     * your AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can only
+     * be set if subnet is empty.
+     * 
+     * @return the sharingScope value.
+     */
+    SharingScope sharingScope();
+
+    /**
      * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
      * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
      * existing subnet.

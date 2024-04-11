@@ -195,7 +195,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.delete(this.client.getEndpoint(), resourceGroupName, azureFirewallName,
@@ -233,7 +233,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.delete(this.client.getEndpoint(), resourceGroupName, azureFirewallName, apiVersion,
@@ -400,7 +400,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -438,7 +438,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.getByResourceGroup(this.client.getEndpoint(), resourceGroupName, azureFirewallName, apiVersion,
@@ -528,7 +528,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), resourceGroupName,
@@ -572,7 +572,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), resourceGroupName, azureFirewallName, apiVersion,
@@ -763,7 +763,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.updateTags(this.client.getEndpoint(), resourceGroupName, azureFirewallName,
@@ -807,7 +807,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.updateTags(this.client.getEndpoint(), resourceGroupName, azureFirewallName, apiVersion,
@@ -986,7 +986,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), resourceGroupName,
@@ -1022,7 +1022,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
@@ -1110,7 +1110,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
@@ -1140,7 +1140,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
@@ -1231,7 +1231,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.listLearnedPrefixes(this.client.getEndpoint(), resourceGroupName,
@@ -1270,7 +1270,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.listLearnedPrefixes(this.client.getEndpoint(), resourceGroupName, azureFirewallName, apiVersion,
@@ -1451,7 +1451,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.packetCapture(this.client.getEndpoint(), resourceGroupName,
@@ -1495,7 +1495,7 @@ public final class AzureFirewallsClientImpl implements AzureFirewallsClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2023-09-01";
+        final String apiVersion = "2023-11-01";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.packetCapture(this.client.getEndpoint(), resourceGroupName, azureFirewallName, apiVersion,

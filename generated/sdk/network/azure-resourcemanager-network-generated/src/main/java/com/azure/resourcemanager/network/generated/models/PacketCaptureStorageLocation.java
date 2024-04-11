@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class PacketCaptureStorageLocation {
     /*
-     * The ID of the storage account to save the packet capture session. Required if no local file path is provided.
+     * The ID of the storage account to save the packet capture session. Required if no localPath or filePath is provided.
      */
     @JsonProperty(value = "storageId")
     private String storageId;
@@ -25,10 +25,16 @@ public final class PacketCaptureStorageLocation {
     private String storagePath;
 
     /*
-     * A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual machine it must start with /var/captures. Required if no storage ID is provided, otherwise optional.
+     * This path is invalid if 'Continuous Capture' is provided with 'true' or 'false'. A valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual machine it must start with /var/captures. Required if no storage ID is provided, otherwise optional.
      */
     @JsonProperty(value = "filePath")
     private String filePath;
+
+    /*
+     * This path is valid if 'Continuous Capture' is provided with 'true' or 'false' and required if no storage ID is provided, otherwise optional. Must include the name of the capture file (*.cap). For linux virtual machine it must start with /var/captures.
+     */
+    @JsonProperty(value = "localPath")
+    private String localPath;
 
     /**
      * Creates an instance of PacketCaptureStorageLocation class.
@@ -38,7 +44,7 @@ public final class PacketCaptureStorageLocation {
 
     /**
      * Get the storageId property: The ID of the storage account to save the packet capture session. Required if no
-     * local file path is provided.
+     * localPath or filePath is provided.
      * 
      * @return the storageId value.
      */
@@ -48,7 +54,7 @@ public final class PacketCaptureStorageLocation {
 
     /**
      * Set the storageId property: The ID of the storage account to save the packet capture session. Required if no
-     * local file path is provided.
+     * localPath or filePath is provided.
      * 
      * @param storageId the storageId value to set.
      * @return the PacketCaptureStorageLocation object itself.
@@ -81,9 +87,9 @@ public final class PacketCaptureStorageLocation {
     }
 
     /**
-     * Get the filePath property: A valid local path on the targeting VM. Must include the name of the capture file
-     * (*.cap). For linux virtual machine it must start with /var/captures. Required if no storage ID is provided,
-     * otherwise optional.
+     * Get the filePath property: This path is invalid if 'Continuous Capture' is provided with 'true' or 'false'. A
+     * valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual
+     * machine it must start with /var/captures. Required if no storage ID is provided, otherwise optional.
      * 
      * @return the filePath value.
      */
@@ -92,15 +98,39 @@ public final class PacketCaptureStorageLocation {
     }
 
     /**
-     * Set the filePath property: A valid local path on the targeting VM. Must include the name of the capture file
-     * (*.cap). For linux virtual machine it must start with /var/captures. Required if no storage ID is provided,
-     * otherwise optional.
+     * Set the filePath property: This path is invalid if 'Continuous Capture' is provided with 'true' or 'false'. A
+     * valid local path on the targeting VM. Must include the name of the capture file (*.cap). For linux virtual
+     * machine it must start with /var/captures. Required if no storage ID is provided, otherwise optional.
      * 
      * @param filePath the filePath value to set.
      * @return the PacketCaptureStorageLocation object itself.
      */
     public PacketCaptureStorageLocation withFilePath(String filePath) {
         this.filePath = filePath;
+        return this;
+    }
+
+    /**
+     * Get the localPath property: This path is valid if 'Continuous Capture' is provided with 'true' or 'false' and
+     * required if no storage ID is provided, otherwise optional. Must include the name of the capture file (*.cap). For
+     * linux virtual machine it must start with /var/captures.
+     * 
+     * @return the localPath value.
+     */
+    public String localPath() {
+        return this.localPath;
+    }
+
+    /**
+     * Set the localPath property: This path is valid if 'Continuous Capture' is provided with 'true' or 'false' and
+     * required if no storage ID is provided, otherwise optional. Must include the name of the capture file (*.cap). For
+     * linux virtual machine it must start with /var/captures.
+     * 
+     * @param localPath the localPath value to set.
+     * @return the PacketCaptureStorageLocation object itself.
+     */
+    public PacketCaptureStorageLocation withLocalPath(String localPath) {
+        this.localPath = localPath;
         return this;
     }
 

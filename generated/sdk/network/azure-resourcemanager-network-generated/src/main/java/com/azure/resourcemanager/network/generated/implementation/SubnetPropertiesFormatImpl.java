@@ -24,6 +24,7 @@ import com.azure.resourcemanager.network.generated.models.RouteTable;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicy;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
+import com.azure.resourcemanager.network.generated.models.SharingScope;
 import com.azure.resourcemanager.network.generated.models.SubnetPropertiesFormat;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateLinkServiceNetworkPolicies;
@@ -189,6 +190,10 @@ public final class SubnetPropertiesFormatImpl implements SubnetPropertiesFormat 
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public SharingScope sharingScope() {
+        return this.innerModel().sharingScope();
     }
 
     public Boolean defaultOutboundAccess() {

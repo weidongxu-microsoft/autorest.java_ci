@@ -63,9 +63,12 @@ import com.azure.resourcemanager.network.generated.fluent.ExpressRoutePortsLocat
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteProviderPortsLocationsClient;
 import com.azure.resourcemanager.network.generated.fluent.ExpressRouteServiceProvidersClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPoliciesClient;
+import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyDeploymentsClient;
+import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyDraftsClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesFilterValuesClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyIdpsSignaturesOverridesClient;
+import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyRuleCollectionGroupDraftsClient;
 import com.azure.resourcemanager.network.generated.fluent.FirewallPolicyRuleCollectionGroupsClient;
 import com.azure.resourcemanager.network.generated.fluent.FlowLogsClient;
 import com.azure.resourcemanager.network.generated.fluent.HubRouteTablesClient;
@@ -800,6 +803,48 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
      */
     public FirewallPolicyIdpsSignaturesFilterValuesClient getFirewallPolicyIdpsSignaturesFilterValues() {
         return this.firewallPolicyIdpsSignaturesFilterValues;
+    }
+
+    /**
+     * The FirewallPolicyDraftsClient object to access its operations.
+     */
+    private final FirewallPolicyDraftsClient firewallPolicyDrafts;
+
+    /**
+     * Gets the FirewallPolicyDraftsClient object to access its operations.
+     * 
+     * @return the FirewallPolicyDraftsClient object.
+     */
+    public FirewallPolicyDraftsClient getFirewallPolicyDrafts() {
+        return this.firewallPolicyDrafts;
+    }
+
+    /**
+     * The FirewallPolicyDeploymentsClient object to access its operations.
+     */
+    private final FirewallPolicyDeploymentsClient firewallPolicyDeployments;
+
+    /**
+     * Gets the FirewallPolicyDeploymentsClient object to access its operations.
+     * 
+     * @return the FirewallPolicyDeploymentsClient object.
+     */
+    public FirewallPolicyDeploymentsClient getFirewallPolicyDeployments() {
+        return this.firewallPolicyDeployments;
+    }
+
+    /**
+     * The FirewallPolicyRuleCollectionGroupDraftsClient object to access its operations.
+     */
+    private final FirewallPolicyRuleCollectionGroupDraftsClient firewallPolicyRuleCollectionGroupDrafts;
+
+    /**
+     * Gets the FirewallPolicyRuleCollectionGroupDraftsClient object to access its operations.
+     * 
+     * @return the FirewallPolicyRuleCollectionGroupDraftsClient object.
+     */
+    public FirewallPolicyRuleCollectionGroupDraftsClient getFirewallPolicyRuleCollectionGroupDrafts() {
+        return this.firewallPolicyRuleCollectionGroupDrafts;
     }
 
     /**
@@ -2151,6 +2196,9 @@ public final class NetworkManagementClientImpl implements NetworkManagementClien
         this.firewallPolicyIdpsSignatures = new FirewallPolicyIdpsSignaturesClientImpl(this);
         this.firewallPolicyIdpsSignaturesOverrides = new FirewallPolicyIdpsSignaturesOverridesClientImpl(this);
         this.firewallPolicyIdpsSignaturesFilterValues = new FirewallPolicyIdpsSignaturesFilterValuesClientImpl(this);
+        this.firewallPolicyDrafts = new FirewallPolicyDraftsClientImpl(this);
+        this.firewallPolicyDeployments = new FirewallPolicyDeploymentsClientImpl(this);
+        this.firewallPolicyRuleCollectionGroupDrafts = new FirewallPolicyRuleCollectionGroupDraftsClientImpl(this);
         this.ipAllocations = new IpAllocationsClientImpl(this);
         this.ipGroups = new IpGroupsClientImpl(this);
         this.loadBalancers = new LoadBalancersClientImpl(this);

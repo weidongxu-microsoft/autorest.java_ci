@@ -41,6 +41,14 @@ public interface InboundSecurityRule {
     String type();
 
     /**
+     * Gets the ruleType property: Rule Type. This should be either AutoExpire or Permanent. Auto Expire Rule only
+     * creates NSG rules. Permanent Rule creates NSG rule and SLB LB Rule.
+     * 
+     * @return the ruleType value.
+     */
+    InboundSecurityRuleType ruleType();
+
+    /**
      * Gets the rules property: List of allowed rules.
      * 
      * @return the rules value.
@@ -104,7 +112,8 @@ public interface InboundSecurityRule {
          * The stage of the InboundSecurityRule definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithRules {
+        interface WithCreate
+            extends DefinitionStages.WithName, DefinitionStages.WithRuleType, DefinitionStages.WithRules {
             /**
              * Executes the create request.
              * 
@@ -135,6 +144,21 @@ public interface InboundSecurityRule {
         }
 
         /**
+         * The stage of the InboundSecurityRule definition allowing to specify ruleType.
+         */
+        interface WithRuleType {
+            /**
+             * Specifies the ruleType property: Rule Type. This should be either AutoExpire or Permanent. Auto Expire
+             * Rule only creates NSG rules. Permanent Rule creates NSG rule and SLB LB Rule..
+             * 
+             * @param ruleType Rule Type. This should be either AutoExpire or Permanent. Auto Expire Rule only creates
+             * NSG rules. Permanent Rule creates NSG rule and SLB LB Rule.
+             * @return the next definition stage.
+             */
+            WithCreate withRuleType(InboundSecurityRuleType ruleType);
+        }
+
+        /**
          * The stage of the InboundSecurityRule definition allowing to specify rules.
          */
         interface WithRules {
@@ -158,7 +182,7 @@ public interface InboundSecurityRule {
     /**
      * The template for InboundSecurityRule update.
      */
-    interface Update extends UpdateStages.WithName, UpdateStages.WithRules {
+    interface Update extends UpdateStages.WithName, UpdateStages.WithRuleType, UpdateStages.WithRules {
         /**
          * Executes the update request.
          * 
@@ -190,6 +214,21 @@ public interface InboundSecurityRule {
              * @return the next definition stage.
              */
             Update withName(String name);
+        }
+
+        /**
+         * The stage of the InboundSecurityRule update allowing to specify ruleType.
+         */
+        interface WithRuleType {
+            /**
+             * Specifies the ruleType property: Rule Type. This should be either AutoExpire or Permanent. Auto Expire
+             * Rule only creates NSG rules. Permanent Rule creates NSG rule and SLB LB Rule..
+             * 
+             * @param ruleType Rule Type. This should be either AutoExpire or Permanent. Auto Expire Rule only creates
+             * NSG rules. Permanent Rule creates NSG rule and SLB LB Rule.
+             * @return the next definition stage.
+             */
+            Update withRuleType(InboundSecurityRuleType ruleType);
         }
 
         /**

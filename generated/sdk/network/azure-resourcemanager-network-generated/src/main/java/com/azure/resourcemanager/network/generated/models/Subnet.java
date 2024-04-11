@@ -184,6 +184,15 @@ public interface Subnet {
     List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations();
 
     /**
+     * Gets the sharingScope property: Set this property to Tenant to allow sharing subnet with other subscriptions in
+     * your AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can only
+     * be set if subnet is empty.
+     * 
+     * @return the sharingScope value.
+     */
+    SharingScope sharingScope();
+
+    /**
      * Gets the defaultOutboundAccess property: Set this property to false to disable default outbound connectivity for
      * all VMs in the subnet. This property can only be set at the time of subnet creation and cannot be updated for an
      * existing subnet.
@@ -247,7 +256,8 @@ public interface Subnet {
             DefinitionStages.WithServiceEndpoints, DefinitionStages.WithServiceEndpointPolicies,
             DefinitionStages.WithIpAllocations, DefinitionStages.WithDelegations,
             DefinitionStages.WithPrivateEndpointNetworkPolicies, DefinitionStages.WithPrivateLinkServiceNetworkPolicies,
-            DefinitionStages.WithApplicationGatewayIpConfigurations, DefinitionStages.WithDefaultOutboundAccess {
+            DefinitionStages.WithApplicationGatewayIpConfigurations, DefinitionStages.WithSharingScope,
+            DefinitionStages.WithDefaultOutboundAccess {
             /**
              * Executes the create request.
              * 
@@ -458,6 +468,23 @@ public interface Subnet {
         }
 
         /**
+         * The stage of the Subnet definition allowing to specify sharingScope.
+         */
+        interface WithSharingScope {
+            /**
+             * Specifies the sharingScope property: Set this property to Tenant to allow sharing subnet with other
+             * subscriptions in your AAD tenant. This property can only be set if defaultOutboundAccess is set to false,
+             * both properties can only be set if subnet is empty..
+             * 
+             * @param sharingScope Set this property to Tenant to allow sharing subnet with other subscriptions in your
+             * AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can
+             * only be set if subnet is empty.
+             * @return the next definition stage.
+             */
+            WithCreate withSharingScope(SharingScope sharingScope);
+        }
+
+        /**
          * The stage of the Subnet definition allowing to specify defaultOutboundAccess.
          */
         interface WithDefaultOutboundAccess {
@@ -490,7 +517,7 @@ public interface Subnet {
         UpdateStages.WithNatGateway, UpdateStages.WithServiceEndpoints, UpdateStages.WithServiceEndpointPolicies,
         UpdateStages.WithIpAllocations, UpdateStages.WithDelegations, UpdateStages.WithPrivateEndpointNetworkPolicies,
         UpdateStages.WithPrivateLinkServiceNetworkPolicies, UpdateStages.WithApplicationGatewayIpConfigurations,
-        UpdateStages.WithDefaultOutboundAccess {
+        UpdateStages.WithSharingScope, UpdateStages.WithDefaultOutboundAccess {
         /**
          * Executes the update request.
          * 
@@ -702,6 +729,23 @@ public interface Subnet {
              */
             Update withApplicationGatewayIpConfigurations(
                 List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations);
+        }
+
+        /**
+         * The stage of the Subnet update allowing to specify sharingScope.
+         */
+        interface WithSharingScope {
+            /**
+             * Specifies the sharingScope property: Set this property to Tenant to allow sharing subnet with other
+             * subscriptions in your AAD tenant. This property can only be set if defaultOutboundAccess is set to false,
+             * both properties can only be set if subnet is empty..
+             * 
+             * @param sharingScope Set this property to Tenant to allow sharing subnet with other subscriptions in your
+             * AAD tenant. This property can only be set if defaultOutboundAccess is set to false, both properties can
+             * only be set if subnet is empty.
+             * @return the next definition stage.
+             */
+            Update withSharingScope(SharingScope sharingScope);
         }
 
         /**

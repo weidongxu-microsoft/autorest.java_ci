@@ -15,6 +15,8 @@ import com.azure.resourcemanager.network.generated.models.VirtualNetworkEncrypti
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeering;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringLevel;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPeeringState;
+import java.util.Collections;
+import java.util.List;
 
 public final class VirtualNetworkPeeringImpl
     implements VirtualNetworkPeering, VirtualNetworkPeering.Definition, VirtualNetworkPeering.Update {
@@ -58,6 +60,14 @@ public final class VirtualNetworkPeeringImpl
         return this.innerModel().remoteVirtualNetwork();
     }
 
+    public AddressSpace localAddressSpace() {
+        return this.innerModel().localAddressSpace();
+    }
+
+    public AddressSpace localVirtualNetworkAddressSpace() {
+        return this.innerModel().localVirtualNetworkAddressSpace();
+    }
+
     public AddressSpace remoteAddressSpace() {
         return this.innerModel().remoteAddressSpace();
     }
@@ -92,6 +102,32 @@ public final class VirtualNetworkPeeringImpl
 
     public String resourceGuid() {
         return this.innerModel().resourceGuid();
+    }
+
+    public Boolean peerCompleteVnets() {
+        return this.innerModel().peerCompleteVnets();
+    }
+
+    public Boolean enableOnlyIPv6Peering() {
+        return this.innerModel().enableOnlyIPv6Peering();
+    }
+
+    public List<String> localSubnetNames() {
+        List<String> inner = this.innerModel().localSubnetNames();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public List<String> remoteSubnetNames() {
+        List<String> inner = this.innerModel().remoteSubnetNames();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
     }
 
     public String resourceGroupName() {
@@ -227,6 +263,16 @@ public final class VirtualNetworkPeeringImpl
         return this;
     }
 
+    public VirtualNetworkPeeringImpl withLocalAddressSpace(AddressSpace localAddressSpace) {
+        this.innerModel().withLocalAddressSpace(localAddressSpace);
+        return this;
+    }
+
+    public VirtualNetworkPeeringImpl withLocalVirtualNetworkAddressSpace(AddressSpace localVirtualNetworkAddressSpace) {
+        this.innerModel().withLocalVirtualNetworkAddressSpace(localVirtualNetworkAddressSpace);
+        return this;
+    }
+
     public VirtualNetworkPeeringImpl withRemoteAddressSpace(AddressSpace remoteAddressSpace) {
         this.innerModel().withRemoteAddressSpace(remoteAddressSpace);
         return this;
@@ -255,6 +301,26 @@ public final class VirtualNetworkPeeringImpl
 
     public VirtualNetworkPeeringImpl withDoNotVerifyRemoteGateways(Boolean doNotVerifyRemoteGateways) {
         this.innerModel().withDoNotVerifyRemoteGateways(doNotVerifyRemoteGateways);
+        return this;
+    }
+
+    public VirtualNetworkPeeringImpl withPeerCompleteVnets(Boolean peerCompleteVnets) {
+        this.innerModel().withPeerCompleteVnets(peerCompleteVnets);
+        return this;
+    }
+
+    public VirtualNetworkPeeringImpl withEnableOnlyIPv6Peering(Boolean enableOnlyIPv6Peering) {
+        this.innerModel().withEnableOnlyIPv6Peering(enableOnlyIPv6Peering);
+        return this;
+    }
+
+    public VirtualNetworkPeeringImpl withLocalSubnetNames(List<String> localSubnetNames) {
+        this.innerModel().withLocalSubnetNames(localSubnetNames);
+        return this;
+    }
+
+    public VirtualNetworkPeeringImpl withRemoteSubnetNames(List<String> remoteSubnetNames) {
+        this.innerModel().withRemoteSubnetNames(remoteSubnetNames);
         return this;
     }
 

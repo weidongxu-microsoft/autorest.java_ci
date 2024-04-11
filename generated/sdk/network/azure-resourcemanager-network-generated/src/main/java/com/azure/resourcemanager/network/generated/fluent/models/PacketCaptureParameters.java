@@ -8,6 +8,7 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureFilter;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureMachineScope;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureSettings;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureStorageLocation;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureTargetType;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -65,6 +66,18 @@ public class PacketCaptureParameters {
      */
     @JsonProperty(value = "filters")
     private List<PacketCaptureFilter> filters;
+
+    /*
+     * This continuous capture is a nullable boolean, which can hold 'null', 'true' or 'false' value. If we do not pass this parameter, it would be consider as 'null', default value is 'null'.
+     */
+    @JsonProperty(value = "continuousCapture")
+    private Boolean continuousCapture;
+
+    /*
+     * The capture setting holds the 'FileCount', 'FileSizeInBytes', 'SessionTimeLimitInSeconds' values.
+     */
+    @JsonProperty(value = "captureSettings")
+    private PacketCaptureSettings captureSettings;
 
     /**
      * Creates an instance of PacketCaptureParameters class.
@@ -237,6 +250,50 @@ public class PacketCaptureParameters {
     }
 
     /**
+     * Get the continuousCapture property: This continuous capture is a nullable boolean, which can hold 'null', 'true'
+     * or 'false' value. If we do not pass this parameter, it would be consider as 'null', default value is 'null'.
+     * 
+     * @return the continuousCapture value.
+     */
+    public Boolean continuousCapture() {
+        return this.continuousCapture;
+    }
+
+    /**
+     * Set the continuousCapture property: This continuous capture is a nullable boolean, which can hold 'null', 'true'
+     * or 'false' value. If we do not pass this parameter, it would be consider as 'null', default value is 'null'.
+     * 
+     * @param continuousCapture the continuousCapture value to set.
+     * @return the PacketCaptureParameters object itself.
+     */
+    public PacketCaptureParameters withContinuousCapture(Boolean continuousCapture) {
+        this.continuousCapture = continuousCapture;
+        return this;
+    }
+
+    /**
+     * Get the captureSettings property: The capture setting holds the 'FileCount', 'FileSizeInBytes',
+     * 'SessionTimeLimitInSeconds' values.
+     * 
+     * @return the captureSettings value.
+     */
+    public PacketCaptureSettings captureSettings() {
+        return this.captureSettings;
+    }
+
+    /**
+     * Set the captureSettings property: The capture setting holds the 'FileCount', 'FileSizeInBytes',
+     * 'SessionTimeLimitInSeconds' values.
+     * 
+     * @param captureSettings the captureSettings value to set.
+     * @return the PacketCaptureParameters object itself.
+     */
+    public PacketCaptureParameters withCaptureSettings(PacketCaptureSettings captureSettings) {
+        this.captureSettings = captureSettings;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -258,6 +315,9 @@ public class PacketCaptureParameters {
         }
         if (filters() != null) {
             filters().forEach(e -> e.validate());
+        }
+        if (captureSettings() != null) {
+            captureSettings().validate();
         }
     }
 

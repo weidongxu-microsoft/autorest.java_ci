@@ -168,6 +168,13 @@ public interface VpnSiteLinkConnection {
     List<SubResource> egressNatRules();
 
     /**
+     * Gets the dpdTimeoutSeconds property: Dead Peer Detection timeout in seconds for VpnLink connection.
+     * 
+     * @return the dpdTimeoutSeconds value.
+     */
+    Integer dpdTimeoutSeconds();
+
+    /**
      * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.VpnSiteLinkConnectionInner object.
      * 
      * @return the inner object.

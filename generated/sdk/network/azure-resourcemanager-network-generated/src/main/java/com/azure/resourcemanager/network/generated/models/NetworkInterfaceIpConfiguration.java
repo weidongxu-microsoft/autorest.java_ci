@@ -78,11 +78,20 @@ public interface NetworkInterfaceIpConfiguration {
     List<InboundNatRule> loadBalancerInboundNatRules();
 
     /**
-     * Gets the privateIpAddress property: Private IP address of the IP configuration.
+     * Gets the privateIpAddress property: Private IP address of the IP configuration. It can be a single IP address or
+     * a CIDR block in the format &lt;address&gt;/&lt;prefix-length&gt;.
      * 
      * @return the privateIpAddress value.
      */
     String privateIpAddress();
+
+    /**
+     * Gets the privateIpAddressPrefixLength property: The private IP address prefix length. If specified and the
+     * allocation method is dynamic, the service will allocate a CIDR block instead of a single IP address.
+     * 
+     * @return the privateIpAddressPrefixLength value.
+     */
+    Integer privateIpAddressPrefixLength();
 
     /**
      * Gets the privateIpAllocationMethod property: The private IP address allocation method.

@@ -135,6 +135,10 @@ public final class VpnSiteLinkConnectionImpl implements VpnSiteLinkConnection {
         }
     }
 
+    public Integer dpdTimeoutSeconds() {
+        return this.innerModel().dpdTimeoutSeconds();
+    }
+
     public VpnSiteLinkConnectionInner innerModel() {
         return this.innerObject;
     }

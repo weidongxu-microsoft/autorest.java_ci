@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.VirtualNetworkPeeringInner;
+import java.util.List;
 
 /**
  * An immutable client-side representation of VirtualNetworkPeering.
@@ -85,6 +86,21 @@ public interface VirtualNetworkPeering {
     SubResource remoteVirtualNetwork();
 
     /**
+     * Gets the localAddressSpace property: The local address space of the local virtual network that is peered.
+     * 
+     * @return the localAddressSpace value.
+     */
+    AddressSpace localAddressSpace();
+
+    /**
+     * Gets the localVirtualNetworkAddressSpace property: The current local address space of the local virtual network
+     * that is peered.
+     * 
+     * @return the localVirtualNetworkAddressSpace value.
+     */
+    AddressSpace localVirtualNetworkAddressSpace();
+
+    /**
      * Gets the remoteAddressSpace property: The reference to the address space peered with the remote virtual network.
      * 
      * @return the remoteAddressSpace value.
@@ -149,6 +165,36 @@ public interface VirtualNetworkPeering {
     String resourceGuid();
 
     /**
+     * Gets the peerCompleteVnets property: Whether complete virtual network address space is peered.
+     * 
+     * @return the peerCompleteVnets value.
+     */
+    Boolean peerCompleteVnets();
+
+    /**
+     * Gets the enableOnlyIPv6Peering property: Whether only Ipv6 address space is peered for subnet peering.
+     * 
+     * @return the enableOnlyIPv6Peering value.
+     */
+    Boolean enableOnlyIPv6Peering();
+
+    /**
+     * Gets the localSubnetNames property: List of local subnet names that are subnet peered with remote virtual
+     * network.
+     * 
+     * @return the localSubnetNames value.
+     */
+    List<String> localSubnetNames();
+
+    /**
+     * Gets the remoteSubnetNames property: List of remote subnet names from remote virtual network that are subnet
+     * peered.
+     * 
+     * @return the remoteSubnetNames value.
+     */
+    List<String> remoteSubnetNames();
+
+    /**
      * Gets the name of the resource group.
      * 
      * @return the name of the resource group.
@@ -200,10 +246,13 @@ public interface VirtualNetworkPeering {
         interface WithCreate extends DefinitionStages.WithName, DefinitionStages.WithType,
             DefinitionStages.WithAllowVirtualNetworkAccess, DefinitionStages.WithAllowForwardedTraffic,
             DefinitionStages.WithAllowGatewayTransit, DefinitionStages.WithUseRemoteGateways,
-            DefinitionStages.WithRemoteVirtualNetwork, DefinitionStages.WithRemoteAddressSpace,
+            DefinitionStages.WithRemoteVirtualNetwork, DefinitionStages.WithLocalAddressSpace,
+            DefinitionStages.WithLocalVirtualNetworkAddressSpace, DefinitionStages.WithRemoteAddressSpace,
             DefinitionStages.WithRemoteVirtualNetworkAddressSpace, DefinitionStages.WithRemoteBgpCommunities,
             DefinitionStages.WithPeeringState, DefinitionStages.WithPeeringSyncLevel,
-            DefinitionStages.WithDoNotVerifyRemoteGateways, DefinitionStages.WithSyncRemoteAddressSpace {
+            DefinitionStages.WithDoNotVerifyRemoteGateways, DefinitionStages.WithPeerCompleteVnets,
+            DefinitionStages.WithEnableOnlyIPv6Peering, DefinitionStages.WithLocalSubnetNames,
+            DefinitionStages.WithRemoteSubnetNames, DefinitionStages.WithSyncRemoteAddressSpace {
             /**
              * Executes the create request.
              * 
@@ -330,6 +379,35 @@ public interface VirtualNetworkPeering {
         }
 
         /**
+         * The stage of the VirtualNetworkPeering definition allowing to specify localAddressSpace.
+         */
+        interface WithLocalAddressSpace {
+            /**
+             * Specifies the localAddressSpace property: The local address space of the local virtual network that is
+             * peered..
+             * 
+             * @param localAddressSpace The local address space of the local virtual network that is peered.
+             * @return the next definition stage.
+             */
+            WithCreate withLocalAddressSpace(AddressSpace localAddressSpace);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering definition allowing to specify localVirtualNetworkAddressSpace.
+         */
+        interface WithLocalVirtualNetworkAddressSpace {
+            /**
+             * Specifies the localVirtualNetworkAddressSpace property: The current local address space of the local
+             * virtual network that is peered..
+             * 
+             * @param localVirtualNetworkAddressSpace The current local address space of the local virtual network that
+             * is peered.
+             * @return the next definition stage.
+             */
+            WithCreate withLocalVirtualNetworkAddressSpace(AddressSpace localVirtualNetworkAddressSpace);
+        }
+
+        /**
          * The stage of the VirtualNetworkPeering definition allowing to specify remoteAddressSpace.
          */
         interface WithRemoteAddressSpace {
@@ -413,6 +491,61 @@ public interface VirtualNetworkPeering {
         }
 
         /**
+         * The stage of the VirtualNetworkPeering definition allowing to specify peerCompleteVnets.
+         */
+        interface WithPeerCompleteVnets {
+            /**
+             * Specifies the peerCompleteVnets property: Whether complete virtual network address space is peered..
+             * 
+             * @param peerCompleteVnets Whether complete virtual network address space is peered.
+             * @return the next definition stage.
+             */
+            WithCreate withPeerCompleteVnets(Boolean peerCompleteVnets);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering definition allowing to specify enableOnlyIPv6Peering.
+         */
+        interface WithEnableOnlyIPv6Peering {
+            /**
+             * Specifies the enableOnlyIPv6Peering property: Whether only Ipv6 address space is peered for subnet
+             * peering..
+             * 
+             * @param enableOnlyIPv6Peering Whether only Ipv6 address space is peered for subnet peering.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableOnlyIPv6Peering(Boolean enableOnlyIPv6Peering);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering definition allowing to specify localSubnetNames.
+         */
+        interface WithLocalSubnetNames {
+            /**
+             * Specifies the localSubnetNames property: List of local subnet names that are subnet peered with remote
+             * virtual network..
+             * 
+             * @param localSubnetNames List of local subnet names that are subnet peered with remote virtual network.
+             * @return the next definition stage.
+             */
+            WithCreate withLocalSubnetNames(List<String> localSubnetNames);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering definition allowing to specify remoteSubnetNames.
+         */
+        interface WithRemoteSubnetNames {
+            /**
+             * Specifies the remoteSubnetNames property: List of remote subnet names from remote virtual network that
+             * are subnet peered..
+             * 
+             * @param remoteSubnetNames List of remote subnet names from remote virtual network that are subnet peered.
+             * @return the next definition stage.
+             */
+            WithCreate withRemoteSubnetNames(List<String> remoteSubnetNames);
+        }
+
+        /**
          * The stage of the VirtualNetworkPeering definition allowing to specify syncRemoteAddressSpace.
          */
         interface WithSyncRemoteAddressSpace {
@@ -440,10 +573,12 @@ public interface VirtualNetworkPeering {
      */
     interface Update extends UpdateStages.WithName, UpdateStages.WithType, UpdateStages.WithAllowVirtualNetworkAccess,
         UpdateStages.WithAllowForwardedTraffic, UpdateStages.WithAllowGatewayTransit,
-        UpdateStages.WithUseRemoteGateways, UpdateStages.WithRemoteVirtualNetwork, UpdateStages.WithRemoteAddressSpace,
+        UpdateStages.WithUseRemoteGateways, UpdateStages.WithRemoteVirtualNetwork, UpdateStages.WithLocalAddressSpace,
+        UpdateStages.WithLocalVirtualNetworkAddressSpace, UpdateStages.WithRemoteAddressSpace,
         UpdateStages.WithRemoteVirtualNetworkAddressSpace, UpdateStages.WithRemoteBgpCommunities,
         UpdateStages.WithPeeringState, UpdateStages.WithPeeringSyncLevel, UpdateStages.WithDoNotVerifyRemoteGateways,
-        UpdateStages.WithSyncRemoteAddressSpace {
+        UpdateStages.WithPeerCompleteVnets, UpdateStages.WithEnableOnlyIPv6Peering, UpdateStages.WithLocalSubnetNames,
+        UpdateStages.WithRemoteSubnetNames, UpdateStages.WithSyncRemoteAddressSpace {
         /**
          * Executes the update request.
          * 
@@ -574,6 +709,35 @@ public interface VirtualNetworkPeering {
         }
 
         /**
+         * The stage of the VirtualNetworkPeering update allowing to specify localAddressSpace.
+         */
+        interface WithLocalAddressSpace {
+            /**
+             * Specifies the localAddressSpace property: The local address space of the local virtual network that is
+             * peered..
+             * 
+             * @param localAddressSpace The local address space of the local virtual network that is peered.
+             * @return the next definition stage.
+             */
+            Update withLocalAddressSpace(AddressSpace localAddressSpace);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering update allowing to specify localVirtualNetworkAddressSpace.
+         */
+        interface WithLocalVirtualNetworkAddressSpace {
+            /**
+             * Specifies the localVirtualNetworkAddressSpace property: The current local address space of the local
+             * virtual network that is peered..
+             * 
+             * @param localVirtualNetworkAddressSpace The current local address space of the local virtual network that
+             * is peered.
+             * @return the next definition stage.
+             */
+            Update withLocalVirtualNetworkAddressSpace(AddressSpace localVirtualNetworkAddressSpace);
+        }
+
+        /**
          * The stage of the VirtualNetworkPeering update allowing to specify remoteAddressSpace.
          */
         interface WithRemoteAddressSpace {
@@ -654,6 +818,61 @@ public interface VirtualNetworkPeering {
              * @return the next definition stage.
              */
             Update withDoNotVerifyRemoteGateways(Boolean doNotVerifyRemoteGateways);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering update allowing to specify peerCompleteVnets.
+         */
+        interface WithPeerCompleteVnets {
+            /**
+             * Specifies the peerCompleteVnets property: Whether complete virtual network address space is peered..
+             * 
+             * @param peerCompleteVnets Whether complete virtual network address space is peered.
+             * @return the next definition stage.
+             */
+            Update withPeerCompleteVnets(Boolean peerCompleteVnets);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering update allowing to specify enableOnlyIPv6Peering.
+         */
+        interface WithEnableOnlyIPv6Peering {
+            /**
+             * Specifies the enableOnlyIPv6Peering property: Whether only Ipv6 address space is peered for subnet
+             * peering..
+             * 
+             * @param enableOnlyIPv6Peering Whether only Ipv6 address space is peered for subnet peering.
+             * @return the next definition stage.
+             */
+            Update withEnableOnlyIPv6Peering(Boolean enableOnlyIPv6Peering);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering update allowing to specify localSubnetNames.
+         */
+        interface WithLocalSubnetNames {
+            /**
+             * Specifies the localSubnetNames property: List of local subnet names that are subnet peered with remote
+             * virtual network..
+             * 
+             * @param localSubnetNames List of local subnet names that are subnet peered with remote virtual network.
+             * @return the next definition stage.
+             */
+            Update withLocalSubnetNames(List<String> localSubnetNames);
+        }
+
+        /**
+         * The stage of the VirtualNetworkPeering update allowing to specify remoteSubnetNames.
+         */
+        interface WithRemoteSubnetNames {
+            /**
+             * Specifies the remoteSubnetNames property: List of remote subnet names from remote virtual network that
+             * are subnet peered..
+             * 
+             * @param remoteSubnetNames List of remote subnet names from remote virtual network that are subnet peered.
+             * @return the next definition stage.
+             */
+            Update withRemoteSubnetNames(List<String> remoteSubnetNames);
         }
 
         /**

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -127,6 +128,13 @@ public interface NetworkVirtualAppliance {
      * @return the virtualApplianceNics value.
      */
     List<VirtualApplianceNicProperties> virtualApplianceNics();
+
+    /**
+     * Gets the networkProfile property: Network Profile containing configurations for Public and Private NIC.
+     * 
+     * @return the networkProfile value.
+     */
+    NetworkVirtualAppliancePropertiesFormatNetworkProfile networkProfile();
 
     /**
      * Gets the additionalNics property: Details required for Additional Network Interface.
@@ -274,13 +282,13 @@ public interface NetworkVirtualAppliance {
          * The stage of the NetworkVirtualAppliance definition which contains all the minimum required properties for
          * the resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithNvaSku,
-            DefinitionStages.WithBootStrapConfigurationBlobs, DefinitionStages.WithVirtualHub,
-            DefinitionStages.WithCloudInitConfigurationBlobs, DefinitionStages.WithCloudInitConfiguration,
-            DefinitionStages.WithVirtualApplianceAsn, DefinitionStages.WithSshPublicKey,
-            DefinitionStages.WithAdditionalNics, DefinitionStages.WithInternetIngressPublicIps,
-            DefinitionStages.WithDelegation, DefinitionStages.WithPartnerManagedResource {
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
+            DefinitionStages.WithNvaSku, DefinitionStages.WithBootStrapConfigurationBlobs,
+            DefinitionStages.WithVirtualHub, DefinitionStages.WithCloudInitConfigurationBlobs,
+            DefinitionStages.WithCloudInitConfiguration, DefinitionStages.WithVirtualApplianceAsn,
+            DefinitionStages.WithSshPublicKey, DefinitionStages.WithNetworkProfile, DefinitionStages.WithAdditionalNics,
+            DefinitionStages.WithInternetIngressPublicIps, DefinitionStages.WithDelegation,
+            DefinitionStages.WithPartnerManagedResource {
             /**
              * Executes the create request.
              * 
@@ -418,6 +426,20 @@ public interface NetworkVirtualAppliance {
         }
 
         /**
+         * The stage of the NetworkVirtualAppliance definition allowing to specify networkProfile.
+         */
+        interface WithNetworkProfile {
+            /**
+             * Specifies the networkProfile property: Network Profile containing configurations for Public and Private
+             * NIC..
+             * 
+             * @param networkProfile Network Profile containing configurations for Public and Private NIC.
+             * @return the next definition stage.
+             */
+            WithCreate withNetworkProfile(NetworkVirtualAppliancePropertiesFormatNetworkProfile networkProfile);
+        }
+
+        /**
          * The stage of the NetworkVirtualAppliance definition allowing to specify additionalNics.
          */
         interface WithAdditionalNics {
@@ -530,4 +552,26 @@ public interface NetworkVirtualAppliance {
      * @return the refreshed resource.
      */
     NetworkVirtualAppliance refresh(Context context);
+
+    /**
+     * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
+     * 
+     * @param networkVirtualApplianceInstanceIds Specifies a list of virtual machine instance IDs from the Network
+     * Virtual Appliance VM instances.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> restartWithResponse(NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds,
+        Context context);
+
+    /**
+     * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
+     * 
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void restart();
 }

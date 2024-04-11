@@ -26,6 +26,13 @@ public interface FlowLogInformation {
     TrafficAnalyticsProperties flowAnalyticsConfiguration();
 
     /**
+     * Gets the identity property: FlowLog resource Managed Identity.
+     * 
+     * @return the identity value.
+     */
+    ManagedServiceIdentity identity();
+
+    /**
      * Gets the storageId property: ID of the storage account which is used to store the flow log.
      * 
      * @return the storageId value.

@@ -4,6 +4,7 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
+import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
@@ -12,6 +13,8 @@ import com.azure.resourcemanager.network.generated.models.DelegationProperties;
 import com.azure.resourcemanager.network.generated.models.InternetIngressPublicIpsProperties;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
+import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceInstanceIds;
+import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliancePropertiesFormatNetworkProfile;
 import com.azure.resourcemanager.network.generated.models.PartnerManagedResourceProperties;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -110,6 +113,10 @@ public final class NetworkVirtualApplianceImpl
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public NetworkVirtualAppliancePropertiesFormatNetworkProfile networkProfile() {
+        return this.innerModel().networkProfile();
     }
 
     public List<VirtualApplianceAdditionalNicProperties> additionalNics() {
@@ -273,6 +280,17 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
+    public Response<Void> restartWithResponse(NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds,
+        Context context) {
+        return serviceManager.networkVirtualAppliances()
+            .restartWithResponse(resourceGroupName, networkVirtualApplianceName, networkVirtualApplianceInstanceIds,
+                context);
+    }
+
+    public void restart() {
+        serviceManager.networkVirtualAppliances().restart(resourceGroupName, networkVirtualApplianceName);
+    }
+
     public NetworkVirtualApplianceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -330,6 +348,12 @@ public final class NetworkVirtualApplianceImpl
 
     public NetworkVirtualApplianceImpl withSshPublicKey(String sshPublicKey) {
         this.innerModel().withSshPublicKey(sshPublicKey);
+        return this;
+    }
+
+    public NetworkVirtualApplianceImpl
+        withNetworkProfile(NetworkVirtualAppliancePropertiesFormatNetworkProfile networkProfile) {
+        this.innerModel().withNetworkProfile(networkProfile);
         return this;
     }
 

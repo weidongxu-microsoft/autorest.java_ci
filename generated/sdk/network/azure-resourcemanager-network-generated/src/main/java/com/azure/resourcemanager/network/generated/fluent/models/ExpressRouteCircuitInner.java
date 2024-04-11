@@ -459,6 +459,31 @@ public final class ExpressRouteCircuitInner extends Resource {
     }
 
     /**
+     * Get the enableDirectPortRateLimit property: Flag denoting rate-limiting status of the ExpressRoute direct-port
+     * circuit.
+     * 
+     * @return the enableDirectPortRateLimit value.
+     */
+    public Boolean enableDirectPortRateLimit() {
+        return this.innerProperties() == null ? null : this.innerProperties().enableDirectPortRateLimit();
+    }
+
+    /**
+     * Set the enableDirectPortRateLimit property: Flag denoting rate-limiting status of the ExpressRoute direct-port
+     * circuit.
+     * 
+     * @param enableDirectPortRateLimit the enableDirectPortRateLimit value to set.
+     * @return the ExpressRouteCircuitInner object itself.
+     */
+    public ExpressRouteCircuitInner withEnableDirectPortRateLimit(Boolean enableDirectPortRateLimit) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ExpressRouteCircuitPropertiesFormat();
+        }
+        this.innerProperties().withEnableDirectPortRateLimit(enableDirectPortRateLimit);
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.

@@ -64,9 +64,12 @@ import com.azure.resourcemanager.network.generated.implementation.ExpressRoutePo
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteProviderPortsLocationsImpl;
 import com.azure.resourcemanager.network.generated.implementation.ExpressRouteServiceProvidersImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPoliciesImpl;
+import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyDeploymentsImpl;
+import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyDraftsImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesFilterValuesImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyIdpsSignaturesOverridesImpl;
+import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyRuleCollectionGroupDraftsImpl;
 import com.azure.resourcemanager.network.generated.implementation.FirewallPolicyRuleCollectionGroupsImpl;
 import com.azure.resourcemanager.network.generated.implementation.FlowLogsImpl;
 import com.azure.resourcemanager.network.generated.implementation.HubRouteTablesImpl;
@@ -197,9 +200,12 @@ import com.azure.resourcemanager.network.generated.models.ExpressRoutePortsLocat
 import com.azure.resourcemanager.network.generated.models.ExpressRouteProviderPortsLocations;
 import com.azure.resourcemanager.network.generated.models.ExpressRouteServiceProviders;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicies;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyDeployments;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyDrafts;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignatures;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignaturesFilterValues;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyIdpsSignaturesOverrides;
+import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollectionGroupDrafts;
 import com.azure.resourcemanager.network.generated.models.FirewallPolicyRuleCollectionGroups;
 import com.azure.resourcemanager.network.generated.models.FlowLogs;
 import com.azure.resourcemanager.network.generated.models.HubRouteTables;
@@ -380,6 +386,12 @@ public final class NetworkManager {
     private FirewallPolicyIdpsSignaturesOverrides firewallPolicyIdpsSignaturesOverrides;
 
     private FirewallPolicyIdpsSignaturesFilterValues firewallPolicyIdpsSignaturesFilterValues;
+
+    private FirewallPolicyDrafts firewallPolicyDrafts;
+
+    private FirewallPolicyDeployments firewallPolicyDeployments;
+
+    private FirewallPolicyRuleCollectionGroupDrafts firewallPolicyRuleCollectionGroupDrafts;
 
     private IpAllocations ipAllocations;
 
@@ -1277,6 +1289,44 @@ public final class NetworkManager {
                 clientObject.getFirewallPolicyIdpsSignaturesFilterValues(), this);
         }
         return firewallPolicyIdpsSignaturesFilterValues;
+    }
+
+    /**
+     * Gets the resource collection API of FirewallPolicyDrafts.
+     * 
+     * @return Resource collection API of FirewallPolicyDrafts.
+     */
+    public FirewallPolicyDrafts firewallPolicyDrafts() {
+        if (this.firewallPolicyDrafts == null) {
+            this.firewallPolicyDrafts = new FirewallPolicyDraftsImpl(clientObject.getFirewallPolicyDrafts(), this);
+        }
+        return firewallPolicyDrafts;
+    }
+
+    /**
+     * Gets the resource collection API of FirewallPolicyDeployments.
+     * 
+     * @return Resource collection API of FirewallPolicyDeployments.
+     */
+    public FirewallPolicyDeployments firewallPolicyDeployments() {
+        if (this.firewallPolicyDeployments == null) {
+            this.firewallPolicyDeployments
+                = new FirewallPolicyDeploymentsImpl(clientObject.getFirewallPolicyDeployments(), this);
+        }
+        return firewallPolicyDeployments;
+    }
+
+    /**
+     * Gets the resource collection API of FirewallPolicyRuleCollectionGroupDrafts.
+     * 
+     * @return Resource collection API of FirewallPolicyRuleCollectionGroupDrafts.
+     */
+    public FirewallPolicyRuleCollectionGroupDrafts firewallPolicyRuleCollectionGroupDrafts() {
+        if (this.firewallPolicyRuleCollectionGroupDrafts == null) {
+            this.firewallPolicyRuleCollectionGroupDrafts = new FirewallPolicyRuleCollectionGroupDraftsImpl(
+                clientObject.getFirewallPolicyRuleCollectionGroupDrafts(), this);
+        }
+        return firewallPolicyRuleCollectionGroupDrafts;
     }
 
     /**

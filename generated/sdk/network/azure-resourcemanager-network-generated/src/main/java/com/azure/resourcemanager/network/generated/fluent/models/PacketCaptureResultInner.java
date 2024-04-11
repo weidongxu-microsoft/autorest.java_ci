@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureFilter;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureMachineScope;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureSettings;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureStorageLocation;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureTargetType;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -278,6 +279,56 @@ public final class PacketCaptureResultInner {
             this.innerProperties = new PacketCaptureResultProperties();
         }
         this.innerProperties().withFilters(filters);
+        return this;
+    }
+
+    /**
+     * Get the continuousCapture property: This continuous capture is a nullable boolean, which can hold 'null', 'true'
+     * or 'false' value. If we do not pass this parameter, it would be consider as 'null', default value is 'null'.
+     * 
+     * @return the continuousCapture value.
+     */
+    public Boolean continuousCapture() {
+        return this.innerProperties() == null ? null : this.innerProperties().continuousCapture();
+    }
+
+    /**
+     * Set the continuousCapture property: This continuous capture is a nullable boolean, which can hold 'null', 'true'
+     * or 'false' value. If we do not pass this parameter, it would be consider as 'null', default value is 'null'.
+     * 
+     * @param continuousCapture the continuousCapture value to set.
+     * @return the PacketCaptureResultInner object itself.
+     */
+    public PacketCaptureResultInner withContinuousCapture(Boolean continuousCapture) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PacketCaptureResultProperties();
+        }
+        this.innerProperties().withContinuousCapture(continuousCapture);
+        return this;
+    }
+
+    /**
+     * Get the captureSettings property: The capture setting holds the 'FileCount', 'FileSizeInBytes',
+     * 'SessionTimeLimitInSeconds' values.
+     * 
+     * @return the captureSettings value.
+     */
+    public PacketCaptureSettings captureSettings() {
+        return this.innerProperties() == null ? null : this.innerProperties().captureSettings();
+    }
+
+    /**
+     * Set the captureSettings property: The capture setting holds the 'FileCount', 'FileSizeInBytes',
+     * 'SessionTimeLimitInSeconds' values.
+     * 
+     * @param captureSettings the captureSettings value to set.
+     * @return the PacketCaptureResultInner object itself.
+     */
+    public PacketCaptureResultInner withCaptureSettings(PacketCaptureSettings captureSettings) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new PacketCaptureResultProperties();
+        }
+        this.innerProperties().withCaptureSettings(captureSettings);
         return this;
     }
 

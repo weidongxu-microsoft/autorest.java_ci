@@ -26,6 +26,7 @@ import com.azure.resourcemanager.network.generated.models.RouteTable;
 import com.azure.resourcemanager.network.generated.models.ServiceAssociationLink;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPolicy;
 import com.azure.resourcemanager.network.generated.models.ServiceEndpointPropertiesFormat;
+import com.azure.resourcemanager.network.generated.models.SharingScope;
 import com.azure.resourcemanager.network.generated.models.Subnet;
 import com.azure.resourcemanager.network.generated.models.UnprepareNetworkPoliciesRequest;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkPrivateEndpointNetworkPolicies;
@@ -202,6 +203,10 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public SharingScope sharingScope() {
+        return this.innerModel().sharingScope();
     }
 
     public Boolean defaultOutboundAccess() {
@@ -392,6 +397,11 @@ public final class SubnetImpl implements Subnet, Subnet.Definition, Subnet.Updat
     public SubnetImpl withApplicationGatewayIpConfigurations(
         List<ApplicationGatewayIpConfiguration> applicationGatewayIpConfigurations) {
         this.innerModel().withApplicationGatewayIpConfigurations(applicationGatewayIpConfigurations);
+        return this;
+    }
+
+    public SubnetImpl withSharingScope(SharingScope sharingScope) {
+        this.innerModel().withSharingScope(sharingScope);
         return this;
     }
 

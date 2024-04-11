@@ -12,6 +12,7 @@ import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualAppliancesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
+import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceInstanceIds;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
 
 public final class NetworkVirtualAppliancesImpl implements NetworkVirtualAppliances {
@@ -55,6 +56,17 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         } else {
             return null;
         }
+    }
+
+    public Response<Void> restartWithResponse(String resourceGroupName, String networkVirtualApplianceName,
+        NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds, Context context) {
+        return this.serviceClient()
+            .restartWithResponse(resourceGroupName, networkVirtualApplianceName, networkVirtualApplianceInstanceIds,
+                context);
+    }
+
+    public void restart(String resourceGroupName, String networkVirtualApplianceName) {
+        this.serviceClient().restart(resourceGroupName, networkVirtualApplianceName);
     }
 
     public PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName) {

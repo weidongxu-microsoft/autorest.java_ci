@@ -105,6 +105,10 @@ public final class NetworkInterfaceIpConfigurationImpl implements NetworkInterfa
         return this.innerModel().privateIpAddress();
     }
 
+    public Integer privateIpAddressPrefixLength() {
+        return this.innerModel().privateIpAddressPrefixLength();
+    }
+
     public IpAllocationMethod privateIpAllocationMethod() {
         return this.innerModel().privateIpAllocationMethod();
     }

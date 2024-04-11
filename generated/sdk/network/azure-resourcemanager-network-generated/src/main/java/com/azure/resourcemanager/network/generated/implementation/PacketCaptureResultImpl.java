@@ -8,6 +8,7 @@ import com.azure.resourcemanager.network.generated.fluent.models.PacketCaptureRe
 import com.azure.resourcemanager.network.generated.models.PacketCaptureFilter;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureMachineScope;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureResult;
+import com.azure.resourcemanager.network.generated.models.PacketCaptureSettings;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureStorageLocation;
 import com.azure.resourcemanager.network.generated.models.PacketCaptureTargetType;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
@@ -76,6 +77,14 @@ public final class PacketCaptureResultImpl implements PacketCaptureResult {
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public Boolean continuousCapture() {
+        return this.innerModel().continuousCapture();
+    }
+
+    public PacketCaptureSettings captureSettings() {
+        return this.innerModel().captureSettings();
     }
 
     public PacketCaptureResultInner innerModel() {

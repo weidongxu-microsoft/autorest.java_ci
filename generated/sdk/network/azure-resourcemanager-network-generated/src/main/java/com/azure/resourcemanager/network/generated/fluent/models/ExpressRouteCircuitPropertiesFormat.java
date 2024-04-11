@@ -113,6 +113,12 @@ public final class ExpressRouteCircuitPropertiesFormat {
     @JsonProperty(value = "authorizationStatus", access = JsonProperty.Access.WRITE_ONLY)
     private String authorizationStatus;
 
+    /*
+     * Flag denoting rate-limiting status of the ExpressRoute direct-port circuit.
+     */
+    @JsonProperty(value = "enableDirectPortRateLimit")
+    private Boolean enableDirectPortRateLimit;
+
     /**
      * Creates an instance of ExpressRouteCircuitPropertiesFormat class.
      */
@@ -411,6 +417,28 @@ public final class ExpressRouteCircuitPropertiesFormat {
      */
     public String authorizationStatus() {
         return this.authorizationStatus;
+    }
+
+    /**
+     * Get the enableDirectPortRateLimit property: Flag denoting rate-limiting status of the ExpressRoute direct-port
+     * circuit.
+     * 
+     * @return the enableDirectPortRateLimit value.
+     */
+    public Boolean enableDirectPortRateLimit() {
+        return this.enableDirectPortRateLimit;
+    }
+
+    /**
+     * Set the enableDirectPortRateLimit property: Flag denoting rate-limiting status of the ExpressRoute direct-port
+     * circuit.
+     * 
+     * @param enableDirectPortRateLimit the enableDirectPortRateLimit value to set.
+     * @return the ExpressRouteCircuitPropertiesFormat object itself.
+     */
+    public ExpressRouteCircuitPropertiesFormat withEnableDirectPortRateLimit(Boolean enableDirectPortRateLimit) {
+        this.enableDirectPortRateLimit = enableDirectPortRateLimit;
+        return this;
     }
 
     /**

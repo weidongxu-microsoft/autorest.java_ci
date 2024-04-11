@@ -8,6 +8,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.InboundSecurityRuleInner;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRule;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRules;
+import com.azure.resourcemanager.network.generated.models.InboundSecurityRuleType;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.util.Collections;
 import java.util.List;
@@ -32,6 +33,10 @@ public final class InboundSecurityRuleImpl
 
     public String type() {
         return this.innerModel().type();
+    }
+
+    public InboundSecurityRuleType ruleType() {
+        return this.innerModel().ruleType();
     }
 
     public List<InboundSecurityRules> rules() {
@@ -126,6 +131,11 @@ public final class InboundSecurityRuleImpl
 
     public InboundSecurityRuleImpl withName(String name) {
         this.innerModel().withName(name);
+        return this;
+    }
+
+    public InboundSecurityRuleImpl withRuleType(InboundSecurityRuleType ruleType) {
+        this.innerModel().withRuleType(ruleType);
         return this;
     }
 
