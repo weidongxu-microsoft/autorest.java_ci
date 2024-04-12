@@ -19,10 +19,16 @@ public final class RetentionDescription {
     private CleanupPolicyRetentionDescription cleanupPolicy;
 
     /*
-     * Number of hours to retain the events for this Event Hub. This value is only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue 
+     * Number of hours to retain the events for this Event Hub. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue 
      */
     @JsonProperty(value = "retentionTimeInHours")
     private Long retentionTimeInHours;
+
+    /*
+     * The minimum time a message will remain ineligible for compaction in the log. Only applicable for logs that are being compacted.
+     */
+    @JsonProperty(value = "minCompactionLagInMins")
+    private Long minCompactionLagInMins;
 
     /*
      * Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub
@@ -57,9 +63,8 @@ public final class RetentionDescription {
     }
 
     /**
-     * Get the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This value is
-     * only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is
-     * Long.MaxValue.
+     * Get the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. If cleanupPolicy
+     * is Compact the returned value of this property is Long.MaxValue.
      * 
      * @return the retentionTimeInHours value.
      */
@@ -68,15 +73,36 @@ public final class RetentionDescription {
     }
 
     /**
-     * Set the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This value is
-     * only used when cleanupPolicy is Delete. If cleanupPolicy is Compact the returned value of this property is
-     * Long.MaxValue.
+     * Set the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. If cleanupPolicy
+     * is Compact the returned value of this property is Long.MaxValue.
      * 
      * @param retentionTimeInHours the retentionTimeInHours value to set.
      * @return the RetentionDescription object itself.
      */
     public RetentionDescription withRetentionTimeInHours(Long retentionTimeInHours) {
         this.retentionTimeInHours = retentionTimeInHours;
+        return this;
+    }
+
+    /**
+     * Get the minCompactionLagInMins property: The minimum time a message will remain ineligible for compaction in the
+     * log. Only applicable for logs that are being compacted.
+     * 
+     * @return the minCompactionLagInMins value.
+     */
+    public Long minCompactionLagInMins() {
+        return this.minCompactionLagInMins;
+    }
+
+    /**
+     * Set the minCompactionLagInMins property: The minimum time a message will remain ineligible for compaction in the
+     * log. Only applicable for logs that are being compacted.
+     * 
+     * @param minCompactionLagInMins the minCompactionLagInMins value to set.
+     * @return the RetentionDescription object itself.
+     */
+    public RetentionDescription withMinCompactionLagInMins(Long minCompactionLagInMins) {
+        this.minCompactionLagInMins = minCompactionLagInMins;
         return this;
     }
 

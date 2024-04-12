@@ -121,15 +121,6 @@ public final class ClustersImpl implements Clusters {
         }
     }
 
-    public Response<Void> triggerUpgradePostWithResponse(String resourceGroupName, String clusterName,
-        Context context) {
-        return this.serviceClient().triggerUpgradePostWithResponse(resourceGroupName, clusterName, context);
-    }
-
-    public void triggerUpgradePost(String resourceGroupName, String clusterName) {
-        this.serviceClient().triggerUpgradePost(resourceGroupName, clusterName);
-    }
-
     public Cluster getById(String id) {
         String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {

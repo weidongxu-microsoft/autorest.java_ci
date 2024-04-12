@@ -51,7 +51,7 @@ public final class PolicySettings {
     private PolicyRequestBodyCheck requestBodyCheck;
 
     /*
-     * Defines the JavaScript challenge cookie validity lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
+     * Defines the JavaScript challenge cookie validity lifetime in minutes. This setting is only applicable to Premium_AzureFrontDoor. Value must be an integer between 5 and 1440 with the default value being 30.
      */
     @JsonProperty(value = "javascriptChallengeExpirationInMinutes")
     private Integer javascriptChallengeExpirationInMinutes;
@@ -196,7 +196,8 @@ public final class PolicySettings {
 
     /**
      * Get the javascriptChallengeExpirationInMinutes property: Defines the JavaScript challenge cookie validity
-     * lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
+     * lifetime in minutes. This setting is only applicable to Premium_AzureFrontDoor. Value must be an integer between
+     * 5 and 1440 with the default value being 30.
      * 
      * @return the javascriptChallengeExpirationInMinutes value.
      */
@@ -206,7 +207,8 @@ public final class PolicySettings {
 
     /**
      * Set the javascriptChallengeExpirationInMinutes property: Defines the JavaScript challenge cookie validity
-     * lifetime in minutes. Value must be an integer between 5 and 1440 with the default value being 30.
+     * lifetime in minutes. This setting is only applicable to Premium_AzureFrontDoor. Value must be an integer between
+     * 5 and 1440 with the default value being 30.
      * 
      * @param javascriptChallengeExpirationInMinutes the javascriptChallengeExpirationInMinutes value to set.
      * @return the PolicySettings object itself.

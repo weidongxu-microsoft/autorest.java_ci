@@ -18,6 +18,7 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EHNamespaceIn
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetInner;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.NetworkRuleSetListResultInner;
 import com.azure.resourcemanager.eventhubs.generated.models.CheckNameAvailabilityParameter;
+import com.azure.resourcemanager.eventhubs.generated.models.FailOver;
 import com.azure.resourcemanager.eventhubs.generated.models.RegenerateAccessKeyParameters;
 
 /**
@@ -247,6 +248,64 @@ public interface NamespacesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     EHNamespaceInner update(String resourceGroupName, String namespaceName, EHNamespaceInner parameters);
+
+    /**
+     * GeoDR Failover.
+     * 
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String namespaceName,
+        FailOver parameters);
+
+    /**
+     * GeoDR Failover.
+     * 
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginFailover(String resourceGroupName, String namespaceName,
+        FailOver parameters, Context context);
+
+    /**
+     * GeoDR Failover.
+     * 
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void failover(String resourceGroupName, String namespaceName, FailOver parameters);
+
+    /**
+     * GeoDR Failover.
+     * 
+     * @param resourceGroupName Name of the resource group within the azure subscription.
+     * @param namespaceName The Namespace name.
+     * @param parameters Parameters for updating a namespace resource.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void failover(String resourceGroupName, String namespaceName, FailOver parameters, Context context);
 
     /**
      * Create or update NetworkRuleSet for a Namespace.

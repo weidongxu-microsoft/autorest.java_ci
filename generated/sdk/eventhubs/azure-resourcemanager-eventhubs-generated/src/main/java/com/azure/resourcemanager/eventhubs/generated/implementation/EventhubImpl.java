@@ -12,6 +12,7 @@ import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
 import com.azure.resourcemanager.eventhubs.generated.models.Eventhub;
 import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
+import com.azure.resourcemanager.eventhubs.generated.models.TimestampType;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -76,6 +77,18 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
 
     public RetentionDescription retentionDescription() {
         return this.innerModel().retentionDescription();
+    }
+
+    public TimestampType messageTimestampType() {
+        return this.innerModel().messageTimestampType();
+    }
+
+    public String identifier() {
+        return this.innerModel().identifier();
+    }
+
+    public String userMetadata() {
+        return this.innerModel().userMetadata();
     }
 
     public Region region() {
@@ -199,6 +212,16 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
 
     public EventhubImpl withRetentionDescription(RetentionDescription retentionDescription) {
         this.innerModel().withRetentionDescription(retentionDescription);
+        return this;
+    }
+
+    public EventhubImpl withMessageTimestampType(TimestampType messageTimestampType) {
+        this.innerModel().withMessageTimestampType(messageTimestampType);
+        return this;
+    }
+
+    public EventhubImpl withUserMetadata(String userMetadata) {
+        this.innerModel().withUserMetadata(userMetadata);
         return this;
     }
 }
