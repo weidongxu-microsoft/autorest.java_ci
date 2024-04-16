@@ -109,6 +109,12 @@ public final class VaultProperties {
     @JsonProperty(value = "bcdrSecurityLevel", access = JsonProperty.Access.WRITE_ONLY)
     private BcdrSecurityLevel bcdrSecurityLevel;
 
+    /*
+     * ResourceGuardOperationRequests on which LAC check will be performed
+     */
+    @JsonProperty(value = "resourceGuardOperationRequests")
+    private List<String> resourceGuardOperationRequests;
+
     /**
      * Creates an instance of VaultProperties class.
      */
@@ -348,6 +354,28 @@ public final class VaultProperties {
      */
     public BcdrSecurityLevel bcdrSecurityLevel() {
         return this.bcdrSecurityLevel;
+    }
+
+    /**
+     * Get the resourceGuardOperationRequests property: ResourceGuardOperationRequests on which LAC check will be
+     * performed.
+     * 
+     * @return the resourceGuardOperationRequests value.
+     */
+    public List<String> resourceGuardOperationRequests() {
+        return this.resourceGuardOperationRequests;
+    }
+
+    /**
+     * Set the resourceGuardOperationRequests property: ResourceGuardOperationRequests on which LAC check will be
+     * performed.
+     * 
+     * @param resourceGuardOperationRequests the resourceGuardOperationRequests value to set.
+     * @return the VaultProperties object itself.
+     */
+    public VaultProperties withResourceGuardOperationRequests(List<String> resourceGuardOperationRequests) {
+        this.resourceGuardOperationRequests = resourceGuardOperationRequests;
+        return this;
     }
 
     /**

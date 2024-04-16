@@ -90,6 +90,10 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
 
     private String vaultName;
 
+    private String createXMsAuthorizationAuxiliary;
+
+    private String updateXMsAuthorizationAuxiliary;
+
     private PatchVault updateVault;
 
     public VaultImpl withExistingResourceGroup(String resourceGroupName) {
@@ -100,14 +104,15 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     public Vault create() {
         this.innerObject = serviceManager.serviceClient()
             .getVaults()
-            .createOrUpdate(resourceGroupName, vaultName, this.innerModel(), Context.NONE);
+            .createOrUpdate(resourceGroupName, vaultName, this.innerModel(), createXMsAuthorizationAuxiliary,
+                Context.NONE);
         return this;
     }
 
     public Vault create(Context context) {
         this.innerObject = serviceManager.serviceClient()
             .getVaults()
-            .createOrUpdate(resourceGroupName, vaultName, this.innerModel(), context);
+            .createOrUpdate(resourceGroupName, vaultName, this.innerModel(), createXMsAuthorizationAuxiliary, context);
         return this;
     }
 
@@ -116,9 +121,11 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
         this.innerObject = new VaultInner();
         this.serviceManager = serviceManager;
         this.vaultName = name;
+        this.createXMsAuthorizationAuxiliary = null;
     }
 
     public VaultImpl update() {
+        this.updateXMsAuthorizationAuxiliary = null;
         this.updateVault = new PatchVault();
         return this;
     }
@@ -126,13 +133,14 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
     public Vault apply() {
         this.innerObject = serviceManager.serviceClient()
             .getVaults()
-            .update(resourceGroupName, vaultName, updateVault, Context.NONE);
+            .update(resourceGroupName, vaultName, updateVault, updateXMsAuthorizationAuxiliary, Context.NONE);
         return this;
     }
 
     public Vault apply(Context context) {
-        this.innerObject
-            = serviceManager.serviceClient().getVaults().update(resourceGroupName, vaultName, updateVault, context);
+        this.innerObject = serviceManager.serviceClient()
+            .getVaults()
+            .update(resourceGroupName, vaultName, updateVault, updateXMsAuthorizationAuxiliary, context);
         return this;
     }
 
@@ -216,6 +224,16 @@ public final class VaultImpl implements Vault, Vault.Definition, Vault.Update {
             return this;
         } else {
             this.updateVault.withEtag(etag);
+            return this;
+        }
+    }
+
+    public VaultImpl withXMsAuthorizationAuxiliary(String xMsAuthorizationAuxiliary) {
+        if (isInCreateMode()) {
+            this.createXMsAuthorizationAuxiliary = xMsAuthorizationAuxiliary;
+            return this;
+        } else {
+            this.updateXMsAuthorizationAuxiliary = xMsAuthorizationAuxiliary;
             return this;
         }
     }

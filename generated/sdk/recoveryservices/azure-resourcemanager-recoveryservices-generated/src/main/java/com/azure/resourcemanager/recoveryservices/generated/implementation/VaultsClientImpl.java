@@ -104,6 +104,7 @@ public final class VaultsClientImpl implements VaultsClient {
         Mono<Response<Flux<ByteBuffer>>> createOrUpdate(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @HeaderParam("x-ms-authorization-auxiliary") String xMsAuthorizationAuxiliary,
             @BodyParam("application/json") VaultInner vault, @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
@@ -122,6 +123,7 @@ public final class VaultsClientImpl implements VaultsClient {
         Mono<Response<Flux<ByteBuffer>>> update(@HostParam("$host") String endpoint,
             @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("vaultName") String vaultName,
+            @HeaderParam("x-ms-authorization-auxiliary") String xMsAuthorizationAuxiliary,
             @BodyParam("application/json") PatchVault vault, @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
@@ -503,6 +505,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -511,7 +514,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
-        VaultInner vault) {
+        VaultInner vault, String xMsAuthorizationAuxiliary) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -535,7 +538,8 @@ public final class VaultsClientImpl implements VaultsClient {
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(),
-                this.client.getApiVersion(), resourceGroupName, vaultName, vault, accept, context))
+                this.client.getApiVersion(), resourceGroupName, vaultName, xMsAuthorizationAuxiliary, vault, accept,
+                context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -545,6 +549,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -554,7 +559,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> createOrUpdateWithResponseAsync(String resourceGroupName, String vaultName,
-        VaultInner vault, Context context) {
+        VaultInner vault, String xMsAuthorizationAuxiliary, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -578,7 +583,29 @@ public final class VaultsClientImpl implements VaultsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.createOrUpdate(this.client.getEndpoint(), this.client.getSubscriptionId(),
-            this.client.getApiVersion(), resourceGroupName, vaultName, vault, accept, context);
+            this.client.getApiVersion(), resourceGroupName, vaultName, xMsAuthorizationAuxiliary, vault, accept,
+            context);
+    }
+
+    /**
+     * Creates or updates a Recovery Services vault.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param vaultName The name of the recovery services vault.
+     * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of resource information, as returned by the resource provider.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<VaultInner>, VaultInner> beginCreateOrUpdateAsync(String resourceGroupName,
+        String vaultName, VaultInner vault, String xMsAuthorizationAuxiliary) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = createOrUpdateWithResponseAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary);
+        return this.client.<VaultInner, VaultInner>getLroResult(mono, this.client.getHttpPipeline(), VaultInner.class,
+            VaultInner.class, this.client.getContext());
     }
 
     /**
@@ -595,7 +622,9 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VaultInner>, VaultInner> beginCreateOrUpdateAsync(String resourceGroupName,
         String vaultName, VaultInner vault) {
-        Mono<Response<Flux<ByteBuffer>>> mono = createOrUpdateWithResponseAsync(resourceGroupName, vaultName, vault);
+        final String xMsAuthorizationAuxiliary = null;
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = createOrUpdateWithResponseAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary);
         return this.client.<VaultInner, VaultInner>getLroResult(mono, this.client.getHttpPipeline(), VaultInner.class,
             VaultInner.class, this.client.getContext());
     }
@@ -606,6 +635,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -614,10 +644,10 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VaultInner>, VaultInner> beginCreateOrUpdateAsync(String resourceGroupName,
-        String vaultName, VaultInner vault, Context context) {
+        String vaultName, VaultInner vault, String xMsAuthorizationAuxiliary, Context context) {
         context = this.client.mergeContext(context);
         Mono<Response<Flux<ByteBuffer>>> mono
-            = createOrUpdateWithResponseAsync(resourceGroupName, vaultName, vault, context);
+            = createOrUpdateWithResponseAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context);
         return this.client.<VaultInner, VaultInner>getLroResult(mono, this.client.getHttpPipeline(), VaultInner.class,
             VaultInner.class, context);
     }
@@ -636,7 +666,9 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(String resourceGroupName,
         String vaultName, VaultInner vault) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault).getSyncPoller();
+        final String xMsAuthorizationAuxiliary = null;
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary)
+            .getSyncPoller();
     }
 
     /**
@@ -645,6 +677,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -653,8 +686,28 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginCreateOrUpdate(String resourceGroupName,
-        String vaultName, VaultInner vault, Context context) {
-        return this.beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, context).getSyncPoller();
+        String vaultName, VaultInner vault, String xMsAuthorizationAuxiliary, Context context) {
+        return this.beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Creates or updates a Recovery Services vault.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param vaultName The name of the recovery services vault.
+     * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource information, as returned by the resource provider on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<VaultInner> createOrUpdateAsync(String resourceGroupName, String vaultName, VaultInner vault,
+        String xMsAuthorizationAuxiliary) {
+        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -670,7 +723,8 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> createOrUpdateAsync(String resourceGroupName, String vaultName, VaultInner vault) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault).last()
+        final String xMsAuthorizationAuxiliary = null;
+        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -680,6 +734,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -688,8 +743,8 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> createOrUpdateAsync(String resourceGroupName, String vaultName, VaultInner vault,
-        Context context) {
-        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, context).last()
+        String xMsAuthorizationAuxiliary, Context context) {
+        return beginCreateOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -706,7 +761,8 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VaultInner createOrUpdate(String resourceGroupName, String vaultName, VaultInner vault) {
-        return createOrUpdateAsync(resourceGroupName, vaultName, vault).block();
+        final String xMsAuthorizationAuxiliary = null;
+        return createOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).block();
     }
 
     /**
@@ -715,6 +771,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -722,8 +779,9 @@ public final class VaultsClientImpl implements VaultsClient {
      * @return resource information, as returned by the resource provider.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VaultInner createOrUpdate(String resourceGroupName, String vaultName, VaultInner vault, Context context) {
-        return createOrUpdateAsync(resourceGroupName, vaultName, vault, context).block();
+    public VaultInner createOrUpdate(String resourceGroupName, String vaultName, VaultInner vault,
+        String xMsAuthorizationAuxiliary, Context context) {
+        return createOrUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context).block();
     }
 
     /**
@@ -930,6 +988,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -938,7 +997,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vaultName,
-        PatchVault vault) {
+        PatchVault vault, String xMsAuthorizationAuxiliary) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -962,7 +1021,8 @@ public final class VaultsClientImpl implements VaultsClient {
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), this.client.getSubscriptionId(),
-                this.client.getApiVersion(), resourceGroupName, vaultName, vault, accept, context))
+                this.client.getApiVersion(), resourceGroupName, vaultName, xMsAuthorizationAuxiliary, vault, accept,
+                context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -972,6 +1032,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -981,7 +1042,7 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<Response<Flux<ByteBuffer>>> updateWithResponseAsync(String resourceGroupName, String vaultName,
-        PatchVault vault, Context context) {
+        PatchVault vault, String xMsAuthorizationAuxiliary, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -1005,7 +1066,28 @@ public final class VaultsClientImpl implements VaultsClient {
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), this.client.getSubscriptionId(), this.client.getApiVersion(),
-            resourceGroupName, vaultName, vault, accept, context);
+            resourceGroupName, vaultName, xMsAuthorizationAuxiliary, vault, accept, context);
+    }
+
+    /**
+     * Updates the vault.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param vaultName The name of the recovery services vault.
+     * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of resource information, as returned by the resource provider.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<VaultInner>, VaultInner> beginUpdateAsync(String resourceGroupName, String vaultName,
+        PatchVault vault, String xMsAuthorizationAuxiliary) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updateWithResponseAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary);
+        return this.client.<VaultInner, VaultInner>getLroResult(mono, this.client.getHttpPipeline(), VaultInner.class,
+            VaultInner.class, this.client.getContext());
     }
 
     /**
@@ -1022,7 +1104,9 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VaultInner>, VaultInner> beginUpdateAsync(String resourceGroupName, String vaultName,
         PatchVault vault) {
-        Mono<Response<Flux<ByteBuffer>>> mono = updateWithResponseAsync(resourceGroupName, vaultName, vault);
+        final String xMsAuthorizationAuxiliary = null;
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updateWithResponseAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary);
         return this.client.<VaultInner, VaultInner>getLroResult(mono, this.client.getHttpPipeline(), VaultInner.class,
             VaultInner.class, this.client.getContext());
     }
@@ -1033,6 +1117,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1041,9 +1126,10 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     private PollerFlux<PollResult<VaultInner>, VaultInner> beginUpdateAsync(String resourceGroupName, String vaultName,
-        PatchVault vault, Context context) {
+        PatchVault vault, String xMsAuthorizationAuxiliary, Context context) {
         context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono = updateWithResponseAsync(resourceGroupName, vaultName, vault, context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = updateWithResponseAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context);
         return this.client.<VaultInner, VaultInner>getLroResult(mono, this.client.getHttpPipeline(), VaultInner.class,
             VaultInner.class, context);
     }
@@ -1062,7 +1148,8 @@ public final class VaultsClientImpl implements VaultsClient {
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginUpdate(String resourceGroupName, String vaultName,
         PatchVault vault) {
-        return this.beginUpdateAsync(resourceGroupName, vaultName, vault).getSyncPoller();
+        final String xMsAuthorizationAuxiliary = null;
+        return this.beginUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).getSyncPoller();
     }
 
     /**
@@ -1071,6 +1158,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1079,8 +1167,28 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
     public SyncPoller<PollResult<VaultInner>, VaultInner> beginUpdate(String resourceGroupName, String vaultName,
-        PatchVault vault, Context context) {
-        return this.beginUpdateAsync(resourceGroupName, vaultName, vault, context).getSyncPoller();
+        PatchVault vault, String xMsAuthorizationAuxiliary, Context context) {
+        return this.beginUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Updates the vault.
+     * 
+     * @param resourceGroupName The name of the resource group. The name is case insensitive.
+     * @param vaultName The name of the recovery services vault.
+     * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return resource information, as returned by the resource provider on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<VaultInner> updateAsync(String resourceGroupName, String vaultName, PatchVault vault,
+        String xMsAuthorizationAuxiliary) {
+        return beginUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).last()
+            .flatMap(this.client::getLroFinalResultOrError);
     }
 
     /**
@@ -1096,7 +1204,8 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> updateAsync(String resourceGroupName, String vaultName, PatchVault vault) {
-        return beginUpdateAsync(resourceGroupName, vaultName, vault).last()
+        final String xMsAuthorizationAuxiliary = null;
+        return beginUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -1106,6 +1215,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1114,8 +1224,8 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<VaultInner> updateAsync(String resourceGroupName, String vaultName, PatchVault vault,
-        Context context) {
-        return beginUpdateAsync(resourceGroupName, vaultName, vault, context).last()
+        String xMsAuthorizationAuxiliary, Context context) {
+        return beginUpdateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context).last()
             .flatMap(this.client::getLroFinalResultOrError);
     }
 
@@ -1132,7 +1242,8 @@ public final class VaultsClientImpl implements VaultsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     public VaultInner update(String resourceGroupName, String vaultName, PatchVault vault) {
-        return updateAsync(resourceGroupName, vaultName, vault).block();
+        final String xMsAuthorizationAuxiliary = null;
+        return updateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary).block();
     }
 
     /**
@@ -1141,6 +1252,7 @@ public final class VaultsClientImpl implements VaultsClient {
      * @param resourceGroupName The name of the resource group. The name is case insensitive.
      * @param vaultName The name of the recovery services vault.
      * @param vault Recovery Services Vault to be created.
+     * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1148,8 +1260,9 @@ public final class VaultsClientImpl implements VaultsClient {
      * @return resource information, as returned by the resource provider.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    public VaultInner update(String resourceGroupName, String vaultName, PatchVault vault, Context context) {
-        return updateAsync(resourceGroupName, vaultName, vault, context).block();
+    public VaultInner update(String resourceGroupName, String vaultName, PatchVault vault,
+        String xMsAuthorizationAuxiliary, Context context) {
+        return updateAsync(resourceGroupName, vaultName, vault, xMsAuthorizationAuxiliary, context).block();
     }
 
     /**

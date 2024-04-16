@@ -167,8 +167,9 @@ public interface Vault {
          * The stage of the Vault definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
-            DefinitionStages.WithProperties, DefinitionStages.WithSku, DefinitionStages.WithEtag {
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithProperties,
+            DefinitionStages.WithSku, DefinitionStages.WithEtag, DefinitionStages.WithXMsAuthorizationAuxiliary {
             /**
              * Executes the create request.
              * 
@@ -249,6 +250,19 @@ public interface Vault {
              */
             WithCreate withEtag(String etag);
         }
+
+        /**
+         * The stage of the Vault definition allowing to specify xMsAuthorizationAuxiliary.
+         */
+        interface WithXMsAuthorizationAuxiliary {
+            /**
+             * Specifies the xMsAuthorizationAuxiliary property: The xMsAuthorizationAuxiliary parameter.
+             * 
+             * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
+             * @return the next definition stage.
+             */
+            WithCreate withXMsAuthorizationAuxiliary(String xMsAuthorizationAuxiliary);
+        }
     }
 
     /**
@@ -262,7 +276,7 @@ public interface Vault {
      * The template for Vault update.
      */
     interface Update extends UpdateStages.WithTags, UpdateStages.WithEtag, UpdateStages.WithProperties,
-        UpdateStages.WithSku, UpdateStages.WithIdentity {
+        UpdateStages.WithSku, UpdateStages.WithIdentity, UpdateStages.WithXMsAuthorizationAuxiliary {
         /**
          * Executes the update request.
          * 
@@ -346,6 +360,19 @@ public interface Vault {
              * @return the next definition stage.
              */
             Update withIdentity(IdentityData identity);
+        }
+
+        /**
+         * The stage of the Vault update allowing to specify xMsAuthorizationAuxiliary.
+         */
+        interface WithXMsAuthorizationAuxiliary {
+            /**
+             * Specifies the xMsAuthorizationAuxiliary property: The xMsAuthorizationAuxiliary parameter.
+             * 
+             * @param xMsAuthorizationAuxiliary The xMsAuthorizationAuxiliary parameter.
+             * @return the next definition stage.
+             */
+            Update withXMsAuthorizationAuxiliary(String xMsAuthorizationAuxiliary);
         }
     }
 
