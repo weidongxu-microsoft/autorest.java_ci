@@ -197,6 +197,28 @@ public interface SqlVirtualMachine {
     Boolean enableAutomaticUpgrade();
 
     /**
+     * Gets the additionalVmPatch property: Additional VM Patching solution enabled on the Virtual Machine.
+     * 
+     * @return the additionalVmPatch value.
+     */
+    AdditionalOsPatch additionalVmPatch();
+
+    /**
+     * Gets the virtualMachineIdentitySettings property: Virtual Machine Identity details used for Sql IaaS extension
+     * configurations.
+     * 
+     * @return the virtualMachineIdentitySettings value.
+     */
+    VirtualMachineIdentity virtualMachineIdentitySettings();
+
+    /**
+     * Gets the osType property: Operating System of the current SQL Virtual Machine.
+     * 
+     * @return the osType value.
+     */
+    OsType osType();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -289,7 +311,7 @@ public interface SqlVirtualMachine {
             DefinitionStages.WithKeyVaultCredentialSettings,
             DefinitionStages.WithServerConfigurationsManagementSettings,
             DefinitionStages.WithStorageConfigurationSettings, DefinitionStages.WithAssessmentSettings,
-            DefinitionStages.WithEnableAutomaticUpgrade {
+            DefinitionStages.WithEnableAutomaticUpgrade, DefinitionStages.WithVirtualMachineIdentitySettings {
             /**
              * Executes the create request.
              * 
@@ -539,6 +561,21 @@ public interface SqlVirtualMachine {
              */
             WithCreate withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade);
         }
+
+        /**
+         * The stage of the SqlVirtualMachine definition allowing to specify virtualMachineIdentitySettings.
+         */
+        interface WithVirtualMachineIdentitySettings {
+            /**
+             * Specifies the virtualMachineIdentitySettings property: Virtual Machine Identity details used for Sql IaaS
+             * extension configurations..
+             * 
+             * @param virtualMachineIdentitySettings Virtual Machine Identity details used for Sql IaaS extension
+             * configurations.
+             * @return the next definition stage.
+             */
+            WithCreate withVirtualMachineIdentitySettings(VirtualMachineIdentity virtualMachineIdentitySettings);
+        }
     }
 
     /**
@@ -618,6 +655,27 @@ public interface SqlVirtualMachine {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void startAssessment(Context context);
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void fetchDCAssessment(DiskConfigAssessmentRequest parameters);
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void fetchDCAssessment(DiskConfigAssessmentRequest parameters, Context context);
 
     /**
      * Uninstalls and reinstalls the SQL IaaS Extension.

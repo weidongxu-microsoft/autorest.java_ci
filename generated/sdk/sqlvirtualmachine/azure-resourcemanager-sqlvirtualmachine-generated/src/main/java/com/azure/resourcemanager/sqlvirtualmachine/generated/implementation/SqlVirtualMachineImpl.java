@@ -8,11 +8,14 @@ import com.azure.core.management.Region;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AdditionalOsPatch;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.DiskConfigAssessmentRequest;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LeastPrivilegeMode;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.OsType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ResourceIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ServerConfigurationsManagementSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlImageSku;
@@ -22,6 +25,7 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMa
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineUpdate;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.StorageConfigurationSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.TroubleshootingStatus;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainCredentials;
 import java.util.Collections;
 import java.util.Map;
@@ -137,6 +141,18 @@ public final class SqlVirtualMachineImpl
         return this.innerModel().enableAutomaticUpgrade();
     }
 
+    public AdditionalOsPatch additionalVmPatch() {
+        return this.innerModel().additionalVmPatch();
+    }
+
+    public VirtualMachineIdentity virtualMachineIdentitySettings() {
+        return this.innerModel().virtualMachineIdentitySettings();
+    }
+
+    public OsType osType() {
+        return this.innerModel().osType();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -240,6 +256,15 @@ public final class SqlVirtualMachineImpl
 
     public void startAssessment(Context context) {
         serviceManager.sqlVirtualMachines().startAssessment(resourceGroupName, sqlVirtualMachineName, context);
+    }
+
+    public void fetchDCAssessment(DiskConfigAssessmentRequest parameters) {
+        serviceManager.sqlVirtualMachines().fetchDCAssessment(resourceGroupName, sqlVirtualMachineName, parameters);
+    }
+
+    public void fetchDCAssessment(DiskConfigAssessmentRequest parameters, Context context) {
+        serviceManager.sqlVirtualMachines()
+            .fetchDCAssessment(resourceGroupName, sqlVirtualMachineName, parameters, context);
     }
 
     public void redeploy() {
@@ -349,6 +374,12 @@ public final class SqlVirtualMachineImpl
 
     public SqlVirtualMachineImpl withEnableAutomaticUpgrade(Boolean enableAutomaticUpgrade) {
         this.innerModel().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
+        return this;
+    }
+
+    public SqlVirtualMachineImpl
+        withVirtualMachineIdentitySettings(VirtualMachineIdentity virtualMachineIdentitySettings) {
+        this.innerModel().withVirtualMachineIdentitySettings(virtualMachineIdentitySettings);
         return this;
     }
 

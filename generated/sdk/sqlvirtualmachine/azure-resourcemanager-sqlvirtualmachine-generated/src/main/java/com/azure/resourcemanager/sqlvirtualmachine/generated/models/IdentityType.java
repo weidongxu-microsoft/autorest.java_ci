@@ -24,6 +24,16 @@ public final class IdentityType extends ExpandableStringEnum<IdentityType> {
     public static final IdentityType SYSTEM_ASSIGNED = fromString("SystemAssigned");
 
     /**
+     * Static value UserAssigned for IdentityType.
+     */
+    public static final IdentityType USER_ASSIGNED = fromString("UserAssigned");
+
+    /**
+     * Static value SystemAssigned,UserAssigned for IdentityType.
+     */
+    public static final IdentityType SYSTEM_ASSIGNED_USER_ASSIGNED = fromString("SystemAssigned,UserAssigned");
+
+    /**
      * Creates a new instance of IdentityType value.
      * 
      * @deprecated Use the {@link #fromString(String)} factory method.

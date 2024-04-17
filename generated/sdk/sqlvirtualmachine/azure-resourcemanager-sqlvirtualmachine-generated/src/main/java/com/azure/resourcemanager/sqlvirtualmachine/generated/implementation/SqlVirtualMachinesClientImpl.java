@@ -35,6 +35,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.SqlVirtualMachinesClient;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.DiskConfigAssessmentRequest;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineListResult;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineUpdate;
 import java.nio.ByteBuffer;
@@ -93,7 +94,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
 
         @Headers({ "Content-Type: application/json" })
         @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine/sqlVirtualMachines/{sqlVirtualMachineName}/startAssessment")
-        @ExpectedResponses({ 200, 202 })
+        @ExpectedResponses({ 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> startAssessment(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -102,8 +103,19 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
             @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine/sqlVirtualMachines/{sqlVirtualMachineName}/fetchDCAssessment")
+        @ExpectedResponses({ 202 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<Flux<ByteBuffer>>> fetchDCAssessment(@HostParam("$host") String endpoint,
+            @PathParam("resourceGroupName") String resourceGroupName,
+            @PathParam("sqlVirtualMachineName") String sqlVirtualMachineName,
+            @PathParam("subscriptionId") String subscriptionId, @QueryParam("api-version") String apiVersion,
+            @BodyParam("application/json") DiskConfigAssessmentRequest parameters, @HeaderParam("Accept") String accept,
+            Context context);
+
+        @Headers({ "Content-Type: application/json" })
         @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.SqlVirtualMachine/sqlVirtualMachines/{sqlVirtualMachineName}/redeploy")
-        @ExpectedResponses({ 200, 202 })
+        @ExpectedResponses({ 202 })
         @UnexpectedResponseExceptionType(ManagementException.class)
         Mono<Response<Flux<ByteBuffer>>> redeploy(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName,
@@ -668,6 +680,249 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     @ServiceMethod(returns = ReturnType.SINGLE)
     public void startAssessment(String resourceGroupName, String sqlVirtualMachineName, Context context) {
         startAssessmentAsync(resourceGroupName, sqlVirtualMachineName, context).block();
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> fetchDCAssessmentWithResponseAsync(String resourceGroupName,
+        String sqlVirtualMachineName, DiskConfigAssessmentRequest parameters) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (sqlVirtualMachineName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter sqlVirtualMachineName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.fetchDCAssessment(this.client.getEndpoint(), resourceGroupName,
+                sqlVirtualMachineName, this.client.getSubscriptionId(), this.client.getApiVersion(), parameters, accept,
+                context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response} on successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<Flux<ByteBuffer>>> fetchDCAssessmentWithResponseAsync(String resourceGroupName,
+        String sqlVirtualMachineName, DiskConfigAssessmentRequest parameters, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (sqlVirtualMachineName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter sqlVirtualMachineName is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (parameters == null) {
+            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
+        } else {
+            parameters.validate();
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.fetchDCAssessment(this.client.getEndpoint(), resourceGroupName, sqlVirtualMachineName,
+            this.client.getSubscriptionId(), this.client.getApiVersion(), parameters, accept, context);
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginFetchDCAssessmentAsync(String resourceGroupName,
+        String sqlVirtualMachineName, DiskConfigAssessmentRequest parameters) {
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = fetchDCAssessmentWithResponseAsync(resourceGroupName, sqlVirtualMachineName, parameters);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            this.client.getContext());
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link PollerFlux} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    private PollerFlux<PollResult<Void>, Void> beginFetchDCAssessmentAsync(String resourceGroupName,
+        String sqlVirtualMachineName, DiskConfigAssessmentRequest parameters, Context context) {
+        context = this.client.mergeContext(context);
+        Mono<Response<Flux<ByteBuffer>>> mono
+            = fetchDCAssessmentWithResponseAsync(resourceGroupName, sqlVirtualMachineName, parameters, context);
+        return this.client.<Void, Void>getLroResult(mono, this.client.getHttpPipeline(), Void.class, Void.class,
+            context);
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginFetchDCAssessment(String resourceGroupName,
+        String sqlVirtualMachineName, DiskConfigAssessmentRequest parameters) {
+        return this.beginFetchDCAssessmentAsync(resourceGroupName, sqlVirtualMachineName, parameters).getSyncPoller();
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    public SyncPoller<PollResult<Void>, Void> beginFetchDCAssessment(String resourceGroupName,
+        String sqlVirtualMachineName, DiskConfigAssessmentRequest parameters, Context context) {
+        return this.beginFetchDCAssessmentAsync(resourceGroupName, sqlVirtualMachineName, parameters, context)
+            .getSyncPoller();
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> fetchDCAssessmentAsync(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters) {
+        return beginFetchDCAssessmentAsync(resourceGroupName, sqlVirtualMachineName, parameters).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return A {@link Mono} that completes when a successful response is received.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Void> fetchDCAssessmentAsync(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters, Context context) {
+        return beginFetchDCAssessmentAsync(resourceGroupName, sqlVirtualMachineName, parameters, context).last()
+            .flatMap(this.client::getLroFinalResultOrError);
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void fetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters) {
+        fetchDCAssessmentAsync(resourceGroupName, sqlVirtualMachineName, parameters).block();
+    }
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public void fetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters, Context context) {
+        fetchDCAssessmentAsync(resourceGroupName, sqlVirtualMachineName, parameters, context).block();
     }
 
     /**
@@ -1480,7 +1735,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1523,7 +1778,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1566,7 +1821,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1588,7 +1843,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1611,7 +1866,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1629,7 +1884,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1648,7 +1903,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1667,7 +1922,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1687,7 +1942,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -1705,7 +1960,7 @@ public final class SqlVirtualMachinesClientImpl implements SqlVirtualMachinesCli
     }
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.

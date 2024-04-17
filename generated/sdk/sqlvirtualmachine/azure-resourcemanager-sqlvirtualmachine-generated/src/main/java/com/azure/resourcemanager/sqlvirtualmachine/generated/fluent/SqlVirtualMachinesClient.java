@@ -12,6 +12,7 @@ import com.azure.core.management.polling.PollResult;
 import com.azure.core.util.Context;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.DiskConfigAssessmentRequest;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachineUpdate;
 
 /**
@@ -128,6 +129,70 @@ public interface SqlVirtualMachinesClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void startAssessment(String resourceGroupName, String sqlVirtualMachineName, Context context);
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginFetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters);
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of long-running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<Void>, Void> beginFetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters, Context context);
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void fetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters);
+
+    /**
+     * Starts SQL best practices Assessment with Disk Config rules on SQL virtual machine.
+     * 
+     * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
+     * the Azure Resource Manager API or the portal.
+     * @param sqlVirtualMachineName Name of the SQL virtual machine.
+     * @param parameters Disk Config Assessment property.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void fetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters, Context context);
 
     /**
      * Uninstalls and reinstalls the SQL IaaS Extension.
@@ -341,7 +406,7 @@ public interface SqlVirtualMachinesClient {
     void delete(String resourceGroupName, String sqlVirtualMachineName, Context context);
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -357,7 +422,7 @@ public interface SqlVirtualMachinesClient {
         String sqlVirtualMachineName, SqlVirtualMachineUpdate parameters);
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -374,7 +439,7 @@ public interface SqlVirtualMachinesClient {
         String sqlVirtualMachineName, SqlVirtualMachineUpdate parameters, Context context);
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.
@@ -390,7 +455,7 @@ public interface SqlVirtualMachinesClient {
         SqlVirtualMachineUpdate parameters);
 
     /**
-     * Updates a SQL virtual machine.
+     * Updates SQL virtual machine tags.
      * 
      * @param resourceGroupName Name of the resource group that contains the resource. You can obtain this value from
      * the Azure Resource Manager API or the portal.

@@ -7,11 +7,13 @@ package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AdditionalOsPatch;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LeastPrivilegeMode;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.OsType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ResourceIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ServerConfigurationsManagementSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlImageSku;
@@ -19,6 +21,7 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlManagemen
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlServerLicenseType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.StorageConfigurationSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.TroubleshootingStatus;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainCredentials;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.Map;
@@ -509,6 +512,50 @@ public final class SqlVirtualMachineInner extends Resource {
         }
         this.innerProperties().withEnableAutomaticUpgrade(enableAutomaticUpgrade);
         return this;
+    }
+
+    /**
+     * Get the additionalVmPatch property: Additional VM Patching solution enabled on the Virtual Machine.
+     * 
+     * @return the additionalVmPatch value.
+     */
+    public AdditionalOsPatch additionalVmPatch() {
+        return this.innerProperties() == null ? null : this.innerProperties().additionalVmPatch();
+    }
+
+    /**
+     * Get the virtualMachineIdentitySettings property: Virtual Machine Identity details used for Sql IaaS extension
+     * configurations.
+     * 
+     * @return the virtualMachineIdentitySettings value.
+     */
+    public VirtualMachineIdentity virtualMachineIdentitySettings() {
+        return this.innerProperties() == null ? null : this.innerProperties().virtualMachineIdentitySettings();
+    }
+
+    /**
+     * Set the virtualMachineIdentitySettings property: Virtual Machine Identity details used for Sql IaaS extension
+     * configurations.
+     * 
+     * @param virtualMachineIdentitySettings the virtualMachineIdentitySettings value to set.
+     * @return the SqlVirtualMachineInner object itself.
+     */
+    public SqlVirtualMachineInner
+        withVirtualMachineIdentitySettings(VirtualMachineIdentity virtualMachineIdentitySettings) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SqlVirtualMachineProperties();
+        }
+        this.innerProperties().withVirtualMachineIdentitySettings(virtualMachineIdentitySettings);
+        return this;
+    }
+
+    /**
+     * Get the osType property: Operating System of the current SQL Virtual Machine.
+     * 
+     * @return the osType value.
+     */
+    public OsType osType() {
+        return this.innerProperties() == null ? null : this.innerProperties().osType();
     }
 
     /**

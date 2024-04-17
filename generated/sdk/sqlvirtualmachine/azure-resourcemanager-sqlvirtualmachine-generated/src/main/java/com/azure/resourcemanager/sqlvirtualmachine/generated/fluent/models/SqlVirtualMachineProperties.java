@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AdditionalOsPatch;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoPatchingSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.KeyVaultCredentialSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LeastPrivilegeMode;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.OsType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ServerConfigurationsManagementSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlImageSku;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlManagementMode;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlServerLicenseType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.StorageConfigurationSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.TroubleshootingStatus;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainCredentials;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -131,6 +134,24 @@ public final class SqlVirtualMachineProperties {
      */
     @JsonProperty(value = "enableAutomaticUpgrade")
     private Boolean enableAutomaticUpgrade;
+
+    /*
+     * Additional VM Patching solution enabled on the Virtual Machine
+     */
+    @JsonProperty(value = "additionalVmPatch", access = JsonProperty.Access.WRITE_ONLY)
+    private AdditionalOsPatch additionalVmPatch;
+
+    /*
+     * Virtual Machine Identity details used for Sql IaaS extension configurations.
+     */
+    @JsonProperty(value = "virtualMachineIdentitySettings")
+    private VirtualMachineIdentity virtualMachineIdentitySettings;
+
+    /*
+     * Operating System of the current SQL Virtual Machine.
+     */
+    @JsonProperty(value = "osType", access = JsonProperty.Access.WRITE_ONLY)
+    private OsType osType;
 
     /**
      * Creates an instance of SqlVirtualMachineProperties class.
@@ -492,6 +513,47 @@ public final class SqlVirtualMachineProperties {
     }
 
     /**
+     * Get the additionalVmPatch property: Additional VM Patching solution enabled on the Virtual Machine.
+     * 
+     * @return the additionalVmPatch value.
+     */
+    public AdditionalOsPatch additionalVmPatch() {
+        return this.additionalVmPatch;
+    }
+
+    /**
+     * Get the virtualMachineIdentitySettings property: Virtual Machine Identity details used for Sql IaaS extension
+     * configurations.
+     * 
+     * @return the virtualMachineIdentitySettings value.
+     */
+    public VirtualMachineIdentity virtualMachineIdentitySettings() {
+        return this.virtualMachineIdentitySettings;
+    }
+
+    /**
+     * Set the virtualMachineIdentitySettings property: Virtual Machine Identity details used for Sql IaaS extension
+     * configurations.
+     * 
+     * @param virtualMachineIdentitySettings the virtualMachineIdentitySettings value to set.
+     * @return the SqlVirtualMachineProperties object itself.
+     */
+    public SqlVirtualMachineProperties
+        withVirtualMachineIdentitySettings(VirtualMachineIdentity virtualMachineIdentitySettings) {
+        this.virtualMachineIdentitySettings = virtualMachineIdentitySettings;
+        return this;
+    }
+
+    /**
+     * Get the osType property: Operating System of the current SQL Virtual Machine.
+     * 
+     * @return the osType value.
+     */
+    public OsType osType() {
+        return this.osType;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -520,6 +582,9 @@ public final class SqlVirtualMachineProperties {
         }
         if (assessmentSettings() != null) {
             assessmentSettings().validate();
+        }
+        if (virtualMachineIdentitySettings() != null) {
+            virtualMachineIdentitySettings().validate();
         }
     }
 }

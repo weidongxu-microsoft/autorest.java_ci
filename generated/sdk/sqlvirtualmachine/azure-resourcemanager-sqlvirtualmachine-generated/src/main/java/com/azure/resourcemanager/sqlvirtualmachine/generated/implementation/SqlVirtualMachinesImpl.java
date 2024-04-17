@@ -11,6 +11,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.SqlVirtualMachinesClient;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models.SqlVirtualMachineInner;
+import com.azure.resourcemanager.sqlvirtualmachine.generated.models.DiskConfigAssessmentRequest;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachine;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVirtualMachines;
 
@@ -57,6 +58,16 @@ public final class SqlVirtualMachinesImpl implements SqlVirtualMachines {
 
     public void startAssessment(String resourceGroupName, String sqlVirtualMachineName, Context context) {
         this.serviceClient().startAssessment(resourceGroupName, sqlVirtualMachineName, context);
+    }
+
+    public void fetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters) {
+        this.serviceClient().fetchDCAssessment(resourceGroupName, sqlVirtualMachineName, parameters);
+    }
+
+    public void fetchDCAssessment(String resourceGroupName, String sqlVirtualMachineName,
+        DiskConfigAssessmentRequest parameters, Context context) {
+        this.serviceClient().fetchDCAssessment(resourceGroupName, sqlVirtualMachineName, parameters, context);
     }
 
     public void redeploy(String resourceGroupName, String sqlVirtualMachineName) {
