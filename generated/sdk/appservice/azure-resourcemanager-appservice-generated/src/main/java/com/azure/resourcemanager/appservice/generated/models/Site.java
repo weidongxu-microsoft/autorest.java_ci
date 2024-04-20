@@ -174,6 +174,13 @@ public interface Site {
     OffsetDateTime lastModifiedTimeUtc();
 
     /**
+     * Gets the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    SiteDnsConfig dnsConfiguration();
+
+    /**
      * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
      * have Virtual Network Security Groups and User Defined Routes applied.
      * 
@@ -196,11 +203,25 @@ public interface Site {
     Boolean vnetContentShareEnabled();
 
     /**
+     * Gets the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual network.
+     * 
+     * @return the vnetBackupRestoreEnabled value.
+     */
+    Boolean vnetBackupRestoreEnabled();
+
+    /**
      * Gets the siteConfig property: Configuration of the app.
      * 
      * @return the siteConfig value.
      */
     SiteConfig siteConfig();
+
+    /**
+     * Gets the functionAppConfig property: Configuration specific of the Azure Function app.
+     * 
+     * @return the functionAppConfig value.
+     */
+    FunctionAppConfig functionAppConfig();
 
     /**
      * Gets the daprConfig property: Dapr configuration of the app.
@@ -535,18 +556,20 @@ public interface Site {
         interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithIdentity,
             DefinitionStages.WithExtendedLocation, DefinitionStages.WithKind, DefinitionStages.WithEnabled,
             DefinitionStages.WithHostnameSslStates, DefinitionStages.WithServerFarmId, DefinitionStages.WithReserved,
-            DefinitionStages.WithIsXenon, DefinitionStages.WithHyperV, DefinitionStages.WithVnetRouteAllEnabled,
-            DefinitionStages.WithVnetImagePullEnabled, DefinitionStages.WithVnetContentShareEnabled,
-            DefinitionStages.WithSiteConfig, DefinitionStages.WithDaprConfig, DefinitionStages.WithWorkloadProfileName,
-            DefinitionStages.WithResourceConfig, DefinitionStages.WithScmSiteAlsoStopped,
-            DefinitionStages.WithHostingEnvironmentProfile, DefinitionStages.WithClientAffinityEnabled,
-            DefinitionStages.WithClientCertEnabled, DefinitionStages.WithClientCertMode,
-            DefinitionStages.WithClientCertExclusionPaths, DefinitionStages.WithHostNamesDisabled,
-            DefinitionStages.WithCustomDomainVerificationId, DefinitionStages.WithContainerSize,
-            DefinitionStages.WithDailyMemoryTimeQuota, DefinitionStages.WithCloningInfo, DefinitionStages.WithHttpsOnly,
-            DefinitionStages.WithRedundancyMode, DefinitionStages.WithPublicNetworkAccess,
-            DefinitionStages.WithStorageAccountRequired, DefinitionStages.WithKeyVaultReferenceIdentity,
-            DefinitionStages.WithVirtualNetworkSubnetId, DefinitionStages.WithManagedEnvironmentId {
+            DefinitionStages.WithIsXenon, DefinitionStages.WithHyperV, DefinitionStages.WithDnsConfiguration,
+            DefinitionStages.WithVnetRouteAllEnabled, DefinitionStages.WithVnetImagePullEnabled,
+            DefinitionStages.WithVnetContentShareEnabled, DefinitionStages.WithVnetBackupRestoreEnabled,
+            DefinitionStages.WithSiteConfig, DefinitionStages.WithFunctionAppConfig, DefinitionStages.WithDaprConfig,
+            DefinitionStages.WithWorkloadProfileName, DefinitionStages.WithResourceConfig,
+            DefinitionStages.WithScmSiteAlsoStopped, DefinitionStages.WithHostingEnvironmentProfile,
+            DefinitionStages.WithClientAffinityEnabled, DefinitionStages.WithClientCertEnabled,
+            DefinitionStages.WithClientCertMode, DefinitionStages.WithClientCertExclusionPaths,
+            DefinitionStages.WithHostNamesDisabled, DefinitionStages.WithCustomDomainVerificationId,
+            DefinitionStages.WithContainerSize, DefinitionStages.WithDailyMemoryTimeQuota,
+            DefinitionStages.WithCloningInfo, DefinitionStages.WithHttpsOnly, DefinitionStages.WithRedundancyMode,
+            DefinitionStages.WithPublicNetworkAccess, DefinitionStages.WithStorageAccountRequired,
+            DefinitionStages.WithKeyVaultReferenceIdentity, DefinitionStages.WithVirtualNetworkSubnetId,
+            DefinitionStages.WithManagedEnvironmentId {
             /**
              * Executes the create request.
              * 
@@ -700,6 +723,19 @@ public interface Site {
         }
 
         /**
+         * The stage of the Site definition allowing to specify dnsConfiguration.
+         */
+        interface WithDnsConfiguration {
+            /**
+             * Specifies the dnsConfiguration property: Property to configure various DNS related settings for a site..
+             * 
+             * @param dnsConfiguration Property to configure various DNS related settings for a site.
+             * @return the next definition stage.
+             */
+            WithCreate withDnsConfiguration(SiteDnsConfig dnsConfiguration);
+        }
+
+        /**
          * The stage of the Site definition allowing to specify vnetRouteAllEnabled.
          */
         interface WithVnetRouteAllEnabled {
@@ -741,6 +777,20 @@ public interface Site {
         }
 
         /**
+         * The stage of the Site definition allowing to specify vnetBackupRestoreEnabled.
+         */
+        interface WithVnetBackupRestoreEnabled {
+            /**
+             * Specifies the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual
+             * network.
+             * 
+             * @param vnetBackupRestoreEnabled To enable Backup and Restore operations over virtual network.
+             * @return the next definition stage.
+             */
+            WithCreate withVnetBackupRestoreEnabled(Boolean vnetBackupRestoreEnabled);
+        }
+
+        /**
          * The stage of the Site definition allowing to specify siteConfig.
          */
         interface WithSiteConfig {
@@ -751,6 +801,19 @@ public interface Site {
              * @return the next definition stage.
              */
             WithCreate withSiteConfig(SiteConfigInner siteConfig);
+        }
+
+        /**
+         * The stage of the Site definition allowing to specify functionAppConfig.
+         */
+        interface WithFunctionAppConfig {
+            /**
+             * Specifies the functionAppConfig property: Configuration specific of the Azure Function app..
+             * 
+             * @param functionAppConfig Configuration specific of the Azure Function app.
+             * @return the next definition stage.
+             */
+            WithCreate withFunctionAppConfig(FunctionAppConfig functionAppConfig);
         }
 
         /**
@@ -1080,10 +1143,10 @@ public interface Site {
      * The template for Site update.
      */
     interface Update extends UpdateStages.WithKind, UpdateStages.WithIdentity, UpdateStages.WithEnabled,
-        UpdateStages.WithHostnameSslStates, UpdateStages.WithServerFarmId, UpdateStages.WithSiteConfig,
-        UpdateStages.WithScmSiteAlsoStopped, UpdateStages.WithClientAffinityEnabled, UpdateStages.WithClientCertEnabled,
-        UpdateStages.WithClientCertMode, UpdateStages.WithClientCertExclusionPaths, UpdateStages.WithHostNamesDisabled,
-        UpdateStages.WithCustomDomainVerificationId, UpdateStages.WithContainerSize,
+        UpdateStages.WithHostnameSslStates, UpdateStages.WithServerFarmId, UpdateStages.WithDnsConfiguration,
+        UpdateStages.WithSiteConfig, UpdateStages.WithScmSiteAlsoStopped, UpdateStages.WithClientAffinityEnabled,
+        UpdateStages.WithClientCertEnabled, UpdateStages.WithClientCertMode, UpdateStages.WithClientCertExclusionPaths,
+        UpdateStages.WithHostNamesDisabled, UpdateStages.WithCustomDomainVerificationId, UpdateStages.WithContainerSize,
         UpdateStages.WithDailyMemoryTimeQuota, UpdateStages.WithHttpsOnly, UpdateStages.WithRedundancyMode,
         UpdateStages.WithStorageAccountRequired, UpdateStages.WithKeyVaultReferenceIdentity,
         UpdateStages.WithVirtualNetworkSubnetId {
@@ -1175,6 +1238,19 @@ public interface Site {
              * @return the next definition stage.
              */
             Update withServerFarmId(String serverFarmId);
+        }
+
+        /**
+         * The stage of the Site update allowing to specify dnsConfiguration.
+         */
+        interface WithDnsConfiguration {
+            /**
+             * Specifies the dnsConfiguration property: Property to configure various DNS related settings for a site..
+             * 
+             * @param dnsConfiguration Property to configure various DNS related settings for a site.
+             * @return the next definition stage.
+             */
+            Update withDnsConfiguration(SiteDnsConfig dnsConfiguration);
         }
 
         /**

@@ -13,6 +13,7 @@ import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SitePatchResourceProperties;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
@@ -97,6 +98,10 @@ public final class SitePatchResourcePropertiesImpl implements SitePatchResourceP
 
     public OffsetDateTime lastModifiedTimeUtc() {
         return this.innerModel().lastModifiedTimeUtc();
+    }
+
+    public SiteDnsConfig dnsConfiguration() {
+        return this.innerModel().dnsConfiguration();
     }
 
     public SiteConfig siteConfig() {

@@ -144,6 +144,13 @@ public interface SitePatchResource {
     OffsetDateTime lastModifiedTimeUtc();
 
     /**
+     * Gets the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    SiteDnsConfig dnsConfiguration();
+
+    /**
      * Gets the siteConfig property: Configuration of the app.
      * 
      * @return the siteConfig value.

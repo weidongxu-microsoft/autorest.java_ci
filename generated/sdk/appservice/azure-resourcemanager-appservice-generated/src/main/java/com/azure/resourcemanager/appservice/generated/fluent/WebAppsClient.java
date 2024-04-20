@@ -53,6 +53,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSett
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.SiteContainerInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
@@ -6970,6 +6971,133 @@ public interface WebAppsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     void restoreSnapshot(String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest, Context context);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<SiteContainerInner> listSiteContainers(String resourceGroupName, String name);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<SiteContainerInner> listSiteContainers(String resourceGroupName, String name, Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteContainerInner> getSiteContainerWithResponse(String resourceGroupName, String name,
+        String containerName, Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteContainerInner getSiteContainer(String resourceGroupName, String name, String containerName);
+
+    /**
+     * Creates or Updates a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @param request Container Entity.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container of a site along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteContainerInner> createOrUpdateSiteContainerWithResponse(String resourceGroupName, String name,
+        String containerName, SiteContainerInner request, Context context);
+
+    /**
+     * Creates or Updates a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @param request Container Entity.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container of a site.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteContainerInner createOrUpdateSiteContainer(String resourceGroupName, String name, String containerName,
+        SiteContainerInner request);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<Void> deleteSiteContainerWithResponse(String resourceGroupName, String name, String containerName,
+        Context context);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void deleteSiteContainer(String resourceGroupName, String name, String containerName);
 
     /**
      * Get list of siteextensions for a web site, or a deployment slot.
@@ -14236,6 +14364,150 @@ public interface WebAppsClient {
     @ServiceMethod(returns = ReturnType.SINGLE)
     void restoreSnapshotSlot(String resourceGroupName, String name, String slot, SnapshotRestoreRequest restoreRequest,
         Context context);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get a list of site containers
+     * for the production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<SiteContainerInner> listSiteContainersSlot(String resourceGroupName, String name, String slot);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get a list of site containers
+     * for the production slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    PagedIterable<SiteContainerInner> listSiteContainersSlot(String resourceGroupName, String name, String slot,
+        Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the Site Container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteContainerInner> getSiteContainerSlotWithResponse(String resourceGroupName, String name, String slot,
+        String containerName, Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the Site Container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteContainerInner getSiteContainerSlot(String resourceGroupName, String name, String slot, String containerName);
+
+    /**
+     * Creates or Updates a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will create the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param request Container Entity.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container of a site along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<SiteContainerInner> createOrUpdateSiteContainerSlotWithResponse(String resourceGroupName, String name,
+        String slot, String containerName, SiteContainerInner request, Context context);
+
+    /**
+     * Creates or Updates a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will create the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param request Container Entity.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container of a site.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    SiteContainerInner createOrUpdateSiteContainerSlot(String resourceGroupName, String name, String slot,
+        String containerName, SiteContainerInner request);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    Response<Void> deleteSiteContainerSlotWithResponse(String resourceGroupName, String name, String slot,
+        String containerName, Context context);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    void deleteSiteContainerSlot(String resourceGroupName, String name, String slot, String containerName);
 
     /**
      * Get list of siteextensions for a web site, or a deployment slot.

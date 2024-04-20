@@ -13,6 +13,7 @@ import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdent
 import com.azure.resourcemanager.appservice.generated.models.ProxyOnlyResource;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -286,6 +287,29 @@ public final class SitePatchResourceInner extends ProxyOnlyResource {
      */
     public OffsetDateTime lastModifiedTimeUtc() {
         return this.innerProperties() == null ? null : this.innerProperties().lastModifiedTimeUtc();
+    }
+
+    /**
+     * Get the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    public SiteDnsConfig dnsConfiguration() {
+        return this.innerProperties() == null ? null : this.innerProperties().dnsConfiguration();
+    }
+
+    /**
+     * Set the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @param dnsConfiguration the dnsConfiguration value to set.
+     * @return the SitePatchResourceInner object itself.
+     */
+    public SitePatchResourceInner withDnsConfiguration(SiteDnsConfig dnsConfiguration) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SitePatchResourcePropertiesInner();
+        }
+        this.innerProperties().withDnsConfiguration(dnsConfiguration);
+        return this;
     }
 
     /**

@@ -109,6 +109,13 @@ public interface SiteProperties {
     OffsetDateTime lastModifiedTimeUtc();
 
     /**
+     * Gets the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    SiteDnsConfig dnsConfiguration();
+
+    /**
      * Gets the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to
      * have Virtual Network Security Groups and User Defined Routes applied.
      * 
@@ -131,11 +138,25 @@ public interface SiteProperties {
     Boolean vnetContentShareEnabled();
 
     /**
+     * Gets the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual network.
+     * 
+     * @return the vnetBackupRestoreEnabled value.
+     */
+    Boolean vnetBackupRestoreEnabled();
+
+    /**
      * Gets the siteConfig property: Configuration of the app.
      * 
      * @return the siteConfig value.
      */
     SiteConfig siteConfig();
+
+    /**
+     * Gets the functionAppConfig property: Configuration specific of the Azure Function app.
+     * 
+     * @return the functionAppConfig value.
+     */
+    FunctionAppConfig functionAppConfig();
 
     /**
      * Gets the daprConfig property: Dapr configuration of the app.

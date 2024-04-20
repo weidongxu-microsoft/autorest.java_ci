@@ -52,6 +52,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSett
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteCloneabilityInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigurationSnapshotInfoInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.SiteContainerInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteExtensionInfoInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
@@ -120,6 +121,7 @@ import com.azure.resourcemanager.appservice.generated.models.SiteAuthSettingsV2;
 import com.azure.resourcemanager.appservice.generated.models.SiteCloneability;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfigResource;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfigurationSnapshotInfo;
+import com.azure.resourcemanager.appservice.generated.models.SiteContainer;
 import com.azure.resourcemanager.appservice.generated.models.SiteExtensionInfo;
 import com.azure.resourcemanager.appservice.generated.models.SiteLogsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SitePhpErrorLogFlag;
@@ -2735,6 +2737,47 @@ public final class WebAppsImpl implements WebApps {
     public void restoreSnapshot(String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest,
         Context context) {
         this.serviceClient().restoreSnapshot(resourceGroupName, name, restoreRequest, context);
+    }
+
+    public PagedIterable<SiteContainer> listSiteContainers(String resourceGroupName, String name) {
+        PagedIterable<SiteContainerInner> inner = this.serviceClient().listSiteContainers(resourceGroupName, name);
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteContainerImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<SiteContainer> listSiteContainers(String resourceGroupName, String name, Context context) {
+        PagedIterable<SiteContainerInner> inner
+            = this.serviceClient().listSiteContainers(resourceGroupName, name, context);
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteContainerImpl(inner1, this.manager()));
+    }
+
+    public Response<SiteContainer> getSiteContainerWithResponse(String resourceGroupName, String name,
+        String containerName, Context context) {
+        Response<SiteContainerInner> inner
+            = this.serviceClient().getSiteContainerWithResponse(resourceGroupName, name, containerName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new SiteContainerImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteContainer getSiteContainer(String resourceGroupName, String name, String containerName) {
+        SiteContainerInner inner = this.serviceClient().getSiteContainer(resourceGroupName, name, containerName);
+        if (inner != null) {
+            return new SiteContainerImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deleteSiteContainerWithResponse(String resourceGroupName, String name, String containerName,
+        Context context) {
+        return this.serviceClient().deleteSiteContainerWithResponse(resourceGroupName, name, containerName, context);
+    }
+
+    public void deleteSiteContainer(String resourceGroupName, String name, String containerName) {
+        this.serviceClient().deleteSiteContainer(resourceGroupName, name, containerName);
     }
 
     public PagedIterable<SiteExtensionInfo> listSiteExtensions(String resourceGroupName, String name) {
@@ -5711,6 +5754,76 @@ public final class WebAppsImpl implements WebApps {
         this.serviceClient().restoreSnapshotSlot(resourceGroupName, name, slot, restoreRequest, context);
     }
 
+    public PagedIterable<SiteContainer> listSiteContainersSlot(String resourceGroupName, String name, String slot) {
+        PagedIterable<SiteContainerInner> inner
+            = this.serviceClient().listSiteContainersSlot(resourceGroupName, name, slot);
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteContainerImpl(inner1, this.manager()));
+    }
+
+    public PagedIterable<SiteContainer> listSiteContainersSlot(String resourceGroupName, String name, String slot,
+        Context context) {
+        PagedIterable<SiteContainerInner> inner
+            = this.serviceClient().listSiteContainersSlot(resourceGroupName, name, slot, context);
+        return ResourceManagerUtils.mapPage(inner, inner1 -> new SiteContainerImpl(inner1, this.manager()));
+    }
+
+    public Response<SiteContainer> getSiteContainerSlotWithResponse(String resourceGroupName, String name, String slot,
+        String containerName, Context context) {
+        Response<SiteContainerInner> inner = this.serviceClient()
+            .getSiteContainerSlotWithResponse(resourceGroupName, name, slot, containerName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new SiteContainerImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteContainer getSiteContainerSlot(String resourceGroupName, String name, String slot,
+        String containerName) {
+        SiteContainerInner inner
+            = this.serviceClient().getSiteContainerSlot(resourceGroupName, name, slot, containerName);
+        if (inner != null) {
+            return new SiteContainerImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SiteContainer> createOrUpdateSiteContainerSlotWithResponse(String resourceGroupName, String name,
+        String slot, String containerName, SiteContainerInner request, Context context) {
+        Response<SiteContainerInner> inner = this.serviceClient()
+            .createOrUpdateSiteContainerSlotWithResponse(resourceGroupName, name, slot, containerName, request,
+                context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new SiteContainerImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SiteContainer createOrUpdateSiteContainerSlot(String resourceGroupName, String name, String slot,
+        String containerName, SiteContainerInner request) {
+        SiteContainerInner inner = this.serviceClient()
+            .createOrUpdateSiteContainerSlot(resourceGroupName, name, slot, containerName, request);
+        if (inner != null) {
+            return new SiteContainerImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<Void> deleteSiteContainerSlotWithResponse(String resourceGroupName, String name, String slot,
+        String containerName, Context context) {
+        return this.serviceClient()
+            .deleteSiteContainerSlotWithResponse(resourceGroupName, name, slot, containerName, context);
+    }
+
+    public void deleteSiteContainerSlot(String resourceGroupName, String name, String slot, String containerName) {
+        this.serviceClient().deleteSiteContainerSlot(resourceGroupName, name, slot, containerName);
+    }
+
     public PagedIterable<SiteExtensionInfo> listSiteExtensionsSlot(String resourceGroupName, String name, String slot) {
         PagedIterable<SiteExtensionInfoInner> inner
             = this.serviceClient().listSiteExtensionsSlot(resourceGroupName, name, slot);
@@ -7129,6 +7242,44 @@ public final class WebAppsImpl implements WebApps {
         return this.getPublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
     }
 
+    public SiteContainer getSiteContainerById(String id) {
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String containerName = ResourceManagerUtils.getValueFromIdByName(id, "sitecontainers");
+        if (containerName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sitecontainers'.", id)));
+        }
+        return this.getSiteContainerWithResponse(resourceGroupName, name, containerName, Context.NONE).getValue();
+    }
+
+    public Response<SiteContainer> getSiteContainerByIdWithResponse(String id, Context context) {
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String containerName = ResourceManagerUtils.getValueFromIdByName(id, "sitecontainers");
+        if (containerName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sitecontainers'.", id)));
+        }
+        return this.getSiteContainerWithResponse(resourceGroupName, name, containerName, context);
+    }
+
     public VnetInfoResource getVnetConnectionSlotById(String id) {
         String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -7588,6 +7739,44 @@ public final class WebAppsImpl implements WebApps {
         return this.deletePublicCertificateWithResponse(resourceGroupName, name, publicCertificateName, context);
     }
 
+    public void deleteSiteContainerById(String id) {
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String containerName = ResourceManagerUtils.getValueFromIdByName(id, "sitecontainers");
+        if (containerName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sitecontainers'.", id)));
+        }
+        this.deleteSiteContainerWithResponse(resourceGroupName, name, containerName, Context.NONE);
+    }
+
+    public Response<Void> deleteSiteContainerByIdWithResponse(String id, Context context) {
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String name = ResourceManagerUtils.getValueFromIdByName(id, "sites");
+        if (name == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sites'.", id)));
+        }
+        String containerName = ResourceManagerUtils.getValueFromIdByName(id, "sitecontainers");
+        if (containerName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'sitecontainers'.", id)));
+        }
+        return this.deleteSiteContainerWithResponse(resourceGroupName, name, containerName, context);
+    }
+
     public void deleteVnetConnectionSlotById(String id) {
         String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
         if (resourceGroupName == null) {
@@ -7678,6 +7867,10 @@ public final class WebAppsImpl implements WebApps {
 
     public PublicCertificateImpl definePublicCertificate(String name) {
         return new PublicCertificateImpl(name, this.manager());
+    }
+
+    public SiteContainerImpl defineSiteContainer(String name) {
+        return new SiteContainerImpl(name, this.manager());
     }
 
     public VnetInfoResourceImpl defineVnetConnectionSlot(String name) {

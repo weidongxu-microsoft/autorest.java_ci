@@ -8,11 +8,13 @@ import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.DaprConfig;
+import com.azure.resourcemanager.appservice.generated.models.FunctionAppConfig;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.ResourceConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -105,6 +107,12 @@ public final class SitePropertiesInner {
     private OffsetDateTime lastModifiedTimeUtc;
 
     /*
+     * Property to configure various DNS related settings for a site.
+     */
+    @JsonProperty(value = "dnsConfiguration")
+    private SiteDnsConfig dnsConfiguration;
+
+    /*
      * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
      */
     @JsonProperty(value = "vnetRouteAllEnabled")
@@ -123,10 +131,22 @@ public final class SitePropertiesInner {
     private Boolean vnetContentShareEnabled;
 
     /*
+     * To enable Backup and Restore operations over virtual network
+     */
+    @JsonProperty(value = "vnetBackupRestoreEnabled")
+    private Boolean vnetBackupRestoreEnabled;
+
+    /*
      * Configuration of the app.
      */
     @JsonProperty(value = "siteConfig")
     private SiteConfigInner siteConfig;
+
+    /*
+     * Configuration specific of the Azure Function app.
+     */
+    @JsonProperty(value = "functionAppConfig")
+    private FunctionAppConfig functionAppConfig;
 
     /*
      * Dapr configuration of the app.
@@ -523,6 +543,26 @@ public final class SitePropertiesInner {
     }
 
     /**
+     * Get the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    public SiteDnsConfig dnsConfiguration() {
+        return this.dnsConfiguration;
+    }
+
+    /**
+     * Set the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @param dnsConfiguration the dnsConfiguration value to set.
+     * @return the SitePropertiesInner object itself.
+     */
+    public SitePropertiesInner withDnsConfiguration(SiteDnsConfig dnsConfiguration) {
+        this.dnsConfiguration = dnsConfiguration;
+        return this;
+    }
+
+    /**
      * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
      * Virtual Network Security Groups and User Defined Routes applied.
      * 
@@ -585,6 +625,26 @@ public final class SitePropertiesInner {
     }
 
     /**
+     * Get the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual network.
+     * 
+     * @return the vnetBackupRestoreEnabled value.
+     */
+    public Boolean vnetBackupRestoreEnabled() {
+        return this.vnetBackupRestoreEnabled;
+    }
+
+    /**
+     * Set the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual network.
+     * 
+     * @param vnetBackupRestoreEnabled the vnetBackupRestoreEnabled value to set.
+     * @return the SitePropertiesInner object itself.
+     */
+    public SitePropertiesInner withVnetBackupRestoreEnabled(Boolean vnetBackupRestoreEnabled) {
+        this.vnetBackupRestoreEnabled = vnetBackupRestoreEnabled;
+        return this;
+    }
+
+    /**
      * Get the siteConfig property: Configuration of the app.
      * 
      * @return the siteConfig value.
@@ -601,6 +661,26 @@ public final class SitePropertiesInner {
      */
     public SitePropertiesInner withSiteConfig(SiteConfigInner siteConfig) {
         this.siteConfig = siteConfig;
+        return this;
+    }
+
+    /**
+     * Get the functionAppConfig property: Configuration specific of the Azure Function app.
+     * 
+     * @return the functionAppConfig value.
+     */
+    public FunctionAppConfig functionAppConfig() {
+        return this.functionAppConfig;
+    }
+
+    /**
+     * Set the functionAppConfig property: Configuration specific of the Azure Function app.
+     * 
+     * @param functionAppConfig the functionAppConfig value to set.
+     * @return the SitePropertiesInner object itself.
+     */
+    public SitePropertiesInner withFunctionAppConfig(FunctionAppConfig functionAppConfig) {
+        this.functionAppConfig = functionAppConfig;
         return this;
     }
 
@@ -1172,8 +1252,14 @@ public final class SitePropertiesInner {
         if (hostnameSslStates() != null) {
             hostnameSslStates().forEach(e -> e.validate());
         }
+        if (dnsConfiguration() != null) {
+            dnsConfiguration().validate();
+        }
         if (siteConfig() != null) {
             siteConfig().validate();
+        }
+        if (functionAppConfig() != null) {
+            functionAppConfig().validate();
         }
         if (daprConfig() != null) {
             daprConfig().validate();

@@ -636,7 +636,7 @@ public final class AppServiceManager {
 
     /**
      * Gets the resource collection API of WebApps. It manages Site, Deployment, Identifier, FunctionEnvelope,
-     * HostnameBinding, HybridConnection, RelayServiceConnectionEntity, PremierAddOn, PublicCertificate,
+     * HostnameBinding, HybridConnection, RelayServiceConnectionEntity, PremierAddOn, PublicCertificate, SiteContainer,
      * VnetInfoResource, VnetGateway.
      * 
      * @return Resource collection API of WebApps.

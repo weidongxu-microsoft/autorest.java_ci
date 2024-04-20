@@ -605,7 +605,7 @@ public final class WebSiteManagementClientImpl implements WebSiteManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2023-01-01";
+        this.apiVersion = "2023-12-01";
         this.appServiceCertificateOrders = new AppServiceCertificateOrdersClientImpl(this);
         this.certificateOrdersDiagnostics = new CertificateOrdersDiagnosticsClientImpl(this);
         this.certificateRegistrationProviders = new CertificateRegistrationProvidersClientImpl(this);

@@ -11,6 +11,7 @@ import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentP
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -101,6 +102,12 @@ public final class SitePatchResourcePropertiesInner {
      */
     @JsonProperty(value = "lastModifiedTimeUtc", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModifiedTimeUtc;
+
+    /*
+     * Property to configure various DNS related settings for a site.
+     */
+    @JsonProperty(value = "dnsConfiguration")
+    private SiteDnsConfig dnsConfiguration;
 
     /*
      * Configuration of the app.
@@ -470,6 +477,26 @@ public final class SitePatchResourcePropertiesInner {
      */
     public OffsetDateTime lastModifiedTimeUtc() {
         return this.lastModifiedTimeUtc;
+    }
+
+    /**
+     * Get the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    public SiteDnsConfig dnsConfiguration() {
+        return this.dnsConfiguration;
+    }
+
+    /**
+     * Set the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @param dnsConfiguration the dnsConfiguration value to set.
+     * @return the SitePatchResourcePropertiesInner object itself.
+     */
+    public SitePatchResourcePropertiesInner withDnsConfiguration(SiteDnsConfig dnsConfiguration) {
+        this.dnsConfiguration = dnsConfiguration;
+        return this;
     }
 
     /**
@@ -954,6 +981,9 @@ public final class SitePatchResourcePropertiesInner {
     public void validate() {
         if (hostnameSslStates() != null) {
             hostnameSslStates().forEach(e -> e.validate());
+        }
+        if (dnsConfiguration() != null) {
+            dnsConfiguration().validate();
         }
         if (siteConfig() != null) {
             siteConfig().validate();

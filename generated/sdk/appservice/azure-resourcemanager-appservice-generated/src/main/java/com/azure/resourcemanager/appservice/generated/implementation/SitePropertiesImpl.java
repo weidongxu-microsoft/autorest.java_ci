@@ -9,12 +9,14 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.SiteProperti
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.DaprConfig;
+import com.azure.resourcemanager.appservice.generated.models.FunctionAppConfig;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.ResourceConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteProperties;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
@@ -101,6 +103,10 @@ public final class SitePropertiesImpl implements SiteProperties {
         return this.innerModel().lastModifiedTimeUtc();
     }
 
+    public SiteDnsConfig dnsConfiguration() {
+        return this.innerModel().dnsConfiguration();
+    }
+
     public Boolean vnetRouteAllEnabled() {
         return this.innerModel().vnetRouteAllEnabled();
     }
@@ -113,6 +119,10 @@ public final class SitePropertiesImpl implements SiteProperties {
         return this.innerModel().vnetContentShareEnabled();
     }
 
+    public Boolean vnetBackupRestoreEnabled() {
+        return this.innerModel().vnetBackupRestoreEnabled();
+    }
+
     public SiteConfig siteConfig() {
         SiteConfigInner inner = this.innerModel().siteConfig();
         if (inner != null) {
@@ -120,6 +130,10 @@ public final class SitePropertiesImpl implements SiteProperties {
         } else {
             return null;
         }
+    }
+
+    public FunctionAppConfig functionAppConfig() {
+        return this.innerModel().functionAppConfig();
     }
 
     public DaprConfig daprConfig() {

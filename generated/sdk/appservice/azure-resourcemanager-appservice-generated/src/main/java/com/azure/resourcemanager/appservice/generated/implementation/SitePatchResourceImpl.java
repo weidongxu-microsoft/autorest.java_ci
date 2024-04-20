@@ -14,6 +14,7 @@ import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdent
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SitePatchResource;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
@@ -118,6 +119,10 @@ public final class SitePatchResourceImpl implements SitePatchResource {
 
     public OffsetDateTime lastModifiedTimeUtc() {
         return this.innerModel().lastModifiedTimeUtc();
+    }
+
+    public SiteDnsConfig dnsConfiguration() {
+        return this.innerModel().dnsConfiguration();
     }
 
     public SiteConfig siteConfig() {

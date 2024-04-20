@@ -10,12 +10,14 @@ import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.DaprConfig;
 import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.appservice.generated.models.FunctionAppConfig;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
 import com.azure.resourcemanager.appservice.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.appservice.generated.models.RedundancyMode;
 import com.azure.resourcemanager.appservice.generated.models.ResourceConfig;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -354,6 +356,29 @@ public final class SiteInner extends Resource {
     }
 
     /**
+     * Get the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @return the dnsConfiguration value.
+     */
+    public SiteDnsConfig dnsConfiguration() {
+        return this.innerProperties() == null ? null : this.innerProperties().dnsConfiguration();
+    }
+
+    /**
+     * Set the dnsConfiguration property: Property to configure various DNS related settings for a site.
+     * 
+     * @param dnsConfiguration the dnsConfiguration value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withDnsConfiguration(SiteDnsConfig dnsConfiguration) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SitePropertiesInner();
+        }
+        this.innerProperties().withDnsConfiguration(dnsConfiguration);
+        return this;
+    }
+
+    /**
      * Get the vnetRouteAllEnabled property: Virtual Network Route All enabled. This causes all outbound traffic to have
      * Virtual Network Security Groups and User Defined Routes applied.
      * 
@@ -425,6 +450,29 @@ public final class SiteInner extends Resource {
     }
 
     /**
+     * Get the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual network.
+     * 
+     * @return the vnetBackupRestoreEnabled value.
+     */
+    public Boolean vnetBackupRestoreEnabled() {
+        return this.innerProperties() == null ? null : this.innerProperties().vnetBackupRestoreEnabled();
+    }
+
+    /**
+     * Set the vnetBackupRestoreEnabled property: To enable Backup and Restore operations over virtual network.
+     * 
+     * @param vnetBackupRestoreEnabled the vnetBackupRestoreEnabled value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withVnetBackupRestoreEnabled(Boolean vnetBackupRestoreEnabled) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SitePropertiesInner();
+        }
+        this.innerProperties().withVnetBackupRestoreEnabled(vnetBackupRestoreEnabled);
+        return this;
+    }
+
+    /**
      * Get the siteConfig property: Configuration of the app.
      * 
      * @return the siteConfig value.
@@ -444,6 +492,29 @@ public final class SiteInner extends Resource {
             this.innerProperties = new SitePropertiesInner();
         }
         this.innerProperties().withSiteConfig(siteConfig);
+        return this;
+    }
+
+    /**
+     * Get the functionAppConfig property: Configuration specific of the Azure Function app.
+     * 
+     * @return the functionAppConfig value.
+     */
+    public FunctionAppConfig functionAppConfig() {
+        return this.innerProperties() == null ? null : this.innerProperties().functionAppConfig();
+    }
+
+    /**
+     * Set the functionAppConfig property: Configuration specific of the Azure Function app.
+     * 
+     * @param functionAppConfig the functionAppConfig value to set.
+     * @return the SiteInner object itself.
+     */
+    public SiteInner withFunctionAppConfig(FunctionAppConfig functionAppConfig) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new SitePropertiesInner();
+        }
+        this.innerProperties().withFunctionAppConfig(functionAppConfig);
         return this;
     }
 

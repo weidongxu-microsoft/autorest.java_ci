@@ -22,6 +22,7 @@ import com.azure.resourcemanager.appservice.generated.models.CsmSlotEntity;
 import com.azure.resourcemanager.appservice.generated.models.DaprConfig;
 import com.azure.resourcemanager.appservice.generated.models.DeletedAppRestoreRequest;
 import com.azure.resourcemanager.appservice.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.appservice.generated.models.FunctionAppConfig;
 import com.azure.resourcemanager.appservice.generated.models.FunctionSecrets;
 import com.azure.resourcemanager.appservice.generated.models.HostingEnvironmentProfile;
 import com.azure.resourcemanager.appservice.generated.models.HostnameSslState;
@@ -35,6 +36,7 @@ import com.azure.resourcemanager.appservice.generated.models.Site;
 import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilityState;
 import com.azure.resourcemanager.appservice.generated.models.SiteCloneability;
 import com.azure.resourcemanager.appservice.generated.models.SiteConfig;
+import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotDifference;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.SnapshotRestoreRequest;
@@ -156,6 +158,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().lastModifiedTimeUtc();
     }
 
+    public SiteDnsConfig dnsConfiguration() {
+        return this.innerModel().dnsConfiguration();
+    }
+
     public Boolean vnetRouteAllEnabled() {
         return this.innerModel().vnetRouteAllEnabled();
     }
@@ -168,6 +174,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this.innerModel().vnetContentShareEnabled();
     }
 
+    public Boolean vnetBackupRestoreEnabled() {
+        return this.innerModel().vnetBackupRestoreEnabled();
+    }
+
     public SiteConfig siteConfig() {
         SiteConfigInner inner = this.innerModel().siteConfig();
         if (inner != null) {
@@ -175,6 +185,10 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         } else {
             return null;
         }
+    }
+
+    public FunctionAppConfig functionAppConfig() {
+        return this.innerModel().functionAppConfig();
     }
 
     public DaprConfig daprConfig() {
@@ -696,6 +710,16 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
+    public SiteImpl withDnsConfiguration(SiteDnsConfig dnsConfiguration) {
+        if (isInCreateMode()) {
+            this.innerModel().withDnsConfiguration(dnsConfiguration);
+            return this;
+        } else {
+            this.updateSiteEnvelope.withDnsConfiguration(dnsConfiguration);
+            return this;
+        }
+    }
+
     public SiteImpl withVnetRouteAllEnabled(Boolean vnetRouteAllEnabled) {
         this.innerModel().withVnetRouteAllEnabled(vnetRouteAllEnabled);
         return this;
@@ -711,6 +735,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
         return this;
     }
 
+    public SiteImpl withVnetBackupRestoreEnabled(Boolean vnetBackupRestoreEnabled) {
+        this.innerModel().withVnetBackupRestoreEnabled(vnetBackupRestoreEnabled);
+        return this;
+    }
+
     public SiteImpl withSiteConfig(SiteConfigInner siteConfig) {
         if (isInCreateMode()) {
             this.innerModel().withSiteConfig(siteConfig);
@@ -719,6 +748,11 @@ public final class SiteImpl implements Site, Site.Definition, Site.Update {
             this.updateSiteEnvelope.withSiteConfig(siteConfig);
             return this;
         }
+    }
+
+    public SiteImpl withFunctionAppConfig(FunctionAppConfig functionAppConfig) {
+        this.innerModel().withFunctionAppConfig(functionAppConfig);
+        return this;
     }
 
     public SiteImpl withDaprConfig(DaprConfig daprConfig) {

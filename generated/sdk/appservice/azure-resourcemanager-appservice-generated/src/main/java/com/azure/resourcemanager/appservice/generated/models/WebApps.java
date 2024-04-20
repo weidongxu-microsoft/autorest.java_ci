@@ -28,6 +28,7 @@ import com.azure.resourcemanager.appservice.generated.fluent.models.RestoreReque
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteAuthSettingsV2Inner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteConfigResourceInner;
+import com.azure.resourcemanager.appservice.generated.fluent.models.SiteContainerInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SiteLogsConfigInner;
 import com.azure.resourcemanager.appservice.generated.fluent.models.SitePatchResourceInner;
@@ -5363,6 +5364,92 @@ public interface WebApps {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      */
     void restoreSnapshot(String resourceGroupName, String name, SnapshotRestoreRequest restoreRequest, Context context);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<SiteContainer> listSiteContainers(String resourceGroupName, String name);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<SiteContainer> listSiteContainers(String resourceGroupName, String name, Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot along with {@link Response}.
+     */
+    Response<SiteContainer> getSiteContainerWithResponse(String resourceGroupName, String name, String containerName,
+        Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot.
+     */
+    SiteContainer getSiteContainer(String resourceGroupName, String name, String containerName);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteSiteContainerWithResponse(String resourceGroupName, String name, String containerName,
+        Context context);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteSiteContainer(String resourceGroupName, String name, String containerName);
 
     /**
      * Get list of siteextensions for a web site, or a deployment slot.
@@ -11701,6 +11788,142 @@ public interface WebApps {
         Context context);
 
     /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get a list of site containers
+     * for the production slot.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<SiteContainer> listSiteContainersSlot(String resourceGroupName, String name, String slot);
+
+    /**
+     * Lists all the site containers of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get a list of site containers
+     * for the production slot.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return collection of site containers as paginated response with {@link PagedIterable}.
+     */
+    PagedIterable<SiteContainer> listSiteContainersSlot(String resourceGroupName, String name, String slot,
+        Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the Site Container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot along with {@link Response}.
+     */
+    Response<SiteContainer> getSiteContainerSlotWithResponse(String resourceGroupName, String name, String slot,
+        String containerName, Context context);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will get the Site Container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot.
+     */
+    SiteContainer getSiteContainerSlot(String resourceGroupName, String name, String slot, String containerName);
+
+    /**
+     * Creates or Updates a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will create the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param request Container Entity.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container of a site along with {@link Response}.
+     */
+    Response<SiteContainer> createOrUpdateSiteContainerSlotWithResponse(String resourceGroupName, String name,
+        String slot, String containerName, SiteContainerInner request, Context context);
+
+    /**
+     * Creates or Updates a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will create the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param request Container Entity.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return container of a site.
+     */
+    SiteContainer createOrUpdateSiteContainerSlot(String resourceGroupName, String name, String slot,
+        String containerName, SiteContainerInner request);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteSiteContainerSlotWithResponse(String resourceGroupName, String name, String slot,
+        String containerName, Context context);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param resourceGroupName Name of the resource group to which the resource belongs.
+     * @param name Name of the app.
+     * @param slot Name of the deployment slot. If a slot is not specified, the API will delete the container for the
+     * production slot.
+     * @param containerName Site Container Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteSiteContainerSlot(String resourceGroupName, String name, String slot, String containerName);
+
+    /**
      * Get list of siteextensions for a web site, or a deployment slot.
      * 
      * Description for Get list of siteextensions for a web site, or a deployment slot.
@@ -14460,6 +14683,31 @@ public interface WebApps {
     Response<PublicCertificate> getPublicCertificateByIdWithResponse(String id, Context context);
 
     /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot along with {@link Response}.
+     */
+    SiteContainer getSiteContainerById(String id);
+
+    /**
+     * Gets a site container of a site, or a deployment slot.
+     * 
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return a site container of a site, or a deployment slot along with {@link Response}.
+     */
+    Response<SiteContainer> getSiteContainerByIdWithResponse(String id, Context context);
+
+    /**
      * Gets a virtual network the app (or deployment slot) is connected to by name.
      * 
      * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
@@ -14794,6 +15042,30 @@ public interface WebApps {
     Response<Void> deletePublicCertificateByIdWithResponse(String id, Context context);
 
     /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param id the resource ID.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void deleteSiteContainerById(String id);
+
+    /**
+     * Deletes a site container for a site, or a deployment slot.
+     * 
+     * @param id the resource ID.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
+     * request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link Response}.
+     */
+    Response<Void> deleteSiteContainerByIdWithResponse(String id, Context context);
+
+    /**
      * Deletes a connection from an app (or deployment slot to a named virtual network.
      * 
      * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
@@ -14896,6 +15168,14 @@ public interface WebApps {
      * @return the first stage of the new PublicCertificate definition.
      */
     PublicCertificate.DefinitionStages.Blank definePublicCertificate(String name);
+
+    /**
+     * Begins definition for a new SiteContainer resource.
+     * 
+     * @param name resource name.
+     * @return the first stage of the new SiteContainer definition.
+     */
+    SiteContainer.DefinitionStages.Blank defineSiteContainer(String name);
 
     /**
      * Begins definition for a new VnetInfoResource resource.
