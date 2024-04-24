@@ -13,8 +13,10 @@ import com.azure.resourcemanager.eventgrid.generated.models.DeliveryConfiguratio
 import com.azure.resourcemanager.eventgrid.generated.models.DeliverySchema;
 import com.azure.resourcemanager.eventgrid.generated.models.FiltersConfiguration;
 import com.azure.resourcemanager.eventgrid.generated.models.Subscription;
+import com.azure.resourcemanager.eventgrid.generated.models.SubscriptionFullUrl;
 import com.azure.resourcemanager.eventgrid.generated.models.SubscriptionProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.SubscriptionUpdateParameters;
+import java.time.OffsetDateTime;
 
 public final class SubscriptionImpl implements Subscription, Subscription.Definition, Subscription.Update {
     private SubscriptionInner innerObject;
@@ -51,6 +53,10 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
 
     public FiltersConfiguration filtersConfiguration() {
         return this.innerModel().filtersConfiguration();
+    }
+
+    public OffsetDateTime expirationTimeUtc() {
+        return this.innerModel().expirationTimeUtc();
     }
 
     public String resourceGroupName() {
@@ -162,6 +168,16 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
             .getDeliveryAttributes(resourceGroupName, namespaceName, topicName, eventSubscriptionName);
     }
 
+    public Response<SubscriptionFullUrl> getFullUrlWithResponse(Context context) {
+        return serviceManager.namespaceTopicEventSubscriptions()
+            .getFullUrlWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, context);
+    }
+
+    public SubscriptionFullUrl getFullUrl() {
+        return serviceManager.namespaceTopicEventSubscriptions()
+            .getFullUrl(resourceGroupName, namespaceName, topicName, eventSubscriptionName);
+    }
+
     public SubscriptionImpl withDeliveryConfiguration(DeliveryConfiguration deliveryConfiguration) {
         if (isInCreateMode()) {
             this.innerModel().withDeliveryConfiguration(deliveryConfiguration);
@@ -188,6 +204,16 @@ public final class SubscriptionImpl implements Subscription, Subscription.Defini
             return this;
         } else {
             this.updateEventSubscriptionUpdateParameters.withFiltersConfiguration(filtersConfiguration);
+            return this;
+        }
+    }
+
+    public SubscriptionImpl withExpirationTimeUtc(OffsetDateTime expirationTimeUtc) {
+        if (isInCreateMode()) {
+            this.innerModel().withExpirationTimeUtc(expirationTimeUtc);
+            return this;
+        } else {
+            this.updateEventSubscriptionUpdateParameters.withExpirationTimeUtc(expirationTimeUtc);
             return this;
         }
     }

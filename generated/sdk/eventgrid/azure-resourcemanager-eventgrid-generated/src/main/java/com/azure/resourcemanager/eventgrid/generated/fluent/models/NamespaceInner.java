@@ -131,7 +131,7 @@ public final class NamespaceInner extends Resource {
     }
 
     /**
-     * Get the privateEndpointConnections property: The privateEndpointConnections property.
+     * Get the privateEndpointConnections property: List of private endpoint connections.
      * 
      * @return the privateEndpointConnections value.
      */
@@ -140,7 +140,7 @@ public final class NamespaceInner extends Resource {
     }
 
     /**
-     * Set the privateEndpointConnections property: The privateEndpointConnections property.
+     * Set the privateEndpointConnections property: List of private endpoint connections.
      * 
      * @param privateEndpointConnections the privateEndpointConnections value to set.
      * @return the NamespaceInner object itself.

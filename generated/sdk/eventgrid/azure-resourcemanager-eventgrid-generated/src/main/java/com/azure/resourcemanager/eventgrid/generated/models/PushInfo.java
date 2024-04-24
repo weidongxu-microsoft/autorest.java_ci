@@ -41,17 +41,24 @@ public final class PushInfo {
 
     /*
      * The dead letter destination of the event subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
-     * Uses the managed identity setup on the parent resource (namely, namespace) to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Uses the managed identity setup on the parent resource (namely, namespace) to acquire the authentication tokens being used during dead-lettering.
      */
     @JsonProperty(value = "deadLetterDestinationWithResourceIdentity")
     private DeadLetterWithResourceIdentity deadLetterDestinationWithResourceIdentity;
 
     /*
      * Information about the destination where events have to be delivered for the event subscription.
-     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery / dead-lettering.
+     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery.
      */
     @JsonProperty(value = "deliveryWithResourceIdentity")
     private DeliveryWithResourceIdentity deliveryWithResourceIdentity;
+
+    /*
+     * Information about the destination where events have to be delivered for the event subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery.
+     */
+    @JsonProperty(value = "destination")
+    private EventSubscriptionDestination destination;
 
     /**
      * Creates an instance of PushInfo class.
@@ -137,7 +144,7 @@ public final class PushInfo {
      * Get the deadLetterDestinationWithResourceIdentity property: The dead letter destination of the event
      * subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
      * Uses the managed identity setup on the parent resource (namely, namespace) to acquire the authentication tokens
-     * being used during delivery / dead-lettering.
+     * being used during dead-lettering.
      * 
      * @return the deadLetterDestinationWithResourceIdentity value.
      */
@@ -149,7 +156,7 @@ public final class PushInfo {
      * Set the deadLetterDestinationWithResourceIdentity property: The dead letter destination of the event
      * subscription. Any event that cannot be delivered to its' destination is sent to the dead letter destination.
      * Uses the managed identity setup on the parent resource (namely, namespace) to acquire the authentication tokens
-     * being used during delivery / dead-lettering.
+     * being used during dead-lettering.
      * 
      * @param deadLetterDestinationWithResourceIdentity the deadLetterDestinationWithResourceIdentity value to set.
      * @return the PushInfo object itself.
@@ -164,7 +171,7 @@ public final class PushInfo {
      * Get the deliveryWithResourceIdentity property: Information about the destination where events have to be
      * delivered for the event subscription.
      * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
-     * tokens being used during delivery / dead-lettering.
+     * tokens being used during delivery.
      * 
      * @return the deliveryWithResourceIdentity value.
      */
@@ -176,13 +183,37 @@ public final class PushInfo {
      * Set the deliveryWithResourceIdentity property: Information about the destination where events have to be
      * delivered for the event subscription.
      * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
-     * tokens being used during delivery / dead-lettering.
+     * tokens being used during delivery.
      * 
      * @param deliveryWithResourceIdentity the deliveryWithResourceIdentity value to set.
      * @return the PushInfo object itself.
      */
     public PushInfo withDeliveryWithResourceIdentity(DeliveryWithResourceIdentity deliveryWithResourceIdentity) {
         this.deliveryWithResourceIdentity = deliveryWithResourceIdentity;
+        return this;
+    }
+
+    /**
+     * Get the destination property: Information about the destination where events have to be delivered for the event
+     * subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery.
+     * 
+     * @return the destination value.
+     */
+    public EventSubscriptionDestination destination() {
+        return this.destination;
+    }
+
+    /**
+     * Set the destination property: Information about the destination where events have to be delivered for the event
+     * subscription.
+     * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery.
+     * 
+     * @param destination the destination value to set.
+     * @return the PushInfo object itself.
+     */
+    public PushInfo withDestination(EventSubscriptionDestination destination) {
+        this.destination = destination;
         return this;
     }
 
@@ -197,6 +228,9 @@ public final class PushInfo {
         }
         if (deliveryWithResourceIdentity() != null) {
             deliveryWithResourceIdentity().validate();
+        }
+        if (destination() != null) {
+            destination().validate();
         }
     }
 }

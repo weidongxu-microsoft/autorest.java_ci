@@ -35,6 +35,7 @@ import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.eventgrid.generated.fluent.NamespaceTopicEventSubscriptionsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner;
+import com.azure.resourcemanager.eventgrid.generated.fluent.models.SubscriptionFullUrlInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.SubscriptionInner;
 import com.azure.resourcemanager.eventgrid.generated.models.SubscriptionsListResult;
 import com.azure.resourcemanager.eventgrid.generated.models.SubscriptionUpdateParameters;
@@ -140,6 +141,16 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
             @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
 
         @Headers({ "Content-Type: application/json" })
+        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EventGrid/namespaces/{namespaceName}/topics/{topicName}/eventSubscriptions/{eventSubscriptionName}/getFullUrl")
+        @ExpectedResponses({ 200 })
+        @UnexpectedResponseExceptionType(ManagementException.class)
+        Mono<Response<SubscriptionFullUrlInner>> getFullUrl(@HostParam("$host") String endpoint,
+            @PathParam("subscriptionId") String subscriptionId,
+            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("namespaceName") String namespaceName,
+            @PathParam("topicName") String topicName, @PathParam("eventSubscriptionName") String eventSubscriptionName,
+            @QueryParam("api-version") String apiVersion, @HeaderParam("Accept") String accept, Context context);
+
+        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
         @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -156,8 +167,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -205,8 +215,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -253,8 +262,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -275,8 +283,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -298,8 +305,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -322,7 +328,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -379,7 +385,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @param context The context to associate with this operation.
@@ -437,7 +443,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -465,7 +471,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @param context The context to associate with this operation.
@@ -495,7 +501,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -522,7 +528,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @param context The context to associate with this operation.
@@ -551,7 +557,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -576,7 +582,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @param context The context to associate with this operation.
@@ -602,7 +608,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -627,7 +633,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 50 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the delivery mode, filter information, and
      * others.
      * @param context The context to associate with this operation.
@@ -651,8 +657,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -699,8 +704,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -746,8 +750,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -770,8 +773,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -796,8 +798,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -818,8 +819,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -841,8 +841,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -863,8 +862,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -886,8 +884,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -905,8 +902,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -926,8 +922,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -982,8 +977,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1038,8 +1032,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1064,8 +1057,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1092,8 +1084,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1118,8 +1109,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1145,8 +1135,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1168,8 +1157,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1192,8 +1180,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1215,8 +1202,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1471,8 +1457,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1520,8 +1505,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1570,8 +1554,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1593,8 +1576,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1616,8 +1598,7 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param namespaceName Name of the namespace.
      * @param topicName Name of the namespace topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1628,6 +1609,166 @@ public final class NamespaceTopicEventSubscriptionsClientImpl implements Namespa
         String topicName, String eventSubscriptionName) {
         return getDeliveryAttributesWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName,
             Context.NONE).getValue();
+    }
+
+    /**
+     * Get full URL of an event subscription of a namespace topic.
+     * 
+     * Get the full endpoint URL for an event subscription of a namespace topic.
+     * 
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param namespaceName Name of the namespace.
+     * @param topicName Name of the namespace topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription of a namespace topic along with {@link Response} on
+     * successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SubscriptionFullUrlInner>> getFullUrlWithResponseAsync(String resourceGroupName,
+        String namespaceName, String topicName, String eventSubscriptionName) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (topicName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter topicName is required and cannot be null."));
+        }
+        if (eventSubscriptionName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter eventSubscriptionName is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        return FluxUtil
+            .withContext(context -> service.getFullUrl(this.client.getEndpoint(), this.client.getSubscriptionId(),
+                resourceGroupName, namespaceName, topicName, eventSubscriptionName, this.client.getApiVersion(), accept,
+                context))
+            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
+    }
+
+    /**
+     * Get full URL of an event subscription of a namespace topic.
+     * 
+     * Get the full endpoint URL for an event subscription of a namespace topic.
+     * 
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param namespaceName Name of the namespace.
+     * @param topicName Name of the namespace topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription of a namespace topic along with {@link Response} on
+     * successful completion of {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<Response<SubscriptionFullUrlInner>> getFullUrlWithResponseAsync(String resourceGroupName,
+        String namespaceName, String topicName, String eventSubscriptionName, Context context) {
+        if (this.client.getEndpoint() == null) {
+            return Mono.error(
+                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
+        }
+        if (this.client.getSubscriptionId() == null) {
+            return Mono.error(new IllegalArgumentException(
+                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
+        }
+        if (resourceGroupName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
+        }
+        if (namespaceName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter namespaceName is required and cannot be null."));
+        }
+        if (topicName == null) {
+            return Mono.error(new IllegalArgumentException("Parameter topicName is required and cannot be null."));
+        }
+        if (eventSubscriptionName == null) {
+            return Mono
+                .error(new IllegalArgumentException("Parameter eventSubscriptionName is required and cannot be null."));
+        }
+        final String accept = "application/json";
+        context = this.client.mergeContext(context);
+        return service.getFullUrl(this.client.getEndpoint(), this.client.getSubscriptionId(), resourceGroupName,
+            namespaceName, topicName, eventSubscriptionName, this.client.getApiVersion(), accept, context);
+    }
+
+    /**
+     * Get full URL of an event subscription of a namespace topic.
+     * 
+     * Get the full endpoint URL for an event subscription of a namespace topic.
+     * 
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param namespaceName Name of the namespace.
+     * @param topicName Name of the namespace topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription of a namespace topic on successful completion of
+     * {@link Mono}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    private Mono<SubscriptionFullUrlInner> getFullUrlAsync(String resourceGroupName, String namespaceName,
+        String topicName, String eventSubscriptionName) {
+        return getFullUrlWithResponseAsync(resourceGroupName, namespaceName, topicName, eventSubscriptionName)
+            .flatMap(res -> Mono.justOrEmpty(res.getValue()));
+    }
+
+    /**
+     * Get full URL of an event subscription of a namespace topic.
+     * 
+     * Get the full endpoint URL for an event subscription of a namespace topic.
+     * 
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param namespaceName Name of the namespace.
+     * @param topicName Name of the namespace topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription of a namespace topic along with {@link Response}.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public Response<SubscriptionFullUrlInner> getFullUrlWithResponse(String resourceGroupName, String namespaceName,
+        String topicName, String eventSubscriptionName, Context context) {
+        return getFullUrlWithResponseAsync(resourceGroupName, namespaceName, topicName, eventSubscriptionName, context)
+            .block();
+    }
+
+    /**
+     * Get full URL of an event subscription of a namespace topic.
+     * 
+     * Get the full endpoint URL for an event subscription of a namespace topic.
+     * 
+     * @param resourceGroupName The name of the resource group within the user's subscription.
+     * @param namespaceName Name of the namespace.
+     * @param topicName Name of the namespace topic.
+     * @param eventSubscriptionName Name of the event subscription.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the full endpoint URL for an event subscription of a namespace topic.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    public SubscriptionFullUrlInner getFullUrl(String resourceGroupName, String namespaceName, String topicName,
+        String eventSubscriptionName) {
+        return getFullUrlWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, Context.NONE)
+            .getValue();
     }
 
     /**

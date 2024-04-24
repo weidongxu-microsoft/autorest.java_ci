@@ -11,10 +11,12 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.fluent.NamespaceTopicEventSubscriptionsClient;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.DeliveryAttributeListResultInner;
+import com.azure.resourcemanager.eventgrid.generated.fluent.models.SubscriptionFullUrlInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.SubscriptionInner;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryAttributeListResult;
 import com.azure.resourcemanager.eventgrid.generated.models.NamespaceTopicEventSubscriptions;
 import com.azure.resourcemanager.eventgrid.generated.models.Subscription;
+import com.azure.resourcemanager.eventgrid.generated.models.SubscriptionFullUrl;
 
 public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopicEventSubscriptions {
     private static final ClientLogger LOGGER = new ClientLogger(NamespaceTopicEventSubscriptionsImpl.class);
@@ -94,6 +96,29 @@ public final class NamespaceTopicEventSubscriptionsImpl implements NamespaceTopi
             .getDeliveryAttributes(resourceGroupName, namespaceName, topicName, eventSubscriptionName);
         if (inner != null) {
             return new DeliveryAttributeListResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public Response<SubscriptionFullUrl> getFullUrlWithResponse(String resourceGroupName, String namespaceName,
+        String topicName, String eventSubscriptionName, Context context) {
+        Response<SubscriptionFullUrlInner> inner = this.serviceClient()
+            .getFullUrlWithResponse(resourceGroupName, namespaceName, topicName, eventSubscriptionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new SubscriptionFullUrlImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public SubscriptionFullUrl getFullUrl(String resourceGroupName, String namespaceName, String topicName,
+        String eventSubscriptionName) {
+        SubscriptionFullUrlInner inner
+            = this.serviceClient().getFullUrl(resourceGroupName, namespaceName, topicName, eventSubscriptionName);
+        if (inner != null) {
+            return new SubscriptionFullUrlImpl(inner, this.manager());
         } else {
             return null;
         }

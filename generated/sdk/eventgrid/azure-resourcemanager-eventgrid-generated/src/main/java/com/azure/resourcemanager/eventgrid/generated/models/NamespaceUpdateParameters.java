@@ -141,6 +141,29 @@ public final class NamespaceUpdateParameters {
     }
 
     /**
+     * Get the topicsConfiguration property: Topics configuration properties that can be updated.
+     * 
+     * @return the topicsConfiguration value.
+     */
+    public UpdateTopicsConfigurationInfo topicsConfiguration() {
+        return this.innerProperties() == null ? null : this.innerProperties().topicsConfiguration();
+    }
+
+    /**
+     * Set the topicsConfiguration property: Topics configuration properties that can be updated.
+     * 
+     * @param topicsConfiguration the topicsConfiguration value to set.
+     * @return the NamespaceUpdateParameters object itself.
+     */
+    public NamespaceUpdateParameters withTopicsConfiguration(UpdateTopicsConfigurationInfo topicsConfiguration) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new NamespaceUpdateParameterProperties();
+        }
+        this.innerProperties().withTopicsConfiguration(topicsConfiguration);
+        return this;
+    }
+
+    /**
      * Get the publicNetworkAccess property: This determines if traffic is allowed over public network. By default it is
      * enabled.
      * You can further restrict to specific IPs by configuring &lt;seealso

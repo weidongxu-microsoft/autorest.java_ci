@@ -172,8 +172,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
-     * 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -218,8 +217,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
-     * 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -263,8 +261,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
-     * 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -284,8 +281,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
-     * 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -305,8 +301,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be found. Event subscription names must be between
-     * 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be found.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -326,7 +321,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -379,7 +374,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -433,7 +428,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -460,7 +455,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -488,7 +483,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -513,7 +508,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -540,7 +535,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -563,7 +558,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -587,7 +582,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -610,7 +605,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
      * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * between 3 and 64 characters in length and use alphanumeric letters only.
      * @param eventSubscriptionInfo Event subscription properties containing the destination and filter information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -632,8 +627,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -675,8 +669,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -718,8 +711,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -741,8 +733,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -766,8 +757,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -786,8 +776,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -808,8 +797,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -828,8 +816,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -850,8 +837,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -868,8 +854,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be deleted.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -888,8 +873,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -940,8 +924,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -993,8 +976,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1019,8 +1001,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1046,8 +1027,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1071,8 +1051,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1097,8 +1076,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1119,8 +1097,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1143,8 +1120,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1165,8 +1141,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription to be updated.
      * @param eventSubscriptionUpdateParameters Updated event subscription information.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -1189,8 +1164,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1235,8 +1209,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1280,8 +1253,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1302,8 +1274,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1323,8 +1294,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1564,8 +1534,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1610,8 +1579,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1655,8 +1623,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -1677,8 +1644,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -1699,8 +1665,7 @@ public final class PartnerTopicEventSubscriptionsClientImpl implements PartnerTo
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription.
      * @param partnerTopicName Name of the partner topic.
-     * @param eventSubscriptionName Name of the event subscription to be created. Event subscription names must be
-     * between 3 and 100 characters in length and use alphanumeric letters only.
+     * @param eventSubscriptionName Name of the event subscription.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

@@ -10,8 +10,10 @@ import com.azure.core.http.rest.SimpleResponse;
 import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.eventgrid.generated.fluent.NamespacesClient;
+import com.azure.resourcemanager.eventgrid.generated.fluent.models.CustomDomainOwnershipValidationResultInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.NamespaceInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.NamespaceSharedAccessKeysInner;
+import com.azure.resourcemanager.eventgrid.generated.models.CustomDomainOwnershipValidationResult;
 import com.azure.resourcemanager.eventgrid.generated.models.Namespace;
 import com.azure.resourcemanager.eventgrid.generated.models.NamespaceRegenerateKeyRequest;
 import com.azure.resourcemanager.eventgrid.generated.models.Namespaces;
@@ -120,6 +122,28 @@ public final class NamespacesImpl implements Namespaces {
             = this.serviceClient().regenerateKey(resourceGroupName, namespaceName, regenerateKeyRequest, context);
         if (inner != null) {
             return new NamespaceSharedAccessKeysImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public CustomDomainOwnershipValidationResult validateCustomDomainOwnership(String resourceGroupName,
+        String namespaceName) {
+        CustomDomainOwnershipValidationResultInner inner
+            = this.serviceClient().validateCustomDomainOwnership(resourceGroupName, namespaceName);
+        if (inner != null) {
+            return new CustomDomainOwnershipValidationResultImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public CustomDomainOwnershipValidationResult validateCustomDomainOwnership(String resourceGroupName,
+        String namespaceName, Context context) {
+        CustomDomainOwnershipValidationResultInner inner
+            = this.serviceClient().validateCustomDomainOwnership(resourceGroupName, namespaceName, context);
+        if (inner != null) {
+            return new CustomDomainOwnershipValidationResultImpl(inner, this.manager());
         } else {
             return null;
         }

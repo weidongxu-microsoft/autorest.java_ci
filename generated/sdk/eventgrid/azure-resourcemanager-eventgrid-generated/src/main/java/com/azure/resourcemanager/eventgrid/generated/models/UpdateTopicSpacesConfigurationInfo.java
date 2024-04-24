@@ -6,6 +6,7 @@ package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import java.util.List;
 
 /**
  * Properties of the topic spaces configuration info of a namespace.
@@ -55,6 +56,12 @@ public final class UpdateTopicSpacesConfigurationInfo {
      */
     @JsonProperty(value = "routingIdentityInfo")
     private RoutingIdentityInfo routingIdentityInfo;
+
+    /*
+     * Custom domain info for topic spaces configuration.
+     */
+    @JsonProperty(value = "customDomains")
+    private List<CustomDomainConfiguration> customDomains;
 
     /**
      * Creates an instance of UpdateTopicSpacesConfigurationInfo class.
@@ -215,6 +222,26 @@ public final class UpdateTopicSpacesConfigurationInfo {
     }
 
     /**
+     * Get the customDomains property: Custom domain info for topic spaces configuration.
+     * 
+     * @return the customDomains value.
+     */
+    public List<CustomDomainConfiguration> customDomains() {
+        return this.customDomains;
+    }
+
+    /**
+     * Set the customDomains property: Custom domain info for topic spaces configuration.
+     * 
+     * @param customDomains the customDomains value to set.
+     * @return the UpdateTopicSpacesConfigurationInfo object itself.
+     */
+    public UpdateTopicSpacesConfigurationInfo withCustomDomains(List<CustomDomainConfiguration> customDomains) {
+        this.customDomains = customDomains;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -228,6 +255,9 @@ public final class UpdateTopicSpacesConfigurationInfo {
         }
         if (routingIdentityInfo() != null) {
             routingIdentityInfo().validate();
+        }
+        if (customDomains() != null) {
+            customDomains().forEach(e -> e.validate());
         }
     }
 }

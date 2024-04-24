@@ -7,6 +7,7 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
+import com.azure.resourcemanager.eventgrid.generated.models.UpdateTopicsConfigurationInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.UpdateTopicSpacesConfigurationInfo;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
@@ -21,6 +22,12 @@ public final class NamespaceUpdateParameterProperties {
      */
     @JsonProperty(value = "topicSpacesConfiguration")
     private UpdateTopicSpacesConfigurationInfo topicSpacesConfiguration;
+
+    /*
+     * Topics configuration properties that can be updated.
+     */
+    @JsonProperty(value = "topicsConfiguration")
+    private UpdateTopicsConfigurationInfo topicsConfiguration;
 
     /*
      * This determines if traffic is allowed over public network. By default it is enabled. 
@@ -59,6 +66,27 @@ public final class NamespaceUpdateParameterProperties {
     public NamespaceUpdateParameterProperties
         withTopicSpacesConfiguration(UpdateTopicSpacesConfigurationInfo topicSpacesConfiguration) {
         this.topicSpacesConfiguration = topicSpacesConfiguration;
+        return this;
+    }
+
+    /**
+     * Get the topicsConfiguration property: Topics configuration properties that can be updated.
+     * 
+     * @return the topicsConfiguration value.
+     */
+    public UpdateTopicsConfigurationInfo topicsConfiguration() {
+        return this.topicsConfiguration;
+    }
+
+    /**
+     * Set the topicsConfiguration property: Topics configuration properties that can be updated.
+     * 
+     * @param topicsConfiguration the topicsConfiguration value to set.
+     * @return the NamespaceUpdateParameterProperties object itself.
+     */
+    public NamespaceUpdateParameterProperties
+        withTopicsConfiguration(UpdateTopicsConfigurationInfo topicsConfiguration) {
+        this.topicsConfiguration = topicsConfiguration;
         return this;
     }
 
@@ -120,6 +148,9 @@ public final class NamespaceUpdateParameterProperties {
     public void validate() {
         if (topicSpacesConfiguration() != null) {
             topicSpacesConfiguration().validate();
+        }
+        if (topicsConfiguration() != null) {
+            topicsConfiguration().validate();
         }
         if (inboundIpRules() != null) {
             inboundIpRules().forEach(e -> e.validate());

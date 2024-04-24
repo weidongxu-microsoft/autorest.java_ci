@@ -76,7 +76,7 @@ public final class PartnerNamespaceInner extends Resource {
     }
 
     /**
-     * Get the privateEndpointConnections property: The privateEndpointConnections property.
+     * Get the privateEndpointConnections property: List of private endpoint connections.
      * 
      * @return the privateEndpointConnections value.
      */

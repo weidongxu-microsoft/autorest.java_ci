@@ -10,6 +10,7 @@ import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.NamespaceInner;
 import com.azure.resourcemanager.eventgrid.generated.fluent.models.PrivateEndpointConnectionInner;
+import com.azure.resourcemanager.eventgrid.generated.models.CustomDomainOwnershipValidationResult;
 import com.azure.resourcemanager.eventgrid.generated.models.IdentityInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.InboundIpRule;
 import com.azure.resourcemanager.eventgrid.generated.models.Namespace;
@@ -23,6 +24,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventgrid.generated.models.TlsVersion;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicsConfiguration;
 import com.azure.resourcemanager.eventgrid.generated.models.TopicSpacesConfiguration;
+import com.azure.resourcemanager.eventgrid.generated.models.UpdateTopicsConfigurationInfo;
 import com.azure.resourcemanager.eventgrid.generated.models.UpdateTopicSpacesConfigurationInfo;
 import java.util.Collections;
 import java.util.List;
@@ -227,6 +229,14 @@ public final class NamespaceImpl implements Namespace, Namespace.Definition, Nam
             .regenerateKey(resourceGroupName, namespaceName, regenerateKeyRequest, context);
     }
 
+    public CustomDomainOwnershipValidationResult validateCustomDomainOwnership() {
+        return serviceManager.namespaces().validateCustomDomainOwnership(resourceGroupName, namespaceName);
+    }
+
+    public CustomDomainOwnershipValidationResult validateCustomDomainOwnership(Context context) {
+        return serviceManager.namespaces().validateCustomDomainOwnership(resourceGroupName, namespaceName, context);
+    }
+
     public NamespaceImpl withRegion(Region location) {
         this.innerModel().withLocation(location.toString());
         return this;
@@ -315,6 +325,11 @@ public final class NamespaceImpl implements Namespace, Namespace.Definition, Nam
 
     public NamespaceImpl withTopicSpacesConfiguration(UpdateTopicSpacesConfigurationInfo topicSpacesConfiguration) {
         this.updateNamespaceUpdateParameters.withTopicSpacesConfiguration(topicSpacesConfiguration);
+        return this;
+    }
+
+    public NamespaceImpl withTopicsConfiguration(UpdateTopicsConfigurationInfo topicsConfiguration) {
+        this.updateNamespaceUpdateParameters.withTopicsConfiguration(topicsConfiguration);
         return this;
     }
 

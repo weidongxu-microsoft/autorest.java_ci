@@ -22,7 +22,7 @@ import java.util.List;
 @Fluent
 public final class TopicProperties {
     /*
-     * The privateEndpointConnections property.
+     * List of private endpoint connections.
      */
     @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
@@ -102,7 +102,7 @@ public final class TopicProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: The privateEndpointConnections property.
+     * Get the privateEndpointConnections property: List of private endpoint connections.
      * 
      * @return the privateEndpointConnections value.
      */

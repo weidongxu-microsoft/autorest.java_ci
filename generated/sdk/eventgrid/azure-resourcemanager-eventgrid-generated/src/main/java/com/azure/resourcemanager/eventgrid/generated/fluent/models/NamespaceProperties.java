@@ -20,7 +20,7 @@ import java.util.List;
 @Fluent
 public final class NamespaceProperties {
     /*
-     * The privateEndpointConnections property.
+     * List of private endpoint connections.
      */
     @JsonProperty(value = "privateEndpointConnections")
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
@@ -79,7 +79,7 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Get the privateEndpointConnections property: The privateEndpointConnections property.
+     * Get the privateEndpointConnections property: List of private endpoint connections.
      * 
      * @return the privateEndpointConnections value.
      */
@@ -88,7 +88,7 @@ public final class NamespaceProperties {
     }
 
     /**
-     * Set the privateEndpointConnections property: The privateEndpointConnections property.
+     * Set the privateEndpointConnections property: List of private endpoint connections.
      * 
      * @param privateEndpointConnections the privateEndpointConnections value to set.
      * @return the NamespaceProperties object itself.
