@@ -3144,12 +3144,12 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.ComponentNames",
+  "name" : "com.azure.resourcemanager.compute.generated.models.PassNames",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.compute.generated.models.PassNames",
+  "name" : "com.azure.resourcemanager.compute.generated.models.ComponentNames",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
