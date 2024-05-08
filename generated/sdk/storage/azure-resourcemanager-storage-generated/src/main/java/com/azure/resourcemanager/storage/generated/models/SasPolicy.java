@@ -20,7 +20,7 @@ public final class SasPolicy {
     private String sasExpirationPeriod;
 
     /*
-     * The SAS expiration action. Can only be Log.
+     * The SAS Expiration Action defines the action to be performed when sasPolicy.sasExpirationPeriod is violated. The 'Log' action can be used for audit purposes and the 'Block' action can be used to block and deny the usage of SAS tokens that do not adhere to the sas policy expiration period.
      */
     @JsonProperty(value = "expirationAction", required = true)
     private ExpirationAction expirationAction;
@@ -52,7 +52,9 @@ public final class SasPolicy {
     }
 
     /**
-     * Get the expirationAction property: The SAS expiration action. Can only be Log.
+     * Get the expirationAction property: The SAS Expiration Action defines the action to be performed when
+     * sasPolicy.sasExpirationPeriod is violated. The 'Log' action can be used for audit purposes and the 'Block' action
+     * can be used to block and deny the usage of SAS tokens that do not adhere to the sas policy expiration period.
      * 
      * @return the expirationAction value.
      */
@@ -61,7 +63,9 @@ public final class SasPolicy {
     }
 
     /**
-     * Set the expirationAction property: The SAS expiration action. Can only be Log.
+     * Set the expirationAction property: The SAS Expiration Action defines the action to be performed when
+     * sasPolicy.sasExpirationPeriod is violated. The 'Log' action can be used for audit purposes and the 'Block' action
+     * can be used to block and deny the usage of SAS tokens that do not adhere to the sas policy expiration period.
      * 
      * @param expirationAction the expirationAction value to set.
      * @return the SasPolicy object itself.

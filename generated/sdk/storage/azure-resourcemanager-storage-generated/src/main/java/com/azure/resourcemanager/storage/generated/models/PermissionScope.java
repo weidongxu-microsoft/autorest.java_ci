@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class PermissionScope {
     /*
-     * The permissions for the local user. Possible values include: Read (r), Write (w), Delete (d), List (l), and Create (c).
+     * The permissions for the local user. Possible values include: Read (r), Write (w), Delete (d), List (l), Create (c), Modify Ownership (o), and Modify Permissions (p).
      */
     @JsonProperty(value = "permissions", required = true)
     private String permissions;
@@ -39,7 +39,7 @@ public final class PermissionScope {
 
     /**
      * Get the permissions property: The permissions for the local user. Possible values include: Read (r), Write (w),
-     * Delete (d), List (l), and Create (c).
+     * Delete (d), List (l), Create (c), Modify Ownership (o), and Modify Permissions (p).
      * 
      * @return the permissions value.
      */
@@ -49,7 +49,7 @@ public final class PermissionScope {
 
     /**
      * Set the permissions property: The permissions for the local user. Possible values include: Read (r), Write (w),
-     * Delete (d), List (l), and Create (c).
+     * Delete (d), List (l), Create (c), Modify Ownership (o), and Modify Permissions (p).
      * 
      * @param permissions the permissions value to set.
      * @return the PermissionScope object itself.

@@ -75,6 +75,31 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
         return this.innerModel().hasSshPassword();
     }
 
+    public Integer userId() {
+        return this.innerModel().userId();
+    }
+
+    public Integer groupId() {
+        return this.innerModel().groupId();
+    }
+
+    public Boolean allowAclAuthorization() {
+        return this.innerModel().allowAclAuthorization();
+    }
+
+    public List<Integer> extendedGroups() {
+        List<Integer> inner = this.innerModel().extendedGroups();
+        if (inner != null) {
+            return Collections.unmodifiableList(inner);
+        } else {
+            return Collections.emptyList();
+        }
+    }
+
+    public Boolean isNFSv3Enabled() {
+        return this.innerModel().isNFSv3Enabled();
+    }
+
     public String resourceGroupName() {
         return resourceGroupName;
     }
@@ -211,6 +236,26 @@ public final class LocalUserImpl implements LocalUser, LocalUser.Definition, Loc
 
     public LocalUserImpl withHasSshPassword(Boolean hasSshPassword) {
         this.innerModel().withHasSshPassword(hasSshPassword);
+        return this;
+    }
+
+    public LocalUserImpl withGroupId(Integer groupId) {
+        this.innerModel().withGroupId(groupId);
+        return this;
+    }
+
+    public LocalUserImpl withAllowAclAuthorization(Boolean allowAclAuthorization) {
+        this.innerModel().withAllowAclAuthorization(allowAclAuthorization);
+        return this;
+    }
+
+    public LocalUserImpl withExtendedGroups(List<Integer> extendedGroups) {
+        this.innerModel().withExtendedGroups(extendedGroups);
+        return this;
+    }
+
+    public LocalUserImpl withIsNFSv3Enabled(Boolean isNFSv3Enabled) {
+        this.innerModel().withIsNFSv3Enabled(isNFSv3Enabled);
         return this;
     }
 }

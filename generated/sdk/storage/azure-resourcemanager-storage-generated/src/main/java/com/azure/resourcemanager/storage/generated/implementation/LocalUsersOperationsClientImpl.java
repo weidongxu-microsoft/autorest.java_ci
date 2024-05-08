@@ -33,6 +33,7 @@ import com.azure.resourcemanager.storage.generated.fluent.LocalUsersOperationsCl
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserKeysInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner;
+import com.azure.resourcemanager.storage.generated.models.ListLocalUserIncludeParam;
 import com.azure.resourcemanager.storage.generated.models.LocalUsers;
 import reactor.core.publisher.Mono;
 
@@ -75,7 +76,9 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
         Mono<Response<LocalUsers>> list(@HostParam("$host") String endpoint,
             @PathParam("resourceGroupName") String resourceGroupName, @PathParam("accountName") String accountName,
             @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
-            @HeaderParam("Accept") String accept, Context context);
+            @QueryParam("$maxpagesize") Integer maxpagesize, @QueryParam("$filter") String filter,
+            @QueryParam("$include") ListLocalUserIncludeParam include, @HeaderParam("Accept") String accept,
+            Context context);
 
         @Headers({ "Content-Type: application/json" })
         @Get("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/localUsers/{username}")
@@ -131,14 +134,20 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users along
+     * with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<PagedResponse<LocalUserInner>> listSinglePageAsync(String resourceGroupName, String accountName) {
+    private Mono<PagedResponse<LocalUserInner>> listSinglePageAsync(String resourceGroupName, String accountName,
+        Integer maxpagesize, String filter, ListLocalUserIncludeParam include) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -157,7 +166,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), resourceGroupName, accountName,
-                this.client.getApiVersion(), this.client.getSubscriptionId(), accept, context))
+                this.client.getApiVersion(), this.client.getSubscriptionId(), maxpagesize, filter, include, accept,
+                context))
             .<PagedResponse<LocalUserInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
                 res.getHeaders(), res.getValue().value(), null, null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -170,16 +180,21 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users along with {@link PagedResponse} on successful completion of
-     * {@link Mono}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users along
+     * with {@link PagedResponse} on successful completion of {@link Mono}.
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     private Mono<PagedResponse<LocalUserInner>> listSinglePageAsync(String resourceGroupName, String accountName,
-        Context context) {
+        Integer maxpagesize, String filter, ListLocalUserIncludeParam include, Context context) {
         if (this.client.getEndpoint() == null) {
             return Mono.error(
                 new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
@@ -199,7 +214,7 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
         context = this.client.mergeContext(context);
         return service
             .list(this.client.getEndpoint(), resourceGroupName, accountName, this.client.getApiVersion(),
-                this.client.getSubscriptionId(), accept, context)
+                this.client.getSubscriptionId(), maxpagesize, filter, include, accept, context)
             .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
                 res.getValue().value(), null, null));
     }
@@ -211,14 +226,42 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedFlux}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedFlux}.
+     */
+    @ServiceMethod(returns = ReturnType.COLLECTION)
+    private PagedFlux<LocalUserInner> listAsync(String resourceGroupName, String accountName, Integer maxpagesize,
+        String filter, ListLocalUserIncludeParam include) {
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName, maxpagesize, filter, include));
+    }
+
+    /**
+     * List the local users associated with the storage account.
+     * 
+     * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
+     * insensitive.
+     * @param accountName The name of the storage account within the specified resource group. Storage account names
+     * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     private PagedFlux<LocalUserInner> listAsync(String resourceGroupName, String accountName) {
-        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName));
+        final Integer maxpagesize = null;
+        final String filter = null;
+        final ListLocalUserIncludeParam include = null;
+        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName, maxpagesize, filter, include));
     }
 
     /**
@@ -228,15 +271,23 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedFlux}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedFlux}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    private PagedFlux<LocalUserInner> listAsync(String resourceGroupName, String accountName, Context context) {
-        return new PagedFlux<>(() -> listSinglePageAsync(resourceGroupName, accountName, context));
+    private PagedFlux<LocalUserInner> listAsync(String resourceGroupName, String accountName, Integer maxpagesize,
+        String filter, ListLocalUserIncludeParam include, Context context) {
+        return new PagedFlux<>(
+            () -> listSinglePageAsync(resourceGroupName, accountName, maxpagesize, filter, include, context));
     }
 
     /**
@@ -249,11 +300,15 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedIterable}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     public PagedIterable<LocalUserInner> list(String resourceGroupName, String accountName) {
-        return new PagedIterable<>(listAsync(resourceGroupName, accountName));
+        final Integer maxpagesize = null;
+        final String filter = null;
+        final ListLocalUserIncludeParam include = null;
+        return new PagedIterable<>(listAsync(resourceGroupName, accountName, maxpagesize, filter, include));
     }
 
     /**
@@ -263,15 +318,22 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedIterable}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    public PagedIterable<LocalUserInner> list(String resourceGroupName, String accountName, Context context) {
-        return new PagedIterable<>(listAsync(resourceGroupName, accountName, context));
+    public PagedIterable<LocalUserInner> list(String resourceGroupName, String accountName, Integer maxpagesize,
+        String filter, ListLocalUserIncludeParam include, Context context) {
+        return new PagedIterable<>(listAsync(resourceGroupName, accountName, maxpagesize, filter, include, context));
     }
 
     /**
@@ -421,7 +483,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     }
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.
@@ -470,7 +533,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     }
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.
@@ -519,7 +583,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     }
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.
@@ -541,7 +606,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     }
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.
@@ -563,7 +629,8 @@ public final class LocalUsersOperationsClientImpl implements LocalUsersOperation
     }
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.

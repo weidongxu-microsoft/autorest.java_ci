@@ -43,6 +43,9 @@ import com.azure.resourcemanager.storage.generated.implementation.QueuesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.SkusImpl;
 import com.azure.resourcemanager.storage.generated.implementation.StorageAccountsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.StorageManagementClientBuilder;
+import com.azure.resourcemanager.storage.generated.implementation.StorageTaskAssignmentInstancesReportsImpl;
+import com.azure.resourcemanager.storage.generated.implementation.StorageTaskAssignmentsImpl;
+import com.azure.resourcemanager.storage.generated.implementation.StorageTaskAssignmentsInstancesReportsImpl;
 import com.azure.resourcemanager.storage.generated.implementation.TableServicesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.TablesImpl;
 import com.azure.resourcemanager.storage.generated.implementation.UsagesImpl;
@@ -64,6 +67,9 @@ import com.azure.resourcemanager.storage.generated.models.Queues;
 import com.azure.resourcemanager.storage.generated.models.QueueServices;
 import com.azure.resourcemanager.storage.generated.models.Skus;
 import com.azure.resourcemanager.storage.generated.models.StorageAccounts;
+import com.azure.resourcemanager.storage.generated.models.StorageTaskAssignmentInstancesReports;
+import com.azure.resourcemanager.storage.generated.models.StorageTaskAssignments;
+import com.azure.resourcemanager.storage.generated.models.StorageTaskAssignmentsInstancesReports;
 import com.azure.resourcemanager.storage.generated.models.Tables;
 import com.azure.resourcemanager.storage.generated.models.TableServices;
 import com.azure.resourcemanager.storage.generated.models.Usages;
@@ -120,6 +126,12 @@ public final class StorageManager {
     private Tables tables;
 
     private NetworkSecurityPerimeterConfigurations networkSecurityPerimeterConfigurations;
+
+    private StorageTaskAssignments storageTaskAssignments;
+
+    private StorageTaskAssignmentsInstancesReports storageTaskAssignmentsInstancesReports;
+
+    private StorageTaskAssignmentInstancesReports storageTaskAssignmentInstancesReports;
 
     private final StorageManagementClient clientObject;
 
@@ -584,6 +596,45 @@ public final class StorageManager {
                 clientObject.getNetworkSecurityPerimeterConfigurations(), this);
         }
         return networkSecurityPerimeterConfigurations;
+    }
+
+    /**
+     * Gets the resource collection API of StorageTaskAssignments. It manages StorageTaskAssignment.
+     * 
+     * @return Resource collection API of StorageTaskAssignments.
+     */
+    public StorageTaskAssignments storageTaskAssignments() {
+        if (this.storageTaskAssignments == null) {
+            this.storageTaskAssignments
+                = new StorageTaskAssignmentsImpl(clientObject.getStorageTaskAssignments(), this);
+        }
+        return storageTaskAssignments;
+    }
+
+    /**
+     * Gets the resource collection API of StorageTaskAssignmentsInstancesReports.
+     * 
+     * @return Resource collection API of StorageTaskAssignmentsInstancesReports.
+     */
+    public StorageTaskAssignmentsInstancesReports storageTaskAssignmentsInstancesReports() {
+        if (this.storageTaskAssignmentsInstancesReports == null) {
+            this.storageTaskAssignmentsInstancesReports = new StorageTaskAssignmentsInstancesReportsImpl(
+                clientObject.getStorageTaskAssignmentsInstancesReports(), this);
+        }
+        return storageTaskAssignmentsInstancesReports;
+    }
+
+    /**
+     * Gets the resource collection API of StorageTaskAssignmentInstancesReports.
+     * 
+     * @return Resource collection API of StorageTaskAssignmentInstancesReports.
+     */
+    public StorageTaskAssignmentInstancesReports storageTaskAssignmentInstancesReports() {
+        if (this.storageTaskAssignmentInstancesReports == null) {
+            this.storageTaskAssignmentInstancesReports = new StorageTaskAssignmentInstancesReportsImpl(
+                clientObject.getStorageTaskAssignmentInstancesReports(), this);
+        }
+        return storageTaskAssignmentInstancesReports;
     }
 
     /**

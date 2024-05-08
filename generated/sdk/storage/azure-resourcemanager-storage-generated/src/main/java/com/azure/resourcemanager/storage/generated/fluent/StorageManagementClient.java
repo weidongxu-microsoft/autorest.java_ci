@@ -192,4 +192,25 @@ public interface StorageManagementClient {
      * @return the NetworkSecurityPerimeterConfigurationsClient object.
      */
     NetworkSecurityPerimeterConfigurationsClient getNetworkSecurityPerimeterConfigurations();
+
+    /**
+     * Gets the StorageTaskAssignmentsClient object to access its operations.
+     * 
+     * @return the StorageTaskAssignmentsClient object.
+     */
+    StorageTaskAssignmentsClient getStorageTaskAssignments();
+
+    /**
+     * Gets the StorageTaskAssignmentsInstancesReportsClient object to access its operations.
+     * 
+     * @return the StorageTaskAssignmentsInstancesReportsClient object.
+     */
+    StorageTaskAssignmentsInstancesReportsClient getStorageTaskAssignmentsInstancesReports();
+
+    /**
+     * Gets the StorageTaskAssignmentInstancesReportsClient object to access its operations.
+     * 
+     * @return the StorageTaskAssignmentInstancesReportsClient object.
+     */
+    StorageTaskAssignmentInstancesReportsClient getStorageTaskAssignmentInstancesReports();
 }

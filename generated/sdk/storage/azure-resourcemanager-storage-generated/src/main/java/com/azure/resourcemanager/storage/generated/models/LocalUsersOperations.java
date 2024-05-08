@@ -22,7 +22,8 @@ public interface LocalUsersOperations {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedIterable}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedIterable}.
      */
     PagedIterable<LocalUser> list(String resourceGroupName, String accountName);
 
@@ -33,13 +34,20 @@ public interface LocalUsersOperations {
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedIterable}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedIterable}.
      */
-    PagedIterable<LocalUser> list(String resourceGroupName, String accountName, Context context);
+    PagedIterable<LocalUser> list(String resourceGroupName, String accountName, Integer maxpagesize, String filter,
+        ListLocalUserIncludeParam include, Context context);
 
     /**
      * Get the local user of the storage account by username.

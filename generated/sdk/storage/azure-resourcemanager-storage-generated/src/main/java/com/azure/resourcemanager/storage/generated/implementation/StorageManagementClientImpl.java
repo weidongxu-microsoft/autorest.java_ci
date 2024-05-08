@@ -42,6 +42,9 @@ import com.azure.resourcemanager.storage.generated.fluent.QueueServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.SkusClient;
 import com.azure.resourcemanager.storage.generated.fluent.StorageAccountsClient;
 import com.azure.resourcemanager.storage.generated.fluent.StorageManagementClient;
+import com.azure.resourcemanager.storage.generated.fluent.StorageTaskAssignmentInstancesReportsClient;
+import com.azure.resourcemanager.storage.generated.fluent.StorageTaskAssignmentsClient;
+import com.azure.resourcemanager.storage.generated.fluent.StorageTaskAssignmentsInstancesReportsClient;
 import com.azure.resourcemanager.storage.generated.fluent.TablesClient;
 import com.azure.resourcemanager.storage.generated.fluent.TableServicesClient;
 import com.azure.resourcemanager.storage.generated.fluent.UsagesClient;
@@ -438,6 +441,48 @@ public final class StorageManagementClientImpl implements StorageManagementClien
     }
 
     /**
+     * The StorageTaskAssignmentsClient object to access its operations.
+     */
+    private final StorageTaskAssignmentsClient storageTaskAssignments;
+
+    /**
+     * Gets the StorageTaskAssignmentsClient object to access its operations.
+     * 
+     * @return the StorageTaskAssignmentsClient object.
+     */
+    public StorageTaskAssignmentsClient getStorageTaskAssignments() {
+        return this.storageTaskAssignments;
+    }
+
+    /**
+     * The StorageTaskAssignmentsInstancesReportsClient object to access its operations.
+     */
+    private final StorageTaskAssignmentsInstancesReportsClient storageTaskAssignmentsInstancesReports;
+
+    /**
+     * Gets the StorageTaskAssignmentsInstancesReportsClient object to access its operations.
+     * 
+     * @return the StorageTaskAssignmentsInstancesReportsClient object.
+     */
+    public StorageTaskAssignmentsInstancesReportsClient getStorageTaskAssignmentsInstancesReports() {
+        return this.storageTaskAssignmentsInstancesReports;
+    }
+
+    /**
+     * The StorageTaskAssignmentInstancesReportsClient object to access its operations.
+     */
+    private final StorageTaskAssignmentInstancesReportsClient storageTaskAssignmentInstancesReports;
+
+    /**
+     * Gets the StorageTaskAssignmentInstancesReportsClient object to access its operations.
+     * 
+     * @return the StorageTaskAssignmentInstancesReportsClient object.
+     */
+    public StorageTaskAssignmentInstancesReportsClient getStorageTaskAssignmentInstancesReports() {
+        return this.storageTaskAssignmentInstancesReports;
+    }
+
+    /**
      * Initializes an instance of StorageManagementClient client.
      * 
      * @param httpPipeline The HTTP pipeline to send requests through.
@@ -454,7 +499,7 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         this.defaultPollInterval = defaultPollInterval;
         this.subscriptionId = subscriptionId;
         this.endpoint = endpoint;
-        this.apiVersion = "2023-04-01";
+        this.apiVersion = "2023-05-01";
         this.blobServices = new BlobServicesClientImpl(this);
         this.blobContainers = new BlobContainersClientImpl(this);
         this.fileServices = new FileServicesClientImpl(this);
@@ -476,6 +521,9 @@ public final class StorageManagementClientImpl implements StorageManagementClien
         this.tableServices = new TableServicesClientImpl(this);
         this.tables = new TablesClientImpl(this);
         this.networkSecurityPerimeterConfigurations = new NetworkSecurityPerimeterConfigurationsClientImpl(this);
+        this.storageTaskAssignments = new StorageTaskAssignmentsClientImpl(this);
+        this.storageTaskAssignmentsInstancesReports = new StorageTaskAssignmentsInstancesReportsClientImpl(this);
+        this.storageTaskAssignmentInstancesReports = new StorageTaskAssignmentInstancesReportsClientImpl(this);
     }
 
     /**

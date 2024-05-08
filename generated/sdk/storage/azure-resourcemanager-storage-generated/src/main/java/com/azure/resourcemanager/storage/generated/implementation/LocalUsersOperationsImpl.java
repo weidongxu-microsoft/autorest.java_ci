@@ -13,6 +13,7 @@ import com.azure.resourcemanager.storage.generated.fluent.LocalUsersOperationsCl
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserKeysInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner;
+import com.azure.resourcemanager.storage.generated.models.ListLocalUserIncludeParam;
 import com.azure.resourcemanager.storage.generated.models.LocalUser;
 import com.azure.resourcemanager.storage.generated.models.LocalUserKeys;
 import com.azure.resourcemanager.storage.generated.models.LocalUserRegeneratePasswordResult;
@@ -36,8 +37,10 @@ public final class LocalUsersOperationsImpl implements LocalUsersOperations {
         return ResourceManagerUtils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<LocalUser> list(String resourceGroupName, String accountName, Context context) {
-        PagedIterable<LocalUserInner> inner = this.serviceClient().list(resourceGroupName, accountName, context);
+    public PagedIterable<LocalUser> list(String resourceGroupName, String accountName, Integer maxpagesize,
+        String filter, ListLocalUserIncludeParam include, Context context) {
+        PagedIterable<LocalUserInner> inner
+            = this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, include, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new LocalUserImpl(inner1, this.manager()));
     }
 

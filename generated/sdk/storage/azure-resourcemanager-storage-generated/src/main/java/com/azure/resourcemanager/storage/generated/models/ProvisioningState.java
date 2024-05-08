@@ -24,7 +24,32 @@ public enum ProvisioningState {
     /**
      * Enum value Succeeded.
      */
-    SUCCEEDED("Succeeded");
+    SUCCEEDED("Succeeded"),
+
+    /**
+     * Enum value ValidateSubscriptionQuotaBegin.
+     */
+    VALIDATE_SUBSCRIPTION_QUOTA_BEGIN("ValidateSubscriptionQuotaBegin"),
+
+    /**
+     * Enum value ValidateSubscriptionQuotaEnd.
+     */
+    VALIDATE_SUBSCRIPTION_QUOTA_END("ValidateSubscriptionQuotaEnd"),
+
+    /**
+     * Enum value Deleting.
+     */
+    DELETING("Deleting"),
+
+    /**
+     * Enum value Canceled.
+     */
+    CANCELED("Canceled"),
+
+    /**
+     * Enum value Failed.
+     */
+    FAILED("Failed");
 
     /**
      * The actual serialized value for a ProvisioningState instance.

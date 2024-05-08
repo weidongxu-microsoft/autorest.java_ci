@@ -12,6 +12,7 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserKeysInner;
 import com.azure.resourcemanager.storage.generated.fluent.models.LocalUserRegeneratePasswordResultInner;
+import com.azure.resourcemanager.storage.generated.models.ListLocalUserIncludeParam;
 
 /**
  * An instance of this class provides access to all the operations defined in LocalUsersOperationsClient.
@@ -27,7 +28,8 @@ public interface LocalUsersOperationsClient {
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedIterable}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<LocalUserInner> list(String resourceGroupName, String accountName);
@@ -39,14 +41,21 @@ public interface LocalUsersOperationsClient {
      * insensitive.
      * @param accountName The name of the storage account within the specified resource group. Storage account names
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+     * @param maxpagesize Optional, specifies the maximum number of local users that will be included in the list
+     * response.
+     * @param filter Optional. When specified, only local user names starting with the filter will be listed.
+     * @param include Optional, when specified, will list local users enabled for the specific protocol. Lists all users
+     * by default.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return list storage account local users as paginated response with {@link PagedIterable}.
+     * @return list of local users requested, and if paging is required, a URL to the next page of local users as
+     * paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<LocalUserInner> list(String resourceGroupName, String accountName, Context context);
+    PagedIterable<LocalUserInner> list(String resourceGroupName, String accountName, Integer maxpagesize, String filter,
+        ListLocalUserIncludeParam include, Context context);
 
     /**
      * Get the local user of the storage account by username.
@@ -85,7 +94,8 @@ public interface LocalUsersOperationsClient {
     LocalUserInner get(String resourceGroupName, String accountName, String username);
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.
@@ -105,7 +115,8 @@ public interface LocalUsersOperationsClient {
         LocalUserInner properties, Context context);
 
     /**
-     * Create or update the properties of a local user associated with the storage account.
+     * Create or update the properties of a local user associated with the storage account. Properties for NFSv3
+     * enablement and extended groups cannot be set with other properties.
      * 
      * @param resourceGroupName The name of the resource group within the user's subscription. The name is case
      * insensitive.
