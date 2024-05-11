@@ -334,16 +334,6 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.network.generated.models.ManagedServiceIdentityUserAssignedIdentities",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
   "name" : "com.azure.resourcemanager.network.generated.fluent.models.RouteTableInner",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -760,6 +750,16 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.network.generated.models.ApplicationGatewayGlobalConfiguration",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.network.generated.models.ManagedServiceIdentityUserAssignedIdentities",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
@@ -5394,12 +5394,12 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.network.generated.models.ResourceIdentityType",
+  "name" : "com.azure.resourcemanager.network.generated.models.PublicIpAddressDnsSettingsDomainNameLabelScope",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.network.generated.models.PublicIpAddressDnsSettingsDomainNameLabelScope",
+  "name" : "com.azure.resourcemanager.network.generated.models.ResourceIdentityType",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

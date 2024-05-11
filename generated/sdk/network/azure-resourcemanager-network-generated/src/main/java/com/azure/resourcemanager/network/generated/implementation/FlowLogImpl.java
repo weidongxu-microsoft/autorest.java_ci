@@ -9,7 +9,6 @@ import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInner;
 import com.azure.resourcemanager.network.generated.models.FlowLog;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
-import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RetentionPolicyParameters;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -45,10 +44,6 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
 
     public String etag() {
         return this.innerModel().etag();
-    }
-
-    public ManagedServiceIdentity identity() {
-        return this.innerModel().identity();
     }
 
     public String id() {
@@ -204,11 +199,6 @@ public final class FlowLogImpl implements FlowLog, FlowLog.Definition, FlowLog.U
             this.updateParameters.withTags(tags);
             return this;
         }
-    }
-
-    public FlowLogImpl withIdentity(ManagedServiceIdentity identity) {
-        this.innerModel().withIdentity(identity);
-        return this;
     }
 
     public FlowLogImpl withTargetResourceId(String targetResourceId) {

@@ -3779,12 +3779,12 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.appservice.generated.models.ConfigReferenceSource",
+  "name" : "com.azure.resourcemanager.appservice.generated.models.ClientCredentialMethod",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
-  "name" : "com.azure.resourcemanager.appservice.generated.models.ClientCredentialMethod",
+  "name" : "com.azure.resourcemanager.appservice.generated.models.ConfigReferenceSource",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

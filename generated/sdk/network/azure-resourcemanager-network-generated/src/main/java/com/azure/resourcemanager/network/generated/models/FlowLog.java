@@ -49,13 +49,6 @@ public interface FlowLog {
     String etag();
 
     /**
-     * Gets the identity property: FlowLog resource Managed Identity.
-     * 
-     * @return the identity value.
-     */
-    ManagedServiceIdentity identity();
-
-    /**
      * Gets the id property: Resource ID.
      * 
      * @return the id value.
@@ -202,8 +195,7 @@ public interface FlowLog {
          * The stage of the FlowLog definition which contains all the minimum required properties for the resource to be
          * created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate
-            extends DefinitionStages.WithTags, DefinitionStages.WithIdentity, DefinitionStages.WithTargetResourceId,
+        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithTargetResourceId,
             DefinitionStages.WithStorageId, DefinitionStages.WithEnabled, DefinitionStages.WithRetentionPolicy,
             DefinitionStages.WithFormat, DefinitionStages.WithFlowAnalyticsConfiguration {
             /**
@@ -233,19 +225,6 @@ public interface FlowLog {
              * @return the next definition stage.
              */
             WithCreate withTags(Map<String, String> tags);
-        }
-
-        /**
-         * The stage of the FlowLog definition allowing to specify identity.
-         */
-        interface WithIdentity {
-            /**
-             * Specifies the identity property: FlowLog resource Managed Identity.
-             * 
-             * @param identity FlowLog resource Managed Identity.
-             * @return the next definition stage.
-             */
-            WithCreate withIdentity(ManagedServiceIdentity identity);
         }
 
         /**

@@ -7,7 +7,6 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.resourcemanager.network.generated.fluent.models.FlowLogInformationInner;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
 import com.azure.resourcemanager.network.generated.models.FlowLogInformation;
-import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.RetentionPolicyParameters;
 import com.azure.resourcemanager.network.generated.models.TrafficAnalyticsProperties;
 
@@ -28,10 +27,6 @@ public final class FlowLogInformationImpl implements FlowLogInformation {
 
     public TrafficAnalyticsProperties flowAnalyticsConfiguration() {
         return this.innerModel().flowAnalyticsConfiguration();
-    }
-
-    public ManagedServiceIdentity identity() {
-        return this.innerModel().identity();
     }
 
     public String storageId() {
