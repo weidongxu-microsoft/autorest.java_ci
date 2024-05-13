@@ -1,1 +1,1 @@
-[ [ "com.azure.resourcemanager.resourcegraph.generated.implementation.ResourceProvidersClientImpl$ResourceProvidersService" ], [ "com.azure.resourcemanager.resourcegraph.generated.implementation.OperationsClientImpl$OperationsService" ] ]
+[ [ "com.azure.resourcemanager.resourcegraph.generated.implementation.OperationsClientImpl$OperationsService" ], [ "com.azure.resourcemanager.resourcegraph.generated.implementation.ResourceProvidersClientImpl$ResourceProvidersService" ] ]
