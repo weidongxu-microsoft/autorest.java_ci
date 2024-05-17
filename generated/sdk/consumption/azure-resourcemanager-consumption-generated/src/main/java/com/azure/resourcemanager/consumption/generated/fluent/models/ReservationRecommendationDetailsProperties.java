@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class ReservationRecommendationDetailsProperties {
     /*
-     * An ISO 4217 currency code identifier for the costs and savings 
+     * An ISO 4217 currency code identifier for the costs and savings
      */
     @JsonProperty(value = "currency", access = JsonProperty.Access.WRITE_ONLY)
     private String currency;

@@ -25,13 +25,15 @@ public final class ChannelProperties {
     private ChannelType channelType;
 
     /*
-     * This property should be populated when channelType is PartnerTopic and represents information about the partner topic resource corresponding to the channel.
+     * This property should be populated when channelType is PartnerTopic and represents information about the partner
+     * topic resource corresponding to the channel.
      */
     @JsonProperty(value = "partnerTopicInfo")
     private PartnerTopicInfo partnerTopicInfo;
 
     /*
-     * This property should be populated when channelType is PartnerDestination and represents information about the partner destination resource corresponding to the channel.
+     * This property should be populated when channelType is PartnerDestination and represents information about the
+     * partner destination resource corresponding to the channel.
      */
     @JsonProperty(value = "partnerDestinationInfo")
     private PartnerDestinationInfo partnerDestinationInfo;

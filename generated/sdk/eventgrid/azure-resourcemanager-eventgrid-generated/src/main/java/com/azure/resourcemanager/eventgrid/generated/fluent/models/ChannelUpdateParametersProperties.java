@@ -16,7 +16,8 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class ChannelUpdateParametersProperties {
     /*
-     * Expiration time of the channel. If this timer expires while the corresponding partner topic or partner destination is never activated,
+     * Expiration time of the channel. If this timer expires while the corresponding partner topic or partner
+     * destination is never activated,
      * the channel and corresponding partner topic or partner destination are deleted.
      */
     @JsonProperty(value = "expirationTimeIfNotActivatedUtc")

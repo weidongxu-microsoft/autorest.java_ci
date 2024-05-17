@@ -13,25 +13,28 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class CaptureDescription {
     /*
-     * A value that indicates whether capture description is enabled. 
+     * A value that indicates whether capture description is enabled.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
-     * Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be deprecated in New API Version
+     * Enumerates the possible values for the encoding format of capture description. Note: 'AvroDeflate' will be
+     * deprecated in New API Version
      */
     @JsonProperty(value = "encoding")
     private EncodingCaptureDescription encoding;
 
     /*
-     * The time window allows you to set the frequency with which the capture to Azure Blobs will happen, value should between 60 to 900 seconds
+     * The time window allows you to set the frequency with which the capture to Azure Blobs will happen, value should
+     * between 60 to 900 seconds
      */
     @JsonProperty(value = "intervalInSeconds")
     private Integer intervalInSeconds;
 
     /*
-     * The size window defines the amount of data built up in your Event Hub before an capture operation, value should be between 10485760 to 524288000 bytes
+     * The size window defines the amount of data built up in your Event Hub before an capture operation, value should
+     * be between 10485760 to 524288000 bytes
      */
     @JsonProperty(value = "sizeLimitInBytes")
     private Integer sizeLimitInBytes;

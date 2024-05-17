@@ -70,7 +70,8 @@ public final class LocalUserProperties {
     private Integer groupId;
 
     /*
-     * Indicates whether ACL authorization is allowed for this user. Set it to false to disallow using ACL authorization.
+     * Indicates whether ACL authorization is allowed for this user. Set it to false to disallow using ACL
+     * authorization.
      */
     @JsonProperty(value = "allowAclAuthorization")
     private Boolean allowAclAuthorization;

@@ -334,6 +334,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.eventhubs.generated.models.MessageTimestampDescription",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.eventhubs.generated.models.MetricId",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,

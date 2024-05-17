@@ -14,13 +14,15 @@ import java.time.OffsetDateTime;
 @Immutable
 public final class LastPatchInstallationSummary {
     /*
-     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
+     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At
+     * that point it will become "Unknown", "Failed", "Succeeded", or "CompletedWithWarnings."
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private PatchOperationStatus status;
 
     /*
-     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension
+     * logs.
      */
     @JsonProperty(value = "installationActivityId", access = JsonProperty.Access.WRITE_ONLY)
     private String installationActivityId;
@@ -32,7 +34,8 @@ public final class LastPatchInstallationSummary {
     private Boolean maintenanceWindowExceeded;
 
     /*
-     * The number of all available patches but not going to be installed because it didn't match a classification or inclusion list entry.
+     * The number of all available patches but not going to be installed because it didn't match a classification or
+     * inclusion list entry.
      */
     @JsonProperty(value = "notSelectedPatchCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer notSelectedPatchCount;

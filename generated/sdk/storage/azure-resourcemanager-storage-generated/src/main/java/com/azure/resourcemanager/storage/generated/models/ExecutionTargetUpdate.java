@@ -21,7 +21,8 @@ public final class ExecutionTargetUpdate {
     private List<String> prefix;
 
     /*
-     * List of object prefixes to be excluded from task execution. If there is a conflict between include and exclude prefixes, the exclude prefix will be the determining factor
+     * List of object prefixes to be excluded from task execution. If there is a conflict between include and exclude
+     * prefixes, the exclude prefix will be the determining factor
      */
     @JsonProperty(value = "excludePrefix")
     private List<String> excludePrefix;

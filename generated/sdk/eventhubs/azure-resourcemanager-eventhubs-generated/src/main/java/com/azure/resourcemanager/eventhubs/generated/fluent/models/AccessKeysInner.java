@@ -31,7 +31,7 @@ public final class AccessKeysInner {
     private String aliasPrimaryConnectionString;
 
     /*
-     * Secondary  connection string of the alias if GEO DR is enabled
+     * Secondary connection string of the alias if GEO DR is enabled
      */
     @JsonProperty(value = "aliasSecondaryConnectionString", access = JsonProperty.Access.WRITE_ONLY)
     private String aliasSecondaryConnectionString;

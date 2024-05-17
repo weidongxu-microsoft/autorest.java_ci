@@ -21,7 +21,7 @@ public final class Source {
     private String query;
 
     /*
-     * List of  Resource referred into query
+     * List of Resource referred into query
      */
     @JsonProperty(value = "authorizedResources")
     private List<String> authorizedResources;

@@ -21,7 +21,8 @@ public final class QuotaUsagesListResult {
     private List<QuotaUsageResultInner> value;
 
     /*
-     * Request URL that can be used to query next page of quota usages. Returned when the total number of requested quota usages exceed maximum page size.
+     * Request URL that can be used to query next page of quota usages. Returned when the total number of requested
+     * quota usages exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;

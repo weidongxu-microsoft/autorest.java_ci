@@ -40,7 +40,8 @@ public final class WorkbookProperties {
     private String workbookId;
 
     /*
-     * Enum indicating if this workbook definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Enum indicating if this workbook definition is owned by a specific user or is shared between all users with
+     * access to the Application Insights component.
      */
     @JsonProperty(value = "kind", required = true)
     private SharedTypeKind sharedTypeKind;

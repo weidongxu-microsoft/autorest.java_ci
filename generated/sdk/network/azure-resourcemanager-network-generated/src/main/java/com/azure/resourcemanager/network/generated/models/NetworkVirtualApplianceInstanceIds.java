@@ -4,56 +4,27 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner;
 import java.util.List;
 
 /**
- * Specifies a list of virtual machine instance IDs from the Network Virtual Appliance VM instances.
+ * An immutable client-side representation of NetworkVirtualApplianceInstanceIds.
  */
-@Fluent
-public final class NetworkVirtualApplianceInstanceIds {
-    /*
-     * The network virtual appliance instance ids. Omitting the network virtual appliance instance ids will result in the operation being performed on all virtual machines belonging to the network virtual appliance.
-     */
-    @JsonProperty(value = "instanceIds")
-    private List<String> instanceIds;
-
+public interface NetworkVirtualApplianceInstanceIds {
     /**
-     * Creates an instance of NetworkVirtualApplianceInstanceIds class.
-     */
-    public NetworkVirtualApplianceInstanceIds() {
-    }
-
-    /**
-     * Get the instanceIds property: The network virtual appliance instance ids. Omitting the network virtual appliance
+     * Gets the instanceIds property: The network virtual appliance instance ids. Omitting the network virtual appliance
      * instance ids will result in the operation being performed on all virtual machines belonging to the network
      * virtual appliance.
      * 
      * @return the instanceIds value.
      */
-    public List<String> instanceIds() {
-        return this.instanceIds;
-    }
+    List<String> instanceIds();
 
     /**
-     * Set the instanceIds property: The network virtual appliance instance ids. Omitting the network virtual appliance
-     * instance ids will result in the operation being performed on all virtual machines belonging to the network
-     * virtual appliance.
+     * Gets the inner com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner
+     * object.
      * 
-     * @param instanceIds the instanceIds value to set.
-     * @return the NetworkVirtualApplianceInstanceIds object itself.
+     * @return the inner object.
      */
-    public NetworkVirtualApplianceInstanceIds withInstanceIds(List<String> instanceIds) {
-        this.instanceIds = instanceIds;
-        return this;
-    }
-
-    /**
-     * Validates the instance.
-     * 
-     * @throws IllegalArgumentException thrown if the instance is not valid.
-     */
-    public void validate() {
-    }
+    NetworkVirtualApplianceInstanceIdsInner innerModel();
 }

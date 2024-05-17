@@ -21,7 +21,8 @@ public final class AzureActiveDirectoryLogin {
     private List<String> loginParameters;
 
     /*
-     * <code>true</code> if the www-authenticate provider should be omitted from the request; otherwise, <code>false</code>.
+     * <code>true</code> if the www-authenticate provider should be omitted from the request; otherwise,
+     * <code>false</code>.
      */
     @JsonProperty(value = "disableWWWAuthenticate")
     private Boolean disableWwwAuthenticate;

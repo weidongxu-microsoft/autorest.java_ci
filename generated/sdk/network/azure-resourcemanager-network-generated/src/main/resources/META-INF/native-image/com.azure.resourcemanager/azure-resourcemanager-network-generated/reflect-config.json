@@ -1079,6 +1079,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualAppliancePropertiesFormat",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -4120,11 +4125,6 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceConnectionList",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceInstanceIds",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

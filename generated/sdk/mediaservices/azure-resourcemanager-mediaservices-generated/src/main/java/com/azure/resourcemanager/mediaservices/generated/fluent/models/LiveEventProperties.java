@@ -35,19 +35,22 @@ public final class LiveEventProperties {
     private LiveEventInput input;
 
     /*
-     * Live event preview settings. Preview allows live event producers to preview the live streaming content without creating any live output.
+     * Live event preview settings. Preview allows live event producers to preview the live streaming content without
+     * creating any live output.
      */
     @JsonProperty(value = "preview")
     private LiveEventPreview preview;
 
     /*
-     * Encoding settings for the live event. It configures whether a live encoder is used for the live event and settings for the live encoder if it is used.
+     * Encoding settings for the live event. It configures whether a live encoder is used for the live event and
+     * settings for the live encoder if it is used.
      */
     @JsonProperty(value = "encoding")
     private LiveEventEncoding encoding;
 
     /*
-     * Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature.
+     * Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more
+     * information about the live transcription feature.
      */
     @JsonProperty(value = "transcriptions")
     private List<LiveEventTranscription> transcriptions;
@@ -71,19 +74,23 @@ public final class LiveEventProperties {
     private CrossSiteAccessPolicies crossSiteAccessPolicies;
 
     /*
-     * Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value can only be updated if the live event is in Standby state
+     * Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value
+     * can only be updated if the live event is in Standby state
      */
     @JsonProperty(value = "useStaticHostname")
     private Boolean useStaticHostname;
 
     /*
-     * When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media service account name and a short code for the Azure Media Services data center.
+     * When useStaticHostname is set to true, the hostnamePrefix specifies the first part of the hostname assigned to
+     * the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media
+     * service account name and a short code for the Azure Media Services data center.
      */
     @JsonProperty(value = "hostnamePrefix")
     private String hostnamePrefix;
 
     /*
-     * The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid values for the array entry values are 'Default' and 'LowLatency'.
+     * The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid
+     * values for the array entry values are 'Default' and 'LowLatency'.
      */
     @JsonProperty(value = "streamOptions")
     private List<StreamOptionsFlag> streamOptions;

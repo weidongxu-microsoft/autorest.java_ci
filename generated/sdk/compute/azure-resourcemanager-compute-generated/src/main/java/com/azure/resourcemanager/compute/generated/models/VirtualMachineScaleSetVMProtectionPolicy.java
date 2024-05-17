@@ -19,7 +19,8 @@ public final class VirtualMachineScaleSetVMProtectionPolicy {
     private Boolean protectFromScaleIn;
 
     /*
-     * Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should not be applied to the virtual machine scale set VM.
+     * Indicates that model updates or actions (including scale-in) initiated on the virtual machine scale set should
+     * not be applied to the virtual machine scale set VM.
      */
     @JsonProperty(value = "protectFromScaleSetActions")
     private Boolean protectFromScaleSetActions;

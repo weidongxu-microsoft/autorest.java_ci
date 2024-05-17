@@ -13,7 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ActionGroupPatch {
     /*
-     * Indicates whether this action group is enabled. If an action group is not enabled, then none of its actions will be activated.
+     * Indicates whether this action group is enabled. If an action group is not enabled, then none of its actions will
+     * be activated.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;

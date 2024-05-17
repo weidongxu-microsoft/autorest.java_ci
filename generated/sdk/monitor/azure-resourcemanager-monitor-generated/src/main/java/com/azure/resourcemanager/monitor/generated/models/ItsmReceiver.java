@@ -32,13 +32,16 @@ public final class ItsmReceiver {
     private String connectionId;
 
     /*
-     * JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as well.
+     * JSON blob for the configurations of the ITSM action. CreateMultipleWorkItems option will be part of this blob as
+     * well.
      */
     @JsonProperty(value = "ticketConfiguration", required = true)
     private String ticketConfiguration;
 
     /*
-     * Region in which workspace resides. Supported values:'centralindia','japaneast','southeastasia','australiasoutheast','uksouth','westcentralus','canadacentral','eastus','westeurope'
+     * Region in which workspace resides. Supported
+     * values:'centralindia','japaneast','southeastasia','australiasoutheast','uksouth','westcentralus','canadacentral',
+     * 'eastus','westeurope'
      */
     @JsonProperty(value = "region", required = true)
     private String region;

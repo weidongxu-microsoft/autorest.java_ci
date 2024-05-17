@@ -38,7 +38,9 @@ public final class HybridConnectionProperties {
     private Boolean requiresClientAuthorization;
 
     /*
-     * The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For example, it can be used to store descriptive data, such as a list of teams and their contact information. Also, user-defined configuration settings can be stored.
+     * The usermetadata is a placeholder to store user-defined string data for the hybrid connection endpoint. For
+     * example, it can be used to store descriptive data, such as a list of teams and their contact information. Also,
+     * user-defined configuration settings can be stored.
      */
     @JsonProperty(value = "userMetadata")
     private String userMetadata;

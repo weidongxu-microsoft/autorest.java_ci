@@ -22,14 +22,18 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class ManagementEventRuleCondition extends RuleCondition {
     /*
-     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of
+     * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
+     * ThresholdRuleCondition (based on the threshold of a metric).
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
     private String odataType = "Microsoft.Azure.Management.Insights.Models.ManagementEventRuleCondition";
 
     /*
-     * How the data that is collected should be combined over time and when the alert is activated. Note that for management event alerts aggregation is optional – if it is not provided then any event will cause the alert to activate.
+     * How the data that is collected should be combined over time and when the alert is activated. Note that for
+     * management event alerts aggregation is optional – if it is not provided then any event will cause the alert to
+     * activate.
      */
     @JsonProperty(value = "aggregation")
     private ManagementEventAggregationCondition aggregation;

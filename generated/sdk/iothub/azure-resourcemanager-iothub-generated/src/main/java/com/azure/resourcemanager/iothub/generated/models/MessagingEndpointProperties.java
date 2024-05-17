@@ -20,13 +20,15 @@ public final class MessagingEndpointProperties {
     private Duration lockDurationAsIso8601;
 
     /*
-     * The period of time for which a message is available to consume before it is expired by the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-file-upload.
+     * The period of time for which a message is available to consume before it is expired by the IoT hub. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-file-upload.
      */
     @JsonProperty(value = "ttlAsIso8601")
     private Duration ttlAsIso8601;
 
     /*
-     * The number of times the IoT hub attempts to deliver a message. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-file-upload.
+     * The number of times the IoT hub attempts to deliver a message. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-file-upload.
      */
     @JsonProperty(value = "maxDeliveryCount")
     private Integer maxDeliveryCount;

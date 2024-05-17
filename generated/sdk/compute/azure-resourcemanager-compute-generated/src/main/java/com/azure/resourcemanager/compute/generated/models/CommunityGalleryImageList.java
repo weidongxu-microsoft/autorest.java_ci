@@ -22,7 +22,8 @@ public final class CommunityGalleryImageList {
     private List<CommunityGalleryImageInner> value;
 
     /*
-     * The URI to fetch the next page of community gallery images. Call ListNext() with this to fetch the next page of community gallery images.
+     * The URI to fetch the next page of community gallery images. Call ListNext() with this to fetch the next page of
+     * community gallery images.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

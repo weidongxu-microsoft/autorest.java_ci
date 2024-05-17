@@ -17,7 +17,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class DatabasePrincipalProperties {
     /*
-     * The principal ID assigned to the database principal. It can be a user email, application ID, or security group name.
+     * The principal ID assigned to the database principal. It can be a user email, application ID, or security group
+     * name.
      */
     @JsonProperty(value = "principalId", required = true)
     private String principalId;

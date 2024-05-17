@@ -21,7 +21,7 @@ public final class MetricAvailability {
     private Duration timeGrain;
 
     /*
-     * the retention period for the metric at the specified timegrain.  Expressed as a duration 'PT1M', 'P1D', etc.
+     * the retention period for the metric at the specified timegrain. Expressed as a duration 'PT1M', 'P1D', etc.
      */
     @JsonProperty(value = "retention")
     private Duration retention;

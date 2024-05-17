@@ -20,7 +20,8 @@ public final class DataPlaneAuthOptions {
     private Object apiKeyOnly;
 
     /*
-     * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for authentication.
+     * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for
+     * authentication.
      */
     @JsonProperty(value = "aadOrApiKey")
     private DataPlaneAadOrApiKeyAuthOption aadOrApiKey;

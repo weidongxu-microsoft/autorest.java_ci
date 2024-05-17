@@ -34,13 +34,22 @@ public class AudioAnalyzerPreset extends Preset {
     private String odataType = "#Microsoft.Media.AudioAnalyzerPreset";
 
     /*
-     * The language for the audio payload in the input using the BCP-47 format of 'language tag-region' (e.g: 'en-US').  If you know the language of your content, it is recommended that you specify it. The language must be specified explicitly for AudioAnalysisMode::Basic, since automatic language detection is not included in basic mode. If the language isn't specified or set to null, automatic language detection will choose the first language detected and process with the selected language for the duration of the file. It does not currently support dynamically switching between languages after the first language is detected. The automatic detection works best with audio recordings with clearly discernable speech. If automatic detection fails to find the language, transcription would fallback to 'en-US'." The list of supported languages is available here: https://go.microsoft.com/fwlink/?linkid=2109463
+     * The language for the audio payload in the input using the BCP-47 format of 'language tag-region' (e.g: 'en-US').
+     * If you know the language of your content, it is recommended that you specify it. The language must be specified
+     * explicitly for AudioAnalysisMode::Basic, since automatic language detection is not included in basic mode. If the
+     * language isn't specified or set to null, automatic language detection will choose the first language detected and
+     * process with the selected language for the duration of the file. It does not currently support dynamically
+     * switching between languages after the first language is detected. The automatic detection works best with audio
+     * recordings with clearly discernable speech. If automatic detection fails to find the language, transcription
+     * would fallback to 'en-US'." The list of supported languages is available here:
+     * https://go.microsoft.com/fwlink/?linkid=2109463
      */
     @JsonProperty(value = "audioLanguage")
     private String audioLanguage;
 
     /*
-     * Determines the set of audio analysis operations to be performed. If unspecified, the Standard AudioAnalysisMode would be chosen.
+     * Determines the set of audio analysis operations to be performed. If unspecified, the Standard AudioAnalysisMode
+     * would be chosen.
      */
     @JsonProperty(value = "mode")
     private AudioAnalysisMode mode;

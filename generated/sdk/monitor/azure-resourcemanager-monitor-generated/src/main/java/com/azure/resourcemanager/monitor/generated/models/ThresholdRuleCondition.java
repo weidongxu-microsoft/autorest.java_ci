@@ -24,7 +24,9 @@ import java.time.Duration;
 @Fluent
 public final class ThresholdRuleCondition extends RuleCondition {
     /*
-     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of
+     * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
+     * ThresholdRuleCondition (based on the threshold of a metric).
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
@@ -43,13 +45,15 @@ public final class ThresholdRuleCondition extends RuleCondition {
     private double threshold;
 
     /*
-     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold. If specified then it must be between 5 minutes and 1 day.
+     * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
+     * If specified then it must be between 5 minutes and 1 day.
      */
     @JsonProperty(value = "windowSize")
     private Duration windowSize;
 
     /*
-     * the time aggregation operator. How the data that are collected should be combined over time. The default value is the PrimaryAggregationType of the Metric.
+     * the time aggregation operator. How the data that are collected should be combined over time. The default value is
+     * the PrimaryAggregationType of the Metric.
      */
     @JsonProperty(value = "timeAggregation")
     private TimeAggregationOperator timeAggregation;

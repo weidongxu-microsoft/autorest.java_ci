@@ -21,7 +21,8 @@ public final class ClusterListResult {
     private List<ClusterInner> value;
 
     /*
-     * Link to the next set of results. Empty unless the value parameter contains an incomplete list of Event Hubs Clusters.
+     * Link to the next set of results. Empty unless the value parameter contains an incomplete list of Event Hubs
+     * Clusters.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

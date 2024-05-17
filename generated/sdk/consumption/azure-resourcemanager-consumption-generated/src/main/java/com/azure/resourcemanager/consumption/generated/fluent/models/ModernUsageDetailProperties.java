@@ -53,13 +53,17 @@ public final class ModernUsageDetailProperties {
     private OffsetDateTime billingPeriodEndDate;
 
     /*
-     * Identifier for the billing profile that groups costs across invoices in the a singular billing currency across across the customers who have onboarded the Microsoft customer agreement and the customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
+     * Identifier for the billing profile that groups costs across invoices in the a singular billing currency across
+     * across the customers who have onboarded the Microsoft customer agreement and the customers in CSP who have made
+     * entitlement purchases like SaaS, Marketplace, RI, etc.
      */
     @JsonProperty(value = "billingProfileId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileId;
 
     /*
-     * Name of the billing profile that groups costs across invoices in the a singular billing currency across across the customers who have onboarded the Microsoft customer agreement and the customers in CSP who have made entitlement purchases like SaaS, Marketplace, RI, etc.
+     * Name of the billing profile that groups costs across invoices in the a singular billing currency across across
+     * the customers who have onboarded the Microsoft customer agreement and the customers in CSP who have made
+     * entitlement purchases like SaaS, Marketplace, RI, etc.
      */
     @JsonProperty(value = "billingProfileName", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileName;
@@ -83,13 +87,16 @@ public final class ModernUsageDetailProperties {
     private OffsetDateTime date;
 
     /*
-     * Name of the product that has accrued charges by consumption or purchase as listed in the invoice. Not available for Marketplace.
+     * Name of the product that has accrued charges by consumption or purchase as listed in the invoice. Not available
+     * for Marketplace.
      */
     @JsonProperty(value = "product", access = JsonProperty.Access.WRITE_ONLY)
     private String product;
 
     /*
-     * The meter id (GUID). Not available for marketplace. For reserved instance this represents the primary meter for which the reservation was purchased. For the actual VM Size for which the reservation is purchased see productOrderName.
+     * The meter id (GUID). Not available for marketplace. For reserved instance this represents the primary meter for
+     * which the reservation was purchased. For the actual VM Size for which the reservation is purchased see
+     * productOrderName.
      */
     @JsonProperty(value = "meterId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID meterId;
@@ -167,7 +174,8 @@ public final class ModernUsageDetailProperties {
     private String resourceLocation;
 
     /*
-     * Consumed service name. Name of the azure resource provider that emits the usage or was purchased. This value is not provided for marketplace usage.
+     * Consumed service name. Name of the azure resource provider that emits the usage or was purchased. This value is
+     * not provided for marketplace usage.
      */
     @JsonProperty(value = "consumedService", access = JsonProperty.Access.WRITE_ONLY)
     private String consumedService;
@@ -185,19 +193,22 @@ public final class ModernUsageDetailProperties {
     private String serviceInfo2;
 
     /*
-     * Additional details of this usage item. Use this field to get usage line item specific details such as the actual VM Size (ServiceType) or the ratio in which the reservation discount is applied.
+     * Additional details of this usage item. Use this field to get usage line item specific details such as the actual
+     * VM Size (ServiceType) or the ratio in which the reservation discount is applied.
      */
     @JsonProperty(value = "additionalInfo", access = JsonProperty.Access.WRITE_ONLY)
     private String additionalInfo;
 
     /*
-     * Identifier of the project that is being charged in the invoice. Not applicable for Microsoft Customer Agreements onboarded by partners.
+     * Identifier of the project that is being charged in the invoice. Not applicable for Microsoft Customer Agreements
+     * onboarded by partners.
      */
     @JsonProperty(value = "invoiceSectionId", access = JsonProperty.Access.WRITE_ONLY)
     private String invoiceSectionId;
 
     /*
-     * Name of the project that is being charged in the invoice. Not applicable for Microsoft Customer Agreements onboarded by partners.
+     * Name of the project that is being charged in the invoice. Not applicable for Microsoft Customer Agreements
+     * onboarded by partners.
      */
     @JsonProperty(value = "invoiceSectionName", access = JsonProperty.Access.WRITE_ONLY)
     private String invoiceSectionName;
@@ -221,13 +232,15 @@ public final class ModernUsageDetailProperties {
     private String reservationId;
 
     /*
-     * User provided display name of the reservation. Last known name for a particular day is populated in the daily data. Only applies to records relevant to reservations.
+     * User provided display name of the reservation. Last known name for a particular day is populated in the daily
+     * data. Only applies to records relevant to reservations.
      */
     @JsonProperty(value = "reservationName", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationName;
 
     /*
-     * The identifier for the asset or Azure plan name that the subscription belongs to. For example: Azure Plan. For reservations this is the Reservation Order ID.
+     * The identifier for the asset or Azure plan name that the subscription belongs to. For example: Azure Plan. For
+     * reservations this is the Reservation Order ID.
      */
     @JsonProperty(value = "productOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String productOrderId;
@@ -245,7 +258,9 @@ public final class ModernUsageDetailProperties {
     private Boolean isAzureCreditEligible;
 
     /*
-     * Term (in months). Displays the term for the validity of the offer. For example. In case of reserved instances it displays 12 months for yearly term of reserved instance. For one time purchases or recurring purchases, the terms displays 1 month; This is not applicable for Azure consumption.
+     * Term (in months). Displays the term for the validity of the offer. For example. In case of reserved instances it
+     * displays 12 months for yearly term of reserved instance. For one time purchases or recurring purchases, the terms
+     * displays 1 month; This is not applicable for Azure consumption.
      */
     @JsonProperty(value = "term", access = JsonProperty.Access.WRITE_ONLY)
     private String term;
@@ -269,7 +284,8 @@ public final class ModernUsageDetailProperties {
     private String chargeType;
 
     /*
-     * Indicates how frequently this charge will occur. OneTime for purchases which only happen once, Monthly for fees which recur every month, and UsageBased for charges based on how much a service is used.
+     * Indicates how frequently this charge will occur. OneTime for purchases which only happen once, Monthly for fees
+     * which recur every month, and UsageBased for charges based on how much a service is used.
      */
     @JsonProperty(value = "frequency", access = JsonProperty.Access.WRITE_ONLY)
     private String frequency;
@@ -305,7 +321,8 @@ public final class ModernUsageDetailProperties {
     private String invoiceId;
 
     /*
-     * Reference to an original invoice there is a refund (negative cost). This is populated only when there is a refund.
+     * Reference to an original invoice there is a refund (negative cost). This is populated only when there is a
+     * refund.
      */
     @JsonProperty(value = "previousInvoiceId", access = JsonProperty.Access.WRITE_ONLY)
     private String previousInvoiceId;
@@ -317,7 +334,8 @@ public final class ModernUsageDetailProperties {
     private String pricingCurrencyCode;
 
     /*
-     * Identifier for the product that has accrued charges by consumption or purchase . This is the concatenated key of productId and SkuId in partner center.
+     * Identifier for the product that has accrued charges by consumption or purchase . This is the concatenated key of
+     * productId and SkuId in partner center.
      */
     @JsonProperty(value = "productIdentifier", access = JsonProperty.Access.WRITE_ONLY)
     private String productIdentifier;
@@ -329,13 +347,15 @@ public final class ModernUsageDetailProperties {
     private String resourceLocationNormalized;
 
     /*
-     * Start date for the rating period when the service usage was rated for charges. The prices for Azure services are determined for the rating period.
+     * Start date for the rating period when the service usage was rated for charges. The prices for Azure services are
+     * determined for the rating period.
      */
     @JsonProperty(value = "servicePeriodStartDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime servicePeriodStartDate;
 
     /*
-     * End date for the period when the service usage was rated for charges. The prices for Azure services are determined based on the rating period.
+     * End date for the period when the service usage was rated for charges. The prices for Azure services are
+     * determined based on the rating period.
      */
     @JsonProperty(value = "servicePeriodEndDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime servicePeriodEndDate;

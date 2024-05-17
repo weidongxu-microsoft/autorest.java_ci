@@ -15,7 +15,7 @@ import java.util.Map;
 @Fluent
 public final class VaultPatchParameters {
     /*
-     * The tags that will be assigned to the key vault. 
+     * The tags that will be assigned to the key vault.
      */
     @JsonProperty(value = "tags")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

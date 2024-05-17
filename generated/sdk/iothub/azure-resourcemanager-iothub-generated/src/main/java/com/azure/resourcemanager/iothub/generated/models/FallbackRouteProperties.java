@@ -15,7 +15,8 @@ import java.util.List;
 @Fluent
 public final class FallbackRouteProperties {
     /*
-     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
+     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a
+     * maximum length of 64 characters, and must be unique.
      */
     @JsonProperty(value = "name")
     private String name;
@@ -27,13 +28,16 @@ public final class FallbackRouteProperties {
     private RoutingSource source;
 
     /*
-     * The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will evaluate to true by default. For grammar, See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
+     * The condition which is evaluated in order to apply the fallback route. If the condition is not provided it will
+     * evaluate to true by default. For grammar, See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
      */
     @JsonProperty(value = "condition")
     private String condition;
 
     /*
-     * The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint is allowed.
+     * The list of endpoints to which the messages that satisfy the condition are routed to. Currently only 1 endpoint
+     * is allowed.
      */
     @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;

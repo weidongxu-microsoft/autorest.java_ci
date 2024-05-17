@@ -33,7 +33,8 @@ public final class PartnerTopicInfo {
     private String name;
 
     /*
-     * Event Type Information for the partner topic. This information is provided by the publisher and can be used by the 
+     * Event Type Information for the partner topic. This information is provided by the publisher and can be used by
+     * the
      * subscriber to view different types of events that are published.
      */
     @JsonProperty(value = "eventTypeInfo")

@@ -20,7 +20,8 @@ public final class DeliveryWithResourceIdentity {
 
     /*
      * Information about the destination where events have to be delivered for the event subscription.
-     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication tokens being used during delivery.
+     * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
+     * tokens being used during delivery.
      */
     @JsonProperty(value = "destination")
     private EventSubscriptionDestination destination;

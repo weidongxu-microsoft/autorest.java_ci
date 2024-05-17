@@ -28,7 +28,8 @@ public final class CosmosDbDataConnectionProperties {
     private String mappingRuleName;
 
     /*
-     * The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos DB.
+     * The resource ID of a managed system or user-assigned identity. The identity is used to authenticate with Cosmos
+     * DB.
      */
     @JsonProperty(value = "managedIdentityResourceId", required = true)
     private String managedIdentityResourceId;
@@ -58,7 +59,8 @@ public final class CosmosDbDataConnectionProperties {
     private String cosmosDbContainer;
 
     /*
-     * Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified retrieval start date.
+     * Optional. If defined, the data connection retrieves Cosmos DB documents created or updated after the specified
+     * retrieval start date.
      */
     @JsonProperty(value = "retrievalStartDate")
     private OffsetDateTime retrievalStartDate;

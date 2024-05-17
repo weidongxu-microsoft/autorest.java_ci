@@ -54,13 +54,15 @@ public final class MetricAlertPropertiesPatch {
     private Duration windowSize;
 
     /*
-     * the resource type of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * the resource type of the target resource(s) on which the alert is created/updated. Mandatory for
+     * MultipleResourceMultipleMetricCriteria.
      */
     @JsonProperty(value = "targetResourceType")
     private String targetResourceType;
 
     /*
-     * the region of the target resource(s) on which the alert is created/updated. Mandatory for MultipleResourceMultipleMetricCriteria.
+     * the region of the target resource(s) on which the alert is created/updated. Mandatory for
+     * MultipleResourceMultipleMetricCriteria.
      */
     @JsonProperty(value = "targetResourceRegion")
     private String targetResourceRegion;
@@ -78,7 +80,8 @@ public final class MetricAlertPropertiesPatch {
     private Boolean autoMitigate;
 
     /*
-     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is
+     * resolved.
      */
     @JsonProperty(value = "actions")
     private List<MetricAlertAction> actions;

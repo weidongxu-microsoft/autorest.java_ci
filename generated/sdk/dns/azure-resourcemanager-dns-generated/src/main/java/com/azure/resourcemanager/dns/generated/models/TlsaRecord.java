@@ -14,13 +14,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class TlsaRecord {
     /*
-     * The usage specifies the provided association that will be used to match the certificate presented in the TLS handshake.
+     * The usage specifies the provided association that will be used to match the certificate presented in the TLS
+     * handshake.
      */
     @JsonProperty(value = "usage")
     private Integer usage;
 
     /*
-     * The selector specifies which part of the TLS certificate presented by the server will be matched against the association data.
+     * The selector specifies which part of the TLS certificate presented by the server will be matched against the
+     * association data.
      */
     @JsonProperty(value = "selector")
     private Integer selector;

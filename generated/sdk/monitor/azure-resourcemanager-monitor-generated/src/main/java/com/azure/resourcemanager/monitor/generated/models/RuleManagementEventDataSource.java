@@ -22,7 +22,8 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public final class RuleManagementEventDataSource extends RuleDataSource {
     /*
-     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource
+     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and
+     * RuleManagementEventDataSource
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)

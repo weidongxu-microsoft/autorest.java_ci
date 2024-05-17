@@ -19,19 +19,25 @@ public final class RetentionDescription {
     private CleanupPolicyRetentionDescription cleanupPolicy;
 
     /*
-     * Number of hours to retain the events for this Event Hub. If cleanupPolicy is Compact the returned value of this property is Long.MaxValue 
+     * Number of hours to retain the events for this Event Hub. This should be positive value upto namespace SKU max. -1
+     * is a special case where retention time is infinite, but the size of an entity is restricted and its size depends
+     * on namespace SKU type.
      */
     @JsonProperty(value = "retentionTimeInHours")
     private Long retentionTimeInHours;
 
     /*
-     * The minimum time a message will remain ineligible for compaction in the log. Only applicable for logs that are being compacted.
+     * The minimum time a message will remain ineligible for compaction in the log. This value is used when
+     * cleanupPolicy is Compact or DeleteOrCompact.
      */
     @JsonProperty(value = "minCompactionLagInMins")
     private Long minCompactionLagInMins;
 
     /*
-     * Number of hours to retain the tombstone markers of a compacted Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub
+     * Number of hours to retain the tombstone markers of a compacted Event Hub. This value is used when cleanupPolicy
+     * is Compact or DeleteOrCompact. Consumer must complete reading the tombstone marker within this specified amount
+     * of time if consumer begins from starting offset to ensure they get a valid snapshot for the specific key
+     * described by the tombstone marker within the compacted Event Hub
      */
     @JsonProperty(value = "tombstoneRetentionTimeInHours")
     private Integer tombstoneRetentionTimeInHours;
@@ -63,8 +69,9 @@ public final class RetentionDescription {
     }
 
     /**
-     * Get the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. If cleanupPolicy
-     * is Compact the returned value of this property is Long.MaxValue.
+     * Get the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This should be
+     * positive value upto namespace SKU max. -1 is a special case where retention time is infinite, but the size of an
+     * entity is restricted and its size depends on namespace SKU type.
      * 
      * @return the retentionTimeInHours value.
      */
@@ -73,8 +80,9 @@ public final class RetentionDescription {
     }
 
     /**
-     * Set the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. If cleanupPolicy
-     * is Compact the returned value of this property is Long.MaxValue.
+     * Set the retentionTimeInHours property: Number of hours to retain the events for this Event Hub. This should be
+     * positive value upto namespace SKU max. -1 is a special case where retention time is infinite, but the size of an
+     * entity is restricted and its size depends on namespace SKU type.
      * 
      * @param retentionTimeInHours the retentionTimeInHours value to set.
      * @return the RetentionDescription object itself.
@@ -86,7 +94,7 @@ public final class RetentionDescription {
 
     /**
      * Get the minCompactionLagInMins property: The minimum time a message will remain ineligible for compaction in the
-     * log. Only applicable for logs that are being compacted.
+     * log. This value is used when cleanupPolicy is Compact or DeleteOrCompact.
      * 
      * @return the minCompactionLagInMins value.
      */
@@ -96,7 +104,7 @@ public final class RetentionDescription {
 
     /**
      * Set the minCompactionLagInMins property: The minimum time a message will remain ineligible for compaction in the
-     * log. Only applicable for logs that are being compacted.
+     * log. This value is used when cleanupPolicy is Compact or DeleteOrCompact.
      * 
      * @param minCompactionLagInMins the minCompactionLagInMins value to set.
      * @return the RetentionDescription object itself.
@@ -108,9 +116,9 @@ public final class RetentionDescription {
 
     /**
      * Get the tombstoneRetentionTimeInHours property: Number of hours to retain the tombstone markers of a compacted
-     * Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone
-     * marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid
-     * snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
+     * Event Hub. This value is used when cleanupPolicy is Compact or DeleteOrCompact. Consumer must complete reading
+     * the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they
+     * get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
      * 
      * @return the tombstoneRetentionTimeInHours value.
      */
@@ -120,9 +128,9 @@ public final class RetentionDescription {
 
     /**
      * Set the tombstoneRetentionTimeInHours property: Number of hours to retain the tombstone markers of a compacted
-     * Event Hub. This value is only used when cleanupPolicy is Compact. Consumer must complete reading the tombstone
-     * marker within this specified amount of time if consumer begins from starting offset to ensure they get a valid
-     * snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
+     * Event Hub. This value is used when cleanupPolicy is Compact or DeleteOrCompact. Consumer must complete reading
+     * the tombstone marker within this specified amount of time if consumer begins from starting offset to ensure they
+     * get a valid snapshot for the specific key described by the tombstone marker within the compacted Event Hub.
      * 
      * @param tombstoneRetentionTimeInHours the tombstoneRetentionTimeInHours value to set.
      * @return the RetentionDescription object itself.

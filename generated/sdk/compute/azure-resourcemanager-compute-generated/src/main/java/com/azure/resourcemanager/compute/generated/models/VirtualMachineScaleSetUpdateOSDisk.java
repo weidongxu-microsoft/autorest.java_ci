@@ -33,13 +33,16 @@ public final class VirtualMachineScaleSetUpdateOSDisk {
     private DiffDiskSettings diffDiskSettings;
 
     /*
-     * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk in a virtual machine image. <br><br> diskSizeGB is the number of bytes x 1024^3 for the disk and the value cannot be larger than 1023
+     * Specifies the size of an empty data disk in gigabytes. This element can be used to overwrite the size of the disk
+     * in a virtual machine image. <br><br> diskSizeGB is the number of bytes x 1024^3 for the disk and the value cannot
+     * be larger than 1023
      */
     @JsonProperty(value = "diskSizeGB")
     private Integer diskSizeGB;
 
     /*
-     * The Source User Image VirtualHardDisk. This VirtualHardDisk will be copied before using it to attach to the Virtual Machine. If SourceImage is provided, the destination VirtualHardDisk should not exist.
+     * The Source User Image VirtualHardDisk. This VirtualHardDisk will be copied before using it to attach to the
+     * Virtual Machine. If SourceImage is provided, the destination VirtualHardDisk should not exist.
      */
     @JsonProperty(value = "image")
     private VirtualHardDisk image;
@@ -57,7 +60,11 @@ public final class VirtualMachineScaleSetUpdateOSDisk {
     private VirtualMachineScaleSetManagedDiskParameters managedDisk;
 
     /*
-     * Specifies whether OS Disk should be deleted or detached upon VMSS Flex deletion (This feature is available for VMSS with Flexible OrchestrationMode only). <br><br> Possible values: <br><br> **Delete** If this value is used, the OS disk is deleted when VMSS Flex VM is deleted.<br><br> **Detach** If this value is used, the OS disk is retained after VMSS Flex VM is deleted. <br><br> The default value is set to **Delete**. For an Ephemeral OS Disk, the default value is set to **Delete**. User cannot change the delete option for Ephemeral OS Disk.
+     * Specifies whether OS Disk should be deleted or detached upon VMSS Flex deletion (This feature is available for
+     * VMSS with Flexible OrchestrationMode only). <br><br> Possible values: <br><br> **Delete** If this value is used,
+     * the OS disk is deleted when VMSS Flex VM is deleted.<br><br> **Detach** If this value is used, the OS disk is
+     * retained after VMSS Flex VM is deleted. <br><br> The default value is set to **Delete**. For an Ephemeral OS
+     * Disk, the default value is set to **Delete**. User cannot change the delete option for Ephemeral OS Disk.
      */
     @JsonProperty(value = "deleteOption")
     private DiskDeleteOptionTypes deleteOption;

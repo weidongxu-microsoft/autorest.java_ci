@@ -44,7 +44,9 @@ public final class TextTrack extends TrackBase {
     private String languageCode;
 
     /*
-     * When PlayerVisibility is set to "Visible", the text track will be present in the DASH manifest or HLS playlist when requested by a client. When the PlayerVisibility is set to "Hidden", the text will not be available to the client. The default value is "Visible".
+     * When PlayerVisibility is set to "Visible", the text track will be present in the DASH manifest or HLS playlist
+     * when requested by a client. When the PlayerVisibility is set to "Hidden", the text will not be available to the
+     * client. The default value is "Visible".
      */
     @JsonProperty(value = "playerVisibility")
     private Visibility playerVisibility;

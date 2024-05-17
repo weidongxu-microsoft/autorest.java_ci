@@ -13,7 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LogSettings {
     /*
-     * Name of a Diagnostic Log category for a resource type this setting is applied to. To obtain the list of Diagnostic Log categories for a resource, first perform a GET diagnostic settings operation.
+     * Name of a Diagnostic Log category for a resource type this setting is applied to. To obtain the list of
+     * Diagnostic Log categories for a resource, first perform a GET diagnostic settings operation.
      */
     @JsonProperty(value = "category")
     private String category;

@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
-import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner;
 import com.azure.resourcemanager.network.generated.models.DelegationProperties;
 import com.azure.resourcemanager.network.generated.models.InternetIngressPublicIpsProperties;
 import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
@@ -280,15 +280,14 @@ public final class NetworkVirtualApplianceImpl
         return this;
     }
 
-    public Response<Void> restartWithResponse(NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds,
-        Context context) {
-        return serviceManager.networkVirtualAppliances()
-            .restartWithResponse(resourceGroupName, networkVirtualApplianceName, networkVirtualApplianceInstanceIds,
-                context);
+    public NetworkVirtualApplianceInstanceIds restart() {
+        return serviceManager.networkVirtualAppliances().restart(resourceGroupName, networkVirtualApplianceName);
     }
 
-    public void restart() {
-        serviceManager.networkVirtualAppliances().restart(resourceGroupName, networkVirtualApplianceName);
+    public NetworkVirtualApplianceInstanceIds
+        restart(NetworkVirtualApplianceInstanceIdsInner networkVirtualApplianceInstanceIds, Context context) {
+        return serviceManager.networkVirtualAppliances()
+            .restart(resourceGroupName, networkVirtualApplianceName, networkVirtualApplianceInstanceIds, context);
     }
 
     public NetworkVirtualApplianceImpl withRegion(Region location) {

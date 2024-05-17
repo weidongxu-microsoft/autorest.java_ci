@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ArmDisasterRecoveryProperties {
     /*
-     * Provisioning state of the Alias(Disaster Recovery configuration) - possible values 'Accepted' or 'Succeeded' or 'Failed'
+     * Provisioning state of the Alias(Disaster Recovery configuration) - possible values 'Accepted' or 'Succeeded' or
+     * 'Failed'
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningStateDR provisioningState;

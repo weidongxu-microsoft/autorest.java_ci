@@ -19,7 +19,8 @@ public final class AlternativeOption {
     private AlternativeType type;
 
     /*
-     * Indicates the alternative option value specified by the Publisher. This is the Offer name when the type is Offer or the Plan name when the type is Plan.
+     * Indicates the alternative option value specified by the Publisher. This is the Offer name when the type is Offer
+     * or the Plan name when the type is Plan.
      */
     @JsonProperty(value = "value")
     private String value;

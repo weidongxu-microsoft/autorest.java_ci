@@ -14,7 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class VirtualMachineInstallPatchesParameters {
     /*
-     * Specifies the maximum amount of time that the operation will run. It must be an ISO 8601-compliant duration string such as PT4H (4 hours)
+     * Specifies the maximum amount of time that the operation will run. It must be an ISO 8601-compliant duration
+     * string such as PT4H (4 hours)
      */
     @JsonProperty(value = "maximumDuration")
     private String maximumDuration;

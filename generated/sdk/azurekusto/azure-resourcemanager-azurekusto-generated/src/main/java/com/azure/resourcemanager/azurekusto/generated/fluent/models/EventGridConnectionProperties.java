@@ -72,7 +72,8 @@ public final class EventGridConnectionProperties {
     private BlobStorageEventType blobStorageEventType;
 
     /*
-     * The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub and storage account.
+     * The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub and
+     * storage account.
      */
     @JsonProperty(value = "managedIdentityResourceId")
     private String managedIdentityResourceId;
@@ -84,7 +85,8 @@ public final class EventGridConnectionProperties {
     private String managedIdentityObjectId;
 
     /*
-     * Indication for database routing information from the data connection, by default only database routing information is allowed
+     * Indication for database routing information from the data connection, by default only database routing
+     * information is allowed
      */
     @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;

@@ -59,7 +59,8 @@ public final class JobProperties {
     private String refreshedEntityId;
 
     /*
-     * If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is empty if there are no subfolders.)
+     * If only subfolders need to be refreshed, then the subfolder path inside the share or container. (The path is
+     * empty if there are no subfolders.)
      */
     @JsonProperty(value = "folder")
     private String folder;

@@ -39,7 +39,8 @@ public final class PolicySetDefinitionProperties {
     private String description;
 
     /*
-     * The policy set definition metadata.  Metadata is an open ended object and is typically a collection of key value pairs.
+     * The policy set definition metadata. Metadata is an open ended object and is typically a collection of key value
+     * pairs.
      */
     @JsonProperty(value = "metadata")
     private Object metadata;

@@ -27,7 +27,8 @@ public final class AutoscaleProfile {
     private ScaleCapacity capacity;
 
     /*
-     * the collection of rules that provide the triggers and parameters for the scaling action. A maximum of 10 rules can be specified.
+     * the collection of rules that provide the triggers and parameters for the scaling action. A maximum of 10 rules
+     * can be specified.
      */
     @JsonProperty(value = "rules", required = true)
     private List<ScaleRule> rules;

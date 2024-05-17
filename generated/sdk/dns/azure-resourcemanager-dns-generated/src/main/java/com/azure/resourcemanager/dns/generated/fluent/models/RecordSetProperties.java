@@ -109,7 +109,7 @@ public final class RecordSetProperties {
     private List<TxtRecord> txtRecords;
 
     /*
-     * The CNAME record in the  record set.
+     * The CNAME record in the record set.
      */
     @JsonProperty(value = "CNAMERecord")
     private CnameRecord cnameRecord;

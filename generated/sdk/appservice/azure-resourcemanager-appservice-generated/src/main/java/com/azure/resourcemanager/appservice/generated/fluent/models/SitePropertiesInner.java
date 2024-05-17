@@ -52,7 +52,8 @@ public final class SitePropertiesInner {
     private UsageState usageState;
 
     /*
-     * <code>true</code> if the app is enabled; otherwise, <code>false</code>. Setting this value to false disables the app (takes the app offline).
+     * <code>true</code> if the app is enabled; otherwise, <code>false</code>. Setting this value to false disables the
+     * app (takes the app offline).
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;
@@ -77,7 +78,8 @@ public final class SitePropertiesInner {
     private List<HostnameSslState> hostnameSslStates;
 
     /*
-     * Resource ID of the associated App Service plan, formatted as: "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
+     * Resource ID of the associated App Service plan, formatted as:
+     * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      */
     @JsonProperty(value = "serverFarmId")
     private String serverFarmId;
@@ -113,7 +115,8 @@ public final class SitePropertiesInner {
     private SiteDnsConfig dnsConfiguration;
 
     /*
-     * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
+     * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and
+     * User Defined Routes applied.
      */
     @JsonProperty(value = "vnetRouteAllEnabled")
     private Boolean vnetRouteAllEnabled;
@@ -173,7 +176,8 @@ public final class SitePropertiesInner {
     private List<String> trafficManagerHostNames;
 
     /*
-     * <code>true</code> to stop SCM (KUDU) site when the app is stopped; otherwise, <code>false</code>. The default is <code>false</code>.
+     * <code>true</code> to stop SCM (KUDU) site when the app is stopped; otherwise, <code>false</code>. The default is
+     * <code>false</code>.
      */
     @JsonProperty(value = "scmSiteAlsoStopped")
     private Boolean scmSiteAlsoStopped;
@@ -191,13 +195,15 @@ public final class SitePropertiesInner {
     private HostingEnvironmentProfile hostingEnvironmentProfile;
 
     /*
-     * <code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which route client requests in the same session to the same instance. Default is <code>true</code>.
+     * <code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which
+     * route client requests in the same session to the same instance. Default is <code>true</code>.
      */
     @JsonProperty(value = "clientAffinityEnabled")
     private Boolean clientAffinityEnabled;
 
     /*
-     * <code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise, <code>false</code>. Default is <code>false</code>.
+     * <code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise,
+     * <code>false</code>. Default is <code>false</code>.
      */
     @JsonProperty(value = "clientCertEnabled")
     private Boolean clientCertEnabled;
@@ -219,25 +225,28 @@ public final class SitePropertiesInner {
 
     /*
      * <code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.
-     *  If <code>true</code>, the app is only accessible via API management process.
+     * If <code>true</code>, the app is only accessible via API management process.
      */
     @JsonProperty(value = "hostNamesDisabled")
     private Boolean hostNamesDisabled;
 
     /*
-     * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record for verification.
+     * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record
+     * for verification.
      */
     @JsonProperty(value = "customDomainVerificationId")
     private String customDomainVerificationId;
 
     /*
-     * List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from tenants that site can be hosted with current settings. Read-only.
+     * List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from
+     * tenants that site can be hosted with current settings. Read-only.
      */
     @JsonProperty(value = "outboundIpAddresses", access = JsonProperty.Access.WRITE_ONLY)
     private String outboundIpAddresses;
 
     /*
-     * List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from all tenants except dataComponent. Read-only.
+     * List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from all
+     * tenants except dataComponent. Read-only.
      */
     @JsonProperty(value = "possibleOutboundIpAddresses", access = JsonProperty.Access.WRITE_ONLY)
     private String possibleOutboundIpAddresses;
@@ -336,13 +345,18 @@ public final class SitePropertiesInner {
 
     /*
      * Azure Resource Manager ID of the Virtual network and subnet to be joined by Regional VNET Integration.
-     * This must be of the form /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/{vnetName}/subnets/{subnetName}
+     * This must be of the form
+     * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/
+     * {vnetName}/subnets/{subnetName}
      */
     @JsonProperty(value = "virtualNetworkSubnetId")
     private String virtualNetworkSubnetId;
 
     /*
-     * Azure Resource Manager ID of the customer's selected Managed Environment on which to host this app. This must be of the form /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{managedEnvironmentName}
+     * Azure Resource Manager ID of the customer's selected Managed Environment on which to host this app. This must be
+     * of the form
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{
+     * managedEnvironmentName}
      */
     @JsonProperty(value = "managedEnvironmentId")
     private String managedEnvironmentId;

@@ -28,7 +28,8 @@ public final class RoutingEndpoints {
     private List<RoutingServiceBusTopicEndpointProperties> serviceBusTopics;
 
     /*
-     * The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not include the built-in Event Hubs endpoint.
+     * The list of Event Hubs endpoints that IoT hub routes messages to, based on the routing rules. This list does not
+     * include the built-in Event Hubs endpoint.
      */
     @JsonProperty(value = "eventHubs")
     private List<RoutingEventHubProperties> eventHubs;

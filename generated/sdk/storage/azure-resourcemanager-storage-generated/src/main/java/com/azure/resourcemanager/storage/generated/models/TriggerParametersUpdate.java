@@ -14,31 +14,36 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class TriggerParametersUpdate {
     /*
-     * When to start task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule'; this property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
+     * When to start task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule'; this
+     * property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
      */
     @JsonProperty(value = "startFrom")
     private OffsetDateTime startFrom;
 
     /*
-     * Run interval of task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule'; this property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
+     * Run interval of task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule';
+     * this property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
      */
     @JsonProperty(value = "interval")
     private Integer interval;
 
     /*
-     * Run interval unit of task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule'; this property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
+     * Run interval unit of task execution. This is a mutable field when ExecutionTrigger.properties.type is
+     * 'OnSchedule'; this property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
      */
     @JsonProperty(value = "intervalUnit")
     private IntervalUnit intervalUnit;
 
     /*
-     * When to end task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule'; this property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
+     * When to end task execution. This is a mutable field when ExecutionTrigger.properties.type is 'OnSchedule'; this
+     * property should not be present when ExecutionTrigger.properties.type is 'RunOnce'
      */
     @JsonProperty(value = "endBy")
     private OffsetDateTime endBy;
 
     /*
-     * When to start task execution. This is a mutable field when ExecutionTrigger.properties.type is 'RunOnce'; this property should not be present when ExecutionTrigger.properties.type is 'OnSchedule'
+     * When to start task execution. This is a mutable field when ExecutionTrigger.properties.type is 'RunOnce'; this
+     * property should not be present when ExecutionTrigger.properties.type is 'OnSchedule'
      */
     @JsonProperty(value = "startOn")
     private OffsetDateTime startOn;

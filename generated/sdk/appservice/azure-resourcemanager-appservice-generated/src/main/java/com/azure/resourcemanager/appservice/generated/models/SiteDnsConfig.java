@@ -38,13 +38,15 @@ public final class SiteDnsConfig {
     private Integer dnsRetryAttemptCount;
 
     /*
-     * Custom time for DNS to be cached in seconds. Allowed range: 0-60. Default is 30 seconds. 0 means caching disabled.
+     * Custom time for DNS to be cached in seconds. Allowed range: 0-60. Default is 30 seconds. 0 means caching
+     * disabled.
      */
     @JsonProperty(value = "dnsMaxCacheTimeout")
     private Integer dnsMaxCacheTimeout;
 
     /*
-     * Indicates that sites using Virtual network custom DNS servers are still sorting the list of DNS servers. Read-Only.
+     * Indicates that sites using Virtual network custom DNS servers are still sorting the list of DNS servers.
+     * Read-Only.
      */
     @JsonProperty(value = "dnsLegacySortOrder", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean dnsLegacySortOrder;

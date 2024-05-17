@@ -30,13 +30,16 @@ public final class ParameterDefinitionsValueMetadata {
     private String description;
 
     /*
-     * Used when assigning the policy definition through the portal. Provides a context aware list of values for the user to choose from.
+     * Used when assigning the policy definition through the portal. Provides a context aware list of values for the
+     * user to choose from.
      */
     @JsonProperty(value = "strongType")
     private String strongType;
 
     /*
-     * Set to true to have Azure portal create role assignments on the resource ID or resource scope value of this parameter during policy assignment. This property is useful in case you wish to assign permissions outside the assignment scope.
+     * Set to true to have Azure portal create role assignments on the resource ID or resource scope value of this
+     * parameter during policy assignment. This property is useful in case you wish to assign permissions outside the
+     * assignment scope.
      */
     @JsonProperty(value = "assignPermissions")
     private Boolean assignPermissions;

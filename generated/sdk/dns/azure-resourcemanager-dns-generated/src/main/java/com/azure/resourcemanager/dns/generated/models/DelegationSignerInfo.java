@@ -13,7 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class DelegationSignerInfo {
     /*
-     * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
+     * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See:
+     * https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
      */
     @JsonProperty(value = "digestAlgorithmType", access = JsonProperty.Access.WRITE_ONLY)
     private Integer digestAlgorithmType;

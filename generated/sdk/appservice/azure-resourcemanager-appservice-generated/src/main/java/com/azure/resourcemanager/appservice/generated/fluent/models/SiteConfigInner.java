@@ -289,7 +289,8 @@ public final class SiteConfigInner {
     private String vnetName;
 
     /*
-     * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and User Defined Routes applied.
+     * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and
+     * User Defined Routes applied.
      */
     @JsonProperty(value = "vnetRouteAllEnabled")
     private Boolean vnetRouteAllEnabled;
@@ -450,7 +451,11 @@ public final class SiteConfigInner {
     private Boolean functionsRuntimeScaleMonitoringEnabled;
 
     /*
-     * Sets the time zone a site uses for generating timestamps. Compatible with Linux and Windows App Service. Setting the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux, expects tz database values https://www.iana.org/time-zones (for a quick reference see https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones
+     * Sets the time zone a site uses for generating timestamps. Compatible with Linux and Windows App Service. Setting
+     * the WEBSITE_TIME_ZONE app setting takes precedence over this config. For Linux, expects tz database values
+     * https://www.iana.org/time-zones (for a quick reference see
+     * https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). For Windows, expects one of the time zones listed
+     * under HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Time Zones
      */
     @JsonProperty(value = "websiteTimeZone")
     private String websiteTimeZone;

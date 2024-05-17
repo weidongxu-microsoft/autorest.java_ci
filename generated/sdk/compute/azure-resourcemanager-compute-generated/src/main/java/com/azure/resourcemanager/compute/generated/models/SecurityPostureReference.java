@@ -15,7 +15,9 @@ import java.util.List;
 @Fluent
 public final class SecurityPostureReference {
     /*
-     * The security posture reference id in the form of /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{major.*}|latest
+     * The security posture reference id in the form of
+     * /CommunityGalleries/{communityGalleryName}/securityPostures/{securityPostureName}/versions/{major.minor.patch}|{
+     * major.*}|latest
      */
     @JsonProperty(value = "id")
     private String id;

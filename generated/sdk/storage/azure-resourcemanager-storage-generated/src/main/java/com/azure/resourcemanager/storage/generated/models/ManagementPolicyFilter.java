@@ -22,7 +22,8 @@ public final class ManagementPolicyFilter {
     private List<String> prefixMatch;
 
     /*
-     * An array of predefined enum values. Currently blockBlob supports all tiering and delete actions. Only delete actions are supported for appendBlob.
+     * An array of predefined enum values. Currently blockBlob supports all tiering and delete actions. Only delete
+     * actions are supported for appendBlob.
      */
     @JsonProperty(value = "blobTypes", required = true)
     private List<String> blobTypes;

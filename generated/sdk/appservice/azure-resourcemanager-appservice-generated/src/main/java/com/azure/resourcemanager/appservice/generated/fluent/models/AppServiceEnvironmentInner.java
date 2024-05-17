@@ -82,8 +82,9 @@ public final class AppServiceEnvironmentInner {
     private Integer frontEndScaleFactor;
 
     /*
-     * <code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can be suspended, e.g. when the management endpoint is no longer available
-     *  (most likely because NSG blocked the incoming traffic).
+     * <code>true</code> if the App Service Environment is suspended; otherwise, <code>false</code>. The environment can
+     * be suspended, e.g. when the management endpoint is no longer available
+     * (most likely because NSG blocked the incoming traffic).
      */
     @JsonProperty(value = "suspended", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean suspended;

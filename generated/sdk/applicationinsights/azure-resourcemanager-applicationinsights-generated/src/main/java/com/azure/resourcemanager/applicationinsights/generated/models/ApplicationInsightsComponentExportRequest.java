@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ApplicationInsightsComponentExportRequest {
     /*
-     * The document types to be exported, as comma separated values. Allowed values include 'Requests', 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability', 'Messages'.
+     * The document types to be exported, as comma separated values. Allowed values include 'Requests', 'Event',
+     * 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters', 'Availability',
+     * 'Messages'.
      */
     @JsonProperty(value = "RecordTypes")
     private String recordTypes;

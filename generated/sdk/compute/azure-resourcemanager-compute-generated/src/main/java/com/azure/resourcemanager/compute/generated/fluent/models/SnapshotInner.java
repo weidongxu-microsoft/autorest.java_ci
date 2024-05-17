@@ -37,7 +37,8 @@ public final class SnapshotInner extends Resource {
     private String managedBy;
 
     /*
-     * The snapshots sku name. Can be Standard_LRS, Premium_LRS, or Standard_ZRS. This is an optional parameter for incremental snapshot and the default behavior is the SKU will be set to the same sku as the previous snapshot
+     * The snapshots sku name. Can be Standard_LRS, Premium_LRS, or Standard_ZRS. This is an optional parameter for
+     * incremental snapshot and the default behavior is the SKU will be set to the same sku as the previous snapshot
      */
     @JsonProperty(value = "sku")
     private SnapshotSku sku;

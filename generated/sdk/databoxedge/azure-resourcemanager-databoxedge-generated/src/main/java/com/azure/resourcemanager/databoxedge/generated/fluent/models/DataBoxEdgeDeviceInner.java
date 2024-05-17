@@ -28,13 +28,16 @@ import java.util.Map;
 @Fluent
 public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     /*
-     * The location of the device. This is a supported and registered Azure geographical region (for example, West US, East US, or Southeast Asia). The geographical region of a device cannot be changed once it is created, but if an identical geographical region is specified on update, the request will succeed.
+     * The location of the device. This is a supported and registered Azure geographical region (for example, West US,
+     * East US, or Southeast Asia). The geographical region of a device cannot be changed once it is created, but if an
+     * identical geographical region is specified on update, the request will succeed.
      */
     @JsonProperty(value = "location", required = true)
     private String location;
 
     /*
-     * The list of tags that describe the device. These tags can be used to view and group this device (across resource groups).
+     * The list of tags that describe the device. These tags can be used to view and group this device (across resource
+     * groups).
      */
     @JsonProperty(value = "tags")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

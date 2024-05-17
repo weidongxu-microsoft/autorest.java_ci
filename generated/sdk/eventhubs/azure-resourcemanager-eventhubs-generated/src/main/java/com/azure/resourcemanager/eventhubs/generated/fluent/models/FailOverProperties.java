@@ -19,10 +19,11 @@ public final class FailOverProperties {
     private String primaryLocation;
 
     /*
-     * Maximum time duration allowed complete data replication from primary to secondary. Use maximumGracePeriodInMins = 0: For Unplanned Geo-Failover, which switches the role between primary and secondary immediately. The data that is not being replicated yet will be discarded. Use maximumGracePeriodInMins > 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period expires.  Any data that is not replicated during the grace period will be discarded. During the replication the namespace stops accepting any new publishing requests
+     * If Force is false then graceful failover is attempted after ensuring no data loss. If Force flag is set to true,
+     * Forced failover is attempted with possible data loss.
      */
-    @JsonProperty(value = "maximumGracePeriodInMins")
-    private Integer maximumGracePeriodInMins;
+    @JsonProperty(value = "force")
+    private Boolean force;
 
     /**
      * Creates an instance of FailOverProperties class.
@@ -51,32 +52,24 @@ public final class FailOverProperties {
     }
 
     /**
-     * Get the maximumGracePeriodInMins property: Maximum time duration allowed complete data replication from primary
-     * to secondary. Use maximumGracePeriodInMins = 0: For Unplanned Geo-Failover, which switches the role between
-     * primary and secondary immediately. The data that is not being replicated yet will be discarded. Use
-     * maximumGracePeriodInMins &gt; 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period
-     * expires. Any data that is not replicated during the grace period will be discarded. During the replication the
-     * namespace stops accepting any new publishing requests.
+     * Get the force property: If Force is false then graceful failover is attempted after ensuring no data loss. If
+     * Force flag is set to true, Forced failover is attempted with possible data loss.
      * 
-     * @return the maximumGracePeriodInMins value.
+     * @return the force value.
      */
-    public Integer maximumGracePeriodInMins() {
-        return this.maximumGracePeriodInMins;
+    public Boolean force() {
+        return this.force;
     }
 
     /**
-     * Set the maximumGracePeriodInMins property: Maximum time duration allowed complete data replication from primary
-     * to secondary. Use maximumGracePeriodInMins = 0: For Unplanned Geo-Failover, which switches the role between
-     * primary and secondary immediately. The data that is not being replicated yet will be discarded. Use
-     * maximumGracePeriodInMins &gt; 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period
-     * expires. Any data that is not replicated during the grace period will be discarded. During the replication the
-     * namespace stops accepting any new publishing requests.
+     * Set the force property: If Force is false then graceful failover is attempted after ensuring no data loss. If
+     * Force flag is set to true, Forced failover is attempted with possible data loss.
      * 
-     * @param maximumGracePeriodInMins the maximumGracePeriodInMins value to set.
+     * @param force the force value to set.
      * @return the FailOverProperties object itself.
      */
-    public FailOverProperties withMaximumGracePeriodInMins(Integer maximumGracePeriodInMins) {
-        this.maximumGracePeriodInMins = maximumGracePeriodInMins;
+    public FailOverProperties withForce(Boolean force) {
+        this.force = force;
         return this;
     }
 

@@ -14,13 +14,15 @@ import java.time.Duration;
 @Fluent
 public final class CloudToDeviceProperties {
     /*
-     * The max delivery count for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * The max delivery count for cloud-to-device messages in the device queue. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      */
     @JsonProperty(value = "maxDeliveryCount")
     private Integer maxDeliveryCount;
 
     /*
-     * The default time to live for cloud-to-device messages in the device queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * The default time to live for cloud-to-device messages in the device queue. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      */
     @JsonProperty(value = "defaultTtlAsIso8601")
     private Duration defaultTtlAsIso8601;

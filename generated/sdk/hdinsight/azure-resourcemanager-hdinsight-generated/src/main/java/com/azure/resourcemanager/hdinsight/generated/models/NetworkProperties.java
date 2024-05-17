@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class NetworkProperties {
     /*
-     * A value to describe how the outbound dependencies of a HDInsight cluster are managed. 'Managed' means that the outbound dependencies are managed by the HDInsight service. 'External' means that the outbound dependencies are managed by a customer specific solution.
+     * A value to describe how the outbound dependencies of a HDInsight cluster are managed. 'Managed' means that the
+     * outbound dependencies are managed by the HDInsight service. 'External' means that the outbound dependencies are
+     * managed by a customer specific solution.
      */
     @JsonProperty(value = "outboundDependenciesManagedType")
     private OutboundDependenciesManagedType outboundDependenciesManagedType;

@@ -31,7 +31,9 @@ public final class SharedPrivateLinkResourceProperties {
     private String requestMessage;
 
     /*
-     * Optional. Can be used to specify the Azure Resource Manager location of the resource for which a shared private link is being created. This is only required for those resources whose DNS configuration are regional (such as Azure Kubernetes Service).
+     * Optional. Can be used to specify the Azure Resource Manager location of the resource for which a shared private
+     * link is being created. This is only required for those resources whose DNS configuration are regional (such as
+     * Azure Kubernetes Service).
      */
     @JsonProperty(value = "resourceRegion")
     private String resourceRegion;
@@ -43,7 +45,8 @@ public final class SharedPrivateLinkResourceProperties {
     private SharedPrivateLinkResourceStatus status;
 
     /*
-     * The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed, Succeeded or Incomplete.
+     * The provisioning state of the shared private link resource. Valid values are Updating, Deleting, Failed,
+     * Succeeded or Incomplete.
      */
     @JsonProperty(value = "provisioningState")
     private SharedPrivateLinkResourceProvisioningState provisioningState;

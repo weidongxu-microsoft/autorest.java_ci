@@ -27,7 +27,8 @@ public final class OperationInner {
     private OperationDisplay display;
 
     /*
-     * Describes if the specified operation is a data plane API operation. Operations where this value is not true are supported directly by the resource provider.
+     * Describes if the specified operation is a data plane API operation. Operations where this value is not true are
+     * supported directly by the resource provider.
      */
     @JsonProperty(value = "isDataAction", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isDataAction;

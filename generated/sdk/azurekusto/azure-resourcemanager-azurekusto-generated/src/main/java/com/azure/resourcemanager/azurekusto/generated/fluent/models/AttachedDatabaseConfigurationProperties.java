@@ -24,7 +24,8 @@ public final class AttachedDatabaseConfigurationProperties {
     private ProvisioningState provisioningState;
 
     /*
-     * The name of the database which you would like to attach, use * if you want to follow all current and future databases.
+     * The name of the database which you would like to attach, use * if you want to follow all current and future
+     * databases.
      */
     @JsonProperty(value = "databaseName", required = true)
     private String databaseName;
@@ -60,7 +61,8 @@ public final class AttachedDatabaseConfigurationProperties {
     private String databaseNameOverride;
 
     /*
-     * Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all of the databases original names from leader cluster.
+     * Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all
+     * of the databases original names from leader cluster.
      */
     @JsonProperty(value = "databaseNamePrefix")
     private String databaseNamePrefix;

@@ -14,13 +14,15 @@ import java.util.List;
 @Fluent
 public final class EventHubProperties {
     /*
-     * The retention time for device-to-cloud messages in days. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages
+     * The retention time for device-to-cloud messages in days. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages
      */
     @JsonProperty(value = "retentionTimeInDays")
     private Long retentionTimeInDays;
 
     /*
-     * The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
+     * The number of partitions for receiving device-to-cloud messages in the Event Hub-compatible endpoint. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#device-to-cloud-messages.
      */
     @JsonProperty(value = "partitionCount")
     private Integer partitionCount;

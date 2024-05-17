@@ -24,7 +24,8 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class ResourceCertificateAndAcsDetails extends ResourceCertificateDetails {
     /*
-     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of types.
+     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of
+     * types.
      */
     @JsonTypeId
     @JsonProperty(value = "authType", required = true)

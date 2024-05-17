@@ -37,7 +37,8 @@ public class HealthProbeSettingsUpdateParameters {
     private FrontDoorHealthProbeMethod healthProbeMethod;
 
     /*
-     * Whether to enable health probes to be made against backends defined under backendPools. Health probes can only be disabled if there is a single enabled backend in single enabled backend pool.
+     * Whether to enable health probes to be made against backends defined under backendPools. Health probes can only be
+     * disabled if there is a single enabled backend in single enabled backend pool.
      */
     @JsonProperty(value = "enabledState")
     private HealthProbeEnabled enabledState;

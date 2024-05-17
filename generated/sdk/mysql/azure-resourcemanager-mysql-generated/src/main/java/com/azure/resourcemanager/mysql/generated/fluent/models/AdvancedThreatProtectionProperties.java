@@ -22,7 +22,8 @@ public final class AdvancedThreatProtectionProperties {
     private OffsetDateTime creationTime;
 
     /*
-     * Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled or a state has not been applied yet on the specific database or server.
+     * Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled or a state has not been
+     * applied yet on the specific database or server.
      */
     @JsonProperty(value = "state")
     private AdvancedThreatProtectionState state;

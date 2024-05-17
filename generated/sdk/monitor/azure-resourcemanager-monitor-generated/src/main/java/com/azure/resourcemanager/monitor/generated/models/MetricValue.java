@@ -45,7 +45,8 @@ public final class MetricValue {
     private Double total;
 
     /*
-     * The number of samples in the time range. Can be used to determine the number of values that contributed to the average value.
+     * The number of samples in the time range. Can be used to determine the number of values that contributed to the
+     * average value.
      */
     @JsonProperty(value = "count")
     private Double count;

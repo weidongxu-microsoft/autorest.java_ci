@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.models;
 import com.azure.core.http.rest.PagedIterable;
 import com.azure.core.http.rest.Response;
 import com.azure.core.util.Context;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner;
 
 /**
  * Resource collection API of NetworkVirtualAppliances.
@@ -67,27 +68,28 @@ public interface NetworkVirtualAppliances {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
-     * @param networkVirtualApplianceInstanceIds Specifies a list of virtual machine instance IDs from the Network
-     * Virtual Appliance VM instances.
-     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
+     * @return specifies a list of virtual machine instance IDs from the Network Virtual Appliance VM instances.
      */
-    Response<Void> restartWithResponse(String resourceGroupName, String networkVirtualApplianceName,
-        NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds, Context context);
+    NetworkVirtualApplianceInstanceIds restart(String resourceGroupName, String networkVirtualApplianceName);
 
     /**
      * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
      * 
      * @param resourceGroupName The name of the resource group.
      * @param networkVirtualApplianceName The name of Network Virtual Appliance.
+     * @param networkVirtualApplianceInstanceIds Specifies a list of virtual machine instance IDs from the Network
+     * Virtual Appliance VM instances.
+     * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies a list of virtual machine instance IDs from the Network Virtual Appliance VM instances.
      */
-    void restart(String resourceGroupName, String networkVirtualApplianceName);
+    NetworkVirtualApplianceInstanceIds restart(String resourceGroupName, String networkVirtualApplianceName,
+        NetworkVirtualApplianceInstanceIdsInner networkVirtualApplianceInstanceIds, Context context);
 
     /**
      * Lists all Network Virtual Appliances in a resource group.

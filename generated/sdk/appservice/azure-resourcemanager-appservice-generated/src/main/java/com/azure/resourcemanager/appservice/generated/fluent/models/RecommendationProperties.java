@@ -121,7 +121,8 @@ public final class RecommendationProperties {
     private OffsetDateTime notificationExpirationTime;
 
     /*
-     * Last timestamp in UTC this instance was actually notified. Null means that this recommendation hasn't been notified yet.
+     * Last timestamp in UTC this instance was actually notified. Null means that this recommendation hasn't been
+     * notified yet.
      */
     @JsonProperty(value = "notifiedTime")
     private OffsetDateTime notifiedTime;

@@ -27,13 +27,16 @@ public final class LiveEventInput {
     private LiveEventInputAccessControl accessControl;
 
     /*
-     * ISO 8601 time duration of the key frame interval duration of the input. This value sets the EXT-X-TARGETDURATION property in the HLS output. For example, use PT2S to indicate 2 seconds. Leave the value empty for encoding live events.
+     * ISO 8601 time duration of the key frame interval duration of the input. This value sets the EXT-X-TARGETDURATION
+     * property in the HLS output. For example, use PT2S to indicate 2 seconds. Leave the value empty for encoding live
+     * events.
      */
     @JsonProperty(value = "keyFrameIntervalDuration")
     private String keyFrameIntervalDuration;
 
     /*
-     * A UUID in string form to uniquely identify the stream. This can be specified at creation time but cannot be updated. If omitted, the service will generate a unique value.
+     * A UUID in string form to uniquely identify the stream. This can be specified at creation time but cannot be
+     * updated. If omitted, the service will generate a unique value.
      */
     @JsonProperty(value = "accessToken")
     private String accessToken;

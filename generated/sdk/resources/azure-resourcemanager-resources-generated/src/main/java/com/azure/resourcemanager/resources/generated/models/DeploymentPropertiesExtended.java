@@ -65,13 +65,13 @@ public final class DeploymentPropertiesExtended {
     private TemplateLink templateLink;
 
     /*
-     * Deployment parameters. 
+     * Deployment parameters.
      */
     @JsonProperty(value = "parameters", access = JsonProperty.Access.WRITE_ONLY)
     private Object parameters;
 
     /*
-     * The URI referencing the parameters. 
+     * The URI referencing the parameters.
      */
     @JsonProperty(value = "parametersLink", access = JsonProperty.Access.WRITE_ONLY)
     private ParametersLink parametersLink;

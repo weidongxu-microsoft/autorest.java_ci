@@ -21,7 +21,8 @@ public final class StorageTaskAssignmentsList {
     private List<StorageTaskAssignmentInner> value;
 
     /*
-     * Request URL that can be used to query next page of storage task assignments. Returned when total number of requested storage task assignments exceed maximum page size.
+     * Request URL that can be used to query next page of storage task assignments. Returned when total number of
+     * requested storage task assignments exceed maximum page size.
      */
     @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;

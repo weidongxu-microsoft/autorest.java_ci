@@ -55,13 +55,15 @@ public final class MetricAlertProperties {
     private Duration windowSize;
 
     /*
-     * the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * the resource type of the target resource(s) on which the alert is created/updated. Mandatory if the scope
+     * contains a subscription, resource group, or more than one resource.
      */
     @JsonProperty(value = "targetResourceType")
     private String targetResourceType;
 
     /*
-     * the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a subscription, resource group, or more than one resource.
+     * the region of the target resource(s) on which the alert is created/updated. Mandatory if the scope contains a
+     * subscription, resource group, or more than one resource.
      */
     @JsonProperty(value = "targetResourceRegion")
     private String targetResourceRegion;
@@ -79,7 +81,8 @@ public final class MetricAlertProperties {
     private Boolean autoMitigate;
 
     /*
-     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is
+     * resolved.
      */
     @JsonProperty(value = "actions")
     private List<MetricAlertAction> actions;

@@ -26,7 +26,8 @@ public final class IotHubSkuInfo {
     private IotHubSkuTier tier;
 
     /*
-     * The number of provisioned IoT Hub units. See: https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
+     * The number of provisioned IoT Hub units. See:
+     * https://docs.microsoft.com/azure/azure-subscription-service-limits#iot-hub-limits.
      */
     @JsonProperty(value = "capacity")
     private Long capacity;

@@ -30,7 +30,8 @@ public final class BuiltInStandardEncoderPreset extends Preset {
     private String odataType = "#Microsoft.Media.BuiltInStandardEncoderPreset";
 
     /*
-     * Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and H265ContentAwareEncoding BuiltInStandardEncoderPreset.
+     * Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and
+     * H265ContentAwareEncoding BuiltInStandardEncoderPreset.
      */
     @JsonProperty(value = "configurations")
     private PresetConfigurations configurations;

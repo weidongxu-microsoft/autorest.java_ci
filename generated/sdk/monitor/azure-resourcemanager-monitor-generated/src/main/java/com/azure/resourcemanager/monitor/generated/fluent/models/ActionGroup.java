@@ -31,7 +31,8 @@ public final class ActionGroup {
     private String groupShortName;
 
     /*
-     * Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers will receive communications.
+     * Indicates whether this action group is enabled. If an action group is not enabled, then none of its receivers
+     * will receive communications.
      */
     @JsonProperty(value = "enabled", required = true)
     private boolean enabled;
@@ -91,7 +92,8 @@ public final class ActionGroup {
     private List<AzureFunctionReceiver> azureFunctionReceivers;
 
     /*
-     * The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in roles are supported.
+     * The list of ARM role receivers that are part of this action group. Roles are Azure RBAC roles and only built-in
+     * roles are supported.
      */
     @JsonProperty(value = "armRoleReceivers")
     private List<ArmRoleReceiver> armRoleReceivers;

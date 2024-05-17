@@ -38,7 +38,8 @@ public final class RuleWebhookAction extends RuleAction {
     private String serviceUri;
 
     /*
-     * the dictionary of custom properties to include with the post operation. These data are appended to the webhook payload.
+     * the dictionary of custom properties to include with the post operation. These data are appended to the webhook
+     * payload.
      */
     @JsonProperty(value = "properties")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

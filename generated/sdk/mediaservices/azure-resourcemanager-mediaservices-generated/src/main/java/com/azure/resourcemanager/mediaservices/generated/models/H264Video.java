@@ -45,7 +45,8 @@ public final class H264Video extends Video {
     private H264RateControlMode rateControlMode;
 
     /*
-     * Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false. This flag should be set to true only when the encoder is being configured to produce a single output video.
+     * Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false.
+     * This flag should be set to true only when the encoder is being configured to produce a single output video.
      */
     @JsonProperty(value = "sceneChangeDetection")
     private Boolean sceneChangeDetection;

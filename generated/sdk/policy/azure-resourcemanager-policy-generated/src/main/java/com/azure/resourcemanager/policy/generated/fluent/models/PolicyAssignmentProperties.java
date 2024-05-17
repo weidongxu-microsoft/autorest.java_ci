@@ -56,7 +56,8 @@ public final class PolicyAssignmentProperties {
     private String description;
 
     /*
-     * The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value pairs.
+     * The policy assignment metadata. Metadata is an open ended object and is typically a collection of key value
+     * pairs.
      */
     @JsonProperty(value = "metadata")
     private Object metadata;

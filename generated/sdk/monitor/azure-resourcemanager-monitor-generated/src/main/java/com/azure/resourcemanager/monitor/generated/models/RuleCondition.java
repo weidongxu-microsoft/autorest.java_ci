@@ -29,14 +29,17 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class RuleCondition {
     /*
-     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of
+     * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
+     * ThresholdRuleCondition (based on the threshold of a metric).
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
     private String odataType;
 
     /*
-     * the resource from which the rule collects its data. For this type dataSource will always be of type RuleMetricDataSource.
+     * the resource from which the rule collects its data. For this type dataSource will always be of type
+     * RuleMetricDataSource.
      */
     @JsonProperty(value = "dataSource")
     private RuleDataSource dataSource;

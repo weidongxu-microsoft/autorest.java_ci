@@ -13,7 +13,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ClearKeyEncryptionConfiguration {
     /*
-     * Template for the URL of the custom service delivering content keys to end user players. Not required when using Azure Media Services for issuing licenses. The template supports replaceable tokens that the service will update at runtime with the value specific to the request.  The currently supported token value is {AlternativeMediaId}, which is replaced with the value of StreamingLocatorId.AlternativeMediaId.
+     * Template for the URL of the custom service delivering content keys to end user players. Not required when using
+     * Azure Media Services for issuing licenses. The template supports replaceable tokens that the service will update
+     * at runtime with the value specific to the request. The currently supported token value is {AlternativeMediaId},
+     * which is replaced with the value of StreamingLocatorId.AlternativeMediaId.
      */
     @JsonProperty(value = "customKeysAcquisitionUrlTemplate")
     private String customKeysAcquisitionUrlTemplate;

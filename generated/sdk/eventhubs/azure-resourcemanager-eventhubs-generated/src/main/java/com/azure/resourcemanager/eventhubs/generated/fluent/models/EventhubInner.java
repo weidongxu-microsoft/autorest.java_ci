@@ -9,8 +9,8 @@ import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
+import com.azure.resourcemanager.eventhubs.generated.models.MessageTimestampDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
-import com.azure.resourcemanager.eventhubs.generated.models.TimestampType;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -218,33 +218,25 @@ public final class EventhubInner extends ProxyResource {
     }
 
     /**
-     * Get the messageTimestampType property: Denotes the type of timestamp the message will hold. Two types of
-     * timestamp types AppendTime, CreateTime. AppendTime refers the time in which message got appended inside broker
-     * log. CreateTime refers to the time in which the message was generated on source side and producers can set this
-     * timestamp while sending the message. Default value is AppendTime. If you are using AMQP protocol, CreateTime
-     * equals AppendTime for now and will full have runtime support later.
+     * Get the messageTimestampDescription property: Properties of MessageTimestamp Description.
      * 
-     * @return the messageTimestampType value.
+     * @return the messageTimestampDescription value.
      */
-    public TimestampType messageTimestampType() {
-        return this.innerProperties() == null ? null : this.innerProperties().messageTimestampType();
+    public MessageTimestampDescription messageTimestampDescription() {
+        return this.innerProperties() == null ? null : this.innerProperties().messageTimestampDescription();
     }
 
     /**
-     * Set the messageTimestampType property: Denotes the type of timestamp the message will hold. Two types of
-     * timestamp types AppendTime, CreateTime. AppendTime refers the time in which message got appended inside broker
-     * log. CreateTime refers to the time in which the message was generated on source side and producers can set this
-     * timestamp while sending the message. Default value is AppendTime. If you are using AMQP protocol, CreateTime
-     * equals AppendTime for now and will full have runtime support later.
+     * Set the messageTimestampDescription property: Properties of MessageTimestamp Description.
      * 
-     * @param messageTimestampType the messageTimestampType value to set.
+     * @param messageTimestampDescription the messageTimestampDescription value to set.
      * @return the EventhubInner object itself.
      */
-    public EventhubInner withMessageTimestampType(TimestampType messageTimestampType) {
+    public EventhubInner withMessageTimestampDescription(MessageTimestampDescription messageTimestampDescription) {
         if (this.innerProperties() == null) {
             this.innerProperties = new EventhubProperties();
         }
-        this.innerProperties().withMessageTimestampType(messageTimestampType);
+        this.innerProperties().withMessageTimestampDescription(messageTimestampDescription);
         return this;
     }
 

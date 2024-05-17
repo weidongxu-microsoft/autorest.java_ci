@@ -21,7 +21,8 @@ public final class ResourceUriList {
     private List<String> value;
 
     /*
-     * The uri to fetch the next page of encrypted resources. Call ListNext() with this to fetch the next page of encrypted resources.
+     * The uri to fetch the next page of encrypted resources. Call ListNext() with this to fetch the next page of
+     * encrypted resources.
      */
     @JsonProperty(value = "nextLink")
     private String nextLink;

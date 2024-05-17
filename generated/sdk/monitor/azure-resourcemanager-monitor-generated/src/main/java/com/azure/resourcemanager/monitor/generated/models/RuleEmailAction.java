@@ -27,7 +27,8 @@ public final class RuleEmailAction extends RuleAction {
     private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleEmailAction";
 
     /*
-     * Whether the administrators (service and co-administrators) of the service should be notified when the alert is activated.
+     * Whether the administrators (service and co-administrators) of the service should be notified when the alert is
+     * activated.
      */
     @JsonProperty(value = "sendToServiceOwners")
     private Boolean sendToServiceOwners;

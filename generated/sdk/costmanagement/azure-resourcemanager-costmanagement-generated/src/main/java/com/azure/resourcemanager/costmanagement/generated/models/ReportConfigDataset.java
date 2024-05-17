@@ -22,13 +22,15 @@ public final class ReportConfigDataset {
     private ReportGranularityType granularity;
 
     /*
-     * Has configuration information for the data in the report. The configuration will be ignored if aggregation and grouping are provided.
+     * Has configuration information for the data in the report. The configuration will be ignored if aggregation and
+     * grouping are provided.
      */
     @JsonProperty(value = "configuration")
     private ReportConfigDatasetConfiguration configuration;
 
     /*
-     * Dictionary of aggregation expression to use in the report. The key of each item in the dictionary is the alias for the aggregated column. Report can have up to 2 aggregation clauses.
+     * Dictionary of aggregation expression to use in the report. The key of each item in the dictionary is the alias
+     * for the aggregated column. Report can have up to 2 aggregation clauses.
      */
     @JsonProperty(value = "aggregation")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

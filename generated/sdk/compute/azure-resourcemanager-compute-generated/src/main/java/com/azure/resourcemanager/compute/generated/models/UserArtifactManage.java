@@ -26,7 +26,9 @@ public final class UserArtifactManage {
     private String remove;
 
     /*
-     * Optional. The path and arguments to update the gallery application. If not present, then update operation will invoke remove command on the previous version and install command on the current version of the gallery application. This is limited to 4096 characters.
+     * Optional. The path and arguments to update the gallery application. If not present, then update operation will
+     * invoke remove command on the previous version and install command on the current version of the gallery
+     * application. This is limited to 4096 characters.
      */
     @JsonProperty(value = "update")
     private String update;

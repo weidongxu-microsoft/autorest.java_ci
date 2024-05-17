@@ -20,34 +20,42 @@ public final class CustomDomainConfiguration {
     private String fullyQualifiedDomainName;
 
     /*
-     * Validation state for the custom domain. This is a read only property and is initially set to 'Pending' and will be updated to 'Approved' by Event Grid only after ownership of the domain name has been successfully validated.
+     * Validation state for the custom domain. This is a read only property and is initially set to 'Pending' and will
+     * be updated to 'Approved' by Event Grid only after ownership of the domain name has been successfully validated.
      */
     @JsonProperty(value = "validationState")
     private CustomDomainValidationState validationState;
 
     /*
-     * Identity info for accessing the certificate for the custom domain. This identity info must match an identity that has been set on the namespace.
+     * Identity info for accessing the certificate for the custom domain. This identity info must match an identity that
+     * has been set on the namespace.
      */
     @JsonProperty(value = "identity")
     private CustomDomainIdentity identity;
 
     /*
-     * The URL for the certificate that is used for publishing to the custom domain. We currently support certificates stored in Azure Key Vault only. While certificate URL can be either
-     * versioned URL of the following format https://{key-vault-name}.vault.azure.net/certificates/{certificate-name}/{version-id}, or unversioned URL of the following format (e.g.,
-     * https://contosovault.vault.azure.net/certificates/contosocert, we support unversioned certificate URL only (e.g., https://contosovault.vault.azure.net/certificates/contosocert)
+     * The URL for the certificate that is used for publishing to the custom domain. We currently support certificates
+     * stored in Azure Key Vault only. While certificate URL can be either
+     * versioned URL of the following format
+     * https://{key-vault-name}.vault.azure.net/certificates/{certificate-name}/{version-id}, or unversioned URL of the
+     * following format (e.g.,
+     * https://contosovault.vault.azure.net/certificates/contosocert, we support unversioned certificate URL only (e.g.,
+     * https://contosovault.vault.azure.net/certificates/contosocert)
      */
     @JsonProperty(value = "certificateUrl")
     private String certificateUrl;
 
     /*
-     * Expected DNS TXT record name. Event Grid will check for a TXT record with this name in the DNS record set of the custom domain name to prove ownership over the domain.
+     * Expected DNS TXT record name. Event Grid will check for a TXT record with this name in the DNS record set of the
+     * custom domain name to prove ownership over the domain.
      * The values under this TXT record must contain the expected TXT record value.
      */
     @JsonProperty(value = "expectedTxtRecordName")
     private String expectedTxtRecordName;
 
     /*
-     * Expected DNS TXT record value. Event Grid will check for a TXT record with this value in the DNS record set of the custom domain name to prove ownership over the domain.
+     * Expected DNS TXT record value. Event Grid will check for a TXT record with this value in the DNS record set of
+     * the custom domain name to prove ownership over the domain.
      */
     @JsonProperty(value = "expectedTxtRecordValue")
     private String expectedTxtRecordValue;

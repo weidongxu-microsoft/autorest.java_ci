@@ -31,7 +31,8 @@ public final class NamespaceReplicaLocation {
     private String replicaState;
 
     /*
-     * Optional property that denotes the ARM ID of the Cluster. This is required, if a namespace replica should be placed in a Dedicated Event Hub Cluster
+     * Optional property that denotes the ARM ID of the Cluster. This is required, if a namespace replica should be
+     * placed in a Dedicated Event Hub Cluster
      */
     @JsonProperty(value = "clusterArmId")
     private String clusterArmId;

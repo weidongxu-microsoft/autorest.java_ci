@@ -26,7 +26,8 @@ public final class FunctionsScaleAndConcurrency {
     private Float maximumInstanceCount;
 
     /*
-     * Set the amount of memory allocated to each instance of the function app in MB. CPU and network bandwidth are allocated proportionally.
+     * Set the amount of memory allocated to each instance of the function app in MB. CPU and network bandwidth are
+     * allocated proportionally.
      */
     @JsonProperty(value = "instanceMemoryMB")
     private Float instanceMemoryMB;

@@ -30,7 +30,8 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     private CreateMode createMode = CreateMode.DEFAULT;
 
     /*
-     * The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+     * The administrator's login name of a server. Can only be specified when the server is being created (and is
+     * required for creation).
      */
     @JsonProperty(value = "administratorLogin", required = true)
     private String administratorLogin;

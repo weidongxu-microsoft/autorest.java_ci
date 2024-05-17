@@ -20,7 +20,8 @@ public final class ClientCertificateAuthentication {
     private ClientCertificateValidationScheme validationScheme;
 
     /*
-     * The list of thumbprints that are allowed during client authentication. This property is required only if the validationScheme is 'ThumbprintMatch'.
+     * The list of thumbprints that are allowed during client authentication. This property is required only if the
+     * validationScheme is 'ThumbprintMatch'.
      */
     @JsonProperty(value = "allowedThumbprints")
     private List<String> allowedThumbprints;

@@ -28,13 +28,18 @@ public final class Identity {
     private String tenantId;
 
     /*
-     * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an identity created by the system and a set of user assigned identities. The type 'None' will remove all identities from the service.
+     * The type of identity used for the resource. The type 'SystemAssigned, UserAssigned' includes both an identity
+     * created by the system and a set of user assigned identities. The type 'None' will remove all identities from the
+     * service.
      */
     @JsonProperty(value = "type", required = true)
     private IdentityType type;
 
     /*
-     * The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource IDs in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * The list of user identities associated with the resource. The user identity dictionary key references will be ARM
+     * resource IDs in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
+     * userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

@@ -28,13 +28,16 @@ public final class Notification {
     private OperatorType operator;
 
     /*
-     * Threshold value associated with a notification. Notification is sent when the cost exceeded the threshold. It is always percent and has to be between 0 and 1000.
+     * Threshold value associated with a notification. Notification is sent when the cost exceeded the threshold. It is
+     * always percent and has to be between 0 and 1000.
      */
     @JsonProperty(value = "threshold", required = true)
     private BigDecimal threshold;
 
     /*
-     * Email addresses to send the budget notification to when the threshold is exceeded. Must have at least one contact email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at least one contact email specified.
+     * Email addresses to send the budget notification to when the threshold is exceeded. Must have at least one contact
+     * email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at
+     * least one contact email specified.
      */
     @JsonProperty(value = "contactEmails", required = true)
     private List<String> contactEmails;
@@ -46,7 +49,8 @@ public final class Notification {
     private List<String> contactRoles;
 
     /*
-     * Action groups to send the budget notification to when the threshold is exceeded. Must be provided as a fully qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
+     * Action groups to send the budget notification to when the threshold is exceeded. Must be provided as a fully
+     * qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
      */
     @JsonProperty(value = "contactGroups")
     private List<String> contactGroups;

@@ -4,11 +4,11 @@
 
 package com.azure.resourcemanager.network.generated.models;
 
-import com.azure.core.http.rest.Response;
 import com.azure.core.management.Region;
 import com.azure.core.management.SubResource;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner;
 import java.util.List;
 import java.util.Map;
 
@@ -556,22 +556,23 @@ public interface NetworkVirtualAppliance {
     /**
      * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
      * 
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return specifies a list of virtual machine instance IDs from the Network Virtual Appliance VM instances.
+     */
+    NetworkVirtualApplianceInstanceIds restart();
+
+    /**
+     * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
+     * 
      * @param networkVirtualApplianceInstanceIds Specifies a list of virtual machine instance IDs from the Network
      * Virtual Appliance VM instances.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link Response}.
+     * @return specifies a list of virtual machine instance IDs from the Network Virtual Appliance VM instances.
      */
-    Response<Void> restartWithResponse(NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds,
-        Context context);
-
-    /**
-     * Restarts one or more VMs belonging to the specified Network Virtual Appliance.
-     * 
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     */
-    void restart();
+    NetworkVirtualApplianceInstanceIds
+        restart(NetworkVirtualApplianceInstanceIdsInner networkVirtualApplianceInstanceIds, Context context);
 }

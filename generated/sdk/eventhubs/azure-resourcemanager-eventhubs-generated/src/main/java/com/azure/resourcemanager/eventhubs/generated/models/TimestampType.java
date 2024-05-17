@@ -9,22 +9,21 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
- * Denotes the type of timestamp the message will hold. Two types of timestamp types AppendTime, CreateTime. AppendTime
- * refers the time in which message got appended inside broker log. CreateTime refers to the time in which the message
- * was generated on source side and producers can set this timestamp while sending the message. Default value is
- * AppendTime. If you are using AMQP protocol, CreateTime equals AppendTime for now and will full have runtime support
- * later.
+ * Denotes the type of timestamp the message will hold.Two types of timestamp types - "AppendTime" and "CreateTime".
+ * AppendTime refers the time in which message got appended inside broker log. CreateTime refers to the time in which
+ * the message was generated on source side and producers can set this timestamp while sending the message. Default
+ * value is AppendTime. If you are using AMQP protocol, CreateTime equals AppendTime and its behavior remains the same.
  */
 public final class TimestampType extends ExpandableStringEnum<TimestampType> {
     /**
-     * Static value AppendTime for TimestampType.
+     * Static value LogAppend for TimestampType.
      */
-    public static final TimestampType APPEND_TIME = fromString("AppendTime");
+    public static final TimestampType LOG_APPEND = fromString("LogAppend");
 
     /**
-     * Static value CreateTime for TimestampType.
+     * Static value Create for TimestampType.
      */
-    public static final TimestampType CREATE_TIME = fromString("CreateTime");
+    public static final TimestampType CREATE = fromString("Create");
 
     /**
      * Creates a new instance of TimestampType value.

@@ -18,7 +18,7 @@ import java.util.List;
 @Fluent
 public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     /*
-     * Properties of the remote support  settings.
+     * Properties of the remote support settings.
      */
     @JsonProperty(value = "properties", required = true)
     private DiagnosticRemoteSupportSettingsProperties innerProperties = new DiagnosticRemoteSupportSettingsProperties();

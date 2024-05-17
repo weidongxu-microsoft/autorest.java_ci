@@ -40,7 +40,8 @@ public final class MetricTrigger {
     private String metricResourceLocation;
 
     /*
-     * the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric definitions for the metric. Must be between 12 hours and 1 minute.
+     * the granularity of metrics the rule monitors. Must be one of the predefined values returned from metric
+     * definitions for the metric. Must be between 12 hours and 1 minute.
      */
     @JsonProperty(value = "timeGrain", required = true)
     private Duration timeGrain;
@@ -52,7 +53,8 @@ public final class MetricTrigger {
     private MetricStatisticType statistic;
 
     /*
-     * the range of time in which instance data is collected. This value must be greater than the delay in metric collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
+     * the range of time in which instance data is collected. This value must be greater than the delay in metric
+     * collection, which can vary from resource-to-resource. Must be between 12 hours and 5 minutes.
      */
     @JsonProperty(value = "timeWindow", required = true)
     private Duration timeWindow;
@@ -76,7 +78,9 @@ public final class MetricTrigger {
     private double threshold;
 
     /*
-     * List of dimension conditions. For example: [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":"Equals","Values":["default"]}].
+     * List of dimension conditions. For example:
+     * [{"DimensionName":"AppName","Operator":"Equals","Values":["App1"]},{"DimensionName":"Deployment","Operator":
+     * "Equals","Values":["default"]}].
      */
     @JsonProperty(value = "dimensions")
     private List<ScaleRuleMetricDimension> dimensions;

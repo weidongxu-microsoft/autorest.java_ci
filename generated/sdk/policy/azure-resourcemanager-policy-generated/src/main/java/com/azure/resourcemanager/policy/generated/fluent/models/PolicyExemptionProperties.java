@@ -23,7 +23,8 @@ public final class PolicyExemptionProperties {
     private String policyAssignmentId;
 
     /*
-     * The policy definition reference ID list when the associated policy assignment is an assignment of a policy set definition.
+     * The policy definition reference ID list when the associated policy assignment is an assignment of a policy set
+     * definition.
      */
     @JsonProperty(value = "policyDefinitionReferenceIds")
     private List<String> policyDefinitionReferenceIds;

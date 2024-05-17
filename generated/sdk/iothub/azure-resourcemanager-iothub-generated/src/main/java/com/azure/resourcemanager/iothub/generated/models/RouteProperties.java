@@ -15,7 +15,8 @@ import java.util.List;
 @Fluent
 public final class RouteProperties {
     /*
-     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a maximum length of 64 characters, and must be unique.
+     * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a
+     * maximum length of 64 characters, and must be unique.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -27,13 +28,15 @@ public final class RouteProperties {
     private RoutingSource source;
 
     /*
-     * The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
+     * The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by
+     * default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
      */
     @JsonProperty(value = "condition")
     private String condition;
 
     /*
-     * The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is allowed.
+     * The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is
+     * allowed.
      */
     @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;

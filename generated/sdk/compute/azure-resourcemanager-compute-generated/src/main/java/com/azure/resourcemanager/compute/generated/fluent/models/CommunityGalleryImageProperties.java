@@ -27,19 +27,22 @@ import java.util.Map;
 @Fluent
 public final class CommunityGalleryImageProperties {
     /*
-     * This property allows you to specify the type of the OS that is included in the disk when creating a VM from a managed image. Possible values are: **Windows,** **Linux.**
+     * This property allows you to specify the type of the OS that is included in the disk when creating a VM from a
+     * managed image. Possible values are: **Windows,** **Linux.**
      */
     @JsonProperty(value = "osType", required = true)
     private OperatingSystemTypes osType;
 
     /*
-     * This property allows the user to specify whether the virtual machines created under this image are 'Generalized' or 'Specialized'.
+     * This property allows the user to specify whether the virtual machines created under this image are 'Generalized'
+     * or 'Specialized'.
      */
     @JsonProperty(value = "osState", required = true)
     private OperatingSystemStateTypes osState;
 
     /*
-     * The end of life date of the gallery image definition. This property can be used for decommissioning purposes. This property is updatable.
+     * The end of life date of the gallery image definition. This property can be used for decommissioning purposes.
+     * This property is updatable.
      */
     @JsonProperty(value = "endOfLifeDate")
     private OffsetDateTime endOfLifeDate;
@@ -51,7 +54,8 @@ public final class CommunityGalleryImageProperties {
     private CommunityGalleryImageIdentifier identifier;
 
     /*
-     * The properties describe the recommended machine configuration for this Image Definition. These properties are updatable.
+     * The properties describe the recommended machine configuration for this Image Definition. These properties are
+     * updatable.
      */
     @JsonProperty(value = "recommended")
     private RecommendedMachineConfiguration recommended;

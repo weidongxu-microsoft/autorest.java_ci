@@ -25,7 +25,8 @@ public final class TemplateLink {
     private String id;
 
     /*
-     * Applicable only if this template link references a Template Spec. This relativePath property can optionally be used to reference a Template Spec artifact by path.
+     * Applicable only if this template link references a Template Spec. This relativePath property can optionally be
+     * used to reference a Template Spec artifact by path.
      */
     @JsonProperty(value = "relativePath")
     private String relativePath;

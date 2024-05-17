@@ -17,7 +17,8 @@ import java.util.List;
 @Fluent
 public final class InboundSecurityRuleProperties {
     /*
-     * Rule Type. This should be either AutoExpire or Permanent. Auto Expire Rule only creates NSG rules. Permanent Rule creates NSG rule and SLB LB Rule.
+     * Rule Type. This should be either AutoExpire or Permanent. Auto Expire Rule only creates NSG rules. Permanent Rule
+     * creates NSG rule and SLB LB Rule.
      */
     @JsonProperty(value = "ruleType")
     private InboundSecurityRuleType ruleType;

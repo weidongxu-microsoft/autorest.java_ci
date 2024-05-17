@@ -47,7 +47,8 @@ public final class TimeseriesProperties {
     private TimeseriesType timeseriesType;
 
     /*
-     * The country associated with the Timeseries. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html
+     * The country associated with the Timeseries. Values are country ISO codes as specified here-
+     * https://www.iso.org/iso-3166-country-codes.html
      */
     @JsonProperty(value = "country")
     private String country;

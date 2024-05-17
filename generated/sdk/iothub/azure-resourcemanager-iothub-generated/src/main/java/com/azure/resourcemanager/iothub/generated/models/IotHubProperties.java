@@ -30,7 +30,8 @@ public final class IotHubProperties {
     private Boolean disableLocalAuth;
 
     /*
-     * If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for authentication.
+     * If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for
+     * authentication.
      */
     @JsonProperty(value = "disableDeviceSAS")
     private Boolean disableDeviceSas;
@@ -72,7 +73,8 @@ public final class IotHubProperties {
     private NetworkRuleSetProperties networkRuleSets;
 
     /*
-     * Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS version below 1.2 to be rejected.
+     * Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS
+     * version below 1.2 to be rejected.
      */
     @JsonProperty(value = "minTlsVersion")
     private String minTlsVersion;
@@ -102,20 +104,25 @@ public final class IotHubProperties {
     private String hostname;
 
     /*
-     * The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has to be present in the dictionary while making create or update calls for the IoT hub.
+     * The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has
+     * to be present in the dictionary while making create or update calls for the IoT hub.
      */
     @JsonProperty(value = "eventHubEndpoints")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, EventHubProperties> eventHubEndpoints;
 
     /*
-     * The routing related properties of the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging
+     * The routing related properties of the IoT hub. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging
      */
     @JsonProperty(value = "routing")
     private RoutingProperties routing;
 
     /*
-     * The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to True, causes an error to be thrown.
+     * The list of Azure Storage endpoints where you can upload files. Currently you can configure only one Azure
+     * Storage account and that MUST have its key as $default. Specifying more than one storage account causes an error
+     * to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to
+     * True, causes an error to be thrown.
      */
     @JsonProperty(value = "storageEndpoints")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

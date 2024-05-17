@@ -20,7 +20,8 @@ public final class UpdateTopicSpacesConfigurationInfo {
     private TopicSpacesConfigurationState state;
 
     /*
-     * This property is used to specify custom topic to which events will be routed to from topic spaces configuration under namespace.
+     * This property is used to specify custom topic to which events will be routed to from topic spaces configuration
+     * under namespace.
      */
     @JsonProperty(value = "routeTopicResourceId")
     private String routeTopicResourceId;

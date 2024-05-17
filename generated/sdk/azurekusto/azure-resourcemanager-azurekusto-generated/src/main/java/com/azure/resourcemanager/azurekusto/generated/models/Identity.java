@@ -28,13 +28,17 @@ public final class Identity {
     private String tenantId;
 
     /*
-     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user-assigned identities. The type 'None' will remove all identities.
+     * The type of managed identity used. The type 'SystemAssigned, UserAssigned' includes both an implicitly created
+     * identity and a set of user-assigned identities. The type 'None' will remove all identities.
      */
     @JsonProperty(value = "type", required = true)
     private IdentityType type;
 
     /*
-     * The list of user identities associated with the Kusto cluster. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+     * The list of user identities associated with the Kusto cluster. The user identity dictionary key references will
+     * be ARM resource ids in the form:
+     * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/
+     * userAssignedIdentities/{identityName}'.
      */
     @JsonProperty(value = "userAssignedIdentities")
     @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)

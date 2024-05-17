@@ -39,7 +39,8 @@ public final class PolicySettings {
     private Integer customBlockResponseStatusCode;
 
     /*
-     * If the action type is block, customer can override the response body. The body must be specified in base64 encoding.
+     * If the action type is block, customer can override the response body. The body must be specified in base64
+     * encoding.
      */
     @JsonProperty(value = "customBlockResponseBody")
     private String customBlockResponseBody;
@@ -51,7 +52,8 @@ public final class PolicySettings {
     private PolicyRequestBodyCheck requestBodyCheck;
 
     /*
-     * Defines the JavaScript challenge cookie validity lifetime in minutes. This setting is only applicable to Premium_AzureFrontDoor. Value must be an integer between 5 and 1440 with the default value being 30.
+     * Defines the JavaScript challenge cookie validity lifetime in minutes. This setting is only applicable to
+     * Premium_AzureFrontDoor. Value must be an integer between 5 and 1440 with the default value being 30.
      */
     @JsonProperty(value = "javascriptChallengeExpirationInMinutes")
     private Integer javascriptChallengeExpirationInMinutes;

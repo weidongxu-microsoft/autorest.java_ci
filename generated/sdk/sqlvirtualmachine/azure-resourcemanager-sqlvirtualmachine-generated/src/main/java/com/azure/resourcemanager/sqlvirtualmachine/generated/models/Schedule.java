@@ -25,7 +25,8 @@ public final class Schedule {
     private Integer weeklyInterval;
 
     /*
-     * Occurrence of the DayOfWeek day within a month to schedule assessment. Takes values: 1,2,3,4 and -1. Use -1 for last DayOfWeek day of the month
+     * Occurrence of the DayOfWeek day within a month to schedule assessment. Takes values: 1,2,3,4 and -1. Use -1 for
+     * last DayOfWeek day of the month
      */
     @JsonProperty(value = "monthlyOccurrence")
     private Integer monthlyOccurrence;

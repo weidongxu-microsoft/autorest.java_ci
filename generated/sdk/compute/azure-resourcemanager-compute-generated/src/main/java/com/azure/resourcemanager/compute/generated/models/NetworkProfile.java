@@ -20,7 +20,8 @@ public final class NetworkProfile {
     private List<NetworkInterfaceReference> networkInterfaces;
 
     /*
-     * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface Configurations
+     * specifies the Microsoft.Network API version used when creating networking resources in the Network Interface
+     * Configurations
      */
     @JsonProperty(value = "networkApiVersion")
     private NetworkApiVersion networkApiVersion;

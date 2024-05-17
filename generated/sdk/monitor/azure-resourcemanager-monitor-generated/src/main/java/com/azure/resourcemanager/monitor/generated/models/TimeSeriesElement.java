@@ -20,7 +20,8 @@ public final class TimeSeriesElement {
     private List<MetadataValue> metadatavalues;
 
     /*
-     * An array of data points representing the metric values.  This is only returned if a result type of data is specified.
+     * An array of data points representing the metric values. This is only returned if a result type of data is
+     * specified.
      */
     @JsonProperty(value = "data")
     private List<MetricValue> data;

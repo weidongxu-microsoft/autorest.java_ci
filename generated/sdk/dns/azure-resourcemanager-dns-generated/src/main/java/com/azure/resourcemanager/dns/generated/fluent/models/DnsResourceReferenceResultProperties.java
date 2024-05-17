@@ -16,7 +16,8 @@ import java.util.List;
 @Fluent
 public final class DnsResourceReferenceResultProperties {
     /*
-     * The result of dns resource reference request. A list of dns resource references for each of the azure resource in the request
+     * The result of dns resource reference request. A list of dns resource references for each of the azure resource in
+     * the request
      */
     @JsonProperty(value = "dnsResourceReferences")
     private List<DnsResourceReference> dnsResourceReferences;

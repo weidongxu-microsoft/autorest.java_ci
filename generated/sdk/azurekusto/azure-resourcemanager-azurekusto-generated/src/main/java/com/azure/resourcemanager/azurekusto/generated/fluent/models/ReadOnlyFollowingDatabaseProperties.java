@@ -80,7 +80,8 @@ public final class ReadOnlyFollowingDatabaseProperties {
     private DatabaseShareOrigin databaseShareOrigin;
 
     /*
-     * The database suspension details. If the database is suspended, this object contains information related to the database's suspension state.
+     * The database suspension details. If the database is suspended, this object contains information related to the
+     * database's suspension state.
      */
     @JsonProperty(value = "suspensionDetails", access = JsonProperty.Access.WRITE_ONLY)
     private SuspensionDetails suspensionDetails;

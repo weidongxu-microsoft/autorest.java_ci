@@ -18,7 +18,8 @@ import java.util.Map;
 @Fluent
 public final class QueryResultInner extends ProxyResource {
     /*
-     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user is updating the latest version or not.
+     * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
+     * is updating the latest version or not.
      */
     @JsonProperty(value = "eTag")
     private String etag;

@@ -20,13 +20,15 @@ public final class ScriptProperties {
     private String scriptUrl;
 
     /*
-     * The SaS token that provide read access to the file which contain the script. Must be provided when using scriptUrl property.
+     * The SaS token that provide read access to the file which contain the script. Must be provided when using
+     * scriptUrl property.
      */
     @JsonProperty(value = "scriptUrlSasToken")
     private String scriptUrlSasToken;
 
     /*
-     * The script content. This property should be used when the script is provide inline and not through file in a SA. Must not be used together with scriptUrl and scriptUrlSasToken properties.
+     * The script content. This property should be used when the script is provide inline and not through file in a SA.
+     * Must not be used together with scriptUrl and scriptUrlSasToken properties.
      */
     @JsonProperty(value = "scriptContent")
     private String scriptContent;

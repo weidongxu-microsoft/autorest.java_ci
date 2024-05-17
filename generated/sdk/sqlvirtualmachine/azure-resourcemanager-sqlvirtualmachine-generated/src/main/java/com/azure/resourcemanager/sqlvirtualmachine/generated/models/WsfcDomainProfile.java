@@ -31,7 +31,8 @@ public final class WsfcDomainProfile {
     private String clusterBootstrapAccount;
 
     /*
-     * Account name used for operating cluster i.e. will be part of administrators group on all the participating virtual machines in the cluster.
+     * Account name used for operating cluster i.e. will be part of administrators group on all the participating
+     * virtual machines in the cluster.
      */
     @JsonProperty(value = "clusterOperatorAccount")
     private String clusterOperatorAccount;

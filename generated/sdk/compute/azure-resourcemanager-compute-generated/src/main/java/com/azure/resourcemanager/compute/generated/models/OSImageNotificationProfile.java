@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class OSImageNotificationProfile {
     /*
-     * Length of time a Virtual Machine being reimaged or having its OS upgraded will have to potentially approve the OS Image Scheduled Event before the event is auto approved (timed out). The configuration is specified in ISO 8601 format, and the value must be 15 minutes (PT15M)
+     * Length of time a Virtual Machine being reimaged or having its OS upgraded will have to potentially approve the OS
+     * Image Scheduled Event before the event is auto approved (timed out). The configuration is specified in ISO 8601
+     * format, and the value must be 15 minutes (PT15M)
      */
     @JsonProperty(value = "notBeforeTimeout")
     private String notBeforeTimeout;

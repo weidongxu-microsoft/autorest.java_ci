@@ -33,7 +33,8 @@ public final class DiskEncryptionSetUpdateProperties {
     private Boolean rotationToLatestKeyVersionEnabled;
 
     /*
-     * Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will clear the property.
+     * Multi-tenant application client id to access key vault in a different tenant. Setting the value to 'None' will
+     * clear the property.
      */
     @JsonProperty(value = "federatedClientId")
     private String federatedClientId;

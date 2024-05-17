@@ -19,13 +19,15 @@ public final class ComponentPurgeBodyFilters {
     private String column;
 
     /*
-     * A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >, >=, <, <=, between, and have the same behavior as they would in a KQL query.
+     * A query operator to evaluate over the provided column and value(s). Supported operators are ==, =~, in, in~, >,
+     * >=, <, <=, between, and have the same behavior as they would in a KQL query.
      */
     @JsonProperty(value = "operator")
     private String operator;
 
     /*
-     * the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >= '2017-09-01') or array of values.
+     * the value for the operator to function over. This can be a number (e.g., > 100), a string (timestamp >=
+     * '2017-09-01') or array of values.
      */
     @JsonProperty(value = "value")
     private Object value;

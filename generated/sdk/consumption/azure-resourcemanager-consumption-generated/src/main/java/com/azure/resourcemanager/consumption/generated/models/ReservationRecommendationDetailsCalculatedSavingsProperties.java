@@ -49,7 +49,8 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
     private Float reservedUnitCount;
 
     /*
-     * The amount saved by purchasing the recommended quantity of reservation. This is equal to onDemandCost - totalReservationCost.
+     * The amount saved by purchasing the recommended quantity of reservation. This is equal to onDemandCost -
+     * totalReservationCost.
      */
     @JsonProperty(value = "savings", access = JsonProperty.Access.WRITE_ONLY)
     private Float savings;

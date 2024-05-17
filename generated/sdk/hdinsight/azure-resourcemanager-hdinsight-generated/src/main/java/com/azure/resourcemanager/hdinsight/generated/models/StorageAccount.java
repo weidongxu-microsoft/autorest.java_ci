@@ -49,7 +49,8 @@ public final class StorageAccount {
     private String resourceId;
 
     /*
-     * The managed identity (MSI) that is allowed to access the storage account, only to be specified for Azure Data Lake Storage Gen 2.
+     * The managed identity (MSI) that is allowed to access the storage account, only to be specified for Azure Data
+     * Lake Storage Gen 2.
      */
     @JsonProperty(value = "msiResourceId")
     private String msiResourceId;
@@ -67,7 +68,8 @@ public final class StorageAccount {
     private String fileshare;
 
     /*
-     * Enable secure channel or not, it's an optional field. Default value is false when cluster version < 5.1 and true when cluster version >= 5.1 , 
+     * Enable secure channel or not, it's an optional field. Default value is false when cluster version < 5.1 and true
+     * when cluster version >= 5.1 ,
      */
     @JsonProperty(value = "enableSecureChannel")
     private Boolean enableSecureChannel;

@@ -20,7 +20,8 @@ public final class DataDisksToDetach {
     private String diskId;
 
     /*
-     * Supported options available for Detach of a disk from a VM. Refer to DetachOption object reference for more details.
+     * Supported options available for Detach of a disk from a VM. Refer to DetachOption object reference for more
+     * details.
      */
     @JsonProperty(value = "detachOption")
     private DiskDetachOptionTypes detachOption;

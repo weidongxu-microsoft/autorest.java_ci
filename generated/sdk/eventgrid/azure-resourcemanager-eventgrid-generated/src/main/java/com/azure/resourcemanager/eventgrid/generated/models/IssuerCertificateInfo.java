@@ -14,7 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class IssuerCertificateInfo {
     /*
-     * Keyvault certificate URL in https://keyvaultname.vault.azure.net/certificates/certificateName/certificateVersion format.
+     * Keyvault certificate URL in https://keyvaultname.vault.azure.net/certificates/certificateName/certificateVersion
+     * format.
      */
     @JsonProperty(value = "certificateUrl", required = true)
     private String certificateUrl;

@@ -21,7 +21,8 @@ public final class BlobInventoryPolicySchema {
     private boolean enabled;
 
     /*
-     * Deprecated Property from API version 2021-04-01 onwards, the required destination container name must be specified at the rule level 'policy.rule.destination'
+     * Deprecated Property from API version 2021-04-01 onwards, the required destination container name must be
+     * specified at the rule level 'policy.rule.destination'
      */
     @JsonProperty(value = "destination", access = JsonProperty.Access.WRITE_ONLY)
     private String destination;

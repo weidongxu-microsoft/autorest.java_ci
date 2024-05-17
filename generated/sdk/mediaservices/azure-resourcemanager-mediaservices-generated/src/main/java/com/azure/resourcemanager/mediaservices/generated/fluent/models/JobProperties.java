@@ -58,7 +58,8 @@ public final class JobProperties {
     private List<JobOutput> outputs;
 
     /*
-     * Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs. If not set, the default is normal.
+     * Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs.
+     * If not set, the default is normal.
      */
     @JsonProperty(value = "priority")
     private Priority priority;

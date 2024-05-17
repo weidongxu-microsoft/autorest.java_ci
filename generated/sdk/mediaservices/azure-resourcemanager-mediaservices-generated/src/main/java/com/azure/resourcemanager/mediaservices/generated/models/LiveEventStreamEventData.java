@@ -13,7 +13,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LiveEventStreamEventData {
     /*
-     * Name of the track. 
+     * Name of the track.
      */
     @JsonProperty(value = "trackName")
     private String trackName;

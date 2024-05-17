@@ -35,19 +35,23 @@ public final class ManagedHsmProperties {
     private String hsmUri;
 
     /*
-     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is enabled by default for all managed HSMs and is immutable.
+     * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is
+     * enabled by default for all managed HSMs and is immutable.
      */
     @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
 
     /*
-     * Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured retention period or for a default period of 90 days. It accepts values between 7 and 90.
+     * Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured
+     * retention period or for a default period of 90 days. It accepts values between 7 and 90.
      */
     @JsonProperty(value = "softDeleteRetentionInDays")
     private Integer softDeleteRetentionInDays;
 
     /*
-     * Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
+     * Property specifying whether protection against purge is enabled for this managed HSM pool. Setting this property
+     * to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM
+     * service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
      */
     @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;

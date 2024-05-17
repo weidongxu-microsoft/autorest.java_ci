@@ -13,7 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Digest {
     /*
-     * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See: https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
+     * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See:
+     * https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
      */
     @JsonProperty(value = "algorithmType")
     private Integer algorithmType;

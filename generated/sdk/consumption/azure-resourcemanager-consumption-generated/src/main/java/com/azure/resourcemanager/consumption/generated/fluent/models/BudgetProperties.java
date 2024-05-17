@@ -36,13 +36,17 @@ public final class BudgetProperties {
     private BigDecimal amount;
 
     /*
-     * The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth, BillingQuarter, and BillingAnnual are only supported by WD customers
+     * The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth,
+     * BillingQuarter, and BillingAnnual are only supported by WD customers
      */
     @JsonProperty(value = "timeGrain", required = true)
     private TimeGrainType timeGrain;
 
     /*
-     * Has start and end date of the budget. The start date must be first of the month and should be less than the end date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve months. Past start date should  be selected within the timegrain period. There are no restrictions on the end date.
+     * Has start and end date of the budget. The start date must be first of the month and should be less than the end
+     * date. Budget start date must be on or after June 1, 2017. Future start date should not be more than twelve
+     * months. Past start date should be selected within the timegrain period. There are no restrictions on the end
+     * date.
      */
     @JsonProperty(value = "timePeriod", required = true)
     private BudgetTimePeriod timePeriod;

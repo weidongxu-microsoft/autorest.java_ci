@@ -61,13 +61,15 @@ public final class IotHubConnectionProperties {
     private String sharedAccessPolicyName;
 
     /*
-     * Indication for database routing information from the data connection, by default only database routing information is allowed
+     * Indication for database routing information from the data connection, by default only database routing
+     * information is allowed
      */
     @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;
 
     /*
-     * When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It can only retrieve events retained by the Event hub, based on its retention period.
+     * When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It
+     * can only retrieve events retained by the Event hub, based on its retention period.
      */
     @JsonProperty(value = "retrievalStartDate")
     private OffsetDateTime retrievalStartDate;

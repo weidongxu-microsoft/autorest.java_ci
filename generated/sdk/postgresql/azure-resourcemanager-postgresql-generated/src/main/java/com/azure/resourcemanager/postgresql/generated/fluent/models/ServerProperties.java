@@ -23,7 +23,8 @@ import java.util.List;
 @Fluent
 public final class ServerProperties {
     /*
-     * The administrator's login name of a server. Can only be specified when the server is being created (and is required for creation).
+     * The administrator's login name of a server. Can only be specified when the server is being created (and is
+     * required for creation).
      */
     @JsonProperty(value = "administratorLogin")
     private String administratorLogin;
@@ -101,7 +102,8 @@ public final class ServerProperties {
     private Integer replicaCapacity;
 
     /*
-     * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be 'Enabled' or 'Disabled'
+     * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be
+     * 'Enabled' or 'Disabled'
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessEnum publicNetworkAccess;

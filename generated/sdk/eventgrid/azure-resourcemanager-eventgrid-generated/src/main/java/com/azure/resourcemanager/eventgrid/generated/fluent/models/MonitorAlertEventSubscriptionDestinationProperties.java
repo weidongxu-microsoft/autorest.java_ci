@@ -29,7 +29,9 @@ public final class MonitorAlertEventSubscriptionDestinationProperties {
 
     /*
      * The list of ARM Ids of Action Groups that will be triggered on every Alert fired through this event subscription.
-     * Each resource ARM Id should follow this pattern: /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Insights/actionGroups/{ActionGroupName}.
+     * Each resource ARM Id should follow this pattern:
+     * /subscriptions/{AzureSubscriptionId}/resourceGroups/{ResourceGroupName}/providers/Microsoft.Insights/actionGroups
+     * /{ActionGroupName}.
      */
     @JsonProperty(value = "actionGroups")
     private List<String> actionGroups;

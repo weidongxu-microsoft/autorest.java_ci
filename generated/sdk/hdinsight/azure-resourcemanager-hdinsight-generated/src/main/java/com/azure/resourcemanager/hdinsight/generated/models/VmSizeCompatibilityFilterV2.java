@@ -59,13 +59,15 @@ public final class VmSizeCompatibilityFilterV2 {
     private List<String> vmSizes;
 
     /*
-     * Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for non-ESP, null or empty string or others mean for both.
+     * Whether apply for ESP cluster. 'true' means only for ESP, 'false' means only for non-ESP, null or empty string or
+     * others mean for both.
      */
     @JsonProperty(value = "espApplied")
     private String espApplied;
 
     /*
-     * Whether support compute isolation. 'true' means only for ComputeIsolationEnabled, 'false' means only for regular cluster.
+     * Whether support compute isolation. 'true' means only for ComputeIsolationEnabled, 'false' means only for regular
+     * cluster.
      */
     @JsonProperty(value = "computeIsolationSupported")
     private String computeIsolationSupported;

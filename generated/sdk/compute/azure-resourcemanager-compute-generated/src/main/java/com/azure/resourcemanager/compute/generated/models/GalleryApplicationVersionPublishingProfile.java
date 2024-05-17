@@ -30,7 +30,8 @@ public final class GalleryApplicationVersionPublishingProfile extends GalleryArt
     private UserArtifactManage manageActions;
 
     /*
-     * Additional settings for the VM app that contains the target package and config file name when it is deployed to target VM or VM scale set.
+     * Additional settings for the VM app that contains the target package and config file name when it is deployed to
+     * target VM or VM scale set.
      */
     @JsonProperty(value = "settings")
     private UserArtifactSettings settings;

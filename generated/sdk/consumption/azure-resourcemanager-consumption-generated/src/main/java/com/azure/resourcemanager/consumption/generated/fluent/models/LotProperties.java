@@ -20,7 +20,8 @@ import java.time.OffsetDateTime;
 @Immutable
 public final class LotProperties {
     /*
-     * The original amount of a lot, Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment
+     * The original amount of a lot, Note: This will not be returned for Contributor Organization Type in Multi-Entity
+     * consumption commitment
      */
     @JsonProperty(value = "originalAmount", access = JsonProperty.Access.WRITE_ONLY)
     private Amount originalAmount;
@@ -50,7 +51,8 @@ public final class LotProperties {
     private OffsetDateTime expirationDate;
 
     /*
-     * The po number of the invoice on which the lot was added. This property is not available for ConsumptionCommitment lots.
+     * The po number of the invoice on which the lot was added. This property is not available for ConsumptionCommitment
+     * lots.
      */
     @JsonProperty(value = "poNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String poNumber;
@@ -80,7 +82,8 @@ public final class LotProperties {
     private String billingCurrency;
 
     /*
-     * The original amount of a lot in billing currency,  Note: This will not be returned for Contributor Organization Type in Multi-Entity consumption commitment
+     * The original amount of a lot in billing currency, Note: This will not be returned for Contributor Organization
+     * Type in Multi-Entity consumption commitment
      */
     @JsonProperty(value = "originalAmountInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate originalAmountInBillingCurrency;

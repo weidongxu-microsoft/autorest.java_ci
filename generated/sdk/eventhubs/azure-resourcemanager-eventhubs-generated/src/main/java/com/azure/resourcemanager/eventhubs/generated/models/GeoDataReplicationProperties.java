@@ -14,7 +14,9 @@ import java.util.List;
 @Fluent
 public final class GeoDataReplicationProperties {
     /*
-     * The maximum acceptable lag for data replication operations from the primary replica to a quorum of secondary replicas.  When the lag exceeds the configured amount, operations on the primary replica will be failed. The allowed values are 0 and 5 minutes to 1 day.
+     * The maximum acceptable lag for data replication operations from the primary replica to a quorum of secondary
+     * replicas. When the lag exceeds the configured amount, operations on the primary replica will be failed. The
+     * allowed values are 0 and 5 minutes to 1 day.
      */
     @JsonProperty(value = "maxReplicationLagDurationInSeconds")
     private Integer maxReplicationLagDurationInSeconds;

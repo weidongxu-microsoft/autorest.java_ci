@@ -13,7 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class Network {
     /*
-     * Whether or not public network access is allowed for this server. Value is 'Disabled' when server has VNet integration.
+     * Whether or not public network access is allowed for this server. Value is 'Disabled' when server has VNet
+     * integration.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private EnableStatusEnum publicNetworkAccess;

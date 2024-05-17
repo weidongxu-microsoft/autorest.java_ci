@@ -50,7 +50,14 @@ public final class VirtualMachineScaleSetVMProfile {
     private VirtualMachineScaleSetExtensionProfile extensionProfile;
 
     /*
-     * Specifies that the image or disk that is being used was licensed on-premises. <br><br> Possible values for Windows Server operating system are: <br><br> Windows_Client <br><br> Windows_Server <br><br> Possible values for Linux Server operating system are: <br><br> RHEL_BYOS (for RHEL) <br><br> SLES_BYOS (for SUSE) <br><br> For more information, see [Azure Hybrid Use Benefit for Windows Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) <br><br> [Azure Hybrid Use Benefit for Linux Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) <br><br> Minimum api-version: 2015-06-15
+     * Specifies that the image or disk that is being used was licensed on-premises. <br><br> Possible values for
+     * Windows Server operating system are: <br><br> Windows_Client <br><br> Windows_Server <br><br> Possible values for
+     * Linux Server operating system are: <br><br> RHEL_BYOS (for RHEL) <br><br> SLES_BYOS (for SUSE) <br><br> For more
+     * information, see [Azure Hybrid Use Benefit for Windows
+     * Server](https://docs.microsoft.com/azure/virtual-machines/windows/hybrid-use-benefit-licensing) <br><br> [Azure
+     * Hybrid Use Benefit for Linux
+     * Server](https://docs.microsoft.com/azure/virtual-machines/linux/azure-hybrid-benefit-linux) <br><br> Minimum
+     * api-version: 2015-06-15
      */
     @JsonProperty(value = "licenseType")
     private String licenseType;
@@ -62,7 +69,9 @@ public final class VirtualMachineScaleSetVMProfile {
     private VirtualMachinePriorityTypes priority;
 
     /*
-     * Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
+     * Specifies the eviction policy for the Azure Spot virtual machine and Azure Spot scale set. For Azure Spot virtual
+     * machines, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2019-03-01. For Azure Spot
+     * scale sets, both 'Deallocate' and 'Delete' are supported and the minimum api-version is 2017-10-30-preview.
      */
     @JsonProperty(value = "evictionPolicy")
     private VirtualMachineEvictionPolicyTypes evictionPolicy;
@@ -80,7 +89,8 @@ public final class VirtualMachineScaleSetVMProfile {
     private ScheduledEventsProfile scheduledEventsProfile;
 
     /*
-     * UserData for the virtual machines in the scale set, which must be base-64 encoded. Customer should not pass any secrets in here. Minimum api-version: 2021-03-01.
+     * UserData for the virtual machines in the scale set, which must be base-64 encoded. Customer should not pass any
+     * secrets in here. Minimum api-version: 2021-03-01.
      */
     @JsonProperty(value = "userData")
     private String userData;
@@ -104,19 +114,23 @@ public final class VirtualMachineScaleSetVMProfile {
     private VirtualMachineScaleSetHardwareProfile hardwareProfile;
 
     /*
-     * Specifies the service artifact reference id used to set same image version for all virtual machines in the scale set when using 'latest' image version. Minimum api-version: 2022-11-01
+     * Specifies the service artifact reference id used to set same image version for all virtual machines in the scale
+     * set when using 'latest' image version. Minimum api-version: 2022-11-01
      */
     @JsonProperty(value = "serviceArtifactReference")
     private ServiceArtifactReference serviceArtifactReference;
 
     /*
-     * Specifies the security posture to be used for all virtual machines in the scale set. Minimum api-version: 2023-03-01
+     * Specifies the security posture to be used for all virtual machines in the scale set. Minimum api-version:
+     * 2023-03-01
      */
     @JsonProperty(value = "securityPostureReference")
     private SecurityPostureReference securityPostureReference;
 
     /*
-     * Specifies the time in which this VM profile for the Virtual Machine Scale Set was created. Minimum API version for this property is 2024-03-01. This value will be added to VMSS Flex VM tags when creating/updating the VMSS VM Profile with minimum api-version 2024-03-01.
+     * Specifies the time in which this VM profile for the Virtual Machine Scale Set was created. Minimum API version
+     * for this property is 2024-03-01. This value will be added to VMSS Flex VM tags when creating/updating the VMSS VM
+     * Profile with minimum api-version 2024-03-01.
      */
     @JsonProperty(value = "timeCreated", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime timeCreated;

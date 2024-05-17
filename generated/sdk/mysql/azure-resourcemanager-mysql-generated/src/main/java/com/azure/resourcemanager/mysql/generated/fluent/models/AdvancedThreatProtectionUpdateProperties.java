@@ -15,7 +15,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class AdvancedThreatProtectionUpdateProperties {
     /*
-     * Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled or a state has not been applied yet on the specific database or server.
+     * Specifies the state of the Advanced Threat Protection, whether it is enabled or disabled or a state has not been
+     * applied yet on the specific database or server.
      */
     @JsonProperty(value = "state", required = true)
     private AdvancedThreatProtectionState state;

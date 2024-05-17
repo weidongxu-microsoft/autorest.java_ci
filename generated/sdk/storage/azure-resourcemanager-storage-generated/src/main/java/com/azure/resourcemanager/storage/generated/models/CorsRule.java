@@ -15,7 +15,8 @@ import java.util.List;
 @Fluent
 public final class CorsRule {
     /*
-     * Required if CorsRule element is present. A list of origin domains that will be allowed via CORS, or "*" to allow all domains
+     * Required if CorsRule element is present. A list of origin domains that will be allowed via CORS, or "*" to allow
+     * all domains
      */
     @JsonProperty(value = "allowedOrigins", required = true)
     private List<String> allowedOrigins;
@@ -27,7 +28,8 @@ public final class CorsRule {
     private List<AllowedMethods> allowedMethods;
 
     /*
-     * Required if CorsRule element is present. The number of seconds that the client/browser should cache a preflight response.
+     * Required if CorsRule element is present. The number of seconds that the client/browser should cache a preflight
+     * response.
      */
     @JsonProperty(value = "maxAgeInSeconds", required = true)
     private int maxAgeInSeconds;

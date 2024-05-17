@@ -23,7 +23,8 @@ public final class BackupRequestProperties {
     private String backupName;
 
     /*
-     * True if the backup schedule is enabled (must be included in that case), false if the backup schedule should be disabled.
+     * True if the backup schedule is enabled (must be included in that case), false if the backup schedule should be
+     * disabled.
      */
     @JsonProperty(value = "enabled")
     private Boolean enabled;

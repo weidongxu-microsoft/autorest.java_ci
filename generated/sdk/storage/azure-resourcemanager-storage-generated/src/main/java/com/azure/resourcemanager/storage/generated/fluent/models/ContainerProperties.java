@@ -108,19 +108,24 @@ public final class ContainerProperties {
     private LegalHoldProperties legalHold;
 
     /*
-     * The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of 1000 blob containers with hasLegalHold=true for a given account.
+     * The hasLegalHold public property is set to true by SRP if there are at least one existing tag. The hasLegalHold
+     * public property is set to false by SRP if all existing legal hold tags are cleared out. There can be a maximum of
+     * 1000 blob containers with hasLegalHold=true for a given account.
      */
     @JsonProperty(value = "hasLegalHold", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean hasLegalHold;
 
     /*
-     * The hasImmutabilityPolicy public property is set to true by SRP if ImmutabilityPolicy has been created for this container. The hasImmutabilityPolicy public property is set to false by SRP if ImmutabilityPolicy has not been created for this container.
+     * The hasImmutabilityPolicy public property is set to true by SRP if ImmutabilityPolicy has been created for this
+     * container. The hasImmutabilityPolicy public property is set to false by SRP if ImmutabilityPolicy has not been
+     * created for this container.
      */
     @JsonProperty(value = "hasImmutabilityPolicy", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean hasImmutabilityPolicy;
 
     /*
-     * The object level immutability property of the container. The property is immutable and can only be set to true at the container creation time. Existing containers must undergo a migration process.
+     * The object level immutability property of the container. The property is immutable and can only be set to true at
+     * the container creation time. Existing containers must undergo a migration process.
      */
     @JsonProperty(value = "immutableStorageWithVersioning")
     private ImmutableStorageWithVersioning immutableStorageWithVersioning;

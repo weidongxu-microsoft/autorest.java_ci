@@ -55,7 +55,8 @@ public final class PartnerTopicProperties {
     private PartnerTopicActivationState activationState;
 
     /*
-     * Friendly description about the topic. This can be set by the publisher/partner to show custom description for the customer partner topic.
+     * Friendly description about the topic. This can be set by the publisher/partner to show custom description for the
+     * customer partner topic.
      * This will be helpful to remove any ambiguity of the origin of creation of the partner topic for the customer.
      */
     @JsonProperty(value = "partnerTopicFriendlyDescription")

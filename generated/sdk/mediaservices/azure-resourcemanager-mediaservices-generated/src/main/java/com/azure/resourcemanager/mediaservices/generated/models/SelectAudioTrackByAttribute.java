@@ -42,7 +42,8 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     private AttributeFilter filter;
 
     /*
-     * The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property.
+     * The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is specified for the Filter
+     * property.
      */
     @JsonProperty(value = "filterValue")
     private String filterValue;

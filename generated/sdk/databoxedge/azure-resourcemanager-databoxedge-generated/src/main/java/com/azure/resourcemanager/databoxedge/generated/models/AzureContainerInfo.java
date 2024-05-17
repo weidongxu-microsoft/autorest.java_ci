@@ -20,7 +20,8 @@ public final class AzureContainerInfo {
     private String storageAccountCredentialId;
 
     /*
-     * Container name (Based on the data format specified, this represents the name of Azure Files/Page blob/Block blob).
+     * Container name (Based on the data format specified, this represents the name of Azure Files/Page blob/Block
+     * blob).
      */
     @JsonProperty(value = "containerName", required = true)
     private String containerName;

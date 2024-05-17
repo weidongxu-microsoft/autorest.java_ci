@@ -95,8 +95,9 @@ public final class DomainProperties {
     private Boolean autoRenew;
 
     /*
-     * <code>true</code> if Azure can assign this domain to App Service apps; otherwise, <code>false</code>. This value will be <code>true</code> if domain registration status is active and 
-     *  it is hosted on name servers Azure has programmatic access to.
+     * <code>true</code> if Azure can assign this domain to App Service apps; otherwise, <code>false</code>. This value
+     * will be <code>true</code> if domain registration status is active and
+     * it is hosted on name servers Azure has programmatic access to.
      */
     @JsonProperty(value = "readyForDnsRecordManagement", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean readyForDnsRecordManagement;

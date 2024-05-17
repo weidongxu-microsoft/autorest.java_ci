@@ -42,7 +42,9 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
     private AttributeFilter filter;
 
     /*
-     * The value to filter the tracks by.  Only used when AttributeFilter.ValueEquals is specified for the Filter property. For TrackAttribute.Bitrate, this should be an integer value in bits per second (e.g: '1500000').  The TrackAttribute.Language is not supported for video tracks.
+     * The value to filter the tracks by. Only used when AttributeFilter.ValueEquals is specified for the Filter
+     * property. For TrackAttribute.Bitrate, this should be an integer value in bits per second (e.g: '1500000'). The
+     * TrackAttribute.Language is not supported for video tracks.
      */
     @JsonProperty(value = "filterValue")
     private String filterValue;

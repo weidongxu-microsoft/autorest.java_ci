@@ -57,7 +57,9 @@ public final class WcfRelayProperties {
     private Boolean requiresTransportSecurity;
 
     /*
-     * The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined configuration settings can be stored.
+     * The usermetadata is a placeholder to store user-defined string data for the WCF Relay endpoint. For example, it
+     * can be used to store descriptive data, such as list of teams and their contact information. Also, user-defined
+     * configuration settings can be stored.
      */
     @JsonProperty(value = "userMetadata")
     private String userMetadata;

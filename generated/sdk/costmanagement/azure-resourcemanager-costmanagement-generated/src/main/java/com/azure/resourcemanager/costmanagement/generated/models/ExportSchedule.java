@@ -26,7 +26,8 @@ public final class ExportSchedule {
     private RecurrenceType recurrence;
 
     /*
-     * Has start and end date of the recurrence. The start date must be in future. If present, the end date must be greater than start date.
+     * Has start and end date of the recurrence. The start date must be in future. If present, the end date must be
+     * greater than start date.
      */
     @JsonProperty(value = "recurrencePeriod")
     private ExportRecurrencePeriod recurrencePeriod;

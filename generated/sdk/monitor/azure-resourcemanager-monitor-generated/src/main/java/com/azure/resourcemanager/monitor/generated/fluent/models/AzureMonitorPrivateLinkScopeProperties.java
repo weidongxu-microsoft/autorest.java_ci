@@ -14,7 +14,9 @@ import java.util.List;
 @Immutable
 public final class AzureMonitorPrivateLinkScopeProperties {
     /*
-     * Current state of this PrivateLinkScope: whether or not is has been provisioned within the resource group it is defined. Users cannot change this value but are able to read from it. Values will include Provisioning ,Succeeded, Canceled and Failed.
+     * Current state of this PrivateLinkScope: whether or not is has been provisioned within the resource group it is
+     * defined. Users cannot change this value but are able to read from it. Values will include Provisioning
+     * ,Succeeded, Canceled and Failed.
      */
     @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;

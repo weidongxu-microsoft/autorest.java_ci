@@ -13,13 +13,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LinuxPatchSettings {
     /*
-     * Specifies the mode of VM Guest Patching to IaaS virtual machine or virtual machines associated to virtual machine scale set with OrchestrationMode as Flexible.<br /><br /> Possible values are:<br /><br /> **ImageDefault** - The virtual machine's default patching configuration is used. <br /><br /> **AutomaticByPlatform** - The virtual machine will be automatically updated by the platform. The property provisionVMAgent must be true
+     * Specifies the mode of VM Guest Patching to IaaS virtual machine or virtual machines associated to virtual machine
+     * scale set with OrchestrationMode as Flexible.<br /><br /> Possible values are:<br /><br /> **ImageDefault** - The
+     * virtual machine's default patching configuration is used. <br /><br /> **AutomaticByPlatform** - The virtual
+     * machine will be automatically updated by the platform. The property provisionVMAgent must be true
      */
     @JsonProperty(value = "patchMode")
     private LinuxVMGuestPatchMode patchMode;
 
     /*
-     * Specifies the mode of VM Guest Patch Assessment for the IaaS virtual machine.<br /><br /> Possible values are:<br /><br /> **ImageDefault** - You control the timing of patch assessments on a virtual machine. <br /><br /> **AutomaticByPlatform** - The platform will trigger periodic patch assessments. The property provisionVMAgent must be true.
+     * Specifies the mode of VM Guest Patch Assessment for the IaaS virtual machine.<br /><br /> Possible values are:<br
+     * /><br /> **ImageDefault** - You control the timing of patch assessments on a virtual machine. <br /><br />
+     * **AutomaticByPlatform** - The platform will trigger periodic patch assessments. The property provisionVMAgent
+     * must be true.
      */
     @JsonProperty(value = "assessmentMode")
     private LinuxPatchAssessmentMode assessmentMode;

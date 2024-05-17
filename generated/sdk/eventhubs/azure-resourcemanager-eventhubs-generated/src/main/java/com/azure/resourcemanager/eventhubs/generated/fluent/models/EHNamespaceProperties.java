@@ -79,7 +79,8 @@ public final class EHNamespaceProperties {
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
-     * Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. ( '0' if AutoInflateEnabled = true)
+     * Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. (
+     * '0' if AutoInflateEnabled = true)
      */
     @JsonProperty(value = "maximumThroughputUnits")
     private Integer maximumThroughputUnits;

@@ -17,7 +17,8 @@ import java.util.List;
 @Fluent
 public final class AutoscaleSetting {
     /*
-     * the collection of automatic scaling profiles that specify different scaling parameters for different time periods. A maximum of 20 profiles can be specified.
+     * the collection of automatic scaling profiles that specify different scaling parameters for different time
+     * periods. A maximum of 20 profiles can be specified.
      */
     @JsonProperty(value = "profiles", required = true)
     private List<AutoscaleProfile> profiles;

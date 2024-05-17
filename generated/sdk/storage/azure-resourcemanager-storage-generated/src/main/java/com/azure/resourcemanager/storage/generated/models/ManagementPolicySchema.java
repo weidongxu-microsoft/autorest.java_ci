@@ -16,7 +16,8 @@ import java.util.List;
 @Fluent
 public final class ManagementPolicySchema {
     /*
-     * The Storage Account ManagementPolicies Rules. See more details in: https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
+     * The Storage Account ManagementPolicies Rules. See more details in:
+     * https://docs.microsoft.com/en-us/azure/storage/common/storage-lifecycle-managment-concepts.
      */
     @JsonProperty(value = "rules", required = true)
     private List<ManagementPolicyRule> rules;

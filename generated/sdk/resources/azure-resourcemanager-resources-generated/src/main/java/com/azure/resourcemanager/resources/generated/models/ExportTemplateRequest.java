@@ -20,7 +20,8 @@ public final class ExportTemplateRequest {
     private List<String> resources;
 
     /*
-     * The export template options. A CSV-formatted list containing zero or more of the following: 'IncludeParameterDefaultValue', 'IncludeComments', 'SkipResourceNameParameterization', 'SkipAllParameterization'
+     * The export template options. A CSV-formatted list containing zero or more of the following:
+     * 'IncludeParameterDefaultValue', 'IncludeComments', 'SkipResourceNameParameterization', 'SkipAllParameterization'
      */
     @JsonProperty(value = "options")
     private String options;

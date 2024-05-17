@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class RoutingCosmosDBSqlApiProperties {
     /*
-     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores, hyphens and has a maximum length of 64 characters. The following names are reserved:  events, fileNotifications, $default. Endpoint names must be unique across endpoint types.
+     * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
+     * hyphens and has a maximum length of 64 characters. The following names are reserved: events, fileNotifications,
+     * $default. Endpoint names must be unique across endpoint types.
      */
     @JsonProperty(value = "name", required = true)
     private String name;
@@ -80,13 +82,17 @@ public final class RoutingCosmosDBSqlApiProperties {
     private String containerName;
 
     /*
-     * The name of the partition key associated with this cosmos DB sql container if one exists. This is an optional parameter.
+     * The name of the partition key associated with this cosmos DB sql container if one exists. This is an optional
+     * parameter.
      */
     @JsonProperty(value = "partitionKeyName")
     private String partitionKeyName;
 
     /*
-     * The template for generating a synthetic partition key value for use with this cosmos DB sql container. The template must include at least one of the following placeholders: {iothub}, {deviceid}, {DD}, {MM}, and {YYYY}. Any one placeholder may be specified at most once, but order and non-placeholder components are arbitrary. This parameter is only required if PartitionKeyName is specified.
+     * The template for generating a synthetic partition key value for use with this cosmos DB sql container. The
+     * template must include at least one of the following placeholders: {iothub}, {deviceid}, {DD}, {MM}, and {YYYY}.
+     * Any one placeholder may be specified at most once, but order and non-placeholder components are arbitrary. This
+     * parameter is only required if PartitionKeyName is specified.
      */
     @JsonProperty(value = "partitionKeyTemplate")
     private String partitionKeyTemplate;

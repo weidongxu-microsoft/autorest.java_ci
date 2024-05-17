@@ -30,7 +30,7 @@ public final class MetricAlertMultipleResourceMultipleMetricCriteria extends Met
     private Odatatype odataType = Odatatype.MICROSOFT_AZURE_MONITOR_MULTIPLE_RESOURCE_MULTIPLE_METRIC_CRITERIA;
 
     /*
-     * the list of multiple metric criteria for this 'all of' operation. 
+     * the list of multiple metric criteria for this 'all of' operation.
      */
     @JsonProperty(value = "allOf")
     private List<MultiMetricCriteria> allOf;

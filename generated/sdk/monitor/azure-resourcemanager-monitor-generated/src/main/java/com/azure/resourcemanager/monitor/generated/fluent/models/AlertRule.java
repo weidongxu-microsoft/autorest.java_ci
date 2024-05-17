@@ -54,7 +54,8 @@ public final class AlertRule {
     private RuleAction action;
 
     /*
-     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is resolved.
+     * the array of actions that are performed when the alert rule becomes active, and when an alert condition is
+     * resolved.
      */
     @JsonProperty(value = "actions")
     private List<RuleAction> actions;

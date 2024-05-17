@@ -100,7 +100,8 @@ public final class DiskRestorePointProperties {
     private String diskAccessId;
 
     /*
-     * Percentage complete for the background copy of disk restore point when source resource is from a different region.
+     * Percentage complete for the background copy of disk restore point when source resource is from a different
+     * region.
      */
     @JsonProperty(value = "completionPercent")
     private Float completionPercent;

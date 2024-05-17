@@ -22,7 +22,9 @@ public final class LegacyReservationTransactionProperties {
     private OffsetDateTime eventDate;
 
     /*
-     * The reservation order ID is the identifier for a reservation purchase. Each reservation order ID represents a single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM size and region for the reservations.
+     * The reservation order ID is the identifier for a reservation purchase. Each reservation order ID represents a
+     * single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM
+     * size and region for the reservations.
      */
     @JsonProperty(value = "reservationOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationOrderId;

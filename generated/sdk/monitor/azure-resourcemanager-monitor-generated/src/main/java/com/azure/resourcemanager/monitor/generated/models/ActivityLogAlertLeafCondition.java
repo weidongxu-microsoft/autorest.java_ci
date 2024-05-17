@@ -14,7 +14,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class ActivityLogAlertLeafCondition {
     /*
-     * The name of the field that this condition will examine. The possible values for this field are (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup', 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
+     * The name of the field that this condition will examine. The possible values for this field are
+     * (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup',
+     * 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
      */
     @JsonProperty(value = "field", required = true)
     private String field;

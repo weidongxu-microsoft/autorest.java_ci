@@ -32,13 +32,15 @@ public final class CacheItem {
     private String channel;
 
     /*
-     * Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect, NotApplicable
+     * Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect,
+     * NotApplicable
      */
     @JsonProperty(value = "subchannel", required = true)
     private String subchannel;
 
     /*
-     * Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management group resource ID for a subscription.
+     * Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management
+     * group resource ID for a subscription.
      */
     @JsonProperty(value = "parent")
     private String parent;

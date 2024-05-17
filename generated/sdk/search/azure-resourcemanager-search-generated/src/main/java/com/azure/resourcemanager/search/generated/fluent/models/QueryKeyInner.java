@@ -14,7 +14,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Immutable
 public final class QueryKeyInner {
     /*
-     * The name of the query API key. Query names are optional, but assigning a name can help you remember how it's used.
+     * The name of the query API key. Query names are optional, but assigning a name can help you remember how it's
+     * used.
      */
     @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;

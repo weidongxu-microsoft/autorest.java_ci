@@ -13,13 +13,15 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class BackendPoolsSettings {
     /*
-     * Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS requests.
+     * Whether to enforce certificate name check on HTTPS requests to all backend pools. No effect on non-HTTPS
+     * requests.
      */
     @JsonProperty(value = "enforceCertificateNameCheck")
     private EnforceCertificateNameCheckEnabledState enforceCertificateNameCheck;
 
     /*
-     * Send and receive timeout on forwarding request to the backend. When timeout is reached, the request fails and returns.
+     * Send and receive timeout on forwarding request to the backend. When timeout is reached, the request fails and
+     * returns.
      */
     @JsonProperty(value = "sendRecvTimeoutSeconds")
     private Integer sendRecvTimeoutSeconds;

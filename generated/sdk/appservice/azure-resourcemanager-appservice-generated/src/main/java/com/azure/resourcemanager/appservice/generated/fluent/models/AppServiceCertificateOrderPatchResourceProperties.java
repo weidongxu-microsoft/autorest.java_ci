@@ -61,7 +61,8 @@ public final class AppServiceCertificateOrderPatchResourceProperties {
     private CertificateProductType productType;
 
     /*
-     * <code>true</code> if the certificate should be automatically renewed when it expires; otherwise, <code>false</code>.
+     * <code>true</code> if the certificate should be automatically renewed when it expires; otherwise,
+     * <code>false</code>.
      */
     @JsonProperty(value = "autoRenew")
     private Boolean autoRenew;

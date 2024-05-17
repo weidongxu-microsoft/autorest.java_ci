@@ -19,7 +19,8 @@ public final class CaptureIdentity {
     private CaptureIdentityType type;
 
     /*
-     * ARM ID of Managed User Identity. This property is required is the type is UserAssignedIdentity. If type is SystemAssigned, then the System Assigned Identity Associated with the namespace will be used.
+     * ARM ID of Managed User Identity. This property is required is the type is UserAssignedIdentity. If type is
+     * SystemAssigned, then the System Assigned Identity Associated with the namespace will be used.
      */
     @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;

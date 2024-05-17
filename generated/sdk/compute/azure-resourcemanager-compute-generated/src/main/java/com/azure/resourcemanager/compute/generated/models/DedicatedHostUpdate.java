@@ -23,7 +23,9 @@ public final class DedicatedHostUpdate extends UpdateResource {
     private DedicatedHostProperties innerProperties;
 
     /*
-     * [List all available dedicated host sizes for resizing] (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only used to scale up DedicatedHost. Only name is required to be set. 
+     * [List all available dedicated host sizes for resizing]
+     * (https://docs.microsoft.com/rest/api/compute/dedicated-hosts/listavailablesizes). Resizing can be only used to
+     * scale up DedicatedHost. Only name is required to be set.
      */
     @JsonProperty(value = "sku")
     private Sku sku;

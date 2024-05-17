@@ -25,7 +25,8 @@ public final class Backend {
     private String privateLinkAlias;
 
     /*
-     * The Resource Id of the Private Link resource. Populating this optional field indicates that this backend is 'Private'
+     * The Resource Id of the Private Link resource. Populating this optional field indicates that this backend is
+     * 'Private'
      */
     @JsonProperty(value = "privateLinkResourceId")
     private String privateLinkResourceId;
@@ -67,7 +68,8 @@ public final class Backend {
     private BackendEnabledState enabledState;
 
     /*
-     * Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority backend is healthy.
+     * Priority to use for load balancing. Higher priorities will not be used for load balancing if any lower priority
+     * backend is healthy.
      */
     @JsonProperty(value = "priority")
     private Integer priority;
@@ -79,7 +81,8 @@ public final class Backend {
     private Integer weight;
 
     /*
-     * The value to use as the host header sent to the backend. If blank or unspecified, this defaults to the incoming host.
+     * The value to use as the host header sent to the backend. If blank or unspecified, this defaults to the incoming
+     * host.
      */
     @JsonProperty(value = "backendHostHeader")
     private String backendHostHeader;

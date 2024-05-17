@@ -13,7 +13,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class SecretProperties {
     /*
-     * The value of the secret. NOTE: 'value' will never be returned from the service, as APIs using this model are is intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with vault secrets.
+     * The value of the secret. NOTE: 'value' will never be returned from the service, as APIs using this model are is
+     * intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with
+     * vault secrets.
      */
     @JsonProperty(value = "value")
     private String value;

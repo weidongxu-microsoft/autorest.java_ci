@@ -16,7 +16,8 @@ import java.util.List;
 @Fluent
 public final class OutboundNetworkDependenciesEndpointProperties {
     /*
-     * The type of service accessed by the Kusto Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure Active Directory.
+     * The type of service accessed by the Kusto Service Environment, e.g., Azure Storage, Azure SQL Database, and Azure
+     * Active Directory.
      */
     @JsonProperty(value = "category")
     private String category;

@@ -20,7 +20,8 @@ public final class ManagedRuleExclusion {
     private ManagedRuleExclusionMatchVariable matchVariable;
 
     /*
-     * Comparison operator to apply to the selector when specifying which elements in the collection this exclusion applies to.
+     * Comparison operator to apply to the selector when specifying which elements in the collection this exclusion
+     * applies to.
      */
     @JsonProperty(value = "selectorMatchOperator", required = true)
     private ManagedRuleExclusionSelectorMatchOperator selectorMatchOperator;

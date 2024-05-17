@@ -14,19 +14,22 @@ import java.time.Duration;
 @Fluent
 public final class FeedbackProperties {
     /*
-     * The lock duration for the feedback queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * The lock duration for the feedback queue. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      */
     @JsonProperty(value = "lockDurationAsIso8601")
     private Duration lockDurationAsIso8601;
 
     /*
-     * The period of time for which a message is available to consume before it is expired by the IoT hub. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * The period of time for which a message is available to consume before it is expired by the IoT hub. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      */
     @JsonProperty(value = "ttlAsIso8601")
     private Duration ttlAsIso8601;
 
     /*
-     * The number of times the IoT hub attempts to deliver a message on the feedback queue. See: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
+     * The number of times the IoT hub attempts to deliver a message on the feedback queue. See:
+     * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging#cloud-to-device-messages.
      */
     @JsonProperty(value = "maxDeliveryCount")
     private Integer maxDeliveryCount;

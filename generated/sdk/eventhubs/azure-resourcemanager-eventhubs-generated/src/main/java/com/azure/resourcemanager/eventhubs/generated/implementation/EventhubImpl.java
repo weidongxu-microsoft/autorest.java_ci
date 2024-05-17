@@ -11,8 +11,8 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
 import com.azure.resourcemanager.eventhubs.generated.models.Eventhub;
+import com.azure.resourcemanager.eventhubs.generated.models.MessageTimestampDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
-import com.azure.resourcemanager.eventhubs.generated.models.TimestampType;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -79,8 +79,8 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this.innerModel().retentionDescription();
     }
 
-    public TimestampType messageTimestampType() {
-        return this.innerModel().messageTimestampType();
+    public MessageTimestampDescription messageTimestampDescription() {
+        return this.innerModel().messageTimestampDescription();
     }
 
     public String identifier() {
@@ -215,8 +215,8 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
-    public EventhubImpl withMessageTimestampType(TimestampType messageTimestampType) {
-        this.innerModel().withMessageTimestampType(messageTimestampType);
+    public EventhubImpl withMessageTimestampDescription(MessageTimestampDescription messageTimestampDescription) {
+        this.innerModel().withMessageTimestampDescription(messageTimestampDescription);
         return this;
     }
 

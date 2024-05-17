@@ -13,7 +13,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class DataPlaneAadOrApiKeyAuthOption {
     /*
-     * Describes what response the data plane API of a search service would send for requests that failed authentication.
+     * Describes what response the data plane API of a search service would send for requests that failed
+     * authentication.
      */
     @JsonProperty(value = "aadAuthFailureMode")
     private AadAuthFailureMode aadAuthFailureMode;

@@ -118,7 +118,8 @@ public final class StaticSite {
     private EnterpriseGradeCdnStatus enterpriseGradeCdnStatus;
 
     /*
-     * State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled', 'Disabled' or an empty string.
+     * State indicating whether public traffic are allowed or not for a static web app. Allowed Values: 'Enabled',
+     * 'Disabled' or an empty string.
      */
     @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;

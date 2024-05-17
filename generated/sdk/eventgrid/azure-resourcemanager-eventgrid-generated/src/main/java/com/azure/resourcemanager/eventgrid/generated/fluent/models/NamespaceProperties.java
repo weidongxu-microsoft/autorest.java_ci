@@ -44,10 +44,11 @@ public final class NamespaceProperties {
     private TopicSpacesConfiguration topicSpacesConfiguration;
 
     /*
-     * This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy capability or not. If this
+     * This is an optional property and it allows the user to specify if the namespace resource supports zone-redundancy
+     * capability or not. If this
      * property is not specified explicitly by the user, its default value depends on the following conditions:
-     *     a. For Availability Zones enabled regions - The default property value would be true.
-     *     b. For non-Availability Zones enabled regions - The default property value would be false.
+     * a. For Availability Zones enabled regions - The default property value would be true.
+     * b. For non-Availability Zones enabled regions - The default property value would be false.
      * Once specified, this property cannot be updated.
      */
     @JsonProperty(value = "isZoneRedundant")
@@ -55,13 +56,15 @@ public final class NamespaceProperties {
 
     /*
      * This determines if traffic is allowed over public network. By default it is enabled.
-     * You can further restrict to specific IPs by configuring <seealso cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" />
+     * You can further restrict to specific IPs by configuring <seealso
+     * cref="P:Microsoft.Azure.Events.ResourceProvider.Common.Contracts.PubSub.NamespaceProperties.InboundIpRules" />
      */
     @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
-     * This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if PublicNetworkAccess is enabled.
+     * This can be used to restrict traffic from specific IPs instead of all IPs. Note: These are considered only if
+     * PublicNetworkAccess is enabled.
      */
     @JsonProperty(value = "inboundIpRules")
     private List<InboundIpRule> inboundIpRules;

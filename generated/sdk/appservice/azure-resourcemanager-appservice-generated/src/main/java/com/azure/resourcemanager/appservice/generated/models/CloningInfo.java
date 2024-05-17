@@ -42,9 +42,11 @@ public final class CloningInfo {
     private Boolean cloneSourceControl;
 
     /*
-     * ARM resource ID of the source app. App resource ID is of the form 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production slots and 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{slotName} for other slots.
+     * ARM resource ID of the source app. App resource ID is of the form
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName} for production
+     * slots and
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/slots/{
+     * slotName} for other slots.
      */
     @JsonProperty(value = "sourceWebAppId", required = true)
     private String sourceWebAppId;
@@ -62,7 +64,7 @@ public final class CloningInfo {
     private String hostingEnvironment;
 
     /*
-     * Application setting overrides for cloned app. If specified, these settings override the settings cloned 
+     * Application setting overrides for cloned app. If specified, these settings override the settings cloned
      * from source app. Otherwise, application settings from source app are retained.
      */
     @JsonProperty(value = "appSettingsOverrides")
@@ -76,8 +78,9 @@ public final class CloningInfo {
     private Boolean configureLoadBalancing;
 
     /*
-     * ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form 
-     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{profileName}.
+     * ARM resource ID of the Traffic Manager profile to use, if it exists. Traffic Manager resource ID is of the form
+     * /subscriptions/{subId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/trafficManagerProfiles/{
+     * profileName}.
      */
     @JsonProperty(value = "trafficManagerProfileId")
     private String trafficManagerProfileId;

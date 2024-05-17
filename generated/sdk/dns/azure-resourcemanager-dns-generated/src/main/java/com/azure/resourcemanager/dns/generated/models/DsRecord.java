@@ -19,7 +19,8 @@ public final class DsRecord {
     private Integer keyTag;
 
     /*
-     * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See: https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
+     * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See:
+     * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
      */
     @JsonProperty(value = "algorithm")
     private Integer algorithm;

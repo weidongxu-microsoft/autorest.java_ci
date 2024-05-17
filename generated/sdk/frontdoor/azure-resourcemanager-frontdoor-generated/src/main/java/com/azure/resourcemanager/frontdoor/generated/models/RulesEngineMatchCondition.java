@@ -39,7 +39,8 @@ public final class RulesEngineMatchCondition {
     private Boolean negateCondition;
 
     /*
-     * Match values to match against. The operator will apply to each value in here with OR semantics. If any of them match the variable with the given operator this match condition is considered a match.
+     * Match values to match against. The operator will apply to each value in here with OR semantics. If any of them
+     * match the variable with the given operator this match condition is considered a match.
      */
     @JsonProperty(value = "rulesEngineMatchValue", required = true)
     private List<String> rulesEngineMatchValue;

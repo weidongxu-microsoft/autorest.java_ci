@@ -33,7 +33,8 @@ public final class ContentKeyPolicyPlayReadyPlayRight {
     private Integer agcAndColorStripeRestriction;
 
     /*
-     * Configures the Explicit Analog Television Output Restriction in the license. Configuration data must be between 0 and 3 inclusive.
+     * Configures the Explicit Analog Television Output Restriction in the license. Configuration data must be between 0
+     * and 3 inclusive.
      */
     @JsonProperty(value = "explicitAnalogTelevisionOutputRestriction")
     private ContentKeyPolicyPlayReadyExplicitAnalogTelevisionRestriction explicitAnalogTelevisionOutputRestriction;

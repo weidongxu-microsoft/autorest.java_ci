@@ -58,7 +58,8 @@ public final class LatencyScorecardProperties {
     private OffsetDateTime endDateTimeUtc;
 
     /*
-     * The country associated with the Latency Scorecard. Values are country ISO codes as specified here- https://www.iso.org/iso-3166-country-codes.html
+     * The country associated with the Latency Scorecard. Values are country ISO codes as specified here-
+     * https://www.iso.org/iso-3166-country-codes.html
      */
     @JsonProperty(value = "country", access = JsonProperty.Access.WRITE_ONLY)
     private String country;

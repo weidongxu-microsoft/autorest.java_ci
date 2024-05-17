@@ -64,7 +64,9 @@ public final class SnapshotProperties {
     private CreationData creationData;
 
     /*
-     * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create. If this field is present for updates or creation with other options, it indicates a resize. Resizes are only allowed if the disk is not attached to a running VM, and can only increase the disk's size.
+     * If creationData.createOption is Empty, this field is mandatory and it indicates the size of the disk to create.
+     * If this field is present for updates or creation with other options, it indicates a resize. Resizes are only
+     * allowed if the disk is not attached to a running VM, and can only increase the disk's size.
      */
     @JsonProperty(value = "diskSizeGB")
     private Integer diskSizeGB;
@@ -88,7 +90,8 @@ public final class SnapshotProperties {
     private String uniqueId;
 
     /*
-     * Encryption settings collection used be Azure Disk Encryption, can contain multiple encryption settings per disk or snapshot.
+     * Encryption settings collection used be Azure Disk Encryption, can contain multiple encryption settings per disk
+     * or snapshot.
      */
     @JsonProperty(value = "encryptionSettingsCollection")
     private EncryptionSettingsCollection encryptionSettingsCollection;
@@ -100,13 +103,15 @@ public final class SnapshotProperties {
     private String provisioningState;
 
     /*
-     * Whether a snapshot is incremental. Incremental snapshots on the same disk occupy less space than full snapshots and can be diffed.
+     * Whether a snapshot is incremental. Incremental snapshots on the same disk occupy less space than full snapshots
+     * and can be diffed.
      */
     @JsonProperty(value = "incremental")
     private Boolean incremental;
 
     /*
-     * Incremental snapshots for a disk share an incremental snapshot family id. The Get Page Range Diff API can only be called on incremental snapshots with the same family id.
+     * Incremental snapshots for a disk share an incremental snapshot family id. The Get Page Range Diff API can only be
+     * called on incremental snapshots with the same family id.
      */
     @JsonProperty(value = "incrementalSnapshotFamilyId", access = JsonProperty.Access.WRITE_ONLY)
     private String incrementalSnapshotFamilyId;

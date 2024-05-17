@@ -70,7 +70,8 @@ public final class MediaServiceProperties {
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
-     * The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a secure default value will be used.
+     * The minimum TLS version allowed for this account's requests. This is an optional property. If unspecified, a
+     * secure default value will be used.
      */
     @JsonProperty(value = "minimumTlsVersion")
     private MinimumTlsVersion minimumTlsVersion;

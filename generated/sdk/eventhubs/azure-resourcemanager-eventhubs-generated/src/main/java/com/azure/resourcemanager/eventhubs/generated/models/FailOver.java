@@ -58,35 +58,27 @@ public final class FailOver {
     }
 
     /**
-     * Get the maximumGracePeriodInMins property: Maximum time duration allowed complete data replication from primary
-     * to secondary. Use maximumGracePeriodInMins = 0: For Unplanned Geo-Failover, which switches the role between
-     * primary and secondary immediately. The data that is not being replicated yet will be discarded. Use
-     * maximumGracePeriodInMins &gt; 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period
-     * expires. Any data that is not replicated during the grace period will be discarded. During the replication the
-     * namespace stops accepting any new publishing requests.
+     * Get the force property: If Force is false then graceful failover is attempted after ensuring no data loss. If
+     * Force flag is set to true, Forced failover is attempted with possible data loss.
      * 
-     * @return the maximumGracePeriodInMins value.
+     * @return the force value.
      */
-    public Integer maximumGracePeriodInMins() {
-        return this.innerProperties() == null ? null : this.innerProperties().maximumGracePeriodInMins();
+    public Boolean force() {
+        return this.innerProperties() == null ? null : this.innerProperties().force();
     }
 
     /**
-     * Set the maximumGracePeriodInMins property: Maximum time duration allowed complete data replication from primary
-     * to secondary. Use maximumGracePeriodInMins = 0: For Unplanned Geo-Failover, which switches the role between
-     * primary and secondary immediately. The data that is not being replicated yet will be discarded. Use
-     * maximumGracePeriodInMins &gt; 0: For Planned Geo-Failover/DR Drill, continue replicating data until grace period
-     * expires. Any data that is not replicated during the grace period will be discarded. During the replication the
-     * namespace stops accepting any new publishing requests.
+     * Set the force property: If Force is false then graceful failover is attempted after ensuring no data loss. If
+     * Force flag is set to true, Forced failover is attempted with possible data loss.
      * 
-     * @param maximumGracePeriodInMins the maximumGracePeriodInMins value to set.
+     * @param force the force value to set.
      * @return the FailOver object itself.
      */
-    public FailOver withMaximumGracePeriodInMins(Integer maximumGracePeriodInMins) {
+    public FailOver withForce(Boolean force) {
         if (this.innerProperties() == null) {
             this.innerProperties = new FailOverProperties();
         }
-        this.innerProperties().withMaximumGracePeriodInMins(maximumGracePeriodInMins);
+        this.innerProperties().withForce(force);
         return this;
     }
 

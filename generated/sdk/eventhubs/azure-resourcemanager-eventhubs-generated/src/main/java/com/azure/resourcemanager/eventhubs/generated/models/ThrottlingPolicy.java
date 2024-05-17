@@ -32,7 +32,8 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     private long rateLimitThreshold;
 
     /*
-     * Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the Metrics section of Event Hub Namespace inside Azure Portal
+     * Metric Id on which the throttle limit should be set, MetricId can be discovered by hovering over Metric in the
+     * Metrics section of Event Hub Namespace inside Azure Portal
      */
     @JsonProperty(value = "metricId", required = true)
     private MetricId metricId;

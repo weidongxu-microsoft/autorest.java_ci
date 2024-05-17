@@ -21,13 +21,15 @@ public final class ApplicationInsightsComponentFavoriteInner {
     private String name;
 
     /*
-     * Configuration of this particular favorite, which are driven by the Azure portal UX. Configuration data is a string containing valid JSON
+     * Configuration of this particular favorite, which are driven by the Azure portal UX. Configuration data is a
+     * string containing valid JSON
      */
     @JsonProperty(value = "Config")
     private String config;
 
     /*
-     * This instance's version of the data model. This can change as new features are added that can be marked favorite. Current examples include MetricsExplorer (ME) and Search.
+     * This instance's version of the data model. This can change as new features are added that can be marked favorite.
+     * Current examples include MetricsExplorer (ME) and Search.
      */
     @JsonProperty(value = "Version")
     private String version;
@@ -39,7 +41,8 @@ public final class ApplicationInsightsComponentFavoriteInner {
     private String favoriteId;
 
     /*
-     * Enum indicating if this favorite definition is owned by a specific user or is shared between all users with access to the Application Insights component.
+     * Enum indicating if this favorite definition is owned by a specific user or is shared between all users with
+     * access to the Application Insights component.
      */
     @JsonProperty(value = "FavoriteType")
     private FavoriteType favoriteType;

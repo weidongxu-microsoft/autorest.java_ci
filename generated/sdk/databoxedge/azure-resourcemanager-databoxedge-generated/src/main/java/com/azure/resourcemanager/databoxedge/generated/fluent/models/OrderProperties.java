@@ -56,13 +56,15 @@ public final class OrderProperties {
     private String serialNumber;
 
     /*
-     * Tracking information for the package delivered to the customer whether it has an original or a replacement device.
+     * Tracking information for the package delivered to the customer whether it has an original or a replacement
+     * device.
      */
     @JsonProperty(value = "deliveryTrackingInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackingInfo> deliveryTrackingInfo;
 
     /*
-     * Tracking information for the package returned from the customer whether it has an original or a replacement device.
+     * Tracking information for the package returned from the customer whether it has an original or a replacement
+     * device.
      */
     @JsonProperty(value = "returnTrackingInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackingInfo> returnTrackingInfo;

@@ -31,7 +31,8 @@ public final class PrivateEndpointConnectionProperties {
     private String groupId;
 
     /*
-     * The provisioning state of the private link service connection. Valid values are Updating, Deleting, Failed, Succeeded, Incomplete, or Canceled.
+     * The provisioning state of the private link service connection. Valid values are Updating, Deleting, Failed,
+     * Succeeded, Incomplete, or Canceled.
      */
     @JsonProperty(value = "provisioningState")
     private PrivateLinkServiceConnectionProvisioningState provisioningState;

@@ -22,7 +22,8 @@ public final class SecurityAlertPolicyProperties {
     private ServerSecurityAlertPolicyState state;
 
     /*
-     * Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability, Access_Anomaly
+     * Specifies an array of alerts that are disabled. Allowed values are: Sql_Injection, Sql_Injection_Vulnerability,
+     * Access_Anomaly
      */
     @JsonProperty(value = "disabledAlerts")
     private List<String> disabledAlerts;
@@ -40,7 +41,8 @@ public final class SecurityAlertPolicyProperties {
     private Boolean emailAccountAdmins;
 
     /*
-     * Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold all Threat Detection audit logs.
+     * Specifies the blob storage endpoint (e.g. https://MyAccount.blob.core.windows.net). This blob storage will hold
+     * all Threat Detection audit logs.
      */
     @JsonProperty(value = "storageEndpoint")
     private String storageEndpoint;

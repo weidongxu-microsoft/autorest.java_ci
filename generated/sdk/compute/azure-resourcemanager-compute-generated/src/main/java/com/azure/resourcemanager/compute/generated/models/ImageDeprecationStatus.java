@@ -20,7 +20,8 @@ public final class ImageDeprecationStatus {
     private ImageState imageState;
 
     /*
-     * The time, in future, at which this image will be marked as deprecated. This scheduled time is chosen by the Publisher.
+     * The time, in future, at which this image will be marked as deprecated. This scheduled time is chosen by the
+     * Publisher.
      */
     @JsonProperty(value = "scheduledDeprecationTime")
     private OffsetDateTime scheduledDeprecationTime;

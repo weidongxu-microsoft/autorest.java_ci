@@ -38,7 +38,8 @@ public final class WorkspaceProperties {
     private WorkspaceSku sku;
 
     /*
-     * The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for details.
+     * The workspace data retention in days. Allowed values are per pricing plan. See pricing tiers documentation for
+     * details.
      */
     @JsonProperty(value = "retentionInDays")
     private Integer retentionInDays;
@@ -92,7 +93,9 @@ public final class WorkspaceProperties {
     private WorkspaceFeatures features;
 
     /*
-     * The resource ID of the default Data Collection Rule to use for this workspace. Expected format is - /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/dataCollectionRules/{dcrName}.
+     * The resource ID of the default Data Collection Rule to use for this workspace. Expected format is -
+     * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/
+     * dataCollectionRules/{dcrName}.
      */
     @JsonProperty(value = "defaultDataCollectionRuleResourceId")
     private String defaultDataCollectionRuleResourceId;

@@ -25,7 +25,8 @@ public final class FacetRequestOptions {
     private FacetSortOrder sortOrder;
 
     /*
-     * Specifies the filter condition for the 'where' clause which will be run on main query's result, just before the actual faceting.
+     * Specifies the filter condition for the 'where' clause which will be run on main query's result, just before the
+     * actual faceting.
      */
     @JsonProperty(value = "filter")
     private String filter;

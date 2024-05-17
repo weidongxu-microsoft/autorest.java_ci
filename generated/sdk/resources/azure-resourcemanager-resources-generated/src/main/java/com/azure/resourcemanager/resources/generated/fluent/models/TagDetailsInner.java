@@ -27,7 +27,8 @@ public final class TagDetailsInner {
     private String tagName;
 
     /*
-     * The total number of resources that use the resource tag. When a tag is initially created and has no associated resources, the value is 0.
+     * The total number of resources that use the resource tag. When a tag is initially created and has no associated
+     * resources, the value is 0.
      */
     @JsonProperty(value = "count")
     private TagCount count;

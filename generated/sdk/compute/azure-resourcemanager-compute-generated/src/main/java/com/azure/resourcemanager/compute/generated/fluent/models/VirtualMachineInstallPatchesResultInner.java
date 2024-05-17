@@ -19,13 +19,15 @@ import java.util.List;
 @Immutable
 public final class VirtualMachineInstallPatchesResultInner {
     /*
-     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings."
+     * The overall success or failure status of the operation. It remains "InProgress" until the operation completes. At
+     * that point it will become "Failed", "Succeeded", "Unknown" or "CompletedWithWarnings."
      */
     @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private PatchOperationStatus status;
 
     /*
-     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension logs.
+     * The activity ID of the operation that produced this result. It is used to correlate across CRP and extension
+     * logs.
      */
     @JsonProperty(value = "installationActivityId", access = JsonProperty.Access.WRITE_ONLY)
     private String installationActivityId;
@@ -55,7 +57,8 @@ public final class VirtualMachineInstallPatchesResultInner {
     private Integer notSelectedPatchCount;
 
     /*
-     * The number of patches that were identified as meeting the installation criteria, but were not able to be installed. Typically this happens when maintenanceWindowExceeded == true.
+     * The number of patches that were identified as meeting the installation criteria, but were not able to be
+     * installed. Typically this happens when maintenanceWindowExceeded == true.
      */
     @JsonProperty(value = "pendingPatchCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer pendingPatchCount;

@@ -24,13 +24,15 @@ public final class VMInsightsOnboardingStatusProperties {
     private String resourceId;
 
     /*
-     * The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription, is considered onboarded if at least one resource under it is onboarded.
+     * The onboarding status for the resource. Note that, a higher level scope, e.g., resource group or subscription, is
+     * considered onboarded if at least one resource under it is onboarded.
      */
     @JsonProperty(value = "onboardingStatus", required = true)
     private OnboardingStatus onboardingStatus;
 
     /*
-     * The status of VM Insights data from the resource. When reported as `present` the data array will contain information about the data containers to which data for the specified resource is being routed.
+     * The status of VM Insights data from the resource. When reported as `present` the data array will contain
+     * information about the data containers to which data for the specified resource is being routed.
      */
     @JsonProperty(value = "dataStatus", required = true)
     private DataStatus dataStatus;

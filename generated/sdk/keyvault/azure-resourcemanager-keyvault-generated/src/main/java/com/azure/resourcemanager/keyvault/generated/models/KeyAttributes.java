@@ -43,7 +43,9 @@ public final class KeyAttributes {
     private Long updated;
 
     /*
-     * The deletion recovery level currently in effect for the object. If it contains 'Purgeable', then the object can be permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the retention interval.
+     * The deletion recovery level currently in effect for the object. If it contains 'Purgeable', then the object can
+     * be permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the
+     * retention interval.
      */
     @JsonProperty(value = "recoveryLevel", access = JsonProperty.Access.WRITE_ONLY)
     private DeletionRecoveryLevel recoveryLevel;

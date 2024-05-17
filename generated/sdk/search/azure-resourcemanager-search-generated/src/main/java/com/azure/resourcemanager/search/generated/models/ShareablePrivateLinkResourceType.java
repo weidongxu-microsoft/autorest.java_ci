@@ -19,7 +19,8 @@ public final class ShareablePrivateLinkResourceType {
     private String name;
 
     /*
-     * Describes the properties of a resource type that has been onboarded to private link service, supported by Azure AI Search.
+     * Describes the properties of a resource type that has been onboarded to private link service, supported by Azure
+     * AI Search.
      */
     @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private ShareablePrivateLinkResourceProperties properties;

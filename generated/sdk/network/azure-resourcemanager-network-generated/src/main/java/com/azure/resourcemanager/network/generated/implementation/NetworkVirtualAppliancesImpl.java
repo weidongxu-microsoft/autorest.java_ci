@@ -11,6 +11,7 @@ import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.NetworkVirtualAppliancesClient;
 import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInner;
+import com.azure.resourcemanager.network.generated.fluent.models.NetworkVirtualApplianceInstanceIdsInner;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliance;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualApplianceInstanceIds;
 import com.azure.resourcemanager.network.generated.models.NetworkVirtualAppliances;
@@ -58,15 +59,25 @@ public final class NetworkVirtualAppliancesImpl implements NetworkVirtualApplian
         }
     }
 
-    public Response<Void> restartWithResponse(String resourceGroupName, String networkVirtualApplianceName,
-        NetworkVirtualApplianceInstanceIds networkVirtualApplianceInstanceIds, Context context) {
-        return this.serviceClient()
-            .restartWithResponse(resourceGroupName, networkVirtualApplianceName, networkVirtualApplianceInstanceIds,
-                context);
+    public NetworkVirtualApplianceInstanceIds restart(String resourceGroupName, String networkVirtualApplianceName) {
+        NetworkVirtualApplianceInstanceIdsInner inner
+            = this.serviceClient().restart(resourceGroupName, networkVirtualApplianceName);
+        if (inner != null) {
+            return new NetworkVirtualApplianceInstanceIdsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
-    public void restart(String resourceGroupName, String networkVirtualApplianceName) {
-        this.serviceClient().restart(resourceGroupName, networkVirtualApplianceName);
+    public NetworkVirtualApplianceInstanceIds restart(String resourceGroupName, String networkVirtualApplianceName,
+        NetworkVirtualApplianceInstanceIdsInner networkVirtualApplianceInstanceIds, Context context) {
+        NetworkVirtualApplianceInstanceIdsInner inner = this.serviceClient()
+            .restart(resourceGroupName, networkVirtualApplianceName, networkVirtualApplianceInstanceIds, context);
+        if (inner != null) {
+            return new NetworkVirtualApplianceInstanceIdsImpl(inner, this.manager());
+        } else {
+            return null;
+        }
     }
 
     public PagedIterable<NetworkVirtualAppliance> listByResourceGroup(String resourceGroupName) {

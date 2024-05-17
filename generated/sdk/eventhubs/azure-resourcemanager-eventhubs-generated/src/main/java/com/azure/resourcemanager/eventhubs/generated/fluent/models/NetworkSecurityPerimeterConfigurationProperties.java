@@ -55,7 +55,8 @@ public final class NetworkSecurityPerimeterConfigurationProperties {
     private Boolean isBackingResource;
 
     /*
-     * Indicates that the NSP controls related to backing association are only applicable to a specific feature in backing resource's data plane.
+     * Indicates that the NSP controls related to backing association are only applicable to a specific feature in
+     * backing resource's data plane.
      */
     @JsonProperty(value = "applicableFeatures", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> applicableFeatures;

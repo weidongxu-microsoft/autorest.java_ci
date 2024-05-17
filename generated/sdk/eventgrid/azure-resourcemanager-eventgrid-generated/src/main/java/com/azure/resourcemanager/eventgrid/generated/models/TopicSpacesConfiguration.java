@@ -20,8 +20,10 @@ public final class TopicSpacesConfiguration {
     private TopicSpacesConfigurationState state;
 
     /*
-     * Fully qualified Azure Resource Id for the Event Grid Topic to which events will be routed to from TopicSpaces under a namespace.
-     * This property should be in the following format '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
+     * Fully qualified Azure Resource Id for the Event Grid Topic to which events will be routed to from TopicSpaces
+     * under a namespace.
+     * This property should be in the following format
+     * '/subscriptions/{subId}/resourcegroups/{resourceGroupName}/providers/microsoft.EventGrid/topics/{topicName}'.
      * This topic should reside in the same region where namespace is located.
      */
     @JsonProperty(value = "routeTopicResourceId")

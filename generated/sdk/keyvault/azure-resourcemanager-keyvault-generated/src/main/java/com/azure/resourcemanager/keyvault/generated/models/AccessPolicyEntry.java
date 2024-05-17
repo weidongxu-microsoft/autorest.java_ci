@@ -22,13 +22,14 @@ public final class AccessPolicyEntry {
     private UUID tenantId;
 
     /*
-     * The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault. The object ID must be unique for the list of access policies.
+     * The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault.
+     * The object ID must be unique for the list of access policies.
      */
     @JsonProperty(value = "objectId", required = true)
     private String objectId;
 
     /*
-     *  Application ID of the client making request on behalf of a principal
+     * Application ID of the client making request on behalf of a principal
      */
     @JsonProperty(value = "applicationId")
     private UUID applicationId;

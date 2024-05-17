@@ -26,20 +26,23 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @Fluent
 public class RuleDataSource {
     /*
-     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and RuleManagementEventDataSource
+     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and
+     * RuleManagementEventDataSource
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
     private String odataType;
 
     /*
-     * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
+     * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an
+     * existing rule.
      */
     @JsonProperty(value = "resourceUri")
     private String resourceUri;
 
     /*
-     * the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an existing rule.
+     * the legacy resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for
+     * an existing rule.
      */
     @JsonProperty(value = "legacyResourceId")
     private String legacyResourceId;
