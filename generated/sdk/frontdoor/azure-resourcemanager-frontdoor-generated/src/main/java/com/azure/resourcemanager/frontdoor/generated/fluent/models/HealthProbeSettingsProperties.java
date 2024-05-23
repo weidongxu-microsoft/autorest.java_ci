@@ -18,8 +18,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class HealthProbeSettingsProperties extends HealthProbeSettingsUpdateParameters {
     /*
-     * Resource status of the Front Door or Front Door SubResource.
-     * 
      * Resource status.
      */
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
@@ -32,9 +30,7 @@ public final class HealthProbeSettingsProperties extends HealthProbeSettingsUpda
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
-     * 
-     * Resource status.
+     * Get the resourceState property: Resource status.
      * 
      * @return the resourceState value.
      */

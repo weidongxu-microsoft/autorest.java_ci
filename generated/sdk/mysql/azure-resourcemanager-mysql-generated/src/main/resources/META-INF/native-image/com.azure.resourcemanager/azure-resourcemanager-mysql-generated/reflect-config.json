@@ -529,6 +529,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.mysql.generated.models.ServerDetachVNetParameter",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.mysql.generated.models.ServerEditionCapability",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -600,6 +605,11 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.mysql.generated.models.StorageEditionCapability",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.mysql.generated.models.StorageRedundancyEnum",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

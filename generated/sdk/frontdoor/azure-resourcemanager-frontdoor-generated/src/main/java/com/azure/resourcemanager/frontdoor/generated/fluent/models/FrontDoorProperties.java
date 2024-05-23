@@ -24,8 +24,6 @@ import java.util.Map;
 @Fluent
 public final class FrontDoorProperties extends FrontDoorUpdateParameters {
     /*
-     * Resource status of the Front Door or Front Door SubResource.
-     * 
      * Resource status of the Front Door.
      */
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
@@ -69,9 +67,7 @@ public final class FrontDoorProperties extends FrontDoorUpdateParameters {
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
-     * 
-     * Resource status of the Front Door.
+     * Get the resourceState property: Resource status of the Front Door.
      * 
      * @return the resourceState value.
      */

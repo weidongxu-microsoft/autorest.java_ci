@@ -714,7 +714,7 @@ public interface StaticSiteArmResource {
      * 
      * Description for Creates an invitation link for a user with the role.
      * 
-     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
+     * @param staticSiteUserRolesInvitationEnvelope The staticSiteUserRolesInvitationEnvelope parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -730,7 +730,7 @@ public interface StaticSiteArmResource {
      * 
      * Description for Creates an invitation link for a user with the role.
      * 
-     * @param staticSiteUserRolesInvitationEnvelope Static sites user roles invitation resource.
+     * @param staticSiteUserRolesInvitationEnvelope The staticSiteUserRolesInvitationEnvelope parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -873,7 +873,7 @@ public interface StaticSiteArmResource {
      * 
      * Description for Resets the api key for an existing static site.
      * 
-     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
+     * @param resetPropertiesEnvelope The resetPropertiesEnvelope parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -889,7 +889,7 @@ public interface StaticSiteArmResource {
      * 
      * Description for Resets the api key for an existing static site.
      * 
-     * @param resetPropertiesEnvelope Static Site Reset Properties ARM resource.
+     * @param resetPropertiesEnvelope The resetPropertiesEnvelope parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.

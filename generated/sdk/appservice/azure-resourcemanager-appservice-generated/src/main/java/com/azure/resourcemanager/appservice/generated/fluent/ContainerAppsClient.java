@@ -109,7 +109,7 @@ public interface ContainerAppsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
-     * @param containerAppEnvelope Container App.
+     * @param containerAppEnvelope The containerAppEnvelope parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -127,7 +127,7 @@ public interface ContainerAppsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
-     * @param containerAppEnvelope Container App.
+     * @param containerAppEnvelope The containerAppEnvelope parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -146,7 +146,7 @@ public interface ContainerAppsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
-     * @param containerAppEnvelope Container App.
+     * @param containerAppEnvelope The containerAppEnvelope parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -163,7 +163,7 @@ public interface ContainerAppsClient {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the Container App.
-     * @param containerAppEnvelope Container App.
+     * @param containerAppEnvelope The containerAppEnvelope parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

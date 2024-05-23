@@ -553,7 +553,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Check the cluster name is available or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
+     * @param parameters The parameters parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -590,7 +590,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Check the cluster name is available or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
+     * @param parameters The parameters parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -627,7 +627,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Check the cluster name is available or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
+     * @param parameters The parameters parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -644,7 +644,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Check the cluster name is available or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
+     * @param parameters The parameters parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -661,7 +661,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Check the cluster name is available or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The request spec of checking name availability.
+     * @param parameters The parameters parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -677,7 +677,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Validate the cluster create request spec is valid or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
+     * @param parameters The parameters parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -714,7 +714,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Validate the cluster create request spec is valid or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
+     * @param parameters The parameters parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -751,7 +751,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Validate the cluster create request spec is valid or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
+     * @param parameters The parameters parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -768,7 +768,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Validate the cluster create request spec is valid or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
+     * @param parameters The parameters parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
@@ -785,7 +785,7 @@ public final class LocationsClientImpl implements LocationsClient {
      * Validate the cluster create request spec is valid or not.
      * 
      * @param location The Azure location (region) for which to make the request.
-     * @param parameters The cluster create request specification.
+     * @param parameters The parameters parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

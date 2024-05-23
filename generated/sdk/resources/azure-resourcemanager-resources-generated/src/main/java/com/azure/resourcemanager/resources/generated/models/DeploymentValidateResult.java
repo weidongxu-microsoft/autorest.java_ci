@@ -12,9 +12,7 @@ import com.azure.resourcemanager.resources.generated.fluent.models.DeploymentVal
  */
 public interface DeploymentValidateResult {
     /**
-     * Gets the error property: Error Response
-     * 
-     * The deployment validation error.
+     * Gets the error property: The deployment validation error.
      * 
      * @return the error value.
      */

@@ -19,9 +19,7 @@ public interface ResourceGroupExportResult {
     Object template();
 
     /**
-     * Gets the error property: Error Response
-     * 
-     * The template export error.
+     * Gets the error property: The template export error.
      * 
      * @return the error value.
      */

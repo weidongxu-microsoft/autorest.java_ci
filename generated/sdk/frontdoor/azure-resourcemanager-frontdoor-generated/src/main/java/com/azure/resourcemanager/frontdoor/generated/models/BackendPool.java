@@ -87,9 +87,7 @@ public final class BackendPool extends SubResource {
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
-     * 
-     * Resource status.
+     * Get the resourceState property: Resource status.
      * 
      * @return the resourceState value.
      */

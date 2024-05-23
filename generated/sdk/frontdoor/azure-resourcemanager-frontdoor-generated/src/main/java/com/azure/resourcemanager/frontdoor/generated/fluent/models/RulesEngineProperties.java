@@ -17,8 +17,6 @@ import java.util.List;
 @Fluent
 public final class RulesEngineProperties extends RulesEngineUpdateParameters {
     /*
-     * Resource status of the Front Door or Front Door SubResource.
-     * 
      * Resource status.
      */
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
@@ -31,9 +29,7 @@ public final class RulesEngineProperties extends RulesEngineUpdateParameters {
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
-     * 
-     * Resource status.
+     * Get the resourceState property: Resource status.
      * 
      * @return the resourceState value.
      */

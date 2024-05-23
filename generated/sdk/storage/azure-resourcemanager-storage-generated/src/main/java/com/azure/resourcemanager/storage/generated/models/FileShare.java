@@ -465,7 +465,7 @@ public interface FileShare {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param deletedShare The deleted share to be restored.
+     * @param deletedShare The deletedShare parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -477,7 +477,7 @@ public interface FileShare {
     /**
      * Restore a file share within a valid retention days if share soft delete is enabled.
      * 
-     * @param deletedShare The deleted share to be restored.
+     * @param deletedShare The deletedShare parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.

@@ -116,9 +116,7 @@ public interface ExpressRoutePort {
     String allocationDate();
 
     /**
-     * Gets the links property: ExpressRouteLink Sub-Resources
-     * 
-     * The set of physical links of the ExpressRoutePort resource.
+     * Gets the links property: The set of physical links of the ExpressRoutePort resource.
      * 
      * @return the links value.
      */
@@ -327,13 +325,9 @@ public interface ExpressRoutePort {
          */
         interface WithLinks {
             /**
-             * Specifies the links property: ExpressRouteLink Sub-Resources
+             * Specifies the links property: The set of physical links of the ExpressRoutePort resource..
              * 
-             * The set of physical links of the ExpressRoutePort resource..
-             * 
-             * @param links ExpressRouteLink Sub-Resources
-             * 
-             * The set of physical links of the ExpressRoutePort resource.
+             * @param links The set of physical links of the ExpressRoutePort resource.
              * @return the next definition stage.
              */
             WithCreate withLinks(List<ExpressRouteLinkInner> links);

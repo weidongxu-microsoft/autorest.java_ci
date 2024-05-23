@@ -20,8 +20,6 @@ public final class ResourceGroupExportResultInner {
     private Object template;
 
     /*
-     * Error Response
-     * 
      * The template export error.
      */
     @JsonProperty(value = "error")
@@ -54,9 +52,7 @@ public final class ResourceGroupExportResultInner {
     }
 
     /**
-     * Get the error property: Error Response
-     * 
-     * The template export error.
+     * Get the error property: The template export error.
      * 
      * @return the error value.
      */
@@ -65,9 +61,7 @@ public final class ResourceGroupExportResultInner {
     }
 
     /**
-     * Set the error property: Error Response
-     * 
-     * The template export error.
+     * Set the error property: The template export error.
      * 
      * @param error the error value to set.
      * @return the ResourceGroupExportResultInner object itself.

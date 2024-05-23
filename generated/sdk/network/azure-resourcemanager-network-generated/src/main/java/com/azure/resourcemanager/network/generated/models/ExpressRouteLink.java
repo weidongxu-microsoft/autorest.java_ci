@@ -88,9 +88,7 @@ public interface ExpressRouteLink {
     ProvisioningState provisioningState();
 
     /**
-     * Gets the macSecConfig property: Definition of ExpressRouteLink Mac Security configuration.
-     * 
-     * MacSec configuration.
+     * Gets the macSecConfig property: MacSec configuration.
      * 
      * @return the macSecConfig value.
      */

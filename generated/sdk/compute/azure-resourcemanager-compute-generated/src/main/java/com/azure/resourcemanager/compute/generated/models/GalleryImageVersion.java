@@ -56,9 +56,7 @@ public interface GalleryImageVersion {
     GalleryImageVersionPublishingProfile publishingProfile();
 
     /**
-     * Gets the provisioningState property: The current state of the gallery or gallery artifact.
-     * 
-     * The provisioning state, which only appears in the response.
+     * Gets the provisioningState property: The provisioning state, which only appears in the response.
      * 
      * @return the provisioningState value.
      */

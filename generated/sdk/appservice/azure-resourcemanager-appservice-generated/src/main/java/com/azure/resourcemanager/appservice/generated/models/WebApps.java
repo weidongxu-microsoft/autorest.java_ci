@@ -527,7 +527,7 @@ public interface WebApps {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -545,7 +545,7 @@ public interface WebApps {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -594,7 +594,7 @@ public interface WebApps {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -612,7 +612,7 @@ public interface WebApps {
      * 
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -4699,7 +4699,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
+     * @param privateEndpointWrapper The privateEndpointWrapper parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -4718,7 +4718,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
-     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
+     * @param privateEndpointWrapper The privateEndpointWrapper parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -6173,7 +6173,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot The slot parameter.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -6193,7 +6193,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot The slot parameter.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -6245,7 +6245,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot The slot parameter.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
@@ -6265,7 +6265,7 @@ public interface WebApps {
      * @param resourceGroupName Name of the resource group to which the resource belongs.
      * @param name Name of the app.
      * @param slot The slot parameter.
-     * @param csmPublishingAccessPoliciesEntity Publishing Credentials Policies parameters.
+     * @param csmPublishingAccessPoliciesEntity The csmPublishingAccessPoliciesEntity parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -11004,7 +11004,7 @@ public interface WebApps {
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
      * @param slot The slot parameter.
-     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
+     * @param privateEndpointWrapper The privateEndpointWrapper parameter.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the
      * request is rejected by server.
@@ -11024,7 +11024,7 @@ public interface WebApps {
      * @param name Name of the site.
      * @param privateEndpointConnectionName The privateEndpointConnectionName parameter.
      * @param slot The slot parameter.
-     * @param privateEndpointWrapper Remote Private Endpoint Connection ARM resource.
+     * @param privateEndpointWrapper The privateEndpointWrapper parameter.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.appservice.generated.models.DefaultErrorResponseErrorException thrown if the

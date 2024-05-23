@@ -15,8 +15,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 @Fluent
 public final class LoadBalancingSettingsProperties extends LoadBalancingSettingsUpdateParameters {
     /*
-     * Resource status of the Front Door or Front Door SubResource.
-     * 
      * Resource status.
      */
     @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
@@ -29,9 +27,7 @@ public final class LoadBalancingSettingsProperties extends LoadBalancingSettings
     }
 
     /**
-     * Get the resourceState property: Resource status of the Front Door or Front Door SubResource.
-     * 
-     * Resource status.
+     * Get the resourceState property: Resource status.
      * 
      * @return the resourceState value.
      */

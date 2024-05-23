@@ -596,9 +596,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Get the next page of items.
      * 
-     * @param nextLink The URL to get the next list of items
-     * 
-     * The nextLink parameter.
+     * @param nextLink The URL to get the next list of items.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      * included in response information as a way to track the request.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
@@ -629,9 +627,7 @@ public final class QueryKeysClientImpl implements QueryKeysClient {
     /**
      * Get the next page of items.
      * 
-     * @param nextLink The URL to get the next list of items
-     * 
-     * The nextLink parameter.
+     * @param nextLink The URL to get the next list of items.
      * @param clientRequestId A client-generated GUID value that identifies this request. If specified, this will be
      * included in response information as a way to track the request.
      * @param context The context to associate with this operation.

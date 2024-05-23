@@ -113,8 +113,6 @@ public final class DeploymentPropertiesExtended {
     private List<ResourceReference> validatedResources;
 
     /*
-     * Error Response
-     * 
      * The deployment error.
      */
     @JsonProperty(value = "error", access = JsonProperty.Access.WRITE_ONLY)
@@ -271,9 +269,7 @@ public final class DeploymentPropertiesExtended {
     }
 
     /**
-     * Get the error property: Error Response
-     * 
-     * The deployment error.
+     * Get the error property: The deployment error.
      * 
      * @return the error value.
      */

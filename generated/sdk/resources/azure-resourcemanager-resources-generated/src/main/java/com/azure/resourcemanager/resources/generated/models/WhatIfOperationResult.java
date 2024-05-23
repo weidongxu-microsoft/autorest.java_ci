@@ -20,9 +20,7 @@ public interface WhatIfOperationResult {
     String status();
 
     /**
-     * Gets the error property: Error Response
-     * 
-     * Error when What-If operation fails.
+     * Gets the error property: Error when What-If operation fails.
      * 
      * @return the error value.
      */
