@@ -31,7 +31,7 @@ public class TriggerInner extends ArmBaseModel {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private TriggerEventType kind;
+    private TriggerEventType kind = TriggerEventType.fromString("Trigger");
 
     /*
      * Metadata pertaining to creation and last modification of Trigger
@@ -43,7 +43,6 @@ public class TriggerInner extends ArmBaseModel {
      * Creates an instance of TriggerInner class.
      */
     public TriggerInner() {
-        this.kind = TriggerEventType.fromString("Trigger");
     }
 
     /**

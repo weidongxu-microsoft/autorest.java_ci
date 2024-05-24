@@ -32,7 +32,7 @@ public class ServerPropertiesForCreate {
      */
     @JsonTypeId
     @JsonProperty(value = "createMode", required = true)
-    private CreateMode createMode;
+    private CreateMode createMode = CreateMode.fromString("ServerPropertiesForCreate");
 
     /*
      * Server version.
@@ -75,7 +75,6 @@ public class ServerPropertiesForCreate {
      * Creates an instance of ServerPropertiesForCreate class.
      */
     public ServerPropertiesForCreate() {
-        this.createMode = CreateMode.fromString("ServerPropertiesForCreate");
     }
 
     /**

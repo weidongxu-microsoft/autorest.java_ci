@@ -34,13 +34,12 @@ public class RouteConfiguration {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "RouteConfiguration";
 
     /**
      * Creates an instance of RouteConfiguration class.
      */
     public RouteConfiguration() {
-        this.odataType = "RouteConfiguration";
     }
 
     /**

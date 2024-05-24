@@ -25,7 +25,7 @@ public class JobOutput {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "JobOutput";
 
     /*
      * If the JobOutput is in the Error state, it contains the details of the error.
@@ -82,7 +82,6 @@ public class JobOutput {
      * Creates an instance of JobOutput class.
      */
     public JobOutput() {
-        this.odataType = "JobOutput";
     }
 
     /**

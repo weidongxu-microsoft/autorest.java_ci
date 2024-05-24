@@ -30,13 +30,12 @@ public class RuleAction {
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
-    private String odataType;
+    private String odataType = "RuleAction";
 
     /**
      * Creates an instance of RuleAction class.
      */
     public RuleAction() {
-        this.odataType = "RuleAction";
     }
 
     /**

@@ -26,13 +26,12 @@ public class ClipTime {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "ClipTime";
 
     /**
      * Creates an instance of ClipTime class.
      */
     public ClipTime() {
-        this.odataType = "ClipTime";
     }
 
     /**

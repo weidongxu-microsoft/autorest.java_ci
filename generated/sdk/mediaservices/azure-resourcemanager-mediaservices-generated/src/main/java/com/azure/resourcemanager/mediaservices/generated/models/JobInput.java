@@ -27,13 +27,12 @@ public class JobInput {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "JobInput";
 
     /**
      * Creates an instance of JobInput class.
      */
     public JobInput() {
-        this.odataType = "JobInput";
     }
 
     /**

@@ -30,13 +30,12 @@ public class InputSchemaMapping {
      */
     @JsonTypeId
     @JsonProperty(value = "inputSchemaMappingType", required = true)
-    private InputSchemaMappingType inputSchemaMappingType;
+    private InputSchemaMappingType inputSchemaMappingType = InputSchemaMappingType.fromString("InputSchemaMapping");
 
     /**
      * Creates an instance of InputSchemaMapping class.
      */
     public InputSchemaMapping() {
-        this.inputSchemaMappingType = InputSchemaMappingType.fromString("InputSchemaMapping");
     }
 
     /**

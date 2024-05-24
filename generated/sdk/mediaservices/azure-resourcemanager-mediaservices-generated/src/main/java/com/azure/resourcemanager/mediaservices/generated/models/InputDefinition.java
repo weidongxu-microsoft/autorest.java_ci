@@ -28,7 +28,7 @@ public class InputDefinition {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "InputDefinition";
 
     /*
      * The list of TrackDescriptors which define the metadata and selection of tracks in the input.
@@ -40,7 +40,6 @@ public class InputDefinition {
      * Creates an instance of InputDefinition class.
      */
     public InputDefinition() {
-        this.odataType = "InputDefinition";
     }
 
     /**

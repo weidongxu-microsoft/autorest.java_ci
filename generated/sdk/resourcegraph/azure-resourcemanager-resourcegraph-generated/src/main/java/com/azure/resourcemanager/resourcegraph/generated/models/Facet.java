@@ -27,7 +27,7 @@ public class Facet {
      */
     @JsonTypeId
     @JsonProperty(value = "resultType", required = true)
-    private String resultType;
+    private String resultType = "Facet";
 
     /*
      * Facet expression, same as in the corresponding facet request.
@@ -39,7 +39,6 @@ public class Facet {
      * Creates an instance of Facet class.
      */
     public Facet() {
-        this.resultType = "Facet";
     }
 
     /**

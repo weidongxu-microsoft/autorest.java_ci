@@ -28,7 +28,7 @@ public class StaticRoutingEnrichment {
      */
     @JsonTypeId
     @JsonProperty(value = "valueType", required = true)
-    private StaticRoutingEnrichmentType valueType;
+    private StaticRoutingEnrichmentType valueType = StaticRoutingEnrichmentType.fromString("StaticRoutingEnrichment");
 
     /*
      * Static routing enrichment key.
@@ -40,7 +40,6 @@ public class StaticRoutingEnrichment {
      * Creates an instance of StaticRoutingEnrichment class.
      */
     public StaticRoutingEnrichment() {
-        this.valueType = StaticRoutingEnrichmentType.fromString("StaticRoutingEnrichment");
     }
 
     /**

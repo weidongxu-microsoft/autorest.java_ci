@@ -35,7 +35,7 @@ public class RoleInner extends ArmBaseModel {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private RoleTypes kind;
+    private RoleTypes kind = RoleTypes.fromString("Role");
 
     /*
      * Metadata pertaining to creation and last modification of Role
@@ -47,7 +47,6 @@ public class RoleInner extends ArmBaseModel {
      * Creates an instance of RoleInner class.
      */
     public RoleInner() {
-        this.kind = RoleTypes.fromString("Role");
     }
 
     /**

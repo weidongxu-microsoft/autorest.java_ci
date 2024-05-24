@@ -33,7 +33,7 @@ public class ResourceCertificateDetails {
      */
     @JsonTypeId
     @JsonProperty(value = "authType", required = true)
-    private String authType;
+    private String authType = "ResourceCertificateDetails";
 
     /*
      * The base64 encoded certificate raw data string.
@@ -87,7 +87,6 @@ public class ResourceCertificateDetails {
      * Creates an instance of ResourceCertificateDetails class.
      */
     public ResourceCertificateDetails() {
-        this.authType = "ResourceCertificateDetails";
     }
 
     /**

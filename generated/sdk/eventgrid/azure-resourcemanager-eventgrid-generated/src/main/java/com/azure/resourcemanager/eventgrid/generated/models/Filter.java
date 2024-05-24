@@ -47,7 +47,7 @@ public class Filter {
      */
     @JsonTypeId
     @JsonProperty(value = "operatorType", required = true)
-    private FilterOperatorType operatorType;
+    private FilterOperatorType operatorType = FilterOperatorType.fromString("Filter");
 
     /*
      * The field/property in the event based on which you want to filter.
@@ -59,7 +59,6 @@ public class Filter {
      * Creates an instance of Filter class.
      */
     public Filter() {
-        this.operatorType = FilterOperatorType.fromString("Filter");
     }
 
     /**

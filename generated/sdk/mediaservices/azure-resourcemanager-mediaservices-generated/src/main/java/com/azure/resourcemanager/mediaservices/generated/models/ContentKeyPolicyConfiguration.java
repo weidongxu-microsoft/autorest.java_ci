@@ -43,13 +43,12 @@ public class ContentKeyPolicyConfiguration {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "ContentKeyPolicyConfiguration";
 
     /**
      * Creates an instance of ContentKeyPolicyConfiguration class.
      */
     public ContentKeyPolicyConfiguration() {
-        this.odataType = "ContentKeyPolicyConfiguration";
     }
 
     /**

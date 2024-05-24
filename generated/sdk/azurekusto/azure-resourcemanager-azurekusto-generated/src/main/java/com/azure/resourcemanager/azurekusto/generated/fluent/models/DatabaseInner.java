@@ -30,7 +30,7 @@ public class DatabaseInner extends ProxyResource {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private Kind kind;
+    private Kind kind = Kind.fromString("Database");
 
     /*
      * Resource location.
@@ -42,7 +42,6 @@ public class DatabaseInner extends ProxyResource {
      * Creates an instance of DatabaseInner class.
      */
     public DatabaseInner() {
-        this.kind = Kind.fromString("Database");
     }
 
     /**

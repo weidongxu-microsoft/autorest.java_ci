@@ -36,7 +36,7 @@ public class ReservationRecommendationInner extends ProxyResource {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private ReservationRecommendationKind kind;
+    private ReservationRecommendationKind kind = ReservationRecommendationKind.fromString("ReservationRecommendation");
 
     /*
      * The etag for the resource.
@@ -67,7 +67,6 @@ public class ReservationRecommendationInner extends ProxyResource {
      * Creates an instance of ReservationRecommendationInner class.
      */
     public ReservationRecommendationInner() {
-        this.kind = ReservationRecommendationKind.fromString("ReservationRecommendation");
     }
 
     /**

@@ -32,7 +32,7 @@ public class UsageDetailInner extends ProxyResource {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private UsageDetailsKind kind;
+    private UsageDetailsKind kind = UsageDetailsKind.fromString("UsageDetail");
 
     /*
      * The etag for the resource.
@@ -51,7 +51,6 @@ public class UsageDetailInner extends ProxyResource {
      * Creates an instance of UsageDetailInner class.
      */
     public UsageDetailInner() {
-        this.kind = UsageDetailsKind.fromString("UsageDetail");
     }
 
     /**

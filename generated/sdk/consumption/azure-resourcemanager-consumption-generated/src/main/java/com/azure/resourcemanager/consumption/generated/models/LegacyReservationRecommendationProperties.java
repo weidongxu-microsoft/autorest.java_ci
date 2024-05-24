@@ -34,7 +34,7 @@ public class LegacyReservationRecommendationProperties {
      */
     @JsonTypeId
     @JsonProperty(value = "scope", required = true)
-    private String scope;
+    private String scope = "LegacyReservationRecommendationProperties";
 
     /*
      * The number of days of usage to look back for recommendation.
@@ -136,7 +136,6 @@ public class LegacyReservationRecommendationProperties {
      * Creates an instance of LegacyReservationRecommendationProperties class.
      */
     public LegacyReservationRecommendationProperties() {
-        this.scope = "LegacyReservationRecommendationProperties";
     }
 
     /**

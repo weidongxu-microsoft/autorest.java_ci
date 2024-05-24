@@ -30,13 +30,12 @@ public class Preset {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "Preset";
 
     /**
      * Creates an instance of Preset class.
      */
     public Preset() {
-        this.odataType = "Preset";
     }
 
     /**

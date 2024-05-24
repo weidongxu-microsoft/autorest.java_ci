@@ -30,13 +30,12 @@ public class OperationProgressResponseType {
      */
     @JsonTypeId
     @JsonProperty(value = "objectType", required = true)
-    private ObjectType objectType;
+    private ObjectType objectType = ObjectType.fromString("OperationProgressResponseType");
 
     /**
      * Creates an instance of OperationProgressResponseType class.
      */
     public OperationProgressResponseType() {
-        this.objectType = ObjectType.fromString("OperationProgressResponseType");
     }
 
     /**

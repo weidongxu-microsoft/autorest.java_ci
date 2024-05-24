@@ -31,7 +31,7 @@ public class AddonInner extends ArmBaseModel {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private AddonType kind;
+    private AddonType kind = AddonType.fromString("Addon");
 
     /*
      * Metadata pertaining to creation and last modification of Addon
@@ -43,7 +43,6 @@ public class AddonInner extends ArmBaseModel {
      * Creates an instance of AddonInner class.
      */
     public AddonInner() {
-        this.kind = AddonType.fromString("Addon");
     }
 
     /**

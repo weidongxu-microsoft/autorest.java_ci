@@ -38,13 +38,12 @@ public class EventSubscriptionDestination {
      */
     @JsonTypeId
     @JsonProperty(value = "endpointType", required = true)
-    private EndpointType endpointType;
+    private EndpointType endpointType = EndpointType.fromString("EventSubscriptionDestination");
 
     /**
      * Creates an instance of EventSubscriptionDestination class.
      */
     public EventSubscriptionDestination() {
-        this.endpointType = EndpointType.fromString("EventSubscriptionDestination");
     }
 
     /**

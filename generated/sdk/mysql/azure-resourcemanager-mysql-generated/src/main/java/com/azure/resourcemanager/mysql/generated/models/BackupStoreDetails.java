@@ -28,13 +28,12 @@ public class BackupStoreDetails {
      */
     @JsonTypeId
     @JsonProperty(value = "objectType", required = true)
-    private String objectType;
+    private String objectType = "BackupStoreDetails";
 
     /**
      * Creates an instance of BackupStoreDetails class.
      */
     public BackupStoreDetails() {
-        this.objectType = "BackupStoreDetails";
     }
 
     /**

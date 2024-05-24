@@ -34,7 +34,7 @@ public class ModernReservationRecommendationProperties {
      */
     @JsonTypeId
     @JsonProperty(value = "scope", required = true)
-    private String scope;
+    private String scope = "ModernReservationRecommendationProperties";
 
     /*
      * Resource Location.
@@ -148,7 +148,6 @@ public class ModernReservationRecommendationProperties {
      * Creates an instance of ModernReservationRecommendationProperties class.
      */
     public ModernReservationRecommendationProperties() {
-        this.scope = "ModernReservationRecommendationProperties";
     }
 
     /**

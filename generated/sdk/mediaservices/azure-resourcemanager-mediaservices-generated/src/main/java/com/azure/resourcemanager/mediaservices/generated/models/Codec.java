@@ -28,7 +28,7 @@ public class Codec {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "Codec";
 
     /*
      * An optional label for the codec. The label can be used to control muxing behavior.
@@ -40,7 +40,6 @@ public class Codec {
      * Creates an instance of Codec class.
      */
     public Codec() {
-        this.odataType = "Codec";
     }
 
     /**

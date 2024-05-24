@@ -27,13 +27,12 @@ public class TrackDescriptor {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "TrackDescriptor";
 
     /**
      * Creates an instance of TrackDescriptor class.
      */
     public TrackDescriptor() {
-        this.odataType = "TrackDescriptor";
     }
 
     /**

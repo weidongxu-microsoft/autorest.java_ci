@@ -25,7 +25,7 @@ public class ApplicationGroupPolicy {
      */
     @JsonTypeId
     @JsonProperty(value = "type", required = true)
-    private ApplicationGroupPolicyType type;
+    private ApplicationGroupPolicyType type = ApplicationGroupPolicyType.fromString("ApplicationGroupPolicy");
 
     /*
      * The Name of this policy
@@ -37,7 +37,6 @@ public class ApplicationGroupPolicy {
      * Creates an instance of ApplicationGroupPolicy class.
      */
     public ApplicationGroupPolicy() {
-        this.type = ApplicationGroupPolicyType.fromString("ApplicationGroupPolicy");
     }
 
     /**

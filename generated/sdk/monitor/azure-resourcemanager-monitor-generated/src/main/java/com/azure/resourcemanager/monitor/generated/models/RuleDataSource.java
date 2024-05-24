@@ -31,7 +31,7 @@ public class RuleDataSource {
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
-    private String odataType;
+    private String odataType = "RuleDataSource";
 
     /*
      * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an
@@ -63,7 +63,6 @@ public class RuleDataSource {
      * Creates an instance of RuleDataSource class.
      */
     public RuleDataSource() {
-        this.odataType = "RuleDataSource";
     }
 
     /**

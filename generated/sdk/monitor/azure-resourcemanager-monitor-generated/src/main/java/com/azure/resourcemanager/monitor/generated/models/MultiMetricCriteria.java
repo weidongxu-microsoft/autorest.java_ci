@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonSubTypes;
 import com.fasterxml.jackson.annotation.JsonTypeId;
 import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import com.fasterxml.jackson.annotation.JsonTypeName;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -37,7 +37,7 @@ public class MultiMetricCriteria {
      */
     @JsonTypeId
     @JsonProperty(value = "criterionType", required = true)
-    private CriterionType criterionType;
+    private CriterionType criterionType = CriterionType.fromString("MultiMetricCriteria");
 
     /*
      * Name of the criteria.
@@ -86,7 +86,6 @@ public class MultiMetricCriteria {
      * Creates an instance of MultiMetricCriteria class.
      */
     public MultiMetricCriteria() {
-        this.criterionType = CriterionType.fromString("MultiMetricCriteria");
     }
 
     /**
@@ -244,7 +243,7 @@ public class MultiMetricCriteria {
     @JsonAnySetter
     void withAdditionalProperties(String key, Object value) {
         if (additionalProperties == null) {
-            additionalProperties = new HashMap<>();
+            additionalProperties = new LinkedHashMap<>();
         }
         additionalProperties.put(key, value);
     }

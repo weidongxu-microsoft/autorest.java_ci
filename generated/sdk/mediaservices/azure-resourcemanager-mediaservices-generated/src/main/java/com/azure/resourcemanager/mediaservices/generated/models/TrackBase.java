@@ -27,13 +27,12 @@ public class TrackBase {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "TrackBase";
 
     /**
      * Creates an instance of TrackBase class.
      */
     public TrackBase() {
-        this.odataType = "TrackBase";
     }
 
     /**

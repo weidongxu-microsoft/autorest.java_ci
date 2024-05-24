@@ -34,13 +34,12 @@ public class ContentKeyPolicyPlayReadyContentKeyLocation {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "ContentKeyPolicyPlayReadyContentKeyLocation";
 
     /**
      * Creates an instance of ContentKeyPolicyPlayReadyContentKeyLocation class.
      */
     public ContentKeyPolicyPlayReadyContentKeyLocation() {
-        this.odataType = "ContentKeyPolicyPlayReadyContentKeyLocation";
     }
 
     /**

@@ -27,7 +27,7 @@ public class ChargeSummary extends ProxyResource {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private ChargeSummaryKind kind;
+    private ChargeSummaryKind kind = ChargeSummaryKind.fromString("ChargeSummary");
 
     /*
      * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
@@ -40,7 +40,6 @@ public class ChargeSummary extends ProxyResource {
      * Creates an instance of ChargeSummary class.
      */
     public ChargeSummary() {
-        this.kind = ChargeSummaryKind.fromString("ChargeSummary");
     }
 
     /**

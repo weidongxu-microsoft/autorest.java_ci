@@ -29,7 +29,7 @@ public class PartnerDestinationInfo {
      */
     @JsonTypeId
     @JsonProperty(value = "endpointType", required = true)
-    private PartnerEndpointType endpointType;
+    private PartnerEndpointType endpointType = PartnerEndpointType.fromString("PartnerDestinationInfo");
 
     /*
      * Azure subscription ID of the subscriber. The partner destination associated with the channel will be
@@ -67,7 +67,6 @@ public class PartnerDestinationInfo {
      * Creates an instance of PartnerDestinationInfo class.
      */
     public PartnerDestinationInfo() {
-        this.endpointType = PartnerEndpointType.fromString("PartnerDestinationInfo");
     }
 
     /**

@@ -30,13 +30,12 @@ public class Action {
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
-    private String odataType;
+    private String odataType = "Action";
 
     /**
      * Creates an instance of Action class.
      */
     public Action() {
-        this.odataType = "Action";
     }
 
     /**

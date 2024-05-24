@@ -46,7 +46,7 @@ public class AdvancedFilter {
      */
     @JsonTypeId
     @JsonProperty(value = "operatorType", required = true)
-    private AdvancedFilterOperatorType operatorType;
+    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.fromString("AdvancedFilter");
 
     /*
      * The field/property in the event based on which you want to filter.
@@ -58,7 +58,6 @@ public class AdvancedFilter {
      * Creates an instance of AdvancedFilter class.
      */
     public AdvancedFilter() {
-        this.operatorType = AdvancedFilterOperatorType.fromString("AdvancedFilter");
     }
 
     /**

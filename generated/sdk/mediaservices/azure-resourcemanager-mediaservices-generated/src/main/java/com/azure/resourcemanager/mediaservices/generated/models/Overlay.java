@@ -28,7 +28,7 @@ public class Overlay {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "Overlay";
 
     /*
      * The label of the job input which is to be used as an overlay. The Input must specify exactly one file. You can
@@ -80,7 +80,6 @@ public class Overlay {
      * Creates an instance of Overlay class.
      */
     public Overlay() {
-        this.odataType = "Overlay";
     }
 
     /**

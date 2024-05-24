@@ -30,13 +30,12 @@ public class DeadLetterDestination {
      */
     @JsonTypeId
     @JsonProperty(value = "endpointType", required = true)
-    private DeadLetterEndPointType endpointType;
+    private DeadLetterEndPointType endpointType = DeadLetterEndPointType.fromString("DeadLetterDestination");
 
     /**
      * Creates an instance of DeadLetterDestination class.
      */
     public DeadLetterDestination() {
-        this.endpointType = DeadLetterEndPointType.fromString("DeadLetterDestination");
     }
 
     /**

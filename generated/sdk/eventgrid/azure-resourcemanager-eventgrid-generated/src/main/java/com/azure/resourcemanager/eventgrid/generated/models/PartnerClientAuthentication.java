@@ -28,13 +28,13 @@ public class PartnerClientAuthentication {
      */
     @JsonTypeId
     @JsonProperty(value = "clientAuthenticationType", required = true)
-    private PartnerClientAuthenticationType clientAuthenticationType;
+    private PartnerClientAuthenticationType clientAuthenticationType
+        = PartnerClientAuthenticationType.fromString("PartnerClientAuthentication");
 
     /**
      * Creates an instance of PartnerClientAuthentication class.
      */
     public PartnerClientAuthentication() {
-        this.clientAuthenticationType = PartnerClientAuthenticationType.fromString("PartnerClientAuthentication");
     }
 
     /**

@@ -28,13 +28,12 @@ public class PartnerUpdateDestinationInfo {
      */
     @JsonTypeId
     @JsonProperty(value = "endpointType", required = true)
-    private PartnerEndpointType endpointType;
+    private PartnerEndpointType endpointType = PartnerEndpointType.fromString("PartnerUpdateDestinationInfo");
 
     /**
      * Creates an instance of PartnerUpdateDestinationInfo class.
      */
     public PartnerUpdateDestinationInfo() {
-        this.endpointType = PartnerEndpointType.fromString("PartnerUpdateDestinationInfo");
     }
 
     /**

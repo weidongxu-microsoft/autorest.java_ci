@@ -27,7 +27,7 @@ public class Format {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "Format";
 
     /*
      * The file naming pattern used for the creation of output files. The following macros are supported in the file
@@ -47,7 +47,6 @@ public class Format {
      * Creates an instance of Format class.
      */
     public Format() {
-        this.odataType = "Format";
     }
 
     /**

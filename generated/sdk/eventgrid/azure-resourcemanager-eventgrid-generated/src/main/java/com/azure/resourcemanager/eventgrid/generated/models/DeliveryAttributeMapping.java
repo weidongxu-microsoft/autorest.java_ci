@@ -30,7 +30,7 @@ public class DeliveryAttributeMapping {
      */
     @JsonTypeId
     @JsonProperty(value = "type", required = true)
-    private DeliveryAttributeMappingType type;
+    private DeliveryAttributeMappingType type = DeliveryAttributeMappingType.fromString("DeliveryAttributeMapping");
 
     /*
      * Name of the delivery attribute or header.
@@ -42,7 +42,6 @@ public class DeliveryAttributeMapping {
      * Creates an instance of DeliveryAttributeMapping class.
      */
     public DeliveryAttributeMapping() {
-        this.type = DeliveryAttributeMappingType.fromString("DeliveryAttributeMapping");
     }
 
     /**

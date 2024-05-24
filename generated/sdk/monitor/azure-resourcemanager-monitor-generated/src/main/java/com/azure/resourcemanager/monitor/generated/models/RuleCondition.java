@@ -35,7 +35,7 @@ public class RuleCondition {
      */
     @JsonTypeId
     @JsonProperty(value = "odata.type", required = true)
-    private String odataType;
+    private String odataType = "RuleCondition";
 
     /*
      * the resource from which the rule collects its data. For this type dataSource will always be of type
@@ -48,7 +48,6 @@ public class RuleCondition {
      * Creates an instance of RuleCondition class.
      */
     public RuleCondition() {
-        this.odataType = "RuleCondition";
     }
 
     /**

@@ -34,7 +34,7 @@ public class DataConnectionInner extends ProxyResource {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private DataConnectionKind kind;
+    private DataConnectionKind kind = DataConnectionKind.fromString("DataConnection");
 
     /*
      * Resource location.
@@ -46,7 +46,6 @@ public class DataConnectionInner extends ProxyResource {
      * Creates an instance of DataConnectionInner class.
      */
     public DataConnectionInner() {
-        this.kind = DataConnectionKind.fromString("DataConnection");
     }
 
     /**

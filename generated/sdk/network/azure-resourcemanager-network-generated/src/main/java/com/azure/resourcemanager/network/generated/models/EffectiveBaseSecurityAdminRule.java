@@ -31,7 +31,7 @@ public class EffectiveBaseSecurityAdminRule {
      */
     @JsonTypeId
     @JsonProperty(value = "kind", required = true)
-    private EffectiveAdminRuleKind kind;
+    private EffectiveAdminRuleKind kind = EffectiveAdminRuleKind.fromString("EffectiveBaseSecurityAdminRule");
 
     /*
      * Resource ID.
@@ -67,7 +67,6 @@ public class EffectiveBaseSecurityAdminRule {
      * Creates an instance of EffectiveBaseSecurityAdminRule class.
      */
     public EffectiveBaseSecurityAdminRule() {
-        this.kind = EffectiveAdminRuleKind.fromString("EffectiveBaseSecurityAdminRule");
     }
 
     /**

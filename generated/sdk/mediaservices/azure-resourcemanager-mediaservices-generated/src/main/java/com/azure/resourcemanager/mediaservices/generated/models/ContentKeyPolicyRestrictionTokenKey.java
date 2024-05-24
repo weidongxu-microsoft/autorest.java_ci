@@ -37,13 +37,12 @@ public class ContentKeyPolicyRestrictionTokenKey {
      */
     @JsonTypeId
     @JsonProperty(value = "@odata.type", required = true)
-    private String odataType;
+    private String odataType = "ContentKeyPolicyRestrictionTokenKey";
 
     /**
      * Creates an instance of ContentKeyPolicyRestrictionTokenKey class.
      */
     public ContentKeyPolicyRestrictionTokenKey() {
-        this.odataType = "ContentKeyPolicyRestrictionTokenKey";
     }
 
     /**
