@@ -23,6 +23,11 @@ public final class SearchBypass extends ExpandableStringEnum<SearchBypass> {
     public static final SearchBypass AZURE_PORTAL = fromString("AzurePortal");
 
     /**
+     * Static value AzureServices for SearchBypass.
+     */
+    public static final SearchBypass AZURE_SERVICES = fromString("AzureServices");
+
+    /**
      * Creates a new instance of SearchBypass value.
      * 
      * @deprecated Use the {@link #fromString(String)} factory method.
