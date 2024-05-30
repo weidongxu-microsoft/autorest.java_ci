@@ -26,7 +26,12 @@ public enum AccessTier {
     /**
      * Enum value Premium.
      */
-    PREMIUM("Premium");
+    PREMIUM("Premium"),
+
+    /**
+     * Enum value Cold.
+     */
+    COLD("Cold");
 
     /**
      * The actual serialized value for a AccessTier instance.

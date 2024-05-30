@@ -182,6 +182,10 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
         return this.innerModel().isLocalUserEnabled();
     }
 
+    public Boolean enableExtendedGroups() {
+        return this.innerModel().enableExtendedGroups();
+    }
+
     public Boolean isHnsEnabled() {
         return this.innerModel().isHnsEnabled();
     }
@@ -619,6 +623,16 @@ public final class StorageAccountImpl implements StorageAccount, StorageAccount.
             return this;
         } else {
             this.updateParameters.withIsLocalUserEnabled(isLocalUserEnabled);
+            return this;
+        }
+    }
+
+    public StorageAccountImpl withEnableExtendedGroups(Boolean enableExtendedGroups) {
+        if (isInCreateMode()) {
+            this.createParameters.withEnableExtendedGroups(enableExtendedGroups);
+            return this;
+        } else {
+            this.updateParameters.withEnableExtendedGroups(enableExtendedGroups);
             return this;
         }
     }

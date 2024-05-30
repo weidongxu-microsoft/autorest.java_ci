@@ -105,6 +105,12 @@ public final class StorageAccountPropertiesCreateParameters {
     private Boolean isLocalUserEnabled;
 
     /*
+     * Enables extended group support with local users feature, if set to true
+     */
+    @JsonProperty(value = "enableExtendedGroups")
+    private Boolean enableExtendedGroups;
+
+    /*
      * Account HierarchicalNamespace enabled if sets to true.
      */
     @JsonProperty(value = "isHnsEnabled")
@@ -442,6 +448,26 @@ public final class StorageAccountPropertiesCreateParameters {
      */
     public StorageAccountPropertiesCreateParameters withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
         this.isLocalUserEnabled = isLocalUserEnabled;
+        return this;
+    }
+
+    /**
+     * Get the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @return the enableExtendedGroups value.
+     */
+    public Boolean enableExtendedGroups() {
+        return this.enableExtendedGroups;
+    }
+
+    /**
+     * Set the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @param enableExtendedGroups the enableExtendedGroups value to set.
+     * @return the StorageAccountPropertiesCreateParameters object itself.
+     */
+    public StorageAccountPropertiesCreateParameters withEnableExtendedGroups(Boolean enableExtendedGroups) {
+        this.enableExtendedGroups = enableExtendedGroups;
         return this;
     }
 

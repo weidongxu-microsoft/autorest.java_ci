@@ -411,6 +411,29 @@ public final class StorageAccountInner extends Resource {
     }
 
     /**
+     * Get the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @return the enableExtendedGroups value.
+     */
+    public Boolean enableExtendedGroups() {
+        return this.innerProperties() == null ? null : this.innerProperties().enableExtendedGroups();
+    }
+
+    /**
+     * Set the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @param enableExtendedGroups the enableExtendedGroups value to set.
+     * @return the StorageAccountInner object itself.
+     */
+    public StorageAccountInner withEnableExtendedGroups(Boolean enableExtendedGroups) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new StorageAccountPropertiesInner();
+        }
+        this.innerProperties().withEnableExtendedGroups(enableExtendedGroups);
+        return this;
+    }
+
+    /**
      * Get the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
      * 
      * @return the isHnsEnabled value.

@@ -164,6 +164,13 @@ public interface StorageAccountProperties {
     Boolean isLocalUserEnabled();
 
     /**
+     * Gets the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @return the enableExtendedGroups value.
+     */
+    Boolean enableExtendedGroups();
+
+    /**
      * Gets the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
      * 
      * @return the isHnsEnabled value.

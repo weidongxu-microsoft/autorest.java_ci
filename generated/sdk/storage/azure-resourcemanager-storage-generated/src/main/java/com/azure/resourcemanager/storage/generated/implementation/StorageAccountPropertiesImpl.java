@@ -126,6 +126,10 @@ public final class StorageAccountPropertiesImpl implements StorageAccountPropert
         return this.innerModel().isLocalUserEnabled();
     }
 
+    public Boolean enableExtendedGroups() {
+        return this.innerModel().enableExtendedGroups();
+    }
+
     public Boolean isHnsEnabled() {
         return this.innerModel().isHnsEnabled();
     }

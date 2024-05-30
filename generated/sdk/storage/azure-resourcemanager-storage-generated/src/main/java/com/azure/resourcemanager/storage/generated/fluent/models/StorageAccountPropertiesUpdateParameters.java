@@ -86,6 +86,12 @@ public final class StorageAccountPropertiesUpdateParameters {
     private Boolean isLocalUserEnabled;
 
     /*
+     * Enables extended group support with local users feature, if set to true
+     */
+    @JsonProperty(value = "enableExtendedGroups")
+    private Boolean enableExtendedGroups;
+
+    /*
      * Network rule set
      */
     @JsonProperty(value = "networkAcls")
@@ -364,6 +370,26 @@ public final class StorageAccountPropertiesUpdateParameters {
      */
     public StorageAccountPropertiesUpdateParameters withIsLocalUserEnabled(Boolean isLocalUserEnabled) {
         this.isLocalUserEnabled = isLocalUserEnabled;
+        return this;
+    }
+
+    /**
+     * Get the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @return the enableExtendedGroups value.
+     */
+    public Boolean enableExtendedGroups() {
+        return this.enableExtendedGroups;
+    }
+
+    /**
+     * Set the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @param enableExtendedGroups the enableExtendedGroups value to set.
+     * @return the StorageAccountPropertiesUpdateParameters object itself.
+     */
+    public StorageAccountPropertiesUpdateParameters withEnableExtendedGroups(Boolean enableExtendedGroups) {
+        this.enableExtendedGroups = enableExtendedGroups;
         return this;
     }
 

@@ -232,6 +232,13 @@ public interface StorageAccount {
     Boolean isLocalUserEnabled();
 
     /**
+     * Gets the enableExtendedGroups property: Enables extended group support with local users feature, if set to true.
+     * 
+     * @return the enableExtendedGroups value.
+     */
+    Boolean enableExtendedGroups();
+
+    /**
      * Gets the isHnsEnabled property: Account HierarchicalNamespace enabled if sets to true.
      * 
      * @return the isHnsEnabled value.
@@ -509,13 +516,14 @@ public interface StorageAccount {
          * The stage of the StorageAccount definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
-            DefinitionStages.WithIdentity, DefinitionStages.WithAllowedCopyScope,
-            DefinitionStages.WithPublicNetworkAccess, DefinitionStages.WithSasPolicy, DefinitionStages.WithKeyPolicy,
-            DefinitionStages.WithCustomDomain, DefinitionStages.WithEncryption, DefinitionStages.WithNetworkRuleSet,
-            DefinitionStages.WithAccessTier, DefinitionStages.WithAzureFilesIdentityBasedAuthentication,
-            DefinitionStages.WithEnableHttpsTrafficOnly, DefinitionStages.WithIsSftpEnabled,
-            DefinitionStages.WithIsLocalUserEnabled, DefinitionStages.WithIsHnsEnabled,
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation, DefinitionStages.WithIdentity,
+            DefinitionStages.WithAllowedCopyScope, DefinitionStages.WithPublicNetworkAccess,
+            DefinitionStages.WithSasPolicy, DefinitionStages.WithKeyPolicy, DefinitionStages.WithCustomDomain,
+            DefinitionStages.WithEncryption, DefinitionStages.WithNetworkRuleSet, DefinitionStages.WithAccessTier,
+            DefinitionStages.WithAzureFilesIdentityBasedAuthentication, DefinitionStages.WithEnableHttpsTrafficOnly,
+            DefinitionStages.WithIsSftpEnabled, DefinitionStages.WithIsLocalUserEnabled,
+            DefinitionStages.WithEnableExtendedGroups, DefinitionStages.WithIsHnsEnabled,
             DefinitionStages.WithLargeFileSharesState, DefinitionStages.WithRoutingPreference,
             DefinitionStages.WithAllowBlobPublicAccess, DefinitionStages.WithMinimumTlsVersion,
             DefinitionStages.WithAllowSharedKeyAccess, DefinitionStages.WithEnableNfsV3,
@@ -763,6 +771,20 @@ public interface StorageAccount {
         }
 
         /**
+         * The stage of the StorageAccount definition allowing to specify enableExtendedGroups.
+         */
+        interface WithEnableExtendedGroups {
+            /**
+             * Specifies the enableExtendedGroups property: Enables extended group support with local users feature, if
+             * set to true.
+             * 
+             * @param enableExtendedGroups Enables extended group support with local users feature, if set to true.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableExtendedGroups(Boolean enableExtendedGroups);
+        }
+
+        /**
          * The stage of the StorageAccount definition allowing to specify isHnsEnabled.
          */
         interface WithIsHnsEnabled {
@@ -950,8 +972,8 @@ public interface StorageAccount {
         UpdateStages.WithKind, UpdateStages.WithCustomDomain, UpdateStages.WithEncryption, UpdateStages.WithSasPolicy,
         UpdateStages.WithKeyPolicy, UpdateStages.WithAccessTier, UpdateStages.WithAzureFilesIdentityBasedAuthentication,
         UpdateStages.WithEnableHttpsTrafficOnly, UpdateStages.WithIsSftpEnabled, UpdateStages.WithIsLocalUserEnabled,
-        UpdateStages.WithNetworkRuleSet, UpdateStages.WithLargeFileSharesState, UpdateStages.WithRoutingPreference,
-        UpdateStages.WithAllowBlobPublicAccess, UpdateStages.WithMinimumTlsVersion,
+        UpdateStages.WithEnableExtendedGroups, UpdateStages.WithNetworkRuleSet, UpdateStages.WithLargeFileSharesState,
+        UpdateStages.WithRoutingPreference, UpdateStages.WithAllowBlobPublicAccess, UpdateStages.WithMinimumTlsVersion,
         UpdateStages.WithAllowSharedKeyAccess, UpdateStages.WithAllowCrossTenantReplication,
         UpdateStages.WithDefaultToOAuthAuthentication, UpdateStages.WithPublicNetworkAccess,
         UpdateStages.WithImmutableStorageWithVersioning, UpdateStages.WithAllowedCopyScope,
@@ -1168,6 +1190,20 @@ public interface StorageAccount {
              * @return the next definition stage.
              */
             Update withIsLocalUserEnabled(Boolean isLocalUserEnabled);
+        }
+
+        /**
+         * The stage of the StorageAccount update allowing to specify enableExtendedGroups.
+         */
+        interface WithEnableExtendedGroups {
+            /**
+             * Specifies the enableExtendedGroups property: Enables extended group support with local users feature, if
+             * set to true.
+             * 
+             * @param enableExtendedGroups Enables extended group support with local users feature, if set to true.
+             * @return the next definition stage.
+             */
+            Update withEnableExtendedGroups(Boolean enableExtendedGroups);
         }
 
         /**
