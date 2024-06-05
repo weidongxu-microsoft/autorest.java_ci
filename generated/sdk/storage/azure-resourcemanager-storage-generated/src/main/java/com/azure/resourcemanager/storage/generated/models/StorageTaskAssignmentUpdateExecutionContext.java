@@ -16,7 +16,7 @@ public final class StorageTaskAssignmentUpdateExecutionContext {
      * Execution target of the storage task assignment
      */
     @JsonProperty(value = "target")
-    private ExecutionTargetUpdate target;
+    private ExecutionTarget target;
 
     /*
      * Execution trigger of the storage task assignment
@@ -35,7 +35,7 @@ public final class StorageTaskAssignmentUpdateExecutionContext {
      * 
      * @return the target value.
      */
-    public ExecutionTargetUpdate target() {
+    public ExecutionTarget target() {
         return this.target;
     }
 
@@ -45,7 +45,7 @@ public final class StorageTaskAssignmentUpdateExecutionContext {
      * @param target the target value to set.
      * @return the StorageTaskAssignmentUpdateExecutionContext object itself.
      */
-    public StorageTaskAssignmentUpdateExecutionContext withTarget(ExecutionTargetUpdate target) {
+    public StorageTaskAssignmentUpdateExecutionContext withTarget(ExecutionTarget target) {
         this.target = target;
         return this;
     }

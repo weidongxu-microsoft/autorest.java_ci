@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageTaskReportInstanceInner;
 
 /**
@@ -38,13 +37,6 @@ public interface StorageTaskReportInstance {
      * @return the properties value.
      */
     StorageTaskReportProperties properties();
-
-    /**
-     * Gets the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     * 
-     * @return the systemData value.
-     */
-    SystemData systemData();
 
     /**
      * Gets the inner com.azure.resourcemanager.storage.generated.fluent.models.StorageTaskReportInstanceInner object.

@@ -1551,7 +1551,7 @@ public interface VirtualMachine {
      * Shuts down the virtual machine and releases the compute resources. You are not billed for the compute resources
      * that this virtual machine uses.
      * 
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageTaskAssignmentInner;
 import com.azure.resourcemanager.storage.generated.models.StorageTaskAssignment;
@@ -32,10 +31,6 @@ public final class StorageTaskAssignmentImpl
 
     public StorageTaskAssignmentProperties properties() {
         return this.innerModel().properties();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public String resourceGroupName() {

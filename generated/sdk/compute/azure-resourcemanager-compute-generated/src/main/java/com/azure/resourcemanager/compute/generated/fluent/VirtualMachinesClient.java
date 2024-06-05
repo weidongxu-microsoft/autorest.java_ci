@@ -488,7 +488,7 @@ public interface VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by
@@ -520,7 +520,7 @@ public interface VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.resourcemanager.compute.generated.models.ApiErrorException thrown if the request is rejected by

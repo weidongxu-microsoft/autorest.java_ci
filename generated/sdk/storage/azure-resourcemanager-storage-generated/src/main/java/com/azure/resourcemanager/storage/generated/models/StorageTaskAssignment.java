@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.models;
 
-import com.azure.core.management.SystemData;
 import com.azure.core.util.Context;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageTaskAssignmentInner;
 
@@ -41,13 +40,6 @@ public interface StorageTaskAssignment {
     StorageTaskAssignmentProperties properties();
 
     /**
-     * Gets the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     * 
-     * @return the systemData value.
-     */
-    SystemData systemData();
-
-    /**
      * Gets the name of the resource group.
      * 
      * @return the name of the resource group.
@@ -64,8 +56,8 @@ public interface StorageTaskAssignment {
     /**
      * The entirety of the StorageTaskAssignment definition.
      */
-    interface Definition
-        extends DefinitionStages.Blank, DefinitionStages.WithParentResource, DefinitionStages.WithCreate {
+    interface Definition extends DefinitionStages.Blank, DefinitionStages.WithParentResource,
+        DefinitionStages.WithProperties, DefinitionStages.WithCreate {
     }
 
     /**
@@ -90,14 +82,27 @@ public interface StorageTaskAssignment {
              * names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
              * @return the next definition stage.
              */
-            WithCreate withExistingStorageAccount(String resourceGroupName, String accountName);
+            WithProperties withExistingStorageAccount(String resourceGroupName, String accountName);
+        }
+
+        /**
+         * The stage of the StorageTaskAssignment definition allowing to specify properties.
+         */
+        interface WithProperties {
+            /**
+             * Specifies the properties property: Properties of the storage task assignment..
+             * 
+             * @param properties Properties of the storage task assignment.
+             * @return the next definition stage.
+             */
+            WithCreate withProperties(StorageTaskAssignmentProperties properties);
         }
 
         /**
          * The stage of the StorageTaskAssignment definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithProperties {
+        interface WithCreate {
             /**
              * Executes the create request.
              * 
@@ -112,19 +117,6 @@ public interface StorageTaskAssignment {
              * @return the created resource.
              */
             StorageTaskAssignment create(Context context);
-        }
-
-        /**
-         * The stage of the StorageTaskAssignment definition allowing to specify properties.
-         */
-        interface WithProperties {
-            /**
-             * Specifies the properties property: Properties of the storage task assignment..
-             * 
-             * @param properties Properties of the storage task assignment.
-             * @return the next definition stage.
-             */
-            WithCreate withProperties(StorageTaskAssignmentProperties properties);
         }
     }
 

@@ -4,7 +4,6 @@
 
 package com.azure.resourcemanager.storage.generated.implementation;
 
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.storage.generated.fluent.models.StorageTaskReportInstanceInner;
 import com.azure.resourcemanager.storage.generated.models.StorageTaskReportInstance;
 import com.azure.resourcemanager.storage.generated.models.StorageTaskReportProperties;
@@ -34,10 +33,6 @@ public final class StorageTaskReportInstanceImpl implements StorageTaskReportIns
 
     public StorageTaskReportProperties properties() {
         return this.innerModel().properties();
-    }
-
-    public SystemData systemData() {
-        return this.innerModel().systemData();
     }
 
     public StorageTaskReportInstanceInner innerModel() {

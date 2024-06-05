@@ -2102,7 +2102,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2140,7 +2140,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2178,7 +2178,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2217,7 +2217,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2257,7 +2257,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2276,7 +2276,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
@@ -2312,7 +2312,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.
@@ -2347,7 +2347,7 @@ public final class VirtualMachinesClientImpl implements VirtualMachinesClient {
      * 
      * @param resourceGroupName The name of the resource group.
      * @param vmName The name of the virtual machine.
-     * @param hibernate Optional parameter to hibernate a virtual machine. (Feature in Preview).
+     * @param hibernate Optional parameter to hibernate a virtual machine.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws ApiErrorException thrown if the request is rejected by server.

@@ -99,7 +99,6 @@ public interface StorageTaskAssignments {
      * must be between 3 and 24 characters in length and use numbers and lower-case letters only.
      * @param maxpagesize Optional, specifies the maximum number of storage task assignment Ids to be included in the
      * list response.
-     * @param filter Optional. When specified, it can be used to query using reporting properties.
      * @param context The context to associate with this operation.
      * @throws IllegalArgumentException thrown if parameters fail the validation.
      * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
@@ -108,7 +107,7 @@ public interface StorageTaskAssignments {
      * {@link PagedIterable}.
      */
     PagedIterable<StorageTaskAssignment> list(String resourceGroupName, String accountName, String maxpagesize,
-        String filter, Context context);
+        Context context);
 
     /**
      * Get the storage task assignment properties.

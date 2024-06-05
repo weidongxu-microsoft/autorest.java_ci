@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.storage.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.logging.ClientLogger;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
@@ -18,7 +17,7 @@ public final class ExecutionTarget {
     /*
      * Required list of object prefixes to be included for task execution
      */
-    @JsonProperty(value = "prefix", required = true)
+    @JsonProperty(value = "prefix")
     private List<String> prefix;
 
     /*
@@ -82,11 +81,5 @@ public final class ExecutionTarget {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (prefix() == null) {
-            throw LOGGER.atError()
-                .log(new IllegalArgumentException("Missing required property prefix in model ExecutionTarget"));
-        }
     }
-
-    private static final ClientLogger LOGGER = new ClientLogger(ExecutionTarget.class);
 }

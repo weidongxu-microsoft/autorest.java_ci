@@ -6,7 +6,7 @@ package com.azure.resourcemanager.storage.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.management.SystemData;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.storage.generated.models.StorageTaskAssignmentProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -18,14 +18,8 @@ public final class StorageTaskAssignmentInner extends ProxyResource {
     /*
      * Properties of the storage task assignment.
      */
-    @JsonProperty(value = "properties")
+    @JsonProperty(value = "properties", required = true)
     private StorageTaskAssignmentProperties properties;
-
-    /*
-     * Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Creates an instance of StorageTaskAssignmentInner class.
@@ -54,22 +48,19 @@ public final class StorageTaskAssignmentInner extends ProxyResource {
     }
 
     /**
-     * Get the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     * 
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
-    }
-
-    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (properties() != null) {
+        if (properties() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property properties in model StorageTaskAssignmentInner"));
+        } else {
             properties().validate();
         }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(StorageTaskAssignmentInner.class);
 }

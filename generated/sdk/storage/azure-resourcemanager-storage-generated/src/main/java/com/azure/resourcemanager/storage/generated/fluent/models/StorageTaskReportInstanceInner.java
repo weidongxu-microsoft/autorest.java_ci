@@ -6,7 +6,6 @@ package com.azure.resourcemanager.storage.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
-import com.azure.core.management.SystemData;
 import com.azure.resourcemanager.storage.generated.models.StorageTaskReportProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
@@ -20,12 +19,6 @@ public final class StorageTaskReportInstanceInner extends ProxyResource {
      */
     @JsonProperty(value = "properties")
     private StorageTaskReportProperties properties;
-
-    /*
-     * Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
-    private SystemData systemData;
 
     /**
      * Creates an instance of StorageTaskReportInstanceInner class.
@@ -51,15 +44,6 @@ public final class StorageTaskReportInstanceInner extends ProxyResource {
     public StorageTaskReportInstanceInner withProperties(StorageTaskReportProperties properties) {
         this.properties = properties;
         return this;
-    }
-
-    /**
-     * Get the systemData property: Azure Resource Manager metadata containing createdBy and modifiedBy information.
-     * 
-     * @return the systemData value.
-     */
-    public SystemData systemData() {
-        return this.systemData;
     }
 
     /**

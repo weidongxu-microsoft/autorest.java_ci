@@ -64,9 +64,9 @@ public final class StorageTaskAssignmentsImpl implements StorageTaskAssignments 
     }
 
     public PagedIterable<StorageTaskAssignment> list(String resourceGroupName, String accountName, String maxpagesize,
-        String filter, Context context) {
+        Context context) {
         PagedIterable<StorageTaskAssignmentInner> inner
-            = this.serviceClient().list(resourceGroupName, accountName, maxpagesize, filter, context);
+            = this.serviceClient().list(resourceGroupName, accountName, maxpagesize, context);
         return ResourceManagerUtils.mapPage(inner, inner1 -> new StorageTaskAssignmentImpl(inner1, this.manager()));
     }
 

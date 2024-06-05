@@ -16,7 +16,7 @@ public final class StorageTaskAssignmentExecutionContext {
     /*
      * Execution target of the storage task assignment
      */
-    @JsonProperty(value = "target", required = true)
+    @JsonProperty(value = "target")
     private ExecutionTarget target;
 
     /*
@@ -77,11 +77,7 @@ public final class StorageTaskAssignmentExecutionContext {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (target() == null) {
-            throw LOGGER.atError()
-                .log(new IllegalArgumentException(
-                    "Missing required property target in model StorageTaskAssignmentExecutionContext"));
-        } else {
+        if (target() != null) {
             target().validate();
         }
         if (trigger() == null) {
