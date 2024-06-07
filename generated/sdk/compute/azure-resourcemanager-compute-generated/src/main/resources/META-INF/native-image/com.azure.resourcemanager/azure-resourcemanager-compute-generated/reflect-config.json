@@ -2359,6 +2359,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.compute.generated.models.SecurityPostureReferenceUpdate",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.compute.generated.models.SecurityProfile",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,

@@ -2364,6 +2364,11 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.appservice.generated.models.FunctionsDeploymentStorageType",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.appservice.generated.models.FunctionsRuntime",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,

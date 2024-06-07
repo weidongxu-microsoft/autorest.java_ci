@@ -31,6 +31,12 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     private VirtualMachineScaleSetUpdateNetworkProfile networkProfile;
 
     /*
+     * The virtual machine scale set security posture reference.
+     */
+    @JsonProperty(value = "securityPostureReference")
+    private SecurityPostureReferenceUpdate securityPostureReference;
+
+    /*
      * The virtual machine scale set Security profile
      */
     @JsonProperty(value = "securityProfile")
@@ -144,6 +150,27 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
     public VirtualMachineScaleSetUpdateVMProfile
         withNetworkProfile(VirtualMachineScaleSetUpdateNetworkProfile networkProfile) {
         this.networkProfile = networkProfile;
+        return this;
+    }
+
+    /**
+     * Get the securityPostureReference property: The virtual machine scale set security posture reference.
+     * 
+     * @return the securityPostureReference value.
+     */
+    public SecurityPostureReferenceUpdate securityPostureReference() {
+        return this.securityPostureReference;
+    }
+
+    /**
+     * Set the securityPostureReference property: The virtual machine scale set security posture reference.
+     * 
+     * @param securityPostureReference the securityPostureReference value to set.
+     * @return the VirtualMachineScaleSetUpdateVMProfile object itself.
+     */
+    public VirtualMachineScaleSetUpdateVMProfile
+        withSecurityPostureReference(SecurityPostureReferenceUpdate securityPostureReference) {
+        this.securityPostureReference = securityPostureReference;
         return this;
     }
 
@@ -330,6 +357,9 @@ public final class VirtualMachineScaleSetUpdateVMProfile {
         }
         if (networkProfile() != null) {
             networkProfile().validate();
+        }
+        if (securityPostureReference() != null) {
+            securityPostureReference().validate();
         }
         if (securityProfile() != null) {
             securityProfile().validate();

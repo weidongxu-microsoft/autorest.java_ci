@@ -121,8 +121,7 @@ public final class VirtualMachineScaleSetVMProfile {
     private ServiceArtifactReference serviceArtifactReference;
 
     /*
-     * Specifies the security posture to be used for all virtual machines in the scale set. Minimum api-version:
-     * 2023-03-01
+     * Specifies the security posture to be used in the scale set. Minimum api-version: 2023-03-01
      */
     @JsonProperty(value = "securityPostureReference")
     private SecurityPostureReference securityPostureReference;
@@ -510,8 +509,8 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Get the securityPostureReference property: Specifies the security posture to be used for all virtual machines in
-     * the scale set. Minimum api-version: 2023-03-01.
+     * Get the securityPostureReference property: Specifies the security posture to be used in the scale set. Minimum
+     * api-version: 2023-03-01.
      * 
      * @return the securityPostureReference value.
      */
@@ -520,8 +519,8 @@ public final class VirtualMachineScaleSetVMProfile {
     }
 
     /**
-     * Set the securityPostureReference property: Specifies the security posture to be used for all virtual machines in
-     * the scale set. Minimum api-version: 2023-03-01.
+     * Set the securityPostureReference property: Specifies the security posture to be used in the scale set. Minimum
+     * api-version: 2023-03-01.
      * 
      * @param securityPostureReference the securityPostureReference value to set.
      * @return the VirtualMachineScaleSetVMProfile object itself.
