@@ -23,6 +23,7 @@ import com.azure.core.util.polling.LongRunningOperationStatus;
 import com.azure.core.util.polling.PollerFlux;
 import com.azure.core.util.serializer.SerializerAdapter;
 import com.azure.core.util.serializer.SerializerEncoding;
+import com.azure.resourcemanager.resourcegraph.generated.fluent.GraphQueriesClient;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.OperationsClient;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.ResourceGraphClient;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.ResourceProvidersClient;
@@ -139,6 +140,20 @@ public final class ResourceGraphClientImpl implements ResourceGraphClient {
     }
 
     /**
+     * The GraphQueriesClient object to access its operations.
+     */
+    private final GraphQueriesClient graphQueries;
+
+    /**
+     * Gets the GraphQueriesClient object to access its operations.
+     * 
+     * @return the GraphQueriesClient object.
+     */
+    public GraphQueriesClient getGraphQueries() {
+        return this.graphQueries;
+    }
+
+    /**
      * Initializes an instance of ResourceGraphClient client.
      * 
      * @param httpPipeline The HTTP pipeline to send requests through.
@@ -156,6 +171,7 @@ public final class ResourceGraphClientImpl implements ResourceGraphClient {
         this.apiVersion = "2021-03-01";
         this.resourceProviders = new ResourceProvidersClientImpl(this);
         this.operations = new OperationsClientImpl(this);
+        this.graphQueries = new GraphQueriesClientImpl(this);
     }
 
     /**

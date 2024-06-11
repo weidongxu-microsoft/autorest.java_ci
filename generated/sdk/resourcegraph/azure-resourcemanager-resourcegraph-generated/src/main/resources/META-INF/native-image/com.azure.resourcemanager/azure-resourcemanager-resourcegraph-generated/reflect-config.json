@@ -1,4 +1,19 @@
 [ {
+  "name" : "com.azure.resourcemanager.resourcegraph.generated.fluent.models.GraphQueryProperties",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.resourcegraph.generated.fluent.models.GraphQueryPropertiesUpdateParameters",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.resourcegraph.generated.fluent.models.GraphQueryResourceInner",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.resourcegraph.generated.fluent.models.OperationInner",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -44,6 +59,16 @@
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true
 }, {
+  "name" : "com.azure.resourcemanager.resourcegraph.generated.models.GraphQueryListResult",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.resourcegraph.generated.models.GraphQueryUpdateParameters",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
   "name" : "com.azure.resourcemanager.resourcegraph.generated.models.OperationDisplay",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
@@ -65,6 +90,11 @@
   "allDeclaredMethods" : true
 }, {
   "name" : "com.azure.resourcemanager.resourcegraph.generated.models.ResultFormat",
+  "allDeclaredConstructors" : true,
+  "allDeclaredFields" : true,
+  "allDeclaredMethods" : true
+}, {
+  "name" : "com.azure.resourcemanager.resourcegraph.generated.models.ResultKind",
   "allDeclaredConstructors" : true,
   "allDeclaredFields" : true,
   "allDeclaredMethods" : true

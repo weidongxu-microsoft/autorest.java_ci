@@ -52,4 +52,11 @@ public interface ResourceGraphClient {
      * @return the OperationsClient object.
      */
     OperationsClient getOperations();
+
+    /**
+     * Gets the GraphQueriesClient object to access its operations.
+     * 
+     * @return the GraphQueriesClient object.
+     */
+    GraphQueriesClient getGraphQueries();
 }

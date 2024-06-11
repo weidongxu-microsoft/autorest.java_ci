@@ -24,9 +24,11 @@ import com.azure.core.management.profile.AzureProfile;
 import com.azure.core.util.Configuration;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.ResourceGraphClient;
+import com.azure.resourcemanager.resourcegraph.generated.implementation.GraphQueriesImpl;
 import com.azure.resourcemanager.resourcegraph.generated.implementation.OperationsImpl;
 import com.azure.resourcemanager.resourcegraph.generated.implementation.ResourceGraphClientBuilder;
 import com.azure.resourcemanager.resourcegraph.generated.implementation.ResourceProvidersImpl;
+import com.azure.resourcemanager.resourcegraph.generated.models.GraphQueries;
 import com.azure.resourcemanager.resourcegraph.generated.models.Operations;
 import com.azure.resourcemanager.resourcegraph.generated.models.ResourceProviders;
 import java.time.Duration;
@@ -44,6 +46,8 @@ public final class ResourceGraphManager {
     private ResourceProviders resourceProviders;
 
     private Operations operations;
+
+    private GraphQueries graphQueries;
 
     private final ResourceGraphClient clientObject;
 
@@ -276,6 +280,18 @@ public final class ResourceGraphManager {
             this.operations = new OperationsImpl(clientObject.getOperations(), this);
         }
         return operations;
+    }
+
+    /**
+     * Gets the resource collection API of GraphQueries. It manages GraphQueryResource.
+     * 
+     * @return Resource collection API of GraphQueries.
+     */
+    public GraphQueries graphQueries() {
+        if (this.graphQueries == null) {
+            this.graphQueries = new GraphQueriesImpl(clientObject.getGraphQueries(), this);
+        }
+        return graphQueries;
     }
 
     /**
