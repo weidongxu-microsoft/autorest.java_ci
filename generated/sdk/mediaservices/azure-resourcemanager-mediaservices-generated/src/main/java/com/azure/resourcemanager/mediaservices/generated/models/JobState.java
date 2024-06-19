@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class JobState extends ExpandableStringEnum<JobState> {
      * @param name a name to look for.
      * @return the corresponding JobState.
      */
-    @JsonCreator
     public static JobState fromString(String name) {
         return fromString(name, JobState.class);
     }

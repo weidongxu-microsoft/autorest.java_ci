@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class MountType extends ExpandableStringEnum<MountType> {
      * @param name a name to look for.
      * @return the corresponding MountType.
      */
-    @JsonCreator
     public static MountType fromString(String name) {
         return fromString(name, MountType.class);
     }

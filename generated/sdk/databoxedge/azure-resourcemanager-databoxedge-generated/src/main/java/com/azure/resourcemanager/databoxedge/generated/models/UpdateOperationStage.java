@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -112,7 +111,6 @@ public final class UpdateOperationStage extends ExpandableStringEnum<UpdateOpera
      * @param name a name to look for.
      * @return the corresponding UpdateOperationStage.
      */
-    @JsonCreator
     public static UpdateOperationStage fromString(String name) {
         return fromString(name, UpdateOperationStage.class);
     }

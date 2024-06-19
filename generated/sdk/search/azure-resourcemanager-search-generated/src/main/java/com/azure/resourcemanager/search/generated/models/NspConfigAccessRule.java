@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * An access rule for a network security perimeter configuration.
  */
 @Fluent
-public final class NspConfigAccessRule {
+public final class NspConfigAccessRule implements JsonSerializable<NspConfigAccessRule> {
     /*
      * The name property.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The properties for the access rules in a network security perimeter configuration.
      */
-    @JsonProperty(value = "properties")
     private NspConfigAccessRuleProperties properties;
 
     /**
@@ -79,5 +81,44 @@ public final class NspConfigAccessRule {
         if (properties() != null) {
             properties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeJsonField("properties", this.properties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NspConfigAccessRule from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NspConfigAccessRule if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NspConfigAccessRule.
+     */
+    public static NspConfigAccessRule fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NspConfigAccessRule deserializedNspConfigAccessRule = new NspConfigAccessRule();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedNspConfigAccessRule.name = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedNspConfigAccessRule.properties = NspConfigAccessRuleProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNspConfigAccessRule;
+        });
     }
 }

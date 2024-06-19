@@ -5,25 +5,28 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSignatureAuthorizationRuleInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The list of shared access policies with a next link.
  */
 @Fluent
-public final class SharedAccessSignatureAuthorizationRuleListResult {
+public final class SharedAccessSignatureAuthorizationRuleListResult
+    implements JsonSerializable<SharedAccessSignatureAuthorizationRuleListResult> {
     /*
      * The list of shared access policies.
      */
-    @JsonProperty(value = "value")
     private List<SharedAccessSignatureAuthorizationRuleInner> value;
 
     /*
      * The next link.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -71,5 +74,46 @@ public final class SharedAccessSignatureAuthorizationRuleListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SharedAccessSignatureAuthorizationRuleListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SharedAccessSignatureAuthorizationRuleListResult if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SharedAccessSignatureAuthorizationRuleListResult.
+     */
+    public static SharedAccessSignatureAuthorizationRuleListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SharedAccessSignatureAuthorizationRuleListResult deserializedSharedAccessSignatureAuthorizationRuleListResult
+                = new SharedAccessSignatureAuthorizationRuleListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<SharedAccessSignatureAuthorizationRuleInner> value
+                        = reader.readArray(reader1 -> SharedAccessSignatureAuthorizationRuleInner.fromJson(reader1));
+                    deserializedSharedAccessSignatureAuthorizationRuleListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedSharedAccessSignatureAuthorizationRuleListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSharedAccessSignatureAuthorizationRuleListResult;
+        });
     }
 }

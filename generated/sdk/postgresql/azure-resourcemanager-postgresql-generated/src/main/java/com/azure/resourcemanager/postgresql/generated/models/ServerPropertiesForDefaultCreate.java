@@ -6,40 +6,30 @@ package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The properties used to create a new server.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "createMode",
-    defaultImpl = ServerPropertiesForDefaultCreate.class,
-    visible = true)
-@JsonTypeName("Default")
 @Fluent
 public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForCreate {
     /*
      * The mode to create a new server.
      */
-    @JsonTypeId
-    @JsonProperty(value = "createMode", required = true)
     private CreateMode createMode = CreateMode.DEFAULT;
 
     /*
      * The administrator's login name of a server. Can only be specified when the server is being created (and is
      * required for creation).
      */
-    @JsonProperty(value = "administratorLogin", required = true)
     private String administratorLogin;
 
     /*
      * The password of the administrator login.
      */
-    @JsonProperty(value = "administratorLoginPassword")
     private String administratorLoginPassword;
 
     /**
@@ -176,4 +166,74 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ServerPropertiesForDefaultCreate.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("version", version() == null ? null : version().toString());
+        jsonWriter.writeStringField("sslEnforcement", sslEnforcement() == null ? null : sslEnforcement().toString());
+        jsonWriter.writeStringField("minimalTlsVersion",
+            minimalTlsVersion() == null ? null : minimalTlsVersion().toString());
+        jsonWriter.writeStringField("infrastructureEncryption",
+            infrastructureEncryption() == null ? null : infrastructureEncryption().toString());
+        jsonWriter.writeStringField("publicNetworkAccess",
+            publicNetworkAccess() == null ? null : publicNetworkAccess().toString());
+        jsonWriter.writeJsonField("storageProfile", storageProfile());
+        jsonWriter.writeStringField("administratorLogin", this.administratorLogin);
+        jsonWriter.writeStringField("administratorLoginPassword", this.administratorLoginPassword);
+        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerPropertiesForDefaultCreate from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerPropertiesForDefaultCreate if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ServerPropertiesForDefaultCreate.
+     */
+    public static ServerPropertiesForDefaultCreate fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerPropertiesForDefaultCreate deserializedServerPropertiesForDefaultCreate
+                = new ServerPropertiesForDefaultCreate();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("version".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate
+                        .withVersion(ServerVersion.fromString(reader.getString()));
+                } else if ("sslEnforcement".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate
+                        .withSslEnforcement(SslEnforcementEnum.fromString(reader.getString()));
+                } else if ("minimalTlsVersion".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate
+                        .withMinimalTlsVersion(MinimalTlsVersionEnum.fromString(reader.getString()));
+                } else if ("infrastructureEncryption".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate
+                        .withInfrastructureEncryption(InfrastructureEncryption.fromString(reader.getString()));
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate
+                        .withPublicNetworkAccess(PublicNetworkAccessEnum.fromString(reader.getString()));
+                } else if ("storageProfile".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate.withStorageProfile(StorageProfile.fromJson(reader));
+                } else if ("administratorLogin".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate.administratorLogin = reader.getString();
+                } else if ("administratorLoginPassword".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate.administratorLoginPassword = reader.getString();
+                } else if ("createMode".equals(fieldName)) {
+                    deserializedServerPropertiesForDefaultCreate.createMode = CreateMode.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerPropertiesForDefaultCreate;
+        });
+    }
 }

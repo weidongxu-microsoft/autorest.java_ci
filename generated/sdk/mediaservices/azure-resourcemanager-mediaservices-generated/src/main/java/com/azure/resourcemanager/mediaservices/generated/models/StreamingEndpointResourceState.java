@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -57,7 +56,6 @@ public final class StreamingEndpointResourceState extends ExpandableStringEnum<S
      * @param name a name to look for.
      * @return the corresponding StreamingEndpointResourceState.
      */
-    @JsonCreator
     public static StreamingEndpointResourceState fromString(String name) {
         return fromString(name, StreamingEndpointResourceState.class);
     }

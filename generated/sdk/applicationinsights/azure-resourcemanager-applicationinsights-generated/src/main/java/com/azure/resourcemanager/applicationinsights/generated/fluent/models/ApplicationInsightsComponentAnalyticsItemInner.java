@@ -5,70 +5,66 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsComponentAnalyticsItemProperties;
 import com.azure.resourcemanager.applicationinsights.generated.models.ItemScope;
 import com.azure.resourcemanager.applicationinsights.generated.models.ItemType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Properties that define an Analytics item that is associated to an Application Insights component.
  */
 @Fluent
-public final class ApplicationInsightsComponentAnalyticsItemInner {
+public final class ApplicationInsightsComponentAnalyticsItemInner
+    implements JsonSerializable<ApplicationInsightsComponentAnalyticsItemInner> {
     /*
      * Internally assigned unique id of the item definition.
      */
-    @JsonProperty(value = "Id")
     private String id;
 
     /*
      * The user-defined name of the item.
      */
-    @JsonProperty(value = "Name")
     private String name;
 
     /*
      * The content of this item
      */
-    @JsonProperty(value = "Content")
     private String content;
 
     /*
      * This instance's version of the data model. This can change as new features are added.
      */
-    @JsonProperty(value = "Version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
     /*
      * Enum indicating if this item definition is owned by a specific user or is shared between all users with access to
      * the Application Insights component.
      */
-    @JsonProperty(value = "Scope")
     private ItemScope scope;
 
     /*
      * Enum indicating the type of the Analytics item.
      */
-    @JsonProperty(value = "Type")
     private ItemType type;
 
     /*
      * Date and time in UTC when this item was created.
      */
-    @JsonProperty(value = "TimeCreated", access = JsonProperty.Access.WRITE_ONLY)
     private String timeCreated;
 
     /*
      * Date and time in UTC of the last modification that was made to this item.
      */
-    @JsonProperty(value = "TimeModified", access = JsonProperty.Access.WRITE_ONLY)
     private String timeModified;
 
     /*
      * A set of properties that can be defined in the context of a specific item type. Each type may have its own
      * properties.
      */
-    @JsonProperty(value = "Properties")
     private ApplicationInsightsComponentAnalyticsItemProperties properties;
 
     /**
@@ -238,5 +234,66 @@ public final class ApplicationInsightsComponentAnalyticsItemInner {
         if (properties() != null) {
             properties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("Id", this.id);
+        jsonWriter.writeStringField("Name", this.name);
+        jsonWriter.writeStringField("Content", this.content);
+        jsonWriter.writeStringField("Scope", this.scope == null ? null : this.scope.toString());
+        jsonWriter.writeStringField("Type", this.type == null ? null : this.type.toString());
+        jsonWriter.writeJsonField("Properties", this.properties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentAnalyticsItemInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentAnalyticsItemInner if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentAnalyticsItemInner.
+     */
+    public static ApplicationInsightsComponentAnalyticsItemInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentAnalyticsItemInner deserializedApplicationInsightsComponentAnalyticsItemInner
+                = new ApplicationInsightsComponentAnalyticsItemInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("Id".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.id = reader.getString();
+                } else if ("Name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.name = reader.getString();
+                } else if ("Content".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.content = reader.getString();
+                } else if ("Version".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.version = reader.getString();
+                } else if ("Scope".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.scope
+                        = ItemScope.fromString(reader.getString());
+                } else if ("Type".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.type
+                        = ItemType.fromString(reader.getString());
+                } else if ("TimeCreated".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.timeCreated = reader.getString();
+                } else if ("TimeModified".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.timeModified = reader.getString();
+                } else if ("Properties".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemInner.properties
+                        = ApplicationInsightsComponentAnalyticsItemProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentAnalyticsItemInner;
+        });
     }
 }

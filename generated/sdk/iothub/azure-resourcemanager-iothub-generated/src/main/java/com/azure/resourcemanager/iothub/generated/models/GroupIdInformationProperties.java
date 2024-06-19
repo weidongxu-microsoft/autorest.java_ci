@@ -5,30 +5,31 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties for a group information object.
  */
 @Fluent
-public final class GroupIdInformationProperties {
+public final class GroupIdInformationProperties implements JsonSerializable<GroupIdInformationProperties> {
     /*
      * The group id
      */
-    @JsonProperty(value = "groupId")
     private String groupId;
 
     /*
      * The required members for a specific group id
      */
-    @JsonProperty(value = "requiredMembers")
     private List<String> requiredMembers;
 
     /*
      * The required DNS zones for a specific group id
      */
-    @JsonProperty(value = "requiredZoneNames")
     private List<String> requiredZoneNames;
 
     /**
@@ -103,5 +104,51 @@ public final class GroupIdInformationProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("groupId", this.groupId);
+        jsonWriter.writeArrayField("requiredMembers", this.requiredMembers,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("requiredZoneNames", this.requiredZoneNames,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of GroupIdInformationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of GroupIdInformationProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the GroupIdInformationProperties.
+     */
+    public static GroupIdInformationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            GroupIdInformationProperties deserializedGroupIdInformationProperties = new GroupIdInformationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("groupId".equals(fieldName)) {
+                    deserializedGroupIdInformationProperties.groupId = reader.getString();
+                } else if ("requiredMembers".equals(fieldName)) {
+                    List<String> requiredMembers = reader.readArray(reader1 -> reader1.getString());
+                    deserializedGroupIdInformationProperties.requiredMembers = requiredMembers;
+                } else if ("requiredZoneNames".equals(fieldName)) {
+                    List<String> requiredZoneNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedGroupIdInformationProperties.requiredZoneNames = requiredZoneNames;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedGroupIdInformationProperties;
+        });
     }
 }

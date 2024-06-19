@@ -5,59 +5,56 @@
 package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.postgresql.generated.models.MinimalTlsVersionEnum;
 import com.azure.resourcemanager.postgresql.generated.models.PublicNetworkAccessEnum;
 import com.azure.resourcemanager.postgresql.generated.models.ServerVersion;
 import com.azure.resourcemanager.postgresql.generated.models.SslEnforcementEnum;
 import com.azure.resourcemanager.postgresql.generated.models.StorageProfile;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties that can be updated for a server.
  */
 @Fluent
-public final class ServerUpdateParametersProperties {
+public final class ServerUpdateParametersProperties implements JsonSerializable<ServerUpdateParametersProperties> {
     /*
      * Storage profile of a server.
      */
-    @JsonProperty(value = "storageProfile")
     private StorageProfile storageProfile;
 
     /*
      * The password of the administrator login.
      */
-    @JsonProperty(value = "administratorLoginPassword")
     private String administratorLoginPassword;
 
     /*
      * The version of a server.
      */
-    @JsonProperty(value = "version")
     private ServerVersion version;
 
     /*
      * Enable ssl enforcement or not when connect to server.
      */
-    @JsonProperty(value = "sslEnforcement")
     private SslEnforcementEnum sslEnforcement;
 
     /*
      * Enforce a minimal Tls version for the server.
      */
-    @JsonProperty(value = "minimalTlsVersion")
     private MinimalTlsVersionEnum minimalTlsVersion;
 
     /*
      * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be
      * 'Enabled' or 'Disabled'
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessEnum publicNetworkAccess;
 
     /*
      * The replication role of the server.
      */
-    @JsonProperty(value = "replicationRole")
     private String replicationRole;
 
     /**
@@ -217,5 +214,66 @@ public final class ServerUpdateParametersProperties {
         if (storageProfile() != null) {
             storageProfile().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("storageProfile", this.storageProfile);
+        jsonWriter.writeStringField("administratorLoginPassword", this.administratorLoginPassword);
+        jsonWriter.writeStringField("version", this.version == null ? null : this.version.toString());
+        jsonWriter.writeStringField("sslEnforcement",
+            this.sslEnforcement == null ? null : this.sslEnforcement.toString());
+        jsonWriter.writeStringField("minimalTlsVersion",
+            this.minimalTlsVersion == null ? null : this.minimalTlsVersion.toString());
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        jsonWriter.writeStringField("replicationRole", this.replicationRole);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerUpdateParametersProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerUpdateParametersProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ServerUpdateParametersProperties.
+     */
+    public static ServerUpdateParametersProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerUpdateParametersProperties deserializedServerUpdateParametersProperties
+                = new ServerUpdateParametersProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("storageProfile".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.storageProfile = StorageProfile.fromJson(reader);
+                } else if ("administratorLoginPassword".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.administratorLoginPassword = reader.getString();
+                } else if ("version".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.version = ServerVersion.fromString(reader.getString());
+                } else if ("sslEnforcement".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.sslEnforcement
+                        = SslEnforcementEnum.fromString(reader.getString());
+                } else if ("minimalTlsVersion".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.minimalTlsVersion
+                        = MinimalTlsVersionEnum.fromString(reader.getString());
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.publicNetworkAccess
+                        = PublicNetworkAccessEnum.fromString(reader.getString());
+                } else if ("replicationRole".equals(fieldName)) {
+                    deserializedServerUpdateParametersProperties.replicationRole = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerUpdateParametersProperties;
+        });
     }
 }

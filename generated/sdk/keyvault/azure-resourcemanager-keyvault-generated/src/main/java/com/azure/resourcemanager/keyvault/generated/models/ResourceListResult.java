@@ -6,24 +6,26 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * List of vault resources.
  */
 @Fluent
-public final class ResourceListResult {
+public final class ResourceListResult implements JsonSerializable<ResourceListResult> {
     /*
      * The list of vault resources.
      */
-    @JsonProperty(value = "value")
     private List<Resource> value;
 
     /*
      * The URL to get the next set of vault resources.
      */
-    @JsonProperty(value = "nextLink")
     private String nextLink;
 
     /**
@@ -78,5 +80,45 @@ public final class ResourceListResult {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("nextLink", this.nextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ResourceListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ResourceListResult if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ResourceListResult.
+     */
+    public static ResourceListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ResourceListResult deserializedResourceListResult = new ResourceListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<Resource> value = reader.readArray(reader1 -> Resource.fromJson(reader1));
+                    deserializedResourceListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedResourceListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedResourceListResult;
+        });
     }
 }

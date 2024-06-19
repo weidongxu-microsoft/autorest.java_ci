@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class TablePlanEnum extends ExpandableStringEnum<TablePlanEnum> {
      * @param name a name to look for.
      * @return the corresponding TablePlanEnum.
      */
-    @JsonCreator
     public static TablePlanEnum fromString(String name) {
         return fromString(name, TablePlanEnum.class);
     }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class FilterMode extends ExpandableStringEnum<FilterMode> {
      * @param name a name to look for.
      * @return the corresponding FilterMode.
      */
-    @JsonCreator
     public static FilterMode fromString(String name) {
         return fromString(name, FilterMode.class);
     }

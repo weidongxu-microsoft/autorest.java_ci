@@ -7,9 +7,12 @@ package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterGetProperties;
 import com.azure.resourcemanager.hdinsight.generated.models.ClusterIdentity;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -21,32 +24,42 @@ public final class ClusterInner extends Resource {
     /*
      * The ETag for the resource
      */
-    @JsonProperty(value = "etag")
     private String etag;
 
     /*
      * The availability zones.
      */
-    @JsonProperty(value = "zones")
     private List<String> zones;
 
     /*
      * The properties of the cluster.
      */
-    @JsonProperty(value = "properties")
     private ClusterGetProperties properties;
 
     /*
      * The identity of the cluster, if configured.
      */
-    @JsonProperty(value = "identity")
     private ClusterIdentity identity;
 
     /*
      * Metadata pertaining to creation and last modification of the resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of ClusterInner class.
@@ -144,6 +157,36 @@ public final class ClusterInner extends Resource {
     }
 
     /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -173,5 +216,67 @@ public final class ClusterInner extends Resource {
         if (identity() != null) {
             identity().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", location());
+        jsonWriter.writeMapField("tags", tags(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("etag", this.etag);
+        jsonWriter.writeArrayField("zones", this.zones, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("properties", this.properties);
+        jsonWriter.writeJsonField("identity", this.identity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClusterInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClusterInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ClusterInner.
+     */
+    public static ClusterInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClusterInner deserializedClusterInner = new ClusterInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedClusterInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedClusterInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedClusterInner.type = reader.getString();
+                } else if ("location".equals(fieldName)) {
+                    deserializedClusterInner.withLocation(reader.getString());
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedClusterInner.withTags(tags);
+                } else if ("etag".equals(fieldName)) {
+                    deserializedClusterInner.etag = reader.getString();
+                } else if ("zones".equals(fieldName)) {
+                    List<String> zones = reader.readArray(reader1 -> reader1.getString());
+                    deserializedClusterInner.zones = zones;
+                } else if ("properties".equals(fieldName)) {
+                    deserializedClusterInner.properties = ClusterGetProperties.fromJson(reader);
+                } else if ("identity".equals(fieldName)) {
+                    deserializedClusterInner.identity = ClusterIdentity.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedClusterInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClusterInner;
+        });
     }
 }

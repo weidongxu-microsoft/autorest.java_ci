@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The Trigger model.
  */
 @Fluent
-public final class Trigger {
+public final class Trigger implements JsonSerializable<Trigger> {
     /*
      * The time duration after key creation to rotate the key. It only applies to rotate. It will be in ISO 8601
      * duration format. Eg: 'P90D', 'P1Y'.
      */
-    @JsonProperty(value = "timeAfterCreate")
     private String timeAfterCreate;
 
     /*
      * The time duration before key expiring to rotate or notify. It will be in ISO 8601 duration format. Eg: 'P90D',
      * 'P1Y'.
      */
-    @JsonProperty(value = "timeBeforeExpiry")
     private String timeBeforeExpiry;
 
     /**
@@ -82,5 +84,44 @@ public final class Trigger {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("timeAfterCreate", this.timeAfterCreate);
+        jsonWriter.writeStringField("timeBeforeExpiry", this.timeBeforeExpiry);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Trigger from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Trigger if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the Trigger.
+     */
+    public static Trigger fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Trigger deserializedTrigger = new Trigger();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("timeAfterCreate".equals(fieldName)) {
+                    deserializedTrigger.timeAfterCreate = reader.getString();
+                } else if ("timeBeforeExpiry".equals(fieldName)) {
+                    deserializedTrigger.timeBeforeExpiry = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedTrigger;
+        });
     }
 }

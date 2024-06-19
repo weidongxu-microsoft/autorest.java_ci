@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.resourcegraph.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Indicates whether the query results are truncated.
  */
@@ -36,7 +33,6 @@ public enum ResultTruncated {
      * @param value the serialized value to parse.
      * @return the parsed ResultTruncated object, or null if unable to parse.
      */
-    @JsonCreator
     public static ResultTruncated fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum ResultTruncated {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

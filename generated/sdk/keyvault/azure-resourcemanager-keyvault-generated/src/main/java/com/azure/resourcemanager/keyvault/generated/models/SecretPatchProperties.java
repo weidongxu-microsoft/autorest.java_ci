@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Properties of the secret.
  */
 @Fluent
-public final class SecretPatchProperties {
+public final class SecretPatchProperties implements JsonSerializable<SecretPatchProperties> {
     /*
      * The value of the secret.
      */
-    @JsonProperty(value = "value")
     private String value;
 
     /*
      * The content type of the secret.
      */
-    @JsonProperty(value = "contentType")
     private String contentType;
 
     /*
      * The attributes of the secret.
      */
-    @JsonProperty(value = "attributes")
     private SecretAttributes attributes;
 
     /**
@@ -105,5 +106,47 @@ public final class SecretPatchProperties {
         if (attributes() != null) {
             attributes().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("value", this.value);
+        jsonWriter.writeStringField("contentType", this.contentType);
+        jsonWriter.writeJsonField("attributes", this.attributes);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SecretPatchProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SecretPatchProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SecretPatchProperties.
+     */
+    public static SecretPatchProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SecretPatchProperties deserializedSecretPatchProperties = new SecretPatchProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    deserializedSecretPatchProperties.value = reader.getString();
+                } else if ("contentType".equals(fieldName)) {
+                    deserializedSecretPatchProperties.contentType = reader.getString();
+                } else if ("attributes".equals(fieldName)) {
+                    deserializedSecretPatchProperties.attributes = SecretAttributes.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSecretPatchProperties;
+        });
     }
 }

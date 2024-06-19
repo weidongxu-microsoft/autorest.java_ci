@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class AccountType extends ExpandableStringEnum<AccountType> {
      * @param name a name to look for.
      * @return the corresponding AccountType.
      */
-    @JsonCreator
     public static AccountType fromString(String name) {
         return fromString(name, AccountType.class);
     }

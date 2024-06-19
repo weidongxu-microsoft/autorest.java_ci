@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Day of week to apply the patch on.
  */
@@ -66,7 +63,6 @@ public enum DayOfWeek {
      * @param value the serialized value to parse.
      * @return the parsed DayOfWeek object, or null if unable to parse.
      */
-    @JsonCreator
     public static DayOfWeek fromString(String value) {
         if (value == null) {
             return null;
@@ -83,7 +79,6 @@ public enum DayOfWeek {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

@@ -5,26 +5,28 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.search.generated.fluent.models.QueryKeyInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Response containing the query API keys for a given Azure AI Search service.
  */
 @Immutable
-public final class ListQueryKeysResult {
+public final class ListQueryKeysResult implements JsonSerializable<ListQueryKeysResult> {
     /*
      * The query keys for the Azure AI Search service.
      */
-    @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<QueryKeyInner> value;
 
     /*
      * Request URL that can be used to query next page of query keys. Returned when the total number of requested query
      * keys exceed maximum page size.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -61,5 +63,43 @@ public final class ListQueryKeysResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ListQueryKeysResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ListQueryKeysResult if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ListQueryKeysResult.
+     */
+    public static ListQueryKeysResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ListQueryKeysResult deserializedListQueryKeysResult = new ListQueryKeysResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<QueryKeyInner> value = reader.readArray(reader1 -> QueryKeyInner.fromJson(reader1));
+                    deserializedListQueryKeysResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedListQueryKeysResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedListQueryKeysResult;
+        });
     }
 }

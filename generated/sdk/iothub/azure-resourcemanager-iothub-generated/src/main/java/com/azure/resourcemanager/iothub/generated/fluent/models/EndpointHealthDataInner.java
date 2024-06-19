@@ -6,19 +6,23 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.DateTimeRfc1123;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.EndpointHealthStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.util.Objects;
 
 /**
  * The health data for an endpoint.
  */
 @Fluent
-public final class EndpointHealthDataInner {
+public final class EndpointHealthDataInner implements JsonSerializable<EndpointHealthDataInner> {
     /*
      * Id of the endpoint
      */
-    @JsonProperty(value = "endpointId")
     private String endpointId;
 
     /*
@@ -30,31 +34,26 @@ public final class EndpointHealthDataInner {
      * identify errors and monitor issues with endpoints. The 'unknown' status shows that the IoT Hub has not
      * established a connection with the endpoint. No messages have been delivered to or rejected from this endpoint
      */
-    @JsonProperty(value = "healthStatus")
     private EndpointHealthStatus healthStatus;
 
     /*
      * Last error obtained when a message failed to be delivered to iot hub
      */
-    @JsonProperty(value = "lastKnownError")
     private String lastKnownError;
 
     /*
      * Time at which the last known error occurred
      */
-    @JsonProperty(value = "lastKnownErrorTime")
     private DateTimeRfc1123 lastKnownErrorTime;
 
     /*
      * Last time iot hub successfully sent a message to the endpoint
      */
-    @JsonProperty(value = "lastSuccessfulSendAttemptTime")
     private DateTimeRfc1123 lastSuccessfulSendAttemptTime;
 
     /*
      * Last time iot hub tried to send a message to the endpoint
      */
-    @JsonProperty(value = "lastSendAttemptTime")
     private DateTimeRfc1123 lastSendAttemptTime;
 
     /**
@@ -224,5 +223,61 @@ public final class EndpointHealthDataInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("endpointId", this.endpointId);
+        jsonWriter.writeStringField("healthStatus", this.healthStatus == null ? null : this.healthStatus.toString());
+        jsonWriter.writeStringField("lastKnownError", this.lastKnownError);
+        jsonWriter.writeStringField("lastKnownErrorTime", Objects.toString(this.lastKnownErrorTime, null));
+        jsonWriter.writeStringField("lastSuccessfulSendAttemptTime",
+            Objects.toString(this.lastSuccessfulSendAttemptTime, null));
+        jsonWriter.writeStringField("lastSendAttemptTime", Objects.toString(this.lastSendAttemptTime, null));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EndpointHealthDataInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EndpointHealthDataInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EndpointHealthDataInner.
+     */
+    public static EndpointHealthDataInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EndpointHealthDataInner deserializedEndpointHealthDataInner = new EndpointHealthDataInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("endpointId".equals(fieldName)) {
+                    deserializedEndpointHealthDataInner.endpointId = reader.getString();
+                } else if ("healthStatus".equals(fieldName)) {
+                    deserializedEndpointHealthDataInner.healthStatus
+                        = EndpointHealthStatus.fromString(reader.getString());
+                } else if ("lastKnownError".equals(fieldName)) {
+                    deserializedEndpointHealthDataInner.lastKnownError = reader.getString();
+                } else if ("lastKnownErrorTime".equals(fieldName)) {
+                    deserializedEndpointHealthDataInner.lastKnownErrorTime
+                        = reader.getNullable(nonNullReader -> new DateTimeRfc1123(nonNullReader.getString()));
+                } else if ("lastSuccessfulSendAttemptTime".equals(fieldName)) {
+                    deserializedEndpointHealthDataInner.lastSuccessfulSendAttemptTime
+                        = reader.getNullable(nonNullReader -> new DateTimeRfc1123(nonNullReader.getString()));
+                } else if ("lastSendAttemptTime".equals(fieldName)) {
+                    deserializedEndpointHealthDataInner.lastSendAttemptTime
+                        = reader.getNullable(nonNullReader -> new DateTimeRfc1123(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEndpointHealthDataInner;
+        });
     }
 }

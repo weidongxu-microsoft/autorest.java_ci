@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -38,7 +37,6 @@ public final class BillingType extends ExpandableStringEnum<BillingType> {
      * @param name a name to look for.
      * @return the corresponding BillingType.
      */
-    @JsonCreator
     public static BillingType fromString(String name) {
         return fromString(name, BillingType.class);
     }

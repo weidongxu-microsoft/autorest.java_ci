@@ -5,30 +5,31 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Load balancer configuration.
  */
 @Fluent
-public final class LoadBalancerConfig {
+public final class LoadBalancerConfig implements JsonSerializable<LoadBalancerConfig> {
     /*
      * Load balancer type
      */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
     /*
      * Load balancer version
      */
-    @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private String version;
 
     /*
      * Load balancer ipconfig
      */
-    @JsonProperty(value = "ipRange")
     private List<String> ipRange;
 
     /**
@@ -81,5 +82,46 @@ public final class LoadBalancerConfig {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("ipRange", this.ipRange, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LoadBalancerConfig from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LoadBalancerConfig if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LoadBalancerConfig.
+     */
+    public static LoadBalancerConfig fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LoadBalancerConfig deserializedLoadBalancerConfig = new LoadBalancerConfig();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("type".equals(fieldName)) {
+                    deserializedLoadBalancerConfig.type = reader.getString();
+                } else if ("version".equals(fieldName)) {
+                    deserializedLoadBalancerConfig.version = reader.getString();
+                } else if ("ipRange".equals(fieldName)) {
+                    List<String> ipRange = reader.readArray(reader1 -> reader1.getString());
+                    deserializedLoadBalancerConfig.ipRange = ipRange;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLoadBalancerConfig;
+        });
     }
 }

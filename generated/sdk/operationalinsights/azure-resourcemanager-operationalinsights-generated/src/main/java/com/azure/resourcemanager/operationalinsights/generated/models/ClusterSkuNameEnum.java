@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class ClusterSkuNameEnum extends ExpandableStringEnum<ClusterSkuNam
      * @param name a name to look for.
      * @return the corresponding ClusterSkuNameEnum.
      */
-    @JsonCreator
     public static ClusterSkuNameEnum fromString(String name) {
         return fromString(name, ClusterSkuNameEnum.class);
     }

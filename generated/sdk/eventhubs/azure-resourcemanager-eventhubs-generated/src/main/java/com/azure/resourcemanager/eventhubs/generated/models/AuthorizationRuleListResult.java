@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.AuthorizationRuleInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The response from the List namespace operation.
  */
 @Fluent
-public final class AuthorizationRuleListResult {
+public final class AuthorizationRuleListResult implements JsonSerializable<AuthorizationRuleListResult> {
     /*
      * Result of the List Authorization Rules operation.
      */
-    @JsonProperty(value = "value")
     private List<AuthorizationRuleInner> value;
 
     /*
      * Link to the next set of results. Not empty if Value contains an incomplete list of Authorization Rules
      */
-    @JsonProperty(value = "nextLink")
     private String nextLink;
 
     /**
@@ -83,5 +85,46 @@ public final class AuthorizationRuleListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("nextLink", this.nextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AuthorizationRuleListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AuthorizationRuleListResult if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AuthorizationRuleListResult.
+     */
+    public static AuthorizationRuleListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AuthorizationRuleListResult deserializedAuthorizationRuleListResult = new AuthorizationRuleListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<AuthorizationRuleInner> value
+                        = reader.readArray(reader1 -> AuthorizationRuleInner.fromJson(reader1));
+                    deserializedAuthorizationRuleListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedAuthorizationRuleListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAuthorizationRuleListResult;
+        });
     }
 }

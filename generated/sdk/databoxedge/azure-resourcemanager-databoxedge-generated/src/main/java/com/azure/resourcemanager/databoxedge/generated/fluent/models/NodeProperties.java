@@ -5,54 +5,51 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.NodeStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * This class represents the nodes in a highly available cluster.
  */
 @Immutable
-public final class NodeProperties {
+public final class NodeProperties implements JsonSerializable<NodeProperties> {
     /*
      * The current status of the individual node
      */
-    @JsonProperty(value = "nodeStatus", access = JsonProperty.Access.WRITE_ONLY)
     private NodeStatus nodeStatus;
 
     /*
      * Serial number of the Chassis
      */
-    @JsonProperty(value = "nodeChassisSerialNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeChassisSerialNumber;
 
     /*
      * Serial number of the individual node
      */
-    @JsonProperty(value = "nodeSerialNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeSerialNumber;
 
     /*
      * Display Name of the individual node
      */
-    @JsonProperty(value = "nodeDisplayName", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeDisplayName;
 
     /*
      * Friendly software version name that is currently installed on the node
      */
-    @JsonProperty(value = "nodeFriendlySoftwareVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeFriendlySoftwareVersion;
 
     /*
      * HCS version that is currently installed on the node
      */
-    @JsonProperty(value = "nodeHcsVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeHcsVersion;
 
     /*
      * Guid instance id of the node
      */
-    @JsonProperty(value = "nodeInstanceId", access = JsonProperty.Access.WRITE_ONLY)
     private String nodeInstanceId;
 
     /**
@@ -131,5 +128,52 @@ public final class NodeProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NodeProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NodeProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NodeProperties.
+     */
+    public static NodeProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NodeProperties deserializedNodeProperties = new NodeProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("nodeStatus".equals(fieldName)) {
+                    deserializedNodeProperties.nodeStatus = NodeStatus.fromString(reader.getString());
+                } else if ("nodeChassisSerialNumber".equals(fieldName)) {
+                    deserializedNodeProperties.nodeChassisSerialNumber = reader.getString();
+                } else if ("nodeSerialNumber".equals(fieldName)) {
+                    deserializedNodeProperties.nodeSerialNumber = reader.getString();
+                } else if ("nodeDisplayName".equals(fieldName)) {
+                    deserializedNodeProperties.nodeDisplayName = reader.getString();
+                } else if ("nodeFriendlySoftwareVersion".equals(fieldName)) {
+                    deserializedNodeProperties.nodeFriendlySoftwareVersion = reader.getString();
+                } else if ("nodeHcsVersion".equals(fieldName)) {
+                    deserializedNodeProperties.nodeHcsVersion = reader.getString();
+                } else if ("nodeInstanceId".equals(fieldName)) {
+                    deserializedNodeProperties.nodeInstanceId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNodeProperties;
+        });
     }
 }

@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.postgresql.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Enable ssl enforcement or not when connect to server.
  */
@@ -36,7 +33,6 @@ public enum SslEnforcementEnum {
      * @param value the serialized value to parse.
      * @return the parsed SslEnforcementEnum object, or null if unable to parse.
      */
-    @JsonCreator
     public static SslEnforcementEnum fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum SslEnforcementEnum {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

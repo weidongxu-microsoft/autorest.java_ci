@@ -5,18 +5,22 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A set of properties that can be defined in the context of a specific item type. Each type may have its own
  * properties.
  */
 @Fluent
-public final class ApplicationInsightsComponentAnalyticsItemProperties {
+public final class ApplicationInsightsComponentAnalyticsItemProperties
+    implements JsonSerializable<ApplicationInsightsComponentAnalyticsItemProperties> {
     /*
      * A function alias, used when the type of the item is Function
      */
-    @JsonProperty(value = "functionAlias")
     private String functionAlias;
 
     /**
@@ -51,5 +55,43 @@ public final class ApplicationInsightsComponentAnalyticsItemProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("functionAlias", this.functionAlias);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentAnalyticsItemProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentAnalyticsItemProperties if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentAnalyticsItemProperties.
+     */
+    public static ApplicationInsightsComponentAnalyticsItemProperties fromJson(JsonReader jsonReader)
+        throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentAnalyticsItemProperties deserializedApplicationInsightsComponentAnalyticsItemProperties
+                = new ApplicationInsightsComponentAnalyticsItemProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("functionAlias".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentAnalyticsItemProperties.functionAlias = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentAnalyticsItemProperties;
+        });
     }
 }

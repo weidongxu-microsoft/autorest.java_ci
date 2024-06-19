@@ -5,47 +5,48 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmGeoReplicatedRegionInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * Properties of the managed HSM Pool.
  */
 @Fluent
-public final class ManagedHsmProperties {
+public final class ManagedHsmProperties implements JsonSerializable<ManagedHsmProperties> {
     /*
      * The Azure Active Directory tenant ID that should be used for authenticating requests to the managed HSM pool.
      */
-    @JsonProperty(value = "tenantId")
     private UUID tenantId;
 
     /*
      * Array of initial administrators object ids for this managed hsm pool.
      */
-    @JsonProperty(value = "initialAdminObjectIds")
     private List<String> initialAdminObjectIds;
 
     /*
      * The URI of the managed hsm pool for performing operations on keys.
      */
-    @JsonProperty(value = "hsmUri", access = JsonProperty.Access.WRITE_ONLY)
     private String hsmUri;
 
     /*
      * Property to specify whether the 'soft delete' functionality is enabled for this managed HSM pool. Soft delete is
      * enabled by default for all managed HSMs and is immutable.
      */
-    @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
 
     /*
      * Soft deleted data retention days. When you delete an HSM or a key, it will remain recoverable for the configured
      * retention period or for a default period of 90 days. It accepts values between 7 and 90.
      */
-    @JsonProperty(value = "softDeleteRetentionInDays")
     private Integer softDeleteRetentionInDays;
 
     /*
@@ -53,61 +54,51 @@ public final class ManagedHsmProperties {
      * to true activates protection against purge for this managed HSM pool and its content - only the Managed HSM
      * service may initiate a hard, irrecoverable deletion. Enabling this functionality is irreversible.
      */
-    @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
 
     /*
      * The create mode to indicate whether the resource is being created or is being recovered from a deleted resource.
      */
-    @JsonProperty(value = "createMode")
     private CreateMode createMode;
 
     /*
      * Resource Status Message.
      */
-    @JsonProperty(value = "statusMessage", access = JsonProperty.Access.WRITE_ONLY)
     private String statusMessage;
 
     /*
      * Provisioning state.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * Rules governing the accessibility of the key vault from specific network locations.
      */
-    @JsonProperty(value = "networkAcls")
     private MhsmNetworkRuleSet networkAcls;
 
     /*
      * List of all regions associated with the managed hsm pool.
      */
-    @JsonProperty(value = "regions")
     private List<MhsmGeoReplicatedRegionInner> regions;
 
     /*
      * List of private endpoint connections associated with the managed hsm pool.
      */
-    @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<MhsmPrivateEndpointConnectionItem> privateEndpointConnections;
 
     /*
      * Control permission to the managed HSM from public networks.
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
      * The scheduled purge date in UTC.
      */
-    @JsonProperty(value = "scheduledPurgeDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime scheduledPurgeDate;
 
     /*
      * Managed HSM security domain properties.
      */
-    @JsonProperty(value = "securityDomainProperties", access = JsonProperty.Access.WRITE_ONLY)
     private ManagedHsmSecurityDomainProperties securityDomainProperties;
 
     /**
@@ -385,5 +376,89 @@ public final class ManagedHsmProperties {
         if (securityDomainProperties() != null) {
             securityDomainProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("tenantId", Objects.toString(this.tenantId, null));
+        jsonWriter.writeArrayField("initialAdminObjectIds", this.initialAdminObjectIds,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeBooleanField("enableSoftDelete", this.enableSoftDelete);
+        jsonWriter.writeNumberField("softDeleteRetentionInDays", this.softDeleteRetentionInDays);
+        jsonWriter.writeBooleanField("enablePurgeProtection", this.enablePurgeProtection);
+        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
+        jsonWriter.writeJsonField("networkAcls", this.networkAcls);
+        jsonWriter.writeArrayField("regions", this.regions, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ManagedHsmProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ManagedHsmProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ManagedHsmProperties.
+     */
+    public static ManagedHsmProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ManagedHsmProperties deserializedManagedHsmProperties = new ManagedHsmProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tenantId".equals(fieldName)) {
+                    deserializedManagedHsmProperties.tenantId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("initialAdminObjectIds".equals(fieldName)) {
+                    List<String> initialAdminObjectIds = reader.readArray(reader1 -> reader1.getString());
+                    deserializedManagedHsmProperties.initialAdminObjectIds = initialAdminObjectIds;
+                } else if ("hsmUri".equals(fieldName)) {
+                    deserializedManagedHsmProperties.hsmUri = reader.getString();
+                } else if ("enableSoftDelete".equals(fieldName)) {
+                    deserializedManagedHsmProperties.enableSoftDelete = reader.getNullable(JsonReader::getBoolean);
+                } else if ("softDeleteRetentionInDays".equals(fieldName)) {
+                    deserializedManagedHsmProperties.softDeleteRetentionInDays = reader.getNullable(JsonReader::getInt);
+                } else if ("enablePurgeProtection".equals(fieldName)) {
+                    deserializedManagedHsmProperties.enablePurgeProtection = reader.getNullable(JsonReader::getBoolean);
+                } else if ("createMode".equals(fieldName)) {
+                    deserializedManagedHsmProperties.createMode = CreateMode.fromString(reader.getString());
+                } else if ("statusMessage".equals(fieldName)) {
+                    deserializedManagedHsmProperties.statusMessage = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedManagedHsmProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("networkAcls".equals(fieldName)) {
+                    deserializedManagedHsmProperties.networkAcls = MhsmNetworkRuleSet.fromJson(reader);
+                } else if ("regions".equals(fieldName)) {
+                    List<MhsmGeoReplicatedRegionInner> regions
+                        = reader.readArray(reader1 -> MhsmGeoReplicatedRegionInner.fromJson(reader1));
+                    deserializedManagedHsmProperties.regions = regions;
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<MhsmPrivateEndpointConnectionItem> privateEndpointConnections
+                        = reader.readArray(reader1 -> MhsmPrivateEndpointConnectionItem.fromJson(reader1));
+                    deserializedManagedHsmProperties.privateEndpointConnections = privateEndpointConnections;
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedManagedHsmProperties.publicNetworkAccess
+                        = PublicNetworkAccess.fromString(reader.getString());
+                } else if ("scheduledPurgeDate".equals(fieldName)) {
+                    deserializedManagedHsmProperties.scheduledPurgeDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("securityDomainProperties".equals(fieldName)) {
+                    deserializedManagedHsmProperties.securityDomainProperties
+                        = ManagedHsmSecurityDomainProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedManagedHsmProperties;
+        });
     }
 }

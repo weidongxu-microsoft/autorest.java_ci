@@ -5,8 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -14,32 +17,27 @@ import java.util.Map;
  * The definition of data present in the query.
  */
 @Fluent
-public final class QueryDataset {
+public final class QueryDataset implements JsonSerializable<QueryDataset> {
     /*
      * The granularity of rows in the query.
      */
-    @JsonProperty(value = "granularity")
     private GranularityType granularity;
 
     /*
      * Dictionary of aggregation expression to use in the query. The key of each item in the dictionary is the alias for
      * the aggregated column. Query can have up to 2 aggregation clauses.
      */
-    @JsonProperty(value = "aggregation")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, QueryAggregation> aggregation;
 
     /*
      * Array of group by expression to use in the query. Query can have up to 2 group by clauses.
      */
-    @JsonProperty(value = "grouping")
     private List<QueryGrouping> grouping;
 
     /*
      * The filter expression to use in the query. Please reference our Query API REST documentation for how to properly
      * format the filter.
      */
-    @JsonProperty(value = "filter")
     private QueryFilter filter;
 
     /**
@@ -153,5 +151,53 @@ public final class QueryDataset {
         if (filter() != null) {
             filter().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("granularity", this.granularity == null ? null : this.granularity.toString());
+        jsonWriter.writeMapField("aggregation", this.aggregation, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("grouping", this.grouping, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("filter", this.filter);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of QueryDataset from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of QueryDataset if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the QueryDataset.
+     */
+    public static QueryDataset fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            QueryDataset deserializedQueryDataset = new QueryDataset();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("granularity".equals(fieldName)) {
+                    deserializedQueryDataset.granularity = GranularityType.fromString(reader.getString());
+                } else if ("aggregation".equals(fieldName)) {
+                    Map<String, QueryAggregation> aggregation
+                        = reader.readMap(reader1 -> QueryAggregation.fromJson(reader1));
+                    deserializedQueryDataset.aggregation = aggregation;
+                } else if ("grouping".equals(fieldName)) {
+                    List<QueryGrouping> grouping = reader.readArray(reader1 -> QueryGrouping.fromJson(reader1));
+                    deserializedQueryDataset.grouping = grouping;
+                } else if ("filter".equals(fieldName)) {
+                    deserializedQueryDataset.filter = QueryFilter.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedQueryDataset;
+        });
     }
 }

@@ -6,46 +6,45 @@ package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertActionList;
 import com.azure.resourcemanager.monitor.generated.models.ActivityLogAlertAllOfCondition;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * An Azure activity log alert.
  */
 @Fluent
-public final class ActivityLogAlert {
+public final class ActivityLogAlert implements JsonSerializable<ActivityLogAlert> {
     /*
      * A list of resourceIds that will be used as prefixes. The alert will only apply to activityLogs with resourceIds
      * that fall under one of these prefixes. This list must include at least one item.
      */
-    @JsonProperty(value = "scopes", required = true)
     private List<String> scopes;
 
     /*
      * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its
      * actions will be activated.
      */
-    @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
      * The condition that will cause this alert to activate.
      */
-    @JsonProperty(value = "condition", required = true)
     private ActivityLogAlertAllOfCondition condition;
 
     /*
      * The actions that will activate when the condition is met.
      */
-    @JsonProperty(value = "actions", required = true)
     private ActivityLogAlertActionList actions;
 
     /*
      * A description of this activity log alert.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /**
@@ -183,4 +182,54 @@ public final class ActivityLogAlert {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlert.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("scopes", this.scopes, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("condition", this.condition);
+        jsonWriter.writeJsonField("actions", this.actions);
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        jsonWriter.writeStringField("description", this.description);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ActivityLogAlert from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ActivityLogAlert if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ActivityLogAlert.
+     */
+    public static ActivityLogAlert fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ActivityLogAlert deserializedActivityLogAlert = new ActivityLogAlert();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("scopes".equals(fieldName)) {
+                    List<String> scopes = reader.readArray(reader1 -> reader1.getString());
+                    deserializedActivityLogAlert.scopes = scopes;
+                } else if ("condition".equals(fieldName)) {
+                    deserializedActivityLogAlert.condition = ActivityLogAlertAllOfCondition.fromJson(reader);
+                } else if ("actions".equals(fieldName)) {
+                    deserializedActivityLogAlert.actions = ActivityLogAlertActionList.fromJson(reader);
+                } else if ("enabled".equals(fieldName)) {
+                    deserializedActivityLogAlert.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("description".equals(fieldName)) {
+                    deserializedActivityLogAlert.description = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedActivityLogAlert;
+        });
+    }
 }

@@ -6,23 +6,25 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A request to compute additional statistics (facets) over the query results.
  */
 @Fluent
-public final class FacetRequest {
+public final class FacetRequest implements JsonSerializable<FacetRequest> {
     /*
      * The column or list of columns to summarize by
      */
-    @JsonProperty(value = "expression", required = true)
     private String expression;
 
     /*
      * The options for facet evaluation
      */
-    @JsonProperty(value = "options")
     private FacetRequestOptions options;
 
     /**
@@ -87,4 +89,44 @@ public final class FacetRequest {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(FacetRequest.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("expression", this.expression);
+        jsonWriter.writeJsonField("options", this.options);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FacetRequest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FacetRequest if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the FacetRequest.
+     */
+    public static FacetRequest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FacetRequest deserializedFacetRequest = new FacetRequest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("expression".equals(fieldName)) {
+                    deserializedFacetRequest.expression = reader.getString();
+                } else if ("options".equals(fieldName)) {
+                    deserializedFacetRequest.options = FacetRequestOptions.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFacetRequest;
+        });
+    }
 }

@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.BillingType;
 import com.azure.resourcemanager.operationalinsights.generated.models.KeyVaultProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Log Analytics cluster patch properties.
  */
 @Fluent
-public final class ClusterPatchProperties {
+public final class ClusterPatchProperties implements JsonSerializable<ClusterPatchProperties> {
     /*
      * The associated key properties.
      */
-    @JsonProperty(value = "keyVaultProperties")
     private KeyVaultProperties keyVaultProperties;
 
     /*
      * The cluster's billing type.
      */
-    @JsonProperty(value = "billingType")
     private BillingType billingType;
 
     /**
@@ -81,5 +83,44 @@ public final class ClusterPatchProperties {
         if (keyVaultProperties() != null) {
             keyVaultProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("keyVaultProperties", this.keyVaultProperties);
+        jsonWriter.writeStringField("billingType", this.billingType == null ? null : this.billingType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClusterPatchProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClusterPatchProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ClusterPatchProperties.
+     */
+    public static ClusterPatchProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClusterPatchProperties deserializedClusterPatchProperties = new ClusterPatchProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("keyVaultProperties".equals(fieldName)) {
+                    deserializedClusterPatchProperties.keyVaultProperties = KeyVaultProperties.fromJson(reader);
+                } else if ("billingType".equals(fieldName)) {
+                    deserializedClusterPatchProperties.billingType = BillingType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClusterPatchProperties;
+        });
     }
 }

@@ -5,7 +5,11 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -13,28 +17,25 @@ import java.util.List;
  * property is reserved for future use, any value set on this property will be ignored.
  */
 @Fluent
-public final class LiveEventTranscription {
+public final class LiveEventTranscription implements JsonSerializable<LiveEventTranscription> {
     /*
      * Specifies the language (locale) to be used for speech-to-text transcription – it should match the spoken language
      * in the audio track. The value should be in BCP-47 format (e.g: 'en-US'). See
      * https://go.microsoft.com/fwlink/?linkid=2133742 for more information about the live transcription feature and the
      * list of supported languages.
      */
-    @JsonProperty(value = "language")
     private String language;
 
     /*
      * Provides a mechanism to select the audio track in the input live feed, to which speech-to-text transcription is
      * applied. This property is reserved for future use, any value set on this property will be ignored.
      */
-    @JsonProperty(value = "inputTrackSelection")
     private List<LiveEventInputTrackSelection> inputTrackSelection;
 
     /*
      * Describes a transcription track in the output of a live event, generated using speech-to-text transcription. This
      * property is reserved for future use, any value set on this property will be ignored.
      */
-    @JsonProperty(value = "outputTranscriptionTrack")
     private LiveEventOutputTranscriptionTrack outputTranscriptionTrack;
 
     /**
@@ -130,5 +131,51 @@ public final class LiveEventTranscription {
         if (outputTranscriptionTrack() != null) {
             outputTranscriptionTrack().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("language", this.language);
+        jsonWriter.writeArrayField("inputTrackSelection", this.inputTrackSelection,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("outputTranscriptionTrack", this.outputTranscriptionTrack);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventTranscription from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventTranscription if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventTranscription.
+     */
+    public static LiveEventTranscription fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventTranscription deserializedLiveEventTranscription = new LiveEventTranscription();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("language".equals(fieldName)) {
+                    deserializedLiveEventTranscription.language = reader.getString();
+                } else if ("inputTrackSelection".equals(fieldName)) {
+                    List<LiveEventInputTrackSelection> inputTrackSelection
+                        = reader.readArray(reader1 -> LiveEventInputTrackSelection.fromJson(reader1));
+                    deserializedLiveEventTranscription.inputTrackSelection = inputTrackSelection;
+                } else if ("outputTranscriptionTrack".equals(fieldName)) {
+                    deserializedLiveEventTranscription.outputTranscriptionTrack
+                        = LiveEventOutputTranscriptionTrack.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventTranscription;
+        });
     }
 }

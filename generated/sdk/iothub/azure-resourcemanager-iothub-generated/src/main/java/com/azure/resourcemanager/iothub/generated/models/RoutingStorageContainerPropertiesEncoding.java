@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -44,7 +43,6 @@ public final class RoutingStorageContainerPropertiesEncoding
      * @param name a name to look for.
      * @return the corresponding RoutingStorageContainerPropertiesEncoding.
      */
-    @JsonCreator
     public static RoutingStorageContainerPropertiesEncoding fromString(String name) {
         return fromString(name, RoutingStorageContainerPropertiesEncoding.class);
     }

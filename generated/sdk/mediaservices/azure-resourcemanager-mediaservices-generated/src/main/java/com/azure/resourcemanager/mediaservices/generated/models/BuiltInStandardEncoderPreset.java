@@ -6,40 +6,30 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Describes a built-in preset for encoding the input video with the Standard Encoder.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "@odata.type",
-    defaultImpl = BuiltInStandardEncoderPreset.class,
-    visible = true)
-@JsonTypeName("#Microsoft.Media.BuiltInStandardEncoderPreset")
 @Fluent
 public final class BuiltInStandardEncoderPreset extends Preset {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.BuiltInStandardEncoderPreset";
 
     /*
      * Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and
      * H265ContentAwareEncoding BuiltInStandardEncoderPreset.
      */
-    @JsonProperty(value = "configurations")
     private PresetConfigurations configurations;
 
     /*
      * The built-in preset to be used for encoding videos.
      */
-    @JsonProperty(value = "presetName", required = true)
     private EncoderNamedPreset presetName;
 
     /**
@@ -119,4 +109,48 @@ public final class BuiltInStandardEncoderPreset extends Preset {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(BuiltInStandardEncoderPreset.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("presetName", this.presetName == null ? null : this.presetName.toString());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeJsonField("configurations", this.configurations);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of BuiltInStandardEncoderPreset from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of BuiltInStandardEncoderPreset if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the BuiltInStandardEncoderPreset.
+     */
+    public static BuiltInStandardEncoderPreset fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            BuiltInStandardEncoderPreset deserializedBuiltInStandardEncoderPreset = new BuiltInStandardEncoderPreset();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("presetName".equals(fieldName)) {
+                    deserializedBuiltInStandardEncoderPreset.presetName
+                        = EncoderNamedPreset.fromString(reader.getString());
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedBuiltInStandardEncoderPreset.odataType = reader.getString();
+                } else if ("configurations".equals(fieldName)) {
+                    deserializedBuiltInStandardEncoderPreset.configurations = PresetConfigurations.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedBuiltInStandardEncoderPreset;
+        });
+    }
 }

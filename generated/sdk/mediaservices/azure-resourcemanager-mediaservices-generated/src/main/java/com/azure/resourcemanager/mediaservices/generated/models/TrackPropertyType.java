@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class TrackPropertyType extends ExpandableStringEnum<TrackPropertyT
      * @param name a name to look for.
      * @return the corresponding TrackPropertyType.
      */
-    @JsonCreator
     public static TrackPropertyType fromString(String name) {
         return fromString(name, TrackPropertyType.class);
     }

@@ -5,50 +5,43 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
 /**
  * Describes all the properties for encoding a video with the H.264 codec.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = H264Video.class, visible = true)
-@JsonTypeName("#Microsoft.Media.H264Video")
 @Fluent
 public final class H264Video extends Video {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.H264Video";
 
     /*
      * Tells the encoder how to choose its encoding settings. The default value is Balanced.
      */
-    @JsonProperty(value = "complexity")
     private H264Complexity complexity;
 
     /*
      * The collection of output H.264 layers to be produced by the encoder.
      */
-    @JsonProperty(value = "layers")
     private List<H264Layer> layers;
 
     /*
      * The video rate control mode
      */
-    @JsonProperty(value = "rateControlMode")
     private H264RateControlMode rateControlMode;
 
     /*
      * Whether or not the encoder should insert key frames at scene changes. If not specified, the default is false.
      * This flag should be set to true only when the encoder is being configured to produce a single output video.
      */
-    @JsonProperty(value = "sceneChangeDetection")
     private Boolean sceneChangeDetection;
 
     /**
@@ -200,5 +193,68 @@ public final class H264Video extends Video {
         if (layers() != null) {
             layers().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(keyFrameInterval()));
+        jsonWriter.writeStringField("stretchMode", stretchMode() == null ? null : stretchMode().toString());
+        jsonWriter.writeStringField("syncMode", syncMode() == null ? null : syncMode().toString());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeStringField("complexity", this.complexity == null ? null : this.complexity.toString());
+        jsonWriter.writeArrayField("layers", this.layers, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("rateControlMode",
+            this.rateControlMode == null ? null : this.rateControlMode.toString());
+        jsonWriter.writeBooleanField("sceneChangeDetection", this.sceneChangeDetection);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of H264Video from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of H264Video if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the H264Video.
+     */
+    public static H264Video fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            H264Video deserializedH264Video = new H264Video();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("label".equals(fieldName)) {
+                    deserializedH264Video.withLabel(reader.getString());
+                } else if ("keyFrameInterval".equals(fieldName)) {
+                    deserializedH264Video.withKeyFrameInterval(
+                        reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString())));
+                } else if ("stretchMode".equals(fieldName)) {
+                    deserializedH264Video.withStretchMode(StretchMode.fromString(reader.getString()));
+                } else if ("syncMode".equals(fieldName)) {
+                    deserializedH264Video.withSyncMode(VideoSyncMode.fromString(reader.getString()));
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedH264Video.odataType = reader.getString();
+                } else if ("complexity".equals(fieldName)) {
+                    deserializedH264Video.complexity = H264Complexity.fromString(reader.getString());
+                } else if ("layers".equals(fieldName)) {
+                    List<H264Layer> layers = reader.readArray(reader1 -> H264Layer.fromJson(reader1));
+                    deserializedH264Video.layers = layers;
+                } else if ("rateControlMode".equals(fieldName)) {
+                    deserializedH264Video.rateControlMode = H264RateControlMode.fromString(reader.getString());
+                } else if ("sceneChangeDetection".equals(fieldName)) {
+                    deserializedH264Video.sceneChangeDetection = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedH264Video;
+        });
     }
 }

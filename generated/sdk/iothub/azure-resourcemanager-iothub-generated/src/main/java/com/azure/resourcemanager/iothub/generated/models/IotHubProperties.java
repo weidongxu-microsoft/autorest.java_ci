@@ -5,10 +5,13 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.iothub.generated.fluent.models.SharedAccessSignatureAuthorizationRuleInner;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -16,106 +19,89 @@ import java.util.Map;
  * The properties of an IoT hub.
  */
 @Fluent
-public final class IotHubProperties {
+public final class IotHubProperties implements JsonSerializable<IotHubProperties> {
     /*
      * The shared access policies you can use to secure a connection to the IoT hub.
      */
-    @JsonProperty(value = "authorizationPolicies")
     private List<SharedAccessSignatureAuthorizationRuleInner> authorizationPolicies;
 
     /*
      * If true, SAS tokens with Iot hub scoped SAS keys cannot be used for authentication.
      */
-    @JsonProperty(value = "disableLocalAuth")
     private Boolean disableLocalAuth;
 
     /*
      * If true, all device(including Edge devices but excluding modules) scoped SAS keys cannot be used for
      * authentication.
      */
-    @JsonProperty(value = "disableDeviceSAS")
     private Boolean disableDeviceSas;
 
     /*
      * If true, all module scoped SAS keys cannot be used for authentication.
      */
-    @JsonProperty(value = "disableModuleSAS")
     private Boolean disableModuleSas;
 
     /*
      * If true, egress from IotHub will be restricted to only the allowed FQDNs that are configured via allowedFqdnList.
      */
-    @JsonProperty(value = "restrictOutboundNetworkAccess")
     private Boolean restrictOutboundNetworkAccess;
 
     /*
      * List of allowed FQDNs(Fully Qualified Domain Name) for egress from Iot Hub.
      */
-    @JsonProperty(value = "allowedFqdnList")
     private List<String> allowedFqdnList;
 
     /*
      * Whether requests from Public Network are allowed
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
      * The IP filter rules.
      */
-    @JsonProperty(value = "ipFilterRules")
     private List<IpFilterRule> ipFilterRules;
 
     /*
      * Network Rule Set Properties of IotHub
      */
-    @JsonProperty(value = "networkRuleSets")
     private NetworkRuleSetProperties networkRuleSets;
 
     /*
      * Specifies the minimum TLS version to support for this hub. Can be set to "1.2" to have clients that use a TLS
      * version below 1.2 to be rejected.
      */
-    @JsonProperty(value = "minTlsVersion")
     private String minTlsVersion;
 
     /*
      * Private endpoint connections created on this IotHub
      */
-    @JsonProperty(value = "privateEndpointConnections")
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
      * The provisioning state.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * The hub state.
      */
-    @JsonProperty(value = "state", access = JsonProperty.Access.WRITE_ONLY)
     private String state;
 
     /*
      * The name of the host.
      */
-    @JsonProperty(value = "hostName", access = JsonProperty.Access.WRITE_ONLY)
     private String hostname;
 
     /*
      * The Event Hub-compatible endpoint properties. The only possible keys to this dictionary is events. This key has
      * to be present in the dictionary while making create or update calls for the IoT hub.
      */
-    @JsonProperty(value = "eventHubEndpoints")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, EventHubProperties> eventHubEndpoints;
 
     /*
      * The routing related properties of the IoT hub. See:
      * https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-messaging
      */
-    @JsonProperty(value = "routing")
     private RoutingProperties routing;
 
     /*
@@ -124,51 +110,41 @@ public final class IotHubProperties {
      * to be thrown. Not specifying a value for this property when the enableFileUploadNotifications property is set to
      * True, causes an error to be thrown.
      */
-    @JsonProperty(value = "storageEndpoints")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, StorageEndpointProperties> storageEndpoints;
 
     /*
      * The messaging endpoint properties for the file upload notification queue.
      */
-    @JsonProperty(value = "messagingEndpoints")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, MessagingEndpointProperties> messagingEndpoints;
 
     /*
      * If True, file upload notifications are enabled.
      */
-    @JsonProperty(value = "enableFileUploadNotifications")
     private Boolean enableFileUploadNotifications;
 
     /*
      * The IoT hub cloud-to-device messaging properties.
      */
-    @JsonProperty(value = "cloudToDevice")
     private CloudToDeviceProperties cloudToDevice;
 
     /*
      * IoT hub comments.
      */
-    @JsonProperty(value = "comments")
     private String comments;
 
     /*
      * The capabilities and features enabled for the IoT hub.
      */
-    @JsonProperty(value = "features")
     private Capabilities features;
 
     /*
      * Primary and secondary location for iot hub
      */
-    @JsonProperty(value = "locations", access = JsonProperty.Access.WRITE_ONLY)
     private List<IotHubLocationDescription> locations;
 
     /*
      * This property when set to true, will enable data residency, thus, disabling disaster recovery.
      */
-    @JsonProperty(value = "enableDataResidency")
     private Boolean enableDataResidency;
 
     /**
@@ -687,5 +663,130 @@ public final class IotHubProperties {
         if (locations() != null) {
             locations().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("authorizationPolicies", this.authorizationPolicies,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("disableLocalAuth", this.disableLocalAuth);
+        jsonWriter.writeBooleanField("disableDeviceSAS", this.disableDeviceSas);
+        jsonWriter.writeBooleanField("disableModuleSAS", this.disableModuleSas);
+        jsonWriter.writeBooleanField("restrictOutboundNetworkAccess", this.restrictOutboundNetworkAccess);
+        jsonWriter.writeArrayField("allowedFqdnList", this.allowedFqdnList,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        jsonWriter.writeArrayField("ipFilterRules", this.ipFilterRules, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("networkRuleSets", this.networkRuleSets);
+        jsonWriter.writeStringField("minTlsVersion", this.minTlsVersion);
+        jsonWriter.writeArrayField("privateEndpointConnections", this.privateEndpointConnections,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeMapField("eventHubEndpoints", this.eventHubEndpoints,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("routing", this.routing);
+        jsonWriter.writeMapField("storageEndpoints", this.storageEndpoints,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeMapField("messagingEndpoints", this.messagingEndpoints,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("enableFileUploadNotifications", this.enableFileUploadNotifications);
+        jsonWriter.writeJsonField("cloudToDevice", this.cloudToDevice);
+        jsonWriter.writeStringField("comments", this.comments);
+        jsonWriter.writeStringField("features", this.features == null ? null : this.features.toString());
+        jsonWriter.writeBooleanField("enableDataResidency", this.enableDataResidency);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IotHubProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IotHubProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the IotHubProperties.
+     */
+    public static IotHubProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IotHubProperties deserializedIotHubProperties = new IotHubProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("authorizationPolicies".equals(fieldName)) {
+                    List<SharedAccessSignatureAuthorizationRuleInner> authorizationPolicies
+                        = reader.readArray(reader1 -> SharedAccessSignatureAuthorizationRuleInner.fromJson(reader1));
+                    deserializedIotHubProperties.authorizationPolicies = authorizationPolicies;
+                } else if ("disableLocalAuth".equals(fieldName)) {
+                    deserializedIotHubProperties.disableLocalAuth = reader.getNullable(JsonReader::getBoolean);
+                } else if ("disableDeviceSAS".equals(fieldName)) {
+                    deserializedIotHubProperties.disableDeviceSas = reader.getNullable(JsonReader::getBoolean);
+                } else if ("disableModuleSAS".equals(fieldName)) {
+                    deserializedIotHubProperties.disableModuleSas = reader.getNullable(JsonReader::getBoolean);
+                } else if ("restrictOutboundNetworkAccess".equals(fieldName)) {
+                    deserializedIotHubProperties.restrictOutboundNetworkAccess
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("allowedFqdnList".equals(fieldName)) {
+                    List<String> allowedFqdnList = reader.readArray(reader1 -> reader1.getString());
+                    deserializedIotHubProperties.allowedFqdnList = allowedFqdnList;
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedIotHubProperties.publicNetworkAccess
+                        = PublicNetworkAccess.fromString(reader.getString());
+                } else if ("ipFilterRules".equals(fieldName)) {
+                    List<IpFilterRule> ipFilterRules = reader.readArray(reader1 -> IpFilterRule.fromJson(reader1));
+                    deserializedIotHubProperties.ipFilterRules = ipFilterRules;
+                } else if ("networkRuleSets".equals(fieldName)) {
+                    deserializedIotHubProperties.networkRuleSets = NetworkRuleSetProperties.fromJson(reader);
+                } else if ("minTlsVersion".equals(fieldName)) {
+                    deserializedIotHubProperties.minTlsVersion = reader.getString();
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<PrivateEndpointConnectionInner> privateEndpointConnections
+                        = reader.readArray(reader1 -> PrivateEndpointConnectionInner.fromJson(reader1));
+                    deserializedIotHubProperties.privateEndpointConnections = privateEndpointConnections;
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedIotHubProperties.provisioningState = reader.getString();
+                } else if ("state".equals(fieldName)) {
+                    deserializedIotHubProperties.state = reader.getString();
+                } else if ("hostName".equals(fieldName)) {
+                    deserializedIotHubProperties.hostname = reader.getString();
+                } else if ("eventHubEndpoints".equals(fieldName)) {
+                    Map<String, EventHubProperties> eventHubEndpoints
+                        = reader.readMap(reader1 -> EventHubProperties.fromJson(reader1));
+                    deserializedIotHubProperties.eventHubEndpoints = eventHubEndpoints;
+                } else if ("routing".equals(fieldName)) {
+                    deserializedIotHubProperties.routing = RoutingProperties.fromJson(reader);
+                } else if ("storageEndpoints".equals(fieldName)) {
+                    Map<String, StorageEndpointProperties> storageEndpoints
+                        = reader.readMap(reader1 -> StorageEndpointProperties.fromJson(reader1));
+                    deserializedIotHubProperties.storageEndpoints = storageEndpoints;
+                } else if ("messagingEndpoints".equals(fieldName)) {
+                    Map<String, MessagingEndpointProperties> messagingEndpoints
+                        = reader.readMap(reader1 -> MessagingEndpointProperties.fromJson(reader1));
+                    deserializedIotHubProperties.messagingEndpoints = messagingEndpoints;
+                } else if ("enableFileUploadNotifications".equals(fieldName)) {
+                    deserializedIotHubProperties.enableFileUploadNotifications
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("cloudToDevice".equals(fieldName)) {
+                    deserializedIotHubProperties.cloudToDevice = CloudToDeviceProperties.fromJson(reader);
+                } else if ("comments".equals(fieldName)) {
+                    deserializedIotHubProperties.comments = reader.getString();
+                } else if ("features".equals(fieldName)) {
+                    deserializedIotHubProperties.features = Capabilities.fromString(reader.getString());
+                } else if ("locations".equals(fieldName)) {
+                    List<IotHubLocationDescription> locations
+                        = reader.readArray(reader1 -> IotHubLocationDescription.fromJson(reader1));
+                    deserializedIotHubProperties.locations = locations;
+                } else if ("enableDataResidency".equals(fieldName)) {
+                    deserializedIotHubProperties.enableDataResidency = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIotHubProperties;
+        });
     }
 }

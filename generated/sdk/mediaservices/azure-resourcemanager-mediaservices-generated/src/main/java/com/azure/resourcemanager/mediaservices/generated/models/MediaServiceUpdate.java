@@ -5,10 +5,13 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.MediaServiceProperties;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.PrivateEndpointConnectionInner;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
@@ -17,24 +20,20 @@ import java.util.UUID;
  * A Media Services account update.
  */
 @Fluent
-public final class MediaServiceUpdate {
+public final class MediaServiceUpdate implements JsonSerializable<MediaServiceUpdate> {
     /*
      * Resource tags.
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * The resource properties.
      */
-    @JsonProperty(value = "properties")
     private MediaServiceProperties innerProperties;
 
     /*
      * The Managed Identity for the Media Services account.
      */
-    @JsonProperty(value = "identity")
     private MediaServiceIdentity identity;
 
     /**
@@ -274,5 +273,48 @@ public final class MediaServiceUpdate {
         if (identity() != null) {
             identity().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeJsonField("identity", this.identity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MediaServiceUpdate from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MediaServiceUpdate if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MediaServiceUpdate.
+     */
+    public static MediaServiceUpdate fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MediaServiceUpdate deserializedMediaServiceUpdate = new MediaServiceUpdate();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedMediaServiceUpdate.tags = tags;
+                } else if ("properties".equals(fieldName)) {
+                    deserializedMediaServiceUpdate.innerProperties = MediaServiceProperties.fromJson(reader);
+                } else if ("identity".equals(fieldName)) {
+                    deserializedMediaServiceUpdate.identity = MediaServiceIdentity.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMediaServiceUpdate;
+        });
     }
 }

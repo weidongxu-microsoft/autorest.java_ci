@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.dns.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The type of this DNS zone (Public or Private).
  */
@@ -36,7 +33,6 @@ public enum ZoneType {
      * @param value the serialized value to parse.
      * @return the parsed ZoneType object, or null if unable to parse.
      */
-    @JsonCreator
     public static ZoneType fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum ZoneType {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

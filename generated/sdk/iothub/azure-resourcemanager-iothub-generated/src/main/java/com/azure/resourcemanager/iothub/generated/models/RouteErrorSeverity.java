@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class RouteErrorSeverity extends ExpandableStringEnum<RouteErrorSev
      * @param name a name to look for.
      * @return the corresponding RouteErrorSeverity.
      */
-    @JsonCreator
     public static RouteErrorSeverity fromString(String name) {
         return fromString(name, RouteErrorSeverity.class);
     }

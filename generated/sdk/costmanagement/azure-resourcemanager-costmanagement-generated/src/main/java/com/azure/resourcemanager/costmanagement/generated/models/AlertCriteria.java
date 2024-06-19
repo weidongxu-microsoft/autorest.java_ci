@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -97,7 +96,6 @@ public final class AlertCriteria extends ExpandableStringEnum<AlertCriteria> {
      * @param name a name to look for.
      * @return the corresponding AlertCriteria.
      */
-    @JsonCreator
     public static AlertCriteria fromString(String name) {
         return fromString(name, AlertCriteria.class);
     }

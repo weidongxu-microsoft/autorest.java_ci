@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class LiveEventResourceState extends ExpandableStringEnum<LiveEvent
      * @param name a name to look for.
      * @return the corresponding LiveEventResourceState.
      */
-    @JsonCreator
     public static LiveEventResourceState fromString(String name) {
         return fromString(name, LiveEventResourceState.class);
     }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class H264Complexity extends ExpandableStringEnum<H264Complexity> {
      * @param name a name to look for.
      * @return the corresponding H264Complexity.
      */
-    @JsonCreator
     public static H264Complexity fromString(String name) {
         return fromString(name, H264Complexity.class);
     }

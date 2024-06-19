@@ -5,60 +5,58 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Management group properties.
  */
 @Fluent
-public final class ManagementGroupProperties {
+public final class ManagementGroupProperties implements JsonSerializable<ManagementGroupProperties> {
     /*
      * The number of servers connected to the management group.
      */
-    @JsonProperty(value = "serverCount")
     private Integer serverCount;
 
     /*
      * Gets or sets a value indicating whether the management group is a gateway.
      */
-    @JsonProperty(value = "isGateway")
     private Boolean isGateway;
 
     /*
      * The name of the management group.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The unique ID of the management group.
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * The datetime that the management group was created.
      */
-    @JsonProperty(value = "created")
     private OffsetDateTime created;
 
     /*
      * The last datetime that the management group received data.
      */
-    @JsonProperty(value = "dataReceived")
     private OffsetDateTime dataReceived;
 
     /*
      * The version of System Center that is managing the management group.
      */
-    @JsonProperty(value = "version")
     private String version;
 
     /*
      * The SKU of System Center that is managing the management group.
      */
-    @JsonProperty(value = "sku")
     private String sku;
 
     /**
@@ -233,5 +231,66 @@ public final class ManagementGroupProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("serverCount", this.serverCount);
+        jsonWriter.writeBooleanField("isGateway", this.isGateway);
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("created",
+            this.created == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.created));
+        jsonWriter.writeStringField("dataReceived",
+            this.dataReceived == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.dataReceived));
+        jsonWriter.writeStringField("version", this.version);
+        jsonWriter.writeStringField("sku", this.sku);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ManagementGroupProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ManagementGroupProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ManagementGroupProperties.
+     */
+    public static ManagementGroupProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ManagementGroupProperties deserializedManagementGroupProperties = new ManagementGroupProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("serverCount".equals(fieldName)) {
+                    deserializedManagementGroupProperties.serverCount = reader.getNullable(JsonReader::getInt);
+                } else if ("isGateway".equals(fieldName)) {
+                    deserializedManagementGroupProperties.isGateway = reader.getNullable(JsonReader::getBoolean);
+                } else if ("name".equals(fieldName)) {
+                    deserializedManagementGroupProperties.name = reader.getString();
+                } else if ("id".equals(fieldName)) {
+                    deserializedManagementGroupProperties.id = reader.getString();
+                } else if ("created".equals(fieldName)) {
+                    deserializedManagementGroupProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("dataReceived".equals(fieldName)) {
+                    deserializedManagementGroupProperties.dataReceived = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("version".equals(fieldName)) {
+                    deserializedManagementGroupProperties.version = reader.getString();
+                } else if ("sku".equals(fieldName)) {
+                    deserializedManagementGroupProperties.sku = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedManagementGroupProperties;
+        });
     }
 }

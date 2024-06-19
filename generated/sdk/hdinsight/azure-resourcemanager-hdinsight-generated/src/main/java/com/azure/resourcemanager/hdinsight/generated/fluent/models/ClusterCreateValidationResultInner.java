@@ -5,9 +5,14 @@
 package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.hdinsight.generated.models.AaddsResourceDetails;
 import com.azure.resourcemanager.hdinsight.generated.models.ValidationErrorInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
@@ -15,29 +20,25 @@ import java.util.List;
  * The response of cluster create request validation.
  */
 @Fluent
-public final class ClusterCreateValidationResultInner {
+public final class ClusterCreateValidationResultInner implements JsonSerializable<ClusterCreateValidationResultInner> {
     /*
      * The validation errors.
      */
-    @JsonProperty(value = "validationErrors")
     private List<ValidationErrorInfo> validationErrors;
 
     /*
      * The validation warnings.
      */
-    @JsonProperty(value = "validationWarnings")
     private List<ValidationErrorInfo> validationWarnings;
 
     /*
      * The estimated creation duration.
      */
-    @JsonProperty(value = "estimatedCreationDuration")
     private Duration estimatedCreationDuration;
 
     /*
      * The Azure active directory domain service resource details.
      */
-    @JsonProperty(value = "aaddsResourcesDetails")
     private List<AaddsResourceDetails> aaddsResourcesDetails;
 
     /**
@@ -142,5 +143,62 @@ public final class ClusterCreateValidationResultInner {
         if (aaddsResourcesDetails() != null) {
             aaddsResourcesDetails().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("validationErrors", this.validationErrors,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("validationWarnings", this.validationWarnings,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("estimatedCreationDuration",
+            CoreUtils.durationToStringWithDays(this.estimatedCreationDuration));
+        jsonWriter.writeArrayField("aaddsResourcesDetails", this.aaddsResourcesDetails,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClusterCreateValidationResultInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClusterCreateValidationResultInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ClusterCreateValidationResultInner.
+     */
+    public static ClusterCreateValidationResultInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClusterCreateValidationResultInner deserializedClusterCreateValidationResultInner
+                = new ClusterCreateValidationResultInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("validationErrors".equals(fieldName)) {
+                    List<ValidationErrorInfo> validationErrors
+                        = reader.readArray(reader1 -> ValidationErrorInfo.fromJson(reader1));
+                    deserializedClusterCreateValidationResultInner.validationErrors = validationErrors;
+                } else if ("validationWarnings".equals(fieldName)) {
+                    List<ValidationErrorInfo> validationWarnings
+                        = reader.readArray(reader1 -> ValidationErrorInfo.fromJson(reader1));
+                    deserializedClusterCreateValidationResultInner.validationWarnings = validationWarnings;
+                } else if ("estimatedCreationDuration".equals(fieldName)) {
+                    deserializedClusterCreateValidationResultInner.estimatedCreationDuration
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("aaddsResourcesDetails".equals(fieldName)) {
+                    List<AaddsResourceDetails> aaddsResourcesDetails
+                        = reader.readArray(reader1 -> AaddsResourceDetails.fromJson(reader1));
+                    deserializedClusterCreateValidationResultInner.aaddsResourcesDetails = aaddsResourcesDetails;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClusterCreateValidationResultInner;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class Term extends ExpandableStringEnum<Term> {
      * @param name a name to look for.
      * @return the corresponding Term.
      */
-    @JsonCreator
     public static Term fromString(String name) {
         return fromString(name, Term.class);
     }

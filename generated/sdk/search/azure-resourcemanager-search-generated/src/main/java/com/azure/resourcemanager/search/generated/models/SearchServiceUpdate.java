@@ -6,11 +6,13 @@ package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.search.generated.fluent.models.PrivateEndpointConnectionInner;
 import com.azure.resourcemanager.search.generated.fluent.models.SearchServiceProperties;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -22,36 +24,45 @@ public final class SearchServiceUpdate extends ProxyResource {
     /*
      * Properties of the search service.
      */
-    @JsonProperty(value = "properties")
     private SearchServiceProperties innerProperties;
 
     /*
      * The SKU of the search service, which determines price tier and capacity limits. This property is required when
      * creating a new search service.
      */
-    @JsonProperty(value = "sku")
     private Sku sku;
 
     /*
      * The geographic location of the resource. This must be one of the supported and registered Azure geo regions (for
      * example, West US, East US, Southeast Asia, and so forth). This property is required when creating a new resource.
      */
-    @JsonProperty(value = "location")
     private String location;
 
     /*
      * Tags to help categorize the resource in the Azure portal.
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * Details about the search service identity. A null value indicates that the search service has no identity
      * assigned.
      */
-    @JsonProperty(value = "identity")
     private Identity identity;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of SearchServiceUpdate class.
@@ -154,6 +165,36 @@ public final class SearchServiceUpdate extends ProxyResource {
     public SearchServiceUpdate withIdentity(Identity identity) {
         this.identity = identity;
         return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -503,5 +544,61 @@ public final class SearchServiceUpdate extends ProxyResource {
         if (identity() != null) {
             identity().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeStringField("location", this.location);
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("identity", this.identity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SearchServiceUpdate from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SearchServiceUpdate if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SearchServiceUpdate.
+     */
+    public static SearchServiceUpdate fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SearchServiceUpdate deserializedSearchServiceUpdate = new SearchServiceUpdate();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.innerProperties = SearchServiceProperties.fromJson(reader);
+                } else if ("sku".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.sku = Sku.fromJson(reader);
+                } else if ("location".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.location = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedSearchServiceUpdate.tags = tags;
+                } else if ("identity".equals(fieldName)) {
+                    deserializedSearchServiceUpdate.identity = Identity.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSearchServiceUpdate;
+        });
     }
 }

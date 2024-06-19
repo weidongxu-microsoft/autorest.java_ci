@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class SslStatus extends ExpandableStringEnum<SslStatus> {
      * @param name a name to look for.
      * @return the corresponding SslStatus.
      */
-    @JsonCreator
     public static SslStatus fromString(String name) {
         return fromString(name, SslStatus.class);
     }

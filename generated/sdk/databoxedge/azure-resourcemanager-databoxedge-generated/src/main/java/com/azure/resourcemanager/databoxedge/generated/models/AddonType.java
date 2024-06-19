@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class AddonType extends ExpandableStringEnum<AddonType> {
      * @param name a name to look for.
      * @return the corresponding AddonType.
      */
-    @JsonCreator
     public static AddonType fromString(String name) {
         return fromString(name, AddonType.class);
     }

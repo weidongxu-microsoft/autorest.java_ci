@@ -6,10 +6,14 @@ package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransactionResource;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -20,8 +24,27 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     /*
      * The properties of a modern reservation transaction.
      */
-    @JsonProperty(value = "properties", required = true)
     private ModernReservationTransactionProperties innerProperties = new ModernReservationTransactionProperties();
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * Resource tags.
+     */
+    private List<String> tags;
 
     /**
      * Creates an instance of ModernReservationTransactionInner class.
@@ -36,6 +59,46 @@ public final class ModernReservationTransactionInner extends ReservationTransact
      */
     private ModernReservationTransactionProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the tags property: Resource tags.
+     * 
+     * @return the tags value.
+     */
+    @Override
+    public List<String> tags() {
+        return this.tags;
     }
 
     /**
@@ -239,4 +302,52 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ModernReservationTransactionInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ModernReservationTransactionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ModernReservationTransactionInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ModernReservationTransactionInner.
+     */
+    public static ModernReservationTransactionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ModernReservationTransactionInner deserializedModernReservationTransactionInner
+                = new ModernReservationTransactionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedModernReservationTransactionInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedModernReservationTransactionInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedModernReservationTransactionInner.type = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    List<String> tags = reader.readArray(reader1 -> reader1.getString());
+                    deserializedModernReservationTransactionInner.tags = tags;
+                } else if ("properties".equals(fieldName)) {
+                    deserializedModernReservationTransactionInner.innerProperties
+                        = ModernReservationTransactionProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedModernReservationTransactionInner;
+        });
+    }
 }

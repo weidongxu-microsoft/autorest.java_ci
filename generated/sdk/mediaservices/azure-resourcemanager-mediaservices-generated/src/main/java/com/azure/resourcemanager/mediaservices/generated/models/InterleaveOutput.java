@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -38,7 +37,6 @@ public final class InterleaveOutput extends ExpandableStringEnum<InterleaveOutpu
      * @param name a name to look for.
      * @return the corresponding InterleaveOutput.
      */
-    @JsonCreator
     public static InterleaveOutput fromString(String name) {
         return fromString(name, InterleaveOutput.class);
     }

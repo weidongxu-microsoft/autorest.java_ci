@@ -6,32 +6,31 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * Parameters for creating or updating a vault.
  */
 @Fluent
-public final class VaultCreateOrUpdateParameters {
+public final class VaultCreateOrUpdateParameters implements JsonSerializable<VaultCreateOrUpdateParameters> {
     /*
      * The supported Azure location where the key vault should be created.
      */
-    @JsonProperty(value = "location", required = true)
     private String location;
 
     /*
      * The tags that will be assigned to the key vault.
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * Properties of the vault
      */
-    @JsonProperty(value = "properties", required = true)
     private VaultProperties properties;
 
     /**
@@ -121,4 +120,49 @@ public final class VaultCreateOrUpdateParameters {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(VaultCreateOrUpdateParameters.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", this.location);
+        jsonWriter.writeJsonField("properties", this.properties);
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VaultCreateOrUpdateParameters from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VaultCreateOrUpdateParameters if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the VaultCreateOrUpdateParameters.
+     */
+    public static VaultCreateOrUpdateParameters fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VaultCreateOrUpdateParameters deserializedVaultCreateOrUpdateParameters
+                = new VaultCreateOrUpdateParameters();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("location".equals(fieldName)) {
+                    deserializedVaultCreateOrUpdateParameters.location = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedVaultCreateOrUpdateParameters.properties = VaultProperties.fromJson(reader);
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedVaultCreateOrUpdateParameters.tags = tags;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVaultCreateOrUpdateParameters;
+        });
+    }
 }

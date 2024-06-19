@@ -5,47 +5,45 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * User subscription quota response.
  */
 @Fluent
-public final class UserSubscriptionQuota {
+public final class UserSubscriptionQuota implements JsonSerializable<UserSubscriptionQuota> {
     /*
      * IotHub type id
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * Response type
      */
-    @JsonProperty(value = "type")
     private String type;
 
     /*
      * Unit of IotHub type
      */
-    @JsonProperty(value = "unit")
     private String unit;
 
     /*
      * Current number of IotHub type
      */
-    @JsonProperty(value = "currentValue")
     private Integer currentValue;
 
     /*
      * Numerical limit on IotHub type
      */
-    @JsonProperty(value = "limit")
     private Integer limit;
 
     /*
      * IotHub type
      */
-    @JsonProperty(value = "name")
     private Name name;
 
     /**
@@ -183,5 +181,56 @@ public final class UserSubscriptionQuota {
         if (name() != null) {
             name().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("type", this.type);
+        jsonWriter.writeStringField("unit", this.unit);
+        jsonWriter.writeNumberField("currentValue", this.currentValue);
+        jsonWriter.writeNumberField("limit", this.limit);
+        jsonWriter.writeJsonField("name", this.name);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of UserSubscriptionQuota from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of UserSubscriptionQuota if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the UserSubscriptionQuota.
+     */
+    public static UserSubscriptionQuota fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            UserSubscriptionQuota deserializedUserSubscriptionQuota = new UserSubscriptionQuota();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedUserSubscriptionQuota.id = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedUserSubscriptionQuota.type = reader.getString();
+                } else if ("unit".equals(fieldName)) {
+                    deserializedUserSubscriptionQuota.unit = reader.getString();
+                } else if ("currentValue".equals(fieldName)) {
+                    deserializedUserSubscriptionQuota.currentValue = reader.getNullable(JsonReader::getInt);
+                } else if ("limit".equals(fieldName)) {
+                    deserializedUserSubscriptionQuota.limit = reader.getNullable(JsonReader::getInt);
+                } else if ("name".equals(fieldName)) {
+                    deserializedUserSubscriptionQuota.name = Name.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUserSubscriptionQuota;
+        });
     }
 }

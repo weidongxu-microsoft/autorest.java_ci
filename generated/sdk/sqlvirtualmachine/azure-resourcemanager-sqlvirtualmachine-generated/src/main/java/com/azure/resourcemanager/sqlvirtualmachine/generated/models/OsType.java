@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Operating System of the current SQL Virtual Machine.
  */
@@ -36,7 +33,6 @@ public enum OsType {
      * @param value the serialized value to parse.
      * @return the parsed OsType object, or null if unable to parse.
      */
-    @JsonCreator
     public static OsType fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum OsType {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

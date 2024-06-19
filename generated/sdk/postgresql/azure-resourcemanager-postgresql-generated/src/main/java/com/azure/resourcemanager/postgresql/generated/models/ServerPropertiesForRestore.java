@@ -5,41 +5,33 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The properties used to create a new server by restoring from a backup.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "createMode",
-    defaultImpl = ServerPropertiesForRestore.class,
-    visible = true)
-@JsonTypeName("PointInTimeRestore")
 @Fluent
 public final class ServerPropertiesForRestore extends ServerPropertiesForCreate {
     /*
      * The mode to create a new server.
      */
-    @JsonTypeId
-    @JsonProperty(value = "createMode", required = true)
     private CreateMode createMode = CreateMode.POINT_IN_TIME_RESTORE;
 
     /*
      * The source server id to restore from.
      */
-    @JsonProperty(value = "sourceServerId", required = true)
     private String sourceServerId;
 
     /*
      * Restore point creation time (ISO8601 format), specifying the time to restore from.
      */
-    @JsonProperty(value = "restorePointInTime", required = true)
     private OffsetDateTime restorePointInTime;
 
     /**
@@ -175,4 +167,76 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ServerPropertiesForRestore.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("version", version() == null ? null : version().toString());
+        jsonWriter.writeStringField("sslEnforcement", sslEnforcement() == null ? null : sslEnforcement().toString());
+        jsonWriter.writeStringField("minimalTlsVersion",
+            minimalTlsVersion() == null ? null : minimalTlsVersion().toString());
+        jsonWriter.writeStringField("infrastructureEncryption",
+            infrastructureEncryption() == null ? null : infrastructureEncryption().toString());
+        jsonWriter.writeStringField("publicNetworkAccess",
+            publicNetworkAccess() == null ? null : publicNetworkAccess().toString());
+        jsonWriter.writeJsonField("storageProfile", storageProfile());
+        jsonWriter.writeStringField("sourceServerId", this.sourceServerId);
+        jsonWriter.writeStringField("restorePointInTime",
+            this.restorePointInTime == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.restorePointInTime));
+        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerPropertiesForRestore from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerPropertiesForRestore if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ServerPropertiesForRestore.
+     */
+    public static ServerPropertiesForRestore fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerPropertiesForRestore deserializedServerPropertiesForRestore = new ServerPropertiesForRestore();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("version".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore.withVersion(ServerVersion.fromString(reader.getString()));
+                } else if ("sslEnforcement".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore
+                        .withSslEnforcement(SslEnforcementEnum.fromString(reader.getString()));
+                } else if ("minimalTlsVersion".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore
+                        .withMinimalTlsVersion(MinimalTlsVersionEnum.fromString(reader.getString()));
+                } else if ("infrastructureEncryption".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore
+                        .withInfrastructureEncryption(InfrastructureEncryption.fromString(reader.getString()));
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore
+                        .withPublicNetworkAccess(PublicNetworkAccessEnum.fromString(reader.getString()));
+                } else if ("storageProfile".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore.withStorageProfile(StorageProfile.fromJson(reader));
+                } else if ("sourceServerId".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore.sourceServerId = reader.getString();
+                } else if ("restorePointInTime".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore.restorePointInTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("createMode".equals(fieldName)) {
+                    deserializedServerPropertiesForRestore.createMode = CreateMode.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerPropertiesForRestore;
+        });
+    }
 }

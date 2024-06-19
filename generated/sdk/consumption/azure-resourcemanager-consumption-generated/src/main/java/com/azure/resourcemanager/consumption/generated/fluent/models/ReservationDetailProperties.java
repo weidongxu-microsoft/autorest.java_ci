@@ -5,7 +5,12 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 
@@ -13,25 +18,22 @@ import java.time.OffsetDateTime;
  * The properties of the reservation detail.
  */
 @Immutable
-public final class ReservationDetailProperties {
+public final class ReservationDetailProperties implements JsonSerializable<ReservationDetailProperties> {
     /*
      * The reservation order ID is the identifier for a reservation purchase. Each reservation order ID represents a
      * single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM
      * size and region for the reservations.
      */
-    @JsonProperty(value = "reservationOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationOrderId;
 
     /*
      * The instance Flexibility Ratio.
      */
-    @JsonProperty(value = "instanceFlexibilityRatio", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceFlexibilityRatio;
 
     /*
      * The instance Flexibility Group.
      */
-    @JsonProperty(value = "instanceFlexibilityGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceFlexibilityGroup;
 
     /*
@@ -39,50 +41,42 @@ public final class ReservationDetailProperties {
      * grouping for applying the benefit scope and also specifies the number of instances to which the reservation
      * benefit can be applied to.
      */
-    @JsonProperty(value = "reservationId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationId;
 
     /*
      * This is the ARM Sku name. It can be used to join with the serviceType field in additional info in usage records.
      */
-    @JsonProperty(value = "skuName", access = JsonProperty.Access.WRITE_ONLY)
     private String skuName;
 
     /*
      * This is the total hours reserved for the day. E.g. if reservation for 1 instance was made on 1 PM, this will be
      * 11 hours for that day and 24 hours from subsequent days.
      */
-    @JsonProperty(value = "reservedHours", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal reservedHours;
 
     /*
      * The date on which consumption occurred.
      */
-    @JsonProperty(value = "usageDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime usageDate;
 
     /*
      * This is the total hours used by the instance.
      */
-    @JsonProperty(value = "usedHours", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal usedHours;
 
     /*
      * This identifier is the name of the resource or the fully qualified Resource ID.
      */
-    @JsonProperty(value = "instanceId", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceId;
 
     /*
      * This is the total count of instances that are reserved for the reservationId.
      */
-    @JsonProperty(value = "totalReservedQuantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal totalReservedQuantity;
 
     /*
      * The reservation kind.
      */
-    @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private String kind;
 
     /**
@@ -203,5 +197,64 @@ public final class ReservationDetailProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReservationDetailProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReservationDetailProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ReservationDetailProperties.
+     */
+    public static ReservationDetailProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReservationDetailProperties deserializedReservationDetailProperties = new ReservationDetailProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("reservationOrderId".equals(fieldName)) {
+                    deserializedReservationDetailProperties.reservationOrderId = reader.getString();
+                } else if ("instanceFlexibilityRatio".equals(fieldName)) {
+                    deserializedReservationDetailProperties.instanceFlexibilityRatio = reader.getString();
+                } else if ("instanceFlexibilityGroup".equals(fieldName)) {
+                    deserializedReservationDetailProperties.instanceFlexibilityGroup = reader.getString();
+                } else if ("reservationId".equals(fieldName)) {
+                    deserializedReservationDetailProperties.reservationId = reader.getString();
+                } else if ("skuName".equals(fieldName)) {
+                    deserializedReservationDetailProperties.skuName = reader.getString();
+                } else if ("reservedHours".equals(fieldName)) {
+                    deserializedReservationDetailProperties.reservedHours
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("usageDate".equals(fieldName)) {
+                    deserializedReservationDetailProperties.usageDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("usedHours".equals(fieldName)) {
+                    deserializedReservationDetailProperties.usedHours
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("instanceId".equals(fieldName)) {
+                    deserializedReservationDetailProperties.instanceId = reader.getString();
+                } else if ("totalReservedQuantity".equals(fieldName)) {
+                    deserializedReservationDetailProperties.totalReservedQuantity
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("kind".equals(fieldName)) {
+                    deserializedReservationDetailProperties.kind = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReservationDetailProperties;
+        });
     }
 }

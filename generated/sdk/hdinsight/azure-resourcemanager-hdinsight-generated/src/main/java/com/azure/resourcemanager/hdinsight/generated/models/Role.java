@@ -5,78 +5,71 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Describes a role on the cluster.
  */
 @Fluent
-public final class Role {
+public final class Role implements JsonSerializable<Role> {
     /*
      * The name of the role.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The minimum instance count of the cluster.
      */
-    @JsonProperty(value = "minInstanceCount")
     private Integer minInstanceCount;
 
     /*
      * The instance count of the cluster.
      */
-    @JsonProperty(value = "targetInstanceCount")
     private Integer targetInstanceCount;
 
     /*
      * The name of the virtual machine group.
      */
-    @JsonProperty(value = "VMGroupName")
     private String vMGroupName;
 
     /*
      * The autoscale configurations.
      */
-    @JsonProperty(value = "autoscale")
     private Autoscale autoscaleConfiguration;
 
     /*
      * The hardware profile.
      */
-    @JsonProperty(value = "hardwareProfile")
     private HardwareProfile hardwareProfile;
 
     /*
      * The operating system profile.
      */
-    @JsonProperty(value = "osProfile")
     private OsProfile osProfile;
 
     /*
      * The virtual network profile.
      */
-    @JsonProperty(value = "virtualNetworkProfile")
     private VirtualNetworkProfile virtualNetworkProfile;
 
     /*
      * The data disks groups for the role.
      */
-    @JsonProperty(value = "dataDisksGroups")
     private List<DataDisksGroups> dataDisksGroups;
 
     /*
      * The list of script actions on the role.
      */
-    @JsonProperty(value = "scriptActions")
     private List<ScriptAction> scriptActions;
 
     /*
      * Indicates whether encrypt the data disks.
      */
-    @JsonProperty(value = "encryptDataDisks")
     private Boolean encryptDataDisks;
 
     /**
@@ -329,5 +322,75 @@ public final class Role {
         if (scriptActions() != null) {
             scriptActions().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeNumberField("minInstanceCount", this.minInstanceCount);
+        jsonWriter.writeNumberField("targetInstanceCount", this.targetInstanceCount);
+        jsonWriter.writeStringField("VMGroupName", this.vMGroupName);
+        jsonWriter.writeJsonField("autoscale", this.autoscaleConfiguration);
+        jsonWriter.writeJsonField("hardwareProfile", this.hardwareProfile);
+        jsonWriter.writeJsonField("osProfile", this.osProfile);
+        jsonWriter.writeJsonField("virtualNetworkProfile", this.virtualNetworkProfile);
+        jsonWriter.writeArrayField("dataDisksGroups", this.dataDisksGroups,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("scriptActions", this.scriptActions, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("encryptDataDisks", this.encryptDataDisks);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Role from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Role if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the Role.
+     */
+    public static Role fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Role deserializedRole = new Role();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedRole.name = reader.getString();
+                } else if ("minInstanceCount".equals(fieldName)) {
+                    deserializedRole.minInstanceCount = reader.getNullable(JsonReader::getInt);
+                } else if ("targetInstanceCount".equals(fieldName)) {
+                    deserializedRole.targetInstanceCount = reader.getNullable(JsonReader::getInt);
+                } else if ("VMGroupName".equals(fieldName)) {
+                    deserializedRole.vMGroupName = reader.getString();
+                } else if ("autoscale".equals(fieldName)) {
+                    deserializedRole.autoscaleConfiguration = Autoscale.fromJson(reader);
+                } else if ("hardwareProfile".equals(fieldName)) {
+                    deserializedRole.hardwareProfile = HardwareProfile.fromJson(reader);
+                } else if ("osProfile".equals(fieldName)) {
+                    deserializedRole.osProfile = OsProfile.fromJson(reader);
+                } else if ("virtualNetworkProfile".equals(fieldName)) {
+                    deserializedRole.virtualNetworkProfile = VirtualNetworkProfile.fromJson(reader);
+                } else if ("dataDisksGroups".equals(fieldName)) {
+                    List<DataDisksGroups> dataDisksGroups
+                        = reader.readArray(reader1 -> DataDisksGroups.fromJson(reader1));
+                    deserializedRole.dataDisksGroups = dataDisksGroups;
+                } else if ("scriptActions".equals(fieldName)) {
+                    List<ScriptAction> scriptActions = reader.readArray(reader1 -> ScriptAction.fromJson(reader1));
+                    deserializedRole.scriptActions = scriptActions;
+                } else if ("encryptDataDisks".equals(fieldName)) {
+                    deserializedRole.encryptDataDisks = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRole;
+        });
     }
 }

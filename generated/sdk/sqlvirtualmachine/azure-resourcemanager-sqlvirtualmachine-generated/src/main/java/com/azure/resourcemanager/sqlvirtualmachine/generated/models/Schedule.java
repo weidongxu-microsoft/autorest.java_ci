@@ -5,42 +5,41 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Set assessment schedule for SQL Server.
  */
 @Fluent
-public final class Schedule {
+public final class Schedule implements JsonSerializable<Schedule> {
     /*
      * Enable or disable assessment schedule on SQL virtual machine.
      */
-    @JsonProperty(value = "enable")
     private Boolean enable;
 
     /*
      * Number of weeks to schedule between 2 assessment runs. Takes value from 1-6
      */
-    @JsonProperty(value = "weeklyInterval")
     private Integer weeklyInterval;
 
     /*
      * Occurrence of the DayOfWeek day within a month to schedule assessment. Takes values: 1,2,3,4 and -1. Use -1 for
      * last DayOfWeek day of the month
      */
-    @JsonProperty(value = "monthlyOccurrence")
     private Integer monthlyOccurrence;
 
     /*
      * Day of the week to run assessment.
      */
-    @JsonProperty(value = "dayOfWeek")
     private AssessmentDayOfWeek dayOfWeek;
 
     /*
      * Time of the day in HH:mm format. Eg. 17:30
      */
-    @JsonProperty(value = "startTime")
     private String startTime;
 
     /**
@@ -157,5 +156,53 @@ public final class Schedule {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enable", this.enable);
+        jsonWriter.writeNumberField("weeklyInterval", this.weeklyInterval);
+        jsonWriter.writeNumberField("monthlyOccurrence", this.monthlyOccurrence);
+        jsonWriter.writeStringField("dayOfWeek", this.dayOfWeek == null ? null : this.dayOfWeek.toString());
+        jsonWriter.writeStringField("startTime", this.startTime);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Schedule from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Schedule if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the Schedule.
+     */
+    public static Schedule fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Schedule deserializedSchedule = new Schedule();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enable".equals(fieldName)) {
+                    deserializedSchedule.enable = reader.getNullable(JsonReader::getBoolean);
+                } else if ("weeklyInterval".equals(fieldName)) {
+                    deserializedSchedule.weeklyInterval = reader.getNullable(JsonReader::getInt);
+                } else if ("monthlyOccurrence".equals(fieldName)) {
+                    deserializedSchedule.monthlyOccurrence = reader.getNullable(JsonReader::getInt);
+                } else if ("dayOfWeek".equals(fieldName)) {
+                    deserializedSchedule.dayOfWeek = AssessmentDayOfWeek.fromString(reader.getString());
+                } else if ("startTime".equals(fieldName)) {
+                    deserializedSchedule.startTime = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSchedule;
+        });
     }
 }

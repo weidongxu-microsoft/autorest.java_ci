@@ -6,29 +6,31 @@ package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The ServerPrivateLinkServiceConnectionStateProperty model.
  */
 @Fluent
-public final class ServerPrivateLinkServiceConnectionStateProperty {
+public final class ServerPrivateLinkServiceConnectionStateProperty
+    implements JsonSerializable<ServerPrivateLinkServiceConnectionStateProperty> {
     /*
      * The private link service connection status.
      */
-    @JsonProperty(value = "status", required = true)
     private PrivateLinkServiceConnectionStateStatus status;
 
     /*
      * The private link service connection description.
      */
-    @JsonProperty(value = "description", required = true)
     private String description;
 
     /*
      * The actions required for private link service connection.
      */
-    @JsonProperty(value = "actionsRequired", access = JsonProperty.Access.WRITE_ONLY)
     private PrivateLinkServiceConnectionStateActionsRequire actionsRequired;
 
     /**
@@ -105,4 +107,49 @@ public final class ServerPrivateLinkServiceConnectionStateProperty {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ServerPrivateLinkServiceConnectionStateProperty.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("status", this.status == null ? null : this.status.toString());
+        jsonWriter.writeStringField("description", this.description);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerPrivateLinkServiceConnectionStateProperty from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerPrivateLinkServiceConnectionStateProperty if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ServerPrivateLinkServiceConnectionStateProperty.
+     */
+    public static ServerPrivateLinkServiceConnectionStateProperty fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerPrivateLinkServiceConnectionStateProperty deserializedServerPrivateLinkServiceConnectionStateProperty
+                = new ServerPrivateLinkServiceConnectionStateProperty();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("status".equals(fieldName)) {
+                    deserializedServerPrivateLinkServiceConnectionStateProperty.status
+                        = PrivateLinkServiceConnectionStateStatus.fromString(reader.getString());
+                } else if ("description".equals(fieldName)) {
+                    deserializedServerPrivateLinkServiceConnectionStateProperty.description = reader.getString();
+                } else if ("actionsRequired".equals(fieldName)) {
+                    deserializedServerPrivateLinkServiceConnectionStateProperty.actionsRequired
+                        = PrivateLinkServiceConnectionStateActionsRequire.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerPrivateLinkServiceConnectionStateProperty;
+        });
+    }
 }

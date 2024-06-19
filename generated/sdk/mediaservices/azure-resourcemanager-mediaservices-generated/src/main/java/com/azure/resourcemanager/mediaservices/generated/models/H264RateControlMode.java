@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class H264RateControlMode extends ExpandableStringEnum<H264RateCont
      * @param name a name to look for.
      * @return the corresponding H264RateControlMode.
      */
-    @JsonCreator
     public static H264RateControlMode fromString(String name) {
         return fromString(name, H264RateControlMode.class);
     }

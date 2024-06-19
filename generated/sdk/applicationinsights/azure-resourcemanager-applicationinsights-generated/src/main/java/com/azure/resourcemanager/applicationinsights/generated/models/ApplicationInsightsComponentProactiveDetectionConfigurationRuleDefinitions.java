@@ -5,59 +5,56 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Static definitions of the ProactiveDetection configuration rule (same values for all components).
  */
 @Fluent
-public final class ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions {
+public final class ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions
+    implements JsonSerializable<ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions> {
     /*
      * The rule name
      */
-    @JsonProperty(value = "Name")
     private String name;
 
     /*
      * The rule name as it is displayed in UI
      */
-    @JsonProperty(value = "DisplayName")
     private String displayName;
 
     /*
      * The rule description
      */
-    @JsonProperty(value = "Description")
     private String description;
 
     /*
      * URL which displays additional info about the proactive detection rule
      */
-    @JsonProperty(value = "HelpUrl")
     private String helpUrl;
 
     /*
      * A flag indicating whether the rule is hidden (from the UI)
      */
-    @JsonProperty(value = "IsHidden")
     private Boolean isHidden;
 
     /*
      * A flag indicating whether the rule is enabled by default
      */
-    @JsonProperty(value = "IsEnabledByDefault")
     private Boolean isEnabledByDefault;
 
     /*
      * A flag indicating whether the rule is in preview
      */
-    @JsonProperty(value = "IsInPreview")
     private Boolean isInPreview;
 
     /*
      * A flag indicating whether email notifications are supported for detections for this rule
      */
-    @JsonProperty(value = "SupportsEmailNotifications")
     private Boolean supportsEmailNotifications;
 
     /**
@@ -239,5 +236,74 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationRu
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("Name", this.name);
+        jsonWriter.writeStringField("DisplayName", this.displayName);
+        jsonWriter.writeStringField("Description", this.description);
+        jsonWriter.writeStringField("HelpUrl", this.helpUrl);
+        jsonWriter.writeBooleanField("IsHidden", this.isHidden);
+        jsonWriter.writeBooleanField("IsEnabledByDefault", this.isEnabledByDefault);
+        jsonWriter.writeBooleanField("IsInPreview", this.isInPreview);
+        jsonWriter.writeBooleanField("SupportsEmailNotifications", this.supportsEmailNotifications);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions from the
+     * JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions if the
+     * JsonReader was pointing to an instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the
+     * ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.
+     */
+    public static ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions
+        fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions
+                = new ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("Name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.name
+                        = reader.getString();
+                } else if ("DisplayName".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.displayName
+                        = reader.getString();
+                } else if ("Description".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.description
+                        = reader.getString();
+                } else if ("HelpUrl".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.helpUrl
+                        = reader.getString();
+                } else if ("IsHidden".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.isHidden
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("IsEnabledByDefault".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.isEnabledByDefault
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("IsInPreview".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.isInPreview
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("SupportsEmailNotifications".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.supportsEmailNotifications
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions;
+        });
     }
 }

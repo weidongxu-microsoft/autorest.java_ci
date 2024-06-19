@@ -5,6 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.costmanagement.generated.models.AccumulatedType;
 import com.azure.resourcemanager.costmanagement.generated.models.ChartType;
 import com.azure.resourcemanager.costmanagement.generated.models.KpiProperties;
@@ -14,7 +19,7 @@ import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigDat
 import com.azure.resourcemanager.costmanagement.generated.models.ReportConfigTimePeriod;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportTimeframeType;
 import com.azure.resourcemanager.costmanagement.generated.models.ReportType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -22,11 +27,10 @@ import java.util.List;
  * The properties of the view.
  */
 @Fluent
-public final class ViewProperties {
+public final class ViewProperties implements JsonSerializable<ViewProperties> {
     /*
      * User input name of the view. Required.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
@@ -45,67 +49,56 @@ public final class ViewProperties {
      * '/providers/Microsoft.CostManagement/externalSubscriptions/{externalSubscriptionName}' for ExternalSubscription
      * scope.
      */
-    @JsonProperty(value = "scope")
     private String scope;
 
     /*
      * Date the user created this view.
      */
-    @JsonProperty(value = "createdOn", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdOn;
 
     /*
      * Date when the user last modified this view.
      */
-    @JsonProperty(value = "modifiedOn", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime modifiedOn;
 
     /*
      * Selected date range for viewing cost in.
      */
-    @JsonProperty(value = "dateRange", access = JsonProperty.Access.WRITE_ONLY)
     private String dateRange;
 
     /*
      * Selected currency.
      */
-    @JsonProperty(value = "currency", access = JsonProperty.Access.WRITE_ONLY)
     private String currency;
 
     /*
      * Query body configuration. Required.
      */
-    @JsonProperty(value = "query")
     private ReportConfigDefinition innerQuery;
 
     /*
      * Chart type of the main view in Cost Analysis. Required.
      */
-    @JsonProperty(value = "chart")
     private ChartType chart;
 
     /*
      * Show costs accumulated over time.
      */
-    @JsonProperty(value = "accumulated")
     private AccumulatedType accumulated;
 
     /*
      * Metric to use when displaying costs.
      */
-    @JsonProperty(value = "metric")
     private MetricType metric;
 
     /*
      * List of KPIs to show in Cost Analysis UI.
      */
-    @JsonProperty(value = "kpis")
     private List<KpiProperties> kpis;
 
     /*
      * Configuration of 3 sub-views in the Cost Analysis UI.
      */
-    @JsonProperty(value = "pivots")
     private List<PivotProperties> pivots;
 
     /**
@@ -447,5 +440,74 @@ public final class ViewProperties {
         if (pivots() != null) {
             pivots().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("scope", this.scope);
+        jsonWriter.writeJsonField("query", this.innerQuery);
+        jsonWriter.writeStringField("chart", this.chart == null ? null : this.chart.toString());
+        jsonWriter.writeStringField("accumulated", this.accumulated == null ? null : this.accumulated.toString());
+        jsonWriter.writeStringField("metric", this.metric == null ? null : this.metric.toString());
+        jsonWriter.writeArrayField("kpis", this.kpis, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("pivots", this.pivots, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ViewProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ViewProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ViewProperties.
+     */
+    public static ViewProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ViewProperties deserializedViewProperties = new ViewProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("displayName".equals(fieldName)) {
+                    deserializedViewProperties.displayName = reader.getString();
+                } else if ("scope".equals(fieldName)) {
+                    deserializedViewProperties.scope = reader.getString();
+                } else if ("createdOn".equals(fieldName)) {
+                    deserializedViewProperties.createdOn = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("modifiedOn".equals(fieldName)) {
+                    deserializedViewProperties.modifiedOn = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("dateRange".equals(fieldName)) {
+                    deserializedViewProperties.dateRange = reader.getString();
+                } else if ("currency".equals(fieldName)) {
+                    deserializedViewProperties.currency = reader.getString();
+                } else if ("query".equals(fieldName)) {
+                    deserializedViewProperties.innerQuery = ReportConfigDefinition.fromJson(reader);
+                } else if ("chart".equals(fieldName)) {
+                    deserializedViewProperties.chart = ChartType.fromString(reader.getString());
+                } else if ("accumulated".equals(fieldName)) {
+                    deserializedViewProperties.accumulated = AccumulatedType.fromString(reader.getString());
+                } else if ("metric".equals(fieldName)) {
+                    deserializedViewProperties.metric = MetricType.fromString(reader.getString());
+                } else if ("kpis".equals(fieldName)) {
+                    List<KpiProperties> kpis = reader.readArray(reader1 -> KpiProperties.fromJson(reader1));
+                    deserializedViewProperties.kpis = kpis;
+                } else if ("pivots".equals(fieldName)) {
+                    List<PivotProperties> pivots = reader.readArray(reader1 -> PivotProperties.fromJson(reader1));
+                    deserializedViewProperties.pivots = pivots;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedViewProperties;
+        });
     }
 }

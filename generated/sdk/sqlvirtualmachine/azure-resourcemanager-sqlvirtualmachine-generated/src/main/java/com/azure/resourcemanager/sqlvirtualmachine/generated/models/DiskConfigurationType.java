@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class DiskConfigurationType extends ExpandableStringEnum<DiskConfig
      * @param name a name to look for.
      * @return the corresponding DiskConfigurationType.
      */
-    @JsonCreator
     public static DiskConfigurationType fromString(String name) {
         return fromString(name, DiskConfigurationType.class);
     }

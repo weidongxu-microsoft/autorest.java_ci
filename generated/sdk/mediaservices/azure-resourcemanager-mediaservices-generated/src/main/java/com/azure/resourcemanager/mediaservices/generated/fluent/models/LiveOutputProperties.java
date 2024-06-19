@@ -5,10 +5,15 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.Hls;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveOutputResourceState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.OffsetDateTime;
 
@@ -16,17 +21,15 @@ import java.time.OffsetDateTime;
  * The JSON object that contains the properties required to create a live output.
  */
 @Fluent
-public final class LiveOutputProperties {
+public final class LiveOutputProperties implements JsonSerializable<LiveOutputProperties> {
     /*
      * The description of the live output.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The asset that the live output will write to.
      */
-    @JsonProperty(value = "assetName", required = true)
     private String assetName;
 
     /*
@@ -34,7 +37,6 @@ public final class LiveOutputProperties {
      * asset for this live output. This also sets the maximum content length for the rewind window. For example, use
      * PT1H30M to indicate 1 hour and 30 minutes of archive window.
      */
-    @JsonProperty(value = "archiveWindowLength", required = true)
     private Duration archiveWindowLength;
 
     /*
@@ -43,49 +45,41 @@ public final class LiveOutputProperties {
      * original ArchiveWindowLength. For example, use PT1H30M to indicate 1 hour and 30 minutes of rewind window length.
      * Service will use implicit default value 30m only if Live Event enables LL.
      */
-    @JsonProperty(value = "rewindWindowLength")
     private Duration rewindWindowLength;
 
     /*
      * The manifest file name. If not provided, the service will generate one automatically.
      */
-    @JsonProperty(value = "manifestName")
     private String manifestName;
 
     /*
      * HTTP Live Streaming (HLS) packing setting for the live output.
      */
-    @JsonProperty(value = "hls")
     private Hls hls;
 
     /*
      * The initial timestamp that the live output will start at, any content before this value will not be archived.
      */
-    @JsonProperty(value = "outputSnapTime")
     private Long outputSnapTime;
 
     /*
      * The creation time the live output.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The time the live output was last modified.
      */
-    @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
     /*
      * The provisioning state of the live output.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * The resource state of the live output.
      */
-    @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private LiveOutputResourceState resourceState;
 
     /**
@@ -307,4 +301,73 @@ public final class LiveOutputProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(LiveOutputProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("assetName", this.assetName);
+        jsonWriter.writeStringField("archiveWindowLength",
+            CoreUtils.durationToStringWithDays(this.archiveWindowLength));
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("rewindWindowLength", CoreUtils.durationToStringWithDays(this.rewindWindowLength));
+        jsonWriter.writeStringField("manifestName", this.manifestName);
+        jsonWriter.writeJsonField("hls", this.hls);
+        jsonWriter.writeNumberField("outputSnapTime", this.outputSnapTime);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveOutputProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveOutputProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LiveOutputProperties.
+     */
+    public static LiveOutputProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveOutputProperties deserializedLiveOutputProperties = new LiveOutputProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("assetName".equals(fieldName)) {
+                    deserializedLiveOutputProperties.assetName = reader.getString();
+                } else if ("archiveWindowLength".equals(fieldName)) {
+                    deserializedLiveOutputProperties.archiveWindowLength
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("description".equals(fieldName)) {
+                    deserializedLiveOutputProperties.description = reader.getString();
+                } else if ("rewindWindowLength".equals(fieldName)) {
+                    deserializedLiveOutputProperties.rewindWindowLength
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("manifestName".equals(fieldName)) {
+                    deserializedLiveOutputProperties.manifestName = reader.getString();
+                } else if ("hls".equals(fieldName)) {
+                    deserializedLiveOutputProperties.hls = Hls.fromJson(reader);
+                } else if ("outputSnapTime".equals(fieldName)) {
+                    deserializedLiveOutputProperties.outputSnapTime = reader.getNullable(JsonReader::getLong);
+                } else if ("created".equals(fieldName)) {
+                    deserializedLiveOutputProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("lastModified".equals(fieldName)) {
+                    deserializedLiveOutputProperties.lastModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedLiveOutputProperties.provisioningState = reader.getString();
+                } else if ("resourceState".equals(fieldName)) {
+                    deserializedLiveOutputProperties.resourceState
+                        = LiveOutputResourceState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveOutputProperties;
+        });
+    }
 }

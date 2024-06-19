@@ -5,36 +5,36 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Role Assignments.
  */
 @Fluent
-public final class RoleAssignmentInner {
+public final class RoleAssignmentInner implements JsonSerializable<RoleAssignmentInner> {
     /*
      * The role assignment ID.
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * The role assignment name.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * The role assignment type.
      */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
     /*
      * Role assignment properties.
      */
-    @JsonProperty(value = "properties")
     private RoleAssignmentPropertiesWithScope innerProperties;
 
     /**
@@ -203,5 +203,48 @@ public final class RoleAssignmentInner {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoleAssignmentInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoleAssignmentInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the RoleAssignmentInner.
+     */
+    public static RoleAssignmentInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoleAssignmentInner deserializedRoleAssignmentInner = new RoleAssignmentInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedRoleAssignmentInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedRoleAssignmentInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedRoleAssignmentInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedRoleAssignmentInner.innerProperties
+                        = RoleAssignmentPropertiesWithScope.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoleAssignmentInner;
+        });
     }
 }

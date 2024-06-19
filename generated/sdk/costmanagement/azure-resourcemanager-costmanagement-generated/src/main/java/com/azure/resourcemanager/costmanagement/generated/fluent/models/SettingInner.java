@@ -5,10 +5,13 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.costmanagement.generated.models.CacheItem;
 import com.azure.resourcemanager.costmanagement.generated.models.ProxySettingResource;
 import com.azure.resourcemanager.costmanagement.generated.models.SettingsPropertiesStartOn;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -19,8 +22,27 @@ public final class SettingInner extends ProxySettingResource {
     /*
      * The properties of the setting.
      */
-    @JsonProperty(value = "properties")
     private SettingsProperties innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * Resource kind.
+     */
+    private String kind;
 
     /**
      * Creates an instance of SettingInner class.
@@ -35,6 +57,46 @@ public final class SettingInner extends ProxySettingResource {
      */
     private SettingsProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the kind property: Resource kind.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public String kind() {
+        return this.kind;
     }
 
     /**
@@ -121,5 +183,50 @@ public final class SettingInner extends ProxySettingResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SettingInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SettingInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SettingInner.
+     */
+    public static SettingInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SettingInner deserializedSettingInner = new SettingInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedSettingInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedSettingInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedSettingInner.type = reader.getString();
+                } else if ("kind".equals(fieldName)) {
+                    deserializedSettingInner.kind = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedSettingInner.innerProperties = SettingsProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSettingInner;
+        });
     }
 }

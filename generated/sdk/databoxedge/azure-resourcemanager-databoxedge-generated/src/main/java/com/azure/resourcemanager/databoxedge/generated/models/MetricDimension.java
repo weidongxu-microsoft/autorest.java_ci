@@ -6,23 +6,25 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The metric dimension.
  */
 @Fluent
-public final class MetricDimension {
+public final class MetricDimension implements JsonSerializable<MetricDimension> {
     /*
      * The dimension type.
      */
-    @JsonProperty(value = "sourceType", required = true)
     private String sourceType;
 
     /*
      * The dimension value.
      */
-    @JsonProperty(value = "sourceName", required = true)
     private String sourceName;
 
     /**
@@ -88,4 +90,44 @@ public final class MetricDimension {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MetricDimension.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("sourceType", this.sourceType);
+        jsonWriter.writeStringField("sourceName", this.sourceName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MetricDimension from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MetricDimension if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MetricDimension.
+     */
+    public static MetricDimension fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MetricDimension deserializedMetricDimension = new MetricDimension();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sourceType".equals(fieldName)) {
+                    deserializedMetricDimension.sourceType = reader.getString();
+                } else if ("sourceName".equals(fieldName)) {
+                    deserializedMetricDimension.sourceName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMetricDimension;
+        });
+    }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class DaysOfWeek extends ExpandableStringEnum<DaysOfWeek> {
      * @param name a name to look for.
      * @return the corresponding DaysOfWeek.
      */
-    @JsonCreator
     public static DaysOfWeek fromString(String name) {
         return fromString(name, DaysOfWeek.class);
     }

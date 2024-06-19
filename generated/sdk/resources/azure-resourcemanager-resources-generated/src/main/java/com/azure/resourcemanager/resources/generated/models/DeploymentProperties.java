@@ -6,25 +6,27 @@ package com.azure.resourcemanager.resources.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Deployment properties.
  */
 @Fluent
-public class DeploymentProperties {
+public class DeploymentProperties implements JsonSerializable<DeploymentProperties> {
     /*
      * The template content. You use this element when you want to pass the template syntax directly in the request
      * rather than link to an existing template. It can be a JObject or well-formed JSON string. Use either the
      * templateLink property or the template property, but not both.
      */
-    @JsonProperty(value = "template")
     private Object template;
 
     /*
      * The URI of the template. Use either the templateLink property or the template property, but not both.
      */
-    @JsonProperty(value = "templateLink")
     private TemplateLink templateLink;
 
     /*
@@ -33,14 +35,12 @@ public class DeploymentProperties {
      * either the parametersLink property or the parameters property, but not both. It can be a JObject or a well formed
      * JSON string.
      */
-    @JsonProperty(value = "parameters")
     private Object parameters;
 
     /*
      * The URI of parameters file. You use this element to link to an existing parameters file. Use either the
      * parametersLink property or the parameters property, but not both.
      */
-    @JsonProperty(value = "parametersLink")
     private ParametersLink parametersLink;
 
     /*
@@ -49,26 +49,22 @@ public class DeploymentProperties {
      * mode, resources are deployed and existing resources in the resource group that are not included in the template
      * are deleted. Be careful when using Complete mode as you may unintentionally delete resources.
      */
-    @JsonProperty(value = "mode", required = true)
     private DeploymentMode mode;
 
     /*
      * The debug setting of the deployment.
      */
-    @JsonProperty(value = "debugSetting")
     private DebugSetting debugSetting;
 
     /*
      * The deployment on error behavior.
      */
-    @JsonProperty(value = "onErrorDeployment")
     private OnErrorDeployment onErrorDeployment;
 
     /*
      * Specifies whether template expressions are evaluated within the scope of the parent template or nested template.
      * Only applicable to nested templates. If not specified, default value is outer.
      */
-    @JsonProperty(value = "expressionEvaluationOptions")
     private ExpressionEvaluationOptions expressionEvaluationOptions;
 
     /**
@@ -292,4 +288,63 @@ public class DeploymentProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DeploymentProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("mode", this.mode == null ? null : this.mode.toString());
+        jsonWriter.writeUntypedField("template", this.template);
+        jsonWriter.writeJsonField("templateLink", this.templateLink);
+        jsonWriter.writeUntypedField("parameters", this.parameters);
+        jsonWriter.writeJsonField("parametersLink", this.parametersLink);
+        jsonWriter.writeJsonField("debugSetting", this.debugSetting);
+        jsonWriter.writeJsonField("onErrorDeployment", this.onErrorDeployment);
+        jsonWriter.writeJsonField("expressionEvaluationOptions", this.expressionEvaluationOptions);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DeploymentProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DeploymentProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DeploymentProperties.
+     */
+    public static DeploymentProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DeploymentProperties deserializedDeploymentProperties = new DeploymentProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("mode".equals(fieldName)) {
+                    deserializedDeploymentProperties.mode = DeploymentMode.fromString(reader.getString());
+                } else if ("template".equals(fieldName)) {
+                    deserializedDeploymentProperties.template = reader.readUntyped();
+                } else if ("templateLink".equals(fieldName)) {
+                    deserializedDeploymentProperties.templateLink = TemplateLink.fromJson(reader);
+                } else if ("parameters".equals(fieldName)) {
+                    deserializedDeploymentProperties.parameters = reader.readUntyped();
+                } else if ("parametersLink".equals(fieldName)) {
+                    deserializedDeploymentProperties.parametersLink = ParametersLink.fromJson(reader);
+                } else if ("debugSetting".equals(fieldName)) {
+                    deserializedDeploymentProperties.debugSetting = DebugSetting.fromJson(reader);
+                } else if ("onErrorDeployment".equals(fieldName)) {
+                    deserializedDeploymentProperties.onErrorDeployment = OnErrorDeployment.fromJson(reader);
+                } else if ("expressionEvaluationOptions".equals(fieldName)) {
+                    deserializedDeploymentProperties.expressionEvaluationOptions
+                        = ExpressionEvaluationOptions.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDeploymentProperties;
+        });
+    }
 }

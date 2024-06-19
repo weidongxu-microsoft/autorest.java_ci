@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -58,7 +57,6 @@ public final class KeyVaultSyncStatus extends ExpandableStringEnum<KeyVaultSyncS
      * @param name a name to look for.
      * @return the corresponding KeyVaultSyncStatus.
      */
-    @JsonCreator
     public static KeyVaultSyncStatus fromString(String name) {
         return fromString(name, KeyVaultSyncStatus.class);
     }

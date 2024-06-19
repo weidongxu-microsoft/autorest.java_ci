@@ -6,36 +6,36 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.UUID;
 
 /**
  * Represents a policy option.
  */
 @Fluent
-public final class ContentKeyPolicyOption {
+public final class ContentKeyPolicyOption implements JsonSerializable<ContentKeyPolicyOption> {
     /*
      * The legacy Policy Option ID.
      */
-    @JsonProperty(value = "policyOptionId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID policyOptionId;
 
     /*
      * The Policy Option description.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The key delivery configuration.
      */
-    @JsonProperty(value = "configuration", required = true)
     private ContentKeyPolicyConfiguration configuration;
 
     /*
      * The requirements that must be met to deliver keys with this configuration
      */
-    @JsonProperty(value = "restriction", required = true)
     private ContentKeyPolicyRestriction restriction;
 
     /**
@@ -136,4 +136,50 @@ public final class ContentKeyPolicyOption {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ContentKeyPolicyOption.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("configuration", this.configuration);
+        jsonWriter.writeJsonField("restriction", this.restriction);
+        jsonWriter.writeStringField("name", this.name);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ContentKeyPolicyOption from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ContentKeyPolicyOption if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ContentKeyPolicyOption.
+     */
+    public static ContentKeyPolicyOption fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ContentKeyPolicyOption deserializedContentKeyPolicyOption = new ContentKeyPolicyOption();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("configuration".equals(fieldName)) {
+                    deserializedContentKeyPolicyOption.configuration = ContentKeyPolicyConfiguration.fromJson(reader);
+                } else if ("restriction".equals(fieldName)) {
+                    deserializedContentKeyPolicyOption.restriction = ContentKeyPolicyRestriction.fromJson(reader);
+                } else if ("policyOptionId".equals(fieldName)) {
+                    deserializedContentKeyPolicyOption.policyOptionId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("name".equals(fieldName)) {
+                    deserializedContentKeyPolicyOption.name = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedContentKeyPolicyOption;
+        });
+    }
 }

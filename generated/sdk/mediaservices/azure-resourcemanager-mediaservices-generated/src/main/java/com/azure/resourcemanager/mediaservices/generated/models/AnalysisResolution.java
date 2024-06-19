@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -43,7 +42,6 @@ public final class AnalysisResolution extends ExpandableStringEnum<AnalysisResol
      * @param name a name to look for.
      * @return the corresponding AnalysisResolution.
      */
-    @JsonCreator
     public static AnalysisResolution fromString(String name) {
         return fromString(name, AnalysisResolution.class);
     }

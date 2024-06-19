@@ -6,35 +6,26 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Specify action need to be taken when rule type is converting log to metric.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "odata.type",
-    defaultImpl = LogToMetricAction.class,
-    visible = true)
-@JsonTypeName("Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction")
 @Fluent
 public final class LogToMetricAction extends Action {
     /*
      * Specifies the action. Supported values - AlertingAction, LogToMetricAction
      */
-    @JsonTypeId
-    @JsonProperty(value = "odata.type", required = true)
     private String odataType
         = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction";
 
     /*
      * Criteria of Metric
      */
-    @JsonProperty(value = "criteria", required = true)
     private List<Criteria> criteria;
 
     /**
@@ -90,4 +81,45 @@ public final class LogToMetricAction extends Action {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(LogToMetricAction.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("criteria", this.criteria, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LogToMetricAction from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LogToMetricAction if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LogToMetricAction.
+     */
+    public static LogToMetricAction fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LogToMetricAction deserializedLogToMetricAction = new LogToMetricAction();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("criteria".equals(fieldName)) {
+                    List<Criteria> criteria = reader.readArray(reader1 -> Criteria.fromJson(reader1));
+                    deserializedLogToMetricAction.criteria = criteria;
+                } else if ("odata.type".equals(fieldName)) {
+                    deserializedLogToMetricAction.odataType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLogToMetricAction;
+        });
+    }
 }

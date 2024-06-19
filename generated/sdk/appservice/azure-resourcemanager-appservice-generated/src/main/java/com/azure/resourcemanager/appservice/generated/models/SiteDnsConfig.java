@@ -5,50 +5,48 @@
 package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The SiteDnsConfig model.
  */
 @Fluent
-public final class SiteDnsConfig {
+public final class SiteDnsConfig implements JsonSerializable<SiteDnsConfig> {
     /*
      * List of custom DNS servers to be used by an app for lookups. Maximum 5 dns servers can be set.
      */
-    @JsonProperty(value = "dnsServers")
     private List<String> dnsServers;
 
     /*
      * Alternate DNS server to be used by apps. This property replicates the WEBSITE_DNS_ALT_SERVER app setting.
      */
-    @JsonProperty(value = "dnsAltServer")
     private String dnsAltServer;
 
     /*
      * Timeout for a single dns lookup in seconds. Allowed range: 1-30. Default is 3.
      */
-    @JsonProperty(value = "dnsRetryAttemptTimeout")
     private Integer dnsRetryAttemptTimeout;
 
     /*
      * Total number of retries for dns lookup. Allowed range: 1-5. Default is 3.
      */
-    @JsonProperty(value = "dnsRetryAttemptCount")
     private Integer dnsRetryAttemptCount;
 
     /*
      * Custom time for DNS to be cached in seconds. Allowed range: 0-60. Default is 30 seconds. 0 means caching
      * disabled.
      */
-    @JsonProperty(value = "dnsMaxCacheTimeout")
     private Integer dnsMaxCacheTimeout;
 
     /*
      * Indicates that sites using Virtual network custom DNS servers are still sorting the list of DNS servers.
      * Read-Only.
      */
-    @JsonProperty(value = "dnsLegacySortOrder", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean dnsLegacySortOrder;
 
     /**
@@ -181,5 +179,56 @@ public final class SiteDnsConfig {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("dnsServers", this.dnsServers, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("dnsAltServer", this.dnsAltServer);
+        jsonWriter.writeNumberField("dnsRetryAttemptTimeout", this.dnsRetryAttemptTimeout);
+        jsonWriter.writeNumberField("dnsRetryAttemptCount", this.dnsRetryAttemptCount);
+        jsonWriter.writeNumberField("dnsMaxCacheTimeout", this.dnsMaxCacheTimeout);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SiteDnsConfig from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SiteDnsConfig if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SiteDnsConfig.
+     */
+    public static SiteDnsConfig fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SiteDnsConfig deserializedSiteDnsConfig = new SiteDnsConfig();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("dnsServers".equals(fieldName)) {
+                    List<String> dnsServers = reader.readArray(reader1 -> reader1.getString());
+                    deserializedSiteDnsConfig.dnsServers = dnsServers;
+                } else if ("dnsAltServer".equals(fieldName)) {
+                    deserializedSiteDnsConfig.dnsAltServer = reader.getString();
+                } else if ("dnsRetryAttemptTimeout".equals(fieldName)) {
+                    deserializedSiteDnsConfig.dnsRetryAttemptTimeout = reader.getNullable(JsonReader::getInt);
+                } else if ("dnsRetryAttemptCount".equals(fieldName)) {
+                    deserializedSiteDnsConfig.dnsRetryAttemptCount = reader.getNullable(JsonReader::getInt);
+                } else if ("dnsMaxCacheTimeout".equals(fieldName)) {
+                    deserializedSiteDnsConfig.dnsMaxCacheTimeout = reader.getNullable(JsonReader::getInt);
+                } else if ("dnsLegacySortOrder".equals(fieldName)) {
+                    deserializedSiteDnsConfig.dnsLegacySortOrder = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSiteDnsConfig;
+        });
     }
 }

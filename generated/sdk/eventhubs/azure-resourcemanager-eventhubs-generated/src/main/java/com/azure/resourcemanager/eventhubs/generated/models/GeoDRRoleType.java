@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class GeoDRRoleType extends ExpandableStringEnum<GeoDRRoleType> {
      * @param name a name to look for.
      * @return the corresponding GeoDRRoleType.
      */
-    @JsonCreator
     public static GeoDRRoleType fromString(String name) {
         return fromString(name, GeoDRRoleType.class);
     }

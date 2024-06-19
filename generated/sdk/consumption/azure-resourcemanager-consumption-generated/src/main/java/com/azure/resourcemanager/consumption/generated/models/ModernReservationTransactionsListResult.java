@@ -5,25 +5,28 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernReservationTransactionInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Result of listing reservation recommendations.
  */
 @Immutable
-public final class ModernReservationTransactionsListResult {
+public final class ModernReservationTransactionsListResult
+    implements JsonSerializable<ModernReservationTransactionsListResult> {
     /*
      * The list of reservation recommendations.
      */
-    @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<ModernReservationTransactionInner> value;
 
     /*
      * The link (url) to the next page of results.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -59,5 +62,45 @@ public final class ModernReservationTransactionsListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ModernReservationTransactionsListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ModernReservationTransactionsListResult if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ModernReservationTransactionsListResult.
+     */
+    public static ModernReservationTransactionsListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ModernReservationTransactionsListResult deserializedModernReservationTransactionsListResult
+                = new ModernReservationTransactionsListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<ModernReservationTransactionInner> value
+                        = reader.readArray(reader1 -> ModernReservationTransactionInner.fromJson(reader1));
+                    deserializedModernReservationTransactionsListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedModernReservationTransactionsListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedModernReservationTransactionsListResult;
+        });
     }
 }

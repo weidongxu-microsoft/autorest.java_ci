@@ -5,31 +5,32 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionImageName;
 import com.azure.resourcemanager.azurekusto.generated.models.LanguageExtensionName;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The language extension object.
  */
 @Fluent
-public final class LanguageExtensionInner {
+public final class LanguageExtensionInner implements JsonSerializable<LanguageExtensionInner> {
     /*
      * The language extension name.
      */
-    @JsonProperty(value = "languageExtensionName")
     private LanguageExtensionName languageExtensionName;
 
     /*
      * The language extension image name.
      */
-    @JsonProperty(value = "languageExtensionImageName")
     private LanguageExtensionImageName languageExtensionImageName;
 
     /*
      * The language extension custom image name.
      */
-    @JsonProperty(value = "languageExtensionCustomImageName")
     private String languageExtensionCustomImageName;
 
     /**
@@ -105,5 +106,51 @@ public final class LanguageExtensionInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("languageExtensionName",
+            this.languageExtensionName == null ? null : this.languageExtensionName.toString());
+        jsonWriter.writeStringField("languageExtensionImageName",
+            this.languageExtensionImageName == null ? null : this.languageExtensionImageName.toString());
+        jsonWriter.writeStringField("languageExtensionCustomImageName", this.languageExtensionCustomImageName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LanguageExtensionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LanguageExtensionInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LanguageExtensionInner.
+     */
+    public static LanguageExtensionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LanguageExtensionInner deserializedLanguageExtensionInner = new LanguageExtensionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("languageExtensionName".equals(fieldName)) {
+                    deserializedLanguageExtensionInner.languageExtensionName
+                        = LanguageExtensionName.fromString(reader.getString());
+                } else if ("languageExtensionImageName".equals(fieldName)) {
+                    deserializedLanguageExtensionInner.languageExtensionImageName
+                        = LanguageExtensionImageName.fromString(reader.getString());
+                } else if ("languageExtensionCustomImageName".equals(fieldName)) {
+                    deserializedLanguageExtensionInner.languageExtensionCustomImageName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLanguageExtensionInner;
+        });
     }
 }

@@ -6,49 +6,47 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.Type;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Data Export properties.
  */
 @Fluent
-public final class DataExportProperties {
+public final class DataExportProperties implements JsonSerializable<DataExportProperties> {
     /*
      * The data export rule ID.
      */
-    @JsonProperty(value = "dataExportId")
     private String dataExportId;
 
     /*
      * An array of tables to export, for example: [“Heartbeat, SecurityEvent”].
      */
-    @JsonProperty(value = "tableNames", required = true)
     private List<String> tableNames;
 
     /*
      * destination properties.
      */
-    @JsonProperty(value = "destination")
     private Destination innerDestination;
 
     /*
      * Active when enabled.
      */
-    @JsonProperty(value = "enable")
     private Boolean enable;
 
     /*
      * The latest data export rule modification time.
      */
-    @JsonProperty(value = "createdDate")
     private String createdDate;
 
     /*
      * Date and time when the export was last modified.
      */
-    @JsonProperty(value = "lastModifiedDate")
     private String lastModifiedDate;
 
     /**
@@ -242,4 +240,57 @@ public final class DataExportProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DataExportProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("tableNames", this.tableNames, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("dataExportId", this.dataExportId);
+        jsonWriter.writeJsonField("destination", this.innerDestination);
+        jsonWriter.writeBooleanField("enable", this.enable);
+        jsonWriter.writeStringField("createdDate", this.createdDate);
+        jsonWriter.writeStringField("lastModifiedDate", this.lastModifiedDate);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataExportProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataExportProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DataExportProperties.
+     */
+    public static DataExportProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataExportProperties deserializedDataExportProperties = new DataExportProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tableNames".equals(fieldName)) {
+                    List<String> tableNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDataExportProperties.tableNames = tableNames;
+                } else if ("dataExportId".equals(fieldName)) {
+                    deserializedDataExportProperties.dataExportId = reader.getString();
+                } else if ("destination".equals(fieldName)) {
+                    deserializedDataExportProperties.innerDestination = Destination.fromJson(reader);
+                } else if ("enable".equals(fieldName)) {
+                    deserializedDataExportProperties.enable = reader.getNullable(JsonReader::getBoolean);
+                } else if ("createdDate".equals(fieldName)) {
+                    deserializedDataExportProperties.createdDate = reader.getString();
+                } else if ("lastModifiedDate".equals(fieldName)) {
+                    deserializedDataExportProperties.lastModifiedDate = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataExportProperties;
+        });
+    }
 }

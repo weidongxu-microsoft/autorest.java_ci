@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Compute infrastructure Resource.
  */
 @Fluent
-public final class ComputeResource {
+public final class ComputeResource implements JsonSerializable<ComputeResource> {
     /*
      * Processor count
      */
-    @JsonProperty(value = "processorCount", required = true)
     private int processorCount;
 
     /*
      * Memory in GB
      */
-    @JsonProperty(value = "memoryInGB", required = true)
     private long memoryInGB;
 
     /**
@@ -76,5 +78,45 @@ public final class ComputeResource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeIntField("processorCount", this.processorCount);
+        jsonWriter.writeLongField("memoryInGB", this.memoryInGB);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ComputeResource from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ComputeResource if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ComputeResource.
+     */
+    public static ComputeResource fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ComputeResource deserializedComputeResource = new ComputeResource();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("processorCount".equals(fieldName)) {
+                    deserializedComputeResource.processorCount = reader.getInt();
+                } else if ("memoryInGB".equals(fieldName)) {
+                    deserializedComputeResource.memoryInGB = reader.getLong();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedComputeResource;
+        });
     }
 }

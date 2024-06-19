@@ -5,19 +5,22 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ScriptInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The list Kusto database script operation response.
  */
 @Fluent
-public final class ScriptListResult {
+public final class ScriptListResult implements JsonSerializable<ScriptListResult> {
     /*
      * The list of Kusto scripts.
      */
-    @JsonProperty(value = "value")
     private List<ScriptInner> value;
 
     /**
@@ -55,5 +58,42 @@ public final class ScriptListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ScriptListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ScriptListResult if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ScriptListResult.
+     */
+    public static ScriptListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ScriptListResult deserializedScriptListResult = new ScriptListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<ScriptInner> value = reader.readArray(reader1 -> ScriptInner.fromJson(reader1));
+                    deserializedScriptListResult.value = value;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedScriptListResult;
+        });
     }
 }

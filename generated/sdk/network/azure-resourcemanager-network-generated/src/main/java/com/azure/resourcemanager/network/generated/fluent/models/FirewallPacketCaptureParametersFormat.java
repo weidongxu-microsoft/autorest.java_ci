@@ -5,57 +5,55 @@
 package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallNetworkRuleProtocol;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallPacketCaptureFlags;
 import com.azure.resourcemanager.network.generated.models.AzureFirewallPacketCaptureRule;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Packet capture parameters on azure firewall.
  */
 @Fluent
-public final class FirewallPacketCaptureParametersFormat {
+public final class FirewallPacketCaptureParametersFormat
+    implements JsonSerializable<FirewallPacketCaptureParametersFormat> {
     /*
      * Duration of packet capture in seconds.
      */
-    @JsonProperty(value = "durationInSeconds")
     private Integer durationInSeconds;
 
     /*
      * Number of packets to be captured.
      */
-    @JsonProperty(value = "numberOfPacketsToCapture")
     private Integer numberOfPacketsToCapture;
 
     /*
      * Upload capture location
      */
-    @JsonProperty(value = "sasUrl")
     private String sasUrl;
 
     /*
      * Name of file to be uploaded to sasURL
      */
-    @JsonProperty(value = "fileName")
     private String fileName;
 
     /*
      * The protocol of packets to capture
      */
-    @JsonProperty(value = "protocol")
     private AzureFirewallNetworkRuleProtocol protocol;
 
     /*
      * The tcp-flag type to be captured. Used with protocol TCP
      */
-    @JsonProperty(value = "flags")
     private List<AzureFirewallPacketCaptureFlags> flags;
 
     /*
      * Rules to filter packet captures.
      */
-    @JsonProperty(value = "filters")
     private List<AzureFirewallPacketCaptureRule> filters;
 
     /**
@@ -216,5 +214,67 @@ public final class FirewallPacketCaptureParametersFormat {
         if (filters() != null) {
             filters().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("durationInSeconds", this.durationInSeconds);
+        jsonWriter.writeNumberField("numberOfPacketsToCapture", this.numberOfPacketsToCapture);
+        jsonWriter.writeStringField("sasUrl", this.sasUrl);
+        jsonWriter.writeStringField("fileName", this.fileName);
+        jsonWriter.writeStringField("protocol", this.protocol == null ? null : this.protocol.toString());
+        jsonWriter.writeArrayField("flags", this.flags, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("filters", this.filters, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FirewallPacketCaptureParametersFormat from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FirewallPacketCaptureParametersFormat if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the FirewallPacketCaptureParametersFormat.
+     */
+    public static FirewallPacketCaptureParametersFormat fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FirewallPacketCaptureParametersFormat deserializedFirewallPacketCaptureParametersFormat
+                = new FirewallPacketCaptureParametersFormat();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("durationInSeconds".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParametersFormat.durationInSeconds
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("numberOfPacketsToCapture".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParametersFormat.numberOfPacketsToCapture
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("sasUrl".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParametersFormat.sasUrl = reader.getString();
+                } else if ("fileName".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParametersFormat.fileName = reader.getString();
+                } else if ("protocol".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParametersFormat.protocol
+                        = AzureFirewallNetworkRuleProtocol.fromString(reader.getString());
+                } else if ("flags".equals(fieldName)) {
+                    List<AzureFirewallPacketCaptureFlags> flags
+                        = reader.readArray(reader1 -> AzureFirewallPacketCaptureFlags.fromJson(reader1));
+                    deserializedFirewallPacketCaptureParametersFormat.flags = flags;
+                } else if ("filters".equals(fieldName)) {
+                    List<AzureFirewallPacketCaptureRule> filters
+                        = reader.readArray(reader1 -> AzureFirewallPacketCaptureRule.fromJson(reader1));
+                    deserializedFirewallPacketCaptureParametersFormat.filters = filters;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFirewallPacketCaptureParametersFormat;
+        });
     }
 }

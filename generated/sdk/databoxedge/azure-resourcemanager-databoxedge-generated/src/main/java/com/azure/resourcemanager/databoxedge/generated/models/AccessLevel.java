@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class AccessLevel extends ExpandableStringEnum<AccessLevel> {
      * @param name a name to look for.
      * @return the corresponding AccessLevel.
      */
-    @JsonCreator
     public static AccessLevel fromString(String name) {
         return fromString(name, AccessLevel.class);
     }

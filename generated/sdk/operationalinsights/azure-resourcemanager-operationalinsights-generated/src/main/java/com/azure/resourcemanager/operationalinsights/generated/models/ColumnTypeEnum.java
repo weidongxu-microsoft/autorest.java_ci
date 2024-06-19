@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -67,7 +66,6 @@ public final class ColumnTypeEnum extends ExpandableStringEnum<ColumnTypeEnum> {
      * @param name a name to look for.
      * @return the corresponding ColumnTypeEnum.
      */
-    @JsonCreator
     public static ColumnTypeEnum fromString(String name) {
         return fromString(name, ColumnTypeEnum.class);
     }

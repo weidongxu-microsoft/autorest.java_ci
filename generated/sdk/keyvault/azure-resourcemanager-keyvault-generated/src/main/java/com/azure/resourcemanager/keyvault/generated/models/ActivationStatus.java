@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class ActivationStatus extends ExpandableStringEnum<ActivationStatu
      * @param name a name to look for.
      * @return the corresponding ActivationStatus.
      */
-    @JsonCreator
     public static ActivationStatus fromString(String name) {
         return fromString(name, ActivationStatus.class);
     }

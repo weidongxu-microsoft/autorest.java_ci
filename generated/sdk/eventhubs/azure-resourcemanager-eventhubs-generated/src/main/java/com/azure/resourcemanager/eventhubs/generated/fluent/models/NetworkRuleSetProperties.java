@@ -5,40 +5,40 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventhubs.generated.models.DefaultAction;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetIpRules;
 import com.azure.resourcemanager.eventhubs.generated.models.NWRuleSetVirtualNetworkRules;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccessFlag;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * NetworkRuleSet properties.
  */
 @Fluent
-public final class NetworkRuleSetProperties {
+public final class NetworkRuleSetProperties implements JsonSerializable<NetworkRuleSetProperties> {
     /*
      * Value that indicates whether Trusted Service Access is Enabled or not.
      */
-    @JsonProperty(value = "trustedServiceAccessEnabled")
     private Boolean trustedServiceAccessEnabled;
 
     /*
      * Default Action for Network Rule Set
      */
-    @JsonProperty(value = "defaultAction")
     private DefaultAction defaultAction;
 
     /*
      * List VirtualNetwork Rules
      */
-    @JsonProperty(value = "virtualNetworkRules")
     private List<NWRuleSetVirtualNetworkRules> virtualNetworkRules;
 
     /*
      * List of IpRules
      */
-    @JsonProperty(value = "ipRules")
     private List<NWRuleSetIpRules> ipRules;
 
     /*
@@ -46,7 +46,6 @@ public final class NetworkRuleSetProperties {
      * SecuredByPerimeter then Inbound and Outbound communication is controlled by the network security perimeter and
      * profile's access rules.
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessFlag publicNetworkAccess;
 
     /**
@@ -173,5 +172,60 @@ public final class NetworkRuleSetProperties {
         if (ipRules() != null) {
             ipRules().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("trustedServiceAccessEnabled", this.trustedServiceAccessEnabled);
+        jsonWriter.writeStringField("defaultAction", this.defaultAction == null ? null : this.defaultAction.toString());
+        jsonWriter.writeArrayField("virtualNetworkRules", this.virtualNetworkRules,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("ipRules", this.ipRules, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NetworkRuleSetProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NetworkRuleSetProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NetworkRuleSetProperties.
+     */
+    public static NetworkRuleSetProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NetworkRuleSetProperties deserializedNetworkRuleSetProperties = new NetworkRuleSetProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("trustedServiceAccessEnabled".equals(fieldName)) {
+                    deserializedNetworkRuleSetProperties.trustedServiceAccessEnabled
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("defaultAction".equals(fieldName)) {
+                    deserializedNetworkRuleSetProperties.defaultAction = DefaultAction.fromString(reader.getString());
+                } else if ("virtualNetworkRules".equals(fieldName)) {
+                    List<NWRuleSetVirtualNetworkRules> virtualNetworkRules
+                        = reader.readArray(reader1 -> NWRuleSetVirtualNetworkRules.fromJson(reader1));
+                    deserializedNetworkRuleSetProperties.virtualNetworkRules = virtualNetworkRules;
+                } else if ("ipRules".equals(fieldName)) {
+                    List<NWRuleSetIpRules> ipRules = reader.readArray(reader1 -> NWRuleSetIpRules.fromJson(reader1));
+                    deserializedNetworkRuleSetProperties.ipRules = ipRules;
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedNetworkRuleSetProperties.publicNetworkAccess
+                        = PublicNetworkAccessFlag.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNetworkRuleSetProperties;
+        });
     }
 }

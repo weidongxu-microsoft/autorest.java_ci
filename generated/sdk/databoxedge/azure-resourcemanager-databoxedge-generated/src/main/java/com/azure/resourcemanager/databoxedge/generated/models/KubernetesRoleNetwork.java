@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Kubernetes role network resource.
  */
 @Immutable
-public final class KubernetesRoleNetwork {
+public final class KubernetesRoleNetwork implements JsonSerializable<KubernetesRoleNetwork> {
     /*
      * Cni configuration
      */
-    @JsonProperty(value = "cniConfig", access = JsonProperty.Access.WRITE_ONLY)
     private CniConfig cniConfig;
 
     /*
      * Load balancer configuration
      */
-    @JsonProperty(value = "loadBalancerConfig", access = JsonProperty.Access.WRITE_ONLY)
     private LoadBalancerConfig loadBalancerConfig;
 
     /**
@@ -60,5 +62,42 @@ public final class KubernetesRoleNetwork {
         if (loadBalancerConfig() != null) {
             loadBalancerConfig().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of KubernetesRoleNetwork from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of KubernetesRoleNetwork if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the KubernetesRoleNetwork.
+     */
+    public static KubernetesRoleNetwork fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            KubernetesRoleNetwork deserializedKubernetesRoleNetwork = new KubernetesRoleNetwork();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("cniConfig".equals(fieldName)) {
+                    deserializedKubernetesRoleNetwork.cniConfig = CniConfig.fromJson(reader);
+                } else if ("loadBalancerConfig".equals(fieldName)) {
+                    deserializedKubernetesRoleNetwork.loadBalancerConfig = LoadBalancerConfig.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedKubernetesRoleNetwork;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class FunctionType extends ExpandableStringEnum<FunctionType> {
      * @param name a name to look for.
      * @return the corresponding FunctionType.
      */
-    @JsonCreator
     public static FunctionType fromString(String name) {
         return fromString(name, FunctionType.class);
     }

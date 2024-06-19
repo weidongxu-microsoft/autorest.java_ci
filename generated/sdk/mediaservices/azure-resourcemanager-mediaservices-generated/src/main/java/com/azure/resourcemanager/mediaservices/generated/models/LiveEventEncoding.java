@@ -5,14 +5,19 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Duration;
 
 /**
  * Specifies the live event type and optional encoding settings for encoding live events.
  */
 @Fluent
-public final class LiveEventEncoding {
+public final class LiveEventEncoding implements JsonSerializable<LiveEventEncoding> {
     /*
      * Live event type. When encodingType is set to PassthroughBasic or PassthroughStandard, the service simply passes
      * through the incoming video and audio layer(s) to the output. When encodingType is set to Standard or
@@ -20,7 +25,6 @@ public final class LiveEventEncoding {
      * https://go.microsoft.com/fwlink/?linkid=2095101 for more information. This property cannot be modified after the
      * live event is created.
      */
-    @JsonProperty(value = "encodingType")
     private LiveEventEncodingType encodingType;
 
     /*
@@ -28,13 +32,11 @@ public final class LiveEventEncoding {
      * and cannot be updated. If the encodingType is set to Standard, then the default preset name is ‘Default720p’.
      * Else if the encodingType is set to Premium1080p, the default preset is ‘Default1080p’.
      */
-    @JsonProperty(value = "presetName")
     private String presetName;
 
     /*
      * Specifies how the input video will be resized to fit the desired output resolution(s). Default is None
      */
-    @JsonProperty(value = "stretchMode")
     private StretchMode stretchMode;
 
     /*
@@ -44,7 +46,6 @@ public final class LiveEventEncoding {
      * encoding live event, the fragment duration defaults to 2 seconds. The value cannot be set for pass-through live
      * events.
      */
-    @JsonProperty(value = "keyFrameInterval")
     private Duration keyFrameInterval;
 
     /**
@@ -161,5 +162,51 @@ public final class LiveEventEncoding {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("encodingType", this.encodingType == null ? null : this.encodingType.toString());
+        jsonWriter.writeStringField("presetName", this.presetName);
+        jsonWriter.writeStringField("stretchMode", this.stretchMode == null ? null : this.stretchMode.toString());
+        jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(this.keyFrameInterval));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventEncoding from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventEncoding if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventEncoding.
+     */
+    public static LiveEventEncoding fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventEncoding deserializedLiveEventEncoding = new LiveEventEncoding();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("encodingType".equals(fieldName)) {
+                    deserializedLiveEventEncoding.encodingType = LiveEventEncodingType.fromString(reader.getString());
+                } else if ("presetName".equals(fieldName)) {
+                    deserializedLiveEventEncoding.presetName = reader.getString();
+                } else if ("stretchMode".equals(fieldName)) {
+                    deserializedLiveEventEncoding.stretchMode = StretchMode.fromString(reader.getString());
+                } else if ("keyFrameInterval".equals(fieldName)) {
+                    deserializedLiveEventEncoding.keyFrameInterval
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventEncoding;
+        });
     }
 }

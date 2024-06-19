@@ -6,32 +6,33 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
 import com.azure.resourcemanager.network.generated.models.RetentionPolicyParameters;
 import com.azure.resourcemanager.network.generated.models.TrafficAnalyticsProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Information on the configuration of flow log and traffic analytics (optional) .
  */
 @Fluent
-public final class FlowLogInformationInner {
+public final class FlowLogInformationInner implements JsonSerializable<FlowLogInformationInner> {
     /*
      * The ID of the resource to configure for flow log and traffic analytics (optional) .
      */
-    @JsonProperty(value = "targetResourceId", required = true)
     private String targetResourceId;
 
     /*
      * Properties of the flow log.
      */
-    @JsonProperty(value = "properties", required = true)
     private FlowLogProperties innerProperties = new FlowLogProperties();
 
     /*
      * Parameters that define the configuration of traffic analytics.
      */
-    @JsonProperty(value = "flowAnalyticsConfiguration")
     private TrafficAnalyticsProperties flowAnalyticsConfiguration;
 
     /**
@@ -208,4 +209,48 @@ public final class FlowLogInformationInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(FlowLogInformationInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("targetResourceId", this.targetResourceId);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeJsonField("flowAnalyticsConfiguration", this.flowAnalyticsConfiguration);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FlowLogInformationInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FlowLogInformationInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the FlowLogInformationInner.
+     */
+    public static FlowLogInformationInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FlowLogInformationInner deserializedFlowLogInformationInner = new FlowLogInformationInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("targetResourceId".equals(fieldName)) {
+                    deserializedFlowLogInformationInner.targetResourceId = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedFlowLogInformationInner.innerProperties = FlowLogProperties.fromJson(reader);
+                } else if ("flowAnalyticsConfiguration".equals(fieldName)) {
+                    deserializedFlowLogInformationInner.flowAnalyticsConfiguration
+                        = TrafficAnalyticsProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFlowLogInformationInner;
+        });
+    }
 }

@@ -6,74 +6,68 @@ package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.SharedTypeKind;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Properties that contain a workbook.
  */
 @Fluent
-public final class WorkbookProperties {
+public final class WorkbookProperties implements JsonSerializable<WorkbookProperties> {
     /*
      * The user-defined name of the workbook.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * Configuration of this particular workbook. Configuration data is a string containing valid JSON
      */
-    @JsonProperty(value = "serializedData", required = true)
     private String serializedData;
 
     /*
      * This instance's version of the data model. This can change as new features are added that can be marked workbook.
      */
-    @JsonProperty(value = "version")
     private String version;
 
     /*
      * Internally assigned unique id of the workbook definition.
      */
-    @JsonProperty(value = "workbookId", required = true)
     private String workbookId;
 
     /*
      * Enum indicating if this workbook definition is owned by a specific user or is shared between all users with
      * access to the Application Insights component.
      */
-    @JsonProperty(value = "kind", required = true)
     private SharedTypeKind sharedTypeKind;
 
     /*
      * Date and time in UTC of the last modification that was made to this workbook definition.
      */
-    @JsonProperty(value = "timeModified", access = JsonProperty.Access.WRITE_ONLY)
     private String timeModified;
 
     /*
      * Workbook category, as defined by the user at creation time.
      */
-    @JsonProperty(value = "category", required = true)
     private String category;
 
     /*
      * A list of 0 or more tags that are associated with this workbook definition
      */
-    @JsonProperty(value = "tags")
     private List<String> tags;
 
     /*
      * Unique user id of the specific user that owns this workbook.
      */
-    @JsonProperty(value = "userId", required = true)
     private String userId;
 
     /*
      * Optional resourceId for a source resource.
      */
-    @JsonProperty(value = "sourceResourceId")
     private String sourceResourceId;
 
     /**
@@ -313,4 +307,68 @@ public final class WorkbookProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(WorkbookProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("serializedData", this.serializedData);
+        jsonWriter.writeStringField("workbookId", this.workbookId);
+        jsonWriter.writeStringField("kind", this.sharedTypeKind == null ? null : this.sharedTypeKind.toString());
+        jsonWriter.writeStringField("category", this.category);
+        jsonWriter.writeStringField("userId", this.userId);
+        jsonWriter.writeStringField("version", this.version);
+        jsonWriter.writeArrayField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("sourceResourceId", this.sourceResourceId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WorkbookProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WorkbookProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the WorkbookProperties.
+     */
+    public static WorkbookProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WorkbookProperties deserializedWorkbookProperties = new WorkbookProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedWorkbookProperties.name = reader.getString();
+                } else if ("serializedData".equals(fieldName)) {
+                    deserializedWorkbookProperties.serializedData = reader.getString();
+                } else if ("workbookId".equals(fieldName)) {
+                    deserializedWorkbookProperties.workbookId = reader.getString();
+                } else if ("kind".equals(fieldName)) {
+                    deserializedWorkbookProperties.sharedTypeKind = SharedTypeKind.fromString(reader.getString());
+                } else if ("category".equals(fieldName)) {
+                    deserializedWorkbookProperties.category = reader.getString();
+                } else if ("userId".equals(fieldName)) {
+                    deserializedWorkbookProperties.userId = reader.getString();
+                } else if ("version".equals(fieldName)) {
+                    deserializedWorkbookProperties.version = reader.getString();
+                } else if ("timeModified".equals(fieldName)) {
+                    deserializedWorkbookProperties.timeModified = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    List<String> tags = reader.readArray(reader1 -> reader1.getString());
+                    deserializedWorkbookProperties.tags = tags;
+                } else if ("sourceResourceId".equals(fieldName)) {
+                    deserializedWorkbookProperties.sourceResourceId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedWorkbookProperties;
+        });
+    }
 }

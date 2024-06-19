@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The type of the scaling enabled.
  */
@@ -41,7 +38,6 @@ public enum IotHubScaleType {
      * @param value the serialized value to parse.
      * @return the parsed IotHubScaleType object, or null if unable to parse.
      */
-    @JsonCreator
     public static IotHubScaleType fromString(String value) {
         if (value == null) {
             return null;
@@ -58,7 +54,6 @@ public enum IotHubScaleType {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

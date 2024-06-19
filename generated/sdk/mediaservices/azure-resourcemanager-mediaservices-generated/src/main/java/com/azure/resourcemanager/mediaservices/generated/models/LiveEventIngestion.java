@@ -5,43 +5,44 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
  * The live event ingestion telemetry data.
  */
 @Fluent
-public final class LiveEventIngestion {
+public final class LiveEventIngestion implements JsonSerializable<LiveEventIngestion> {
     /*
      * Ingestion stream name.
      */
-    @JsonProperty(value = "streamName")
     private String streamName;
 
     /*
      * Ingestion begin time in UTC.
      */
-    @JsonProperty(value = "begin")
     private OffsetDateTime begin;
 
     /*
      * Ingestion end time in UTC. Empty if it's not stopped yet.
      */
-    @JsonProperty(value = "end")
     private OffsetDateTime end;
 
     /*
      * Reason why ingestion stops. Empty if it's not stopped yet. E.g) Service Stopped. No Ingestion.
      */
-    @JsonProperty(value = "endReason")
     private String endReason;
 
     /*
      * IngestInterruption entry list.
      */
-    @JsonProperty(value = "ingestInterruptions")
     private List<LiveEventIngestInterruption> ingestInterruptions;
 
     /**
@@ -161,5 +162,60 @@ public final class LiveEventIngestion {
         if (ingestInterruptions() != null) {
             ingestInterruptions().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("streamName", this.streamName);
+        jsonWriter.writeStringField("begin",
+            this.begin == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.begin));
+        jsonWriter.writeStringField("end",
+            this.end == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.end));
+        jsonWriter.writeStringField("endReason", this.endReason);
+        jsonWriter.writeArrayField("ingestInterruptions", this.ingestInterruptions,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventIngestion from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventIngestion if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventIngestion.
+     */
+    public static LiveEventIngestion fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventIngestion deserializedLiveEventIngestion = new LiveEventIngestion();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("streamName".equals(fieldName)) {
+                    deserializedLiveEventIngestion.streamName = reader.getString();
+                } else if ("begin".equals(fieldName)) {
+                    deserializedLiveEventIngestion.begin = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("end".equals(fieldName)) {
+                    deserializedLiveEventIngestion.end = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("endReason".equals(fieldName)) {
+                    deserializedLiveEventIngestion.endReason = reader.getString();
+                } else if ("ingestInterruptions".equals(fieldName)) {
+                    List<LiveEventIngestInterruption> ingestInterruptions
+                        = reader.readArray(reader1 -> LiveEventIngestInterruption.fromJson(reader1));
+                    deserializedLiveEventIngestion.ingestInterruptions = ingestInterruptions;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventIngestion;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class SecurityAlertPolicyName extends ExpandableStringEnum<Security
      * @param name a name to look for.
      * @return the corresponding SecurityAlertPolicyName.
      */
-    @JsonCreator
     public static SecurityAlertPolicyName fromString(String name) {
         return fromString(name, SecurityAlertPolicyName.class);
     }

@@ -5,30 +5,32 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * Properties that define a Log Analytics QueryPack resource.
  */
 @Immutable
-public final class LogAnalyticsQueryPackProperties {
+public final class LogAnalyticsQueryPackProperties implements JsonSerializable<LogAnalyticsQueryPackProperties> {
     /*
      * The unique ID of your application. This field cannot be changed.
      */
-    @JsonProperty(value = "queryPackId", access = JsonProperty.Access.WRITE_ONLY)
     private String queryPackId;
 
     /*
      * Creation Date for the Log Analytics QueryPack, in ISO 8601 format.
      */
-    @JsonProperty(value = "timeCreated", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime timeCreated;
 
     /*
      * Last modified date of the Log Analytics QueryPack, in ISO 8601 format.
      */
-    @JsonProperty(value = "timeModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime timeModified;
 
     /*
@@ -36,7 +38,6 @@ public final class LogAnalyticsQueryPackProperties {
      * Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled,
      * and Failed.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /**
@@ -89,5 +90,49 @@ public final class LogAnalyticsQueryPackProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LogAnalyticsQueryPackProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LogAnalyticsQueryPackProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LogAnalyticsQueryPackProperties.
+     */
+    public static LogAnalyticsQueryPackProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LogAnalyticsQueryPackProperties deserializedLogAnalyticsQueryPackProperties
+                = new LogAnalyticsQueryPackProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("queryPackId".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackProperties.queryPackId = reader.getString();
+                } else if ("timeCreated".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackProperties.timeCreated = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("timeModified".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackProperties.timeModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackProperties.provisioningState = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLogAnalyticsQueryPackProperties;
+        });
     }
 }

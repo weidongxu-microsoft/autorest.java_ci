@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -58,7 +57,6 @@ public final class EndpointHealthStatus extends ExpandableStringEnum<EndpointHea
      * @param name a name to look for.
      * @return the corresponding EndpointHealthStatus.
      */
-    @JsonCreator
     public static EndpointHealthStatus fromString(String name) {
         return fromString(name, EndpointHealthStatus.class);
     }

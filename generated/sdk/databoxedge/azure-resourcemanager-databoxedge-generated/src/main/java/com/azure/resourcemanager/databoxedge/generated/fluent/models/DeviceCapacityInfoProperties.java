@@ -5,42 +5,42 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ClusterCapacityViewData;
 import com.azure.resourcemanager.databoxedge.generated.models.ClusterStorageViewData;
 import com.azure.resourcemanager.databoxedge.generated.models.HostCapacity;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 
 /**
  * The properties of Device Capacity Info.
  */
 @Fluent
-public final class DeviceCapacityInfoProperties {
+public final class DeviceCapacityInfoProperties implements JsonSerializable<DeviceCapacityInfoProperties> {
     /*
      * Timestamp of request in UTC
      */
-    @JsonProperty(value = "timeStamp")
     private OffsetDateTime timestamp;
 
     /*
      * Cluster capacity data for storage resources (CSV).
      */
-    @JsonProperty(value = "clusterStorageCapacityInfo")
     private ClusterStorageViewData clusterStorageCapacityInfo;
 
     /*
      * Cluster capacity data for compute resources (Memory and GPU).
      */
-    @JsonProperty(value = "clusterComputeCapacityInfo")
     private ClusterCapacityViewData clusterComputeCapacityInfo;
 
     /*
      * The dictionary of individual node names and node capacities in the cluster.
      */
-    @JsonProperty(value = "nodeCapacityInfos")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, HostCapacity> nodeCapacityInfos;
 
     /**
@@ -150,5 +150,57 @@ public final class DeviceCapacityInfoProperties {
                 }
             });
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("timeStamp",
+            this.timestamp == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.timestamp));
+        jsonWriter.writeJsonField("clusterStorageCapacityInfo", this.clusterStorageCapacityInfo);
+        jsonWriter.writeJsonField("clusterComputeCapacityInfo", this.clusterComputeCapacityInfo);
+        jsonWriter.writeMapField("nodeCapacityInfos", this.nodeCapacityInfos,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DeviceCapacityInfoProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DeviceCapacityInfoProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DeviceCapacityInfoProperties.
+     */
+    public static DeviceCapacityInfoProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DeviceCapacityInfoProperties deserializedDeviceCapacityInfoProperties = new DeviceCapacityInfoProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("timeStamp".equals(fieldName)) {
+                    deserializedDeviceCapacityInfoProperties.timestamp = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("clusterStorageCapacityInfo".equals(fieldName)) {
+                    deserializedDeviceCapacityInfoProperties.clusterStorageCapacityInfo
+                        = ClusterStorageViewData.fromJson(reader);
+                } else if ("clusterComputeCapacityInfo".equals(fieldName)) {
+                    deserializedDeviceCapacityInfoProperties.clusterComputeCapacityInfo
+                        = ClusterCapacityViewData.fromJson(reader);
+                } else if ("nodeCapacityInfos".equals(fieldName)) {
+                    Map<String, HostCapacity> nodeCapacityInfos
+                        = reader.readMap(reader1 -> HostCapacity.fromJson(reader1));
+                    deserializedDeviceCapacityInfoProperties.nodeCapacityInfos = nodeCapacityInfos;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDeviceCapacityInfoProperties;
+        });
     }
 }

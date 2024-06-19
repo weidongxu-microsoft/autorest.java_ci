@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -43,7 +42,6 @@ public final class PublicNetworkAccessFlag extends ExpandableStringEnum<PublicNe
      * @param name a name to look for.
      * @return the corresponding PublicNetworkAccessFlag.
      */
-    @JsonCreator
     public static PublicNetworkAccessFlag fromString(String name) {
         return fromString(name, PublicNetworkAccessFlag.class);
     }

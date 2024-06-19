@@ -5,7 +5,12 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventEncoding;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventInput;
@@ -13,7 +18,7 @@ import com.azure.resourcemanager.mediaservices.generated.models.LiveEventPreview
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventResourceState;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTranscription;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamOptionsFlag;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -21,63 +26,54 @@ import java.util.List;
  * The live event properties.
  */
 @Fluent
-public final class LiveEventProperties {
+public final class LiveEventProperties implements JsonSerializable<LiveEventProperties> {
     /*
      * A description for the live event.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * Live event input settings. It defines how the live event receives input from a contribution encoder.
      */
-    @JsonProperty(value = "input", required = true)
     private LiveEventInput input;
 
     /*
      * Live event preview settings. Preview allows live event producers to preview the live streaming content without
      * creating any live output.
      */
-    @JsonProperty(value = "preview")
     private LiveEventPreview preview;
 
     /*
      * Encoding settings for the live event. It configures whether a live encoder is used for the live event and
      * settings for the live encoder if it is used.
      */
-    @JsonProperty(value = "encoding")
     private LiveEventEncoding encoding;
 
     /*
      * Live transcription settings for the live event. See https://go.microsoft.com/fwlink/?linkid=2133742 for more
      * information about the live transcription feature.
      */
-    @JsonProperty(value = "transcriptions")
     private List<LiveEventTranscription> transcriptions;
 
     /*
      * The provisioning state of the live event.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * The resource state of the live event. See https://go.microsoft.com/fwlink/?linkid=2139012 for more information.
      */
-    @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private LiveEventResourceState resourceState;
 
     /*
      * Live event cross site access policies.
      */
-    @JsonProperty(value = "crossSiteAccessPolicies")
     private CrossSiteAccessPolicies crossSiteAccessPolicies;
 
     /*
      * Specifies whether a static hostname would be assigned to the live event preview and ingest endpoints. This value
      * can only be updated if the live event is in Standby state
      */
-    @JsonProperty(value = "useStaticHostname")
     private Boolean useStaticHostname;
 
     /*
@@ -85,26 +81,22 @@ public final class LiveEventProperties {
      * the live event preview and ingest endpoints. The final hostname would be a combination of this prefix, the media
      * service account name and a short code for the Azure Media Services data center.
      */
-    @JsonProperty(value = "hostnamePrefix")
     private String hostnamePrefix;
 
     /*
      * The options to use for the LiveEvent. This value is specified at creation time and cannot be updated. The valid
      * values for the array entry values are 'Default' and 'LowLatency'.
      */
-    @JsonProperty(value = "streamOptions")
     private List<StreamOptionsFlag> streamOptions;
 
     /*
      * The creation time for the live event
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The last modified time of the live event.
      */
-    @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
     /**
@@ -375,4 +367,82 @@ public final class LiveEventProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(LiveEventProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("input", this.input);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeJsonField("preview", this.preview);
+        jsonWriter.writeJsonField("encoding", this.encoding);
+        jsonWriter.writeArrayField("transcriptions", this.transcriptions,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("crossSiteAccessPolicies", this.crossSiteAccessPolicies);
+        jsonWriter.writeBooleanField("useStaticHostname", this.useStaticHostname);
+        jsonWriter.writeStringField("hostnamePrefix", this.hostnamePrefix);
+        jsonWriter.writeArrayField("streamOptions", this.streamOptions,
+            (writer, element) -> writer.writeString(element == null ? null : element.toString()));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LiveEventProperties.
+     */
+    public static LiveEventProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventProperties deserializedLiveEventProperties = new LiveEventProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("input".equals(fieldName)) {
+                    deserializedLiveEventProperties.input = LiveEventInput.fromJson(reader);
+                } else if ("description".equals(fieldName)) {
+                    deserializedLiveEventProperties.description = reader.getString();
+                } else if ("preview".equals(fieldName)) {
+                    deserializedLiveEventProperties.preview = LiveEventPreview.fromJson(reader);
+                } else if ("encoding".equals(fieldName)) {
+                    deserializedLiveEventProperties.encoding = LiveEventEncoding.fromJson(reader);
+                } else if ("transcriptions".equals(fieldName)) {
+                    List<LiveEventTranscription> transcriptions
+                        = reader.readArray(reader1 -> LiveEventTranscription.fromJson(reader1));
+                    deserializedLiveEventProperties.transcriptions = transcriptions;
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedLiveEventProperties.provisioningState = reader.getString();
+                } else if ("resourceState".equals(fieldName)) {
+                    deserializedLiveEventProperties.resourceState
+                        = LiveEventResourceState.fromString(reader.getString());
+                } else if ("crossSiteAccessPolicies".equals(fieldName)) {
+                    deserializedLiveEventProperties.crossSiteAccessPolicies = CrossSiteAccessPolicies.fromJson(reader);
+                } else if ("useStaticHostname".equals(fieldName)) {
+                    deserializedLiveEventProperties.useStaticHostname = reader.getNullable(JsonReader::getBoolean);
+                } else if ("hostnamePrefix".equals(fieldName)) {
+                    deserializedLiveEventProperties.hostnamePrefix = reader.getString();
+                } else if ("streamOptions".equals(fieldName)) {
+                    List<StreamOptionsFlag> streamOptions
+                        = reader.readArray(reader1 -> StreamOptionsFlag.fromString(reader1.getString()));
+                    deserializedLiveEventProperties.streamOptions = streamOptions;
+                } else if ("created".equals(fieldName)) {
+                    deserializedLiveEventProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("lastModified".equals(fieldName)) {
+                    deserializedLiveEventProperties.lastModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventProperties;
+        });
+    }
 }

@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Position where the route error happened.
  */
 @Fluent
-public final class RouteErrorPosition {
+public final class RouteErrorPosition implements JsonSerializable<RouteErrorPosition> {
     /*
      * Line where the route error happened
      */
-    @JsonProperty(value = "line")
     private Integer line;
 
     /*
      * Column where the route error happened
      */
-    @JsonProperty(value = "column")
     private Integer column;
 
     /**
@@ -76,5 +78,44 @@ public final class RouteErrorPosition {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("line", this.line);
+        jsonWriter.writeNumberField("column", this.column);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RouteErrorPosition from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RouteErrorPosition if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the RouteErrorPosition.
+     */
+    public static RouteErrorPosition fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RouteErrorPosition deserializedRouteErrorPosition = new RouteErrorPosition();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("line".equals(fieldName)) {
+                    deserializedRouteErrorPosition.line = reader.getNullable(JsonReader::getInt);
+                } else if ("column".equals(fieldName)) {
+                    deserializedRouteErrorPosition.column = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRouteErrorPosition;
+        });
     }
 }

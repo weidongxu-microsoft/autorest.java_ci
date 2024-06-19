@@ -5,24 +5,20 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Represents HTTPS job input.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputHttp.class, visible = true)
-@JsonTypeName("#Microsoft.Media.JobInputHttp")
 @Fluent
 public final class JobInputHttp extends JobInputClip {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.JobInputHttp";
 
     /*
@@ -30,7 +26,6 @@ public final class JobInputHttp extends JobInputClip {
      * provided file list is assumed to be fully qualified uris. Maximum length of 4000 characters. The query strings
      * will not be returned in service responses to prevent sensitive data exposure.
      */
-    @JsonProperty(value = "baseUri")
     private String baseUri;
 
     /**
@@ -126,5 +121,63 @@ public final class JobInputHttp extends JobInputClip {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("files", files(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("start", start());
+        jsonWriter.writeJsonField("end", end());
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeArrayField("inputDefinitions", inputDefinitions(),
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeStringField("baseUri", this.baseUri);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobInputHttp from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobInputHttp if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the JobInputHttp.
+     */
+    public static JobInputHttp fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobInputHttp deserializedJobInputHttp = new JobInputHttp();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("files".equals(fieldName)) {
+                    List<String> files = reader.readArray(reader1 -> reader1.getString());
+                    deserializedJobInputHttp.withFiles(files);
+                } else if ("start".equals(fieldName)) {
+                    deserializedJobInputHttp.withStart(ClipTime.fromJson(reader));
+                } else if ("end".equals(fieldName)) {
+                    deserializedJobInputHttp.withEnd(ClipTime.fromJson(reader));
+                } else if ("label".equals(fieldName)) {
+                    deserializedJobInputHttp.withLabel(reader.getString());
+                } else if ("inputDefinitions".equals(fieldName)) {
+                    List<InputDefinition> inputDefinitions
+                        = reader.readArray(reader1 -> InputDefinition.fromJson(reader1));
+                    deserializedJobInputHttp.withInputDefinitions(inputDefinitions);
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedJobInputHttp.odataType = reader.getString();
+                } else if ("baseUri".equals(fieldName)) {
+                    deserializedJobInputHttp.baseUri = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobInputHttp;
+        });
     }
 }

@@ -5,84 +5,78 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.monitor.generated.models.Action;
 import com.azure.resourcemanager.monitor.generated.models.Enabled;
 import com.azure.resourcemanager.monitor.generated.models.ProvisioningState;
 import com.azure.resourcemanager.monitor.generated.models.Schedule;
 import com.azure.resourcemanager.monitor.generated.models.Source;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * Log Search Rule Definition.
  */
 @Fluent
-public final class LogSearchRule {
+public final class LogSearchRule implements JsonSerializable<LogSearchRule> {
     /*
      * The api-version used when creating this alert rule
      */
-    @JsonProperty(value = "createdWithApiVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String createdWithApiVersion;
 
     /*
      * True if alert rule is legacy Log Analytic rule
      */
-    @JsonProperty(value = "isLegacyLogAnalyticsRule", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isLegacyLogAnalyticsRule;
 
     /*
      * The description of the Log Search rule.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The display name of the alert rule
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * The flag that indicates whether the alert should be automatically resolved or not. The default is false.
      */
-    @JsonProperty(value = "autoMitigate")
     private Boolean autoMitigate;
 
     /*
      * The flag which indicates whether the Log Search rule is enabled. Value should be true or false
      */
-    @JsonProperty(value = "enabled")
     private Enabled enabled;
 
     /*
      * Last time the rule was updated in IS08601 format.
      */
-    @JsonProperty(value = "lastUpdatedTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastUpdatedTime;
 
     /*
      * Provisioning state of the scheduled query rule
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * Data Source against which rule will Query Data
      */
-    @JsonProperty(value = "source", required = true)
     private Source source;
 
     /*
      * Schedule (Frequency, Time Window) for rule. Required for action type - AlertingAction
      */
-    @JsonProperty(value = "schedule")
     private Schedule schedule;
 
     /*
      * Action needs to be taken on rule execution.
      */
-    @JsonProperty(value = "action", required = true)
     private Action action;
 
     /**
@@ -295,4 +289,68 @@ public final class LogSearchRule {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(LogSearchRule.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("source", this.source);
+        jsonWriter.writeJsonField("action", this.action);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeBooleanField("autoMitigate", this.autoMitigate);
+        jsonWriter.writeStringField("enabled", this.enabled == null ? null : this.enabled.toString());
+        jsonWriter.writeJsonField("schedule", this.schedule);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LogSearchRule from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LogSearchRule if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LogSearchRule.
+     */
+    public static LogSearchRule fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LogSearchRule deserializedLogSearchRule = new LogSearchRule();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("source".equals(fieldName)) {
+                    deserializedLogSearchRule.source = Source.fromJson(reader);
+                } else if ("action".equals(fieldName)) {
+                    deserializedLogSearchRule.action = Action.fromJson(reader);
+                } else if ("createdWithApiVersion".equals(fieldName)) {
+                    deserializedLogSearchRule.createdWithApiVersion = reader.getString();
+                } else if ("isLegacyLogAnalyticsRule".equals(fieldName)) {
+                    deserializedLogSearchRule.isLegacyLogAnalyticsRule = reader.getNullable(JsonReader::getBoolean);
+                } else if ("description".equals(fieldName)) {
+                    deserializedLogSearchRule.description = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedLogSearchRule.displayName = reader.getString();
+                } else if ("autoMitigate".equals(fieldName)) {
+                    deserializedLogSearchRule.autoMitigate = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enabled".equals(fieldName)) {
+                    deserializedLogSearchRule.enabled = Enabled.fromString(reader.getString());
+                } else if ("lastUpdatedTime".equals(fieldName)) {
+                    deserializedLogSearchRule.lastUpdatedTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedLogSearchRule.provisioningState = ProvisioningState.fromString(reader.getString());
+                } else if ("schedule".equals(fieldName)) {
+                    deserializedLogSearchRule.schedule = Schedule.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLogSearchRule;
+        });
+    }
 }

@@ -5,8 +5,13 @@
 package com.azure.resourcemanager.relay.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.relay.generated.models.PublicNetworkAccess;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -14,53 +19,45 @@ import java.util.List;
  * Properties of the namespace.
  */
 @Fluent
-public final class RelayNamespaceProperties {
+public final class RelayNamespaceProperties implements JsonSerializable<RelayNamespaceProperties> {
     /*
      * Provisioning state of the Namespace.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * Status of the Namespace.
      */
-    @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private String status;
 
     /*
      * The time the namespace was created.
      */
-    @JsonProperty(value = "createdAt", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdAt;
 
     /*
      * The time the namespace was updated.
      */
-    @JsonProperty(value = "updatedAt", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime updatedAt;
 
     /*
      * Endpoint you can use to perform Service Bus operations.
      */
-    @JsonProperty(value = "serviceBusEndpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceBusEndpoint;
 
     /*
      * Identifier for Azure Insights metrics.
      */
-    @JsonProperty(value = "metricId", access = JsonProperty.Access.WRITE_ONLY)
     private String metricId;
 
     /*
      * List of private endpoint connections.
      */
-    @JsonProperty(value = "privateEndpointConnections")
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
      * This determines if traffic is allowed over public network. By default it is enabled.
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /**
@@ -175,5 +172,63 @@ public final class RelayNamespaceProperties {
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("privateEndpointConnections", this.privateEndpointConnections,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RelayNamespaceProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RelayNamespaceProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the RelayNamespaceProperties.
+     */
+    public static RelayNamespaceProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RelayNamespaceProperties deserializedRelayNamespaceProperties = new RelayNamespaceProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("provisioningState".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.provisioningState = reader.getString();
+                } else if ("status".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.status = reader.getString();
+                } else if ("createdAt".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.createdAt = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("updatedAt".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.updatedAt = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("serviceBusEndpoint".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.serviceBusEndpoint = reader.getString();
+                } else if ("metricId".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.metricId = reader.getString();
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<PrivateEndpointConnectionInner> privateEndpointConnections
+                        = reader.readArray(reader1 -> PrivateEndpointConnectionInner.fromJson(reader1));
+                    deserializedRelayNamespaceProperties.privateEndpointConnections = privateEndpointConnections;
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedRelayNamespaceProperties.publicNetworkAccess
+                        = PublicNetworkAccess.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRelayNamespaceProperties;
+        });
     }
 }

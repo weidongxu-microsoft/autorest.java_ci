@@ -5,59 +5,56 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ClusterConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ClusterManagerType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.ScaleType;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.SqlVmGroupImageSku;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainProfile;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties of a SQL virtual machine group.
  */
 @Fluent
-public final class SqlVirtualMachineGroupProperties {
+public final class SqlVirtualMachineGroupProperties implements JsonSerializable<SqlVirtualMachineGroupProperties> {
     /*
      * Provisioning state to track the async operation status.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * SQL image offer. Examples may include SQL2016-WS2016, SQL2017-WS2016.
      */
-    @JsonProperty(value = "sqlImageOffer")
     private String sqlImageOffer;
 
     /*
      * SQL image sku.
      */
-    @JsonProperty(value = "sqlImageSku")
     private SqlVmGroupImageSku sqlImageSku;
 
     /*
      * Scale type.
      */
-    @JsonProperty(value = "scaleType", access = JsonProperty.Access.WRITE_ONLY)
     private ScaleType scaleType;
 
     /*
      * Type of cluster manager: Windows Server Failover Cluster (WSFC), implied by the scale type of the group and the
      * OS type.
      */
-    @JsonProperty(value = "clusterManagerType", access = JsonProperty.Access.WRITE_ONLY)
     private ClusterManagerType clusterManagerType;
 
     /*
      * Cluster type.
      */
-    @JsonProperty(value = "clusterConfiguration", access = JsonProperty.Access.WRITE_ONLY)
     private ClusterConfiguration clusterConfiguration;
 
     /*
      * Cluster Active Directory domain profile.
      */
-    @JsonProperty(value = "wsfcDomainProfile")
     private WsfcDomainProfile wsfcDomainProfile;
 
     /**
@@ -172,5 +169,59 @@ public final class SqlVirtualMachineGroupProperties {
         if (wsfcDomainProfile() != null) {
             wsfcDomainProfile().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("sqlImageOffer", this.sqlImageOffer);
+        jsonWriter.writeStringField("sqlImageSku", this.sqlImageSku == null ? null : this.sqlImageSku.toString());
+        jsonWriter.writeJsonField("wsfcDomainProfile", this.wsfcDomainProfile);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SqlVirtualMachineGroupProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SqlVirtualMachineGroupProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SqlVirtualMachineGroupProperties.
+     */
+    public static SqlVirtualMachineGroupProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SqlVirtualMachineGroupProperties deserializedSqlVirtualMachineGroupProperties
+                = new SqlVirtualMachineGroupProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("provisioningState".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.provisioningState = reader.getString();
+                } else if ("sqlImageOffer".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.sqlImageOffer = reader.getString();
+                } else if ("sqlImageSku".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.sqlImageSku
+                        = SqlVmGroupImageSku.fromString(reader.getString());
+                } else if ("scaleType".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.scaleType = ScaleType.fromString(reader.getString());
+                } else if ("clusterManagerType".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.clusterManagerType
+                        = ClusterManagerType.fromString(reader.getString());
+                } else if ("clusterConfiguration".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.clusterConfiguration
+                        = ClusterConfiguration.fromString(reader.getString());
+                } else if ("wsfcDomainProfile".equals(fieldName)) {
+                    deserializedSqlVirtualMachineGroupProperties.wsfcDomainProfile = WsfcDomainProfile.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSqlVirtualMachineGroupProperties;
+        });
     }
 }

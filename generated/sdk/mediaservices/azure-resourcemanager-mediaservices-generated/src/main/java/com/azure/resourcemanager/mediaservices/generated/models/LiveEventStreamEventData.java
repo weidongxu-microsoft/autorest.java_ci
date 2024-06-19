@@ -5,185 +5,160 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The live event stream event data.
  */
 @Fluent
-public final class LiveEventStreamEventData {
+public final class LiveEventStreamEventData implements JsonSerializable<LiveEventStreamEventData> {
     /*
      * Name of the track.
      */
-    @JsonProperty(value = "trackName")
     private String trackName;
 
     /*
      * Stream ID in the format "trackName_bitrate"
      */
-    @JsonProperty(value = "streamId")
     private String streamId;
 
     /*
      * Track index.
      */
-    @JsonProperty(value = "trackId")
     private Integer trackId;
 
     /*
      * Type of the track.
      */
-    @JsonProperty(value = "mediaType")
     private LiveEventStreamEventMediaType mediaType;
 
     /*
      * Bitrate of the track.
      */
-    @JsonProperty(value = "bitrate")
     private Long bitrate;
 
     /*
      * Fragment timestamp in timescale.
      */
-    @JsonProperty(value = "mediaTimestamp")
     private String mediaTimestamp;
 
     /*
      * Timescale in which timestamps are expressed.
      */
-    @JsonProperty(value = "timescale")
     private String timescale;
 
     /*
      * Previous fragment timestamp in timescale.
      */
-    @JsonProperty(value = "previousFragmentTimestamp")
     private String previousFragmentTimestamp;
 
     /*
      * Previous fragment duration in timescale.
      */
-    @JsonProperty(value = "previousFragmentDuration")
     private String previousFragmentDuration;
 
     /*
      * Current fragment timestamp in timescale.
      */
-    @JsonProperty(value = "currentFragmentTimestamp")
     private String currentFragmentTimestamp;
 
     /*
      * Timestamp of first fragment used to make a comparison, in timescale.
      */
-    @JsonProperty(value = "fragmentOneTimestamp")
     private String fragmentOneTimestamp;
 
     /*
      * Duration of first fragment used to make a comparison, in timescale.
      */
-    @JsonProperty(value = "fragmentOneDuration")
     private String fragmentOneDuration;
 
     /*
      * Timestamp of second fragment used to make a comparison, in timescale.
      */
-    @JsonProperty(value = "fragmentTwoTimestamp")
     private String fragmentTwoTimestamp;
 
     /*
      * Duration of second fragment used to make a comparison, in timescale.
      */
-    @JsonProperty(value = "fragmentTwoDuration")
     private String fragmentTwoDuration;
 
     /*
      * Reason the fragment was dropped.
      */
-    @JsonProperty(value = "fragmentDropReason")
     private String fragmentDropReason;
 
     /*
      * Length of the discontinuity gap in timescale.
      */
-    @JsonProperty(value = "discontinuityGap")
     private Long discontinuityGap;
 
     /*
      * Identifier of the stream or connection. Encoder or customer is responsible to add this ID in the ingest URL.
      */
-    @JsonProperty(value = "streamName")
     private String streamName;
 
     /*
      * Result code.
      */
-    @JsonProperty(value = "resultCode")
     private String resultCode;
 
     /*
      * Result message.
      */
-    @JsonProperty(value = "resultMessage")
     private String resultMessage;
 
     /*
      * Fragment duration.
      */
-    @JsonProperty(value = "duration")
     private String duration;
 
     /*
      * Width x Height for video, null otherwise.
      */
-    @JsonProperty(value = "resolution")
     private String resolution;
 
     /*
      * The smaller timestamp of the two fragments compared.
      */
-    @JsonProperty(value = "minTime")
     private String minTime;
 
     /*
      * The media type of the smaller timestamp of two fragments compared.
      */
-    @JsonProperty(value = "minTimeMediaType")
     private LiveEventStreamEventMinTimeMediaType minTimeMediaType;
 
     /*
      * The larger timestamp of the two fragments compared.
      */
-    @JsonProperty(value = "maxTime")
     private String maxTime;
 
     /*
      * The media type of the larger timestamp of two fragments compared.
      */
-    @JsonProperty(value = "maxTimeMediaType")
     private LiveEventStreamEventMaxTimeMediaType maxTimeMediaType;
 
     /*
      * Timescale of the fragment with the smaller timestamp.
      */
-    @JsonProperty(value = "timescaleOfMinTime")
     private String timescaleOfMinTime;
 
     /*
      * Timescale of the fragment with the larger timestamp.
      */
-    @JsonProperty(value = "timescaleOfMaxTime")
     private String timescaleOfMaxTime;
 
     /*
      * Truncated IP of the encoder.
      */
-    @JsonProperty(value = "remoteIp")
     private String remoteIp;
 
     /*
      * Port of the encoder.
      */
-    @JsonProperty(value = "remotePort")
     private String remotePort;
 
     /**
@@ -780,5 +755,130 @@ public final class LiveEventStreamEventData {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("trackName", this.trackName);
+        jsonWriter.writeStringField("streamId", this.streamId);
+        jsonWriter.writeNumberField("trackId", this.trackId);
+        jsonWriter.writeStringField("mediaType", this.mediaType == null ? null : this.mediaType.toString());
+        jsonWriter.writeNumberField("bitrate", this.bitrate);
+        jsonWriter.writeStringField("mediaTimestamp", this.mediaTimestamp);
+        jsonWriter.writeStringField("timescale", this.timescale);
+        jsonWriter.writeStringField("previousFragmentTimestamp", this.previousFragmentTimestamp);
+        jsonWriter.writeStringField("previousFragmentDuration", this.previousFragmentDuration);
+        jsonWriter.writeStringField("currentFragmentTimestamp", this.currentFragmentTimestamp);
+        jsonWriter.writeStringField("fragmentOneTimestamp", this.fragmentOneTimestamp);
+        jsonWriter.writeStringField("fragmentOneDuration", this.fragmentOneDuration);
+        jsonWriter.writeStringField("fragmentTwoTimestamp", this.fragmentTwoTimestamp);
+        jsonWriter.writeStringField("fragmentTwoDuration", this.fragmentTwoDuration);
+        jsonWriter.writeStringField("fragmentDropReason", this.fragmentDropReason);
+        jsonWriter.writeNumberField("discontinuityGap", this.discontinuityGap);
+        jsonWriter.writeStringField("streamName", this.streamName);
+        jsonWriter.writeStringField("resultCode", this.resultCode);
+        jsonWriter.writeStringField("resultMessage", this.resultMessage);
+        jsonWriter.writeStringField("duration", this.duration);
+        jsonWriter.writeStringField("resolution", this.resolution);
+        jsonWriter.writeStringField("minTime", this.minTime);
+        jsonWriter.writeStringField("minTimeMediaType",
+            this.minTimeMediaType == null ? null : this.minTimeMediaType.toString());
+        jsonWriter.writeStringField("maxTime", this.maxTime);
+        jsonWriter.writeStringField("maxTimeMediaType",
+            this.maxTimeMediaType == null ? null : this.maxTimeMediaType.toString());
+        jsonWriter.writeStringField("timescaleOfMinTime", this.timescaleOfMinTime);
+        jsonWriter.writeStringField("timescaleOfMaxTime", this.timescaleOfMaxTime);
+        jsonWriter.writeStringField("remoteIp", this.remoteIp);
+        jsonWriter.writeStringField("remotePort", this.remotePort);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventStreamEventData from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventStreamEventData if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventStreamEventData.
+     */
+    public static LiveEventStreamEventData fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventStreamEventData deserializedLiveEventStreamEventData = new LiveEventStreamEventData();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("trackName".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.trackName = reader.getString();
+                } else if ("streamId".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.streamId = reader.getString();
+                } else if ("trackId".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.trackId = reader.getNullable(JsonReader::getInt);
+                } else if ("mediaType".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.mediaType
+                        = LiveEventStreamEventMediaType.fromString(reader.getString());
+                } else if ("bitrate".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.bitrate = reader.getNullable(JsonReader::getLong);
+                } else if ("mediaTimestamp".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.mediaTimestamp = reader.getString();
+                } else if ("timescale".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.timescale = reader.getString();
+                } else if ("previousFragmentTimestamp".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.previousFragmentTimestamp = reader.getString();
+                } else if ("previousFragmentDuration".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.previousFragmentDuration = reader.getString();
+                } else if ("currentFragmentTimestamp".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.currentFragmentTimestamp = reader.getString();
+                } else if ("fragmentOneTimestamp".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.fragmentOneTimestamp = reader.getString();
+                } else if ("fragmentOneDuration".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.fragmentOneDuration = reader.getString();
+                } else if ("fragmentTwoTimestamp".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.fragmentTwoTimestamp = reader.getString();
+                } else if ("fragmentTwoDuration".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.fragmentTwoDuration = reader.getString();
+                } else if ("fragmentDropReason".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.fragmentDropReason = reader.getString();
+                } else if ("discontinuityGap".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.discontinuityGap = reader.getNullable(JsonReader::getLong);
+                } else if ("streamName".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.streamName = reader.getString();
+                } else if ("resultCode".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.resultCode = reader.getString();
+                } else if ("resultMessage".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.resultMessage = reader.getString();
+                } else if ("duration".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.duration = reader.getString();
+                } else if ("resolution".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.resolution = reader.getString();
+                } else if ("minTime".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.minTime = reader.getString();
+                } else if ("minTimeMediaType".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.minTimeMediaType
+                        = LiveEventStreamEventMinTimeMediaType.fromString(reader.getString());
+                } else if ("maxTime".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.maxTime = reader.getString();
+                } else if ("maxTimeMediaType".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.maxTimeMediaType
+                        = LiveEventStreamEventMaxTimeMediaType.fromString(reader.getString());
+                } else if ("timescaleOfMinTime".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.timescaleOfMinTime = reader.getString();
+                } else if ("timescaleOfMaxTime".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.timescaleOfMaxTime = reader.getString();
+                } else if ("remoteIp".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.remoteIp = reader.getString();
+                } else if ("remotePort".equals(fieldName)) {
+                    deserializedLiveEventStreamEventData.remotePort = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventStreamEventData;
+        });
     }
 }

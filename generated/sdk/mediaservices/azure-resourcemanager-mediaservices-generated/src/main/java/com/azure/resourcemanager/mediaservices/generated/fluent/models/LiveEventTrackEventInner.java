@@ -5,32 +5,35 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTrackEventData;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventTrackEventType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The live event track event.
  */
 @Fluent
-public final class LiveEventTrackEventInner {
+public final class LiveEventTrackEventInner implements JsonSerializable<LiveEventTrackEventInner> {
     /*
      * The type of the track event.
      */
-    @JsonProperty(value = "eventType")
     private LiveEventTrackEventType eventType;
 
     /*
      * The time event raised.
      */
-    @JsonProperty(value = "eventTime")
     private OffsetDateTime eventTime;
 
     /*
      * Event data.
      */
-    @JsonProperty(value = "data")
     private LiveEventTrackEventData data;
 
     /**
@@ -108,5 +111,50 @@ public final class LiveEventTrackEventInner {
         if (data() != null) {
             data().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("eventType", this.eventType == null ? null : this.eventType.toString());
+        jsonWriter.writeStringField("eventTime",
+            this.eventTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.eventTime));
+        jsonWriter.writeJsonField("data", this.data);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventTrackEventInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventTrackEventInner if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventTrackEventInner.
+     */
+    public static LiveEventTrackEventInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventTrackEventInner deserializedLiveEventTrackEventInner = new LiveEventTrackEventInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("eventType".equals(fieldName)) {
+                    deserializedLiveEventTrackEventInner.eventType
+                        = LiveEventTrackEventType.fromString(reader.getString());
+                } else if ("eventTime".equals(fieldName)) {
+                    deserializedLiveEventTrackEventInner.eventTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("data".equals(fieldName)) {
+                    deserializedLiveEventTrackEventInner.data = LiveEventTrackEventData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventTrackEventInner;
+        });
     }
 }

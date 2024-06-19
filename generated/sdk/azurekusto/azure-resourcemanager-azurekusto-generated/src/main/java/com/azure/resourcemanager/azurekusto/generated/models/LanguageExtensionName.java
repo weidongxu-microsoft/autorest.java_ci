@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class LanguageExtensionName extends ExpandableStringEnum<LanguageEx
      * @param name a name to look for.
      * @return the corresponding LanguageExtensionName.
      */
-    @JsonCreator
     public static LanguageExtensionName fromString(String name) {
         return fromString(name, LanguageExtensionName.class);
     }

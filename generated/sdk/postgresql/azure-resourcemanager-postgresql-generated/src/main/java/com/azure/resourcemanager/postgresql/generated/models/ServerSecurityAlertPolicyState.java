@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.postgresql.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Specifies the state of the policy, whether it is enabled or disabled.
  */
@@ -36,7 +33,6 @@ public enum ServerSecurityAlertPolicyState {
      * @param value the serialized value to parse.
      * @return the parsed ServerSecurityAlertPolicyState object, or null if unable to parse.
      */
-    @JsonCreator
     public static ServerSecurityAlertPolicyState fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum ServerSecurityAlertPolicyState {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

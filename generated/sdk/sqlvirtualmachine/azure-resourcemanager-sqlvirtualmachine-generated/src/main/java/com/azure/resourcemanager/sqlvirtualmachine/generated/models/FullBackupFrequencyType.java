@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class FullBackupFrequencyType extends ExpandableStringEnum<FullBack
      * @param name a name to look for.
      * @return the corresponding FullBackupFrequencyType.
      */
-    @JsonCreator
     public static FullBackupFrequencyType fromString(String name) {
         return fromString(name, FullBackupFrequencyType.class);
     }

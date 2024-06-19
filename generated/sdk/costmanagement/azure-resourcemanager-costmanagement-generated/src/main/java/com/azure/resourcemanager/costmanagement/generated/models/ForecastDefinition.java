@@ -6,47 +6,45 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The definition of a forecast.
  */
 @Fluent
-public final class ForecastDefinition {
+public final class ForecastDefinition implements JsonSerializable<ForecastDefinition> {
     /*
      * The type of the forecast.
      */
-    @JsonProperty(value = "type", required = true)
     private ForecastType type;
 
     /*
      * The time frame for pulling data for the forecast. If custom, then a specific time period must be provided.
      */
-    @JsonProperty(value = "timeframe", required = true)
     private ForecastTimeframeType timeframe;
 
     /*
      * Has time period for pulling data for the forecast.
      */
-    @JsonProperty(value = "timePeriod")
     private QueryTimePeriod timePeriod;
 
     /*
      * Has definition for data in this forecast.
      */
-    @JsonProperty(value = "dataset", required = true)
     private QueryDataset dataset;
 
     /*
      * a boolean determining if actualCost will be included
      */
-    @JsonProperty(value = "includeActualCost")
     private Boolean includeActualCost;
 
     /*
      * a boolean determining if FreshPartialCost will be included
      */
-    @JsonProperty(value = "includeFreshPartialCost")
     private Boolean includeFreshPartialCost;
 
     /**
@@ -203,4 +201,56 @@ public final class ForecastDefinition {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ForecastDefinition.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
+        jsonWriter.writeStringField("timeframe", this.timeframe == null ? null : this.timeframe.toString());
+        jsonWriter.writeJsonField("dataset", this.dataset);
+        jsonWriter.writeJsonField("timePeriod", this.timePeriod);
+        jsonWriter.writeBooleanField("includeActualCost", this.includeActualCost);
+        jsonWriter.writeBooleanField("includeFreshPartialCost", this.includeFreshPartialCost);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ForecastDefinition from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ForecastDefinition if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ForecastDefinition.
+     */
+    public static ForecastDefinition fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ForecastDefinition deserializedForecastDefinition = new ForecastDefinition();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("type".equals(fieldName)) {
+                    deserializedForecastDefinition.type = ForecastType.fromString(reader.getString());
+                } else if ("timeframe".equals(fieldName)) {
+                    deserializedForecastDefinition.timeframe = ForecastTimeframeType.fromString(reader.getString());
+                } else if ("dataset".equals(fieldName)) {
+                    deserializedForecastDefinition.dataset = QueryDataset.fromJson(reader);
+                } else if ("timePeriod".equals(fieldName)) {
+                    deserializedForecastDefinition.timePeriod = QueryTimePeriod.fromJson(reader);
+                } else if ("includeActualCost".equals(fieldName)) {
+                    deserializedForecastDefinition.includeActualCost = reader.getNullable(JsonReader::getBoolean);
+                } else if ("includeFreshPartialCost".equals(fieldName)) {
+                    deserializedForecastDefinition.includeFreshPartialCost = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedForecastDefinition;
+        });
+    }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mysql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class StorageRedundancyEnum extends ExpandableStringEnum<StorageRed
      * @param name a name to look for.
      * @return the corresponding StorageRedundancyEnum.
      */
-    @JsonCreator
     public static StorageRedundancyEnum fromString(String name) {
         return fromString(name, StorageRedundancyEnum.class);
     }

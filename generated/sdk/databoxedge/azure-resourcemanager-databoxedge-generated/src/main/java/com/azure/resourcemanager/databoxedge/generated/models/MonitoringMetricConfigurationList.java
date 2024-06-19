@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.MonitoringMetricConfigurationInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Collection of metric configurations.
  */
 @Immutable
-public final class MonitoringMetricConfigurationList {
+public final class MonitoringMetricConfigurationList implements JsonSerializable<MonitoringMetricConfigurationList> {
     /*
      * The list of metric configurations.
      */
-    @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<MonitoringMetricConfigurationInner> value;
 
     /*
      * Link to the next set of results.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -59,5 +61,45 @@ public final class MonitoringMetricConfigurationList {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MonitoringMetricConfigurationList from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MonitoringMetricConfigurationList if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MonitoringMetricConfigurationList.
+     */
+    public static MonitoringMetricConfigurationList fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MonitoringMetricConfigurationList deserializedMonitoringMetricConfigurationList
+                = new MonitoringMetricConfigurationList();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<MonitoringMetricConfigurationInner> value
+                        = reader.readArray(reader1 -> MonitoringMetricConfigurationInner.fromJson(reader1));
+                    deserializedMonitoringMetricConfigurationList.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedMonitoringMetricConfigurationList.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMonitoringMetricConfigurationList;
+        });
     }
 }

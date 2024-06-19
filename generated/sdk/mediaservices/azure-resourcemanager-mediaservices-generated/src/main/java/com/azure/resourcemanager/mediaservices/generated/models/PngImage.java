@@ -5,31 +5,27 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.List;
 
 /**
  * Describes the properties for producing a series of PNG images from the input video.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = PngImage.class, visible = true)
-@JsonTypeName("#Microsoft.Media.PngImage")
 @Fluent
 public final class PngImage extends Image {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.PngImage";
 
     /*
      * A collection of output PNG image layers to be produced by the encoder.
      */
-    @JsonProperty(value = "layers")
     private List<PngLayer> layers;
 
     /**
@@ -142,5 +138,68 @@ public final class PngImage extends Image {
         if (layers() != null) {
             layers().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("start", start());
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(keyFrameInterval()));
+        jsonWriter.writeStringField("stretchMode", stretchMode() == null ? null : stretchMode().toString());
+        jsonWriter.writeStringField("syncMode", syncMode() == null ? null : syncMode().toString());
+        jsonWriter.writeStringField("step", step());
+        jsonWriter.writeStringField("range", range());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeArrayField("layers", this.layers, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PngImage from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PngImage if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the PngImage.
+     */
+    public static PngImage fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PngImage deserializedPngImage = new PngImage();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("start".equals(fieldName)) {
+                    deserializedPngImage.withStart(reader.getString());
+                } else if ("label".equals(fieldName)) {
+                    deserializedPngImage.withLabel(reader.getString());
+                } else if ("keyFrameInterval".equals(fieldName)) {
+                    deserializedPngImage.withKeyFrameInterval(
+                        reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString())));
+                } else if ("stretchMode".equals(fieldName)) {
+                    deserializedPngImage.withStretchMode(StretchMode.fromString(reader.getString()));
+                } else if ("syncMode".equals(fieldName)) {
+                    deserializedPngImage.withSyncMode(VideoSyncMode.fromString(reader.getString()));
+                } else if ("step".equals(fieldName)) {
+                    deserializedPngImage.withStep(reader.getString());
+                } else if ("range".equals(fieldName)) {
+                    deserializedPngImage.withRange(reader.getString());
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedPngImage.odataType = reader.getString();
+                } else if ("layers".equals(fieldName)) {
+                    List<PngLayer> layers = reader.readArray(reader1 -> PngLayer.fromJson(reader1));
+                    deserializedPngImage.layers = layers;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPngImage;
+        });
     }
 }

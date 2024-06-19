@@ -6,29 +6,30 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The common properties of the export.
  */
 @Fluent
-public class CommonExportProperties {
+public class CommonExportProperties implements JsonSerializable<CommonExportProperties> {
     /*
      * The format of the export being delivered.
      */
-    @JsonProperty(value = "format")
     private FormatType format;
 
     /*
      * Has delivery information for the export.
      */
-    @JsonProperty(value = "deliveryInfo", required = true)
     private ExportDeliveryInfo deliveryInfo;
 
     /*
      * Has definition for the export.
      */
-    @JsonProperty(value = "definition", required = true)
     private ExportDefinition definition;
 
     /**
@@ -120,4 +121,47 @@ public class CommonExportProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(CommonExportProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("deliveryInfo", this.deliveryInfo);
+        jsonWriter.writeJsonField("definition", this.definition);
+        jsonWriter.writeStringField("format", this.format == null ? null : this.format.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CommonExportProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CommonExportProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the CommonExportProperties.
+     */
+    public static CommonExportProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CommonExportProperties deserializedCommonExportProperties = new CommonExportProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("deliveryInfo".equals(fieldName)) {
+                    deserializedCommonExportProperties.deliveryInfo = ExportDeliveryInfo.fromJson(reader);
+                } else if ("definition".equals(fieldName)) {
+                    deserializedCommonExportProperties.definition = ExportDefinition.fromJson(reader);
+                } else if ("format".equals(fieldName)) {
+                    deserializedCommonExportProperties.format = FormatType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCommonExportProperties;
+        });
+    }
 }

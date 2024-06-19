@@ -5,11 +5,16 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventhubs.generated.models.Encryption;
 import com.azure.resourcemanager.eventhubs.generated.models.GeoDataReplicationProperties;
 import com.azure.resourcemanager.eventhubs.generated.models.PublicNetworkAccess;
 import com.azure.resourcemanager.eventhubs.generated.models.TlsVersion;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -17,114 +22,96 @@ import java.util.List;
  * Namespace properties supplied for create namespace operation.
  */
 @Fluent
-public final class EHNamespaceProperties {
+public final class EHNamespaceProperties implements JsonSerializable<EHNamespaceProperties> {
     /*
      * The minimum TLS version for the cluster to support, e.g. '1.2'
      */
-    @JsonProperty(value = "minimumTlsVersion")
     private TlsVersion minimumTlsVersion;
 
     /*
      * Provisioning state of the Namespace.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * Status of the Namespace.
      */
-    @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private String status;
 
     /*
      * The time the Namespace was created.
      */
-    @JsonProperty(value = "createdAt", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime createdAt;
 
     /*
      * The time the Namespace was updated.
      */
-    @JsonProperty(value = "updatedAt", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime updatedAt;
 
     /*
      * Endpoint you can use to perform Service Bus operations.
      */
-    @JsonProperty(value = "serviceBusEndpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceBusEndpoint;
 
     /*
      * Cluster ARM ID of the Namespace.
      */
-    @JsonProperty(value = "clusterArmId")
     private String clusterArmId;
 
     /*
      * Identifier for Azure Insights metrics.
      */
-    @JsonProperty(value = "metricId", access = JsonProperty.Access.WRITE_ONLY)
     private String metricId;
 
     /*
      * Value that indicates whether AutoInflate is enabled for eventhub namespace.
      */
-    @JsonProperty(value = "isAutoInflateEnabled")
     private Boolean isAutoInflateEnabled;
 
     /*
      * This determines if traffic is allowed over public network. By default it is enabled.
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccess publicNetworkAccess;
 
     /*
      * Upper limit of throughput units when AutoInflate is enabled, value should be within 0 to 20 throughput units. (
      * '0' if AutoInflateEnabled = true)
      */
-    @JsonProperty(value = "maximumThroughputUnits")
     private Integer maximumThroughputUnits;
 
     /*
      * Value that indicates whether Kafka is enabled for eventhub namespace.
      */
-    @JsonProperty(value = "kafkaEnabled")
     private Boolean kafkaEnabled;
 
     /*
      * Enabling this property creates a Standard Event Hubs Namespace in regions supported availability zones.
      */
-    @JsonProperty(value = "zoneRedundant")
     private Boolean zoneRedundant;
 
     /*
      * Properties of BYOK Encryption description
      */
-    @JsonProperty(value = "encryption")
     private Encryption encryption;
 
     /*
      * List of private endpoint connections.
      */
-    @JsonProperty(value = "privateEndpointConnections")
     private List<PrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
      * This property disables SAS authentication for the Event Hubs namespace.
      */
-    @JsonProperty(value = "disableLocalAuth")
     private Boolean disableLocalAuth;
 
     /*
      * Alternate name specified when alias and namespace names are same.
      */
-    @JsonProperty(value = "alternateName")
     private String alternateName;
 
     /*
      * Geo Data Replication settings for the namespace
      */
-    @JsonProperty(value = "geoDataReplication")
     private GeoDataReplicationProperties geoDataReplication;
 
     /**
@@ -451,5 +438,95 @@ public final class EHNamespaceProperties {
         if (geoDataReplication() != null) {
             geoDataReplication().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("minimumTlsVersion",
+            this.minimumTlsVersion == null ? null : this.minimumTlsVersion.toString());
+        jsonWriter.writeStringField("clusterArmId", this.clusterArmId);
+        jsonWriter.writeBooleanField("isAutoInflateEnabled", this.isAutoInflateEnabled);
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        jsonWriter.writeNumberField("maximumThroughputUnits", this.maximumThroughputUnits);
+        jsonWriter.writeBooleanField("kafkaEnabled", this.kafkaEnabled);
+        jsonWriter.writeBooleanField("zoneRedundant", this.zoneRedundant);
+        jsonWriter.writeJsonField("encryption", this.encryption);
+        jsonWriter.writeArrayField("privateEndpointConnections", this.privateEndpointConnections,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("disableLocalAuth", this.disableLocalAuth);
+        jsonWriter.writeStringField("alternateName", this.alternateName);
+        jsonWriter.writeJsonField("geoDataReplication", this.geoDataReplication);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EHNamespaceProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EHNamespaceProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EHNamespaceProperties.
+     */
+    public static EHNamespaceProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EHNamespaceProperties deserializedEHNamespaceProperties = new EHNamespaceProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("minimumTlsVersion".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.minimumTlsVersion = TlsVersion.fromString(reader.getString());
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.provisioningState = reader.getString();
+                } else if ("status".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.status = reader.getString();
+                } else if ("createdAt".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.createdAt = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("updatedAt".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.updatedAt = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("serviceBusEndpoint".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.serviceBusEndpoint = reader.getString();
+                } else if ("clusterArmId".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.clusterArmId = reader.getString();
+                } else if ("metricId".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.metricId = reader.getString();
+                } else if ("isAutoInflateEnabled".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.isAutoInflateEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.publicNetworkAccess
+                        = PublicNetworkAccess.fromString(reader.getString());
+                } else if ("maximumThroughputUnits".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.maximumThroughputUnits = reader.getNullable(JsonReader::getInt);
+                } else if ("kafkaEnabled".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.kafkaEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("zoneRedundant".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.zoneRedundant = reader.getNullable(JsonReader::getBoolean);
+                } else if ("encryption".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.encryption = Encryption.fromJson(reader);
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<PrivateEndpointConnectionInner> privateEndpointConnections
+                        = reader.readArray(reader1 -> PrivateEndpointConnectionInner.fromJson(reader1));
+                    deserializedEHNamespaceProperties.privateEndpointConnections = privateEndpointConnections;
+                } else if ("disableLocalAuth".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.disableLocalAuth = reader.getNullable(JsonReader::getBoolean);
+                } else if ("alternateName".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.alternateName = reader.getString();
+                } else if ("geoDataReplication".equals(fieldName)) {
+                    deserializedEHNamespaceProperties.geoDataReplication
+                        = GeoDataReplicationProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEHNamespaceProperties;
+        });
     }
 }

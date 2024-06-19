@@ -5,24 +5,28 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The share properties.
  */
 @Fluent
-public final class SupportPackageRequestProperties {
+public final class SupportPackageRequestProperties implements JsonSerializable<SupportPackageRequestProperties> {
     /*
      * MinimumTimeStamp from where logs need to be collected
      */
-    @JsonProperty(value = "minimumTimeStamp")
     private OffsetDateTime minimumTimestamp;
 
     /*
      * Start of the timespan of the log collection
      */
-    @JsonProperty(value = "maximumTimeStamp")
     private OffsetDateTime maximumTimestamp;
 
     /*
@@ -30,7 +34,6 @@ public final class SupportPackageRequestProperties {
      * This will contain the type of logs (Default/DefaultWithDumps/None/All/DefaultWithArchived)
      * or a comma separated list of log types that are required
      */
-    @JsonProperty(value = "include")
     private String include;
 
     /**
@@ -109,5 +112,56 @@ public final class SupportPackageRequestProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("minimumTimeStamp",
+            this.minimumTimestamp == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.minimumTimestamp));
+        jsonWriter.writeStringField("maximumTimeStamp",
+            this.maximumTimestamp == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.maximumTimestamp));
+        jsonWriter.writeStringField("include", this.include);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SupportPackageRequestProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SupportPackageRequestProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SupportPackageRequestProperties.
+     */
+    public static SupportPackageRequestProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SupportPackageRequestProperties deserializedSupportPackageRequestProperties
+                = new SupportPackageRequestProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("minimumTimeStamp".equals(fieldName)) {
+                    deserializedSupportPackageRequestProperties.minimumTimestamp = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("maximumTimeStamp".equals(fieldName)) {
+                    deserializedSupportPackageRequestProperties.maximumTimestamp = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("include".equals(fieldName)) {
+                    deserializedSupportPackageRequestProperties.include = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSupportPackageRequestProperties;
+        });
     }
 }

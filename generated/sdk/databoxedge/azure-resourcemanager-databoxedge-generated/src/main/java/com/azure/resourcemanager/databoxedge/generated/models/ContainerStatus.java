@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -52,7 +51,6 @@ public final class ContainerStatus extends ExpandableStringEnum<ContainerStatus>
      * @param name a name to look for.
      * @return the corresponding ContainerStatus.
      */
-    @JsonCreator
     public static ContainerStatus fromString(String name) {
         return fromString(name, ContainerStatus.class);
     }

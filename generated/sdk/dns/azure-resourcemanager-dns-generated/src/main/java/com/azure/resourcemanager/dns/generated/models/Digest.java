@@ -5,24 +5,26 @@
 package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A digest.
  */
 @Fluent
-public final class Digest {
+public final class Digest implements JsonSerializable<Digest> {
     /*
      * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See:
      * https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
      */
-    @JsonProperty(value = "algorithmType")
     private Integer algorithmType;
 
     /*
      * The digest value is a cryptographic hash value of the referenced DNSKEY Resource Record.
      */
-    @JsonProperty(value = "value")
     private String value;
 
     /**
@@ -79,5 +81,44 @@ public final class Digest {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("algorithmType", this.algorithmType);
+        jsonWriter.writeStringField("value", this.value);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Digest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Digest if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the Digest.
+     */
+    public static Digest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Digest deserializedDigest = new Digest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("algorithmType".equals(fieldName)) {
+                    deserializedDigest.algorithmType = reader.getNullable(JsonReader::getInt);
+                } else if ("value".equals(fieldName)) {
+                    deserializedDigest.value = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDigest;
+        });
     }
 }

@@ -5,7 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -13,101 +17,85 @@ import java.util.List;
  * Alert details.
  */
 @Fluent
-public final class AlertPropertiesDetails {
+public final class AlertPropertiesDetails implements JsonSerializable<AlertPropertiesDetails> {
     /*
      * Type of timegrain cadence
      */
-    @JsonProperty(value = "timeGrainType")
     private AlertTimeGrainType timeGrainType;
 
     /*
      * datetime of periodStartDate
      */
-    @JsonProperty(value = "periodStartDate")
     private String periodStartDate;
 
     /*
      * notificationId that triggered this alert
      */
-    @JsonProperty(value = "triggeredBy")
     private String triggeredBy;
 
     /*
      * array of resourceGroups to filter by
      */
-    @JsonProperty(value = "resourceGroupFilter")
     private List<Object> resourceGroupFilter;
 
     /*
      * array of resources to filter by
      */
-    @JsonProperty(value = "resourceFilter")
     private List<Object> resourceFilter;
 
     /*
      * array of meters to filter by
      */
-    @JsonProperty(value = "meterFilter")
     private List<Object> meterFilter;
 
     /*
      * tags to filter by
      */
-    @JsonProperty(value = "tagFilter")
     private Object tagFilter;
 
     /*
      * notification threshold percentage as a decimal which activated this alert
      */
-    @JsonProperty(value = "threshold")
     private BigDecimal threshold;
 
     /*
      * operator used to compare currentSpend with amount
      */
-    @JsonProperty(value = "operator")
     private AlertOperator operator;
 
     /*
      * budget threshold amount
      */
-    @JsonProperty(value = "amount")
     private BigDecimal amount;
 
     /*
      * unit of currency being used
      */
-    @JsonProperty(value = "unit")
     private String unit;
 
     /*
      * current spend
      */
-    @JsonProperty(value = "currentSpend")
     private BigDecimal currentSpend;
 
     /*
      * list of emails to contact
      */
-    @JsonProperty(value = "contactEmails")
     private List<String> contactEmails;
 
     /*
      * list of action groups to broadcast to
      */
-    @JsonProperty(value = "contactGroups")
     private List<String> contactGroups;
 
     /*
      * list of contact roles
      */
-    @JsonProperty(value = "contactRoles")
     private List<String> contactRoles;
 
     /*
      * overriding alert
      */
-    @JsonProperty(value = "overridingAlert")
     private String overridingAlert;
 
     /**
@@ -442,5 +430,100 @@ public final class AlertPropertiesDetails {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("timeGrainType", this.timeGrainType == null ? null : this.timeGrainType.toString());
+        jsonWriter.writeStringField("periodStartDate", this.periodStartDate);
+        jsonWriter.writeStringField("triggeredBy", this.triggeredBy);
+        jsonWriter.writeArrayField("resourceGroupFilter", this.resourceGroupFilter,
+            (writer, element) -> writer.writeUntyped(element));
+        jsonWriter.writeArrayField("resourceFilter", this.resourceFilter,
+            (writer, element) -> writer.writeUntyped(element));
+        jsonWriter.writeArrayField("meterFilter", this.meterFilter, (writer, element) -> writer.writeUntyped(element));
+        jsonWriter.writeUntypedField("tagFilter", this.tagFilter);
+        jsonWriter.writeNumberField("threshold", this.threshold);
+        jsonWriter.writeStringField("operator", this.operator == null ? null : this.operator.toString());
+        jsonWriter.writeNumberField("amount", this.amount);
+        jsonWriter.writeStringField("unit", this.unit);
+        jsonWriter.writeNumberField("currentSpend", this.currentSpend);
+        jsonWriter.writeArrayField("contactEmails", this.contactEmails,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("contactGroups", this.contactGroups,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("contactRoles", this.contactRoles, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("overridingAlert", this.overridingAlert);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AlertPropertiesDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AlertPropertiesDetails if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AlertPropertiesDetails.
+     */
+    public static AlertPropertiesDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AlertPropertiesDetails deserializedAlertPropertiesDetails = new AlertPropertiesDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("timeGrainType".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.timeGrainType
+                        = AlertTimeGrainType.fromString(reader.getString());
+                } else if ("periodStartDate".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.periodStartDate = reader.getString();
+                } else if ("triggeredBy".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.triggeredBy = reader.getString();
+                } else if ("resourceGroupFilter".equals(fieldName)) {
+                    List<Object> resourceGroupFilter = reader.readArray(reader1 -> reader1.readUntyped());
+                    deserializedAlertPropertiesDetails.resourceGroupFilter = resourceGroupFilter;
+                } else if ("resourceFilter".equals(fieldName)) {
+                    List<Object> resourceFilter = reader.readArray(reader1 -> reader1.readUntyped());
+                    deserializedAlertPropertiesDetails.resourceFilter = resourceFilter;
+                } else if ("meterFilter".equals(fieldName)) {
+                    List<Object> meterFilter = reader.readArray(reader1 -> reader1.readUntyped());
+                    deserializedAlertPropertiesDetails.meterFilter = meterFilter;
+                } else if ("tagFilter".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.tagFilter = reader.readUntyped();
+                } else if ("threshold".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.threshold
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("operator".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.operator = AlertOperator.fromString(reader.getString());
+                } else if ("amount".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.amount
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("unit".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.unit = reader.getString();
+                } else if ("currentSpend".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.currentSpend
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("contactEmails".equals(fieldName)) {
+                    List<String> contactEmails = reader.readArray(reader1 -> reader1.getString());
+                    deserializedAlertPropertiesDetails.contactEmails = contactEmails;
+                } else if ("contactGroups".equals(fieldName)) {
+                    List<String> contactGroups = reader.readArray(reader1 -> reader1.getString());
+                    deserializedAlertPropertiesDetails.contactGroups = contactGroups;
+                } else if ("contactRoles".equals(fieldName)) {
+                    List<String> contactRoles = reader.readArray(reader1 -> reader1.getString());
+                    deserializedAlertPropertiesDetails.contactRoles = contactRoles;
+                } else if ("overridingAlert".equals(fieldName)) {
+                    deserializedAlertPropertiesDetails.overridingAlert = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAlertPropertiesDetails;
+        });
     }
 }

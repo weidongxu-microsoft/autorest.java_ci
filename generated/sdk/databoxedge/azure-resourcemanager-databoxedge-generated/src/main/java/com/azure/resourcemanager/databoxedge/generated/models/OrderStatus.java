@@ -5,9 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.Map;
 
@@ -15,37 +19,31 @@ import java.util.Map;
  * Represents a single status change.
  */
 @Fluent
-public final class OrderStatus {
+public final class OrderStatus implements JsonSerializable<OrderStatus> {
     /*
      * Status of the order as per the allowed status types.
      */
-    @JsonProperty(value = "status", required = true)
     private OrderState status;
 
     /*
      * Time of status update.
      */
-    @JsonProperty(value = "updateDateTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime updateDateTime;
 
     /*
      * Comments related to this status change.
      */
-    @JsonProperty(value = "comments")
     private String comments;
 
     /*
      * Tracking information related to the state in the ordering flow
      */
-    @JsonProperty(value = "trackingInformation", access = JsonProperty.Access.WRITE_ONLY)
     private TrackingInfo trackingInformation;
 
     /*
      * Dictionary to hold generic information which is not stored
      * by the already existing properties
      */
-    @JsonProperty(value = "additionalOrderDetails", access = JsonProperty.Access.WRITE_ONLY)
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> additionalOrderDetails;
 
     /**
@@ -138,4 +136,52 @@ public final class OrderStatus {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(OrderStatus.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("status", this.status == null ? null : this.status.toString());
+        jsonWriter.writeStringField("comments", this.comments);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OrderStatus from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OrderStatus if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the OrderStatus.
+     */
+    public static OrderStatus fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OrderStatus deserializedOrderStatus = new OrderStatus();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("status".equals(fieldName)) {
+                    deserializedOrderStatus.status = OrderState.fromString(reader.getString());
+                } else if ("updateDateTime".equals(fieldName)) {
+                    deserializedOrderStatus.updateDateTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("comments".equals(fieldName)) {
+                    deserializedOrderStatus.comments = reader.getString();
+                } else if ("trackingInformation".equals(fieldName)) {
+                    deserializedOrderStatus.trackingInformation = TrackingInfo.fromJson(reader);
+                } else if ("additionalOrderDetails".equals(fieldName)) {
+                    Map<String, String> additionalOrderDetails = reader.readMap(reader1 -> reader1.getString());
+                    deserializedOrderStatus.additionalOrderDetails = additionalOrderDetails;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOrderStatus;
+        });
+    }
 }

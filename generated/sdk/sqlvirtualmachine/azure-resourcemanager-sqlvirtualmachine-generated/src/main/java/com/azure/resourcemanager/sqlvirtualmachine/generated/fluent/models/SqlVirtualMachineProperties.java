@@ -5,6 +5,10 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AdditionalOsPatch;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AssessmentSettings;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AutoBackupSettings;
@@ -20,138 +24,117 @@ import com.azure.resourcemanager.sqlvirtualmachine.generated.models.StorageConfi
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.TroubleshootingStatus;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.VirtualMachineIdentity;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.WsfcDomainCredentials;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The SQL virtual machine properties.
  */
 @Fluent
-public final class SqlVirtualMachineProperties {
+public final class SqlVirtualMachineProperties implements JsonSerializable<SqlVirtualMachineProperties> {
     /*
      * ARM Resource id of underlying virtual machine created from SQL marketplace image.
      */
-    @JsonProperty(value = "virtualMachineResourceId")
     private String virtualMachineResourceId;
 
     /*
      * Provisioning state to track the async operation status.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * SQL image offer. Examples include SQL2016-WS2016, SQL2017-WS2016.
      */
-    @JsonProperty(value = "sqlImageOffer")
     private String sqlImageOffer;
 
     /*
      * SQL Server license type.
      */
-    @JsonProperty(value = "sqlServerLicenseType")
     private SqlServerLicenseType sqlServerLicenseType;
 
     /*
      * SQL Server Management type. NOTE: This parameter is not used anymore. API will automatically detect the Sql
      * Management, refrain from using it.
      */
-    @JsonProperty(value = "sqlManagement")
     private SqlManagementMode sqlManagement;
 
     /*
      * SQL IaaS Agent least privilege mode.
      */
-    @JsonProperty(value = "leastPrivilegeMode")
     private LeastPrivilegeMode leastPrivilegeMode;
 
     /*
      * SQL Server edition type.
      */
-    @JsonProperty(value = "sqlImageSku")
     private SqlImageSku sqlImageSku;
 
     /*
      * ARM resource id of the SQL virtual machine group this SQL virtual machine is or will be part of.
      */
-    @JsonProperty(value = "sqlVirtualMachineGroupResourceId")
     private String sqlVirtualMachineGroupResourceId;
 
     /*
      * Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      */
-    @JsonProperty(value = "wsfcDomainCredentials")
     private WsfcDomainCredentials wsfcDomainCredentials;
 
     /*
      * Domain credentials for setting up Windows Server Failover Cluster for SQL availability group.
      */
-    @JsonProperty(value = "wsfcStaticIp")
     private String wsfcStaticIp;
 
     /*
      * Auto patching settings for applying critical security updates to SQL virtual machine.
      */
-    @JsonProperty(value = "autoPatchingSettings")
     private AutoPatchingSettings autoPatchingSettings;
 
     /*
      * Auto backup settings for SQL Server.
      */
-    @JsonProperty(value = "autoBackupSettings")
     private AutoBackupSettings autoBackupSettings;
 
     /*
      * Key vault credential settings.
      */
-    @JsonProperty(value = "keyVaultCredentialSettings")
     private KeyVaultCredentialSettings keyVaultCredentialSettings;
 
     /*
      * SQL Server configuration management settings.
      */
-    @JsonProperty(value = "serverConfigurationsManagementSettings")
     private ServerConfigurationsManagementSettings serverConfigurationsManagementSettings;
 
     /*
      * Storage Configuration Settings.
      */
-    @JsonProperty(value = "storageConfigurationSettings")
     private StorageConfigurationSettings storageConfigurationSettings;
 
     /*
      * Troubleshooting status
      */
-    @JsonProperty(value = "troubleshootingStatus", access = JsonProperty.Access.WRITE_ONLY)
     private TroubleshootingStatus troubleshootingStatus;
 
     /*
      * SQL best practices Assessment Settings.
      */
-    @JsonProperty(value = "assessmentSettings")
     private AssessmentSettings assessmentSettings;
 
     /*
      * Enable automatic upgrade of Sql IaaS extension Agent.
      */
-    @JsonProperty(value = "enableAutomaticUpgrade")
     private Boolean enableAutomaticUpgrade;
 
     /*
      * Additional VM Patching solution enabled on the Virtual Machine
      */
-    @JsonProperty(value = "additionalVmPatch", access = JsonProperty.Access.WRITE_ONLY)
     private AdditionalOsPatch additionalVmPatch;
 
     /*
      * Virtual Machine Identity details used for Sql IaaS extension configurations.
      */
-    @JsonProperty(value = "virtualMachineIdentitySettings")
     private VirtualMachineIdentity virtualMachineIdentitySettings;
 
     /*
      * Operating System of the current SQL Virtual Machine.
      */
-    @JsonProperty(value = "osType", access = JsonProperty.Access.WRITE_ONLY)
     private OsType osType;
 
     /**
@@ -587,5 +570,112 @@ public final class SqlVirtualMachineProperties {
         if (virtualMachineIdentitySettings() != null) {
             virtualMachineIdentitySettings().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("virtualMachineResourceId", this.virtualMachineResourceId);
+        jsonWriter.writeStringField("sqlImageOffer", this.sqlImageOffer);
+        jsonWriter.writeStringField("sqlServerLicenseType",
+            this.sqlServerLicenseType == null ? null : this.sqlServerLicenseType.toString());
+        jsonWriter.writeStringField("sqlManagement", this.sqlManagement == null ? null : this.sqlManagement.toString());
+        jsonWriter.writeStringField("leastPrivilegeMode",
+            this.leastPrivilegeMode == null ? null : this.leastPrivilegeMode.toString());
+        jsonWriter.writeStringField("sqlImageSku", this.sqlImageSku == null ? null : this.sqlImageSku.toString());
+        jsonWriter.writeStringField("sqlVirtualMachineGroupResourceId", this.sqlVirtualMachineGroupResourceId);
+        jsonWriter.writeJsonField("wsfcDomainCredentials", this.wsfcDomainCredentials);
+        jsonWriter.writeStringField("wsfcStaticIp", this.wsfcStaticIp);
+        jsonWriter.writeJsonField("autoPatchingSettings", this.autoPatchingSettings);
+        jsonWriter.writeJsonField("autoBackupSettings", this.autoBackupSettings);
+        jsonWriter.writeJsonField("keyVaultCredentialSettings", this.keyVaultCredentialSettings);
+        jsonWriter.writeJsonField("serverConfigurationsManagementSettings",
+            this.serverConfigurationsManagementSettings);
+        jsonWriter.writeJsonField("storageConfigurationSettings", this.storageConfigurationSettings);
+        jsonWriter.writeJsonField("assessmentSettings", this.assessmentSettings);
+        jsonWriter.writeBooleanField("enableAutomaticUpgrade", this.enableAutomaticUpgrade);
+        jsonWriter.writeJsonField("virtualMachineIdentitySettings", this.virtualMachineIdentitySettings);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SqlVirtualMachineProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SqlVirtualMachineProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SqlVirtualMachineProperties.
+     */
+    public static SqlVirtualMachineProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SqlVirtualMachineProperties deserializedSqlVirtualMachineProperties = new SqlVirtualMachineProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("virtualMachineResourceId".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.virtualMachineResourceId = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.provisioningState = reader.getString();
+                } else if ("sqlImageOffer".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.sqlImageOffer = reader.getString();
+                } else if ("sqlServerLicenseType".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.sqlServerLicenseType
+                        = SqlServerLicenseType.fromString(reader.getString());
+                } else if ("sqlManagement".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.sqlManagement
+                        = SqlManagementMode.fromString(reader.getString());
+                } else if ("leastPrivilegeMode".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.leastPrivilegeMode
+                        = LeastPrivilegeMode.fromString(reader.getString());
+                } else if ("sqlImageSku".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.sqlImageSku = SqlImageSku.fromString(reader.getString());
+                } else if ("sqlVirtualMachineGroupResourceId".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.sqlVirtualMachineGroupResourceId = reader.getString();
+                } else if ("wsfcDomainCredentials".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.wsfcDomainCredentials
+                        = WsfcDomainCredentials.fromJson(reader);
+                } else if ("wsfcStaticIp".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.wsfcStaticIp = reader.getString();
+                } else if ("autoPatchingSettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.autoPatchingSettings
+                        = AutoPatchingSettings.fromJson(reader);
+                } else if ("autoBackupSettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.autoBackupSettings = AutoBackupSettings.fromJson(reader);
+                } else if ("keyVaultCredentialSettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.keyVaultCredentialSettings
+                        = KeyVaultCredentialSettings.fromJson(reader);
+                } else if ("serverConfigurationsManagementSettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.serverConfigurationsManagementSettings
+                        = ServerConfigurationsManagementSettings.fromJson(reader);
+                } else if ("storageConfigurationSettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.storageConfigurationSettings
+                        = StorageConfigurationSettings.fromJson(reader);
+                } else if ("troubleshootingStatus".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.troubleshootingStatus
+                        = TroubleshootingStatus.fromJson(reader);
+                } else if ("assessmentSettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.assessmentSettings = AssessmentSettings.fromJson(reader);
+                } else if ("enableAutomaticUpgrade".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.enableAutomaticUpgrade
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("additionalVmPatch".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.additionalVmPatch
+                        = AdditionalOsPatch.fromString(reader.getString());
+                } else if ("virtualMachineIdentitySettings".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.virtualMachineIdentitySettings
+                        = VirtualMachineIdentity.fromJson(reader);
+                } else if ("osType".equals(fieldName)) {
+                    deserializedSqlVirtualMachineProperties.osType = OsType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSqlVirtualMachineProperties;
+        });
     }
 }

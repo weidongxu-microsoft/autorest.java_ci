@@ -5,14 +5,19 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationType;
 import com.azure.resourcemanager.applicationinsights.generated.models.FlowType;
 import com.azure.resourcemanager.applicationinsights.generated.models.IngestionMode;
 import com.azure.resourcemanager.applicationinsights.generated.models.PrivateLinkScopedResource;
 import com.azure.resourcemanager.applicationinsights.generated.models.PublicNetworkAccessType;
 import com.azure.resourcemanager.applicationinsights.generated.models.RequestSource;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -20,37 +25,33 @@ import java.util.List;
  * Properties that define an Application Insights component resource.
  */
 @Fluent
-public final class ApplicationInsightsComponentProperties {
+public final class ApplicationInsightsComponentProperties
+    implements JsonSerializable<ApplicationInsightsComponentProperties> {
     /*
      * The unique ID of your application. This field mirrors the 'Name' field and cannot be changed.
      */
-    @JsonProperty(value = "ApplicationId", access = JsonProperty.Access.WRITE_ONLY)
     private String applicationId;
 
     /*
      * Application Insights Unique ID for your Application.
      */
-    @JsonProperty(value = "AppId", access = JsonProperty.Access.WRITE_ONLY)
     private String appId;
 
     /*
      * Type of application being monitored.
      */
-    @JsonProperty(value = "Application_Type", required = true)
     private ApplicationType applicationType;
 
     /*
      * Used by the Application Insights system to determine what kind of flow this component was created by. This is to
      * be set to 'Bluefield' when creating/updating a component via the REST API.
      */
-    @JsonProperty(value = "Flow_Type")
     private FlowType flowType;
 
     /*
      * Describes what tool created this Application Insights component. Customers using this API should set this to the
      * default 'rest'.
      */
-    @JsonProperty(value = "Request_Source")
     private RequestSource requestSource;
 
     /*
@@ -58,32 +59,27 @@ public final class ApplicationInsightsComponentProperties {
      * for all telemetry sent to Azure Application Insights. This value will be supplied upon construction of each new
      * Application Insights component.
      */
-    @JsonProperty(value = "InstrumentationKey", access = JsonProperty.Access.WRITE_ONLY)
     private String instrumentationKey;
 
     /*
      * Creation Date for the Application Insights component, in ISO 8601 format.
      */
-    @JsonProperty(value = "CreationDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime creationDate;
 
     /*
      * Azure Tenant Id.
      */
-    @JsonProperty(value = "TenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantId;
 
     /*
      * The unique application ID created when a new application is added to HockeyApp, used for communications with
      * HockeyApp.
      */
-    @JsonProperty(value = "HockeyAppId")
     private String hockeyAppId;
 
     /*
      * Token used to authenticate communications with between Application Insights and HockeyApp.
      */
-    @JsonProperty(value = "HockeyAppToken", access = JsonProperty.Access.WRITE_ONLY)
     private String hockeyAppToken;
 
     /*
@@ -91,62 +87,52 @@ public final class ApplicationInsightsComponentProperties {
      * Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled,
      * and Failed.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * Percentage of the data produced by the application being monitored that is being sampled for Application Insights
      * telemetry.
      */
-    @JsonProperty(value = "SamplingPercentage")
     private Double samplingPercentage;
 
     /*
      * Application Insights component connection string.
      */
-    @JsonProperty(value = "ConnectionString", access = JsonProperty.Access.WRITE_ONLY)
     private String connectionString;
 
     /*
      * Retention period in days.
      */
-    @JsonProperty(value = "RetentionInDays")
     private Integer retentionInDays;
 
     /*
      * Disable IP masking.
      */
-    @JsonProperty(value = "DisableIpMasking")
     private Boolean disableIpMasking;
 
     /*
      * Purge data immediately after 30 days.
      */
-    @JsonProperty(value = "ImmediatePurgeDataOn30Days")
     private Boolean immediatePurgeDataOn30Days;
 
     /*
      * List of linked private link scope resources.
      */
-    @JsonProperty(value = "PrivateLinkScopedResources", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateLinkScopedResource> privateLinkScopedResources;
 
     /*
      * The network access type for accessing Application Insights ingestion.
      */
-    @JsonProperty(value = "publicNetworkAccessForIngestion")
     private PublicNetworkAccessType publicNetworkAccessForIngestion;
 
     /*
      * The network access type for accessing Application Insights query.
      */
-    @JsonProperty(value = "publicNetworkAccessForQuery")
     private PublicNetworkAccessType publicNetworkAccessForQuery;
 
     /*
      * Indicates the flow of the ingestion.
      */
-    @JsonProperty(value = "IngestionMode")
     private IngestionMode ingestionMode;
 
     /**
@@ -491,4 +477,108 @@ public final class ApplicationInsightsComponentProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ApplicationInsightsComponentProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("Application_Type",
+            this.applicationType == null ? null : this.applicationType.toString());
+        jsonWriter.writeStringField("Flow_Type", this.flowType == null ? null : this.flowType.toString());
+        jsonWriter.writeStringField("Request_Source",
+            this.requestSource == null ? null : this.requestSource.toString());
+        jsonWriter.writeStringField("HockeyAppId", this.hockeyAppId);
+        jsonWriter.writeNumberField("SamplingPercentage", this.samplingPercentage);
+        jsonWriter.writeNumberField("RetentionInDays", this.retentionInDays);
+        jsonWriter.writeBooleanField("DisableIpMasking", this.disableIpMasking);
+        jsonWriter.writeBooleanField("ImmediatePurgeDataOn30Days", this.immediatePurgeDataOn30Days);
+        jsonWriter.writeStringField("publicNetworkAccessForIngestion",
+            this.publicNetworkAccessForIngestion == null ? null : this.publicNetworkAccessForIngestion.toString());
+        jsonWriter.writeStringField("publicNetworkAccessForQuery",
+            this.publicNetworkAccessForQuery == null ? null : this.publicNetworkAccessForQuery.toString());
+        jsonWriter.writeStringField("IngestionMode", this.ingestionMode == null ? null : this.ingestionMode.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentProperties.
+     */
+    public static ApplicationInsightsComponentProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentProperties deserializedApplicationInsightsComponentProperties
+                = new ApplicationInsightsComponentProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("Application_Type".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.applicationType
+                        = ApplicationType.fromString(reader.getString());
+                } else if ("ApplicationId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.applicationId = reader.getString();
+                } else if ("AppId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.appId = reader.getString();
+                } else if ("Flow_Type".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.flowType
+                        = FlowType.fromString(reader.getString());
+                } else if ("Request_Source".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.requestSource
+                        = RequestSource.fromString(reader.getString());
+                } else if ("InstrumentationKey".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.instrumentationKey = reader.getString();
+                } else if ("CreationDate".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.creationDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("TenantId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.tenantId = reader.getString();
+                } else if ("HockeyAppId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.hockeyAppId = reader.getString();
+                } else if ("HockeyAppToken".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.hockeyAppToken = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.provisioningState = reader.getString();
+                } else if ("SamplingPercentage".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.samplingPercentage
+                        = reader.getNullable(JsonReader::getDouble);
+                } else if ("ConnectionString".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.connectionString = reader.getString();
+                } else if ("RetentionInDays".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.retentionInDays
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("DisableIpMasking".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.disableIpMasking
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("ImmediatePurgeDataOn30Days".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.immediatePurgeDataOn30Days
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("PrivateLinkScopedResources".equals(fieldName)) {
+                    List<PrivateLinkScopedResource> privateLinkScopedResources
+                        = reader.readArray(reader1 -> PrivateLinkScopedResource.fromJson(reader1));
+                    deserializedApplicationInsightsComponentProperties.privateLinkScopedResources
+                        = privateLinkScopedResources;
+                } else if ("publicNetworkAccessForIngestion".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.publicNetworkAccessForIngestion
+                        = PublicNetworkAccessType.fromString(reader.getString());
+                } else if ("publicNetworkAccessForQuery".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.publicNetworkAccessForQuery
+                        = PublicNetworkAccessType.fromString(reader.getString());
+                } else if ("IngestionMode".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProperties.ingestionMode
+                        = IngestionMode.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentProperties;
+        });
+    }
 }

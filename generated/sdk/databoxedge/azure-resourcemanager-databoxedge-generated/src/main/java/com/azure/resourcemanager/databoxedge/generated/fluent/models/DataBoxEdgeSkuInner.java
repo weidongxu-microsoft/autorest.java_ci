@@ -5,6 +5,10 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ShipmentType;
 import com.azure.resourcemanager.databoxedge.generated.models.SkuAvailability;
 import com.azure.resourcemanager.databoxedge.generated.models.SkuCapability;
@@ -14,102 +18,87 @@ import com.azure.resourcemanager.databoxedge.generated.models.SkuName;
 import com.azure.resourcemanager.databoxedge.generated.models.SkuSignupOption;
 import com.azure.resourcemanager.databoxedge.generated.models.SkuTier;
 import com.azure.resourcemanager.databoxedge.generated.models.SkuVersion;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The Sku information.
  */
 @Immutable
-public final class DataBoxEdgeSkuInner {
+public final class DataBoxEdgeSkuInner implements JsonSerializable<DataBoxEdgeSkuInner> {
     /*
      * The type of the resource.
      */
-    @JsonProperty(value = "resourceType", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceType;
 
     /*
      * The Sku name.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private SkuName name;
 
     /*
      * The Sku kind.
      */
-    @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private String kind;
 
     /*
      * The Sku tier.
      */
-    @JsonProperty(value = "tier", access = JsonProperty.Access.WRITE_ONLY)
     private SkuTier tier;
 
     /*
      * The Sku kind.
      */
-    @JsonProperty(value = "size", access = JsonProperty.Access.WRITE_ONLY)
     private String size;
 
     /*
      * The Sku family.
      */
-    @JsonProperty(value = "family", access = JsonProperty.Access.WRITE_ONLY)
     private String family;
 
     /*
      * Availability of the Sku for the region.
      */
-    @JsonProperty(value = "locations", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> locations;
 
     /*
      * The API versions in which Sku is available.
      */
-    @JsonProperty(value = "apiVersions", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> apiVersions;
 
     /*
      * Availability of the Sku for the location/zone/site.
      */
-    @JsonProperty(value = "locationInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuLocationInfo> locationInfo;
 
     /*
      * The pricing info of the Sku.
      */
-    @JsonProperty(value = "costs", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuCost> costs;
 
     /*
      * Sku can be signed up by customer or not.
      */
-    @JsonProperty(value = "signupOption", access = JsonProperty.Access.WRITE_ONLY)
     private SkuSignupOption signupOption;
 
     /*
      * Availability of the Sku as preview/stable.
      */
-    @JsonProperty(value = "version", access = JsonProperty.Access.WRITE_ONLY)
     private SkuVersion version;
 
     /*
      * Links to the next set of results
      */
-    @JsonProperty(value = "availability", access = JsonProperty.Access.WRITE_ONLY)
     private SkuAvailability availability;
 
     /*
      * List of Shipment Types supported by this SKU
      */
-    @JsonProperty(value = "shipmentTypes", access = JsonProperty.Access.WRITE_ONLY)
     private List<ShipmentType> shipmentTypes;
 
     /*
      * The capability info of the SKU.
      */
-    @JsonProperty(value = "capabilities", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuCapability> capabilities;
 
     /**
@@ -268,5 +257,75 @@ public final class DataBoxEdgeSkuInner {
         if (capabilities() != null) {
             capabilities().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeSkuInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeSkuInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeSkuInner.
+     */
+    public static DataBoxEdgeSkuInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeSkuInner deserializedDataBoxEdgeSkuInner = new DataBoxEdgeSkuInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("resourceType".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.resourceType = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.name = SkuName.fromString(reader.getString());
+                } else if ("kind".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.kind = reader.getString();
+                } else if ("tier".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.tier = SkuTier.fromString(reader.getString());
+                } else if ("size".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.size = reader.getString();
+                } else if ("family".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.family = reader.getString();
+                } else if ("locations".equals(fieldName)) {
+                    List<String> locations = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDataBoxEdgeSkuInner.locations = locations;
+                } else if ("apiVersions".equals(fieldName)) {
+                    List<String> apiVersions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDataBoxEdgeSkuInner.apiVersions = apiVersions;
+                } else if ("locationInfo".equals(fieldName)) {
+                    List<SkuLocationInfo> locationInfo = reader.readArray(reader1 -> SkuLocationInfo.fromJson(reader1));
+                    deserializedDataBoxEdgeSkuInner.locationInfo = locationInfo;
+                } else if ("costs".equals(fieldName)) {
+                    List<SkuCost> costs = reader.readArray(reader1 -> SkuCost.fromJson(reader1));
+                    deserializedDataBoxEdgeSkuInner.costs = costs;
+                } else if ("signupOption".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.signupOption = SkuSignupOption.fromString(reader.getString());
+                } else if ("version".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.version = SkuVersion.fromString(reader.getString());
+                } else if ("availability".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuInner.availability = SkuAvailability.fromString(reader.getString());
+                } else if ("shipmentTypes".equals(fieldName)) {
+                    List<ShipmentType> shipmentTypes
+                        = reader.readArray(reader1 -> ShipmentType.fromString(reader1.getString()));
+                    deserializedDataBoxEdgeSkuInner.shipmentTypes = shipmentTypes;
+                } else if ("capabilities".equals(fieldName)) {
+                    List<SkuCapability> capabilities = reader.readArray(reader1 -> SkuCapability.fromJson(reader1));
+                    deserializedDataBoxEdgeSkuInner.capabilities = capabilities;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeSkuInner;
+        });
     }
 }

@@ -5,9 +5,12 @@
 package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
 import com.azure.resourcemanager.frontdoor.generated.models.LoadBalancingSettingsUpdateParameters;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The JSON object that contains the properties required to create load balancing settings.
@@ -17,7 +20,6 @@ public final class LoadBalancingSettingsProperties extends LoadBalancingSettings
     /*
      * Resource status.
      */
-    @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
     /**
@@ -70,5 +72,53 @@ public final class LoadBalancingSettingsProperties extends LoadBalancingSettings
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("sampleSize", sampleSize());
+        jsonWriter.writeNumberField("successfulSamplesRequired", successfulSamplesRequired());
+        jsonWriter.writeNumberField("additionalLatencyMilliseconds", additionalLatencyMilliseconds());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LoadBalancingSettingsProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LoadBalancingSettingsProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LoadBalancingSettingsProperties.
+     */
+    public static LoadBalancingSettingsProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LoadBalancingSettingsProperties deserializedLoadBalancingSettingsProperties
+                = new LoadBalancingSettingsProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sampleSize".equals(fieldName)) {
+                    deserializedLoadBalancingSettingsProperties.withSampleSize(reader.getNullable(JsonReader::getInt));
+                } else if ("successfulSamplesRequired".equals(fieldName)) {
+                    deserializedLoadBalancingSettingsProperties
+                        .withSuccessfulSamplesRequired(reader.getNullable(JsonReader::getInt));
+                } else if ("additionalLatencyMilliseconds".equals(fieldName)) {
+                    deserializedLoadBalancingSettingsProperties
+                        .withAdditionalLatencyMilliseconds(reader.getNullable(JsonReader::getInt));
+                } else if ("resourceState".equals(fieldName)) {
+                    deserializedLoadBalancingSettingsProperties.resourceState
+                        = FrontDoorResourceState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLoadBalancingSettingsProperties;
+        });
     }
 }

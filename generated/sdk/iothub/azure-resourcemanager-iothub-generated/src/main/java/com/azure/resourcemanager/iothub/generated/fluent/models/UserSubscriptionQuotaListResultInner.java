@@ -5,25 +5,28 @@
 package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.UserSubscriptionQuota;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Json-serialized array of User subscription quota response.
  */
 @Fluent
-public final class UserSubscriptionQuotaListResultInner {
+public final class UserSubscriptionQuotaListResultInner
+    implements JsonSerializable<UserSubscriptionQuotaListResultInner> {
     /*
      * The value property.
      */
-    @JsonProperty(value = "value")
     private List<UserSubscriptionQuota> value;
 
     /*
      * The nextLink property.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -70,5 +73,46 @@ public final class UserSubscriptionQuotaListResultInner {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of UserSubscriptionQuotaListResultInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of UserSubscriptionQuotaListResultInner if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the UserSubscriptionQuotaListResultInner.
+     */
+    public static UserSubscriptionQuotaListResultInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            UserSubscriptionQuotaListResultInner deserializedUserSubscriptionQuotaListResultInner
+                = new UserSubscriptionQuotaListResultInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<UserSubscriptionQuota> value
+                        = reader.readArray(reader1 -> UserSubscriptionQuota.fromJson(reader1));
+                    deserializedUserSubscriptionQuotaListResultInner.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedUserSubscriptionQuotaListResultInner.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUserSubscriptionQuotaListResultInner;
+        });
     }
 }

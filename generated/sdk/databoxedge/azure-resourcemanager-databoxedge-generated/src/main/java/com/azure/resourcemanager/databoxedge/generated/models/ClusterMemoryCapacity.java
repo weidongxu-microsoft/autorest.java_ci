@@ -5,65 +5,60 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * NodeCapacityInfo defines the required information to determine the placement of a VM.
  */
 @Fluent
-public final class ClusterMemoryCapacity {
+public final class ClusterMemoryCapacity implements JsonSerializable<ClusterMemoryCapacity> {
     /*
      * The free memory in the cluster in MB.
      */
-    @JsonProperty(value = "clusterFreeMemoryMb")
     private Double clusterFreeMemoryMb;
 
     /*
      * The used memory in the cluster in MB.
      */
-    @JsonProperty(value = "clusterUsedMemoryMb")
     private Double clusterUsedMemoryMb;
 
     /*
      * The failover memory in the cluster in MB.
      */
-    @JsonProperty(value = "clusterFailoverMemoryMb")
     private Double clusterFailoverMemoryMb;
 
     /*
      * The fragmentation memory in the cluster in MB.
      */
-    @JsonProperty(value = "clusterFragmentationMemoryMb")
     private Double clusterFragmentationMemoryMb;
 
     /*
      * The memory reserved for Hyper-V in the cluster in MB.
      */
-    @JsonProperty(value = "clusterHypervReserveMemoryMb")
     private Double clusterHypervReserveMemoryMb;
 
     /*
      * The memory of the Infra VM in the cluster in MB.
      */
-    @JsonProperty(value = "clusterInfraVmMemoryMb")
     private Double clusterInfraVmMemoryMb;
 
     /*
      * The total memory in the cluster in MB.
      */
-    @JsonProperty(value = "clusterTotalMemoryMb")
     private Double clusterTotalMemoryMb;
 
     /*
      * The non-failover memory in the cluster in MB.
      */
-    @JsonProperty(value = "clusterNonFailoverVmMb")
     private Double clusterNonFailoverVmMb;
 
     /*
      * The memory used by VMs in the cluster in MB.
      */
-    @JsonProperty(value = "clusterMemoryUsedByVmsMb")
     private Double clusterMemoryUsedByVmsMb;
 
     /**
@@ -258,5 +253,71 @@ public final class ClusterMemoryCapacity {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("clusterFreeMemoryMb", this.clusterFreeMemoryMb);
+        jsonWriter.writeNumberField("clusterUsedMemoryMb", this.clusterUsedMemoryMb);
+        jsonWriter.writeNumberField("clusterFailoverMemoryMb", this.clusterFailoverMemoryMb);
+        jsonWriter.writeNumberField("clusterFragmentationMemoryMb", this.clusterFragmentationMemoryMb);
+        jsonWriter.writeNumberField("clusterHypervReserveMemoryMb", this.clusterHypervReserveMemoryMb);
+        jsonWriter.writeNumberField("clusterInfraVmMemoryMb", this.clusterInfraVmMemoryMb);
+        jsonWriter.writeNumberField("clusterTotalMemoryMb", this.clusterTotalMemoryMb);
+        jsonWriter.writeNumberField("clusterNonFailoverVmMb", this.clusterNonFailoverVmMb);
+        jsonWriter.writeNumberField("clusterMemoryUsedByVmsMb", this.clusterMemoryUsedByVmsMb);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClusterMemoryCapacity from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClusterMemoryCapacity if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ClusterMemoryCapacity.
+     */
+    public static ClusterMemoryCapacity fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClusterMemoryCapacity deserializedClusterMemoryCapacity = new ClusterMemoryCapacity();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("clusterFreeMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterFreeMemoryMb = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterUsedMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterUsedMemoryMb = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterFailoverMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterFailoverMemoryMb
+                        = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterFragmentationMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterFragmentationMemoryMb
+                        = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterHypervReserveMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterHypervReserveMemoryMb
+                        = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterInfraVmMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterInfraVmMemoryMb
+                        = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterTotalMemoryMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterTotalMemoryMb = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterNonFailoverVmMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterNonFailoverVmMb
+                        = reader.getNullable(JsonReader::getDouble);
+                } else if ("clusterMemoryUsedByVmsMb".equals(fieldName)) {
+                    deserializedClusterMemoryCapacity.clusterMemoryUsedByVmsMb
+                        = reader.getNullable(JsonReader::getDouble);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClusterMemoryCapacity;
+        });
     }
 }

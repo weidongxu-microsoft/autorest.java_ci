@@ -5,33 +5,32 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeDevicePropertiesPatch;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * The Data Box Edge/Gateway device patch.
  */
 @Fluent
-public final class DataBoxEdgeDevicePatch {
+public final class DataBoxEdgeDevicePatch implements JsonSerializable<DataBoxEdgeDevicePatch> {
     /*
      * The tags attached to the Data Box Edge/Gateway resource.
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * Msi identity of the resource
      */
-    @JsonProperty(value = "identity")
     private ResourceIdentity identity;
 
     /*
      * The properties associated with the Data Box Edge/Gateway resource
      */
-    @JsonProperty(value = "properties")
     private DataBoxEdgeDevicePropertiesPatch innerProperties;
 
     /**
@@ -124,5 +123,49 @@ public final class DataBoxEdgeDevicePatch {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("identity", this.identity);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDevicePatch from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDevicePatch if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDevicePatch.
+     */
+    public static DataBoxEdgeDevicePatch fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDevicePatch deserializedDataBoxEdgeDevicePatch = new DataBoxEdgeDevicePatch();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedDataBoxEdgeDevicePatch.tags = tags;
+                } else if ("identity".equals(fieldName)) {
+                    deserializedDataBoxEdgeDevicePatch.identity = ResourceIdentity.fromJson(reader);
+                } else if ("properties".equals(fieldName)) {
+                    deserializedDataBoxEdgeDevicePatch.innerProperties
+                        = DataBoxEdgeDevicePropertiesPatch.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDevicePatch;
+        });
     }
 }

@@ -6,36 +6,36 @@ package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.hdinsight.generated.fluent.models.IpConfigurationProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The ip configurations for the private link service.
  */
 @Fluent
-public final class IpConfiguration {
+public final class IpConfiguration implements JsonSerializable<IpConfiguration> {
     /*
      * The private link IP configuration id.
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * The name of private link IP configuration.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The type of the private link IP configuration.
      */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
     /*
      * The private link ip configuration properties.
      */
-    @JsonProperty(value = "properties")
     private IpConfigurationProperties innerProperties;
 
     /**
@@ -209,4 +209,48 @@ public final class IpConfiguration {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IpConfiguration.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IpConfiguration from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IpConfiguration if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IpConfiguration.
+     */
+    public static IpConfiguration fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IpConfiguration deserializedIpConfiguration = new IpConfiguration();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedIpConfiguration.name = reader.getString();
+                } else if ("id".equals(fieldName)) {
+                    deserializedIpConfiguration.id = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedIpConfiguration.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedIpConfiguration.innerProperties = IpConfigurationProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIpConfiguration;
+        });
+    }
 }

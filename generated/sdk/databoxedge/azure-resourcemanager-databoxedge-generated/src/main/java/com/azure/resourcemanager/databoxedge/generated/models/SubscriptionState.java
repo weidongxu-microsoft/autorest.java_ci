@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -52,7 +51,6 @@ public final class SubscriptionState extends ExpandableStringEnum<SubscriptionSt
      * @param name a name to look for.
      * @return the corresponding SubscriptionState.
      */
-    @JsonCreator
     public static SubscriptionState fromString(String name) {
         return fromString(name, SubscriptionState.class);
     }

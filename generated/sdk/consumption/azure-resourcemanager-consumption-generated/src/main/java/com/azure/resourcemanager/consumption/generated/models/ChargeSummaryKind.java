@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ChargeSummaryKind extends ExpandableStringEnum<ChargeSummaryK
      * @param name a name to look for.
      * @return the corresponding ChargeSummaryKind.
      */
-    @JsonCreator
     public static ChargeSummaryKind fromString(String name) {
         return fromString(name, ChargeSummaryKind.class);
     }

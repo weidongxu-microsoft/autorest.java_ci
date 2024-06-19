@@ -5,23 +5,26 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The request spec of checking name availability.
  */
 @Fluent
-public final class NameAvailabilityCheckRequestParameters {
+public final class NameAvailabilityCheckRequestParameters
+    implements JsonSerializable<NameAvailabilityCheckRequestParameters> {
     /*
      * The resource name.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The resource type
      */
-    @JsonProperty(value = "type")
     private String type;
 
     /**
@@ -76,5 +79,45 @@ public final class NameAvailabilityCheckRequestParameters {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("type", this.type);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NameAvailabilityCheckRequestParameters from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NameAvailabilityCheckRequestParameters if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NameAvailabilityCheckRequestParameters.
+     */
+    public static NameAvailabilityCheckRequestParameters fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NameAvailabilityCheckRequestParameters deserializedNameAvailabilityCheckRequestParameters
+                = new NameAvailabilityCheckRequestParameters();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedNameAvailabilityCheckRequestParameters.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedNameAvailabilityCheckRequestParameters.type = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNameAvailabilityCheckRequestParameters;
+        });
     }
 }

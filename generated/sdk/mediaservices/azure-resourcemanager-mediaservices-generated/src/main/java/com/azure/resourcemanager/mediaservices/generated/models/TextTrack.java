@@ -5,42 +5,35 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Represents a text track in an asset. A text track is usually used for sparse data related to the audio or video
  * tracks.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = TextTrack.class, visible = true)
-@JsonTypeName("#Microsoft.Media.TextTrack")
 @Fluent
 public final class TextTrack extends TrackBase {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.TextTrack";
 
     /*
      * The file name to the source file. This file is located in the storage container of the asset.
      */
-    @JsonProperty(value = "fileName")
     private String fileName;
 
     /*
      * The display name of the text track on a video player. In HLS, this maps to the NAME attribute of EXT-X-MEDIA.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * The RFC5646 language code for the text track.
      */
-    @JsonProperty(value = "languageCode", access = JsonProperty.Access.WRITE_ONLY)
     private String languageCode;
 
     /*
@@ -48,13 +41,11 @@ public final class TextTrack extends TrackBase {
      * when requested by a client. When the PlayerVisibility is set to "Hidden", the text will not be available to the
      * client. The default value is "Visible".
      */
-    @JsonProperty(value = "playerVisibility")
     private Visibility playerVisibility;
 
     /*
      * The HLS specific setting for the text track.
      */
-    @JsonProperty(value = "hlsSettings")
     private HlsSettings hlsSettings;
 
     /**
@@ -181,5 +172,56 @@ public final class TextTrack extends TrackBase {
         if (hlsSettings() != null) {
             hlsSettings().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeStringField("fileName", this.fileName);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("playerVisibility",
+            this.playerVisibility == null ? null : this.playerVisibility.toString());
+        jsonWriter.writeJsonField("hlsSettings", this.hlsSettings);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of TextTrack from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of TextTrack if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the TextTrack.
+     */
+    public static TextTrack fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            TextTrack deserializedTextTrack = new TextTrack();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedTextTrack.odataType = reader.getString();
+                } else if ("fileName".equals(fieldName)) {
+                    deserializedTextTrack.fileName = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedTextTrack.displayName = reader.getString();
+                } else if ("languageCode".equals(fieldName)) {
+                    deserializedTextTrack.languageCode = reader.getString();
+                } else if ("playerVisibility".equals(fieldName)) {
+                    deserializedTextTrack.playerVisibility = Visibility.fromString(reader.getString());
+                } else if ("hlsSettings".equals(fieldName)) {
+                    deserializedTextTrack.hlsSettings = HlsSettings.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedTextTrack;
+        });
     }
 }

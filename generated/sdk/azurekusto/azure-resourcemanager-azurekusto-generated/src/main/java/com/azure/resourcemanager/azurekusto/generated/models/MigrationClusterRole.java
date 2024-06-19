@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class MigrationClusterRole extends ExpandableStringEnum<MigrationCl
      * @param name a name to look for.
      * @return the corresponding MigrationClusterRole.
      */
-    @JsonCreator
     public static MigrationClusterRole fromString(String name) {
         return fromString(name, MigrationClusterRole.class);
     }

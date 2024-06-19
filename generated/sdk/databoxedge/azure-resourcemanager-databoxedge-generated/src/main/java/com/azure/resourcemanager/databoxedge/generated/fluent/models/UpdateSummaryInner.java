@@ -6,12 +6,15 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.InstallRebootBehavior;
 import com.azure.resourcemanager.databoxedge.generated.models.JobStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.UpdateOperation;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -23,14 +26,27 @@ public final class UpdateSummaryInner extends ArmBaseModel {
     /*
      * The device update information summary.
      */
-    @JsonProperty(value = "properties")
     private UpdateSummaryProperties innerProperties;
 
     /*
      * Metadata pertaining to creation and last modification of UpdateSummary
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of UpdateSummaryInner class.
@@ -54,6 +70,36 @@ public final class UpdateSummaryInner extends ArmBaseModel {
      */
     public SystemData systemData() {
         return this.systemData;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -387,5 +433,50 @@ public final class UpdateSummaryInner extends ArmBaseModel {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of UpdateSummaryInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of UpdateSummaryInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the UpdateSummaryInner.
+     */
+    public static UpdateSummaryInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            UpdateSummaryInner deserializedUpdateSummaryInner = new UpdateSummaryInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedUpdateSummaryInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedUpdateSummaryInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedUpdateSummaryInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedUpdateSummaryInner.innerProperties = UpdateSummaryProperties.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedUpdateSummaryInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUpdateSummaryInner;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -43,7 +42,6 @@ public final class ContentKeyPolicyPlayReadyLicenseType
      * @param name a name to look for.
      * @return the corresponding ContentKeyPolicyPlayReadyLicenseType.
      */
-    @JsonCreator
     public static ContentKeyPolicyPlayReadyLicenseType fromString(String name) {
         return fromString(name, ContentKeyPolicyPlayReadyLicenseType.class);
     }

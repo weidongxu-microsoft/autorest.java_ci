@@ -6,49 +6,47 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The CacheItem model.
  */
 @Fluent
-public final class CacheItem {
+public final class CacheItem implements JsonSerializable<CacheItem> {
     /*
      * Resource ID used by Resource Manager to uniquely identify the scope.
      */
-    @JsonProperty(value = "id", required = true)
     private String id;
 
     /*
      * Display name for the scope.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * Indicates the account type. Allowed values include: EA, PAYG, Modern, Internal, Unknown.
      */
-    @JsonProperty(value = "channel", required = true)
     private String channel;
 
     /*
      * Indicates the type of modern account. Allowed values include: Individual, Enterprise, Partner, Indirect,
      * NotApplicable
      */
-    @JsonProperty(value = "subchannel", required = true)
     private String subchannel;
 
     /*
      * Resource ID of the parent scope. For instance, subscription's resource ID for a resource group or a management
      * group resource ID for a subscription.
      */
-    @JsonProperty(value = "parent")
     private String parent;
 
     /*
      * Indicates the status of the scope. Status only applies to subscriptions and billing accounts.
      */
-    @JsonProperty(value = "status")
     private String status;
 
     /**
@@ -209,4 +207,56 @@ public final class CacheItem {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(CacheItem.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("channel", this.channel);
+        jsonWriter.writeStringField("subchannel", this.subchannel);
+        jsonWriter.writeStringField("parent", this.parent);
+        jsonWriter.writeStringField("status", this.status);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CacheItem from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CacheItem if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the CacheItem.
+     */
+    public static CacheItem fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CacheItem deserializedCacheItem = new CacheItem();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedCacheItem.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedCacheItem.name = reader.getString();
+                } else if ("channel".equals(fieldName)) {
+                    deserializedCacheItem.channel = reader.getString();
+                } else if ("subchannel".equals(fieldName)) {
+                    deserializedCacheItem.subchannel = reader.getString();
+                } else if ("parent".equals(fieldName)) {
+                    deserializedCacheItem.parent = reader.getString();
+                } else if ("status".equals(fieldName)) {
+                    deserializedCacheItem.status = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCacheItem;
+        });
+    }
 }

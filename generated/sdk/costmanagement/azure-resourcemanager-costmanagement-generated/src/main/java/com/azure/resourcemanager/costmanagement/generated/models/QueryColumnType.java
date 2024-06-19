@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class QueryColumnType extends ExpandableStringEnum<QueryColumnType>
      * @param name a name to look for.
      * @return the corresponding QueryColumnType.
      */
-    @JsonCreator
     public static QueryColumnType fromString(String name) {
         return fromString(name, QueryColumnType.class);
     }

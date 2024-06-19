@@ -7,6 +7,9 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceKind;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceStatus;
@@ -17,8 +20,7 @@ import com.azure.resourcemanager.databoxedge.generated.models.ResourceIdentity;
 import com.azure.resourcemanager.databoxedge.generated.models.ResourceMoveDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
 import com.azure.resourcemanager.databoxedge.generated.models.Sku;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -32,52 +34,58 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
      * East US, or Southeast Asia). The geographical region of a device cannot be changed once it is created, but if an
      * identical geographical region is specified on update, the request will succeed.
      */
-    @JsonProperty(value = "location", required = true)
     private String location;
 
     /*
      * The list of tags that describe the device. These tags can be used to view and group this device (across resource
      * groups).
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * The SKU type.
      */
-    @JsonProperty(value = "sku")
     private Sku sku;
 
     /*
      * The etag for the devices.
      */
-    @JsonProperty(value = "etag")
     private String etag;
 
     /*
      * Msi identity of the resource
      */
-    @JsonProperty(value = "identity")
     private ResourceIdentity identity;
 
     /*
      * The kind of the device.
      */
-    @JsonProperty(value = "kind", access = JsonProperty.Access.WRITE_ONLY)
     private DataBoxEdgeDeviceKind kind;
 
     /*
      * DataBoxEdge Resource
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /*
      * The properties of the Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "properties")
     private DataBoxEdgeDeviceProperties innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of DataBoxEdgeDeviceInner class.
@@ -216,6 +224,36 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
      */
     private DataBoxEdgeDeviceProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -428,4 +466,67 @@ public final class DataBoxEdgeDeviceInner extends ArmBaseModel {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DataBoxEdgeDeviceInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", this.location);
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeStringField("etag", this.etag);
+        jsonWriter.writeJsonField("identity", this.identity);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDeviceInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDeviceInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDeviceInner.
+     */
+    public static DataBoxEdgeDeviceInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDeviceInner deserializedDataBoxEdgeDeviceInner = new DataBoxEdgeDeviceInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.type = reader.getString();
+                } else if ("location".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.location = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedDataBoxEdgeDeviceInner.tags = tags;
+                } else if ("sku".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.sku = Sku.fromJson(reader);
+                } else if ("etag".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.etag = reader.getString();
+                } else if ("identity".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.identity = ResourceIdentity.fromJson(reader);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.kind = DataBoxEdgeDeviceKind.fromString(reader.getString());
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.systemData = SystemData.fromJson(reader);
+                } else if ("properties".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceInner.innerProperties = DataBoxEdgeDeviceProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDeviceInner;
+        });
+    }
 }

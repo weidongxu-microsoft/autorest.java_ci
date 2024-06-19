@@ -5,48 +5,48 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Annotation associated with an application insights resource.
  */
 @Fluent
-public final class AnnotationInner {
+public final class AnnotationInner implements JsonSerializable<AnnotationInner> {
     /*
      * Name of annotation
      */
-    @JsonProperty(value = "AnnotationName")
     private String annotationName;
 
     /*
      * Category of annotation, free form
      */
-    @JsonProperty(value = "Category")
     private String category;
 
     /*
      * Time when event occurred
      */
-    @JsonProperty(value = "EventTime")
     private OffsetDateTime eventTime;
 
     /*
      * Unique Id for annotation
      */
-    @JsonProperty(value = "Id")
     private String id;
 
     /*
      * Serialized JSON object for detailed properties
      */
-    @JsonProperty(value = "Properties")
     private String properties;
 
     /*
      * Related parent annotation if any
      */
-    @JsonProperty(value = "RelatedAnnotation")
     private String relatedAnnotation;
 
     /**
@@ -181,5 +181,58 @@ public final class AnnotationInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("AnnotationName", this.annotationName);
+        jsonWriter.writeStringField("Category", this.category);
+        jsonWriter.writeStringField("EventTime",
+            this.eventTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.eventTime));
+        jsonWriter.writeStringField("Id", this.id);
+        jsonWriter.writeStringField("Properties", this.properties);
+        jsonWriter.writeStringField("RelatedAnnotation", this.relatedAnnotation);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AnnotationInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AnnotationInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AnnotationInner.
+     */
+    public static AnnotationInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AnnotationInner deserializedAnnotationInner = new AnnotationInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("AnnotationName".equals(fieldName)) {
+                    deserializedAnnotationInner.annotationName = reader.getString();
+                } else if ("Category".equals(fieldName)) {
+                    deserializedAnnotationInner.category = reader.getString();
+                } else if ("EventTime".equals(fieldName)) {
+                    deserializedAnnotationInner.eventTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("Id".equals(fieldName)) {
+                    deserializedAnnotationInner.id = reader.getString();
+                } else if ("Properties".equals(fieldName)) {
+                    deserializedAnnotationInner.properties = reader.getString();
+                } else if ("RelatedAnnotation".equals(fieldName)) {
+                    deserializedAnnotationInner.relatedAnnotation = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAnnotationInner;
+        });
     }
 }

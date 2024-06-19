@@ -5,44 +5,37 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * Describes all the properties of a JobOutput.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobOutput.class, visible = true)
-@JsonTypeName("JobOutput")
-@JsonSubTypes({ @JsonSubTypes.Type(name = "#Microsoft.Media.JobOutputAsset", value = JobOutputAsset.class) })
 @Fluent
-public class JobOutput {
+public class JobOutput implements JsonSerializable<JobOutput> {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "JobOutput";
 
     /*
      * If the JobOutput is in the Error state, it contains the details of the error.
      */
-    @JsonProperty(value = "error", access = JsonProperty.Access.WRITE_ONLY)
     private JobError error;
 
     /*
      * A preset used to override the preset in the corresponding transform output.
      */
-    @JsonProperty(value = "presetOverride")
     private Preset presetOverride;
 
     /*
      * Describes the state of the JobOutput.
      */
-    @JsonProperty(value = "state", access = JsonProperty.Access.WRITE_ONLY)
     private JobState state;
 
     /*
@@ -50,7 +43,6 @@ public class JobOutput {
      * and not intended to be used to predict Job completion times. To determine if the JobOutput is complete, use the
      * State property.
      */
-    @JsonProperty(value = "progress", access = JsonProperty.Access.WRITE_ONLY)
     private Integer progress;
 
     /*
@@ -63,19 +55,16 @@ public class JobOutput {
      * index is the relative index of the this JobOutput within the Job. Note that this index is the same as the
      * relative index of the corresponding TransformOutput within its Transform.
      */
-    @JsonProperty(value = "label")
     private String label;
 
     /*
      * The UTC date and time at which this Job Output began processing.
      */
-    @JsonProperty(value = "startTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime startTime;
 
     /*
      * The UTC date and time at which this Job Output finished processing.
      */
-    @JsonProperty(value = "endTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime endTime;
 
     /**
@@ -100,6 +89,17 @@ public class JobOutput {
      */
     public JobError error() {
         return this.error;
+    }
+
+    /**
+     * Set the error property: If the JobOutput is in the Error state, it contains the details of the error.
+     * 
+     * @param error the error value to set.
+     * @return the JobOutput object itself.
+     */
+    JobOutput withError(JobError error) {
+        this.error = error;
+        return this;
     }
 
     /**
@@ -132,6 +132,17 @@ public class JobOutput {
     }
 
     /**
+     * Set the state property: Describes the state of the JobOutput.
+     * 
+     * @param state the state value to set.
+     * @return the JobOutput object itself.
+     */
+    JobOutput withState(JobState state) {
+        this.state = state;
+        return this;
+    }
+
+    /**
      * Get the progress property: If the JobOutput is in a Processing state, this contains the Job completion
      * percentage. The value is an estimate and not intended to be used to predict Job completion times. To determine if
      * the JobOutput is complete, use the State property.
@@ -140,6 +151,19 @@ public class JobOutput {
      */
     public Integer progress() {
         return this.progress;
+    }
+
+    /**
+     * Set the progress property: If the JobOutput is in a Processing state, this contains the Job completion
+     * percentage. The value is an estimate and not intended to be used to predict Job completion times. To determine if
+     * the JobOutput is complete, use the State property.
+     * 
+     * @param progress the progress value to set.
+     * @return the JobOutput object itself.
+     */
+    JobOutput withProgress(Integer progress) {
+        this.progress = progress;
+        return this;
     }
 
     /**
@@ -186,12 +210,34 @@ public class JobOutput {
     }
 
     /**
+     * Set the startTime property: The UTC date and time at which this Job Output began processing.
+     * 
+     * @param startTime the startTime value to set.
+     * @return the JobOutput object itself.
+     */
+    JobOutput withStartTime(OffsetDateTime startTime) {
+        this.startTime = startTime;
+        return this;
+    }
+
+    /**
      * Get the endTime property: The UTC date and time at which this Job Output finished processing.
      * 
      * @return the endTime value.
      */
     public OffsetDateTime endTime() {
         return this.endTime;
+    }
+
+    /**
+     * Set the endTime property: The UTC date and time at which this Job Output finished processing.
+     * 
+     * @param endTime the endTime value to set.
+     * @return the JobOutput object itself.
+     */
+    JobOutput withEndTime(OffsetDateTime endTime) {
+        this.endTime = endTime;
+        return this;
     }
 
     /**
@@ -206,5 +252,84 @@ public class JobOutput {
         if (presetOverride() != null) {
             presetOverride().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeJsonField("presetOverride", this.presetOverride);
+        jsonWriter.writeStringField("label", this.label);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobOutput from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobOutput if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the JobOutput.
+     */
+    public static JobOutput fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("@odata.type".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("#Microsoft.Media.JobOutputAsset".equals(discriminatorValue)) {
+                    return JobOutputAsset.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static JobOutput fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobOutput deserializedJobOutput = new JobOutput();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedJobOutput.odataType = reader.getString();
+                } else if ("error".equals(fieldName)) {
+                    deserializedJobOutput.error = JobError.fromJson(reader);
+                } else if ("presetOverride".equals(fieldName)) {
+                    deserializedJobOutput.presetOverride = Preset.fromJson(reader);
+                } else if ("state".equals(fieldName)) {
+                    deserializedJobOutput.state = JobState.fromString(reader.getString());
+                } else if ("progress".equals(fieldName)) {
+                    deserializedJobOutput.progress = reader.getNullable(JsonReader::getInt);
+                } else if ("label".equals(fieldName)) {
+                    deserializedJobOutput.label = reader.getString();
+                } else if ("startTime".equals(fieldName)) {
+                    deserializedJobOutput.startTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("endTime".equals(fieldName)) {
+                    deserializedJobOutput.endTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobOutput;
+        });
     }
 }

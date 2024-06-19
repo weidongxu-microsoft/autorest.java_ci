@@ -6,6 +6,10 @@ package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.BudgetFilter;
 import com.azure.resourcemanager.consumption.generated.models.BudgetTimePeriod;
 import com.azure.resourcemanager.consumption.generated.models.CategoryType;
@@ -13,8 +17,7 @@ import com.azure.resourcemanager.consumption.generated.models.CurrentSpend;
 import com.azure.resourcemanager.consumption.generated.models.ForecastSpend;
 import com.azure.resourcemanager.consumption.generated.models.Notification;
 import com.azure.resourcemanager.consumption.generated.models.TimeGrainType;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.Map;
 
@@ -22,24 +25,21 @@ import java.util.Map;
  * The properties of the budget.
  */
 @Fluent
-public final class BudgetProperties {
+public final class BudgetProperties implements JsonSerializable<BudgetProperties> {
     /*
      * The category of the budget, whether the budget tracks cost or usage.
      */
-    @JsonProperty(value = "category", required = true)
     private CategoryType category;
 
     /*
      * The total amount of cost to track with the budget
      */
-    @JsonProperty(value = "amount", required = true)
     private BigDecimal amount;
 
     /*
      * The time covered by a budget. Tracking of the amount will be reset based on the time grain. BillingMonth,
      * BillingQuarter, and BillingAnnual are only supported by WD customers
      */
-    @JsonProperty(value = "timeGrain", required = true)
     private TimeGrainType timeGrain;
 
     /*
@@ -48,32 +48,26 @@ public final class BudgetProperties {
      * months. Past start date should be selected within the timegrain period. There are no restrictions on the end
      * date.
      */
-    @JsonProperty(value = "timePeriod", required = true)
     private BudgetTimePeriod timePeriod;
 
     /*
      * May be used to filter budgets by user-specified dimensions and/or tags.
      */
-    @JsonProperty(value = "filter")
     private BudgetFilter filter;
 
     /*
      * The current amount of cost which is being tracked for a budget.
      */
-    @JsonProperty(value = "currentSpend", access = JsonProperty.Access.WRITE_ONLY)
     private CurrentSpend currentSpend;
 
     /*
      * Dictionary of notifications associated with the budget. Budget can have up to five notifications.
      */
-    @JsonProperty(value = "notifications")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Notification> notifications;
 
     /*
      * The forecasted cost which is being tracked for a budget.
      */
-    @JsonProperty(value = "forecastSpend", access = JsonProperty.Access.WRITE_ONLY)
     private ForecastSpend forecastSpend;
 
     /**
@@ -273,4 +267,62 @@ public final class BudgetProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(BudgetProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("category", this.category == null ? null : this.category.toString());
+        jsonWriter.writeNumberField("amount", this.amount);
+        jsonWriter.writeStringField("timeGrain", this.timeGrain == null ? null : this.timeGrain.toString());
+        jsonWriter.writeJsonField("timePeriod", this.timePeriod);
+        jsonWriter.writeJsonField("filter", this.filter);
+        jsonWriter.writeMapField("notifications", this.notifications, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of BudgetProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of BudgetProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the BudgetProperties.
+     */
+    public static BudgetProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            BudgetProperties deserializedBudgetProperties = new BudgetProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("category".equals(fieldName)) {
+                    deserializedBudgetProperties.category = CategoryType.fromString(reader.getString());
+                } else if ("amount".equals(fieldName)) {
+                    deserializedBudgetProperties.amount
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("timeGrain".equals(fieldName)) {
+                    deserializedBudgetProperties.timeGrain = TimeGrainType.fromString(reader.getString());
+                } else if ("timePeriod".equals(fieldName)) {
+                    deserializedBudgetProperties.timePeriod = BudgetTimePeriod.fromJson(reader);
+                } else if ("filter".equals(fieldName)) {
+                    deserializedBudgetProperties.filter = BudgetFilter.fromJson(reader);
+                } else if ("currentSpend".equals(fieldName)) {
+                    deserializedBudgetProperties.currentSpend = CurrentSpend.fromJson(reader);
+                } else if ("notifications".equals(fieldName)) {
+                    Map<String, Notification> notifications = reader.readMap(reader1 -> Notification.fromJson(reader1));
+                    deserializedBudgetProperties.notifications = notifications;
+                } else if ("forecastSpend".equals(fieldName)) {
+                    deserializedBudgetProperties.forecastSpend = ForecastSpend.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedBudgetProperties;
+        });
+    }
 }

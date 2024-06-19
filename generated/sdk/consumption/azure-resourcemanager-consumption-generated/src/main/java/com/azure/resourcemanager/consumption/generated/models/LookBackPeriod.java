@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class LookBackPeriod extends ExpandableStringEnum<LookBackPeriod> {
      * @param name a name to look for.
      * @return the corresponding LookBackPeriod.
      */
-    @JsonCreator
     public static LookBackPeriod fromString(String name) {
         return fromString(name, LookBackPeriod.class);
     }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class SkuNameEnum extends ExpandableStringEnum<SkuNameEnum> {
      * @param name a name to look for.
      * @return the corresponding SkuNameEnum.
      */
-    @JsonCreator
     public static SkuNameEnum fromString(String name) {
         return fromString(name, SkuNameEnum.class);
     }

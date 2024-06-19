@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Configure disk config assessment for databases in your SQL virtual machine.
  */
 @Fluent
-public final class DiskConfigAssessmentRequest {
+public final class DiskConfigAssessmentRequest implements JsonSerializable<DiskConfigAssessmentRequest> {
     /*
      * Boolean to run disk config Assessment. Use false to fetch past Assessment.
      */
-    @JsonProperty(value = "runDiskConfigRules")
     private Boolean runDiskConfigRules;
 
     /**
@@ -50,5 +53,42 @@ public final class DiskConfigAssessmentRequest {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("runDiskConfigRules", this.runDiskConfigRules);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DiskConfigAssessmentRequest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DiskConfigAssessmentRequest if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DiskConfigAssessmentRequest.
+     */
+    public static DiskConfigAssessmentRequest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DiskConfigAssessmentRequest deserializedDiskConfigAssessmentRequest = new DiskConfigAssessmentRequest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("runDiskConfigRules".equals(fieldName)) {
+                    deserializedDiskConfigAssessmentRequest.runDiskConfigRules
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDiskConfigAssessmentRequest;
+        });
     }
 }

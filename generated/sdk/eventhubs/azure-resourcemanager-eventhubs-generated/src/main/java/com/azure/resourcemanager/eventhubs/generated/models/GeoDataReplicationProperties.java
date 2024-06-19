@@ -5,26 +5,28 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * GeoDR Replication properties.
  */
 @Fluent
-public final class GeoDataReplicationProperties {
+public final class GeoDataReplicationProperties implements JsonSerializable<GeoDataReplicationProperties> {
     /*
      * The maximum acceptable lag for data replication operations from the primary replica to a quorum of secondary
      * replicas. When the lag exceeds the configured amount, operations on the primary replica will be failed. The
      * allowed values are 0 and 5 minutes to 1 day.
      */
-    @JsonProperty(value = "maxReplicationLagDurationInSeconds")
     private Integer maxReplicationLagDurationInSeconds;
 
     /*
      * A list of regions where replicas of the namespace are maintained.
      */
-    @JsonProperty(value = "locations")
     private List<NamespaceReplicaLocation> locations;
 
     /**
@@ -87,5 +89,47 @@ public final class GeoDataReplicationProperties {
         if (locations() != null) {
             locations().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("maxReplicationLagDurationInSeconds", this.maxReplicationLagDurationInSeconds);
+        jsonWriter.writeArrayField("locations", this.locations, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of GeoDataReplicationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of GeoDataReplicationProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the GeoDataReplicationProperties.
+     */
+    public static GeoDataReplicationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            GeoDataReplicationProperties deserializedGeoDataReplicationProperties = new GeoDataReplicationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("maxReplicationLagDurationInSeconds".equals(fieldName)) {
+                    deserializedGeoDataReplicationProperties.maxReplicationLagDurationInSeconds
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("locations".equals(fieldName)) {
+                    List<NamespaceReplicaLocation> locations
+                        = reader.readArray(reader1 -> NamespaceReplicaLocation.fromJson(reader1));
+                    deserializedGeoDataReplicationProperties.locations = locations;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedGeoDataReplicationProperties;
+        });
     }
 }

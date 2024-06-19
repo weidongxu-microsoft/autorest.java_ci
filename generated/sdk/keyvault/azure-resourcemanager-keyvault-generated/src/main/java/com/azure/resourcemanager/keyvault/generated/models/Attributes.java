@@ -5,7 +5,11 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Instant;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
@@ -14,35 +18,30 @@ import java.time.ZoneOffset;
  * The object attributes managed by the KeyVault service.
  */
 @Fluent
-public class Attributes {
+public class Attributes implements JsonSerializable<Attributes> {
     /*
      * Determines whether the object is enabled.
      */
-    @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
      * Not before date in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "nbf")
     private Long notBefore;
 
     /*
      * Expiry date in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "exp")
     private Long expires;
 
     /*
      * Creation time in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private Long created;
 
     /*
      * Last updated time in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "updated", access = JsonProperty.Access.WRITE_ONLY)
     private Long updated;
 
     /**
@@ -138,6 +137,21 @@ public class Attributes {
     }
 
     /**
+     * Set the created property: Creation time in seconds since 1970-01-01T00:00:00Z.
+     * 
+     * @param created the created value to set.
+     * @return the Attributes object itself.
+     */
+    Attributes withCreated(OffsetDateTime created) {
+        if (created == null) {
+            this.created = null;
+        } else {
+            this.created = created.toEpochSecond();
+        }
+        return this;
+    }
+
+    /**
      * Get the updated property: Last updated time in seconds since 1970-01-01T00:00:00Z.
      * 
      * @return the updated value.
@@ -150,10 +164,71 @@ public class Attributes {
     }
 
     /**
+     * Set the updated property: Last updated time in seconds since 1970-01-01T00:00:00Z.
+     * 
+     * @param updated the updated value to set.
+     * @return the Attributes object itself.
+     */
+    Attributes withUpdated(OffsetDateTime updated) {
+        if (updated == null) {
+            this.updated = null;
+        } else {
+            this.updated = updated.toEpochSecond();
+        }
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        jsonWriter.writeNumberField("nbf", this.notBefore);
+        jsonWriter.writeNumberField("exp", this.expires);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Attributes from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Attributes if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the Attributes.
+     */
+    public static Attributes fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Attributes deserializedAttributes = new Attributes();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enabled".equals(fieldName)) {
+                    deserializedAttributes.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("nbf".equals(fieldName)) {
+                    deserializedAttributes.notBefore = reader.getNullable(JsonReader::getLong);
+                } else if ("exp".equals(fieldName)) {
+                    deserializedAttributes.expires = reader.getNullable(JsonReader::getLong);
+                } else if ("created".equals(fieldName)) {
+                    deserializedAttributes.created = reader.getNullable(JsonReader::getLong);
+                } else if ("updated".equals(fieldName)) {
+                    deserializedAttributes.updated = reader.getNullable(JsonReader::getLong);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAttributes;
+        });
     }
 }

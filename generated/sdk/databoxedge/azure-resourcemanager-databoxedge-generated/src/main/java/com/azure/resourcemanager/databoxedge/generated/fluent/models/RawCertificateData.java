@@ -6,24 +6,26 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AuthenticationType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Raw Certificate Data.
  */
 @Fluent
-public final class RawCertificateData {
+public final class RawCertificateData implements JsonSerializable<RawCertificateData> {
     /*
      * The authentication type.
      */
-    @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
 
     /*
      * The base64 encoded certificate raw data.
      */
-    @JsonProperty(value = "certificate", required = true)
     private String certificate;
 
     /**
@@ -85,4 +87,46 @@ public final class RawCertificateData {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RawCertificateData.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("certificate", this.certificate);
+        jsonWriter.writeStringField("authenticationType",
+            this.authenticationType == null ? null : this.authenticationType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RawCertificateData from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RawCertificateData if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RawCertificateData.
+     */
+    public static RawCertificateData fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RawCertificateData deserializedRawCertificateData = new RawCertificateData();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("certificate".equals(fieldName)) {
+                    deserializedRawCertificateData.certificate = reader.getString();
+                } else if ("authenticationType".equals(fieldName)) {
+                    deserializedRawCertificateData.authenticationType
+                        = AuthenticationType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRawCertificateData;
+        });
+    }
 }

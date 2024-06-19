@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class Datagrain extends ExpandableStringEnum<Datagrain> {
      * @param name a name to look for.
      * @return the corresponding Datagrain.
      */
-    @JsonCreator
     public static Datagrain fromString(String name) {
         return fromString(name, Datagrain.class);
     }

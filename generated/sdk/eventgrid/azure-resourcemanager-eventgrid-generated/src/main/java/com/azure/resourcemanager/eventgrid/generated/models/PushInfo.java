@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.eventgrid.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Properties of the destination info for event subscription supporting push.
  */
 @Fluent
-public final class PushInfo {
+public final class PushInfo implements JsonSerializable<PushInfo> {
     /*
      * The maximum delivery count of the events.
      */
-    @JsonProperty(value = "maxDeliveryCount")
     private Integer maxDeliveryCount;
 
     /*
@@ -38,7 +41,6 @@ public final class PushInfo {
      * - \'P0DT23H12M\' or \'PT23H12M\': for duration of 23 hours and 12 minutes.
      * - \'P1D\' or \'P1DT0H0M0S\': for duration of 1 day.
      */
-    @JsonProperty(value = "eventTimeToLive")
     private String eventTimeToLive;
 
     /*
@@ -47,7 +49,6 @@ public final class PushInfo {
      * Uses the managed identity setup on the parent resource (namely, namespace) to acquire the authentication tokens
      * being used during dead-lettering.
      */
-    @JsonProperty(value = "deadLetterDestinationWithResourceIdentity")
     private DeadLetterWithResourceIdentity deadLetterDestinationWithResourceIdentity;
 
     /*
@@ -55,14 +56,12 @@ public final class PushInfo {
      * Uses the managed identity setup on the parent resource (namely, topic or domain) to acquire the authentication
      * tokens being used during delivery.
      */
-    @JsonProperty(value = "deliveryWithResourceIdentity")
     private DeliveryWithResourceIdentity deliveryWithResourceIdentity;
 
     /*
      * Information about the destination where events have to be delivered for the event subscription.
      * Uses Azure Event Grid's identity to acquire the authentication tokens being used during delivery.
      */
-    @JsonProperty(value = "destination")
     private EventSubscriptionDestination destination;
 
     /**
@@ -237,5 +236,55 @@ public final class PushInfo {
         if (destination() != null) {
             destination().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("maxDeliveryCount", this.maxDeliveryCount);
+        jsonWriter.writeStringField("eventTimeToLive", this.eventTimeToLive);
+        jsonWriter.writeJsonField("deadLetterDestinationWithResourceIdentity",
+            this.deadLetterDestinationWithResourceIdentity);
+        jsonWriter.writeJsonField("deliveryWithResourceIdentity", this.deliveryWithResourceIdentity);
+        jsonWriter.writeJsonField("destination", this.destination);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PushInfo from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PushInfo if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the PushInfo.
+     */
+    public static PushInfo fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PushInfo deserializedPushInfo = new PushInfo();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("maxDeliveryCount".equals(fieldName)) {
+                    deserializedPushInfo.maxDeliveryCount = reader.getNullable(JsonReader::getInt);
+                } else if ("eventTimeToLive".equals(fieldName)) {
+                    deserializedPushInfo.eventTimeToLive = reader.getString();
+                } else if ("deadLetterDestinationWithResourceIdentity".equals(fieldName)) {
+                    deserializedPushInfo.deadLetterDestinationWithResourceIdentity
+                        = DeadLetterWithResourceIdentity.fromJson(reader);
+                } else if ("deliveryWithResourceIdentity".equals(fieldName)) {
+                    deserializedPushInfo.deliveryWithResourceIdentity = DeliveryWithResourceIdentity.fromJson(reader);
+                } else if ("destination".equals(fieldName)) {
+                    deserializedPushInfo.destination = EventSubscriptionDestination.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPushInfo;
+        });
     }
 }

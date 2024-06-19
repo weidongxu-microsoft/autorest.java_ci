@@ -5,42 +5,41 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties for the access rules in a network security perimeter configuration.
  */
 @Fluent
-public final class NspConfigAccessRuleProperties {
+public final class NspConfigAccessRuleProperties implements JsonSerializable<NspConfigAccessRuleProperties> {
     /*
      * The direction property.
      */
-    @JsonProperty(value = "direction")
     private String direction;
 
     /*
      * The addressPrefixes property.
      */
-    @JsonProperty(value = "addressPrefixes")
     private List<String> addressPrefixes;
 
     /*
      * The fullyQualifiedDomainNames property.
      */
-    @JsonProperty(value = "fullyQualifiedDomainNames")
     private List<String> fullyQualifiedDomainNames;
 
     /*
      * The subscriptions property.
      */
-    @JsonProperty(value = "subscriptions")
     private List<String> subscriptions;
 
     /*
      * The networkSecurityPerimeters property.
      */
-    @JsonProperty(value = "networkSecurityPerimeters")
     private List<NspConfigNetworkSecurityPerimeterRule> networkSecurityPerimeters;
 
     /**
@@ -159,5 +158,63 @@ public final class NspConfigAccessRuleProperties {
         if (networkSecurityPerimeters() != null) {
             networkSecurityPerimeters().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("direction", this.direction);
+        jsonWriter.writeArrayField("addressPrefixes", this.addressPrefixes,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("fullyQualifiedDomainNames", this.fullyQualifiedDomainNames,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("subscriptions", this.subscriptions,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("networkSecurityPerimeters", this.networkSecurityPerimeters,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NspConfigAccessRuleProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NspConfigAccessRuleProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NspConfigAccessRuleProperties.
+     */
+    public static NspConfigAccessRuleProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NspConfigAccessRuleProperties deserializedNspConfigAccessRuleProperties
+                = new NspConfigAccessRuleProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("direction".equals(fieldName)) {
+                    deserializedNspConfigAccessRuleProperties.direction = reader.getString();
+                } else if ("addressPrefixes".equals(fieldName)) {
+                    List<String> addressPrefixes = reader.readArray(reader1 -> reader1.getString());
+                    deserializedNspConfigAccessRuleProperties.addressPrefixes = addressPrefixes;
+                } else if ("fullyQualifiedDomainNames".equals(fieldName)) {
+                    List<String> fullyQualifiedDomainNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedNspConfigAccessRuleProperties.fullyQualifiedDomainNames = fullyQualifiedDomainNames;
+                } else if ("subscriptions".equals(fieldName)) {
+                    List<String> subscriptions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedNspConfigAccessRuleProperties.subscriptions = subscriptions;
+                } else if ("networkSecurityPerimeters".equals(fieldName)) {
+                    List<NspConfigNetworkSecurityPerimeterRule> networkSecurityPerimeters
+                        = reader.readArray(reader1 -> NspConfigNetworkSecurityPerimeterRule.fromJson(reader1));
+                    deserializedNspConfigAccessRuleProperties.networkSecurityPerimeters = networkSecurityPerimeters;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNspConfigAccessRuleProperties;
+        });
     }
 }

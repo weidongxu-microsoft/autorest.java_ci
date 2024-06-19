@@ -5,19 +5,22 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.DataExportInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Result of the request to list data exports.
  */
 @Fluent
-public final class DataExportListResult {
+public final class DataExportListResult implements JsonSerializable<DataExportListResult> {
     /*
      * List of data export instances within a workspace..
      */
-    @JsonProperty(value = "value")
     private List<DataExportInner> value;
 
     /**
@@ -55,5 +58,42 @@ public final class DataExportListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataExportListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataExportListResult if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataExportListResult.
+     */
+    public static DataExportListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataExportListResult deserializedDataExportListResult = new DataExportListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<DataExportInner> value = reader.readArray(reader1 -> DataExportInner.fromJson(reader1));
+                    deserializedDataExportListResult.value = value;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataExportListResult;
+        });
     }
 }

@@ -6,20 +6,23 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties of security settings.
  */
 @Fluent
-public final class SecuritySettingsProperties {
+public final class SecuritySettingsProperties implements JsonSerializable<SecuritySettingsProperties> {
     /*
      * Device administrator password as an encrypted string (encrypted using RSA PKCS #1) is used to sign into the local
      * web UI of the device. The Actual password should have at least 8 characters that are a combination of uppercase,
      * lowercase, numeric, and special characters.
      */
-    @JsonProperty(value = "deviceAdminPassword", required = true)
     private AsymmetricEncryptedSecret deviceAdminPassword;
 
     /**
@@ -68,4 +71,42 @@ public final class SecuritySettingsProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(SecuritySettingsProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("deviceAdminPassword", this.deviceAdminPassword);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SecuritySettingsProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SecuritySettingsProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SecuritySettingsProperties.
+     */
+    public static SecuritySettingsProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SecuritySettingsProperties deserializedSecuritySettingsProperties = new SecuritySettingsProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("deviceAdminPassword".equals(fieldName)) {
+                    deserializedSecuritySettingsProperties.deviceAdminPassword
+                        = AsymmetricEncryptedSecret.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSecuritySettingsProperties;
+        });
+    }
 }

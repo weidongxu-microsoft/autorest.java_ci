@@ -5,37 +5,49 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.PeriodicTimerProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.TriggerInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 
 /**
  * Trigger details.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "kind",
-    defaultImpl = PeriodicTimerEventTrigger.class,
-    visible = true)
-@JsonTypeName("PeriodicTimerEvent")
 @Fluent
 public final class PeriodicTimerEventTrigger extends TriggerInner {
     /*
      * Trigger Kind.
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private TriggerEventType kind = TriggerEventType.PERIODIC_TIMER_EVENT;
 
     /*
      * Periodic timer trigger properties.
      */
-    @JsonProperty(value = "properties", required = true)
     private PeriodicTimerProperties innerProperties = new PeriodicTimerProperties();
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * Metadata pertaining to creation and last modification of Trigger
+     */
+    private SystemData systemData;
 
     /**
      * Creates an instance of PeriodicTimerEventTrigger class.
@@ -60,6 +72,46 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
      */
     private PeriodicTimerProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Trigger.
+     * 
+     * @return the systemData value.
+     */
+    @Override
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -153,4 +205,52 @@ public final class PeriodicTimerEventTrigger extends TriggerInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(PeriodicTimerEventTrigger.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PeriodicTimerEventTrigger from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PeriodicTimerEventTrigger if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the PeriodicTimerEventTrigger.
+     */
+    public static PeriodicTimerEventTrigger fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PeriodicTimerEventTrigger deserializedPeriodicTimerEventTrigger = new PeriodicTimerEventTrigger();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedPeriodicTimerEventTrigger.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedPeriodicTimerEventTrigger.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedPeriodicTimerEventTrigger.type = reader.getString();
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedPeriodicTimerEventTrigger.systemData = SystemData.fromJson(reader);
+                } else if ("properties".equals(fieldName)) {
+                    deserializedPeriodicTimerEventTrigger.innerProperties = PeriodicTimerProperties.fromJson(reader);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedPeriodicTimerEventTrigger.kind = TriggerEventType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPeriodicTimerEventTrigger;
+        });
+    }
 }

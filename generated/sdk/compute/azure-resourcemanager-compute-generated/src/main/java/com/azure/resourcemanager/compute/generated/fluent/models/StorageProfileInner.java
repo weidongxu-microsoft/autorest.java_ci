@@ -5,24 +5,27 @@
 package com.azure.resourcemanager.compute.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.compute.generated.models.DataDisk;
 import com.azure.resourcemanager.compute.generated.models.DiskControllerTypes;
 import com.azure.resourcemanager.compute.generated.models.ImageReference;
 import com.azure.resourcemanager.compute.generated.models.OSDisk;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Specifies the storage settings for the virtual machine disks.
  */
 @Fluent
-public final class StorageProfileInner {
+public final class StorageProfileInner implements JsonSerializable<StorageProfileInner> {
     /*
      * Specifies information about the image to use. You can specify information about platform images, marketplace
      * images, or virtual machine images. This element is required when you want to use a platform image, marketplace
      * image, or virtual machine image, but is not used in other creation operations.
      */
-    @JsonProperty(value = "imageReference")
     private ImageReference imageReference;
 
     /*
@@ -30,7 +33,6 @@ public final class StorageProfileInner {
      * disks, see [About disks and VHDs for Azure virtual
      * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      */
-    @JsonProperty(value = "osDisk")
     private OSDisk osDisk;
 
     /*
@@ -38,7 +40,6 @@ public final class StorageProfileInner {
      * see [About disks and VHDs for Azure virtual
      * machines](https://docs.microsoft.com/azure/virtual-machines/managed-disks-overview).
      */
-    @JsonProperty(value = "dataDisks")
     private List<DataDisk> dataDisks;
 
     /*
@@ -48,7 +49,6 @@ public final class StorageProfileInner {
      * You need to deallocate the VM before updating its disk controller type unless you are updating the VM size in the
      * VM configuration which implicitly deallocates and reallocates the VM. Minimum api-version: 2022-08-01.
      */
-    @JsonProperty(value = "diskControllerType")
     private DiskControllerTypes diskControllerType;
 
     /**
@@ -174,5 +174,53 @@ public final class StorageProfileInner {
         if (dataDisks() != null) {
             dataDisks().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("imageReference", this.imageReference);
+        jsonWriter.writeJsonField("osDisk", this.osDisk);
+        jsonWriter.writeArrayField("dataDisks", this.dataDisks, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("diskControllerType",
+            this.diskControllerType == null ? null : this.diskControllerType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StorageProfileInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StorageProfileInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the StorageProfileInner.
+     */
+    public static StorageProfileInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StorageProfileInner deserializedStorageProfileInner = new StorageProfileInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("imageReference".equals(fieldName)) {
+                    deserializedStorageProfileInner.imageReference = ImageReference.fromJson(reader);
+                } else if ("osDisk".equals(fieldName)) {
+                    deserializedStorageProfileInner.osDisk = OSDisk.fromJson(reader);
+                } else if ("dataDisks".equals(fieldName)) {
+                    List<DataDisk> dataDisks = reader.readArray(reader1 -> DataDisk.fromJson(reader1));
+                    deserializedStorageProfileInner.dataDisks = dataDisks;
+                } else if ("diskControllerType".equals(fieldName)) {
+                    deserializedStorageProfileInner.diskControllerType
+                        = DiskControllerTypes.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStorageProfileInner;
+        });
     }
 }

@@ -6,53 +6,51 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.HostPlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.KubernetesClusterInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.KubernetesRoleResources;
 import com.azure.resourcemanager.databoxedge.generated.models.KubernetesState;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Kubernetes role properties.
  */
 @Fluent
-public final class KubernetesRoleProperties {
+public final class KubernetesRoleProperties implements JsonSerializable<KubernetesRoleProperties> {
     /*
      * Host OS supported by the Kubernetes role.
      */
-    @JsonProperty(value = "hostPlatform", required = true)
     private PlatformType hostPlatform;
 
     /*
      * State of Kubernetes deployment
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private KubernetesState provisioningState;
 
     /*
      * Platform where the runtime is hosted.
      */
-    @JsonProperty(value = "hostPlatformType", access = JsonProperty.Access.WRITE_ONLY)
     private HostPlatformType hostPlatformType;
 
     /*
      * Kubernetes cluster configuration
      */
-    @JsonProperty(value = "kubernetesClusterInfo", required = true)
     private KubernetesClusterInfo kubernetesClusterInfo;
 
     /*
      * Kubernetes role resources
      */
-    @JsonProperty(value = "kubernetesRoleResources", required = true)
     private KubernetesRoleResources kubernetesRoleResources;
 
     /*
      * Role status.
      */
-    @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
     /**
@@ -192,4 +190,57 @@ public final class KubernetesRoleProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(KubernetesRoleProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("hostPlatform", this.hostPlatform == null ? null : this.hostPlatform.toString());
+        jsonWriter.writeJsonField("kubernetesClusterInfo", this.kubernetesClusterInfo);
+        jsonWriter.writeJsonField("kubernetesRoleResources", this.kubernetesRoleResources);
+        jsonWriter.writeStringField("roleStatus", this.roleStatus == null ? null : this.roleStatus.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of KubernetesRoleProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of KubernetesRoleProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the KubernetesRoleProperties.
+     */
+    public static KubernetesRoleProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            KubernetesRoleProperties deserializedKubernetesRoleProperties = new KubernetesRoleProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("hostPlatform".equals(fieldName)) {
+                    deserializedKubernetesRoleProperties.hostPlatform = PlatformType.fromString(reader.getString());
+                } else if ("kubernetesClusterInfo".equals(fieldName)) {
+                    deserializedKubernetesRoleProperties.kubernetesClusterInfo = KubernetesClusterInfo.fromJson(reader);
+                } else if ("kubernetesRoleResources".equals(fieldName)) {
+                    deserializedKubernetesRoleProperties.kubernetesRoleResources
+                        = KubernetesRoleResources.fromJson(reader);
+                } else if ("roleStatus".equals(fieldName)) {
+                    deserializedKubernetesRoleProperties.roleStatus = RoleStatus.fromString(reader.getString());
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedKubernetesRoleProperties.provisioningState
+                        = KubernetesState.fromString(reader.getString());
+                } else if ("hostPlatformType".equals(fieldName)) {
+                    deserializedKubernetesRoleProperties.hostPlatformType
+                        = HostPlatformType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedKubernetesRoleProperties;
+        });
+    }
 }

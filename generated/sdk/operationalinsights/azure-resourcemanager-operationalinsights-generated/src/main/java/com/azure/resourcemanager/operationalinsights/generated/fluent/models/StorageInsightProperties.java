@@ -6,38 +6,38 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageAccount;
 import com.azure.resourcemanager.operationalinsights.generated.models.StorageInsightStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Storage insight properties.
  */
 @Fluent
-public final class StorageInsightProperties {
+public final class StorageInsightProperties implements JsonSerializable<StorageInsightProperties> {
     /*
      * The names of the blob containers that the workspace should read
      */
-    @JsonProperty(value = "containers")
     private List<String> containers;
 
     /*
      * The names of the Azure tables that the workspace should read
      */
-    @JsonProperty(value = "tables")
     private List<String> tables;
 
     /*
      * The storage account connection details
      */
-    @JsonProperty(value = "storageAccount", required = true)
     private StorageAccount storageAccount;
 
     /*
      * The status of the storage insight
      */
-    @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private StorageInsightStatus status;
 
     /**
@@ -134,4 +134,51 @@ public final class StorageInsightProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(StorageInsightProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("storageAccount", this.storageAccount);
+        jsonWriter.writeArrayField("containers", this.containers, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("tables", this.tables, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StorageInsightProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StorageInsightProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the StorageInsightProperties.
+     */
+    public static StorageInsightProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StorageInsightProperties deserializedStorageInsightProperties = new StorageInsightProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("storageAccount".equals(fieldName)) {
+                    deserializedStorageInsightProperties.storageAccount = StorageAccount.fromJson(reader);
+                } else if ("containers".equals(fieldName)) {
+                    List<String> containers = reader.readArray(reader1 -> reader1.getString());
+                    deserializedStorageInsightProperties.containers = containers;
+                } else if ("tables".equals(fieldName)) {
+                    List<String> tables = reader.readArray(reader1 -> reader1.getString());
+                    deserializedStorageInsightProperties.tables = tables;
+                } else if ("status".equals(fieldName)) {
+                    deserializedStorageInsightProperties.status = StorageInsightStatus.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStorageInsightProperties;
+        });
+    }
 }

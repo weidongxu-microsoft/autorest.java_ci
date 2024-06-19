@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.keyvault.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The vault's create mode to indicate whether the vault need to be recovered or not.
  */
@@ -36,7 +33,6 @@ public enum CreateMode {
      * @param value the serialized value to parse.
      * @return the parsed CreateMode object, or null if unable to parse.
      */
-    @JsonCreator
     public static CreateMode fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum CreateMode {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

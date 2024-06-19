@@ -5,49 +5,48 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Properties that define a ProactiveDetection configuration.
  */
 @Fluent
-public final class ApplicationInsightsComponentProactiveDetectionConfigurationInner {
+public final class ApplicationInsightsComponentProactiveDetectionConfigurationInner
+    implements JsonSerializable<ApplicationInsightsComponentProactiveDetectionConfigurationInner> {
     /*
      * The rule name
      */
-    @JsonProperty(value = "Name")
     private String name;
 
     /*
      * A flag that indicates whether this rule is enabled by the user
      */
-    @JsonProperty(value = "Enabled")
     private Boolean enabled;
 
     /*
      * A flag that indicated whether notifications on this rule should be sent to subscription owners
      */
-    @JsonProperty(value = "SendEmailsToSubscriptionOwners")
     private Boolean sendEmailsToSubscriptionOwners;
 
     /*
      * Custom email addresses for this rule notifications
      */
-    @JsonProperty(value = "CustomEmails")
     private List<String> customEmails;
 
     /*
      * The last time this rule was updated
      */
-    @JsonProperty(value = "LastUpdatedTime")
     private String lastUpdatedTime;
 
     /*
      * Static definitions of the ProactiveDetection configuration rule (same values for all components).
      */
-    @JsonProperty(value = "RuleDefinitions")
     private ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions ruleDefinitions;
 
     /**
@@ -193,5 +192,66 @@ public final class ApplicationInsightsComponentProactiveDetectionConfigurationIn
         if (ruleDefinitions() != null) {
             ruleDefinitions().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("Name", this.name);
+        jsonWriter.writeBooleanField("Enabled", this.enabled);
+        jsonWriter.writeBooleanField("SendEmailsToSubscriptionOwners", this.sendEmailsToSubscriptionOwners);
+        jsonWriter.writeArrayField("CustomEmails", this.customEmails, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("LastUpdatedTime", this.lastUpdatedTime);
+        jsonWriter.writeJsonField("RuleDefinitions", this.ruleDefinitions);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentProactiveDetectionConfigurationInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentProactiveDetectionConfigurationInner if the JsonReader was
+     * pointing to an instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the
+     * ApplicationInsightsComponentProactiveDetectionConfigurationInner.
+     */
+    public static ApplicationInsightsComponentProactiveDetectionConfigurationInner fromJson(JsonReader jsonReader)
+        throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentProactiveDetectionConfigurationInner deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner
+                = new ApplicationInsightsComponentProactiveDetectionConfigurationInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("Name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner.name
+                        = reader.getString();
+                } else if ("Enabled".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner.enabled
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("SendEmailsToSubscriptionOwners".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner.sendEmailsToSubscriptionOwners
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("CustomEmails".equals(fieldName)) {
+                    List<String> customEmails = reader.readArray(reader1 -> reader1.getString());
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner.customEmails
+                        = customEmails;
+                } else if ("LastUpdatedTime".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner.lastUpdatedTime
+                        = reader.getString();
+                } else if ("RuleDefinitions".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner.ruleDefinitions
+                        = ApplicationInsightsComponentProactiveDetectionConfigurationRuleDefinitions.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentProactiveDetectionConfigurationInner;
+        });
     }
 }

@@ -5,34 +5,33 @@
 package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.resourcegraph.generated.fluent.models.GraphQueryPropertiesUpdateParameters;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * The parameters that can be provided when updating workbook properties properties.
  */
 @Fluent
-public final class GraphQueryUpdateParameters {
+public final class GraphQueryUpdateParameters implements JsonSerializable<GraphQueryUpdateParameters> {
     /*
      * Resource tags
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * This will be used to handle Optimistic Concurrency. If not present, it will always overwrite the existing
      * resource without checking conflict.
      */
-    @JsonProperty(value = "etag")
     private String etag;
 
     /*
      * Metadata describing a graph query for an Azure resource.
      */
-    @JsonProperty(value = "properties")
     private GraphQueryPropertiesUpdateParameters innerProperties;
 
     /**
@@ -147,5 +146,49 @@ public final class GraphQueryUpdateParameters {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("etag", this.etag);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of GraphQueryUpdateParameters from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of GraphQueryUpdateParameters if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the GraphQueryUpdateParameters.
+     */
+    public static GraphQueryUpdateParameters fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            GraphQueryUpdateParameters deserializedGraphQueryUpdateParameters = new GraphQueryUpdateParameters();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedGraphQueryUpdateParameters.tags = tags;
+                } else if ("etag".equals(fieldName)) {
+                    deserializedGraphQueryUpdateParameters.etag = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedGraphQueryUpdateParameters.innerProperties
+                        = GraphQueryPropertiesUpdateParameters.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedGraphQueryUpdateParameters;
+        });
     }
 }

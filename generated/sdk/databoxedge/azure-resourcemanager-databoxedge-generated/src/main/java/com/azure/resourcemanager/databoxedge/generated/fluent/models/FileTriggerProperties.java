@@ -6,25 +6,27 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.FileSourceInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleSinkInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * File trigger properties.
  */
 @Fluent
-public final class FileTriggerProperties {
+public final class FileTriggerProperties implements JsonSerializable<FileTriggerProperties> {
     /*
      * File event source details.
      */
-    @JsonProperty(value = "sourceInfo", required = true)
     private FileSourceInfo sourceInfo;
 
     /*
      * Role sink info.
      */
-    @JsonProperty(value = "sinkInfo", required = true)
     private RoleSinkInfo sinkInfo;
 
     /*
@@ -32,7 +34,6 @@ public final class FileTriggerProperties {
      * trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of
      * the module.
      */
-    @JsonProperty(value = "customContextTag")
     private String customContextTag;
 
     /**
@@ -127,4 +128,47 @@ public final class FileTriggerProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(FileTriggerProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("sourceInfo", this.sourceInfo);
+        jsonWriter.writeJsonField("sinkInfo", this.sinkInfo);
+        jsonWriter.writeStringField("customContextTag", this.customContextTag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FileTriggerProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FileTriggerProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the FileTriggerProperties.
+     */
+    public static FileTriggerProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FileTriggerProperties deserializedFileTriggerProperties = new FileTriggerProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sourceInfo".equals(fieldName)) {
+                    deserializedFileTriggerProperties.sourceInfo = FileSourceInfo.fromJson(reader);
+                } else if ("sinkInfo".equals(fieldName)) {
+                    deserializedFileTriggerProperties.sinkInfo = RoleSinkInfo.fromJson(reader);
+                } else if ("customContextTag".equals(fieldName)) {
+                    deserializedFileTriggerProperties.customContextTag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFileTriggerProperties;
+        });
+    }
 }

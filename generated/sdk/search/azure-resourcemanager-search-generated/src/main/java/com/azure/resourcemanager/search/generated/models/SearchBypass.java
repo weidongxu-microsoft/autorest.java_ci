@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class SearchBypass extends ExpandableStringEnum<SearchBypass> {
      * @param name a name to look for.
      * @return the corresponding SearchBypass.
      */
-    @JsonCreator
     public static SearchBypass fromString(String name) {
         return fromString(name, SearchBypass.class);
     }

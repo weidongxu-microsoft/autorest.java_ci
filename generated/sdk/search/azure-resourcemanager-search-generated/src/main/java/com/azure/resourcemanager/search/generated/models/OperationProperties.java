@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Describes additional properties for this operation.
  */
 @Immutable
-public final class OperationProperties {
+public final class OperationProperties implements JsonSerializable<OperationProperties> {
     /*
      * Specifications of the service for this operation.
      */
-    @JsonProperty(value = "serviceSpecification", access = JsonProperty.Access.WRITE_ONLY)
     private OperationServiceSpecification serviceSpecification;
 
     /**
@@ -42,5 +45,41 @@ public final class OperationProperties {
         if (serviceSpecification() != null) {
             serviceSpecification().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OperationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OperationProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the OperationProperties.
+     */
+    public static OperationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OperationProperties deserializedOperationProperties = new OperationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("serviceSpecification".equals(fieldName)) {
+                    deserializedOperationProperties.serviceSpecification
+                        = OperationServiceSpecification.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOperationProperties;
+        });
     }
 }

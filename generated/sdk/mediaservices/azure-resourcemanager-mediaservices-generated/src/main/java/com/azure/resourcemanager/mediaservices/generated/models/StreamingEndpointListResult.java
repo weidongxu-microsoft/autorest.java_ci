@@ -5,8 +5,12 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.StreamingEndpointInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -15,23 +19,20 @@ import java.util.List;
  * The streaming endpoint list result.
  */
 @Fluent
-public final class StreamingEndpointListResult {
+public final class StreamingEndpointListResult implements JsonSerializable<StreamingEndpointListResult> {
     /*
      * The result of the List StreamingEndpoint operation.
      */
-    @JsonProperty(value = "value")
     private List<StreamingEndpointInner> value;
 
     /*
      * The number of result.
      */
-    @JsonProperty(value = "@odata.count")
     private Integer odataCount;
 
     /*
      * The link to the next set of results. Not empty if value contains incomplete list of streaming endpoints.
      */
-    @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
     /**
@@ -111,5 +112,49 @@ public final class StreamingEndpointListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeNumberField("@odata.count", this.odataCount);
+        jsonWriter.writeStringField("@odata.nextLink", this.odataNextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StreamingEndpointListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StreamingEndpointListResult if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the StreamingEndpointListResult.
+     */
+    public static StreamingEndpointListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StreamingEndpointListResult deserializedStreamingEndpointListResult = new StreamingEndpointListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<StreamingEndpointInner> value
+                        = reader.readArray(reader1 -> StreamingEndpointInner.fromJson(reader1));
+                    deserializedStreamingEndpointListResult.value = value;
+                } else if ("@odata.count".equals(fieldName)) {
+                    deserializedStreamingEndpointListResult.odataCount = reader.getNullable(JsonReader::getInt);
+                } else if ("@odata.nextLink".equals(fieldName)) {
+                    deserializedStreamingEndpointListResult.odataNextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStreamingEndpointListResult;
+        });
     }
 }

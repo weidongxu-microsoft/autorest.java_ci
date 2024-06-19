@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -38,7 +37,6 @@ public final class PublicNetworkAccessEnum extends ExpandableStringEnum<PublicNe
      * @param name a name to look for.
      * @return the corresponding PublicNetworkAccessEnum.
      */
-    @JsonCreator
     public static PublicNetworkAccessEnum fromString(String name) {
         return fromString(name, PublicNetworkAccessEnum.class);
     }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class RoleName extends ExpandableStringEnum<RoleName> {
      * @param name a name to look for.
      * @return the corresponding RoleName.
      */
-    @JsonCreator
     public static RoleName fromString(String name) {
         return fromString(name, RoleName.class);
     }

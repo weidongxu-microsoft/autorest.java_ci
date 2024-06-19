@@ -6,59 +6,55 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Use to provide parameters when requesting an import of all devices in the hub.
  */
 @Fluent
-public final class ImportDevicesRequest {
+public final class ImportDevicesRequest implements JsonSerializable<ImportDevicesRequest> {
     /*
      * The input blob container URI.
      */
-    @JsonProperty(value = "inputBlobContainerUri", required = true)
     private String inputBlobContainerUri;
 
     /*
      * The output blob container URI.
      */
-    @JsonProperty(value = "outputBlobContainerUri", required = true)
     private String outputBlobContainerUri;
 
     /*
      * The blob name to be used when importing from the provided input blob container.
      */
-    @JsonProperty(value = "inputBlobName")
     private String inputBlobName;
 
     /*
      * The blob name to use for storing the status of the import job.
      */
-    @JsonProperty(value = "outputBlobName")
     private String outputBlobName;
 
     /*
      * Specifies authentication type being used for connecting to the storage account.
      */
-    @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
 
     /*
      * Managed identity properties of storage endpoint for import devices.
      */
-    @JsonProperty(value = "identity")
     private ManagedIdentity identity;
 
     /*
      * The value indicating whether configurations should be imported.
      */
-    @JsonProperty(value = "includeConfigurations")
     private Boolean includeConfigurations;
 
     /*
      * The blob name to be used when importing configurations from the provided input blob container.
      */
-    @JsonProperty(value = "configurationsBlobName")
     private String configurationsBlobName;
 
     /**
@@ -253,4 +249,64 @@ public final class ImportDevicesRequest {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ImportDevicesRequest.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("inputBlobContainerUri", this.inputBlobContainerUri);
+        jsonWriter.writeStringField("outputBlobContainerUri", this.outputBlobContainerUri);
+        jsonWriter.writeStringField("inputBlobName", this.inputBlobName);
+        jsonWriter.writeStringField("outputBlobName", this.outputBlobName);
+        jsonWriter.writeStringField("authenticationType",
+            this.authenticationType == null ? null : this.authenticationType.toString());
+        jsonWriter.writeJsonField("identity", this.identity);
+        jsonWriter.writeBooleanField("includeConfigurations", this.includeConfigurations);
+        jsonWriter.writeStringField("configurationsBlobName", this.configurationsBlobName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ImportDevicesRequest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ImportDevicesRequest if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ImportDevicesRequest.
+     */
+    public static ImportDevicesRequest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ImportDevicesRequest deserializedImportDevicesRequest = new ImportDevicesRequest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("inputBlobContainerUri".equals(fieldName)) {
+                    deserializedImportDevicesRequest.inputBlobContainerUri = reader.getString();
+                } else if ("outputBlobContainerUri".equals(fieldName)) {
+                    deserializedImportDevicesRequest.outputBlobContainerUri = reader.getString();
+                } else if ("inputBlobName".equals(fieldName)) {
+                    deserializedImportDevicesRequest.inputBlobName = reader.getString();
+                } else if ("outputBlobName".equals(fieldName)) {
+                    deserializedImportDevicesRequest.outputBlobName = reader.getString();
+                } else if ("authenticationType".equals(fieldName)) {
+                    deserializedImportDevicesRequest.authenticationType
+                        = AuthenticationType.fromString(reader.getString());
+                } else if ("identity".equals(fieldName)) {
+                    deserializedImportDevicesRequest.identity = ManagedIdentity.fromJson(reader);
+                } else if ("includeConfigurations".equals(fieldName)) {
+                    deserializedImportDevicesRequest.includeConfigurations = reader.getNullable(JsonReader::getBoolean);
+                } else if ("configurationsBlobName".equals(fieldName)) {
+                    deserializedImportDevicesRequest.configurationsBlobName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedImportDevicesRequest;
+        });
+    }
 }

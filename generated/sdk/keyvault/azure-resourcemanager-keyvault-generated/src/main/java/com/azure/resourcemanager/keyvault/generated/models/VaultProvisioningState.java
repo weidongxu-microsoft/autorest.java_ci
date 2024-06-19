@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class VaultProvisioningState extends ExpandableStringEnum<VaultProv
      * @param name a name to look for.
      * @return the corresponding VaultProvisioningState.
      */
-    @JsonCreator
     public static VaultProvisioningState fromString(String name) {
         return fromString(name, VaultProvisioningState.class);
     }

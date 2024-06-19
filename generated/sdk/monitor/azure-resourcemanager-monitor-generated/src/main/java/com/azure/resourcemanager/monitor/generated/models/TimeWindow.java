@@ -5,15 +5,21 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * A specific date-time for the profile.
  */
 @Fluent
-public final class TimeWindow {
+public final class TimeWindow implements JsonSerializable<TimeWindow> {
     /*
      * the timezone of the start and end times for the profile. Some examples of valid time zones are: Dateline Standard
      * Time, UTC-11, Hawaiian Standard Time, Alaskan Standard Time, Pacific Standard Time (Mexico), Pacific Standard
@@ -41,19 +47,16 @@ public final class TimeWindow {
      * Zealand Standard Time, UTC+12, Fiji Standard Time, Kamchatka Standard Time, Tonga Standard Time, Samoa Standard
      * Time, Line Islands Standard Time
      */
-    @JsonProperty(value = "timeZone")
     private String timeZone;
 
     /*
      * the start time for the profile in ISO 8601 format.
      */
-    @JsonProperty(value = "start", required = true)
     private OffsetDateTime start;
 
     /*
      * the end time for the profile in ISO 8601 format.
      */
-    @JsonProperty(value = "end", required = true)
     private OffsetDateTime end;
 
     /**
@@ -187,4 +190,51 @@ public final class TimeWindow {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(TimeWindow.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("start",
+            this.start == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.start));
+        jsonWriter.writeStringField("end",
+            this.end == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.end));
+        jsonWriter.writeStringField("timeZone", this.timeZone);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of TimeWindow from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of TimeWindow if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the TimeWindow.
+     */
+    public static TimeWindow fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            TimeWindow deserializedTimeWindow = new TimeWindow();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("start".equals(fieldName)) {
+                    deserializedTimeWindow.start = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("end".equals(fieldName)) {
+                    deserializedTimeWindow.end = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("timeZone".equals(fieldName)) {
+                    deserializedTimeWindow.timeZone = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedTimeWindow;
+        });
+    }
 }

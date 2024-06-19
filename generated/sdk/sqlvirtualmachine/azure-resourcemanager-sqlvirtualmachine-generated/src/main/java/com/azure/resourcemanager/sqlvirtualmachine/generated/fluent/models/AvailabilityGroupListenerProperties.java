@@ -5,57 +5,55 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.AgConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.LoadBalancerConfiguration;
 import com.azure.resourcemanager.sqlvirtualmachine.generated.models.MultiSubnetIpConfiguration;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties of an availability group listener.
  */
 @Fluent
-public final class AvailabilityGroupListenerProperties {
+public final class AvailabilityGroupListenerProperties
+    implements JsonSerializable<AvailabilityGroupListenerProperties> {
     /*
      * Provisioning state to track the async operation status.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * Name of the availability group.
      */
-    @JsonProperty(value = "availabilityGroupName")
     private String availabilityGroupName;
 
     /*
      * List of load balancer configurations for an availability group listener.
      */
-    @JsonProperty(value = "loadBalancerConfigurations")
     private List<LoadBalancerConfiguration> loadBalancerConfigurations;
 
     /*
      * List of multi subnet IP configurations for an AG listener.
      */
-    @JsonProperty(value = "multiSubnetIpConfigurations")
     private List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations;
 
     /*
      * Create a default availability group if it does not exist.
      */
-    @JsonProperty(value = "createDefaultAvailabilityGroupIfNotExist")
     private Boolean createDefaultAvailabilityGroupIfNotExist;
 
     /*
      * Listener port.
      */
-    @JsonProperty(value = "port")
     private Integer port;
 
     /*
      * Availability Group configuration.
      */
-    @JsonProperty(value = "availabilityGroupConfiguration")
     private AgConfiguration availabilityGroupConfiguration;
 
     /**
@@ -216,5 +214,70 @@ public final class AvailabilityGroupListenerProperties {
         if (availabilityGroupConfiguration() != null) {
             availabilityGroupConfiguration().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("availabilityGroupName", this.availabilityGroupName);
+        jsonWriter.writeArrayField("loadBalancerConfigurations", this.loadBalancerConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("multiSubnetIpConfigurations", this.multiSubnetIpConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("createDefaultAvailabilityGroupIfNotExist",
+            this.createDefaultAvailabilityGroupIfNotExist);
+        jsonWriter.writeNumberField("port", this.port);
+        jsonWriter.writeJsonField("availabilityGroupConfiguration", this.availabilityGroupConfiguration);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AvailabilityGroupListenerProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AvailabilityGroupListenerProperties if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AvailabilityGroupListenerProperties.
+     */
+    public static AvailabilityGroupListenerProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AvailabilityGroupListenerProperties deserializedAvailabilityGroupListenerProperties
+                = new AvailabilityGroupListenerProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("provisioningState".equals(fieldName)) {
+                    deserializedAvailabilityGroupListenerProperties.provisioningState = reader.getString();
+                } else if ("availabilityGroupName".equals(fieldName)) {
+                    deserializedAvailabilityGroupListenerProperties.availabilityGroupName = reader.getString();
+                } else if ("loadBalancerConfigurations".equals(fieldName)) {
+                    List<LoadBalancerConfiguration> loadBalancerConfigurations
+                        = reader.readArray(reader1 -> LoadBalancerConfiguration.fromJson(reader1));
+                    deserializedAvailabilityGroupListenerProperties.loadBalancerConfigurations
+                        = loadBalancerConfigurations;
+                } else if ("multiSubnetIpConfigurations".equals(fieldName)) {
+                    List<MultiSubnetIpConfiguration> multiSubnetIpConfigurations
+                        = reader.readArray(reader1 -> MultiSubnetIpConfiguration.fromJson(reader1));
+                    deserializedAvailabilityGroupListenerProperties.multiSubnetIpConfigurations
+                        = multiSubnetIpConfigurations;
+                } else if ("createDefaultAvailabilityGroupIfNotExist".equals(fieldName)) {
+                    deserializedAvailabilityGroupListenerProperties.createDefaultAvailabilityGroupIfNotExist
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("port".equals(fieldName)) {
+                    deserializedAvailabilityGroupListenerProperties.port = reader.getNullable(JsonReader::getInt);
+                } else if ("availabilityGroupConfiguration".equals(fieldName)) {
+                    deserializedAvailabilityGroupListenerProperties.availabilityGroupConfiguration
+                        = AgConfiguration.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAvailabilityGroupListenerProperties;
+        });
     }
 }

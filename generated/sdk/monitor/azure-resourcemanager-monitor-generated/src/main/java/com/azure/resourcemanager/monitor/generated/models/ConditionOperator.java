@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.monitor.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Operators allowed in the rule condition.
  */
@@ -46,7 +43,6 @@ public enum ConditionOperator {
      * @param value the serialized value to parse.
      * @return the parsed ConditionOperator object, or null if unable to parse.
      */
-    @JsonCreator
     public static ConditionOperator fromString(String value) {
         if (value == null) {
             return null;
@@ -63,7 +59,6 @@ public enum ConditionOperator {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

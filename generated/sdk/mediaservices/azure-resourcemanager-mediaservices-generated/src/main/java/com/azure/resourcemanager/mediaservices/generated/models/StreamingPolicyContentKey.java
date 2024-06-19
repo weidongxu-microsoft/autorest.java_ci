@@ -5,30 +5,31 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Class to specify properties of content key.
  */
 @Fluent
-public final class StreamingPolicyContentKey {
+public final class StreamingPolicyContentKey implements JsonSerializable<StreamingPolicyContentKey> {
     /*
      * Label can be used to specify Content Key when creating a Streaming Locator
      */
-    @JsonProperty(value = "label")
     private String label;
 
     /*
      * Policy used by Content Key
      */
-    @JsonProperty(value = "policyName")
     private String policyName;
 
     /*
      * Tracks which use this content key
      */
-    @JsonProperty(value = "tracks")
     private List<TrackSelection> tracks;
 
     /**
@@ -106,5 +107,48 @@ public final class StreamingPolicyContentKey {
         if (tracks() != null) {
             tracks().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("label", this.label);
+        jsonWriter.writeStringField("policyName", this.policyName);
+        jsonWriter.writeArrayField("tracks", this.tracks, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StreamingPolicyContentKey from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StreamingPolicyContentKey if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the StreamingPolicyContentKey.
+     */
+    public static StreamingPolicyContentKey fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StreamingPolicyContentKey deserializedStreamingPolicyContentKey = new StreamingPolicyContentKey();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("label".equals(fieldName)) {
+                    deserializedStreamingPolicyContentKey.label = reader.getString();
+                } else if ("policyName".equals(fieldName)) {
+                    deserializedStreamingPolicyContentKey.policyName = reader.getString();
+                } else if ("tracks".equals(fieldName)) {
+                    List<TrackSelection> tracks = reader.readArray(reader1 -> TrackSelection.fromJson(reader1));
+                    deserializedStreamingPolicyContentKey.tracks = tracks;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStreamingPolicyContentKey;
+        });
     }
 }

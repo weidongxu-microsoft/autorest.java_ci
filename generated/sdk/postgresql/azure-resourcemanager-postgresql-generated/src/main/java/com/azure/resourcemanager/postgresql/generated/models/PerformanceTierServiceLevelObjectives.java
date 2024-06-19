@@ -5,59 +5,56 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Service level objectives for performance tier.
  */
 @Fluent
-public final class PerformanceTierServiceLevelObjectives {
+public final class PerformanceTierServiceLevelObjectives
+    implements JsonSerializable<PerformanceTierServiceLevelObjectives> {
     /*
      * ID for the service level objective.
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * Edition of the performance tier.
      */
-    @JsonProperty(value = "edition")
     private String edition;
 
     /*
      * vCore associated with the service level objective
      */
-    @JsonProperty(value = "vCore")
     private Integer vCore;
 
     /*
      * Hardware generation associated with the service level objective
      */
-    @JsonProperty(value = "hardwareGeneration")
     private String hardwareGeneration;
 
     /*
      * Maximum Backup retention in days for the performance tier edition
      */
-    @JsonProperty(value = "maxBackupRetentionDays")
     private Integer maxBackupRetentionDays;
 
     /*
      * Minimum Backup retention in days for the performance tier edition
      */
-    @JsonProperty(value = "minBackupRetentionDays")
     private Integer minBackupRetentionDays;
 
     /*
      * Max storage allowed for a server.
      */
-    @JsonProperty(value = "maxStorageMB")
     private Integer maxStorageMB;
 
     /*
      * Max storage allowed for a server.
      */
-    @JsonProperty(value = "minStorageMB")
     private Integer minStorageMB;
 
     /**
@@ -232,5 +229,67 @@ public final class PerformanceTierServiceLevelObjectives {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("edition", this.edition);
+        jsonWriter.writeNumberField("vCore", this.vCore);
+        jsonWriter.writeStringField("hardwareGeneration", this.hardwareGeneration);
+        jsonWriter.writeNumberField("maxBackupRetentionDays", this.maxBackupRetentionDays);
+        jsonWriter.writeNumberField("minBackupRetentionDays", this.minBackupRetentionDays);
+        jsonWriter.writeNumberField("maxStorageMB", this.maxStorageMB);
+        jsonWriter.writeNumberField("minStorageMB", this.minStorageMB);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PerformanceTierServiceLevelObjectives from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PerformanceTierServiceLevelObjectives if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the PerformanceTierServiceLevelObjectives.
+     */
+    public static PerformanceTierServiceLevelObjectives fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PerformanceTierServiceLevelObjectives deserializedPerformanceTierServiceLevelObjectives
+                = new PerformanceTierServiceLevelObjectives();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.id = reader.getString();
+                } else if ("edition".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.edition = reader.getString();
+                } else if ("vCore".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.vCore = reader.getNullable(JsonReader::getInt);
+                } else if ("hardwareGeneration".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.hardwareGeneration = reader.getString();
+                } else if ("maxBackupRetentionDays".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.maxBackupRetentionDays
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("minBackupRetentionDays".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.minBackupRetentionDays
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("maxStorageMB".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.maxStorageMB
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("minStorageMB".equals(fieldName)) {
+                    deserializedPerformanceTierServiceLevelObjectives.minStorageMB
+                        = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPerformanceTierServiceLevelObjectives;
+        });
     }
 }

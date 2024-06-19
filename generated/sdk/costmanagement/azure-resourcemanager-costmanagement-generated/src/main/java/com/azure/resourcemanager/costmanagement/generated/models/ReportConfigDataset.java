@@ -5,8 +5,11 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -14,44 +17,37 @@ import java.util.Map;
  * The definition of data present in the report.
  */
 @Fluent
-public final class ReportConfigDataset {
+public final class ReportConfigDataset implements JsonSerializable<ReportConfigDataset> {
     /*
      * The granularity of rows in the report.
      */
-    @JsonProperty(value = "granularity")
     private ReportGranularityType granularity;
 
     /*
      * Has configuration information for the data in the report. The configuration will be ignored if aggregation and
      * grouping are provided.
      */
-    @JsonProperty(value = "configuration")
     private ReportConfigDatasetConfiguration configuration;
 
     /*
      * Dictionary of aggregation expression to use in the report. The key of each item in the dictionary is the alias
      * for the aggregated column. Report can have up to 2 aggregation clauses.
      */
-    @JsonProperty(value = "aggregation")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, ReportConfigAggregation> aggregation;
 
     /*
      * Array of group by expression to use in the report. Report can have up to 2 group by clauses.
      */
-    @JsonProperty(value = "grouping")
     private List<ReportConfigGrouping> grouping;
 
     /*
      * Array of order by expression to use in the report.
      */
-    @JsonProperty(value = "sorting")
     private List<ReportConfigSorting> sorting;
 
     /*
      * Has filter expression to use in the report.
      */
-    @JsonProperty(value = "filter")
     private ReportConfigFilter filter;
 
     /**
@@ -211,5 +207,62 @@ public final class ReportConfigDataset {
         if (filter() != null) {
             filter().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("granularity", this.granularity == null ? null : this.granularity.toString());
+        jsonWriter.writeJsonField("configuration", this.configuration);
+        jsonWriter.writeMapField("aggregation", this.aggregation, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("grouping", this.grouping, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("sorting", this.sorting, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("filter", this.filter);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReportConfigDataset from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReportConfigDataset if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ReportConfigDataset.
+     */
+    public static ReportConfigDataset fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReportConfigDataset deserializedReportConfigDataset = new ReportConfigDataset();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("granularity".equals(fieldName)) {
+                    deserializedReportConfigDataset.granularity = ReportGranularityType.fromString(reader.getString());
+                } else if ("configuration".equals(fieldName)) {
+                    deserializedReportConfigDataset.configuration = ReportConfigDatasetConfiguration.fromJson(reader);
+                } else if ("aggregation".equals(fieldName)) {
+                    Map<String, ReportConfigAggregation> aggregation
+                        = reader.readMap(reader1 -> ReportConfigAggregation.fromJson(reader1));
+                    deserializedReportConfigDataset.aggregation = aggregation;
+                } else if ("grouping".equals(fieldName)) {
+                    List<ReportConfigGrouping> grouping
+                        = reader.readArray(reader1 -> ReportConfigGrouping.fromJson(reader1));
+                    deserializedReportConfigDataset.grouping = grouping;
+                } else if ("sorting".equals(fieldName)) {
+                    List<ReportConfigSorting> sorting
+                        = reader.readArray(reader1 -> ReportConfigSorting.fromJson(reader1));
+                    deserializedReportConfigDataset.sorting = sorting;
+                } else if ("filter".equals(fieldName)) {
+                    deserializedReportConfigDataset.filter = ReportConfigFilter.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReportConfigDataset;
+        });
     }
 }

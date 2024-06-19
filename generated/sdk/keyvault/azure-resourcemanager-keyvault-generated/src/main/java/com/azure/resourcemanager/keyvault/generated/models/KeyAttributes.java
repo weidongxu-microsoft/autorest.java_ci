@@ -5,41 +5,40 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The object attributes managed by the Azure Key Vault service.
  */
 @Fluent
-public final class KeyAttributes {
+public final class KeyAttributes implements JsonSerializable<KeyAttributes> {
     /*
      * Determines whether or not the object is enabled.
      */
-    @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
      * Not before date in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "nbf")
     private Long notBefore;
 
     /*
      * Expiry date in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "exp")
     private Long expires;
 
     /*
      * Creation time in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private Long created;
 
     /*
      * Last updated time in seconds since 1970-01-01T00:00:00Z.
      */
-    @JsonProperty(value = "updated", access = JsonProperty.Access.WRITE_ONLY)
     private Long updated;
 
     /*
@@ -47,13 +46,11 @@ public final class KeyAttributes {
      * be permanently deleted by a privileged user; otherwise, only the system can purge the object at the end of the
      * retention interval.
      */
-    @JsonProperty(value = "recoveryLevel", access = JsonProperty.Access.WRITE_ONLY)
     private DeletionRecoveryLevel recoveryLevel;
 
     /*
      * Indicates if the private key can be exported.
      */
-    @JsonProperty(value = "exportable")
     private Boolean exportable;
 
     /**
@@ -177,5 +174,56 @@ public final class KeyAttributes {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        jsonWriter.writeNumberField("nbf", this.notBefore);
+        jsonWriter.writeNumberField("exp", this.expires);
+        jsonWriter.writeBooleanField("exportable", this.exportable);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of KeyAttributes from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of KeyAttributes if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the KeyAttributes.
+     */
+    public static KeyAttributes fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            KeyAttributes deserializedKeyAttributes = new KeyAttributes();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enabled".equals(fieldName)) {
+                    deserializedKeyAttributes.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("nbf".equals(fieldName)) {
+                    deserializedKeyAttributes.notBefore = reader.getNullable(JsonReader::getLong);
+                } else if ("exp".equals(fieldName)) {
+                    deserializedKeyAttributes.expires = reader.getNullable(JsonReader::getLong);
+                } else if ("created".equals(fieldName)) {
+                    deserializedKeyAttributes.created = reader.getNullable(JsonReader::getLong);
+                } else if ("updated".equals(fieldName)) {
+                    deserializedKeyAttributes.updated = reader.getNullable(JsonReader::getLong);
+                } else if ("recoveryLevel".equals(fieldName)) {
+                    deserializedKeyAttributes.recoveryLevel = DeletionRecoveryLevel.fromString(reader.getString());
+                } else if ("exportable".equals(fieldName)) {
+                    deserializedKeyAttributes.exportable = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedKeyAttributes;
+        });
     }
 }

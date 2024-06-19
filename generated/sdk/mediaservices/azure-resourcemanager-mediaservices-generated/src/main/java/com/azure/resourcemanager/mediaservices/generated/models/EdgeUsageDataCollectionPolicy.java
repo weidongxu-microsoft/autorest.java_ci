@@ -5,35 +5,35 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The EdgeUsageDataCollectionPolicy model.
  */
 @Fluent
-public final class EdgeUsageDataCollectionPolicy {
+public final class EdgeUsageDataCollectionPolicy implements JsonSerializable<EdgeUsageDataCollectionPolicy> {
     /*
      * Usage data collection frequency in ISO 8601 duration format e.g. PT10M , PT5H.
      */
-    @JsonProperty(value = "dataCollectionFrequency")
     private String dataCollectionFrequency;
 
     /*
      * Usage data reporting frequency in ISO 8601 duration format e.g. PT10M , PT5H.
      */
-    @JsonProperty(value = "dataReportingFrequency")
     private String dataReportingFrequency;
 
     /*
      * Maximum time for which the functionality of the device will not be hampered for not reporting the usage data.
      */
-    @JsonProperty(value = "maxAllowedUnreportedUsageDuration")
     private String maxAllowedUnreportedUsageDuration;
 
     /*
      * Details of Event Hub where the usage will be reported.
      */
-    @JsonProperty(value = "eventHubDetails")
     private EdgeUsageDataEventHub eventHubDetails;
 
     /**
@@ -138,5 +138,51 @@ public final class EdgeUsageDataCollectionPolicy {
         if (eventHubDetails() != null) {
             eventHubDetails().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("dataCollectionFrequency", this.dataCollectionFrequency);
+        jsonWriter.writeStringField("dataReportingFrequency", this.dataReportingFrequency);
+        jsonWriter.writeStringField("maxAllowedUnreportedUsageDuration", this.maxAllowedUnreportedUsageDuration);
+        jsonWriter.writeJsonField("eventHubDetails", this.eventHubDetails);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EdgeUsageDataCollectionPolicy from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EdgeUsageDataCollectionPolicy if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EdgeUsageDataCollectionPolicy.
+     */
+    public static EdgeUsageDataCollectionPolicy fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EdgeUsageDataCollectionPolicy deserializedEdgeUsageDataCollectionPolicy
+                = new EdgeUsageDataCollectionPolicy();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("dataCollectionFrequency".equals(fieldName)) {
+                    deserializedEdgeUsageDataCollectionPolicy.dataCollectionFrequency = reader.getString();
+                } else if ("dataReportingFrequency".equals(fieldName)) {
+                    deserializedEdgeUsageDataCollectionPolicy.dataReportingFrequency = reader.getString();
+                } else if ("maxAllowedUnreportedUsageDuration".equals(fieldName)) {
+                    deserializedEdgeUsageDataCollectionPolicy.maxAllowedUnreportedUsageDuration = reader.getString();
+                } else if ("eventHubDetails".equals(fieldName)) {
+                    deserializedEdgeUsageDataCollectionPolicy.eventHubDetails = EdgeUsageDataEventHub.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEdgeUsageDataCollectionPolicy;
+        });
     }
 }

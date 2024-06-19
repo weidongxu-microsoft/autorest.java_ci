@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Gateway settings.
  */
 @Immutable
-public final class GatewaySettingsInner {
+public final class GatewaySettingsInner implements JsonSerializable<GatewaySettingsInner> {
     /*
      * Indicates whether or not the gateway settings based authorization is enabled.
      */
-    @JsonProperty(value = "restAuthCredential.isEnabled", access = JsonProperty.Access.WRITE_ONLY)
     private String isCredentialEnabled;
 
     /*
      * The gateway settings user name.
      */
-    @JsonProperty(value = "restAuthCredential.username", access = JsonProperty.Access.WRITE_ONLY)
     private String username;
 
     /*
      * The gateway settings user password.
      */
-    @JsonProperty(value = "restAuthCredential.password", access = JsonProperty.Access.WRITE_ONLY)
     private String password;
 
     /**
@@ -70,5 +71,44 @@ public final class GatewaySettingsInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of GatewaySettingsInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of GatewaySettingsInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the GatewaySettingsInner.
+     */
+    public static GatewaySettingsInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            GatewaySettingsInner deserializedGatewaySettingsInner = new GatewaySettingsInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("restAuthCredential.isEnabled".equals(fieldName)) {
+                    deserializedGatewaySettingsInner.isCredentialEnabled = reader.getString();
+                } else if ("restAuthCredential.username".equals(fieldName)) {
+                    deserializedGatewaySettingsInner.username = reader.getString();
+                } else if ("restAuthCredential.password".equals(fieldName)) {
+                    deserializedGatewaySettingsInner.password = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedGatewaySettingsInner;
+        });
     }
 }

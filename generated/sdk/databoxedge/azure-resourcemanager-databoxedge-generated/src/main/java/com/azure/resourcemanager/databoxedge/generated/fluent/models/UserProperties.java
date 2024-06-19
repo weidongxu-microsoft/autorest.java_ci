@@ -6,33 +6,34 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareAccessRight;
 import com.azure.resourcemanager.databoxedge.generated.models.UserType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The user properties.
  */
 @Fluent
-public final class UserProperties {
+public final class UserProperties implements JsonSerializable<UserProperties> {
     /*
      * The password details.
      */
-    @JsonProperty(value = "encryptedPassword")
     private AsymmetricEncryptedSecret encryptedPassword;
 
     /*
      * List of shares that the user has rights on. This field should not be specified during user creation.
      */
-    @JsonProperty(value = "shareAccessRights", access = JsonProperty.Access.WRITE_ONLY)
     private List<ShareAccessRight> shareAccessRights;
 
     /*
      * Type of the user.
      */
-    @JsonProperty(value = "userType", required = true)
     private UserType userType;
 
     /**
@@ -110,4 +111,48 @@ public final class UserProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(UserProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("userType", this.userType == null ? null : this.userType.toString());
+        jsonWriter.writeJsonField("encryptedPassword", this.encryptedPassword);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of UserProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of UserProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the UserProperties.
+     */
+    public static UserProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            UserProperties deserializedUserProperties = new UserProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("userType".equals(fieldName)) {
+                    deserializedUserProperties.userType = UserType.fromString(reader.getString());
+                } else if ("encryptedPassword".equals(fieldName)) {
+                    deserializedUserProperties.encryptedPassword = AsymmetricEncryptedSecret.fromJson(reader);
+                } else if ("shareAccessRights".equals(fieldName)) {
+                    List<ShareAccessRight> shareAccessRights
+                        = reader.readArray(reader1 -> ShareAccessRight.fromJson(reader1));
+                    deserializedUserProperties.shareAccessRights = shareAccessRights;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUserProperties;
+        });
+    }
 }

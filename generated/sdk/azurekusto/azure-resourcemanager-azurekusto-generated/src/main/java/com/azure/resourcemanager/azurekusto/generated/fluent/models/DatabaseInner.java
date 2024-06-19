@@ -6,37 +6,43 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.Kind;
 import com.azure.resourcemanager.azurekusto.generated.models.ReadOnlyFollowingDatabase;
 import com.azure.resourcemanager.azurekusto.generated.models.ReadWriteDatabase;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 
 /**
  * Class representing a Kusto database.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = DatabaseInner.class, visible = true)
-@JsonTypeName("Database")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "ReadWrite", value = ReadWriteDatabase.class),
-    @JsonSubTypes.Type(name = "ReadOnlyFollowing", value = ReadOnlyFollowingDatabase.class) })
 @Fluent
 public class DatabaseInner extends ProxyResource {
     /*
      * Kind of the database
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private Kind kind = Kind.fromString("Database");
 
     /*
      * Resource location.
      */
-    @JsonProperty(value = "location")
     private String location;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of DatabaseInner class.
@@ -74,10 +80,113 @@ public class DatabaseInner extends ProxyResource {
     }
 
     /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        jsonWriter.writeStringField("location", this.location);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DatabaseInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DatabaseInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DatabaseInner.
+     */
+    public static DatabaseInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("kind".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("ReadWrite".equals(discriminatorValue)) {
+                    return ReadWriteDatabase.fromJson(readerToUse.reset());
+                } else if ("ReadOnlyFollowing".equals(discriminatorValue)) {
+                    return ReadOnlyFollowingDatabase.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static DatabaseInner fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DatabaseInner deserializedDatabaseInner = new DatabaseInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedDatabaseInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedDatabaseInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedDatabaseInner.type = reader.getString();
+                } else if ("kind".equals(fieldName)) {
+                    deserializedDatabaseInner.kind = Kind.fromString(reader.getString());
+                } else if ("location".equals(fieldName)) {
+                    deserializedDatabaseInner.location = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDatabaseInner;
+        });
     }
 }

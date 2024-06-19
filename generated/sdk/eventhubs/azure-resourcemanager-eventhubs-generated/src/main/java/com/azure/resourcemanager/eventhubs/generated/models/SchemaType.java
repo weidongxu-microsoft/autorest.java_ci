@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class SchemaType extends ExpandableStringEnum<SchemaType> {
      * @param name a name to look for.
      * @return the corresponding SchemaType.
      */
-    @JsonCreator
     public static SchemaType fromString(String name) {
         return fromString(name, SchemaType.class);
     }

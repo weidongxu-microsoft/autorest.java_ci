@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class PublicNetworkAccessType extends ExpandableStringEnum<PublicNe
      * @param name a name to look for.
      * @return the corresponding PublicNetworkAccessType.
      */
-    @JsonCreator
     public static PublicNetworkAccessType fromString(String name) {
         return fromString(name, PublicNetworkAccessType.class);
     }

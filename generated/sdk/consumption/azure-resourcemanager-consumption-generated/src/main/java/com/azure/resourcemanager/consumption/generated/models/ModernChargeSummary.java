@@ -6,31 +6,41 @@ package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.fluent.models.ModernChargeSummaryProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 
 /**
  * Modern charge summary.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = ModernChargeSummary.class, visible = true)
-@JsonTypeName("modern")
 @Fluent
 public final class ModernChargeSummary extends ChargeSummary {
     /*
      * Specifies the kind of charge summary.
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private ChargeSummaryKind kind = ChargeSummaryKind.MODERN;
 
     /*
      * Properties for modern charge summary
      */
-    @JsonProperty(value = "properties", required = true)
     private ModernChargeSummaryProperties innerProperties = new ModernChargeSummaryProperties();
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of ModernChargeSummary class.
@@ -55,6 +65,36 @@ public final class ModernChargeSummary extends ChargeSummary {
      */
     private ModernChargeSummaryProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -192,4 +232,53 @@ public final class ModernChargeSummary extends ChargeSummary {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ModernChargeSummary.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("eTag", etag());
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ModernChargeSummary from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ModernChargeSummary if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ModernChargeSummary.
+     */
+    public static ModernChargeSummary fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ModernChargeSummary deserializedModernChargeSummary = new ModernChargeSummary();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedModernChargeSummary.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedModernChargeSummary.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedModernChargeSummary.type = reader.getString();
+                } else if ("eTag".equals(fieldName)) {
+                    deserializedModernChargeSummary.withEtag(reader.getString());
+                } else if ("properties".equals(fieldName)) {
+                    deserializedModernChargeSummary.innerProperties = ModernChargeSummaryProperties.fromJson(reader);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedModernChargeSummary.kind = ChargeSummaryKind.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedModernChargeSummary;
+        });
+    }
 }

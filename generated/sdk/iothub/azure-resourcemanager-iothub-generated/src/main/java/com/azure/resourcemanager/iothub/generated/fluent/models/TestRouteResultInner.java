@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.TestResultStatus;
 import com.azure.resourcemanager.iothub.generated.models.TestRouteResultDetails;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Result of testing one route.
  */
 @Fluent
-public final class TestRouteResultInner {
+public final class TestRouteResultInner implements JsonSerializable<TestRouteResultInner> {
     /*
      * Result of testing route
      */
-    @JsonProperty(value = "result")
     private TestResultStatus result;
 
     /*
      * Detailed result of testing route
      */
-    @JsonProperty(value = "details")
     private TestRouteResultDetails details;
 
     /**
@@ -81,5 +83,44 @@ public final class TestRouteResultInner {
         if (details() != null) {
             details().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("result", this.result == null ? null : this.result.toString());
+        jsonWriter.writeJsonField("details", this.details);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of TestRouteResultInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of TestRouteResultInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the TestRouteResultInner.
+     */
+    public static TestRouteResultInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            TestRouteResultInner deserializedTestRouteResultInner = new TestRouteResultInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("result".equals(fieldName)) {
+                    deserializedTestRouteResultInner.result = TestResultStatus.fromString(reader.getString());
+                } else if ("details".equals(fieldName)) {
+                    deserializedTestRouteResultInner.details = TestRouteResultDetails.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedTestRouteResultInner;
+        });
     }
 }

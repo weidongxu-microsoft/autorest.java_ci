@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class DatabasePrincipalType extends ExpandableStringEnum<DatabasePr
      * @param name a name to look for.
      * @return the corresponding DatabasePrincipalType.
      */
-    @JsonCreator
     public static DatabasePrincipalType fromString(String name) {
         return fromString(name, DatabasePrincipalType.class);
     }

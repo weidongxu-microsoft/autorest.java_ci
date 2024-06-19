@@ -5,49 +5,47 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.SubscriptionProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Subscription details for the Edge Profile.
  */
 @Fluent
-public final class EdgeProfileSubscription {
+public final class EdgeProfileSubscription implements JsonSerializable<EdgeProfileSubscription> {
     /*
      * Edge Subscription Registration ID
      */
-    @JsonProperty(value = "registrationId")
     private String registrationId;
 
     /*
      * ARM ID of the subscription
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * The state property.
      */
-    @JsonProperty(value = "state")
     private SubscriptionState state;
 
     /*
      * The registrationDate property.
      */
-    @JsonProperty(value = "registrationDate")
     private String registrationDate;
 
     /*
      * The subscriptionId property.
      */
-    @JsonProperty(value = "subscriptionId")
     private String subscriptionId;
 
     /*
      * The properties property.
      */
-    @JsonProperty(value = "properties")
     private SubscriptionProperties innerProperties;
 
     /**
@@ -289,5 +287,56 @@ public final class EdgeProfileSubscription {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("registrationId", this.registrationId);
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("state", this.state == null ? null : this.state.toString());
+        jsonWriter.writeStringField("registrationDate", this.registrationDate);
+        jsonWriter.writeStringField("subscriptionId", this.subscriptionId);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EdgeProfileSubscription from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EdgeProfileSubscription if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EdgeProfileSubscription.
+     */
+    public static EdgeProfileSubscription fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EdgeProfileSubscription deserializedEdgeProfileSubscription = new EdgeProfileSubscription();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("registrationId".equals(fieldName)) {
+                    deserializedEdgeProfileSubscription.registrationId = reader.getString();
+                } else if ("id".equals(fieldName)) {
+                    deserializedEdgeProfileSubscription.id = reader.getString();
+                } else if ("state".equals(fieldName)) {
+                    deserializedEdgeProfileSubscription.state = SubscriptionState.fromString(reader.getString());
+                } else if ("registrationDate".equals(fieldName)) {
+                    deserializedEdgeProfileSubscription.registrationDate = reader.getString();
+                } else if ("subscriptionId".equals(fieldName)) {
+                    deserializedEdgeProfileSubscription.subscriptionId = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedEdgeProfileSubscription.innerProperties = SubscriptionProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEdgeProfileSubscription;
+        });
     }
 }

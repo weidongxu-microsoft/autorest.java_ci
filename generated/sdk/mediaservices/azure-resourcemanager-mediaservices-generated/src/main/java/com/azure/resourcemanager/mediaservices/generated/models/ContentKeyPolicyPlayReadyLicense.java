@@ -5,80 +5,75 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Duration;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The PlayReady license.
  */
 @Fluent
-public final class ContentKeyPolicyPlayReadyLicense {
+public final class ContentKeyPolicyPlayReadyLicense implements JsonSerializable<ContentKeyPolicyPlayReadyLicense> {
     /*
      * A flag indicating whether test devices can use the license.
      */
-    @JsonProperty(value = "allowTestDevices", required = true)
     private boolean allowTestDevices;
 
     /*
      * The security level.
      */
-    @JsonProperty(value = "securityLevel")
     private SecurityLevel securityLevel;
 
     /*
      * The begin date of license
      */
-    @JsonProperty(value = "beginDate")
     private OffsetDateTime beginDate;
 
     /*
      * The expiration date of license.
      */
-    @JsonProperty(value = "expirationDate")
     private OffsetDateTime expirationDate;
 
     /*
      * The relative begin date of license.
      */
-    @JsonProperty(value = "relativeBeginDate")
     private Duration relativeBeginDate;
 
     /*
      * The relative expiration date of license.
      */
-    @JsonProperty(value = "relativeExpirationDate")
     private Duration relativeExpirationDate;
 
     /*
      * The grace period of license.
      */
-    @JsonProperty(value = "gracePeriod")
     private Duration gracePeriod;
 
     /*
      * The license PlayRight
      */
-    @JsonProperty(value = "playRight")
     private ContentKeyPolicyPlayReadyPlayRight playRight;
 
     /*
      * The license type.
      */
-    @JsonProperty(value = "licenseType", required = true)
     private ContentKeyPolicyPlayReadyLicenseType licenseType;
 
     /*
      * The content key location.
      */
-    @JsonProperty(value = "contentKeyLocation", required = true)
     private ContentKeyPolicyPlayReadyContentKeyLocation contentKeyLocation;
 
     /*
      * The PlayReady content type.
      */
-    @JsonProperty(value = "contentType", required = true)
     private ContentKeyPolicyPlayReadyContentType contentType;
 
     /**
@@ -337,4 +332,85 @@ public final class ContentKeyPolicyPlayReadyLicense {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ContentKeyPolicyPlayReadyLicense.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("allowTestDevices", this.allowTestDevices);
+        jsonWriter.writeStringField("licenseType", this.licenseType == null ? null : this.licenseType.toString());
+        jsonWriter.writeJsonField("contentKeyLocation", this.contentKeyLocation);
+        jsonWriter.writeStringField("contentType", this.contentType == null ? null : this.contentType.toString());
+        jsonWriter.writeStringField("securityLevel", this.securityLevel == null ? null : this.securityLevel.toString());
+        jsonWriter.writeStringField("beginDate",
+            this.beginDate == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.beginDate));
+        jsonWriter.writeStringField("expirationDate",
+            this.expirationDate == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.expirationDate));
+        jsonWriter.writeStringField("relativeBeginDate", CoreUtils.durationToStringWithDays(this.relativeBeginDate));
+        jsonWriter.writeStringField("relativeExpirationDate",
+            CoreUtils.durationToStringWithDays(this.relativeExpirationDate));
+        jsonWriter.writeStringField("gracePeriod", CoreUtils.durationToStringWithDays(this.gracePeriod));
+        jsonWriter.writeJsonField("playRight", this.playRight);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ContentKeyPolicyPlayReadyLicense from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ContentKeyPolicyPlayReadyLicense if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ContentKeyPolicyPlayReadyLicense.
+     */
+    public static ContentKeyPolicyPlayReadyLicense fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ContentKeyPolicyPlayReadyLicense deserializedContentKeyPolicyPlayReadyLicense
+                = new ContentKeyPolicyPlayReadyLicense();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("allowTestDevices".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.allowTestDevices = reader.getBoolean();
+                } else if ("licenseType".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.licenseType
+                        = ContentKeyPolicyPlayReadyLicenseType.fromString(reader.getString());
+                } else if ("contentKeyLocation".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.contentKeyLocation
+                        = ContentKeyPolicyPlayReadyContentKeyLocation.fromJson(reader);
+                } else if ("contentType".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.contentType
+                        = ContentKeyPolicyPlayReadyContentType.fromString(reader.getString());
+                } else if ("securityLevel".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.securityLevel
+                        = SecurityLevel.fromString(reader.getString());
+                } else if ("beginDate".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.beginDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("expirationDate".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.expirationDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("relativeBeginDate".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.relativeBeginDate
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("relativeExpirationDate".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.relativeExpirationDate
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("gracePeriod".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.gracePeriod
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("playRight".equals(fieldName)) {
+                    deserializedContentKeyPolicyPlayReadyLicense.playRight
+                        = ContentKeyPolicyPlayReadyPlayRight.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedContentKeyPolicyPlayReadyLicense;
+        });
+    }
 }

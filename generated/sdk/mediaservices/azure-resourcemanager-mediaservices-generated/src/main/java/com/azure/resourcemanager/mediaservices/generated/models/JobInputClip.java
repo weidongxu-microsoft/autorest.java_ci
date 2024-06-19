@@ -5,49 +5,38 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Represents input files for a Job.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputClip.class, visible = true)
-@JsonTypeName("#Microsoft.Media.JobInputClip")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputAsset", value = JobInputAsset.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.JobInputHttp", value = JobInputHttp.class) })
 @Fluent
 public class JobInputClip extends JobInput {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.JobInputClip";
 
     /*
      * List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings will not be returned in
      * service responses to prevent sensitive data exposure.
      */
-    @JsonProperty(value = "files")
     private List<String> files;
 
     /*
      * Defines a point on the timeline of the input media at which processing will start. Defaults to the beginning of
      * the input media.
      */
-    @JsonProperty(value = "start")
     private ClipTime start;
 
     /*
      * Defines a point on the timeline of the input media at which processing will end. Defaults to the end of the input
      * media.
      */
-    @JsonProperty(value = "end")
     private ClipTime end;
 
     /*
@@ -56,14 +45,12 @@ public class JobInputClip extends JobInput {
      * onto the input video before it is encoded. When submitting a Job, exactly one of the JobInputs should be the
      * image file, and it should have the label 'xyz'.
      */
-    @JsonProperty(value = "label")
     private String label;
 
     /*
      * Defines a list of InputDefinitions. For each InputDefinition, it defines a list of track selections and related
      * metadata.
      */
-    @JsonProperty(value = "inputDefinitions")
     private List<InputDefinition> inputDefinitions;
 
     /**
@@ -213,5 +200,87 @@ public class JobInputClip extends JobInput {
         if (inputDefinitions() != null) {
             inputDefinitions().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeArrayField("files", this.files, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("start", this.start);
+        jsonWriter.writeJsonField("end", this.end);
+        jsonWriter.writeStringField("label", this.label);
+        jsonWriter.writeArrayField("inputDefinitions", this.inputDefinitions,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobInputClip from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobInputClip if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the JobInputClip.
+     */
+    public static JobInputClip fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("@odata.type".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("#Microsoft.Media.JobInputAsset".equals(discriminatorValue)) {
+                    return JobInputAsset.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.JobInputHttp".equals(discriminatorValue)) {
+                    return JobInputHttp.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static JobInputClip fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobInputClip deserializedJobInputClip = new JobInputClip();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedJobInputClip.odataType = reader.getString();
+                } else if ("files".equals(fieldName)) {
+                    List<String> files = reader.readArray(reader1 -> reader1.getString());
+                    deserializedJobInputClip.files = files;
+                } else if ("start".equals(fieldName)) {
+                    deserializedJobInputClip.start = ClipTime.fromJson(reader);
+                } else if ("end".equals(fieldName)) {
+                    deserializedJobInputClip.end = ClipTime.fromJson(reader);
+                } else if ("label".equals(fieldName)) {
+                    deserializedJobInputClip.label = reader.getString();
+                } else if ("inputDefinitions".equals(fieldName)) {
+                    List<InputDefinition> inputDefinitions
+                        = reader.readArray(reader1 -> InputDefinition.fromJson(reader1));
+                    deserializedJobInputClip.inputDefinitions = inputDefinitions;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobInputClip;
+        });
     }
 }

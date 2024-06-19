@@ -6,18 +6,21 @@ package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.PurgeState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Response containing status for a specific purge operation.
  */
 @Fluent
-public final class ComponentPurgeStatusResponseInner {
+public final class ComponentPurgeStatusResponseInner implements JsonSerializable<ComponentPurgeStatusResponseInner> {
     /*
      * Status of the operation represented by the requested Id.
      */
-    @JsonProperty(value = "status", required = true)
     private PurgeState status;
 
     /**
@@ -60,4 +63,42 @@ public final class ComponentPurgeStatusResponseInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ComponentPurgeStatusResponseInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("status", this.status == null ? null : this.status.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ComponentPurgeStatusResponseInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ComponentPurgeStatusResponseInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ComponentPurgeStatusResponseInner.
+     */
+    public static ComponentPurgeStatusResponseInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ComponentPurgeStatusResponseInner deserializedComponentPurgeStatusResponseInner
+                = new ComponentPurgeStatusResponseInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("status".equals(fieldName)) {
+                    deserializedComponentPurgeStatusResponseInner.status = PurgeState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedComponentPurgeStatusResponseInner;
+        });
+    }
 }

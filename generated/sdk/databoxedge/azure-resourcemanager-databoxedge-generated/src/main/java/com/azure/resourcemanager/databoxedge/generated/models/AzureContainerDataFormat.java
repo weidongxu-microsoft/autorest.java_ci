@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class AzureContainerDataFormat extends ExpandableStringEnum<AzureCo
      * @param name a name to look for.
      * @return the corresponding AzureContainerDataFormat.
      */
-    @JsonCreator
     public static AzureContainerDataFormat fromString(String name) {
         return fromString(name, AzureContainerDataFormat.class);
     }

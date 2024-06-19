@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The billing tier for the IoT hub.
  */
@@ -41,7 +38,6 @@ public enum IotHubSkuTier {
      * @param value the serialized value to parse.
      * @return the parsed IotHubSkuTier object, or null if unable to parse.
      */
-    @JsonCreator
     public static IotHubSkuTier fromString(String value) {
         if (value == null) {
             return null;
@@ -58,7 +54,6 @@ public enum IotHubSkuTier {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

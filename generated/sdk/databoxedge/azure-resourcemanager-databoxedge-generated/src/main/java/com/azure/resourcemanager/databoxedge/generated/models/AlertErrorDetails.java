@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Error details for the alert.
  */
 @Immutable
-public final class AlertErrorDetails {
+public final class AlertErrorDetails implements JsonSerializable<AlertErrorDetails> {
     /*
      * Error code.
      */
-    @JsonProperty(value = "errorCode", access = JsonProperty.Access.WRITE_ONLY)
     private String errorCode;
 
     /*
      * Error Message.
      */
-    @JsonProperty(value = "errorMessage", access = JsonProperty.Access.WRITE_ONLY)
     private String errorMessage;
 
     /*
      * Number of occurrences.
      */
-    @JsonProperty(value = "occurrences", access = JsonProperty.Access.WRITE_ONLY)
     private Integer occurrences;
 
     /**
@@ -69,5 +70,44 @@ public final class AlertErrorDetails {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AlertErrorDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AlertErrorDetails if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AlertErrorDetails.
+     */
+    public static AlertErrorDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AlertErrorDetails deserializedAlertErrorDetails = new AlertErrorDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("errorCode".equals(fieldName)) {
+                    deserializedAlertErrorDetails.errorCode = reader.getString();
+                } else if ("errorMessage".equals(fieldName)) {
+                    deserializedAlertErrorDetails.errorMessage = reader.getString();
+                } else if ("occurrences".equals(fieldName)) {
+                    deserializedAlertErrorDetails.occurrences = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAlertErrorDetails;
+        });
     }
 }

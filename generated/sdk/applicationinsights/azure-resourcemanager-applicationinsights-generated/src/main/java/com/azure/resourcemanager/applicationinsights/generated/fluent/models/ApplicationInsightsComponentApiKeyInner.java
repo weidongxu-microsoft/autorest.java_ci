@@ -5,49 +5,48 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Properties that define an API key of an Application Insights Component.
  */
 @Fluent
-public final class ApplicationInsightsComponentApiKeyInner {
+public final class ApplicationInsightsComponentApiKeyInner
+    implements JsonSerializable<ApplicationInsightsComponentApiKeyInner> {
     /*
      * The unique ID of the API key inside an Application Insights component. It is auto generated when the API key is
      * created.
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * The API key value. It will be only return once when the API Key was created.
      */
-    @JsonProperty(value = "apiKey", access = JsonProperty.Access.WRITE_ONLY)
     private String apiKey;
 
     /*
      * The create date of this API key.
      */
-    @JsonProperty(value = "createdDate")
     private String createdDate;
 
     /*
      * The name of the API key.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The read access rights of this API Key.
      */
-    @JsonProperty(value = "linkedReadProperties")
     private List<String> linkedReadProperties;
 
     /*
      * The write access rights of this API Key.
      */
-    @JsonProperty(value = "linkedWriteProperties")
     private List<String> linkedWriteProperties;
 
     /**
@@ -161,5 +160,59 @@ public final class ApplicationInsightsComponentApiKeyInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("createdDate", this.createdDate);
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeArrayField("linkedReadProperties", this.linkedReadProperties,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("linkedWriteProperties", this.linkedWriteProperties,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentApiKeyInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentApiKeyInner if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentApiKeyInner.
+     */
+    public static ApplicationInsightsComponentApiKeyInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentApiKeyInner deserializedApplicationInsightsComponentApiKeyInner
+                = new ApplicationInsightsComponentApiKeyInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentApiKeyInner.id = reader.getString();
+                } else if ("apiKey".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentApiKeyInner.apiKey = reader.getString();
+                } else if ("createdDate".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentApiKeyInner.createdDate = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentApiKeyInner.name = reader.getString();
+                } else if ("linkedReadProperties".equals(fieldName)) {
+                    List<String> linkedReadProperties = reader.readArray(reader1 -> reader1.getString());
+                    deserializedApplicationInsightsComponentApiKeyInner.linkedReadProperties = linkedReadProperties;
+                } else if ("linkedWriteProperties".equals(fieldName)) {
+                    List<String> linkedWriteProperties = reader.readArray(reader1 -> reader1.getString());
+                    deserializedApplicationInsightsComponentApiKeyInner.linkedWriteProperties = linkedWriteProperties;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentApiKeyInner;
+        });
     }
 }

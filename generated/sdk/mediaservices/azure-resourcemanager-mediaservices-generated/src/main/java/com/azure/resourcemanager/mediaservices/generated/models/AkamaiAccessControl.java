@@ -5,18 +5,21 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Akamai access control.
  */
 @Fluent
-public final class AkamaiAccessControl {
+public final class AkamaiAccessControl implements JsonSerializable<AkamaiAccessControl> {
     /*
      * authentication key list
      */
-    @JsonProperty(value = "akamaiSignatureHeaderAuthenticationKeyList")
     private List<AkamaiSignatureHeaderAuthenticationKey> akamaiSignatureHeaderAuthenticationKeyList;
 
     /**
@@ -55,5 +58,45 @@ public final class AkamaiAccessControl {
         if (akamaiSignatureHeaderAuthenticationKeyList() != null) {
             akamaiSignatureHeaderAuthenticationKeyList().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("akamaiSignatureHeaderAuthenticationKeyList",
+            this.akamaiSignatureHeaderAuthenticationKeyList, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AkamaiAccessControl from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AkamaiAccessControl if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AkamaiAccessControl.
+     */
+    public static AkamaiAccessControl fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AkamaiAccessControl deserializedAkamaiAccessControl = new AkamaiAccessControl();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("akamaiSignatureHeaderAuthenticationKeyList".equals(fieldName)) {
+                    List<AkamaiSignatureHeaderAuthenticationKey> akamaiSignatureHeaderAuthenticationKeyList
+                        = reader.readArray(reader1 -> AkamaiSignatureHeaderAuthenticationKey.fromJson(reader1));
+                    deserializedAkamaiAccessControl.akamaiSignatureHeaderAuthenticationKeyList
+                        = akamaiSignatureHeaderAuthenticationKeyList;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAkamaiAccessControl;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -56,7 +55,6 @@ public final class LiveEventEncodingType extends ExpandableStringEnum<LiveEventE
      * @param name a name to look for.
      * @return the corresponding LiveEventEncodingType.
      */
-    @JsonCreator
     public static LiveEventEncodingType fromString(String name) {
         return fromString(name, LiveEventEncodingType.class);
     }

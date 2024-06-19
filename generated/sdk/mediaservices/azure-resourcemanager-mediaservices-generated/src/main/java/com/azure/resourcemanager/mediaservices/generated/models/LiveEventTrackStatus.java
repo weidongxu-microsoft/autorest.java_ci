@@ -5,47 +5,45 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The live event track status.
  */
 @Fluent
-public final class LiveEventTrackStatus {
+public final class LiveEventTrackStatus implements JsonSerializable<LiveEventTrackStatus> {
     /*
      * Track Id.
      */
-    @JsonProperty(value = "trackId")
     private String trackId;
 
     /*
      * Expected bitrate for this track.
      */
-    @JsonProperty(value = "expectedBitrate")
     private Long expectedBitrate;
 
     /*
      * Average incoming bitrate for last 20 seconds when live event is running.
      */
-    @JsonProperty(value = "incomingBitrate")
     private Long incomingBitrate;
 
     /*
      * Current ingest drift value in seconds for last 1 minute.
      */
-    @JsonProperty(value = "ingestDrift")
     private String ingestDrift;
 
     /*
      * Total number of timed metadata request received.
      */
-    @JsonProperty(value = "requestReceived")
     private Long requestReceived;
 
     /*
      * Total number of successful timed metadata request received.
      */
-    @JsonProperty(value = "requestSucceeded")
     private Long requestSucceeded;
 
     /**
@@ -180,5 +178,56 @@ public final class LiveEventTrackStatus {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("trackId", this.trackId);
+        jsonWriter.writeNumberField("expectedBitrate", this.expectedBitrate);
+        jsonWriter.writeNumberField("incomingBitrate", this.incomingBitrate);
+        jsonWriter.writeStringField("ingestDrift", this.ingestDrift);
+        jsonWriter.writeNumberField("requestReceived", this.requestReceived);
+        jsonWriter.writeNumberField("requestSucceeded", this.requestSucceeded);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventTrackStatus from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventTrackStatus if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventTrackStatus.
+     */
+    public static LiveEventTrackStatus fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventTrackStatus deserializedLiveEventTrackStatus = new LiveEventTrackStatus();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("trackId".equals(fieldName)) {
+                    deserializedLiveEventTrackStatus.trackId = reader.getString();
+                } else if ("expectedBitrate".equals(fieldName)) {
+                    deserializedLiveEventTrackStatus.expectedBitrate = reader.getNullable(JsonReader::getLong);
+                } else if ("incomingBitrate".equals(fieldName)) {
+                    deserializedLiveEventTrackStatus.incomingBitrate = reader.getNullable(JsonReader::getLong);
+                } else if ("ingestDrift".equals(fieldName)) {
+                    deserializedLiveEventTrackStatus.ingestDrift = reader.getString();
+                } else if ("requestReceived".equals(fieldName)) {
+                    deserializedLiveEventTrackStatus.requestReceived = reader.getNullable(JsonReader::getLong);
+                } else if ("requestSucceeded".equals(fieldName)) {
+                    deserializedLiveEventTrackStatus.requestSucceeded = reader.getNullable(JsonReader::getLong);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventTrackStatus;
+        });
     }
 }

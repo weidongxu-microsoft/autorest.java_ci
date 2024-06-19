@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ResourceProviderConnection extends ExpandableStringEnum<Resou
      * @param name a name to look for.
      * @return the corresponding ResourceProviderConnection.
      */
-    @JsonCreator
     public static ResourceProviderConnection fromString(String name) {
         return fromString(name, ResourceProviderConnection.class);
     }

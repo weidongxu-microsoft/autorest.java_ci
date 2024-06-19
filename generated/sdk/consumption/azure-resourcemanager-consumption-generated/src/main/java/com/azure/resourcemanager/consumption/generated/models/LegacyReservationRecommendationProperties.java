@@ -5,11 +5,12 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.List;
@@ -18,118 +19,92 @@ import java.util.UUID;
 /**
  * The properties of the reservation recommendation.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "scope",
-    defaultImpl = LegacyReservationRecommendationProperties.class,
-    visible = true)
-@JsonTypeName("LegacyReservationRecommendationProperties")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "Single", value = LegacySingleScopeReservationRecommendationProperties.class),
-    @JsonSubTypes.Type(name = "Shared", value = LegacySharedScopeReservationRecommendationProperties.class) })
 @Immutable
-public class LegacyReservationRecommendationProperties {
+public class LegacyReservationRecommendationProperties
+    implements JsonSerializable<LegacyReservationRecommendationProperties> {
     /*
      * Shared or single recommendation.
      */
-    @JsonTypeId
-    @JsonProperty(value = "scope", required = true)
     private String scope = "LegacyReservationRecommendationProperties";
 
     /*
      * The number of days of usage to look back for recommendation.
      */
-    @JsonProperty(value = "lookBackPeriod", access = JsonProperty.Access.WRITE_ONLY)
     private String lookBackPeriod;
 
     /*
      * The instance Flexibility Ratio.
      */
-    @JsonProperty(value = "instanceFlexibilityRatio", access = JsonProperty.Access.WRITE_ONLY)
     private Float instanceFlexibilityRatio;
 
     /*
      * The instance Flexibility Group.
      */
-    @JsonProperty(value = "instanceFlexibilityGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceFlexibilityGroup;
 
     /*
      * The normalized Size.
      */
-    @JsonProperty(value = "normalizedSize", access = JsonProperty.Access.WRITE_ONLY)
     private String normalizedSize;
 
     /*
      * The recommended Quantity Normalized.
      */
-    @JsonProperty(value = "recommendedQuantityNormalized", access = JsonProperty.Access.WRITE_ONLY)
     private Float recommendedQuantityNormalized;
 
     /*
      * The meter id (GUID)
      */
-    @JsonProperty(value = "meterId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID meterId;
 
     /*
      * The azure resource type.
      */
-    @JsonProperty(value = "resourceType", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceType;
 
     /*
      * RI recommendations in one or three year terms.
      */
-    @JsonProperty(value = "term", access = JsonProperty.Access.WRITE_ONLY)
     private String term;
 
     /*
      * The total amount of cost without reserved instances.
      */
-    @JsonProperty(value = "costWithNoReservedInstances", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal costWithNoReservedInstances;
 
     /*
      * Recommended quality for reserved instances.
      */
-    @JsonProperty(value = "recommendedQuantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal recommendedQuantity;
 
     /*
      * The total amount of cost with reserved instances.
      */
-    @JsonProperty(value = "totalCostWithReservedInstances", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal totalCostWithReservedInstances;
 
     /*
      * Total estimated savings with reserved instances.
      */
-    @JsonProperty(value = "netSavings", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal netSavings;
 
     /*
      * The usage date for looking back.
      */
-    @JsonProperty(value = "firstUsageDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime firstUsageDate;
 
     /*
      * List of sku properties
      */
-    @JsonProperty(value = "skuProperties", access = JsonProperty.Access.WRITE_ONLY)
     private List<SkuProperty> skuProperties;
 
     /*
      * The last usage date used for looking back for computing the recommendation.
      */
-    @JsonProperty(value = "lastUsageDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastUsageDate;
 
     /*
      * The total hours for which the cost is covered.
      */
-    @JsonProperty(value = "totalHours", access = JsonProperty.Access.WRITE_ONLY)
     private Integer totalHours;
 
     /**
@@ -157,12 +132,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the lookBackPeriod property: The number of days of usage to look back for recommendation.
+     * 
+     * @param lookBackPeriod the lookBackPeriod value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withLookBackPeriod(String lookBackPeriod) {
+        this.lookBackPeriod = lookBackPeriod;
+        return this;
+    }
+
+    /**
      * Get the instanceFlexibilityRatio property: The instance Flexibility Ratio.
      * 
      * @return the instanceFlexibilityRatio value.
      */
     public Float instanceFlexibilityRatio() {
         return this.instanceFlexibilityRatio;
+    }
+
+    /**
+     * Set the instanceFlexibilityRatio property: The instance Flexibility Ratio.
+     * 
+     * @param instanceFlexibilityRatio the instanceFlexibilityRatio value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withInstanceFlexibilityRatio(Float instanceFlexibilityRatio) {
+        this.instanceFlexibilityRatio = instanceFlexibilityRatio;
+        return this;
     }
 
     /**
@@ -175,12 +172,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the instanceFlexibilityGroup property: The instance Flexibility Group.
+     * 
+     * @param instanceFlexibilityGroup the instanceFlexibilityGroup value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withInstanceFlexibilityGroup(String instanceFlexibilityGroup) {
+        this.instanceFlexibilityGroup = instanceFlexibilityGroup;
+        return this;
+    }
+
+    /**
      * Get the normalizedSize property: The normalized Size.
      * 
      * @return the normalizedSize value.
      */
     public String normalizedSize() {
         return this.normalizedSize;
+    }
+
+    /**
+     * Set the normalizedSize property: The normalized Size.
+     * 
+     * @param normalizedSize the normalizedSize value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withNormalizedSize(String normalizedSize) {
+        this.normalizedSize = normalizedSize;
+        return this;
     }
 
     /**
@@ -193,12 +212,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the recommendedQuantityNormalized property: The recommended Quantity Normalized.
+     * 
+     * @param recommendedQuantityNormalized the recommendedQuantityNormalized value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withRecommendedQuantityNormalized(Float recommendedQuantityNormalized) {
+        this.recommendedQuantityNormalized = recommendedQuantityNormalized;
+        return this;
+    }
+
+    /**
      * Get the meterId property: The meter id (GUID).
      * 
      * @return the meterId value.
      */
     public UUID meterId() {
         return this.meterId;
+    }
+
+    /**
+     * Set the meterId property: The meter id (GUID).
+     * 
+     * @param meterId the meterId value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withMeterId(UUID meterId) {
+        this.meterId = meterId;
+        return this;
     }
 
     /**
@@ -211,12 +252,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the resourceType property: The azure resource type.
+     * 
+     * @param resourceType the resourceType value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withResourceType(String resourceType) {
+        this.resourceType = resourceType;
+        return this;
+    }
+
+    /**
      * Get the term property: RI recommendations in one or three year terms.
      * 
      * @return the term value.
      */
     public String term() {
         return this.term;
+    }
+
+    /**
+     * Set the term property: RI recommendations in one or three year terms.
+     * 
+     * @param term the term value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withTerm(String term) {
+        this.term = term;
+        return this;
     }
 
     /**
@@ -229,12 +292,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the costWithNoReservedInstances property: The total amount of cost without reserved instances.
+     * 
+     * @param costWithNoReservedInstances the costWithNoReservedInstances value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withCostWithNoReservedInstances(BigDecimal costWithNoReservedInstances) {
+        this.costWithNoReservedInstances = costWithNoReservedInstances;
+        return this;
+    }
+
+    /**
      * Get the recommendedQuantity property: Recommended quality for reserved instances.
      * 
      * @return the recommendedQuantity value.
      */
     public BigDecimal recommendedQuantity() {
         return this.recommendedQuantity;
+    }
+
+    /**
+     * Set the recommendedQuantity property: Recommended quality for reserved instances.
+     * 
+     * @param recommendedQuantity the recommendedQuantity value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withRecommendedQuantity(BigDecimal recommendedQuantity) {
+        this.recommendedQuantity = recommendedQuantity;
+        return this;
     }
 
     /**
@@ -247,12 +332,35 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
+     * 
+     * @param totalCostWithReservedInstances the totalCostWithReservedInstances value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties
+        withTotalCostWithReservedInstances(BigDecimal totalCostWithReservedInstances) {
+        this.totalCostWithReservedInstances = totalCostWithReservedInstances;
+        return this;
+    }
+
+    /**
      * Get the netSavings property: Total estimated savings with reserved instances.
      * 
      * @return the netSavings value.
      */
     public BigDecimal netSavings() {
         return this.netSavings;
+    }
+
+    /**
+     * Set the netSavings property: Total estimated savings with reserved instances.
+     * 
+     * @param netSavings the netSavings value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withNetSavings(BigDecimal netSavings) {
+        this.netSavings = netSavings;
+        return this;
     }
 
     /**
@@ -265,12 +373,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the firstUsageDate property: The usage date for looking back.
+     * 
+     * @param firstUsageDate the firstUsageDate value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withFirstUsageDate(OffsetDateTime firstUsageDate) {
+        this.firstUsageDate = firstUsageDate;
+        return this;
+    }
+
+    /**
      * Get the skuProperties property: List of sku properties.
      * 
      * @return the skuProperties value.
      */
     public List<SkuProperty> skuProperties() {
         return this.skuProperties;
+    }
+
+    /**
+     * Set the skuProperties property: List of sku properties.
+     * 
+     * @param skuProperties the skuProperties value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withSkuProperties(List<SkuProperty> skuProperties) {
+        this.skuProperties = skuProperties;
+        return this;
     }
 
     /**
@@ -283,12 +413,34 @@ public class LegacyReservationRecommendationProperties {
     }
 
     /**
+     * Set the lastUsageDate property: The last usage date used for looking back for computing the recommendation.
+     * 
+     * @param lastUsageDate the lastUsageDate value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withLastUsageDate(OffsetDateTime lastUsageDate) {
+        this.lastUsageDate = lastUsageDate;
+        return this;
+    }
+
+    /**
      * Get the totalHours property: The total hours for which the cost is covered.
      * 
      * @return the totalHours value.
      */
     public Integer totalHours() {
         return this.totalHours;
+    }
+
+    /**
+     * Set the totalHours property: The total hours for which the cost is covered.
+     * 
+     * @param totalHours the totalHours value to set.
+     * @return the LegacyReservationRecommendationProperties object itself.
+     */
+    LegacyReservationRecommendationProperties withTotalHours(Integer totalHours) {
+        this.totalHours = totalHours;
+        return this;
     }
 
     /**
@@ -300,5 +452,113 @@ public class LegacyReservationRecommendationProperties {
         if (skuProperties() != null) {
             skuProperties().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("scope", this.scope);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LegacyReservationRecommendationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LegacyReservationRecommendationProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LegacyReservationRecommendationProperties.
+     */
+    public static LegacyReservationRecommendationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("scope".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("Single".equals(discriminatorValue)) {
+                    return LegacySingleScopeReservationRecommendationProperties.fromJson(readerToUse.reset());
+                } else if ("Shared".equals(discriminatorValue)) {
+                    return LegacySharedScopeReservationRecommendationProperties.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static LegacyReservationRecommendationProperties fromJsonKnownDiscriminator(JsonReader jsonReader)
+        throws IOException {
+        return jsonReader.readObject(reader -> {
+            LegacyReservationRecommendationProperties deserializedLegacyReservationRecommendationProperties
+                = new LegacyReservationRecommendationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("scope".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.scope = reader.getString();
+                } else if ("lookBackPeriod".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.lookBackPeriod = reader.getString();
+                } else if ("instanceFlexibilityRatio".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.instanceFlexibilityRatio
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("instanceFlexibilityGroup".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.instanceFlexibilityGroup = reader.getString();
+                } else if ("normalizedSize".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.normalizedSize = reader.getString();
+                } else if ("recommendedQuantityNormalized".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.recommendedQuantityNormalized
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("meterId".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.meterId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("resourceType".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.resourceType = reader.getString();
+                } else if ("term".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.term = reader.getString();
+                } else if ("costWithNoReservedInstances".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.costWithNoReservedInstances
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("recommendedQuantity".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.recommendedQuantity
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("totalCostWithReservedInstances".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.totalCostWithReservedInstances
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("netSavings".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.netSavings
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("firstUsageDate".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.firstUsageDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("skuProperties".equals(fieldName)) {
+                    List<SkuProperty> skuProperties = reader.readArray(reader1 -> SkuProperty.fromJson(reader1));
+                    deserializedLegacyReservationRecommendationProperties.skuProperties = skuProperties;
+                } else if ("lastUsageDate".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.lastUsageDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("totalHours".equals(fieldName)) {
+                    deserializedLegacyReservationRecommendationProperties.totalHours
+                        = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLegacyReservationRecommendationProperties;
+        });
     }
 }

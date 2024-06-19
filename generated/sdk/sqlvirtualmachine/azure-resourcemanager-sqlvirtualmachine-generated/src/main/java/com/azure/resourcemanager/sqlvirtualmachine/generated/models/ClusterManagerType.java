@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -33,7 +32,6 @@ public final class ClusterManagerType extends ExpandableStringEnum<ClusterManage
      * @param name a name to look for.
      * @return the corresponding ClusterManagerType.
      */
-    @JsonCreator
     public static ClusterManagerType fromString(String name) {
         return fromString(name, ClusterManagerType.class);
     }

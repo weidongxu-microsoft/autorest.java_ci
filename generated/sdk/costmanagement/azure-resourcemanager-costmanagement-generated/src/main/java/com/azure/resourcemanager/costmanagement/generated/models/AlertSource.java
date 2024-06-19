@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class AlertSource extends ExpandableStringEnum<AlertSource> {
      * @param name a name to look for.
      * @return the corresponding AlertSource.
      */
-    @JsonCreator
     public static AlertSource fromString(String name) {
         return fromString(name, AlertSource.class);
     }

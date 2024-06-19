@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -52,7 +51,6 @@ public final class PrivateEndpointProvisioningState extends ExpandableStringEnum
      * @param name a name to look for.
      * @return the corresponding PrivateEndpointProvisioningState.
      */
-    @JsonCreator
     public static PrivateEndpointProvisioningState fromString(String name) {
         return fromString(name, PrivateEndpointProvisioningState.class);
     }

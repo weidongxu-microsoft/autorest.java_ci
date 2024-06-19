@@ -5,25 +5,29 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The start and end date for pulling data for the query.
  */
 @Fluent
-public final class QueryTimePeriod {
+public final class QueryTimePeriod implements JsonSerializable<QueryTimePeriod> {
     /*
      * The start date to pull data from.
      */
-    @JsonProperty(value = "from", required = true)
     private OffsetDateTime from;
 
     /*
      * The end date to pull data to.
      */
-    @JsonProperty(value = "to", required = true)
     private OffsetDateTime to;
 
     /**
@@ -89,4 +93,48 @@ public final class QueryTimePeriod {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(QueryTimePeriod.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("from",
+            this.from == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.from));
+        jsonWriter.writeStringField("to",
+            this.to == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.to));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of QueryTimePeriod from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of QueryTimePeriod if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the QueryTimePeriod.
+     */
+    public static QueryTimePeriod fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            QueryTimePeriod deserializedQueryTimePeriod = new QueryTimePeriod();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("from".equals(fieldName)) {
+                    deserializedQueryTimePeriod.from = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("to".equals(fieldName)) {
+                    deserializedQueryTimePeriod.to = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedQueryTimePeriod;
+        });
+    }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class NetworkAdapterRdmaStatus extends ExpandableStringEnum<Network
      * @param name a name to look for.
      * @return the corresponding NetworkAdapterRdmaStatus.
      */
-    @JsonCreator
     public static NetworkAdapterRdmaStatus fromString(String name) {
         return fromString(name, NetworkAdapterRdmaStatus.class);
     }

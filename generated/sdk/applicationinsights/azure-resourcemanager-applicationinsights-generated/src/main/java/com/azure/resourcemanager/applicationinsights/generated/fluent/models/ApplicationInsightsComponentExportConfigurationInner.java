@@ -5,24 +5,27 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Properties that define a Continuous Export configuration.
  */
 @Fluent
-public final class ApplicationInsightsComponentExportConfigurationInner {
+public final class ApplicationInsightsComponentExportConfigurationInner
+    implements JsonSerializable<ApplicationInsightsComponentExportConfigurationInner> {
     /*
      * The unique ID of the export configuration inside an Application Insights component. It is auto generated when the
      * Continuous Export configuration is created.
      */
-    @JsonProperty(value = "ExportId", access = JsonProperty.Access.WRITE_ONLY)
     private String exportId;
 
     /*
      * The instrumentation key of the Application Insights component.
      */
-    @JsonProperty(value = "InstrumentationKey", access = JsonProperty.Access.WRITE_ONLY)
     private String instrumentationKey;
 
     /*
@@ -30,106 +33,89 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
      * 'Event', 'Exceptions', 'Metrics', 'PageViews', 'PageViewPerformance', 'Rdd', 'PerformanceCounters',
      * 'Availability', 'Messages'.
      */
-    @JsonProperty(value = "RecordTypes")
     private String recordTypes;
 
     /*
      * The name of the Application Insights component.
      */
-    @JsonProperty(value = "ApplicationName", access = JsonProperty.Access.WRITE_ONLY)
     private String applicationName;
 
     /*
      * The subscription of the Application Insights component.
      */
-    @JsonProperty(value = "SubscriptionId", access = JsonProperty.Access.WRITE_ONLY)
     private String subscriptionId;
 
     /*
      * The resource group of the Application Insights component.
      */
-    @JsonProperty(value = "ResourceGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGroup;
 
     /*
      * The destination storage account subscription ID.
      */
-    @JsonProperty(value = "DestinationStorageSubscriptionId", access = JsonProperty.Access.WRITE_ONLY)
     private String destinationStorageSubscriptionId;
 
     /*
      * The destination account location ID.
      */
-    @JsonProperty(value = "DestinationStorageLocationId", access = JsonProperty.Access.WRITE_ONLY)
     private String destinationStorageLocationId;
 
     /*
      * The name of destination account.
      */
-    @JsonProperty(value = "DestinationAccountId", access = JsonProperty.Access.WRITE_ONLY)
     private String destinationAccountId;
 
     /*
      * The destination type.
      */
-    @JsonProperty(value = "DestinationType", access = JsonProperty.Access.WRITE_ONLY)
     private String destinationType;
 
     /*
      * This will be 'true' if the Continuous Export configuration is enabled, otherwise it will be 'false'.
      */
-    @JsonProperty(value = "IsUserEnabled", access = JsonProperty.Access.WRITE_ONLY)
     private String isUserEnabled;
 
     /*
      * Last time the Continuous Export configuration was updated.
      */
-    @JsonProperty(value = "LastUserUpdate", access = JsonProperty.Access.WRITE_ONLY)
     private String lastUserUpdate;
 
     /*
      * Deprecated
      */
-    @JsonProperty(value = "NotificationQueueEnabled")
     private String notificationQueueEnabled;
 
     /*
      * This indicates current Continuous Export configuration status. The possible values are 'Preparing', 'Success',
      * 'Failure'.
      */
-    @JsonProperty(value = "ExportStatus", access = JsonProperty.Access.WRITE_ONLY)
     private String exportStatus;
 
     /*
      * The last time data was successfully delivered to the destination storage container for this Continuous Export
      * configuration.
      */
-    @JsonProperty(value = "LastSuccessTime", access = JsonProperty.Access.WRITE_ONLY)
     private String lastSuccessTime;
 
     /*
      * The last time the Continuous Export configuration started failing.
      */
-    @JsonProperty(value = "LastGapTime", access = JsonProperty.Access.WRITE_ONLY)
     private String lastGapTime;
 
     /*
      * This is the reason the Continuous Export configuration started failing. It can be 'AzureStorageNotFound' or
      * 'AzureStorageAccessDenied'.
      */
-    @JsonProperty(value = "PermanentErrorReason", access = JsonProperty.Access.WRITE_ONLY)
     private String permanentErrorReason;
 
     /*
      * The name of the destination storage account.
      */
-    @JsonProperty(value = "StorageName", access = JsonProperty.Access.WRITE_ONLY)
     private String storageName;
 
     /*
      * The name of the destination storage container.
      */
-    @JsonProperty(value = "ContainerName", access = JsonProperty.Access.WRITE_ONLY)
     private String containerName;
 
     /**
@@ -347,5 +333,91 @@ public final class ApplicationInsightsComponentExportConfigurationInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("RecordTypes", this.recordTypes);
+        jsonWriter.writeStringField("NotificationQueueEnabled", this.notificationQueueEnabled);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentExportConfigurationInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentExportConfigurationInner if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentExportConfigurationInner.
+     */
+    public static ApplicationInsightsComponentExportConfigurationInner fromJson(JsonReader jsonReader)
+        throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentExportConfigurationInner deserializedApplicationInsightsComponentExportConfigurationInner
+                = new ApplicationInsightsComponentExportConfigurationInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("ExportId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.exportId = reader.getString();
+                } else if ("InstrumentationKey".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.instrumentationKey
+                        = reader.getString();
+                } else if ("RecordTypes".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.recordTypes = reader.getString();
+                } else if ("ApplicationName".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.applicationName
+                        = reader.getString();
+                } else if ("SubscriptionId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.subscriptionId
+                        = reader.getString();
+                } else if ("ResourceGroup".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.resourceGroup = reader.getString();
+                } else if ("DestinationStorageSubscriptionId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.destinationStorageSubscriptionId
+                        = reader.getString();
+                } else if ("DestinationStorageLocationId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.destinationStorageLocationId
+                        = reader.getString();
+                } else if ("DestinationAccountId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.destinationAccountId
+                        = reader.getString();
+                } else if ("DestinationType".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.destinationType
+                        = reader.getString();
+                } else if ("IsUserEnabled".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.isUserEnabled = reader.getString();
+                } else if ("LastUserUpdate".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.lastUserUpdate
+                        = reader.getString();
+                } else if ("NotificationQueueEnabled".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.notificationQueueEnabled
+                        = reader.getString();
+                } else if ("ExportStatus".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.exportStatus = reader.getString();
+                } else if ("LastSuccessTime".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.lastSuccessTime
+                        = reader.getString();
+                } else if ("LastGapTime".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.lastGapTime = reader.getString();
+                } else if ("PermanentErrorReason".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.permanentErrorReason
+                        = reader.getString();
+                } else if ("StorageName".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.storageName = reader.getString();
+                } else if ("ContainerName".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentExportConfigurationInner.containerName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentExportConfigurationInner;
+        });
     }
 }

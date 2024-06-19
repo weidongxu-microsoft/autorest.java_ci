@@ -6,86 +6,78 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The properties related to a cosmos DB sql container endpoint.
  */
 @Fluent
-public final class RoutingCosmosDBSqlApiProperties {
+public final class RoutingCosmosDBSqlApiProperties implements JsonSerializable<RoutingCosmosDBSqlApiProperties> {
     /*
      * The name that identifies this endpoint. The name can only include alphanumeric characters, periods, underscores,
      * hyphens and has a maximum length of 64 characters. The following names are reserved: events, fileNotifications,
      * $default. Endpoint names must be unique across endpoint types.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * Id of the cosmos DB sql container endpoint
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * The subscription identifier of the cosmos DB account.
      */
-    @JsonProperty(value = "subscriptionId")
     private String subscriptionId;
 
     /*
      * The name of the resource group of the cosmos DB account.
      */
-    @JsonProperty(value = "resourceGroup")
     private String resourceGroup;
 
     /*
      * The url of the cosmos DB account. It must include the protocol https://
      */
-    @JsonProperty(value = "endpointUri", required = true)
     private String endpointUri;
 
     /*
      * Method used to authenticate against the cosmos DB sql container endpoint
      */
-    @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
 
     /*
      * Managed identity properties of routing cosmos DB container endpoint.
      */
-    @JsonProperty(value = "identity")
     private ManagedIdentity identity;
 
     /*
      * The primary key of the cosmos DB account.
      */
-    @JsonProperty(value = "primaryKey")
     private String primaryKey;
 
     /*
      * The secondary key of the cosmos DB account.
      */
-    @JsonProperty(value = "secondaryKey")
     private String secondaryKey;
 
     /*
      * The name of the cosmos DB database in the cosmos DB account.
      */
-    @JsonProperty(value = "databaseName", required = true)
     private String databaseName;
 
     /*
      * The name of the cosmos DB sql container in the cosmos DB database.
      */
-    @JsonProperty(value = "containerName", required = true)
     private String containerName;
 
     /*
      * The name of the partition key associated with this cosmos DB sql container if one exists. This is an optional
      * parameter.
      */
-    @JsonProperty(value = "partitionKeyName")
     private String partitionKeyName;
 
     /*
@@ -94,7 +86,6 @@ public final class RoutingCosmosDBSqlApiProperties {
      * Any one placeholder may be specified at most once, but order and non-placeholder components are arbitrary. This
      * parameter is only required if PartitionKeyName is specified.
      */
-    @JsonProperty(value = "partitionKeyTemplate")
     private String partitionKeyTemplate;
 
     /**
@@ -396,4 +387,79 @@ public final class RoutingCosmosDBSqlApiProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RoutingCosmosDBSqlApiProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("endpointUri", this.endpointUri);
+        jsonWriter.writeStringField("databaseName", this.databaseName);
+        jsonWriter.writeStringField("containerName", this.containerName);
+        jsonWriter.writeStringField("subscriptionId", this.subscriptionId);
+        jsonWriter.writeStringField("resourceGroup", this.resourceGroup);
+        jsonWriter.writeStringField("authenticationType",
+            this.authenticationType == null ? null : this.authenticationType.toString());
+        jsonWriter.writeJsonField("identity", this.identity);
+        jsonWriter.writeStringField("primaryKey", this.primaryKey);
+        jsonWriter.writeStringField("secondaryKey", this.secondaryKey);
+        jsonWriter.writeStringField("partitionKeyName", this.partitionKeyName);
+        jsonWriter.writeStringField("partitionKeyTemplate", this.partitionKeyTemplate);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoutingCosmosDBSqlApiProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoutingCosmosDBSqlApiProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RoutingCosmosDBSqlApiProperties.
+     */
+    public static RoutingCosmosDBSqlApiProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoutingCosmosDBSqlApiProperties deserializedRoutingCosmosDBSqlApiProperties
+                = new RoutingCosmosDBSqlApiProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.name = reader.getString();
+                } else if ("endpointUri".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.endpointUri = reader.getString();
+                } else if ("databaseName".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.databaseName = reader.getString();
+                } else if ("containerName".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.containerName = reader.getString();
+                } else if ("id".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.id = reader.getString();
+                } else if ("subscriptionId".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.subscriptionId = reader.getString();
+                } else if ("resourceGroup".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.resourceGroup = reader.getString();
+                } else if ("authenticationType".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.authenticationType
+                        = AuthenticationType.fromString(reader.getString());
+                } else if ("identity".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.identity = ManagedIdentity.fromJson(reader);
+                } else if ("primaryKey".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.primaryKey = reader.getString();
+                } else if ("secondaryKey".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.secondaryKey = reader.getString();
+                } else if ("partitionKeyName".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.partitionKeyName = reader.getString();
+                } else if ("partitionKeyTemplate".equals(fieldName)) {
+                    deserializedRoutingCosmosDBSqlApiProperties.partitionKeyTemplate = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoutingCosmosDBSqlApiProperties;
+        });
+    }
 }

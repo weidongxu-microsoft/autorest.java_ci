@@ -5,31 +5,32 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Used in activation key generation flow.
  */
 @Fluent
-public final class GenerateCertResponseInner {
+public final class GenerateCertResponseInner implements JsonSerializable<GenerateCertResponseInner> {
     /*
      * Gets or sets base64 encoded certificate raw data,
      * this is the public part needed to be uploaded to cert vault
      */
-    @JsonProperty(value = "publicKey")
     private String publicKey;
 
     /*
      * Gets or sets base64 encoded private part of the certificate,
      * needed to form the activation key
      */
-    @JsonProperty(value = "privateKey")
     private String privateKey;
 
     /*
      * Gets or sets expiry time in UTC
      */
-    @JsonProperty(value = "expiryTimeInUTC")
     private String expiryTimeInUtc;
 
     /**
@@ -108,5 +109,47 @@ public final class GenerateCertResponseInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("publicKey", this.publicKey);
+        jsonWriter.writeStringField("privateKey", this.privateKey);
+        jsonWriter.writeStringField("expiryTimeInUTC", this.expiryTimeInUtc);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of GenerateCertResponseInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of GenerateCertResponseInner if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the GenerateCertResponseInner.
+     */
+    public static GenerateCertResponseInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            GenerateCertResponseInner deserializedGenerateCertResponseInner = new GenerateCertResponseInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("publicKey".equals(fieldName)) {
+                    deserializedGenerateCertResponseInner.publicKey = reader.getString();
+                } else if ("privateKey".equals(fieldName)) {
+                    deserializedGenerateCertResponseInner.privateKey = reader.getString();
+                } else if ("expiryTimeInUTC".equals(fieldName)) {
+                    deserializedGenerateCertResponseInner.expiryTimeInUtc = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedGenerateCertResponseInner;
+        });
     }
 }

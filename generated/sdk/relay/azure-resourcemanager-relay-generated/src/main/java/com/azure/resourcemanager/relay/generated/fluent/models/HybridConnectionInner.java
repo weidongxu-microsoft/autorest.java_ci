@@ -7,7 +7,10 @@ package com.azure.resourcemanager.relay.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
@@ -18,20 +21,32 @@ public final class HybridConnectionInner extends ProxyResource {
     /*
      * Properties of the HybridConnection.
      */
-    @JsonProperty(value = "properties")
     private HybridConnectionProperties innerProperties;
 
     /*
      * The system meta data relating to this resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /*
      * The geo-location where the resource lives
      */
-    @JsonProperty(value = "location", access = JsonProperty.Access.WRITE_ONLY)
     private String location;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of HybridConnectionInner class.
@@ -64,6 +79,36 @@ public final class HybridConnectionInner extends ProxyResource {
      */
     public String location() {
         return this.location;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -155,5 +200,52 @@ public final class HybridConnectionInner extends ProxyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of HybridConnectionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of HybridConnectionInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the HybridConnectionInner.
+     */
+    public static HybridConnectionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            HybridConnectionInner deserializedHybridConnectionInner = new HybridConnectionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedHybridConnectionInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedHybridConnectionInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedHybridConnectionInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedHybridConnectionInner.innerProperties = HybridConnectionProperties.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedHybridConnectionInner.systemData = SystemData.fromJson(reader);
+                } else if ("location".equals(fieldName)) {
+                    deserializedHybridConnectionInner.location = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedHybridConnectionInner;
+        });
     }
 }

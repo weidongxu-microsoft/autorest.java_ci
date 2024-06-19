@@ -6,36 +6,37 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.AccessRights;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties of an IoT hub shared access policy.
  */
 @Fluent
-public final class SharedAccessSignatureAuthorizationRuleInner {
+public final class SharedAccessSignatureAuthorizationRuleInner
+    implements JsonSerializable<SharedAccessSignatureAuthorizationRuleInner> {
     /*
      * The name of the shared access policy.
      */
-    @JsonProperty(value = "keyName", required = true)
     private String keyName;
 
     /*
      * The primary key.
      */
-    @JsonProperty(value = "primaryKey")
     private String primaryKey;
 
     /*
      * The secondary key.
      */
-    @JsonProperty(value = "secondaryKey")
     private String secondaryKey;
 
     /*
      * The permissions assigned to the shared access policy.
      */
-    @JsonProperty(value = "rights", required = true)
     private AccessRights rights;
 
     /**
@@ -143,4 +144,52 @@ public final class SharedAccessSignatureAuthorizationRuleInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(SharedAccessSignatureAuthorizationRuleInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("keyName", this.keyName);
+        jsonWriter.writeStringField("rights", this.rights == null ? null : this.rights.toString());
+        jsonWriter.writeStringField("primaryKey", this.primaryKey);
+        jsonWriter.writeStringField("secondaryKey", this.secondaryKey);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SharedAccessSignatureAuthorizationRuleInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SharedAccessSignatureAuthorizationRuleInner if the JsonReader was pointing to an instance
+     * of it, or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SharedAccessSignatureAuthorizationRuleInner.
+     */
+    public static SharedAccessSignatureAuthorizationRuleInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SharedAccessSignatureAuthorizationRuleInner deserializedSharedAccessSignatureAuthorizationRuleInner
+                = new SharedAccessSignatureAuthorizationRuleInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("keyName".equals(fieldName)) {
+                    deserializedSharedAccessSignatureAuthorizationRuleInner.keyName = reader.getString();
+                } else if ("rights".equals(fieldName)) {
+                    deserializedSharedAccessSignatureAuthorizationRuleInner.rights
+                        = AccessRights.fromString(reader.getString());
+                } else if ("primaryKey".equals(fieldName)) {
+                    deserializedSharedAccessSignatureAuthorizationRuleInner.primaryKey = reader.getString();
+                } else if ("secondaryKey".equals(fieldName)) {
+                    deserializedSharedAccessSignatureAuthorizationRuleInner.secondaryKey = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSharedAccessSignatureAuthorizationRuleInner;
+        });
+    }
 }

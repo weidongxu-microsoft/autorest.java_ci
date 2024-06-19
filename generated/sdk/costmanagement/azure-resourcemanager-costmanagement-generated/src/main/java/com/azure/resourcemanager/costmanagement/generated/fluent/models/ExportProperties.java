@@ -5,12 +5,15 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.costmanagement.generated.models.CommonExportProperties;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportDefinition;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportDeliveryInfo;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportSchedule;
 import com.azure.resourcemanager.costmanagement.generated.models.FormatType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties of the export.
@@ -20,7 +23,6 @@ public final class ExportProperties extends CommonExportProperties {
     /*
      * Has schedule information for the export.
      */
-    @JsonProperty(value = "schedule")
     private ExportSchedule schedule;
 
     /**
@@ -87,5 +89,51 @@ public final class ExportProperties extends CommonExportProperties {
         if (schedule() != null) {
             schedule().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("deliveryInfo", deliveryInfo());
+        jsonWriter.writeJsonField("definition", definition());
+        jsonWriter.writeStringField("format", format() == null ? null : format().toString());
+        jsonWriter.writeJsonField("schedule", this.schedule);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ExportProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ExportProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ExportProperties.
+     */
+    public static ExportProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ExportProperties deserializedExportProperties = new ExportProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("deliveryInfo".equals(fieldName)) {
+                    deserializedExportProperties.withDeliveryInfo(ExportDeliveryInfo.fromJson(reader));
+                } else if ("definition".equals(fieldName)) {
+                    deserializedExportProperties.withDefinition(ExportDefinition.fromJson(reader));
+                } else if ("format".equals(fieldName)) {
+                    deserializedExportProperties.withFormat(FormatType.fromString(reader.getString()));
+                } else if ("schedule".equals(fieldName)) {
+                    deserializedExportProperties.schedule = ExportSchedule.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedExportProperties;
+        });
     }
 }

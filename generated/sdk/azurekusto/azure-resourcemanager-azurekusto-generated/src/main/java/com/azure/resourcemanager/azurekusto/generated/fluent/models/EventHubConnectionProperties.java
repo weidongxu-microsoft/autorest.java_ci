@@ -5,92 +5,86 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.Compression;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabaseRouting;
 import com.azure.resourcemanager.azurekusto.generated.models.EventHubDataFormat;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
  * Class representing the Kusto event hub connection properties.
  */
 @Fluent
-public final class EventHubConnectionProperties {
+public final class EventHubConnectionProperties implements JsonSerializable<EventHubConnectionProperties> {
     /*
      * The resource ID of the event hub to be used to create a data connection.
      */
-    @JsonProperty(value = "eventHubResourceId", required = true)
     private String eventHubResourceId;
 
     /*
      * The event hub consumer group.
      */
-    @JsonProperty(value = "consumerGroup", required = true)
     private String consumerGroup;
 
     /*
      * The table where the data should be ingested. Optionally the table information can be added to each message.
      */
-    @JsonProperty(value = "tableName")
     private String tableName;
 
     /*
      * The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
      */
-    @JsonProperty(value = "mappingRuleName")
     private String mappingRuleName;
 
     /*
      * The data format of the message. Optionally the data format can be added to each message.
      */
-    @JsonProperty(value = "dataFormat")
     private EventHubDataFormat dataFormat;
 
     /*
      * System properties of the event hub
      */
-    @JsonProperty(value = "eventSystemProperties")
     private List<String> eventSystemProperties;
 
     /*
      * The event hub messages compression type
      */
-    @JsonProperty(value = "compression")
     private Compression compression;
 
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * The resource ID of a managed identity (system or user assigned) to be used to authenticate with event hub.
      */
-    @JsonProperty(value = "managedIdentityResourceId")
     private String managedIdentityResourceId;
 
     /*
      * The object ID of the managedIdentityResourceId
      */
-    @JsonProperty(value = "managedIdentityObjectId", access = JsonProperty.Access.WRITE_ONLY)
     private String managedIdentityObjectId;
 
     /*
      * Indication for database routing information from the data connection, by default only database routing
      * information is allowed
      */
-    @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;
 
     /*
      * When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It
      * can only retrieve events retained by the Event hub, based on its retention period.
      */
-    @JsonProperty(value = "retrievalStartDate")
     private OffsetDateTime retrievalStartDate;
 
     /**
@@ -350,4 +344,82 @@ public final class EventHubConnectionProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(EventHubConnectionProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("eventHubResourceId", this.eventHubResourceId);
+        jsonWriter.writeStringField("consumerGroup", this.consumerGroup);
+        jsonWriter.writeStringField("tableName", this.tableName);
+        jsonWriter.writeStringField("mappingRuleName", this.mappingRuleName);
+        jsonWriter.writeStringField("dataFormat", this.dataFormat == null ? null : this.dataFormat.toString());
+        jsonWriter.writeArrayField("eventSystemProperties", this.eventSystemProperties,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("compression", this.compression == null ? null : this.compression.toString());
+        jsonWriter.writeStringField("managedIdentityResourceId", this.managedIdentityResourceId);
+        jsonWriter.writeStringField("databaseRouting",
+            this.databaseRouting == null ? null : this.databaseRouting.toString());
+        jsonWriter.writeStringField("retrievalStartDate",
+            this.retrievalStartDate == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.retrievalStartDate));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EventHubConnectionProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EventHubConnectionProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the EventHubConnectionProperties.
+     */
+    public static EventHubConnectionProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EventHubConnectionProperties deserializedEventHubConnectionProperties = new EventHubConnectionProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("eventHubResourceId".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.eventHubResourceId = reader.getString();
+                } else if ("consumerGroup".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.consumerGroup = reader.getString();
+                } else if ("tableName".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.tableName = reader.getString();
+                } else if ("mappingRuleName".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.mappingRuleName = reader.getString();
+                } else if ("dataFormat".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.dataFormat
+                        = EventHubDataFormat.fromString(reader.getString());
+                } else if ("eventSystemProperties".equals(fieldName)) {
+                    List<String> eventSystemProperties = reader.readArray(reader1 -> reader1.getString());
+                    deserializedEventHubConnectionProperties.eventSystemProperties = eventSystemProperties;
+                } else if ("compression".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.compression = Compression.fromString(reader.getString());
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("managedIdentityResourceId".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.managedIdentityResourceId = reader.getString();
+                } else if ("managedIdentityObjectId".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.managedIdentityObjectId = reader.getString();
+                } else if ("databaseRouting".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.databaseRouting
+                        = DatabaseRouting.fromString(reader.getString());
+                } else if ("retrievalStartDate".equals(fieldName)) {
+                    deserializedEventHubConnectionProperties.retrievalStartDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEventHubConnectionProperties;
+        });
+    }
 }

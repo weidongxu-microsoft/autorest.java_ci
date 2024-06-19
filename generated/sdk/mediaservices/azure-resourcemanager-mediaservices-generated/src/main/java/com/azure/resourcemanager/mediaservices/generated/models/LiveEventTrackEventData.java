@@ -5,90 +5,83 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The live event track ingest heart beat event data.
  */
 @Fluent
-public final class LiveEventTrackEventData {
+public final class LiveEventTrackEventData implements JsonSerializable<LiveEventTrackEventData> {
     /*
      * Name of the track.
      */
-    @JsonProperty(value = "trackName")
     private String trackName;
 
     /*
      * Type of the track.
      */
-    @JsonProperty(value = "trackType")
     private LiveEventTrackType trackType;
 
     /*
      * Bitrate of the track.
      */
-    @JsonProperty(value = "bitrate")
     private Long bitrate;
 
     /*
      * Calculated bitrate based on data chunks coming from encoder.
      */
-    @JsonProperty(value = "incomingBitrate")
     private Long incomingBitrate;
 
     /*
      * Latest timestamp received for a track in last 20 seconds.
      */
-    @JsonProperty(value = "lastTimestamp")
     private String lastTimestamp;
 
     /*
      * Timescale in which timestamps are expressed.
      */
-    @JsonProperty(value = "timescale")
     private String timescale;
 
     /*
      * Number of data chunks that had overlapped timestamps in last 20 seconds.
      */
-    @JsonProperty(value = "overlapCount")
     private Long overlapCount;
 
     /*
      * Number of discontinuities detected in the last 20 seconds.
      */
-    @JsonProperty(value = "discontinuityCount")
     private Long discontinuityCount;
 
     /*
      * Number of data chunks with timestamps in the past that were received in last 20 seconds.
      */
-    @JsonProperty(value = "nonincreasingCount")
     private Long nonincreasingCount;
 
     /*
      * If expected and actual bitrates differ by more than allowed limit in last 20 seconds.
      */
-    @JsonProperty(value = "unexpectedBitrate")
     private Boolean unexpectedBitrate;
 
     /*
      * State of the live event.
      */
-    @JsonProperty(value = "state")
     private String state;
 
     /*
      * Indicates whether ingest is healthy.
      */
-    @JsonProperty(value = "healthy")
     private Boolean healthy;
 
     /*
      * The last timestamp in UTC that a fragment arrived at the ingest endpoint.
      */
-    @JsonProperty(value = "lastFragmentArrivalTime")
     private OffsetDateTime lastFragmentArrivalTime;
 
     /*
@@ -102,7 +95,6 @@ public final class LiveEventTrackEventData {
      * discontinuity from the encoder, this value may still display as 0, as it does not account for breaks in the data
      * - only data that is delayed in timestamps.
      */
-    @JsonProperty(value = "ingestDriftValue")
     private String ingestDriftValue;
 
     /*
@@ -110,14 +102,12 @@ public final class LiveEventTrackEventData {
      * string. This state is only applicable to track type of "audio" for Live transcription. All other tracks will have
      * an empty value.
      */
-    @JsonProperty(value = "transcriptionState")
     private String transcriptionState;
 
     /*
      * The language code (in BCP-47 format) of the transcription language. For example, "de-de" indicates German
      * (Germany). The value is empty for the video track heartbeats, or when live transcription is turned off.
      */
-    @JsonProperty(value = "transcriptionLanguage")
     private String transcriptionLanguage;
 
     /**
@@ -482,5 +472,90 @@ public final class LiveEventTrackEventData {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("trackName", this.trackName);
+        jsonWriter.writeStringField("trackType", this.trackType == null ? null : this.trackType.toString());
+        jsonWriter.writeNumberField("bitrate", this.bitrate);
+        jsonWriter.writeNumberField("incomingBitrate", this.incomingBitrate);
+        jsonWriter.writeStringField("lastTimestamp", this.lastTimestamp);
+        jsonWriter.writeStringField("timescale", this.timescale);
+        jsonWriter.writeNumberField("overlapCount", this.overlapCount);
+        jsonWriter.writeNumberField("discontinuityCount", this.discontinuityCount);
+        jsonWriter.writeNumberField("nonincreasingCount", this.nonincreasingCount);
+        jsonWriter.writeBooleanField("unexpectedBitrate", this.unexpectedBitrate);
+        jsonWriter.writeStringField("state", this.state);
+        jsonWriter.writeBooleanField("healthy", this.healthy);
+        jsonWriter.writeStringField("lastFragmentArrivalTime",
+            this.lastFragmentArrivalTime == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.lastFragmentArrivalTime));
+        jsonWriter.writeStringField("ingestDriftValue", this.ingestDriftValue);
+        jsonWriter.writeStringField("transcriptionState", this.transcriptionState);
+        jsonWriter.writeStringField("transcriptionLanguage", this.transcriptionLanguage);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventTrackEventData from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventTrackEventData if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventTrackEventData.
+     */
+    public static LiveEventTrackEventData fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventTrackEventData deserializedLiveEventTrackEventData = new LiveEventTrackEventData();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("trackName".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.trackName = reader.getString();
+                } else if ("trackType".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.trackType = LiveEventTrackType.fromString(reader.getString());
+                } else if ("bitrate".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.bitrate = reader.getNullable(JsonReader::getLong);
+                } else if ("incomingBitrate".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.incomingBitrate = reader.getNullable(JsonReader::getLong);
+                } else if ("lastTimestamp".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.lastTimestamp = reader.getString();
+                } else if ("timescale".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.timescale = reader.getString();
+                } else if ("overlapCount".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.overlapCount = reader.getNullable(JsonReader::getLong);
+                } else if ("discontinuityCount".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.discontinuityCount = reader.getNullable(JsonReader::getLong);
+                } else if ("nonincreasingCount".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.nonincreasingCount = reader.getNullable(JsonReader::getLong);
+                } else if ("unexpectedBitrate".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.unexpectedBitrate = reader.getNullable(JsonReader::getBoolean);
+                } else if ("state".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.state = reader.getString();
+                } else if ("healthy".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.healthy = reader.getNullable(JsonReader::getBoolean);
+                } else if ("lastFragmentArrivalTime".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.lastFragmentArrivalTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("ingestDriftValue".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.ingestDriftValue = reader.getString();
+                } else if ("transcriptionState".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.transcriptionState = reader.getString();
+                } else if ("transcriptionLanguage".equals(fieldName)) {
+                    deserializedLiveEventTrackEventData.transcriptionLanguage = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventTrackEventData;
+        });
     }
 }

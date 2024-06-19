@@ -5,36 +5,36 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * List of VM sizes being checked for creation on appliance along with corresponding result.
  */
 @Fluent
-public final class VmPlacementRequestResult {
+public final class VmPlacementRequestResult implements JsonSerializable<VmPlacementRequestResult> {
     /*
      * List of VM sizes being checked.
      */
-    @JsonProperty(value = "vmSize")
     private List<String> vmSize;
 
     /*
      * Boolean value indicating if the VM(s) in VmSize can be created.
      */
-    @JsonProperty(value = "isFeasible")
     private Boolean isFeasible;
 
     /*
      * MessageCode indicating reason for success or failure.
      */
-    @JsonProperty(value = "messageCode")
     private String messageCode;
 
     /*
      * Localized message to be displayed to the user to explain the check result.
      */
-    @JsonProperty(value = "message")
     private String message;
 
     /**
@@ -129,5 +129,51 @@ public final class VmPlacementRequestResult {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("vmSize", this.vmSize, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeBooleanField("isFeasible", this.isFeasible);
+        jsonWriter.writeStringField("messageCode", this.messageCode);
+        jsonWriter.writeStringField("message", this.message);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VmPlacementRequestResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VmPlacementRequestResult if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the VmPlacementRequestResult.
+     */
+    public static VmPlacementRequestResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VmPlacementRequestResult deserializedVmPlacementRequestResult = new VmPlacementRequestResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("vmSize".equals(fieldName)) {
+                    List<String> vmSize = reader.readArray(reader1 -> reader1.getString());
+                    deserializedVmPlacementRequestResult.vmSize = vmSize;
+                } else if ("isFeasible".equals(fieldName)) {
+                    deserializedVmPlacementRequestResult.isFeasible = reader.getNullable(JsonReader::getBoolean);
+                } else if ("messageCode".equals(fieldName)) {
+                    deserializedVmPlacementRequestResult.messageCode = reader.getString();
+                } else if ("message".equals(fieldName)) {
+                    deserializedVmPlacementRequestResult.message = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVmPlacementRequestResult;
+        });
     }
 }

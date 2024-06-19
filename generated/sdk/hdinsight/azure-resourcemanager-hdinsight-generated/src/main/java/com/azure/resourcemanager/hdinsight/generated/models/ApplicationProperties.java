@@ -5,84 +5,76 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The HDInsight cluster application GET response.
  */
 @Fluent
-public final class ApplicationProperties {
+public final class ApplicationProperties implements JsonSerializable<ApplicationProperties> {
     /*
      * The list of roles in the cluster.
      */
-    @JsonProperty(value = "computeProfile")
     private ComputeProfile computeProfile;
 
     /*
      * The list of install script actions.
      */
-    @JsonProperty(value = "installScriptActions")
     private List<RuntimeScriptAction> installScriptActions;
 
     /*
      * The list of uninstall script actions.
      */
-    @JsonProperty(value = "uninstallScriptActions")
     private List<RuntimeScriptAction> uninstallScriptActions;
 
     /*
      * The list of application HTTPS endpoints.
      */
-    @JsonProperty(value = "httpsEndpoints")
     private List<ApplicationGetHttpsEndpoint> httpsEndpoints;
 
     /*
      * The list of application SSH endpoints.
      */
-    @JsonProperty(value = "sshEndpoints")
     private List<ApplicationGetEndpoint> sshEndpoints;
 
     /*
      * The provisioning state of the application.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * The application type.
      */
-    @JsonProperty(value = "applicationType")
     private String applicationType;
 
     /*
      * The application state.
      */
-    @JsonProperty(value = "applicationState", access = JsonProperty.Access.WRITE_ONLY)
     private String applicationState;
 
     /*
      * The list of errors.
      */
-    @JsonProperty(value = "errors")
     private List<Errors> errors;
 
     /*
      * The application create date time.
      */
-    @JsonProperty(value = "createdDate", access = JsonProperty.Access.WRITE_ONLY)
     private String createdDate;
 
     /*
      * The marketplace identifier.
      */
-    @JsonProperty(value = "marketplaceIdentifier", access = JsonProperty.Access.WRITE_ONLY)
     private String marketplaceIdentifier;
 
     /*
      * The private link configurations.
      */
-    @JsonProperty(value = "privateLinkConfigurations")
     private List<PrivateLinkConfiguration> privateLinkConfigurations;
 
     /**
@@ -315,5 +307,85 @@ public final class ApplicationProperties {
         if (privateLinkConfigurations() != null) {
             privateLinkConfigurations().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("computeProfile", this.computeProfile);
+        jsonWriter.writeArrayField("installScriptActions", this.installScriptActions,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("uninstallScriptActions", this.uninstallScriptActions,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("httpsEndpoints", this.httpsEndpoints,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("sshEndpoints", this.sshEndpoints, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("applicationType", this.applicationType);
+        jsonWriter.writeArrayField("errors", this.errors, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("privateLinkConfigurations", this.privateLinkConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationProperties.
+     */
+    public static ApplicationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationProperties deserializedApplicationProperties = new ApplicationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("computeProfile".equals(fieldName)) {
+                    deserializedApplicationProperties.computeProfile = ComputeProfile.fromJson(reader);
+                } else if ("installScriptActions".equals(fieldName)) {
+                    List<RuntimeScriptAction> installScriptActions
+                        = reader.readArray(reader1 -> RuntimeScriptAction.fromJson(reader1));
+                    deserializedApplicationProperties.installScriptActions = installScriptActions;
+                } else if ("uninstallScriptActions".equals(fieldName)) {
+                    List<RuntimeScriptAction> uninstallScriptActions
+                        = reader.readArray(reader1 -> RuntimeScriptAction.fromJson(reader1));
+                    deserializedApplicationProperties.uninstallScriptActions = uninstallScriptActions;
+                } else if ("httpsEndpoints".equals(fieldName)) {
+                    List<ApplicationGetHttpsEndpoint> httpsEndpoints
+                        = reader.readArray(reader1 -> ApplicationGetHttpsEndpoint.fromJson(reader1));
+                    deserializedApplicationProperties.httpsEndpoints = httpsEndpoints;
+                } else if ("sshEndpoints".equals(fieldName)) {
+                    List<ApplicationGetEndpoint> sshEndpoints
+                        = reader.readArray(reader1 -> ApplicationGetEndpoint.fromJson(reader1));
+                    deserializedApplicationProperties.sshEndpoints = sshEndpoints;
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedApplicationProperties.provisioningState = reader.getString();
+                } else if ("applicationType".equals(fieldName)) {
+                    deserializedApplicationProperties.applicationType = reader.getString();
+                } else if ("applicationState".equals(fieldName)) {
+                    deserializedApplicationProperties.applicationState = reader.getString();
+                } else if ("errors".equals(fieldName)) {
+                    List<Errors> errors = reader.readArray(reader1 -> Errors.fromJson(reader1));
+                    deserializedApplicationProperties.errors = errors;
+                } else if ("createdDate".equals(fieldName)) {
+                    deserializedApplicationProperties.createdDate = reader.getString();
+                } else if ("marketplaceIdentifier".equals(fieldName)) {
+                    deserializedApplicationProperties.marketplaceIdentifier = reader.getString();
+                } else if ("privateLinkConfigurations".equals(fieldName)) {
+                    List<PrivateLinkConfiguration> privateLinkConfigurations
+                        = reader.readArray(reader1 -> PrivateLinkConfiguration.fromJson(reader1));
+                    deserializedApplicationProperties.privateLinkConfigurations = privateLinkConfigurations;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationProperties;
+        });
     }
 }

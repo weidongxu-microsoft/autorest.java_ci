@@ -6,35 +6,56 @@ package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.fluent.models.LegacyUsageDetailProperties;
 import com.azure.resourcemanager.consumption.generated.fluent.models.UsageDetailInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.Map;
 import java.util.UUID;
 
 /**
  * Legacy usage detail.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = LegacyUsageDetail.class, visible = true)
-@JsonTypeName("legacy")
 @Immutable
 public final class LegacyUsageDetail extends UsageDetailInner {
     /*
      * Specifies the kind of usage details.
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private UsageDetailsKind kind = UsageDetailsKind.LEGACY;
 
     /*
      * Properties for legacy usage details
      */
-    @JsonProperty(value = "properties", required = true)
     private LegacyUsageDetailProperties innerProperties = new LegacyUsageDetailProperties();
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * The etag for the resource.
+     */
+    private String etag;
+
+    /*
+     * Resource tags.
+     */
+    private Map<String, String> tags;
 
     /**
      * Creates an instance of LegacyUsageDetail class.
@@ -59,6 +80,56 @@ public final class LegacyUsageDetail extends UsageDetailInner {
      */
     private LegacyUsageDetailProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the etag property: The etag for the resource.
+     * 
+     * @return the etag value.
+     */
+    @Override
+    public String etag() {
+        return this.etag;
+    }
+
+    /**
+     * Get the tags property: Resource tags.
+     * 
+     * @return the tags value.
+     */
+    @Override
+    public Map<String, String> tags() {
+        return this.tags;
     }
 
     /**
@@ -507,4 +578,55 @@ public final class LegacyUsageDetail extends UsageDetailInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(LegacyUsageDetail.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LegacyUsageDetail from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LegacyUsageDetail if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LegacyUsageDetail.
+     */
+    public static LegacyUsageDetail fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LegacyUsageDetail deserializedLegacyUsageDetail = new LegacyUsageDetail();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedLegacyUsageDetail.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedLegacyUsageDetail.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedLegacyUsageDetail.type = reader.getString();
+                } else if ("etag".equals(fieldName)) {
+                    deserializedLegacyUsageDetail.etag = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedLegacyUsageDetail.tags = tags;
+                } else if ("properties".equals(fieldName)) {
+                    deserializedLegacyUsageDetail.innerProperties = LegacyUsageDetailProperties.fromJson(reader);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedLegacyUsageDetail.kind = UsageDetailsKind.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLegacyUsageDetail;
+        });
+    }
 }

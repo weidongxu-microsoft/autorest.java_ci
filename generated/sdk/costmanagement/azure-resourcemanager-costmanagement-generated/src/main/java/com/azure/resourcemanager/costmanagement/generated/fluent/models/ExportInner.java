@@ -6,11 +6,14 @@ package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportDefinition;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportDeliveryInfo;
 import com.azure.resourcemanager.costmanagement.generated.models.ExportSchedule;
 import com.azure.resourcemanager.costmanagement.generated.models.FormatType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * A export resource.
@@ -20,15 +23,28 @@ public final class ExportInner extends ProxyResource {
     /*
      * The properties of the export.
      */
-    @JsonProperty(value = "properties")
     private ExportProperties innerProperties;
 
     /*
      * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
      * is updating the latest version or not.
      */
-    @JsonProperty(value = "eTag")
     private String etag;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of ExportInner class.
@@ -65,6 +81,36 @@ public final class ExportInner extends ProxyResource {
     public ExportInner withEtag(String etag) {
         this.etag = etag;
         return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -168,5 +214,51 @@ public final class ExportInner extends ProxyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("eTag", this.etag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ExportInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ExportInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ExportInner.
+     */
+    public static ExportInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ExportInner deserializedExportInner = new ExportInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedExportInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedExportInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedExportInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedExportInner.innerProperties = ExportProperties.fromJson(reader);
+                } else if ("eTag".equals(fieldName)) {
+                    deserializedExportInner.etag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedExportInner;
+        });
     }
 }

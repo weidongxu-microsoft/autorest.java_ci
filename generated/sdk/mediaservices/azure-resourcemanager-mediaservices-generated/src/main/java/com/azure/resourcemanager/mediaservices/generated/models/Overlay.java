@@ -5,29 +5,23 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Duration;
 
 /**
  * Base type for all overlays - image, audio or video.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Overlay.class, visible = true)
-@JsonTypeName("Overlay")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "#Microsoft.Media.AudioOverlay", value = AudioOverlay.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.VideoOverlay", value = VideoOverlay.class) })
 @Fluent
-public class Overlay {
+public class Overlay implements JsonSerializable<Overlay> {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "Overlay";
 
     /*
@@ -35,7 +29,6 @@ public class Overlay {
      * specify an image file in JPG, PNG, GIF or BMP format, or an audio file (such as a WAV, MP3, WMA or M4A file), or
      * a video file. See https://aka.ms/mesformats for the complete list of supported audio and video file formats.
      */
-    @JsonProperty(value = "inputLabel", required = true)
     private String inputLabel;
 
     /*
@@ -43,7 +36,6 @@ public class Overlay {
      * 8601 format. For example, PT05S to start the overlay at 5 seconds into the input video. If not specified the
      * overlay starts from the beginning of the input video.
      */
-    @JsonProperty(value = "start")
     private Duration start;
 
     /*
@@ -53,27 +45,23 @@ public class Overlay {
      * overlay media duration is greater than the input video duration, else the overlay will last as long as the
      * overlay media duration.
      */
-    @JsonProperty(value = "end")
     private Duration end;
 
     /*
      * The duration over which the overlay fades in onto the input video. The value should be in ISO 8601 duration
      * format. If not specified the default behavior is to have no fade in (same as PT0S).
      */
-    @JsonProperty(value = "fadeInDuration")
     private Duration fadeInDuration;
 
     /*
      * The duration over which the overlay fades out of the input video. The value should be in ISO 8601 duration
      * format. If not specified the default behavior is to have no fade out (same as PT0S).
      */
-    @JsonProperty(value = "fadeOutDuration")
     private Duration fadeOutDuration;
 
     /*
      * The gain level of audio in the overlay. The value should be in the range [0, 1.0]. The default is 1.0.
      */
-    @JsonProperty(value = "audioGainLevel")
     private Double audioGainLevel;
 
     /**
@@ -252,4 +240,90 @@ public class Overlay {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(Overlay.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("inputLabel", this.inputLabel);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeStringField("start", CoreUtils.durationToStringWithDays(this.start));
+        jsonWriter.writeStringField("end", CoreUtils.durationToStringWithDays(this.end));
+        jsonWriter.writeStringField("fadeInDuration", CoreUtils.durationToStringWithDays(this.fadeInDuration));
+        jsonWriter.writeStringField("fadeOutDuration", CoreUtils.durationToStringWithDays(this.fadeOutDuration));
+        jsonWriter.writeNumberField("audioGainLevel", this.audioGainLevel);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Overlay from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Overlay if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the Overlay.
+     */
+    public static Overlay fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("@odata.type".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("#Microsoft.Media.AudioOverlay".equals(discriminatorValue)) {
+                    return AudioOverlay.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.VideoOverlay".equals(discriminatorValue)) {
+                    return VideoOverlay.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static Overlay fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Overlay deserializedOverlay = new Overlay();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("inputLabel".equals(fieldName)) {
+                    deserializedOverlay.inputLabel = reader.getString();
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedOverlay.odataType = reader.getString();
+                } else if ("start".equals(fieldName)) {
+                    deserializedOverlay.start
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("end".equals(fieldName)) {
+                    deserializedOverlay.end
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("fadeInDuration".equals(fieldName)) {
+                    deserializedOverlay.fadeInDuration
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("fadeOutDuration".equals(fieldName)) {
+                    deserializedOverlay.fadeOutDuration
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("audioGainLevel".equals(fieldName)) {
+                    deserializedOverlay.audioGainLevel = reader.getNullable(JsonReader::getDouble);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOverlay;
+        });
+    }
 }

@@ -6,23 +6,25 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The mapping between a particular client IP and the type of access client has on the NFS share.
  */
 @Fluent
-public final class ClientAccessRight {
+public final class ClientAccessRight implements JsonSerializable<ClientAccessRight> {
     /*
      * IP of the client.
      */
-    @JsonProperty(value = "client", required = true)
     private String client;
 
     /*
      * Type of access to be allowed for the client.
      */
-    @JsonProperty(value = "accessPermission", required = true)
     private ClientPermissionType accessPermission;
 
     /**
@@ -89,4 +91,46 @@ public final class ClientAccessRight {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ClientAccessRight.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("client", this.client);
+        jsonWriter.writeStringField("accessPermission",
+            this.accessPermission == null ? null : this.accessPermission.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClientAccessRight from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClientAccessRight if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ClientAccessRight.
+     */
+    public static ClientAccessRight fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClientAccessRight deserializedClientAccessRight = new ClientAccessRight();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("client".equals(fieldName)) {
+                    deserializedClientAccessRight.client = reader.getString();
+                } else if ("accessPermission".equals(fieldName)) {
+                    deserializedClientAccessRight.accessPermission
+                        = ClientPermissionType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClientAccessRight;
+        });
+    }
 }

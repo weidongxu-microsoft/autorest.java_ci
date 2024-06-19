@@ -6,8 +6,11 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.Map;
 import java.util.UUID;
 
@@ -15,30 +18,25 @@ import java.util.UUID;
  * The MediaServiceIdentity model.
  */
 @Fluent
-public final class MediaServiceIdentity {
+public final class MediaServiceIdentity implements JsonSerializable<MediaServiceIdentity> {
     /*
      * The identity type.
      */
-    @JsonProperty(value = "type", required = true)
     private String type;
 
     /*
      * The Principal ID of the identity.
      */
-    @JsonProperty(value = "principalId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID principalId;
 
     /*
      * The Tenant ID of the identity.
      */
-    @JsonProperty(value = "tenantId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID tenantId;
 
     /*
      * The user assigned managed identities.
      */
-    @JsonProperty(value = "userAssignedIdentities")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, UserAssignedManagedIdentity> userAssignedIdentities;
 
     /**
@@ -126,4 +124,53 @@ public final class MediaServiceIdentity {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MediaServiceIdentity.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("type", this.type);
+        jsonWriter.writeMapField("userAssignedIdentities", this.userAssignedIdentities,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MediaServiceIdentity from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MediaServiceIdentity if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MediaServiceIdentity.
+     */
+    public static MediaServiceIdentity fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MediaServiceIdentity deserializedMediaServiceIdentity = new MediaServiceIdentity();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("type".equals(fieldName)) {
+                    deserializedMediaServiceIdentity.type = reader.getString();
+                } else if ("principalId".equals(fieldName)) {
+                    deserializedMediaServiceIdentity.principalId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("tenantId".equals(fieldName)) {
+                    deserializedMediaServiceIdentity.tenantId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("userAssignedIdentities".equals(fieldName)) {
+                    Map<String, UserAssignedManagedIdentity> userAssignedIdentities
+                        = reader.readMap(reader1 -> UserAssignedManagedIdentity.fromJson(reader1));
+                    deserializedMediaServiceIdentity.userAssignedIdentities = userAssignedIdentities;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMediaServiceIdentity;
+        });
+    }
 }

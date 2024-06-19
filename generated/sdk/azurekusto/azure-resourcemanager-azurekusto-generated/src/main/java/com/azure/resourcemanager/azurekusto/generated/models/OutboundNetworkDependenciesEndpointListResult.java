@@ -6,25 +6,28 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.OutboundNetworkDependenciesEndpointInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Collection of Outbound Environment Endpoints.
  */
 @Fluent
-public final class OutboundNetworkDependenciesEndpointListResult {
+public final class OutboundNetworkDependenciesEndpointListResult
+    implements JsonSerializable<OutboundNetworkDependenciesEndpointListResult> {
     /*
      * Collection of resources.
      */
-    @JsonProperty(value = "value", required = true)
     private List<OutboundNetworkDependenciesEndpointInner> value;
 
     /*
      * Link to next page of resources.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -79,4 +82,46 @@ public final class OutboundNetworkDependenciesEndpointListResult {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(OutboundNetworkDependenciesEndpointListResult.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OutboundNetworkDependenciesEndpointListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OutboundNetworkDependenciesEndpointListResult if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the OutboundNetworkDependenciesEndpointListResult.
+     */
+    public static OutboundNetworkDependenciesEndpointListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OutboundNetworkDependenciesEndpointListResult deserializedOutboundNetworkDependenciesEndpointListResult
+                = new OutboundNetworkDependenciesEndpointListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<OutboundNetworkDependenciesEndpointInner> value
+                        = reader.readArray(reader1 -> OutboundNetworkDependenciesEndpointInner.fromJson(reader1));
+                    deserializedOutboundNetworkDependenciesEndpointListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedOutboundNetworkDependenciesEndpointListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOutboundNetworkDependenciesEndpointListResult;
+        });
+    }
 }

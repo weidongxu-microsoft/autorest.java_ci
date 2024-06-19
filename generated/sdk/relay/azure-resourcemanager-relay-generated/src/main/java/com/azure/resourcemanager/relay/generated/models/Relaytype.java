@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.relay.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * WCF relay type.
  */
@@ -36,7 +33,6 @@ public enum Relaytype {
      * @param value the serialized value to parse.
      * @return the parsed Relaytype object, or null if unable to parse.
      */
-    @JsonCreator
     public static Relaytype fromString(String value) {
         if (value == null) {
             return null;
@@ -53,7 +49,6 @@ public enum Relaytype {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

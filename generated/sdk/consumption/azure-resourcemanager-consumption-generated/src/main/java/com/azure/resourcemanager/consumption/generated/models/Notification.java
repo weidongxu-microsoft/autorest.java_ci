@@ -6,7 +6,11 @@ package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -14,24 +18,21 @@ import java.util.List;
  * The notification associated with a budget.
  */
 @Fluent
-public final class Notification {
+public final class Notification implements JsonSerializable<Notification> {
     /*
      * The notification is enabled or not.
      */
-    @JsonProperty(value = "enabled", required = true)
     private boolean enabled;
 
     /*
      * The comparison operator.
      */
-    @JsonProperty(value = "operator", required = true)
     private OperatorType operator;
 
     /*
      * Threshold value associated with a notification. Notification is sent when the cost exceeded the threshold. It is
      * always percent and has to be between 0 and 1000.
      */
-    @JsonProperty(value = "threshold", required = true)
     private BigDecimal threshold;
 
     /*
@@ -39,32 +40,27 @@ public final class Notification {
      * email or contact group specified at the Subscription or Resource Group scopes. All other scopes must have at
      * least one contact email specified.
      */
-    @JsonProperty(value = "contactEmails", required = true)
     private List<String> contactEmails;
 
     /*
      * Contact roles to send the budget notification to when the threshold is exceeded.
      */
-    @JsonProperty(value = "contactRoles")
     private List<String> contactRoles;
 
     /*
      * Action groups to send the budget notification to when the threshold is exceeded. Must be provided as a fully
      * qualified Azure resource id. Only supported at Subscription or Resource Group scopes.
      */
-    @JsonProperty(value = "contactGroups")
     private List<String> contactGroups;
 
     /*
      * The type of threshold
      */
-    @JsonProperty(value = "thresholdType")
     private ThresholdType thresholdType;
 
     /*
      * Language in which the recipient will receive the notification
      */
-    @JsonProperty(value = "locale")
     private CultureCode locale;
 
     /**
@@ -262,4 +258,68 @@ public final class Notification {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(Notification.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        jsonWriter.writeStringField("operator", this.operator == null ? null : this.operator.toString());
+        jsonWriter.writeNumberField("threshold", this.threshold);
+        jsonWriter.writeArrayField("contactEmails", this.contactEmails,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("contactRoles", this.contactRoles, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("contactGroups", this.contactGroups,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("thresholdType", this.thresholdType == null ? null : this.thresholdType.toString());
+        jsonWriter.writeStringField("locale", this.locale == null ? null : this.locale.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Notification from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Notification if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the Notification.
+     */
+    public static Notification fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Notification deserializedNotification = new Notification();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enabled".equals(fieldName)) {
+                    deserializedNotification.enabled = reader.getBoolean();
+                } else if ("operator".equals(fieldName)) {
+                    deserializedNotification.operator = OperatorType.fromString(reader.getString());
+                } else if ("threshold".equals(fieldName)) {
+                    deserializedNotification.threshold
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("contactEmails".equals(fieldName)) {
+                    List<String> contactEmails = reader.readArray(reader1 -> reader1.getString());
+                    deserializedNotification.contactEmails = contactEmails;
+                } else if ("contactRoles".equals(fieldName)) {
+                    List<String> contactRoles = reader.readArray(reader1 -> reader1.getString());
+                    deserializedNotification.contactRoles = contactRoles;
+                } else if ("contactGroups".equals(fieldName)) {
+                    List<String> contactGroups = reader.readArray(reader1 -> reader1.getString());
+                    deserializedNotification.contactGroups = contactGroups;
+                } else if ("thresholdType".equals(fieldName)) {
+                    deserializedNotification.thresholdType = ThresholdType.fromString(reader.getString());
+                } else if ("locale".equals(fieldName)) {
+                    deserializedNotification.locale = CultureCode.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNotification;
+        });
+    }
 }

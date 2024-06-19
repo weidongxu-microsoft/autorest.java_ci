@@ -5,24 +5,26 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The FailOverProperties model.
  */
 @Fluent
-public final class FailOverProperties {
+public final class FailOverProperties implements JsonSerializable<FailOverProperties> {
     /*
      * Query parameter for the new primary location after failover.
      */
-    @JsonProperty(value = "primaryLocation")
     private String primaryLocation;
 
     /*
      * If Force is false then graceful failover is attempted after ensuring no data loss. If Force flag is set to true,
      * Forced failover is attempted with possible data loss.
      */
-    @JsonProperty(value = "force")
     private Boolean force;
 
     /**
@@ -79,5 +81,44 @@ public final class FailOverProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("primaryLocation", this.primaryLocation);
+        jsonWriter.writeBooleanField("force", this.force);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FailOverProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FailOverProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the FailOverProperties.
+     */
+    public static FailOverProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FailOverProperties deserializedFailOverProperties = new FailOverProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("primaryLocation".equals(fieldName)) {
+                    deserializedFailOverProperties.primaryLocation = reader.getString();
+                } else if ("force".equals(fieldName)) {
+                    deserializedFailOverProperties.force = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFailOverProperties;
+        });
     }
 }

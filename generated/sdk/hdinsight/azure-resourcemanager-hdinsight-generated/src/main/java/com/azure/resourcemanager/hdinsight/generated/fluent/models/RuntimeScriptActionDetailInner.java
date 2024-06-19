@@ -5,9 +5,12 @@
 package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.hdinsight.generated.models.RuntimeScriptAction;
 import com.azure.resourcemanager.hdinsight.generated.models.ScriptActionExecutionSummary;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -18,44 +21,42 @@ public final class RuntimeScriptActionDetailInner extends RuntimeScriptAction {
     /*
      * The execution id of the script action.
      */
-    @JsonProperty(value = "scriptExecutionId", access = JsonProperty.Access.WRITE_ONLY)
     private Long scriptExecutionId;
 
     /*
      * The start time of script action execution.
      */
-    @JsonProperty(value = "startTime", access = JsonProperty.Access.WRITE_ONLY)
     private String startTime;
 
     /*
      * The end time of script action execution.
      */
-    @JsonProperty(value = "endTime", access = JsonProperty.Access.WRITE_ONLY)
     private String endTime;
 
     /*
      * The current execution status of the script action.
      */
-    @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private String status;
 
     /*
      * The reason why the script action was executed.
      */
-    @JsonProperty(value = "operation", access = JsonProperty.Access.WRITE_ONLY)
     private String operation;
 
     /*
      * The summary of script action execution result.
      */
-    @JsonProperty(value = "executionSummary", access = JsonProperty.Access.WRITE_ONLY)
     private List<ScriptActionExecutionSummary> executionSummary;
 
     /*
      * The script action execution debug information.
      */
-    @JsonProperty(value = "debugInformation", access = JsonProperty.Access.WRITE_ONLY)
     private String debugInformation;
+
+    /*
+     * The application name of the script action, if any.
+     */
+    private String applicationName;
 
     /**
      * Creates an instance of RuntimeScriptActionDetailInner class.
@@ -127,6 +128,16 @@ public final class RuntimeScriptActionDetailInner extends RuntimeScriptAction {
     }
 
     /**
+     * Get the applicationName property: The application name of the script action, if any.
+     * 
+     * @return the applicationName value.
+     */
+    @Override
+    public String applicationName() {
+        return this.applicationName;
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -173,5 +184,72 @@ public final class RuntimeScriptActionDetailInner extends RuntimeScriptAction {
         if (executionSummary() != null) {
             executionSummary().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", name());
+        jsonWriter.writeStringField("uri", uri());
+        jsonWriter.writeArrayField("roles", roles(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("parameters", parameters());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RuntimeScriptActionDetailInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RuntimeScriptActionDetailInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RuntimeScriptActionDetailInner.
+     */
+    public static RuntimeScriptActionDetailInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RuntimeScriptActionDetailInner deserializedRuntimeScriptActionDetailInner
+                = new RuntimeScriptActionDetailInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.withName(reader.getString());
+                } else if ("uri".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.withUri(reader.getString());
+                } else if ("roles".equals(fieldName)) {
+                    List<String> roles = reader.readArray(reader1 -> reader1.getString());
+                    deserializedRuntimeScriptActionDetailInner.withRoles(roles);
+                } else if ("parameters".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.withParameters(reader.getString());
+                } else if ("applicationName".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.applicationName = reader.getString();
+                } else if ("scriptExecutionId".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.scriptExecutionId
+                        = reader.getNullable(JsonReader::getLong);
+                } else if ("startTime".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.startTime = reader.getString();
+                } else if ("endTime".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.endTime = reader.getString();
+                } else if ("status".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.status = reader.getString();
+                } else if ("operation".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.operation = reader.getString();
+                } else if ("executionSummary".equals(fieldName)) {
+                    List<ScriptActionExecutionSummary> executionSummary
+                        = reader.readArray(reader1 -> ScriptActionExecutionSummary.fromJson(reader1));
+                    deserializedRuntimeScriptActionDetailInner.executionSummary = executionSummary;
+                } else if ("debugInformation".equals(fieldName)) {
+                    deserializedRuntimeScriptActionDetailInner.debugInformation = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRuntimeScriptActionDetailInner;
+        });
     }
 }

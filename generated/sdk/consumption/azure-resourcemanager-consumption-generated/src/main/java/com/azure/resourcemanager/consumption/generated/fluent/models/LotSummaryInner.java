@@ -6,13 +6,16 @@ package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.LotSource;
 import com.azure.resourcemanager.consumption.generated.models.OrganizationType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
 import com.azure.resourcemanager.consumption.generated.models.Status;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
@@ -23,15 +26,28 @@ public final class LotSummaryInner extends ProxyResource {
     /*
      * The lot properties.
      */
-    @JsonProperty(value = "properties")
     private LotProperties innerProperties;
 
     /*
      * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
      * is updating the latest version or not.
      */
-    @JsonProperty(value = "eTag")
     private String etag;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of LotSummaryInner class.
@@ -68,6 +84,36 @@ public final class LotSummaryInner extends ProxyResource {
     public LotSummaryInner withEtag(String etag) {
         this.etag = etag;
         return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -236,5 +282,51 @@ public final class LotSummaryInner extends ProxyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("eTag", this.etag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LotSummaryInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LotSummaryInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LotSummaryInner.
+     */
+    public static LotSummaryInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LotSummaryInner deserializedLotSummaryInner = new LotSummaryInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedLotSummaryInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedLotSummaryInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedLotSummaryInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedLotSummaryInner.innerProperties = LotProperties.fromJson(reader);
+                } else if ("eTag".equals(fieldName)) {
+                    deserializedLotSummaryInner.etag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLotSummaryInner;
+        });
     }
 }

@@ -6,6 +6,9 @@ package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.ApplicationType;
 import com.azure.resourcemanager.applicationinsights.generated.models.ComponentsResource;
 import com.azure.resourcemanager.applicationinsights.generated.models.FlowType;
@@ -13,7 +16,7 @@ import com.azure.resourcemanager.applicationinsights.generated.models.IngestionM
 import com.azure.resourcemanager.applicationinsights.generated.models.PrivateLinkScopedResource;
 import com.azure.resourcemanager.applicationinsights.generated.models.PublicNetworkAccessType;
 import com.azure.resourcemanager.applicationinsights.generated.models.RequestSource;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -27,14 +30,27 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
      * The kind of application that this component refers to, used to customize UI. This value is a freeform string,
      * values should typically be one of the following: web, ios, other, store, java, phone.
      */
-    @JsonProperty(value = "kind", required = true)
     private String kind;
 
     /*
      * Properties that define an Application Insights component resource.
      */
-    @JsonProperty(value = "properties")
     private ApplicationInsightsComponentProperties innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of ApplicationInsightsComponentInner class.
@@ -71,6 +87,36 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
      */
     private ApplicationInsightsComponentProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -462,4 +508,59 @@ public final class ApplicationInsightsComponentInner extends ComponentsResource 
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ApplicationInsightsComponentInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", location());
+        jsonWriter.writeMapField("tags", tags(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("kind", this.kind);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentInner.
+     */
+    public static ApplicationInsightsComponentInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentInner deserializedApplicationInsightsComponentInner
+                = new ApplicationInsightsComponentInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentInner.type = reader.getString();
+                } else if ("location".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentInner.withLocation(reader.getString());
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedApplicationInsightsComponentInner.withTags(tags);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentInner.kind = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentInner.innerProperties
+                        = ApplicationInsightsComponentProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentInner;
+        });
+    }
 }

@@ -5,115 +5,104 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
  * Metadata for search results.
  */
 @Fluent
-public final class SearchMetadata {
+public final class SearchMetadata implements JsonSerializable<SearchMetadata> {
     /*
      * The request id of the search.
      */
-    @JsonProperty(value = "requestId")
     private String searchId;
 
     /*
      * The search result type.
      */
-    @JsonProperty(value = "resultType")
     private String resultType;
 
     /*
      * The total number of search results.
      */
-    @JsonProperty(value = "total")
     private Long total;
 
     /*
      * The number of top search results.
      */
-    @JsonProperty(value = "top")
     private Long top;
 
     /*
      * The id of the search results request.
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * The core summaries.
      */
-    @JsonProperty(value = "coreSummaries")
     private List<CoreSummary> coreSummaries;
 
     /*
      * The status of the search results.
      */
-    @JsonProperty(value = "status")
     private String status;
 
     /*
      * The start time for the search.
      */
-    @JsonProperty(value = "startTime")
     private OffsetDateTime startTime;
 
     /*
      * The time of last update.
      */
-    @JsonProperty(value = "lastUpdated")
     private OffsetDateTime lastUpdated;
 
     /*
      * The ETag of the search results.
      */
-    @JsonProperty(value = "eTag")
     private String etag;
 
     /*
      * How the results are sorted.
      */
-    @JsonProperty(value = "sort")
     private List<SearchSort> sort;
 
     /*
      * The request time.
      */
-    @JsonProperty(value = "requestTime")
     private Long requestTime;
 
     /*
      * The aggregated value field.
      */
-    @JsonProperty(value = "aggregatedValueField")
     private String aggregatedValueField;
 
     /*
      * The aggregated grouping fields.
      */
-    @JsonProperty(value = "aggregatedGroupingFields")
     private String aggregatedGroupingFields;
 
     /*
      * The sum of all aggregates returned in the result set.
      */
-    @JsonProperty(value = "sum")
     private Long sum;
 
     /*
      * The max of all aggregates returned in the result set.
      */
-    @JsonProperty(value = "max")
     private Long max;
 
     /*
      * The schema.
      */
-    @JsonProperty(value = "schema")
     private SearchMetadataSchema schema;
 
     /**
@@ -477,5 +466,95 @@ public final class SearchMetadata {
         if (schema() != null) {
             schema().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("requestId", this.searchId);
+        jsonWriter.writeStringField("resultType", this.resultType);
+        jsonWriter.writeNumberField("total", this.total);
+        jsonWriter.writeNumberField("top", this.top);
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeArrayField("coreSummaries", this.coreSummaries, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("status", this.status);
+        jsonWriter.writeStringField("startTime",
+            this.startTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.startTime));
+        jsonWriter.writeStringField("lastUpdated",
+            this.lastUpdated == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.lastUpdated));
+        jsonWriter.writeStringField("eTag", this.etag);
+        jsonWriter.writeArrayField("sort", this.sort, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeNumberField("requestTime", this.requestTime);
+        jsonWriter.writeStringField("aggregatedValueField", this.aggregatedValueField);
+        jsonWriter.writeStringField("aggregatedGroupingFields", this.aggregatedGroupingFields);
+        jsonWriter.writeNumberField("sum", this.sum);
+        jsonWriter.writeNumberField("max", this.max);
+        jsonWriter.writeJsonField("schema", this.schema);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SearchMetadata from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SearchMetadata if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SearchMetadata.
+     */
+    public static SearchMetadata fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SearchMetadata deserializedSearchMetadata = new SearchMetadata();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("requestId".equals(fieldName)) {
+                    deserializedSearchMetadata.searchId = reader.getString();
+                } else if ("resultType".equals(fieldName)) {
+                    deserializedSearchMetadata.resultType = reader.getString();
+                } else if ("total".equals(fieldName)) {
+                    deserializedSearchMetadata.total = reader.getNullable(JsonReader::getLong);
+                } else if ("top".equals(fieldName)) {
+                    deserializedSearchMetadata.top = reader.getNullable(JsonReader::getLong);
+                } else if ("id".equals(fieldName)) {
+                    deserializedSearchMetadata.id = reader.getString();
+                } else if ("coreSummaries".equals(fieldName)) {
+                    List<CoreSummary> coreSummaries = reader.readArray(reader1 -> CoreSummary.fromJson(reader1));
+                    deserializedSearchMetadata.coreSummaries = coreSummaries;
+                } else if ("status".equals(fieldName)) {
+                    deserializedSearchMetadata.status = reader.getString();
+                } else if ("startTime".equals(fieldName)) {
+                    deserializedSearchMetadata.startTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("lastUpdated".equals(fieldName)) {
+                    deserializedSearchMetadata.lastUpdated = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("eTag".equals(fieldName)) {
+                    deserializedSearchMetadata.etag = reader.getString();
+                } else if ("sort".equals(fieldName)) {
+                    List<SearchSort> sort = reader.readArray(reader1 -> SearchSort.fromJson(reader1));
+                    deserializedSearchMetadata.sort = sort;
+                } else if ("requestTime".equals(fieldName)) {
+                    deserializedSearchMetadata.requestTime = reader.getNullable(JsonReader::getLong);
+                } else if ("aggregatedValueField".equals(fieldName)) {
+                    deserializedSearchMetadata.aggregatedValueField = reader.getString();
+                } else if ("aggregatedGroupingFields".equals(fieldName)) {
+                    deserializedSearchMetadata.aggregatedGroupingFields = reader.getString();
+                } else if ("sum".equals(fieldName)) {
+                    deserializedSearchMetadata.sum = reader.getNullable(JsonReader::getLong);
+                } else if ("max".equals(fieldName)) {
+                    deserializedSearchMetadata.max = reader.getNullable(JsonReader::getLong);
+                } else if ("schema".equals(fieldName)) {
+                    deserializedSearchMetadata.schema = SearchMetadataSchema.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSearchMetadata;
+        });
     }
 }

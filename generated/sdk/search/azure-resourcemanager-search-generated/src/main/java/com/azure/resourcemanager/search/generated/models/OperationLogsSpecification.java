@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Specifications of one type of log for this operation.
  */
 @Immutable
-public final class OperationLogsSpecification {
+public final class OperationLogsSpecification implements JsonSerializable<OperationLogsSpecification> {
     /*
      * The name of the log specification.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * The display name of the log specification.
      */
-    @JsonProperty(value = "displayName", access = JsonProperty.Access.WRITE_ONLY)
     private String displayName;
 
     /*
      * The blob duration for the log specification.
      */
-    @JsonProperty(value = "blobDuration", access = JsonProperty.Access.WRITE_ONLY)
     private String blobDuration;
 
     /**
@@ -69,5 +70,44 @@ public final class OperationLogsSpecification {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OperationLogsSpecification from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OperationLogsSpecification if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the OperationLogsSpecification.
+     */
+    public static OperationLogsSpecification fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OperationLogsSpecification deserializedOperationLogsSpecification = new OperationLogsSpecification();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedOperationLogsSpecification.name = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedOperationLogsSpecification.displayName = reader.getString();
+                } else if ("blobDuration".equals(fieldName)) {
+                    deserializedOperationLogsSpecification.blobDuration = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOperationLogsSpecification;
+        });
     }
 }

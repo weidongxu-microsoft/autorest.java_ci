@@ -5,6 +5,9 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.appservice.generated.models.ApiDefinitionInfo;
 import com.azure.resourcemanager.appservice.generated.models.ApiManagementConfig;
 import com.azure.resourcemanager.appservice.generated.models.AutoHealRules;
@@ -26,7 +29,7 @@ import com.azure.resourcemanager.appservice.generated.models.SiteMachineKey;
 import com.azure.resourcemanager.appservice.generated.models.SupportedTlsVersions;
 import com.azure.resourcemanager.appservice.generated.models.TlsCipherSuites;
 import com.azure.resourcemanager.appservice.generated.models.VirtualApplication;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -39,8 +42,22 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
     /*
      * Core resource properties
      */
-    @JsonProperty(value = "properties")
     private SiteConfigInner innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of SiteConfigResourceInner class.
@@ -55,6 +72,36 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
      */
     private SiteConfigInner innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -1773,5 +1820,51 @@ public final class SiteConfigResourceInner extends ProxyOnlyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("kind", kind());
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SiteConfigResourceInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SiteConfigResourceInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SiteConfigResourceInner.
+     */
+    public static SiteConfigResourceInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SiteConfigResourceInner deserializedSiteConfigResourceInner = new SiteConfigResourceInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedSiteConfigResourceInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedSiteConfigResourceInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedSiteConfigResourceInner.type = reader.getString();
+                } else if ("kind".equals(fieldName)) {
+                    deserializedSiteConfigResourceInner.withKind(reader.getString());
+                } else if ("properties".equals(fieldName)) {
+                    deserializedSiteConfigResourceInner.innerProperties = SiteConfigInner.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSiteConfigResourceInner;
+        });
     }
 }

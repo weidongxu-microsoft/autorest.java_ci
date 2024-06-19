@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.DataBoxEdgeSkuInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * List of SKU Information objects.
  */
 @Immutable
-public final class DataBoxEdgeSkuList {
+public final class DataBoxEdgeSkuList implements JsonSerializable<DataBoxEdgeSkuList> {
     /*
      * List of ResourceType Sku
      */
-    @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<DataBoxEdgeSkuInner> value;
 
     /*
      * Links to the next set of results
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -59,5 +61,44 @@ public final class DataBoxEdgeSkuList {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeSkuList from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeSkuList if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeSkuList.
+     */
+    public static DataBoxEdgeSkuList fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeSkuList deserializedDataBoxEdgeSkuList = new DataBoxEdgeSkuList();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<DataBoxEdgeSkuInner> value
+                        = reader.readArray(reader1 -> DataBoxEdgeSkuInner.fromJson(reader1));
+                    deserializedDataBoxEdgeSkuList.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedDataBoxEdgeSkuList.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeSkuList;
+        });
     }
 }

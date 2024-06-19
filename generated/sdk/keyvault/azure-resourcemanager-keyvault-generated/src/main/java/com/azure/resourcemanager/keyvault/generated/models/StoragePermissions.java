@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -102,7 +101,6 @@ public final class StoragePermissions extends ExpandableStringEnum<StoragePermis
      * @param name a name to look for.
      * @return the corresponding StoragePermissions.
      */
-    @JsonCreator
     public static StoragePermissions fromString(String name) {
         return fromString(name, StoragePermissions.class);
     }

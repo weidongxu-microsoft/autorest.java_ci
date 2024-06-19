@@ -5,10 +5,14 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.ReservationTransactionResource;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
+import java.util.List;
 import java.util.UUID;
 
 /**
@@ -19,8 +23,27 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
     /*
      * The properties of a legacy reservation transaction.
      */
-    @JsonProperty(value = "properties")
     private LegacyReservationTransactionProperties innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * Resource tags.
+     */
+    private List<String> tags;
 
     /**
      * Creates an instance of ReservationTransactionInner class.
@@ -35,6 +58,57 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
      */
     private LegacyReservationTransactionProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Set the innerProperties property: The properties of a legacy reservation transaction.
+     * 
+     * @param innerProperties the innerProperties value to set.
+     * @return the ReservationTransactionInner object itself.
+     */
+    ReservationTransactionInner withInnerProperties(LegacyReservationTransactionProperties innerProperties) {
+        this.innerProperties = innerProperties;
+        return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the tags property: Resource tags.
+     * 
+     * @return the tags value.
+     */
+    @Override
+    public List<String> tags() {
+        return this.tags;
     }
 
     /**
@@ -259,5 +333,52 @@ public class ReservationTransactionInner extends ReservationTransactionResource 
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReservationTransactionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReservationTransactionInner if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ReservationTransactionInner.
+     */
+    public static ReservationTransactionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReservationTransactionInner deserializedReservationTransactionInner = new ReservationTransactionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedReservationTransactionInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedReservationTransactionInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedReservationTransactionInner.type = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    List<String> tags = reader.readArray(reader1 -> reader1.getString());
+                    deserializedReservationTransactionInner.tags = tags;
+                } else if ("properties".equals(fieldName)) {
+                    deserializedReservationTransactionInner.innerProperties
+                        = LegacyReservationTransactionProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReservationTransactionInner;
+        });
     }
 }

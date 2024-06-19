@@ -5,38 +5,36 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * Work item configuration creation payload.
  */
 @Fluent
-public final class WorkItemCreateConfiguration {
+public final class WorkItemCreateConfiguration implements JsonSerializable<WorkItemCreateConfiguration> {
     /*
      * Unique connector id
      */
-    @JsonProperty(value = "ConnectorId")
     private String connectorId;
 
     /*
      * Serialized JSON object for detailed properties
      */
-    @JsonProperty(value = "ConnectorDataConfiguration")
     private String connectorDataConfiguration;
 
     /*
      * Boolean indicating validate only
      */
-    @JsonProperty(value = "ValidateOnly")
     private Boolean validateOnly;
 
     /*
      * Custom work item properties
      */
-    @JsonProperty(value = "WorkItemProperties")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> workItemProperties;
 
     /**
@@ -131,5 +129,52 @@ public final class WorkItemCreateConfiguration {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("ConnectorId", this.connectorId);
+        jsonWriter.writeStringField("ConnectorDataConfiguration", this.connectorDataConfiguration);
+        jsonWriter.writeBooleanField("ValidateOnly", this.validateOnly);
+        jsonWriter.writeMapField("WorkItemProperties", this.workItemProperties,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WorkItemCreateConfiguration from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WorkItemCreateConfiguration if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the WorkItemCreateConfiguration.
+     */
+    public static WorkItemCreateConfiguration fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WorkItemCreateConfiguration deserializedWorkItemCreateConfiguration = new WorkItemCreateConfiguration();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("ConnectorId".equals(fieldName)) {
+                    deserializedWorkItemCreateConfiguration.connectorId = reader.getString();
+                } else if ("ConnectorDataConfiguration".equals(fieldName)) {
+                    deserializedWorkItemCreateConfiguration.connectorDataConfiguration = reader.getString();
+                } else if ("ValidateOnly".equals(fieldName)) {
+                    deserializedWorkItemCreateConfiguration.validateOnly = reader.getNullable(JsonReader::getBoolean);
+                } else if ("WorkItemProperties".equals(fieldName)) {
+                    Map<String, String> workItemProperties = reader.readMap(reader1 -> reader1.getString());
+                    deserializedWorkItemCreateConfiguration.workItemProperties = workItemProperties;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedWorkItemCreateConfiguration;
+        });
     }
 }

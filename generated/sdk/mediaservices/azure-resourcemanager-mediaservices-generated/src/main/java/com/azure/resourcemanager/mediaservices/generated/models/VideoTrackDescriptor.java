@@ -5,33 +5,19 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A TrackSelection to select video tracks.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "@odata.type",
-    defaultImpl = VideoTrackDescriptor.class,
-    visible = true)
-@JsonTypeName("#Microsoft.Media.VideoTrackDescriptor")
-@JsonSubTypes({
-    @JsonSubTypes.Type(
-        name = "#Microsoft.Media.SelectVideoTrackByAttribute",
-        value = SelectVideoTrackByAttribute.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.SelectVideoTrackById", value = SelectVideoTrackById.class) })
 @Immutable
 public class VideoTrackDescriptor extends TrackDescriptor {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.VideoTrackDescriptor";
 
     /**
@@ -58,5 +44,68 @@ public class VideoTrackDescriptor extends TrackDescriptor {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VideoTrackDescriptor from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VideoTrackDescriptor if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the VideoTrackDescriptor.
+     */
+    public static VideoTrackDescriptor fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("@odata.type".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("#Microsoft.Media.SelectVideoTrackByAttribute".equals(discriminatorValue)) {
+                    return SelectVideoTrackByAttribute.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.SelectVideoTrackById".equals(discriminatorValue)) {
+                    return SelectVideoTrackById.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static VideoTrackDescriptor fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VideoTrackDescriptor deserializedVideoTrackDescriptor = new VideoTrackDescriptor();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedVideoTrackDescriptor.odataType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVideoTrackDescriptor;
+        });
     }
 }

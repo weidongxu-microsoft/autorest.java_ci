@@ -5,24 +5,27 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * Properties describing the storage account, blob container and archive name format for capture destination.
  */
 @Fluent
-public final class DestinationProperties {
+public final class DestinationProperties implements JsonSerializable<DestinationProperties> {
     /*
      * Resource id of the storage account to be used to create the blobs
      */
-    @JsonProperty(value = "storageAccountResourceId")
     private String storageAccountResourceId;
 
     /*
      * Blob container Name
      */
-    @JsonProperty(value = "blobContainer")
     private String blobContainer;
 
     /*
@@ -30,25 +33,21 @@ public final class DestinationProperties {
      * {Namespace}/{EventHub}/{PartitionId}/{Year}/{Month}/{Day}/{Hour}/{Minute}/{Second}. Here all the parameters
      * (Namespace,EventHub .. etc) are mandatory irrespective of order
      */
-    @JsonProperty(value = "archiveNameFormat")
     private String archiveNameFormat;
 
     /*
      * Subscription Id of Azure Data Lake Store
      */
-    @JsonProperty(value = "dataLakeSubscriptionId")
     private UUID dataLakeSubscriptionId;
 
     /*
      * The Azure Data Lake Store name for the captured events
      */
-    @JsonProperty(value = "dataLakeAccountName")
     private String dataLakeAccountName;
 
     /*
      * The destination folder path for the captured events
      */
-    @JsonProperty(value = "dataLakeFolderPath")
     private String dataLakeFolderPath;
 
     /**
@@ -187,5 +186,57 @@ public final class DestinationProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("storageAccountResourceId", this.storageAccountResourceId);
+        jsonWriter.writeStringField("blobContainer", this.blobContainer);
+        jsonWriter.writeStringField("archiveNameFormat", this.archiveNameFormat);
+        jsonWriter.writeStringField("dataLakeSubscriptionId", Objects.toString(this.dataLakeSubscriptionId, null));
+        jsonWriter.writeStringField("dataLakeAccountName", this.dataLakeAccountName);
+        jsonWriter.writeStringField("dataLakeFolderPath", this.dataLakeFolderPath);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DestinationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DestinationProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DestinationProperties.
+     */
+    public static DestinationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DestinationProperties deserializedDestinationProperties = new DestinationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("storageAccountResourceId".equals(fieldName)) {
+                    deserializedDestinationProperties.storageAccountResourceId = reader.getString();
+                } else if ("blobContainer".equals(fieldName)) {
+                    deserializedDestinationProperties.blobContainer = reader.getString();
+                } else if ("archiveNameFormat".equals(fieldName)) {
+                    deserializedDestinationProperties.archiveNameFormat = reader.getString();
+                } else if ("dataLakeSubscriptionId".equals(fieldName)) {
+                    deserializedDestinationProperties.dataLakeSubscriptionId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("dataLakeAccountName".equals(fieldName)) {
+                    deserializedDestinationProperties.dataLakeAccountName = reader.getString();
+                } else if ("dataLakeFolderPath".equals(fieldName)) {
+                    deserializedDestinationProperties.dataLakeFolderPath = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDestinationProperties;
+        });
     }
 }

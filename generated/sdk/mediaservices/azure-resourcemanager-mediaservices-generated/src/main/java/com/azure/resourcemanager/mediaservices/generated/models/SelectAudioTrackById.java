@@ -5,33 +5,24 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Select audio tracks from the input by specifying a track identifier.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "@odata.type",
-    defaultImpl = SelectAudioTrackById.class,
-    visible = true)
-@JsonTypeName("#Microsoft.Media.SelectAudioTrackById")
 @Fluent
 public final class SelectAudioTrackById extends AudioTrackDescriptor {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.SelectAudioTrackById";
 
     /*
      * Track identifier to select
      */
-    @JsonProperty(value = "trackId", required = true)
     private long trackId;
 
     /**
@@ -87,5 +78,48 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("channelMapping", channelMapping() == null ? null : channelMapping().toString());
+        jsonWriter.writeLongField("trackId", this.trackId);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SelectAudioTrackById from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SelectAudioTrackById if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SelectAudioTrackById.
+     */
+    public static SelectAudioTrackById fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SelectAudioTrackById deserializedSelectAudioTrackById = new SelectAudioTrackById();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("channelMapping".equals(fieldName)) {
+                    deserializedSelectAudioTrackById.withChannelMapping(ChannelMapping.fromString(reader.getString()));
+                } else if ("trackId".equals(fieldName)) {
+                    deserializedSelectAudioTrackById.trackId = reader.getLong();
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedSelectAudioTrackById.odataType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSelectAudioTrackById;
+        });
     }
 }

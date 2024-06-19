@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -43,7 +42,6 @@ public final class IngestionMode extends ExpandableStringEnum<IngestionMode> {
      * @param name a name to look for.
      * @return the corresponding IngestionMode.
      */
-    @JsonCreator
     public static IngestionMode fromString(String name) {
         return fromString(name, IngestionMode.class);
     }

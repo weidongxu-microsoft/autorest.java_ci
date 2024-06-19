@@ -5,36 +5,36 @@
 package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The options for facet evaluation.
  */
 @Fluent
-public final class FacetRequestOptions {
+public final class FacetRequestOptions implements JsonSerializable<FacetRequestOptions> {
     /*
      * The column name or query expression to sort on. Defaults to count if not present.
      */
-    @JsonProperty(value = "sortBy")
     private String sortBy;
 
     /*
      * The sorting order by the selected column (count by default).
      */
-    @JsonProperty(value = "sortOrder")
     private FacetSortOrder sortOrder;
 
     /*
      * Specifies the filter condition for the 'where' clause which will be run on main query's result, just before the
      * actual faceting.
      */
-    @JsonProperty(value = "filter")
     private String filter;
 
     /*
      * The maximum number of facet rows that should be returned.
      */
-    @JsonProperty(value = "$top")
     private Integer top;
 
     /**
@@ -131,5 +131,50 @@ public final class FacetRequestOptions {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("sortBy", this.sortBy);
+        jsonWriter.writeStringField("sortOrder", this.sortOrder == null ? null : this.sortOrder.toString());
+        jsonWriter.writeStringField("filter", this.filter);
+        jsonWriter.writeNumberField("$top", this.top);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FacetRequestOptions from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FacetRequestOptions if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the FacetRequestOptions.
+     */
+    public static FacetRequestOptions fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FacetRequestOptions deserializedFacetRequestOptions = new FacetRequestOptions();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sortBy".equals(fieldName)) {
+                    deserializedFacetRequestOptions.sortBy = reader.getString();
+                } else if ("sortOrder".equals(fieldName)) {
+                    deserializedFacetRequestOptions.sortOrder = FacetSortOrder.fromString(reader.getString());
+                } else if ("filter".equals(fieldName)) {
+                    deserializedFacetRequestOptions.filter = reader.getString();
+                } else if ("$top".equals(fieldName)) {
+                    deserializedFacetRequestOptions.top = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFacetRequestOptions;
+        });
     }
 }

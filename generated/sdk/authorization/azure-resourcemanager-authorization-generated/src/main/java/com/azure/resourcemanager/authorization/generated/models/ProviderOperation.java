@@ -5,47 +5,45 @@
 package com.azure.resourcemanager.authorization.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Operation.
  */
 @Fluent
-public final class ProviderOperation {
+public final class ProviderOperation implements JsonSerializable<ProviderOperation> {
     /*
      * The operation name.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The operation display name.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * The operation description.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The operation origin.
      */
-    @JsonProperty(value = "origin")
     private String origin;
 
     /*
      * The operation properties.
      */
-    @JsonProperty(value = "properties")
     private Object properties;
 
     /*
      * The dataAction flag to specify the operation type.
      */
-    @JsonProperty(value = "isDataAction")
     private Boolean isDataAction;
 
     /**
@@ -180,5 +178,56 @@ public final class ProviderOperation {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("origin", this.origin);
+        jsonWriter.writeUntypedField("properties", this.properties);
+        jsonWriter.writeBooleanField("isDataAction", this.isDataAction);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ProviderOperation from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ProviderOperation if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ProviderOperation.
+     */
+    public static ProviderOperation fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ProviderOperation deserializedProviderOperation = new ProviderOperation();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedProviderOperation.name = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedProviderOperation.displayName = reader.getString();
+                } else if ("description".equals(fieldName)) {
+                    deserializedProviderOperation.description = reader.getString();
+                } else if ("origin".equals(fieldName)) {
+                    deserializedProviderOperation.origin = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedProviderOperation.properties = reader.readUntyped();
+                } else if ("isDataAction".equals(fieldName)) {
+                    deserializedProviderOperation.isDataAction = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedProviderOperation;
+        });
     }
 }

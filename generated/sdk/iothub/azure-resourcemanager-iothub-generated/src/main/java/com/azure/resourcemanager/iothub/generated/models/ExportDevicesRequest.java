@@ -6,55 +6,52 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Use to provide parameters when requesting an export of all devices in the IoT hub.
  */
 @Fluent
-public final class ExportDevicesRequest {
+public final class ExportDevicesRequest implements JsonSerializable<ExportDevicesRequest> {
     /*
      * The export blob container URI.
      */
-    @JsonProperty(value = "exportBlobContainerUri", required = true)
     private String exportBlobContainerUri;
 
     /*
      * The value indicating whether keys should be excluded during export.
      */
-    @JsonProperty(value = "excludeKeys", required = true)
     private boolean excludeKeys;
 
     /*
      * The name of the blob that will be created in the provided output blob container. This blob will contain the
      * exported device registry information for the IoT Hub.
      */
-    @JsonProperty(value = "exportBlobName")
     private String exportBlobName;
 
     /*
      * Specifies authentication type being used for connecting to the storage account.
      */
-    @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
 
     /*
      * Managed identity properties of storage endpoint for export devices.
      */
-    @JsonProperty(value = "identity")
     private ManagedIdentity identity;
 
     /*
      * The value indicating whether configurations should be exported.
      */
-    @JsonProperty(value = "includeConfigurations")
     private Boolean includeConfigurations;
 
     /*
      * The name of the blob that will be created in the provided output blob container. This blob will contain the
      * exported configurations for the Iot Hub.
      */
-    @JsonProperty(value = "configurationsBlobName")
     private String configurationsBlobName;
 
     /**
@@ -226,4 +223,61 @@ public final class ExportDevicesRequest {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ExportDevicesRequest.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("exportBlobContainerUri", this.exportBlobContainerUri);
+        jsonWriter.writeBooleanField("excludeKeys", this.excludeKeys);
+        jsonWriter.writeStringField("exportBlobName", this.exportBlobName);
+        jsonWriter.writeStringField("authenticationType",
+            this.authenticationType == null ? null : this.authenticationType.toString());
+        jsonWriter.writeJsonField("identity", this.identity);
+        jsonWriter.writeBooleanField("includeConfigurations", this.includeConfigurations);
+        jsonWriter.writeStringField("configurationsBlobName", this.configurationsBlobName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ExportDevicesRequest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ExportDevicesRequest if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ExportDevicesRequest.
+     */
+    public static ExportDevicesRequest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ExportDevicesRequest deserializedExportDevicesRequest = new ExportDevicesRequest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("exportBlobContainerUri".equals(fieldName)) {
+                    deserializedExportDevicesRequest.exportBlobContainerUri = reader.getString();
+                } else if ("excludeKeys".equals(fieldName)) {
+                    deserializedExportDevicesRequest.excludeKeys = reader.getBoolean();
+                } else if ("exportBlobName".equals(fieldName)) {
+                    deserializedExportDevicesRequest.exportBlobName = reader.getString();
+                } else if ("authenticationType".equals(fieldName)) {
+                    deserializedExportDevicesRequest.authenticationType
+                        = AuthenticationType.fromString(reader.getString());
+                } else if ("identity".equals(fieldName)) {
+                    deserializedExportDevicesRequest.identity = ManagedIdentity.fromJson(reader);
+                } else if ("includeConfigurations".equals(fieldName)) {
+                    deserializedExportDevicesRequest.includeConfigurations = reader.getNullable(JsonReader::getBoolean);
+                } else if ("configurationsBlobName".equals(fieldName)) {
+                    deserializedExportDevicesRequest.configurationsBlobName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedExportDevicesRequest;
+        });
+    }
 }

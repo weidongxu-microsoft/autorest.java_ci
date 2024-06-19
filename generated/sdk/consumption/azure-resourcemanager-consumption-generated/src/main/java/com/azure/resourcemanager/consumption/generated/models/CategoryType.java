@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class CategoryType extends ExpandableStringEnum<CategoryType> {
      * @param name a name to look for.
      * @return the corresponding CategoryType.
      */
-    @JsonCreator
     public static CategoryType fromString(String name) {
         return fromString(name, CategoryType.class);
     }

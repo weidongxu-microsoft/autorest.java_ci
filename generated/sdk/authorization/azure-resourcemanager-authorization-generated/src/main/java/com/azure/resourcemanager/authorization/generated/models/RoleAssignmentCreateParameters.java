@@ -6,18 +6,21 @@ package com.azure.resourcemanager.authorization.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.authorization.generated.fluent.models.RoleAssignmentProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Role assignment create parameters.
  */
 @Fluent
-public final class RoleAssignmentCreateParameters {
+public final class RoleAssignmentCreateParameters implements JsonSerializable<RoleAssignmentCreateParameters> {
     /*
      * Role assignment properties.
      */
-    @JsonProperty(value = "properties", required = true)
     private RoleAssignmentProperties innerProperties = new RoleAssignmentProperties();
 
     /**
@@ -145,4 +148,43 @@ public final class RoleAssignmentCreateParameters {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RoleAssignmentCreateParameters.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoleAssignmentCreateParameters from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoleAssignmentCreateParameters if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RoleAssignmentCreateParameters.
+     */
+    public static RoleAssignmentCreateParameters fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoleAssignmentCreateParameters deserializedRoleAssignmentCreateParameters
+                = new RoleAssignmentCreateParameters();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("properties".equals(fieldName)) {
+                    deserializedRoleAssignmentCreateParameters.innerProperties
+                        = RoleAssignmentProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoleAssignmentCreateParameters;
+        });
+    }
 }

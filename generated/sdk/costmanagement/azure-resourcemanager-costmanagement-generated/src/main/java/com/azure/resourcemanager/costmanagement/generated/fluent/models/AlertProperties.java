@@ -5,81 +5,74 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.costmanagement.generated.models.AlertPropertiesDefinition;
 import com.azure.resourcemanager.costmanagement.generated.models.AlertPropertiesDetails;
 import com.azure.resourcemanager.costmanagement.generated.models.AlertSource;
 import com.azure.resourcemanager.costmanagement.generated.models.AlertStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The AlertProperties model.
  */
 @Fluent
-public final class AlertProperties {
+public final class AlertProperties implements JsonSerializable<AlertProperties> {
     /*
      * defines the type of alert
      */
-    @JsonProperty(value = "definition")
     private AlertPropertiesDefinition definition;
 
     /*
      * Alert description
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * Source of alert
      */
-    @JsonProperty(value = "source")
     private AlertSource source;
 
     /*
      * Alert details
      */
-    @JsonProperty(value = "details")
     private AlertPropertiesDetails details;
 
     /*
      * related budget
      */
-    @JsonProperty(value = "costEntityId")
     private String costEntityId;
 
     /*
      * alert status
      */
-    @JsonProperty(value = "status")
     private AlertStatus status;
 
     /*
      * dateTime in which alert was created
      */
-    @JsonProperty(value = "creationTime")
     private String creationTime;
 
     /*
      * dateTime in which alert was closed
      */
-    @JsonProperty(value = "closeTime")
     private String closeTime;
 
     /*
      * dateTime in which alert was last modified
      */
-    @JsonProperty(value = "modificationTime")
     private String modificationTime;
 
     /*
      * The statusModificationUserName property.
      */
-    @JsonProperty(value = "statusModificationUserName")
     private String statusModificationUsername;
 
     /*
      * dateTime in which the alert status was last modified
      */
-    @JsonProperty(value = "statusModificationTime")
     private String statusModificationTime;
 
     /**
@@ -320,5 +313,71 @@ public final class AlertProperties {
         if (details() != null) {
             details().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("definition", this.definition);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("source", this.source == null ? null : this.source.toString());
+        jsonWriter.writeJsonField("details", this.details);
+        jsonWriter.writeStringField("costEntityId", this.costEntityId);
+        jsonWriter.writeStringField("status", this.status == null ? null : this.status.toString());
+        jsonWriter.writeStringField("creationTime", this.creationTime);
+        jsonWriter.writeStringField("closeTime", this.closeTime);
+        jsonWriter.writeStringField("modificationTime", this.modificationTime);
+        jsonWriter.writeStringField("statusModificationUserName", this.statusModificationUsername);
+        jsonWriter.writeStringField("statusModificationTime", this.statusModificationTime);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AlertProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AlertProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AlertProperties.
+     */
+    public static AlertProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AlertProperties deserializedAlertProperties = new AlertProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("definition".equals(fieldName)) {
+                    deserializedAlertProperties.definition = AlertPropertiesDefinition.fromJson(reader);
+                } else if ("description".equals(fieldName)) {
+                    deserializedAlertProperties.description = reader.getString();
+                } else if ("source".equals(fieldName)) {
+                    deserializedAlertProperties.source = AlertSource.fromString(reader.getString());
+                } else if ("details".equals(fieldName)) {
+                    deserializedAlertProperties.details = AlertPropertiesDetails.fromJson(reader);
+                } else if ("costEntityId".equals(fieldName)) {
+                    deserializedAlertProperties.costEntityId = reader.getString();
+                } else if ("status".equals(fieldName)) {
+                    deserializedAlertProperties.status = AlertStatus.fromString(reader.getString());
+                } else if ("creationTime".equals(fieldName)) {
+                    deserializedAlertProperties.creationTime = reader.getString();
+                } else if ("closeTime".equals(fieldName)) {
+                    deserializedAlertProperties.closeTime = reader.getString();
+                } else if ("modificationTime".equals(fieldName)) {
+                    deserializedAlertProperties.modificationTime = reader.getString();
+                } else if ("statusModificationUserName".equals(fieldName)) {
+                    deserializedAlertProperties.statusModificationUsername = reader.getString();
+                } else if ("statusModificationTime".equals(fieldName)) {
+                    deserializedAlertProperties.statusModificationTime = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAlertProperties;
+        });
     }
 }

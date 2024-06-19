@@ -5,24 +5,27 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * The properties of the price sheet download.
  */
 @Immutable
-public final class PricesheetDownloadProperties {
+public final class PricesheetDownloadProperties implements JsonSerializable<PricesheetDownloadProperties> {
     /*
      * The link (url) to download the pricesheet.
      */
-    @JsonProperty(value = "downloadUrl", access = JsonProperty.Access.WRITE_ONLY)
     private String downloadUrl;
 
     /*
      * Download link validity.
      */
-    @JsonProperty(value = "validTill", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime validTill;
 
     /**
@@ -55,5 +58,43 @@ public final class PricesheetDownloadProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PricesheetDownloadProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PricesheetDownloadProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the PricesheetDownloadProperties.
+     */
+    public static PricesheetDownloadProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PricesheetDownloadProperties deserializedPricesheetDownloadProperties = new PricesheetDownloadProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("downloadUrl".equals(fieldName)) {
+                    deserializedPricesheetDownloadProperties.downloadUrl = reader.getString();
+                } else if ("validTill".equals(fieldName)) {
+                    deserializedPricesheetDownloadProperties.validTill = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPricesheetDownloadProperties;
+        });
     }
 }

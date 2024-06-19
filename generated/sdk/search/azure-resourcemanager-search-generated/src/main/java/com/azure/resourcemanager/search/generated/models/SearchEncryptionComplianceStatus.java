@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Returns the status of search service compliance with respect to non-CMK-encrypted objects. If a service has more than
  * one unencrypted object, and enforcement is enabled, the service is marked as noncompliant.
@@ -37,7 +34,6 @@ public enum SearchEncryptionComplianceStatus {
      * @param value the serialized value to parse.
      * @return the parsed SearchEncryptionComplianceStatus object, or null if unable to parse.
      */
-    @JsonCreator
     public static SearchEncryptionComplianceStatus fromString(String value) {
         if (value == null) {
             return null;
@@ -54,7 +50,6 @@ public enum SearchEncryptionComplianceStatus {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

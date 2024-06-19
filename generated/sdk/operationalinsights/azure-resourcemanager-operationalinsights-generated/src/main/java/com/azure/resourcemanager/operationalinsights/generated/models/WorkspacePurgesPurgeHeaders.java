@@ -7,7 +7,6 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.http.HttpHeaderName;
 import com.azure.core.http.HttpHeaders;
-import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * The WorkspacePurgesPurgeHeaders model.
@@ -17,7 +16,6 @@ public final class WorkspacePurgesPurgeHeaders {
     /*
      * The x-ms-status-location property.
      */
-    @JsonProperty(value = "x-ms-status-location")
     private String xMsStatusLocation;
 
     private static final HttpHeaderName X_MS_STATUS_LOCATION = HttpHeaderName.fromString("x-ms-status-location");

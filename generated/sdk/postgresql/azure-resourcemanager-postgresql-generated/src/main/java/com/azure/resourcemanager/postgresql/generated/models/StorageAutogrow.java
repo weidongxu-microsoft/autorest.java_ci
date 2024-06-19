@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class StorageAutogrow extends ExpandableStringEnum<StorageAutogrow>
      * @param name a name to look for.
      * @return the corresponding StorageAutogrow.
      */
-    @JsonCreator
     public static StorageAutogrow fromString(String name) {
         return fromString(name, StorageAutogrow.class);
     }

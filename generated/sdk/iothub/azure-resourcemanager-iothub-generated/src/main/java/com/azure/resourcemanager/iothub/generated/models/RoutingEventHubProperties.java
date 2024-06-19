@@ -6,47 +6,45 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The properties related to an event hub endpoint.
  */
 @Fluent
-public final class RoutingEventHubProperties {
+public final class RoutingEventHubProperties implements JsonSerializable<RoutingEventHubProperties> {
     /*
      * Id of the event hub endpoint
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * The connection string of the event hub endpoint.
      */
-    @JsonProperty(value = "connectionString")
     private String connectionString;
 
     /*
      * The url of the event hub endpoint. It must include the protocol sb://
      */
-    @JsonProperty(value = "endpointUri")
     private String endpointUri;
 
     /*
      * Event hub name on the event hub namespace
      */
-    @JsonProperty(value = "entityPath")
     private String entityPath;
 
     /*
      * Method used to authenticate against the event hub endpoint
      */
-    @JsonProperty(value = "authenticationType")
     private AuthenticationType authenticationType;
 
     /*
      * Managed identity properties of routing event hub endpoint.
      */
-    @JsonProperty(value = "identity")
     private ManagedIdentity identity;
 
     /*
@@ -54,19 +52,16 @@ public final class RoutingEventHubProperties {
      * hyphens and has a maximum length of 64 characters. The following names are reserved: events, fileNotifications,
      * $default. Endpoint names must be unique across endpoint types.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The subscription identifier of the event hub endpoint.
      */
-    @JsonProperty(value = "subscriptionId")
     private String subscriptionId;
 
     /*
      * The name of the resource group of the event hub endpoint.
      */
-    @JsonProperty(value = "resourceGroup")
     private String resourceGroup;
 
     /**
@@ -275,4 +270,67 @@ public final class RoutingEventHubProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RoutingEventHubProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("connectionString", this.connectionString);
+        jsonWriter.writeStringField("endpointUri", this.endpointUri);
+        jsonWriter.writeStringField("entityPath", this.entityPath);
+        jsonWriter.writeStringField("authenticationType",
+            this.authenticationType == null ? null : this.authenticationType.toString());
+        jsonWriter.writeJsonField("identity", this.identity);
+        jsonWriter.writeStringField("subscriptionId", this.subscriptionId);
+        jsonWriter.writeStringField("resourceGroup", this.resourceGroup);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoutingEventHubProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoutingEventHubProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RoutingEventHubProperties.
+     */
+    public static RoutingEventHubProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoutingEventHubProperties deserializedRoutingEventHubProperties = new RoutingEventHubProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.name = reader.getString();
+                } else if ("id".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.id = reader.getString();
+                } else if ("connectionString".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.connectionString = reader.getString();
+                } else if ("endpointUri".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.endpointUri = reader.getString();
+                } else if ("entityPath".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.entityPath = reader.getString();
+                } else if ("authenticationType".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.authenticationType
+                        = AuthenticationType.fromString(reader.getString());
+                } else if ("identity".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.identity = ManagedIdentity.fromJson(reader);
+                } else if ("subscriptionId".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.subscriptionId = reader.getString();
+                } else if ("resourceGroup".equals(fieldName)) {
+                    deserializedRoutingEventHubProperties.resourceGroup = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoutingEventHubProperties;
+        });
+    }
 }

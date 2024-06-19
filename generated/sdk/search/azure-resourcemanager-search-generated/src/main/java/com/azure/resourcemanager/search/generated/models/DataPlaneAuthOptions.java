@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Defines the options for how the search service authenticates a data plane request. This cannot be set if
  * 'disableLocalAuth' is set to true.
  */
 @Fluent
-public final class DataPlaneAuthOptions {
+public final class DataPlaneAuthOptions implements JsonSerializable<DataPlaneAuthOptions> {
     /*
      * Indicates that only the API key can be used for authentication.
      */
-    @JsonProperty(value = "apiKeyOnly")
     private Object apiKeyOnly;
 
     /*
      * Indicates that either the API key or an access token from a Microsoft Entra ID tenant can be used for
      * authentication.
      */
-    @JsonProperty(value = "aadOrApiKey")
     private DataPlaneAadOrApiKeyAuthOption aadOrApiKey;
 
     /**
@@ -83,5 +85,44 @@ public final class DataPlaneAuthOptions {
         if (aadOrApiKey() != null) {
             aadOrApiKey().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeUntypedField("apiKeyOnly", this.apiKeyOnly);
+        jsonWriter.writeJsonField("aadOrApiKey", this.aadOrApiKey);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataPlaneAuthOptions from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataPlaneAuthOptions if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataPlaneAuthOptions.
+     */
+    public static DataPlaneAuthOptions fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataPlaneAuthOptions deserializedDataPlaneAuthOptions = new DataPlaneAuthOptions();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("apiKeyOnly".equals(fieldName)) {
+                    deserializedDataPlaneAuthOptions.apiKeyOnly = reader.readUntyped();
+                } else if ("aadOrApiKey".equals(fieldName)) {
+                    deserializedDataPlaneAuthOptions.aadOrApiKey = DataPlaneAadOrApiKeyAuthOption.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataPlaneAuthOptions;
+        });
     }
 }

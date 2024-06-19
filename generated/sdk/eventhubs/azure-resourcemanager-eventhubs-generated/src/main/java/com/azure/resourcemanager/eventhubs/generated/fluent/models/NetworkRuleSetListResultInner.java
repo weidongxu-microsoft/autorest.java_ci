@@ -5,24 +5,26 @@
 package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The response of the List NetworkRuleSet operation.
  */
 @Fluent
-public final class NetworkRuleSetListResultInner {
+public final class NetworkRuleSetListResultInner implements JsonSerializable<NetworkRuleSetListResultInner> {
     /*
      * Result of the List NetworkRuleSet operation
      */
-    @JsonProperty(value = "value")
     private List<NetworkRuleSetInner> value;
 
     /*
      * Link to the next set of results. Not empty if Value contains incomplete list of NetworkRuleSet.
      */
-    @JsonProperty(value = "nextLink")
     private String nextLink;
 
     /**
@@ -82,5 +84,47 @@ public final class NetworkRuleSetListResultInner {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("nextLink", this.nextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NetworkRuleSetListResultInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NetworkRuleSetListResultInner if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NetworkRuleSetListResultInner.
+     */
+    public static NetworkRuleSetListResultInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NetworkRuleSetListResultInner deserializedNetworkRuleSetListResultInner
+                = new NetworkRuleSetListResultInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<NetworkRuleSetInner> value
+                        = reader.readArray(reader1 -> NetworkRuleSetInner.fromJson(reader1));
+                    deserializedNetworkRuleSetListResultInner.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedNetworkRuleSetListResultInner.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNetworkRuleSetListResultInner;
+        });
     }
 }

@@ -6,30 +6,31 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Kubernetes cluster configuration.
  */
 @Fluent
-public final class KubernetesClusterInfo {
+public final class KubernetesClusterInfo implements JsonSerializable<KubernetesClusterInfo> {
     /*
      * Etcd configuration
      */
-    @JsonProperty(value = "etcdInfo", access = JsonProperty.Access.WRITE_ONLY)
     private EtcdInfo etcdInfo;
 
     /*
      * Kubernetes cluster nodes
      */
-    @JsonProperty(value = "nodes", access = JsonProperty.Access.WRITE_ONLY)
     private List<NodeInfo> nodes;
 
     /*
      * Kubernetes cluster version
      */
-    @JsonProperty(value = "version", required = true)
     private String version;
 
     /**
@@ -95,4 +96,46 @@ public final class KubernetesClusterInfo {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(KubernetesClusterInfo.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("version", this.version);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of KubernetesClusterInfo from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of KubernetesClusterInfo if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the KubernetesClusterInfo.
+     */
+    public static KubernetesClusterInfo fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            KubernetesClusterInfo deserializedKubernetesClusterInfo = new KubernetesClusterInfo();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("version".equals(fieldName)) {
+                    deserializedKubernetesClusterInfo.version = reader.getString();
+                } else if ("etcdInfo".equals(fieldName)) {
+                    deserializedKubernetesClusterInfo.etcdInfo = EtcdInfo.fromJson(reader);
+                } else if ("nodes".equals(fieldName)) {
+                    List<NodeInfo> nodes = reader.readArray(reader1 -> NodeInfo.fromJson(reader1));
+                    deserializedKubernetesClusterInfo.nodes = nodes;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedKubernetesClusterInfo;
+        });
+    }
 }

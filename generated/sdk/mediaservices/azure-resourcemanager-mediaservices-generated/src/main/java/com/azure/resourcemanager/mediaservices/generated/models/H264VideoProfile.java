@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -57,7 +56,6 @@ public final class H264VideoProfile extends ExpandableStringEnum<H264VideoProfil
      * @param name a name to look for.
      * @return the corresponding H264VideoProfile.
      */
-    @JsonCreator
     public static H264VideoProfile fromString(String name) {
         return fromString(name, H264VideoProfile.class);
     }

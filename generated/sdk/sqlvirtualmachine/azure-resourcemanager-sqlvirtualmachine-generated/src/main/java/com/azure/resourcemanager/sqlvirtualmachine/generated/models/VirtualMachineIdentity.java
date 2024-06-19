@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Virtual Machine Identity details used for Sql IaaS extension configurations.
  */
 @Fluent
-public final class VirtualMachineIdentity {
+public final class VirtualMachineIdentity implements JsonSerializable<VirtualMachineIdentity> {
     /*
      * Identity type of the virtual machine. Specify None to opt-out of Managed Identities.
      */
-    @JsonProperty(value = "type")
     private VmIdentityType type;
 
     /*
      * ARM Resource Id of the identity. Only required when UserAssigned identity is selected.
      */
-    @JsonProperty(value = "resourceId")
     private String resourceId;
 
     /**
@@ -78,5 +80,44 @@ public final class VirtualMachineIdentity {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
+        jsonWriter.writeStringField("resourceId", this.resourceId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VirtualMachineIdentity from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VirtualMachineIdentity if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the VirtualMachineIdentity.
+     */
+    public static VirtualMachineIdentity fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VirtualMachineIdentity deserializedVirtualMachineIdentity = new VirtualMachineIdentity();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("type".equals(fieldName)) {
+                    deserializedVirtualMachineIdentity.type = VmIdentityType.fromString(reader.getString());
+                } else if ("resourceId".equals(fieldName)) {
+                    deserializedVirtualMachineIdentity.resourceId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVirtualMachineIdentity;
+        });
     }
 }

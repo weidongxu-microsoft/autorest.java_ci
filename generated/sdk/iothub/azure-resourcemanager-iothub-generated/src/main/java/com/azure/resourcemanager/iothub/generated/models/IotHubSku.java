@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class IotHubSku extends ExpandableStringEnum<IotHubSku> {
      * @param name a name to look for.
      * @return the corresponding IotHubSku.
      */
-    @JsonCreator
     public static IotHubSku fromString(String name) {
         return fromString(name, IotHubSku.class);
     }

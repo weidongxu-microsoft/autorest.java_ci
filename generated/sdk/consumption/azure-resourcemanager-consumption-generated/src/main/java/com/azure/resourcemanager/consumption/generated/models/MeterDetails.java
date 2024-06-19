@@ -5,66 +5,61 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 /**
  * The properties of the meter detail.
  */
 @Immutable
-public final class MeterDetails {
+public final class MeterDetails implements JsonSerializable<MeterDetails> {
     /*
      * The name of the meter, within the given meter category
      */
-    @JsonProperty(value = "meterName", access = JsonProperty.Access.WRITE_ONLY)
     private String meterName;
 
     /*
      * The category of the meter, for example, 'Cloud services', 'Networking', etc..
      */
-    @JsonProperty(value = "meterCategory", access = JsonProperty.Access.WRITE_ONLY)
     private String meterCategory;
 
     /*
      * The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute (IXP)', etc..
      */
-    @JsonProperty(value = "meterSubCategory", access = JsonProperty.Access.WRITE_ONLY)
     private String meterSubCategory;
 
     /*
      * The unit in which the meter consumption is charged, for example, 'Hours', 'GB', etc.
      */
-    @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
     /*
      * The location in which the Azure service is available.
      */
-    @JsonProperty(value = "meterLocation", access = JsonProperty.Access.WRITE_ONLY)
     private String meterLocation;
 
     /*
      * The total included quantity associated with the offer.
      */
-    @JsonProperty(value = "totalIncludedQuantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal totalIncludedQuantity;
 
     /*
      * The pretax listing price.
      */
-    @JsonProperty(value = "pretaxStandardRate", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal pretaxStandardRate;
 
     /*
      * The name of the service.
      */
-    @JsonProperty(value = "serviceName", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceName;
 
     /*
      * The service tier.
      */
-    @JsonProperty(value = "serviceTier", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceTier;
 
     /**
@@ -161,5 +156,58 @@ public final class MeterDetails {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MeterDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MeterDetails if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MeterDetails.
+     */
+    public static MeterDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MeterDetails deserializedMeterDetails = new MeterDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("meterName".equals(fieldName)) {
+                    deserializedMeterDetails.meterName = reader.getString();
+                } else if ("meterCategory".equals(fieldName)) {
+                    deserializedMeterDetails.meterCategory = reader.getString();
+                } else if ("meterSubCategory".equals(fieldName)) {
+                    deserializedMeterDetails.meterSubCategory = reader.getString();
+                } else if ("unit".equals(fieldName)) {
+                    deserializedMeterDetails.unit = reader.getString();
+                } else if ("meterLocation".equals(fieldName)) {
+                    deserializedMeterDetails.meterLocation = reader.getString();
+                } else if ("totalIncludedQuantity".equals(fieldName)) {
+                    deserializedMeterDetails.totalIncludedQuantity
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("pretaxStandardRate".equals(fieldName)) {
+                    deserializedMeterDetails.pretaxStandardRate
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("serviceName".equals(fieldName)) {
+                    deserializedMeterDetails.serviceName = reader.getString();
+                } else if ("serviceTier".equals(fieldName)) {
+                    deserializedMeterDetails.serviceTier = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMeterDetails;
+        });
     }
 }

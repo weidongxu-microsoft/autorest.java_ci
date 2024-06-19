@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.hdinsight.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The cluster host information.
  */
 @Fluent
-public final class HostInfoInner {
+public final class HostInfoInner implements JsonSerializable<HostInfoInner> {
     /*
      * The host name
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The Fully Qualified Domain Name of host
      */
-    @JsonProperty(value = "fqdn")
     private String fqdn;
 
     /*
      * The effective disk encryption key URL used by the host
      */
-    @JsonProperty(value = "effectiveDiskEncryptionKeyUrl")
     private String effectiveDiskEncryptionKeyUrl;
 
     /**
@@ -102,5 +103,47 @@ public final class HostInfoInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("fqdn", this.fqdn);
+        jsonWriter.writeStringField("effectiveDiskEncryptionKeyUrl", this.effectiveDiskEncryptionKeyUrl);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of HostInfoInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of HostInfoInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the HostInfoInner.
+     */
+    public static HostInfoInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            HostInfoInner deserializedHostInfoInner = new HostInfoInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedHostInfoInner.name = reader.getString();
+                } else if ("fqdn".equals(fieldName)) {
+                    deserializedHostInfoInner.fqdn = reader.getString();
+                } else if ("effectiveDiskEncryptionKeyUrl".equals(fieldName)) {
+                    deserializedHostInfoInner.effectiveDiskEncryptionKeyUrl = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedHostInfoInner;
+        });
     }
 }

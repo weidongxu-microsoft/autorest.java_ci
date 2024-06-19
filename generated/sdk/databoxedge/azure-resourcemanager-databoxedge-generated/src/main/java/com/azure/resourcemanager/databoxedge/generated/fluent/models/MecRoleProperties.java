@@ -6,37 +6,37 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * MEC role properties.
  */
 @Fluent
-public final class MecRoleProperties {
+public final class MecRoleProperties implements JsonSerializable<MecRoleProperties> {
     /*
      * Activation key of the MEC.
      */
-    @JsonProperty(value = "connectionString")
     private AsymmetricEncryptedSecret connectionString;
 
     /*
      * Controller Endpoint.
      */
-    @JsonProperty(value = "controllerEndpoint")
     private String controllerEndpoint;
 
     /*
      * Unique Id of the Resource.
      */
-    @JsonProperty(value = "resourceUniqueId")
     private String resourceUniqueId;
 
     /*
      * Role status.
      */
-    @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
     /**
@@ -141,4 +141,50 @@ public final class MecRoleProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MecRoleProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("roleStatus", this.roleStatus == null ? null : this.roleStatus.toString());
+        jsonWriter.writeJsonField("connectionString", this.connectionString);
+        jsonWriter.writeStringField("controllerEndpoint", this.controllerEndpoint);
+        jsonWriter.writeStringField("resourceUniqueId", this.resourceUniqueId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MecRoleProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MecRoleProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MecRoleProperties.
+     */
+    public static MecRoleProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MecRoleProperties deserializedMecRoleProperties = new MecRoleProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("roleStatus".equals(fieldName)) {
+                    deserializedMecRoleProperties.roleStatus = RoleStatus.fromString(reader.getString());
+                } else if ("connectionString".equals(fieldName)) {
+                    deserializedMecRoleProperties.connectionString = AsymmetricEncryptedSecret.fromJson(reader);
+                } else if ("controllerEndpoint".equals(fieldName)) {
+                    deserializedMecRoleProperties.controllerEndpoint = reader.getString();
+                } else if ("resourceUniqueId".equals(fieldName)) {
+                    deserializedMecRoleProperties.resourceUniqueId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMecRoleProperties;
+        });
+    }
 }

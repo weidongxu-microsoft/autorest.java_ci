@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The cluster sku definition.
  */
 @Fluent
-public final class ClusterSku {
+public final class ClusterSku implements JsonSerializable<ClusterSku> {
     /*
      * The capacity reservation level in Gigabytes for this cluster.
      */
-    @JsonProperty(value = "capacity")
     private Capacity capacity;
 
     /*
      * The SKU (tier) of a cluster.
      */
-    @JsonProperty(value = "name")
     private ClusterSkuNameEnum name;
 
     /**
@@ -76,5 +78,44 @@ public final class ClusterSku {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("capacity", this.capacity == null ? null : this.capacity.toLong());
+        jsonWriter.writeStringField("name", this.name == null ? null : this.name.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClusterSku from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClusterSku if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the ClusterSku.
+     */
+    public static ClusterSku fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClusterSku deserializedClusterSku = new ClusterSku();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("capacity".equals(fieldName)) {
+                    deserializedClusterSku.capacity = Capacity.fromLong(reader.getLong());
+                } else if ("name".equals(fieldName)) {
+                    deserializedClusterSku.name = ClusterSkuNameEnum.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClusterSku;
+        });
     }
 }

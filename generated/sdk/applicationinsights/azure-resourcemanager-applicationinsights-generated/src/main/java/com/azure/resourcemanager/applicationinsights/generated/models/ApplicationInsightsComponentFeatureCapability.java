@@ -5,47 +5,46 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * An Application Insights component feature capability.
  */
 @Immutable
-public final class ApplicationInsightsComponentFeatureCapability {
+public final class ApplicationInsightsComponentFeatureCapability
+    implements JsonSerializable<ApplicationInsightsComponentFeatureCapability> {
     /*
      * The name of the capability.
      */
-    @JsonProperty(value = "Name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * The description of the capability.
      */
-    @JsonProperty(value = "Description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
 
     /*
      * The value of the capability.
      */
-    @JsonProperty(value = "Value", access = JsonProperty.Access.WRITE_ONLY)
     private String value;
 
     /*
      * The unit of the capability.
      */
-    @JsonProperty(value = "Unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
     /*
      * The meter used for the capability.
      */
-    @JsonProperty(value = "MeterId", access = JsonProperty.Access.WRITE_ONLY)
     private String meterId;
 
     /*
      * The meter rate of the meter.
      */
-    @JsonProperty(value = "MeterRateFrequency", access = JsonProperty.Access.WRITE_ONLY)
     private String meterRateFrequency;
 
     /**
@@ -114,5 +113,51 @@ public final class ApplicationInsightsComponentFeatureCapability {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentFeatureCapability from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentFeatureCapability if the JsonReader was pointing to an
+     * instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentFeatureCapability.
+     */
+    public static ApplicationInsightsComponentFeatureCapability fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentFeatureCapability deserializedApplicationInsightsComponentFeatureCapability
+                = new ApplicationInsightsComponentFeatureCapability();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("Name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFeatureCapability.name = reader.getString();
+                } else if ("Description".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFeatureCapability.description = reader.getString();
+                } else if ("Value".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFeatureCapability.value = reader.getString();
+                } else if ("Unit".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFeatureCapability.unit = reader.getString();
+                } else if ("MeterId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFeatureCapability.meterId = reader.getString();
+                } else if ("MeterRateFrequency".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFeatureCapability.meterRateFrequency = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentFeatureCapability;
+        });
     }
 }

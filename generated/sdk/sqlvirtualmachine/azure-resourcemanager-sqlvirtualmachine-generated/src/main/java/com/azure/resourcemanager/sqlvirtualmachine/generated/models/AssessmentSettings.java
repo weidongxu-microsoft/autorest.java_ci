@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Configure SQL best practices Assessment for databases in your SQL virtual machine.
  */
 @Fluent
-public final class AssessmentSettings {
+public final class AssessmentSettings implements JsonSerializable<AssessmentSettings> {
     /*
      * Enable or disable SQL best practices Assessment feature on SQL virtual machine.
      */
-    @JsonProperty(value = "enable")
     private Boolean enable;
 
     /*
      * Run SQL best practices Assessment immediately on SQL virtual machine.
      */
-    @JsonProperty(value = "runImmediately")
     private Boolean runImmediately;
 
     /*
      * Schedule for SQL best practices Assessment.
      */
-    @JsonProperty(value = "schedule")
     private Schedule schedule;
 
     /**
@@ -105,5 +106,47 @@ public final class AssessmentSettings {
         if (schedule() != null) {
             schedule().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enable", this.enable);
+        jsonWriter.writeBooleanField("runImmediately", this.runImmediately);
+        jsonWriter.writeJsonField("schedule", this.schedule);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AssessmentSettings from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AssessmentSettings if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AssessmentSettings.
+     */
+    public static AssessmentSettings fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AssessmentSettings deserializedAssessmentSettings = new AssessmentSettings();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enable".equals(fieldName)) {
+                    deserializedAssessmentSettings.enable = reader.getNullable(JsonReader::getBoolean);
+                } else if ("runImmediately".equals(fieldName)) {
+                    deserializedAssessmentSettings.runImmediately = reader.getNullable(JsonReader::getBoolean);
+                } else if ("schedule".equals(fieldName)) {
+                    deserializedAssessmentSettings.schedule = Schedule.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAssessmentSettings;
+        });
     }
 }

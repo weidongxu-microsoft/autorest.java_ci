@@ -5,33 +5,49 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.AddonInner;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.IoTAddonProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 
 /**
  * IoT Addon.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = IoTAddon.class, visible = true)
-@JsonTypeName("IotEdge")
 @Fluent
 public final class IoTAddon extends AddonInner {
     /*
      * Addon type.
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private AddonType kind = AddonType.IOT_EDGE;
 
     /*
      * Properties specific to IOT addon.
      */
-    @JsonProperty(value = "properties", required = true)
     private IoTAddonProperties innerProperties = new IoTAddonProperties();
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * Metadata pertaining to creation and last modification of Addon
+     */
+    private SystemData systemData;
 
     /**
      * Creates an instance of IoTAddon class.
@@ -56,6 +72,46 @@ public final class IoTAddon extends AddonInner {
      */
     private IoTAddonProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
+     * 
+     * @return the systemData value.
+     */
+    @Override
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -157,4 +213,52 @@ public final class IoTAddon extends AddonInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IoTAddon.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IoTAddon from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IoTAddon if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IoTAddon.
+     */
+    public static IoTAddon fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IoTAddon deserializedIoTAddon = new IoTAddon();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedIoTAddon.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedIoTAddon.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedIoTAddon.type = reader.getString();
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedIoTAddon.systemData = SystemData.fromJson(reader);
+                } else if ("properties".equals(fieldName)) {
+                    deserializedIoTAddon.innerProperties = IoTAddonProperties.fromJson(reader);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedIoTAddon.kind = AddonType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIoTAddon;
+        });
+    }
 }

@@ -6,37 +6,37 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.Tag;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Value object for saved search results.
  */
 @Fluent
-public final class SavedSearchProperties {
+public final class SavedSearchProperties implements JsonSerializable<SavedSearchProperties> {
     /*
      * The category of the saved search. This helps the user to find a saved search faster.
      */
-    @JsonProperty(value = "category", required = true)
     private String category;
 
     /*
      * Saved search display name.
      */
-    @JsonProperty(value = "displayName", required = true)
     private String displayName;
 
     /*
      * The query expression for the saved search.
      */
-    @JsonProperty(value = "query", required = true)
     private String query;
 
     /*
      * The function alias if query serves as a function.
      */
-    @JsonProperty(value = "functionAlias")
     private String functionAlias;
 
     /*
@@ -44,19 +44,16 @@ public final class SavedSearchProperties {
      * 'param-name1:type1 = default_value1, param-name2:type2 = default_value2'. For more examples and proper syntax
      * please refer to https://docs.microsoft.com/en-us/azure/kusto/query/functions/user-defined-functions.
      */
-    @JsonProperty(value = "functionParameters")
     private String functionParameters;
 
     /*
      * The version number of the query language. The current version is 2 and is the default.
      */
-    @JsonProperty(value = "version")
     private Long version;
 
     /*
      * The tags attached to the saved search.
      */
-    @JsonProperty(value = "tags")
     private List<Tag> tags;
 
     /**
@@ -236,4 +233,60 @@ public final class SavedSearchProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(SavedSearchProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("category", this.category);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("query", this.query);
+        jsonWriter.writeStringField("functionAlias", this.functionAlias);
+        jsonWriter.writeStringField("functionParameters", this.functionParameters);
+        jsonWriter.writeNumberField("version", this.version);
+        jsonWriter.writeArrayField("tags", this.tags, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SavedSearchProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SavedSearchProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SavedSearchProperties.
+     */
+    public static SavedSearchProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SavedSearchProperties deserializedSavedSearchProperties = new SavedSearchProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("category".equals(fieldName)) {
+                    deserializedSavedSearchProperties.category = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedSavedSearchProperties.displayName = reader.getString();
+                } else if ("query".equals(fieldName)) {
+                    deserializedSavedSearchProperties.query = reader.getString();
+                } else if ("functionAlias".equals(fieldName)) {
+                    deserializedSavedSearchProperties.functionAlias = reader.getString();
+                } else if ("functionParameters".equals(fieldName)) {
+                    deserializedSavedSearchProperties.functionParameters = reader.getString();
+                } else if ("version".equals(fieldName)) {
+                    deserializedSavedSearchProperties.version = reader.getNullable(JsonReader::getLong);
+                } else if ("tags".equals(fieldName)) {
+                    List<Tag> tags = reader.readArray(reader1 -> Tag.fromJson(reader1));
+                    deserializedSavedSearchProperties.tags = tags;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSavedSearchProperties;
+        });
+    }
 }

@@ -5,50 +5,48 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.monitor.generated.models.LogSettings;
 import com.azure.resourcemanager.monitor.generated.models.MetricSettings;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The diagnostic settings.
  */
 @Fluent
-public final class DiagnosticSettings {
+public final class DiagnosticSettings implements JsonSerializable<DiagnosticSettings> {
     /*
      * The resource ID of the storage account to which you would like to send Diagnostic Logs.
      */
-    @JsonProperty(value = "storageAccountId")
     private String storageAccountId;
 
     /*
      * The service bus rule Id of the diagnostic setting. This is here to maintain backwards compatibility.
      */
-    @JsonProperty(value = "serviceBusRuleId")
     private String serviceBusRuleId;
 
     /*
      * The resource Id for the event hub authorization rule.
      */
-    @JsonProperty(value = "eventHubAuthorizationRuleId")
     private String eventHubAuthorizationRuleId;
 
     /*
      * The name of the event hub. If none is specified, the default event hub will be selected.
      */
-    @JsonProperty(value = "eventHubName")
     private String eventHubName;
 
     /*
      * The list of metric settings.
      */
-    @JsonProperty(value = "metrics")
     private List<MetricSettings> metrics;
 
     /*
      * The list of logs settings.
      */
-    @JsonProperty(value = "logs")
     private List<LogSettings> logs;
 
     /*
@@ -56,7 +54,6 @@ public final class DiagnosticSettings {
      * /subscriptions/4b9e8510-67ab-4e9a-95a9-e2f1e570ea9c/resourceGroups/insights-integration/providers/Microsoft.
      * OperationalInsights/workspaces/viruela2
      */
-    @JsonProperty(value = "workspaceId")
     private String workspaceId;
 
     /*
@@ -64,7 +61,6 @@ public final class DiagnosticSettings {
      * AzureDiagnostics, or use a destination type constructed as follows: <normalized service identity>_<normalized
      * category name>. Possible values are: Dedicated and null (null is default.)
      */
-    @JsonProperty(value = "logAnalyticsDestinationType")
     private String logAnalyticsDestinationType;
 
     /**
@@ -261,5 +257,64 @@ public final class DiagnosticSettings {
         if (logs() != null) {
             logs().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("storageAccountId", this.storageAccountId);
+        jsonWriter.writeStringField("serviceBusRuleId", this.serviceBusRuleId);
+        jsonWriter.writeStringField("eventHubAuthorizationRuleId", this.eventHubAuthorizationRuleId);
+        jsonWriter.writeStringField("eventHubName", this.eventHubName);
+        jsonWriter.writeArrayField("metrics", this.metrics, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("logs", this.logs, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("workspaceId", this.workspaceId);
+        jsonWriter.writeStringField("logAnalyticsDestinationType", this.logAnalyticsDestinationType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DiagnosticSettings from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DiagnosticSettings if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DiagnosticSettings.
+     */
+    public static DiagnosticSettings fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DiagnosticSettings deserializedDiagnosticSettings = new DiagnosticSettings();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("storageAccountId".equals(fieldName)) {
+                    deserializedDiagnosticSettings.storageAccountId = reader.getString();
+                } else if ("serviceBusRuleId".equals(fieldName)) {
+                    deserializedDiagnosticSettings.serviceBusRuleId = reader.getString();
+                } else if ("eventHubAuthorizationRuleId".equals(fieldName)) {
+                    deserializedDiagnosticSettings.eventHubAuthorizationRuleId = reader.getString();
+                } else if ("eventHubName".equals(fieldName)) {
+                    deserializedDiagnosticSettings.eventHubName = reader.getString();
+                } else if ("metrics".equals(fieldName)) {
+                    List<MetricSettings> metrics = reader.readArray(reader1 -> MetricSettings.fromJson(reader1));
+                    deserializedDiagnosticSettings.metrics = metrics;
+                } else if ("logs".equals(fieldName)) {
+                    List<LogSettings> logs = reader.readArray(reader1 -> LogSettings.fromJson(reader1));
+                    deserializedDiagnosticSettings.logs = logs;
+                } else if ("workspaceId".equals(fieldName)) {
+                    deserializedDiagnosticSettings.workspaceId = reader.getString();
+                } else if ("logAnalyticsDestinationType".equals(fieldName)) {
+                    deserializedDiagnosticSettings.logAnalyticsDestinationType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDiagnosticSettings;
+        });
     }
 }

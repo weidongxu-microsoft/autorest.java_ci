@@ -6,29 +6,30 @@ package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The SKU (tier) of a workspace.
  */
 @Fluent
-public final class WorkspaceSku {
+public final class WorkspaceSku implements JsonSerializable<WorkspaceSku> {
     /*
      * The name of the SKU.
      */
-    @JsonProperty(value = "name", required = true)
     private WorkspaceSkuNameEnum name;
 
     /*
      * The capacity reservation level in GB for this workspace, when CapacityReservation sku is selected.
      */
-    @JsonProperty(value = "capacityReservationLevel")
     private CapacityReservationLevel capacityReservationLevel;
 
     /*
      * The last time when the sku was updated.
      */
-    @JsonProperty(value = "lastSkuUpdate", access = JsonProperty.Access.WRITE_ONLY)
     private String lastSkuUpdate;
 
     /**
@@ -101,4 +102,48 @@ public final class WorkspaceSku {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(WorkspaceSku.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name == null ? null : this.name.toString());
+        jsonWriter.writeNumberField("capacityReservationLevel",
+            this.capacityReservationLevel == null ? null : this.capacityReservationLevel.toInt());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WorkspaceSku from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WorkspaceSku if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the WorkspaceSku.
+     */
+    public static WorkspaceSku fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WorkspaceSku deserializedWorkspaceSku = new WorkspaceSku();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedWorkspaceSku.name = WorkspaceSkuNameEnum.fromString(reader.getString());
+                } else if ("capacityReservationLevel".equals(fieldName)) {
+                    deserializedWorkspaceSku.capacityReservationLevel
+                        = CapacityReservationLevel.fromInt(reader.getInt());
+                } else if ("lastSkuUpdate".equals(fieldName)) {
+                    deserializedWorkspaceSku.lastSkuUpdate = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedWorkspaceSku;
+        });
+    }
 }

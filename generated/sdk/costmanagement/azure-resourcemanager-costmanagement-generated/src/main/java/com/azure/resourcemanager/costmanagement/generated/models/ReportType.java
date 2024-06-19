@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -33,7 +32,6 @@ public final class ReportType extends ExpandableStringEnum<ReportType> {
      * @param name a name to look for.
      * @return the corresponding ReportType.
      */
-    @JsonCreator
     public static ReportType fromString(String name) {
         return fromString(name, ReportType.class);
     }

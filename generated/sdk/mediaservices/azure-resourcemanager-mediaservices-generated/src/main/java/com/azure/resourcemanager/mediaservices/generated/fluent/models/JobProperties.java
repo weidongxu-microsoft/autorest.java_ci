@@ -5,13 +5,17 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.JobInput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobOutput;
 import com.azure.resourcemanager.mediaservices.generated.models.JobState;
 import com.azure.resourcemanager.mediaservices.generated.models.Priority;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -20,67 +24,56 @@ import java.util.Map;
  * Properties of the Job.
  */
 @Fluent
-public final class JobProperties {
+public final class JobProperties implements JsonSerializable<JobProperties> {
     /*
      * The UTC date and time when the customer has created the Job, in 'YYYY-MM-DDThh:mm:ssZ' format.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The current state of the job.
      */
-    @JsonProperty(value = "state", access = JsonProperty.Access.WRITE_ONLY)
     private JobState state;
 
     /*
      * Optional customer supplied description of the Job.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The inputs for the Job.
      */
-    @JsonProperty(value = "input", required = true)
     private JobInput input;
 
     /*
      * The UTC date and time when the customer has last updated the Job, in 'YYYY-MM-DDThh:mm:ssZ' format.
      */
-    @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
     /*
      * The outputs for the Job.
      */
-    @JsonProperty(value = "outputs", required = true)
     private List<JobOutput> outputs;
 
     /*
      * Priority with which the job should be processed. Higher priority jobs are processed before lower priority jobs.
      * If not set, the default is normal.
      */
-    @JsonProperty(value = "priority")
     private Priority priority;
 
     /*
      * Customer provided key, value pairs that will be returned in Job and JobOutput state events.
      */
-    @JsonProperty(value = "correlationData")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> correlationData;
 
     /*
      * The UTC date and time at which this Job began processing.
      */
-    @JsonProperty(value = "startTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime startTime;
 
     /*
      * The UTC date and time at which this Job finished processing.
      */
-    @JsonProperty(value = "endTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime endTime;
 
     /**
@@ -261,4 +254,70 @@ public final class JobProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(JobProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("input", this.input);
+        jsonWriter.writeArrayField("outputs", this.outputs, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("priority", this.priority == null ? null : this.priority.toString());
+        jsonWriter.writeMapField("correlationData", this.correlationData,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the JobProperties.
+     */
+    public static JobProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobProperties deserializedJobProperties = new JobProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("input".equals(fieldName)) {
+                    deserializedJobProperties.input = JobInput.fromJson(reader);
+                } else if ("outputs".equals(fieldName)) {
+                    List<JobOutput> outputs = reader.readArray(reader1 -> JobOutput.fromJson(reader1));
+                    deserializedJobProperties.outputs = outputs;
+                } else if ("created".equals(fieldName)) {
+                    deserializedJobProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("state".equals(fieldName)) {
+                    deserializedJobProperties.state = JobState.fromString(reader.getString());
+                } else if ("description".equals(fieldName)) {
+                    deserializedJobProperties.description = reader.getString();
+                } else if ("lastModified".equals(fieldName)) {
+                    deserializedJobProperties.lastModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("priority".equals(fieldName)) {
+                    deserializedJobProperties.priority = Priority.fromString(reader.getString());
+                } else if ("correlationData".equals(fieldName)) {
+                    Map<String, String> correlationData = reader.readMap(reader1 -> reader1.getString());
+                    deserializedJobProperties.correlationData = correlationData;
+                } else if ("startTime".equals(fieldName)) {
+                    deserializedJobProperties.startTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("endTime".equals(fieldName)) {
+                    deserializedJobProperties.endTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobProperties;
+        });
+    }
 }

@@ -6,132 +6,117 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.DataBoxEdgeDeviceStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.DataResidency;
 import com.azure.resourcemanager.databoxedge.generated.models.DeviceType;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfile;
 import com.azure.resourcemanager.databoxedge.generated.models.ResourceMoveDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties of the Data Box Edge/Gateway device.
  */
 @Fluent
-public final class DataBoxEdgeDeviceProperties {
+public final class DataBoxEdgeDeviceProperties implements JsonSerializable<DataBoxEdgeDeviceProperties> {
     /*
      * DataBoxEdge Device Properties
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /*
      * The status of the Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "dataBoxEdgeDeviceStatus", access = JsonProperty.Access.WRITE_ONLY)
     private DataBoxEdgeDeviceStatus dataBoxEdgeDeviceStatus;
 
     /*
      * The Serial Number of Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "serialNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String serialNumber;
 
     /*
      * The Description of the Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
 
     /*
      * The description of the Data Box Edge/Gateway device model.
      */
-    @JsonProperty(value = "modelDescription", access = JsonProperty.Access.WRITE_ONLY)
     private String modelDescription;
 
     /*
      * The type of the Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "deviceType", access = JsonProperty.Access.WRITE_ONLY)
     private DeviceType deviceType;
 
     /*
      * The Data Box Edge/Gateway device name.
      */
-    @JsonProperty(value = "friendlyName", access = JsonProperty.Access.WRITE_ONLY)
     private String friendlyName;
 
     /*
      * The Data Box Edge/Gateway device culture.
      */
-    @JsonProperty(value = "culture", access = JsonProperty.Access.WRITE_ONLY)
     private String culture;
 
     /*
      * The Data Box Edge/Gateway device model.
      */
-    @JsonProperty(value = "deviceModel", access = JsonProperty.Access.WRITE_ONLY)
     private String deviceModel;
 
     /*
      * The Data Box Edge/Gateway device software version.
      */
-    @JsonProperty(value = "deviceSoftwareVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String deviceSoftwareVersion;
 
     /*
      * The Data Box Edge/Gateway device local capacity in MB.
      */
-    @JsonProperty(value = "deviceLocalCapacity", access = JsonProperty.Access.WRITE_ONLY)
     private Long deviceLocalCapacity;
 
     /*
      * The Data Box Edge/Gateway device timezone.
      */
-    @JsonProperty(value = "timeZone", access = JsonProperty.Access.WRITE_ONLY)
     private String timeZone;
 
     /*
      * The device software version number of the device (eg: 1.2.18105.6).
      */
-    @JsonProperty(value = "deviceHcsVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String deviceHcsVersion;
 
     /*
      * Type of compute roles configured.
      */
-    @JsonProperty(value = "configuredRoleTypes", access = JsonProperty.Access.WRITE_ONLY)
     private List<RoleTypes> configuredRoleTypes;
 
     /*
      * The number of nodes in the cluster.
      */
-    @JsonProperty(value = "nodeCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer nodeCount;
 
     /*
      * The details of the move operation on this resource.
      */
-    @JsonProperty(value = "resourceMoveDetails", access = JsonProperty.Access.WRITE_ONLY)
     private ResourceMoveDetails resourceMoveDetails;
 
     /*
      * The details of Edge Profile for this resource
      */
-    @JsonProperty(value = "edgeProfile", access = JsonProperty.Access.WRITE_ONLY)
     private EdgeProfile edgeProfile;
 
     /*
      * The details of data-residency related properties for this resource
      */
-    @JsonProperty(value = "dataResidency")
     private DataResidency dataResidency;
 
     /*
      * Kubernetes Workload Profile
      */
-    @JsonProperty(value = "kubernetesWorkloadProfile", access = JsonProperty.Access.WRITE_ONLY)
     private String kubernetesWorkloadProfile;
 
     /**
@@ -337,5 +322,81 @@ public final class DataBoxEdgeDeviceProperties {
         if (dataResidency() != null) {
             dataResidency().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("dataResidency", this.dataResidency);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDeviceProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDeviceProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDeviceProperties.
+     */
+    public static DataBoxEdgeDeviceProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDeviceProperties deserializedDataBoxEdgeDeviceProperties = new DataBoxEdgeDeviceProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("systemData".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.systemData = SystemData.fromJson(reader);
+                } else if ("dataBoxEdgeDeviceStatus".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.dataBoxEdgeDeviceStatus
+                        = DataBoxEdgeDeviceStatus.fromString(reader.getString());
+                } else if ("serialNumber".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.serialNumber = reader.getString();
+                } else if ("description".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.description = reader.getString();
+                } else if ("modelDescription".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.modelDescription = reader.getString();
+                } else if ("deviceType".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.deviceType = DeviceType.fromString(reader.getString());
+                } else if ("friendlyName".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.friendlyName = reader.getString();
+                } else if ("culture".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.culture = reader.getString();
+                } else if ("deviceModel".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.deviceModel = reader.getString();
+                } else if ("deviceSoftwareVersion".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.deviceSoftwareVersion = reader.getString();
+                } else if ("deviceLocalCapacity".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.deviceLocalCapacity
+                        = reader.getNullable(JsonReader::getLong);
+                } else if ("timeZone".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.timeZone = reader.getString();
+                } else if ("deviceHcsVersion".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.deviceHcsVersion = reader.getString();
+                } else if ("configuredRoleTypes".equals(fieldName)) {
+                    List<RoleTypes> configuredRoleTypes
+                        = reader.readArray(reader1 -> RoleTypes.fromString(reader1.getString()));
+                    deserializedDataBoxEdgeDeviceProperties.configuredRoleTypes = configuredRoleTypes;
+                } else if ("nodeCount".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.nodeCount = reader.getNullable(JsonReader::getInt);
+                } else if ("resourceMoveDetails".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.resourceMoveDetails = ResourceMoveDetails.fromJson(reader);
+                } else if ("edgeProfile".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.edgeProfile = EdgeProfile.fromJson(reader);
+                } else if ("dataResidency".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.dataResidency = DataResidency.fromJson(reader);
+                } else if ("kubernetesWorkloadProfile".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceProperties.kubernetesWorkloadProfile = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDeviceProperties;
+        });
     }
 }

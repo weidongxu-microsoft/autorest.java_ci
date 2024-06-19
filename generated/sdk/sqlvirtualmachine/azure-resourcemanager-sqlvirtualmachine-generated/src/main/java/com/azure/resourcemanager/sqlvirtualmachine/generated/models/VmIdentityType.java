@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class VmIdentityType extends ExpandableStringEnum<VmIdentityType> {
      * @param name a name to look for.
      * @return the corresponding VmIdentityType.
      */
-    @JsonCreator
     public static VmIdentityType fromString(String name) {
         return fromString(name, VmIdentityType.class);
     }

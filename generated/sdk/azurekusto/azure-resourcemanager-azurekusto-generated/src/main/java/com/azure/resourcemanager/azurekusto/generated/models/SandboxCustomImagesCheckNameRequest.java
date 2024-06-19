@@ -6,23 +6,26 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The result returned from a sandboxCustomImage check name availability request.
  */
 @Fluent
-public final class SandboxCustomImagesCheckNameRequest {
+public final class SandboxCustomImagesCheckNameRequest
+    implements JsonSerializable<SandboxCustomImagesCheckNameRequest> {
     /*
      * Sandbox custom image resource name.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The type of resource, for instance Microsoft.Kusto/clusters/sandboxCustomImages.
      */
-    @JsonProperty(value = "type", required = true)
     private String type = "Microsoft.Kusto/clusters/sandboxCustomImages";
 
     /**
@@ -85,4 +88,43 @@ public final class SandboxCustomImagesCheckNameRequest {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(SandboxCustomImagesCheckNameRequest.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("type", this.type);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SandboxCustomImagesCheckNameRequest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SandboxCustomImagesCheckNameRequest if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SandboxCustomImagesCheckNameRequest.
+     */
+    public static SandboxCustomImagesCheckNameRequest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SandboxCustomImagesCheckNameRequest deserializedSandboxCustomImagesCheckNameRequest
+                = new SandboxCustomImagesCheckNameRequest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedSandboxCustomImagesCheckNameRequest.name = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSandboxCustomImagesCheckNameRequest;
+        });
+    }
 }

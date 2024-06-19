@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The capacity reservation level in Gigabytes for this cluster.
  */
@@ -81,7 +78,6 @@ public enum Capacity {
      * @param value the serialized value to parse.
      * @return the parsed Capacity object, or null if unable to parse.
      */
-    @JsonCreator
     public static Capacity fromLong(long value) {
         Capacity[] items = Capacity.values();
         for (Capacity item : items) {
@@ -97,7 +93,6 @@ public enum Capacity {
      * 
      * @return the long value.
      */
-    @JsonValue
     public long toLong() {
         return this.value;
     }

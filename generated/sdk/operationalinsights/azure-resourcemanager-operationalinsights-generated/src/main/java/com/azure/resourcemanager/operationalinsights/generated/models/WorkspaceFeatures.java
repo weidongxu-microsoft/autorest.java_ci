@@ -5,10 +5,11 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonAnyGetter;
-import com.fasterxml.jackson.annotation.JsonAnySetter;
-import com.fasterxml.jackson.annotation.JsonIgnore;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -16,47 +17,40 @@ import java.util.Map;
  * Workspace features.
  */
 @Fluent
-public final class WorkspaceFeatures {
+public final class WorkspaceFeatures implements JsonSerializable<WorkspaceFeatures> {
     /*
      * Flag that indicate if data should be exported.
      */
-    @JsonProperty(value = "enableDataExport")
     private Boolean enableDataExport;
 
     /*
      * Flag that describes if we want to remove the data after 30 days.
      */
-    @JsonProperty(value = "immediatePurgeDataOn30Days")
     private Boolean immediatePurgeDataOn30Days;
 
     /*
      * Flag that indicate which permission to use - resource or workspace or both.
      */
-    @JsonProperty(value = "enableLogAccessUsingOnlyResourcePermissions")
     private Boolean enableLogAccessUsingOnlyResourcePermissions;
 
     /*
      * Dedicated LA cluster resourceId that is linked to the workspaces.
      */
-    @JsonProperty(value = "clusterResourceId")
     private String clusterResourceId;
 
     /*
      * Disable Non-AAD based Auth.
      */
-    @JsonProperty(value = "disableLocalAuth")
     private Boolean disableLocalAuth;
 
     /*
      * An indication if the specify workspace is limited to sentinel's unified billing model only.
      */
-    @JsonProperty(value = "unifiedSentinelBillingOnly", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean unifiedSentinelBillingOnly;
 
     /*
      * Workspace features.
      */
-    @JsonIgnore
     private Map<String, Object> additionalProperties;
 
     /**
@@ -183,7 +177,6 @@ public final class WorkspaceFeatures {
      * 
      * @return the additionalProperties value.
      */
-    @JsonAnyGetter
     public Map<String, Object> additionalProperties() {
         return this.additionalProperties;
     }
@@ -199,19 +192,76 @@ public final class WorkspaceFeatures {
         return this;
     }
 
-    @JsonAnySetter
-    void withAdditionalProperties(String key, Object value) {
-        if (additionalProperties == null) {
-            additionalProperties = new LinkedHashMap<>();
-        }
-        additionalProperties.put(key, value);
-    }
-
     /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enableDataExport", this.enableDataExport);
+        jsonWriter.writeBooleanField("immediatePurgeDataOn30Days", this.immediatePurgeDataOn30Days);
+        jsonWriter.writeBooleanField("enableLogAccessUsingOnlyResourcePermissions",
+            this.enableLogAccessUsingOnlyResourcePermissions);
+        jsonWriter.writeStringField("clusterResourceId", this.clusterResourceId);
+        jsonWriter.writeBooleanField("disableLocalAuth", this.disableLocalAuth);
+        if (additionalProperties != null) {
+            for (Map.Entry<String, Object> additionalProperty : additionalProperties.entrySet()) {
+                jsonWriter.writeUntypedField(additionalProperty.getKey(), additionalProperty.getValue());
+            }
+        }
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WorkspaceFeatures from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WorkspaceFeatures if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the WorkspaceFeatures.
+     */
+    public static WorkspaceFeatures fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WorkspaceFeatures deserializedWorkspaceFeatures = new WorkspaceFeatures();
+            Map<String, Object> additionalProperties = null;
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enableDataExport".equals(fieldName)) {
+                    deserializedWorkspaceFeatures.enableDataExport = reader.getNullable(JsonReader::getBoolean);
+                } else if ("immediatePurgeDataOn30Days".equals(fieldName)) {
+                    deserializedWorkspaceFeatures.immediatePurgeDataOn30Days
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enableLogAccessUsingOnlyResourcePermissions".equals(fieldName)) {
+                    deserializedWorkspaceFeatures.enableLogAccessUsingOnlyResourcePermissions
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("clusterResourceId".equals(fieldName)) {
+                    deserializedWorkspaceFeatures.clusterResourceId = reader.getString();
+                } else if ("disableLocalAuth".equals(fieldName)) {
+                    deserializedWorkspaceFeatures.disableLocalAuth = reader.getNullable(JsonReader::getBoolean);
+                } else if ("unifiedSentinelBillingOnly".equals(fieldName)) {
+                    deserializedWorkspaceFeatures.unifiedSentinelBillingOnly
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    if (additionalProperties == null) {
+                        additionalProperties = new LinkedHashMap<>();
+                    }
+
+                    additionalProperties.put(fieldName, reader.readUntyped());
+                }
+            }
+            deserializedWorkspaceFeatures.additionalProperties = additionalProperties;
+
+            return deserializedWorkspaceFeatures;
+        });
     }
 }

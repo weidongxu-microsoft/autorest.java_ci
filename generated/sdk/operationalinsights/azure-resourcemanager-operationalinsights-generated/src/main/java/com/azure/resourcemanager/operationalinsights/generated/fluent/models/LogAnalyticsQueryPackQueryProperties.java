@@ -5,10 +5,14 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.LogAnalyticsQueryPackQueryPropertiesRelated;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.Map;
@@ -17,66 +21,56 @@ import java.util.Map;
  * Properties that define an Log Analytics QueryPack-Query resource.
  */
 @Fluent
-public final class LogAnalyticsQueryPackQueryProperties {
+public final class LogAnalyticsQueryPackQueryProperties
+    implements JsonSerializable<LogAnalyticsQueryPackQueryProperties> {
     /*
      * The unique ID of your application. This field cannot be changed.
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * Unique display name for your query within the Query Pack.
      */
-    @JsonProperty(value = "displayName", required = true)
     private String displayName;
 
     /*
      * Creation Date for the Log Analytics Query, in ISO 8601 format.
      */
-    @JsonProperty(value = "timeCreated", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime timeCreated;
 
     /*
      * Last modified date of the Log Analytics Query, in ISO 8601 format.
      */
-    @JsonProperty(value = "timeModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime timeModified;
 
     /*
      * Object Id of user creating the query.
      */
-    @JsonProperty(value = "author", access = JsonProperty.Access.WRITE_ONLY)
     private String author;
 
     /*
      * Description of the query.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * Body of the query.
      */
-    @JsonProperty(value = "body", required = true)
     private String body;
 
     /*
      * The related metadata items for the function.
      */
-    @JsonProperty(value = "related")
     private LogAnalyticsQueryPackQueryPropertiesRelated related;
 
     /*
      * Tags associated with the query.
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, List<String>> tags;
 
     /*
      * Additional properties that can be set for the query.
      */
-    @JsonProperty(value = "properties")
     private Object properties;
 
     /**
@@ -263,4 +257,71 @@ public final class LogAnalyticsQueryPackQueryProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(LogAnalyticsQueryPackQueryProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("body", this.body);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeJsonField("related", this.related);
+        jsonWriter.writeMapField("tags", this.tags,
+            (writer, element) -> writer.writeArray(element, (writer1, element1) -> writer1.writeString(element1)));
+        jsonWriter.writeUntypedField("properties", this.properties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LogAnalyticsQueryPackQueryProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LogAnalyticsQueryPackQueryProperties if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the LogAnalyticsQueryPackQueryProperties.
+     */
+    public static LogAnalyticsQueryPackQueryProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LogAnalyticsQueryPackQueryProperties deserializedLogAnalyticsQueryPackQueryProperties
+                = new LogAnalyticsQueryPackQueryProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("displayName".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.displayName = reader.getString();
+                } else if ("body".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.body = reader.getString();
+                } else if ("id".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.id = reader.getString();
+                } else if ("timeCreated".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.timeCreated = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("timeModified".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.timeModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("author".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.author = reader.getString();
+                } else if ("description".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.description = reader.getString();
+                } else if ("related".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.related
+                        = LogAnalyticsQueryPackQueryPropertiesRelated.fromJson(reader);
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, List<String>> tags
+                        = reader.readMap(reader1 -> reader1.readArray(reader2 -> reader2.getString()));
+                    deserializedLogAnalyticsQueryPackQueryProperties.tags = tags;
+                } else if ("properties".equals(fieldName)) {
+                    deserializedLogAnalyticsQueryPackQueryProperties.properties = reader.readUntyped();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLogAnalyticsQueryPackQueryProperties;
+        });
+    }
 }

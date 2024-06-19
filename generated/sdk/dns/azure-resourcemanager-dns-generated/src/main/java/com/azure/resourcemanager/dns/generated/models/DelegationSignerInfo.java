@@ -5,30 +5,31 @@
 package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The delegation signer information.
  */
 @Immutable
-public final class DelegationSignerInfo {
+public final class DelegationSignerInfo implements JsonSerializable<DelegationSignerInfo> {
     /*
      * The digest algorithm type represents the standard digest algorithm number used to construct the digest. See:
      * https://www.iana.org/assignments/ds-rr-types/ds-rr-types.xhtml
      */
-    @JsonProperty(value = "digestAlgorithmType", access = JsonProperty.Access.WRITE_ONLY)
     private Integer digestAlgorithmType;
 
     /*
      * The digest value is a cryptographic hash value of the referenced DNSKEY Resource Record.
      */
-    @JsonProperty(value = "digestValue", access = JsonProperty.Access.WRITE_ONLY)
     private String digestValue;
 
     /*
      * The record represents a delegation signer (DS) record.
      */
-    @JsonProperty(value = "record", access = JsonProperty.Access.WRITE_ONLY)
     private String record;
 
     /**
@@ -72,5 +73,44 @@ public final class DelegationSignerInfo {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DelegationSignerInfo from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DelegationSignerInfo if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DelegationSignerInfo.
+     */
+    public static DelegationSignerInfo fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DelegationSignerInfo deserializedDelegationSignerInfo = new DelegationSignerInfo();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("digestAlgorithmType".equals(fieldName)) {
+                    deserializedDelegationSignerInfo.digestAlgorithmType = reader.getNullable(JsonReader::getInt);
+                } else if ("digestValue".equals(fieldName)) {
+                    deserializedDelegationSignerInfo.digestValue = reader.getString();
+                } else if ("record".equals(fieldName)) {
+                    deserializedDelegationSignerInfo.record = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDelegationSignerInfo;
+        });
     }
 }

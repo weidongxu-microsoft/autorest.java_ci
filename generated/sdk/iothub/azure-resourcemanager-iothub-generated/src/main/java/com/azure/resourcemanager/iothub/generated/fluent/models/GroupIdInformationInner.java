@@ -6,36 +6,36 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.GroupIdInformationProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The group information for creating a private endpoint on an IotHub.
  */
 @Fluent
-public final class GroupIdInformationInner {
+public final class GroupIdInformationInner implements JsonSerializable<GroupIdInformationInner> {
     /*
      * The resource identifier.
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * The resource name.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * The resource type.
      */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
     /*
      * The properties for a group information object
      */
-    @JsonProperty(value = "properties", required = true)
     private GroupIdInformationProperties properties;
 
     /**
@@ -107,4 +107,47 @@ public final class GroupIdInformationInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(GroupIdInformationInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.properties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of GroupIdInformationInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of GroupIdInformationInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the GroupIdInformationInner.
+     */
+    public static GroupIdInformationInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            GroupIdInformationInner deserializedGroupIdInformationInner = new GroupIdInformationInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("properties".equals(fieldName)) {
+                    deserializedGroupIdInformationInner.properties = GroupIdInformationProperties.fromJson(reader);
+                } else if ("id".equals(fieldName)) {
+                    deserializedGroupIdInformationInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedGroupIdInformationInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedGroupIdInformationInner.type = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedGroupIdInformationInner;
+        });
+    }
 }

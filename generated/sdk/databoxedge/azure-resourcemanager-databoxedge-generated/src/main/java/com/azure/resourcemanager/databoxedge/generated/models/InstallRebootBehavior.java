@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class InstallRebootBehavior extends ExpandableStringEnum<InstallReb
      * @param name a name to look for.
      * @return the corresponding InstallRebootBehavior.
      */
-    @JsonCreator
     public static InstallRebootBehavior fromString(String name) {
         return fromString(name, InstallRebootBehavior.class);
     }

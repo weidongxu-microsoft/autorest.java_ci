@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class Tier extends ExpandableStringEnum<Tier> {
      * @param name a name to look for.
      * @return the corresponding Tier.
      */
-    @JsonCreator
     public static Tier fromString(String name) {
         return fromString(name, Tier.class);
     }

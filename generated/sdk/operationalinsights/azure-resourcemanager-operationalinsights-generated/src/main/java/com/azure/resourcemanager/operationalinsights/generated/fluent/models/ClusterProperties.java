@@ -5,36 +5,37 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.AssociatedWorkspace;
 import com.azure.resourcemanager.operationalinsights.generated.models.BillingType;
 import com.azure.resourcemanager.operationalinsights.generated.models.CapacityReservationProperties;
 import com.azure.resourcemanager.operationalinsights.generated.models.ClusterEntityStatus;
 import com.azure.resourcemanager.operationalinsights.generated.models.KeyVaultProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Cluster properties.
  */
 @Fluent
-public final class ClusterProperties {
+public final class ClusterProperties implements JsonSerializable<ClusterProperties> {
     /*
      * The ID associated with the cluster.
      */
-    @JsonProperty(value = "clusterId", access = JsonProperty.Access.WRITE_ONLY)
     private String clusterId;
 
     /*
      * The provisioning state of the cluster.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ClusterEntityStatus provisioningState;
 
     /*
      * Configures whether cluster will use double encryption. This Property can not be modified after cluster creation.
      * Default value is 'true'
      */
-    @JsonProperty(value = "isDoubleEncryptionEnabled")
     private Boolean isDoubleEncryptionEnabled;
 
     /*
@@ -42,43 +43,36 @@ public final class ClusterProperties {
      * Data Explorer support Availability Zones. This Property can not be modified after cluster creation. Default value
      * is 'true' if region supports Availability Zones.
      */
-    @JsonProperty(value = "isAvailabilityZonesEnabled")
     private Boolean isAvailabilityZonesEnabled;
 
     /*
      * The cluster's billing type.
      */
-    @JsonProperty(value = "billingType")
     private BillingType billingType;
 
     /*
      * The associated key properties.
      */
-    @JsonProperty(value = "keyVaultProperties")
     private KeyVaultProperties keyVaultProperties;
 
     /*
      * The last time the cluster was updated.
      */
-    @JsonProperty(value = "lastModifiedDate", access = JsonProperty.Access.WRITE_ONLY)
     private String lastModifiedDate;
 
     /*
      * The cluster creation time
      */
-    @JsonProperty(value = "createdDate", access = JsonProperty.Access.WRITE_ONLY)
     private String createdDate;
 
     /*
      * The list of Log Analytics workspaces associated with the cluster
      */
-    @JsonProperty(value = "associatedWorkspaces")
     private List<AssociatedWorkspace> associatedWorkspaces;
 
     /*
      * Additional properties for capacity reservation
      */
-    @JsonProperty(value = "capacityReservationProperties")
     private CapacityReservationProperties capacityReservationProperties;
 
     /**
@@ -265,5 +259,71 @@ public final class ClusterProperties {
         if (capacityReservationProperties() != null) {
             capacityReservationProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("isDoubleEncryptionEnabled", this.isDoubleEncryptionEnabled);
+        jsonWriter.writeBooleanField("isAvailabilityZonesEnabled", this.isAvailabilityZonesEnabled);
+        jsonWriter.writeStringField("billingType", this.billingType == null ? null : this.billingType.toString());
+        jsonWriter.writeJsonField("keyVaultProperties", this.keyVaultProperties);
+        jsonWriter.writeArrayField("associatedWorkspaces", this.associatedWorkspaces,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("capacityReservationProperties", this.capacityReservationProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ClusterProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ClusterProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ClusterProperties.
+     */
+    public static ClusterProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ClusterProperties deserializedClusterProperties = new ClusterProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("clusterId".equals(fieldName)) {
+                    deserializedClusterProperties.clusterId = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedClusterProperties.provisioningState
+                        = ClusterEntityStatus.fromString(reader.getString());
+                } else if ("isDoubleEncryptionEnabled".equals(fieldName)) {
+                    deserializedClusterProperties.isDoubleEncryptionEnabled
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("isAvailabilityZonesEnabled".equals(fieldName)) {
+                    deserializedClusterProperties.isAvailabilityZonesEnabled
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("billingType".equals(fieldName)) {
+                    deserializedClusterProperties.billingType = BillingType.fromString(reader.getString());
+                } else if ("keyVaultProperties".equals(fieldName)) {
+                    deserializedClusterProperties.keyVaultProperties = KeyVaultProperties.fromJson(reader);
+                } else if ("lastModifiedDate".equals(fieldName)) {
+                    deserializedClusterProperties.lastModifiedDate = reader.getString();
+                } else if ("createdDate".equals(fieldName)) {
+                    deserializedClusterProperties.createdDate = reader.getString();
+                } else if ("associatedWorkspaces".equals(fieldName)) {
+                    List<AssociatedWorkspace> associatedWorkspaces
+                        = reader.readArray(reader1 -> AssociatedWorkspace.fromJson(reader1));
+                    deserializedClusterProperties.associatedWorkspaces = associatedWorkspaces;
+                } else if ("capacityReservationProperties".equals(fieldName)) {
+                    deserializedClusterProperties.capacityReservationProperties
+                        = CapacityReservationProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedClusterProperties;
+        });
     }
 }

@@ -6,25 +6,28 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * Properties of the vault.
  */
 @Fluent
-public final class VaultProperties {
+public final class VaultProperties implements JsonSerializable<VaultProperties> {
     /*
      * The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
      */
-    @JsonProperty(value = "tenantId", required = true)
     private UUID tenantId;
 
     /*
      * SKU details
      */
-    @JsonProperty(value = "sku", required = true)
     private Sku sku;
 
     /*
@@ -32,39 +35,33 @@ public final class VaultProperties {
      * tenant ID as the key vault's tenant ID. When `createMode` is set to `recover`, access policies are not required.
      * Otherwise, access policies are required.
      */
-    @JsonProperty(value = "accessPolicies")
     private List<AccessPolicyEntry> accessPolicies;
 
     /*
      * The URI of the vault for performing operations on keys and secrets.
      */
-    @JsonProperty(value = "vaultUri")
     private String vaultUri;
 
     /*
      * The resource id of HSM Pool.
      */
-    @JsonProperty(value = "hsmPoolResourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String hsmPoolResourceId;
 
     /*
      * Property to specify whether Azure Virtual Machines are permitted to retrieve certificates stored as secrets from
      * the key vault.
      */
-    @JsonProperty(value = "enabledForDeployment")
     private Boolean enabledForDeployment;
 
     /*
      * Property to specify whether Azure Disk Encryption is permitted to retrieve secrets from the vault and unwrap
      * keys.
      */
-    @JsonProperty(value = "enabledForDiskEncryption")
     private Boolean enabledForDiskEncryption;
 
     /*
      * Property to specify whether Azure Resource Manager is permitted to retrieve secrets from the key vault.
      */
-    @JsonProperty(value = "enabledForTemplateDeployment")
     private Boolean enabledForTemplateDeployment;
 
     /*
@@ -72,13 +69,11 @@ public final class VaultProperties {
      * value(true or false) when creating new key vault, it will be set to true by default. Once set to true, it cannot
      * be reverted to false.
      */
-    @JsonProperty(value = "enableSoftDelete")
     private Boolean enableSoftDelete;
 
     /*
      * softDelete data retention days. It accepts >=7 and <=90.
      */
-    @JsonProperty(value = "softDeleteRetentionInDays")
     private Integer softDeleteRetentionInDays;
 
     /*
@@ -88,13 +83,11 @@ public final class VaultProperties {
      * stored on Azure Resource Manager will be ignored. If null or not specified, the vault is created with the default
      * value of false. Note that management actions are always authorized with RBAC.
      */
-    @JsonProperty(value = "enableRbacAuthorization")
     private Boolean enableRbacAuthorization;
 
     /*
      * The vault's create mode to indicate whether the vault need to be recovered or not.
      */
-    @JsonProperty(value = "createMode")
     private CreateMode createMode;
 
     /*
@@ -103,25 +96,21 @@ public final class VaultProperties {
      * hard, irrecoverable deletion. The setting is effective only if soft delete is also enabled. Enabling this
      * functionality is irreversible - that is, the property does not accept false as its value.
      */
-    @JsonProperty(value = "enablePurgeProtection")
     private Boolean enablePurgeProtection;
 
     /*
      * Rules governing the accessibility of the key vault from specific network locations.
      */
-    @JsonProperty(value = "networkAcls")
     private NetworkRuleSet networkAcls;
 
     /*
      * Provisioning state of the vault.
      */
-    @JsonProperty(value = "provisioningState")
     private VaultProvisioningState provisioningState;
 
     /*
      * List of private endpoint connections associated with the key vault.
      */
-    @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<PrivateEndpointConnectionItem> privateEndpointConnections;
 
     /*
@@ -129,7 +118,6 @@ public final class VaultProperties {
      * except private endpoint traffic and that that originates from trusted services will be blocked. This will
      * override the set firewall rules, meaning that even if the firewall rules are present we will not honor the rules.
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;
 
     /**
@@ -524,4 +512,96 @@ public final class VaultProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(VaultProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("tenantId", Objects.toString(this.tenantId, null));
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeArrayField("accessPolicies", this.accessPolicies,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("vaultUri", this.vaultUri);
+        jsonWriter.writeBooleanField("enabledForDeployment", this.enabledForDeployment);
+        jsonWriter.writeBooleanField("enabledForDiskEncryption", this.enabledForDiskEncryption);
+        jsonWriter.writeBooleanField("enabledForTemplateDeployment", this.enabledForTemplateDeployment);
+        jsonWriter.writeBooleanField("enableSoftDelete", this.enableSoftDelete);
+        jsonWriter.writeNumberField("softDeleteRetentionInDays", this.softDeleteRetentionInDays);
+        jsonWriter.writeBooleanField("enableRbacAuthorization", this.enableRbacAuthorization);
+        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
+        jsonWriter.writeBooleanField("enablePurgeProtection", this.enablePurgeProtection);
+        jsonWriter.writeJsonField("networkAcls", this.networkAcls);
+        jsonWriter.writeStringField("provisioningState",
+            this.provisioningState == null ? null : this.provisioningState.toString());
+        jsonWriter.writeStringField("publicNetworkAccess", this.publicNetworkAccess);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VaultProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VaultProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the VaultProperties.
+     */
+    public static VaultProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VaultProperties deserializedVaultProperties = new VaultProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tenantId".equals(fieldName)) {
+                    deserializedVaultProperties.tenantId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("sku".equals(fieldName)) {
+                    deserializedVaultProperties.sku = Sku.fromJson(reader);
+                } else if ("accessPolicies".equals(fieldName)) {
+                    List<AccessPolicyEntry> accessPolicies
+                        = reader.readArray(reader1 -> AccessPolicyEntry.fromJson(reader1));
+                    deserializedVaultProperties.accessPolicies = accessPolicies;
+                } else if ("vaultUri".equals(fieldName)) {
+                    deserializedVaultProperties.vaultUri = reader.getString();
+                } else if ("hsmPoolResourceId".equals(fieldName)) {
+                    deserializedVaultProperties.hsmPoolResourceId = reader.getString();
+                } else if ("enabledForDeployment".equals(fieldName)) {
+                    deserializedVaultProperties.enabledForDeployment = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enabledForDiskEncryption".equals(fieldName)) {
+                    deserializedVaultProperties.enabledForDiskEncryption = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enabledForTemplateDeployment".equals(fieldName)) {
+                    deserializedVaultProperties.enabledForTemplateDeployment
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enableSoftDelete".equals(fieldName)) {
+                    deserializedVaultProperties.enableSoftDelete = reader.getNullable(JsonReader::getBoolean);
+                } else if ("softDeleteRetentionInDays".equals(fieldName)) {
+                    deserializedVaultProperties.softDeleteRetentionInDays = reader.getNullable(JsonReader::getInt);
+                } else if ("enableRbacAuthorization".equals(fieldName)) {
+                    deserializedVaultProperties.enableRbacAuthorization = reader.getNullable(JsonReader::getBoolean);
+                } else if ("createMode".equals(fieldName)) {
+                    deserializedVaultProperties.createMode = CreateMode.fromString(reader.getString());
+                } else if ("enablePurgeProtection".equals(fieldName)) {
+                    deserializedVaultProperties.enablePurgeProtection = reader.getNullable(JsonReader::getBoolean);
+                } else if ("networkAcls".equals(fieldName)) {
+                    deserializedVaultProperties.networkAcls = NetworkRuleSet.fromJson(reader);
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedVaultProperties.provisioningState
+                        = VaultProvisioningState.fromString(reader.getString());
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<PrivateEndpointConnectionItem> privateEndpointConnections
+                        = reader.readArray(reader1 -> PrivateEndpointConnectionItem.fromJson(reader1));
+                    deserializedVaultProperties.privateEndpointConnections = privateEndpointConnections;
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedVaultProperties.publicNetworkAccess = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVaultProperties;
+        });
+    }
 }

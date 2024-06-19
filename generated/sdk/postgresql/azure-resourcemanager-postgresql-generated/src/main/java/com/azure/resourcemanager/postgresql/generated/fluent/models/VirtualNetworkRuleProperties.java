@@ -6,30 +6,31 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.postgresql.generated.models.VirtualNetworkRuleState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Properties of a virtual network rule.
  */
 @Fluent
-public final class VirtualNetworkRuleProperties {
+public final class VirtualNetworkRuleProperties implements JsonSerializable<VirtualNetworkRuleProperties> {
     /*
      * The ARM resource id of the virtual network subnet.
      */
-    @JsonProperty(value = "virtualNetworkSubnetId", required = true)
     private String virtualNetworkSubnetId;
 
     /*
      * Create firewall rule before the virtual network has vnet service endpoint enabled.
      */
-    @JsonProperty(value = "ignoreMissingVnetServiceEndpoint")
     private Boolean ignoreMissingVnetServiceEndpoint;
 
     /*
      * Virtual Network Rule State
      */
-    @JsonProperty(value = "state", access = JsonProperty.Access.WRITE_ONLY)
     private VirtualNetworkRuleState state;
 
     /**
@@ -103,4 +104,48 @@ public final class VirtualNetworkRuleProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkRuleProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("virtualNetworkSubnetId", this.virtualNetworkSubnetId);
+        jsonWriter.writeBooleanField("ignoreMissingVnetServiceEndpoint", this.ignoreMissingVnetServiceEndpoint);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VirtualNetworkRuleProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VirtualNetworkRuleProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the VirtualNetworkRuleProperties.
+     */
+    public static VirtualNetworkRuleProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VirtualNetworkRuleProperties deserializedVirtualNetworkRuleProperties = new VirtualNetworkRuleProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("virtualNetworkSubnetId".equals(fieldName)) {
+                    deserializedVirtualNetworkRuleProperties.virtualNetworkSubnetId = reader.getString();
+                } else if ("ignoreMissingVnetServiceEndpoint".equals(fieldName)) {
+                    deserializedVirtualNetworkRuleProperties.ignoreMissingVnetServiceEndpoint
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("state".equals(fieldName)) {
+                    deserializedVirtualNetworkRuleProperties.state
+                        = VirtualNetworkRuleState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVirtualNetworkRuleProperties;
+        });
+    }
 }

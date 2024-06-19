@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -38,7 +37,6 @@ public final class DatabaseRouting extends ExpandableStringEnum<DatabaseRouting>
      * @param name a name to look for.
      * @return the corresponding DatabaseRouting.
      */
-    @JsonCreator
     public static DatabaseRouting fromString(String name) {
         return fromString(name, DatabaseRouting.class);
     }

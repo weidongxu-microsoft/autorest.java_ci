@@ -5,8 +5,11 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -14,42 +17,35 @@ import java.util.Map;
  * Host Capacity Data.
  */
 @Fluent
-public final class HostCapacity {
+public final class HostCapacity implements JsonSerializable<HostCapacity> {
     /*
      * The name of the host.
      */
-    @JsonProperty(value = "hostName")
     private String hostname;
 
     /*
      * The available memory on the host accounting for VM placement size and any host VM reservations.
      */
-    @JsonProperty(value = "effectiveAvailableMemoryMbOnHost")
     private Long effectiveAvailableMemoryMbOnHost;
 
     /*
      * The available amount of GPUs on the host to use after accounting for GPUS used by reservations on the host.
      */
-    @JsonProperty(value = "availableGpuCount")
     private Integer availableGpuCount;
 
     /*
      * The VM used memory per VmId.
      */
-    @JsonProperty(value = "vmUsedMemory")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, VmMemory> vmUsedMemory;
 
     /*
      * The GPU type of the VM.
      */
-    @JsonProperty(value = "gpuType")
     private String gpuType;
 
     /*
      * The numa nodes information for Hpn VMs.
      */
-    @JsonProperty(value = "numaNodesData")
     private List<NumaNodeData> numaNodesData;
 
     /**
@@ -198,5 +194,58 @@ public final class HostCapacity {
         if (numaNodesData() != null) {
             numaNodesData().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("hostName", this.hostname);
+        jsonWriter.writeNumberField("effectiveAvailableMemoryMbOnHost", this.effectiveAvailableMemoryMbOnHost);
+        jsonWriter.writeNumberField("availableGpuCount", this.availableGpuCount);
+        jsonWriter.writeMapField("vmUsedMemory", this.vmUsedMemory, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("gpuType", this.gpuType);
+        jsonWriter.writeArrayField("numaNodesData", this.numaNodesData, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of HostCapacity from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of HostCapacity if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the HostCapacity.
+     */
+    public static HostCapacity fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            HostCapacity deserializedHostCapacity = new HostCapacity();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("hostName".equals(fieldName)) {
+                    deserializedHostCapacity.hostname = reader.getString();
+                } else if ("effectiveAvailableMemoryMbOnHost".equals(fieldName)) {
+                    deserializedHostCapacity.effectiveAvailableMemoryMbOnHost = reader.getNullable(JsonReader::getLong);
+                } else if ("availableGpuCount".equals(fieldName)) {
+                    deserializedHostCapacity.availableGpuCount = reader.getNullable(JsonReader::getInt);
+                } else if ("vmUsedMemory".equals(fieldName)) {
+                    Map<String, VmMemory> vmUsedMemory = reader.readMap(reader1 -> VmMemory.fromJson(reader1));
+                    deserializedHostCapacity.vmUsedMemory = vmUsedMemory;
+                } else if ("gpuType".equals(fieldName)) {
+                    deserializedHostCapacity.gpuType = reader.getString();
+                } else if ("numaNodesData".equals(fieldName)) {
+                    List<NumaNodeData> numaNodesData = reader.readArray(reader1 -> NumaNodeData.fromJson(reader1));
+                    deserializedHostCapacity.numaNodesData = numaNodesData;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedHostCapacity;
+        });
     }
 }

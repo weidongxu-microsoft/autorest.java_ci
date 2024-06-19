@@ -5,47 +5,46 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Set the connectivity, storage and workload settings.
  */
 @Fluent
-public final class ServerConfigurationsManagementSettings {
+public final class ServerConfigurationsManagementSettings
+    implements JsonSerializable<ServerConfigurationsManagementSettings> {
     /*
      * SQL connectivity type settings.
      */
-    @JsonProperty(value = "sqlConnectivityUpdateSettings")
     private SqlConnectivityUpdateSettings sqlConnectivityUpdateSettings;
 
     /*
      * SQL workload type settings.
      */
-    @JsonProperty(value = "sqlWorkloadTypeUpdateSettings")
     private SqlWorkloadTypeUpdateSettings sqlWorkloadTypeUpdateSettings;
 
     /*
      * SQL storage update settings.
      */
-    @JsonProperty(value = "sqlStorageUpdateSettings")
     private SqlStorageUpdateSettings sqlStorageUpdateSettings;
 
     /*
      * Additional SQL feature settings.
      */
-    @JsonProperty(value = "additionalFeaturesServerConfigurations")
     private AdditionalFeaturesServerConfigurations additionalFeaturesServerConfigurations;
 
     /*
      * SQL Instance settings.
      */
-    @JsonProperty(value = "sqlInstanceSettings")
     private SqlInstanceSettings sqlInstanceSettings;
 
     /*
      * Azure AD authentication Settings.
      */
-    @JsonProperty(value = "azureAdAuthenticationSettings")
     private AadAuthenticationSettings azureAdAuthenticationSettings;
 
     /**
@@ -203,5 +202,64 @@ public final class ServerConfigurationsManagementSettings {
         if (azureAdAuthenticationSettings() != null) {
             azureAdAuthenticationSettings().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("sqlConnectivityUpdateSettings", this.sqlConnectivityUpdateSettings);
+        jsonWriter.writeJsonField("sqlWorkloadTypeUpdateSettings", this.sqlWorkloadTypeUpdateSettings);
+        jsonWriter.writeJsonField("sqlStorageUpdateSettings", this.sqlStorageUpdateSettings);
+        jsonWriter.writeJsonField("additionalFeaturesServerConfigurations",
+            this.additionalFeaturesServerConfigurations);
+        jsonWriter.writeJsonField("sqlInstanceSettings", this.sqlInstanceSettings);
+        jsonWriter.writeJsonField("azureAdAuthenticationSettings", this.azureAdAuthenticationSettings);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerConfigurationsManagementSettings from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerConfigurationsManagementSettings if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ServerConfigurationsManagementSettings.
+     */
+    public static ServerConfigurationsManagementSettings fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerConfigurationsManagementSettings deserializedServerConfigurationsManagementSettings
+                = new ServerConfigurationsManagementSettings();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sqlConnectivityUpdateSettings".equals(fieldName)) {
+                    deserializedServerConfigurationsManagementSettings.sqlConnectivityUpdateSettings
+                        = SqlConnectivityUpdateSettings.fromJson(reader);
+                } else if ("sqlWorkloadTypeUpdateSettings".equals(fieldName)) {
+                    deserializedServerConfigurationsManagementSettings.sqlWorkloadTypeUpdateSettings
+                        = SqlWorkloadTypeUpdateSettings.fromJson(reader);
+                } else if ("sqlStorageUpdateSettings".equals(fieldName)) {
+                    deserializedServerConfigurationsManagementSettings.sqlStorageUpdateSettings
+                        = SqlStorageUpdateSettings.fromJson(reader);
+                } else if ("additionalFeaturesServerConfigurations".equals(fieldName)) {
+                    deserializedServerConfigurationsManagementSettings.additionalFeaturesServerConfigurations
+                        = AdditionalFeaturesServerConfigurations.fromJson(reader);
+                } else if ("sqlInstanceSettings".equals(fieldName)) {
+                    deserializedServerConfigurationsManagementSettings.sqlInstanceSettings
+                        = SqlInstanceSettings.fromJson(reader);
+                } else if ("azureAdAuthenticationSettings".equals(fieldName)) {
+                    deserializedServerConfigurationsManagementSettings.azureAdAuthenticationSettings
+                        = AadAuthenticationSettings.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerConfigurationsManagementSettings;
+        });
     }
 }

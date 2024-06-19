@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class IdentityType extends ExpandableStringEnum<IdentityType> {
      * @param name a name to look for.
      * @return the corresponding IdentityType.
      */
-    @JsonCreator
     public static IdentityType fromString(String name) {
         return fromString(name, IdentityType.class);
     }

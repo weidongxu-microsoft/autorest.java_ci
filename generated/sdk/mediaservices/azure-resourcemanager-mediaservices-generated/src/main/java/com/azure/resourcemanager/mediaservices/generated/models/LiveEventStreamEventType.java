@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -71,7 +70,6 @@ public final class LiveEventStreamEventType extends ExpandableStringEnum<LiveEve
      * @param name a name to look for.
      * @return the corresponding LiveEventStreamEventType.
      */
-    @JsonCreator
     public static LiveEventStreamEventType fromString(String name) {
         return fromString(name, LiveEventStreamEventType.class);
     }

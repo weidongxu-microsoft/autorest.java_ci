@@ -6,41 +6,40 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The share mount point.
  */
 @Fluent
-public final class MountPointMap {
+public final class MountPointMap implements JsonSerializable<MountPointMap> {
     /*
      * ID of the share mounted to the role VM.
      */
-    @JsonProperty(value = "shareId", required = true)
     private String shareId;
 
     /*
      * ID of the role to which share is mounted.
      */
-    @JsonProperty(value = "roleId", access = JsonProperty.Access.WRITE_ONLY)
     private String roleId;
 
     /*
      * Mount point for the share.
      */
-    @JsonProperty(value = "mountPoint", access = JsonProperty.Access.WRITE_ONLY)
     private String mountPoint;
 
     /*
      * Mounting type.
      */
-    @JsonProperty(value = "mountType", access = JsonProperty.Access.WRITE_ONLY)
     private MountType mountType;
 
     /*
      * Role type.
      */
-    @JsonProperty(value = "roleType", access = JsonProperty.Access.WRITE_ONLY)
     private RoleTypes roleType;
 
     /**
@@ -118,4 +117,49 @@ public final class MountPointMap {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MountPointMap.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("shareId", this.shareId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MountPointMap from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MountPointMap if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MountPointMap.
+     */
+    public static MountPointMap fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MountPointMap deserializedMountPointMap = new MountPointMap();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("shareId".equals(fieldName)) {
+                    deserializedMountPointMap.shareId = reader.getString();
+                } else if ("roleId".equals(fieldName)) {
+                    deserializedMountPointMap.roleId = reader.getString();
+                } else if ("mountPoint".equals(fieldName)) {
+                    deserializedMountPointMap.mountPoint = reader.getString();
+                } else if ("mountType".equals(fieldName)) {
+                    deserializedMountPointMap.mountType = MountType.fromString(reader.getString());
+                } else if ("roleType".equals(fieldName)) {
+                    deserializedMountPointMap.roleType = RoleTypes.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMountPointMap;
+        });
+    }
 }

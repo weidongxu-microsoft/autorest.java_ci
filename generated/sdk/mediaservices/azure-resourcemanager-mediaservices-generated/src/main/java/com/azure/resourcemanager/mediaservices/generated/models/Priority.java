@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -43,7 +42,6 @@ public final class Priority extends ExpandableStringEnum<Priority> {
      * @param name a name to look for.
      * @return the corresponding Priority.
      */
-    @JsonCreator
     public static Priority fromString(String name) {
         return fromString(name, Priority.class);
     }

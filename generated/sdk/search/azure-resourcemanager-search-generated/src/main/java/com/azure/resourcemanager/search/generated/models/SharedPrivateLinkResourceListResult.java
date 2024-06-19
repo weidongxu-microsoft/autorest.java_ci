@@ -5,25 +5,28 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.search.generated.fluent.models.SharedPrivateLinkResourceInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Response containing a list of shared private link resources.
  */
 @Fluent
-public final class SharedPrivateLinkResourceListResult {
+public final class SharedPrivateLinkResourceListResult
+    implements JsonSerializable<SharedPrivateLinkResourceListResult> {
     /*
      * The list of shared private link resources.
      */
-    @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private List<SharedPrivateLinkResourceInner> value;
 
     /*
      * The URL to get the next set of shared private link resources, if there are any.
      */
-    @JsonProperty(value = "nextLink")
     private String nextLink;
 
     /**
@@ -70,5 +73,46 @@ public final class SharedPrivateLinkResourceListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("nextLink", this.nextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SharedPrivateLinkResourceListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SharedPrivateLinkResourceListResult if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SharedPrivateLinkResourceListResult.
+     */
+    public static SharedPrivateLinkResourceListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SharedPrivateLinkResourceListResult deserializedSharedPrivateLinkResourceListResult
+                = new SharedPrivateLinkResourceListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<SharedPrivateLinkResourceInner> value
+                        = reader.readArray(reader1 -> SharedPrivateLinkResourceInner.fromJson(reader1));
+                    deserializedSharedPrivateLinkResourceListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedSharedPrivateLinkResourceListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSharedPrivateLinkResourceListResult;
+        });
     }
 }

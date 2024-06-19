@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -33,7 +32,6 @@ public final class RequestSource extends ExpandableStringEnum<RequestSource> {
      * @param name a name to look for.
      * @return the corresponding RequestSource.
      */
-    @JsonCreator
     public static RequestSource fromString(String name) {
         return fromString(name, RequestSource.class);
     }

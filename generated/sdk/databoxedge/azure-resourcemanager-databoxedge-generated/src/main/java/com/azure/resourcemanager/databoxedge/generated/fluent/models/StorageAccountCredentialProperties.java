@@ -6,62 +6,58 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AccountType;
 import com.azure.resourcemanager.databoxedge.generated.models.AsymmetricEncryptedSecret;
 import com.azure.resourcemanager.databoxedge.generated.models.SslStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The storage account credential properties.
  */
 @Fluent
-public final class StorageAccountCredentialProperties {
+public final class StorageAccountCredentialProperties implements JsonSerializable<StorageAccountCredentialProperties> {
     /*
      * Alias for the storage account.
      */
-    @JsonProperty(value = "alias", required = true)
     private String alias;
 
     /*
      * Username for the storage account.
      */
-    @JsonProperty(value = "userName")
     private String username;
 
     /*
      * Encrypted storage key.
      */
-    @JsonProperty(value = "accountKey")
     private AsymmetricEncryptedSecret accountKey;
 
     /*
      * Connection string for the storage account. Use this string if username and account key are not specified.
      */
-    @JsonProperty(value = "connectionString")
     private String connectionString;
 
     /*
      * Signifies whether SSL needs to be enabled or not.
      */
-    @JsonProperty(value = "sslStatus", required = true)
     private SslStatus sslStatus;
 
     /*
      * Blob end point for private clouds.
      */
-    @JsonProperty(value = "blobDomainName")
     private String blobDomainName;
 
     /*
      * Type of storage accessed on the storage account.
      */
-    @JsonProperty(value = "accountType", required = true)
     private AccountType accountType;
 
     /*
      * Id of the storage account.
      */
-    @JsonProperty(value = "storageAccountId")
     private String storageAccountId;
 
     /**
@@ -259,4 +255,65 @@ public final class StorageAccountCredentialProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(StorageAccountCredentialProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("alias", this.alias);
+        jsonWriter.writeStringField("sslStatus", this.sslStatus == null ? null : this.sslStatus.toString());
+        jsonWriter.writeStringField("accountType", this.accountType == null ? null : this.accountType.toString());
+        jsonWriter.writeStringField("userName", this.username);
+        jsonWriter.writeJsonField("accountKey", this.accountKey);
+        jsonWriter.writeStringField("connectionString", this.connectionString);
+        jsonWriter.writeStringField("blobDomainName", this.blobDomainName);
+        jsonWriter.writeStringField("storageAccountId", this.storageAccountId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StorageAccountCredentialProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StorageAccountCredentialProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the StorageAccountCredentialProperties.
+     */
+    public static StorageAccountCredentialProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StorageAccountCredentialProperties deserializedStorageAccountCredentialProperties
+                = new StorageAccountCredentialProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("alias".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.alias = reader.getString();
+                } else if ("sslStatus".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.sslStatus = SslStatus.fromString(reader.getString());
+                } else if ("accountType".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.accountType
+                        = AccountType.fromString(reader.getString());
+                } else if ("userName".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.username = reader.getString();
+                } else if ("accountKey".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.accountKey
+                        = AsymmetricEncryptedSecret.fromJson(reader);
+                } else if ("connectionString".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.connectionString = reader.getString();
+                } else if ("blobDomainName".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.blobDomainName = reader.getString();
+                } else if ("storageAccountId".equals(fieldName)) {
+                    deserializedStorageAccountCredentialProperties.storageAccountId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStorageAccountCredentialProperties;
+        });
+    }
 }

@@ -6,19 +6,23 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.MetricConfiguration;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Metrics properties.
  */
 @Fluent
-public final class MonitoringMetricConfigurationProperties {
+public final class MonitoringMetricConfigurationProperties
+    implements JsonSerializable<MonitoringMetricConfigurationProperties> {
     /*
      * The metrics configuration details
      */
-    @JsonProperty(value = "metricConfigurations", required = true)
     private List<MetricConfiguration> metricConfigurations;
 
     /**
@@ -64,4 +68,45 @@ public final class MonitoringMetricConfigurationProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MonitoringMetricConfigurationProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("metricConfigurations", this.metricConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MonitoringMetricConfigurationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MonitoringMetricConfigurationProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MonitoringMetricConfigurationProperties.
+     */
+    public static MonitoringMetricConfigurationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MonitoringMetricConfigurationProperties deserializedMonitoringMetricConfigurationProperties
+                = new MonitoringMetricConfigurationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("metricConfigurations".equals(fieldName)) {
+                    List<MetricConfiguration> metricConfigurations
+                        = reader.readArray(reader1 -> MetricConfiguration.fromJson(reader1));
+                    deserializedMonitoringMetricConfigurationProperties.metricConfigurations = metricConfigurations;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMonitoringMetricConfigurationProperties;
+        });
+    }
 }

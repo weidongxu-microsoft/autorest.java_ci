@@ -6,29 +6,30 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Represent the secrets intended for encryption with asymmetric key pair.
  */
 @Fluent
-public final class AsymmetricEncryptedSecret {
+public final class AsymmetricEncryptedSecret implements JsonSerializable<AsymmetricEncryptedSecret> {
     /*
      * The value of the secret.
      */
-    @JsonProperty(value = "value", required = true)
     private String value;
 
     /*
      * Thumbprint certificate used to encrypt \"Value\". If the value is unencrypted, it will be null.
      */
-    @JsonProperty(value = "encryptionCertThumbprint")
     private String encryptionCertThumbprint;
 
     /*
      * The algorithm used to encrypt "Value".
      */
-    @JsonProperty(value = "encryptionAlgorithm", required = true)
     private EncryptionAlgorithm encryptionAlgorithm;
 
     /**
@@ -118,4 +119,49 @@ public final class AsymmetricEncryptedSecret {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AsymmetricEncryptedSecret.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("value", this.value);
+        jsonWriter.writeStringField("encryptionAlgorithm",
+            this.encryptionAlgorithm == null ? null : this.encryptionAlgorithm.toString());
+        jsonWriter.writeStringField("encryptionCertThumbprint", this.encryptionCertThumbprint);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AsymmetricEncryptedSecret from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AsymmetricEncryptedSecret if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AsymmetricEncryptedSecret.
+     */
+    public static AsymmetricEncryptedSecret fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AsymmetricEncryptedSecret deserializedAsymmetricEncryptedSecret = new AsymmetricEncryptedSecret();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    deserializedAsymmetricEncryptedSecret.value = reader.getString();
+                } else if ("encryptionAlgorithm".equals(fieldName)) {
+                    deserializedAsymmetricEncryptedSecret.encryptionAlgorithm
+                        = EncryptionAlgorithm.fromString(reader.getString());
+                } else if ("encryptionCertThumbprint".equals(fieldName)) {
+                    deserializedAsymmetricEncryptedSecret.encryptionCertThumbprint = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAsymmetricEncryptedSecret;
+        });
+    }
 }

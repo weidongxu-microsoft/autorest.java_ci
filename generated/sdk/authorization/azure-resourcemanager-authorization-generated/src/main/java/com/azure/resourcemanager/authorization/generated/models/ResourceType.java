@@ -5,30 +5,31 @@
 package com.azure.resourcemanager.authorization.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Resource Type.
  */
 @Fluent
-public final class ResourceType {
+public final class ResourceType implements JsonSerializable<ResourceType> {
     /*
      * The resource type name.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The resource type display name.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * The resource type operations.
      */
-    @JsonProperty(value = "operations")
     private List<ProviderOperation> operations;
 
     /**
@@ -106,5 +107,49 @@ public final class ResourceType {
         if (operations() != null) {
             operations().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeArrayField("operations", this.operations, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ResourceType from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ResourceType if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ResourceType.
+     */
+    public static ResourceType fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ResourceType deserializedResourceType = new ResourceType();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedResourceType.name = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedResourceType.displayName = reader.getString();
+                } else if ("operations".equals(fieldName)) {
+                    List<ProviderOperation> operations
+                        = reader.readArray(reader1 -> ProviderOperation.fromJson(reader1));
+                    deserializedResourceType.operations = operations;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedResourceType;
+        });
     }
 }

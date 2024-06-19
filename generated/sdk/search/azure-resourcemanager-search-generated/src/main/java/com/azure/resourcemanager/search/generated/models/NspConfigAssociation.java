@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The resource association for the network security perimeter.
  */
 @Fluent
-public final class NspConfigAssociation {
+public final class NspConfigAssociation implements JsonSerializable<NspConfigAssociation> {
     /*
      * The name property.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The accessMode property.
      */
-    @JsonProperty(value = "accessMode")
     private String accessMode;
 
     /**
@@ -76,5 +78,44 @@ public final class NspConfigAssociation {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("accessMode", this.accessMode);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NspConfigAssociation from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NspConfigAssociation if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NspConfigAssociation.
+     */
+    public static NspConfigAssociation fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NspConfigAssociation deserializedNspConfigAssociation = new NspConfigAssociation();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedNspConfigAssociation.name = reader.getString();
+                } else if ("accessMode".equals(fieldName)) {
+                    deserializedNspConfigAssociation.accessMode = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNspConfigAssociation;
+        });
     }
 }

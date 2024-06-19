@@ -6,31 +6,32 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.IotHubCapacity;
 import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * SKU properties.
  */
 @Fluent
-public final class IotHubSkuDescriptionInner {
+public final class IotHubSkuDescriptionInner implements JsonSerializable<IotHubSkuDescriptionInner> {
     /*
      * The type of the resource.
      */
-    @JsonProperty(value = "resourceType", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceType;
 
     /*
      * The type of the resource.
      */
-    @JsonProperty(value = "sku", required = true)
     private IotHubSkuInfo sku;
 
     /*
      * IotHub capacity
      */
-    @JsonProperty(value = "capacity", required = true)
     private IotHubCapacity capacity;
 
     /**
@@ -110,4 +111,46 @@ public final class IotHubSkuDescriptionInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IotHubSkuDescriptionInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeJsonField("capacity", this.capacity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IotHubSkuDescriptionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IotHubSkuDescriptionInner if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IotHubSkuDescriptionInner.
+     */
+    public static IotHubSkuDescriptionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IotHubSkuDescriptionInner deserializedIotHubSkuDescriptionInner = new IotHubSkuDescriptionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sku".equals(fieldName)) {
+                    deserializedIotHubSkuDescriptionInner.sku = IotHubSkuInfo.fromJson(reader);
+                } else if ("capacity".equals(fieldName)) {
+                    deserializedIotHubSkuDescriptionInner.capacity = IotHubCapacity.fromJson(reader);
+                } else if ("resourceType".equals(fieldName)) {
+                    deserializedIotHubSkuDescriptionInner.resourceType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIotHubSkuDescriptionInner;
+        });
+    }
 }

@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.keyvault.generated.fluent.models.MhsmGeoReplicatedRegionInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * List of regions associated with a managed HSM Pools.
  */
 @Fluent
-public final class MhsmRegionsListResult {
+public final class MhsmRegionsListResult implements JsonSerializable<MhsmRegionsListResult> {
     /*
      * The region associated with a managed HSM Pools.
      */
-    @JsonProperty(value = "value")
     private List<MhsmGeoReplicatedRegionInner> value;
 
     /*
      * The URL to get the next set of managed HSM Pools.
      */
-    @JsonProperty(value = "nextLink")
     private String nextLink;
 
     /**
@@ -81,5 +83,46 @@ public final class MhsmRegionsListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("nextLink", this.nextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MhsmRegionsListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MhsmRegionsListResult if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MhsmRegionsListResult.
+     */
+    public static MhsmRegionsListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MhsmRegionsListResult deserializedMhsmRegionsListResult = new MhsmRegionsListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<MhsmGeoReplicatedRegionInner> value
+                        = reader.readArray(reader1 -> MhsmGeoReplicatedRegionInner.fromJson(reader1));
+                    deserializedMhsmRegionsListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedMhsmRegionsListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMhsmRegionsListResult;
+        });
     }
 }

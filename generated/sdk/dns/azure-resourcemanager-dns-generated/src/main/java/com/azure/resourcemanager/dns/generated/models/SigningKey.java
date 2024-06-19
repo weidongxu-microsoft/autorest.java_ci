@@ -5,49 +5,47 @@
 package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Represents the signing key.
  */
 @Immutable
-public final class SigningKey {
+public final class SigningKey implements JsonSerializable<SigningKey> {
     /*
      * The delegation signer information.
      */
-    @JsonProperty(value = "delegationSignerInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<DelegationSignerInfo> delegationSignerInfo;
 
     /*
      * The flags specifies how the key is used.
      */
-    @JsonProperty(value = "flags", access = JsonProperty.Access.WRITE_ONLY)
     private Integer flags;
 
     /*
      * The key tag value of the DNSKEY Resource Record.
      */
-    @JsonProperty(value = "keyTag", access = JsonProperty.Access.WRITE_ONLY)
     private Integer keyTag;
 
     /*
      * The protocol value. The value is always 3.
      */
-    @JsonProperty(value = "protocol", access = JsonProperty.Access.WRITE_ONLY)
     private Integer protocol;
 
     /*
      * The public key, represented as a Base64 encoding.
      */
-    @JsonProperty(value = "publicKey", access = JsonProperty.Access.WRITE_ONLY)
     private String publicKey;
 
     /*
      * The security algorithm type represents the standard security algorithm number of the DNSKEY Resource Record. See:
      * https://www.iana.org/assignments/dns-sec-alg-numbers/dns-sec-alg-numbers.xhtml
      */
-    @JsonProperty(value = "securityAlgorithmType", access = JsonProperty.Access.WRITE_ONLY)
     private Integer securityAlgorithmType;
 
     /**
@@ -121,5 +119,52 @@ public final class SigningKey {
         if (delegationSignerInfo() != null) {
             delegationSignerInfo().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SigningKey from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SigningKey if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the SigningKey.
+     */
+    public static SigningKey fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SigningKey deserializedSigningKey = new SigningKey();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("delegationSignerInfo".equals(fieldName)) {
+                    List<DelegationSignerInfo> delegationSignerInfo
+                        = reader.readArray(reader1 -> DelegationSignerInfo.fromJson(reader1));
+                    deserializedSigningKey.delegationSignerInfo = delegationSignerInfo;
+                } else if ("flags".equals(fieldName)) {
+                    deserializedSigningKey.flags = reader.getNullable(JsonReader::getInt);
+                } else if ("keyTag".equals(fieldName)) {
+                    deserializedSigningKey.keyTag = reader.getNullable(JsonReader::getInt);
+                } else if ("protocol".equals(fieldName)) {
+                    deserializedSigningKey.protocol = reader.getNullable(JsonReader::getInt);
+                } else if ("publicKey".equals(fieldName)) {
+                    deserializedSigningKey.publicKey = reader.getString();
+                } else if ("securityAlgorithmType".equals(fieldName)) {
+                    deserializedSigningKey.securityAlgorithmType = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSigningKey;
+        });
     }
 }

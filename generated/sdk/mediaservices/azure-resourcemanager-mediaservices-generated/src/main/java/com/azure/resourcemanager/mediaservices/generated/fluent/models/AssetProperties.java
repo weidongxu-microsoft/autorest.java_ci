@@ -5,8 +5,13 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.AssetStorageEncryptionFormat;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.UUID;
 
@@ -14,59 +19,50 @@ import java.util.UUID;
  * The Asset properties.
  */
 @Fluent
-public final class AssetProperties {
+public final class AssetProperties implements JsonSerializable<AssetProperties> {
     /*
      * The Asset ID.
      */
-    @JsonProperty(value = "assetId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID assetId;
 
     /*
      * The creation date of the Asset.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The last modified date of the Asset.
      */
-    @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
     /*
      * The alternate ID of the Asset.
      */
-    @JsonProperty(value = "alternateId")
     private String alternateId;
 
     /*
      * The Asset description.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The name of the asset blob container.
      */
-    @JsonProperty(value = "container")
     private String container;
 
     /*
      * The name of the storage account.
      */
-    @JsonProperty(value = "storageAccountName")
     private String storageAccountName;
 
     /*
      * The Asset encryption format. One of None or MediaStorageEncryption.
      */
-    @JsonProperty(value = "storageEncryptionFormat", access = JsonProperty.Access.WRITE_ONLY)
     private AssetStorageEncryptionFormat storageEncryptionFormat;
 
     /*
      * The Asset container encryption scope in the storage account.
      */
-    @JsonProperty(value = "encryptionScope")
     private String encryptionScope;
 
     /**
@@ -217,5 +213,65 @@ public final class AssetProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("alternateId", this.alternateId);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("container", this.container);
+        jsonWriter.writeStringField("storageAccountName", this.storageAccountName);
+        jsonWriter.writeStringField("encryptionScope", this.encryptionScope);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AssetProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AssetProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AssetProperties.
+     */
+    public static AssetProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AssetProperties deserializedAssetProperties = new AssetProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("assetId".equals(fieldName)) {
+                    deserializedAssetProperties.assetId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("created".equals(fieldName)) {
+                    deserializedAssetProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("lastModified".equals(fieldName)) {
+                    deserializedAssetProperties.lastModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("alternateId".equals(fieldName)) {
+                    deserializedAssetProperties.alternateId = reader.getString();
+                } else if ("description".equals(fieldName)) {
+                    deserializedAssetProperties.description = reader.getString();
+                } else if ("container".equals(fieldName)) {
+                    deserializedAssetProperties.container = reader.getString();
+                } else if ("storageAccountName".equals(fieldName)) {
+                    deserializedAssetProperties.storageAccountName = reader.getString();
+                } else if ("storageEncryptionFormat".equals(fieldName)) {
+                    deserializedAssetProperties.storageEncryptionFormat
+                        = AssetStorageEncryptionFormat.fromString(reader.getString());
+                } else if ("encryptionScope".equals(fieldName)) {
+                    deserializedAssetProperties.encryptionScope = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAssetProperties;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class LinkedServiceEntityStatus extends ExpandableStringEnum<Linked
      * @param name a name to look for.
      * @return the corresponding LinkedServiceEntityStatus.
      */
-    @JsonCreator
     public static LinkedServiceEntityStatus fromString(String name) {
         return fromString(name, LinkedServiceEntityStatus.class);
     }

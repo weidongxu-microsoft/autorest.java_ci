@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ExecutionType extends ExpandableStringEnum<ExecutionType> {
      * @param name a name to look for.
      * @return the corresponding ExecutionType.
      */
-    @JsonCreator
     public static ExecutionType fromString(String name) {
         return fromString(name, ExecutionType.class);
     }

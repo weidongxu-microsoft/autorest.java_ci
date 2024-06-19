@@ -5,60 +5,56 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AuthenticationType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The upload registration certificate response.
  */
 @Fluent
-public final class UploadCertificateResponseInner {
+public final class UploadCertificateResponseInner implements JsonSerializable<UploadCertificateResponseInner> {
     /*
      * Specifies authentication type.
      */
-    @JsonProperty(value = "authType")
     private AuthenticationType authType;
 
     /*
      * The resource ID of the Data Box Edge/Gateway device.
      */
-    @JsonProperty(value = "resourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceId;
 
     /*
      * Azure Active Directory tenant authority.
      */
-    @JsonProperty(value = "aadAuthority", access = JsonProperty.Access.WRITE_ONLY)
     private String aadAuthority;
 
     /*
      * Azure Active Directory tenant ID.
      */
-    @JsonProperty(value = "aadTenantId", access = JsonProperty.Access.WRITE_ONLY)
     private String aadTenantId;
 
     /*
      * Azure Active Directory service principal client ID.
      */
-    @JsonProperty(value = "servicePrincipalClientId", access = JsonProperty.Access.WRITE_ONLY)
     private String servicePrincipalClientId;
 
     /*
      * Azure Active Directory service principal object ID.
      */
-    @JsonProperty(value = "servicePrincipalObjectId", access = JsonProperty.Access.WRITE_ONLY)
     private String servicePrincipalObjectId;
 
     /*
      * The azure management endpoint audience.
      */
-    @JsonProperty(value = "azureManagementEndpointAudience", access = JsonProperty.Access.WRITE_ONLY)
     private String azureManagementEndpointAudience;
 
     /*
      * Identifier of the target resource that is the recipient of the requested token.
      */
-    @JsonProperty(value = "aadAudience", access = JsonProperty.Access.WRITE_ONLY)
     private String aadAudience;
 
     /**
@@ -156,5 +152,57 @@ public final class UploadCertificateResponseInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("authType", this.authType == null ? null : this.authType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of UploadCertificateResponseInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of UploadCertificateResponseInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the UploadCertificateResponseInner.
+     */
+    public static UploadCertificateResponseInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            UploadCertificateResponseInner deserializedUploadCertificateResponseInner
+                = new UploadCertificateResponseInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("authType".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.authType
+                        = AuthenticationType.fromString(reader.getString());
+                } else if ("resourceId".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.resourceId = reader.getString();
+                } else if ("aadAuthority".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.aadAuthority = reader.getString();
+                } else if ("aadTenantId".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.aadTenantId = reader.getString();
+                } else if ("servicePrincipalClientId".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.servicePrincipalClientId = reader.getString();
+                } else if ("servicePrincipalObjectId".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.servicePrincipalObjectId = reader.getString();
+                } else if ("azureManagementEndpointAudience".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.azureManagementEndpointAudience = reader.getString();
+                } else if ("aadAudience".equals(fieldName)) {
+                    deserializedUploadCertificateResponseInner.aadAudience = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUploadCertificateResponseInner;
+        });
     }
 }

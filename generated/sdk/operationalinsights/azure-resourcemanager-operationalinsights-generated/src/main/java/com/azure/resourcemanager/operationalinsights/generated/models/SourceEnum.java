@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class SourceEnum extends ExpandableStringEnum<SourceEnum> {
      * @param name a name to look for.
      * @return the corresponding SourceEnum.
      */
-    @JsonCreator
     public static SourceEnum fromString(String name) {
         return fromString(name, SourceEnum.class);
     }

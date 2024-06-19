@@ -6,7 +6,10 @@ package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.exception.ManagementError;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Error associated with trying to get work item configuration or configurations.
@@ -16,7 +19,6 @@ public final class WorkItemConfigurationError extends ManagementError {
     /*
      * Inner error
      */
-    @JsonProperty(value = "innererror", access = JsonProperty.Access.WRITE_ONLY)
     private InnerError innererror;
 
     /**
@@ -43,5 +45,40 @@ public final class WorkItemConfigurationError extends ManagementError {
         if (getInnererror() != null) {
             getInnererror().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WorkItemConfigurationError from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WorkItemConfigurationError if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the WorkItemConfigurationError.
+     */
+    public static WorkItemConfigurationError fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WorkItemConfigurationError deserializedWorkItemConfigurationError = new WorkItemConfigurationError();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("innererror".equals(fieldName)) {
+                    deserializedWorkItemConfigurationError.innererror = InnerError.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedWorkItemConfigurationError;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -50,7 +49,6 @@ public final class DeletionRecoveryLevel extends ExpandableStringEnum<DeletionRe
      * @param name a name to look for.
      * @return the corresponding DeletionRecoveryLevel.
      */
-    @JsonCreator
     public static DeletionRecoveryLevel fromString(String name) {
         return fromString(name, DeletionRecoveryLevel.class);
     }

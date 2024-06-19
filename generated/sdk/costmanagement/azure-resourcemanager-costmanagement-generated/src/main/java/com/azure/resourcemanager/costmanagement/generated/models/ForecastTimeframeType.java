@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -57,7 +56,6 @@ public final class ForecastTimeframeType extends ExpandableStringEnum<ForecastTi
      * @param name a name to look for.
      * @return the corresponding ForecastTimeframeType.
      */
-    @JsonCreator
     public static ForecastTimeframeType fromString(String name) {
         return fromString(name, ForecastTimeframeType.class);
     }

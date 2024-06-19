@@ -5,35 +5,35 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The definition of Dimension.
  */
 @Fluent
-public final class Dimension {
+public final class Dimension implements JsonSerializable<Dimension> {
     /*
      * The name of the dimension.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The display name of the dimension.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * The display name of the dimension.
      */
-    @JsonProperty(value = "internalName")
     private String internalName;
 
     /*
      * The flag indicates whether the metric will be exported for shoebox or not.
      */
-    @JsonProperty(value = "toBeExportedForShoebox")
     private Boolean toBeExportedForShoebox;
 
     /**
@@ -130,5 +130,50 @@ public final class Dimension {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("internalName", this.internalName);
+        jsonWriter.writeBooleanField("toBeExportedForShoebox", this.toBeExportedForShoebox);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Dimension from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Dimension if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the Dimension.
+     */
+    public static Dimension fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Dimension deserializedDimension = new Dimension();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedDimension.name = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedDimension.displayName = reader.getString();
+                } else if ("internalName".equals(fieldName)) {
+                    deserializedDimension.internalName = reader.getString();
+                } else if ("toBeExportedForShoebox".equals(fieldName)) {
+                    deserializedDimension.toBeExportedForShoebox = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDimension;
+        });
     }
 }

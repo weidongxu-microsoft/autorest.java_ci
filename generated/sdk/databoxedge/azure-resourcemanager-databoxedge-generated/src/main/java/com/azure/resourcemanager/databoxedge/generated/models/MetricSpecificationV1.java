@@ -5,78 +5,71 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Metric specification version 1.
  */
 @Fluent
-public final class MetricSpecificationV1 {
+public final class MetricSpecificationV1 implements JsonSerializable<MetricSpecificationV1> {
     /*
      * Name of the metric.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * Display name of the metric.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * Description of the metric to be displayed.
      */
-    @JsonProperty(value = "displayDescription")
     private String displayDescription;
 
     /*
      * Metric units.
      */
-    @JsonProperty(value = "unit")
     private MetricUnit unit;
 
     /*
      * Metric aggregation type.
      */
-    @JsonProperty(value = "aggregationType")
     private MetricAggregationType aggregationType;
 
     /*
      * Metric dimensions, other than default dimension which is resource.
      */
-    @JsonProperty(value = "dimensions")
     private List<MetricDimensionV1> dimensions;
 
     /*
      * Set true to fill the gaps with zero.
      */
-    @JsonProperty(value = "fillGapWithZero")
     private Boolean fillGapWithZero;
 
     /*
      * Metric category.
      */
-    @JsonProperty(value = "category")
     private MetricCategory category;
 
     /*
      * Resource name override.
      */
-    @JsonProperty(value = "resourceIdDimensionNameOverride")
     private String resourceIdDimensionNameOverride;
 
     /*
      * Support granularity of metrics.
      */
-    @JsonProperty(value = "supportedTimeGrainTypes")
     private List<TimeGrain> supportedTimeGrainTypes;
 
     /*
      * Support metric aggregation type.
      */
-    @JsonProperty(value = "supportedAggregationTypes")
     private List<MetricAggregationType> supportedAggregationTypes;
 
     /**
@@ -314,5 +307,81 @@ public final class MetricSpecificationV1 {
         if (dimensions() != null) {
             dimensions().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeStringField("displayDescription", this.displayDescription);
+        jsonWriter.writeStringField("unit", this.unit == null ? null : this.unit.toString());
+        jsonWriter.writeStringField("aggregationType",
+            this.aggregationType == null ? null : this.aggregationType.toString());
+        jsonWriter.writeArrayField("dimensions", this.dimensions, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("fillGapWithZero", this.fillGapWithZero);
+        jsonWriter.writeStringField("category", this.category == null ? null : this.category.toString());
+        jsonWriter.writeStringField("resourceIdDimensionNameOverride", this.resourceIdDimensionNameOverride);
+        jsonWriter.writeArrayField("supportedTimeGrainTypes", this.supportedTimeGrainTypes,
+            (writer, element) -> writer.writeString(element == null ? null : element.toString()));
+        jsonWriter.writeArrayField("supportedAggregationTypes", this.supportedAggregationTypes,
+            (writer, element) -> writer.writeString(element == null ? null : element.toString()));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MetricSpecificationV1 from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MetricSpecificationV1 if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MetricSpecificationV1.
+     */
+    public static MetricSpecificationV1 fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MetricSpecificationV1 deserializedMetricSpecificationV1 = new MetricSpecificationV1();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.name = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.displayName = reader.getString();
+                } else if ("displayDescription".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.displayDescription = reader.getString();
+                } else if ("unit".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.unit = MetricUnit.fromString(reader.getString());
+                } else if ("aggregationType".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.aggregationType
+                        = MetricAggregationType.fromString(reader.getString());
+                } else if ("dimensions".equals(fieldName)) {
+                    List<MetricDimensionV1> dimensions
+                        = reader.readArray(reader1 -> MetricDimensionV1.fromJson(reader1));
+                    deserializedMetricSpecificationV1.dimensions = dimensions;
+                } else if ("fillGapWithZero".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.fillGapWithZero = reader.getNullable(JsonReader::getBoolean);
+                } else if ("category".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.category = MetricCategory.fromString(reader.getString());
+                } else if ("resourceIdDimensionNameOverride".equals(fieldName)) {
+                    deserializedMetricSpecificationV1.resourceIdDimensionNameOverride = reader.getString();
+                } else if ("supportedTimeGrainTypes".equals(fieldName)) {
+                    List<TimeGrain> supportedTimeGrainTypes
+                        = reader.readArray(reader1 -> TimeGrain.fromString(reader1.getString()));
+                    deserializedMetricSpecificationV1.supportedTimeGrainTypes = supportedTimeGrainTypes;
+                } else if ("supportedAggregationTypes".equals(fieldName)) {
+                    List<MetricAggregationType> supportedAggregationTypes
+                        = reader.readArray(reader1 -> MetricAggregationType.fromString(reader1.getString()));
+                    deserializedMetricSpecificationV1.supportedAggregationTypes = supportedAggregationTypes;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMetricSpecificationV1;
+        });
     }
 }

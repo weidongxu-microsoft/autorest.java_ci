@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class AacAudioProfile extends ExpandableStringEnum<AacAudioProfile>
      * @param name a name to look for.
      * @return the corresponding AacAudioProfile.
      */
-    @JsonCreator
     public static AacAudioProfile fromString(String name) {
         return fromString(name, AacAudioProfile.class);
     }

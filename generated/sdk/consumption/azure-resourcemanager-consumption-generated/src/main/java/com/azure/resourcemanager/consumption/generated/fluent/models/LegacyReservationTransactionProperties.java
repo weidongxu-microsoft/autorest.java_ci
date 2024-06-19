@@ -5,7 +5,12 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -14,11 +19,11 @@ import java.util.UUID;
  * The properties of a legacy reservation transaction.
  */
 @Immutable
-public final class LegacyReservationTransactionProperties {
+public final class LegacyReservationTransactionProperties
+    implements JsonSerializable<LegacyReservationTransactionProperties> {
     /*
      * The date of the transaction
      */
-    @JsonProperty(value = "eventDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime eventDate;
 
     /*
@@ -26,133 +31,111 @@ public final class LegacyReservationTransactionProperties {
      * single purchase transaction. A reservation order contains reservations. The reservation order specifies the VM
      * size and region for the reservations.
      */
-    @JsonProperty(value = "reservationOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationOrderId;
 
     /*
      * The description of the transaction.
      */
-    @JsonProperty(value = "description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
 
     /*
      * The type of the transaction (Purchase, Cancel or Refund).
      */
-    @JsonProperty(value = "eventType", access = JsonProperty.Access.WRITE_ONLY)
     private String eventType;
 
     /*
      * The quantity of the transaction.
      */
-    @JsonProperty(value = "quantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal quantity;
 
     /*
      * The charge of the transaction.
      */
-    @JsonProperty(value = "amount", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal amount;
 
     /*
      * The ISO currency in which the transaction is charged, for example, USD.
      */
-    @JsonProperty(value = "currency", access = JsonProperty.Access.WRITE_ONLY)
     private String currency;
 
     /*
      * The name of the reservation order.
      */
-    @JsonProperty(value = "reservationOrderName", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationOrderName;
 
     /*
      * The purchasing enrollment.
      */
-    @JsonProperty(value = "purchasingEnrollment", access = JsonProperty.Access.WRITE_ONLY)
     private String purchasingEnrollment;
 
     /*
      * The subscription guid that makes the transaction.
      */
-    @JsonProperty(value = "purchasingSubscriptionGuid", access = JsonProperty.Access.WRITE_ONLY)
     private UUID purchasingSubscriptionGuid;
 
     /*
      * The subscription name that makes the transaction.
      */
-    @JsonProperty(value = "purchasingSubscriptionName", access = JsonProperty.Access.WRITE_ONLY)
     private String purchasingSubscriptionName;
 
     /*
      * This is the ARM Sku name. It can be used to join with the serviceType field in additional info in usage records.
      */
-    @JsonProperty(value = "armSkuName", access = JsonProperty.Access.WRITE_ONLY)
     private String armSkuName;
 
     /*
      * This is the term of the transaction.
      */
-    @JsonProperty(value = "term", access = JsonProperty.Access.WRITE_ONLY)
     private String term;
 
     /*
      * The region of the transaction.
      */
-    @JsonProperty(value = "region", access = JsonProperty.Access.WRITE_ONLY)
     private String region;
 
     /*
      * The name of the account that makes the transaction.
      */
-    @JsonProperty(value = "accountName", access = JsonProperty.Access.WRITE_ONLY)
     private String accountName;
 
     /*
      * The email of the account owner that makes the transaction.
      */
-    @JsonProperty(value = "accountOwnerEmail", access = JsonProperty.Access.WRITE_ONLY)
     private String accountOwnerEmail;
 
     /*
      * The department name.
      */
-    @JsonProperty(value = "departmentName", access = JsonProperty.Access.WRITE_ONLY)
     private String departmentName;
 
     /*
      * The cost center of this department if it is a department and a cost center is provided.
      */
-    @JsonProperty(value = "costCenter", access = JsonProperty.Access.WRITE_ONLY)
     private String costCenter;
 
     /*
      * The current enrollment.
      */
-    @JsonProperty(value = "currentEnrollment", access = JsonProperty.Access.WRITE_ONLY)
     private String currentEnrollment;
 
     /*
      * The billing frequency, which can be either one-time or recurring.
      */
-    @JsonProperty(value = "billingFrequency", access = JsonProperty.Access.WRITE_ONLY)
     private String billingFrequency;
 
     /*
      * The billing month(yyyyMMdd), on which the event initiated.
      */
-    @JsonProperty(value = "billingMonth", access = JsonProperty.Access.WRITE_ONLY)
     private Integer billingMonth;
 
     /*
      * The monetary commitment amount at the enrollment scope.
      */
-    @JsonProperty(value = "monetaryCommitment", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal monetaryCommitment;
 
     /*
      * The overage amount at the enrollment scope.
      */
-    @JsonProperty(value = "overage", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal overage;
 
     /**
@@ -378,5 +361,92 @@ public final class LegacyReservationTransactionProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LegacyReservationTransactionProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LegacyReservationTransactionProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LegacyReservationTransactionProperties.
+     */
+    public static LegacyReservationTransactionProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LegacyReservationTransactionProperties deserializedLegacyReservationTransactionProperties
+                = new LegacyReservationTransactionProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("eventDate".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.eventDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("reservationOrderId".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.reservationOrderId = reader.getString();
+                } else if ("description".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.description = reader.getString();
+                } else if ("eventType".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.eventType = reader.getString();
+                } else if ("quantity".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.quantity
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("amount".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.amount
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("currency".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.currency = reader.getString();
+                } else if ("reservationOrderName".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.reservationOrderName = reader.getString();
+                } else if ("purchasingEnrollment".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.purchasingEnrollment = reader.getString();
+                } else if ("purchasingSubscriptionGuid".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.purchasingSubscriptionGuid
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("purchasingSubscriptionName".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.purchasingSubscriptionName = reader.getString();
+                } else if ("armSkuName".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.armSkuName = reader.getString();
+                } else if ("term".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.term = reader.getString();
+                } else if ("region".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.region = reader.getString();
+                } else if ("accountName".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.accountName = reader.getString();
+                } else if ("accountOwnerEmail".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.accountOwnerEmail = reader.getString();
+                } else if ("departmentName".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.departmentName = reader.getString();
+                } else if ("costCenter".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.costCenter = reader.getString();
+                } else if ("currentEnrollment".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.currentEnrollment = reader.getString();
+                } else if ("billingFrequency".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.billingFrequency = reader.getString();
+                } else if ("billingMonth".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.billingMonth
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("monetaryCommitment".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.monetaryCommitment
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("overage".equals(fieldName)) {
+                    deserializedLegacyReservationTransactionProperties.overage
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLegacyReservationTransactionProperties;
+        });
     }
 }

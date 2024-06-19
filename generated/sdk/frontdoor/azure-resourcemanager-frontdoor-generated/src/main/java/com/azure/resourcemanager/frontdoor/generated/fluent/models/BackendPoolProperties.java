@@ -6,10 +6,13 @@ package com.azure.resourcemanager.frontdoor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.frontdoor.generated.models.Backend;
 import com.azure.resourcemanager.frontdoor.generated.models.BackendPoolUpdateParameters;
 import com.azure.resourcemanager.frontdoor.generated.models.FrontDoorResourceState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -20,7 +23,6 @@ public final class BackendPoolProperties extends BackendPoolUpdateParameters {
     /*
      * Resource status.
      */
-    @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private FrontDoorResourceState resourceState;
 
     /**
@@ -73,5 +75,51 @@ public final class BackendPoolProperties extends BackendPoolUpdateParameters {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("backends", backends(), (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("loadBalancingSettings", loadBalancingSettings());
+        jsonWriter.writeJsonField("healthProbeSettings", healthProbeSettings());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of BackendPoolProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of BackendPoolProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the BackendPoolProperties.
+     */
+    public static BackendPoolProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            BackendPoolProperties deserializedBackendPoolProperties = new BackendPoolProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("backends".equals(fieldName)) {
+                    List<Backend> backends = reader.readArray(reader1 -> Backend.fromJson(reader1));
+                    deserializedBackendPoolProperties.withBackends(backends);
+                } else if ("loadBalancingSettings".equals(fieldName)) {
+                    deserializedBackendPoolProperties.withLoadBalancingSettings(SubResource.fromJson(reader));
+                } else if ("healthProbeSettings".equals(fieldName)) {
+                    deserializedBackendPoolProperties.withHealthProbeSettings(SubResource.fromJson(reader));
+                } else if ("resourceState".equals(fieldName)) {
+                    deserializedBackendPoolProperties.resourceState
+                        = FrontDoorResourceState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedBackendPoolProperties;
+        });
     }
 }

@@ -5,8 +5,12 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.fluent.models.LiveEventInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -15,23 +19,20 @@ import java.util.List;
  * The LiveEvent list result.
  */
 @Fluent
-public final class LiveEventListResult {
+public final class LiveEventListResult implements JsonSerializable<LiveEventListResult> {
     /*
      * The result of the List Live Event operation.
      */
-    @JsonProperty(value = "value")
     private List<LiveEventInner> value;
 
     /*
      * The number of result.
      */
-    @JsonProperty(value = "@odata.count")
     private Integer odataCount;
 
     /*
      * The link to the next set of results. Not empty if value contains incomplete list of live outputs.
      */
-    @JsonProperty(value = "@odata.nextLink")
     private String odataNextLink;
 
     /**
@@ -111,5 +112,48 @@ public final class LiveEventListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeNumberField("@odata.count", this.odataCount);
+        jsonWriter.writeStringField("@odata.nextLink", this.odataNextLink);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventListResult if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventListResult.
+     */
+    public static LiveEventListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventListResult deserializedLiveEventListResult = new LiveEventListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<LiveEventInner> value = reader.readArray(reader1 -> LiveEventInner.fromJson(reader1));
+                    deserializedLiveEventListResult.value = value;
+                } else if ("@odata.count".equals(fieldName)) {
+                    deserializedLiveEventListResult.odataCount = reader.getNullable(JsonReader::getInt);
+                } else if ("@odata.nextLink".equals(fieldName)) {
+                    deserializedLiveEventListResult.odataNextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventListResult;
+        });
     }
 }

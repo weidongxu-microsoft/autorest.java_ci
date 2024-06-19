@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class SecurityLevel extends ExpandableStringEnum<SecurityLevel> {
      * @param name a name to look for.
      * @return the corresponding SecurityLevel.
      */
-    @JsonCreator
     public static SecurityLevel fromString(String name) {
         return fromString(name, SecurityLevel.class);
     }

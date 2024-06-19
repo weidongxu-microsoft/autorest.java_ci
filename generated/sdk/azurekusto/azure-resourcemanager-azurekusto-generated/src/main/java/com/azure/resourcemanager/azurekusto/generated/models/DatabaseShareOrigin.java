@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class DatabaseShareOrigin extends ExpandableStringEnum<DatabaseShar
      * @param name a name to look for.
      * @return the corresponding DatabaseShareOrigin.
      */
-    @JsonCreator
     public static DatabaseShareOrigin fromString(String name) {
         return fromString(name, DatabaseShareOrigin.class);
     }

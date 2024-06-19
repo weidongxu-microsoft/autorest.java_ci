@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -58,7 +57,6 @@ public final class TimeGrainType extends ExpandableStringEnum<TimeGrainType> {
      * @param name a name to look for.
      * @return the corresponding TimeGrainType.
      */
-    @JsonCreator
     public static TimeGrainType fromString(String name) {
         return fromString(name, TimeGrainType.class);
     }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class SqlServerLicenseType extends ExpandableStringEnum<SqlServerLi
      * @param name a name to look for.
      * @return the corresponding SqlServerLicenseType.
      */
-    @JsonCreator
     public static SqlServerLicenseType fromString(String name) {
         return fromString(name, SqlServerLicenseType.class);
     }

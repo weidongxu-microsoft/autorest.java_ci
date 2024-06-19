@@ -5,36 +5,36 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Namespace replication properties.
  */
 @Fluent
-public final class NamespaceReplicaLocation {
+public final class NamespaceReplicaLocation implements JsonSerializable<NamespaceReplicaLocation> {
     /*
      * Azure regions where a replica of the namespace is maintained
      */
-    @JsonProperty(value = "locationName")
     private String locationName;
 
     /*
      * GeoDR Role Types
      */
-    @JsonProperty(value = "roleType")
     private GeoDRRoleType roleType;
 
     /*
      * state of Namespace replica.
      */
-    @JsonProperty(value = "replicaState", access = JsonProperty.Access.WRITE_ONLY)
     private String replicaState;
 
     /*
      * Optional property that denotes the ARM ID of the Cluster. This is required, if a namespace replica should be
      * placed in a Dedicated Event Hub Cluster
      */
-    @JsonProperty(value = "clusterArmId")
     private String clusterArmId;
 
     /**
@@ -120,5 +120,49 @@ public final class NamespaceReplicaLocation {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("locationName", this.locationName);
+        jsonWriter.writeStringField("roleType", this.roleType == null ? null : this.roleType.toString());
+        jsonWriter.writeStringField("clusterArmId", this.clusterArmId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NamespaceReplicaLocation from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NamespaceReplicaLocation if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NamespaceReplicaLocation.
+     */
+    public static NamespaceReplicaLocation fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NamespaceReplicaLocation deserializedNamespaceReplicaLocation = new NamespaceReplicaLocation();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("locationName".equals(fieldName)) {
+                    deserializedNamespaceReplicaLocation.locationName = reader.getString();
+                } else if ("roleType".equals(fieldName)) {
+                    deserializedNamespaceReplicaLocation.roleType = GeoDRRoleType.fromString(reader.getString());
+                } else if ("replicaState".equals(fieldName)) {
+                    deserializedNamespaceReplicaLocation.replicaState = reader.getString();
+                } else if ("clusterArmId".equals(fieldName)) {
+                    deserializedNamespaceReplicaLocation.clusterArmId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNamespaceReplicaLocation;
+        });
     }
 }

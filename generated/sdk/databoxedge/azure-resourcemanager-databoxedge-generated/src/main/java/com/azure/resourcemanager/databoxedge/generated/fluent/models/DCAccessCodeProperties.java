@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * DCAccessCode Properties.
  */
 @Fluent
-public final class DCAccessCodeProperties {
+public final class DCAccessCodeProperties implements JsonSerializable<DCAccessCodeProperties> {
     /*
      * DCAccess Code for the Self Managed shipment.
      */
-    @JsonProperty(value = "authCode")
     private String authCode;
 
     /**
@@ -50,5 +53,41 @@ public final class DCAccessCodeProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("authCode", this.authCode);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DCAccessCodeProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DCAccessCodeProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DCAccessCodeProperties.
+     */
+    public static DCAccessCodeProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DCAccessCodeProperties deserializedDCAccessCodeProperties = new DCAccessCodeProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("authCode".equals(fieldName)) {
+                    deserializedDCAccessCodeProperties.authCode = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDCAccessCodeProperties;
+        });
     }
 }

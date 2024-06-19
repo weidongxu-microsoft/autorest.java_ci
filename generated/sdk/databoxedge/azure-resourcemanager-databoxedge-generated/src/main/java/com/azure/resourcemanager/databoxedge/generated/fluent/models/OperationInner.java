@@ -5,43 +5,42 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.OperationDisplay;
 import com.azure.resourcemanager.databoxedge.generated.models.ServiceSpecification;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Operations.
  */
 @Fluent
-public final class OperationInner {
+public final class OperationInner implements JsonSerializable<OperationInner> {
     /*
      * Name of the operation.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * Is data action.
      */
-    @JsonProperty(value = "isDataAction")
     private Boolean isDataAction;
 
     /*
      * Properties displayed for the operation.
      */
-    @JsonProperty(value = "display")
     private OperationDisplay display;
 
     /*
      * Origin of the operation.
      */
-    @JsonProperty(value = "origin")
     private String origin;
 
     /*
      * Operation properties.
      */
-    @JsonProperty(value = "properties")
     private OperationProperties innerProperties;
 
     /**
@@ -174,5 +173,53 @@ public final class OperationInner {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeBooleanField("isDataAction", this.isDataAction);
+        jsonWriter.writeJsonField("display", this.display);
+        jsonWriter.writeStringField("origin", this.origin);
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OperationInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OperationInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the OperationInner.
+     */
+    public static OperationInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OperationInner deserializedOperationInner = new OperationInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedOperationInner.name = reader.getString();
+                } else if ("isDataAction".equals(fieldName)) {
+                    deserializedOperationInner.isDataAction = reader.getNullable(JsonReader::getBoolean);
+                } else if ("display".equals(fieldName)) {
+                    deserializedOperationInner.display = OperationDisplay.fromJson(reader);
+                } else if ("origin".equals(fieldName)) {
+                    deserializedOperationInner.origin = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedOperationInner.innerProperties = OperationProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOperationInner;
+        });
     }
 }

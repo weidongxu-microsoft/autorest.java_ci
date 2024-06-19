@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -132,7 +131,6 @@ public final class CultureCode extends ExpandableStringEnum<CultureCode> {
      * @param name a name to look for.
      * @return the corresponding CultureCode.
      */
-    @JsonCreator
     public static CultureCode fromString(String name) {
         return fromString(name, CultureCode.class);
     }

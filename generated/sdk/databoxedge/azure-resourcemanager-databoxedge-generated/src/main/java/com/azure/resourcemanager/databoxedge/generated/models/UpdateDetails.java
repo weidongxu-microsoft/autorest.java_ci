@@ -5,65 +5,60 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Update Specific attributes.
  */
 @Fluent
-public final class UpdateDetails {
+public final class UpdateDetails implements JsonSerializable<UpdateDetails> {
     /*
      * Title of the Update
      */
-    @JsonProperty(value = "updateTitle")
     private String updateTitle;
 
     /*
      * Size of the update(In Bytes)
      */
-    @JsonProperty(value = "updateSize")
     private Double updateSize;
 
     /*
      * Type of the Update
      */
-    @JsonProperty(value = "updateType")
     private UpdateType updateType;
 
     /*
      * Target Version number
      */
-    @JsonProperty(value = "targetVersion")
     private String targetVersion;
 
     /*
      * Friendly Version Number
      */
-    @JsonProperty(value = "friendlyVersionNumber")
     private String friendlyVersionNumber;
 
     /*
      * Estimated Install Time for the update
      */
-    @JsonProperty(value = "estimatedInstallTimeInMins")
     private Integer estimatedInstallTimeInMins;
 
     /*
      * Indicates if updates are available and at least one of the updates needs a reboot.
      */
-    @JsonProperty(value = "rebootBehavior")
     private InstallRebootBehavior rebootBehavior;
 
     /*
      * Impact of Installing an updateType
      */
-    @JsonProperty(value = "installationImpact")
     private InstallationImpact installationImpact;
 
     /*
      * Status of the update.
      */
-    @JsonProperty(value = "status")
     private UpdateStatus status;
 
     /**
@@ -260,5 +255,67 @@ public final class UpdateDetails {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("updateTitle", this.updateTitle);
+        jsonWriter.writeNumberField("updateSize", this.updateSize);
+        jsonWriter.writeStringField("updateType", this.updateType == null ? null : this.updateType.toString());
+        jsonWriter.writeStringField("targetVersion", this.targetVersion);
+        jsonWriter.writeStringField("friendlyVersionNumber", this.friendlyVersionNumber);
+        jsonWriter.writeNumberField("estimatedInstallTimeInMins", this.estimatedInstallTimeInMins);
+        jsonWriter.writeStringField("rebootBehavior",
+            this.rebootBehavior == null ? null : this.rebootBehavior.toString());
+        jsonWriter.writeStringField("installationImpact",
+            this.installationImpact == null ? null : this.installationImpact.toString());
+        jsonWriter.writeStringField("status", this.status == null ? null : this.status.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of UpdateDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of UpdateDetails if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the UpdateDetails.
+     */
+    public static UpdateDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            UpdateDetails deserializedUpdateDetails = new UpdateDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("updateTitle".equals(fieldName)) {
+                    deserializedUpdateDetails.updateTitle = reader.getString();
+                } else if ("updateSize".equals(fieldName)) {
+                    deserializedUpdateDetails.updateSize = reader.getNullable(JsonReader::getDouble);
+                } else if ("updateType".equals(fieldName)) {
+                    deserializedUpdateDetails.updateType = UpdateType.fromString(reader.getString());
+                } else if ("targetVersion".equals(fieldName)) {
+                    deserializedUpdateDetails.targetVersion = reader.getString();
+                } else if ("friendlyVersionNumber".equals(fieldName)) {
+                    deserializedUpdateDetails.friendlyVersionNumber = reader.getString();
+                } else if ("estimatedInstallTimeInMins".equals(fieldName)) {
+                    deserializedUpdateDetails.estimatedInstallTimeInMins = reader.getNullable(JsonReader::getInt);
+                } else if ("rebootBehavior".equals(fieldName)) {
+                    deserializedUpdateDetails.rebootBehavior = InstallRebootBehavior.fromString(reader.getString());
+                } else if ("installationImpact".equals(fieldName)) {
+                    deserializedUpdateDetails.installationImpact = InstallationImpact.fromString(reader.getString());
+                } else if ("status".equals(fieldName)) {
+                    deserializedUpdateDetails.status = UpdateStatus.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUpdateDetails;
+        });
     }
 }

@@ -6,45 +6,44 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties of a routing rule that your IoT hub uses to route messages to endpoints.
  */
 @Fluent
-public final class RouteProperties {
+public final class RouteProperties implements JsonSerializable<RouteProperties> {
     /*
      * The name of the route. The name can only include alphanumeric characters, periods, underscores, hyphens, has a
      * maximum length of 64 characters, and must be unique.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The source that the routing rule is to be applied to, such as DeviceMessages.
      */
-    @JsonProperty(value = "source", required = true)
     private RoutingSource source;
 
     /*
      * The condition that is evaluated to apply the routing rule. If no condition is provided, it evaluates to true by
      * default. For grammar, see: https://docs.microsoft.com/azure/iot-hub/iot-hub-devguide-query-language
      */
-    @JsonProperty(value = "condition")
     private String condition;
 
     /*
      * The list of endpoints to which messages that satisfy the condition are routed. Currently only one endpoint is
      * allowed.
      */
-    @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;
 
     /*
      * Used to specify whether a route is enabled.
      */
-    @JsonProperty(value = "isEnabled", required = true)
     private boolean isEnabled;
 
     /**
@@ -182,4 +181,55 @@ public final class RouteProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RouteProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("source", this.source == null ? null : this.source.toString());
+        jsonWriter.writeArrayField("endpointNames", this.endpointNames,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeBooleanField("isEnabled", this.isEnabled);
+        jsonWriter.writeStringField("condition", this.condition);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RouteProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RouteProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RouteProperties.
+     */
+    public static RouteProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RouteProperties deserializedRouteProperties = new RouteProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedRouteProperties.name = reader.getString();
+                } else if ("source".equals(fieldName)) {
+                    deserializedRouteProperties.source = RoutingSource.fromString(reader.getString());
+                } else if ("endpointNames".equals(fieldName)) {
+                    List<String> endpointNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedRouteProperties.endpointNames = endpointNames;
+                } else if ("isEnabled".equals(fieldName)) {
+                    deserializedRouteProperties.isEnabled = reader.getBoolean();
+                } else if ("condition".equals(fieldName)) {
+                    deserializedRouteProperties.condition = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRouteProperties;
+        });
+    }
 }

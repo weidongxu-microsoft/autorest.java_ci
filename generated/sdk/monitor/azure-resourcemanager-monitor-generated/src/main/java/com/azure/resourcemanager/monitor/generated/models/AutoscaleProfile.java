@@ -6,43 +6,42 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Autoscale profile.
  */
 @Fluent
-public final class AutoscaleProfile {
+public final class AutoscaleProfile implements JsonSerializable<AutoscaleProfile> {
     /*
      * the name of the profile.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * the number of instances that can be used during this profile.
      */
-    @JsonProperty(value = "capacity", required = true)
     private ScaleCapacity capacity;
 
     /*
      * the collection of rules that provide the triggers and parameters for the scaling action. A maximum of 10 rules
      * can be specified.
      */
-    @JsonProperty(value = "rules", required = true)
     private List<ScaleRule> rules;
 
     /*
      * the specific date-time for the profile. This element is not used if the Recurrence element is used.
      */
-    @JsonProperty(value = "fixedDate")
     private TimeWindow fixedDate;
 
     /*
      * the repeating times at which this profile begins. This element is not used if the FixedDate element is used.
      */
-    @JsonProperty(value = "recurrence")
     private Recurrence recurrence;
 
     /**
@@ -188,4 +187,54 @@ public final class AutoscaleProfile {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AutoscaleProfile.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeJsonField("capacity", this.capacity);
+        jsonWriter.writeArrayField("rules", this.rules, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("fixedDate", this.fixedDate);
+        jsonWriter.writeJsonField("recurrence", this.recurrence);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AutoscaleProfile from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AutoscaleProfile if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AutoscaleProfile.
+     */
+    public static AutoscaleProfile fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AutoscaleProfile deserializedAutoscaleProfile = new AutoscaleProfile();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedAutoscaleProfile.name = reader.getString();
+                } else if ("capacity".equals(fieldName)) {
+                    deserializedAutoscaleProfile.capacity = ScaleCapacity.fromJson(reader);
+                } else if ("rules".equals(fieldName)) {
+                    List<ScaleRule> rules = reader.readArray(reader1 -> ScaleRule.fromJson(reader1));
+                    deserializedAutoscaleProfile.rules = rules;
+                } else if ("fixedDate".equals(fieldName)) {
+                    deserializedAutoscaleProfile.fixedDate = TimeWindow.fromJson(reader);
+                } else if ("recurrence".equals(fieldName)) {
+                    deserializedAutoscaleProfile.recurrence = Recurrence.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAutoscaleProfile;
+        });
+    }
 }

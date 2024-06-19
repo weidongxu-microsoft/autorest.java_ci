@@ -6,29 +6,30 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The class to specify one track property condition.
  */
 @Fluent
-public final class FilterTrackPropertyCondition {
+public final class FilterTrackPropertyCondition implements JsonSerializable<FilterTrackPropertyCondition> {
     /*
      * The track property type.
      */
-    @JsonProperty(value = "property", required = true)
     private FilterTrackPropertyType property;
 
     /*
      * The track property value.
      */
-    @JsonProperty(value = "value", required = true)
     private String value;
 
     /*
      * The track property condition operation.
      */
-    @JsonProperty(value = "operation", required = true)
     private FilterTrackPropertyCompareOperation operation;
 
     /**
@@ -121,4 +122,49 @@ public final class FilterTrackPropertyCondition {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(FilterTrackPropertyCondition.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("property", this.property == null ? null : this.property.toString());
+        jsonWriter.writeStringField("value", this.value);
+        jsonWriter.writeStringField("operation", this.operation == null ? null : this.operation.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FilterTrackPropertyCondition from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FilterTrackPropertyCondition if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the FilterTrackPropertyCondition.
+     */
+    public static FilterTrackPropertyCondition fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FilterTrackPropertyCondition deserializedFilterTrackPropertyCondition = new FilterTrackPropertyCondition();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("property".equals(fieldName)) {
+                    deserializedFilterTrackPropertyCondition.property
+                        = FilterTrackPropertyType.fromString(reader.getString());
+                } else if ("value".equals(fieldName)) {
+                    deserializedFilterTrackPropertyCondition.value = reader.getString();
+                } else if ("operation".equals(fieldName)) {
+                    deserializedFilterTrackPropertyCondition.operation
+                        = FilterTrackPropertyCompareOperation.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFilterTrackPropertyCondition;
+        });
+    }
 }

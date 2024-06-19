@@ -5,40 +5,25 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A TrackSelection to select audio tracks.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "@odata.type",
-    defaultImpl = AudioTrackDescriptor.class,
-    visible = true)
-@JsonTypeName("#Microsoft.Media.AudioTrackDescriptor")
-@JsonSubTypes({
-    @JsonSubTypes.Type(
-        name = "#Microsoft.Media.SelectAudioTrackByAttribute",
-        value = SelectAudioTrackByAttribute.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.SelectAudioTrackById", value = SelectAudioTrackById.class) })
 @Fluent
 public class AudioTrackDescriptor extends TrackDescriptor {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.AudioTrackDescriptor";
 
     /*
      * Optional designation for single channel audio tracks. Can be used to combine the tracks into stereo or
      * multi-channel audio tracks.
      */
-    @JsonProperty(value = "channelMapping")
     private ChannelMapping channelMapping;
 
     /**
@@ -87,5 +72,72 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeStringField("channelMapping",
+            this.channelMapping == null ? null : this.channelMapping.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AudioTrackDescriptor from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AudioTrackDescriptor if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AudioTrackDescriptor.
+     */
+    public static AudioTrackDescriptor fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("@odata.type".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("#Microsoft.Media.SelectAudioTrackByAttribute".equals(discriminatorValue)) {
+                    return SelectAudioTrackByAttribute.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.SelectAudioTrackById".equals(discriminatorValue)) {
+                    return SelectAudioTrackById.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static AudioTrackDescriptor fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AudioTrackDescriptor deserializedAudioTrackDescriptor = new AudioTrackDescriptor();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedAudioTrackDescriptor.odataType = reader.getString();
+                } else if ("channelMapping".equals(fieldName)) {
+                    deserializedAudioTrackDescriptor.channelMapping = ChannelMapping.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAudioTrackDescriptor;
+        });
     }
 }

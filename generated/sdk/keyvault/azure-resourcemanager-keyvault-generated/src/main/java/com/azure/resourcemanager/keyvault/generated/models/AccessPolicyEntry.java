@@ -6,7 +6,12 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
@@ -14,30 +19,26 @@ import java.util.UUID;
  * vault's tenant ID.
  */
 @Fluent
-public final class AccessPolicyEntry {
+public final class AccessPolicyEntry implements JsonSerializable<AccessPolicyEntry> {
     /*
      * The Azure Active Directory tenant ID that should be used for authenticating requests to the key vault.
      */
-    @JsonProperty(value = "tenantId", required = true)
     private UUID tenantId;
 
     /*
      * The object ID of a user, service principal or security group in the Azure Active Directory tenant for the vault.
      * The object ID must be unique for the list of access policies.
      */
-    @JsonProperty(value = "objectId", required = true)
     private String objectId;
 
     /*
      * Application ID of the client making request on behalf of a principal
      */
-    @JsonProperty(value = "applicationId")
     private UUID applicationId;
 
     /*
      * Permissions the identity has for keys, secrets and certificates.
      */
-    @JsonProperty(value = "permissions", required = true)
     private Permissions permissions;
 
     /**
@@ -153,4 +154,52 @@ public final class AccessPolicyEntry {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AccessPolicyEntry.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("tenantId", Objects.toString(this.tenantId, null));
+        jsonWriter.writeStringField("objectId", this.objectId);
+        jsonWriter.writeJsonField("permissions", this.permissions);
+        jsonWriter.writeStringField("applicationId", Objects.toString(this.applicationId, null));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AccessPolicyEntry from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AccessPolicyEntry if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AccessPolicyEntry.
+     */
+    public static AccessPolicyEntry fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AccessPolicyEntry deserializedAccessPolicyEntry = new AccessPolicyEntry();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("tenantId".equals(fieldName)) {
+                    deserializedAccessPolicyEntry.tenantId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("objectId".equals(fieldName)) {
+                    deserializedAccessPolicyEntry.objectId = reader.getString();
+                } else if ("permissions".equals(fieldName)) {
+                    deserializedAccessPolicyEntry.permissions = Permissions.fromJson(reader);
+                } else if ("applicationId".equals(fieldName)) {
+                    deserializedAccessPolicyEntry.applicationId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAccessPolicyEntry;
+        });
+    }
 }

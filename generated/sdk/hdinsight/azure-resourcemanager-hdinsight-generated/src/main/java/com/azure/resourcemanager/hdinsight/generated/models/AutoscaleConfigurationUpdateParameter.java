@@ -5,17 +5,21 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The autoscale configuration update parameter.
  */
 @Fluent
-public final class AutoscaleConfigurationUpdateParameter {
+public final class AutoscaleConfigurationUpdateParameter
+    implements JsonSerializable<AutoscaleConfigurationUpdateParameter> {
     /*
      * The autoscale configuration.
      */
-    @JsonProperty(value = "autoscale")
     private Autoscale autoscale;
 
     /**
@@ -53,5 +57,42 @@ public final class AutoscaleConfigurationUpdateParameter {
         if (autoscale() != null) {
             autoscale().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("autoscale", this.autoscale);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AutoscaleConfigurationUpdateParameter from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AutoscaleConfigurationUpdateParameter if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AutoscaleConfigurationUpdateParameter.
+     */
+    public static AutoscaleConfigurationUpdateParameter fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AutoscaleConfigurationUpdateParameter deserializedAutoscaleConfigurationUpdateParameter
+                = new AutoscaleConfigurationUpdateParameter();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("autoscale".equals(fieldName)) {
+                    deserializedAutoscaleConfigurationUpdateParameter.autoscale = Autoscale.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAutoscaleConfigurationUpdateParameter;
+        });
     }
 }

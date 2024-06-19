@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class Scope extends ExpandableStringEnum<Scope> {
      * @param name a name to look for.
      * @return the corresponding Scope.
      */
-    @JsonCreator
     public static Scope fromString(String name) {
         return fromString(name, Scope.class);
     }

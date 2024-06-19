@@ -5,37 +5,43 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.DatabaseInner;
 import com.azure.resourcemanager.azurekusto.generated.fluent.models.ReadOnlyFollowingDatabaseProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 import java.time.Duration;
 
 /**
  * Class representing a read only following database.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "kind",
-    defaultImpl = ReadOnlyFollowingDatabase.class,
-    visible = true)
-@JsonTypeName("ReadOnlyFollowing")
 @Fluent
 public final class ReadOnlyFollowingDatabase extends DatabaseInner {
     /*
      * Kind of the database
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private Kind kind = Kind.READ_ONLY_FOLLOWING;
 
     /*
      * The database properties.
      */
-    @JsonProperty(value = "properties")
     private ReadOnlyFollowingDatabaseProperties innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of ReadOnlyFollowingDatabase class.
@@ -60,6 +66,36 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
      */
     private ReadOnlyFollowingDatabaseProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -198,5 +234,55 @@ public final class ReadOnlyFollowingDatabase extends DatabaseInner {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", location());
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReadOnlyFollowingDatabase from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReadOnlyFollowingDatabase if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ReadOnlyFollowingDatabase.
+     */
+    public static ReadOnlyFollowingDatabase fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReadOnlyFollowingDatabase deserializedReadOnlyFollowingDatabase = new ReadOnlyFollowingDatabase();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedReadOnlyFollowingDatabase.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedReadOnlyFollowingDatabase.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedReadOnlyFollowingDatabase.type = reader.getString();
+                } else if ("location".equals(fieldName)) {
+                    deserializedReadOnlyFollowingDatabase.withLocation(reader.getString());
+                } else if ("kind".equals(fieldName)) {
+                    deserializedReadOnlyFollowingDatabase.kind = Kind.fromString(reader.getString());
+                } else if ("properties".equals(fieldName)) {
+                    deserializedReadOnlyFollowingDatabase.innerProperties
+                        = ReadOnlyFollowingDatabaseProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReadOnlyFollowingDatabase;
+        });
     }
 }

@@ -6,38 +6,39 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.models.NetworkManagerSecurityGroupItem;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Defines the admin rule collection properties.
  */
 @Fluent
-public final class AdminRuleCollectionPropertiesFormat {
+public final class AdminRuleCollectionPropertiesFormat
+    implements JsonSerializable<AdminRuleCollectionPropertiesFormat> {
     /*
      * A description of the admin rule collection.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * Groups for configuration
      */
-    @JsonProperty(value = "appliesToGroups", required = true)
     private List<NetworkManagerSecurityGroupItem> appliesToGroups;
 
     /*
      * The provisioning state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * Unique identifier for this resource.
      */
-    @JsonProperty(value = "resourceGuid", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGuid;
 
     /**
@@ -121,4 +122,53 @@ public final class AdminRuleCollectionPropertiesFormat {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AdminRuleCollectionPropertiesFormat.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("appliesToGroups", this.appliesToGroups,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("description", this.description);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AdminRuleCollectionPropertiesFormat from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AdminRuleCollectionPropertiesFormat if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AdminRuleCollectionPropertiesFormat.
+     */
+    public static AdminRuleCollectionPropertiesFormat fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AdminRuleCollectionPropertiesFormat deserializedAdminRuleCollectionPropertiesFormat
+                = new AdminRuleCollectionPropertiesFormat();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("appliesToGroups".equals(fieldName)) {
+                    List<NetworkManagerSecurityGroupItem> appliesToGroups
+                        = reader.readArray(reader1 -> NetworkManagerSecurityGroupItem.fromJson(reader1));
+                    deserializedAdminRuleCollectionPropertiesFormat.appliesToGroups = appliesToGroups;
+                } else if ("description".equals(fieldName)) {
+                    deserializedAdminRuleCollectionPropertiesFormat.description = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedAdminRuleCollectionPropertiesFormat.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("resourceGuid".equals(fieldName)) {
+                    deserializedAdminRuleCollectionPropertiesFormat.resourceGuid = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAdminRuleCollectionPropertiesFormat;
+        });
+    }
 }

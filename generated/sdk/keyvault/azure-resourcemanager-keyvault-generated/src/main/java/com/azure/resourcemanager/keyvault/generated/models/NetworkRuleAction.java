@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -38,7 +37,6 @@ public final class NetworkRuleAction extends ExpandableStringEnum<NetworkRuleAct
      * @param name a name to look for.
      * @return the corresponding NetworkRuleAction.
      */
-    @JsonCreator
     public static NetworkRuleAction fromString(String name) {
         return fromString(name, NetworkRuleAction.class);
     }

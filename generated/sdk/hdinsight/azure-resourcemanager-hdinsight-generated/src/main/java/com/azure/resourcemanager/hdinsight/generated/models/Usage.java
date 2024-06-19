@@ -5,35 +5,35 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The details about the usage of a particular limited resource.
  */
 @Fluent
-public final class Usage {
+public final class Usage implements JsonSerializable<Usage> {
     /*
      * The type of measurement for usage.
      */
-    @JsonProperty(value = "unit")
     private String unit;
 
     /*
      * The current usage.
      */
-    @JsonProperty(value = "currentValue")
     private Long currentValue;
 
     /*
      * The maximum allowed usage.
      */
-    @JsonProperty(value = "limit")
     private Long limit;
 
     /*
      * The details about the localizable name of the used resource.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private LocalizedName name;
 
     /**
@@ -120,5 +120,49 @@ public final class Usage {
         if (name() != null) {
             name().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("unit", this.unit);
+        jsonWriter.writeNumberField("currentValue", this.currentValue);
+        jsonWriter.writeNumberField("limit", this.limit);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Usage from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Usage if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the Usage.
+     */
+    public static Usage fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Usage deserializedUsage = new Usage();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("unit".equals(fieldName)) {
+                    deserializedUsage.unit = reader.getString();
+                } else if ("currentValue".equals(fieldName)) {
+                    deserializedUsage.currentValue = reader.getNullable(JsonReader::getLong);
+                } else if ("limit".equals(fieldName)) {
+                    deserializedUsage.limit = reader.getNullable(JsonReader::getLong);
+                } else if ("name".equals(fieldName)) {
+                    deserializedUsage.name = LocalizedName.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedUsage;
+        });
     }
 }

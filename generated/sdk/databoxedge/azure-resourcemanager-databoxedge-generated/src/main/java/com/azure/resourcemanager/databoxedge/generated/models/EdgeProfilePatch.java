@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The Data Box Edge/Gateway Edge Profile patch.
  */
 @Fluent
-public final class EdgeProfilePatch {
+public final class EdgeProfilePatch implements JsonSerializable<EdgeProfilePatch> {
     /*
      * The Data Box Edge/Gateway Edge Profile Subscription patch
      */
-    @JsonProperty(value = "subscription")
     private EdgeProfileSubscriptionPatch subscription;
 
     /**
@@ -53,5 +56,41 @@ public final class EdgeProfilePatch {
         if (subscription() != null) {
             subscription().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("subscription", this.subscription);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EdgeProfilePatch from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EdgeProfilePatch if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EdgeProfilePatch.
+     */
+    public static EdgeProfilePatch fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EdgeProfilePatch deserializedEdgeProfilePatch = new EdgeProfilePatch();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("subscription".equals(fieldName)) {
+                    deserializedEdgeProfilePatch.subscription = EdgeProfileSubscriptionPatch.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEdgeProfilePatch;
+        });
     }
 }

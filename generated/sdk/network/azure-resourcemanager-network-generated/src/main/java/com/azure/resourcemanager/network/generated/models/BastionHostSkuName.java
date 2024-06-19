@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class BastionHostSkuName extends ExpandableStringEnum<BastionHostSk
      * @param name a name to look for.
      * @return the corresponding BastionHostSkuName.
      */
-    @JsonCreator
     public static BastionHostSkuName fromString(String name) {
         return fromString(name, BastionHostSkuName.class);
     }

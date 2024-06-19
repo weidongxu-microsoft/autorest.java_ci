@@ -6,36 +6,36 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Contains all the contact details of the customer.
  */
 @Fluent
-public final class ContactDetails {
+public final class ContactDetails implements JsonSerializable<ContactDetails> {
     /*
      * The contact person name.
      */
-    @JsonProperty(value = "contactPerson", required = true)
     private String contactPerson;
 
     /*
      * The name of the company.
      */
-    @JsonProperty(value = "companyName", required = true)
     private String companyName;
 
     /*
      * The phone number.
      */
-    @JsonProperty(value = "phone", required = true)
     private String phone;
 
     /*
      * The email list.
      */
-    @JsonProperty(value = "emailList", required = true)
     private List<String> emailList;
 
     /**
@@ -149,4 +149,51 @@ public final class ContactDetails {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ContactDetails.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("contactPerson", this.contactPerson);
+        jsonWriter.writeStringField("companyName", this.companyName);
+        jsonWriter.writeStringField("phone", this.phone);
+        jsonWriter.writeArrayField("emailList", this.emailList, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ContactDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ContactDetails if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ContactDetails.
+     */
+    public static ContactDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ContactDetails deserializedContactDetails = new ContactDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("contactPerson".equals(fieldName)) {
+                    deserializedContactDetails.contactPerson = reader.getString();
+                } else if ("companyName".equals(fieldName)) {
+                    deserializedContactDetails.companyName = reader.getString();
+                } else if ("phone".equals(fieldName)) {
+                    deserializedContactDetails.phone = reader.getString();
+                } else if ("emailList".equals(fieldName)) {
+                    List<String> emailList = reader.readArray(reader1 -> reader1.getString());
+                    deserializedContactDetails.emailList = emailList;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedContactDetails;
+        });
+    }
 }

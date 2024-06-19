@@ -7,8 +7,11 @@ package com.azure.resourcemanager.dns.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.dns.generated.models.SigningKey;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -19,20 +22,32 @@ public final class DnssecConfigInner extends ProxyResource {
     /*
      * The DNSSEC properties.
      */
-    @JsonProperty(value = "properties", access = JsonProperty.Access.WRITE_ONLY)
     private DnssecProperties innerProperties;
 
     /*
      * The etag of the DNSSEC configuration.
      */
-    @JsonProperty(value = "etag")
     private String etag;
 
     /*
      * Metadata pertaining to creation and last modification of the resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of DnssecConfigInner class.
@@ -79,6 +94,36 @@ public final class DnssecConfigInner extends ProxyResource {
     }
 
     /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
      * Get the provisioningState property: Provisioning State of the DNSSEC configuration.
      * 
      * @return the provisioningState value.
@@ -105,5 +150,52 @@ public final class DnssecConfigInner extends ProxyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("etag", this.etag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DnssecConfigInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DnssecConfigInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DnssecConfigInner.
+     */
+    public static DnssecConfigInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DnssecConfigInner deserializedDnssecConfigInner = new DnssecConfigInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedDnssecConfigInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedDnssecConfigInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedDnssecConfigInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedDnssecConfigInner.innerProperties = DnssecProperties.fromJson(reader);
+                } else if ("etag".equals(fieldName)) {
+                    deserializedDnssecConfigInner.etag = reader.getString();
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedDnssecConfigInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDnssecConfigInner;
+        });
     }
 }

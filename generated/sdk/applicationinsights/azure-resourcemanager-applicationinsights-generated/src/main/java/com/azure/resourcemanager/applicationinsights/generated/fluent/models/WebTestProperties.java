@@ -6,75 +6,69 @@ package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.WebTestGeolocation;
 import com.azure.resourcemanager.applicationinsights.generated.models.WebTestKind;
 import com.azure.resourcemanager.applicationinsights.generated.models.WebTestPropertiesConfiguration;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Metadata describing a web test for an Azure resource.
  */
 @Fluent
-public final class WebTestProperties {
+public final class WebTestProperties implements JsonSerializable<WebTestProperties> {
     /*
      * Unique ID of this WebTest. This is typically the same value as the Name field.
      */
-    @JsonProperty(value = "SyntheticMonitorId", required = true)
     private String syntheticMonitorId;
 
     /*
      * User defined name if this WebTest.
      */
-    @JsonProperty(value = "Name", required = true)
     private String webTestName;
 
     /*
      * Purpose/user defined descriptive test for this WebTest.
      */
-    @JsonProperty(value = "Description")
     private String description;
 
     /*
      * Is the test actively being monitored.
      */
-    @JsonProperty(value = "Enabled")
     private Boolean enabled;
 
     /*
      * Interval in seconds between test runs for this WebTest. Default value is 300.
      */
-    @JsonProperty(value = "Frequency")
     private Integer frequency;
 
     /*
      * Seconds until this WebTest will timeout and fail. Default value is 30.
      */
-    @JsonProperty(value = "Timeout")
     private Integer timeout;
 
     /*
      * The kind of web test this is, valid choices are ping and multistep.
      */
-    @JsonProperty(value = "Kind", required = true)
     private WebTestKind webTestKind;
 
     /*
      * Allow for retries should this WebTest fail.
      */
-    @JsonProperty(value = "RetryEnabled")
     private Boolean retryEnabled;
 
     /*
      * A list of where to physically run the tests from to give global coverage for accessibility of your application.
      */
-    @JsonProperty(value = "Locations", required = true)
     private List<WebTestGeolocation> locations;
 
     /*
      * An XML configuration specification for a WebTest.
      */
-    @JsonProperty(value = "Configuration")
     private WebTestPropertiesConfiguration configuration;
 
     /*
@@ -82,7 +76,6 @@ public final class WebTestProperties {
      * Users cannot change this value but are able to read from it. Values will include Succeeded, Deploying, Canceled,
      * and Failed.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /**
@@ -337,4 +330,72 @@ public final class WebTestProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(WebTestProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("SyntheticMonitorId", this.syntheticMonitorId);
+        jsonWriter.writeStringField("Name", this.webTestName);
+        jsonWriter.writeStringField("Kind", this.webTestKind == null ? null : this.webTestKind.toString());
+        jsonWriter.writeArrayField("Locations", this.locations, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("Description", this.description);
+        jsonWriter.writeBooleanField("Enabled", this.enabled);
+        jsonWriter.writeNumberField("Frequency", this.frequency);
+        jsonWriter.writeNumberField("Timeout", this.timeout);
+        jsonWriter.writeBooleanField("RetryEnabled", this.retryEnabled);
+        jsonWriter.writeJsonField("Configuration", this.configuration);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WebTestProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WebTestProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the WebTestProperties.
+     */
+    public static WebTestProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WebTestProperties deserializedWebTestProperties = new WebTestProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("SyntheticMonitorId".equals(fieldName)) {
+                    deserializedWebTestProperties.syntheticMonitorId = reader.getString();
+                } else if ("Name".equals(fieldName)) {
+                    deserializedWebTestProperties.webTestName = reader.getString();
+                } else if ("Kind".equals(fieldName)) {
+                    deserializedWebTestProperties.webTestKind = WebTestKind.fromString(reader.getString());
+                } else if ("Locations".equals(fieldName)) {
+                    List<WebTestGeolocation> locations
+                        = reader.readArray(reader1 -> WebTestGeolocation.fromJson(reader1));
+                    deserializedWebTestProperties.locations = locations;
+                } else if ("Description".equals(fieldName)) {
+                    deserializedWebTestProperties.description = reader.getString();
+                } else if ("Enabled".equals(fieldName)) {
+                    deserializedWebTestProperties.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("Frequency".equals(fieldName)) {
+                    deserializedWebTestProperties.frequency = reader.getNullable(JsonReader::getInt);
+                } else if ("Timeout".equals(fieldName)) {
+                    deserializedWebTestProperties.timeout = reader.getNullable(JsonReader::getInt);
+                } else if ("RetryEnabled".equals(fieldName)) {
+                    deserializedWebTestProperties.retryEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("Configuration".equals(fieldName)) {
+                    deserializedWebTestProperties.configuration = WebTestPropertiesConfiguration.fromJson(reader);
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedWebTestProperties.provisioningState = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedWebTestProperties;
+        });
+    }
 }

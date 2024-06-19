@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -43,7 +42,6 @@ public final class Complexity extends ExpandableStringEnum<Complexity> {
      * @param name a name to look for.
      * @return the corresponding Complexity.
      */
-    @JsonCreator
     public static Complexity fromString(String name) {
         return fromString(name, Complexity.class);
     }

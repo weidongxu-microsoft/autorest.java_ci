@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Describes how a search service should enforce compliance if it finds objects that aren't encrypted with the
  * customer-managed key.
@@ -42,7 +39,6 @@ public enum SearchEncryptionWithCmk {
      * @param value the serialized value to parse.
      * @return the parsed SearchEncryptionWithCmk object, or null if unable to parse.
      */
-    @JsonCreator
     public static SearchEncryptionWithCmk fromString(String value) {
         if (value == null) {
             return null;
@@ -59,7 +55,6 @@ public enum SearchEncryptionWithCmk {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

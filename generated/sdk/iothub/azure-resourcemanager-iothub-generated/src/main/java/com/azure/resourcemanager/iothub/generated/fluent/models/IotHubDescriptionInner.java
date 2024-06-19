@@ -8,10 +8,13 @@ import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.ArmIdentity;
 import com.azure.resourcemanager.iothub.generated.models.IotHubProperties;
 import com.azure.resourcemanager.iothub.generated.models.IotHubSkuInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -23,32 +26,42 @@ public final class IotHubDescriptionInner extends Resource {
      * The Etag field is *not* required. If it is provided in the response body, it must also be provided as a header
      * per the normal ETag convention.
      */
-    @JsonProperty(value = "etag")
     private String etag;
 
     /*
      * IotHub properties
      */
-    @JsonProperty(value = "properties")
     private IotHubProperties properties;
 
     /*
      * IotHub SKU info
      */
-    @JsonProperty(value = "sku", required = true)
     private IotHubSkuInfo sku;
 
     /*
      * The managed identities for the IotHub.
      */
-    @JsonProperty(value = "identity")
     private ArmIdentity identity;
 
     /*
      * The system meta data relating to this resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of IotHubDescriptionInner class.
@@ -148,6 +161,36 @@ public final class IotHubDescriptionInner extends Resource {
     }
 
     /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
      * {@inheritDoc}
      */
     @Override
@@ -186,4 +229,65 @@ public final class IotHubDescriptionInner extends Resource {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IotHubDescriptionInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", location());
+        jsonWriter.writeMapField("tags", tags(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeStringField("etag", this.etag);
+        jsonWriter.writeJsonField("properties", this.properties);
+        jsonWriter.writeJsonField("identity", this.identity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IotHubDescriptionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IotHubDescriptionInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IotHubDescriptionInner.
+     */
+    public static IotHubDescriptionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IotHubDescriptionInner deserializedIotHubDescriptionInner = new IotHubDescriptionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.type = reader.getString();
+                } else if ("location".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.withLocation(reader.getString());
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedIotHubDescriptionInner.withTags(tags);
+                } else if ("sku".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.sku = IotHubSkuInfo.fromJson(reader);
+                } else if ("etag".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.etag = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.properties = IotHubProperties.fromJson(reader);
+                } else if ("identity".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.identity = ArmIdentity.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedIotHubDescriptionInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIotHubDescriptionInner;
+        });
+    }
 }

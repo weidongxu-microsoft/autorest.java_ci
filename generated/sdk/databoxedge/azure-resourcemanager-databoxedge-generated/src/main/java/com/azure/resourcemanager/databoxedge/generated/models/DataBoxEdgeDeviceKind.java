@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -47,7 +46,6 @@ public final class DataBoxEdgeDeviceKind extends ExpandableStringEnum<DataBoxEdg
      * @param name a name to look for.
      * @return the corresponding DataBoxEdgeDeviceKind.
      */
-    @JsonCreator
     public static DataBoxEdgeDeviceKind fromString(String name) {
         return fromString(name, DataBoxEdgeDeviceKind.class);
     }

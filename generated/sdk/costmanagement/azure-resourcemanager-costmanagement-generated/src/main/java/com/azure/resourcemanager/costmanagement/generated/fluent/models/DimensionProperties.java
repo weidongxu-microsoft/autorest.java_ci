@@ -5,7 +5,12 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -13,59 +18,50 @@ import java.util.List;
  * The DimensionProperties model.
  */
 @Fluent
-public final class DimensionProperties {
+public final class DimensionProperties implements JsonSerializable<DimensionProperties> {
     /*
      * Dimension description.
      */
-    @JsonProperty(value = "description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
 
     /*
      * Filter enabled.
      */
-    @JsonProperty(value = "filterEnabled", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean filterEnabled;
 
     /*
      * Grouping enabled.
      */
-    @JsonProperty(value = "groupingEnabled", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean groupingEnabled;
 
     /*
      * The data property.
      */
-    @JsonProperty(value = "data")
     private List<String> data;
 
     /*
      * Total number of data for the dimension.
      */
-    @JsonProperty(value = "total", access = JsonProperty.Access.WRITE_ONLY)
     private Integer total;
 
     /*
      * Dimension category.
      */
-    @JsonProperty(value = "category", access = JsonProperty.Access.WRITE_ONLY)
     private String category;
 
     /*
      * Usage start.
      */
-    @JsonProperty(value = "usageStart", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime usageStart;
 
     /*
      * Usage end.
      */
-    @JsonProperty(value = "usageEnd", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime usageEnd;
 
     /*
      * The link (url) to the next page of results.
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -172,5 +168,60 @@ public final class DimensionProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("data", this.data, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DimensionProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DimensionProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DimensionProperties.
+     */
+    public static DimensionProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DimensionProperties deserializedDimensionProperties = new DimensionProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("description".equals(fieldName)) {
+                    deserializedDimensionProperties.description = reader.getString();
+                } else if ("filterEnabled".equals(fieldName)) {
+                    deserializedDimensionProperties.filterEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("groupingEnabled".equals(fieldName)) {
+                    deserializedDimensionProperties.groupingEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("data".equals(fieldName)) {
+                    List<String> data = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDimensionProperties.data = data;
+                } else if ("total".equals(fieldName)) {
+                    deserializedDimensionProperties.total = reader.getNullable(JsonReader::getInt);
+                } else if ("category".equals(fieldName)) {
+                    deserializedDimensionProperties.category = reader.getString();
+                } else if ("usageStart".equals(fieldName)) {
+                    deserializedDimensionProperties.usageStart = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("usageEnd".equals(fieldName)) {
+                    deserializedDimensionProperties.usageEnd = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedDimensionProperties.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDimensionProperties;
+        });
     }
 }

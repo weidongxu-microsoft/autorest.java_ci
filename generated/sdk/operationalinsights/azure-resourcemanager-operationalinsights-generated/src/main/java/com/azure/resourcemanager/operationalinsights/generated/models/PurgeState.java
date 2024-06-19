@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class PurgeState extends ExpandableStringEnum<PurgeState> {
      * @param name a name to look for.
      * @return the corresponding PurgeState.
      */
-    @JsonCreator
     public static PurgeState fromString(String name) {
         return fromString(name, PurgeState.class);
     }

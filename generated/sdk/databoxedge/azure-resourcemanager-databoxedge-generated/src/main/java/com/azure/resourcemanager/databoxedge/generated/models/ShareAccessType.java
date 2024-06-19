@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class ShareAccessType extends ExpandableStringEnum<ShareAccessType>
      * @param name a name to look for.
      * @return the corresponding ShareAccessType.
      */
-    @JsonCreator
     public static ShareAccessType fromString(String name) {
         return fromString(name, ShareAccessType.class);
     }

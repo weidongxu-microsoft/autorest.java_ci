@@ -6,6 +6,10 @@ package com.azure.resourcemanager.network.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAuthenticationCertificate;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayAutoscaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayBackendAddressPool;
@@ -36,244 +40,208 @@ import com.azure.resourcemanager.network.generated.models.ApplicationGatewayTrus
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayUrlPathMap;
 import com.azure.resourcemanager.network.generated.models.ApplicationGatewayWebApplicationFirewallConfiguration;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Properties of the application gateway.
  */
 @Fluent
-public final class ApplicationGatewayPropertiesFormat {
+public final class ApplicationGatewayPropertiesFormat implements JsonSerializable<ApplicationGatewayPropertiesFormat> {
     /*
      * SKU of the application gateway resource.
      */
-    @JsonProperty(value = "sku")
     private ApplicationGatewaySku sku;
 
     /*
      * SSL policy of the application gateway resource.
      */
-    @JsonProperty(value = "sslPolicy")
     private ApplicationGatewaySslPolicy sslPolicy;
 
     /*
      * Operational state of the application gateway resource.
      */
-    @JsonProperty(value = "operationalState", access = JsonProperty.Access.WRITE_ONLY)
     private ApplicationGatewayOperationalState operationalState;
 
     /*
      * Subnets of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "gatewayIPConfigurations")
     private List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations;
 
     /*
      * Authentication certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "authenticationCertificates")
     private List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates;
 
     /*
      * Trusted Root certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "trustedRootCertificates")
     private List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates;
 
     /*
      * Trusted client certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "trustedClientCertificates")
     private List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates;
 
     /*
      * SSL certificates of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "sslCertificates")
     private List<ApplicationGatewaySslCertificate> sslCertificates;
 
     /*
      * Frontend IP addresses of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "frontendIPConfigurations")
     private List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations;
 
     /*
      * Frontend ports of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "frontendPorts")
     private List<ApplicationGatewayFrontendPort> frontendPorts;
 
     /*
      * Probes of the application gateway resource.
      */
-    @JsonProperty(value = "probes")
     private List<ApplicationGatewayProbe> probes;
 
     /*
      * Backend address pool of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "backendAddressPools")
     private List<ApplicationGatewayBackendAddressPool> backendAddressPools;
 
     /*
      * Backend http settings of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "backendHttpSettingsCollection")
     private List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection;
 
     /*
      * Backend settings of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "backendSettingsCollection")
     private List<ApplicationGatewayBackendSettings> backendSettingsCollection;
 
     /*
      * Http listeners of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "httpListeners")
     private List<ApplicationGatewayHttpListener> httpListeners;
 
     /*
      * Listeners of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "listeners")
     private List<ApplicationGatewayListener> listeners;
 
     /*
      * SSL profiles of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "sslProfiles")
     private List<ApplicationGatewaySslProfile> sslProfiles;
 
     /*
      * URL path map of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "urlPathMaps")
     private List<ApplicationGatewayUrlPathMap> urlPathMaps;
 
     /*
      * Request routing rules of the application gateway resource.
      */
-    @JsonProperty(value = "requestRoutingRules")
     private List<ApplicationGatewayRequestRoutingRule> requestRoutingRules;
 
     /*
      * Routing rules of the application gateway resource.
      */
-    @JsonProperty(value = "routingRules")
     private List<ApplicationGatewayRoutingRule> routingRules;
 
     /*
      * Rewrite rules for the application gateway resource.
      */
-    @JsonProperty(value = "rewriteRuleSets")
     private List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets;
 
     /*
      * Redirect configurations of the application gateway resource. For default limits, see [Application Gateway
      * limits](https://docs.microsoft.com/azure/azure-subscription-service-limits#application-gateway-limits).
      */
-    @JsonProperty(value = "redirectConfigurations")
     private List<ApplicationGatewayRedirectConfiguration> redirectConfigurations;
 
     /*
      * Web application firewall configuration.
      */
-    @JsonProperty(value = "webApplicationFirewallConfiguration")
     private ApplicationGatewayWebApplicationFirewallConfiguration webApplicationFirewallConfiguration;
 
     /*
      * Reference to the FirewallPolicy resource.
      */
-    @JsonProperty(value = "firewallPolicy")
     private SubResource firewallPolicy;
 
     /*
      * Whether HTTP2 is enabled on the application gateway resource.
      */
-    @JsonProperty(value = "enableHttp2")
     private Boolean enableHttp2;
 
     /*
      * Whether FIPS is enabled on the application gateway resource.
      */
-    @JsonProperty(value = "enableFips")
     private Boolean enableFips;
 
     /*
      * Autoscale Configuration.
      */
-    @JsonProperty(value = "autoscaleConfiguration")
     private ApplicationGatewayAutoscaleConfiguration autoscaleConfiguration;
 
     /*
      * PrivateLink configurations on application gateway.
      */
-    @JsonProperty(value = "privateLinkConfigurations")
     private List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations;
 
     /*
      * Private Endpoint connections on application gateway.
      */
-    @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<ApplicationGatewayPrivateEndpointConnectionInner> privateEndpointConnections;
 
     /*
      * The resource GUID property of the application gateway resource.
      */
-    @JsonProperty(value = "resourceGuid", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGuid;
 
     /*
      * The provisioning state of the application gateway resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * Custom error configurations of the application gateway resource.
      */
-    @JsonProperty(value = "customErrorConfigurations")
     private List<ApplicationGatewayCustomError> customErrorConfigurations;
 
     /*
      * If true, associates a firewall policy with an application gateway regardless whether the policy differs from the
      * WAF Config.
      */
-    @JsonProperty(value = "forceFirewallPolicyAssociation")
     private Boolean forceFirewallPolicyAssociation;
 
     /*
      * Load distribution policies of the application gateway resource.
      */
-    @JsonProperty(value = "loadDistributionPolicies")
     private List<ApplicationGatewayLoadDistributionPolicy> loadDistributionPolicies;
 
     /*
      * Global Configuration.
      */
-    @JsonProperty(value = "globalConfiguration")
     private ApplicationGatewayGlobalConfiguration globalConfiguration;
 
     /*
      * The default predefined SSL Policy applied on the application gateway resource.
      */
-    @JsonProperty(value = "defaultPredefinedSslPolicy", access = JsonProperty.Access.WRITE_ONLY)
     private ApplicationGatewaySslPolicyName defaultPredefinedSslPolicy;
 
     /**
@@ -1117,5 +1085,220 @@ public final class ApplicationGatewayPropertiesFormat {
         if (globalConfiguration() != null) {
             globalConfiguration().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeJsonField("sslPolicy", this.sslPolicy);
+        jsonWriter.writeArrayField("gatewayIPConfigurations", this.gatewayIpConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("authenticationCertificates", this.authenticationCertificates,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("trustedRootCertificates", this.trustedRootCertificates,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("trustedClientCertificates", this.trustedClientCertificates,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("sslCertificates", this.sslCertificates,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("frontendIPConfigurations", this.frontendIpConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("frontendPorts", this.frontendPorts, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("probes", this.probes, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("backendAddressPools", this.backendAddressPools,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("backendHttpSettingsCollection", this.backendHttpSettingsCollection,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("backendSettingsCollection", this.backendSettingsCollection,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("httpListeners", this.httpListeners, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("listeners", this.listeners, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("sslProfiles", this.sslProfiles, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("urlPathMaps", this.urlPathMaps, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("requestRoutingRules", this.requestRoutingRules,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("routingRules", this.routingRules, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("rewriteRuleSets", this.rewriteRuleSets,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("redirectConfigurations", this.redirectConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("webApplicationFirewallConfiguration", this.webApplicationFirewallConfiguration);
+        jsonWriter.writeJsonField("firewallPolicy", this.firewallPolicy);
+        jsonWriter.writeBooleanField("enableHttp2", this.enableHttp2);
+        jsonWriter.writeBooleanField("enableFips", this.enableFips);
+        jsonWriter.writeJsonField("autoscaleConfiguration", this.autoscaleConfiguration);
+        jsonWriter.writeArrayField("privateLinkConfigurations", this.privateLinkConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("customErrorConfigurations", this.customErrorConfigurations,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("forceFirewallPolicyAssociation", this.forceFirewallPolicyAssociation);
+        jsonWriter.writeArrayField("loadDistributionPolicies", this.loadDistributionPolicies,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("globalConfiguration", this.globalConfiguration);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationGatewayPropertiesFormat from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationGatewayPropertiesFormat if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationGatewayPropertiesFormat.
+     */
+    public static ApplicationGatewayPropertiesFormat fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationGatewayPropertiesFormat deserializedApplicationGatewayPropertiesFormat
+                = new ApplicationGatewayPropertiesFormat();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sku".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.sku = ApplicationGatewaySku.fromJson(reader);
+                } else if ("sslPolicy".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.sslPolicy
+                        = ApplicationGatewaySslPolicy.fromJson(reader);
+                } else if ("operationalState".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.operationalState
+                        = ApplicationGatewayOperationalState.fromString(reader.getString());
+                } else if ("gatewayIPConfigurations".equals(fieldName)) {
+                    List<ApplicationGatewayIpConfiguration> gatewayIpConfigurations
+                        = reader.readArray(reader1 -> ApplicationGatewayIpConfiguration.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.gatewayIpConfigurations = gatewayIpConfigurations;
+                } else if ("authenticationCertificates".equals(fieldName)) {
+                    List<ApplicationGatewayAuthenticationCertificate> authenticationCertificates
+                        = reader.readArray(reader1 -> ApplicationGatewayAuthenticationCertificate.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.authenticationCertificates
+                        = authenticationCertificates;
+                } else if ("trustedRootCertificates".equals(fieldName)) {
+                    List<ApplicationGatewayTrustedRootCertificate> trustedRootCertificates
+                        = reader.readArray(reader1 -> ApplicationGatewayTrustedRootCertificate.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.trustedRootCertificates = trustedRootCertificates;
+                } else if ("trustedClientCertificates".equals(fieldName)) {
+                    List<ApplicationGatewayTrustedClientCertificate> trustedClientCertificates
+                        = reader.readArray(reader1 -> ApplicationGatewayTrustedClientCertificate.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.trustedClientCertificates
+                        = trustedClientCertificates;
+                } else if ("sslCertificates".equals(fieldName)) {
+                    List<ApplicationGatewaySslCertificate> sslCertificates
+                        = reader.readArray(reader1 -> ApplicationGatewaySslCertificate.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.sslCertificates = sslCertificates;
+                } else if ("frontendIPConfigurations".equals(fieldName)) {
+                    List<ApplicationGatewayFrontendIpConfiguration> frontendIpConfigurations
+                        = reader.readArray(reader1 -> ApplicationGatewayFrontendIpConfiguration.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.frontendIpConfigurations = frontendIpConfigurations;
+                } else if ("frontendPorts".equals(fieldName)) {
+                    List<ApplicationGatewayFrontendPort> frontendPorts
+                        = reader.readArray(reader1 -> ApplicationGatewayFrontendPort.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.frontendPorts = frontendPorts;
+                } else if ("probes".equals(fieldName)) {
+                    List<ApplicationGatewayProbe> probes
+                        = reader.readArray(reader1 -> ApplicationGatewayProbe.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.probes = probes;
+                } else if ("backendAddressPools".equals(fieldName)) {
+                    List<ApplicationGatewayBackendAddressPool> backendAddressPools
+                        = reader.readArray(reader1 -> ApplicationGatewayBackendAddressPool.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.backendAddressPools = backendAddressPools;
+                } else if ("backendHttpSettingsCollection".equals(fieldName)) {
+                    List<ApplicationGatewayBackendHttpSettings> backendHttpSettingsCollection
+                        = reader.readArray(reader1 -> ApplicationGatewayBackendHttpSettings.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.backendHttpSettingsCollection
+                        = backendHttpSettingsCollection;
+                } else if ("backendSettingsCollection".equals(fieldName)) {
+                    List<ApplicationGatewayBackendSettings> backendSettingsCollection
+                        = reader.readArray(reader1 -> ApplicationGatewayBackendSettings.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.backendSettingsCollection
+                        = backendSettingsCollection;
+                } else if ("httpListeners".equals(fieldName)) {
+                    List<ApplicationGatewayHttpListener> httpListeners
+                        = reader.readArray(reader1 -> ApplicationGatewayHttpListener.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.httpListeners = httpListeners;
+                } else if ("listeners".equals(fieldName)) {
+                    List<ApplicationGatewayListener> listeners
+                        = reader.readArray(reader1 -> ApplicationGatewayListener.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.listeners = listeners;
+                } else if ("sslProfiles".equals(fieldName)) {
+                    List<ApplicationGatewaySslProfile> sslProfiles
+                        = reader.readArray(reader1 -> ApplicationGatewaySslProfile.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.sslProfiles = sslProfiles;
+                } else if ("urlPathMaps".equals(fieldName)) {
+                    List<ApplicationGatewayUrlPathMap> urlPathMaps
+                        = reader.readArray(reader1 -> ApplicationGatewayUrlPathMap.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.urlPathMaps = urlPathMaps;
+                } else if ("requestRoutingRules".equals(fieldName)) {
+                    List<ApplicationGatewayRequestRoutingRule> requestRoutingRules
+                        = reader.readArray(reader1 -> ApplicationGatewayRequestRoutingRule.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.requestRoutingRules = requestRoutingRules;
+                } else if ("routingRules".equals(fieldName)) {
+                    List<ApplicationGatewayRoutingRule> routingRules
+                        = reader.readArray(reader1 -> ApplicationGatewayRoutingRule.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.routingRules = routingRules;
+                } else if ("rewriteRuleSets".equals(fieldName)) {
+                    List<ApplicationGatewayRewriteRuleSet> rewriteRuleSets
+                        = reader.readArray(reader1 -> ApplicationGatewayRewriteRuleSet.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.rewriteRuleSets = rewriteRuleSets;
+                } else if ("redirectConfigurations".equals(fieldName)) {
+                    List<ApplicationGatewayRedirectConfiguration> redirectConfigurations
+                        = reader.readArray(reader1 -> ApplicationGatewayRedirectConfiguration.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.redirectConfigurations = redirectConfigurations;
+                } else if ("webApplicationFirewallConfiguration".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.webApplicationFirewallConfiguration
+                        = ApplicationGatewayWebApplicationFirewallConfiguration.fromJson(reader);
+                } else if ("firewallPolicy".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.firewallPolicy = SubResource.fromJson(reader);
+                } else if ("enableHttp2".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.enableHttp2
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enableFips".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.enableFips
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("autoscaleConfiguration".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.autoscaleConfiguration
+                        = ApplicationGatewayAutoscaleConfiguration.fromJson(reader);
+                } else if ("privateLinkConfigurations".equals(fieldName)) {
+                    List<ApplicationGatewayPrivateLinkConfiguration> privateLinkConfigurations
+                        = reader.readArray(reader1 -> ApplicationGatewayPrivateLinkConfiguration.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.privateLinkConfigurations
+                        = privateLinkConfigurations;
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<ApplicationGatewayPrivateEndpointConnectionInner> privateEndpointConnections = reader
+                        .readArray(reader1 -> ApplicationGatewayPrivateEndpointConnectionInner.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.privateEndpointConnections
+                        = privateEndpointConnections;
+                } else if ("resourceGuid".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.resourceGuid = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("customErrorConfigurations".equals(fieldName)) {
+                    List<ApplicationGatewayCustomError> customErrorConfigurations
+                        = reader.readArray(reader1 -> ApplicationGatewayCustomError.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.customErrorConfigurations
+                        = customErrorConfigurations;
+                } else if ("forceFirewallPolicyAssociation".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.forceFirewallPolicyAssociation
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("loadDistributionPolicies".equals(fieldName)) {
+                    List<ApplicationGatewayLoadDistributionPolicy> loadDistributionPolicies
+                        = reader.readArray(reader1 -> ApplicationGatewayLoadDistributionPolicy.fromJson(reader1));
+                    deserializedApplicationGatewayPropertiesFormat.loadDistributionPolicies = loadDistributionPolicies;
+                } else if ("globalConfiguration".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.globalConfiguration
+                        = ApplicationGatewayGlobalConfiguration.fromJson(reader);
+                } else if ("defaultPredefinedSslPolicy".equals(fieldName)) {
+                    deserializedApplicationGatewayPropertiesFormat.defaultPredefinedSslPolicy
+                        = ApplicationGatewaySslPolicyName.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationGatewayPropertiesFormat;
+        });
     }
 }

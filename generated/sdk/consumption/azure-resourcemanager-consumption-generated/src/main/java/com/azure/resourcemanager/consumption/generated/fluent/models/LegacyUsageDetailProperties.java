@@ -5,9 +5,14 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.MeterDetailsResponse;
 import com.azure.resourcemanager.consumption.generated.models.PricingModelType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -16,83 +21,70 @@ import java.util.UUID;
  * The properties of the legacy usage detail.
  */
 @Immutable
-public final class LegacyUsageDetailProperties {
+public final class LegacyUsageDetailProperties implements JsonSerializable<LegacyUsageDetailProperties> {
     /*
      * Billing Account identifier.
      */
-    @JsonProperty(value = "billingAccountId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingAccountId;
 
     /*
      * Billing Account Name.
      */
-    @JsonProperty(value = "billingAccountName", access = JsonProperty.Access.WRITE_ONLY)
     private String billingAccountName;
 
     /*
      * The billing period start date.
      */
-    @JsonProperty(value = "billingPeriodStartDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime billingPeriodStartDate;
 
     /*
      * The billing period end date.
      */
-    @JsonProperty(value = "billingPeriodEndDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime billingPeriodEndDate;
 
     /*
      * Billing Profile identifier.
      */
-    @JsonProperty(value = "billingProfileId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileId;
 
     /*
      * Billing Profile Name.
      */
-    @JsonProperty(value = "billingProfileName", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileName;
 
     /*
      * Account Owner Id.
      */
-    @JsonProperty(value = "accountOwnerId", access = JsonProperty.Access.WRITE_ONLY)
     private String accountOwnerId;
 
     /*
      * Account Name.
      */
-    @JsonProperty(value = "accountName", access = JsonProperty.Access.WRITE_ONLY)
     private String accountName;
 
     /*
      * Subscription guid.
      */
-    @JsonProperty(value = "subscriptionId", access = JsonProperty.Access.WRITE_ONLY)
     private String subscriptionId;
 
     /*
      * Subscription name.
      */
-    @JsonProperty(value = "subscriptionName", access = JsonProperty.Access.WRITE_ONLY)
     private String subscriptionName;
 
     /*
      * Date for the usage record.
      */
-    @JsonProperty(value = "date", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime date;
 
     /*
      * Product name for the consumed service or purchase. Not available for Marketplace.
      */
-    @JsonProperty(value = "product", access = JsonProperty.Access.WRITE_ONLY)
     private String product;
 
     /*
      * Part Number of the service used. Can be used to join with the price sheet. Not available for marketplace.
      */
-    @JsonProperty(value = "partNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String partNumber;
 
     /*
@@ -100,80 +92,67 @@ public final class LegacyUsageDetailProperties {
      * which the reservation was purchased. For the actual VM Size for which the reservation is purchased see
      * productOrderName.
      */
-    @JsonProperty(value = "meterId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID meterId;
 
     /*
      * The details about the meter. By default this is not populated, unless it's specified in $expand.
      */
-    @JsonProperty(value = "meterDetails", access = JsonProperty.Access.WRITE_ONLY)
     private MeterDetailsResponse meterDetails;
 
     /*
      * The usage quantity.
      */
-    @JsonProperty(value = "quantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal quantity;
 
     /*
      * Effective Price that's charged for the usage.
      */
-    @JsonProperty(value = "effectivePrice", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal effectivePrice;
 
     /*
      * The amount of cost before tax.
      */
-    @JsonProperty(value = "cost", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal cost;
 
     /*
      * Unit Price is the price applicable to you. (your EA or other contract price).
      */
-    @JsonProperty(value = "unitPrice", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal unitPrice;
 
     /*
      * Billing Currency.
      */
-    @JsonProperty(value = "billingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private String billingCurrency;
 
     /*
      * Resource Location.
      */
-    @JsonProperty(value = "resourceLocation", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceLocation;
 
     /*
      * Consumed service name. Name of the azure resource provider that emits the usage or was purchased. This value is
      * not provided for marketplace usage.
      */
-    @JsonProperty(value = "consumedService", access = JsonProperty.Access.WRITE_ONLY)
     private String consumedService;
 
     /*
      * Unique identifier of the Azure Resource Manager usage detail resource.
      */
-    @JsonProperty(value = "resourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceId;
 
     /*
      * Resource Name.
      */
-    @JsonProperty(value = "resourceName", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceName;
 
     /*
      * Service-specific metadata.
      */
-    @JsonProperty(value = "serviceInfo1", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceInfo1;
 
     /*
      * Legacy field with optional service-specific metadata.
      */
-    @JsonProperty(value = "serviceInfo2", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceInfo2;
 
     /*
@@ -181,124 +160,104 @@ public final class LegacyUsageDetailProperties {
      * this field to get usage line item specific details such as the actual VM Size (ServiceType) or the ratio in which
      * the reservation discount is applied.
      */
-    @JsonProperty(value = "additionalInfo", access = JsonProperty.Access.WRITE_ONLY)
     private String additionalInfo;
 
     /*
      * Invoice Section Name.
      */
-    @JsonProperty(value = "invoiceSection", access = JsonProperty.Access.WRITE_ONLY)
     private String invoiceSection;
 
     /*
      * The cost center of this department if it is a department and a cost center is provided.
      */
-    @JsonProperty(value = "costCenter", access = JsonProperty.Access.WRITE_ONLY)
     private String costCenter;
 
     /*
      * Resource Group Name.
      */
-    @JsonProperty(value = "resourceGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGroup;
 
     /*
      * ARM resource id of the reservation. Only applies to records relevant to reservations.
      */
-    @JsonProperty(value = "reservationId", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationId;
 
     /*
      * User provided display name of the reservation. Last known name for a particular day is populated in the daily
      * data. Only applies to records relevant to reservations.
      */
-    @JsonProperty(value = "reservationName", access = JsonProperty.Access.WRITE_ONLY)
     private String reservationName;
 
     /*
      * Product Order Id. For reservations this is the Reservation Order ID.
      */
-    @JsonProperty(value = "productOrderId", access = JsonProperty.Access.WRITE_ONLY)
     private String productOrderId;
 
     /*
      * Product Order Name. For reservations this is the SKU that was purchased.
      */
-    @JsonProperty(value = "productOrderName", access = JsonProperty.Access.WRITE_ONLY)
     private String productOrderName;
 
     /*
      * Offer Id. Ex: MS-AZR-0017P, MS-AZR-0148P.
      */
-    @JsonProperty(value = "offerId", access = JsonProperty.Access.WRITE_ONLY)
     private String offerId;
 
     /*
      * Is Azure Credit Eligible.
      */
-    @JsonProperty(value = "isAzureCreditEligible", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isAzureCreditEligible;
 
     /*
      * Term (in months). 1 month for monthly recurring purchase. 12 months for a 1 year reservation. 36 months for a 3
      * year reservation.
      */
-    @JsonProperty(value = "term", access = JsonProperty.Access.WRITE_ONLY)
     private String term;
 
     /*
      * Publisher Name.
      */
-    @JsonProperty(value = "publisherName", access = JsonProperty.Access.WRITE_ONLY)
     private String publisherName;
 
     /*
      * Publisher Type.
      */
-    @JsonProperty(value = "publisherType", access = JsonProperty.Access.WRITE_ONLY)
     private String publisherType;
 
     /*
      * Plan Name.
      */
-    @JsonProperty(value = "planName", access = JsonProperty.Access.WRITE_ONLY)
     private String planName;
 
     /*
      * Indicates a charge represents credits, usage, a Marketplace purchase, a reservation fee, or a refund.
      */
-    @JsonProperty(value = "chargeType", access = JsonProperty.Access.WRITE_ONLY)
     private String chargeType;
 
     /*
      * Indicates how frequently this charge will occur. OneTime for purchases which only happen once, Monthly for fees
      * which recur every month, and UsageBased for charges based on how much a service is used.
      */
-    @JsonProperty(value = "frequency", access = JsonProperty.Access.WRITE_ONLY)
     private String frequency;
 
     /*
      * Retail price for the resource.
      */
-    @JsonProperty(value = "payGPrice", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal payGPrice;
 
     /*
      * Unique identifier for the applicable benefit.
      */
-    @JsonProperty(value = "benefitId", access = JsonProperty.Access.WRITE_ONLY)
     private String benefitId;
 
     /*
      * Name of the applicable benefit.
      */
-    @JsonProperty(value = "benefitName", access = JsonProperty.Access.WRITE_ONLY)
     private String benefitName;
 
     /*
      * Identifier that indicates how the meter is priced.
      */
-    @JsonProperty(value = "pricingModel", access = JsonProperty.Access.WRITE_ONLY)
     private PricingModelType pricingModel;
 
     /**
@@ -744,5 +703,141 @@ public final class LegacyUsageDetailProperties {
         if (meterDetails() != null) {
             meterDetails().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LegacyUsageDetailProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LegacyUsageDetailProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LegacyUsageDetailProperties.
+     */
+    public static LegacyUsageDetailProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LegacyUsageDetailProperties deserializedLegacyUsageDetailProperties = new LegacyUsageDetailProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("billingAccountId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingAccountId = reader.getString();
+                } else if ("billingAccountName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingAccountName = reader.getString();
+                } else if ("billingPeriodStartDate".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingPeriodStartDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("billingPeriodEndDate".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingPeriodEndDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("billingProfileId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingProfileId = reader.getString();
+                } else if ("billingProfileName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingProfileName = reader.getString();
+                } else if ("accountOwnerId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.accountOwnerId = reader.getString();
+                } else if ("accountName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.accountName = reader.getString();
+                } else if ("subscriptionId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.subscriptionId = reader.getString();
+                } else if ("subscriptionName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.subscriptionName = reader.getString();
+                } else if ("date".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.date = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("product".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.product = reader.getString();
+                } else if ("partNumber".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.partNumber = reader.getString();
+                } else if ("meterId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.meterId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("meterDetails".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.meterDetails = MeterDetailsResponse.fromJson(reader);
+                } else if ("quantity".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.quantity
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("effectivePrice".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.effectivePrice
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("cost".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.cost
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("unitPrice".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.unitPrice
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("billingCurrency".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.billingCurrency = reader.getString();
+                } else if ("resourceLocation".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.resourceLocation = reader.getString();
+                } else if ("consumedService".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.consumedService = reader.getString();
+                } else if ("resourceId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.resourceId = reader.getString();
+                } else if ("resourceName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.resourceName = reader.getString();
+                } else if ("serviceInfo1".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.serviceInfo1 = reader.getString();
+                } else if ("serviceInfo2".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.serviceInfo2 = reader.getString();
+                } else if ("additionalInfo".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.additionalInfo = reader.getString();
+                } else if ("invoiceSection".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.invoiceSection = reader.getString();
+                } else if ("costCenter".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.costCenter = reader.getString();
+                } else if ("resourceGroup".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.resourceGroup = reader.getString();
+                } else if ("reservationId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.reservationId = reader.getString();
+                } else if ("reservationName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.reservationName = reader.getString();
+                } else if ("productOrderId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.productOrderId = reader.getString();
+                } else if ("productOrderName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.productOrderName = reader.getString();
+                } else if ("offerId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.offerId = reader.getString();
+                } else if ("isAzureCreditEligible".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.isAzureCreditEligible
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("term".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.term = reader.getString();
+                } else if ("publisherName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.publisherName = reader.getString();
+                } else if ("publisherType".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.publisherType = reader.getString();
+                } else if ("planName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.planName = reader.getString();
+                } else if ("chargeType".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.chargeType = reader.getString();
+                } else if ("frequency".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.frequency = reader.getString();
+                } else if ("payGPrice".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.payGPrice
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("benefitId".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.benefitId = reader.getString();
+                } else if ("benefitName".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.benefitName = reader.getString();
+                } else if ("pricingModel".equals(fieldName)) {
+                    deserializedLegacyUsageDetailProperties.pricingModel
+                        = PricingModelType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLegacyUsageDetailProperties;
+        });
     }
 }

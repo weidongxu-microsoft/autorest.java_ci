@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -112,7 +111,6 @@ public final class CertificatePermissions extends ExpandableStringEnum<Certifica
      * @param name a name to look for.
      * @return the corresponding CertificatePermissions.
      */
-    @JsonCreator
     public static CertificatePermissions fromString(String name) {
         return fromString(name, CertificatePermissions.class);
     }

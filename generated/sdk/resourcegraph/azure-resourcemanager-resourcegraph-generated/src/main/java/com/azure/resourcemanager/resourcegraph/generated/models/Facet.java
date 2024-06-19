@@ -6,33 +6,25 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A facet containing additional statistics on the response of a query. Can be either FacetResult or FacetError.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "resultType", defaultImpl = Facet.class, visible = true)
-@JsonTypeName("Facet")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "FacetResult", value = FacetResult.class),
-    @JsonSubTypes.Type(name = "FacetError", value = FacetError.class) })
 @Fluent
-public class Facet {
+public class Facet implements JsonSerializable<Facet> {
     /*
      * Result type
      */
-    @JsonTypeId
-    @JsonProperty(value = "resultType", required = true)
     private String resultType = "Facet";
 
     /*
      * Facet expression, same as in the corresponding facet request.
      */
-    @JsonProperty(value = "expression", required = true)
     private String expression;
 
     /**
@@ -83,4 +75,71 @@ public class Facet {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(Facet.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("expression", this.expression);
+        jsonWriter.writeStringField("resultType", this.resultType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Facet from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Facet if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the Facet.
+     */
+    public static Facet fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("resultType".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("FacetResult".equals(discriminatorValue)) {
+                    return FacetResult.fromJson(readerToUse.reset());
+                } else if ("FacetError".equals(discriminatorValue)) {
+                    return FacetError.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static Facet fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Facet deserializedFacet = new Facet();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("expression".equals(fieldName)) {
+                    deserializedFacet.expression = reader.getString();
+                } else if ("resultType".equals(fieldName)) {
+                    deserializedFacet.resultType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFacet;
+        });
+    }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class LeastPrivilegeMode extends ExpandableStringEnum<LeastPrivileg
      * @param name a name to look for.
      * @return the corresponding LeastPrivilegeMode.
      */
-    @JsonCreator
     public static LeastPrivilegeMode fromString(String name) {
         return fromString(name, LeastPrivilegeMode.class);
     }

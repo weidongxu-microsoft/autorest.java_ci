@@ -6,29 +6,30 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Kubernetes role resources.
  */
 @Fluent
-public final class KubernetesRoleResources {
+public final class KubernetesRoleResources implements JsonSerializable<KubernetesRoleResources> {
     /*
      * Kubernetes role storage resource
      */
-    @JsonProperty(value = "storage")
     private KubernetesRoleStorage storage;
 
     /*
      * Kubernetes role compute resource
      */
-    @JsonProperty(value = "compute", required = true)
     private KubernetesRoleCompute compute;
 
     /*
      * Kubernetes role network resource
      */
-    @JsonProperty(value = "network", access = JsonProperty.Access.WRITE_ONLY)
     private KubernetesRoleNetwork network;
 
     /**
@@ -108,4 +109,46 @@ public final class KubernetesRoleResources {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(KubernetesRoleResources.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("compute", this.compute);
+        jsonWriter.writeJsonField("storage", this.storage);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of KubernetesRoleResources from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of KubernetesRoleResources if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the KubernetesRoleResources.
+     */
+    public static KubernetesRoleResources fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            KubernetesRoleResources deserializedKubernetesRoleResources = new KubernetesRoleResources();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("compute".equals(fieldName)) {
+                    deserializedKubernetesRoleResources.compute = KubernetesRoleCompute.fromJson(reader);
+                } else if ("storage".equals(fieldName)) {
+                    deserializedKubernetesRoleResources.storage = KubernetesRoleStorage.fromJson(reader);
+                } else if ("network".equals(fieldName)) {
+                    deserializedKubernetesRoleResources.network = KubernetesRoleNetwork.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedKubernetesRoleResources;
+        });
+    }
 }

@@ -6,30 +6,31 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * IoT edge agent details is optional, this will be used for download system Agent module while bootstrapping IoT Role
  * if specified.
  */
 @Fluent
-public final class IoTEdgeAgentInfo {
+public final class IoTEdgeAgentInfo implements JsonSerializable<IoTEdgeAgentInfo> {
     /*
      * Name of the IoT edge agent image.
      */
-    @JsonProperty(value = "imageName", required = true)
     private String imageName;
 
     /*
      * Image Tag.
      */
-    @JsonProperty(value = "tag", required = true)
     private String tag;
 
     /*
      * Image repository details.
      */
-    @JsonProperty(value = "imageRepository")
     private ImageRepositoryCredential imageRepository;
 
     /**
@@ -118,4 +119,47 @@ public final class IoTEdgeAgentInfo {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IoTEdgeAgentInfo.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("imageName", this.imageName);
+        jsonWriter.writeStringField("tag", this.tag);
+        jsonWriter.writeJsonField("imageRepository", this.imageRepository);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IoTEdgeAgentInfo from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IoTEdgeAgentInfo if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IoTEdgeAgentInfo.
+     */
+    public static IoTEdgeAgentInfo fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IoTEdgeAgentInfo deserializedIoTEdgeAgentInfo = new IoTEdgeAgentInfo();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("imageName".equals(fieldName)) {
+                    deserializedIoTEdgeAgentInfo.imageName = reader.getString();
+                } else if ("tag".equals(fieldName)) {
+                    deserializedIoTEdgeAgentInfo.tag = reader.getString();
+                } else if ("imageRepository".equals(fieldName)) {
+                    deserializedIoTEdgeAgentInfo.imageRepository = ImageRepositoryCredential.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIoTEdgeAgentInfo;
+        });
+    }
 }

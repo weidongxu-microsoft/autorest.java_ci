@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The list of Log Analytics workspaces associated with the cluster.
  */
 @Immutable
-public final class AssociatedWorkspace {
+public final class AssociatedWorkspace implements JsonSerializable<AssociatedWorkspace> {
     /*
      * Associated workspace immutable id.
      */
-    @JsonProperty(value = "workspaceId", access = JsonProperty.Access.WRITE_ONLY)
     private String workspaceId;
 
     /*
      * Associated workspace resource name.
      */
-    @JsonProperty(value = "workspaceName", access = JsonProperty.Access.WRITE_ONLY)
     private String workspaceName;
 
     /*
@@ -29,13 +31,11 @@ public final class AssociatedWorkspace {
      * '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.OperationalInsights/
      * workspaces/{workspaceName}.
      */
-    @JsonProperty(value = "resourceId", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceId;
 
     /*
      * The time of workspace association.
      */
-    @JsonProperty(value = "associateDate", access = JsonProperty.Access.WRITE_ONLY)
     private String associateDate;
 
     /**
@@ -87,5 +87,46 @@ public final class AssociatedWorkspace {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AssociatedWorkspace from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AssociatedWorkspace if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AssociatedWorkspace.
+     */
+    public static AssociatedWorkspace fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AssociatedWorkspace deserializedAssociatedWorkspace = new AssociatedWorkspace();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("workspaceId".equals(fieldName)) {
+                    deserializedAssociatedWorkspace.workspaceId = reader.getString();
+                } else if ("workspaceName".equals(fieldName)) {
+                    deserializedAssociatedWorkspace.workspaceName = reader.getString();
+                } else if ("resourceId".equals(fieldName)) {
+                    deserializedAssociatedWorkspace.resourceId = reader.getString();
+                } else if ("associateDate".equals(fieldName)) {
+                    deserializedAssociatedWorkspace.associateDate = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAssociatedWorkspace;
+        });
     }
 }

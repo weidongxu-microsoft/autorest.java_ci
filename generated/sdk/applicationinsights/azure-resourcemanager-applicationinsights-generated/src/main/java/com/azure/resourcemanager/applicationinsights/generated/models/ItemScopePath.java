@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ItemScopePath extends ExpandableStringEnum<ItemScopePath> {
      * @param name a name to look for.
      * @return the corresponding ItemScopePath.
      */
-    @JsonCreator
     public static ItemScopePath fromString(String name) {
         return fromString(name, ItemScopePath.class);
     }

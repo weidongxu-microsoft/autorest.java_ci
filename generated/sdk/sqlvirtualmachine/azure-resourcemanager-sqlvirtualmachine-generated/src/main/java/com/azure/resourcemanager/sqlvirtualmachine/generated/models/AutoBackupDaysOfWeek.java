@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class AutoBackupDaysOfWeek extends ExpandableStringEnum<AutoBackupD
      * @param name a name to look for.
      * @return the corresponding AutoBackupDaysOfWeek.
      */
-    @JsonCreator
     public static AutoBackupDaysOfWeek fromString(String name) {
         return fromString(name, AutoBackupDaysOfWeek.class);
     }

@@ -5,9 +5,14 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.ContentKeyPolicyOption;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -16,35 +21,30 @@ import java.util.UUID;
  * The properties of the Content Key Policy.
  */
 @Fluent
-public final class ContentKeyPolicyPropertiesInner {
+public final class ContentKeyPolicyPropertiesInner implements JsonSerializable<ContentKeyPolicyPropertiesInner> {
     /*
      * The legacy Policy ID.
      */
-    @JsonProperty(value = "policyId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID policyId;
 
     /*
      * The creation date of the Policy
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The last modified date of the Policy
      */
-    @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
     /*
      * A description for the Policy.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The Key Policy options.
      */
-    @JsonProperty(value = "options", required = true)
     private List<ContentKeyPolicyOption> options;
 
     /**
@@ -136,4 +136,56 @@ public final class ContentKeyPolicyPropertiesInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ContentKeyPolicyPropertiesInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("options", this.options, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("description", this.description);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ContentKeyPolicyPropertiesInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ContentKeyPolicyPropertiesInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ContentKeyPolicyPropertiesInner.
+     */
+    public static ContentKeyPolicyPropertiesInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ContentKeyPolicyPropertiesInner deserializedContentKeyPolicyPropertiesInner
+                = new ContentKeyPolicyPropertiesInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("options".equals(fieldName)) {
+                    List<ContentKeyPolicyOption> options
+                        = reader.readArray(reader1 -> ContentKeyPolicyOption.fromJson(reader1));
+                    deserializedContentKeyPolicyPropertiesInner.options = options;
+                } else if ("policyId".equals(fieldName)) {
+                    deserializedContentKeyPolicyPropertiesInner.policyId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("created".equals(fieldName)) {
+                    deserializedContentKeyPolicyPropertiesInner.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("lastModified".equals(fieldName)) {
+                    deserializedContentKeyPolicyPropertiesInner.lastModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("description".equals(fieldName)) {
+                    deserializedContentKeyPolicyPropertiesInner.description = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedContentKeyPolicyPropertiesInner;
+        });
+    }
 }

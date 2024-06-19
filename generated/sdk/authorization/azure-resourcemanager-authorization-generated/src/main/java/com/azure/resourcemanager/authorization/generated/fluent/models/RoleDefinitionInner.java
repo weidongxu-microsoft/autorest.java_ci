@@ -5,36 +5,36 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Role definition.
  */
 @Fluent
-public final class RoleDefinitionInner {
+public final class RoleDefinitionInner implements JsonSerializable<RoleDefinitionInner> {
     /*
      * The role definition ID.
      */
-    @JsonProperty(value = "id", access = JsonProperty.Access.WRITE_ONLY)
     private String id;
 
     /*
      * The role definition name.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * The role definition type.
      */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private String type;
 
     /*
      * Role definition properties.
      */
-    @JsonProperty(value = "properties")
     private RoleDefinitionProperties innerProperties;
 
     /**
@@ -203,5 +203,47 @@ public final class RoleDefinitionInner {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoleDefinitionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoleDefinitionInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the RoleDefinitionInner.
+     */
+    public static RoleDefinitionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoleDefinitionInner deserializedRoleDefinitionInner = new RoleDefinitionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedRoleDefinitionInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedRoleDefinitionInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedRoleDefinitionInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedRoleDefinitionInner.innerProperties = RoleDefinitionProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoleDefinitionInner;
+        });
     }
 }

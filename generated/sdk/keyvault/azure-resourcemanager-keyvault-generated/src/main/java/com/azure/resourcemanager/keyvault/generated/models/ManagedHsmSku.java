@@ -6,23 +6,25 @@ package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * SKU details.
  */
 @Fluent
-public final class ManagedHsmSku {
+public final class ManagedHsmSku implements JsonSerializable<ManagedHsmSku> {
     /*
      * SKU Family of the managed HSM Pool
      */
-    @JsonProperty(value = "family", required = true)
     private ManagedHsmSkuFamily family = ManagedHsmSkuFamily.B;
 
     /*
      * SKU of the managed HSM Pool
      */
-    @JsonProperty(value = "name", required = true)
     private ManagedHsmSkuName name;
 
     /**
@@ -88,4 +90,44 @@ public final class ManagedHsmSku {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ManagedHsmSku.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("family", this.family == null ? null : this.family.toString());
+        jsonWriter.writeStringField("name", this.name == null ? null : this.name.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ManagedHsmSku from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ManagedHsmSku if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ManagedHsmSku.
+     */
+    public static ManagedHsmSku fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ManagedHsmSku deserializedManagedHsmSku = new ManagedHsmSku();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("family".equals(fieldName)) {
+                    deserializedManagedHsmSku.family = ManagedHsmSkuFamily.fromString(reader.getString());
+                } else if ("name".equals(fieldName)) {
+                    deserializedManagedHsmSku.name = ManagedHsmSkuName.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedManagedHsmSku;
+        });
+    }
 }

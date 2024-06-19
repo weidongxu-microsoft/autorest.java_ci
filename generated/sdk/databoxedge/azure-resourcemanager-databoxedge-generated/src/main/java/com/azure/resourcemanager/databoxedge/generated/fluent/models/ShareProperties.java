@@ -6,6 +6,10 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.AzureContainerInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.ClientAccessRight;
 import com.azure.resourcemanager.databoxedge.generated.models.DataPolicy;
@@ -15,72 +19,62 @@ import com.azure.resourcemanager.databoxedge.generated.models.RefreshDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareAccessProtocol;
 import com.azure.resourcemanager.databoxedge.generated.models.ShareStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.UserAccessRight;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The share properties.
  */
 @Fluent
-public final class ShareProperties {
+public final class ShareProperties implements JsonSerializable<ShareProperties> {
     /*
      * Description for the share.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * Current status of the share.
      */
-    @JsonProperty(value = "shareStatus", required = true)
     private ShareStatus shareStatus;
 
     /*
      * Current monitoring status of the share.
      */
-    @JsonProperty(value = "monitoringStatus", required = true)
     private MonitoringStatus monitoringStatus;
 
     /*
      * Azure container mapping for the share.
      */
-    @JsonProperty(value = "azureContainerInfo")
     private AzureContainerInfo azureContainerInfo;
 
     /*
      * Access protocol to be used by the share.
      */
-    @JsonProperty(value = "accessProtocol", required = true)
     private ShareAccessProtocol accessProtocol;
 
     /*
      * Mapping of users and corresponding access rights on the share (required for SMB protocol).
      */
-    @JsonProperty(value = "userAccessRights")
     private List<UserAccessRight> userAccessRights;
 
     /*
      * List of IP addresses and corresponding access rights on the share(required for NFS protocol).
      */
-    @JsonProperty(value = "clientAccessRights")
     private List<ClientAccessRight> clientAccessRights;
 
     /*
      * Details of the refresh job on this share.
      */
-    @JsonProperty(value = "refreshDetails")
     private RefreshDetails refreshDetails;
 
     /*
      * Share mount point to the role.
      */
-    @JsonProperty(value = "shareMappings", access = JsonProperty.Access.WRITE_ONLY)
     private List<MountPointMap> shareMappings;
 
     /*
      * Data policy of the share.
      */
-    @JsonProperty(value = "dataPolicy")
     private DataPolicy dataPolicy;
 
     /**
@@ -319,4 +313,76 @@ public final class ShareProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ShareProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("shareStatus", this.shareStatus == null ? null : this.shareStatus.toString());
+        jsonWriter.writeStringField("monitoringStatus",
+            this.monitoringStatus == null ? null : this.monitoringStatus.toString());
+        jsonWriter.writeStringField("accessProtocol",
+            this.accessProtocol == null ? null : this.accessProtocol.toString());
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeJsonField("azureContainerInfo", this.azureContainerInfo);
+        jsonWriter.writeArrayField("userAccessRights", this.userAccessRights,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("clientAccessRights", this.clientAccessRights,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("refreshDetails", this.refreshDetails);
+        jsonWriter.writeStringField("dataPolicy", this.dataPolicy == null ? null : this.dataPolicy.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ShareProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ShareProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ShareProperties.
+     */
+    public static ShareProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ShareProperties deserializedShareProperties = new ShareProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("shareStatus".equals(fieldName)) {
+                    deserializedShareProperties.shareStatus = ShareStatus.fromString(reader.getString());
+                } else if ("monitoringStatus".equals(fieldName)) {
+                    deserializedShareProperties.monitoringStatus = MonitoringStatus.fromString(reader.getString());
+                } else if ("accessProtocol".equals(fieldName)) {
+                    deserializedShareProperties.accessProtocol = ShareAccessProtocol.fromString(reader.getString());
+                } else if ("description".equals(fieldName)) {
+                    deserializedShareProperties.description = reader.getString();
+                } else if ("azureContainerInfo".equals(fieldName)) {
+                    deserializedShareProperties.azureContainerInfo = AzureContainerInfo.fromJson(reader);
+                } else if ("userAccessRights".equals(fieldName)) {
+                    List<UserAccessRight> userAccessRights
+                        = reader.readArray(reader1 -> UserAccessRight.fromJson(reader1));
+                    deserializedShareProperties.userAccessRights = userAccessRights;
+                } else if ("clientAccessRights".equals(fieldName)) {
+                    List<ClientAccessRight> clientAccessRights
+                        = reader.readArray(reader1 -> ClientAccessRight.fromJson(reader1));
+                    deserializedShareProperties.clientAccessRights = clientAccessRights;
+                } else if ("refreshDetails".equals(fieldName)) {
+                    deserializedShareProperties.refreshDetails = RefreshDetails.fromJson(reader);
+                } else if ("shareMappings".equals(fieldName)) {
+                    List<MountPointMap> shareMappings = reader.readArray(reader1 -> MountPointMap.fromJson(reader1));
+                    deserializedShareProperties.shareMappings = shareMappings;
+                } else if ("dataPolicy".equals(fieldName)) {
+                    deserializedShareProperties.dataPolicy = DataPolicy.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedShareProperties;
+        });
+    }
 }

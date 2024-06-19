@@ -5,43 +5,42 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Details of JobOutput errors.
  */
 @Immutable
-public final class JobError {
+public final class JobError implements JsonSerializable<JobError> {
     /*
      * Error code describing the error.
      */
-    @JsonProperty(value = "code", access = JsonProperty.Access.WRITE_ONLY)
     private JobErrorCode code;
 
     /*
      * A human-readable language-dependent representation of the error.
      */
-    @JsonProperty(value = "message", access = JsonProperty.Access.WRITE_ONLY)
     private String message;
 
     /*
      * Helps with categorization of errors.
      */
-    @JsonProperty(value = "category", access = JsonProperty.Access.WRITE_ONLY)
     private JobErrorCategory category;
 
     /*
      * Indicates that it may be possible to retry the Job. If retry is unsuccessful, please contact Azure support via
      * Azure Portal.
      */
-    @JsonProperty(value = "retry", access = JsonProperty.Access.WRITE_ONLY)
     private JobRetry retry;
 
     /*
      * An array of details about specific errors that led to this reported error.
      */
-    @JsonProperty(value = "details", access = JsonProperty.Access.WRITE_ONLY)
     private List<JobErrorDetail> details;
 
     /**
@@ -105,5 +104,49 @@ public final class JobError {
         if (details() != null) {
             details().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobError from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobError if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the JobError.
+     */
+    public static JobError fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobError deserializedJobError = new JobError();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("code".equals(fieldName)) {
+                    deserializedJobError.code = JobErrorCode.fromString(reader.getString());
+                } else if ("message".equals(fieldName)) {
+                    deserializedJobError.message = reader.getString();
+                } else if ("category".equals(fieldName)) {
+                    deserializedJobError.category = JobErrorCategory.fromString(reader.getString());
+                } else if ("retry".equals(fieldName)) {
+                    deserializedJobError.retry = JobRetry.fromString(reader.getString());
+                } else if ("details".equals(fieldName)) {
+                    List<JobErrorDetail> details = reader.readArray(reader1 -> JobErrorDetail.fromJson(reader1));
+                    deserializedJobError.details = details;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobError;
+        });
     }
 }

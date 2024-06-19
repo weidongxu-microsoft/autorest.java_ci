@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class StreamingLocatorContentKeyType extends ExpandableStringEnum<S
      * @param name a name to look for.
      * @return the corresponding StreamingLocatorContentKeyType.
      */
-    @JsonCreator
     public static StreamingLocatorContentKeyType fromString(String name) {
         return fromString(name, StreamingLocatorContentKeyType.class);
     }

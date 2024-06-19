@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -39,7 +38,6 @@ public final class BlobStorageEventType extends ExpandableStringEnum<BlobStorage
      * @param name a name to look for.
      * @return the corresponding BlobStorageEventType.
      */
-    @JsonCreator
     public static BlobStorageEventType fromString(String name) {
         return fromString(name, BlobStorageEventType.class);
     }

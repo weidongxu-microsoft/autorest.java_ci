@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class AsyncOperationStatus extends ExpandableStringEnum<AsyncOperat
      * @param name a name to look for.
      * @return the corresponding AsyncOperationStatus.
      */
-    @JsonCreator
     public static AsyncOperationStatus fromString(String name) {
         return fromString(name, AsyncOperationStatus.class);
     }

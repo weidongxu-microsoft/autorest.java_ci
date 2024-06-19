@@ -6,42 +6,41 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Describes a query to be executed.
  */
 @Fluent
-public final class QueryRequest {
+public final class QueryRequest implements JsonSerializable<QueryRequest> {
     /*
      * Azure subscriptions against which to execute the query.
      */
-    @JsonProperty(value = "subscriptions")
     private List<String> subscriptions;
 
     /*
      * Azure management groups against which to execute the query. Example: [ 'mg1', 'mg2' ]
      */
-    @JsonProperty(value = "managementGroups")
     private List<String> managementGroups;
 
     /*
      * The resources query.
      */
-    @JsonProperty(value = "query", required = true)
     private String query;
 
     /*
      * The query evaluation options
      */
-    @JsonProperty(value = "options")
     private QueryRequestOptions options;
 
     /*
      * An array of facet requests to be computed against the query result.
      */
-    @JsonProperty(value = "facets")
     private List<FacetRequest> facets;
 
     /**
@@ -171,4 +170,58 @@ public final class QueryRequest {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(QueryRequest.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("query", this.query);
+        jsonWriter.writeArrayField("subscriptions", this.subscriptions,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("managementGroups", this.managementGroups,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("options", this.options);
+        jsonWriter.writeArrayField("facets", this.facets, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of QueryRequest from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of QueryRequest if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the QueryRequest.
+     */
+    public static QueryRequest fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            QueryRequest deserializedQueryRequest = new QueryRequest();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("query".equals(fieldName)) {
+                    deserializedQueryRequest.query = reader.getString();
+                } else if ("subscriptions".equals(fieldName)) {
+                    List<String> subscriptions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedQueryRequest.subscriptions = subscriptions;
+                } else if ("managementGroups".equals(fieldName)) {
+                    List<String> managementGroups = reader.readArray(reader1 -> reader1.getString());
+                    deserializedQueryRequest.managementGroups = managementGroups;
+                } else if ("options".equals(fieldName)) {
+                    deserializedQueryRequest.options = QueryRequestOptions.fromJson(reader);
+                } else if ("facets".equals(fieldName)) {
+                    List<FacetRequest> facets = reader.readArray(reader1 -> FacetRequest.fromJson(reader1));
+                    deserializedQueryRequest.facets = facets;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedQueryRequest;
+        });
+    }
 }

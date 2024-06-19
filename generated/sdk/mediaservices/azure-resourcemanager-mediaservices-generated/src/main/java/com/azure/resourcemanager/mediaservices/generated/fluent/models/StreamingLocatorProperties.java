@@ -5,46 +5,48 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingLocatorContentKey;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * Properties of the Streaming Locator.
  */
 @Fluent
-public final class StreamingLocatorProperties {
+public final class StreamingLocatorProperties implements JsonSerializable<StreamingLocatorProperties> {
     /*
      * Asset Name
      */
-    @JsonProperty(value = "assetName", required = true)
     private String assetName;
 
     /*
      * The creation time of the Streaming Locator.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The start time of the Streaming Locator.
      */
-    @JsonProperty(value = "startTime")
     private OffsetDateTime startTime;
 
     /*
      * The end time of the Streaming Locator.
      */
-    @JsonProperty(value = "endTime")
     private OffsetDateTime endTime;
 
     /*
      * The StreamingLocatorId of the Streaming Locator.
      */
-    @JsonProperty(value = "streamingLocatorId")
     private UUID streamingLocatorId;
 
     /*
@@ -53,31 +55,26 @@ public final class StreamingLocatorProperties {
      * 'Predefined_DownloadOnly', 'Predefined_ClearStreamingOnly', 'Predefined_DownloadAndClearStreaming',
      * 'Predefined_ClearKey', 'Predefined_MultiDrmCencStreaming' and 'Predefined_MultiDrmStreaming'
      */
-    @JsonProperty(value = "streamingPolicyName", required = true)
     private String streamingPolicyName;
 
     /*
      * Name of the default ContentKeyPolicy used by this Streaming Locator.
      */
-    @JsonProperty(value = "defaultContentKeyPolicyName")
     private String defaultContentKeyPolicyName;
 
     /*
      * The ContentKeys used by this Streaming Locator.
      */
-    @JsonProperty(value = "contentKeys")
     private List<StreamingLocatorContentKey> contentKeys;
 
     /*
      * Alternative Media ID of this Streaming Locator
      */
-    @JsonProperty(value = "alternativeMediaId")
     private String alternativeMediaId;
 
     /*
      * A list of asset or account filters which apply to this streaming locator
      */
-    @JsonProperty(value = "filters")
     private List<String> filters;
 
     /**
@@ -307,4 +304,76 @@ public final class StreamingLocatorProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(StreamingLocatorProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("assetName", this.assetName);
+        jsonWriter.writeStringField("streamingPolicyName", this.streamingPolicyName);
+        jsonWriter.writeStringField("startTime",
+            this.startTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.startTime));
+        jsonWriter.writeStringField("endTime",
+            this.endTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.endTime));
+        jsonWriter.writeStringField("streamingLocatorId", Objects.toString(this.streamingLocatorId, null));
+        jsonWriter.writeStringField("defaultContentKeyPolicyName", this.defaultContentKeyPolicyName);
+        jsonWriter.writeArrayField("contentKeys", this.contentKeys, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("alternativeMediaId", this.alternativeMediaId);
+        jsonWriter.writeArrayField("filters", this.filters, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StreamingLocatorProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StreamingLocatorProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the StreamingLocatorProperties.
+     */
+    public static StreamingLocatorProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StreamingLocatorProperties deserializedStreamingLocatorProperties = new StreamingLocatorProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("assetName".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.assetName = reader.getString();
+                } else if ("streamingPolicyName".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.streamingPolicyName = reader.getString();
+                } else if ("created".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("startTime".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.startTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("endTime".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.endTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("streamingLocatorId".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.streamingLocatorId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("defaultContentKeyPolicyName".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.defaultContentKeyPolicyName = reader.getString();
+                } else if ("contentKeys".equals(fieldName)) {
+                    List<StreamingLocatorContentKey> contentKeys
+                        = reader.readArray(reader1 -> StreamingLocatorContentKey.fromJson(reader1));
+                    deserializedStreamingLocatorProperties.contentKeys = contentKeys;
+                } else if ("alternativeMediaId".equals(fieldName)) {
+                    deserializedStreamingLocatorProperties.alternativeMediaId = reader.getString();
+                } else if ("filters".equals(fieldName)) {
+                    List<String> filters = reader.readArray(reader1 -> reader1.getString());
+                    deserializedStreamingLocatorProperties.filters = filters;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStreamingLocatorProperties;
+        });
+    }
 }

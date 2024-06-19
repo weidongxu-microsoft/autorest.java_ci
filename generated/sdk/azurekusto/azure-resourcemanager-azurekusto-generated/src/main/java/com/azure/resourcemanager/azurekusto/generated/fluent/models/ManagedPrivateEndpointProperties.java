@@ -6,42 +6,41 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * A class representing the properties of a managed private endpoint object.
  */
 @Fluent
-public final class ManagedPrivateEndpointProperties {
+public final class ManagedPrivateEndpointProperties implements JsonSerializable<ManagedPrivateEndpointProperties> {
     /*
      * The ARM resource ID of the resource for which the managed private endpoint is created.
      */
-    @JsonProperty(value = "privateLinkResourceId", required = true)
     private String privateLinkResourceId;
 
     /*
      * The region of the resource to which the managed private endpoint is created.
      */
-    @JsonProperty(value = "privateLinkResourceRegion")
     private String privateLinkResourceRegion;
 
     /*
      * The groupId in which the managed private endpoint is created.
      */
-    @JsonProperty(value = "groupId", required = true)
     private String groupId;
 
     /*
      * The user request message.
      */
-    @JsonProperty(value = "requestMessage")
     private String requestMessage;
 
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /**
@@ -162,4 +161,54 @@ public final class ManagedPrivateEndpointProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ManagedPrivateEndpointProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("privateLinkResourceId", this.privateLinkResourceId);
+        jsonWriter.writeStringField("groupId", this.groupId);
+        jsonWriter.writeStringField("privateLinkResourceRegion", this.privateLinkResourceRegion);
+        jsonWriter.writeStringField("requestMessage", this.requestMessage);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ManagedPrivateEndpointProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ManagedPrivateEndpointProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ManagedPrivateEndpointProperties.
+     */
+    public static ManagedPrivateEndpointProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ManagedPrivateEndpointProperties deserializedManagedPrivateEndpointProperties
+                = new ManagedPrivateEndpointProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("privateLinkResourceId".equals(fieldName)) {
+                    deserializedManagedPrivateEndpointProperties.privateLinkResourceId = reader.getString();
+                } else if ("groupId".equals(fieldName)) {
+                    deserializedManagedPrivateEndpointProperties.groupId = reader.getString();
+                } else if ("privateLinkResourceRegion".equals(fieldName)) {
+                    deserializedManagedPrivateEndpointProperties.privateLinkResourceRegion = reader.getString();
+                } else if ("requestMessage".equals(fieldName)) {
+                    deserializedManagedPrivateEndpointProperties.requestMessage = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedManagedPrivateEndpointProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedManagedPrivateEndpointProperties;
+        });
+    }
 }

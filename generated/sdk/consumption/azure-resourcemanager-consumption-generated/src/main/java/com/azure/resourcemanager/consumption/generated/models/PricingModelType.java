@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class PricingModelType extends ExpandableStringEnum<PricingModelTyp
      * @param name a name to look for.
      * @return the corresponding PricingModelType.
      */
-    @JsonCreator
     public static PricingModelType fromString(String name) {
         return fromString(name, PricingModelType.class);
     }

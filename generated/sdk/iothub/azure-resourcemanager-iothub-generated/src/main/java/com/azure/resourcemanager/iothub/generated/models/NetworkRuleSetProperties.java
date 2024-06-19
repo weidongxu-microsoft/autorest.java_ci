@@ -6,30 +6,31 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Network Rule Set Properties of IotHub.
  */
 @Fluent
-public final class NetworkRuleSetProperties {
+public final class NetworkRuleSetProperties implements JsonSerializable<NetworkRuleSetProperties> {
     /*
      * Default Action for Network Rule Set
      */
-    @JsonProperty(value = "defaultAction")
     private DefaultAction defaultAction;
 
     /*
      * If True, then Network Rule Set is also applied to BuiltIn EventHub EndPoint of IotHub
      */
-    @JsonProperty(value = "applyToBuiltInEventHubEndpoint", required = true)
     private boolean applyToBuiltInEventHubEndpoint;
 
     /*
      * List of IP Rules
      */
-    @JsonProperty(value = "ipRules", required = true)
     private List<NetworkRuleSetIpRule> ipRules;
 
     /**
@@ -116,4 +117,49 @@ public final class NetworkRuleSetProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(NetworkRuleSetProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("applyToBuiltInEventHubEndpoint", this.applyToBuiltInEventHubEndpoint);
+        jsonWriter.writeArrayField("ipRules", this.ipRules, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("defaultAction", this.defaultAction == null ? null : this.defaultAction.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NetworkRuleSetProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NetworkRuleSetProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the NetworkRuleSetProperties.
+     */
+    public static NetworkRuleSetProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NetworkRuleSetProperties deserializedNetworkRuleSetProperties = new NetworkRuleSetProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("applyToBuiltInEventHubEndpoint".equals(fieldName)) {
+                    deserializedNetworkRuleSetProperties.applyToBuiltInEventHubEndpoint = reader.getBoolean();
+                } else if ("ipRules".equals(fieldName)) {
+                    List<NetworkRuleSetIpRule> ipRules
+                        = reader.readArray(reader1 -> NetworkRuleSetIpRule.fromJson(reader1));
+                    deserializedNetworkRuleSetProperties.ipRules = ipRules;
+                } else if ("defaultAction".equals(fieldName)) {
+                    deserializedNetworkRuleSetProperties.defaultAction = DefaultAction.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNetworkRuleSetProperties;
+        });
+    }
 }

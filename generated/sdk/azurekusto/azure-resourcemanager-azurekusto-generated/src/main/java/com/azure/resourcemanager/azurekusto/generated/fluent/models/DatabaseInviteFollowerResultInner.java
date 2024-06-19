@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The result returned from a follower invitation generation request.
  */
 @Fluent
-public final class DatabaseInviteFollowerResultInner {
+public final class DatabaseInviteFollowerResultInner implements JsonSerializable<DatabaseInviteFollowerResultInner> {
     /*
      * The generated invitation token.
      */
-    @JsonProperty(value = "generatedInvitation")
     private String generatedInvitation;
 
     /**
@@ -50,5 +53,42 @@ public final class DatabaseInviteFollowerResultInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("generatedInvitation", this.generatedInvitation);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DatabaseInviteFollowerResultInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DatabaseInviteFollowerResultInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DatabaseInviteFollowerResultInner.
+     */
+    public static DatabaseInviteFollowerResultInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DatabaseInviteFollowerResultInner deserializedDatabaseInviteFollowerResultInner
+                = new DatabaseInviteFollowerResultInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("generatedInvitation".equals(fieldName)) {
+                    deserializedDatabaseInviteFollowerResultInner.generatedInvitation = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDatabaseInviteFollowerResultInner;
+        });
     }
 }

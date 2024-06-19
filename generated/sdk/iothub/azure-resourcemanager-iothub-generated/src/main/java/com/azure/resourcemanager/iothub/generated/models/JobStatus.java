@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The status of the job.
  */
@@ -56,7 +53,6 @@ public enum JobStatus {
      * @param value the serialized value to parse.
      * @return the parsed JobStatus object, or null if unable to parse.
      */
-    @JsonCreator
     public static JobStatus fromString(String value) {
         if (value == null) {
             return null;
@@ -73,7 +69,6 @@ public enum JobStatus {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

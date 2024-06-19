@@ -6,29 +6,30 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A voice receiver.
  */
 @Fluent
-public final class VoiceReceiver {
+public final class VoiceReceiver implements JsonSerializable<VoiceReceiver> {
     /*
      * The name of the voice receiver. Names must be unique across all receivers within an action group.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The country code of the voice receiver.
      */
-    @JsonProperty(value = "countryCode", required = true)
     private String countryCode;
 
     /*
      * The phone number of the voice receiver.
      */
-    @JsonProperty(value = "phoneNumber", required = true)
     private String phoneNumber;
 
     /**
@@ -120,4 +121,47 @@ public final class VoiceReceiver {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(VoiceReceiver.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("countryCode", this.countryCode);
+        jsonWriter.writeStringField("phoneNumber", this.phoneNumber);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of VoiceReceiver from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of VoiceReceiver if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the VoiceReceiver.
+     */
+    public static VoiceReceiver fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            VoiceReceiver deserializedVoiceReceiver = new VoiceReceiver();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedVoiceReceiver.name = reader.getString();
+                } else if ("countryCode".equals(fieldName)) {
+                    deserializedVoiceReceiver.countryCode = reader.getString();
+                } else if ("phoneNumber".equals(fieldName)) {
+                    deserializedVoiceReceiver.phoneNumber = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedVoiceReceiver;
+        });
+    }
 }

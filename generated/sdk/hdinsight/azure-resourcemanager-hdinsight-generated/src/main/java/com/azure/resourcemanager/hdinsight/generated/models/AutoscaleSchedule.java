@@ -5,24 +5,26 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Parameters for a schedule-based autoscale rule, consisting of an array of days + a time and capacity.
  */
 @Fluent
-public final class AutoscaleSchedule {
+public final class AutoscaleSchedule implements JsonSerializable<AutoscaleSchedule> {
     /*
      * Days of the week for a schedule-based autoscale rule
      */
-    @JsonProperty(value = "days")
     private List<DaysOfWeek> days;
 
     /*
      * Time and capacity for a schedule-based autoscale rule
      */
-    @JsonProperty(value = "timeAndCapacity")
     private AutoscaleTimeAndCapacity timeAndCapacity;
 
     /**
@@ -80,5 +82,46 @@ public final class AutoscaleSchedule {
         if (timeAndCapacity() != null) {
             timeAndCapacity().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("days", this.days,
+            (writer, element) -> writer.writeString(element == null ? null : element.toString()));
+        jsonWriter.writeJsonField("timeAndCapacity", this.timeAndCapacity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AutoscaleSchedule from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AutoscaleSchedule if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AutoscaleSchedule.
+     */
+    public static AutoscaleSchedule fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AutoscaleSchedule deserializedAutoscaleSchedule = new AutoscaleSchedule();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("days".equals(fieldName)) {
+                    List<DaysOfWeek> days = reader.readArray(reader1 -> DaysOfWeek.fromString(reader1.getString()));
+                    deserializedAutoscaleSchedule.days = days;
+                } else if ("timeAndCapacity".equals(fieldName)) {
+                    deserializedAutoscaleSchedule.timeAndCapacity = AutoscaleTimeAndCapacity.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAutoscaleSchedule;
+        });
     }
 }

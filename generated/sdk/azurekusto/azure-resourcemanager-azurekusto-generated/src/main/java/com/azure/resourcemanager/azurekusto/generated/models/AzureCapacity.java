@@ -6,35 +6,35 @@ package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Azure capacity definition.
  */
 @Fluent
-public final class AzureCapacity {
+public final class AzureCapacity implements JsonSerializable<AzureCapacity> {
     /*
      * Scale type.
      */
-    @JsonProperty(value = "scaleType", required = true)
     private AzureScaleType scaleType;
 
     /*
      * Minimum allowed capacity.
      */
-    @JsonProperty(value = "minimum", required = true)
     private int minimum;
 
     /*
      * Maximum allowed capacity.
      */
-    @JsonProperty(value = "maximum", required = true)
     private int maximum;
 
     /*
      * The default capacity that would be used.
      */
-    @JsonProperty(value = "default", required = true)
     private int defaultProperty;
 
     /**
@@ -136,4 +136,50 @@ public final class AzureCapacity {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AzureCapacity.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("scaleType", this.scaleType == null ? null : this.scaleType.toString());
+        jsonWriter.writeIntField("minimum", this.minimum);
+        jsonWriter.writeIntField("maximum", this.maximum);
+        jsonWriter.writeIntField("default", this.defaultProperty);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AzureCapacity from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AzureCapacity if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AzureCapacity.
+     */
+    public static AzureCapacity fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AzureCapacity deserializedAzureCapacity = new AzureCapacity();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("scaleType".equals(fieldName)) {
+                    deserializedAzureCapacity.scaleType = AzureScaleType.fromString(reader.getString());
+                } else if ("minimum".equals(fieldName)) {
+                    deserializedAzureCapacity.minimum = reader.getInt();
+                } else if ("maximum".equals(fieldName)) {
+                    deserializedAzureCapacity.maximum = reader.getInt();
+                } else if ("default".equals(fieldName)) {
+                    deserializedAzureCapacity.defaultProperty = reader.getInt();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAzureCapacity;
+        });
+    }
 }

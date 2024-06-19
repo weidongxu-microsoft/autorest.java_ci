@@ -6,42 +6,46 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.CloudEdgeManagementRole;
 import com.azure.resourcemanager.databoxedge.generated.models.IoTRole;
 import com.azure.resourcemanager.databoxedge.generated.models.KubernetesRole;
 import com.azure.resourcemanager.databoxedge.generated.models.MecRole;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleTypes;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 
 /**
  * Compute role.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "kind", defaultImpl = RoleInner.class, visible = true)
-@JsonTypeName("Role")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "CloudEdgeManagement", value = CloudEdgeManagementRole.class),
-    @JsonSubTypes.Type(name = "IOT", value = IoTRole.class),
-    @JsonSubTypes.Type(name = "Kubernetes", value = KubernetesRole.class),
-    @JsonSubTypes.Type(name = "MEC", value = MecRole.class) })
 @Immutable
 public class RoleInner extends ArmBaseModel {
     /*
      * Role type.
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private RoleTypes kind = RoleTypes.fromString("Role");
 
     /*
      * Metadata pertaining to creation and last modification of Role
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of RoleInner class.
@@ -68,6 +72,47 @@ public class RoleInner extends ArmBaseModel {
     }
 
     /**
+     * Set the systemData property: Metadata pertaining to creation and last modification of Role.
+     * 
+     * @param systemData the systemData value to set.
+     * @return the RoleInner object itself.
+     */
+    RoleInner withSystemData(SystemData systemData) {
+        this.systemData = systemData;
+        return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -75,5 +120,81 @@ public class RoleInner extends ArmBaseModel {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoleInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoleInner if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RoleInner.
+     */
+    public static RoleInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("kind".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("CloudEdgeManagement".equals(discriminatorValue)) {
+                    return CloudEdgeManagementRole.fromJson(readerToUse.reset());
+                } else if ("IOT".equals(discriminatorValue)) {
+                    return IoTRole.fromJson(readerToUse.reset());
+                } else if ("Kubernetes".equals(discriminatorValue)) {
+                    return KubernetesRole.fromJson(readerToUse.reset());
+                } else if ("MEC".equals(discriminatorValue)) {
+                    return MecRole.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static RoleInner fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoleInner deserializedRoleInner = new RoleInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedRoleInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedRoleInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedRoleInner.type = reader.getString();
+                } else if ("kind".equals(fieldName)) {
+                    deserializedRoleInner.kind = RoleTypes.fromString(reader.getString());
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedRoleInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoleInner;
+        });
     }
 }

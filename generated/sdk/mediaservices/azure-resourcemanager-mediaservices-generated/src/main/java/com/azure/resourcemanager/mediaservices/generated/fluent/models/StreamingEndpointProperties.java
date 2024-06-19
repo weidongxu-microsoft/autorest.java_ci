@@ -5,10 +5,15 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.CrossSiteAccessPolicies;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointAccessControl;
 import com.azure.resourcemanager.mediaservices.generated.models.StreamingEndpointResourceState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -16,101 +21,85 @@ import java.util.List;
  * The streaming endpoint properties.
  */
 @Fluent
-public final class StreamingEndpointProperties {
+public final class StreamingEndpointProperties implements JsonSerializable<StreamingEndpointProperties> {
     /*
      * The streaming endpoint description.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * The number of scale units. Use the Scale operation to adjust this value.
      */
-    @JsonProperty(value = "scaleUnits", required = true)
     private int scaleUnits;
 
     /*
      * This feature is deprecated, do not set a value for this property.
      */
-    @JsonProperty(value = "availabilitySetName")
     private String availabilitySetName;
 
     /*
      * The access control definition of the streaming endpoint.
      */
-    @JsonProperty(value = "accessControl")
     private StreamingEndpointAccessControl accessControl;
 
     /*
      * Max cache age
      */
-    @JsonProperty(value = "maxCacheAge")
     private Long maxCacheAge;
 
     /*
      * The custom host names of the streaming endpoint
      */
-    @JsonProperty(value = "customHostNames")
     private List<String> customHostNames;
 
     /*
      * The streaming endpoint host name.
      */
-    @JsonProperty(value = "hostName", access = JsonProperty.Access.WRITE_ONLY)
     private String hostname;
 
     /*
      * The CDN enabled flag.
      */
-    @JsonProperty(value = "cdnEnabled")
     private Boolean cdnEnabled;
 
     /*
      * The CDN provider name.
      */
-    @JsonProperty(value = "cdnProvider")
     private String cdnProvider;
 
     /*
      * The CDN profile name.
      */
-    @JsonProperty(value = "cdnProfile")
     private String cdnProfile;
 
     /*
      * The provisioning state of the streaming endpoint.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /*
      * The resource state of the streaming endpoint.
      */
-    @JsonProperty(value = "resourceState", access = JsonProperty.Access.WRITE_ONLY)
     private StreamingEndpointResourceState resourceState;
 
     /*
      * The streaming endpoint access policies.
      */
-    @JsonProperty(value = "crossSiteAccessPolicies")
     private CrossSiteAccessPolicies crossSiteAccessPolicies;
 
     /*
      * The free trial expiration time.
      */
-    @JsonProperty(value = "freeTrialEndTime", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime freeTrialEndTime;
 
     /*
      * The exact time the streaming endpoint was created.
      */
-    @JsonProperty(value = "created", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime created;
 
     /*
      * The exact time the streaming endpoint was last modified.
      */
-    @JsonProperty(value = "lastModified", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModified;
 
     /**
@@ -385,5 +374,89 @@ public final class StreamingEndpointProperties {
         if (crossSiteAccessPolicies() != null) {
             crossSiteAccessPolicies().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeIntField("scaleUnits", this.scaleUnits);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("availabilitySetName", this.availabilitySetName);
+        jsonWriter.writeJsonField("accessControl", this.accessControl);
+        jsonWriter.writeNumberField("maxCacheAge", this.maxCacheAge);
+        jsonWriter.writeArrayField("customHostNames", this.customHostNames,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeBooleanField("cdnEnabled", this.cdnEnabled);
+        jsonWriter.writeStringField("cdnProvider", this.cdnProvider);
+        jsonWriter.writeStringField("cdnProfile", this.cdnProfile);
+        jsonWriter.writeJsonField("crossSiteAccessPolicies", this.crossSiteAccessPolicies);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StreamingEndpointProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StreamingEndpointProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the StreamingEndpointProperties.
+     */
+    public static StreamingEndpointProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StreamingEndpointProperties deserializedStreamingEndpointProperties = new StreamingEndpointProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("scaleUnits".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.scaleUnits = reader.getInt();
+                } else if ("description".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.description = reader.getString();
+                } else if ("availabilitySetName".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.availabilitySetName = reader.getString();
+                } else if ("accessControl".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.accessControl
+                        = StreamingEndpointAccessControl.fromJson(reader);
+                } else if ("maxCacheAge".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.maxCacheAge = reader.getNullable(JsonReader::getLong);
+                } else if ("customHostNames".equals(fieldName)) {
+                    List<String> customHostNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedStreamingEndpointProperties.customHostNames = customHostNames;
+                } else if ("hostName".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.hostname = reader.getString();
+                } else if ("cdnEnabled".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.cdnEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("cdnProvider".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.cdnProvider = reader.getString();
+                } else if ("cdnProfile".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.cdnProfile = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.provisioningState = reader.getString();
+                } else if ("resourceState".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.resourceState
+                        = StreamingEndpointResourceState.fromString(reader.getString());
+                } else if ("crossSiteAccessPolicies".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.crossSiteAccessPolicies
+                        = CrossSiteAccessPolicies.fromJson(reader);
+                } else if ("freeTrialEndTime".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.freeTrialEndTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("created".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.created = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("lastModified".equals(fieldName)) {
+                    deserializedStreamingEndpointProperties.lastModified = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStreamingEndpointProperties;
+        });
     }
 }

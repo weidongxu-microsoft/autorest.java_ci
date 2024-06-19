@@ -5,33 +5,31 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * Routing message.
  */
 @Fluent
-public final class RoutingMessage {
+public final class RoutingMessage implements JsonSerializable<RoutingMessage> {
     /*
      * Body of routing message
      */
-    @JsonProperty(value = "body")
     private String body;
 
     /*
      * App properties
      */
-    @JsonProperty(value = "appProperties")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> appProperties;
 
     /*
      * System properties
      */
-    @JsonProperty(value = "systemProperties")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> systemProperties;
 
     /**
@@ -106,5 +104,50 @@ public final class RoutingMessage {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("body", this.body);
+        jsonWriter.writeMapField("appProperties", this.appProperties, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeMapField("systemProperties", this.systemProperties,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoutingMessage from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoutingMessage if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the RoutingMessage.
+     */
+    public static RoutingMessage fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoutingMessage deserializedRoutingMessage = new RoutingMessage();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("body".equals(fieldName)) {
+                    deserializedRoutingMessage.body = reader.getString();
+                } else if ("appProperties".equals(fieldName)) {
+                    Map<String, String> appProperties = reader.readMap(reader1 -> reader1.getString());
+                    deserializedRoutingMessage.appProperties = appProperties;
+                } else if ("systemProperties".equals(fieldName)) {
+                    Map<String, String> systemProperties = reader.readMap(reader1 -> reader1.getString());
+                    deserializedRoutingMessage.systemProperties = systemProperties;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoutingMessage;
+        });
     }
 }

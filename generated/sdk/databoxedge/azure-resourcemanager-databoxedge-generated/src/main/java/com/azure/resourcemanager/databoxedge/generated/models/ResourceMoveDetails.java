@@ -5,24 +5,28 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Fields for tracking resource move.
  */
 @Fluent
-public final class ResourceMoveDetails {
+public final class ResourceMoveDetails implements JsonSerializable<ResourceMoveDetails> {
     /*
      * Denotes whether move operation is in progress
      */
-    @JsonProperty(value = "operationInProgress")
     private ResourceMoveStatus operationInProgress;
 
     /*
      * Denotes the timeout of the operation to finish
      */
-    @JsonProperty(value = "operationInProgressLockTimeoutInUTC")
     private OffsetDateTime operationInProgressLockTimeoutInUtc;
 
     /**
@@ -78,5 +82,50 @@ public final class ResourceMoveDetails {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("operationInProgress",
+            this.operationInProgress == null ? null : this.operationInProgress.toString());
+        jsonWriter.writeStringField("operationInProgressLockTimeoutInUTC",
+            this.operationInProgressLockTimeoutInUtc == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.operationInProgressLockTimeoutInUtc));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ResourceMoveDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ResourceMoveDetails if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ResourceMoveDetails.
+     */
+    public static ResourceMoveDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ResourceMoveDetails deserializedResourceMoveDetails = new ResourceMoveDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("operationInProgress".equals(fieldName)) {
+                    deserializedResourceMoveDetails.operationInProgress
+                        = ResourceMoveStatus.fromString(reader.getString());
+                } else if ("operationInProgressLockTimeoutInUTC".equals(fieldName)) {
+                    deserializedResourceMoveDetails.operationInProgressLockTimeoutInUtc = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedResourceMoveDetails;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -62,7 +61,6 @@ public final class KubernetesState extends ExpandableStringEnum<KubernetesState>
      * @param name a name to look for.
      * @return the corresponding KubernetesState.
      */
-    @JsonCreator
     public static KubernetesState fromString(String name) {
         return fromString(name, KubernetesState.class);
     }

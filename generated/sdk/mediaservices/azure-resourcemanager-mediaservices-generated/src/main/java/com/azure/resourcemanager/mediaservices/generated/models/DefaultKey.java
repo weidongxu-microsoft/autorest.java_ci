@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Class to specify properties of default content key for each encryption scheme.
  */
 @Fluent
-public final class DefaultKey {
+public final class DefaultKey implements JsonSerializable<DefaultKey> {
     /*
      * Label can be used to specify Content Key when creating a Streaming Locator
      */
-    @JsonProperty(value = "label")
     private String label;
 
     /*
      * Policy used by Default Key
      */
-    @JsonProperty(value = "policyName")
     private String policyName;
 
     /**
@@ -76,5 +78,44 @@ public final class DefaultKey {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("label", this.label);
+        jsonWriter.writeStringField("policyName", this.policyName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DefaultKey from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DefaultKey if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the DefaultKey.
+     */
+    public static DefaultKey fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DefaultKey deserializedDefaultKey = new DefaultKey();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("label".equals(fieldName)) {
+                    deserializedDefaultKey.label = reader.getString();
+                } else if ("policyName".equals(fieldName)) {
+                    deserializedDefaultKey.policyName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDefaultKey;
+        });
     }
 }

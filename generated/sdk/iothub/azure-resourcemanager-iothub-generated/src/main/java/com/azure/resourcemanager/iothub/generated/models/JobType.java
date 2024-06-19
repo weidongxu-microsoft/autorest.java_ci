@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -77,7 +76,6 @@ public final class JobType extends ExpandableStringEnum<JobType> {
      * @param name a name to look for.
      * @return the corresponding JobType.
      */
-    @JsonCreator
     public static JobType fromString(String name) {
         return fromString(name, JobType.class);
     }

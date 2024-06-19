@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.appservice.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -57,7 +56,6 @@ public final class RuntimeName extends ExpandableStringEnum<RuntimeName> {
      * @param name a name to look for.
      * @return the corresponding RuntimeName.
      */
-    @JsonCreator
     public static RuntimeName fromString(String name) {
         return fromString(name, RuntimeName.class);
     }

@@ -5,43 +5,42 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Properties of the secret.
  */
 @Fluent
-public final class SecretProperties {
+public final class SecretProperties implements JsonSerializable<SecretProperties> {
     /*
      * The value of the secret. NOTE: 'value' will never be returned from the service, as APIs using this model are is
      * intended for internal use in ARM deployments. Users should use the data-plane REST service for interaction with
      * vault secrets.
      */
-    @JsonProperty(value = "value")
     private String value;
 
     /*
      * The content type of the secret.
      */
-    @JsonProperty(value = "contentType")
     private String contentType;
 
     /*
      * The attributes of the secret.
      */
-    @JsonProperty(value = "attributes")
     private SecretAttributes attributes;
 
     /*
      * The URI to retrieve the current version of the secret.
      */
-    @JsonProperty(value = "secretUri", access = JsonProperty.Access.WRITE_ONLY)
     private String secretUri;
 
     /*
      * The URI to retrieve the specific version of the secret.
      */
-    @JsonProperty(value = "secretUriWithVersion", access = JsonProperty.Access.WRITE_ONLY)
     private String secretUriWithVersion;
 
     /**
@@ -141,5 +140,51 @@ public final class SecretProperties {
         if (attributes() != null) {
             attributes().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("value", this.value);
+        jsonWriter.writeStringField("contentType", this.contentType);
+        jsonWriter.writeJsonField("attributes", this.attributes);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SecretProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SecretProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SecretProperties.
+     */
+    public static SecretProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SecretProperties deserializedSecretProperties = new SecretProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    deserializedSecretProperties.value = reader.getString();
+                } else if ("contentType".equals(fieldName)) {
+                    deserializedSecretProperties.contentType = reader.getString();
+                } else if ("attributes".equals(fieldName)) {
+                    deserializedSecretProperties.attributes = SecretAttributes.fromJson(reader);
+                } else if ("secretUri".equals(fieldName)) {
+                    deserializedSecretProperties.secretUri = reader.getString();
+                } else if ("secretUriWithVersion".equals(fieldName)) {
+                    deserializedSecretProperties.secretUriWithVersion = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSecretProperties;
+        });
     }
 }

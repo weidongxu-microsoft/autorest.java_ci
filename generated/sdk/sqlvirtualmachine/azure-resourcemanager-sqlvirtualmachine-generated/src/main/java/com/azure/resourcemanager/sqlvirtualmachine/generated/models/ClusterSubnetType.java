@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ClusterSubnetType extends ExpandableStringEnum<ClusterSubnetT
      * @param name a name to look for.
      * @return the corresponding ClusterSubnetType.
      */
-    @JsonCreator
     public static ClusterSubnetType fromString(String name) {
         return fromString(name, ClusterSubnetType.class);
     }

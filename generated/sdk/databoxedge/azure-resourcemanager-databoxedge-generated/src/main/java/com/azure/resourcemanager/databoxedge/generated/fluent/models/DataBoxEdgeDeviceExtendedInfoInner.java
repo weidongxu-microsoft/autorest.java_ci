@@ -6,11 +6,14 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.ClusterWitnessType;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -21,14 +24,27 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
     /*
      * The extended info properties.
      */
-    @JsonProperty(value = "properties")
     private DataBoxEdgeDeviceExtendedInfoProperties innerProperties;
 
     /*
      * Metadata pertaining to creation and last modification of DataBoxEdgeDevice
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of DataBoxEdgeDeviceExtendedInfoInner class.
@@ -52,6 +68,36 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
      */
     public SystemData systemData() {
         return this.systemData;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -300,5 +346,52 @@ public final class DataBoxEdgeDeviceExtendedInfoInner extends ArmBaseModel {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDeviceExtendedInfoInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDeviceExtendedInfoInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDeviceExtendedInfoInner.
+     */
+    public static DataBoxEdgeDeviceExtendedInfoInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDeviceExtendedInfoInner deserializedDataBoxEdgeDeviceExtendedInfoInner
+                = new DataBoxEdgeDeviceExtendedInfoInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoInner.innerProperties
+                        = DataBoxEdgeDeviceExtendedInfoProperties.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDeviceExtendedInfoInner;
+        });
     }
 }

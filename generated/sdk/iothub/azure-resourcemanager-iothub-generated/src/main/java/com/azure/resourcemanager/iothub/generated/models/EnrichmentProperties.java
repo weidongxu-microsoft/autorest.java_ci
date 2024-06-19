@@ -6,30 +6,31 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties of an enrichment that your IoT hub applies to messages delivered to endpoints.
  */
 @Fluent
-public final class EnrichmentProperties {
+public final class EnrichmentProperties implements JsonSerializable<EnrichmentProperties> {
     /*
      * The key or name for the enrichment property.
      */
-    @JsonProperty(value = "key", required = true)
     private String key;
 
     /*
      * The value for the enrichment property.
      */
-    @JsonProperty(value = "value", required = true)
     private String value;
 
     /*
      * The list of endpoints for which the enrichment is applied to the message.
      */
-    @JsonProperty(value = "endpointNames", required = true)
     private List<String> endpointNames;
 
     /**
@@ -120,4 +121,49 @@ public final class EnrichmentProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(EnrichmentProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("key", this.key);
+        jsonWriter.writeStringField("value", this.value);
+        jsonWriter.writeArrayField("endpointNames", this.endpointNames,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EnrichmentProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EnrichmentProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the EnrichmentProperties.
+     */
+    public static EnrichmentProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EnrichmentProperties deserializedEnrichmentProperties = new EnrichmentProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("key".equals(fieldName)) {
+                    deserializedEnrichmentProperties.key = reader.getString();
+                } else if ("value".equals(fieldName)) {
+                    deserializedEnrichmentProperties.value = reader.getString();
+                } else if ("endpointNames".equals(fieldName)) {
+                    List<String> endpointNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedEnrichmentProperties.endpointNames = endpointNames;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEnrichmentProperties;
+        });
+    }
 }

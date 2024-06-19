@@ -7,8 +7,11 @@ package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.models.Tag;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -19,14 +22,27 @@ public final class SavedSearchInner extends ProxyResource {
     /*
      * The ETag of the saved search. To override an existing saved search, use "*" or specify the current Etag
      */
-    @JsonProperty(value = "etag")
     private String etag;
 
     /*
      * The properties of the saved search.
      */
-    @JsonProperty(value = "properties", required = true)
     private SavedSearchProperties innerProperties = new SavedSearchProperties();
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of SavedSearchInner class.
@@ -63,6 +79,36 @@ public final class SavedSearchInner extends ProxyResource {
      */
     private SavedSearchProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -248,4 +294,50 @@ public final class SavedSearchInner extends ProxyResource {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(SavedSearchInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("etag", this.etag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SavedSearchInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SavedSearchInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the SavedSearchInner.
+     */
+    public static SavedSearchInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SavedSearchInner deserializedSavedSearchInner = new SavedSearchInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedSavedSearchInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedSavedSearchInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedSavedSearchInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedSavedSearchInner.innerProperties = SavedSearchProperties.fromJson(reader);
+                } else if ("etag".equals(fieldName)) {
+                    deserializedSavedSearchInner.etag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSavedSearchInner;
+        });
+    }
 }

@@ -6,23 +6,25 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The order by expression to be used in the report.
  */
 @Fluent
-public final class ReportConfigSorting {
+public final class ReportConfigSorting implements JsonSerializable<ReportConfigSorting> {
     /*
      * Direction of sort.
      */
-    @JsonProperty(value = "direction")
     private ReportConfigSortingDirection direction;
 
     /*
      * The name of the column to sort.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /**
@@ -84,4 +86,45 @@ public final class ReportConfigSorting {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ReportConfigSorting.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("direction", this.direction == null ? null : this.direction.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReportConfigSorting from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReportConfigSorting if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ReportConfigSorting.
+     */
+    public static ReportConfigSorting fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReportConfigSorting deserializedReportConfigSorting = new ReportConfigSorting();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedReportConfigSorting.name = reader.getString();
+                } else if ("direction".equals(fieldName)) {
+                    deserializedReportConfigSorting.direction
+                        = ReportConfigSortingDirection.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReportConfigSorting;
+        });
+    }
 }

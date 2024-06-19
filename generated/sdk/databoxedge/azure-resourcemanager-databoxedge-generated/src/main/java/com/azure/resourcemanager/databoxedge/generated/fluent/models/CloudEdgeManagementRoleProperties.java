@@ -6,31 +6,32 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfile;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * CloudEdgeManagement Role properties.
  */
 @Fluent
-public final class CloudEdgeManagementRoleProperties {
+public final class CloudEdgeManagementRoleProperties implements JsonSerializable<CloudEdgeManagementRoleProperties> {
     /*
      * Local Edge Management Status
      */
-    @JsonProperty(value = "localManagementStatus", access = JsonProperty.Access.WRITE_ONLY)
     private RoleStatus localManagementStatus;
 
     /*
      * Edge Profile of the resource
      */
-    @JsonProperty(value = "edgeProfile", access = JsonProperty.Access.WRITE_ONLY)
     private EdgeProfile edgeProfile;
 
     /*
      * Role status.
      */
-    @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
     /**
@@ -94,4 +95,48 @@ public final class CloudEdgeManagementRoleProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(CloudEdgeManagementRoleProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("roleStatus", this.roleStatus == null ? null : this.roleStatus.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CloudEdgeManagementRoleProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CloudEdgeManagementRoleProperties if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the CloudEdgeManagementRoleProperties.
+     */
+    public static CloudEdgeManagementRoleProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CloudEdgeManagementRoleProperties deserializedCloudEdgeManagementRoleProperties
+                = new CloudEdgeManagementRoleProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("roleStatus".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRoleProperties.roleStatus
+                        = RoleStatus.fromString(reader.getString());
+                } else if ("localManagementStatus".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRoleProperties.localManagementStatus
+                        = RoleStatus.fromString(reader.getString());
+                } else if ("edgeProfile".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRoleProperties.edgeProfile = EdgeProfile.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCloudEdgeManagementRoleProperties;
+        });
+    }
 }

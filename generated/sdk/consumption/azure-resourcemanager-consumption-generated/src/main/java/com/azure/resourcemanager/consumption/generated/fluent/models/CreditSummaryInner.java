@@ -6,10 +6,13 @@ package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.CreditBalanceSummary;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * A credit summary resource.
@@ -19,15 +22,28 @@ public final class CreditSummaryInner extends ProxyResource {
     /*
      * The properties of the credit summary.
      */
-    @JsonProperty(value = "properties")
     private CreditSummaryProperties innerProperties;
 
     /*
      * eTag of the resource. To handle concurrent update scenario, this field will be used to determine whether the user
      * is updating the latest version or not.
      */
-    @JsonProperty(value = "eTag")
     private String etag;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of CreditSummaryInner class.
@@ -64,6 +80,36 @@ public final class CreditSummaryInner extends ProxyResource {
     public CreditSummaryInner withEtag(String etag) {
         this.etag = etag;
         return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -157,5 +203,51 @@ public final class CreditSummaryInner extends ProxyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("eTag", this.etag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CreditSummaryInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CreditSummaryInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the CreditSummaryInner.
+     */
+    public static CreditSummaryInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CreditSummaryInner deserializedCreditSummaryInner = new CreditSummaryInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedCreditSummaryInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedCreditSummaryInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedCreditSummaryInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedCreditSummaryInner.innerProperties = CreditSummaryProperties.fromJson(reader);
+                } else if ("eTag".equals(fieldName)) {
+                    deserializedCreditSummaryInner.etag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCreditSummaryInner;
+        });
     }
 }

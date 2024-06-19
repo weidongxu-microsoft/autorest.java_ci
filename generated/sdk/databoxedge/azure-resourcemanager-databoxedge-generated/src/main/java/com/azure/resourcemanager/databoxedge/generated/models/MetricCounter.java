@@ -6,36 +6,36 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The metric counter.
  */
 @Fluent
-public final class MetricCounter {
+public final class MetricCounter implements JsonSerializable<MetricCounter> {
     /*
      * The counter name.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The instance from which counter should be collected.
      */
-    @JsonProperty(value = "instance")
     private String instance;
 
     /*
      * The dimension filter.
      */
-    @JsonProperty(value = "dimensionFilter")
     private List<MetricDimension> dimensionFilter;
 
     /*
      * The additional dimensions to be added to metric.
      */
-    @JsonProperty(value = "additionalDimensions")
     private List<MetricDimension> additionalDimensions;
 
     /**
@@ -143,4 +143,56 @@ public final class MetricCounter {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MetricCounter.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("instance", this.instance);
+        jsonWriter.writeArrayField("dimensionFilter", this.dimensionFilter,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("additionalDimensions", this.additionalDimensions,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MetricCounter from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MetricCounter if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MetricCounter.
+     */
+    public static MetricCounter fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MetricCounter deserializedMetricCounter = new MetricCounter();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedMetricCounter.name = reader.getString();
+                } else if ("instance".equals(fieldName)) {
+                    deserializedMetricCounter.instance = reader.getString();
+                } else if ("dimensionFilter".equals(fieldName)) {
+                    List<MetricDimension> dimensionFilter
+                        = reader.readArray(reader1 -> MetricDimension.fromJson(reader1));
+                    deserializedMetricCounter.dimensionFilter = dimensionFilter;
+                } else if ("additionalDimensions".equals(fieldName)) {
+                    List<MetricDimension> additionalDimensions
+                        = reader.readArray(reader1 -> MetricDimension.fromJson(reader1));
+                    deserializedMetricCounter.additionalDimensions = additionalDimensions;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMetricCounter;
+        });
+    }
 }

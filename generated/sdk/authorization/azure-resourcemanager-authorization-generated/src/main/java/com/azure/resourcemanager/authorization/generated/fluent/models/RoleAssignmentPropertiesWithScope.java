@@ -5,42 +5,41 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Role assignment properties with scope.
  */
 @Fluent
-public final class RoleAssignmentPropertiesWithScope {
+public final class RoleAssignmentPropertiesWithScope implements JsonSerializable<RoleAssignmentPropertiesWithScope> {
     /*
      * The role assignment scope.
      */
-    @JsonProperty(value = "scope")
     private String scope;
 
     /*
      * The role definition ID.
      */
-    @JsonProperty(value = "roleDefinitionId")
     private String roleDefinitionId;
 
     /*
      * The principal ID.
      */
-    @JsonProperty(value = "principalId")
     private String principalId;
 
     /*
      * The principal type of the assigned principal ID.
      */
-    @JsonProperty(value = "principalType")
     private PrincipalType principalType;
 
     /*
      * The Delegation flag for the role assignment
      */
-    @JsonProperty(value = "canDelegate")
     private Boolean canDelegate;
 
     /**
@@ -155,5 +154,56 @@ public final class RoleAssignmentPropertiesWithScope {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("scope", this.scope);
+        jsonWriter.writeStringField("roleDefinitionId", this.roleDefinitionId);
+        jsonWriter.writeStringField("principalId", this.principalId);
+        jsonWriter.writeStringField("principalType", this.principalType == null ? null : this.principalType.toString());
+        jsonWriter.writeBooleanField("canDelegate", this.canDelegate);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoleAssignmentPropertiesWithScope from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoleAssignmentPropertiesWithScope if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the RoleAssignmentPropertiesWithScope.
+     */
+    public static RoleAssignmentPropertiesWithScope fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoleAssignmentPropertiesWithScope deserializedRoleAssignmentPropertiesWithScope
+                = new RoleAssignmentPropertiesWithScope();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("scope".equals(fieldName)) {
+                    deserializedRoleAssignmentPropertiesWithScope.scope = reader.getString();
+                } else if ("roleDefinitionId".equals(fieldName)) {
+                    deserializedRoleAssignmentPropertiesWithScope.roleDefinitionId = reader.getString();
+                } else if ("principalId".equals(fieldName)) {
+                    deserializedRoleAssignmentPropertiesWithScope.principalId = reader.getString();
+                } else if ("principalType".equals(fieldName)) {
+                    deserializedRoleAssignmentPropertiesWithScope.principalType
+                        = PrincipalType.fromString(reader.getString());
+                } else if ("canDelegate".equals(fieldName)) {
+                    deserializedRoleAssignmentPropertiesWithScope.canDelegate
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoleAssignmentPropertiesWithScope;
+        });
     }
 }

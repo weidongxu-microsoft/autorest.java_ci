@@ -6,62 +6,58 @@ package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.util.DateTimeRfc1123;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.iothub.generated.models.JobStatus;
 import com.azure.resourcemanager.iothub.generated.models.JobType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * The properties of the Job Response object.
  */
 @Immutable
-public final class JobResponseInner {
+public final class JobResponseInner implements JsonSerializable<JobResponseInner> {
     /*
      * The job identifier.
      */
-    @JsonProperty(value = "jobId", access = JsonProperty.Access.WRITE_ONLY)
     private String jobId;
 
     /*
      * The start time of the job.
      */
-    @JsonProperty(value = "startTimeUtc", access = JsonProperty.Access.WRITE_ONLY)
     private DateTimeRfc1123 startTimeUtc;
 
     /*
      * The time the job stopped processing.
      */
-    @JsonProperty(value = "endTimeUtc", access = JsonProperty.Access.WRITE_ONLY)
     private DateTimeRfc1123 endTimeUtc;
 
     /*
      * The type of the job.
      */
-    @JsonProperty(value = "type", access = JsonProperty.Access.WRITE_ONLY)
     private JobType type;
 
     /*
      * The status of the job.
      */
-    @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private JobStatus status;
 
     /*
      * If status == failed, this string containing the reason for the failure.
      */
-    @JsonProperty(value = "failureReason", access = JsonProperty.Access.WRITE_ONLY)
     private String failureReason;
 
     /*
      * The status message for the job.
      */
-    @JsonProperty(value = "statusMessage", access = JsonProperty.Access.WRITE_ONLY)
     private String statusMessage;
 
     /*
      * The job identifier of the parent job, if any.
      */
-    @JsonProperty(value = "parentJobId", access = JsonProperty.Access.WRITE_ONLY)
     private String parentJobId;
 
     /**
@@ -154,5 +150,56 @@ public final class JobResponseInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobResponseInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobResponseInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the JobResponseInner.
+     */
+    public static JobResponseInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobResponseInner deserializedJobResponseInner = new JobResponseInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("jobId".equals(fieldName)) {
+                    deserializedJobResponseInner.jobId = reader.getString();
+                } else if ("startTimeUtc".equals(fieldName)) {
+                    deserializedJobResponseInner.startTimeUtc
+                        = reader.getNullable(nonNullReader -> new DateTimeRfc1123(nonNullReader.getString()));
+                } else if ("endTimeUtc".equals(fieldName)) {
+                    deserializedJobResponseInner.endTimeUtc
+                        = reader.getNullable(nonNullReader -> new DateTimeRfc1123(nonNullReader.getString()));
+                } else if ("type".equals(fieldName)) {
+                    deserializedJobResponseInner.type = JobType.fromString(reader.getString());
+                } else if ("status".equals(fieldName)) {
+                    deserializedJobResponseInner.status = JobStatus.fromString(reader.getString());
+                } else if ("failureReason".equals(fieldName)) {
+                    deserializedJobResponseInner.failureReason = reader.getString();
+                } else if ("statusMessage".equals(fieldName)) {
+                    deserializedJobResponseInner.statusMessage = reader.getString();
+                } else if ("parentJobId".equals(fieldName)) {
+                    deserializedJobResponseInner.parentJobId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobResponseInner;
+        });
     }
 }

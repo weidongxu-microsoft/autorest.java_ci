@@ -6,73 +6,68 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.Address;
 import com.azure.resourcemanager.databoxedge.generated.models.ContactDetails;
 import com.azure.resourcemanager.databoxedge.generated.models.OrderStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.ShipmentType;
 import com.azure.resourcemanager.databoxedge.generated.models.TrackingInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Order properties.
  */
 @Fluent
-public final class OrderProperties {
+public final class OrderProperties implements JsonSerializable<OrderProperties> {
     /*
      * It specify the order resource id.
      */
-    @JsonProperty(value = "orderId", access = JsonProperty.Access.WRITE_ONLY)
     private String orderId;
 
     /*
      * The contact details.
      */
-    @JsonProperty(value = "contactInformation", required = true)
     private ContactDetails contactInformation;
 
     /*
      * The shipping address.
      */
-    @JsonProperty(value = "shippingAddress")
     private Address shippingAddress;
 
     /*
      * Current status of the order.
      */
-    @JsonProperty(value = "currentStatus", access = JsonProperty.Access.WRITE_ONLY)
     private OrderStatus currentStatus;
 
     /*
      * List of status changes in the order.
      */
-    @JsonProperty(value = "orderHistory", access = JsonProperty.Access.WRITE_ONLY)
     private List<OrderStatus> orderHistory;
 
     /*
      * Serial number of the device.
      */
-    @JsonProperty(value = "serialNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String serialNumber;
 
     /*
      * Tracking information for the package delivered to the customer whether it has an original or a replacement
      * device.
      */
-    @JsonProperty(value = "deliveryTrackingInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackingInfo> deliveryTrackingInfo;
 
     /*
      * Tracking information for the package returned from the customer whether it has an original or a replacement
      * device.
      */
-    @JsonProperty(value = "returnTrackingInfo", access = JsonProperty.Access.WRITE_ONLY)
     private List<TrackingInfo> returnTrackingInfo;
 
     /*
      * ShipmentType of the order
      */
-    @JsonProperty(value = "shipmentType")
     private ShipmentType shipmentType;
 
     /**
@@ -228,4 +223,63 @@ public final class OrderProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(OrderProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("contactInformation", this.contactInformation);
+        jsonWriter.writeJsonField("shippingAddress", this.shippingAddress);
+        jsonWriter.writeStringField("shipmentType", this.shipmentType == null ? null : this.shipmentType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OrderProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OrderProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the OrderProperties.
+     */
+    public static OrderProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OrderProperties deserializedOrderProperties = new OrderProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("contactInformation".equals(fieldName)) {
+                    deserializedOrderProperties.contactInformation = ContactDetails.fromJson(reader);
+                } else if ("orderId".equals(fieldName)) {
+                    deserializedOrderProperties.orderId = reader.getString();
+                } else if ("shippingAddress".equals(fieldName)) {
+                    deserializedOrderProperties.shippingAddress = Address.fromJson(reader);
+                } else if ("currentStatus".equals(fieldName)) {
+                    deserializedOrderProperties.currentStatus = OrderStatus.fromJson(reader);
+                } else if ("orderHistory".equals(fieldName)) {
+                    List<OrderStatus> orderHistory = reader.readArray(reader1 -> OrderStatus.fromJson(reader1));
+                    deserializedOrderProperties.orderHistory = orderHistory;
+                } else if ("serialNumber".equals(fieldName)) {
+                    deserializedOrderProperties.serialNumber = reader.getString();
+                } else if ("deliveryTrackingInfo".equals(fieldName)) {
+                    List<TrackingInfo> deliveryTrackingInfo
+                        = reader.readArray(reader1 -> TrackingInfo.fromJson(reader1));
+                    deserializedOrderProperties.deliveryTrackingInfo = deliveryTrackingInfo;
+                } else if ("returnTrackingInfo".equals(fieldName)) {
+                    List<TrackingInfo> returnTrackingInfo = reader.readArray(reader1 -> TrackingInfo.fromJson(reader1));
+                    deserializedOrderProperties.returnTrackingInfo = returnTrackingInfo;
+                } else if ("shipmentType".equals(fieldName)) {
+                    deserializedOrderProperties.shipmentType = ShipmentType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOrderProperties;
+        });
+    }
 }

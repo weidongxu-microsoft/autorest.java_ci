@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class SqlVmGroupImageSku extends ExpandableStringEnum<SqlVmGroupIma
      * @param name a name to look for.
      * @return the corresponding SqlVmGroupImageSku.
      */
-    @JsonCreator
     public static SqlVmGroupImageSku fromString(String name) {
         return fromString(name, SqlVmGroupImageSku.class);
     }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -52,7 +51,6 @@ public final class HDInsightClusterProvisioningState extends ExpandableStringEnu
      * @param name a name to look for.
      * @return the corresponding HDInsightClusterProvisioningState.
      */
-    @JsonCreator
     public static HDInsightClusterProvisioningState fromString(String name) {
         return fromString(name, HDInsightClusterProvisioningState.class);
     }

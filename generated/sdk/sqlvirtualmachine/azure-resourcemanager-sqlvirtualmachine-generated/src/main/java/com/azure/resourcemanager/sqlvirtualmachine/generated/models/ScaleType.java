@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class ScaleType extends ExpandableStringEnum<ScaleType> {
      * @param name a name to look for.
      * @return the corresponding ScaleType.
      */
-    @JsonCreator
     public static ScaleType fromString(String name) {
         return fromString(name, ScaleType.class);
     }

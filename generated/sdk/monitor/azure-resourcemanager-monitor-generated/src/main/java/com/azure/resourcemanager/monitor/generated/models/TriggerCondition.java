@@ -6,29 +6,30 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The condition that results in the Log Search rule.
  */
 @Fluent
-public final class TriggerCondition {
+public final class TriggerCondition implements JsonSerializable<TriggerCondition> {
     /*
      * Evaluation operation for rule - 'GreaterThan' or 'LessThan.
      */
-    @JsonProperty(value = "thresholdOperator", required = true)
     private ConditionalOperator thresholdOperator;
 
     /*
      * Result or count threshold based on which rule should be triggered.
      */
-    @JsonProperty(value = "threshold", required = true)
     private double threshold;
 
     /*
      * Trigger condition for metric query rule
      */
-    @JsonProperty(value = "metricTrigger")
     private LogMetricTrigger metricTrigger;
 
     /**
@@ -114,4 +115,48 @@ public final class TriggerCondition {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(TriggerCondition.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("thresholdOperator",
+            this.thresholdOperator == null ? null : this.thresholdOperator.toString());
+        jsonWriter.writeDoubleField("threshold", this.threshold);
+        jsonWriter.writeJsonField("metricTrigger", this.metricTrigger);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of TriggerCondition from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of TriggerCondition if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the TriggerCondition.
+     */
+    public static TriggerCondition fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            TriggerCondition deserializedTriggerCondition = new TriggerCondition();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("thresholdOperator".equals(fieldName)) {
+                    deserializedTriggerCondition.thresholdOperator = ConditionalOperator.fromString(reader.getString());
+                } else if ("threshold".equals(fieldName)) {
+                    deserializedTriggerCondition.threshold = reader.getDouble();
+                } else if ("metricTrigger".equals(fieldName)) {
+                    deserializedTriggerCondition.metricTrigger = LogMetricTrigger.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedTriggerCondition;
+        });
+    }
 }

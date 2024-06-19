@@ -6,14 +6,18 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The scheduling constraints for when the profile begins.
  */
 @Fluent
-public final class RecurrentSchedule {
+public final class RecurrentSchedule implements JsonSerializable<RecurrentSchedule> {
     /*
      * the timezone for the hours of the profile. Some examples of valid time zones are: Dateline Standard Time, UTC-11,
      * Hawaiian Standard Time, Alaskan Standard Time, Pacific Standard Time (Mexico), Pacific Standard Time, US Mountain
@@ -41,26 +45,22 @@ public final class RecurrentSchedule {
      * Time, UTC+12, Fiji Standard Time, Kamchatka Standard Time, Tonga Standard Time, Samoa Standard Time, Line Islands
      * Standard Time
      */
-    @JsonProperty(value = "timeZone", required = true)
     private String timeZone;
 
     /*
      * the collection of days that the profile takes effect on. Possible values are Sunday through Saturday.
      */
-    @JsonProperty(value = "days", required = true)
     private List<String> days;
 
     /*
      * A collection of hours that the profile takes effect on. Values supported are 0 to 23 on the 24-hour clock (AM/PM
      * times are not supported).
      */
-    @JsonProperty(value = "hours", required = true)
     private List<Integer> hours;
 
     /*
      * A collection of minutes at which the profile takes effect at.
      */
-    @JsonProperty(value = "minutes", required = true)
     private List<Integer> minutes;
 
     /**
@@ -226,4 +226,53 @@ public final class RecurrentSchedule {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RecurrentSchedule.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("timeZone", this.timeZone);
+        jsonWriter.writeArrayField("days", this.days, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("hours", this.hours, (writer, element) -> writer.writeInt(element));
+        jsonWriter.writeArrayField("minutes", this.minutes, (writer, element) -> writer.writeInt(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RecurrentSchedule from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RecurrentSchedule if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RecurrentSchedule.
+     */
+    public static RecurrentSchedule fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RecurrentSchedule deserializedRecurrentSchedule = new RecurrentSchedule();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("timeZone".equals(fieldName)) {
+                    deserializedRecurrentSchedule.timeZone = reader.getString();
+                } else if ("days".equals(fieldName)) {
+                    List<String> days = reader.readArray(reader1 -> reader1.getString());
+                    deserializedRecurrentSchedule.days = days;
+                } else if ("hours".equals(fieldName)) {
+                    List<Integer> hours = reader.readArray(reader1 -> reader1.getInt());
+                    deserializedRecurrentSchedule.hours = hours;
+                } else if ("minutes".equals(fieldName)) {
+                    List<Integer> minutes = reader.readArray(reader1 -> reader1.getInt());
+                    deserializedRecurrentSchedule.minutes = minutes;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRecurrentSchedule;
+        });
+    }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -107,7 +106,6 @@ public final class IotHubDataFormat extends ExpandableStringEnum<IotHubDataForma
      * @param name a name to look for.
      * @return the corresponding IotHubDataFormat.
      */
-    @JsonCreator
     public static IotHubDataFormat fromString(String name) {
         return fromString(name, IotHubDataFormat.class);
     }

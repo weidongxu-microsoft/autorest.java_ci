@@ -6,55 +6,52 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalRole;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * A class representing database principal entity.
  */
 @Fluent
-public final class DatabasePrincipalInner {
+public final class DatabasePrincipalInner implements JsonSerializable<DatabasePrincipalInner> {
     /*
      * Database principal role.
      */
-    @JsonProperty(value = "role", required = true)
     private DatabasePrincipalRole role;
 
     /*
      * Database principal name.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * Database principal type.
      */
-    @JsonProperty(value = "type", required = true)
     private DatabasePrincipalType type;
 
     /*
      * Database principal fully qualified name.
      */
-    @JsonProperty(value = "fqn")
     private String fqn;
 
     /*
      * Database principal email if exists.
      */
-    @JsonProperty(value = "email")
     private String email;
 
     /*
      * Application id - relevant only for application principal type.
      */
-    @JsonProperty(value = "appId")
     private String appId;
 
     /*
      * The tenant name of the principal
      */
-    @JsonProperty(value = "tenantName", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantName;
 
     /**
@@ -213,4 +210,58 @@ public final class DatabasePrincipalInner {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DatabasePrincipalInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("role", this.role == null ? null : this.role.toString());
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
+        jsonWriter.writeStringField("fqn", this.fqn);
+        jsonWriter.writeStringField("email", this.email);
+        jsonWriter.writeStringField("appId", this.appId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DatabasePrincipalInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DatabasePrincipalInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DatabasePrincipalInner.
+     */
+    public static DatabasePrincipalInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DatabasePrincipalInner deserializedDatabasePrincipalInner = new DatabasePrincipalInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("role".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.role = DatabasePrincipalRole.fromString(reader.getString());
+                } else if ("name".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.type = DatabasePrincipalType.fromString(reader.getString());
+                } else if ("fqn".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.fqn = reader.getString();
+                } else if ("email".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.email = reader.getString();
+                } else if ("appId".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.appId = reader.getString();
+                } else if ("tenantName".equals(fieldName)) {
+                    deserializedDatabasePrincipalInner.tenantName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDatabasePrincipalInner;
+        });
+    }
 }

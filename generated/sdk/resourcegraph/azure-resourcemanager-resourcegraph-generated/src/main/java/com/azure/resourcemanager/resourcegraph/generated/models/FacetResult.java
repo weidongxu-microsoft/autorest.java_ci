@@ -6,41 +6,34 @@ package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Successfully executed facet containing additional statistics on the response of a query.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "resultType", defaultImpl = FacetResult.class, visible = true)
-@JsonTypeName("FacetResult")
 @Fluent
 public final class FacetResult extends Facet {
     /*
      * Result type
      */
-    @JsonTypeId
-    @JsonProperty(value = "resultType", required = true)
     private String resultType = "FacetResult";
 
     /*
      * Number of total records in the facet results.
      */
-    @JsonProperty(value = "totalRecords", required = true)
     private long totalRecords;
 
     /*
      * Number of records returned in the facet response.
      */
-    @JsonProperty(value = "count", required = true)
     private int count;
 
     /*
      * A JObject array or Table containing the desired facets. Only present if the facet is valid.
      */
-    @JsonProperty(value = "data", required = true)
     private Object data;
 
     /**
@@ -145,4 +138,53 @@ public final class FacetResult extends Facet {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(FacetResult.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("expression", expression());
+        jsonWriter.writeLongField("totalRecords", this.totalRecords);
+        jsonWriter.writeIntField("count", this.count);
+        jsonWriter.writeUntypedField("data", this.data);
+        jsonWriter.writeStringField("resultType", this.resultType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FacetResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FacetResult if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the FacetResult.
+     */
+    public static FacetResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FacetResult deserializedFacetResult = new FacetResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("expression".equals(fieldName)) {
+                    deserializedFacetResult.withExpression(reader.getString());
+                } else if ("totalRecords".equals(fieldName)) {
+                    deserializedFacetResult.totalRecords = reader.getLong();
+                } else if ("count".equals(fieldName)) {
+                    deserializedFacetResult.count = reader.getInt();
+                } else if ("data".equals(fieldName)) {
+                    deserializedFacetResult.data = reader.readUntyped();
+                } else if ("resultType".equals(fieldName)) {
+                    deserializedFacetResult.resultType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFacetResult;
+        });
+    }
 }

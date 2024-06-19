@@ -5,19 +5,22 @@
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.operationalinsights.generated.fluent.models.LinkedServiceInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The list linked service operation response.
  */
 @Fluent
-public final class LinkedServiceListResult {
+public final class LinkedServiceListResult implements JsonSerializable<LinkedServiceListResult> {
     /*
      * The list of linked service instances
      */
-    @JsonProperty(value = "value")
     private List<LinkedServiceInner> value;
 
     /**
@@ -55,5 +58,42 @@ public final class LinkedServiceListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LinkedServiceListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LinkedServiceListResult if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LinkedServiceListResult.
+     */
+    public static LinkedServiceListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LinkedServiceListResult deserializedLinkedServiceListResult = new LinkedServiceListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<LinkedServiceInner> value = reader.readArray(reader1 -> LinkedServiceInner.fromJson(reader1));
+                    deserializedLinkedServiceListResult.value = value;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLinkedServiceListResult;
+        });
     }
 }

@@ -5,25 +5,27 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.ApplicationGroupInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The response from the List Application Groups operation.
  */
 @Fluent
-public final class ApplicationGroupListResult {
+public final class ApplicationGroupListResult implements JsonSerializable<ApplicationGroupListResult> {
     /*
      * Result of the List Application Groups operation.
      */
-    @JsonProperty(value = "value")
     private List<ApplicationGroupInner> value;
 
     /*
      * Link to the next set of results. Not empty if Value contains an incomplete list of Authorization Rules
      */
-    @JsonProperty(value = "nextLink", access = JsonProperty.Access.WRITE_ONLY)
     private String nextLink;
 
     /**
@@ -71,5 +73,45 @@ public final class ApplicationGroupListResult {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationGroupListResult from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationGroupListResult if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationGroupListResult.
+     */
+    public static ApplicationGroupListResult fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationGroupListResult deserializedApplicationGroupListResult = new ApplicationGroupListResult();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<ApplicationGroupInner> value
+                        = reader.readArray(reader1 -> ApplicationGroupInner.fromJson(reader1));
+                    deserializedApplicationGroupListResult.value = value;
+                } else if ("nextLink".equals(fieldName)) {
+                    deserializedApplicationGroupListResult.nextLink = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationGroupListResult;
+        });
     }
 }

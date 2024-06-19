@@ -5,79 +5,75 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabaseRouting;
 import com.azure.resourcemanager.azurekusto.generated.models.IotHubDataFormat;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
  * Class representing the Kusto Iot hub connection properties.
  */
 @Fluent
-public final class IotHubConnectionProperties {
+public final class IotHubConnectionProperties implements JsonSerializable<IotHubConnectionProperties> {
     /*
      * The resource ID of the Iot hub to be used to create a data connection.
      */
-    @JsonProperty(value = "iotHubResourceId", required = true)
     private String iotHubResourceId;
 
     /*
      * The iot hub consumer group.
      */
-    @JsonProperty(value = "consumerGroup", required = true)
     private String consumerGroup;
 
     /*
      * The table where the data should be ingested. Optionally the table information can be added to each message.
      */
-    @JsonProperty(value = "tableName")
     private String tableName;
 
     /*
      * The mapping rule to be used to ingest the data. Optionally the mapping information can be added to each message.
      */
-    @JsonProperty(value = "mappingRuleName")
     private String mappingRuleName;
 
     /*
      * The data format of the message. Optionally the data format can be added to each message.
      */
-    @JsonProperty(value = "dataFormat")
     private IotHubDataFormat dataFormat;
 
     /*
      * System properties of the iot hub
      */
-    @JsonProperty(value = "eventSystemProperties")
     private List<String> eventSystemProperties;
 
     /*
      * The name of the share access policy
      */
-    @JsonProperty(value = "sharedAccessPolicyName", required = true)
     private String sharedAccessPolicyName;
 
     /*
      * Indication for database routing information from the data connection, by default only database routing
      * information is allowed
      */
-    @JsonProperty(value = "databaseRouting")
     private DatabaseRouting databaseRouting;
 
     /*
      * When defined, the data connection retrieves existing Event hub events created since the Retrieval start date. It
      * can only retrieve events retained by the Event hub, based on its retention period.
      */
-    @JsonProperty(value = "retrievalStartDate")
     private OffsetDateTime retrievalStartDate;
 
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /**
@@ -311,4 +307,76 @@ public final class IotHubConnectionProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IotHubConnectionProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("iotHubResourceId", this.iotHubResourceId);
+        jsonWriter.writeStringField("consumerGroup", this.consumerGroup);
+        jsonWriter.writeStringField("sharedAccessPolicyName", this.sharedAccessPolicyName);
+        jsonWriter.writeStringField("tableName", this.tableName);
+        jsonWriter.writeStringField("mappingRuleName", this.mappingRuleName);
+        jsonWriter.writeStringField("dataFormat", this.dataFormat == null ? null : this.dataFormat.toString());
+        jsonWriter.writeArrayField("eventSystemProperties", this.eventSystemProperties,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("databaseRouting",
+            this.databaseRouting == null ? null : this.databaseRouting.toString());
+        jsonWriter.writeStringField("retrievalStartDate",
+            this.retrievalStartDate == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.retrievalStartDate));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IotHubConnectionProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IotHubConnectionProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IotHubConnectionProperties.
+     */
+    public static IotHubConnectionProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IotHubConnectionProperties deserializedIotHubConnectionProperties = new IotHubConnectionProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("iotHubResourceId".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.iotHubResourceId = reader.getString();
+                } else if ("consumerGroup".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.consumerGroup = reader.getString();
+                } else if ("sharedAccessPolicyName".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.sharedAccessPolicyName = reader.getString();
+                } else if ("tableName".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.tableName = reader.getString();
+                } else if ("mappingRuleName".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.mappingRuleName = reader.getString();
+                } else if ("dataFormat".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.dataFormat = IotHubDataFormat.fromString(reader.getString());
+                } else if ("eventSystemProperties".equals(fieldName)) {
+                    List<String> eventSystemProperties = reader.readArray(reader1 -> reader1.getString());
+                    deserializedIotHubConnectionProperties.eventSystemProperties = eventSystemProperties;
+                } else if ("databaseRouting".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.databaseRouting
+                        = DatabaseRouting.fromString(reader.getString());
+                } else if ("retrievalStartDate".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.retrievalStartDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedIotHubConnectionProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIotHubConnectionProperties;
+        });
+    }
 }

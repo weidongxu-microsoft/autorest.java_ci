@@ -6,63 +6,59 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabasePrincipalRole;
 import com.azure.resourcemanager.azurekusto.generated.models.PrincipalType;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * A class representing database principal property.
  */
 @Fluent
-public final class DatabasePrincipalProperties {
+public final class DatabasePrincipalProperties implements JsonSerializable<DatabasePrincipalProperties> {
     /*
      * The principal ID assigned to the database principal. It can be a user email, application ID, or security group
      * name.
      */
-    @JsonProperty(value = "principalId", required = true)
     private String principalId;
 
     /*
      * Database principal role.
      */
-    @JsonProperty(value = "role", required = true)
     private DatabasePrincipalRole role;
 
     /*
      * The tenant id of the principal
      */
-    @JsonProperty(value = "tenantId")
     private String tenantId;
 
     /*
      * Principal type.
      */
-    @JsonProperty(value = "principalType", required = true)
     private PrincipalType principalType;
 
     /*
      * The tenant name of the principal
      */
-    @JsonProperty(value = "tenantName", access = JsonProperty.Access.WRITE_ONLY)
     private String tenantName;
 
     /*
      * The principal name
      */
-    @JsonProperty(value = "principalName", access = JsonProperty.Access.WRITE_ONLY)
     private String principalName;
 
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * The service principal object id in AAD (Azure active directory)
      */
-    @JsonProperty(value = "aadObjectId", access = JsonProperty.Access.WRITE_ONLY)
     private String aadObjectId;
 
     /**
@@ -213,4 +209,60 @@ public final class DatabasePrincipalProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DatabasePrincipalProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("principalId", this.principalId);
+        jsonWriter.writeStringField("role", this.role == null ? null : this.role.toString());
+        jsonWriter.writeStringField("principalType", this.principalType == null ? null : this.principalType.toString());
+        jsonWriter.writeStringField("tenantId", this.tenantId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DatabasePrincipalProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DatabasePrincipalProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DatabasePrincipalProperties.
+     */
+    public static DatabasePrincipalProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DatabasePrincipalProperties deserializedDatabasePrincipalProperties = new DatabasePrincipalProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("principalId".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.principalId = reader.getString();
+                } else if ("role".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.role = DatabasePrincipalRole.fromString(reader.getString());
+                } else if ("principalType".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.principalType
+                        = PrincipalType.fromString(reader.getString());
+                } else if ("tenantId".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.tenantId = reader.getString();
+                } else if ("tenantName".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.tenantName = reader.getString();
+                } else if ("principalName".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.principalName = reader.getString();
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("aadObjectId".equals(fieldName)) {
+                    deserializedDatabasePrincipalProperties.aadObjectId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDatabasePrincipalProperties;
+        });
+    }
 }

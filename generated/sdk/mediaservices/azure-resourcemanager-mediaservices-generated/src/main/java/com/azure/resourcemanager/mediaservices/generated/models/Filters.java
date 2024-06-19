@@ -5,7 +5,11 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -13,41 +17,35 @@ import java.util.List;
  * media before encoding.
  */
 @Fluent
-public final class Filters {
+public final class Filters implements JsonSerializable<Filters> {
     /*
      * The de-interlacing settings.
      */
-    @JsonProperty(value = "deinterlace")
     private Deinterlace deinterlace;
 
     /*
      * The rotation, if any, to be applied to the input video, before it is encoded. Default is Auto
      */
-    @JsonProperty(value = "rotation")
     private Rotation rotation;
 
     /*
      * The parameters for the rectangular window with which to crop the input video.
      */
-    @JsonProperty(value = "crop")
     private Rectangle crop;
 
     /*
      * Describes the properties of a Fade effect applied to the input media.
      */
-    @JsonProperty(value = "fadeIn")
     private Fade fadeIn;
 
     /*
      * Describes the properties of a Fade effect applied to the input media.
      */
-    @JsonProperty(value = "fadeOut")
     private Fade fadeOut;
 
     /*
      * The properties of overlays to be applied to the input video. These could be audio, image or video overlays.
      */
-    @JsonProperty(value = "overlays")
     private List<Overlay> overlays;
 
     /**
@@ -201,5 +199,57 @@ public final class Filters {
         if (overlays() != null) {
             overlays().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("deinterlace", this.deinterlace);
+        jsonWriter.writeStringField("rotation", this.rotation == null ? null : this.rotation.toString());
+        jsonWriter.writeJsonField("crop", this.crop);
+        jsonWriter.writeJsonField("fadeIn", this.fadeIn);
+        jsonWriter.writeJsonField("fadeOut", this.fadeOut);
+        jsonWriter.writeArrayField("overlays", this.overlays, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Filters from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Filters if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the Filters.
+     */
+    public static Filters fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Filters deserializedFilters = new Filters();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("deinterlace".equals(fieldName)) {
+                    deserializedFilters.deinterlace = Deinterlace.fromJson(reader);
+                } else if ("rotation".equals(fieldName)) {
+                    deserializedFilters.rotation = Rotation.fromString(reader.getString());
+                } else if ("crop".equals(fieldName)) {
+                    deserializedFilters.crop = Rectangle.fromJson(reader);
+                } else if ("fadeIn".equals(fieldName)) {
+                    deserializedFilters.fadeIn = Fade.fromJson(reader);
+                } else if ("fadeOut".equals(fieldName)) {
+                    deserializedFilters.fadeOut = Fade.fromJson(reader);
+                } else if ("overlays".equals(fieldName)) {
+                    List<Overlay> overlays = reader.readArray(reader1 -> Overlay.fromJson(reader1));
+                    deserializedFilters.overlays = overlays;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFilters;
+        });
     }
 }

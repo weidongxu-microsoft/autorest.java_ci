@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -54,7 +53,6 @@ public final class SharedPrivateLinkResourceProvisioningState
      * @param name a name to look for.
      * @return the corresponding SharedPrivateLinkResourceProvisioningState.
      */
-    @JsonCreator
     public static SharedPrivateLinkResourceProvisioningState fromString(String name) {
         return fromString(name, SharedPrivateLinkResourceProvisioningState.class);
     }

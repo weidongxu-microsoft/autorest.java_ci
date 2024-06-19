@@ -6,36 +6,36 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Specifies the log search query.
  */
 @Fluent
-public final class Source {
+public final class Source implements JsonSerializable<Source> {
     /*
      * Log search query. Required for action type - AlertingAction
      */
-    @JsonProperty(value = "query")
     private String query;
 
     /*
      * List of Resource referred into query
      */
-    @JsonProperty(value = "authorizedResources")
     private List<String> authorizedResources;
 
     /*
      * The resource uri over which log search query is to be run.
      */
-    @JsonProperty(value = "dataSourceId", required = true)
     private String dataSourceId;
 
     /*
      * Set value to 'ResultCount' .
      */
-    @JsonProperty(value = "queryType")
     private QueryType queryType;
 
     /**
@@ -137,4 +137,52 @@ public final class Source {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(Source.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("dataSourceId", this.dataSourceId);
+        jsonWriter.writeStringField("query", this.query);
+        jsonWriter.writeArrayField("authorizedResources", this.authorizedResources,
+            (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("queryType", this.queryType == null ? null : this.queryType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Source from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Source if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the Source.
+     */
+    public static Source fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Source deserializedSource = new Source();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("dataSourceId".equals(fieldName)) {
+                    deserializedSource.dataSourceId = reader.getString();
+                } else if ("query".equals(fieldName)) {
+                    deserializedSource.query = reader.getString();
+                } else if ("authorizedResources".equals(fieldName)) {
+                    List<String> authorizedResources = reader.readArray(reader1 -> reader1.getString());
+                    deserializedSource.authorizedResources = authorizedResources;
+                } else if ("queryType".equals(fieldName)) {
+                    deserializedSource.queryType = QueryType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSource;
+        });
+    }
 }

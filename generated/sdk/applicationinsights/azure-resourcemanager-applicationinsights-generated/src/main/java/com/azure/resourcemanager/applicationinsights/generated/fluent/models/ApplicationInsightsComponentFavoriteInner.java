@@ -5,82 +5,76 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.applicationinsights.generated.models.FavoriteType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Properties that define a favorite that is associated to an Application Insights component.
  */
 @Fluent
-public final class ApplicationInsightsComponentFavoriteInner {
+public final class ApplicationInsightsComponentFavoriteInner
+    implements JsonSerializable<ApplicationInsightsComponentFavoriteInner> {
     /*
      * The user-defined name of the favorite.
      */
-    @JsonProperty(value = "Name")
     private String name;
 
     /*
      * Configuration of this particular favorite, which are driven by the Azure portal UX. Configuration data is a
      * string containing valid JSON
      */
-    @JsonProperty(value = "Config")
     private String config;
 
     /*
      * This instance's version of the data model. This can change as new features are added that can be marked favorite.
      * Current examples include MetricsExplorer (ME) and Search.
      */
-    @JsonProperty(value = "Version")
     private String version;
 
     /*
      * Internally assigned unique id of the favorite definition.
      */
-    @JsonProperty(value = "FavoriteId", access = JsonProperty.Access.WRITE_ONLY)
     private String favoriteId;
 
     /*
      * Enum indicating if this favorite definition is owned by a specific user or is shared between all users with
      * access to the Application Insights component.
      */
-    @JsonProperty(value = "FavoriteType")
     private FavoriteType favoriteType;
 
     /*
      * The source of the favorite definition.
      */
-    @JsonProperty(value = "SourceType")
     private String sourceType;
 
     /*
      * Date and time in UTC of the last modification that was made to this favorite definition.
      */
-    @JsonProperty(value = "TimeModified", access = JsonProperty.Access.WRITE_ONLY)
     private String timeModified;
 
     /*
      * A list of 0 or more tags that are associated with this favorite definition
      */
-    @JsonProperty(value = "Tags")
     private List<String> tags;
 
     /*
      * Favorite category, as defined by the user at creation time.
      */
-    @JsonProperty(value = "Category")
     private String category;
 
     /*
      * Flag denoting wether or not this favorite was generated from a template.
      */
-    @JsonProperty(value = "IsGeneratedFromTemplate")
     private Boolean isGeneratedFromTemplate;
 
     /*
      * Unique user id of the specific user that owns this favorite.
      */
-    @JsonProperty(value = "UserId", access = JsonProperty.Access.WRITE_ONLY)
     private String userId;
 
     /**
@@ -291,5 +285,72 @@ public final class ApplicationInsightsComponentFavoriteInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("Name", this.name);
+        jsonWriter.writeStringField("Config", this.config);
+        jsonWriter.writeStringField("Version", this.version);
+        jsonWriter.writeStringField("FavoriteType", this.favoriteType == null ? null : this.favoriteType.toString());
+        jsonWriter.writeStringField("SourceType", this.sourceType);
+        jsonWriter.writeArrayField("Tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeStringField("Category", this.category);
+        jsonWriter.writeBooleanField("IsGeneratedFromTemplate", this.isGeneratedFromTemplate);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationInsightsComponentFavoriteInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationInsightsComponentFavoriteInner if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ApplicationInsightsComponentFavoriteInner.
+     */
+    public static ApplicationInsightsComponentFavoriteInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationInsightsComponentFavoriteInner deserializedApplicationInsightsComponentFavoriteInner
+                = new ApplicationInsightsComponentFavoriteInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("Name".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.name = reader.getString();
+                } else if ("Config".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.config = reader.getString();
+                } else if ("Version".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.version = reader.getString();
+                } else if ("FavoriteId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.favoriteId = reader.getString();
+                } else if ("FavoriteType".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.favoriteType
+                        = FavoriteType.fromString(reader.getString());
+                } else if ("SourceType".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.sourceType = reader.getString();
+                } else if ("TimeModified".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.timeModified = reader.getString();
+                } else if ("Tags".equals(fieldName)) {
+                    List<String> tags = reader.readArray(reader1 -> reader1.getString());
+                    deserializedApplicationInsightsComponentFavoriteInner.tags = tags;
+                } else if ("Category".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.category = reader.getString();
+                } else if ("IsGeneratedFromTemplate".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.isGeneratedFromTemplate
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("UserId".equals(fieldName)) {
+                    deserializedApplicationInsightsComponentFavoriteInner.userId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationInsightsComponentFavoriteInner;
+        });
     }
 }

@@ -5,107 +5,95 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ClusterWitnessType;
 import com.azure.resourcemanager.databoxedge.generated.models.KeyVaultSyncStatus;
 import com.azure.resourcemanager.databoxedge.generated.models.Secret;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.Map;
 
 /**
  * The properties of the Data Box Edge/Gateway device extended info.
  */
 @Fluent
-public final class DataBoxEdgeDeviceExtendedInfoProperties {
+public final class DataBoxEdgeDeviceExtendedInfoProperties
+    implements JsonSerializable<DataBoxEdgeDeviceExtendedInfoProperties> {
     /*
      * The digital signature of encrypted certificate.
      */
-    @JsonProperty(value = "encryptionKeyThumbprint")
     private String encryptionKeyThumbprint;
 
     /*
      * The public part of the encryption certificate. Client uses this to encrypt any secret.
      */
-    @JsonProperty(value = "encryptionKey")
     private String encryptionKey;
 
     /*
      * The Resource ID of the Resource.
      */
-    @JsonProperty(value = "resourceKey", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceKey;
 
     /*
      * The Key Vault ARM Id for client secrets
      */
-    @JsonProperty(value = "clientSecretStoreId")
     private String clientSecretStoreId;
 
     /*
      * The url to access the Client Key Vault
      */
-    @JsonProperty(value = "clientSecretStoreUrl")
     private String clientSecretStoreUrl;
 
     /*
      * The name of Channel Integrity Key stored in the Client Key Vault
      */
-    @JsonProperty(value = "channelIntegrityKeyName")
     private String channelIntegrityKeyName;
 
     /*
      * The version of Channel Integrity Key stored in the Client Key Vault
      */
-    @JsonProperty(value = "channelIntegrityKeyVersion")
     private String channelIntegrityKeyVersion;
 
     /*
      * Key vault sync status
      */
-    @JsonProperty(value = "keyVaultSyncStatus")
     private KeyVaultSyncStatus keyVaultSyncStatus;
 
     /*
      * Device secrets, will be returned only with ODataFilter $expand=deviceSecrets
      */
-    @JsonProperty(value = "deviceSecrets", access = JsonProperty.Access.WRITE_ONLY)
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, Secret> deviceSecrets;
 
     /*
      * Cluster Witness Type
      */
-    @JsonProperty(value = "clusterWitnessType", access = JsonProperty.Access.WRITE_ONLY)
     private ClusterWitnessType clusterWitnessType;
 
     /*
      * The witness location of file share.
      */
-    @JsonProperty(value = "fileShareWitnessLocation", access = JsonProperty.Access.WRITE_ONLY)
     private String fileShareWitnessLocation;
 
     /*
      * The username of file share.
      */
-    @JsonProperty(value = "fileShareWitnessUsername", access = JsonProperty.Access.WRITE_ONLY)
     private String fileShareWitnessUsername;
 
     /*
      * The Cloud Witness Storage account name.
      */
-    @JsonProperty(value = "cloudWitnessStorageAccountName", access = JsonProperty.Access.WRITE_ONLY)
     private String cloudWitnessStorageAccountName;
 
     /*
      * The Container for cloud witness in the storage account.
      */
-    @JsonProperty(value = "cloudWitnessContainerName", access = JsonProperty.Access.WRITE_ONLY)
     private String cloudWitnessContainerName;
 
     /*
      * The Azure service endpoint of the cloud witness storage account.
      */
-    @JsonProperty(value = "cloudWitnessStorageEndpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String cloudWitnessStorageEndpoint;
 
     /**
@@ -341,5 +329,82 @@ public final class DataBoxEdgeDeviceExtendedInfoProperties {
                 }
             });
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("encryptionKeyThumbprint", this.encryptionKeyThumbprint);
+        jsonWriter.writeStringField("encryptionKey", this.encryptionKey);
+        jsonWriter.writeStringField("clientSecretStoreId", this.clientSecretStoreId);
+        jsonWriter.writeStringField("clientSecretStoreUrl", this.clientSecretStoreUrl);
+        jsonWriter.writeStringField("channelIntegrityKeyName", this.channelIntegrityKeyName);
+        jsonWriter.writeStringField("channelIntegrityKeyVersion", this.channelIntegrityKeyVersion);
+        jsonWriter.writeStringField("keyVaultSyncStatus",
+            this.keyVaultSyncStatus == null ? null : this.keyVaultSyncStatus.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDeviceExtendedInfoProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDeviceExtendedInfoProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDeviceExtendedInfoProperties.
+     */
+    public static DataBoxEdgeDeviceExtendedInfoProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDeviceExtendedInfoProperties deserializedDataBoxEdgeDeviceExtendedInfoProperties
+                = new DataBoxEdgeDeviceExtendedInfoProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("encryptionKeyThumbprint".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.encryptionKeyThumbprint = reader.getString();
+                } else if ("encryptionKey".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.encryptionKey = reader.getString();
+                } else if ("resourceKey".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.resourceKey = reader.getString();
+                } else if ("clientSecretStoreId".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.clientSecretStoreId = reader.getString();
+                } else if ("clientSecretStoreUrl".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.clientSecretStoreUrl = reader.getString();
+                } else if ("channelIntegrityKeyName".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.channelIntegrityKeyName = reader.getString();
+                } else if ("channelIntegrityKeyVersion".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.channelIntegrityKeyVersion = reader.getString();
+                } else if ("keyVaultSyncStatus".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.keyVaultSyncStatus
+                        = KeyVaultSyncStatus.fromString(reader.getString());
+                } else if ("deviceSecrets".equals(fieldName)) {
+                    Map<String, Secret> deviceSecrets = reader.readMap(reader1 -> Secret.fromJson(reader1));
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.deviceSecrets = deviceSecrets;
+                } else if ("clusterWitnessType".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.clusterWitnessType
+                        = ClusterWitnessType.fromString(reader.getString());
+                } else if ("fileShareWitnessLocation".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.fileShareWitnessLocation = reader.getString();
+                } else if ("fileShareWitnessUsername".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.fileShareWitnessUsername = reader.getString();
+                } else if ("cloudWitnessStorageAccountName".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.cloudWitnessStorageAccountName
+                        = reader.getString();
+                } else if ("cloudWitnessContainerName".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.cloudWitnessContainerName = reader.getString();
+                } else if ("cloudWitnessStorageEndpoint".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoProperties.cloudWitnessStorageEndpoint
+                        = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDeviceExtendedInfoProperties;
+        });
     }
 }

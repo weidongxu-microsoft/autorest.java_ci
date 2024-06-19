@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ThresholdType extends ExpandableStringEnum<ThresholdType> {
      * @param name a name to look for.
      * @return the corresponding ThresholdType.
      */
-    @JsonCreator
     public static ThresholdType fromString(String name) {
         return fromString(name, ThresholdType.class);
     }

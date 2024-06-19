@@ -5,41 +5,40 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The properties of the meter detail.
  */
 @Immutable
-public final class MeterDetailsResponse {
+public final class MeterDetailsResponse implements JsonSerializable<MeterDetailsResponse> {
     /*
      * The name of the meter, within the given meter category
      */
-    @JsonProperty(value = "meterName", access = JsonProperty.Access.WRITE_ONLY)
     private String meterName;
 
     /*
      * The category of the meter, for example, 'Cloud services', 'Networking', etc..
      */
-    @JsonProperty(value = "meterCategory", access = JsonProperty.Access.WRITE_ONLY)
     private String meterCategory;
 
     /*
      * The subcategory of the meter, for example, 'A6 Cloud services', 'ExpressRoute (IXP)', etc..
      */
-    @JsonProperty(value = "meterSubCategory", access = JsonProperty.Access.WRITE_ONLY)
     private String meterSubCategory;
 
     /*
      * The unit in which the meter consumption is charged, for example, 'Hours', 'GB', etc.
      */
-    @JsonProperty(value = "unitOfMeasure", access = JsonProperty.Access.WRITE_ONLY)
     private String unitOfMeasure;
 
     /*
      * The service family.
      */
-    @JsonProperty(value = "serviceFamily", access = JsonProperty.Access.WRITE_ONLY)
     private String serviceFamily;
 
     /**
@@ -101,5 +100,48 @@ public final class MeterDetailsResponse {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MeterDetailsResponse from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MeterDetailsResponse if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MeterDetailsResponse.
+     */
+    public static MeterDetailsResponse fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MeterDetailsResponse deserializedMeterDetailsResponse = new MeterDetailsResponse();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("meterName".equals(fieldName)) {
+                    deserializedMeterDetailsResponse.meterName = reader.getString();
+                } else if ("meterCategory".equals(fieldName)) {
+                    deserializedMeterDetailsResponse.meterCategory = reader.getString();
+                } else if ("meterSubCategory".equals(fieldName)) {
+                    deserializedMeterDetailsResponse.meterSubCategory = reader.getString();
+                } else if ("unitOfMeasure".equals(fieldName)) {
+                    deserializedMeterDetailsResponse.unitOfMeasure = reader.getString();
+                } else if ("serviceFamily".equals(fieldName)) {
+                    deserializedMeterDetailsResponse.serviceFamily = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMeterDetailsResponse;
+        });
     }
 }

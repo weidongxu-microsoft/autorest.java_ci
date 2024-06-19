@@ -6,6 +6,10 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ComputeResource;
 import com.azure.resourcemanager.databoxedge.generated.models.HostPlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.IoTDeviceInfo;
@@ -13,60 +17,52 @@ import com.azure.resourcemanager.databoxedge.generated.models.IoTEdgeAgentInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.MountPointMap;
 import com.azure.resourcemanager.databoxedge.generated.models.PlatformType;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * IoT role properties.
  */
 @Fluent
-public final class IoTRoleProperties {
+public final class IoTRoleProperties implements JsonSerializable<IoTRoleProperties> {
     /*
      * Host OS supported by the IoT role.
      */
-    @JsonProperty(value = "hostPlatform", required = true)
     private PlatformType hostPlatform;
 
     /*
      * IoT device metadata to which data box edge device needs to be connected.
      */
-    @JsonProperty(value = "ioTDeviceDetails", required = true)
     private IoTDeviceInfo ioTDeviceDetails;
 
     /*
      * IoT edge device to which the IoT role needs to be configured.
      */
-    @JsonProperty(value = "ioTEdgeDeviceDetails", required = true)
     private IoTDeviceInfo ioTEdgeDeviceDetails;
 
     /*
      * Mount points of shares in role(s).
      */
-    @JsonProperty(value = "shareMappings")
     private List<MountPointMap> shareMappings;
 
     /*
      * Iot edge agent details to download the agent and bootstrap iot runtime.
      */
-    @JsonProperty(value = "ioTEdgeAgentInfo")
     private IoTEdgeAgentInfo ioTEdgeAgentInfo;
 
     /*
      * Platform where the Iot runtime is hosted.
      */
-    @JsonProperty(value = "hostPlatformType", access = JsonProperty.Access.WRITE_ONLY)
     private HostPlatformType hostPlatformType;
 
     /*
      * Resource allocation
      */
-    @JsonProperty(value = "computeResource")
     private ComputeResource computeResource;
 
     /*
      * Role status.
      */
-    @JsonProperty(value = "roleStatus", required = true)
     private RoleStatus roleStatus;
 
     /**
@@ -264,4 +260,62 @@ public final class IoTRoleProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(IoTRoleProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("hostPlatform", this.hostPlatform == null ? null : this.hostPlatform.toString());
+        jsonWriter.writeJsonField("ioTDeviceDetails", this.ioTDeviceDetails);
+        jsonWriter.writeJsonField("ioTEdgeDeviceDetails", this.ioTEdgeDeviceDetails);
+        jsonWriter.writeStringField("roleStatus", this.roleStatus == null ? null : this.roleStatus.toString());
+        jsonWriter.writeArrayField("shareMappings", this.shareMappings, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("ioTEdgeAgentInfo", this.ioTEdgeAgentInfo);
+        jsonWriter.writeJsonField("computeResource", this.computeResource);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IoTRoleProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IoTRoleProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the IoTRoleProperties.
+     */
+    public static IoTRoleProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IoTRoleProperties deserializedIoTRoleProperties = new IoTRoleProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("hostPlatform".equals(fieldName)) {
+                    deserializedIoTRoleProperties.hostPlatform = PlatformType.fromString(reader.getString());
+                } else if ("ioTDeviceDetails".equals(fieldName)) {
+                    deserializedIoTRoleProperties.ioTDeviceDetails = IoTDeviceInfo.fromJson(reader);
+                } else if ("ioTEdgeDeviceDetails".equals(fieldName)) {
+                    deserializedIoTRoleProperties.ioTEdgeDeviceDetails = IoTDeviceInfo.fromJson(reader);
+                } else if ("roleStatus".equals(fieldName)) {
+                    deserializedIoTRoleProperties.roleStatus = RoleStatus.fromString(reader.getString());
+                } else if ("shareMappings".equals(fieldName)) {
+                    List<MountPointMap> shareMappings = reader.readArray(reader1 -> MountPointMap.fromJson(reader1));
+                    deserializedIoTRoleProperties.shareMappings = shareMappings;
+                } else if ("ioTEdgeAgentInfo".equals(fieldName)) {
+                    deserializedIoTRoleProperties.ioTEdgeAgentInfo = IoTEdgeAgentInfo.fromJson(reader);
+                } else if ("hostPlatformType".equals(fieldName)) {
+                    deserializedIoTRoleProperties.hostPlatformType = HostPlatformType.fromString(reader.getString());
+                } else if ("computeResource".equals(fieldName)) {
+                    deserializedIoTRoleProperties.computeResource = ComputeResource.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIoTRoleProperties;
+        });
+    }
 }

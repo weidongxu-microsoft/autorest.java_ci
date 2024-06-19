@@ -5,59 +5,57 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.DatabaseStatistics;
 import com.azure.resourcemanager.azurekusto.generated.models.KeyVaultProperties;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
 import com.azure.resourcemanager.azurekusto.generated.models.SuspensionDetails;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.Duration;
 
 /**
  * Class representing the Kusto database properties.
  */
 @Fluent
-public final class ReadWriteDatabaseProperties {
+public final class ReadWriteDatabaseProperties implements JsonSerializable<ReadWriteDatabaseProperties> {
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * The time the data should be kept before it stops being accessible to queries in TimeSpan.
      */
-    @JsonProperty(value = "softDeletePeriod")
     private Duration softDeletePeriod;
 
     /*
      * The time the data should be kept in cache for fast queries in TimeSpan.
      */
-    @JsonProperty(value = "hotCachePeriod")
     private Duration hotCachePeriod;
 
     /*
      * The statistics of the database.
      */
-    @JsonProperty(value = "statistics", access = JsonProperty.Access.WRITE_ONLY)
     private DatabaseStatistics statistics;
 
     /*
      * Indicates whether the database is followed.
      */
-    @JsonProperty(value = "isFollowed", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isFollowed;
 
     /*
      * KeyVault properties for the database encryption.
      */
-    @JsonProperty(value = "keyVaultProperties")
     private KeyVaultProperties keyVaultProperties;
 
     /*
      * The database suspension details. If the database is suspended, this object contains information related to the
      * database's suspension state.
      */
-    @JsonProperty(value = "suspensionDetails", access = JsonProperty.Access.WRITE_ONLY)
     private SuspensionDetails suspensionDetails;
 
     /**
@@ -180,5 +178,58 @@ public final class ReadWriteDatabaseProperties {
         if (suspensionDetails() != null) {
             suspensionDetails().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("softDeletePeriod", CoreUtils.durationToStringWithDays(this.softDeletePeriod));
+        jsonWriter.writeStringField("hotCachePeriod", CoreUtils.durationToStringWithDays(this.hotCachePeriod));
+        jsonWriter.writeJsonField("keyVaultProperties", this.keyVaultProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReadWriteDatabaseProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReadWriteDatabaseProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ReadWriteDatabaseProperties.
+     */
+    public static ReadWriteDatabaseProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReadWriteDatabaseProperties deserializedReadWriteDatabaseProperties = new ReadWriteDatabaseProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("provisioningState".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("softDeletePeriod".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.softDeletePeriod
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("hotCachePeriod".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.hotCachePeriod
+                        = reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString()));
+                } else if ("statistics".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.statistics = DatabaseStatistics.fromJson(reader);
+                } else if ("isFollowed".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.isFollowed = reader.getNullable(JsonReader::getBoolean);
+                } else if ("keyVaultProperties".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.keyVaultProperties = KeyVaultProperties.fromJson(reader);
+                } else if ("suspensionDetails".equals(fieldName)) {
+                    deserializedReadWriteDatabaseProperties.suspensionDetails = SuspensionDetails.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReadWriteDatabaseProperties;
+        });
     }
 }

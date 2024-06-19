@@ -6,7 +6,11 @@ package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The destination information for the delivery of the export. To allow access to a storage account, you must register
@@ -16,23 +20,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  * https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-supported-services .
  */
 @Fluent
-public final class ExportDeliveryDestination {
+public final class ExportDeliveryDestination implements JsonSerializable<ExportDeliveryDestination> {
     /*
      * The resource id of the storage account where exports will be delivered.
      */
-    @JsonProperty(value = "resourceId", required = true)
     private String resourceId;
 
     /*
      * The name of the container where exports will be uploaded.
      */
-    @JsonProperty(value = "container", required = true)
     private String container;
 
     /*
      * The name of the directory where exports will be uploaded.
      */
-    @JsonProperty(value = "rootFolderPath")
     private String rootFolderPath;
 
     /**
@@ -120,4 +121,47 @@ public final class ExportDeliveryDestination {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ExportDeliveryDestination.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("resourceId", this.resourceId);
+        jsonWriter.writeStringField("container", this.container);
+        jsonWriter.writeStringField("rootFolderPath", this.rootFolderPath);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ExportDeliveryDestination from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ExportDeliveryDestination if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ExportDeliveryDestination.
+     */
+    public static ExportDeliveryDestination fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ExportDeliveryDestination deserializedExportDeliveryDestination = new ExportDeliveryDestination();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("resourceId".equals(fieldName)) {
+                    deserializedExportDeliveryDestination.resourceId = reader.getString();
+                } else if ("container".equals(fieldName)) {
+                    deserializedExportDeliveryDestination.container = reader.getString();
+                } else if ("rootFolderPath".equals(fieldName)) {
+                    deserializedExportDeliveryDestination.rootFolderPath = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedExportDeliveryDestination;
+        });
+    }
 }

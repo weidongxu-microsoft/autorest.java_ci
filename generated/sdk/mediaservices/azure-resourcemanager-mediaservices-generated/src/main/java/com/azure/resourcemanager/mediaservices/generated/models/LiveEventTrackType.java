@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class LiveEventTrackType extends ExpandableStringEnum<LiveEventTrac
      * @param name a name to look for.
      * @return the corresponding LiveEventTrackType.
      */
-    @JsonCreator
     public static LiveEventTrackType fromString(String name) {
         return fromString(name, LiveEventTrackType.class);
     }

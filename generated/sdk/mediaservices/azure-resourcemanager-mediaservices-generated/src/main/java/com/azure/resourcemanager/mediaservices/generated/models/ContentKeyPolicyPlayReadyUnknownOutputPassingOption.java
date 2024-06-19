@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -49,7 +48,6 @@ public final class ContentKeyPolicyPlayReadyUnknownOutputPassingOption
      * @param name a name to look for.
      * @return the corresponding ContentKeyPolicyPlayReadyUnknownOutputPassingOption.
      */
-    @JsonCreator
     public static ContentKeyPolicyPlayReadyUnknownOutputPassingOption fromString(String name) {
         return fromString(name, ContentKeyPolicyPlayReadyUnknownOutputPassingOption.class);
     }

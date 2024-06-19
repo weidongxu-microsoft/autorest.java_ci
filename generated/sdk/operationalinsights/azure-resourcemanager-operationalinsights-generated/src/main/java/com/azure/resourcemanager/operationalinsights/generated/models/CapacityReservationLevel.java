@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.operationalinsights.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The capacity reservation level in GB for this workspace, when CapacityReservation sku is selected.
  */
@@ -81,7 +78,6 @@ public enum CapacityReservationLevel {
      * @param value the serialized value to parse.
      * @return the parsed CapacityReservationLevel object, or null if unable to parse.
      */
-    @JsonCreator
     public static CapacityReservationLevel fromInt(int value) {
         CapacityReservationLevel[] items = CapacityReservationLevel.values();
         for (CapacityReservationLevel item : items) {
@@ -97,7 +93,6 @@ public enum CapacityReservationLevel {
      * 
      * @return the int value.
      */
-    @JsonValue
     public int toInt() {
         return this.value;
     }

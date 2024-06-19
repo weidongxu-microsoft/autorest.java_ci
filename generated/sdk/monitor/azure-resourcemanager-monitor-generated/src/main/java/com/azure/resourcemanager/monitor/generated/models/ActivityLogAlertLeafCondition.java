@@ -6,25 +6,27 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * An Activity Log alert condition that is met by comparing an activity log field and value.
  */
 @Fluent
-public final class ActivityLogAlertLeafCondition {
+public final class ActivityLogAlertLeafCondition implements JsonSerializable<ActivityLogAlertLeafCondition> {
     /*
      * The name of the field that this condition will examine. The possible values for this field are
      * (case-insensitive): 'resourceId', 'category', 'caller', 'level', 'operationName', 'resourceGroup',
      * 'resourceProvider', 'status', 'subStatus', 'resourceType', or anything beginning with 'properties.'.
      */
-    @JsonProperty(value = "field", required = true)
     private String field;
 
     /*
      * The field value will be compared to this value (case-insensitive) to determine if the condition is met.
      */
-    @JsonProperty(value = "equals", required = true)
     private String equals;
 
     /**
@@ -98,4 +100,45 @@ public final class ActivityLogAlertLeafCondition {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ActivityLogAlertLeafCondition.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("field", this.field);
+        jsonWriter.writeStringField("equals", this.equals);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ActivityLogAlertLeafCondition from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ActivityLogAlertLeafCondition if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ActivityLogAlertLeafCondition.
+     */
+    public static ActivityLogAlertLeafCondition fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ActivityLogAlertLeafCondition deserializedActivityLogAlertLeafCondition
+                = new ActivityLogAlertLeafCondition();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("field".equals(fieldName)) {
+                    deserializedActivityLogAlertLeafCondition.field = reader.getString();
+                } else if ("equals".equals(fieldName)) {
+                    deserializedActivityLogAlertLeafCondition.equals = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedActivityLogAlertLeafCondition;
+        });
+    }
 }

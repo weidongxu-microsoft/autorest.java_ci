@@ -5,19 +5,23 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.RemoteSupportSettings;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The properties of remote support settings.
  */
 @Fluent
-public final class DiagnosticRemoteSupportSettingsProperties {
+public final class DiagnosticRemoteSupportSettingsProperties
+    implements JsonSerializable<DiagnosticRemoteSupportSettingsProperties> {
     /*
      * Remote support settings list according to the RemoteApplicationType
      */
-    @JsonProperty(value = "remoteSupportSettingsList")
     private List<RemoteSupportSettings> remoteSupportSettingsList;
 
     /**
@@ -56,5 +60,46 @@ public final class DiagnosticRemoteSupportSettingsProperties {
         if (remoteSupportSettingsList() != null) {
             remoteSupportSettingsList().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("remoteSupportSettingsList", this.remoteSupportSettingsList,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DiagnosticRemoteSupportSettingsProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DiagnosticRemoteSupportSettingsProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DiagnosticRemoteSupportSettingsProperties.
+     */
+    public static DiagnosticRemoteSupportSettingsProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DiagnosticRemoteSupportSettingsProperties deserializedDiagnosticRemoteSupportSettingsProperties
+                = new DiagnosticRemoteSupportSettingsProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("remoteSupportSettingsList".equals(fieldName)) {
+                    List<RemoteSupportSettings> remoteSupportSettingsList
+                        = reader.readArray(reader1 -> RemoteSupportSettings.fromJson(reader1));
+                    deserializedDiagnosticRemoteSupportSettingsProperties.remoteSupportSettingsList
+                        = remoteSupportSettingsList;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDiagnosticRemoteSupportSettingsProperties;
+        });
     }
 }

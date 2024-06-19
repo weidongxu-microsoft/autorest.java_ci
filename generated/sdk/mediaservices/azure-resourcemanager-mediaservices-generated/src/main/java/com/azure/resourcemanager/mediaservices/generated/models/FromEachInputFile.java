@@ -5,29 +5,21 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * An InputDefinition that looks at each input file provided to select tracks specified by the IncludedTracks property.
  * Generally used with the AudioTrackByAttribute and VideoTrackByAttribute to select tracks from each file given.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "@odata.type",
-    defaultImpl = FromEachInputFile.class,
-    visible = true)
-@JsonTypeName("#Microsoft.Media.FromEachInputFile")
 @Fluent
 public final class FromEachInputFile extends InputDefinition {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.FromEachInputFile";
 
     /**
@@ -63,5 +55,46 @@ public final class FromEachInputFile extends InputDefinition {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("includedTracks", includedTracks(), (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of FromEachInputFile from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of FromEachInputFile if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the FromEachInputFile.
+     */
+    public static FromEachInputFile fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            FromEachInputFile deserializedFromEachInputFile = new FromEachInputFile();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("includedTracks".equals(fieldName)) {
+                    List<TrackDescriptor> includedTracks
+                        = reader.readArray(reader1 -> TrackDescriptor.fromJson(reader1));
+                    deserializedFromEachInputFile.withIncludedTracks(includedTracks);
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedFromEachInputFile.odataType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedFromEachInputFile;
+        });
     }
 }

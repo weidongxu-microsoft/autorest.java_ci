@@ -6,36 +6,36 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Metric configuration.
  */
 @Fluent
-public final class MetricConfiguration {
+public final class MetricConfiguration implements JsonSerializable<MetricConfiguration> {
     /*
      * The Resource ID on which the metrics should be pushed.
      */
-    @JsonProperty(value = "resourceId", required = true)
     private String resourceId;
 
     /*
      * The MDM account to which the counters should be pushed.
      */
-    @JsonProperty(value = "mdmAccount")
     private String mdmAccount;
 
     /*
      * The MDM namespace to which the counters should be pushed. This is required if MDMAccount is specified
      */
-    @JsonProperty(value = "metricNameSpace")
     private String metricNameSpace;
 
     /*
      * Host name for the IoT hub associated to the device.
      */
-    @JsonProperty(value = "counterSets", required = true)
     private List<MetricCounterSet> counterSets;
 
     /**
@@ -146,4 +146,52 @@ public final class MetricConfiguration {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MetricConfiguration.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("resourceId", this.resourceId);
+        jsonWriter.writeArrayField("counterSets", this.counterSets, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("mdmAccount", this.mdmAccount);
+        jsonWriter.writeStringField("metricNameSpace", this.metricNameSpace);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MetricConfiguration from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MetricConfiguration if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MetricConfiguration.
+     */
+    public static MetricConfiguration fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MetricConfiguration deserializedMetricConfiguration = new MetricConfiguration();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("resourceId".equals(fieldName)) {
+                    deserializedMetricConfiguration.resourceId = reader.getString();
+                } else if ("counterSets".equals(fieldName)) {
+                    List<MetricCounterSet> counterSets
+                        = reader.readArray(reader1 -> MetricCounterSet.fromJson(reader1));
+                    deserializedMetricConfiguration.counterSets = counterSets;
+                } else if ("mdmAccount".equals(fieldName)) {
+                    deserializedMetricConfiguration.mdmAccount = reader.getString();
+                } else if ("metricNameSpace".equals(fieldName)) {
+                    deserializedMetricConfiguration.metricNameSpace = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMetricConfiguration;
+        });
+    }
 }

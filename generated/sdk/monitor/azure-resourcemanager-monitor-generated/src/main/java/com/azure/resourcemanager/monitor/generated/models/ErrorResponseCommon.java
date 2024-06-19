@@ -6,7 +6,10 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.exception.ManagementError;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -17,7 +20,6 @@ public final class ErrorResponseCommon extends ManagementError {
     /*
      * The error details.
      */
-    @JsonProperty(value = "details", access = JsonProperty.Access.WRITE_ONLY)
     private List<ErrorResponseCommon> details;
 
     /**
@@ -44,5 +46,42 @@ public final class ErrorResponseCommon extends ManagementError {
         if (getDetails() != null) {
             getDetails().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ErrorResponseCommon from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ErrorResponseCommon if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ErrorResponseCommon.
+     */
+    public static ErrorResponseCommon fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ErrorResponseCommon deserializedErrorResponseCommon = new ErrorResponseCommon();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("details".equals(fieldName)) {
+                    List<ErrorResponseCommon> details
+                        = reader.readArray(reader1 -> ErrorResponseCommon.fromJson(reader1));
+                    deserializedErrorResponseCommon.details = details;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedErrorResponseCommon;
+        });
     }
 }

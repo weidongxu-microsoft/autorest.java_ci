@@ -6,68 +6,64 @@ package com.azure.resourcemanager.dns.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SubResource;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.dns.generated.models.SigningKey;
 import com.azure.resourcemanager.dns.generated.models.ZoneType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Represents the properties of the zone.
  */
 @Fluent
-public final class ZoneProperties {
+public final class ZoneProperties implements JsonSerializable<ZoneProperties> {
     /*
      * The maximum number of record sets that can be created in this DNS zone. This is a read-only property and any
      * attempt to set this value will be ignored.
      */
-    @JsonProperty(value = "maxNumberOfRecordSets", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxNumberOfRecordSets;
 
     /*
      * The maximum number of records per record set that can be created in this DNS zone. This is a read-only property
      * and any attempt to set this value will be ignored.
      */
-    @JsonProperty(value = "maxNumberOfRecordsPerRecordSet", access = JsonProperty.Access.WRITE_ONLY)
     private Long maxNumberOfRecordsPerRecordSet;
 
     /*
      * The current number of record sets in this DNS zone. This is a read-only property and any attempt to set this
      * value will be ignored.
      */
-    @JsonProperty(value = "numberOfRecordSets", access = JsonProperty.Access.WRITE_ONLY)
     private Long numberOfRecordSets;
 
     /*
      * The name servers for this DNS zone. This is a read-only property and any attempt to set this value will be
      * ignored.
      */
-    @JsonProperty(value = "nameServers", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> nameServers;
 
     /*
      * The type of this DNS zone (Public or Private).
      */
-    @JsonProperty(value = "zoneType")
     private ZoneType zoneType;
 
     /*
      * A list of references to virtual networks that register hostnames in this DNS zone. This is a only when ZoneType
      * is Private.
      */
-    @JsonProperty(value = "registrationVirtualNetworks")
     private List<SubResource> registrationVirtualNetworks;
 
     /*
      * A list of references to virtual networks that resolve records in this DNS zone. This is a only when ZoneType is
      * Private.
      */
-    @JsonProperty(value = "resolutionVirtualNetworks")
     private List<SubResource> resolutionVirtualNetworks;
 
     /*
      * The list of signing keys.
      */
-    @JsonProperty(value = "signingKeys", access = JsonProperty.Access.WRITE_ONLY)
     private List<SigningKey> signingKeys;
 
     /**
@@ -198,5 +194,65 @@ public final class ZoneProperties {
         if (signingKeys() != null) {
             signingKeys().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("zoneType", this.zoneType == null ? null : this.zoneType.toString());
+        jsonWriter.writeArrayField("registrationVirtualNetworks", this.registrationVirtualNetworks,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("resolutionVirtualNetworks", this.resolutionVirtualNetworks,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ZoneProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ZoneProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ZoneProperties.
+     */
+    public static ZoneProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ZoneProperties deserializedZoneProperties = new ZoneProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("maxNumberOfRecordSets".equals(fieldName)) {
+                    deserializedZoneProperties.maxNumberOfRecordSets = reader.getNullable(JsonReader::getLong);
+                } else if ("maxNumberOfRecordsPerRecordSet".equals(fieldName)) {
+                    deserializedZoneProperties.maxNumberOfRecordsPerRecordSet = reader.getNullable(JsonReader::getLong);
+                } else if ("numberOfRecordSets".equals(fieldName)) {
+                    deserializedZoneProperties.numberOfRecordSets = reader.getNullable(JsonReader::getLong);
+                } else if ("nameServers".equals(fieldName)) {
+                    List<String> nameServers = reader.readArray(reader1 -> reader1.getString());
+                    deserializedZoneProperties.nameServers = nameServers;
+                } else if ("zoneType".equals(fieldName)) {
+                    deserializedZoneProperties.zoneType = ZoneType.fromString(reader.getString());
+                } else if ("registrationVirtualNetworks".equals(fieldName)) {
+                    List<SubResource> registrationVirtualNetworks
+                        = reader.readArray(reader1 -> SubResource.fromJson(reader1));
+                    deserializedZoneProperties.registrationVirtualNetworks = registrationVirtualNetworks;
+                } else if ("resolutionVirtualNetworks".equals(fieldName)) {
+                    List<SubResource> resolutionVirtualNetworks
+                        = reader.readArray(reader1 -> SubResource.fromJson(reader1));
+                    deserializedZoneProperties.resolutionVirtualNetworks = resolutionVirtualNetworks;
+                } else if ("signingKeys".equals(fieldName)) {
+                    List<SigningKey> signingKeys = reader.readArray(reader1 -> SigningKey.fromJson(reader1));
+                    deserializedZoneProperties.signingKeys = signingKeys;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedZoneProperties;
+        });
     }
 }

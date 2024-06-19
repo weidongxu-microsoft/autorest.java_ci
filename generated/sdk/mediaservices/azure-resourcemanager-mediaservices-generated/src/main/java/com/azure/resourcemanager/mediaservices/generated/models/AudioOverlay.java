@@ -5,24 +5,21 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.time.Duration;
 
 /**
  * Describes the properties of an audio overlay.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = AudioOverlay.class, visible = true)
-@JsonTypeName("#Microsoft.Media.AudioOverlay")
 @Fluent
 public final class AudioOverlay extends Overlay {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.AudioOverlay";
 
     /**
@@ -103,5 +100,64 @@ public final class AudioOverlay extends Overlay {
     @Override
     public void validate() {
         super.validate();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("inputLabel", inputLabel());
+        jsonWriter.writeStringField("start", CoreUtils.durationToStringWithDays(start()));
+        jsonWriter.writeStringField("end", CoreUtils.durationToStringWithDays(end()));
+        jsonWriter.writeStringField("fadeInDuration", CoreUtils.durationToStringWithDays(fadeInDuration()));
+        jsonWriter.writeStringField("fadeOutDuration", CoreUtils.durationToStringWithDays(fadeOutDuration()));
+        jsonWriter.writeNumberField("audioGainLevel", audioGainLevel());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AudioOverlay from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AudioOverlay if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AudioOverlay.
+     */
+    public static AudioOverlay fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AudioOverlay deserializedAudioOverlay = new AudioOverlay();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("inputLabel".equals(fieldName)) {
+                    deserializedAudioOverlay.withInputLabel(reader.getString());
+                } else if ("start".equals(fieldName)) {
+                    deserializedAudioOverlay
+                        .withStart(reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString())));
+                } else if ("end".equals(fieldName)) {
+                    deserializedAudioOverlay
+                        .withEnd(reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString())));
+                } else if ("fadeInDuration".equals(fieldName)) {
+                    deserializedAudioOverlay.withFadeInDuration(
+                        reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString())));
+                } else if ("fadeOutDuration".equals(fieldName)) {
+                    deserializedAudioOverlay.withFadeOutDuration(
+                        reader.getNullable(nonNullReader -> Duration.parse(nonNullReader.getString())));
+                } else if ("audioGainLevel".equals(fieldName)) {
+                    deserializedAudioOverlay.withAudioGainLevel(reader.getNullable(JsonReader::getDouble));
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedAudioOverlay.odataType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAudioOverlay;
+        });
     }
 }

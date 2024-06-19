@@ -7,7 +7,10 @@ package com.azure.resourcemanager.keyvault.generated.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
 import com.azure.core.management.SystemData;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.Map;
 
 /**
@@ -18,20 +21,32 @@ public class ManagedHsmResource extends Resource {
     /*
      * SKU details
      */
-    @JsonProperty(value = "sku")
     private ManagedHsmSku sku;
 
     /*
      * Metadata pertaining to creation and last modification of the key vault resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
 
     /*
      * Managed service identity (system assigned and/or user assigned identities)
      */
-    @JsonProperty(value = "identity")
     private ManagedServiceIdentity identity;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of ManagedHsmResource class.
@@ -69,6 +84,17 @@ public class ManagedHsmResource extends Resource {
     }
 
     /**
+     * Set the systemData property: Metadata pertaining to creation and last modification of the key vault resource.
+     * 
+     * @param systemData the systemData value to set.
+     * @return the ManagedHsmResource object itself.
+     */
+    ManagedHsmResource withSystemData(SystemData systemData) {
+        this.systemData = systemData;
+        return this;
+    }
+
+    /**
      * Get the identity property: Managed service identity (system assigned and/or user assigned identities).
      * 
      * @return the identity value.
@@ -86,6 +112,36 @@ public class ManagedHsmResource extends Resource {
     public ManagedHsmResource withIdentity(ManagedServiceIdentity identity) {
         this.identity = identity;
         return this;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -118,5 +174,60 @@ public class ManagedHsmResource extends Resource {
         if (identity() != null) {
             identity().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("location", location());
+        jsonWriter.writeMapField("tags", tags(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("sku", this.sku);
+        jsonWriter.writeJsonField("identity", this.identity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ManagedHsmResource from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ManagedHsmResource if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ManagedHsmResource.
+     */
+    public static ManagedHsmResource fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ManagedHsmResource deserializedManagedHsmResource = new ManagedHsmResource();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedManagedHsmResource.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedManagedHsmResource.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedManagedHsmResource.type = reader.getString();
+                } else if ("location".equals(fieldName)) {
+                    deserializedManagedHsmResource.withLocation(reader.getString());
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedManagedHsmResource.withTags(tags);
+                } else if ("sku".equals(fieldName)) {
+                    deserializedManagedHsmResource.sku = ManagedHsmSku.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedManagedHsmResource.systemData = SystemData.fromJson(reader);
+                } else if ("identity".equals(fieldName)) {
+                    deserializedManagedHsmResource.identity = ManagedServiceIdentity.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedManagedHsmResource;
+        });
     }
 }

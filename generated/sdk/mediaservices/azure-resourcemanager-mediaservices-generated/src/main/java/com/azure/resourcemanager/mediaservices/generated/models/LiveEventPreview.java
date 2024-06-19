@@ -5,24 +5,26 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Live event preview settings.
  */
 @Fluent
-public final class LiveEventPreview {
+public final class LiveEventPreview implements JsonSerializable<LiveEventPreview> {
     /*
      * The endpoints for preview. Do not share the preview URL with the live event audience.
      */
-    @JsonProperty(value = "endpoints")
     private List<LiveEventEndpoint> endpoints;
 
     /*
      * The access control for live event preview.
      */
-    @JsonProperty(value = "accessControl")
     private LiveEventPreviewAccessControl accessControl;
 
     /*
@@ -30,14 +32,12 @@ public final class LiveEventPreview {
      * the preview locator url before the event is created. If omitted, the service will generate a random identifier.
      * This value cannot be updated once the live event is created.
      */
-    @JsonProperty(value = "previewLocator")
     private String previewLocator;
 
     /*
      * The name of streaming policy used for the live event preview. This value is specified at creation time and cannot
      * be updated.
      */
-    @JsonProperty(value = "streamingPolicyName")
     private String streamingPolicyName;
 
     /*
@@ -46,7 +46,6 @@ public final class LiveEventPreview {
      * CustomLicenseAcquisitionUrlTemplate or the CustomKeyAcquisitionUrlTemplate of the StreamingPolicy specified in
      * the StreamingPolicyName field.
      */
-    @JsonProperty(value = "alternativeMediaId")
     private String alternativeMediaId;
 
     /**
@@ -179,5 +178,55 @@ public final class LiveEventPreview {
         if (accessControl() != null) {
             accessControl().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("endpoints", this.endpoints, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeJsonField("accessControl", this.accessControl);
+        jsonWriter.writeStringField("previewLocator", this.previewLocator);
+        jsonWriter.writeStringField("streamingPolicyName", this.streamingPolicyName);
+        jsonWriter.writeStringField("alternativeMediaId", this.alternativeMediaId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventPreview from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventPreview if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventPreview.
+     */
+    public static LiveEventPreview fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventPreview deserializedLiveEventPreview = new LiveEventPreview();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("endpoints".equals(fieldName)) {
+                    List<LiveEventEndpoint> endpoints
+                        = reader.readArray(reader1 -> LiveEventEndpoint.fromJson(reader1));
+                    deserializedLiveEventPreview.endpoints = endpoints;
+                } else if ("accessControl".equals(fieldName)) {
+                    deserializedLiveEventPreview.accessControl = LiveEventPreviewAccessControl.fromJson(reader);
+                } else if ("previewLocator".equals(fieldName)) {
+                    deserializedLiveEventPreview.previewLocator = reader.getString();
+                } else if ("streamingPolicyName".equals(fieldName)) {
+                    deserializedLiveEventPreview.streamingPolicyName = reader.getString();
+                } else if ("alternativeMediaId".equals(fieldName)) {
+                    deserializedLiveEventPreview.alternativeMediaId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventPreview;
+        });
     }
 }

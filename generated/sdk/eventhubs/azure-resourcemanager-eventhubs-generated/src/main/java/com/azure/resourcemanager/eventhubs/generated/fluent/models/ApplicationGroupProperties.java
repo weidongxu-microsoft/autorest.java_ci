@@ -6,33 +6,34 @@ package com.azure.resourcemanager.eventhubs.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventhubs.generated.models.ApplicationGroupPolicy;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The ApplicationGroupProperties model.
  */
 @Fluent
-public final class ApplicationGroupProperties {
+public final class ApplicationGroupProperties implements JsonSerializable<ApplicationGroupProperties> {
     /*
      * Determines if Application Group is allowed to create connection with namespace or not. Once the isEnabled is set
      * to false, all the existing connections of application group gets dropped and no new connections will be allowed
      */
-    @JsonProperty(value = "isEnabled")
     private Boolean isEnabled;
 
     /*
      * The Unique identifier for application group.Supports SAS(SASKeyName=KeyName) or AAD(AADAppID=Guid)
      */
-    @JsonProperty(value = "clientAppGroupIdentifier", required = true)
     private String clientAppGroupIdentifier;
 
     /*
      * List of group policies that define the behavior of application group. The policies can support resource
      * governance scenarios such as limiting ingress or egress traffic.
      */
-    @JsonProperty(value = "policies")
     private List<ApplicationGroupPolicy> policies;
 
     /**
@@ -126,4 +127,49 @@ public final class ApplicationGroupProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ApplicationGroupProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("clientAppGroupIdentifier", this.clientAppGroupIdentifier);
+        jsonWriter.writeBooleanField("isEnabled", this.isEnabled);
+        jsonWriter.writeArrayField("policies", this.policies, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ApplicationGroupProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ApplicationGroupProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ApplicationGroupProperties.
+     */
+    public static ApplicationGroupProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ApplicationGroupProperties deserializedApplicationGroupProperties = new ApplicationGroupProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("clientAppGroupIdentifier".equals(fieldName)) {
+                    deserializedApplicationGroupProperties.clientAppGroupIdentifier = reader.getString();
+                } else if ("isEnabled".equals(fieldName)) {
+                    deserializedApplicationGroupProperties.isEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("policies".equals(fieldName)) {
+                    List<ApplicationGroupPolicy> policies
+                        = reader.readArray(reader1 -> ApplicationGroupPolicy.fromJson(reader1));
+                    deserializedApplicationGroupProperties.policies = policies;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedApplicationGroupProperties;
+        });
+    }
 }

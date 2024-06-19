@@ -6,25 +6,28 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.VmPlacementRequestResult;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Properties of Device Capacity Request Info containing VM's to be checked and their corresponding results.
  */
 @Fluent
-public final class DeviceCapacityRequestInfoProperties {
+public final class DeviceCapacityRequestInfoProperties
+    implements JsonSerializable<DeviceCapacityRequestInfoProperties> {
     /*
      * Array containing the sizes of the VMs for checking if its feasible to create them on the appliance.
      */
-    @JsonProperty(value = "vmPlacementQuery", required = true)
     private List<List<String>> vmPlacementQuery;
 
     /*
      * Array of the VMs of the sizes in VmSizes can be provisioned on the appliance.
      */
-    @JsonProperty(value = "vmPlacementResults")
     private List<VmPlacementRequestResult> vmPlacementResults;
 
     /**
@@ -95,4 +98,51 @@ public final class DeviceCapacityRequestInfoProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DeviceCapacityRequestInfoProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("vmPlacementQuery", this.vmPlacementQuery,
+            (writer, element) -> writer.writeArray(element, (writer1, element1) -> writer1.writeString(element1)));
+        jsonWriter.writeArrayField("vmPlacementResults", this.vmPlacementResults,
+            (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DeviceCapacityRequestInfoProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DeviceCapacityRequestInfoProperties if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DeviceCapacityRequestInfoProperties.
+     */
+    public static DeviceCapacityRequestInfoProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DeviceCapacityRequestInfoProperties deserializedDeviceCapacityRequestInfoProperties
+                = new DeviceCapacityRequestInfoProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("vmPlacementQuery".equals(fieldName)) {
+                    List<List<String>> vmPlacementQuery
+                        = reader.readArray(reader1 -> reader1.readArray(reader2 -> reader2.getString()));
+                    deserializedDeviceCapacityRequestInfoProperties.vmPlacementQuery = vmPlacementQuery;
+                } else if ("vmPlacementResults".equals(fieldName)) {
+                    List<VmPlacementRequestResult> vmPlacementResults
+                        = reader.readArray(reader1 -> VmPlacementRequestResult.fromJson(reader1));
+                    deserializedDeviceCapacityRequestInfoProperties.vmPlacementResults = vmPlacementResults;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDeviceCapacityRequestInfoProperties;
+        });
+    }
 }

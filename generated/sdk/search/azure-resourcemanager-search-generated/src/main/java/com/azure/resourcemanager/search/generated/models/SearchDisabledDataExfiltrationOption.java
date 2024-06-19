@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -33,7 +32,6 @@ public final class SearchDisabledDataExfiltrationOption
      * @param name a name to look for.
      * @return the corresponding SearchDisabledDataExfiltrationOption.
      */
-    @JsonCreator
     public static SearchDisabledDataExfiltrationOption fromString(String name) {
         return fromString(name, SearchDisabledDataExfiltrationOption.class);
     }

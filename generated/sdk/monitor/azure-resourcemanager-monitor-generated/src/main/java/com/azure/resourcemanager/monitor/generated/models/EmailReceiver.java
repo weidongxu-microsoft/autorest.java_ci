@@ -6,35 +6,35 @@ package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * An email receiver.
  */
 @Fluent
-public final class EmailReceiver {
+public final class EmailReceiver implements JsonSerializable<EmailReceiver> {
     /*
      * The name of the email receiver. Names must be unique across all receivers within an action group.
      */
-    @JsonProperty(value = "name", required = true)
     private String name;
 
     /*
      * The email address of this receiver.
      */
-    @JsonProperty(value = "emailAddress", required = true)
     private String emailAddress;
 
     /*
      * Indicates whether to use common alert schema.
      */
-    @JsonProperty(value = "useCommonAlertSchema")
     private Boolean useCommonAlertSchema;
 
     /*
      * The receiver status of the e-mail.
      */
-    @JsonProperty(value = "status", access = JsonProperty.Access.WRITE_ONLY)
     private ReceiverStatus status;
 
     /**
@@ -131,4 +131,49 @@ public final class EmailReceiver {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(EmailReceiver.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("emailAddress", this.emailAddress);
+        jsonWriter.writeBooleanField("useCommonAlertSchema", this.useCommonAlertSchema);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EmailReceiver from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EmailReceiver if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the EmailReceiver.
+     */
+    public static EmailReceiver fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EmailReceiver deserializedEmailReceiver = new EmailReceiver();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedEmailReceiver.name = reader.getString();
+                } else if ("emailAddress".equals(fieldName)) {
+                    deserializedEmailReceiver.emailAddress = reader.getString();
+                } else if ("useCommonAlertSchema".equals(fieldName)) {
+                    deserializedEmailReceiver.useCommonAlertSchema = reader.getNullable(JsonReader::getBoolean);
+                } else if ("status".equals(fieldName)) {
+                    deserializedEmailReceiver.status = ReceiverStatus.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEmailReceiver;
+        });
+    }
 }

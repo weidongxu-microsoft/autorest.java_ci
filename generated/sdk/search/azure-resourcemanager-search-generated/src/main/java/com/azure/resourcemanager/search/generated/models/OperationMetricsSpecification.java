@@ -5,54 +5,51 @@
 package com.azure.resourcemanager.search.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Specifications of one type of metric for this operation.
  */
 @Immutable
-public final class OperationMetricsSpecification {
+public final class OperationMetricsSpecification implements JsonSerializable<OperationMetricsSpecification> {
     /*
      * The name of the metric specification.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * The display name of the metric specification.
      */
-    @JsonProperty(value = "displayName", access = JsonProperty.Access.WRITE_ONLY)
     private String displayName;
 
     /*
      * The display description of the metric specification.
      */
-    @JsonProperty(value = "displayDescription", access = JsonProperty.Access.WRITE_ONLY)
     private String displayDescription;
 
     /*
      * The unit for the metric specification.
      */
-    @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
     /*
      * The type of aggregation for the metric specification.
      */
-    @JsonProperty(value = "aggregationType", access = JsonProperty.Access.WRITE_ONLY)
     private String aggregationType;
 
     /*
      * Dimensions for the metric specification.
      */
-    @JsonProperty(value = "dimensions", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationMetricDimension> dimensions;
 
     /*
      * Availabilities for the metric specification.
      */
-    @JsonProperty(value = "availabilities", access = JsonProperty.Access.WRITE_ONLY)
     private List<OperationAvailability> availabilities;
 
     /**
@@ -136,5 +133,57 @@ public final class OperationMetricsSpecification {
         if (availabilities() != null) {
             availabilities().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of OperationMetricsSpecification from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of OperationMetricsSpecification if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the OperationMetricsSpecification.
+     */
+    public static OperationMetricsSpecification fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            OperationMetricsSpecification deserializedOperationMetricsSpecification
+                = new OperationMetricsSpecification();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedOperationMetricsSpecification.name = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedOperationMetricsSpecification.displayName = reader.getString();
+                } else if ("displayDescription".equals(fieldName)) {
+                    deserializedOperationMetricsSpecification.displayDescription = reader.getString();
+                } else if ("unit".equals(fieldName)) {
+                    deserializedOperationMetricsSpecification.unit = reader.getString();
+                } else if ("aggregationType".equals(fieldName)) {
+                    deserializedOperationMetricsSpecification.aggregationType = reader.getString();
+                } else if ("dimensions".equals(fieldName)) {
+                    List<OperationMetricDimension> dimensions
+                        = reader.readArray(reader1 -> OperationMetricDimension.fromJson(reader1));
+                    deserializedOperationMetricsSpecification.dimensions = dimensions;
+                } else if ("availabilities".equals(fieldName)) {
+                    List<OperationAvailability> availabilities
+                        = reader.readArray(reader1 -> OperationAvailability.fromJson(reader1));
+                    deserializedOperationMetricsSpecification.availabilities = availabilities;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedOperationMetricsSpecification;
+        });
     }
 }

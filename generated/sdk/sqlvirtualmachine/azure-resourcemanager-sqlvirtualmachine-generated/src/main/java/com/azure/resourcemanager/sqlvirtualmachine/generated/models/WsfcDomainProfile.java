@@ -5,72 +5,66 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Active Directory account details to operate Windows Server Failover Cluster.
  */
 @Fluent
-public final class WsfcDomainProfile {
+public final class WsfcDomainProfile implements JsonSerializable<WsfcDomainProfile> {
     /*
      * Fully qualified name of the domain.
      */
-    @JsonProperty(value = "domainFqdn")
     private String domainFqdn;
 
     /*
      * Organizational Unit path in which the nodes and cluster will be present.
      */
-    @JsonProperty(value = "ouPath")
     private String ouPath;
 
     /*
      * Account name used for creating cluster (at minimum needs permissions to 'Create Computer Objects' in domain).
      */
-    @JsonProperty(value = "clusterBootstrapAccount")
     private String clusterBootstrapAccount;
 
     /*
      * Account name used for operating cluster i.e. will be part of administrators group on all the participating
      * virtual machines in the cluster.
      */
-    @JsonProperty(value = "clusterOperatorAccount")
     private String clusterOperatorAccount;
 
     /*
      * Account name under which SQL service will run on all participating SQL virtual machines in the cluster.
      */
-    @JsonProperty(value = "sqlServiceAccount")
     private String sqlServiceAccount;
 
     /*
      * The flag to check if SQL service account is GMSA.
      */
-    @JsonProperty(value = "isSqlServiceAccountGmsa")
     private Boolean isSqlServiceAccountGmsa;
 
     /*
      * Optional path for fileshare witness.
      */
-    @JsonProperty(value = "fileShareWitnessPath")
     private String fileShareWitnessPath;
 
     /*
      * Fully qualified ARM resource id of the witness storage account.
      */
-    @JsonProperty(value = "storageAccountUrl")
     private String storageAccountUrl;
 
     /*
      * Primary key of the witness storage account.
      */
-    @JsonProperty(value = "storageAccountPrimaryKey")
     private String storageAccountPrimaryKey;
 
     /*
      * Cluster subnet type.
      */
-    @JsonProperty(value = "clusterSubnetType")
     private ClusterSubnetType clusterSubnetType;
 
     /**
@@ -291,5 +285,69 @@ public final class WsfcDomainProfile {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("domainFqdn", this.domainFqdn);
+        jsonWriter.writeStringField("ouPath", this.ouPath);
+        jsonWriter.writeStringField("clusterBootstrapAccount", this.clusterBootstrapAccount);
+        jsonWriter.writeStringField("clusterOperatorAccount", this.clusterOperatorAccount);
+        jsonWriter.writeStringField("sqlServiceAccount", this.sqlServiceAccount);
+        jsonWriter.writeBooleanField("isSqlServiceAccountGmsa", this.isSqlServiceAccountGmsa);
+        jsonWriter.writeStringField("fileShareWitnessPath", this.fileShareWitnessPath);
+        jsonWriter.writeStringField("storageAccountUrl", this.storageAccountUrl);
+        jsonWriter.writeStringField("storageAccountPrimaryKey", this.storageAccountPrimaryKey);
+        jsonWriter.writeStringField("clusterSubnetType",
+            this.clusterSubnetType == null ? null : this.clusterSubnetType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of WsfcDomainProfile from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of WsfcDomainProfile if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the WsfcDomainProfile.
+     */
+    public static WsfcDomainProfile fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            WsfcDomainProfile deserializedWsfcDomainProfile = new WsfcDomainProfile();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("domainFqdn".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.domainFqdn = reader.getString();
+                } else if ("ouPath".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.ouPath = reader.getString();
+                } else if ("clusterBootstrapAccount".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.clusterBootstrapAccount = reader.getString();
+                } else if ("clusterOperatorAccount".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.clusterOperatorAccount = reader.getString();
+                } else if ("sqlServiceAccount".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.sqlServiceAccount = reader.getString();
+                } else if ("isSqlServiceAccountGmsa".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.isSqlServiceAccountGmsa = reader.getNullable(JsonReader::getBoolean);
+                } else if ("fileShareWitnessPath".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.fileShareWitnessPath = reader.getString();
+                } else if ("storageAccountUrl".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.storageAccountUrl = reader.getString();
+                } else if ("storageAccountPrimaryKey".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.storageAccountPrimaryKey = reader.getString();
+                } else if ("clusterSubnetType".equals(fieldName)) {
+                    deserializedWsfcDomainProfile.clusterSubnetType = ClusterSubnetType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedWsfcDomainProfile;
+        });
     }
 }

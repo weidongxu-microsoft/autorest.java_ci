@@ -6,9 +6,12 @@ package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.fluent.models.ConnectionMonitorParameters;
-import com.fasterxml.jackson.annotation.JsonInclude;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
@@ -16,24 +19,20 @@ import java.util.Map;
  * Parameters that define the operation to create a connection monitor.
  */
 @Fluent
-public final class ConnectionMonitor {
+public final class ConnectionMonitor implements JsonSerializable<ConnectionMonitor> {
     /*
      * Connection monitor location.
      */
-    @JsonProperty(value = "location")
     private String location;
 
     /*
      * Connection monitor tags.
      */
-    @JsonProperty(value = "tags")
-    @JsonInclude(value = JsonInclude.Include.NON_NULL, content = JsonInclude.Include.ALWAYS)
     private Map<String, String> tags;
 
     /*
      * Properties of the connection monitor.
      */
-    @JsonProperty(value = "properties", required = true)
     private ConnectionMonitorParameters innerProperties = new ConnectionMonitorParameters();
 
     /**
@@ -314,4 +313,48 @@ public final class ConnectionMonitor {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ConnectionMonitor.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("location", this.location);
+        jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ConnectionMonitor from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ConnectionMonitor if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ConnectionMonitor.
+     */
+    public static ConnectionMonitor fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ConnectionMonitor deserializedConnectionMonitor = new ConnectionMonitor();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("properties".equals(fieldName)) {
+                    deserializedConnectionMonitor.innerProperties = ConnectionMonitorParameters.fromJson(reader);
+                } else if ("location".equals(fieldName)) {
+                    deserializedConnectionMonitor.location = reader.getString();
+                } else if ("tags".equals(fieldName)) {
+                    Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
+                    deserializedConnectionMonitor.tags = tags;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedConnectionMonitor;
+        });
+    }
 }

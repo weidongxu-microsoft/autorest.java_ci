@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * An A record.
  */
 @Fluent
-public final class ARecord {
+public final class ARecord implements JsonSerializable<ARecord> {
     /*
      * The IPv4 address of this A record.
      */
-    @JsonProperty(value = "ipv4Address")
     private String ipv4Address;
 
     /**
@@ -50,5 +53,41 @@ public final class ARecord {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("ipv4Address", this.ipv4Address);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ARecord from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ARecord if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the ARecord.
+     */
+    public static ARecord fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ARecord deserializedARecord = new ARecord();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("ipv4Address".equals(fieldName)) {
+                    deserializedARecord.ipv4Address = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedARecord;
+        });
     }
 }

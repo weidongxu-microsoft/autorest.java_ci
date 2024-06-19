@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class ConnectivityType extends ExpandableStringEnum<ConnectivityTyp
      * @param name a name to look for.
      * @return the corresponding ConnectivityType.
      */
-    @JsonCreator
     public static ConnectivityType fromString(String name) {
         return fromString(name, ConnectivityType.class);
     }

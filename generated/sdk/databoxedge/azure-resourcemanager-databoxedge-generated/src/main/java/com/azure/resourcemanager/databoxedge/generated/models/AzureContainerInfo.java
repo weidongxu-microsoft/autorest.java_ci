@@ -6,30 +6,31 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Azure container mapping of the endpoint.
  */
 @Fluent
-public final class AzureContainerInfo {
+public final class AzureContainerInfo implements JsonSerializable<AzureContainerInfo> {
     /*
      * ID of the storage account credential used to access storage.
      */
-    @JsonProperty(value = "storageAccountCredentialId", required = true)
     private String storageAccountCredentialId;
 
     /*
      * Container name (Based on the data format specified, this represents the name of Azure Files/Page blob/Block
      * blob).
      */
-    @JsonProperty(value = "containerName", required = true)
     private String containerName;
 
     /*
      * Storage format used for the file represented by the share.
      */
-    @JsonProperty(value = "dataFormat", required = true)
     private AzureContainerDataFormat dataFormat;
 
     /**
@@ -123,4 +124,47 @@ public final class AzureContainerInfo {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AzureContainerInfo.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("storageAccountCredentialId", this.storageAccountCredentialId);
+        jsonWriter.writeStringField("containerName", this.containerName);
+        jsonWriter.writeStringField("dataFormat", this.dataFormat == null ? null : this.dataFormat.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AzureContainerInfo from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AzureContainerInfo if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AzureContainerInfo.
+     */
+    public static AzureContainerInfo fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AzureContainerInfo deserializedAzureContainerInfo = new AzureContainerInfo();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("storageAccountCredentialId".equals(fieldName)) {
+                    deserializedAzureContainerInfo.storageAccountCredentialId = reader.getString();
+                } else if ("containerName".equals(fieldName)) {
+                    deserializedAzureContainerInfo.containerName = reader.getString();
+                } else if ("dataFormat".equals(fieldName)) {
+                    deserializedAzureContainerInfo.dataFormat = AzureContainerDataFormat.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAzureContainerInfo;
+        });
+    }
 }

@@ -5,37 +5,37 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventhubs.generated.fluent.models.PrivateLinkResourceProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Information of the private link resource.
  */
 @Fluent
-public final class PrivateLinkResource {
+public final class PrivateLinkResource implements JsonSerializable<PrivateLinkResource> {
     /*
      * Properties of the private link resource.
      */
-    @JsonProperty(value = "properties")
     private PrivateLinkResourceProperties innerProperties;
 
     /*
      * Fully qualified identifier of the resource.
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * Name of the resource
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * Type of the resource
      */
-    @JsonProperty(value = "type")
     private String type;
 
     /**
@@ -191,5 +191,50 @@ public final class PrivateLinkResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("type", this.type);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PrivateLinkResource from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PrivateLinkResource if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the PrivateLinkResource.
+     */
+    public static PrivateLinkResource fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PrivateLinkResource deserializedPrivateLinkResource = new PrivateLinkResource();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("properties".equals(fieldName)) {
+                    deserializedPrivateLinkResource.innerProperties = PrivateLinkResourceProperties.fromJson(reader);
+                } else if ("id".equals(fieldName)) {
+                    deserializedPrivateLinkResource.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedPrivateLinkResource.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedPrivateLinkResource.type = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPrivateLinkResource;
+        });
     }
 }

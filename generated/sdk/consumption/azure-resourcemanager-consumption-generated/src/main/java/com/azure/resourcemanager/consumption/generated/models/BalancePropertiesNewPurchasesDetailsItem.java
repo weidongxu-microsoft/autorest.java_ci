@@ -5,24 +5,27 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 /**
  * The BalancePropertiesNewPurchasesDetailsItem model.
  */
 @Immutable
-public final class BalancePropertiesNewPurchasesDetailsItem {
+public final class BalancePropertiesNewPurchasesDetailsItem
+    implements JsonSerializable<BalancePropertiesNewPurchasesDetailsItem> {
     /*
      * the name of new purchase.
      */
-    @JsonProperty(value = "name", access = JsonProperty.Access.WRITE_ONLY)
     private String name;
 
     /*
      * the value of new purchase.
      */
-    @JsonProperty(value = "value", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal value;
 
     /**
@@ -55,5 +58,44 @@ public final class BalancePropertiesNewPurchasesDetailsItem {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of BalancePropertiesNewPurchasesDetailsItem from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of BalancePropertiesNewPurchasesDetailsItem if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the BalancePropertiesNewPurchasesDetailsItem.
+     */
+    public static BalancePropertiesNewPurchasesDetailsItem fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            BalancePropertiesNewPurchasesDetailsItem deserializedBalancePropertiesNewPurchasesDetailsItem
+                = new BalancePropertiesNewPurchasesDetailsItem();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedBalancePropertiesNewPurchasesDetailsItem.name = reader.getString();
+                } else if ("value".equals(fieldName)) {
+                    deserializedBalancePropertiesNewPurchasesDetailsItem.value
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedBalancePropertiesNewPurchasesDetailsItem;
+        });
     }
 }

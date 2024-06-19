@@ -5,64 +5,62 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.costmanagement.generated.models.CommonExportProperties;
 import com.azure.resourcemanager.costmanagement.generated.models.ExecutionStatus;
 import com.azure.resourcemanager.costmanagement.generated.models.ExecutionType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The properties of the export execution.
  */
 @Fluent
-public final class ExportExecutionProperties {
+public final class ExportExecutionProperties implements JsonSerializable<ExportExecutionProperties> {
     /*
      * The type of the export execution.
      */
-    @JsonProperty(value = "executionType")
     private ExecutionType executionType;
 
     /*
      * The status of the export execution.
      */
-    @JsonProperty(value = "status")
     private ExecutionStatus status;
 
     /*
      * The identifier for the entity that executed the export. For OnDemand executions, it is the email id. For
      * Scheduled executions, it is the constant value - System.
      */
-    @JsonProperty(value = "submittedBy")
     private String submittedBy;
 
     /*
      * The time when export was queued to be executed.
      */
-    @JsonProperty(value = "submittedTime")
     private OffsetDateTime submittedTime;
 
     /*
      * The time when export was picked up to be executed.
      */
-    @JsonProperty(value = "processingStartTime")
     private OffsetDateTime processingStartTime;
 
     /*
      * The time when export execution finished.
      */
-    @JsonProperty(value = "processingEndTime")
     private OffsetDateTime processingEndTime;
 
     /*
      * The name of the file export got written to.
      */
-    @JsonProperty(value = "fileName")
     private String fileName;
 
     /*
      * The common properties of the export.
      */
-    @JsonProperty(value = "runSettings")
     private CommonExportProperties runSettings;
 
     /**
@@ -242,5 +240,72 @@ public final class ExportExecutionProperties {
         if (runSettings() != null) {
             runSettings().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("executionType", this.executionType == null ? null : this.executionType.toString());
+        jsonWriter.writeStringField("status", this.status == null ? null : this.status.toString());
+        jsonWriter.writeStringField("submittedBy", this.submittedBy);
+        jsonWriter.writeStringField("submittedTime",
+            this.submittedTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.submittedTime));
+        jsonWriter.writeStringField("processingStartTime",
+            this.processingStartTime == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.processingStartTime));
+        jsonWriter.writeStringField("processingEndTime",
+            this.processingEndTime == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.processingEndTime));
+        jsonWriter.writeStringField("fileName", this.fileName);
+        jsonWriter.writeJsonField("runSettings", this.runSettings);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ExportExecutionProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ExportExecutionProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ExportExecutionProperties.
+     */
+    public static ExportExecutionProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ExportExecutionProperties deserializedExportExecutionProperties = new ExportExecutionProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("executionType".equals(fieldName)) {
+                    deserializedExportExecutionProperties.executionType = ExecutionType.fromString(reader.getString());
+                } else if ("status".equals(fieldName)) {
+                    deserializedExportExecutionProperties.status = ExecutionStatus.fromString(reader.getString());
+                } else if ("submittedBy".equals(fieldName)) {
+                    deserializedExportExecutionProperties.submittedBy = reader.getString();
+                } else if ("submittedTime".equals(fieldName)) {
+                    deserializedExportExecutionProperties.submittedTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("processingStartTime".equals(fieldName)) {
+                    deserializedExportExecutionProperties.processingStartTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("processingEndTime".equals(fieldName)) {
+                    deserializedExportExecutionProperties.processingEndTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("fileName".equals(fieldName)) {
+                    deserializedExportExecutionProperties.fileName = reader.getString();
+                } else if ("runSettings".equals(fieldName)) {
+                    deserializedExportExecutionProperties.runSettings = CommonExportProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedExportExecutionProperties;
+        });
     }
 }

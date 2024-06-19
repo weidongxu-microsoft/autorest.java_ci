@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class LotSource extends ExpandableStringEnum<LotSource> {
      * @param name a name to look for.
      * @return the corresponding LotSource.
      */
-    @JsonCreator
     public static LotSource fromString(String name) {
         return fromString(name, LotSource.class);
     }

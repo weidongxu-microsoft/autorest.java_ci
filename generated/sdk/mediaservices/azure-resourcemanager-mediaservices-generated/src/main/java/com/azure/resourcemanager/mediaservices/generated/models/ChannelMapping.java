@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -68,7 +67,6 @@ public final class ChannelMapping extends ExpandableStringEnum<ChannelMapping> {
      * @param name a name to look for.
      * @return the corresponding ChannelMapping.
      */
-    @JsonCreator
     public static ChannelMapping fromString(String name) {
         return fromString(name, ChannelMapping.class);
     }

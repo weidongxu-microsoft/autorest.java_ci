@@ -5,29 +5,30 @@
 package com.azure.resourcemanager.operationalinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Intelligence Pack containing a string name and boolean indicating if it's enabled.
  */
 @Fluent
-public final class IntelligencePackInner {
+public final class IntelligencePackInner implements JsonSerializable<IntelligencePackInner> {
     /*
      * The name of the intelligence pack.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The enabled boolean for the intelligence pack.
      */
-    @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
      * The display name of the intelligence pack.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /**
@@ -102,5 +103,47 @@ public final class IntelligencePackInner {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of IntelligencePackInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of IntelligencePackInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the IntelligencePackInner.
+     */
+    public static IntelligencePackInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            IntelligencePackInner deserializedIntelligencePackInner = new IntelligencePackInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("name".equals(fieldName)) {
+                    deserializedIntelligencePackInner.name = reader.getString();
+                } else if ("enabled".equals(fieldName)) {
+                    deserializedIntelligencePackInner.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedIntelligencePackInner.displayName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedIntelligencePackInner;
+        });
     }
 }

@@ -5,18 +5,22 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Represents a collection of alert rule resources.
  */
 @Fluent
-public final class DiagnosticSettingsResourceCollectionInner {
+public final class DiagnosticSettingsResourceCollectionInner
+    implements JsonSerializable<DiagnosticSettingsResourceCollectionInner> {
     /*
      * The collection of diagnostic settings resources;.
      */
-    @JsonProperty(value = "value")
     private List<DiagnosticSettingsResourceInner> value;
 
     /**
@@ -54,5 +58,44 @@ public final class DiagnosticSettingsResourceCollectionInner {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DiagnosticSettingsResourceCollectionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DiagnosticSettingsResourceCollectionInner if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DiagnosticSettingsResourceCollectionInner.
+     */
+    public static DiagnosticSettingsResourceCollectionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DiagnosticSettingsResourceCollectionInner deserializedDiagnosticSettingsResourceCollectionInner
+                = new DiagnosticSettingsResourceCollectionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<DiagnosticSettingsResourceInner> value
+                        = reader.readArray(reader1 -> DiagnosticSettingsResourceInner.fromJson(reader1));
+                    deserializedDiagnosticSettingsResourceCollectionInner.value = value;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDiagnosticSettingsResourceCollectionInner;
+        });
     }
 }

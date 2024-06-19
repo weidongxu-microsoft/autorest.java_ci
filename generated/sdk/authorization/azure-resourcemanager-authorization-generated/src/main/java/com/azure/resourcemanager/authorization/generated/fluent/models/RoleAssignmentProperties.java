@@ -6,37 +6,37 @@ package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.authorization.generated.models.PrincipalType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Role assignment properties.
  */
 @Fluent
-public final class RoleAssignmentProperties {
+public final class RoleAssignmentProperties implements JsonSerializable<RoleAssignmentProperties> {
     /*
      * The role definition ID used in the role assignment.
      */
-    @JsonProperty(value = "roleDefinitionId", required = true)
     private String roleDefinitionId;
 
     /*
      * The principal ID assigned to the role. This maps to the ID inside the Active Directory. It can point to a user,
      * service principal, or security group.
      */
-    @JsonProperty(value = "principalId", required = true)
     private String principalId;
 
     /*
      * The principal type of the assigned principal ID.
      */
-    @JsonProperty(value = "principalType")
     private PrincipalType principalType;
 
     /*
      * The delegation flag used for creating a role assignment
      */
-    @JsonProperty(value = "canDelegate")
     private Boolean canDelegate;
 
     /**
@@ -146,4 +146,50 @@ public final class RoleAssignmentProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(RoleAssignmentProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("roleDefinitionId", this.roleDefinitionId);
+        jsonWriter.writeStringField("principalId", this.principalId);
+        jsonWriter.writeStringField("principalType", this.principalType == null ? null : this.principalType.toString());
+        jsonWriter.writeBooleanField("canDelegate", this.canDelegate);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of RoleAssignmentProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of RoleAssignmentProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the RoleAssignmentProperties.
+     */
+    public static RoleAssignmentProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            RoleAssignmentProperties deserializedRoleAssignmentProperties = new RoleAssignmentProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("roleDefinitionId".equals(fieldName)) {
+                    deserializedRoleAssignmentProperties.roleDefinitionId = reader.getString();
+                } else if ("principalId".equals(fieldName)) {
+                    deserializedRoleAssignmentProperties.principalId = reader.getString();
+                } else if ("principalType".equals(fieldName)) {
+                    deserializedRoleAssignmentProperties.principalType = PrincipalType.fromString(reader.getString());
+                } else if ("canDelegate".equals(fieldName)) {
+                    deserializedRoleAssignmentProperties.canDelegate = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRoleAssignmentProperties;
+        });
+    }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.relay.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -58,7 +57,6 @@ public final class UnavailableReason extends ExpandableStringEnum<UnavailableRea
      * @param name a name to look for.
      * @return the corresponding UnavailableReason.
      */
-    @JsonCreator
     public static UnavailableReason fromString(String name) {
         return fromString(name, UnavailableReason.class);
     }

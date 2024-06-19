@@ -5,50 +5,48 @@
 package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * A class representing database script property.
  */
 @Fluent
-public final class ScriptProperties {
+public final class ScriptProperties implements JsonSerializable<ScriptProperties> {
     /*
      * The url to the KQL script blob file. Must not be used together with scriptContent property
      */
-    @JsonProperty(value = "scriptUrl")
     private String scriptUrl;
 
     /*
      * The SaS token that provide read access to the file which contain the script. Must be provided when using
      * scriptUrl property.
      */
-    @JsonProperty(value = "scriptUrlSasToken")
     private String scriptUrlSasToken;
 
     /*
      * The script content. This property should be used when the script is provide inline and not through file in a SA.
      * Must not be used together with scriptUrl and scriptUrlSasToken properties.
      */
-    @JsonProperty(value = "scriptContent")
     private String scriptContent;
 
     /*
      * A unique string. If changed the script will be applied again.
      */
-    @JsonProperty(value = "forceUpdateTag")
     private String forceUpdateTag;
 
     /*
      * Flag that indicates whether to continue if one of the command fails.
      */
-    @JsonProperty(value = "continueOnErrors")
     private Boolean continueOnErrors;
 
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /**
@@ -178,5 +176,55 @@ public final class ScriptProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("scriptUrl", this.scriptUrl);
+        jsonWriter.writeStringField("scriptUrlSasToken", this.scriptUrlSasToken);
+        jsonWriter.writeStringField("scriptContent", this.scriptContent);
+        jsonWriter.writeStringField("forceUpdateTag", this.forceUpdateTag);
+        jsonWriter.writeBooleanField("continueOnErrors", this.continueOnErrors);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ScriptProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ScriptProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ScriptProperties.
+     */
+    public static ScriptProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ScriptProperties deserializedScriptProperties = new ScriptProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("scriptUrl".equals(fieldName)) {
+                    deserializedScriptProperties.scriptUrl = reader.getString();
+                } else if ("scriptUrlSasToken".equals(fieldName)) {
+                    deserializedScriptProperties.scriptUrlSasToken = reader.getString();
+                } else if ("scriptContent".equals(fieldName)) {
+                    deserializedScriptProperties.scriptContent = reader.getString();
+                } else if ("forceUpdateTag".equals(fieldName)) {
+                    deserializedScriptProperties.forceUpdateTag = reader.getString();
+                } else if ("continueOnErrors".equals(fieldName)) {
+                    deserializedScriptProperties.continueOnErrors = reader.getNullable(JsonReader::getBoolean);
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedScriptProperties.provisioningState = ProvisioningState.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedScriptProperties;
+        });
     }
 }

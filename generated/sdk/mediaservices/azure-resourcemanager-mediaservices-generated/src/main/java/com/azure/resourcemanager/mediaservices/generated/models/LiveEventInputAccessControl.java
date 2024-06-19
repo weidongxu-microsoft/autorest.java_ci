@@ -5,17 +5,20 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The IP access control for live event input.
  */
 @Fluent
-public final class LiveEventInputAccessControl {
+public final class LiveEventInputAccessControl implements JsonSerializable<LiveEventInputAccessControl> {
     /*
      * The IP access control properties.
      */
-    @JsonProperty(value = "ip")
     private IpAccessControl ip;
 
     /**
@@ -53,5 +56,41 @@ public final class LiveEventInputAccessControl {
         if (ip() != null) {
             ip().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("ip", this.ip);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventInputAccessControl from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventInputAccessControl if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventInputAccessControl.
+     */
+    public static LiveEventInputAccessControl fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventInputAccessControl deserializedLiveEventInputAccessControl = new LiveEventInputAccessControl();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("ip".equals(fieldName)) {
+                    deserializedLiveEventInputAccessControl.ip = IpAccessControl.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventInputAccessControl;
+        });
     }
 }

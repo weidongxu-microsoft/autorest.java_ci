@@ -5,84 +5,76 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties of modern charge summary.
  */
 @Immutable
-public final class ModernChargeSummaryProperties {
+public final class ModernChargeSummaryProperties implements JsonSerializable<ModernChargeSummaryProperties> {
     /*
      * The id of the billing period resource that the charge belongs to.
      */
-    @JsonProperty(value = "billingPeriodId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingPeriodId;
 
     /*
      * Usage start date.
      */
-    @JsonProperty(value = "usageStart", access = JsonProperty.Access.WRITE_ONLY)
     private String usageStart;
 
     /*
      * Usage end date.
      */
-    @JsonProperty(value = "usageEnd", access = JsonProperty.Access.WRITE_ONLY)
     private String usageEnd;
 
     /*
      * Azure Charges.
      */
-    @JsonProperty(value = "azureCharges", access = JsonProperty.Access.WRITE_ONLY)
     private Amount azureCharges;
 
     /*
      * Charges Billed separately.
      */
-    @JsonProperty(value = "chargesBilledSeparately", access = JsonProperty.Access.WRITE_ONLY)
     private Amount chargesBilledSeparately;
 
     /*
      * Marketplace Charges.
      */
-    @JsonProperty(value = "marketplaceCharges", access = JsonProperty.Access.WRITE_ONLY)
     private Amount marketplaceCharges;
 
     /*
      * Billing Account Id
      */
-    @JsonProperty(value = "billingAccountId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingAccountId;
 
     /*
      * Billing Profile Id
      */
-    @JsonProperty(value = "billingProfileId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileId;
 
     /*
      * Invoice Section Id
      */
-    @JsonProperty(value = "invoiceSectionId", access = JsonProperty.Access.WRITE_ONLY)
     private String invoiceSectionId;
 
     /*
      * Customer Id
      */
-    @JsonProperty(value = "customerId", access = JsonProperty.Access.WRITE_ONLY)
     private String customerId;
 
     /*
      * Is charge Invoiced
      */
-    @JsonProperty(value = "isInvoiced", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isInvoiced;
 
     /*
      * Subscription guid.
      */
-    @JsonProperty(value = "subscriptionId", access = JsonProperty.Access.WRITE_ONLY)
     private String subscriptionId;
 
     /**
@@ -214,5 +206,63 @@ public final class ModernChargeSummaryProperties {
         if (marketplaceCharges() != null) {
             marketplaceCharges().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ModernChargeSummaryProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ModernChargeSummaryProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ModernChargeSummaryProperties.
+     */
+    public static ModernChargeSummaryProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ModernChargeSummaryProperties deserializedModernChargeSummaryProperties
+                = new ModernChargeSummaryProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("billingPeriodId".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.billingPeriodId = reader.getString();
+                } else if ("usageStart".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.usageStart = reader.getString();
+                } else if ("usageEnd".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.usageEnd = reader.getString();
+                } else if ("azureCharges".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.azureCharges = Amount.fromJson(reader);
+                } else if ("chargesBilledSeparately".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.chargesBilledSeparately = Amount.fromJson(reader);
+                } else if ("marketplaceCharges".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.marketplaceCharges = Amount.fromJson(reader);
+                } else if ("billingAccountId".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.billingAccountId = reader.getString();
+                } else if ("billingProfileId".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.billingProfileId = reader.getString();
+                } else if ("invoiceSectionId".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.invoiceSectionId = reader.getString();
+                } else if ("customerId".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.customerId = reader.getString();
+                } else if ("isInvoiced".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.isInvoiced = reader.getNullable(JsonReader::getBoolean);
+                } else if ("subscriptionId".equals(fieldName)) {
+                    deserializedModernChargeSummaryProperties.subscriptionId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedModernChargeSummaryProperties;
+        });
     }
 }

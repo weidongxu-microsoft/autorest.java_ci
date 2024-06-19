@@ -5,12 +5,13 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.CloudEdgeManagementRoleProperties;
 import com.azure.resourcemanager.databoxedge.generated.fluent.models.RoleInner;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import java.io.IOException;
 
 /**
  * The preview of Virtual Machine Cloud Management from the Azure supports deploying and managing VMs on your Azure
@@ -20,26 +21,37 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * By using this feature, you agree to the preview legal terms. See the
  * https://azure.microsoft.com/en-us/support/legal/preview-supplemental-terms/ for additional details.
  */
-@JsonTypeInfo(
-    use = JsonTypeInfo.Id.NAME,
-    property = "kind",
-    defaultImpl = CloudEdgeManagementRole.class,
-    visible = true)
-@JsonTypeName("CloudEdgeManagement")
 @Fluent
 public final class CloudEdgeManagementRole extends RoleInner {
     /*
      * Role type.
      */
-    @JsonTypeId
-    @JsonProperty(value = "kind", required = true)
     private RoleTypes kind = RoleTypes.CLOUD_EDGE_MANAGEMENT;
 
     /*
      * Properties specific to CloudEdgeManagementRole role.
      */
-    @JsonProperty(value = "properties")
     private CloudEdgeManagementRoleProperties innerProperties;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * Metadata pertaining to creation and last modification of Role
+     */
+    private SystemData systemData;
 
     /**
      * Creates an instance of CloudEdgeManagementRole class.
@@ -64,6 +76,46 @@ public final class CloudEdgeManagementRole extends RoleInner {
      */
     private CloudEdgeManagementRoleProperties innerProperties() {
         return this.innerProperties;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the systemData property: Metadata pertaining to creation and last modification of Role.
+     * 
+     * @return the systemData value.
+     */
+    @Override
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -118,5 +170,54 @@ public final class CloudEdgeManagementRole extends RoleInner {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CloudEdgeManagementRole from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CloudEdgeManagementRole if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the CloudEdgeManagementRole.
+     */
+    public static CloudEdgeManagementRole fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CloudEdgeManagementRole deserializedCloudEdgeManagementRole = new CloudEdgeManagementRole();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRole.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRole.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRole.type = reader.getString();
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRole.systemData = SystemData.fromJson(reader);
+                } else if ("kind".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRole.kind = RoleTypes.fromString(reader.getString());
+                } else if ("properties".equals(fieldName)) {
+                    deserializedCloudEdgeManagementRole.innerProperties
+                        = CloudEdgeManagementRoleProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCloudEdgeManagementRole;
+        });
     }
 }

@@ -5,50 +5,48 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.authorization.generated.models.ProviderOperation;
 import com.azure.resourcemanager.authorization.generated.models.ResourceType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Provider Operations metadata.
  */
 @Fluent
-public final class ProviderOperationsMetadataInner {
+public final class ProviderOperationsMetadataInner implements JsonSerializable<ProviderOperationsMetadataInner> {
     /*
      * The provider id.
      */
-    @JsonProperty(value = "id")
     private String id;
 
     /*
      * The provider name.
      */
-    @JsonProperty(value = "name")
     private String name;
 
     /*
      * The provider type.
      */
-    @JsonProperty(value = "type")
     private String type;
 
     /*
      * The provider display name.
      */
-    @JsonProperty(value = "displayName")
     private String displayName;
 
     /*
      * The provider resource types
      */
-    @JsonProperty(value = "resourceTypes")
     private List<ResourceType> resourceTypes;
 
     /*
      * The provider operations.
      */
-    @JsonProperty(value = "operations")
     private List<ProviderOperation> operations;
 
     /**
@@ -189,5 +187,60 @@ public final class ProviderOperationsMetadataInner {
         if (operations() != null) {
             operations().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("id", this.id);
+        jsonWriter.writeStringField("name", this.name);
+        jsonWriter.writeStringField("type", this.type);
+        jsonWriter.writeStringField("displayName", this.displayName);
+        jsonWriter.writeArrayField("resourceTypes", this.resourceTypes, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("operations", this.operations, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ProviderOperationsMetadataInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ProviderOperationsMetadataInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ProviderOperationsMetadataInner.
+     */
+    public static ProviderOperationsMetadataInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ProviderOperationsMetadataInner deserializedProviderOperationsMetadataInner
+                = new ProviderOperationsMetadataInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedProviderOperationsMetadataInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedProviderOperationsMetadataInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedProviderOperationsMetadataInner.type = reader.getString();
+                } else if ("displayName".equals(fieldName)) {
+                    deserializedProviderOperationsMetadataInner.displayName = reader.getString();
+                } else if ("resourceTypes".equals(fieldName)) {
+                    List<ResourceType> resourceTypes = reader.readArray(reader1 -> ResourceType.fromJson(reader1));
+                    deserializedProviderOperationsMetadataInner.resourceTypes = resourceTypes;
+                } else if ("operations".equals(fieldName)) {
+                    List<ProviderOperation> operations
+                        = reader.readArray(reader1 -> ProviderOperation.fromJson(reader1));
+                    deserializedProviderOperationsMetadataInner.operations = operations;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedProviderOperationsMetadataInner;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class Enabled extends ExpandableStringEnum<Enabled> {
      * @param name a name to look for.
      * @return the corresponding Enabled.
      */
-    @JsonCreator
     public static Enabled fromString(String name) {
         return fromString(name, Enabled.class);
     }

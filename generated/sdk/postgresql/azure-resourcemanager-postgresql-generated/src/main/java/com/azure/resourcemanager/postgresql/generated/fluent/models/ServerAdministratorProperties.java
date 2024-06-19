@@ -6,37 +6,38 @@ package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.postgresql.generated.models.AdministratorType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * The properties of an server Administrator.
  */
 @Fluent
-public final class ServerAdministratorProperties {
+public final class ServerAdministratorProperties implements JsonSerializable<ServerAdministratorProperties> {
     /*
      * The type of administrator.
      */
-    @JsonProperty(value = "administratorType", required = true)
     private AdministratorType administratorType;
 
     /*
      * The server administrator login account name.
      */
-    @JsonProperty(value = "login", required = true)
     private String login;
 
     /*
      * The server administrator Sid (Secure ID).
      */
-    @JsonProperty(value = "sid", required = true)
     private UUID sid;
 
     /*
      * The server Active Directory Administrator tenant id.
      */
-    @JsonProperty(value = "tenantId", required = true)
     private UUID tenantId;
 
     /**
@@ -154,4 +155,55 @@ public final class ServerAdministratorProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ServerAdministratorProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("administratorType",
+            this.administratorType == null ? null : this.administratorType.toString());
+        jsonWriter.writeStringField("login", this.login);
+        jsonWriter.writeStringField("sid", Objects.toString(this.sid, null));
+        jsonWriter.writeStringField("tenantId", Objects.toString(this.tenantId, null));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerAdministratorProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerAdministratorProperties if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ServerAdministratorProperties.
+     */
+    public static ServerAdministratorProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerAdministratorProperties deserializedServerAdministratorProperties
+                = new ServerAdministratorProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("administratorType".equals(fieldName)) {
+                    deserializedServerAdministratorProperties.administratorType
+                        = AdministratorType.fromString(reader.getString());
+                } else if ("login".equals(fieldName)) {
+                    deserializedServerAdministratorProperties.login = reader.getString();
+                } else if ("sid".equals(fieldName)) {
+                    deserializedServerAdministratorProperties.sid
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("tenantId".equals(fieldName)) {
+                    deserializedServerAdministratorProperties.tenantId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerAdministratorProperties;
+        });
+    }
 }

@@ -5,54 +5,52 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Details of estimated savings. The costs and savings are estimated for the term.
  */
 @Fluent
-public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
+public final class ReservationRecommendationDetailsCalculatedSavingsProperties
+    implements JsonSerializable<ReservationRecommendationDetailsCalculatedSavingsProperties> {
     /*
      * The cost without reservation. Includes hardware and software cost.
      */
-    @JsonProperty(value = "onDemandCost", access = JsonProperty.Access.WRITE_ONLY)
     private Float onDemandCost;
 
     /*
      * Hardware and software cost of the resources not covered by the reservation.
      */
-    @JsonProperty(value = "overageCost", access = JsonProperty.Access.WRITE_ONLY)
     private Float overageCost;
 
     /*
      * The quantity for calculated savings.
      */
-    @JsonProperty(value = "quantity", access = JsonProperty.Access.WRITE_ONLY)
     private Float quantity;
 
     /*
      * Hardware cost of the resources covered by the reservation.
      */
-    @JsonProperty(value = "reservationCost", access = JsonProperty.Access.WRITE_ONLY)
     private Float reservationCost;
 
     /*
      * Reservation cost + software cost of the resources covered by the reservation + overage cost.
      */
-    @JsonProperty(value = "totalReservationCost", access = JsonProperty.Access.WRITE_ONLY)
     private Float totalReservationCost;
 
     /*
      * The number of reserved units used to calculate savings. Always 1 for virtual machines.
      */
-    @JsonProperty(value = "reservedUnitCount")
     private Float reservedUnitCount;
 
     /*
      * The amount saved by purchasing the recommended quantity of reservation. This is equal to onDemandCost -
      * totalReservationCost.
      */
-    @JsonProperty(value = "savings", access = JsonProperty.Access.WRITE_ONLY)
     private Float savings;
 
     /**
@@ -145,5 +143,63 @@ public final class ReservationRecommendationDetailsCalculatedSavingsProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("reservedUnitCount", this.reservedUnitCount);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReservationRecommendationDetailsCalculatedSavingsProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReservationRecommendationDetailsCalculatedSavingsProperties if the JsonReader was pointing
+     * to an instance of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the
+     * ReservationRecommendationDetailsCalculatedSavingsProperties.
+     */
+    public static ReservationRecommendationDetailsCalculatedSavingsProperties fromJson(JsonReader jsonReader)
+        throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReservationRecommendationDetailsCalculatedSavingsProperties deserializedReservationRecommendationDetailsCalculatedSavingsProperties
+                = new ReservationRecommendationDetailsCalculatedSavingsProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("onDemandCost".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.onDemandCost
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("overageCost".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.overageCost
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("quantity".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.quantity
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("reservationCost".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.reservationCost
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("totalReservationCost".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.totalReservationCost
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("reservedUnitCount".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.reservedUnitCount
+                        = reader.getNullable(JsonReader::getFloat);
+                } else if ("savings".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsCalculatedSavingsProperties.savings
+                        = reader.getNullable(JsonReader::getFloat);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReservationRecommendationDetailsCalculatedSavingsProperties;
+        });
     }
 }

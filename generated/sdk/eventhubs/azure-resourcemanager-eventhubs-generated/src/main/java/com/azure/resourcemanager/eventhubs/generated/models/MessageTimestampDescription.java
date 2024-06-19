@@ -5,13 +5,17 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Properties of MessageTimestamp Description.
  */
 @Fluent
-public final class MessageTimestampDescription {
+public final class MessageTimestampDescription implements JsonSerializable<MessageTimestampDescription> {
     /*
      * Denotes the type of timestamp the message will hold.Two types of timestamp types - "AppendTime" and "CreateTime".
      * AppendTime refers the time in which message got appended inside broker log. CreateTime refers to the time in
@@ -19,7 +23,6 @@ public final class MessageTimestampDescription {
      * Default value is AppendTime. If you are using AMQP protocol, CreateTime equals AppendTime and its behavior
      * remains the same.
      */
-    @JsonProperty(value = "timestampType")
     private TimestampType timestampType;
 
     /**
@@ -62,5 +65,42 @@ public final class MessageTimestampDescription {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("timestampType", this.timestampType == null ? null : this.timestampType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MessageTimestampDescription from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MessageTimestampDescription if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MessageTimestampDescription.
+     */
+    public static MessageTimestampDescription fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MessageTimestampDescription deserializedMessageTimestampDescription = new MessageTimestampDescription();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("timestampType".equals(fieldName)) {
+                    deserializedMessageTimestampDescription.timestampType
+                        = TimestampType.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMessageTimestampDescription;
+        });
     }
 }

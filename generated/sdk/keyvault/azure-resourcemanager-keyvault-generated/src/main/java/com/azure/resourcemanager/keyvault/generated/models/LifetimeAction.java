@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.keyvault.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The LifetimeAction model.
  */
 @Fluent
-public final class LifetimeAction {
+public final class LifetimeAction implements JsonSerializable<LifetimeAction> {
     /*
      * The trigger of key rotation policy lifetimeAction.
      */
-    @JsonProperty(value = "trigger")
     private Trigger trigger;
 
     /*
      * The action of key rotation policy lifetimeAction.
      */
-    @JsonProperty(value = "action")
     private Action action;
 
     /**
@@ -82,5 +84,44 @@ public final class LifetimeAction {
         if (action() != null) {
             action().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("trigger", this.trigger);
+        jsonWriter.writeJsonField("action", this.action);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LifetimeAction from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LifetimeAction if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LifetimeAction.
+     */
+    public static LifetimeAction fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LifetimeAction deserializedLifetimeAction = new LifetimeAction();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("trigger".equals(fieldName)) {
+                    deserializedLifetimeAction.trigger = Trigger.fromJson(reader);
+                } else if ("action".equals(fieldName)) {
+                    deserializedLifetimeAction.action = Action.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLifetimeAction;
+        });
     }
 }

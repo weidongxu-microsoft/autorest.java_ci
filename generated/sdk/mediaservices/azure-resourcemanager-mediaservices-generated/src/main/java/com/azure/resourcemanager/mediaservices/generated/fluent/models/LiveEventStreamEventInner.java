@@ -5,39 +5,41 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventStreamEventData;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventStreamEventLevel;
 import com.azure.resourcemanager.mediaservices.generated.models.LiveEventStreamEventType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * The live event stream event.
  */
 @Fluent
-public final class LiveEventStreamEventInner {
+public final class LiveEventStreamEventInner implements JsonSerializable<LiveEventStreamEventInner> {
     /*
      * The type of the stream event. Format: StreamEvent/{eventType}
      */
-    @JsonProperty(value = "eventType")
     private LiveEventStreamEventType eventType;
 
     /*
      * The time event raised.
      */
-    @JsonProperty(value = "eventTime")
     private OffsetDateTime eventTime;
 
     /*
      * Event level.
      */
-    @JsonProperty(value = "eventLevel")
     private LiveEventStreamEventLevel eventLevel;
 
     /*
      * Event data based on event type.
      */
-    @JsonProperty(value = "data")
     private LiveEventStreamEventData data;
 
     /**
@@ -135,5 +137,54 @@ public final class LiveEventStreamEventInner {
         if (data() != null) {
             data().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("eventType", this.eventType == null ? null : this.eventType.toString());
+        jsonWriter.writeStringField("eventTime",
+            this.eventTime == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.eventTime));
+        jsonWriter.writeStringField("eventLevel", this.eventLevel == null ? null : this.eventLevel.toString());
+        jsonWriter.writeJsonField("data", this.data);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of LiveEventStreamEventInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of LiveEventStreamEventInner if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the LiveEventStreamEventInner.
+     */
+    public static LiveEventStreamEventInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            LiveEventStreamEventInner deserializedLiveEventStreamEventInner = new LiveEventStreamEventInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("eventType".equals(fieldName)) {
+                    deserializedLiveEventStreamEventInner.eventType
+                        = LiveEventStreamEventType.fromString(reader.getString());
+                } else if ("eventTime".equals(fieldName)) {
+                    deserializedLiveEventStreamEventInner.eventTime = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("eventLevel".equals(fieldName)) {
+                    deserializedLiveEventStreamEventInner.eventLevel
+                        = LiveEventStreamEventLevel.fromString(reader.getString());
+                } else if ("data".equals(fieldName)) {
+                    deserializedLiveEventStreamEventInner.data = LiveEventStreamEventData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedLiveEventStreamEventInner;
+        });
     }
 }

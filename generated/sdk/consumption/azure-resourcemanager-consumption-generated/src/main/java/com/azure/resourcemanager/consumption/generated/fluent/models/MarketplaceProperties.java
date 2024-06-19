@@ -5,7 +5,12 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.time.OffsetDateTime;
 import java.util.UUID;
@@ -14,161 +19,135 @@ import java.util.UUID;
  * The properties of the marketplace usage detail.
  */
 @Immutable
-public final class MarketplaceProperties {
+public final class MarketplaceProperties implements JsonSerializable<MarketplaceProperties> {
     /*
      * The id of the billing period resource that the usage belongs to.
      */
-    @JsonProperty(value = "billingPeriodId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingPeriodId;
 
     /*
      * The start of the date time range covered by the usage detail.
      */
-    @JsonProperty(value = "usageStart", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime usageStart;
 
     /*
      * The end of the date time range covered by the usage detail.
      */
-    @JsonProperty(value = "usageEnd", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime usageEnd;
 
     /*
      * The marketplace resource rate.
      */
-    @JsonProperty(value = "resourceRate", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal resourceRate;
 
     /*
      * The type of offer.
      */
-    @JsonProperty(value = "offerName", access = JsonProperty.Access.WRITE_ONLY)
     private String offerName;
 
     /*
      * The name of resource group.
      */
-    @JsonProperty(value = "resourceGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGroup;
 
     /*
      * Additional information.
      */
-    @JsonProperty(value = "additionalInfo", access = JsonProperty.Access.WRITE_ONLY)
     private String additionalInfo;
 
     /*
      * The order number.
      */
-    @JsonProperty(value = "orderNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String orderNumber;
 
     /*
      * The name of the resource instance that the usage is about.
      */
-    @JsonProperty(value = "instanceName", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceName;
 
     /*
      * The uri of the resource instance that the usage is about.
      */
-    @JsonProperty(value = "instanceId", access = JsonProperty.Access.WRITE_ONLY)
     private String instanceId;
 
     /*
      * The ISO currency in which the meter is charged, for example, USD.
      */
-    @JsonProperty(value = "currency", access = JsonProperty.Access.WRITE_ONLY)
     private String currency;
 
     /*
      * The quantity of usage.
      */
-    @JsonProperty(value = "consumedQuantity", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal consumedQuantity;
 
     /*
      * The unit of measure.
      */
-    @JsonProperty(value = "unitOfMeasure", access = JsonProperty.Access.WRITE_ONLY)
     private String unitOfMeasure;
 
     /*
      * The amount of cost before tax.
      */
-    @JsonProperty(value = "pretaxCost", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal pretaxCost;
 
     /*
      * The estimated usage is subject to change.
      */
-    @JsonProperty(value = "isEstimated", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isEstimated;
 
     /*
      * The meter id (GUID).
      */
-    @JsonProperty(value = "meterId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID meterId;
 
     /*
      * Subscription guid.
      */
-    @JsonProperty(value = "subscriptionGuid", access = JsonProperty.Access.WRITE_ONLY)
     private UUID subscriptionGuid;
 
     /*
      * Subscription name.
      */
-    @JsonProperty(value = "subscriptionName", access = JsonProperty.Access.WRITE_ONLY)
     private String subscriptionName;
 
     /*
      * Account name.
      */
-    @JsonProperty(value = "accountName", access = JsonProperty.Access.WRITE_ONLY)
     private String accountName;
 
     /*
      * Department name.
      */
-    @JsonProperty(value = "departmentName", access = JsonProperty.Access.WRITE_ONLY)
     private String departmentName;
 
     /*
      * Consumed service name.
      */
-    @JsonProperty(value = "consumedService", access = JsonProperty.Access.WRITE_ONLY)
     private String consumedService;
 
     /*
      * The cost center of this department if it is a department and a costcenter exists
      */
-    @JsonProperty(value = "costCenter", access = JsonProperty.Access.WRITE_ONLY)
     private String costCenter;
 
     /*
      * Additional details of this usage item. By default this is not populated, unless it's specified in $expand.
      */
-    @JsonProperty(value = "additionalProperties", access = JsonProperty.Access.WRITE_ONLY)
     private String additionalProperties;
 
     /*
      * The name of publisher.
      */
-    @JsonProperty(value = "publisherName", access = JsonProperty.Access.WRITE_ONLY)
     private String publisherName;
 
     /*
      * The name of plan.
      */
-    @JsonProperty(value = "planName", access = JsonProperty.Access.WRITE_ONLY)
     private String planName;
 
     /*
      * Flag indicating whether this is a recurring charge or not.
      */
-    @JsonProperty(value = "isRecurringCharge", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isRecurringCharge;
 
     /**
@@ -418,5 +397,97 @@ public final class MarketplaceProperties {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MarketplaceProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MarketplaceProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the MarketplaceProperties.
+     */
+    public static MarketplaceProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MarketplaceProperties deserializedMarketplaceProperties = new MarketplaceProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("billingPeriodId".equals(fieldName)) {
+                    deserializedMarketplaceProperties.billingPeriodId = reader.getString();
+                } else if ("usageStart".equals(fieldName)) {
+                    deserializedMarketplaceProperties.usageStart = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("usageEnd".equals(fieldName)) {
+                    deserializedMarketplaceProperties.usageEnd = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("resourceRate".equals(fieldName)) {
+                    deserializedMarketplaceProperties.resourceRate
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("offerName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.offerName = reader.getString();
+                } else if ("resourceGroup".equals(fieldName)) {
+                    deserializedMarketplaceProperties.resourceGroup = reader.getString();
+                } else if ("additionalInfo".equals(fieldName)) {
+                    deserializedMarketplaceProperties.additionalInfo = reader.getString();
+                } else if ("orderNumber".equals(fieldName)) {
+                    deserializedMarketplaceProperties.orderNumber = reader.getString();
+                } else if ("instanceName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.instanceName = reader.getString();
+                } else if ("instanceId".equals(fieldName)) {
+                    deserializedMarketplaceProperties.instanceId = reader.getString();
+                } else if ("currency".equals(fieldName)) {
+                    deserializedMarketplaceProperties.currency = reader.getString();
+                } else if ("consumedQuantity".equals(fieldName)) {
+                    deserializedMarketplaceProperties.consumedQuantity
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("unitOfMeasure".equals(fieldName)) {
+                    deserializedMarketplaceProperties.unitOfMeasure = reader.getString();
+                } else if ("pretaxCost".equals(fieldName)) {
+                    deserializedMarketplaceProperties.pretaxCost
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("isEstimated".equals(fieldName)) {
+                    deserializedMarketplaceProperties.isEstimated = reader.getNullable(JsonReader::getBoolean);
+                } else if ("meterId".equals(fieldName)) {
+                    deserializedMarketplaceProperties.meterId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("subscriptionGuid".equals(fieldName)) {
+                    deserializedMarketplaceProperties.subscriptionGuid
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("subscriptionName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.subscriptionName = reader.getString();
+                } else if ("accountName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.accountName = reader.getString();
+                } else if ("departmentName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.departmentName = reader.getString();
+                } else if ("consumedService".equals(fieldName)) {
+                    deserializedMarketplaceProperties.consumedService = reader.getString();
+                } else if ("costCenter".equals(fieldName)) {
+                    deserializedMarketplaceProperties.costCenter = reader.getString();
+                } else if ("additionalProperties".equals(fieldName)) {
+                    deserializedMarketplaceProperties.additionalProperties = reader.getString();
+                } else if ("publisherName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.publisherName = reader.getString();
+                } else if ("planName".equals(fieldName)) {
+                    deserializedMarketplaceProperties.planName = reader.getString();
+                } else if ("isRecurringCharge".equals(fieldName)) {
+                    deserializedMarketplaceProperties.isRecurringCharge = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMarketplaceProperties;
+        });
     }
 }

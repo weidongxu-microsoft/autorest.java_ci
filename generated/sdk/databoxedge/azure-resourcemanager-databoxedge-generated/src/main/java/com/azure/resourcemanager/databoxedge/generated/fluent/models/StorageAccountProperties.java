@@ -6,49 +6,47 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.DataPolicy;
 import com.azure.resourcemanager.databoxedge.generated.models.StorageAccountStatus;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The storage account properties.
  */
 @Fluent
-public final class StorageAccountProperties {
+public final class StorageAccountProperties implements JsonSerializable<StorageAccountProperties> {
     /*
      * Description for the storage Account.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * Current status of the storage account
      */
-    @JsonProperty(value = "storageAccountStatus")
     private StorageAccountStatus storageAccountStatus;
 
     /*
      * Data policy of the storage Account.
      */
-    @JsonProperty(value = "dataPolicy", required = true)
     private DataPolicy dataPolicy;
 
     /*
      * Storage Account Credential Id
      */
-    @JsonProperty(value = "storageAccountCredentialId")
     private String storageAccountCredentialId;
 
     /*
      * BlobEndpoint of Storage Account
      */
-    @JsonProperty(value = "blobEndpoint", access = JsonProperty.Access.WRITE_ONLY)
     private String blobEndpoint;
 
     /*
      * The Container Count. Present only for Storage Accounts with DataPolicy set to Cloud.
      */
-    @JsonProperty(value = "containerCount", access = JsonProperty.Access.WRITE_ONLY)
     private Integer containerCount;
 
     /**
@@ -170,4 +168,56 @@ public final class StorageAccountProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(StorageAccountProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("dataPolicy", this.dataPolicy == null ? null : this.dataPolicy.toString());
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeStringField("storageAccountStatus",
+            this.storageAccountStatus == null ? null : this.storageAccountStatus.toString());
+        jsonWriter.writeStringField("storageAccountCredentialId", this.storageAccountCredentialId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of StorageAccountProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of StorageAccountProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the StorageAccountProperties.
+     */
+    public static StorageAccountProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            StorageAccountProperties deserializedStorageAccountProperties = new StorageAccountProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("dataPolicy".equals(fieldName)) {
+                    deserializedStorageAccountProperties.dataPolicy = DataPolicy.fromString(reader.getString());
+                } else if ("description".equals(fieldName)) {
+                    deserializedStorageAccountProperties.description = reader.getString();
+                } else if ("storageAccountStatus".equals(fieldName)) {
+                    deserializedStorageAccountProperties.storageAccountStatus
+                        = StorageAccountStatus.fromString(reader.getString());
+                } else if ("storageAccountCredentialId".equals(fieldName)) {
+                    deserializedStorageAccountProperties.storageAccountCredentialId = reader.getString();
+                } else if ("blobEndpoint".equals(fieldName)) {
+                    deserializedStorageAccountProperties.blobEndpoint = reader.getString();
+                } else if ("containerCount".equals(fieldName)) {
+                    deserializedStorageAccountProperties.containerCount = reader.getNullable(JsonReader::getInt);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedStorageAccountProperties;
+        });
+    }
 }

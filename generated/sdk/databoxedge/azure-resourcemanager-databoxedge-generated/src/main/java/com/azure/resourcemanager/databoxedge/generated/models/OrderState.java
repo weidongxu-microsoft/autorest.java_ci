@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -112,7 +111,6 @@ public final class OrderState extends ExpandableStringEnum<OrderState> {
      * @param name a name to look for.
      * @return the corresponding OrderState.
      */
-    @JsonCreator
     public static OrderState fromString(String name) {
         return fromString(name, OrderState.class);
     }

@@ -5,32 +5,34 @@
 package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.postgresql.generated.models.ServerKeyType;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * Properties for a key execution.
  */
 @Fluent
-public final class ServerKeyProperties {
+public final class ServerKeyProperties implements JsonSerializable<ServerKeyProperties> {
     /*
      * The key type like 'AzureKeyVault'.
      */
-    @JsonProperty(value = "serverKeyType", required = true)
     private ServerKeyType serverKeyType;
 
     /*
      * The URI of the key.
      */
-    @JsonProperty(value = "uri")
     private String uri;
 
     /*
      * The key creation date.
      */
-    @JsonProperty(value = "creationDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime creationDate;
 
     /**
@@ -102,4 +104,47 @@ public final class ServerKeyProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(ServerKeyProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("serverKeyType", this.serverKeyType == null ? null : this.serverKeyType.toString());
+        jsonWriter.writeStringField("uri", this.uri);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerKeyProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerKeyProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ServerKeyProperties.
+     */
+    public static ServerKeyProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerKeyProperties deserializedServerKeyProperties = new ServerKeyProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("serverKeyType".equals(fieldName)) {
+                    deserializedServerKeyProperties.serverKeyType = ServerKeyType.fromString(reader.getString());
+                } else if ("uri".equals(fieldName)) {
+                    deserializedServerKeyProperties.uri = reader.getString();
+                } else if ("creationDate".equals(fieldName)) {
+                    deserializedServerKeyProperties.creationDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerKeyProperties;
+        });
+    }
 }

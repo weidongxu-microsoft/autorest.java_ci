@@ -5,30 +5,25 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Describes a list of inputs to a Job.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputs.class, visible = true)
-@JsonTypeName("#Microsoft.Media.JobInputs")
 @Fluent
 public final class JobInputs extends JobInput {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.JobInputs";
 
     /*
      * List of inputs to a Job.
      */
-    @JsonProperty(value = "inputs")
     private List<JobInput> inputs;
 
     /**
@@ -78,5 +73,45 @@ public final class JobInputs extends JobInput {
         if (inputs() != null) {
             inputs().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeArrayField("inputs", this.inputs, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobInputs from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobInputs if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the JobInputs.
+     */
+    public static JobInputs fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobInputs deserializedJobInputs = new JobInputs();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedJobInputs.odataType = reader.getString();
+                } else if ("inputs".equals(fieldName)) {
+                    List<JobInput> inputs = reader.readArray(reader1 -> JobInput.fromJson(reader1));
+                    deserializedJobInputs.inputs = inputs;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobInputs;
+        });
     }
 }

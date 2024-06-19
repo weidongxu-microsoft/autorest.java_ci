@@ -5,18 +5,21 @@
 package com.azure.resourcemanager.mediaservices.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.mediaservices.generated.models.EdgeUsageDataCollectionPolicy;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The EdgePolicies model.
  */
 @Fluent
-public final class EdgePoliciesInner {
+public final class EdgePoliciesInner implements JsonSerializable<EdgePoliciesInner> {
     /*
      * The usageDataCollectionPolicy property.
      */
-    @JsonProperty(value = "usageDataCollectionPolicy")
     private EdgeUsageDataCollectionPolicy usageDataCollectionPolicy;
 
     /**
@@ -54,5 +57,42 @@ public final class EdgePoliciesInner {
         if (usageDataCollectionPolicy() != null) {
             usageDataCollectionPolicy().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("usageDataCollectionPolicy", this.usageDataCollectionPolicy);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EdgePoliciesInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EdgePoliciesInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EdgePoliciesInner.
+     */
+    public static EdgePoliciesInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EdgePoliciesInner deserializedEdgePoliciesInner = new EdgePoliciesInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("usageDataCollectionPolicy".equals(fieldName)) {
+                    deserializedEdgePoliciesInner.usageDataCollectionPolicy
+                        = EdgeUsageDataCollectionPolicy.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEdgePoliciesInner;
+        });
     }
 }

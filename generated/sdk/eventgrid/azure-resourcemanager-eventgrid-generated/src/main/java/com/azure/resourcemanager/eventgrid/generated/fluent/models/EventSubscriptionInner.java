@@ -7,6 +7,9 @@ package com.azure.resourcemanager.eventgrid.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.ProxyResource;
 import com.azure.core.management.SystemData;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterDestination;
 import com.azure.resourcemanager.eventgrid.generated.models.DeadLetterWithResourceIdentity;
 import com.azure.resourcemanager.eventgrid.generated.models.DeliveryWithResourceIdentity;
@@ -15,7 +18,7 @@ import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionDes
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionFilter;
 import com.azure.resourcemanager.eventgrid.generated.models.EventSubscriptionProvisioningState;
 import com.azure.resourcemanager.eventgrid.generated.models.RetryPolicy;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 
@@ -27,14 +30,27 @@ public final class EventSubscriptionInner extends ProxyResource {
     /*
      * Properties of the event subscription.
      */
-    @JsonProperty(value = "properties")
     private EventSubscriptionProperties innerProperties;
 
     /*
      * The system metadata relating to Event Subscription resource.
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of EventSubscriptionInner class.
@@ -58,6 +74,36 @@ public final class EventSubscriptionInner extends ProxyResource {
      */
     public SystemData systemData() {
         return this.systemData;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -322,5 +368,50 @@ public final class EventSubscriptionInner extends ProxyResource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EventSubscriptionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EventSubscriptionInner if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the EventSubscriptionInner.
+     */
+    public static EventSubscriptionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EventSubscriptionInner deserializedEventSubscriptionInner = new EventSubscriptionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedEventSubscriptionInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedEventSubscriptionInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedEventSubscriptionInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedEventSubscriptionInner.innerProperties = EventSubscriptionProperties.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedEventSubscriptionInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEventSubscriptionInner;
+        });
     }
 }

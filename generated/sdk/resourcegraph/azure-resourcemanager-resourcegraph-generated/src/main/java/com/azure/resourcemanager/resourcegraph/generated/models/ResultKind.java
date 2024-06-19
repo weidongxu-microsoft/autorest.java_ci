@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.resourcegraph.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class ResultKind extends ExpandableStringEnum<ResultKind> {
      * @param name a name to look for.
      * @return the corresponding ResultKind.
      */
-    @JsonCreator
     public static ResultKind fromString(String name) {
         return fromString(name, ResultKind.class);
     }

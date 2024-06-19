@@ -5,177 +5,156 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.Amount;
 import com.azure.resourcemanager.consumption.generated.models.AmountWithExchangeRate;
 import com.azure.resourcemanager.consumption.generated.models.EventType;
 import com.azure.resourcemanager.consumption.generated.models.Reseller;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 
 /**
  * The event properties.
  */
 @Fluent
-public final class EventProperties {
+public final class EventProperties implements JsonSerializable<EventProperties> {
     /*
      * The date of the event.
      */
-    @JsonProperty(value = "transactionDate", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime transactionDate;
 
     /*
      * The description of the event.
      */
-    @JsonProperty(value = "description", access = JsonProperty.Access.WRITE_ONLY)
     private String description;
 
     /*
      * The amount of new credit or commitment for NewCredit or SettleCharges event.
      */
-    @JsonProperty(value = "newCredit", access = JsonProperty.Access.WRITE_ONLY)
     private Amount newCredit;
 
     /*
      * The amount of balance adjustment. The property is not available for ConsumptionCommitment lots.
      */
-    @JsonProperty(value = "adjustments", access = JsonProperty.Access.WRITE_ONLY)
     private Amount adjustments;
 
     /*
      * The amount of expired credit or commitment for NewCredit or SettleCharges event.
      */
-    @JsonProperty(value = "creditExpired", access = JsonProperty.Access.WRITE_ONLY)
     private Amount creditExpired;
 
     /*
      * The amount of charges for events of type SettleCharges and PendingEligibleCharges.
      */
-    @JsonProperty(value = "charges", access = JsonProperty.Access.WRITE_ONLY)
     private Amount charges;
 
     /*
      * The balance after the event, Note: This will not be returned for Contributor Organization Type in Multi-Entity
      * consumption commitment
      */
-    @JsonProperty(value = "closedBalance", access = JsonProperty.Access.WRITE_ONLY)
     private Amount closedBalance;
 
     /*
      * Identifier of the billing account.
      */
-    @JsonProperty(value = "billingAccountId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingAccountId;
 
     /*
      * Name of the billing account.
      */
-    @JsonProperty(value = "billingAccountDisplayName", access = JsonProperty.Access.WRITE_ONLY)
     private String billingAccountDisplayName;
 
     /*
      * Identifies the type of the event.
      */
-    @JsonProperty(value = "eventType")
     private EventType eventType;
 
     /*
      * The number which uniquely identifies the invoice on which the event was billed. This will be empty for unbilled
      * events.
      */
-    @JsonProperty(value = "invoiceNumber", access = JsonProperty.Access.WRITE_ONLY)
     private String invoiceNumber;
 
     /*
      * The ID that uniquely identifies the billing profile for which the event happened. The property is only available
      * for billing account of type MicrosoftCustomerAgreement.
      */
-    @JsonProperty(value = "billingProfileId", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileId;
 
     /*
      * The display name of the billing profile for which the event happened. The property is only available for billing
      * account of type MicrosoftCustomerAgreement.
      */
-    @JsonProperty(value = "billingProfileDisplayName", access = JsonProperty.Access.WRITE_ONLY)
     private String billingProfileDisplayName;
 
     /*
      * The ID that uniquely identifies the lot for which the event happened.
      */
-    @JsonProperty(value = "lotId", access = JsonProperty.Access.WRITE_ONLY)
     private String lotId;
 
     /*
      * Identifies the source of the lot for which the event happened.
      */
-    @JsonProperty(value = "lotSource", access = JsonProperty.Access.WRITE_ONLY)
     private String lotSource;
 
     /*
      * Amount of canceled credit.
      */
-    @JsonProperty(value = "canceledCredit", access = JsonProperty.Access.WRITE_ONLY)
     private Amount canceledCredit;
 
     /*
      * The credit currency of the event.
      */
-    @JsonProperty(value = "creditCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private String creditCurrency;
 
     /*
      * The billing currency of the event.
      */
-    @JsonProperty(value = "billingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private String billingCurrency;
 
     /*
      * The reseller of the event.
      */
-    @JsonProperty(value = "reseller", access = JsonProperty.Access.WRITE_ONLY)
     private Reseller reseller;
 
     /*
      * The amount of expired credit or commitment for NewCredit or SettleCharges event in billing currency.
      */
-    @JsonProperty(value = "creditExpiredInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate creditExpiredInBillingCurrency;
 
     /*
      * The amount of new credit or commitment for NewCredit or SettleCharges event in billing currency.
      */
-    @JsonProperty(value = "newCreditInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate newCreditInBillingCurrency;
 
     /*
      * The amount of balance adjustment in billing currency.
      */
-    @JsonProperty(value = "adjustmentsInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate adjustmentsInBillingCurrency;
 
     /*
      * The amount of charges for events of type SettleCharges and PendingEligibleCharges in billing currency.
      */
-    @JsonProperty(value = "chargesInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate chargesInBillingCurrency;
 
     /*
      * The balance in billing currency after the event, Note: This will not be returned for Contributor Organization
      * Type in Multi-Entity consumption commitment
      */
-    @JsonProperty(value = "closedBalanceInBillingCurrency", access = JsonProperty.Access.WRITE_ONLY)
     private AmountWithExchangeRate closedBalanceInBillingCurrency;
 
     /*
      * If true, the listed details are based on an estimation and it will be subjected to change.
      */
-    @JsonProperty(value = "isEstimatedBalance", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isEstimatedBalance;
 
     /*
      * The eTag for the resource.
      */
-    @JsonProperty(value = "eTag", access = JsonProperty.Access.WRITE_ONLY)
     private String etag;
 
     /**
@@ -481,5 +460,94 @@ public final class EventProperties {
         if (closedBalanceInBillingCurrency() != null) {
             closedBalanceInBillingCurrency().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("eventType", this.eventType == null ? null : this.eventType.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of EventProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of EventProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the EventProperties.
+     */
+    public static EventProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            EventProperties deserializedEventProperties = new EventProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("transactionDate".equals(fieldName)) {
+                    deserializedEventProperties.transactionDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("description".equals(fieldName)) {
+                    deserializedEventProperties.description = reader.getString();
+                } else if ("newCredit".equals(fieldName)) {
+                    deserializedEventProperties.newCredit = Amount.fromJson(reader);
+                } else if ("adjustments".equals(fieldName)) {
+                    deserializedEventProperties.adjustments = Amount.fromJson(reader);
+                } else if ("creditExpired".equals(fieldName)) {
+                    deserializedEventProperties.creditExpired = Amount.fromJson(reader);
+                } else if ("charges".equals(fieldName)) {
+                    deserializedEventProperties.charges = Amount.fromJson(reader);
+                } else if ("closedBalance".equals(fieldName)) {
+                    deserializedEventProperties.closedBalance = Amount.fromJson(reader);
+                } else if ("billingAccountId".equals(fieldName)) {
+                    deserializedEventProperties.billingAccountId = reader.getString();
+                } else if ("billingAccountDisplayName".equals(fieldName)) {
+                    deserializedEventProperties.billingAccountDisplayName = reader.getString();
+                } else if ("eventType".equals(fieldName)) {
+                    deserializedEventProperties.eventType = EventType.fromString(reader.getString());
+                } else if ("invoiceNumber".equals(fieldName)) {
+                    deserializedEventProperties.invoiceNumber = reader.getString();
+                } else if ("billingProfileId".equals(fieldName)) {
+                    deserializedEventProperties.billingProfileId = reader.getString();
+                } else if ("billingProfileDisplayName".equals(fieldName)) {
+                    deserializedEventProperties.billingProfileDisplayName = reader.getString();
+                } else if ("lotId".equals(fieldName)) {
+                    deserializedEventProperties.lotId = reader.getString();
+                } else if ("lotSource".equals(fieldName)) {
+                    deserializedEventProperties.lotSource = reader.getString();
+                } else if ("canceledCredit".equals(fieldName)) {
+                    deserializedEventProperties.canceledCredit = Amount.fromJson(reader);
+                } else if ("creditCurrency".equals(fieldName)) {
+                    deserializedEventProperties.creditCurrency = reader.getString();
+                } else if ("billingCurrency".equals(fieldName)) {
+                    deserializedEventProperties.billingCurrency = reader.getString();
+                } else if ("reseller".equals(fieldName)) {
+                    deserializedEventProperties.reseller = Reseller.fromJson(reader);
+                } else if ("creditExpiredInBillingCurrency".equals(fieldName)) {
+                    deserializedEventProperties.creditExpiredInBillingCurrency
+                        = AmountWithExchangeRate.fromJson(reader);
+                } else if ("newCreditInBillingCurrency".equals(fieldName)) {
+                    deserializedEventProperties.newCreditInBillingCurrency = AmountWithExchangeRate.fromJson(reader);
+                } else if ("adjustmentsInBillingCurrency".equals(fieldName)) {
+                    deserializedEventProperties.adjustmentsInBillingCurrency = AmountWithExchangeRate.fromJson(reader);
+                } else if ("chargesInBillingCurrency".equals(fieldName)) {
+                    deserializedEventProperties.chargesInBillingCurrency = AmountWithExchangeRate.fromJson(reader);
+                } else if ("closedBalanceInBillingCurrency".equals(fieldName)) {
+                    deserializedEventProperties.closedBalanceInBillingCurrency
+                        = AmountWithExchangeRate.fromJson(reader);
+                } else if ("isEstimatedBalance".equals(fieldName)) {
+                    deserializedEventProperties.isEstimatedBalance = reader.getNullable(JsonReader::getBoolean);
+                } else if ("eTag".equals(fieldName)) {
+                    deserializedEventProperties.etag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedEventProperties;
+        });
     }
 }

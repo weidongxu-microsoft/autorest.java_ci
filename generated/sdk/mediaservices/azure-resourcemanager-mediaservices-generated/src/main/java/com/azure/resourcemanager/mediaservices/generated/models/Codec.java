@@ -5,35 +5,25 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Describes the basic properties of all codecs.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = Codec.class, visible = true)
-@JsonTypeName("Codec")
-@JsonSubTypes({
-    @JsonSubTypes.Type(name = "#Microsoft.Media.Audio", value = Audio.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.Video", value = Video.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.CopyVideo", value = CopyVideo.class),
-    @JsonSubTypes.Type(name = "#Microsoft.Media.CopyAudio", value = CopyAudio.class) })
 @Fluent
-public class Codec {
+public class Codec implements JsonSerializable<Codec> {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "Codec";
 
     /*
      * An optional label for the codec. The label can be used to control muxing behavior.
      */
-    @JsonProperty(value = "label")
     private String label;
 
     /**
@@ -77,5 +67,89 @@ public class Codec {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        jsonWriter.writeStringField("label", this.label);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Codec from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Codec if the JsonReader was pointing to an instance of it, or null if it was pointing to
+     * JSON null.
+     * @throws IOException If an error occurs while reading the Codec.
+     */
+    public static Codec fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            String discriminatorValue = null;
+            try (JsonReader readerToUse = reader.bufferObject()) {
+                readerToUse.nextToken(); // Prepare for reading
+                while (readerToUse.nextToken() != JsonToken.END_OBJECT) {
+                    String fieldName = readerToUse.getFieldName();
+                    readerToUse.nextToken();
+                    if ("@odata.type".equals(fieldName)) {
+                        discriminatorValue = readerToUse.getString();
+                        break;
+                    } else {
+                        readerToUse.skipChildren();
+                    }
+                }
+                // Use the discriminator value to determine which subtype should be deserialized.
+                if ("#Microsoft.Media.Audio".equals(discriminatorValue)) {
+                    return Audio.fromJsonKnownDiscriminator(readerToUse.reset());
+                } else if ("#Microsoft.Media.AacAudio".equals(discriminatorValue)) {
+                    return AacAudio.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.DDAudio".equals(discriminatorValue)) {
+                    return DDAudio.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.Video".equals(discriminatorValue)) {
+                    return Video.fromJsonKnownDiscriminator(readerToUse.reset());
+                } else if ("#Microsoft.Media.H265Video".equals(discriminatorValue)) {
+                    return H265Video.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.Image".equals(discriminatorValue)) {
+                    return Image.fromJsonKnownDiscriminator(readerToUse.reset());
+                } else if ("#Microsoft.Media.JpgImage".equals(discriminatorValue)) {
+                    return JpgImage.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.PngImage".equals(discriminatorValue)) {
+                    return PngImage.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.H264Video".equals(discriminatorValue)) {
+                    return H264Video.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.CopyVideo".equals(discriminatorValue)) {
+                    return CopyVideo.fromJson(readerToUse.reset());
+                } else if ("#Microsoft.Media.CopyAudio".equals(discriminatorValue)) {
+                    return CopyAudio.fromJson(readerToUse.reset());
+                } else {
+                    return fromJsonKnownDiscriminator(readerToUse.reset());
+                }
+            }
+        });
+    }
+
+    static Codec fromJsonKnownDiscriminator(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Codec deserializedCodec = new Codec();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("@odata.type".equals(fieldName)) {
+                    deserializedCodec.odataType = reader.getString();
+                } else if ("label".equals(fieldName)) {
+                    deserializedCodec.label = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCodec;
+        });
     }
 }

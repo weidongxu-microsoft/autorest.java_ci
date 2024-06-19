@@ -5,31 +5,33 @@
 package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateEndpointProperty;
 import com.azure.resourcemanager.postgresql.generated.models.PrivateLinkServiceConnectionStateProperty;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Properties of a private endpoint connection.
  */
 @Fluent
-public final class PrivateEndpointConnectionProperties {
+public final class PrivateEndpointConnectionProperties
+    implements JsonSerializable<PrivateEndpointConnectionProperties> {
     /*
      * Private endpoint which the connection belongs to.
      */
-    @JsonProperty(value = "privateEndpoint")
     private PrivateEndpointProperty privateEndpoint;
 
     /*
      * Connection state of the private endpoint connection.
      */
-    @JsonProperty(value = "privateLinkServiceConnectionState")
     private PrivateLinkServiceConnectionStateProperty privateLinkServiceConnectionState;
 
     /*
      * State of the private endpoint connection.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private String provisioningState;
 
     /**
@@ -100,5 +102,49 @@ public final class PrivateEndpointConnectionProperties {
         if (privateLinkServiceConnectionState() != null) {
             privateLinkServiceConnectionState().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("privateEndpoint", this.privateEndpoint);
+        jsonWriter.writeJsonField("privateLinkServiceConnectionState", this.privateLinkServiceConnectionState);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PrivateEndpointConnectionProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PrivateEndpointConnectionProperties if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the PrivateEndpointConnectionProperties.
+     */
+    public static PrivateEndpointConnectionProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PrivateEndpointConnectionProperties deserializedPrivateEndpointConnectionProperties
+                = new PrivateEndpointConnectionProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("privateEndpoint".equals(fieldName)) {
+                    deserializedPrivateEndpointConnectionProperties.privateEndpoint
+                        = PrivateEndpointProperty.fromJson(reader);
+                } else if ("privateLinkServiceConnectionState".equals(fieldName)) {
+                    deserializedPrivateEndpointConnectionProperties.privateLinkServiceConnectionState
+                        = PrivateLinkServiceConnectionStateProperty.fromJson(reader);
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedPrivateEndpointConnectionProperties.provisioningState = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPrivateEndpointConnectionProperties;
+        });
     }
 }

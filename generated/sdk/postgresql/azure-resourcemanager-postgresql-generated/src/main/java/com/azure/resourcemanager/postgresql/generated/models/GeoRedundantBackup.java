@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class GeoRedundantBackup extends ExpandableStringEnum<GeoRedundantB
      * @param name a name to look for.
      * @return the corresponding GeoRedundantBackup.
      */
-    @JsonCreator
     public static GeoRedundantBackup fromString(String name) {
         return fromString(name, GeoRedundantBackup.class);
     }

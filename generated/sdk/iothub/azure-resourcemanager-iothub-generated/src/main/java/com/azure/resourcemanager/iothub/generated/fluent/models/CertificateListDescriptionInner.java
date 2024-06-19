@@ -5,18 +5,21 @@
 package com.azure.resourcemanager.iothub.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The JSON-serialized array of Certificate objects.
  */
 @Fluent
-public final class CertificateListDescriptionInner {
+public final class CertificateListDescriptionInner implements JsonSerializable<CertificateListDescriptionInner> {
     /*
      * The array of Certificate objects.
      */
-    @JsonProperty(value = "value")
     private List<CertificateDescriptionInner> value;
 
     /**
@@ -54,5 +57,44 @@ public final class CertificateListDescriptionInner {
         if (value() != null) {
             value().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("value", this.value, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CertificateListDescriptionInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CertificateListDescriptionInner if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the CertificateListDescriptionInner.
+     */
+    public static CertificateListDescriptionInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CertificateListDescriptionInner deserializedCertificateListDescriptionInner
+                = new CertificateListDescriptionInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("value".equals(fieldName)) {
+                    List<CertificateDescriptionInner> value
+                        = reader.readArray(reader1 -> CertificateDescriptionInner.fromJson(reader1));
+                    deserializedCertificateListDescriptionInner.value = value;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCertificateListDescriptionInner;
+        });
     }
 }

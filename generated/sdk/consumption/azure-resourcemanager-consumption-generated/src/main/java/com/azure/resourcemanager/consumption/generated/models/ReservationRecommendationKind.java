@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ReservationRecommendationKind extends ExpandableStringEnum<Re
      * @param name a name to look for.
      * @return the corresponding ReservationRecommendationKind.
      */
-    @JsonCreator
     public static ReservationRecommendationKind fromString(String name) {
         return fromString(name, ReservationRecommendationKind.class);
     }

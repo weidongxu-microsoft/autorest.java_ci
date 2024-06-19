@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -57,7 +56,6 @@ public final class RoutingSource extends ExpandableStringEnum<RoutingSource> {
      * @param name a name to look for.
      * @return the corresponding RoutingSource.
      */
-    @JsonCreator
     public static RoutingSource fromString(String name) {
         return fromString(name, RoutingSource.class);
     }

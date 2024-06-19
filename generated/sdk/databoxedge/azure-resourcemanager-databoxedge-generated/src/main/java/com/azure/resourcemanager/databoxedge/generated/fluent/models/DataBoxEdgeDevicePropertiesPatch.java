@@ -5,18 +5,21 @@
 package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.EdgeProfilePatch;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The Data Box Edge/Gateway device properties patch.
  */
 @Fluent
-public final class DataBoxEdgeDevicePropertiesPatch {
+public final class DataBoxEdgeDevicePropertiesPatch implements JsonSerializable<DataBoxEdgeDevicePropertiesPatch> {
     /*
      * Edge Profile property of the Data Box Edge/Gateway device
      */
-    @JsonProperty(value = "edgeProfile")
     private EdgeProfilePatch edgeProfile;
 
     /**
@@ -54,5 +57,42 @@ public final class DataBoxEdgeDevicePropertiesPatch {
         if (edgeProfile() != null) {
             edgeProfile().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("edgeProfile", this.edgeProfile);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDevicePropertiesPatch from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDevicePropertiesPatch if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDevicePropertiesPatch.
+     */
+    public static DataBoxEdgeDevicePropertiesPatch fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDevicePropertiesPatch deserializedDataBoxEdgeDevicePropertiesPatch
+                = new DataBoxEdgeDevicePropertiesPatch();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("edgeProfile".equals(fieldName)) {
+                    deserializedDataBoxEdgeDevicePropertiesPatch.edgeProfile = EdgeProfilePatch.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDevicePropertiesPatch;
+        });
     }
 }

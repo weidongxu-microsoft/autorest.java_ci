@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class ApplicationGroupPolicyType extends ExpandableStringEnum<Appli
      * @param name a name to look for.
      * @return the corresponding ApplicationGroupPolicyType.
      */
-    @JsonCreator
     public static ApplicationGroupPolicyType fromString(String name) {
         return fromString(name, ApplicationGroupPolicyType.class);
     }

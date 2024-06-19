@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class ApplicationGatewaySkuFamily extends ExpandableStringEnum<Appl
      * @param name a name to look for.
      * @return the corresponding ApplicationGatewaySkuFamily.
      */
-    @JsonCreator
     public static ApplicationGatewaySkuFamily fromString(String name) {
         return fromString(name, ApplicationGatewaySkuFamily.class);
     }

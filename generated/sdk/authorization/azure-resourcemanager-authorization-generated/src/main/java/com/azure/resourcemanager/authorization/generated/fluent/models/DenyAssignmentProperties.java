@@ -5,62 +5,58 @@
 package com.azure.resourcemanager.authorization.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.authorization.generated.models.DenyAssignmentPermission;
 import com.azure.resourcemanager.authorization.generated.models.Principal;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Deny assignment properties.
  */
 @Fluent
-public final class DenyAssignmentProperties {
+public final class DenyAssignmentProperties implements JsonSerializable<DenyAssignmentProperties> {
     /*
      * The display name of the deny assignment.
      */
-    @JsonProperty(value = "denyAssignmentName")
     private String denyAssignmentName;
 
     /*
      * The description of the deny assignment.
      */
-    @JsonProperty(value = "description")
     private String description;
 
     /*
      * An array of permissions that are denied by the deny assignment.
      */
-    @JsonProperty(value = "permissions")
     private List<DenyAssignmentPermission> permissions;
 
     /*
      * The deny assignment scope.
      */
-    @JsonProperty(value = "scope")
     private String scope;
 
     /*
      * Determines if the deny assignment applies to child scopes. Default value is false.
      */
-    @JsonProperty(value = "doNotApplyToChildScopes")
     private Boolean doNotApplyToChildScopes;
 
     /*
      * Array of principals to which the deny assignment applies.
      */
-    @JsonProperty(value = "principals")
     private List<Principal> principals;
 
     /*
      * Array of principals to which the deny assignment does not apply.
      */
-    @JsonProperty(value = "excludePrincipals")
     private List<Principal> excludePrincipals;
 
     /*
      * Specifies whether this deny assignment was created by Azure and cannot be edited or deleted.
      */
-    @JsonProperty(value = "isSystemProtected")
     private Boolean isSystemProtected;
 
     /**
@@ -248,5 +244,68 @@ public final class DenyAssignmentProperties {
         if (excludePrincipals() != null) {
             excludePrincipals().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("denyAssignmentName", this.denyAssignmentName);
+        jsonWriter.writeStringField("description", this.description);
+        jsonWriter.writeArrayField("permissions", this.permissions, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("scope", this.scope);
+        jsonWriter.writeBooleanField("doNotApplyToChildScopes", this.doNotApplyToChildScopes);
+        jsonWriter.writeArrayField("principals", this.principals, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("excludePrincipals", this.excludePrincipals,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("isSystemProtected", this.isSystemProtected);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DenyAssignmentProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DenyAssignmentProperties if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DenyAssignmentProperties.
+     */
+    public static DenyAssignmentProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DenyAssignmentProperties deserializedDenyAssignmentProperties = new DenyAssignmentProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("denyAssignmentName".equals(fieldName)) {
+                    deserializedDenyAssignmentProperties.denyAssignmentName = reader.getString();
+                } else if ("description".equals(fieldName)) {
+                    deserializedDenyAssignmentProperties.description = reader.getString();
+                } else if ("permissions".equals(fieldName)) {
+                    List<DenyAssignmentPermission> permissions
+                        = reader.readArray(reader1 -> DenyAssignmentPermission.fromJson(reader1));
+                    deserializedDenyAssignmentProperties.permissions = permissions;
+                } else if ("scope".equals(fieldName)) {
+                    deserializedDenyAssignmentProperties.scope = reader.getString();
+                } else if ("doNotApplyToChildScopes".equals(fieldName)) {
+                    deserializedDenyAssignmentProperties.doNotApplyToChildScopes
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("principals".equals(fieldName)) {
+                    List<Principal> principals = reader.readArray(reader1 -> Principal.fromJson(reader1));
+                    deserializedDenyAssignmentProperties.principals = principals;
+                } else if ("excludePrincipals".equals(fieldName)) {
+                    List<Principal> excludePrincipals = reader.readArray(reader1 -> Principal.fromJson(reader1));
+                    deserializedDenyAssignmentProperties.excludePrincipals = excludePrincipals;
+                } else if ("isSystemProtected".equals(fieldName)) {
+                    deserializedDenyAssignmentProperties.isSystemProtected = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDenyAssignmentProperties;
+        });
     }
 }

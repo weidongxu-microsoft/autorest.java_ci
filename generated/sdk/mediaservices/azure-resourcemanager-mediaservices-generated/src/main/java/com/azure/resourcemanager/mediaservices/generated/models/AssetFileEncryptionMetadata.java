@@ -6,30 +6,32 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
+import java.util.Objects;
 import java.util.UUID;
 
 /**
  * The Asset File Storage encryption metadata.
  */
 @Fluent
-public final class AssetFileEncryptionMetadata {
+public final class AssetFileEncryptionMetadata implements JsonSerializable<AssetFileEncryptionMetadata> {
     /*
      * The Asset File initialization vector.
      */
-    @JsonProperty(value = "initializationVector")
     private String initializationVector;
 
     /*
      * The Asset File name.
      */
-    @JsonProperty(value = "assetFileName")
     private String assetFileName;
 
     /*
      * The Asset File Id.
      */
-    @JsonProperty(value = "assetFileId", required = true)
     private UUID assetFileId;
 
     /**
@@ -112,4 +114,48 @@ public final class AssetFileEncryptionMetadata {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AssetFileEncryptionMetadata.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("assetFileId", Objects.toString(this.assetFileId, null));
+        jsonWriter.writeStringField("initializationVector", this.initializationVector);
+        jsonWriter.writeStringField("assetFileName", this.assetFileName);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AssetFileEncryptionMetadata from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AssetFileEncryptionMetadata if the JsonReader was pointing to an instance of it, or null
+     * if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AssetFileEncryptionMetadata.
+     */
+    public static AssetFileEncryptionMetadata fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AssetFileEncryptionMetadata deserializedAssetFileEncryptionMetadata = new AssetFileEncryptionMetadata();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("assetFileId".equals(fieldName)) {
+                    deserializedAssetFileEncryptionMetadata.assetFileId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("initializationVector".equals(fieldName)) {
+                    deserializedAssetFileEncryptionMetadata.initializationVector = reader.getString();
+                } else if ("assetFileName".equals(fieldName)) {
+                    deserializedAssetFileEncryptionMetadata.assetFileName = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAssetFileEncryptionMetadata;
+        });
+    }
 }

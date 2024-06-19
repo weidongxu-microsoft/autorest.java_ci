@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.monitor.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class QueryType extends ExpandableStringEnum<QueryType> {
      * @param name a name to look for.
      * @return the corresponding QueryType.
      */
-    @JsonCreator
     public static QueryType fromString(String name) {
         return fromString(name, QueryType.class);
     }

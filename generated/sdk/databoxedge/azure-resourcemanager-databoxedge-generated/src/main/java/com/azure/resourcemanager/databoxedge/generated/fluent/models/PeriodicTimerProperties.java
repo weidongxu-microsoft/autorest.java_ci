@@ -6,25 +6,27 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.PeriodicTimerSourceInfo;
 import com.azure.resourcemanager.databoxedge.generated.models.RoleSinkInfo;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * Periodic timer trigger properties.
  */
 @Fluent
-public final class PeriodicTimerProperties {
+public final class PeriodicTimerProperties implements JsonSerializable<PeriodicTimerProperties> {
     /*
      * Periodic timer details.
      */
-    @JsonProperty(value = "sourceInfo", required = true)
     private PeriodicTimerSourceInfo sourceInfo;
 
     /*
      * Role Sink information.
      */
-    @JsonProperty(value = "sinkInfo", required = true)
     private RoleSinkInfo sinkInfo;
 
     /*
@@ -32,7 +34,6 @@ public final class PeriodicTimerProperties {
      * trigger is intended for certain specific IoT modules in the device, the tag can be the name or the image URL of
      * the module.
      */
-    @JsonProperty(value = "customContextTag")
     private String customContextTag;
 
     /**
@@ -128,4 +129,47 @@ public final class PeriodicTimerProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(PeriodicTimerProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("sourceInfo", this.sourceInfo);
+        jsonWriter.writeJsonField("sinkInfo", this.sinkInfo);
+        jsonWriter.writeStringField("customContextTag", this.customContextTag);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of PeriodicTimerProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of PeriodicTimerProperties if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the PeriodicTimerProperties.
+     */
+    public static PeriodicTimerProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            PeriodicTimerProperties deserializedPeriodicTimerProperties = new PeriodicTimerProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("sourceInfo".equals(fieldName)) {
+                    deserializedPeriodicTimerProperties.sourceInfo = PeriodicTimerSourceInfo.fromJson(reader);
+                } else if ("sinkInfo".equals(fieldName)) {
+                    deserializedPeriodicTimerProperties.sinkInfo = RoleSinkInfo.fromJson(reader);
+                } else if ("customContextTag".equals(fieldName)) {
+                    deserializedPeriodicTimerProperties.customContextTag = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedPeriodicTimerProperties;
+        });
+    }
 }

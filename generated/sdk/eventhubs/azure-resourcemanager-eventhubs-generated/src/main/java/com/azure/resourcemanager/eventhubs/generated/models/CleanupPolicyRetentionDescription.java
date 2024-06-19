@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.eventhubs.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class CleanupPolicyRetentionDescription extends ExpandableStringEnu
      * @param name a name to look for.
      * @return the corresponding CleanupPolicyRetentionDescription.
      */
-    @JsonCreator
     public static CleanupPolicyRetentionDescription fromString(String name) {
         return fromString(name, CleanupPolicyRetentionDescription.class);
     }

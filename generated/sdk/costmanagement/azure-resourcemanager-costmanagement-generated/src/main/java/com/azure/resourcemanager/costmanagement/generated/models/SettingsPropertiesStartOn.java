@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.costmanagement.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class SettingsPropertiesStartOn extends ExpandableStringEnum<Settin
      * @param name a name to look for.
      * @return the corresponding SettingsPropertiesStartOn.
      */
-    @JsonCreator
     public static SettingsPropertiesStartOn fromString(String name) {
         return fromString(name, SettingsPropertiesStartOn.class);
     }

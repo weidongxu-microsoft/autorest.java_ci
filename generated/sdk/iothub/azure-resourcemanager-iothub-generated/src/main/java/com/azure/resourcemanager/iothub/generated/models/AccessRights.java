@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.iothub.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The permissions assigned to the shared access policy.
  */
@@ -102,7 +99,6 @@ public enum AccessRights {
      * @param value the serialized value to parse.
      * @return the parsed AccessRights object, or null if unable to parse.
      */
-    @JsonCreator
     public static AccessRights fromString(String value) {
         if (value == null) {
             return null;
@@ -119,7 +115,6 @@ public enum AccessRights {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

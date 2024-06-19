@@ -6,65 +6,62 @@ package com.azure.resourcemanager.azurekusto.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.azurekusto.generated.models.DefaultPrincipalsModificationKind;
 import com.azure.resourcemanager.azurekusto.generated.models.ProvisioningState;
 import com.azure.resourcemanager.azurekusto.generated.models.TableLevelSharingProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Class representing the an attached database configuration properties of kind specific.
  */
 @Fluent
-public final class AttachedDatabaseConfigurationProperties {
+public final class AttachedDatabaseConfigurationProperties
+    implements JsonSerializable<AttachedDatabaseConfigurationProperties> {
     /*
      * The provisioned state of the resource.
      */
-    @JsonProperty(value = "provisioningState", access = JsonProperty.Access.WRITE_ONLY)
     private ProvisioningState provisioningState;
 
     /*
      * The name of the database which you would like to attach, use * if you want to follow all current and future
      * databases.
      */
-    @JsonProperty(value = "databaseName", required = true)
     private String databaseName;
 
     /*
      * The resource id of the cluster where the databases you would like to attach reside.
      */
-    @JsonProperty(value = "clusterResourceId", required = true)
     private String clusterResourceId;
 
     /*
      * The list of databases from the clusterResourceId which are currently attached to the cluster.
      */
-    @JsonProperty(value = "attachedDatabaseNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> attachedDatabaseNames;
 
     /*
      * The default principals modification kind
      */
-    @JsonProperty(value = "defaultPrincipalsModificationKind", required = true)
     private DefaultPrincipalsModificationKind defaultPrincipalsModificationKind;
 
     /*
      * Table level sharing specifications
      */
-    @JsonProperty(value = "tableLevelSharingProperties")
     private TableLevelSharingProperties tableLevelSharingProperties;
 
     /*
      * Overrides the original database name. Relevant only when attaching to a specific database.
      */
-    @JsonProperty(value = "databaseNameOverride")
     private String databaseNameOverride;
 
     /*
      * Adds a prefix to the attached databases name. When following an entire cluster, that prefix would be added to all
      * of the databases original names from leader cluster.
      */
-    @JsonProperty(value = "databaseNamePrefix")
     private String databaseNamePrefix;
 
     /**
@@ -249,4 +246,66 @@ public final class AttachedDatabaseConfigurationProperties {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(AttachedDatabaseConfigurationProperties.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("databaseName", this.databaseName);
+        jsonWriter.writeStringField("clusterResourceId", this.clusterResourceId);
+        jsonWriter.writeStringField("defaultPrincipalsModificationKind",
+            this.defaultPrincipalsModificationKind == null ? null : this.defaultPrincipalsModificationKind.toString());
+        jsonWriter.writeJsonField("tableLevelSharingProperties", this.tableLevelSharingProperties);
+        jsonWriter.writeStringField("databaseNameOverride", this.databaseNameOverride);
+        jsonWriter.writeStringField("databaseNamePrefix", this.databaseNamePrefix);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AttachedDatabaseConfigurationProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AttachedDatabaseConfigurationProperties if the JsonReader was pointing to an instance of
+     * it, or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the AttachedDatabaseConfigurationProperties.
+     */
+    public static AttachedDatabaseConfigurationProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AttachedDatabaseConfigurationProperties deserializedAttachedDatabaseConfigurationProperties
+                = new AttachedDatabaseConfigurationProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("databaseName".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.databaseName = reader.getString();
+                } else if ("clusterResourceId".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.clusterResourceId = reader.getString();
+                } else if ("defaultPrincipalsModificationKind".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.defaultPrincipalsModificationKind
+                        = DefaultPrincipalsModificationKind.fromString(reader.getString());
+                } else if ("provisioningState".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.provisioningState
+                        = ProvisioningState.fromString(reader.getString());
+                } else if ("attachedDatabaseNames".equals(fieldName)) {
+                    List<String> attachedDatabaseNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedAttachedDatabaseConfigurationProperties.attachedDatabaseNames = attachedDatabaseNames;
+                } else if ("tableLevelSharingProperties".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.tableLevelSharingProperties
+                        = TableLevelSharingProperties.fromJson(reader);
+                } else if ("databaseNameOverride".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.databaseNameOverride = reader.getString();
+                } else if ("databaseNamePrefix".equals(fieldName)) {
+                    deserializedAttachedDatabaseConfigurationProperties.databaseNamePrefix = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAttachedDatabaseConfigurationProperties;
+        });
+    }
 }

@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.resources.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * Type of change that will be made to the resource when the deployment is executed.
  */
@@ -56,7 +53,6 @@ public enum ChangeType {
      * @param value the serialized value to parse.
      * @return the parsed ChangeType object, or null if unable to parse.
      */
-    @JsonCreator
     public static ChangeType fromString(String value) {
         if (value == null) {
             return null;
@@ -73,7 +69,6 @@ public enum ChangeType {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

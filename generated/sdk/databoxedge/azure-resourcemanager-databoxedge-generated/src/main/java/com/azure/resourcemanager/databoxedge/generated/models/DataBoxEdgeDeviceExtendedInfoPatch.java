@@ -5,42 +5,41 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The Data Box Edge/Gateway device extended info patch.
  */
 @Fluent
-public final class DataBoxEdgeDeviceExtendedInfoPatch {
+public final class DataBoxEdgeDeviceExtendedInfoPatch implements JsonSerializable<DataBoxEdgeDeviceExtendedInfoPatch> {
     /*
      * The Key Vault ARM Id for client secrets
      */
-    @JsonProperty(value = "clientSecretStoreId")
     private String clientSecretStoreId;
 
     /*
      * The url to access the Client Key Vault
      */
-    @JsonProperty(value = "clientSecretStoreUrl")
     private String clientSecretStoreUrl;
 
     /*
      * The name for Channel Integrity Key stored in the Client Key Vault
      */
-    @JsonProperty(value = "channelIntegrityKeyName")
     private String channelIntegrityKeyName;
 
     /*
      * The version of Channel Integrity Key stored in the Client Key Vault
      */
-    @JsonProperty(value = "channelIntegrityKeyVersion")
     private String channelIntegrityKeyVersion;
 
     /*
      * For changing or to initiate the resync to key-vault set the status to KeyVaultSyncPending, rest of the status
      * will not be applicable.
      */
-    @JsonProperty(value = "syncStatus")
     private KeyVaultSyncStatus syncStatus;
 
     /**
@@ -157,5 +156,55 @@ public final class DataBoxEdgeDeviceExtendedInfoPatch {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("clientSecretStoreId", this.clientSecretStoreId);
+        jsonWriter.writeStringField("clientSecretStoreUrl", this.clientSecretStoreUrl);
+        jsonWriter.writeStringField("channelIntegrityKeyName", this.channelIntegrityKeyName);
+        jsonWriter.writeStringField("channelIntegrityKeyVersion", this.channelIntegrityKeyVersion);
+        jsonWriter.writeStringField("syncStatus", this.syncStatus == null ? null : this.syncStatus.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DataBoxEdgeDeviceExtendedInfoPatch from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DataBoxEdgeDeviceExtendedInfoPatch if the JsonReader was pointing to an instance of it, or
+     * null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DataBoxEdgeDeviceExtendedInfoPatch.
+     */
+    public static DataBoxEdgeDeviceExtendedInfoPatch fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DataBoxEdgeDeviceExtendedInfoPatch deserializedDataBoxEdgeDeviceExtendedInfoPatch
+                = new DataBoxEdgeDeviceExtendedInfoPatch();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("clientSecretStoreId".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoPatch.clientSecretStoreId = reader.getString();
+                } else if ("clientSecretStoreUrl".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoPatch.clientSecretStoreUrl = reader.getString();
+                } else if ("channelIntegrityKeyName".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoPatch.channelIntegrityKeyName = reader.getString();
+                } else if ("channelIntegrityKeyVersion".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoPatch.channelIntegrityKeyVersion = reader.getString();
+                } else if ("syncStatus".equals(fieldName)) {
+                    deserializedDataBoxEdgeDeviceExtendedInfoPatch.syncStatus
+                        = KeyVaultSyncStatus.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDataBoxEdgeDeviceExtendedInfoPatch;
+        });
     }
 }

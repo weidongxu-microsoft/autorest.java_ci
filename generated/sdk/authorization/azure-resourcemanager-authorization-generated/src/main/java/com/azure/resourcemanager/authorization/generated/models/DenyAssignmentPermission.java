@@ -5,36 +5,36 @@
 package com.azure.resourcemanager.authorization.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Deny assignment permissions.
  */
 @Fluent
-public final class DenyAssignmentPermission {
+public final class DenyAssignmentPermission implements JsonSerializable<DenyAssignmentPermission> {
     /*
      * Actions to which the deny assignment does not grant access.
      */
-    @JsonProperty(value = "actions")
     private List<String> actions;
 
     /*
      * Actions to exclude from that the deny assignment does not grant access.
      */
-    @JsonProperty(value = "notActions")
     private List<String> notActions;
 
     /*
      * Data actions to which the deny assignment does not grant access.
      */
-    @JsonProperty(value = "dataActions")
     private List<String> dataActions;
 
     /*
      * Data actions to exclude from that the deny assignment does not grant access.
      */
-    @JsonProperty(value = "notDataActions")
     private List<String> notDataActions;
 
     /**
@@ -129,5 +129,55 @@ public final class DenyAssignmentPermission {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("actions", this.actions, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("notActions", this.notActions, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("dataActions", this.dataActions, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeArrayField("notDataActions", this.notDataActions,
+            (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DenyAssignmentPermission from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DenyAssignmentPermission if the JsonReader was pointing to an instance of it, or null if
+     * it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the DenyAssignmentPermission.
+     */
+    public static DenyAssignmentPermission fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DenyAssignmentPermission deserializedDenyAssignmentPermission = new DenyAssignmentPermission();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("actions".equals(fieldName)) {
+                    List<String> actions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDenyAssignmentPermission.actions = actions;
+                } else if ("notActions".equals(fieldName)) {
+                    List<String> notActions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDenyAssignmentPermission.notActions = notActions;
+                } else if ("dataActions".equals(fieldName)) {
+                    List<String> dataActions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDenyAssignmentPermission.dataActions = dataActions;
+                } else if ("notDataActions".equals(fieldName)) {
+                    List<String> notDataActions = reader.readArray(reader1 -> reader1.getString());
+                    deserializedDenyAssignmentPermission.notDataActions = notDataActions;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDenyAssignmentPermission;
+        });
     }
 }

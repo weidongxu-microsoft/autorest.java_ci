@@ -6,18 +6,21 @@ package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * The metric counter set.
  */
 @Fluent
-public final class MetricCounterSet {
+public final class MetricCounterSet implements JsonSerializable<MetricCounterSet> {
     /*
      * The counters that should be collected in this set.
      */
-    @JsonProperty(value = "counters", required = true)
     private List<MetricCounter> counters;
 
     /**
@@ -61,4 +64,42 @@ public final class MetricCounterSet {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(MetricCounterSet.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("counters", this.counters, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of MetricCounterSet from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of MetricCounterSet if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the MetricCounterSet.
+     */
+    public static MetricCounterSet fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            MetricCounterSet deserializedMetricCounterSet = new MetricCounterSet();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("counters".equals(fieldName)) {
+                    List<MetricCounter> counters = reader.readArray(reader1 -> MetricCounter.fromJson(reader1));
+                    deserializedMetricCounterSet.counters = counters;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedMetricCounterSet;
+        });
+    }
 }

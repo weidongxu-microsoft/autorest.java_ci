@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.azurekusto.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -347,7 +346,6 @@ public final class AzureSkuName extends ExpandableStringEnum<AzureSkuName> {
      * @param name a name to look for.
      * @return the corresponding AzureSkuName.
      */
-    @JsonCreator
     public static AzureSkuName fromString(String name) {
         return fromString(name, AzureSkuName.class);
     }

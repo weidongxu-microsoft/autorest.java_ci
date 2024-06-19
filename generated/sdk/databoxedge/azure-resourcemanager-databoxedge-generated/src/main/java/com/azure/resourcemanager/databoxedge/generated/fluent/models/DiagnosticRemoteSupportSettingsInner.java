@@ -7,9 +7,12 @@ package com.azure.resourcemanager.databoxedge.generated.fluent.models;
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.SystemData;
 import com.azure.core.util.logging.ClientLogger;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.databoxedge.generated.models.ArmBaseModel;
 import com.azure.resourcemanager.databoxedge.generated.models.RemoteSupportSettings;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -20,14 +23,27 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     /*
      * Properties of the remote support settings.
      */
-    @JsonProperty(value = "properties", required = true)
     private DiagnosticRemoteSupportSettingsProperties innerProperties = new DiagnosticRemoteSupportSettingsProperties();
 
     /*
      * Represents resource creation and updation time
      */
-    @JsonProperty(value = "systemData", access = JsonProperty.Access.WRITE_ONLY)
     private SystemData systemData;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
 
     /**
      * Creates an instance of DiagnosticRemoteSupportSettingsInner class.
@@ -51,6 +67,36 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
      */
     public SystemData systemData() {
         return this.systemData;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -95,4 +141,51 @@ public final class DiagnosticRemoteSupportSettingsInner extends ArmBaseModel {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(DiagnosticRemoteSupportSettingsInner.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeJsonField("properties", this.innerProperties);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of DiagnosticRemoteSupportSettingsInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of DiagnosticRemoteSupportSettingsInner if the JsonReader was pointing to an instance of it,
+     * or null if it was pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the DiagnosticRemoteSupportSettingsInner.
+     */
+    public static DiagnosticRemoteSupportSettingsInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            DiagnosticRemoteSupportSettingsInner deserializedDiagnosticRemoteSupportSettingsInner
+                = new DiagnosticRemoteSupportSettingsInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("id".equals(fieldName)) {
+                    deserializedDiagnosticRemoteSupportSettingsInner.id = reader.getString();
+                } else if ("name".equals(fieldName)) {
+                    deserializedDiagnosticRemoteSupportSettingsInner.name = reader.getString();
+                } else if ("type".equals(fieldName)) {
+                    deserializedDiagnosticRemoteSupportSettingsInner.type = reader.getString();
+                } else if ("properties".equals(fieldName)) {
+                    deserializedDiagnosticRemoteSupportSettingsInner.innerProperties
+                        = DiagnosticRemoteSupportSettingsProperties.fromJson(reader);
+                } else if ("systemData".equals(fieldName)) {
+                    deserializedDiagnosticRemoteSupportSettingsInner.systemData = SystemData.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedDiagnosticRemoteSupportSettingsInner;
+        });
+    }
 }

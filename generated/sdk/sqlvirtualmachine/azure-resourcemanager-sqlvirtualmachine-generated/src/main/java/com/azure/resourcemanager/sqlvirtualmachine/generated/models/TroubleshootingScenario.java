@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -32,7 +31,6 @@ public final class TroubleshootingScenario extends ExpandableStringEnum<Troubles
      * @param name a name to look for.
      * @return the corresponding TroubleshootingScenario.
      */
-    @JsonCreator
     public static TroubleshootingScenario fromString(String name) {
         return fromString(name, TroubleshootingScenario.class);
     }

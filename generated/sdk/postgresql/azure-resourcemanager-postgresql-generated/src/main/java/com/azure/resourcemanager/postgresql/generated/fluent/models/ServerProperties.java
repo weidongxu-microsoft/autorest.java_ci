@@ -5,6 +5,11 @@
 package com.azure.resourcemanager.postgresql.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.postgresql.generated.models.InfrastructureEncryption;
 import com.azure.resourcemanager.postgresql.generated.models.MinimalTlsVersionEnum;
 import com.azure.resourcemanager.postgresql.generated.models.PublicNetworkAccessEnum;
@@ -13,105 +18,91 @@ import com.azure.resourcemanager.postgresql.generated.models.ServerState;
 import com.azure.resourcemanager.postgresql.generated.models.ServerVersion;
 import com.azure.resourcemanager.postgresql.generated.models.SslEnforcementEnum;
 import com.azure.resourcemanager.postgresql.generated.models.StorageProfile;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
  * The properties of a server.
  */
 @Fluent
-public final class ServerProperties {
+public final class ServerProperties implements JsonSerializable<ServerProperties> {
     /*
      * The administrator's login name of a server. Can only be specified when the server is being created (and is
      * required for creation).
      */
-    @JsonProperty(value = "administratorLogin")
     private String administratorLogin;
 
     /*
      * Server version.
      */
-    @JsonProperty(value = "version")
     private ServerVersion version;
 
     /*
      * Enable ssl enforcement or not when connect to server.
      */
-    @JsonProperty(value = "sslEnforcement")
     private SslEnforcementEnum sslEnforcement;
 
     /*
      * Enforce a minimal Tls version for the server.
      */
-    @JsonProperty(value = "minimalTlsVersion")
     private MinimalTlsVersionEnum minimalTlsVersion;
 
     /*
      * Status showing whether the server data encryption is enabled with customer-managed keys.
      */
-    @JsonProperty(value = "byokEnforcement", access = JsonProperty.Access.WRITE_ONLY)
     private String byokEnforcement;
 
     /*
      * Status showing whether the server enabled infrastructure encryption.
      */
-    @JsonProperty(value = "infrastructureEncryption")
     private InfrastructureEncryption infrastructureEncryption;
 
     /*
      * A state of a server that is visible to user.
      */
-    @JsonProperty(value = "userVisibleState")
     private ServerState userVisibleState;
 
     /*
      * The fully qualified domain name of a server.
      */
-    @JsonProperty(value = "fullyQualifiedDomainName")
     private String fullyQualifiedDomainName;
 
     /*
      * Earliest restore point creation time (ISO8601 format)
      */
-    @JsonProperty(value = "earliestRestoreDate")
     private OffsetDateTime earliestRestoreDate;
 
     /*
      * Storage profile of a server.
      */
-    @JsonProperty(value = "storageProfile")
     private StorageProfile storageProfile;
 
     /*
      * The replication role of the server.
      */
-    @JsonProperty(value = "replicationRole")
     private String replicationRole;
 
     /*
      * The master server id of a replica server.
      */
-    @JsonProperty(value = "masterServerId")
     private String masterServerId;
 
     /*
      * The maximum number of replicas that a master server can have.
      */
-    @JsonProperty(value = "replicaCapacity")
     private Integer replicaCapacity;
 
     /*
      * Whether or not public network access is allowed for this server. Value is optional but if passed in, must be
      * 'Enabled' or 'Disabled'
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private PublicNetworkAccessEnum publicNetworkAccess;
 
     /*
      * List of private endpoint connections on a server
      */
-    @JsonProperty(value = "privateEndpointConnections", access = JsonProperty.Access.WRITE_ONLY)
     private List<ServerPrivateEndpointConnection> privateEndpointConnections;
 
     /**
@@ -415,5 +406,95 @@ public final class ServerProperties {
         if (privateEndpointConnections() != null) {
             privateEndpointConnections().forEach(e -> e.validate());
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("administratorLogin", this.administratorLogin);
+        jsonWriter.writeStringField("version", this.version == null ? null : this.version.toString());
+        jsonWriter.writeStringField("sslEnforcement",
+            this.sslEnforcement == null ? null : this.sslEnforcement.toString());
+        jsonWriter.writeStringField("minimalTlsVersion",
+            this.minimalTlsVersion == null ? null : this.minimalTlsVersion.toString());
+        jsonWriter.writeStringField("infrastructureEncryption",
+            this.infrastructureEncryption == null ? null : this.infrastructureEncryption.toString());
+        jsonWriter.writeStringField("userVisibleState",
+            this.userVisibleState == null ? null : this.userVisibleState.toString());
+        jsonWriter.writeStringField("fullyQualifiedDomainName", this.fullyQualifiedDomainName);
+        jsonWriter.writeStringField("earliestRestoreDate",
+            this.earliestRestoreDate == null
+                ? null
+                : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.earliestRestoreDate));
+        jsonWriter.writeJsonField("storageProfile", this.storageProfile);
+        jsonWriter.writeStringField("replicationRole", this.replicationRole);
+        jsonWriter.writeStringField("masterServerId", this.masterServerId);
+        jsonWriter.writeNumberField("replicaCapacity", this.replicaCapacity);
+        jsonWriter.writeStringField("publicNetworkAccess",
+            this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ServerProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ServerProperties if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ServerProperties.
+     */
+    public static ServerProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ServerProperties deserializedServerProperties = new ServerProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("administratorLogin".equals(fieldName)) {
+                    deserializedServerProperties.administratorLogin = reader.getString();
+                } else if ("version".equals(fieldName)) {
+                    deserializedServerProperties.version = ServerVersion.fromString(reader.getString());
+                } else if ("sslEnforcement".equals(fieldName)) {
+                    deserializedServerProperties.sslEnforcement = SslEnforcementEnum.fromString(reader.getString());
+                } else if ("minimalTlsVersion".equals(fieldName)) {
+                    deserializedServerProperties.minimalTlsVersion
+                        = MinimalTlsVersionEnum.fromString(reader.getString());
+                } else if ("byokEnforcement".equals(fieldName)) {
+                    deserializedServerProperties.byokEnforcement = reader.getString();
+                } else if ("infrastructureEncryption".equals(fieldName)) {
+                    deserializedServerProperties.infrastructureEncryption
+                        = InfrastructureEncryption.fromString(reader.getString());
+                } else if ("userVisibleState".equals(fieldName)) {
+                    deserializedServerProperties.userVisibleState = ServerState.fromString(reader.getString());
+                } else if ("fullyQualifiedDomainName".equals(fieldName)) {
+                    deserializedServerProperties.fullyQualifiedDomainName = reader.getString();
+                } else if ("earliestRestoreDate".equals(fieldName)) {
+                    deserializedServerProperties.earliestRestoreDate = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("storageProfile".equals(fieldName)) {
+                    deserializedServerProperties.storageProfile = StorageProfile.fromJson(reader);
+                } else if ("replicationRole".equals(fieldName)) {
+                    deserializedServerProperties.replicationRole = reader.getString();
+                } else if ("masterServerId".equals(fieldName)) {
+                    deserializedServerProperties.masterServerId = reader.getString();
+                } else if ("replicaCapacity".equals(fieldName)) {
+                    deserializedServerProperties.replicaCapacity = reader.getNullable(JsonReader::getInt);
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedServerProperties.publicNetworkAccess
+                        = PublicNetworkAccessEnum.fromString(reader.getString());
+                } else if ("privateEndpointConnections".equals(fieldName)) {
+                    List<ServerPrivateEndpointConnection> privateEndpointConnections
+                        = reader.readArray(reader1 -> ServerPrivateEndpointConnection.fromJson(reader1));
+                    deserializedServerProperties.privateEndpointConnections = privateEndpointConnections;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedServerProperties;
+        });
     }
 }

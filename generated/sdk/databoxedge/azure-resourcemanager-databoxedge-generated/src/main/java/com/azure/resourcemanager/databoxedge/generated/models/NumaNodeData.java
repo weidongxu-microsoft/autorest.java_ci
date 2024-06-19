@@ -5,54 +5,51 @@
 package com.azure.resourcemanager.databoxedge.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * NUMA node data.
  */
 @Fluent
-public final class NumaNodeData {
+public final class NumaNodeData implements JsonSerializable<NumaNodeData> {
     /*
      * The NUMA node index.
      */
-    @JsonProperty(value = "numaNodeIndex")
     private Integer numaNodeIndex;
 
     /*
      * The total memory on the NUMA node.
      */
-    @JsonProperty(value = "totalMemoryInMb")
     private Long totalMemoryInMb;
 
     /*
      * The logical cores per core count.
      */
-    @JsonProperty(value = "logicalCoreCountPerCore")
     private Integer logicalCoreCountPerCore;
 
     /*
      * The effective available memory on the NUMA node in MB.
      */
-    @JsonProperty(value = "effectiveAvailableMemoryInMb")
     private Long effectiveAvailableMemoryInMb;
 
     /*
      * The free VCPU indices for the Hpn VMs.
      */
-    @JsonProperty(value = "freeVCpuIndexesForHpn")
     private List<Integer> freeVCpuIndexesForHpn;
 
     /*
      * The VCPU indices for Hpn VMs
      */
-    @JsonProperty(value = "vCpuIndexesForHpn")
     private List<Integer> vCpuIndexesForHpn;
 
     /*
      * The VCPU indices for the root.
      */
-    @JsonProperty(value = "vCpuIndexesForRoot")
     private List<Integer> vCpuIndexesForRoot;
 
     /**
@@ -207,5 +204,65 @@ public final class NumaNodeData {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("numaNodeIndex", this.numaNodeIndex);
+        jsonWriter.writeNumberField("totalMemoryInMb", this.totalMemoryInMb);
+        jsonWriter.writeNumberField("logicalCoreCountPerCore", this.logicalCoreCountPerCore);
+        jsonWriter.writeNumberField("effectiveAvailableMemoryInMb", this.effectiveAvailableMemoryInMb);
+        jsonWriter.writeArrayField("freeVCpuIndexesForHpn", this.freeVCpuIndexesForHpn,
+            (writer, element) -> writer.writeInt(element));
+        jsonWriter.writeArrayField("vCpuIndexesForHpn", this.vCpuIndexesForHpn,
+            (writer, element) -> writer.writeInt(element));
+        jsonWriter.writeArrayField("vCpuIndexesForRoot", this.vCpuIndexesForRoot,
+            (writer, element) -> writer.writeInt(element));
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NumaNodeData from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NumaNodeData if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NumaNodeData.
+     */
+    public static NumaNodeData fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NumaNodeData deserializedNumaNodeData = new NumaNodeData();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("numaNodeIndex".equals(fieldName)) {
+                    deserializedNumaNodeData.numaNodeIndex = reader.getNullable(JsonReader::getInt);
+                } else if ("totalMemoryInMb".equals(fieldName)) {
+                    deserializedNumaNodeData.totalMemoryInMb = reader.getNullable(JsonReader::getLong);
+                } else if ("logicalCoreCountPerCore".equals(fieldName)) {
+                    deserializedNumaNodeData.logicalCoreCountPerCore = reader.getNullable(JsonReader::getInt);
+                } else if ("effectiveAvailableMemoryInMb".equals(fieldName)) {
+                    deserializedNumaNodeData.effectiveAvailableMemoryInMb = reader.getNullable(JsonReader::getLong);
+                } else if ("freeVCpuIndexesForHpn".equals(fieldName)) {
+                    List<Integer> freeVCpuIndexesForHpn = reader.readArray(reader1 -> reader1.getInt());
+                    deserializedNumaNodeData.freeVCpuIndexesForHpn = freeVCpuIndexesForHpn;
+                } else if ("vCpuIndexesForHpn".equals(fieldName)) {
+                    List<Integer> vCpuIndexesForHpn = reader.readArray(reader1 -> reader1.getInt());
+                    deserializedNumaNodeData.vCpuIndexesForHpn = vCpuIndexesForHpn;
+                } else if ("vCpuIndexesForRoot".equals(fieldName)) {
+                    List<Integer> vCpuIndexesForRoot = reader.readArray(reader1 -> reader1.getInt());
+                    deserializedNumaNodeData.vCpuIndexesForRoot = vCpuIndexesForRoot;
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNumaNodeData;
+        });
     }
 }

@@ -5,41 +5,40 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Set a patching window during which Windows and SQL patches will be applied.
  */
 @Fluent
-public final class AutoPatchingSettings {
+public final class AutoPatchingSettings implements JsonSerializable<AutoPatchingSettings> {
     /*
      * Enable or disable autopatching on SQL virtual machine.
      */
-    @JsonProperty(value = "enable")
     private Boolean enable;
 
     /*
      * Day of week to apply the patch on.
      */
-    @JsonProperty(value = "dayOfWeek")
     private DayOfWeek dayOfWeek;
 
     /*
      * Hour of the day when patching is initiated. Local VM time.
      */
-    @JsonProperty(value = "maintenanceWindowStartingHour")
     private Integer maintenanceWindowStartingHour;
 
     /*
      * Duration of patching.
      */
-    @JsonProperty(value = "maintenanceWindowDuration")
     private Integer maintenanceWindowDuration;
 
     /*
      * Additional Patch to be enable or enabled on the SQL Virtual Machine.
      */
-    @JsonProperty(value = "additionalVmPatch")
     private AdditionalVmPatch additionalVmPatch;
 
     /**
@@ -154,5 +153,56 @@ public final class AutoPatchingSettings {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enable", this.enable);
+        jsonWriter.writeStringField("dayOfWeek", this.dayOfWeek == null ? null : this.dayOfWeek.toString());
+        jsonWriter.writeNumberField("maintenanceWindowStartingHour", this.maintenanceWindowStartingHour);
+        jsonWriter.writeNumberField("maintenanceWindowDuration", this.maintenanceWindowDuration);
+        jsonWriter.writeStringField("additionalVmPatch",
+            this.additionalVmPatch == null ? null : this.additionalVmPatch.toString());
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of AutoPatchingSettings from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of AutoPatchingSettings if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the AutoPatchingSettings.
+     */
+    public static AutoPatchingSettings fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            AutoPatchingSettings deserializedAutoPatchingSettings = new AutoPatchingSettings();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enable".equals(fieldName)) {
+                    deserializedAutoPatchingSettings.enable = reader.getNullable(JsonReader::getBoolean);
+                } else if ("dayOfWeek".equals(fieldName)) {
+                    deserializedAutoPatchingSettings.dayOfWeek = DayOfWeek.fromString(reader.getString());
+                } else if ("maintenanceWindowStartingHour".equals(fieldName)) {
+                    deserializedAutoPatchingSettings.maintenanceWindowStartingHour
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("maintenanceWindowDuration".equals(fieldName)) {
+                    deserializedAutoPatchingSettings.maintenanceWindowDuration = reader.getNullable(JsonReader::getInt);
+                } else if ("additionalVmPatch".equals(fieldName)) {
+                    deserializedAutoPatchingSettings.additionalVmPatch
+                        = AdditionalVmPatch.fromString(reader.getString());
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedAutoPatchingSettings;
+        });
     }
 }

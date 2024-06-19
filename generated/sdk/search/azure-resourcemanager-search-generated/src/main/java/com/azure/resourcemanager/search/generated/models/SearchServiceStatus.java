@@ -4,9 +4,6 @@
 
 package com.azure.resourcemanager.search.generated.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonValue;
-
 /**
  * The status of the search service. Possible values include: 'running': The search service is running and no
  * provisioning operations are underway. 'provisioning': The search service is being provisioned or scaled up or down.
@@ -69,7 +66,6 @@ public enum SearchServiceStatus {
      * @param value the serialized value to parse.
      * @return the parsed SearchServiceStatus object, or null if unable to parse.
      */
-    @JsonCreator
     public static SearchServiceStatus fromString(String value) {
         if (value == null) {
             return null;
@@ -86,7 +82,6 @@ public enum SearchServiceStatus {
     /**
      * {@inheritDoc}
      */
-    @JsonValue
     @Override
     public String toString() {
         return this.value;

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.postgresql.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -33,7 +32,6 @@ public final class PrivateLinkServiceConnectionStateActionsRequire
      * @param name a name to look for.
      * @return the corresponding PrivateLinkServiceConnectionStateActionsRequire.
      */
-    @JsonCreator
     public static PrivateLinkServiceConnectionStateActionsRequire fromString(String name) {
         return fromString(name, PrivateLinkServiceConnectionStateActionsRequire.class);
     }

@@ -5,39 +5,39 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Describes the properties of a rectangular window applied to the input media before processing it.
  */
 @Fluent
-public final class Rectangle {
+public final class Rectangle implements JsonSerializable<Rectangle> {
     /*
      * The number of pixels from the left-margin. This can be absolute pixel value (e.g 100), or relative to the size of
      * the video (For example, 50%).
      */
-    @JsonProperty(value = "left")
     private String left;
 
     /*
      * The number of pixels from the top-margin. This can be absolute pixel value (e.g 100), or relative to the size of
      * the video (For example, 50%).
      */
-    @JsonProperty(value = "top")
     private String top;
 
     /*
      * The width of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the
      * size of the video (For example, 50%).
      */
-    @JsonProperty(value = "width")
     private String width;
 
     /*
      * The height of the rectangular region in pixels. This can be absolute pixel value (e.g 100), or relative to the
      * size of the video (For example, 50%).
      */
-    @JsonProperty(value = "height")
     private String height;
 
     /**
@@ -140,5 +140,50 @@ public final class Rectangle {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeStringField("left", this.left);
+        jsonWriter.writeStringField("top", this.top);
+        jsonWriter.writeStringField("width", this.width);
+        jsonWriter.writeStringField("height", this.height);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of Rectangle from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of Rectangle if the JsonReader was pointing to an instance of it, or null if it was pointing
+     * to JSON null.
+     * @throws IOException If an error occurs while reading the Rectangle.
+     */
+    public static Rectangle fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            Rectangle deserializedRectangle = new Rectangle();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("left".equals(fieldName)) {
+                    deserializedRectangle.left = reader.getString();
+                } else if ("top".equals(fieldName)) {
+                    deserializedRectangle.top = reader.getString();
+                } else if ("width".equals(fieldName)) {
+                    deserializedRectangle.width = reader.getString();
+                } else if ("height".equals(fieldName)) {
+                    deserializedRectangle.height = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedRectangle;
+        });
     }
 }

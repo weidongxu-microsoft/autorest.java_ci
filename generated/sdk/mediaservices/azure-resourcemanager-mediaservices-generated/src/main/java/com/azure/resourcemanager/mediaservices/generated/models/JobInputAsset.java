@@ -6,30 +6,25 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.logging.ClientLogger;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeId;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.util.List;
 
 /**
  * Represents an Asset for input into a Job.
  */
-@JsonTypeInfo(use = JsonTypeInfo.Id.NAME, property = "@odata.type", defaultImpl = JobInputAsset.class, visible = true)
-@JsonTypeName("#Microsoft.Media.JobInputAsset")
 @Fluent
 public final class JobInputAsset extends JobInputClip {
     /*
      * The discriminator for derived types.
      */
-    @JsonTypeId
-    @JsonProperty(value = "@odata.type", required = true)
     private String odataType = "#Microsoft.Media.JobInputAsset";
 
     /*
      * The name of the input Asset.
      */
-    @JsonProperty(value = "assetName", required = true)
     private String assetName;
 
     /**
@@ -128,4 +123,63 @@ public final class JobInputAsset extends JobInputClip {
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(JobInputAsset.class);
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeArrayField("files", files(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("start", start());
+        jsonWriter.writeJsonField("end", end());
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeArrayField("inputDefinitions", inputDefinitions(),
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("assetName", this.assetName);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of JobInputAsset from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of JobInputAsset if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the JobInputAsset.
+     */
+    public static JobInputAsset fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            JobInputAsset deserializedJobInputAsset = new JobInputAsset();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("files".equals(fieldName)) {
+                    List<String> files = reader.readArray(reader1 -> reader1.getString());
+                    deserializedJobInputAsset.withFiles(files);
+                } else if ("start".equals(fieldName)) {
+                    deserializedJobInputAsset.withStart(ClipTime.fromJson(reader));
+                } else if ("end".equals(fieldName)) {
+                    deserializedJobInputAsset.withEnd(ClipTime.fromJson(reader));
+                } else if ("label".equals(fieldName)) {
+                    deserializedJobInputAsset.withLabel(reader.getString());
+                } else if ("inputDefinitions".equals(fieldName)) {
+                    List<InputDefinition> inputDefinitions
+                        = reader.readArray(reader1 -> InputDefinition.fromJson(reader1));
+                    deserializedJobInputAsset.withInputDefinitions(inputDefinitions);
+                } else if ("assetName".equals(fieldName)) {
+                    deserializedJobInputAsset.assetName = reader.getString();
+                } else if ("@odata.type".equals(fieldName)) {
+                    deserializedJobInputAsset.odataType = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedJobInputAsset;
+        });
+    }
 }

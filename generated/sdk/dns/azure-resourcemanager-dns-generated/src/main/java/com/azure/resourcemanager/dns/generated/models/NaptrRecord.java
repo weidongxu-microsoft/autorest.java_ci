@@ -5,39 +5,39 @@
 package com.azure.resourcemanager.dns.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * A NAPTR record. For more information about the NAPTR record format, see RFC 3403:
  * https://www.rfc-editor.org/rfc/rfc3403.
  */
 @Fluent
-public final class NaptrRecord {
+public final class NaptrRecord implements JsonSerializable<NaptrRecord> {
     /*
      * The order in which the NAPTR records MUST be processed in order to accurately represent the ordered list of
      * rules. The ordering is from lowest to highest. Valid values: 0-65535.
      */
-    @JsonProperty(value = "order")
     private Integer order;
 
     /*
      * The preference specifies the order in which NAPTR records with equal 'order' values should be processed, low
      * numbers being processed before high numbers. Valid values: 0-65535.
      */
-    @JsonProperty(value = "preference")
     private Integer preference;
 
     /*
      * The flags specific to DDDS applications. Values currently defined in RFC 3404 are uppercase and lowercase letters
      * "A", "P", "S", and "U", and the empty string, "". Enclose Flags in quotation marks.
      */
-    @JsonProperty(value = "flags")
     private String flags;
 
     /*
      * The services specific to DDDS applications. Enclose Services in quotation marks.
      */
-    @JsonProperty(value = "services")
     private String services;
 
     /*
@@ -46,7 +46,6 @@ public final class NaptrRecord {
      * into a SIP URI. Enclose the regular expression in quotation marks. Specify either a value for 'regexp' or a value
      * for 'replacement'.
      */
-    @JsonProperty(value = "regexp")
     private String regexp;
 
     /*
@@ -55,7 +54,6 @@ public final class NaptrRecord {
      * replacement. Specify either a value for 'regexp' or a value for 'replacement'. If you specify a value for
      * 'regexp', specify a dot (.) for 'replacement'.
      */
-    @JsonProperty(value = "replacement")
     private String replacement;
 
     /**
@@ -210,5 +208,56 @@ public final class NaptrRecord {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeNumberField("order", this.order);
+        jsonWriter.writeNumberField("preference", this.preference);
+        jsonWriter.writeStringField("flags", this.flags);
+        jsonWriter.writeStringField("services", this.services);
+        jsonWriter.writeStringField("regexp", this.regexp);
+        jsonWriter.writeStringField("replacement", this.replacement);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of NaptrRecord from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of NaptrRecord if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the NaptrRecord.
+     */
+    public static NaptrRecord fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            NaptrRecord deserializedNaptrRecord = new NaptrRecord();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("order".equals(fieldName)) {
+                    deserializedNaptrRecord.order = reader.getNullable(JsonReader::getInt);
+                } else if ("preference".equals(fieldName)) {
+                    deserializedNaptrRecord.preference = reader.getNullable(JsonReader::getInt);
+                } else if ("flags".equals(fieldName)) {
+                    deserializedNaptrRecord.flags = reader.getString();
+                } else if ("services".equals(fieldName)) {
+                    deserializedNaptrRecord.services = reader.getString();
+                } else if ("regexp".equals(fieldName)) {
+                    deserializedNaptrRecord.regexp = reader.getString();
+                } else if ("replacement".equals(fieldName)) {
+                    deserializedNaptrRecord.replacement = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedNaptrRecord;
+        });
     }
 }

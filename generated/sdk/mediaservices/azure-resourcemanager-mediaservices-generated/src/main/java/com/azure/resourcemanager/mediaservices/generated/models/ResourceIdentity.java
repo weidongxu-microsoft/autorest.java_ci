@@ -5,23 +5,25 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * The ResourceIdentity model.
  */
 @Fluent
-public final class ResourceIdentity {
+public final class ResourceIdentity implements JsonSerializable<ResourceIdentity> {
     /*
      * The user assigned managed identity's ARM ID to use when accessing a resource.
      */
-    @JsonProperty(value = "userAssignedIdentity")
     private String userAssignedIdentity;
 
     /*
      * Indicates whether to use System Assigned Managed Identity. Mutual exclusive with User Assigned Managed Identity.
      */
-    @JsonProperty(value = "useSystemAssignedIdentity", required = true)
     private boolean useSystemAssignedIdentity;
 
     /**
@@ -80,5 +82,45 @@ public final class ResourceIdentity {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("useSystemAssignedIdentity", this.useSystemAssignedIdentity);
+        jsonWriter.writeStringField("userAssignedIdentity", this.userAssignedIdentity);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ResourceIdentity from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ResourceIdentity if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IllegalStateException If the deserialized JSON object was missing any required properties.
+     * @throws IOException If an error occurs while reading the ResourceIdentity.
+     */
+    public static ResourceIdentity fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ResourceIdentity deserializedResourceIdentity = new ResourceIdentity();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("useSystemAssignedIdentity".equals(fieldName)) {
+                    deserializedResourceIdentity.useSystemAssignedIdentity = reader.getBoolean();
+                } else if ("userAssignedIdentity".equals(fieldName)) {
+                    deserializedResourceIdentity.userAssignedIdentity = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedResourceIdentity;
+        });
     }
 }

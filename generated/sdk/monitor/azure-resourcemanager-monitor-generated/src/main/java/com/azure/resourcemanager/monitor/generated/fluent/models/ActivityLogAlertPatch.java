@@ -5,18 +5,21 @@
 package com.azure.resourcemanager.monitor.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * An Azure activity log alert for patch operations.
  */
 @Fluent
-public final class ActivityLogAlertPatch {
+public final class ActivityLogAlertPatch implements JsonSerializable<ActivityLogAlertPatch> {
     /*
      * Indicates whether this activity log alert is enabled. If an activity log alert is not enabled, then none of its
      * actions will be activated.
      */
-    @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /**
@@ -53,5 +56,41 @@ public final class ActivityLogAlertPatch {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ActivityLogAlertPatch from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ActivityLogAlertPatch if the JsonReader was pointing to an instance of it, or null if it
+     * was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ActivityLogAlertPatch.
+     */
+    public static ActivityLogAlertPatch fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ActivityLogAlertPatch deserializedActivityLogAlertPatch = new ActivityLogAlertPatch();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("enabled".equals(fieldName)) {
+                    deserializedActivityLogAlertPatch.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedActivityLogAlertPatch;
+        });
     }
 }

@@ -6,7 +6,10 @@ package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.annotation.Immutable;
 import com.azure.core.management.exception.ManagementError;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 
 /**
  * Error details.
@@ -16,7 +19,6 @@ public final class ErrorDetails extends ManagementError {
     /*
      * The HTTP status code.
      */
-    @JsonProperty(value = "httpStatusCode", access = JsonProperty.Access.WRITE_ONLY)
     private String httpStatusCode;
 
     /**
@@ -40,5 +42,40 @@ public final class ErrorDetails extends ManagementError {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ErrorDetails from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ErrorDetails if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ErrorDetails.
+     */
+    public static ErrorDetails fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ErrorDetails deserializedErrorDetails = new ErrorDetails();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("httpStatusCode".equals(fieldName)) {
+                    deserializedErrorDetails.httpStatusCode = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedErrorDetails;
+        });
     }
 }

@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.hdinsight.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -37,7 +36,6 @@ public final class PrivateLink extends ExpandableStringEnum<PrivateLink> {
      * @param name a name to look for.
      * @return the corresponding PrivateLink.
      */
-    @JsonCreator
     public static PrivateLink fromString(String name) {
         return fromString(name, PrivateLink.class);
     }

@@ -5,6 +5,11 @@
 package com.azure.resourcemanager.appservice.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.appservice.generated.models.ClientCertMode;
 import com.azure.resourcemanager.appservice.generated.models.CloningInfo;
 import com.azure.resourcemanager.appservice.generated.models.DaprConfig;
@@ -17,7 +22,7 @@ import com.azure.resourcemanager.appservice.generated.models.SiteAvailabilitySta
 import com.azure.resourcemanager.appservice.generated.models.SiteDnsConfig;
 import com.azure.resourcemanager.appservice.generated.models.SlotSwapStatus;
 import com.azure.resourcemanager.appservice.generated.models.UsageState;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 import java.time.OffsetDateTime;
 import java.util.List;
 import java.util.UUID;
@@ -26,186 +31,157 @@ import java.util.UUID;
  * Site resource specific properties.
  */
 @Fluent
-public final class SitePropertiesInner {
+public final class SitePropertiesInner implements JsonSerializable<SitePropertiesInner> {
     /*
      * Current state of the app.
      */
-    @JsonProperty(value = "state", access = JsonProperty.Access.WRITE_ONLY)
     private String state;
 
     /*
      * Hostnames associated with the app.
      */
-    @JsonProperty(value = "hostNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> hostNames;
 
     /*
      * Name of the repository site.
      */
-    @JsonProperty(value = "repositorySiteName", access = JsonProperty.Access.WRITE_ONLY)
     private String repositorySiteName;
 
     /*
      * State indicating whether the app has exceeded its quota usage. Read-only.
      */
-    @JsonProperty(value = "usageState", access = JsonProperty.Access.WRITE_ONLY)
     private UsageState usageState;
 
     /*
      * <code>true</code> if the app is enabled; otherwise, <code>false</code>. Setting this value to false disables the
      * app (takes the app offline).
      */
-    @JsonProperty(value = "enabled")
     private Boolean enabled;
 
     /*
      * Enabled hostnames for the app.Hostnames need to be assigned (see HostNames) AND enabled. Otherwise,
      * the app is not served on those hostnames.
      */
-    @JsonProperty(value = "enabledHostNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> enabledHostNames;
 
     /*
      * Management information availability state for the app.
      */
-    @JsonProperty(value = "availabilityState", access = JsonProperty.Access.WRITE_ONLY)
     private SiteAvailabilityState availabilityState;
 
     /*
      * Hostname SSL states are used to manage the SSL bindings for app's hostnames.
      */
-    @JsonProperty(value = "hostNameSslStates")
     private List<HostnameSslState> hostnameSslStates;
 
     /*
      * Resource ID of the associated App Service plan, formatted as:
      * "/subscriptions/{subscriptionID}/resourceGroups/{groupName}/providers/Microsoft.Web/serverfarms/{appServicePlanName}".
      */
-    @JsonProperty(value = "serverFarmId")
     private String serverFarmId;
 
     /*
      * <code>true</code> if reserved; otherwise, <code>false</code>.
      */
-    @JsonProperty(value = "reserved")
     private Boolean reserved;
 
     /*
      * Obsolete: Hyper-V sandbox.
      */
-    @JsonProperty(value = "isXenon")
     private Boolean isXenon;
 
     /*
      * Hyper-V sandbox.
      */
-    @JsonProperty(value = "hyperV")
     private Boolean hyperV;
 
     /*
      * Last time the app was modified, in UTC. Read-only.
      */
-    @JsonProperty(value = "lastModifiedTimeUtc", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime lastModifiedTimeUtc;
 
     /*
      * Property to configure various DNS related settings for a site.
      */
-    @JsonProperty(value = "dnsConfiguration")
     private SiteDnsConfig dnsConfiguration;
 
     /*
      * Virtual Network Route All enabled. This causes all outbound traffic to have Virtual Network Security Groups and
      * User Defined Routes applied.
      */
-    @JsonProperty(value = "vnetRouteAllEnabled")
     private Boolean vnetRouteAllEnabled;
 
     /*
      * To enable pulling image over Virtual Network
      */
-    @JsonProperty(value = "vnetImagePullEnabled")
     private Boolean vnetImagePullEnabled;
 
     /*
      * To enable accessing content over virtual network
      */
-    @JsonProperty(value = "vnetContentShareEnabled")
     private Boolean vnetContentShareEnabled;
 
     /*
      * To enable Backup and Restore operations over virtual network
      */
-    @JsonProperty(value = "vnetBackupRestoreEnabled")
     private Boolean vnetBackupRestoreEnabled;
 
     /*
      * Configuration of the app.
      */
-    @JsonProperty(value = "siteConfig")
     private SiteConfigInner siteConfig;
 
     /*
      * Configuration specific of the Azure Function app.
      */
-    @JsonProperty(value = "functionAppConfig")
     private FunctionAppConfig functionAppConfig;
 
     /*
      * Dapr configuration of the app.
      */
-    @JsonProperty(value = "daprConfig")
     private DaprConfig daprConfig;
 
     /*
      * Workload profile name for function app to execute on.
      */
-    @JsonProperty(value = "workloadProfileName")
     private String workloadProfileName;
 
     /*
      * Function app resource requirements.
      */
-    @JsonProperty(value = "resourceConfig")
     private ResourceConfig resourceConfig;
 
     /*
      * Azure Traffic Manager hostnames associated with the app. Read-only.
      */
-    @JsonProperty(value = "trafficManagerHostNames", access = JsonProperty.Access.WRITE_ONLY)
     private List<String> trafficManagerHostNames;
 
     /*
      * <code>true</code> to stop SCM (KUDU) site when the app is stopped; otherwise, <code>false</code>. The default is
      * <code>false</code>.
      */
-    @JsonProperty(value = "scmSiteAlsoStopped")
     private Boolean scmSiteAlsoStopped;
 
     /*
      * Specifies which deployment slot this app will swap into. Read-only.
      */
-    @JsonProperty(value = "targetSwapSlot", access = JsonProperty.Access.WRITE_ONLY)
     private String targetSwapSlot;
 
     /*
      * App Service Environment to use for the app.
      */
-    @JsonProperty(value = "hostingEnvironmentProfile")
     private HostingEnvironmentProfile hostingEnvironmentProfile;
 
     /*
      * <code>true</code> to enable client affinity; <code>false</code> to stop sending session affinity cookies, which
      * route client requests in the same session to the same instance. Default is <code>true</code>.
      */
-    @JsonProperty(value = "clientAffinityEnabled")
     private Boolean clientAffinityEnabled;
 
     /*
      * <code>true</code> to enable client certificate authentication (TLS mutual authentication); otherwise,
      * <code>false</code>. Default is <code>false</code>.
      */
-    @JsonProperty(value = "clientCertEnabled")
     private Boolean clientCertEnabled;
 
     /*
@@ -214,133 +190,112 @@ public final class SitePropertiesInner {
      * - ClientCertEnabled: true and ClientCertMode: Required means ClientCert is required.
      * - ClientCertEnabled: true and ClientCertMode: Optional means ClientCert is optional or accepted.
      */
-    @JsonProperty(value = "clientCertMode")
     private ClientCertMode clientCertMode;
 
     /*
      * client certificate authentication comma-separated exclusion paths
      */
-    @JsonProperty(value = "clientCertExclusionPaths")
     private String clientCertExclusionPaths;
 
     /*
      * <code>true</code> to disable the public hostnames of the app; otherwise, <code>false</code>.
      * If <code>true</code>, the app is only accessible via API management process.
      */
-    @JsonProperty(value = "hostNamesDisabled")
     private Boolean hostNamesDisabled;
 
     /*
      * Unique identifier that verifies the custom domains assigned to the app. Customer will add this id to a txt record
      * for verification.
      */
-    @JsonProperty(value = "customDomainVerificationId")
     private String customDomainVerificationId;
 
     /*
      * List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from
      * tenants that site can be hosted with current settings. Read-only.
      */
-    @JsonProperty(value = "outboundIpAddresses", access = JsonProperty.Access.WRITE_ONLY)
     private String outboundIpAddresses;
 
     /*
      * List of IP addresses that the app uses for outbound connections (e.g. database access). Includes VIPs from all
      * tenants except dataComponent. Read-only.
      */
-    @JsonProperty(value = "possibleOutboundIpAddresses", access = JsonProperty.Access.WRITE_ONLY)
     private String possibleOutboundIpAddresses;
 
     /*
      * Size of the function container.
      */
-    @JsonProperty(value = "containerSize")
     private Integer containerSize;
 
     /*
      * Maximum allowed daily memory-time quota (applicable on dynamic apps only).
      */
-    @JsonProperty(value = "dailyMemoryTimeQuota")
     private Integer dailyMemoryTimeQuota;
 
     /*
      * App suspended till in case memory-time quota is exceeded.
      */
-    @JsonProperty(value = "suspendedTill", access = JsonProperty.Access.WRITE_ONLY)
     private OffsetDateTime suspendedTill;
 
     /*
      * Maximum number of workers.
      * This only applies to Functions container.
      */
-    @JsonProperty(value = "maxNumberOfWorkers", access = JsonProperty.Access.WRITE_ONLY)
     private Integer maxNumberOfWorkers;
 
     /*
      * If specified during app creation, the app is cloned from a source app.
      */
-    @JsonProperty(value = "cloningInfo")
     private CloningInfo cloningInfo;
 
     /*
      * Name of the resource group the app belongs to. Read-only.
      */
-    @JsonProperty(value = "resourceGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGroup;
 
     /*
      * <code>true</code> if the app is a default container; otherwise, <code>false</code>.
      */
-    @JsonProperty(value = "isDefaultContainer", access = JsonProperty.Access.WRITE_ONLY)
     private Boolean isDefaultContainer;
 
     /*
      * Default hostname of the app. Read-only.
      */
-    @JsonProperty(value = "defaultHostName", access = JsonProperty.Access.WRITE_ONLY)
     private String defaultHostname;
 
     /*
      * Status of the last deployment slot swap operation.
      */
-    @JsonProperty(value = "slotSwapStatus", access = JsonProperty.Access.WRITE_ONLY)
     private SlotSwapStatus slotSwapStatus;
 
     /*
      * HttpsOnly: configures a web site to accept only https requests. Issues redirect for
      * http requests
      */
-    @JsonProperty(value = "httpsOnly")
     private Boolean httpsOnly;
 
     /*
      * Site redundancy mode
      */
-    @JsonProperty(value = "redundancyMode")
     private RedundancyMode redundancyMode;
 
     /*
      * Specifies an operation id if this site has a pending operation.
      */
-    @JsonProperty(value = "inProgressOperationId", access = JsonProperty.Access.WRITE_ONLY)
     private UUID inProgressOperationId;
 
     /*
      * Property to allow or block all public traffic. Allowed Values: 'Enabled', 'Disabled' or an empty string.
      */
-    @JsonProperty(value = "publicNetworkAccess")
     private String publicNetworkAccess;
 
     /*
      * Checks if Customer provided storage account is required
      */
-    @JsonProperty(value = "storageAccountRequired")
     private Boolean storageAccountRequired;
 
     /*
      * Identity to use for Key Vault Reference authentication.
      */
-    @JsonProperty(value = "keyVaultReferenceIdentity")
     private String keyVaultReferenceIdentity;
 
     /*
@@ -349,7 +304,6 @@ public final class SitePropertiesInner {
      * /subscriptions/{subscriptionName}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/virtualNetworks/
      * {vnetName}/subnets/{subnetName}
      */
-    @JsonProperty(value = "virtualNetworkSubnetId")
     private String virtualNetworkSubnetId;
 
     /*
@@ -358,7 +312,6 @@ public final class SitePropertiesInner {
      * /subscriptions/{subscriptionId}/resourceGroups/{resourceGroup}/providers/Microsoft.App/managedEnvironments/{
      * managedEnvironmentName}
      */
-    @JsonProperty(value = "managedEnvironmentId")
     private String managedEnvironmentId;
 
     /**
@@ -1290,5 +1243,191 @@ public final class SitePropertiesInner {
         if (slotSwapStatus() != null) {
             slotSwapStatus().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        jsonWriter.writeBooleanField("enabled", this.enabled);
+        jsonWriter.writeArrayField("hostNameSslStates", this.hostnameSslStates,
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("serverFarmId", this.serverFarmId);
+        jsonWriter.writeBooleanField("reserved", this.reserved);
+        jsonWriter.writeBooleanField("isXenon", this.isXenon);
+        jsonWriter.writeBooleanField("hyperV", this.hyperV);
+        jsonWriter.writeJsonField("dnsConfiguration", this.dnsConfiguration);
+        jsonWriter.writeBooleanField("vnetRouteAllEnabled", this.vnetRouteAllEnabled);
+        jsonWriter.writeBooleanField("vnetImagePullEnabled", this.vnetImagePullEnabled);
+        jsonWriter.writeBooleanField("vnetContentShareEnabled", this.vnetContentShareEnabled);
+        jsonWriter.writeBooleanField("vnetBackupRestoreEnabled", this.vnetBackupRestoreEnabled);
+        jsonWriter.writeJsonField("siteConfig", this.siteConfig);
+        jsonWriter.writeJsonField("functionAppConfig", this.functionAppConfig);
+        jsonWriter.writeJsonField("daprConfig", this.daprConfig);
+        jsonWriter.writeStringField("workloadProfileName", this.workloadProfileName);
+        jsonWriter.writeJsonField("resourceConfig", this.resourceConfig);
+        jsonWriter.writeBooleanField("scmSiteAlsoStopped", this.scmSiteAlsoStopped);
+        jsonWriter.writeJsonField("hostingEnvironmentProfile", this.hostingEnvironmentProfile);
+        jsonWriter.writeBooleanField("clientAffinityEnabled", this.clientAffinityEnabled);
+        jsonWriter.writeBooleanField("clientCertEnabled", this.clientCertEnabled);
+        jsonWriter.writeStringField("clientCertMode",
+            this.clientCertMode == null ? null : this.clientCertMode.toString());
+        jsonWriter.writeStringField("clientCertExclusionPaths", this.clientCertExclusionPaths);
+        jsonWriter.writeBooleanField("hostNamesDisabled", this.hostNamesDisabled);
+        jsonWriter.writeStringField("customDomainVerificationId", this.customDomainVerificationId);
+        jsonWriter.writeNumberField("containerSize", this.containerSize);
+        jsonWriter.writeNumberField("dailyMemoryTimeQuota", this.dailyMemoryTimeQuota);
+        jsonWriter.writeJsonField("cloningInfo", this.cloningInfo);
+        jsonWriter.writeBooleanField("httpsOnly", this.httpsOnly);
+        jsonWriter.writeStringField("redundancyMode",
+            this.redundancyMode == null ? null : this.redundancyMode.toString());
+        jsonWriter.writeStringField("publicNetworkAccess", this.publicNetworkAccess);
+        jsonWriter.writeBooleanField("storageAccountRequired", this.storageAccountRequired);
+        jsonWriter.writeStringField("keyVaultReferenceIdentity", this.keyVaultReferenceIdentity);
+        jsonWriter.writeStringField("virtualNetworkSubnetId", this.virtualNetworkSubnetId);
+        jsonWriter.writeStringField("managedEnvironmentId", this.managedEnvironmentId);
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of SitePropertiesInner from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of SitePropertiesInner if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the SitePropertiesInner.
+     */
+    public static SitePropertiesInner fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            SitePropertiesInner deserializedSitePropertiesInner = new SitePropertiesInner();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("state".equals(fieldName)) {
+                    deserializedSitePropertiesInner.state = reader.getString();
+                } else if ("hostNames".equals(fieldName)) {
+                    List<String> hostNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedSitePropertiesInner.hostNames = hostNames;
+                } else if ("repositorySiteName".equals(fieldName)) {
+                    deserializedSitePropertiesInner.repositorySiteName = reader.getString();
+                } else if ("usageState".equals(fieldName)) {
+                    deserializedSitePropertiesInner.usageState = UsageState.fromString(reader.getString());
+                } else if ("enabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.enabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enabledHostNames".equals(fieldName)) {
+                    List<String> enabledHostNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedSitePropertiesInner.enabledHostNames = enabledHostNames;
+                } else if ("availabilityState".equals(fieldName)) {
+                    deserializedSitePropertiesInner.availabilityState
+                        = SiteAvailabilityState.fromString(reader.getString());
+                } else if ("hostNameSslStates".equals(fieldName)) {
+                    List<HostnameSslState> hostnameSslStates
+                        = reader.readArray(reader1 -> HostnameSslState.fromJson(reader1));
+                    deserializedSitePropertiesInner.hostnameSslStates = hostnameSslStates;
+                } else if ("serverFarmId".equals(fieldName)) {
+                    deserializedSitePropertiesInner.serverFarmId = reader.getString();
+                } else if ("reserved".equals(fieldName)) {
+                    deserializedSitePropertiesInner.reserved = reader.getNullable(JsonReader::getBoolean);
+                } else if ("isXenon".equals(fieldName)) {
+                    deserializedSitePropertiesInner.isXenon = reader.getNullable(JsonReader::getBoolean);
+                } else if ("hyperV".equals(fieldName)) {
+                    deserializedSitePropertiesInner.hyperV = reader.getNullable(JsonReader::getBoolean);
+                } else if ("lastModifiedTimeUtc".equals(fieldName)) {
+                    deserializedSitePropertiesInner.lastModifiedTimeUtc = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("dnsConfiguration".equals(fieldName)) {
+                    deserializedSitePropertiesInner.dnsConfiguration = SiteDnsConfig.fromJson(reader);
+                } else if ("vnetRouteAllEnabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.vnetRouteAllEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("vnetImagePullEnabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.vnetImagePullEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("vnetContentShareEnabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.vnetContentShareEnabled
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("vnetBackupRestoreEnabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.vnetBackupRestoreEnabled
+                        = reader.getNullable(JsonReader::getBoolean);
+                } else if ("siteConfig".equals(fieldName)) {
+                    deserializedSitePropertiesInner.siteConfig = SiteConfigInner.fromJson(reader);
+                } else if ("functionAppConfig".equals(fieldName)) {
+                    deserializedSitePropertiesInner.functionAppConfig = FunctionAppConfig.fromJson(reader);
+                } else if ("daprConfig".equals(fieldName)) {
+                    deserializedSitePropertiesInner.daprConfig = DaprConfig.fromJson(reader);
+                } else if ("workloadProfileName".equals(fieldName)) {
+                    deserializedSitePropertiesInner.workloadProfileName = reader.getString();
+                } else if ("resourceConfig".equals(fieldName)) {
+                    deserializedSitePropertiesInner.resourceConfig = ResourceConfig.fromJson(reader);
+                } else if ("trafficManagerHostNames".equals(fieldName)) {
+                    List<String> trafficManagerHostNames = reader.readArray(reader1 -> reader1.getString());
+                    deserializedSitePropertiesInner.trafficManagerHostNames = trafficManagerHostNames;
+                } else if ("scmSiteAlsoStopped".equals(fieldName)) {
+                    deserializedSitePropertiesInner.scmSiteAlsoStopped = reader.getNullable(JsonReader::getBoolean);
+                } else if ("targetSwapSlot".equals(fieldName)) {
+                    deserializedSitePropertiesInner.targetSwapSlot = reader.getString();
+                } else if ("hostingEnvironmentProfile".equals(fieldName)) {
+                    deserializedSitePropertiesInner.hostingEnvironmentProfile
+                        = HostingEnvironmentProfile.fromJson(reader);
+                } else if ("clientAffinityEnabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.clientAffinityEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("clientCertEnabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.clientCertEnabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("clientCertMode".equals(fieldName)) {
+                    deserializedSitePropertiesInner.clientCertMode = ClientCertMode.fromString(reader.getString());
+                } else if ("clientCertExclusionPaths".equals(fieldName)) {
+                    deserializedSitePropertiesInner.clientCertExclusionPaths = reader.getString();
+                } else if ("hostNamesDisabled".equals(fieldName)) {
+                    deserializedSitePropertiesInner.hostNamesDisabled = reader.getNullable(JsonReader::getBoolean);
+                } else if ("customDomainVerificationId".equals(fieldName)) {
+                    deserializedSitePropertiesInner.customDomainVerificationId = reader.getString();
+                } else if ("outboundIpAddresses".equals(fieldName)) {
+                    deserializedSitePropertiesInner.outboundIpAddresses = reader.getString();
+                } else if ("possibleOutboundIpAddresses".equals(fieldName)) {
+                    deserializedSitePropertiesInner.possibleOutboundIpAddresses = reader.getString();
+                } else if ("containerSize".equals(fieldName)) {
+                    deserializedSitePropertiesInner.containerSize = reader.getNullable(JsonReader::getInt);
+                } else if ("dailyMemoryTimeQuota".equals(fieldName)) {
+                    deserializedSitePropertiesInner.dailyMemoryTimeQuota = reader.getNullable(JsonReader::getInt);
+                } else if ("suspendedTill".equals(fieldName)) {
+                    deserializedSitePropertiesInner.suspendedTill = reader
+                        .getNullable(nonNullReader -> CoreUtils.parseBestOffsetDateTime(nonNullReader.getString()));
+                } else if ("maxNumberOfWorkers".equals(fieldName)) {
+                    deserializedSitePropertiesInner.maxNumberOfWorkers = reader.getNullable(JsonReader::getInt);
+                } else if ("cloningInfo".equals(fieldName)) {
+                    deserializedSitePropertiesInner.cloningInfo = CloningInfo.fromJson(reader);
+                } else if ("resourceGroup".equals(fieldName)) {
+                    deserializedSitePropertiesInner.resourceGroup = reader.getString();
+                } else if ("isDefaultContainer".equals(fieldName)) {
+                    deserializedSitePropertiesInner.isDefaultContainer = reader.getNullable(JsonReader::getBoolean);
+                } else if ("defaultHostName".equals(fieldName)) {
+                    deserializedSitePropertiesInner.defaultHostname = reader.getString();
+                } else if ("slotSwapStatus".equals(fieldName)) {
+                    deserializedSitePropertiesInner.slotSwapStatus = SlotSwapStatus.fromJson(reader);
+                } else if ("httpsOnly".equals(fieldName)) {
+                    deserializedSitePropertiesInner.httpsOnly = reader.getNullable(JsonReader::getBoolean);
+                } else if ("redundancyMode".equals(fieldName)) {
+                    deserializedSitePropertiesInner.redundancyMode = RedundancyMode.fromString(reader.getString());
+                } else if ("inProgressOperationId".equals(fieldName)) {
+                    deserializedSitePropertiesInner.inProgressOperationId
+                        = reader.getNullable(nonNullReader -> UUID.fromString(nonNullReader.getString()));
+                } else if ("publicNetworkAccess".equals(fieldName)) {
+                    deserializedSitePropertiesInner.publicNetworkAccess = reader.getString();
+                } else if ("storageAccountRequired".equals(fieldName)) {
+                    deserializedSitePropertiesInner.storageAccountRequired = reader.getNullable(JsonReader::getBoolean);
+                } else if ("keyVaultReferenceIdentity".equals(fieldName)) {
+                    deserializedSitePropertiesInner.keyVaultReferenceIdentity = reader.getString();
+                } else if ("virtualNetworkSubnetId".equals(fieldName)) {
+                    deserializedSitePropertiesInner.virtualNetworkSubnetId = reader.getString();
+                } else if ("managedEnvironmentId".equals(fieldName)) {
+                    deserializedSitePropertiesInner.managedEnvironmentId = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedSitePropertiesInner;
+        });
     }
 }

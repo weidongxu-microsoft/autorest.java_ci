@@ -5,50 +5,49 @@
 package com.azure.resourcemanager.consumption.generated.fluent.models;
 
 import com.azure.core.annotation.Immutable;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationDetailsResourceProperties;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationDetailsSavingsProperties;
 import com.azure.resourcemanager.consumption.generated.models.ReservationRecommendationDetailsUsageProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import java.io.IOException;
 
 /**
  * The properties of the reservation recommendation.
  */
 @Immutable
-public final class ReservationRecommendationDetailsProperties {
+public final class ReservationRecommendationDetailsProperties
+    implements JsonSerializable<ReservationRecommendationDetailsProperties> {
     /*
      * An ISO 4217 currency code identifier for the costs and savings
      */
-    @JsonProperty(value = "currency", access = JsonProperty.Access.WRITE_ONLY)
     private String currency;
 
     /*
      * Resource specific properties.
      */
-    @JsonProperty(value = "resource", access = JsonProperty.Access.WRITE_ONLY)
     private ReservationRecommendationDetailsResourceProperties resource;
 
     /*
      * Resource Group.
      */
-    @JsonProperty(value = "resourceGroup", access = JsonProperty.Access.WRITE_ONLY)
     private String resourceGroup;
 
     /*
      * Savings information for the recommendation.
      */
-    @JsonProperty(value = "savings", access = JsonProperty.Access.WRITE_ONLY)
     private ReservationRecommendationDetailsSavingsProperties savings;
 
     /*
      * Scope of the reservation, ex: Single or Shared.
      */
-    @JsonProperty(value = "scope", access = JsonProperty.Access.WRITE_ONLY)
     private String scope;
 
     /*
      * Historical usage details used to calculate the estimated savings.
      */
-    @JsonProperty(value = "usage", access = JsonProperty.Access.WRITE_ONLY)
     private ReservationRecommendationDetailsUsageProperties usage;
 
     /**
@@ -126,5 +125,54 @@ public final class ReservationRecommendationDetailsProperties {
         if (usage() != null) {
             usage().validate();
         }
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of ReservationRecommendationDetailsProperties from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of ReservationRecommendationDetailsProperties if the JsonReader was pointing to an instance
+     * of it, or null if it was pointing to JSON null.
+     * @throws IOException If an error occurs while reading the ReservationRecommendationDetailsProperties.
+     */
+    public static ReservationRecommendationDetailsProperties fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            ReservationRecommendationDetailsProperties deserializedReservationRecommendationDetailsProperties
+                = new ReservationRecommendationDetailsProperties();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("currency".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsProperties.currency = reader.getString();
+                } else if ("resource".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsProperties.resource
+                        = ReservationRecommendationDetailsResourceProperties.fromJson(reader);
+                } else if ("resourceGroup".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsProperties.resourceGroup = reader.getString();
+                } else if ("savings".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsProperties.savings
+                        = ReservationRecommendationDetailsSavingsProperties.fromJson(reader);
+                } else if ("scope".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsProperties.scope = reader.getString();
+                } else if ("usage".equals(fieldName)) {
+                    deserializedReservationRecommendationDetailsProperties.usage
+                        = ReservationRecommendationDetailsUsageProperties.fromJson(reader);
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedReservationRecommendationDetailsProperties;
+        });
     }
 }

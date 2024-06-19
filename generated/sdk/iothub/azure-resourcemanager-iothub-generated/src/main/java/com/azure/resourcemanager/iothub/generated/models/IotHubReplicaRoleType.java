@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.iothub.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -39,7 +38,6 @@ public final class IotHubReplicaRoleType extends ExpandableStringEnum<IotHubRepl
      * @param name a name to look for.
      * @return the corresponding IotHubReplicaRoleType.
      */
-    @JsonCreator
     public static IotHubReplicaRoleType fromString(String name) {
         return fromString(name, IotHubReplicaRoleType.class);
     }

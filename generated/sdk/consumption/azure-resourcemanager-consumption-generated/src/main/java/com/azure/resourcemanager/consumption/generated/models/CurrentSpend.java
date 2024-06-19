@@ -5,24 +5,26 @@
 package com.azure.resourcemanager.consumption.generated.models;
 
 import com.azure.core.annotation.Immutable;
-import com.fasterxml.jackson.annotation.JsonProperty;
+import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
+import com.azure.json.JsonToken;
+import com.azure.json.JsonWriter;
+import java.io.IOException;
 import java.math.BigDecimal;
 
 /**
  * The current amount of cost which is being tracked for a budget.
  */
 @Immutable
-public final class CurrentSpend {
+public final class CurrentSpend implements JsonSerializable<CurrentSpend> {
     /*
      * The total amount of cost which is being tracked by the budget.
      */
-    @JsonProperty(value = "amount", access = JsonProperty.Access.WRITE_ONLY)
     private BigDecimal amount;
 
     /*
      * The unit of measure for the budget amount.
      */
-    @JsonProperty(value = "unit", access = JsonProperty.Access.WRITE_ONLY)
     private String unit;
 
     /**
@@ -55,5 +57,43 @@ public final class CurrentSpend {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+    }
+
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStartObject();
+        return jsonWriter.writeEndObject();
+    }
+
+    /**
+     * Reads an instance of CurrentSpend from the JsonReader.
+     * 
+     * @param jsonReader The JsonReader being read.
+     * @return An instance of CurrentSpend if the JsonReader was pointing to an instance of it, or null if it was
+     * pointing to JSON null.
+     * @throws IOException If an error occurs while reading the CurrentSpend.
+     */
+    public static CurrentSpend fromJson(JsonReader jsonReader) throws IOException {
+        return jsonReader.readObject(reader -> {
+            CurrentSpend deserializedCurrentSpend = new CurrentSpend();
+            while (reader.nextToken() != JsonToken.END_OBJECT) {
+                String fieldName = reader.getFieldName();
+                reader.nextToken();
+
+                if ("amount".equals(fieldName)) {
+                    deserializedCurrentSpend.amount
+                        = reader.getNullable(nonNullReader -> new BigDecimal(nonNullReader.getString()));
+                } else if ("unit".equals(fieldName)) {
+                    deserializedCurrentSpend.unit = reader.getString();
+                } else {
+                    reader.skipChildren();
+                }
+            }
+
+            return deserializedCurrentSpend;
+        });
     }
 }

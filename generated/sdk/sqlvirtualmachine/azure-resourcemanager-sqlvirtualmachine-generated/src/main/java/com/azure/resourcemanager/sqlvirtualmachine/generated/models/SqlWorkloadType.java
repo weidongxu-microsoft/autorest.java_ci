@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.sqlvirtualmachine.generated.models;
 
 import com.azure.core.util.ExpandableStringEnum;
-import com.fasterxml.jackson.annotation.JsonCreator;
 import java.util.Collection;
 
 /**
@@ -42,7 +41,6 @@ public final class SqlWorkloadType extends ExpandableStringEnum<SqlWorkloadType>
      * @param name a name to look for.
      * @return the corresponding SqlWorkloadType.
      */
-    @JsonCreator
     public static SqlWorkloadType fromString(String name) {
         return fromString(name, SqlWorkloadType.class);
     }
