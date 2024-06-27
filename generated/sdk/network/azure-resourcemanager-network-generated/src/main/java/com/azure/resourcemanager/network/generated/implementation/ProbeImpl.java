@@ -7,6 +7,7 @@ package com.azure.resourcemanager.network.generated.implementation;
 import com.azure.core.management.SubResource;
 import com.azure.resourcemanager.network.generated.fluent.models.ProbeInner;
 import com.azure.resourcemanager.network.generated.models.Probe;
+import com.azure.resourcemanager.network.generated.models.ProbeNoHealthyBackendsBehavior;
 import com.azure.resourcemanager.network.generated.models.ProbeProtocol;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.util.Collections;
@@ -57,6 +58,10 @@ public final class ProbeImpl implements Probe {
 
     public Integer intervalInSeconds() {
         return this.innerModel().intervalInSeconds();
+    }
+
+    public ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior() {
+        return this.innerModel().noHealthyBackendsBehavior();
     }
 
     public Integer numberOfProbes() {

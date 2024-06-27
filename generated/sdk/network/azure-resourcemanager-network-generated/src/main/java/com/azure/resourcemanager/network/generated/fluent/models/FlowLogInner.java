@@ -10,6 +10,7 @@ import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
+import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.RetentionPolicyParameters;
 import com.azure.resourcemanager.network.generated.models.TrafficAnalyticsProperties;
@@ -30,6 +31,11 @@ public final class FlowLogInner extends Resource {
      * A unique read-only string that changes whenever the resource is updated.
      */
     private String etag;
+
+    /*
+     * FlowLog resource Managed Identity
+     */
+    private ManagedServiceIdentity identity;
 
     /*
      * Resource ID.
@@ -68,6 +74,26 @@ public final class FlowLogInner extends Resource {
      */
     public String etag() {
         return this.etag;
+    }
+
+    /**
+     * Get the identity property: FlowLog resource Managed Identity.
+     * 
+     * @return the identity value.
+     */
+    public ManagedServiceIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: FlowLog resource Managed Identity.
+     * 
+     * @param identity the identity value to set.
+     * @return the FlowLogInner object itself.
+     */
+    public FlowLogInner withIdentity(ManagedServiceIdentity identity) {
+        this.identity = identity;
+        return this;
     }
 
     /**
@@ -293,6 +319,9 @@ public final class FlowLogInner extends Resource {
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+        if (identity() != null) {
+            identity().validate();
+        }
     }
 
     /**
@@ -304,6 +333,7 @@ public final class FlowLogInner extends Resource {
         jsonWriter.writeStringField("location", location());
         jsonWriter.writeMapField("tags", tags(), (writer, element) -> writer.writeString(element));
         jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeJsonField("identity", this.identity);
         jsonWriter.writeStringField("id", this.id);
         return jsonWriter.writeEndObject();
     }
@@ -339,6 +369,8 @@ public final class FlowLogInner extends Resource {
                     deserializedFlowLogInner.innerProperties = FlowLogPropertiesFormat.fromJson(reader);
                 } else if ("etag".equals(fieldName)) {
                     deserializedFlowLogInner.etag = reader.getString();
+                } else if ("identity".equals(fieldName)) {
+                    deserializedFlowLogInner.identity = ManagedServiceIdentity.fromJson(reader);
                 } else if ("id".equals(fieldName)) {
                     deserializedFlowLogInner.id = reader.getString();
                 } else {

@@ -8,7 +8,7 @@ import com.azure.core.util.ExpandableStringEnum;
 import java.util.Collection;
 
 /**
- * The name of this Bastion Host.
+ * The name of the sku of this Bastion Host.
  */
 public final class BastionHostSkuName extends ExpandableStringEnum<BastionHostSkuName> {
     /**
@@ -25,6 +25,11 @@ public final class BastionHostSkuName extends ExpandableStringEnum<BastionHostSk
      * Static value Developer for BastionHostSkuName.
      */
     public static final BastionHostSkuName DEVELOPER = fromString("Developer");
+
+    /**
+     * Static value Premium for BastionHostSkuName.
+     */
+    public static final BastionHostSkuName PREMIUM = fromString("Premium");
 
     /**
      * Creates a new instance of BastionHostSkuName value.

@@ -23,7 +23,6 @@ import com.azure.resourcemanager.mysql.generated.models.Network;
 import com.azure.resourcemanager.mysql.generated.models.PrivateEndpointConnection;
 import com.azure.resourcemanager.mysql.generated.models.ReplicationRole;
 import com.azure.resourcemanager.mysql.generated.models.Server;
-import com.azure.resourcemanager.mysql.generated.models.ServerDetachVNetParameter;
 import com.azure.resourcemanager.mysql.generated.models.ServerForUpdate;
 import com.azure.resourcemanager.mysql.generated.models.ServerGtidSetParameter;
 import com.azure.resourcemanager.mysql.generated.models.ServerRestartParameter;
@@ -300,14 +299,6 @@ public final class ServerImpl implements Server, Server.Definition, Server.Updat
 
     public void resetGtid(ServerGtidSetParameter parameters, Context context) {
         serviceManager.servers().resetGtid(resourceGroupName, serverName, parameters, context);
-    }
-
-    public Server detachVNet(ServerDetachVNetParameter parameters) {
-        return serviceManager.servers().detachVNet(resourceGroupName, serverName, parameters);
-    }
-
-    public Server detachVNet(ServerDetachVNetParameter parameters, Context context) {
-        return serviceManager.servers().detachVNet(resourceGroupName, serverName, parameters, context);
     }
 
     public ServerImpl withRegion(Region location) {

@@ -55,6 +55,14 @@ public interface ExpressRouteCircuitAuthorization {
     AuthorizationUseStatus authorizationUseStatus();
 
     /**
+     * Gets the connectionResourceUri property: The reference to the ExpressRoute connection resource using the
+     * authorization.
+     * 
+     * @return the connectionResourceUri value.
+     */
+    String connectionResourceUri();
+
+    /**
      * Gets the provisioningState property: The provisioning state of the authorization resource.
      * 
      * @return the provisioningState value.

@@ -36,7 +36,6 @@ import com.azure.core.util.polling.SyncPoller;
 import com.azure.resourcemanager.mysql.generated.fluent.ServersClient;
 import com.azure.resourcemanager.mysql.generated.fluent.models.HighAvailabilityValidationEstimationInner;
 import com.azure.resourcemanager.mysql.generated.fluent.models.ServerInner;
-import com.azure.resourcemanager.mysql.generated.models.ServerDetachVNetParameter;
 import com.azure.resourcemanager.mysql.generated.models.ServerForUpdate;
 import com.azure.resourcemanager.mysql.generated.models.ServerGtidSetParameter;
 import com.azure.resourcemanager.mysql.generated.models.ServerListResult;
@@ -190,16 +189,6 @@ public final class ServersClientImpl implements ServersClient {
             Context context);
 
         @Headers({ "Content-Type: application/json" })
-        @Post("/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMySQL/flexibleServers/{serverName}/detachVNet")
-        @ExpectedResponses({ 200, 202 })
-        @UnexpectedResponseExceptionType(ManagementException.class)
-        Mono<Response<Flux<ByteBuffer>>> detachVNet(@HostParam("$host") String endpoint,
-            @QueryParam("api-version") String apiVersion, @PathParam("subscriptionId") String subscriptionId,
-            @PathParam("resourceGroupName") String resourceGroupName, @PathParam("serverName") String serverName,
-            @BodyParam("application/json") ServerDetachVNetParameter parameters, @HeaderParam("Accept") String accept,
-            Context context);
-
-        @Headers({ "Content-Type: application/json" })
         @Get("{nextLink}")
         @ExpectedResponses({ 200 })
         @UnexpectedResponseExceptionType(ManagementException.class)
@@ -249,10 +238,9 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.create(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.create(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -292,11 +280,10 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.create(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, parameters, accept, context);
+        return service.create(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, parameters, accept, context);
     }
 
     /**
@@ -479,10 +466,9 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.update(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.update(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -523,11 +509,10 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.update(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, parameters, accept, context);
+        return service.update(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, parameters, accept, context);
     }
 
     /**
@@ -711,10 +696,9 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.delete(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.delete(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -748,11 +732,10 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.delete(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, accept, context);
+        return service.delete(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, accept, context);
     }
 
     /**
@@ -913,10 +896,9 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.getByResourceGroup(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -950,11 +932,10 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.getByResourceGroup(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-            resourceGroupName, serverName, accept, context);
+        return service.getByResourceGroup(this.client.getEndpoint(), this.client.getApiVersion(),
+            this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context);
     }
 
     /**
@@ -1028,10 +1009,9 @@ public final class ServersClientImpl implements ServersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.listByResourceGroup(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, accept, context))
             .<PagedResponse<ServerInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
                 res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
@@ -1063,12 +1043,11 @@ public final class ServersClientImpl implements ServersClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .listByResourceGroup(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                resourceGroupName, accept, context)
+            .listByResourceGroup(this.client.getEndpoint(), this.client.getApiVersion(),
+                this.client.getSubscriptionId(), resourceGroupName, accept, context)
             .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
                 res.getValue().value(), res.getValue().nextLink(), null));
     }
@@ -1150,11 +1129,10 @@ public final class ServersClientImpl implements ServersClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                accept, context))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getApiVersion(),
+                this.client.getSubscriptionId(), accept, context))
             .<PagedResponse<ServerInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
                 res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -1179,10 +1157,11 @@ public final class ServersClientImpl implements ServersClient {
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), accept, context)
+        return service
+            .list(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(), accept,
+                context)
             .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
                 res.getValue().value(), res.getValue().nextLink(), null));
     }
@@ -1267,10 +1246,9 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.failover(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.failover(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -1304,10 +1282,9 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.failover(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+        return service.failover(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
             resourceGroupName, serverName, accept, context);
     }
 
@@ -1476,11 +1453,11 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.validateEstimateHighAvailability(this.client.getEndpoint(), apiVersion,
-                this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
+            .withContext(context -> service.validateEstimateHighAvailability(this.client.getEndpoint(),
+                this.client.getApiVersion(), this.client.getSubscriptionId(), resourceGroupName, serverName, parameters,
+                accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -1521,10 +1498,9 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.validateEstimateHighAvailability(this.client.getEndpoint(), apiVersion,
+        return service.validateEstimateHighAvailability(this.client.getEndpoint(), this.client.getApiVersion(),
             this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context);
     }
 
@@ -1618,10 +1594,9 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.restart(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.restart(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -1661,10 +1636,9 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.restart(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
+        return service.restart(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
             resourceGroupName, serverName, parameters, accept, context);
     }
 
@@ -1839,10 +1813,9 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.start(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.start(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -1876,11 +1849,10 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.start(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, accept, context);
+        return service.start(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, accept, context);
     }
 
     /**
@@ -2039,11 +2011,10 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.stop(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                resourceGroupName, serverName, accept, context))
+            .withContext(context -> service.stop(this.client.getEndpoint(), this.client.getApiVersion(),
+                this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -2076,11 +2047,10 @@ public final class ServersClientImpl implements ServersClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.stop(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, accept, context);
+        return service.stop(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, accept, context);
     }
 
     /**
@@ -2246,10 +2216,9 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.resetGtid(this.client.getEndpoint(), apiVersion,
+            .withContext(context -> service.resetGtid(this.client.getEndpoint(), this.client.getApiVersion(),
                 this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
@@ -2289,11 +2258,10 @@ public final class ServersClientImpl implements ServersClient {
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.resetGtid(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-            resourceGroupName, serverName, parameters, accept, context);
+        return service.resetGtid(this.client.getEndpoint(), this.client.getApiVersion(),
+            this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context);
     }
 
     /**
@@ -2438,237 +2406,6 @@ public final class ServersClientImpl implements ServersClient {
     public void resetGtid(String resourceGroupName, String serverName, ServerGtidSetParameter parameters,
         Context context) {
         resetGtidAsync(resourceGroupName, serverName, parameters, context).block();
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a server along with {@link Response} on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> detachVNetWithResponseAsync(String resourceGroupName, String serverName,
-        ServerDetachVNetParameter parameters) {
-        if (this.client.getEndpoint() == null) {
-            return Mono.error(
-                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono.error(new IllegalArgumentException(
-                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (serverName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
-        }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
-        final String apiVersion = "2024-02-01-preview";
-        final String accept = "application/json";
-        return FluxUtil
-            .withContext(context -> service.detachVNet(this.client.getEndpoint(), apiVersion,
-                this.client.getSubscriptionId(), resourceGroupName, serverName, parameters, accept, context))
-            .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a server along with {@link Response} on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<Response<Flux<ByteBuffer>>> detachVNetWithResponseAsync(String resourceGroupName, String serverName,
-        ServerDetachVNetParameter parameters, Context context) {
-        if (this.client.getEndpoint() == null) {
-            return Mono.error(
-                new IllegalArgumentException("Parameter this.client.getEndpoint() is required and cannot be null."));
-        }
-        if (this.client.getSubscriptionId() == null) {
-            return Mono.error(new IllegalArgumentException(
-                "Parameter this.client.getSubscriptionId() is required and cannot be null."));
-        }
-        if (resourceGroupName == null) {
-            return Mono
-                .error(new IllegalArgumentException("Parameter resourceGroupName is required and cannot be null."));
-        }
-        if (serverName == null) {
-            return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
-        }
-        if (parameters == null) {
-            return Mono.error(new IllegalArgumentException("Parameter parameters is required and cannot be null."));
-        } else {
-            parameters.validate();
-        }
-        final String apiVersion = "2024-02-01-preview";
-        final String accept = "application/json";
-        context = this.client.mergeContext(context);
-        return service.detachVNet(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-            resourceGroupName, serverName, parameters, accept, context);
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a server.
-     */
-    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerInner>, ServerInner> beginDetachVNetAsync(String resourceGroupName,
-        String serverName, ServerDetachVNetParameter parameters) {
-        Mono<Response<Flux<ByteBuffer>>> mono = detachVNetWithResponseAsync(resourceGroupName, serverName, parameters);
-        return this.client.<ServerInner, ServerInner>getLroResult(mono, this.client.getHttpPipeline(),
-            ServerInner.class, ServerInner.class, this.client.getContext());
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link PollerFlux} for polling of represents a server.
-     */
-    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    private PollerFlux<PollResult<ServerInner>, ServerInner> beginDetachVNetAsync(String resourceGroupName,
-        String serverName, ServerDetachVNetParameter parameters, Context context) {
-        context = this.client.mergeContext(context);
-        Mono<Response<Flux<ByteBuffer>>> mono
-            = detachVNetWithResponseAsync(resourceGroupName, serverName, parameters, context);
-        return this.client.<ServerInner, ServerInner>getLroResult(mono, this.client.getHttpPipeline(),
-            ServerInner.class, ServerInner.class, context);
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a server.
-     */
-    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<ServerInner>, ServerInner> beginDetachVNet(String resourceGroupName, String serverName,
-        ServerDetachVNetParameter parameters) {
-        return this.beginDetachVNetAsync(resourceGroupName, serverName, parameters).getSyncPoller();
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of represents a server.
-     */
-    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    public SyncPoller<PollResult<ServerInner>, ServerInner> beginDetachVNet(String resourceGroupName, String serverName,
-        ServerDetachVNetParameter parameters, Context context) {
-        return this.beginDetachVNetAsync(resourceGroupName, serverName, parameters, context).getSyncPoller();
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a server on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerInner> detachVNetAsync(String resourceGroupName, String serverName,
-        ServerDetachVNetParameter parameters) {
-        return beginDetachVNetAsync(resourceGroupName, serverName, parameters).last()
-            .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a server on successful completion of {@link Mono}.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    private Mono<ServerInner> detachVNetAsync(String resourceGroupName, String serverName,
-        ServerDetachVNetParameter parameters, Context context) {
-        return beginDetachVNetAsync(resourceGroupName, serverName, parameters, context).last()
-            .flatMap(this.client::getLroFinalResultOrError);
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a server.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ServerInner detachVNet(String resourceGroupName, String serverName, ServerDetachVNetParameter parameters) {
-        return detachVNetAsync(resourceGroupName, serverName, parameters).block();
-    }
-
-    /**
-     * Detach VNet on a server.
-     * 
-     * @param resourceGroupName The name of the resource group. The name is case insensitive.
-     * @param serverName The name of the server.
-     * @param parameters The required parameters for detach vnet on a server.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return represents a server.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    public ServerInner detachVNet(String resourceGroupName, String serverName, ServerDetachVNetParameter parameters,
-        Context context) {
-        return detachVNetAsync(resourceGroupName, serverName, parameters, context).block();
     }
 
     /**

@@ -9,6 +9,7 @@ import com.azure.core.management.SubResource;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
+import com.azure.resourcemanager.network.generated.models.ProbeNoHealthyBackendsBehavior;
 import com.azure.resourcemanager.network.generated.models.ProbeProtocol;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.io.IOException;
@@ -187,6 +188,31 @@ public final class ProbeInner extends SubResource {
             this.innerProperties = new ProbePropertiesFormat();
         }
         this.innerProperties().withIntervalInSeconds(intervalInSeconds);
+        return this;
+    }
+
+    /**
+     * Get the noHealthyBackendsBehavior property: Determines how new connections are handled by the load balancer when
+     * all backend instances are probed down.
+     * 
+     * @return the noHealthyBackendsBehavior value.
+     */
+    public ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior() {
+        return this.innerProperties() == null ? null : this.innerProperties().noHealthyBackendsBehavior();
+    }
+
+    /**
+     * Set the noHealthyBackendsBehavior property: Determines how new connections are handled by the load balancer when
+     * all backend instances are probed down.
+     * 
+     * @param noHealthyBackendsBehavior the noHealthyBackendsBehavior value to set.
+     * @return the ProbeInner object itself.
+     */
+    public ProbeInner withNoHealthyBackendsBehavior(ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior) {
+        if (this.innerProperties() == null) {
+            this.innerProperties = new ProbePropertiesFormat();
+        }
+        this.innerProperties().withNoHealthyBackendsBehavior(noHealthyBackendsBehavior);
         return this;
     }
 

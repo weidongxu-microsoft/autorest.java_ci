@@ -29,6 +29,11 @@ public final class AuthorizationPropertiesFormat implements JsonSerializable<Aut
     private AuthorizationUseStatus authorizationUseStatus;
 
     /*
+     * The reference to the ExpressRoute connection resource using the authorization.
+     */
+    private String connectionResourceUri;
+
+    /*
      * The provisioning state of the authorization resource.
      */
     private ProvisioningState provisioningState;
@@ -77,6 +82,16 @@ public final class AuthorizationPropertiesFormat implements JsonSerializable<Aut
     public AuthorizationPropertiesFormat withAuthorizationUseStatus(AuthorizationUseStatus authorizationUseStatus) {
         this.authorizationUseStatus = authorizationUseStatus;
         return this;
+    }
+
+    /**
+     * Get the connectionResourceUri property: The reference to the ExpressRoute connection resource using the
+     * authorization.
+     * 
+     * @return the connectionResourceUri value.
+     */
+    public String connectionResourceUri() {
+        return this.connectionResourceUri;
     }
 
     /**
@@ -129,6 +144,8 @@ public final class AuthorizationPropertiesFormat implements JsonSerializable<Aut
                 } else if ("authorizationUseStatus".equals(fieldName)) {
                     deserializedAuthorizationPropertiesFormat.authorizationUseStatus
                         = AuthorizationUseStatus.fromString(reader.getString());
+                } else if ("connectionResourceUri".equals(fieldName)) {
+                    deserializedAuthorizationPropertiesFormat.connectionResourceUri = reader.getString();
                 } else if ("provisioningState".equals(fieldName)) {
                     deserializedAuthorizationPropertiesFormat.provisioningState
                         = ProvisioningState.fromString(reader.getString());

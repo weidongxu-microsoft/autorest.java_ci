@@ -50,5 +50,5 @@ public interface StorageTaskAssignmentInstancesReports {
      * @return fetch Storage Tasks Run Summary as paginated response with {@link PagedIterable}.
      */
     PagedIterable<StorageTaskReportInstance> list(String resourceGroupName, String accountName,
-        String storageTaskAssignmentName, String maxpagesize, String filter, Context context);
+        String storageTaskAssignmentName, Integer maxpagesize, String filter, Context context);
 }

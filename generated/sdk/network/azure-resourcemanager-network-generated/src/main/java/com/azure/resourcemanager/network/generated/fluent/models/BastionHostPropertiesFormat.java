@@ -81,6 +81,11 @@ public final class BastionHostPropertiesFormat implements JsonSerializable<Basti
      */
     private Boolean enableKerberos;
 
+    /*
+     * Enable/Disable Session Recording feature of the Bastion Host resource.
+     */
+    private Boolean enableSessionRecording;
+
     /**
      * Creates an instance of BastionHostPropertiesFormat class.
      */
@@ -319,6 +324,26 @@ public final class BastionHostPropertiesFormat implements JsonSerializable<Basti
     }
 
     /**
+     * Get the enableSessionRecording property: Enable/Disable Session Recording feature of the Bastion Host resource.
+     * 
+     * @return the enableSessionRecording value.
+     */
+    public Boolean enableSessionRecording() {
+        return this.enableSessionRecording;
+    }
+
+    /**
+     * Set the enableSessionRecording property: Enable/Disable Session Recording feature of the Bastion Host resource.
+     * 
+     * @param enableSessionRecording the enableSessionRecording value to set.
+     * @return the BastionHostPropertiesFormat object itself.
+     */
+    public BastionHostPropertiesFormat withEnableSessionRecording(Boolean enableSessionRecording) {
+        this.enableSessionRecording = enableSessionRecording;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
@@ -350,6 +375,7 @@ public final class BastionHostPropertiesFormat implements JsonSerializable<Basti
         jsonWriter.writeBooleanField("enableShareableLink", this.enableShareableLink);
         jsonWriter.writeBooleanField("enableTunneling", this.enableTunneling);
         jsonWriter.writeBooleanField("enableKerberos", this.enableKerberos);
+        jsonWriter.writeBooleanField("enableSessionRecording", this.enableSessionRecording);
         return jsonWriter.writeEndObject();
     }
 
@@ -400,6 +426,9 @@ public final class BastionHostPropertiesFormat implements JsonSerializable<Basti
                         = reader.getNullable(JsonReader::getBoolean);
                 } else if ("enableKerberos".equals(fieldName)) {
                     deserializedBastionHostPropertiesFormat.enableKerberos = reader.getNullable(JsonReader::getBoolean);
+                } else if ("enableSessionRecording".equals(fieldName)) {
+                    deserializedBastionHostPropertiesFormat.enableSessionRecording
+                        = reader.getNullable(JsonReader::getBoolean);
                 } else {
                     reader.skipChildren();
                 }

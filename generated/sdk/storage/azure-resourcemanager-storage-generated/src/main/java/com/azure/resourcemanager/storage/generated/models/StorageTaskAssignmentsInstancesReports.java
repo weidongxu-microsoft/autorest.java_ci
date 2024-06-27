@@ -42,6 +42,6 @@ public interface StorageTaskAssignmentsInstancesReports {
      * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
      * @return fetch Storage Tasks Run Summary as paginated response with {@link PagedIterable}.
      */
-    PagedIterable<StorageTaskReportInstance> list(String resourceGroupName, String accountName, String maxpagesize,
+    PagedIterable<StorageTaskReportInstance> list(String resourceGroupName, String accountName, Integer maxpagesize,
         String filter, Context context);
 }

@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.management.SubResource;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonSerializable;
 import com.azure.json.JsonToken;
@@ -21,6 +22,11 @@ public final class ServiceEndpointPropertiesFormat implements JsonSerializable<S
      * The type of the endpoint service.
      */
     private String service;
+
+    /*
+     * SubResource as network identifier.
+     */
+    private SubResource networkIdentifier;
 
     /*
      * A list of locations.
@@ -55,6 +61,26 @@ public final class ServiceEndpointPropertiesFormat implements JsonSerializable<S
      */
     public ServiceEndpointPropertiesFormat withService(String service) {
         this.service = service;
+        return this;
+    }
+
+    /**
+     * Get the networkIdentifier property: SubResource as network identifier.
+     * 
+     * @return the networkIdentifier value.
+     */
+    public SubResource networkIdentifier() {
+        return this.networkIdentifier;
+    }
+
+    /**
+     * Set the networkIdentifier property: SubResource as network identifier.
+     * 
+     * @param networkIdentifier the networkIdentifier value to set.
+     * @return the ServiceEndpointPropertiesFormat object itself.
+     */
+    public ServiceEndpointPropertiesFormat withNetworkIdentifier(SubResource networkIdentifier) {
+        this.networkIdentifier = networkIdentifier;
         return this;
     }
 
@@ -102,6 +128,7 @@ public final class ServiceEndpointPropertiesFormat implements JsonSerializable<S
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
         jsonWriter.writeStringField("service", this.service);
+        jsonWriter.writeJsonField("networkIdentifier", this.networkIdentifier);
         jsonWriter.writeArrayField("locations", this.locations, (writer, element) -> writer.writeString(element));
         return jsonWriter.writeEndObject();
     }
@@ -124,6 +151,8 @@ public final class ServiceEndpointPropertiesFormat implements JsonSerializable<S
 
                 if ("service".equals(fieldName)) {
                     deserializedServiceEndpointPropertiesFormat.service = reader.getString();
+                } else if ("networkIdentifier".equals(fieldName)) {
+                    deserializedServiceEndpointPropertiesFormat.networkIdentifier = SubResource.fromJson(reader);
                 } else if ("locations".equals(fieldName)) {
                     List<String> locations = reader.readArray(reader1 -> reader1.getString());
                     deserializedServiceEndpointPropertiesFormat.locations = locations;

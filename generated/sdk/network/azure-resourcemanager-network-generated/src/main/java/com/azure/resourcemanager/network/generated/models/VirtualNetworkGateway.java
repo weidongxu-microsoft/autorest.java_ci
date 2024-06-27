@@ -61,6 +61,13 @@ public interface VirtualNetworkGateway {
     String etag();
 
     /**
+     * Gets the identity property: The identity of the virtual network gateway, if configured.
+     * 
+     * @return the identity value.
+     */
+    ManagedServiceIdentity identity();
+
+    /**
      * Gets the id property: Resource ID.
      * 
      * @return the id value.
@@ -337,7 +344,8 @@ public interface VirtualNetworkGateway {
          * The stage of the VirtualNetworkGateway definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation,
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithExtendedLocation, DefinitionStages.WithIdentity,
             DefinitionStages.WithAutoScaleConfiguration, DefinitionStages.WithIpConfigurations,
             DefinitionStages.WithGatewayType, DefinitionStages.WithVpnType, DefinitionStages.WithVpnGatewayGeneration,
             DefinitionStages.WithEnableBgp, DefinitionStages.WithEnablePrivateIpAddress, DefinitionStages.WithActive,
@@ -388,6 +396,19 @@ public interface VirtualNetworkGateway {
              * @return the next definition stage.
              */
             WithCreate withExtendedLocation(ExtendedLocation extendedLocation);
+        }
+
+        /**
+         * The stage of the VirtualNetworkGateway definition allowing to specify identity.
+         */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: The identity of the virtual network gateway, if configured..
+             * 
+             * @param identity The identity of the virtual network gateway, if configured.
+             * @return the next definition stage.
+             */
+            WithCreate withIdentity(ManagedServiceIdentity identity);
         }
 
         /**

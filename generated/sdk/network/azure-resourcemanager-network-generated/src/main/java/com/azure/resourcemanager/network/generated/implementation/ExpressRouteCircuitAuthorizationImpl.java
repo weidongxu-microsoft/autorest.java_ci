@@ -40,6 +40,10 @@ public final class ExpressRouteCircuitAuthorizationImpl implements ExpressRouteC
         return this.innerModel().authorizationUseStatus();
     }
 
+    public String connectionResourceUri() {
+        return this.innerModel().connectionResourceUri();
+    }
+
     public ProvisioningState provisioningState() {
         return this.innerModel().provisioningState();
     }

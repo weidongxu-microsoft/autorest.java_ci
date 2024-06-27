@@ -75,6 +75,14 @@ public interface Probe {
     Integer intervalInSeconds();
 
     /**
+     * Gets the noHealthyBackendsBehavior property: Determines how new connections are handled by the load balancer when
+     * all backend instances are probed down.
+     * 
+     * @return the noHealthyBackendsBehavior value.
+     */
+    ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior();
+
+    /**
      * Gets the numberOfProbes property: The number of probes where if no response, will result in stopping further
      * traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or
      * slower than the typical times used in Azure.

@@ -324,6 +324,6 @@ public interface StorageTaskAssignmentsClient {
      * {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<StorageTaskAssignmentInner> list(String resourceGroupName, String accountName, String maxpagesize,
+    PagedIterable<StorageTaskAssignmentInner> list(String resourceGroupName, String accountName, Integer maxpagesize,
         Context context);
 }

@@ -12,7 +12,7 @@ import com.azure.json.JsonWriter;
 import java.io.IOException;
 
 /**
- * Server Gtid set parameters: Replication with Global Transaction Identifiers.
+ * Server Gtid set parameters.
  */
 @Fluent
 public final class ServerGtidSetParameter implements JsonSerializable<ServerGtidSetParameter> {

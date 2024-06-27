@@ -156,11 +156,11 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.get(this.client.getEndpoint(), resourceGroupName, serverName,
-                advancedThreatProtectionName, this.client.getSubscriptionId(), apiVersion, accept, context))
+                advancedThreatProtectionName, this.client.getSubscriptionId(), this.client.getApiVersion(), accept,
+                context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -199,11 +199,10 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.get(this.client.getEndpoint(), resourceGroupName, serverName, advancedThreatProtectionName,
-            this.client.getSubscriptionId(), apiVersion, accept, context);
+            this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context);
     }
 
     /**
@@ -299,11 +298,11 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.update(this.client.getEndpoint(), resourceGroupName, serverName,
-                advancedThreatProtectionName, this.client.getSubscriptionId(), apiVersion, parameters, accept, context))
+                advancedThreatProtectionName, this.client.getSubscriptionId(), this.client.getApiVersion(), parameters,
+                accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -349,11 +348,10 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.update(this.client.getEndpoint(), resourceGroupName, serverName, advancedThreatProtectionName,
-            this.client.getSubscriptionId(), apiVersion, parameters, accept, context);
+            this.client.getSubscriptionId(), this.client.getApiVersion(), parameters, accept, context);
     }
 
     /**
@@ -563,11 +561,11 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.updatePut(this.client.getEndpoint(), resourceGroupName, serverName,
-                advancedThreatProtectionName, this.client.getSubscriptionId(), apiVersion, parameters, accept, context))
+                advancedThreatProtectionName, this.client.getSubscriptionId(), this.client.getApiVersion(), parameters,
+                accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -613,11 +611,10 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
         } else {
             parameters.validate();
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service.updatePut(this.client.getEndpoint(), resourceGroupName, serverName, advancedThreatProtectionName,
-            this.client.getSubscriptionId(), apiVersion, parameters, accept, context);
+            this.client.getSubscriptionId(), this.client.getApiVersion(), parameters, accept, context);
     }
 
     /**
@@ -818,11 +815,10 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         return FluxUtil
             .withContext(context -> service.list(this.client.getEndpoint(), resourceGroupName, serverName,
-                this.client.getSubscriptionId(), apiVersion, accept, context))
+                this.client.getSubscriptionId(), this.client.getApiVersion(), accept, context))
             .<PagedResponse<AdvancedThreatProtectionInner>>map(res -> new PagedResponseBase<>(res.getRequest(),
                 res.getStatusCode(), res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -858,12 +854,11 @@ public final class AdvancedThreatProtectionSettingsClientImpl implements Advance
             return Mono.error(new IllegalArgumentException(
                 "Parameter this.client.getSubscriptionId() is required and cannot be null."));
         }
-        final String apiVersion = "2024-02-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), resourceGroupName, serverName, this.client.getSubscriptionId(), apiVersion,
-                accept, context)
+            .list(this.client.getEndpoint(), resourceGroupName, serverName, this.client.getSubscriptionId(),
+                this.client.getApiVersion(), accept, context)
             .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
                 res.getValue().value(), res.getValue().nextLink(), null));
     }

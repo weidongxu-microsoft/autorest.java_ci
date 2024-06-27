@@ -129,6 +129,22 @@ public final class InboundSecurityRuleImpl
         this.ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(innerObject.id(), "inboundSecurityRules");
     }
 
+    public InboundSecurityRule refresh() {
+        this.innerObject = serviceManager.serviceClient()
+            .getInboundSecurityRuleOperations()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, Context.NONE)
+            .getValue();
+        return this;
+    }
+
+    public InboundSecurityRule refresh(Context context) {
+        this.innerObject = serviceManager.serviceClient()
+            .getInboundSecurityRuleOperations()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, context)
+            .getValue();
+        return this;
+    }
+
     public InboundSecurityRuleImpl withName(String name) {
         this.innerModel().withName(name);
         return this;

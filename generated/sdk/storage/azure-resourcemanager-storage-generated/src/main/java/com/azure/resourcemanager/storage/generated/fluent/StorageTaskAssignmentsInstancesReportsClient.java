@@ -48,6 +48,6 @@ public interface StorageTaskAssignmentsInstancesReportsClient {
      * @return fetch Storage Tasks Run Summary as paginated response with {@link PagedIterable}.
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
-    PagedIterable<StorageTaskReportInstanceInner> list(String resourceGroupName, String accountName, String maxpagesize,
-        String filter, Context context);
+    PagedIterable<StorageTaskReportInstanceInner> list(String resourceGroupName, String accountName,
+        Integer maxpagesize, String filter, Context context);
 }

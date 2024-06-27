@@ -11,6 +11,7 @@ import com.azure.json.JsonReader;
 import com.azure.json.JsonSerializable;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
+import com.azure.resourcemanager.network.generated.models.ProbeNoHealthyBackendsBehavior;
 import com.azure.resourcemanager.network.generated.models.ProbeProtocol;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import java.io.IOException;
@@ -44,6 +45,11 @@ public final class ProbePropertiesFormat implements JsonSerializable<ProbeProper
      * instance out of rotation. The default value is 15, the minimum value is 5.
      */
     private Integer intervalInSeconds;
+
+    /*
+     * Determines how new connections are handled by the load balancer when all backend instances are probed down.
+     */
+    private ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior;
 
     /*
      * The number of probes where if no response, will result in stopping further traffic from being delivered to the
@@ -154,6 +160,29 @@ public final class ProbePropertiesFormat implements JsonSerializable<ProbeProper
     }
 
     /**
+     * Get the noHealthyBackendsBehavior property: Determines how new connections are handled by the load balancer when
+     * all backend instances are probed down.
+     * 
+     * @return the noHealthyBackendsBehavior value.
+     */
+    public ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior() {
+        return this.noHealthyBackendsBehavior;
+    }
+
+    /**
+     * Set the noHealthyBackendsBehavior property: Determines how new connections are handled by the load balancer when
+     * all backend instances are probed down.
+     * 
+     * @param noHealthyBackendsBehavior the noHealthyBackendsBehavior value to set.
+     * @return the ProbePropertiesFormat object itself.
+     */
+    public ProbePropertiesFormat
+        withNoHealthyBackendsBehavior(ProbeNoHealthyBackendsBehavior noHealthyBackendsBehavior) {
+        this.noHealthyBackendsBehavior = noHealthyBackendsBehavior;
+        return this;
+    }
+
+    /**
      * Get the numberOfProbes property: The number of probes where if no response, will result in stopping further
      * traffic from being delivered to the endpoint. This values allows endpoints to be taken out of rotation faster or
      * slower than the typical times used in Azure.
@@ -257,6 +286,8 @@ public final class ProbePropertiesFormat implements JsonSerializable<ProbeProper
         jsonWriter.writeStringField("protocol", this.protocol == null ? null : this.protocol.toString());
         jsonWriter.writeIntField("port", this.port);
         jsonWriter.writeNumberField("intervalInSeconds", this.intervalInSeconds);
+        jsonWriter.writeStringField("NoHealthyBackendsBehavior",
+            this.noHealthyBackendsBehavior == null ? null : this.noHealthyBackendsBehavior.toString());
         jsonWriter.writeNumberField("numberOfProbes", this.numberOfProbes);
         jsonWriter.writeNumberField("probeThreshold", this.probeThreshold);
         jsonWriter.writeStringField("requestPath", this.requestPath);
@@ -288,6 +319,9 @@ public final class ProbePropertiesFormat implements JsonSerializable<ProbeProper
                     deserializedProbePropertiesFormat.loadBalancingRules = loadBalancingRules;
                 } else if ("intervalInSeconds".equals(fieldName)) {
                     deserializedProbePropertiesFormat.intervalInSeconds = reader.getNullable(JsonReader::getInt);
+                } else if ("NoHealthyBackendsBehavior".equals(fieldName)) {
+                    deserializedProbePropertiesFormat.noHealthyBackendsBehavior
+                        = ProbeNoHealthyBackendsBehavior.fromString(reader.getString());
                 } else if ("numberOfProbes".equals(fieldName)) {
                     deserializedProbePropertiesFormat.numberOfProbes = reader.getNullable(JsonReader::getInt);
                 } else if ("probeThreshold".equals(fieldName)) {

@@ -56,5 +56,5 @@ public interface StorageTaskAssignmentInstancesReportsClient {
      */
     @ServiceMethod(returns = ReturnType.COLLECTION)
     PagedIterable<StorageTaskReportInstanceInner> list(String resourceGroupName, String accountName,
-        String storageTaskAssignmentName, String maxpagesize, String filter, Context context);
+        String storageTaskAssignmentName, Integer maxpagesize, String filter, Context context);
 }

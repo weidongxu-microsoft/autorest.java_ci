@@ -39,8 +39,8 @@ public final class ExpressRouteCrossConnectionsImpl implements ExpressRouteCross
             inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }
 
-    public PagedIterable<ExpressRouteCrossConnection> list(Context context) {
-        PagedIterable<ExpressRouteCrossConnectionInner> inner = this.serviceClient().list(context);
+    public PagedIterable<ExpressRouteCrossConnection> list(String filter, Context context) {
+        PagedIterable<ExpressRouteCrossConnectionInner> inner = this.serviceClient().list(filter, context);
         return ResourceManagerUtils.mapPage(inner,
             inner1 -> new ExpressRouteCrossConnectionImpl(inner1, this.manager()));
     }

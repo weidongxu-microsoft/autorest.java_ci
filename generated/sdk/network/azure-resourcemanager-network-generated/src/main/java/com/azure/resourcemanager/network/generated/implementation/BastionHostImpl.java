@@ -118,6 +118,10 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
         return this.innerModel().enableKerberos();
     }
 
+    public Boolean enableSessionRecording() {
+        return this.innerModel().enableSessionRecording();
+    }
+
     public Region region() {
         return Region.fromName(this.regionName());
     }
@@ -294,6 +298,11 @@ public final class BastionHostImpl implements BastionHost, BastionHost.Definitio
 
     public BastionHostImpl withEnableKerberos(Boolean enableKerberos) {
         this.innerModel().withEnableKerberos(enableKerberos);
+        return this;
+    }
+
+    public BastionHostImpl withEnableSessionRecording(Boolean enableSessionRecording) {
+        this.innerModel().withEnableSessionRecording(enableSessionRecording);
         return this;
     }
 

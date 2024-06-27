@@ -11,6 +11,7 @@ import com.azure.json.JsonSerializable;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.models.FlowLogFormatParameters;
+import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.RetentionPolicyParameters;
 import com.azure.resourcemanager.network.generated.models.TrafficAnalyticsProperties;
 import java.io.IOException;
@@ -34,6 +35,11 @@ public final class FlowLogInformationInner implements JsonSerializable<FlowLogIn
      * Parameters that define the configuration of traffic analytics.
      */
     private TrafficAnalyticsProperties flowAnalyticsConfiguration;
+
+    /*
+     * FlowLog resource Managed Identity
+     */
+    private ManagedServiceIdentity identity;
 
     /**
      * Creates an instance of FlowLogInformationInner class.
@@ -90,6 +96,26 @@ public final class FlowLogInformationInner implements JsonSerializable<FlowLogIn
     public FlowLogInformationInner
         withFlowAnalyticsConfiguration(TrafficAnalyticsProperties flowAnalyticsConfiguration) {
         this.flowAnalyticsConfiguration = flowAnalyticsConfiguration;
+        return this;
+    }
+
+    /**
+     * Get the identity property: FlowLog resource Managed Identity.
+     * 
+     * @return the identity value.
+     */
+    public ManagedServiceIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: FlowLog resource Managed Identity.
+     * 
+     * @param identity the identity value to set.
+     * @return the FlowLogInformationInner object itself.
+     */
+    public FlowLogInformationInner withIdentity(ManagedServiceIdentity identity) {
+        this.identity = identity;
         return this;
     }
 
@@ -206,6 +232,9 @@ public final class FlowLogInformationInner implements JsonSerializable<FlowLogIn
         if (flowAnalyticsConfiguration() != null) {
             flowAnalyticsConfiguration().validate();
         }
+        if (identity() != null) {
+            identity().validate();
+        }
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(FlowLogInformationInner.class);
@@ -219,6 +248,7 @@ public final class FlowLogInformationInner implements JsonSerializable<FlowLogIn
         jsonWriter.writeStringField("targetResourceId", this.targetResourceId);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         jsonWriter.writeJsonField("flowAnalyticsConfiguration", this.flowAnalyticsConfiguration);
+        jsonWriter.writeJsonField("identity", this.identity);
         return jsonWriter.writeEndObject();
     }
 
@@ -245,6 +275,8 @@ public final class FlowLogInformationInner implements JsonSerializable<FlowLogIn
                 } else if ("flowAnalyticsConfiguration".equals(fieldName)) {
                     deserializedFlowLogInformationInner.flowAnalyticsConfiguration
                         = TrafficAnalyticsProperties.fromJson(reader);
+                } else if ("identity".equals(fieldName)) {
+                    deserializedFlowLogInformationInner.identity = ManagedServiceIdentity.fromJson(reader);
                 } else {
                     reader.skipChildren();
                 }

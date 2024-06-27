@@ -141,11 +141,10 @@ public final class MaintenancesClientImpl implements MaintenancesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter maintenanceName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.read(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                resourceGroupName, serverName, maintenanceName, accept, context))
+            .withContext(context -> service.read(this.client.getEndpoint(), this.client.getApiVersion(),
+                this.client.getSubscriptionId(), resourceGroupName, serverName, maintenanceName, accept, context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -183,11 +182,10 @@ public final class MaintenancesClientImpl implements MaintenancesClient {
             return Mono
                 .error(new IllegalArgumentException("Parameter maintenanceName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.read(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, maintenanceName, accept, context);
+        return service.read(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, maintenanceName, accept, context);
     }
 
     /**
@@ -278,12 +276,11 @@ public final class MaintenancesClientImpl implements MaintenancesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(
-                context -> service.update(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                    resourceGroupName, serverName, maintenanceName, parameters, accept, context))
+            .withContext(context -> service.update(this.client.getEndpoint(), this.client.getApiVersion(),
+                this.client.getSubscriptionId(), resourceGroupName, serverName, maintenanceName, parameters, accept,
+                context))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
     }
 
@@ -325,11 +322,10 @@ public final class MaintenancesClientImpl implements MaintenancesClient {
         if (parameters != null) {
             parameters.validate();
         }
-        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
-        return service.update(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName,
-            serverName, maintenanceName, parameters, accept, context);
+        return service.update(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+            resourceGroupName, serverName, maintenanceName, parameters, accept, context);
     }
 
     /**
@@ -555,11 +551,10 @@ public final class MaintenancesClientImpl implements MaintenancesClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         return FluxUtil
-            .withContext(context -> service.list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(),
-                resourceGroupName, serverName, accept, context))
+            .withContext(context -> service.list(this.client.getEndpoint(), this.client.getApiVersion(),
+                this.client.getSubscriptionId(), resourceGroupName, serverName, accept, context))
             .<PagedResponse<MaintenanceInner>>map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(),
                 res.getHeaders(), res.getValue().value(), res.getValue().nextLink(), null))
             .contextWrite(context -> context.putAll(FluxUtil.toReactorContext(this.client.getContext()).readOnly()));
@@ -594,12 +589,11 @@ public final class MaintenancesClientImpl implements MaintenancesClient {
         if (serverName == null) {
             return Mono.error(new IllegalArgumentException("Parameter serverName is required and cannot be null."));
         }
-        final String apiVersion = "2023-10-01-preview";
         final String accept = "application/json";
         context = this.client.mergeContext(context);
         return service
-            .list(this.client.getEndpoint(), apiVersion, this.client.getSubscriptionId(), resourceGroupName, serverName,
-                accept, context)
+            .list(this.client.getEndpoint(), this.client.getApiVersion(), this.client.getSubscriptionId(),
+                resourceGroupName, serverName, accept, context)
             .map(res -> new PagedResponseBase<>(res.getRequest(), res.getStatusCode(), res.getHeaders(),
                 res.getValue().value(), res.getValue().nextLink(), null));
     }

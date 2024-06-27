@@ -4,8 +4,13 @@
 
 package com.azure.resourcemanager.network.generated.implementation;
 
+import com.azure.core.http.rest.Response;
+import com.azure.core.http.rest.SimpleResponse;
+import com.azure.core.util.Context;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.resourcemanager.network.generated.fluent.InboundSecurityRuleOperationsClient;
+import com.azure.resourcemanager.network.generated.fluent.models.InboundSecurityRuleInner;
+import com.azure.resourcemanager.network.generated.models.InboundSecurityRule;
 import com.azure.resourcemanager.network.generated.models.InboundSecurityRuleOperations;
 
 public final class InboundSecurityRuleOperationsImpl implements InboundSecurityRuleOperations {
@@ -19,6 +24,68 @@ public final class InboundSecurityRuleOperationsImpl implements InboundSecurityR
         com.azure.resourcemanager.network.generated.NetworkManager serviceManager) {
         this.innerClient = innerClient;
         this.serviceManager = serviceManager;
+    }
+
+    public Response<InboundSecurityRule> getWithResponse(String resourceGroupName, String networkVirtualApplianceName,
+        String ruleCollectionName, Context context) {
+        Response<InboundSecurityRuleInner> inner = this.serviceClient()
+            .getWithResponse(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new InboundSecurityRuleImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public InboundSecurityRule get(String resourceGroupName, String networkVirtualApplianceName,
+        String ruleCollectionName) {
+        InboundSecurityRuleInner inner
+            = this.serviceClient().get(resourceGroupName, networkVirtualApplianceName, ruleCollectionName);
+        if (inner != null) {
+            return new InboundSecurityRuleImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public InboundSecurityRule getById(String id) {
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkVirtualApplianceName = ResourceManagerUtils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.", id)));
+        }
+        String ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "inboundSecurityRules");
+        if (ruleCollectionName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'inboundSecurityRules'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, Context.NONE)
+            .getValue();
+    }
+
+    public Response<InboundSecurityRule> getByIdWithResponse(String id, Context context) {
+        String resourceGroupName = ResourceManagerUtils.getValueFromIdByName(id, "resourceGroups");
+        if (resourceGroupName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'resourceGroups'.", id)));
+        }
+        String networkVirtualApplianceName = ResourceManagerUtils.getValueFromIdByName(id, "networkVirtualAppliances");
+        if (networkVirtualApplianceName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(String
+                .format("The resource ID '%s' is not valid. Missing path segment 'networkVirtualAppliances'.", id)));
+        }
+        String ruleCollectionName = ResourceManagerUtils.getValueFromIdByName(id, "inboundSecurityRules");
+        if (ruleCollectionName == null) {
+            throw LOGGER.logExceptionAsError(new IllegalArgumentException(
+                String.format("The resource ID '%s' is not valid. Missing path segment 'inboundSecurityRules'.", id)));
+        }
+        return this.getWithResponse(resourceGroupName, networkVirtualApplianceName, ruleCollectionName, context);
     }
 
     private InboundSecurityRuleOperationsClient serviceClient() {

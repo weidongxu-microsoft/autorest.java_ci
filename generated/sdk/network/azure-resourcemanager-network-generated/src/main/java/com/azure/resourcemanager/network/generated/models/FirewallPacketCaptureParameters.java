@@ -5,23 +5,52 @@
 package com.azure.resourcemanager.network.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.management.SubResource;
 import com.azure.json.JsonReader;
+import com.azure.json.JsonSerializable;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
-import com.azure.resourcemanager.network.generated.fluent.models.FirewallPacketCaptureParametersFormat;
 import java.io.IOException;
 import java.util.List;
 
 /**
- * Azure Firewall Packet Capture Parameters resource.
+ * Azure Firewall Packet Capture Parameters.
  */
 @Fluent
-public final class FirewallPacketCaptureParameters extends SubResource {
+public final class FirewallPacketCaptureParameters implements JsonSerializable<FirewallPacketCaptureParameters> {
     /*
-     * Properties of the azure firewall.
+     * Duration of packet capture in seconds.
      */
-    private FirewallPacketCaptureParametersFormat innerProperties;
+    private Integer durationInSeconds;
+
+    /*
+     * Number of packets to be captured.
+     */
+    private Integer numberOfPacketsToCapture;
+
+    /*
+     * Upload capture location
+     */
+    private String sasUrl;
+
+    /*
+     * Name of file to be uploaded to sasURL
+     */
+    private String fileName;
+
+    /*
+     * The protocol of packets to capture
+     */
+    private AzureFirewallNetworkRuleProtocol protocol;
+
+    /*
+     * The tcp-flag type to be captured. Used with protocol TCP
+     */
+    private List<AzureFirewallPacketCaptureFlags> flags;
+
+    /*
+     * Rules to filter packet captures.
+     */
+    private List<AzureFirewallPacketCaptureRule> filters;
 
     /**
      * Creates an instance of FirewallPacketCaptureParameters class.
@@ -30,30 +59,12 @@ public final class FirewallPacketCaptureParameters extends SubResource {
     }
 
     /**
-     * Get the innerProperties property: Properties of the azure firewall.
-     * 
-     * @return the innerProperties value.
-     */
-    private FirewallPacketCaptureParametersFormat innerProperties() {
-        return this.innerProperties;
-    }
-
-    /**
-     * {@inheritDoc}
-     */
-    @Override
-    public FirewallPacketCaptureParameters withId(String id) {
-        super.withId(id);
-        return this;
-    }
-
-    /**
      * Get the durationInSeconds property: Duration of packet capture in seconds.
      * 
      * @return the durationInSeconds value.
      */
     public Integer durationInSeconds() {
-        return this.innerProperties() == null ? null : this.innerProperties().durationInSeconds();
+        return this.durationInSeconds;
     }
 
     /**
@@ -63,10 +74,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withDurationInSeconds(Integer durationInSeconds) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withDurationInSeconds(durationInSeconds);
+        this.durationInSeconds = durationInSeconds;
         return this;
     }
 
@@ -76,7 +84,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the numberOfPacketsToCapture value.
      */
     public Integer numberOfPacketsToCapture() {
-        return this.innerProperties() == null ? null : this.innerProperties().numberOfPacketsToCapture();
+        return this.numberOfPacketsToCapture;
     }
 
     /**
@@ -86,10 +94,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withNumberOfPacketsToCapture(Integer numberOfPacketsToCapture) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withNumberOfPacketsToCapture(numberOfPacketsToCapture);
+        this.numberOfPacketsToCapture = numberOfPacketsToCapture;
         return this;
     }
 
@@ -99,7 +104,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the sasUrl value.
      */
     public String sasUrl() {
-        return this.innerProperties() == null ? null : this.innerProperties().sasUrl();
+        return this.sasUrl;
     }
 
     /**
@@ -109,10 +114,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withSasUrl(String sasUrl) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withSasUrl(sasUrl);
+        this.sasUrl = sasUrl;
         return this;
     }
 
@@ -122,7 +124,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the fileName value.
      */
     public String fileName() {
-        return this.innerProperties() == null ? null : this.innerProperties().fileName();
+        return this.fileName;
     }
 
     /**
@@ -132,10 +134,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withFileName(String fileName) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withFileName(fileName);
+        this.fileName = fileName;
         return this;
     }
 
@@ -145,7 +144,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the protocol value.
      */
     public AzureFirewallNetworkRuleProtocol protocol() {
-        return this.innerProperties() == null ? null : this.innerProperties().protocol();
+        return this.protocol;
     }
 
     /**
@@ -155,10 +154,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withProtocol(AzureFirewallNetworkRuleProtocol protocol) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withProtocol(protocol);
+        this.protocol = protocol;
         return this;
     }
 
@@ -168,7 +164,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the flags value.
      */
     public List<AzureFirewallPacketCaptureFlags> flags() {
-        return this.innerProperties() == null ? null : this.innerProperties().flags();
+        return this.flags;
     }
 
     /**
@@ -178,10 +174,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withFlags(List<AzureFirewallPacketCaptureFlags> flags) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withFlags(flags);
+        this.flags = flags;
         return this;
     }
 
@@ -191,7 +184,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the filters value.
      */
     public List<AzureFirewallPacketCaptureRule> filters() {
-        return this.innerProperties() == null ? null : this.innerProperties().filters();
+        return this.filters;
     }
 
     /**
@@ -201,10 +194,7 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @return the FirewallPacketCaptureParameters object itself.
      */
     public FirewallPacketCaptureParameters withFilters(List<AzureFirewallPacketCaptureRule> filters) {
-        if (this.innerProperties() == null) {
-            this.innerProperties = new FirewallPacketCaptureParametersFormat();
-        }
-        this.innerProperties().withFilters(filters);
+        this.filters = filters;
         return this;
     }
 
@@ -214,8 +204,11 @@ public final class FirewallPacketCaptureParameters extends SubResource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
-        if (innerProperties() != null) {
-            innerProperties().validate();
+        if (flags() != null) {
+            flags().forEach(e -> e.validate());
+        }
+        if (filters() != null) {
+            filters().forEach(e -> e.validate());
         }
     }
 
@@ -225,8 +218,13 @@ public final class FirewallPacketCaptureParameters extends SubResource {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("id", id());
-        jsonWriter.writeJsonField("properties", this.innerProperties);
+        jsonWriter.writeNumberField("durationInSeconds", this.durationInSeconds);
+        jsonWriter.writeNumberField("numberOfPacketsToCapture", this.numberOfPacketsToCapture);
+        jsonWriter.writeStringField("sasUrl", this.sasUrl);
+        jsonWriter.writeStringField("fileName", this.fileName);
+        jsonWriter.writeStringField("protocol", this.protocol == null ? null : this.protocol.toString());
+        jsonWriter.writeArrayField("flags", this.flags, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("filters", this.filters, (writer, element) -> writer.writeJson(element));
         return jsonWriter.writeEndObject();
     }
 
@@ -246,11 +244,27 @@ public final class FirewallPacketCaptureParameters extends SubResource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedFirewallPacketCaptureParameters.withId(reader.getString());
-                } else if ("properties".equals(fieldName)) {
-                    deserializedFirewallPacketCaptureParameters.innerProperties
-                        = FirewallPacketCaptureParametersFormat.fromJson(reader);
+                if ("durationInSeconds".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParameters.durationInSeconds
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("numberOfPacketsToCapture".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParameters.numberOfPacketsToCapture
+                        = reader.getNullable(JsonReader::getInt);
+                } else if ("sasUrl".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParameters.sasUrl = reader.getString();
+                } else if ("fileName".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParameters.fileName = reader.getString();
+                } else if ("protocol".equals(fieldName)) {
+                    deserializedFirewallPacketCaptureParameters.protocol
+                        = AzureFirewallNetworkRuleProtocol.fromString(reader.getString());
+                } else if ("flags".equals(fieldName)) {
+                    List<AzureFirewallPacketCaptureFlags> flags
+                        = reader.readArray(reader1 -> AzureFirewallPacketCaptureFlags.fromJson(reader1));
+                    deserializedFirewallPacketCaptureParameters.flags = flags;
+                } else if ("filters".equals(fieldName)) {
+                    List<AzureFirewallPacketCaptureRule> filters
+                        = reader.readArray(reader1 -> AzureFirewallPacketCaptureRule.fromJson(reader1));
+                    deserializedFirewallPacketCaptureParameters.filters = filters;
                 } else {
                     reader.skipChildren();
                 }

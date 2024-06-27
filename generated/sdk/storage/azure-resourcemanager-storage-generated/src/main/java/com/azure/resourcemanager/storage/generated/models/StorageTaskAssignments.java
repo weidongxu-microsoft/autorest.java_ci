@@ -106,7 +106,7 @@ public interface StorageTaskAssignments {
      * @return list of storage task assignments for the storage account as paginated response with
      * {@link PagedIterable}.
      */
-    PagedIterable<StorageTaskAssignment> list(String resourceGroupName, String accountName, String maxpagesize,
+    PagedIterable<StorageTaskAssignment> list(String resourceGroupName, String accountName, Integer maxpagesize,
         Context context);
 
     /**

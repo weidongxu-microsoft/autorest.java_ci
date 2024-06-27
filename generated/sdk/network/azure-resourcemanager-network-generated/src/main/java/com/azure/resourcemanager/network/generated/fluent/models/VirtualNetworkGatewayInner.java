@@ -15,6 +15,7 @@ import com.azure.resourcemanager.network.generated.models.AddressSpace;
 import com.azure.resourcemanager.network.generated.models.AdminState;
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
+import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayAutoScaleConfiguration;
 import com.azure.resourcemanager.network.generated.models.VirtualNetworkGatewayIpConfiguration;
@@ -47,6 +48,11 @@ public final class VirtualNetworkGatewayInner extends Resource {
      * A unique read-only string that changes whenever the resource is updated.
      */
     private String etag;
+
+    /*
+     * The identity of the virtual network gateway, if configured.
+     */
+    private ManagedServiceIdentity identity;
 
     /*
      * Resource ID.
@@ -105,6 +111,26 @@ public final class VirtualNetworkGatewayInner extends Resource {
      */
     public String etag() {
         return this.etag;
+    }
+
+    /**
+     * Get the identity property: The identity of the virtual network gateway, if configured.
+     * 
+     * @return the identity value.
+     */
+    public ManagedServiceIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: The identity of the virtual network gateway, if configured.
+     * 
+     * @param identity the identity value to set.
+     * @return the VirtualNetworkGatewayInner object itself.
+     */
+    public VirtualNetworkGatewayInner withIdentity(ManagedServiceIdentity identity) {
+        this.identity = identity;
+        return this;
     }
 
     /**
@@ -740,6 +766,9 @@ public final class VirtualNetworkGatewayInner extends Resource {
         if (extendedLocation() != null) {
             extendedLocation().validate();
         }
+        if (identity() != null) {
+            identity().validate();
+        }
     }
 
     private static final ClientLogger LOGGER = new ClientLogger(VirtualNetworkGatewayInner.class);
@@ -754,6 +783,7 @@ public final class VirtualNetworkGatewayInner extends Resource {
         jsonWriter.writeMapField("tags", tags(), (writer, element) -> writer.writeString(element));
         jsonWriter.writeJsonField("properties", this.innerProperties);
         jsonWriter.writeJsonField("extendedLocation", this.extendedLocation);
+        jsonWriter.writeJsonField("identity", this.identity);
         jsonWriter.writeStringField("id", this.id);
         return jsonWriter.writeEndObject();
     }
@@ -792,6 +822,8 @@ public final class VirtualNetworkGatewayInner extends Resource {
                     deserializedVirtualNetworkGatewayInner.extendedLocation = ExtendedLocation.fromJson(reader);
                 } else if ("etag".equals(fieldName)) {
                     deserializedVirtualNetworkGatewayInner.etag = reader.getString();
+                } else if ("identity".equals(fieldName)) {
+                    deserializedVirtualNetworkGatewayInner.identity = ManagedServiceIdentity.fromJson(reader);
                 } else if ("id".equals(fieldName)) {
                     deserializedVirtualNetworkGatewayInner.id = reader.getString();
                 } else {

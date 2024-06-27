@@ -17,6 +17,7 @@ import com.azure.resourcemanager.network.generated.models.BgpPeerStatusListResul
 import com.azure.resourcemanager.network.generated.models.BgpSettings;
 import com.azure.resourcemanager.network.generated.models.ExtendedLocation;
 import com.azure.resourcemanager.network.generated.models.GatewayRouteListResult;
+import com.azure.resourcemanager.network.generated.models.ManagedServiceIdentity;
 import com.azure.resourcemanager.network.generated.models.P2SVpnConnectionRequest;
 import com.azure.resourcemanager.network.generated.models.ProvisioningState;
 import com.azure.resourcemanager.network.generated.models.TagsObject;
@@ -73,6 +74,10 @@ public final class VirtualNetworkGatewayImpl
 
     public String etag() {
         return this.innerModel().etag();
+    }
+
+    public ManagedServiceIdentity identity() {
+        return this.innerModel().identity();
     }
 
     public String id() {
@@ -450,6 +455,11 @@ public final class VirtualNetworkGatewayImpl
 
     public VirtualNetworkGatewayImpl withExtendedLocation(ExtendedLocation extendedLocation) {
         this.innerModel().withExtendedLocation(extendedLocation);
+        return this;
+    }
+
+    public VirtualNetworkGatewayImpl withIdentity(ManagedServiceIdentity identity) {
+        this.innerModel().withIdentity(identity);
         return this;
     }
 

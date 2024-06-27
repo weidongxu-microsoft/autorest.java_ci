@@ -157,6 +157,13 @@ public interface BastionHost {
     Boolean enableKerberos();
 
     /**
+     * Gets the enableSessionRecording property: Enable/Disable Session Recording feature of the Bastion Host resource.
+     * 
+     * @return the enableSessionRecording value.
+     */
+    Boolean enableSessionRecording();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -244,7 +251,7 @@ public interface BastionHost {
             DefinitionStages.WithNetworkAcls, DefinitionStages.WithScaleUnits, DefinitionStages.WithDisableCopyPaste,
             DefinitionStages.WithEnableFileCopy, DefinitionStages.WithEnableIpConnect,
             DefinitionStages.WithEnableShareableLink, DefinitionStages.WithEnableTunneling,
-            DefinitionStages.WithEnableKerberos {
+            DefinitionStages.WithEnableKerberos, DefinitionStages.WithEnableSessionRecording {
             /**
              * Executes the create request.
              * 
@@ -443,6 +450,20 @@ public interface BastionHost {
              * @return the next definition stage.
              */
             WithCreate withEnableKerberos(Boolean enableKerberos);
+        }
+
+        /**
+         * The stage of the BastionHost definition allowing to specify enableSessionRecording.
+         */
+        interface WithEnableSessionRecording {
+            /**
+             * Specifies the enableSessionRecording property: Enable/Disable Session Recording feature of the Bastion
+             * Host resource..
+             * 
+             * @param enableSessionRecording Enable/Disable Session Recording feature of the Bastion Host resource.
+             * @return the next definition stage.
+             */
+            WithCreate withEnableSessionRecording(Boolean enableSessionRecording);
         }
     }
 
