@@ -8,6 +8,6 @@ module com.azure.resourcemanager.sqlvirtualmachine.generated {
     exports com.azure.resourcemanager.sqlvirtualmachine.generated.fluent;
     exports com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models;
     exports com.azure.resourcemanager.sqlvirtualmachine.generated.models;
-    opens com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.sqlvirtualmachine.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.sqlvirtualmachine.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.sqlvirtualmachine.generated.models to com.azure.core;
 }

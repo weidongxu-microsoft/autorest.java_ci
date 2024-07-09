@@ -8,6 +8,6 @@ module com.azure.resourcemanager.frontdoor.generated {
     exports com.azure.resourcemanager.frontdoor.generated.fluent;
     exports com.azure.resourcemanager.frontdoor.generated.fluent.models;
     exports com.azure.resourcemanager.frontdoor.generated.models;
-    opens com.azure.resourcemanager.frontdoor.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.frontdoor.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.frontdoor.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.frontdoor.generated.models to com.azure.core;
 }

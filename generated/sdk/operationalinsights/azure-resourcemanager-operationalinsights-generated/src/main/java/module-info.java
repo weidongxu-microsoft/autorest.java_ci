@@ -8,6 +8,6 @@ module com.azure.resourcemanager.operationalinsights.generated {
     exports com.azure.resourcemanager.operationalinsights.generated.fluent;
     exports com.azure.resourcemanager.operationalinsights.generated.fluent.models;
     exports com.azure.resourcemanager.operationalinsights.generated.models;
-    opens com.azure.resourcemanager.operationalinsights.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.operationalinsights.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.operationalinsights.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.operationalinsights.generated.models to com.azure.core;
 }

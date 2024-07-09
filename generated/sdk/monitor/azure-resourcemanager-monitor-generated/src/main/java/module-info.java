@@ -8,6 +8,6 @@ module com.azure.resourcemanager.monitor.generated {
     exports com.azure.resourcemanager.monitor.generated.fluent;
     exports com.azure.resourcemanager.monitor.generated.fluent.models;
     exports com.azure.resourcemanager.monitor.generated.models;
-    opens com.azure.resourcemanager.monitor.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.monitor.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.monitor.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.monitor.generated.models to com.azure.core;
 }

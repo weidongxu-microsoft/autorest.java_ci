@@ -8,6 +8,6 @@ module com.azure.resourcemanager.applicationinsights.generated {
     exports com.azure.resourcemanager.applicationinsights.generated.fluent;
     exports com.azure.resourcemanager.applicationinsights.generated.fluent.models;
     exports com.azure.resourcemanager.applicationinsights.generated.models;
-    opens com.azure.resourcemanager.applicationinsights.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.applicationinsights.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.applicationinsights.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.applicationinsights.generated.models to com.azure.core;
 }

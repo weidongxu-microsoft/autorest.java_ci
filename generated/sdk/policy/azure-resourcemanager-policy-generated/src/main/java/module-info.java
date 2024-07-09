@@ -8,6 +8,6 @@ module com.azure.resourcemanager.policy.generated {
     exports com.azure.resourcemanager.policy.generated.fluent;
     exports com.azure.resourcemanager.policy.generated.fluent.models;
     exports com.azure.resourcemanager.policy.generated.models;
-    opens com.azure.resourcemanager.policy.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.policy.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.policy.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.policy.generated.models to com.azure.core;
 }

@@ -8,6 +8,6 @@ module com.azure.resourcemanager.iothub.generated {
     exports com.azure.resourcemanager.iothub.generated.fluent;
     exports com.azure.resourcemanager.iothub.generated.fluent.models;
     exports com.azure.resourcemanager.iothub.generated.models;
-    opens com.azure.resourcemanager.iothub.generated.fluent.models to com.azure.core, com.fasterxml.jackson.databind;
-    opens com.azure.resourcemanager.iothub.generated.models to com.azure.core, com.fasterxml.jackson.databind;
+    opens com.azure.resourcemanager.iothub.generated.fluent.models to com.azure.core;
+    opens com.azure.resourcemanager.iothub.generated.models to com.azure.core;
 }
