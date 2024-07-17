@@ -158,6 +158,14 @@ public interface DiskRestorePoint {
     DiskSecurityProfile securityProfile();
 
     /**
+     * Gets the logicalSectorSize property: Logical sector size in bytes for disk restore points of UltraSSD_LRS and
+     * PremiumV2_LRS disks. Supported values are 512 and 4096. 4096 is the default.
+     * 
+     * @return the logicalSectorSize value.
+     */
+    Integer logicalSectorSize();
+
+    /**
      * Gets the inner com.azure.resourcemanager.compute.generated.fluent.models.DiskRestorePointInner object.
      * 
      * @return the inner object.

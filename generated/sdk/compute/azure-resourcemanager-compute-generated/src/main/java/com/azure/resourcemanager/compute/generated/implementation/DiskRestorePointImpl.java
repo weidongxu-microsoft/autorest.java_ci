@@ -107,6 +107,10 @@ public final class DiskRestorePointImpl implements DiskRestorePoint {
         return this.innerModel().securityProfile();
     }
 
+    public Integer logicalSectorSize() {
+        return this.innerModel().logicalSectorSize();
+    }
+
     public DiskRestorePointInner innerModel() {
         return this.innerObject;
     }
