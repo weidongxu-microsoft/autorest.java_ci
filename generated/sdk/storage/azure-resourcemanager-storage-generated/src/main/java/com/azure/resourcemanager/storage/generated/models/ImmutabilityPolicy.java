@@ -209,13 +209,13 @@ public interface ImmutabilityPolicy {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A
-             * value of "*" can be used to apply the operation only if the immutability policy already exists. If
-             * omitted, this operation will always be applied..
+             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update must
+             * be returned to the server for all update operations. The ETag value must include the leading and trailing
+             * double quotes as returned by the service..
              * 
-             * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can
-             * be used to apply the operation only if the immutability policy already exists. If omitted, this operation
-             * will always be applied.
+             * @param ifMatch The entity state (ETag) version of the immutability policy to update must be returned to
+             * the server for all update operations. The ETag value must include the leading and trailing double quotes
+             * as returned by the service.
              * @return the next definition stage.
              */
             WithCreate withIfMatch(String ifMatch);
@@ -315,13 +315,13 @@ public interface ImmutabilityPolicy {
          */
         interface WithIfMatch {
             /**
-             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update. A
-             * value of "*" can be used to apply the operation only if the immutability policy already exists. If
-             * omitted, this operation will always be applied..
+             * Specifies the ifMatch property: The entity state (ETag) version of the immutability policy to update must
+             * be returned to the server for all update operations. The ETag value must include the leading and trailing
+             * double quotes as returned by the service..
              * 
-             * @param ifMatch The entity state (ETag) version of the immutability policy to update. A value of "*" can
-             * be used to apply the operation only if the immutability policy already exists. If omitted, this operation
-             * will always be applied.
+             * @param ifMatch The entity state (ETag) version of the immutability policy to update must be returned to
+             * the server for all update operations. The ETag value must include the leading and trailing double quotes
+             * as returned by the service.
              * @return the next definition stage.
              */
             Update withIfMatch(String ifMatch);

@@ -22,16 +22,6 @@ public final class SchemaType extends ExpandableStringEnum<SchemaType> {
     public static final SchemaType AVRO = fromString("Avro");
 
     /**
-     * Static value ProtoBuf for SchemaType.
-     */
-    public static final SchemaType PROTO_BUF = fromString("ProtoBuf");
-
-    /**
-     * Static value Json for SchemaType.
-     */
-    public static final SchemaType JSON = fromString("Json");
-
-    /**
      * Creates a new instance of SchemaType value.
      * 
      * @deprecated Use the {@link #fromString(String)} factory method.

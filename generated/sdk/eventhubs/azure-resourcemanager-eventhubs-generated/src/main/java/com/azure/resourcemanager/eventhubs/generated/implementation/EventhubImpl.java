@@ -11,7 +11,6 @@ import com.azure.resourcemanager.eventhubs.generated.fluent.models.EventhubInner
 import com.azure.resourcemanager.eventhubs.generated.models.CaptureDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.EntityStatus;
 import com.azure.resourcemanager.eventhubs.generated.models.Eventhub;
-import com.azure.resourcemanager.eventhubs.generated.models.MessageTimestampDescription;
 import com.azure.resourcemanager.eventhubs.generated.models.RetentionDescription;
 import java.time.OffsetDateTime;
 import java.util.Collections;
@@ -71,24 +70,16 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this.innerModel().status();
     }
 
+    public String userMetadata() {
+        return this.innerModel().userMetadata();
+    }
+
     public CaptureDescription captureDescription() {
         return this.innerModel().captureDescription();
     }
 
     public RetentionDescription retentionDescription() {
         return this.innerModel().retentionDescription();
-    }
-
-    public MessageTimestampDescription messageTimestampDescription() {
-        return this.innerModel().messageTimestampDescription();
-    }
-
-    public String identifier() {
-        return this.innerModel().identifier();
-    }
-
-    public String userMetadata() {
-        return this.innerModel().userMetadata();
     }
 
     public Region region() {
@@ -205,6 +196,11 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
         return this;
     }
 
+    public EventhubImpl withUserMetadata(String userMetadata) {
+        this.innerModel().withUserMetadata(userMetadata);
+        return this;
+    }
+
     public EventhubImpl withCaptureDescription(CaptureDescription captureDescription) {
         this.innerModel().withCaptureDescription(captureDescription);
         return this;
@@ -212,16 +208,6 @@ public final class EventhubImpl implements Eventhub, Eventhub.Definition, Eventh
 
     public EventhubImpl withRetentionDescription(RetentionDescription retentionDescription) {
         this.innerModel().withRetentionDescription(retentionDescription);
-        return this;
-    }
-
-    public EventhubImpl withMessageTimestampDescription(MessageTimestampDescription messageTimestampDescription) {
-        this.innerModel().withMessageTimestampDescription(messageTimestampDescription);
-        return this;
-    }
-
-    public EventhubImpl withUserMetadata(String userMetadata) {
-        this.innerModel().withUserMetadata(userMetadata);
         return this;
     }
 }
