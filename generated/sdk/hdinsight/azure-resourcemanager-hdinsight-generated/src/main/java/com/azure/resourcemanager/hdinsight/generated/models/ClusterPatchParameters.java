@@ -22,6 +22,11 @@ public final class ClusterPatchParameters implements JsonSerializable<ClusterPat
      */
     private Map<String, String> tags;
 
+    /*
+     * The identity of the cluster, if configured.
+     */
+    private ClusterIdentity identity;
+
     /**
      * Creates an instance of ClusterPatchParameters class.
      */
@@ -49,11 +54,34 @@ public final class ClusterPatchParameters implements JsonSerializable<ClusterPat
     }
 
     /**
+     * Get the identity property: The identity of the cluster, if configured.
+     * 
+     * @return the identity value.
+     */
+    public ClusterIdentity identity() {
+        return this.identity;
+    }
+
+    /**
+     * Set the identity property: The identity of the cluster, if configured.
+     * 
+     * @param identity the identity value to set.
+     * @return the ClusterPatchParameters object itself.
+     */
+    public ClusterPatchParameters withIdentity(ClusterIdentity identity) {
+        this.identity = identity;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (identity() != null) {
+            identity().validate();
+        }
     }
 
     /**
@@ -63,6 +91,7 @@ public final class ClusterPatchParameters implements JsonSerializable<ClusterPat
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
         jsonWriter.writeMapField("tags", this.tags, (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("identity", this.identity);
         return jsonWriter.writeEndObject();
     }
 
@@ -84,6 +113,8 @@ public final class ClusterPatchParameters implements JsonSerializable<ClusterPat
                 if ("tags".equals(fieldName)) {
                     Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());
                     deserializedClusterPatchParameters.tags = tags;
+                } else if ("identity".equals(fieldName)) {
+                    deserializedClusterPatchParameters.identity = ClusterIdentity.fromJson(reader);
                 } else {
                     reader.skipChildren();
                 }

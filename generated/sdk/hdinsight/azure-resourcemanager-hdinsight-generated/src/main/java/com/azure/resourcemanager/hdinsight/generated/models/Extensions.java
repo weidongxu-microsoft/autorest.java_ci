@@ -162,6 +162,81 @@ public interface Extensions {
     void disableAzureMonitor(String resourceGroupName, String clusterName, Context context);
 
     /**
+     * Enables the Azure Monitor Agent on the HDInsight cluster.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param parameters The Log Analytics workspace parameters.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void enableAzureMonitorAgent(String resourceGroupName, String clusterName, AzureMonitorRequest parameters);
+
+    /**
+     * Enables the Azure Monitor Agent on the HDInsight cluster.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param parameters The Log Analytics workspace parameters.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void enableAzureMonitorAgent(String resourceGroupName, String clusterName, AzureMonitorRequest parameters,
+        Context context);
+
+    /**
+     * Gets the status of Azure Monitor Agent on the HDInsight cluster.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of Azure Monitor Agent on the HDInsight cluster along with {@link Response}.
+     */
+    Response<AzureMonitorResponse> getAzureMonitorAgentStatusWithResponse(String resourceGroupName, String clusterName,
+        Context context);
+
+    /**
+     * Gets the status of Azure Monitor Agent on the HDInsight cluster.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of Azure Monitor Agent on the HDInsight cluster.
+     */
+    AzureMonitorResponse getAzureMonitorAgentStatus(String resourceGroupName, String clusterName);
+
+    /**
+     * Disables the Azure Monitor Agent on the HDInsight cluster.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void disableAzureMonitorAgent(String resourceGroupName, String clusterName);
+
+    /**
+     * Disables the Azure Monitor Agent on the HDInsight cluster.
+     * 
+     * @param resourceGroupName The name of the resource group.
+     * @param clusterName The name of the cluster.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     */
+    void disableAzureMonitorAgent(String resourceGroupName, String clusterName, Context context);
+
+    /**
      * Creates an HDInsight cluster extension.
      * 
      * @param resourceGroupName The name of the resource group.

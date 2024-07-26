@@ -12,7 +12,7 @@
   <packaging>jar</packaging>
 
   <name>Microsoft Azure SDK for HDInsight Management</name>
-  <description>This package contains Microsoft Azure SDK for HDInsight Management SDK. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt. HDInsight Management Client. Package tag package-2023-08-preview.</description>
+  <description>This package contains Microsoft Azure SDK for HDInsight Management SDK. For documentation on how to use this package, please see https://aka.ms/azsdk/java/mgmt. HDInsight Management Client. Package tag package-2024-08-preview.</description>
   <url>https://github.com/Azure/azure-sdk-for-java</url>
 
   <licenses>
@@ -50,12 +50,12 @@
     <dependency>
       <groupId>com.azure</groupId>
       <artifactId>azure-core</artifactId>
-      <version>1.49.1</version> <!-- {x-version-update;com.azure:azure-core;dependency} -->
+      <version>1.50.0</version> <!-- {x-version-update;com.azure:azure-core;dependency} -->
     </dependency>
     <dependency>
       <groupId>com.azure</groupId>
       <artifactId>azure-core-management</artifactId>
-      <version>1.15.0</version> <!-- {x-version-update;com.azure:azure-core-management;dependency} -->
+      <version>1.15.1</version> <!-- {x-version-update;com.azure:azure-core-management;dependency} -->
     </dependency>
   </dependencies>
   <build>

@@ -109,6 +109,45 @@ public final class ExtensionsImpl implements Extensions {
         this.serviceClient().disableAzureMonitor(resourceGroupName, clusterName, context);
     }
 
+    public void enableAzureMonitorAgent(String resourceGroupName, String clusterName, AzureMonitorRequest parameters) {
+        this.serviceClient().enableAzureMonitorAgent(resourceGroupName, clusterName, parameters);
+    }
+
+    public void enableAzureMonitorAgent(String resourceGroupName, String clusterName, AzureMonitorRequest parameters,
+        Context context) {
+        this.serviceClient().enableAzureMonitorAgent(resourceGroupName, clusterName, parameters, context);
+    }
+
+    public Response<AzureMonitorResponse> getAzureMonitorAgentStatusWithResponse(String resourceGroupName,
+        String clusterName, Context context) {
+        Response<AzureMonitorResponseInner> inner
+            = this.serviceClient().getAzureMonitorAgentStatusWithResponse(resourceGroupName, clusterName, context);
+        if (inner != null) {
+            return new SimpleResponse<>(inner.getRequest(), inner.getStatusCode(), inner.getHeaders(),
+                new AzureMonitorResponseImpl(inner.getValue(), this.manager()));
+        } else {
+            return null;
+        }
+    }
+
+    public AzureMonitorResponse getAzureMonitorAgentStatus(String resourceGroupName, String clusterName) {
+        AzureMonitorResponseInner inner
+            = this.serviceClient().getAzureMonitorAgentStatus(resourceGroupName, clusterName);
+        if (inner != null) {
+            return new AzureMonitorResponseImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public void disableAzureMonitorAgent(String resourceGroupName, String clusterName) {
+        this.serviceClient().disableAzureMonitorAgent(resourceGroupName, clusterName);
+    }
+
+    public void disableAzureMonitorAgent(String resourceGroupName, String clusterName, Context context) {
+        this.serviceClient().disableAzureMonitorAgent(resourceGroupName, clusterName, context);
+    }
+
     public void create(String resourceGroupName, String clusterName, String extensionName, Extension parameters) {
         this.serviceClient().create(resourceGroupName, clusterName, extensionName, parameters);
     }

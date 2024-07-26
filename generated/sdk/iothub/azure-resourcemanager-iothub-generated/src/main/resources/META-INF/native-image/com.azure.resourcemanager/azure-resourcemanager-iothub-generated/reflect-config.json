@@ -1,11 +1,1 @@
-[ {
-  "name" : "com.azure.resourcemanager.iothub.generated.models.ErrorDetails",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-}, {
-  "name" : "com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException",
-  "allDeclaredConstructors" : true,
-  "allDeclaredFields" : true,
-  "allDeclaredMethods" : true
-} ]
+[{"name":"com.azure.resourcemanager.iothub.generated.models.ErrorDetails","allDeclaredConstructors":true,"allDeclaredFields":true,"allDeclaredMethods":true},{"name":"com.azure.resourcemanager.iothub.generated.models.ErrorDetailsException","allDeclaredConstructors":true,"allDeclaredFields":true,"allDeclaredMethods":true}]

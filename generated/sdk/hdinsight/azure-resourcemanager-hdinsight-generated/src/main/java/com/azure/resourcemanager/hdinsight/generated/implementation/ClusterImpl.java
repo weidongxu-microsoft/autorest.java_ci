@@ -249,8 +249,13 @@ public final class ClusterImpl implements Cluster, Cluster.Definition, Cluster.U
     }
 
     public ClusterImpl withIdentity(ClusterIdentity identity) {
-        this.createParameters.withIdentity(identity);
-        return this;
+        if (isInCreateMode()) {
+            this.createParameters.withIdentity(identity);
+            return this;
+        } else {
+            this.updateParameters.withIdentity(identity);
+            return this;
+        }
     }
 
     private boolean isInCreateMode() {

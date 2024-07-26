@@ -33,6 +33,11 @@ public final class NetworkProperties implements JsonSerializable<NetworkProperti
      */
     private PrivateLink privateLink;
 
+    /*
+     * Gets or sets the IP tag for the public IPs created along with the HDInsight Clusters.
+     */
+    private IpTag publicIpTag;
+
     /**
      * Creates an instance of NetworkProperties class.
      */
@@ -105,11 +110,36 @@ public final class NetworkProperties implements JsonSerializable<NetworkProperti
     }
 
     /**
+     * Get the publicIpTag property: Gets or sets the IP tag for the public IPs created along with the HDInsight
+     * Clusters.
+     * 
+     * @return the publicIpTag value.
+     */
+    public IpTag publicIpTag() {
+        return this.publicIpTag;
+    }
+
+    /**
+     * Set the publicIpTag property: Gets or sets the IP tag for the public IPs created along with the HDInsight
+     * Clusters.
+     * 
+     * @param publicIpTag the publicIpTag value to set.
+     * @return the NetworkProperties object itself.
+     */
+    public NetworkProperties withPublicIpTag(IpTag publicIpTag) {
+        this.publicIpTag = publicIpTag;
+        return this;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (publicIpTag() != null) {
+            publicIpTag().validate();
+        }
     }
 
     /**
@@ -123,6 +153,7 @@ public final class NetworkProperties implements JsonSerializable<NetworkProperti
         jsonWriter.writeStringField("resourceProviderConnection",
             this.resourceProviderConnection == null ? null : this.resourceProviderConnection.toString());
         jsonWriter.writeStringField("privateLink", this.privateLink == null ? null : this.privateLink.toString());
+        jsonWriter.writeJsonField("publicIpTag", this.publicIpTag);
         return jsonWriter.writeEndObject();
     }
 
@@ -149,6 +180,8 @@ public final class NetworkProperties implements JsonSerializable<NetworkProperti
                         = ResourceProviderConnection.fromString(reader.getString());
                 } else if ("privateLink".equals(fieldName)) {
                     deserializedNetworkProperties.privateLink = PrivateLink.fromString(reader.getString());
+                } else if ("publicIpTag".equals(fieldName)) {
+                    deserializedNetworkProperties.publicIpTag = IpTag.fromJson(reader);
                 } else {
                     reader.skipChildren();
                 }

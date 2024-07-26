@@ -250,7 +250,7 @@ public interface Cluster {
     /**
      * The template for Cluster update.
      */
-    interface Update extends UpdateStages.WithTags {
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithIdentity {
         /**
          * Executes the update request.
          * 
@@ -282,6 +282,19 @@ public interface Cluster {
              * @return the next definition stage.
              */
             Update withTags(Map<String, String> tags);
+        }
+
+        /**
+         * The stage of the Cluster update allowing to specify identity.
+         */
+        interface WithIdentity {
+            /**
+             * Specifies the identity property: The identity of the cluster, if configured..
+             * 
+             * @param identity The identity of the cluster, if configured.
+             * @return the next definition stage.
+             */
+            Update withIdentity(ClusterIdentity identity);
         }
     }
 
