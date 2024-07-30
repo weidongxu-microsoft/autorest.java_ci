@@ -221,9 +221,7 @@ public final class NetworkProfileInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedNetworkProfileInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedNetworkProfileInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedNetworkProfileInner.type = reader.getString();

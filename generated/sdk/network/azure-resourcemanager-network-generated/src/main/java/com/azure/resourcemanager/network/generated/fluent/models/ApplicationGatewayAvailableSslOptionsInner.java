@@ -250,9 +250,7 @@ public final class ApplicationGatewayAvailableSslOptionsInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedApplicationGatewayAvailableSslOptionsInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedApplicationGatewayAvailableSslOptionsInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedApplicationGatewayAvailableSslOptionsInner.type = reader.getString();

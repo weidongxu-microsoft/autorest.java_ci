@@ -626,9 +626,7 @@ public final class VirtualHubInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVirtualHubInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVirtualHubInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVirtualHubInner.type = reader.getString();

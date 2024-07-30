@@ -549,9 +549,7 @@ public final class NetworkVirtualApplianceInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedNetworkVirtualApplianceInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedNetworkVirtualApplianceInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedNetworkVirtualApplianceInner.type = reader.getString();

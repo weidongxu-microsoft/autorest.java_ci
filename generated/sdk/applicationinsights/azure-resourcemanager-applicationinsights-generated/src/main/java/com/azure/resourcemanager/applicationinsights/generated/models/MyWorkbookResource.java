@@ -154,13 +154,7 @@ public class MyWorkbookResource extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedMyWorkbookResource.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
-                    deserializedMyWorkbookResource.name = reader.getString();
-                } else if ("type".equals(fieldName)) {
-                    deserializedMyWorkbookResource.type = reader.getString();
-                } else if ("location".equals(fieldName)) {
+                if ("location".equals(fieldName)) {
                     deserializedMyWorkbookResource.withLocation(reader.getString());
                 } else if ("tags".equals(fieldName)) {
                     Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());

@@ -268,9 +268,7 @@ public final class NetworkSecurityGroupInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedNetworkSecurityGroupInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedNetworkSecurityGroupInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedNetworkSecurityGroupInner.type = reader.getString();

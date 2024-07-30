@@ -280,9 +280,7 @@ public final class ServiceEndpointPolicyInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedServiceEndpointPolicyInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedServiceEndpointPolicyInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedServiceEndpointPolicyInner.type = reader.getString();

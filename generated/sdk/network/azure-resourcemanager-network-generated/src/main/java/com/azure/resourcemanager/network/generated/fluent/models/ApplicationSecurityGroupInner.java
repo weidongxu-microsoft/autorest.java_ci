@@ -186,9 +186,7 @@ public final class ApplicationSecurityGroupInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedApplicationSecurityGroupInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedApplicationSecurityGroupInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedApplicationSecurityGroupInner.type = reader.getString();

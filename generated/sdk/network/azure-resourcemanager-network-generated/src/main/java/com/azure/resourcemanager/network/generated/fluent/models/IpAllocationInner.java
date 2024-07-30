@@ -323,9 +323,7 @@ public final class IpAllocationInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedIpAllocationInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedIpAllocationInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedIpAllocationInner.type = reader.getString();

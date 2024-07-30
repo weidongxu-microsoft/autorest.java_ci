@@ -96,6 +96,14 @@ public interface AvailabilitySet {
     List<InstanceViewStatus> statuses();
 
     /**
+     * Gets the scheduledEventsPolicy property: Specifies Redeploy, Reboot and
+     * ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the availability set.
+     * 
+     * @return the scheduledEventsPolicy value.
+     */
+    ScheduledEventsPolicy scheduledEventsPolicy();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -178,9 +186,10 @@ public interface AvailabilitySet {
          * The stage of the AvailabilitySet definition which contains all the minimum required properties for the
          * resource to be created, but also allows for any other optional properties to be specified.
          */
-        interface WithCreate extends DefinitionStages.WithTags, DefinitionStages.WithSku,
-            DefinitionStages.WithPlatformUpdateDomainCount, DefinitionStages.WithPlatformFaultDomainCount,
-            DefinitionStages.WithVirtualMachines, DefinitionStages.WithProximityPlacementGroup {
+        interface WithCreate
+            extends DefinitionStages.WithTags, DefinitionStages.WithSku, DefinitionStages.WithPlatformUpdateDomainCount,
+            DefinitionStages.WithPlatformFaultDomainCount, DefinitionStages.WithVirtualMachines,
+            DefinitionStages.WithProximityPlacementGroup, DefinitionStages.WithScheduledEventsPolicy {
             /**
              * Executes the create request.
              * 
@@ -281,6 +290,22 @@ public interface AvailabilitySet {
              */
             WithCreate withProximityPlacementGroup(SubResource proximityPlacementGroup);
         }
+
+        /**
+         * The stage of the AvailabilitySet definition allowing to specify scheduledEventsPolicy.
+         */
+        interface WithScheduledEventsPolicy {
+            /**
+             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and
+             * ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the availability
+             * set..
+             * 
+             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets
+             * Scheduled Event related configurations for the availability set.
+             * @return the next definition stage.
+             */
+            WithCreate withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
+        }
     }
 
     /**
@@ -295,7 +320,7 @@ public interface AvailabilitySet {
      */
     interface Update extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithPlatformUpdateDomainCount,
         UpdateStages.WithPlatformFaultDomainCount, UpdateStages.WithVirtualMachines,
-        UpdateStages.WithProximityPlacementGroup {
+        UpdateStages.WithProximityPlacementGroup, UpdateStages.WithScheduledEventsPolicy {
         /**
          * Executes the update request.
          * 
@@ -395,6 +420,22 @@ public interface AvailabilitySet {
              * @return the next definition stage.
              */
             Update withProximityPlacementGroup(SubResource proximityPlacementGroup);
+        }
+
+        /**
+         * The stage of the AvailabilitySet update allowing to specify scheduledEventsPolicy.
+         */
+        interface WithScheduledEventsPolicy {
+            /**
+             * Specifies the scheduledEventsPolicy property: Specifies Redeploy, Reboot and
+             * ScheduledEventsAdditionalPublishingTargets Scheduled Event related configurations for the availability
+             * set..
+             * 
+             * @param scheduledEventsPolicy Specifies Redeploy, Reboot and ScheduledEventsAdditionalPublishingTargets
+             * Scheduled Event related configurations for the availability set.
+             * @return the next definition stage.
+             */
+            Update withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy);
         }
     }
 

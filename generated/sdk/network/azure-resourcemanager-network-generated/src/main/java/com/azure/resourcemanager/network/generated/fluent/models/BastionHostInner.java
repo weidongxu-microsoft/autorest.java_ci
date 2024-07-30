@@ -512,9 +512,7 @@ public final class BastionHostInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedBastionHostInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedBastionHostInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedBastionHostInner.type = reader.getString();

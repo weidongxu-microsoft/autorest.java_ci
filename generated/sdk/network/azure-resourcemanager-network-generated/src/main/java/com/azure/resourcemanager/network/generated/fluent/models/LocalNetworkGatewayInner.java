@@ -284,9 +284,7 @@ public final class LocalNetworkGatewayInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedLocalNetworkGatewayInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedLocalNetworkGatewayInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedLocalNetworkGatewayInner.type = reader.getString();

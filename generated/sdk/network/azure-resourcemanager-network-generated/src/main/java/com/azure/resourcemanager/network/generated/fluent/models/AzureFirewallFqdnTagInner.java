@@ -183,9 +183,7 @@ public final class AzureFirewallFqdnTagInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedAzureFirewallFqdnTagInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedAzureFirewallFqdnTagInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedAzureFirewallFqdnTagInner.type = reader.getString();

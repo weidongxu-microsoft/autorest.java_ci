@@ -11,6 +11,7 @@ import com.azure.resourcemanager.compute.generated.fluent.models.AvailabilitySet
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySet;
 import com.azure.resourcemanager.compute.generated.models.AvailabilitySetUpdate;
 import com.azure.resourcemanager.compute.generated.models.InstanceViewStatus;
+import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
 import java.util.Collections;
 import java.util.List;
@@ -78,6 +79,10 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
         } else {
             return Collections.emptyList();
         }
+    }
+
+    public ScheduledEventsPolicy scheduledEventsPolicy() {
+        return this.innerModel().scheduledEventsPolicy();
     }
 
     public Region region() {
@@ -244,6 +249,16 @@ public final class AvailabilitySetImpl implements AvailabilitySet, AvailabilityS
             return this;
         } else {
             this.updateParameters.withProximityPlacementGroup(proximityPlacementGroup);
+            return this;
+        }
+    }
+
+    public AvailabilitySetImpl withScheduledEventsPolicy(ScheduledEventsPolicy scheduledEventsPolicy) {
+        if (isInCreateMode()) {
+            this.innerModel().withScheduledEventsPolicy(scheduledEventsPolicy);
+            return this;
+        } else {
+            this.updateParameters.withScheduledEventsPolicy(scheduledEventsPolicy);
             return this;
         }
     }

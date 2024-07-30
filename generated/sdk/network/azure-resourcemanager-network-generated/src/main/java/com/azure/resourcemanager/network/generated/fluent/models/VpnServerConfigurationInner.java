@@ -511,9 +511,7 @@ public final class VpnServerConfigurationInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVpnServerConfigurationInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVpnServerConfigurationInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVpnServerConfigurationInner.type = reader.getString();

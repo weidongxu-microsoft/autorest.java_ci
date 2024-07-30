@@ -286,9 +286,7 @@ public final class WebApplicationFirewallPolicyInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedWebApplicationFirewallPolicyInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedWebApplicationFirewallPolicyInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedWebApplicationFirewallPolicyInner.type = reader.getString();

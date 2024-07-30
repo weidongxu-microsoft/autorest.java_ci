@@ -367,9 +367,7 @@ public final class DscpConfigurationInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedDscpConfigurationInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedDscpConfigurationInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedDscpConfigurationInner.type = reader.getString();

@@ -493,9 +493,7 @@ public final class VirtualNetworkInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVirtualNetworkInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVirtualNetworkInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVirtualNetworkInner.type = reader.getString();

@@ -588,9 +588,7 @@ public final class PublicIpAddressInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedPublicIpAddressInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedPublicIpAddressInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedPublicIpAddressInner.type = reader.getString();

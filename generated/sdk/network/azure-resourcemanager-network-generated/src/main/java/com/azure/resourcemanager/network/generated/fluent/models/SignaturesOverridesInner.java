@@ -165,13 +165,7 @@ public final class SignaturesOverridesInner extends ProxyResource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedSignaturesOverridesInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
-                    deserializedSignaturesOverridesInner.name = reader.getString();
-                } else if ("type".equals(fieldName)) {
-                    deserializedSignaturesOverridesInner.type = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedSignaturesOverridesInner.name = reader.getString();
                 } else if ("id".equals(fieldName)) {
                     deserializedSignaturesOverridesInner.id = reader.getString();

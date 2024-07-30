@@ -276,9 +276,7 @@ public final class VirtualNetworkTapInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVirtualNetworkTapInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVirtualNetworkTapInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVirtualNetworkTapInner.type = reader.getString();

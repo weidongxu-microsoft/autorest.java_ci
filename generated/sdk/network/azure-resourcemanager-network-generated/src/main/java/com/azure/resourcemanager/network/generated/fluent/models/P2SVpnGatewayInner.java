@@ -328,9 +328,7 @@ public final class P2SVpnGatewayInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedP2SVpnGatewayInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedP2SVpnGatewayInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedP2SVpnGatewayInner.type = reader.getString();

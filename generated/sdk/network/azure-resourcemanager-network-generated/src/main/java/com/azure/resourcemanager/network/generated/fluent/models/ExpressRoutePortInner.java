@@ -382,9 +382,7 @@ public final class ExpressRoutePortInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedExpressRoutePortInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedExpressRoutePortInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedExpressRoutePortInner.type = reader.getString();

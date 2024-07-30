@@ -506,9 +506,7 @@ public final class FirewallPolicyInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedFirewallPolicyInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedFirewallPolicyInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedFirewallPolicyInner.type = reader.getString();

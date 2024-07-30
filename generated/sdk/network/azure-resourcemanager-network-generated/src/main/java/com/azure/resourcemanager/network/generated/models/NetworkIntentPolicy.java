@@ -146,9 +146,7 @@ public final class NetworkIntentPolicy extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedNetworkIntentPolicy.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedNetworkIntentPolicy.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedNetworkIntentPolicy.type = reader.getString();

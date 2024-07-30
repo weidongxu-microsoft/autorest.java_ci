@@ -218,9 +218,7 @@ public final class IpGroupInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedIpGroupInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedIpGroupInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedIpGroupInner.type = reader.getString();

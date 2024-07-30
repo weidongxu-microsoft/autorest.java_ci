@@ -216,9 +216,7 @@ public final class RouteFilterInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedRouteFilterInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedRouteFilterInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedRouteFilterInner.type = reader.getString();

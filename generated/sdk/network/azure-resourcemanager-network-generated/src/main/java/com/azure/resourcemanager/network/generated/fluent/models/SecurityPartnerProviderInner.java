@@ -232,9 +232,7 @@ public final class SecurityPartnerProviderInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedSecurityPartnerProviderInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedSecurityPartnerProviderInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedSecurityPartnerProviderInner.type = reader.getString();

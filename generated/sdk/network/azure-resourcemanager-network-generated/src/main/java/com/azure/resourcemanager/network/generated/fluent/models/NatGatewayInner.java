@@ -319,9 +319,7 @@ public final class NatGatewayInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedNatGatewayInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedNatGatewayInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedNatGatewayInner.type = reader.getString();

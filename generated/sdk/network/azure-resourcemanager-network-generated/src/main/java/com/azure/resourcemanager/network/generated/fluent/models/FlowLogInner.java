@@ -354,9 +354,7 @@ public final class FlowLogInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedFlowLogInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedFlowLogInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedFlowLogInner.type = reader.getString();

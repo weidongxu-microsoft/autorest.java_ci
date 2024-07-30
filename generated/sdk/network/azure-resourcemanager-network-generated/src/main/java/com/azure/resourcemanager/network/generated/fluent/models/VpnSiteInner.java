@@ -387,9 +387,7 @@ public final class VpnSiteInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVpnSiteInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVpnSiteInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVpnSiteInner.type = reader.getString();

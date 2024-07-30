@@ -318,9 +318,7 @@ public final class ExpressRouteCrossConnectionInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedExpressRouteCrossConnectionInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedExpressRouteCrossConnectionInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedExpressRouteCrossConnectionInner.type = reader.getString();

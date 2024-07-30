@@ -419,9 +419,7 @@ public final class PublicIpPrefixInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedPublicIpPrefixInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedPublicIpPrefixInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedPublicIpPrefixInner.type = reader.getString();

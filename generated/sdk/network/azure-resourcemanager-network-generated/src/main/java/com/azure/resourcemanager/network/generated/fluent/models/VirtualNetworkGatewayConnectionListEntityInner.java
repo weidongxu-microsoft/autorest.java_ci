@@ -645,9 +645,7 @@ public final class VirtualNetworkGatewayConnectionListEntityInner extends Resour
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVirtualNetworkGatewayConnectionListEntityInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVirtualNetworkGatewayConnectionListEntityInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVirtualNetworkGatewayConnectionListEntityInner.type = reader.getString();

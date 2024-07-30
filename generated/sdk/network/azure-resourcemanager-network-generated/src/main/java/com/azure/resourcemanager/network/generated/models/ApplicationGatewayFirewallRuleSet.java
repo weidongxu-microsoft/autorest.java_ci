@@ -254,9 +254,7 @@ public final class ApplicationGatewayFirewallRuleSet extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedApplicationGatewayFirewallRuleSet.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedApplicationGatewayFirewallRuleSet.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedApplicationGatewayFirewallRuleSet.type = reader.getString();

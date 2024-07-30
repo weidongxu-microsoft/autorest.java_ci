@@ -21,6 +21,7 @@ import com.azure.resourcemanager.compute.generated.models.ResiliencyPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScaleInPolicy;
 import com.azure.resourcemanager.compute.generated.models.ScheduledEventsPolicy;
 import com.azure.resourcemanager.compute.generated.models.Sku;
+import com.azure.resourcemanager.compute.generated.models.SkuProfile;
 import com.azure.resourcemanager.compute.generated.models.SpotRestorePolicy;
 import com.azure.resourcemanager.compute.generated.models.UpgradePolicy;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet;
@@ -32,6 +33,7 @@ import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSet
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMInstanceRequiredIDs;
 import com.azure.resourcemanager.compute.generated.models.VirtualMachineScaleSetVMProfile;
 import com.azure.resourcemanager.compute.generated.models.VMScaleSetConvertToSinglePlacementGroupInput;
+import com.azure.resourcemanager.compute.generated.models.ZonalPlatformFaultDomainAlignMode;
 import java.time.OffsetDateTime;
 import java.util.Collections;
 import java.util.List;
@@ -179,6 +181,14 @@ public final class VirtualMachineScaleSetImpl
 
     public ResiliencyPolicy resiliencyPolicy() {
         return this.innerModel().resiliencyPolicy();
+    }
+
+    public ZonalPlatformFaultDomainAlignMode zonalPlatformFaultDomainAlignMode() {
+        return this.innerModel().zonalPlatformFaultDomainAlignMode();
+    }
+
+    public SkuProfile skuProfile() {
+        return this.innerModel().skuProfile();
     }
 
     public Region region() {
@@ -468,8 +478,13 @@ public final class VirtualMachineScaleSetImpl
     }
 
     public VirtualMachineScaleSetImpl withZones(List<String> zones) {
-        this.innerModel().withZones(zones);
-        return this;
+        if (isInCreateMode()) {
+            this.innerModel().withZones(zones);
+            return this;
+        } else {
+            this.updateParameters.withZones(zones);
+            return this;
+        }
     }
 
     public VirtualMachineScaleSetImpl withExtendedLocation(ExtendedLocation extendedLocation) {
@@ -619,6 +634,27 @@ public final class VirtualMachineScaleSetImpl
             return this;
         } else {
             this.updateParameters.withResiliencyPolicy(resiliencyPolicy);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl
+        withZonalPlatformFaultDomainAlignMode(ZonalPlatformFaultDomainAlignMode zonalPlatformFaultDomainAlignMode) {
+        if (isInCreateMode()) {
+            this.innerModel().withZonalPlatformFaultDomainAlignMode(zonalPlatformFaultDomainAlignMode);
+            return this;
+        } else {
+            this.updateParameters.withZonalPlatformFaultDomainAlignMode(zonalPlatformFaultDomainAlignMode);
+            return this;
+        }
+    }
+
+    public VirtualMachineScaleSetImpl withSkuProfile(SkuProfile skuProfile) {
+        if (isInCreateMode()) {
+            this.innerModel().withSkuProfile(skuProfile);
+            return this;
+        } else {
+            this.updateParameters.withSkuProfile(skuProfile);
             return this;
         }
     }

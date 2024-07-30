@@ -78,8 +78,7 @@ public interface VirtualMachineScaleSet {
     VirtualMachineScaleSetIdentity identity();
 
     /**
-     * Gets the zones property: The virtual machine scale set zones. NOTE: Availability zones can only be set when you
-     * create the scale set.
+     * Gets the zones property: The virtual machine scale set zones.
      * 
      * @return the zones value.
      */
@@ -261,6 +260,21 @@ public interface VirtualMachineScaleSet {
     ResiliencyPolicy resiliencyPolicy();
 
     /**
+     * Gets the zonalPlatformFaultDomainAlignMode property: Specifies the align mode between Virtual Machine Scale Set
+     * compute and storage Fault Domain count.
+     * 
+     * @return the zonalPlatformFaultDomainAlignMode value.
+     */
+    ZonalPlatformFaultDomainAlignMode zonalPlatformFaultDomainAlignMode();
+
+    /**
+     * Gets the skuProfile property: Specifies the sku profile for the virtual machine scale set.
+     * 
+     * @return the skuProfile value.
+     */
+    SkuProfile skuProfile();
+
+    /**
      * Gets the region of the resource.
      * 
      * @return the region of the resource.
@@ -354,6 +368,7 @@ public interface VirtualMachineScaleSet {
             DefinitionStages.WithScaleInPolicy, DefinitionStages.WithOrchestrationMode,
             DefinitionStages.WithSpotRestorePolicy, DefinitionStages.WithPriorityMixPolicy,
             DefinitionStages.WithConstrainedMaximumCapacity, DefinitionStages.WithResiliencyPolicy,
+            DefinitionStages.WithZonalPlatformFaultDomainAlignMode, DefinitionStages.WithSkuProfile,
             DefinitionStages.WithIfMatch, DefinitionStages.WithIfNoneMatch {
             /**
              * Executes the create request.
@@ -436,11 +451,9 @@ public interface VirtualMachineScaleSet {
          */
         interface WithZones {
             /**
-             * Specifies the zones property: The virtual machine scale set zones. NOTE: Availability zones can only be
-             * set when you create the scale set.
+             * Specifies the zones property: The virtual machine scale set zones..
              * 
-             * @param zones The virtual machine scale set zones. NOTE: Availability zones can only be set when you
-             * create the scale set.
+             * @param zones The virtual machine scale set zones.
              * @return the next definition stage.
              */
             WithCreate withZones(List<String> zones);
@@ -725,6 +738,35 @@ public interface VirtualMachineScaleSet {
         }
 
         /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify zonalPlatformFaultDomainAlignMode.
+         */
+        interface WithZonalPlatformFaultDomainAlignMode {
+            /**
+             * Specifies the zonalPlatformFaultDomainAlignMode property: Specifies the align mode between Virtual
+             * Machine Scale Set compute and storage Fault Domain count..
+             * 
+             * @param zonalPlatformFaultDomainAlignMode Specifies the align mode between Virtual Machine Scale Set
+             * compute and storage Fault Domain count.
+             * @return the next definition stage.
+             */
+            WithCreate withZonalPlatformFaultDomainAlignMode(
+                ZonalPlatformFaultDomainAlignMode zonalPlatformFaultDomainAlignMode);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet definition allowing to specify skuProfile.
+         */
+        interface WithSkuProfile {
+            /**
+             * Specifies the skuProfile property: Specifies the sku profile for the virtual machine scale set..
+             * 
+             * @param skuProfile Specifies the sku profile for the virtual machine scale set.
+             * @return the next definition stage.
+             */
+            WithCreate withSkuProfile(SkuProfile skuProfile);
+        }
+
+        /**
          * The stage of the VirtualMachineScaleSet definition allowing to specify ifMatch.
          */
         interface WithIfMatch {
@@ -767,13 +809,14 @@ public interface VirtualMachineScaleSet {
     /**
      * The template for VirtualMachineScaleSet update.
      */
-    interface Update
-        extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithPlan, UpdateStages.WithIdentity,
-        UpdateStages.WithUpgradePolicy, UpdateStages.WithAutomaticRepairsPolicy, UpdateStages.WithVirtualMachineProfile,
-        UpdateStages.WithOverprovision, UpdateStages.WithDoNotRunExtensionsOnOverprovisionedVMs,
-        UpdateStages.WithSinglePlacementGroup, UpdateStages.WithAdditionalCapabilities, UpdateStages.WithScaleInPolicy,
+    interface Update extends UpdateStages.WithTags, UpdateStages.WithSku, UpdateStages.WithPlan,
+        UpdateStages.WithIdentity, UpdateStages.WithZones, UpdateStages.WithUpgradePolicy,
+        UpdateStages.WithAutomaticRepairsPolicy, UpdateStages.WithVirtualMachineProfile, UpdateStages.WithOverprovision,
+        UpdateStages.WithDoNotRunExtensionsOnOverprovisionedVMs, UpdateStages.WithSinglePlacementGroup,
+        UpdateStages.WithAdditionalCapabilities, UpdateStages.WithScaleInPolicy,
         UpdateStages.WithProximityPlacementGroup, UpdateStages.WithPriorityMixPolicy,
-        UpdateStages.WithSpotRestorePolicy, UpdateStages.WithResiliencyPolicy, UpdateStages.WithIfMatch,
+        UpdateStages.WithSpotRestorePolicy, UpdateStages.WithResiliencyPolicy,
+        UpdateStages.WithZonalPlatformFaultDomainAlignMode, UpdateStages.WithSkuProfile, UpdateStages.WithIfMatch,
         UpdateStages.WithIfNoneMatch {
         /**
          * Executes the update request.
@@ -846,6 +889,19 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             Update withIdentity(VirtualMachineScaleSetIdentity identity);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify zones.
+         */
+        interface WithZones {
+            /**
+             * Specifies the zones property: The virtual machine scale set zones..
+             * 
+             * @param zones The virtual machine scale set zones.
+             * @return the next definition stage.
+             */
+            Update withZones(List<String> zones);
         }
 
         /**
@@ -1023,6 +1079,35 @@ public interface VirtualMachineScaleSet {
              * @return the next definition stage.
              */
             Update withResiliencyPolicy(ResiliencyPolicy resiliencyPolicy);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify zonalPlatformFaultDomainAlignMode.
+         */
+        interface WithZonalPlatformFaultDomainAlignMode {
+            /**
+             * Specifies the zonalPlatformFaultDomainAlignMode property: Specifies the align mode between Virtual
+             * Machine Scale Set compute and storage Fault Domain count..
+             * 
+             * @param zonalPlatformFaultDomainAlignMode Specifies the align mode between Virtual Machine Scale Set
+             * compute and storage Fault Domain count.
+             * @return the next definition stage.
+             */
+            Update withZonalPlatformFaultDomainAlignMode(
+                ZonalPlatformFaultDomainAlignMode zonalPlatformFaultDomainAlignMode);
+        }
+
+        /**
+         * The stage of the VirtualMachineScaleSet update allowing to specify skuProfile.
+         */
+        interface WithSkuProfile {
+            /**
+             * Specifies the skuProfile property: Specifies the sku profile for the virtual machine scale set..
+             * 
+             * @param skuProfile Specifies the sku profile for the virtual machine scale set.
+             * @return the next definition stage.
+             */
+            Update withSkuProfile(SkuProfile skuProfile);
         }
 
         /**

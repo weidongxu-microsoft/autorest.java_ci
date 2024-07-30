@@ -273,9 +273,7 @@ public final class ExpressRouteGatewayInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedExpressRouteGatewayInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedExpressRouteGatewayInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedExpressRouteGatewayInner.type = reader.getString();

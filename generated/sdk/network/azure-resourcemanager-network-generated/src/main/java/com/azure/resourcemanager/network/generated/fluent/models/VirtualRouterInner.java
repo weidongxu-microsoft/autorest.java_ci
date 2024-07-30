@@ -277,9 +277,7 @@ public final class VirtualRouterInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedVirtualRouterInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedVirtualRouterInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedVirtualRouterInner.type = reader.getString();

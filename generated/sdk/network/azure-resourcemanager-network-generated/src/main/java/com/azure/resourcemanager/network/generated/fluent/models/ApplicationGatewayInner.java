@@ -1086,9 +1086,7 @@ public final class ApplicationGatewayInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedApplicationGatewayInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedApplicationGatewayInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedApplicationGatewayInner.type = reader.getString();

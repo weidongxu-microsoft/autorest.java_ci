@@ -174,9 +174,7 @@ public final class NetworkWatcherInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedNetworkWatcherInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedNetworkWatcherInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedNetworkWatcherInner.type = reader.getString();

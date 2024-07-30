@@ -424,9 +424,7 @@ public final class LoadBalancerInner extends Resource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedLoadBalancerInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
+                if ("name".equals(fieldName)) {
                     deserializedLoadBalancerInner.name = reader.getString();
                 } else if ("type".equals(fieldName)) {
                     deserializedLoadBalancerInner.type = reader.getString();
