@@ -18,8 +18,6 @@ public final class OperationsResultsLocationsGetHeaders {
      */
     private String azureAsyncOperation;
 
-    private static final HttpHeaderName AZURE_ASYNC_OPERATION = HttpHeaderName.fromString("Azure-AsyncOperation");
-
     // HttpHeaders containing the raw property values.
     /**
      * Creates an instance of OperationsResultsLocationsGetHeaders class.
@@ -27,7 +25,7 @@ public final class OperationsResultsLocationsGetHeaders {
      * @param rawHeaders The raw HttpHeaders that will be used to create the property values.
      */
     public OperationsResultsLocationsGetHeaders(HttpHeaders rawHeaders) {
-        this.azureAsyncOperation = rawHeaders.getValue(AZURE_ASYNC_OPERATION);
+        this.azureAsyncOperation = rawHeaders.getValue(HttpHeaderName.AZURE_ASYNCOPERATION);
     }
 
     /**
