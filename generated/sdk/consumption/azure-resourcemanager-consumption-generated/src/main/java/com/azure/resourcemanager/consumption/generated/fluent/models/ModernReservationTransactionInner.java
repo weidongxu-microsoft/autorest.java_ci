@@ -27,14 +27,9 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     private ModernReservationTransactionProperties innerProperties = new ModernReservationTransactionProperties();
 
     /*
-     * Fully qualified resource Id for the resource.
+     * Resource tags.
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
+    private List<String> tags;
 
     /*
      * The type of the resource.
@@ -42,9 +37,14 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     private String type;
 
     /*
-     * Resource tags.
+     * The name of the resource.
      */
-    private List<String> tags;
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of ModernReservationTransactionInner class.
@@ -62,23 +62,13 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the tags property: Resource tags.
      * 
-     * @return the id value.
+     * @return the tags value.
      */
     @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
+    public List<String> tags() {
+        return this.tags;
     }
 
     /**
@@ -92,13 +82,23 @@ public final class ModernReservationTransactionInner extends ReservationTransact
     }
 
     /**
-     * Get the tags property: Resource tags.
+     * Get the name property: The name of the resource.
      * 
-     * @return the tags value.
+     * @return the name value.
      */
     @Override
-    public List<String> tags() {
-        return this.tags;
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -291,7 +291,6 @@ public final class ModernReservationTransactionInner extends ReservationTransact
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

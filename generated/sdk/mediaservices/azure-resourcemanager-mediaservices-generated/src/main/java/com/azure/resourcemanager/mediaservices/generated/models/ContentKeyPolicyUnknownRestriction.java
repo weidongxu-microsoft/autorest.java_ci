@@ -43,7 +43,6 @@ public final class ContentKeyPolicyUnknownRestriction extends ContentKeyPolicyRe
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

@@ -146,7 +146,6 @@ public final class ForwardingConfiguration extends RouteConfiguration {
      */
     @Override
     public void validate() {
-        super.validate();
         if (cacheConfiguration() != null) {
             cacheConfiguration().validate();
         }

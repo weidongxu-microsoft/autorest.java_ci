@@ -72,7 +72,6 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifie
      */
     @Override
     public void validate() {
-        super.validate();
         if (keyId() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

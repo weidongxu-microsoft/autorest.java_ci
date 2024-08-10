@@ -55,7 +55,9 @@ public final class RulesEngineProperties extends RulesEngineUpdateParameters {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (rules() != null) {
+            rules().forEach(e -> e.validate());
+        }
     }
 
     /**

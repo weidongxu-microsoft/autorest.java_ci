@@ -78,7 +78,6 @@ public final class BoolEqualsFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

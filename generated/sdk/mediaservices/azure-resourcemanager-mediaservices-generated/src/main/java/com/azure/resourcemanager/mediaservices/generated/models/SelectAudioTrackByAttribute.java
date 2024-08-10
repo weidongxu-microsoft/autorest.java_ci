@@ -133,7 +133,6 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
      */
     @Override
     public void validate() {
-        super.validate();
         if (attribute() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

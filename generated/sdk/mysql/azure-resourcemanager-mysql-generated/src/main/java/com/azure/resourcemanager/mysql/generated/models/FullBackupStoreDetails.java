@@ -70,7 +70,6 @@ public final class FullBackupStoreDetails extends BackupStoreDetails {
      */
     @Override
     public void validate() {
-        super.validate();
         if (sasUriList() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

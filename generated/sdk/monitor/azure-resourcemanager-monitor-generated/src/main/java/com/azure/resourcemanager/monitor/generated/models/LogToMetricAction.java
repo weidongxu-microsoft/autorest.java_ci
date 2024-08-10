@@ -71,7 +71,6 @@ public final class LogToMetricAction extends Action {
      */
     @Override
     public void validate() {
-        super.validate();
         if (criteria() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property criteria in model LogToMetricAction"));

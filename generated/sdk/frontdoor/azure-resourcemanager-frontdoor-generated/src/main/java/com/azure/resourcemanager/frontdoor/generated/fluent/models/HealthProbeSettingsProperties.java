@@ -92,7 +92,6 @@ public final class HealthProbeSettingsProperties extends HealthProbeSettingsUpda
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

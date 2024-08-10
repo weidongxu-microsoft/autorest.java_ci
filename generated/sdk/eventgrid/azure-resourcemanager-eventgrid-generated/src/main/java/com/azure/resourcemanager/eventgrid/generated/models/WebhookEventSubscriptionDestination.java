@@ -237,7 +237,6 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

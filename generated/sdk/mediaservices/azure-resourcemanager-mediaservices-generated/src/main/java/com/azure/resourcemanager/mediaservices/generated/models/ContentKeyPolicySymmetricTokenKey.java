@@ -70,7 +70,6 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
      */
     @Override
     public void validate() {
-        super.validate();
         if (keyValue() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

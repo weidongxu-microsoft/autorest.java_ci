@@ -79,7 +79,6 @@ public final class StringContainsAdvancedFilter extends AdvancedFilter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

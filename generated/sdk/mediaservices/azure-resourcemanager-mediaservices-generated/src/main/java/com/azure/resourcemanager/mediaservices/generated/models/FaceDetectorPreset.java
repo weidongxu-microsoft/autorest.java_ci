@@ -183,7 +183,6 @@ public final class FaceDetectorPreset extends Preset {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

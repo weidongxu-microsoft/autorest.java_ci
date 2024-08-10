@@ -190,7 +190,6 @@ public class JobInputClip extends JobInput {
      */
     @Override
     public void validate() {
-        super.validate();
         if (start() != null) {
             start().validate();
         }

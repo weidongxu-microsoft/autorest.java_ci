@@ -70,7 +70,6 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
      */
     @Override
     public void validate() {
-        super.validate();
         if (rawBody() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

@@ -71,7 +71,6 @@ public final class LoadBalancingSettingsProperties extends LoadBalancingSettings
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

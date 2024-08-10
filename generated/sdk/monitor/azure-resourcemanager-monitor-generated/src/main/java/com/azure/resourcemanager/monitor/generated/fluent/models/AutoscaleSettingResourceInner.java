@@ -27,9 +27,9 @@ public final class AutoscaleSettingResourceInner extends Resource {
     private AutoscaleSetting innerProperties = new AutoscaleSetting();
 
     /*
-     * Fully qualified resource Id for the resource.
+     * The type of the resource.
      */
-    private String id;
+    private String type;
 
     /*
      * The name of the resource.
@@ -37,9 +37,9 @@ public final class AutoscaleSettingResourceInner extends Resource {
     private String name;
 
     /*
-     * The type of the resource.
+     * Fully qualified resource Id for the resource.
      */
-    private String type;
+    private String id;
 
     /**
      * Creates an instance of AutoscaleSettingResourceInner class.
@@ -57,13 +57,13 @@ public final class AutoscaleSettingResourceInner extends Resource {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the type property: The type of the resource.
      * 
-     * @return the id value.
+     * @return the type value.
      */
     @Override
-    public String id() {
-        return this.id;
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -77,13 +77,13 @@ public final class AutoscaleSettingResourceInner extends Resource {
     }
 
     /**
-     * Get the type property: The type of the resource.
+     * Get the id property: Fully qualified resource Id for the resource.
      * 
-     * @return the type value.
+     * @return the id value.
      */
     @Override
-    public String type() {
-        return this.type;
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -262,6 +262,11 @@ public final class AutoscaleSettingResourceInner extends Resource {
                     "Missing required property innerProperties in model AutoscaleSettingResourceInner"));
         } else {
             innerProperties().validate();
+        }
+        if (location() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property location in model AutoscaleSettingResourceInner"));
         }
     }
 

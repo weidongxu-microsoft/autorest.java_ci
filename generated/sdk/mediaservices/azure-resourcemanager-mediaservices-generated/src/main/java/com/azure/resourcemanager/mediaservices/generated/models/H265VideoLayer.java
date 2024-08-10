@@ -231,7 +231,6 @@ public class H265VideoLayer extends Layer {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

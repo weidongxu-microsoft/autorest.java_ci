@@ -140,7 +140,6 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

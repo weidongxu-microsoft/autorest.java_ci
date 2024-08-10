@@ -53,7 +53,6 @@ public final class IsNotNullAdvancedFilter extends AdvancedFilter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

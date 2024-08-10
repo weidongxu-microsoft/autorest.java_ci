@@ -79,7 +79,6 @@ public final class StringInFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

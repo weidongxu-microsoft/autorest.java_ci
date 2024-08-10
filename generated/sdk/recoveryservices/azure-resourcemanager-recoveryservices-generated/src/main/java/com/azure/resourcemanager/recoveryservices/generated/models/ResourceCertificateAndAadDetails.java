@@ -297,7 +297,6 @@ public final class ResourceCertificateAndAadDetails extends ResourceCertificateD
      */
     @Override
     public void validate() {
-        super.validate();
         if (aadAuthority() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

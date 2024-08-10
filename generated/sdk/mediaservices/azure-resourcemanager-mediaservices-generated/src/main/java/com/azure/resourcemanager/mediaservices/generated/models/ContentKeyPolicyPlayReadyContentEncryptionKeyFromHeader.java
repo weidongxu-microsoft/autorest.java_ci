@@ -44,7 +44,6 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

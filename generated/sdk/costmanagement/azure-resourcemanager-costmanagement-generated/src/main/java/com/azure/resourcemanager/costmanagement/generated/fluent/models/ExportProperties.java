@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.costmanagement.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -85,11 +86,24 @@ public final class ExportProperties extends CommonExportProperties {
      */
     @Override
     public void validate() {
-        super.validate();
         if (schedule() != null) {
             schedule().validate();
         }
+        if (deliveryInfo() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property deliveryInfo in model ExportProperties"));
+        } else {
+            deliveryInfo().validate();
+        }
+        if (definition() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property definition in model ExportProperties"));
+        } else {
+            definition().validate();
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(ExportProperties.class);
 
     /**
      * {@inheritDoc}

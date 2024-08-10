@@ -152,7 +152,6 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
      */
     @Override
     public void validate() {
-        super.validate();
         if (administratorLogin() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(
@@ -162,6 +161,9 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(
                     "Missing required property administratorLoginPassword in model ServerPropertiesForDefaultCreate"));
+        }
+        if (storageProfile() != null) {
+            storageProfile().validate();
         }
     }
 

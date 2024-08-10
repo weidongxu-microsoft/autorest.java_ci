@@ -151,10 +151,24 @@ public final class MetricCriteria extends MultiMetricCriteria {
      */
     @Override
     public void validate() {
-        super.validate();
         if (operator() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property operator in model MetricCriteria"));
+        }
+        if (name() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model MetricCriteria"));
+        }
+        if (metricName() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property metricName in model MetricCriteria"));
+        }
+        if (timeAggregation() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property timeAggregation in model MetricCriteria"));
+        }
+        if (dimensions() != null) {
+            dimensions().forEach(e -> e.validate());
         }
     }
 

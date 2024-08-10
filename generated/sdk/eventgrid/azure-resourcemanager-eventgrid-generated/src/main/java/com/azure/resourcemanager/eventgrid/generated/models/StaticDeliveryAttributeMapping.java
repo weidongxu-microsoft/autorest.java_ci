@@ -113,7 +113,6 @@ public final class StaticDeliveryAttributeMapping extends DeliveryAttributeMappi
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

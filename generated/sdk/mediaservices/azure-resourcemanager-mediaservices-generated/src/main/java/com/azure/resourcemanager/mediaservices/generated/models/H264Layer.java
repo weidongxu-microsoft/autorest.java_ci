@@ -285,7 +285,6 @@ public final class H264Layer extends VideoLayer {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

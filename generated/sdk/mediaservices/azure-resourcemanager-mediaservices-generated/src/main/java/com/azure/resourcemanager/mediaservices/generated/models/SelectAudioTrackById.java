@@ -77,7 +77,6 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

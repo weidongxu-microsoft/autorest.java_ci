@@ -68,7 +68,6 @@ public final class SelectVideoTrackById extends VideoTrackDescriptor {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

@@ -212,7 +212,6 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
      */
     @Override
     public void validate() {
-        super.validate();
         if (operator() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property operator in model DynamicMetricCriteria"));
@@ -228,6 +227,23 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
                     "Missing required property failingPeriods in model DynamicMetricCriteria"));
         } else {
             failingPeriods().validate();
+        }
+        if (name() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property name in model DynamicMetricCriteria"));
+        }
+        if (metricName() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property metricName in model DynamicMetricCriteria"));
+        }
+        if (timeAggregation() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property timeAggregation in model DynamicMetricCriteria"));
+        }
+        if (dimensions() != null) {
+            dimensions().forEach(e -> e.validate());
         }
     }
 

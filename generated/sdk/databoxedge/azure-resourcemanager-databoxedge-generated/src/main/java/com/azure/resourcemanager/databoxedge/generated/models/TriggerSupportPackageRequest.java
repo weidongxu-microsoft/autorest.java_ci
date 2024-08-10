@@ -24,9 +24,9 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     private SupportPackageRequestProperties innerProperties = new SupportPackageRequestProperties();
 
     /*
-     * Fully qualified resource Id for the resource.
+     * The type of the resource.
      */
-    private String id;
+    private String type;
 
     /*
      * The name of the resource.
@@ -34,9 +34,9 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     private String name;
 
     /*
-     * The type of the resource.
+     * Fully qualified resource Id for the resource.
      */
-    private String type;
+    private String id;
 
     /**
      * Creates an instance of TriggerSupportPackageRequest class.
@@ -54,13 +54,13 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the type property: The type of the resource.
      * 
-     * @return the id value.
+     * @return the type value.
      */
     @Override
-    public String id() {
-        return this.id;
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -74,13 +74,13 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
     }
 
     /**
-     * Get the type property: The type of the resource.
+     * Get the id property: Fully qualified resource Id for the resource.
      * 
-     * @return the type value.
+     * @return the id value.
      */
     @Override
-    public String type() {
-        return this.type;
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -163,7 +163,6 @@ public final class TriggerSupportPackageRequest extends ArmBaseModel {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

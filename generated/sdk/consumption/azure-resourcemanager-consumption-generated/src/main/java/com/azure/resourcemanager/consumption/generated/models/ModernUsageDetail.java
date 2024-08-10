@@ -33,19 +33,9 @@ public final class ModernUsageDetail extends UsageDetailInner {
     private ModernUsageDetailProperties innerProperties = new ModernUsageDetailProperties();
 
     /*
-     * Fully qualified resource Id for the resource.
+     * Resource tags.
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
-
-    /*
-     * The type of the resource.
-     */
-    private String type;
+    private Map<String, String> tags;
 
     /*
      * The etag for the resource.
@@ -53,9 +43,19 @@ public final class ModernUsageDetail extends UsageDetailInner {
     private String etag;
 
     /*
-     * Resource tags.
+     * The type of the resource.
      */
-    private Map<String, String> tags;
+    private String type;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of ModernUsageDetail class.
@@ -83,33 +83,13 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the tags property: Resource tags.
      * 
-     * @return the id value.
+     * @return the tags value.
      */
     @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
-    }
-
-    /**
-     * Get the type property: The type of the resource.
-     * 
-     * @return the type value.
-     */
-    @Override
-    public String type() {
-        return this.type;
+    public Map<String, String> tags() {
+        return this.tags;
     }
 
     /**
@@ -123,13 +103,33 @@ public final class ModernUsageDetail extends UsageDetailInner {
     }
 
     /**
-     * Get the tags property: Resource tags.
+     * Get the type property: The type of the resource.
      * 
-     * @return the tags value.
+     * @return the type value.
      */
     @Override
-    public Map<String, String> tags() {
-        return this.tags;
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -823,7 +823,6 @@ public final class ModernUsageDetail extends UsageDetailInner {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

@@ -108,7 +108,6 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

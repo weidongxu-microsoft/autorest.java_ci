@@ -169,7 +169,6 @@ public final class H265Video extends Video {
      */
     @Override
     public void validate() {
-        super.validate();
         if (layers() != null) {
             layers().forEach(e -> e.validate());
         }

@@ -124,11 +124,13 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
      */
     @Override
     public void validate() {
-        super.validate();
         if (sourceServerId() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(
                     "Missing required property sourceServerId in model ServerPropertiesForGeoRestore"));
+        }
+        if (storageProfile() != null) {
+            storageProfile().validate();
         }
     }
 

@@ -145,7 +145,6 @@ public final class AlertingAction extends Action {
      */
     @Override
     public void validate() {
-        super.validate();
         if (severity() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property severity in model AlertingAction"));

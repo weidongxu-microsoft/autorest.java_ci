@@ -71,7 +71,6 @@ public final class MetricAlertSingleResourceMultipleMetricCriteria extends Metri
      */
     @Override
     public void validate() {
-        super.validate();
         if (allOf() != null) {
             allOf().forEach(e -> e.validate());
         }

@@ -75,7 +75,6 @@ public final class AbsoluteClipTime extends ClipTime {
      */
     @Override
     public void validate() {
-        super.validate();
         if (time() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property time in model AbsoluteClipTime"));

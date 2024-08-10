@@ -130,10 +130,13 @@ public final class FacetResult extends Facet {
      */
     @Override
     public void validate() {
-        super.validate();
         if (data() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property data in model FacetResult"));
+        }
+        if (expression() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property expression in model FacetResult"));
         }
     }
 

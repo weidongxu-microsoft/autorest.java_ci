@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.resources.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -126,11 +127,32 @@ public final class DeploymentWhatIfProperties extends DeploymentProperties {
      */
     @Override
     public void validate() {
-        super.validate();
         if (whatIfSettings() != null) {
             whatIfSettings().validate();
         }
+        if (templateLink() != null) {
+            templateLink().validate();
+        }
+        if (parametersLink() != null) {
+            parametersLink().validate();
+        }
+        if (mode() == null) {
+            throw LOGGER.atError()
+                .log(
+                    new IllegalArgumentException("Missing required property mode in model DeploymentWhatIfProperties"));
+        }
+        if (debugSetting() != null) {
+            debugSetting().validate();
+        }
+        if (onErrorDeployment() != null) {
+            onErrorDeployment().validate();
+        }
+        if (expressionEvaluationOptions() != null) {
+            expressionEvaluationOptions().validate();
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(DeploymentWhatIfProperties.class);
 
     /**
      * {@inheritDoc}

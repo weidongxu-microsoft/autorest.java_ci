@@ -27,14 +27,14 @@ public final class AmountWithExchangeRate extends Amount {
     private Integer exchangeRateMonth;
 
     /*
-     * Amount currency.
-     */
-    private String currency;
-
-    /*
      * Amount.
      */
     private BigDecimal value;
+
+    /*
+     * Amount currency.
+     */
+    private String currency;
 
     /**
      * Creates an instance of AmountWithExchangeRate class.
@@ -61,16 +61,6 @@ public final class AmountWithExchangeRate extends Amount {
     }
 
     /**
-     * Get the currency property: Amount currency.
-     * 
-     * @return the currency value.
-     */
-    @Override
-    public String currency() {
-        return this.currency;
-    }
-
-    /**
      * Get the value property: Amount.
      * 
      * @return the value value.
@@ -81,13 +71,22 @@ public final class AmountWithExchangeRate extends Amount {
     }
 
     /**
+     * Get the currency property: Amount currency.
+     * 
+     * @return the currency value.
+     */
+    @Override
+    public String currency() {
+        return this.currency;
+    }
+
+    /**
      * Validates the instance.
      * 
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

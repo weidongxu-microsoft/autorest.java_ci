@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -62,8 +63,17 @@ public final class TransportStreamFormat extends MultiBitrateFormat {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (filenamePattern() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property filenamePattern in model TransportStreamFormat"));
+        }
+        if (outputFiles() != null) {
+            outputFiles().forEach(e -> e.validate());
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(TransportStreamFormat.class);
 
     /**
      * {@inheritDoc}

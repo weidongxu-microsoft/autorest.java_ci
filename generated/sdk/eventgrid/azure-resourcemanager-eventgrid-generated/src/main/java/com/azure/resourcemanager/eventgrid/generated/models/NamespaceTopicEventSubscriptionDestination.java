@@ -89,7 +89,6 @@ public final class NamespaceTopicEventSubscriptionDestination extends EventSubsc
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

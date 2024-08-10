@@ -82,7 +82,6 @@ public final class DDAudio extends Audio {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

@@ -114,7 +114,12 @@ public final class RoutingRuleProperties extends RoutingRuleUpdateParameters {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (routeConfiguration() != null) {
+            routeConfiguration().validate();
+        }
+        if (webApplicationFirewallPolicyLink() != null) {
+            webApplicationFirewallPolicyLink().validate();
+        }
     }
 
     /**

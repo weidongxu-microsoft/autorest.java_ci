@@ -69,7 +69,6 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
      */
     @Override
     public void validate() {
-        super.validate();
         if (widevineTemplate() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

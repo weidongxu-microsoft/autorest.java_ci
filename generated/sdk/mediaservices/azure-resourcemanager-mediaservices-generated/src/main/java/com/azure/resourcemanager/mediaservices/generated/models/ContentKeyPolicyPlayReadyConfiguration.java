@@ -95,7 +95,6 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
      */
     @Override
     public void validate() {
-        super.validate();
         if (licenses() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

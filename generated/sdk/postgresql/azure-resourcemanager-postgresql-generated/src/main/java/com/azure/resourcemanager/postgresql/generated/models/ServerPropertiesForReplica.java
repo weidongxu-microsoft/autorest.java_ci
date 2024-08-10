@@ -123,11 +123,13 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
      */
     @Override
     public void validate() {
-        super.validate();
         if (sourceServerId() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(
                     "Missing required property sourceServerId in model ServerPropertiesForReplica"));
+        }
+        if (storageProfile() != null) {
+            storageProfile().validate();
         }
     }
 

@@ -79,12 +79,15 @@ public final class FacetError extends Facet {
      */
     @Override
     public void validate() {
-        super.validate();
         if (errors() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property errors in model FacetError"));
         } else {
             errors().forEach(e -> e.validate());
+        }
+        if (expression() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property expression in model FacetError"));
         }
     }
 

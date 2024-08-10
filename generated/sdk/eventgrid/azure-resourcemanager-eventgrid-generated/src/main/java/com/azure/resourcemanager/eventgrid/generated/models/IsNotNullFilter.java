@@ -53,7 +53,6 @@ public final class IsNotNullFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

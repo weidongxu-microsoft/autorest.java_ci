@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.applicationinsights.generated.fluent.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -28,21 +29,6 @@ public final class MyWorkbookInner extends MyWorkbookResource {
      * Metadata describing a workbook for an Azure resource.
      */
     private MyWorkbookProperties innerProperties;
-
-    /*
-     * Fully qualified resource Id for the resource.
-     */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
-
-    /*
-     * The type of the resource.
-     */
-    private String type;
 
     /**
      * Creates an instance of MyWorkbookInner class.
@@ -80,33 +66,30 @@ public final class MyWorkbookInner extends MyWorkbookResource {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
-     * 
-     * @return the id value.
+     * {@inheritDoc}
      */
     @Override
-    public String id() {
-        return this.id;
+    public MyWorkbookInner withId(String id) {
+        super.withId(id);
+        return this;
     }
 
     /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
+     * {@inheritDoc}
      */
     @Override
-    public String name() {
-        return this.name;
+    public MyWorkbookInner withName(String name) {
+        super.withName(name);
+        return this;
     }
 
     /**
-     * Get the type property: The type of the resource.
-     * 
-     * @return the type value.
+     * {@inheritDoc}
      */
     @Override
-    public String type() {
-        return this.type;
+    public MyWorkbookInner withType(String type) {
+        super.withType(type);
+        return this;
     }
 
     /**
@@ -295,11 +278,16 @@ public final class MyWorkbookInner extends MyWorkbookResource {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }
+        if (location() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property location in model MyWorkbookInner"));
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MyWorkbookInner.class);
 
     /**
      * {@inheritDoc}
@@ -333,13 +321,7 @@ public final class MyWorkbookInner extends MyWorkbookResource {
                 String fieldName = reader.getFieldName();
                 reader.nextToken();
 
-                if ("id".equals(fieldName)) {
-                    deserializedMyWorkbookInner.id = reader.getString();
-                } else if ("name".equals(fieldName)) {
-                    deserializedMyWorkbookInner.name = reader.getString();
-                } else if ("type".equals(fieldName)) {
-                    deserializedMyWorkbookInner.type = reader.getString();
-                } else if ("location".equals(fieldName)) {
+                if ("location".equals(fieldName)) {
                     deserializedMyWorkbookInner.withLocation(reader.getString());
                 } else if ("tags".equals(fieldName)) {
                     Map<String, String> tags = reader.readMap(reader1 -> reader1.getString());

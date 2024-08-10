@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -168,11 +169,16 @@ public final class JpgImage extends Image {
      */
     @Override
     public void validate() {
-        super.validate();
         if (layers() != null) {
             layers().forEach(e -> e.validate());
         }
+        if (start() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property start in model JpgImage"));
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(JpgImage.class);
 
     /**
      * {@inheritDoc}

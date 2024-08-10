@@ -108,7 +108,6 @@ public final class ServiceBusQueueEventSubscriptionDestination extends EventSubs
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

@@ -115,10 +115,18 @@ public final class JobInputAsset extends JobInputClip {
      */
     @Override
     public void validate() {
-        super.validate();
         if (assetName() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property assetName in model JobInputAsset"));
+        }
+        if (start() != null) {
+            start().validate();
+        }
+        if (end() != null) {
+            end().validate();
+        }
+        if (inputDefinitions() != null) {
+            inputDefinitions().forEach(e -> e.validate());
         }
     }
 

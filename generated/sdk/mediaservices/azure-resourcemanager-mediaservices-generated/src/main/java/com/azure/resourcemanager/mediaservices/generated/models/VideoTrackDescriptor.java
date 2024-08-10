@@ -43,7 +43,6 @@ public class VideoTrackDescriptor extends TrackDescriptor {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

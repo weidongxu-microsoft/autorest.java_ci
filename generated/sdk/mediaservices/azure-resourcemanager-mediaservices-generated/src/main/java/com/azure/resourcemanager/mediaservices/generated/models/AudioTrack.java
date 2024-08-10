@@ -211,7 +211,6 @@ public final class AudioTrack extends TrackBase {
      */
     @Override
     public void validate() {
-        super.validate();
         if (hlsSettings() != null) {
             hlsSettings().validate();
         }

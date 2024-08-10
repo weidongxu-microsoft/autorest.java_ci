@@ -121,7 +121,6 @@ public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriter
      */
     @Override
     public void validate() {
-        super.validate();
         if (webTestId() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

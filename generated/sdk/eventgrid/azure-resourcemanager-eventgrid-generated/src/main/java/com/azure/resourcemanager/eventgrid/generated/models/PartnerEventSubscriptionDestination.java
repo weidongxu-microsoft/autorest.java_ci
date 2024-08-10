@@ -83,7 +83,6 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

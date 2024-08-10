@@ -79,7 +79,6 @@ public final class NumberNotInAdvancedFilter extends AdvancedFilter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

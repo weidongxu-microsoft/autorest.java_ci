@@ -22,19 +22,9 @@ import java.util.UUID;
 @Immutable
 public final class LegacyReservationTransaction extends ReservationTransactionInner {
     /*
-     * Fully qualified resource Id for the resource.
+     * The properties of a legacy reservation transaction.
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
-
-    /*
-     * The type of the resource.
-     */
-    private String type;
+    private LegacyReservationTransactionProperties innerProperties;
 
     /*
      * Resource tags.
@@ -42,9 +32,19 @@ public final class LegacyReservationTransaction extends ReservationTransactionIn
     private List<String> tags;
 
     /*
-     * The properties of a legacy reservation transaction.
+     * The type of the resource.
      */
-    private LegacyReservationTransactionProperties innerProperties;
+    private String type;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of LegacyReservationTransaction class.
@@ -53,33 +53,12 @@ public final class LegacyReservationTransaction extends ReservationTransactionIn
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the innerProperties property: The properties of a legacy reservation transaction.
      * 
-     * @return the id value.
+     * @return the innerProperties value.
      */
-    @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
-    }
-
-    /**
-     * Get the type property: The type of the resource.
-     * 
-     * @return the type value.
-     */
-    @Override
-    public String type() {
-        return this.type;
+    private LegacyReservationTransactionProperties innerProperties() {
+        return this.innerProperties;
     }
 
     /**
@@ -93,12 +72,33 @@ public final class LegacyReservationTransaction extends ReservationTransactionIn
     }
 
     /**
-     * Get the innerProperties property: The properties of a legacy reservation transaction.
+     * Get the type property: The type of the resource.
      * 
-     * @return the innerProperties value.
+     * @return the type value.
      */
-    private LegacyReservationTransactionProperties innerProperties() {
-        return this.innerProperties;
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -319,7 +319,9 @@ public final class LegacyReservationTransaction extends ReservationTransactionIn
      */
     @Override
     public void validate() {
-        super.validate();
+        if (innerProperties() != null) {
+            innerProperties().validate();
+        }
     }
 
     /**

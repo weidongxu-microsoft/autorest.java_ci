@@ -211,7 +211,6 @@ public class Image extends Video {
      */
     @Override
     public void validate() {
-        super.validate();
         if (start() == null) {
             throw LOGGER.atError().log(new IllegalArgumentException("Missing required property start in model Image"));
         }

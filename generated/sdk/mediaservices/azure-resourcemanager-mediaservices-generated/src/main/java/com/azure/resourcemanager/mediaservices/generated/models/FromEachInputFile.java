@@ -54,7 +54,9 @@ public final class FromEachInputFile extends InputDefinition {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (includedTracks() != null) {
+            includedTracks().forEach(e -> e.validate());
+        }
     }
 
     /**

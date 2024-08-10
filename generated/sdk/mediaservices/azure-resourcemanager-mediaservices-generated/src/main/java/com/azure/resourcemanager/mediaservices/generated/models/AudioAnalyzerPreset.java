@@ -149,7 +149,6 @@ public class AudioAnalyzerPreset extends Preset {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

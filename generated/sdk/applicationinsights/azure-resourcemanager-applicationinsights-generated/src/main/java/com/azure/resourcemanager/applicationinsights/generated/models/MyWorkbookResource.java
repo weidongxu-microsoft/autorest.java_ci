@@ -6,6 +6,7 @@ package com.azure.resourcemanager.applicationinsights.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.management.Resource;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -122,7 +123,13 @@ public class MyWorkbookResource extends Resource {
      * @throws IllegalArgumentException thrown if the instance is not valid.
      */
     public void validate() {
+        if (location() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property location in model MyWorkbookResource"));
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(MyWorkbookResource.class);
 
     /**
      * {@inheritDoc}

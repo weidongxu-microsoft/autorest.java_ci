@@ -104,7 +104,6 @@ public final class AacAudio extends Audio {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

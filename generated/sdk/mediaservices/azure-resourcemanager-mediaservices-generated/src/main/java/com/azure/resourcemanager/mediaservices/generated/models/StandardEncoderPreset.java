@@ -148,7 +148,6 @@ public final class StandardEncoderPreset extends Preset {
      */
     @Override
     public void validate() {
-        super.validate();
         if (filters() != null) {
             filters().validate();
         }

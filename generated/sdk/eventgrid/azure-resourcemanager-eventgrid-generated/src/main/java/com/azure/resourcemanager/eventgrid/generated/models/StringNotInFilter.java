@@ -79,7 +79,6 @@ public final class StringNotInFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

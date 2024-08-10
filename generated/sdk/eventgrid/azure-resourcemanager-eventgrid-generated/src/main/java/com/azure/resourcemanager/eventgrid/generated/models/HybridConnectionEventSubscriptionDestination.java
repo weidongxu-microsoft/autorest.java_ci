@@ -108,7 +108,6 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

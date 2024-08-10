@@ -127,7 +127,6 @@ public class Audio extends Codec {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

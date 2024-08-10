@@ -207,7 +207,6 @@ public final class RedirectConfiguration extends RouteConfiguration {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

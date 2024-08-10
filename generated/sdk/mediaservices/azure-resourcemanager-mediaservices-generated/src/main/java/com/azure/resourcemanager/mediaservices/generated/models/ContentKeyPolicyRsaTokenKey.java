@@ -95,7 +95,6 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
      */
     @Override
     public void validate() {
-        super.validate();
         if (exponent() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

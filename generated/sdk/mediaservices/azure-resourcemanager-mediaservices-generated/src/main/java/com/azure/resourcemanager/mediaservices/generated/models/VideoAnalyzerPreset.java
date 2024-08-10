@@ -112,7 +112,6 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

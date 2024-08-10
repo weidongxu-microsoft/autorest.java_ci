@@ -6,6 +6,7 @@ package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
 import com.azure.core.util.CoreUtils;
+import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -99,8 +100,13 @@ public final class AudioOverlay extends Overlay {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (inputLabel() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException("Missing required property inputLabel in model AudioOverlay"));
+        }
     }
+
+    private static final ClientLogger LOGGER = new ClientLogger(AudioOverlay.class);
 
     /**
      * {@inheritDoc}

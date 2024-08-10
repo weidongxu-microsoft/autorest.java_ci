@@ -43,7 +43,6 @@ public final class ContentKeyPolicyClearKeyConfiguration extends ContentKeyPolic
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

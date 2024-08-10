@@ -74,7 +74,9 @@ public final class BackendPoolProperties extends BackendPoolUpdateParameters {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (backends() != null) {
+            backends().forEach(e -> e.validate());
+        }
     }
 
     /**

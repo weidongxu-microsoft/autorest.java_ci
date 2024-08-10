@@ -109,7 +109,6 @@ public final class AzureADPartnerClientAuthentication extends PartnerClientAuthe
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

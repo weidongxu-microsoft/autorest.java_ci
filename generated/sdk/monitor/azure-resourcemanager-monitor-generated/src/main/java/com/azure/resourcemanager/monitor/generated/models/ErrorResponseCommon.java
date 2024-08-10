@@ -24,14 +24,9 @@ public final class ErrorResponseCommon extends ManagementError {
     private List<ErrorResponseCommon> details;
 
     /*
-     * The error code parsed from the body of the http error response.
+     * Additional info for the error.
      */
-    private String code;
-
-    /*
-     * The error message parsed from the body of the http error response.
-     */
-    private String message;
+    private List<AdditionalInfo> additionalInfo;
 
     /*
      * The target of the error.
@@ -39,9 +34,14 @@ public final class ErrorResponseCommon extends ManagementError {
     private String target;
 
     /*
-     * Additional info for the error.
+     * The error message parsed from the body of the http error response.
      */
-    private List<AdditionalInfo> additionalInfo;
+    private String message;
+
+    /*
+     * The error code parsed from the body of the http error response.
+     */
+    private String code;
 
     /**
      * Creates an instance of ErrorResponseCommon class.
@@ -60,23 +60,13 @@ public final class ErrorResponseCommon extends ManagementError {
     }
 
     /**
-     * Get the code property: The error code parsed from the body of the http error response.
+     * Get the additionalInfo property: Additional info for the error.
      * 
-     * @return the code value.
+     * @return the additionalInfo value.
      */
     @Override
-    public String getCode() {
-        return this.code;
-    }
-
-    /**
-     * Get the message property: The error message parsed from the body of the http error response.
-     * 
-     * @return the message value.
-     */
-    @Override
-    public String getMessage() {
-        return this.message;
+    public List<AdditionalInfo> getAdditionalInfo() {
+        return this.additionalInfo;
     }
 
     /**
@@ -90,13 +80,23 @@ public final class ErrorResponseCommon extends ManagementError {
     }
 
     /**
-     * Get the additionalInfo property: Additional info for the error.
+     * Get the message property: The error message parsed from the body of the http error response.
      * 
-     * @return the additionalInfo value.
+     * @return the message value.
      */
     @Override
-    public List<AdditionalInfo> getAdditionalInfo() {
-        return this.additionalInfo;
+    public String getMessage() {
+        return this.message;
+    }
+
+    /**
+     * Get the code property: The error code parsed from the body of the http error response.
+     * 
+     * @return the code value.
+     */
+    @Override
+    public String getCode() {
+        return this.code;
     }
 
     /**

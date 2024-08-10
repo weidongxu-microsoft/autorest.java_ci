@@ -127,7 +127,6 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
      */
     @Override
     public void validate() {
-        super.validate();
         if (attribute() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

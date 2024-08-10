@@ -120,7 +120,6 @@ public final class BackupAndExportResponseType extends OperationProgressResponse
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

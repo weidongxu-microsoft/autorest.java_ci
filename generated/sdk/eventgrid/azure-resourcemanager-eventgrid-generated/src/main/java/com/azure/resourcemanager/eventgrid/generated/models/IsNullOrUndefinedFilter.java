@@ -53,7 +53,6 @@ public final class IsNullOrUndefinedFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

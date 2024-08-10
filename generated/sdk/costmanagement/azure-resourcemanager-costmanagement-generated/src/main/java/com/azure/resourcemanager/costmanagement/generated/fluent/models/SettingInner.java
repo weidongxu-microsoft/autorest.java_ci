@@ -25,14 +25,9 @@ public final class SettingInner extends ProxySettingResource {
     private SettingsProperties innerProperties;
 
     /*
-     * Fully qualified resource Id for the resource.
+     * Resource kind.
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
+    private String kind;
 
     /*
      * The type of the resource.
@@ -40,9 +35,14 @@ public final class SettingInner extends ProxySettingResource {
     private String type;
 
     /*
-     * Resource kind.
+     * The name of the resource.
      */
-    private String kind;
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of SettingInner class.
@@ -60,23 +60,13 @@ public final class SettingInner extends ProxySettingResource {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the kind property: Resource kind.
      * 
-     * @return the id value.
+     * @return the kind value.
      */
     @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
+    public String kind() {
+        return this.kind;
     }
 
     /**
@@ -90,13 +80,23 @@ public final class SettingInner extends ProxySettingResource {
     }
 
     /**
-     * Get the kind property: Resource kind.
+     * Get the name property: The name of the resource.
      * 
-     * @return the kind value.
+     * @return the name value.
      */
     @Override
-    public String kind() {
-        return this.kind;
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -179,7 +179,6 @@ public final class SettingInner extends ProxySettingResource {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

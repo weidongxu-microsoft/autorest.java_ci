@@ -223,7 +223,6 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
      */
     @Override
     public void validate() {
-        super.validate();
         if (issuer() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

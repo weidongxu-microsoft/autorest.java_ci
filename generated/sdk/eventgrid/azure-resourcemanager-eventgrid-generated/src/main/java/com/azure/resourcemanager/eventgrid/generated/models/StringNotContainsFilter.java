@@ -79,7 +79,6 @@ public final class StringNotContainsFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

@@ -97,7 +97,6 @@ public final class BuiltInStandardEncoderPreset extends Preset {
      */
     @Override
     public void validate() {
-        super.validate();
         if (configurations() != null) {
             configurations().validate();
         }

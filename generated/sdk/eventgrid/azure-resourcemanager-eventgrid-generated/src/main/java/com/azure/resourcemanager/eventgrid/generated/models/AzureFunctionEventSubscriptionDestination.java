@@ -155,7 +155,6 @@ public final class AzureFunctionEventSubscriptionDestination extends EventSubscr
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

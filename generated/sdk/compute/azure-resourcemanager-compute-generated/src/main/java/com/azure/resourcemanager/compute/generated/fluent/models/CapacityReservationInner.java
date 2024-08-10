@@ -45,9 +45,9 @@ public final class CapacityReservationInner extends Resource {
     private List<String> zones;
 
     /*
-     * Fully qualified resource Id for the resource.
+     * The type of the resource.
      */
-    private String id;
+    private String type;
 
     /*
      * The name of the resource.
@@ -55,9 +55,9 @@ public final class CapacityReservationInner extends Resource {
     private String name;
 
     /*
-     * The type of the resource.
+     * Fully qualified resource Id for the resource.
      */
-    private String type;
+    private String id;
 
     /**
      * Creates an instance of CapacityReservationInner class.
@@ -127,13 +127,13 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the type property: The type of the resource.
      * 
-     * @return the id value.
+     * @return the type value.
      */
     @Override
-    public String id() {
-        return this.id;
+    public String type() {
+        return this.type;
     }
 
     /**
@@ -147,13 +147,13 @@ public final class CapacityReservationInner extends Resource {
     }
 
     /**
-     * Get the type property: The type of the resource.
+     * Get the id property: Fully qualified resource Id for the resource.
      * 
-     * @return the type value.
+     * @return the id value.
      */
     @Override
-    public String type() {
-        return this.type;
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -257,6 +257,11 @@ public final class CapacityReservationInner extends Resource {
                 .log(new IllegalArgumentException("Missing required property sku in model CapacityReservationInner"));
         } else {
             sku().validate();
+        }
+        if (location() == null) {
+            throw LOGGER.atError()
+                .log(new IllegalArgumentException(
+                    "Missing required property location in model CapacityReservationInner"));
         }
     }
 

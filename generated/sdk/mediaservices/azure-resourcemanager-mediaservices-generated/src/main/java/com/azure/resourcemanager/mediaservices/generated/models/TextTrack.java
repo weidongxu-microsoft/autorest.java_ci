@@ -168,7 +168,6 @@ public final class TextTrack extends TrackBase {
      */
     @Override
     public void validate() {
-        super.validate();
         if (hlsSettings() != null) {
             hlsSettings().validate();
         }

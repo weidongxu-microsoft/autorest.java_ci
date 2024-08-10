@@ -90,7 +90,6 @@ public final class DynamicDeliveryAttributeMapping extends DeliveryAttributeMapp
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

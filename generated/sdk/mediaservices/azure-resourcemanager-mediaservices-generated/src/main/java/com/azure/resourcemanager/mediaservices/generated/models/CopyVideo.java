@@ -52,7 +52,6 @@ public final class CopyVideo extends Codec {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

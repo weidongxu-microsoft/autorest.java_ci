@@ -120,7 +120,15 @@ public final class JobInputHttp extends JobInputClip {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (start() != null) {
+            start().validate();
+        }
+        if (end() != null) {
+            end().validate();
+        }
+        if (inputDefinitions() != null) {
+            inputDefinitions().forEach(e -> e.validate());
+        }
     }
 
     /**

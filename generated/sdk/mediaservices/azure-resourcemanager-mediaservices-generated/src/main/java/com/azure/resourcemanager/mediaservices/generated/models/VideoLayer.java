@@ -229,7 +229,6 @@ public class VideoLayer extends Layer {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

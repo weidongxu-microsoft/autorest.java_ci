@@ -70,7 +70,6 @@ public final class JobInputSequence extends JobInput {
      */
     @Override
     public void validate() {
-        super.validate();
         if (inputs() != null) {
             inputs().forEach(e -> e.validate());
         }

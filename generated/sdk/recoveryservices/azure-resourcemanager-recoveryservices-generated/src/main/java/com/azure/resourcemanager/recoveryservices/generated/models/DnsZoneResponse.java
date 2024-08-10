@@ -63,7 +63,6 @@ public final class DnsZoneResponse extends DnsZone {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

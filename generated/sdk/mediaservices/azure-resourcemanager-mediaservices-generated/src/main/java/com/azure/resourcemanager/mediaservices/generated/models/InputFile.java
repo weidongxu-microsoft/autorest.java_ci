@@ -78,7 +78,9 @@ public final class InputFile extends InputDefinition {
      */
     @Override
     public void validate() {
-        super.validate();
+        if (includedTracks() != null) {
+            includedTracks().forEach(e -> e.validate());
+        }
     }
 
     /**

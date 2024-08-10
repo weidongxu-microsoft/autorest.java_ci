@@ -77,7 +77,6 @@ public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

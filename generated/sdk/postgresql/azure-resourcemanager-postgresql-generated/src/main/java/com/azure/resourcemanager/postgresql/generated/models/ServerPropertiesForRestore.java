@@ -153,7 +153,6 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
      */
     @Override
     public void validate() {
-        super.validate();
         if (sourceServerId() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(
@@ -163,6 +162,9 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(
                     "Missing required property restorePointInTime in model ServerPropertiesForRestore"));
+        }
+        if (storageProfile() != null) {
+            storageProfile().validate();
         }
     }
 

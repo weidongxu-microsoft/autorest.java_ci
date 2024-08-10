@@ -140,7 +140,6 @@ public class Video extends Codec {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

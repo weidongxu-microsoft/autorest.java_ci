@@ -78,7 +78,6 @@ public final class NumberLessThanOrEqualsAdvancedFilter extends AdvancedFilter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

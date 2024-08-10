@@ -79,7 +79,6 @@ public final class StringNotEndsWithAdvancedFilter extends AdvancedFilter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

@@ -27,74 +27,9 @@ public final class LegacySharedScopeReservationRecommendationProperties
     private String scope = "Shared";
 
     /*
-     * The number of days of usage to look back for recommendation.
+     * The total hours for which the cost is covered.
      */
-    private String lookBackPeriod;
-
-    /*
-     * The instance Flexibility Ratio.
-     */
-    private Float instanceFlexibilityRatio;
-
-    /*
-     * The instance Flexibility Group.
-     */
-    private String instanceFlexibilityGroup;
-
-    /*
-     * The normalized Size.
-     */
-    private String normalizedSize;
-
-    /*
-     * The recommended Quantity Normalized.
-     */
-    private Float recommendedQuantityNormalized;
-
-    /*
-     * The meter id (GUID)
-     */
-    private UUID meterId;
-
-    /*
-     * The azure resource type.
-     */
-    private String resourceType;
-
-    /*
-     * RI recommendations in one or three year terms.
-     */
-    private String term;
-
-    /*
-     * The total amount of cost without reserved instances.
-     */
-    private BigDecimal costWithNoReservedInstances;
-
-    /*
-     * Recommended quality for reserved instances.
-     */
-    private BigDecimal recommendedQuantity;
-
-    /*
-     * The total amount of cost with reserved instances.
-     */
-    private BigDecimal totalCostWithReservedInstances;
-
-    /*
-     * Total estimated savings with reserved instances.
-     */
-    private BigDecimal netSavings;
-
-    /*
-     * The usage date for looking back.
-     */
-    private OffsetDateTime firstUsageDate;
-
-    /*
-     * List of sku properties
-     */
-    private List<SkuProperty> skuProperties;
+    private Integer totalHours;
 
     /*
      * The last usage date used for looking back for computing the recommendation.
@@ -102,9 +37,74 @@ public final class LegacySharedScopeReservationRecommendationProperties
     private OffsetDateTime lastUsageDate;
 
     /*
-     * The total hours for which the cost is covered.
+     * List of sku properties
      */
-    private Integer totalHours;
+    private List<SkuProperty> skuProperties;
+
+    /*
+     * The usage date for looking back.
+     */
+    private OffsetDateTime firstUsageDate;
+
+    /*
+     * Total estimated savings with reserved instances.
+     */
+    private BigDecimal netSavings;
+
+    /*
+     * The total amount of cost with reserved instances.
+     */
+    private BigDecimal totalCostWithReservedInstances;
+
+    /*
+     * Recommended quality for reserved instances.
+     */
+    private BigDecimal recommendedQuantity;
+
+    /*
+     * The total amount of cost without reserved instances.
+     */
+    private BigDecimal costWithNoReservedInstances;
+
+    /*
+     * RI recommendations in one or three year terms.
+     */
+    private String term;
+
+    /*
+     * The azure resource type.
+     */
+    private String resourceType;
+
+    /*
+     * The meter id (GUID)
+     */
+    private UUID meterId;
+
+    /*
+     * The recommended Quantity Normalized.
+     */
+    private Float recommendedQuantityNormalized;
+
+    /*
+     * The normalized Size.
+     */
+    private String normalizedSize;
+
+    /*
+     * The instance Flexibility Group.
+     */
+    private String instanceFlexibilityGroup;
+
+    /*
+     * The instance Flexibility Ratio.
+     */
+    private Float instanceFlexibilityRatio;
+
+    /*
+     * The number of days of usage to look back for recommendation.
+     */
+    private String lookBackPeriod;
 
     /**
      * Creates an instance of LegacySharedScopeReservationRecommendationProperties class.
@@ -123,143 +123,13 @@ public final class LegacySharedScopeReservationRecommendationProperties
     }
 
     /**
-     * Get the lookBackPeriod property: The number of days of usage to look back for recommendation.
+     * Get the totalHours property: The total hours for which the cost is covered.
      * 
-     * @return the lookBackPeriod value.
+     * @return the totalHours value.
      */
     @Override
-    public String lookBackPeriod() {
-        return this.lookBackPeriod;
-    }
-
-    /**
-     * Get the instanceFlexibilityRatio property: The instance Flexibility Ratio.
-     * 
-     * @return the instanceFlexibilityRatio value.
-     */
-    @Override
-    public Float instanceFlexibilityRatio() {
-        return this.instanceFlexibilityRatio;
-    }
-
-    /**
-     * Get the instanceFlexibilityGroup property: The instance Flexibility Group.
-     * 
-     * @return the instanceFlexibilityGroup value.
-     */
-    @Override
-    public String instanceFlexibilityGroup() {
-        return this.instanceFlexibilityGroup;
-    }
-
-    /**
-     * Get the normalizedSize property: The normalized Size.
-     * 
-     * @return the normalizedSize value.
-     */
-    @Override
-    public String normalizedSize() {
-        return this.normalizedSize;
-    }
-
-    /**
-     * Get the recommendedQuantityNormalized property: The recommended Quantity Normalized.
-     * 
-     * @return the recommendedQuantityNormalized value.
-     */
-    @Override
-    public Float recommendedQuantityNormalized() {
-        return this.recommendedQuantityNormalized;
-    }
-
-    /**
-     * Get the meterId property: The meter id (GUID).
-     * 
-     * @return the meterId value.
-     */
-    @Override
-    public UUID meterId() {
-        return this.meterId;
-    }
-
-    /**
-     * Get the resourceType property: The azure resource type.
-     * 
-     * @return the resourceType value.
-     */
-    @Override
-    public String resourceType() {
-        return this.resourceType;
-    }
-
-    /**
-     * Get the term property: RI recommendations in one or three year terms.
-     * 
-     * @return the term value.
-     */
-    @Override
-    public String term() {
-        return this.term;
-    }
-
-    /**
-     * Get the costWithNoReservedInstances property: The total amount of cost without reserved instances.
-     * 
-     * @return the costWithNoReservedInstances value.
-     */
-    @Override
-    public BigDecimal costWithNoReservedInstances() {
-        return this.costWithNoReservedInstances;
-    }
-
-    /**
-     * Get the recommendedQuantity property: Recommended quality for reserved instances.
-     * 
-     * @return the recommendedQuantity value.
-     */
-    @Override
-    public BigDecimal recommendedQuantity() {
-        return this.recommendedQuantity;
-    }
-
-    /**
-     * Get the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
-     * 
-     * @return the totalCostWithReservedInstances value.
-     */
-    @Override
-    public BigDecimal totalCostWithReservedInstances() {
-        return this.totalCostWithReservedInstances;
-    }
-
-    /**
-     * Get the netSavings property: Total estimated savings with reserved instances.
-     * 
-     * @return the netSavings value.
-     */
-    @Override
-    public BigDecimal netSavings() {
-        return this.netSavings;
-    }
-
-    /**
-     * Get the firstUsageDate property: The usage date for looking back.
-     * 
-     * @return the firstUsageDate value.
-     */
-    @Override
-    public OffsetDateTime firstUsageDate() {
-        return this.firstUsageDate;
-    }
-
-    /**
-     * Get the skuProperties property: List of sku properties.
-     * 
-     * @return the skuProperties value.
-     */
-    @Override
-    public List<SkuProperty> skuProperties() {
-        return this.skuProperties;
+    public Integer totalHours() {
+        return this.totalHours;
     }
 
     /**
@@ -273,13 +143,143 @@ public final class LegacySharedScopeReservationRecommendationProperties
     }
 
     /**
-     * Get the totalHours property: The total hours for which the cost is covered.
+     * Get the skuProperties property: List of sku properties.
      * 
-     * @return the totalHours value.
+     * @return the skuProperties value.
      */
     @Override
-    public Integer totalHours() {
-        return this.totalHours;
+    public List<SkuProperty> skuProperties() {
+        return this.skuProperties;
+    }
+
+    /**
+     * Get the firstUsageDate property: The usage date for looking back.
+     * 
+     * @return the firstUsageDate value.
+     */
+    @Override
+    public OffsetDateTime firstUsageDate() {
+        return this.firstUsageDate;
+    }
+
+    /**
+     * Get the netSavings property: Total estimated savings with reserved instances.
+     * 
+     * @return the netSavings value.
+     */
+    @Override
+    public BigDecimal netSavings() {
+        return this.netSavings;
+    }
+
+    /**
+     * Get the totalCostWithReservedInstances property: The total amount of cost with reserved instances.
+     * 
+     * @return the totalCostWithReservedInstances value.
+     */
+    @Override
+    public BigDecimal totalCostWithReservedInstances() {
+        return this.totalCostWithReservedInstances;
+    }
+
+    /**
+     * Get the recommendedQuantity property: Recommended quality for reserved instances.
+     * 
+     * @return the recommendedQuantity value.
+     */
+    @Override
+    public BigDecimal recommendedQuantity() {
+        return this.recommendedQuantity;
+    }
+
+    /**
+     * Get the costWithNoReservedInstances property: The total amount of cost without reserved instances.
+     * 
+     * @return the costWithNoReservedInstances value.
+     */
+    @Override
+    public BigDecimal costWithNoReservedInstances() {
+        return this.costWithNoReservedInstances;
+    }
+
+    /**
+     * Get the term property: RI recommendations in one or three year terms.
+     * 
+     * @return the term value.
+     */
+    @Override
+    public String term() {
+        return this.term;
+    }
+
+    /**
+     * Get the resourceType property: The azure resource type.
+     * 
+     * @return the resourceType value.
+     */
+    @Override
+    public String resourceType() {
+        return this.resourceType;
+    }
+
+    /**
+     * Get the meterId property: The meter id (GUID).
+     * 
+     * @return the meterId value.
+     */
+    @Override
+    public UUID meterId() {
+        return this.meterId;
+    }
+
+    /**
+     * Get the recommendedQuantityNormalized property: The recommended Quantity Normalized.
+     * 
+     * @return the recommendedQuantityNormalized value.
+     */
+    @Override
+    public Float recommendedQuantityNormalized() {
+        return this.recommendedQuantityNormalized;
+    }
+
+    /**
+     * Get the normalizedSize property: The normalized Size.
+     * 
+     * @return the normalizedSize value.
+     */
+    @Override
+    public String normalizedSize() {
+        return this.normalizedSize;
+    }
+
+    /**
+     * Get the instanceFlexibilityGroup property: The instance Flexibility Group.
+     * 
+     * @return the instanceFlexibilityGroup value.
+     */
+    @Override
+    public String instanceFlexibilityGroup() {
+        return this.instanceFlexibilityGroup;
+    }
+
+    /**
+     * Get the instanceFlexibilityRatio property: The instance Flexibility Ratio.
+     * 
+     * @return the instanceFlexibilityRatio value.
+     */
+    @Override
+    public Float instanceFlexibilityRatio() {
+        return this.instanceFlexibilityRatio;
+    }
+
+    /**
+     * Get the lookBackPeriod property: The number of days of usage to look back for recommendation.
+     * 
+     * @return the lookBackPeriod value.
+     */
+    @Override
+    public String lookBackPeriod() {
+        return this.lookBackPeriod;
     }
 
     /**
@@ -289,7 +289,9 @@ public final class LegacySharedScopeReservationRecommendationProperties
      */
     @Override
     public void validate() {
-        super.validate();
+        if (skuProperties() != null) {
+            skuProperties().forEach(e -> e.validate());
+        }
     }
 
     /**

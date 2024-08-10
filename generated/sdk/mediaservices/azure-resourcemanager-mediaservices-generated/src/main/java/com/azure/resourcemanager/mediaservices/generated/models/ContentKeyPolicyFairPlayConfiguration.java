@@ -201,7 +201,6 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
      */
     @Override
     public void validate() {
-        super.validate();
         if (ask() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

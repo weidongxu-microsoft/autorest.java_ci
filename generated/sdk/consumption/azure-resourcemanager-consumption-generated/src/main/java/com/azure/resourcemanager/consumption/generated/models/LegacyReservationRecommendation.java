@@ -29,29 +29,9 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     private LegacyReservationRecommendationProperties properties;
 
     /*
-     * Fully qualified resource Id for the resource.
+     * Resource sku
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
-
-    /*
-     * The type of the resource.
-     */
-    private String type;
-
-    /*
-     * The etag for the resource.
-     */
-    private String etag;
-
-    /*
-     * Resource tags.
-     */
-    private Map<String, String> tags;
+    private String sku;
 
     /*
      * Resource location
@@ -59,9 +39,29 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     private String location;
 
     /*
-     * Resource sku
+     * Resource tags.
      */
-    private String sku;
+    private Map<String, String> tags;
+
+    /*
+     * The etag for the resource.
+     */
+    private String etag;
+
+    /*
+     * The type of the resource.
+     */
+    private String type;
+
+    /*
+     * The name of the resource.
+     */
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of LegacyReservationRecommendation class.
@@ -100,53 +100,13 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the sku property: Resource sku.
      * 
-     * @return the id value.
+     * @return the sku value.
      */
     @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
-    }
-
-    /**
-     * Get the type property: The type of the resource.
-     * 
-     * @return the type value.
-     */
-    @Override
-    public String type() {
-        return this.type;
-    }
-
-    /**
-     * Get the etag property: The etag for the resource.
-     * 
-     * @return the etag value.
-     */
-    @Override
-    public String etag() {
-        return this.etag;
-    }
-
-    /**
-     * Get the tags property: Resource tags.
-     * 
-     * @return the tags value.
-     */
-    @Override
-    public Map<String, String> tags() {
-        return this.tags;
+    public String sku() {
+        return this.sku;
     }
 
     /**
@@ -160,13 +120,53 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
     }
 
     /**
-     * Get the sku property: Resource sku.
+     * Get the tags property: Resource tags.
      * 
-     * @return the sku value.
+     * @return the tags value.
      */
     @Override
-    public String sku() {
-        return this.sku;
+    public Map<String, String> tags() {
+        return this.tags;
+    }
+
+    /**
+     * Get the etag property: The etag for the resource.
+     * 
+     * @return the etag value.
+     */
+    @Override
+    public String etag() {
+        return this.etag;
+    }
+
+    /**
+     * Get the type property: The type of the resource.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public String type() {
+        return this.type;
+    }
+
+    /**
+     * Get the name property: The name of the resource.
+     * 
+     * @return the name value.
+     */
+    @Override
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -176,7 +176,6 @@ public final class LegacyReservationRecommendation extends ReservationRecommenda
      */
     @Override
     public void validate() {
-        super.validate();
         if (properties() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

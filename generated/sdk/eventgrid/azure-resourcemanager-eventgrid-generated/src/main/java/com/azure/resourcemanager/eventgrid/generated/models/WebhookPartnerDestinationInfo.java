@@ -174,9 +174,11 @@ public final class WebhookPartnerDestinationInfo extends PartnerDestinationInfo 
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
+        }
+        if (resourceMoveChangeHistory() != null) {
+            resourceMoveChangeHistory().forEach(e -> e.validate());
         }
     }
 

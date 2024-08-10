@@ -196,7 +196,6 @@ public final class ResourceCertificateAndAcsDetails extends ResourceCertificateD
      */
     @Override
     public void validate() {
-        super.validate();
         if (globalAcsNamespace() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException(

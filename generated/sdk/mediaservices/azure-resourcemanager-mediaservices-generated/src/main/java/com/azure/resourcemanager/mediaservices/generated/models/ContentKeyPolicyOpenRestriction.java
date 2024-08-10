@@ -43,7 +43,6 @@ public final class ContentKeyPolicyOpenRestriction extends ContentKeyPolicyRestr
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

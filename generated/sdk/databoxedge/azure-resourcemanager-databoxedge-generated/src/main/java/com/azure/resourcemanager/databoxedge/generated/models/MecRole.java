@@ -29,14 +29,9 @@ public final class MecRole extends RoleInner {
     private MecRoleProperties innerProperties;
 
     /*
-     * Fully qualified resource Id for the resource.
+     * Metadata pertaining to creation and last modification of Role
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
+    private SystemData systemData;
 
     /*
      * The type of the resource.
@@ -44,9 +39,14 @@ public final class MecRole extends RoleInner {
     private String type;
 
     /*
-     * Metadata pertaining to creation and last modification of Role
+     * The name of the resource.
      */
-    private SystemData systemData;
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of MecRole class.
@@ -74,23 +74,13 @@ public final class MecRole extends RoleInner {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the systemData property: Metadata pertaining to creation and last modification of Role.
      * 
-     * @return the id value.
+     * @return the systemData value.
      */
     @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -104,13 +94,23 @@ public final class MecRole extends RoleInner {
     }
 
     /**
-     * Get the systemData property: Metadata pertaining to creation and last modification of Role.
+     * Get the name property: The name of the resource.
      * 
-     * @return the systemData value.
+     * @return the name value.
      */
     @Override
-    public SystemData systemData() {
-        return this.systemData;
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -212,7 +212,6 @@ public final class MecRole extends RoleInner {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

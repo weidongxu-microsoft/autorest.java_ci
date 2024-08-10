@@ -55,7 +55,6 @@ public final class PngLayer extends Layer {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

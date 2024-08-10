@@ -79,7 +79,6 @@ public final class StringEndsWithFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

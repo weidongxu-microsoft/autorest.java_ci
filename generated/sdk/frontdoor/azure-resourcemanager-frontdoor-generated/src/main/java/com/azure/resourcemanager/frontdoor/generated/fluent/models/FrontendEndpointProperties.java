@@ -130,9 +130,11 @@ public final class FrontendEndpointProperties extends FrontendEndpointUpdatePara
      */
     @Override
     public void validate() {
-        super.validate();
         if (customHttpsConfiguration() != null) {
             customHttpsConfiguration().validate();
+        }
+        if (webApplicationFirewallPolicyLink() != null) {
+            webApplicationFirewallPolicyLink().validate();
         }
     }
 

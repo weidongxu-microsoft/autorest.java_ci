@@ -108,7 +108,6 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

@@ -194,9 +194,26 @@ public final class FrontDoorProperties extends FrontDoorUpdateParameters {
      */
     @Override
     public void validate() {
-        super.validate();
         if (rulesEngines() != null) {
             rulesEngines().forEach(e -> e.validate());
+        }
+        if (routingRules() != null) {
+            routingRules().forEach(e -> e.validate());
+        }
+        if (loadBalancingSettings() != null) {
+            loadBalancingSettings().forEach(e -> e.validate());
+        }
+        if (healthProbeSettings() != null) {
+            healthProbeSettings().forEach(e -> e.validate());
+        }
+        if (backendPools() != null) {
+            backendPools().forEach(e -> e.validate());
+        }
+        if (frontendEndpoints() != null) {
+            frontendEndpoints().forEach(e -> e.validate());
+        }
+        if (backendPoolsSettings() != null) {
+            backendPoolsSettings().validate();
         }
     }
 

@@ -30,14 +30,9 @@ public final class ArcAddon extends AddonInner {
     private ArcAddonProperties innerProperties = new ArcAddonProperties();
 
     /*
-     * Fully qualified resource Id for the resource.
+     * Metadata pertaining to creation and last modification of Addon
      */
-    private String id;
-
-    /*
-     * The name of the resource.
-     */
-    private String name;
+    private SystemData systemData;
 
     /*
      * The type of the resource.
@@ -45,9 +40,14 @@ public final class ArcAddon extends AddonInner {
     private String type;
 
     /*
-     * Metadata pertaining to creation and last modification of Addon
+     * The name of the resource.
      */
-    private SystemData systemData;
+    private String name;
+
+    /*
+     * Fully qualified resource Id for the resource.
+     */
+    private String id;
 
     /**
      * Creates an instance of ArcAddon class.
@@ -75,23 +75,13 @@ public final class ArcAddon extends AddonInner {
     }
 
     /**
-     * Get the id property: Fully qualified resource Id for the resource.
+     * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
      * 
-     * @return the id value.
+     * @return the systemData value.
      */
     @Override
-    public String id() {
-        return this.id;
-    }
-
-    /**
-     * Get the name property: The name of the resource.
-     * 
-     * @return the name value.
-     */
-    @Override
-    public String name() {
-        return this.name;
+    public SystemData systemData() {
+        return this.systemData;
     }
 
     /**
@@ -105,13 +95,23 @@ public final class ArcAddon extends AddonInner {
     }
 
     /**
-     * Get the systemData property: Metadata pertaining to creation and last modification of Addon.
+     * Get the name property: The name of the resource.
      * 
-     * @return the systemData value.
+     * @return the name value.
      */
     @Override
-    public SystemData systemData() {
-        return this.systemData;
+    public String name() {
+        return this.name;
+    }
+
+    /**
+     * Get the id property: Fully qualified resource Id for the resource.
+     * 
+     * @return the id value.
+     */
+    @Override
+    public String id() {
+        return this.id;
     }
 
     /**
@@ -249,7 +249,6 @@ public final class ArcAddon extends AddonInner {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property innerProperties in model ArcAddon"));

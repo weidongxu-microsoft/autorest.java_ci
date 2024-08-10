@@ -136,7 +136,6 @@ public final class StorageQueueEventSubscriptionDestination extends EventSubscri
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

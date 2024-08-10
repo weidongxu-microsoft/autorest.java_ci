@@ -80,7 +80,6 @@ public final class JpgLayer extends Layer {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

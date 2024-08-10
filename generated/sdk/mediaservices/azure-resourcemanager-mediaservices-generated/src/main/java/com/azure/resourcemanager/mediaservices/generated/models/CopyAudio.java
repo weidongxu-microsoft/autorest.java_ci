@@ -52,7 +52,6 @@ public final class CopyAudio extends Codec {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

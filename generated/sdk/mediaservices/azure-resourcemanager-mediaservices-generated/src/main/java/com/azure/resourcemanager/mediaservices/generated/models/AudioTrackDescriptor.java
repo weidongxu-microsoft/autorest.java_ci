@@ -71,7 +71,6 @@ public class AudioTrackDescriptor extends TrackDescriptor {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

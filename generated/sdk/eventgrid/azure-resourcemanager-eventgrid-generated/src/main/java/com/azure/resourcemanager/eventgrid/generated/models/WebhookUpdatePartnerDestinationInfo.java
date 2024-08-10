@@ -128,7 +128,6 @@ public final class WebhookUpdatePartnerDestinationInfo extends PartnerUpdateDest
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }

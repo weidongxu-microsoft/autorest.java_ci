@@ -29,14 +29,14 @@ public final class JobOutputAsset extends JobOutput {
     private String assetName;
 
     /*
-     * If the JobOutput is in the Error state, it contains the details of the error.
+     * The UTC date and time at which this Job Output finished processing.
      */
-    private JobError error;
+    private OffsetDateTime endTime;
 
     /*
-     * Describes the state of the JobOutput.
+     * The UTC date and time at which this Job Output began processing.
      */
-    private JobState state;
+    private OffsetDateTime startTime;
 
     /*
      * If the JobOutput is in a Processing state, this contains the Job completion percentage. The value is an estimate
@@ -46,14 +46,14 @@ public final class JobOutputAsset extends JobOutput {
     private Integer progress;
 
     /*
-     * The UTC date and time at which this Job Output began processing.
+     * Describes the state of the JobOutput.
      */
-    private OffsetDateTime startTime;
+    private JobState state;
 
     /*
-     * The UTC date and time at which this Job Output finished processing.
+     * If the JobOutput is in the Error state, it contains the details of the error.
      */
-    private OffsetDateTime endTime;
+    private JobError error;
 
     /**
      * Creates an instance of JobOutputAsset class.
@@ -92,23 +92,23 @@ public final class JobOutputAsset extends JobOutput {
     }
 
     /**
-     * Get the error property: If the JobOutput is in the Error state, it contains the details of the error.
+     * Get the endTime property: The UTC date and time at which this Job Output finished processing.
      * 
-     * @return the error value.
+     * @return the endTime value.
      */
     @Override
-    public JobError error() {
-        return this.error;
+    public OffsetDateTime endTime() {
+        return this.endTime;
     }
 
     /**
-     * Get the state property: Describes the state of the JobOutput.
+     * Get the startTime property: The UTC date and time at which this Job Output began processing.
      * 
-     * @return the state value.
+     * @return the startTime value.
      */
     @Override
-    public JobState state() {
-        return this.state;
+    public OffsetDateTime startTime() {
+        return this.startTime;
     }
 
     /**
@@ -124,23 +124,23 @@ public final class JobOutputAsset extends JobOutput {
     }
 
     /**
-     * Get the startTime property: The UTC date and time at which this Job Output began processing.
+     * Get the state property: Describes the state of the JobOutput.
      * 
-     * @return the startTime value.
+     * @return the state value.
      */
     @Override
-    public OffsetDateTime startTime() {
-        return this.startTime;
+    public JobState state() {
+        return this.state;
     }
 
     /**
-     * Get the endTime property: The UTC date and time at which this Job Output finished processing.
+     * Get the error property: If the JobOutput is in the Error state, it contains the details of the error.
      * 
-     * @return the endTime value.
+     * @return the error value.
      */
     @Override
-    public OffsetDateTime endTime() {
-        return this.endTime;
+    public JobError error() {
+        return this.error;
     }
 
     /**
@@ -168,10 +168,15 @@ public final class JobOutputAsset extends JobOutput {
      */
     @Override
     public void validate() {
-        super.validate();
         if (assetName() == null) {
             throw LOGGER.atError()
                 .log(new IllegalArgumentException("Missing required property assetName in model JobOutputAsset"));
+        }
+        if (error() != null) {
+            error().validate();
+        }
+        if (presetOverride() != null) {
+            presetOverride().validate();
         }
     }
 

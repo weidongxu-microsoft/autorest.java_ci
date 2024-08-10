@@ -79,7 +79,6 @@ public final class NumberInRangeFilter extends Filter {
      */
     @Override
     public void validate() {
-        super.validate();
     }
 
     /**

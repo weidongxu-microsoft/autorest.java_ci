@@ -197,7 +197,6 @@ public final class JsonInputSchemaMapping extends InputSchemaMapping {
      */
     @Override
     public void validate() {
-        super.validate();
         if (innerProperties() != null) {
             innerProperties().validate();
         }
