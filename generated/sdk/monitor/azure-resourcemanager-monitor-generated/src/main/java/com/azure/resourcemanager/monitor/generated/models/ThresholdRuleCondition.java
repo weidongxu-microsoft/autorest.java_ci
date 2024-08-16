@@ -19,13 +19,6 @@ import java.time.Duration;
 @Fluent
 public final class ThresholdRuleCondition extends RuleCondition {
     /*
-     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of
-     * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
-     * ThresholdRuleCondition (based on the threshold of a metric).
-     */
-    private String odataType = "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition";
-
-    /*
      * the operator used to compare the data and the threshold.
      */
     private ConditionOperator operator;
@@ -51,18 +44,7 @@ public final class ThresholdRuleCondition extends RuleCondition {
      * Creates an instance of ThresholdRuleCondition class.
      */
     public ThresholdRuleCondition() {
-    }
-
-    /**
-     * Get the odataType property: specifies the type of condition. This can be one of three types:
-     * ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the
-     * number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "Microsoft.Azure.Management.Insights.Models.ThresholdRuleCondition";
     }
 
     /**
@@ -183,10 +165,9 @@ public final class ThresholdRuleCondition extends RuleCondition {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeJsonField("dataSource", dataSource());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("operator", this.operator == null ? null : this.operator.toString());
         jsonWriter.writeDoubleField("threshold", this.threshold);
-        jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeStringField("windowSize", CoreUtils.durationToStringWithDays(this.windowSize));
         jsonWriter.writeStringField("timeAggregation",
             this.timeAggregation == null ? null : this.timeAggregation.toString());

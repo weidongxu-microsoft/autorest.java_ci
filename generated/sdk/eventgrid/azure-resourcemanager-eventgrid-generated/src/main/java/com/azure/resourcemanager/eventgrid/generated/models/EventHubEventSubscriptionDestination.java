@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class EventHubEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
-     * Type of the endpoint for the event subscription destination.
-     */
-    private EndpointType endpointType = EndpointType.EVENT_HUB;
-
-    /*
      * Event Hub Properties of the event subscription destination.
      */
     private EventHubEventSubscriptionDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
      * Creates an instance of EventHubEventSubscriptionDestination class.
      */
     public EventHubEventSubscriptionDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public EndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = EndpointType.EVENT_HUB;
     }
 
     /**
@@ -119,7 +105,7 @@ public final class EventHubEventSubscriptionDestination extends EventSubscriptio
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

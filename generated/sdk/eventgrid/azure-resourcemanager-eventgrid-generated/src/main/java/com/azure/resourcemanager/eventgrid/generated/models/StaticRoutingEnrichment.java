@@ -19,7 +19,7 @@ public class StaticRoutingEnrichment implements JsonSerializable<StaticRoutingEn
     /*
      * Static routing enrichment value type. For e.g. this property value can be 'String'.
      */
-    private StaticRoutingEnrichmentType valueType = StaticRoutingEnrichmentType.fromString("StaticRoutingEnrichment");
+    StaticRoutingEnrichmentType valueType;
 
     /*
      * Static routing enrichment key.
@@ -30,6 +30,7 @@ public class StaticRoutingEnrichment implements JsonSerializable<StaticRoutingEn
      * Creates an instance of StaticRoutingEnrichment class.
      */
     public StaticRoutingEnrichment() {
+        this.valueType = StaticRoutingEnrichmentType.fromString("StaticRoutingEnrichment");
     }
 
     /**
@@ -75,9 +76,13 @@ public class StaticRoutingEnrichment implements JsonSerializable<StaticRoutingEn
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("valueType", this.valueType == null ? null : this.valueType.toString());
         jsonWriter.writeStringField("key", this.key);
-        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class HybridConnectionEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
-     * Type of the endpoint for the event subscription destination.
-     */
-    private EndpointType endpointType = EndpointType.HYBRID_CONNECTION;
-
-    /*
      * Hybrid connection Properties of the event subscription destination.
      */
     private HybridConnectionEventSubscriptionDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
      * Creates an instance of HybridConnectionEventSubscriptionDestination class.
      */
     public HybridConnectionEventSubscriptionDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public EndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = EndpointType.HYBRID_CONNECTION;
     }
 
     /**
@@ -119,7 +105,7 @@ public final class HybridConnectionEventSubscriptionDestination extends EventSub
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

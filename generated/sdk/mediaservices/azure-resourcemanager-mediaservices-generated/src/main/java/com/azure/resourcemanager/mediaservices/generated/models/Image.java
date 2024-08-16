@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
@@ -18,11 +17,6 @@ import java.time.Duration;
  */
 @Fluent
 public class Image extends Video {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.Image";
-
     /*
      * The position in the input video from where to start generating thumbnails. The value can be in ISO 8601 format
      * (For example, PT05S to start at 5 seconds), or a frame count (For example, 10 to start at the 10th frame), or a
@@ -60,16 +54,7 @@ public class Image extends Video {
      * Creates an instance of Image class.
      */
     public Image() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.Image";
     }
 
     /**
@@ -224,15 +209,15 @@ public class Image extends Video {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("label", label());
-        jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(keyFrameInterval()));
-        jsonWriter.writeStringField("stretchMode", stretchMode() == null ? null : stretchMode().toString());
-        jsonWriter.writeStringField("syncMode", syncMode() == null ? null : syncMode().toString());
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        super.toJsonShared(jsonWriter);
         jsonWriter.writeStringField("start", this.start);
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("step", this.step);
         jsonWriter.writeStringField("range", this.range);
-        return jsonWriter.writeEndObject();
     }
 
     /**

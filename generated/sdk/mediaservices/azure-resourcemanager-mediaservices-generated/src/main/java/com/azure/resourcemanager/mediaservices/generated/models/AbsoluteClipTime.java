@@ -20,11 +20,6 @@ import java.time.Duration;
 @Fluent
 public final class AbsoluteClipTime extends ClipTime {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.AbsoluteClipTime";
-
-    /*
      * The time position on the timeline of the input media. It is usually specified as an ISO8601 period. e.g PT30S for
      * 30 seconds.
      */
@@ -34,16 +29,7 @@ public final class AbsoluteClipTime extends ClipTime {
      * Creates an instance of AbsoluteClipTime class.
      */
     public AbsoluteClipTime() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.AbsoluteClipTime";
     }
 
     /**
@@ -89,8 +75,8 @@ public final class AbsoluteClipTime extends ClipTime {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("time", CoreUtils.durationToStringWithDays(this.time));
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

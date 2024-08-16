@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.SelectAudioTrackByAttribute";
-
-    /*
      * The TrackAttribute to filter the tracks by.
      */
     private TrackAttribute attribute;
@@ -41,16 +36,7 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
      * Creates an instance of SelectAudioTrackByAttribute class.
      */
     public SelectAudioTrackByAttribute() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.SelectAudioTrackByAttribute";
     }
 
     /**
@@ -153,10 +139,9 @@ public final class SelectAudioTrackByAttribute extends AudioTrackDescriptor {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("channelMapping", channelMapping() == null ? null : channelMapping().toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("attribute", this.attribute == null ? null : this.attribute.toString());
         jsonWriter.writeStringField("filter", this.filter == null ? null : this.filter.toString());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("filterValue", this.filterValue);
         return jsonWriter.writeEndObject();
     }

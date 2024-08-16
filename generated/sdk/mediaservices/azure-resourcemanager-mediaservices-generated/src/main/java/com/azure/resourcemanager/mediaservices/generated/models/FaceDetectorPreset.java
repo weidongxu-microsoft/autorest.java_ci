@@ -18,11 +18,6 @@ import java.util.Map;
 @Fluent
 public final class FaceDetectorPreset extends Preset {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.FaceDetectorPreset";
-
-    /*
      * Specifies the maximum resolution at which your video is analyzed. The default behavior is "SourceResolution,"
      * which will keep the input video at its original resolution when analyzed. Using "StandardDefinition" will resize
      * input videos to standard definition while preserving the appropriate aspect ratio. It will only resize if the
@@ -58,16 +53,7 @@ public final class FaceDetectorPreset extends Preset {
      * Creates an instance of FaceDetectorPreset class.
      */
     public FaceDetectorPreset() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.FaceDetectorPreset";
     }
 
     /**
@@ -191,7 +177,7 @@ public final class FaceDetectorPreset extends Preset {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("resolution", this.resolution == null ? null : this.resolution.toString());
         jsonWriter.writeStringField("mode", this.mode == null ? null : this.mode.toString());
         jsonWriter.writeStringField("blurType", this.blurType == null ? null : this.blurType.toString());

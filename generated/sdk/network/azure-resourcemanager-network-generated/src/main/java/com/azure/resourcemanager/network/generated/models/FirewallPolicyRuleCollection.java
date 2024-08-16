@@ -19,8 +19,7 @@ public class FirewallPolicyRuleCollection implements JsonSerializable<FirewallPo
     /*
      * The type of the rule collection.
      */
-    private FirewallPolicyRuleCollectionType ruleCollectionType
-        = FirewallPolicyRuleCollectionType.fromString("FirewallPolicyRuleCollection");
+    FirewallPolicyRuleCollectionType ruleCollectionType;
 
     /*
      * The name of the rule collection.
@@ -36,6 +35,7 @@ public class FirewallPolicyRuleCollection implements JsonSerializable<FirewallPo
      * Creates an instance of FirewallPolicyRuleCollection class.
      */
     public FirewallPolicyRuleCollection() {
+        this.ruleCollectionType = FirewallPolicyRuleCollectionType.fromString("FirewallPolicyRuleCollection");
     }
 
     /**
@@ -101,11 +101,15 @@ public class FirewallPolicyRuleCollection implements JsonSerializable<FirewallPo
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("ruleCollectionType",
             this.ruleCollectionType == null ? null : this.ruleCollectionType.toString());
         jsonWriter.writeStringField("name", this.name);
         jsonWriter.writeNumberField("priority", this.priority);
-        return jsonWriter.writeEndObject();
     }
 
     /**

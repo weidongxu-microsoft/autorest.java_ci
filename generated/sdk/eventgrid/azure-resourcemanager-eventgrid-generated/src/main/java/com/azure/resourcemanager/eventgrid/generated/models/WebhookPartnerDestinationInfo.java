@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class WebhookPartnerDestinationInfo extends PartnerDestinationInfo {
     /*
-     * Type of the endpoint for the partner destination
-     */
-    private PartnerEndpointType endpointType = PartnerEndpointType.WEB_HOOK;
-
-    /*
      * WebHook Properties of the partner destination.
      */
     private WebhookPartnerDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class WebhookPartnerDestinationInfo extends PartnerDestinationInfo 
      * Creates an instance of WebhookPartnerDestinationInfo class.
      */
     public WebhookPartnerDestinationInfo() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the partner destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public PartnerEndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = PartnerEndpointType.WEB_HOOK;
     }
 
     /**
@@ -188,13 +174,7 @@ public final class WebhookPartnerDestinationInfo extends PartnerDestinationInfo 
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("azureSubscriptionId", azureSubscriptionId());
-        jsonWriter.writeStringField("resourceGroupName", resourceGroupName());
-        jsonWriter.writeStringField("name", name());
-        jsonWriter.writeStringField("endpointServiceContext", endpointServiceContext());
-        jsonWriter.writeArrayField("resourceMoveChangeHistory", resourceMoveChangeHistory(),
-            (writer, element) -> writer.writeJson(element));
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

@@ -12,19 +12,12 @@ import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Certificate details representing the Vault credentials for ACS.
  */
 @Fluent
 public final class ResourceCertificateAndAcsDetails extends ResourceCertificateDetails {
-    /*
-     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of
-     * types.
-     */
-    private String authType = "AccessControlService";
-
     /*
      * ACS namespace name - tenant for our service.
      */
@@ -44,17 +37,7 @@ public final class ResourceCertificateAndAcsDetails extends ResourceCertificateD
      * Creates an instance of ResourceCertificateAndAcsDetails class.
      */
     public ResourceCertificateAndAcsDetails() {
-    }
-
-    /**
-     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the
-     * polymorphic chain of types.
-     * 
-     * @return the authType value.
-     */
-    @Override
-    public String authType() {
-        return this.authType;
+        this.authType = "AccessControlService";
     }
 
     /**
@@ -221,20 +204,10 @@ public final class ResourceCertificateAndAcsDetails extends ResourceCertificateD
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeBinaryField("certificate", certificate());
-        jsonWriter.writeStringField("friendlyName", friendlyName());
-        jsonWriter.writeStringField("issuer", issuer());
-        jsonWriter.writeNumberField("resourceId", resourceId());
-        jsonWriter.writeStringField("subject", subject());
-        jsonWriter.writeStringField("thumbprint", thumbprint());
-        jsonWriter.writeStringField("validFrom",
-            validFrom() == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(validFrom()));
-        jsonWriter.writeStringField("validTo",
-            validTo() == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(validTo()));
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("globalAcsNamespace", this.globalAcsNamespace);
         jsonWriter.writeStringField("globalAcsHostName", this.globalAcsHostname);
         jsonWriter.writeStringField("globalAcsRPRealm", this.globalAcsRPRealm);
-        jsonWriter.writeStringField("authType", this.authType);
         return jsonWriter.writeEndObject();
     }
 

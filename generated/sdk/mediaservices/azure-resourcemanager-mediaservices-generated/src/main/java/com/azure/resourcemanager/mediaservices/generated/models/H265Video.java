@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.CoreUtils;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
@@ -18,11 +17,6 @@ import java.util.List;
  */
 @Fluent
 public final class H265Video extends Video {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.H265Video";
-
     /*
      * Specifies whether or not the encoder should insert key frames at scene changes. If not specified, the default is
      * false. This flag should be set to true only when the encoder is being configured to produce a single output
@@ -46,16 +40,7 @@ public final class H265Video extends Video {
      * Creates an instance of H265Video class.
      */
     public H265Video() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.H265Video";
     }
 
     /**
@@ -180,11 +165,7 @@ public final class H265Video extends Video {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("label", label());
-        jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(keyFrameInterval()));
-        jsonWriter.writeStringField("stretchMode", stretchMode() == null ? null : stretchMode().toString());
-        jsonWriter.writeStringField("syncMode", syncMode() == null ? null : syncMode().toString());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeBooleanField("sceneChangeDetection", this.sceneChangeDetection);
         jsonWriter.writeStringField("complexity", this.complexity == null ? null : this.complexity.toString());
         jsonWriter.writeArrayField("layers", this.layers, (writer, element) -> writer.writeJson(element));

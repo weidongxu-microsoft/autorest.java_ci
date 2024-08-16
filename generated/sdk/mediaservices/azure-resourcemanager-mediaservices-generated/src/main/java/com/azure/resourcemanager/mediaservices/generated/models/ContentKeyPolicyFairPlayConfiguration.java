@@ -18,11 +18,6 @@ import java.io.IOException;
 @Fluent
 public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolicyConfiguration {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration";
-
-    /*
      * The key that must be used as FairPlay Application Secret key. This needs to be base64 encoded.
      */
     private byte[] ask;
@@ -56,16 +51,7 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyFairPlayConfiguration class.
      */
     public ContentKeyPolicyFairPlayConfiguration() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.ContentKeyPolicyFairPlayConfiguration";
     }
 
     /**
@@ -234,13 +220,13 @@ public final class ContentKeyPolicyFairPlayConfiguration extends ContentKeyPolic
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeBinaryField("ask", this.ask);
         jsonWriter.writeStringField("fairPlayPfxPassword", this.fairPlayPfxPassword);
         jsonWriter.writeStringField("fairPlayPfx", this.fairPlayPfx);
         jsonWriter.writeStringField("rentalAndLeaseKeyType",
             this.rentalAndLeaseKeyType == null ? null : this.rentalAndLeaseKeyType.toString());
         jsonWriter.writeLongField("rentalDuration", this.rentalDuration);
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeJsonField("offlineRentalConfiguration", this.offlineRentalConfiguration);
         return jsonWriter.writeEndObject();
     }

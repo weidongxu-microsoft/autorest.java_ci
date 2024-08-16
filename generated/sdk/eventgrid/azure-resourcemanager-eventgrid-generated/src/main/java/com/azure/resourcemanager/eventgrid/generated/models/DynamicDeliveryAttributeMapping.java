@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class DynamicDeliveryAttributeMapping extends DeliveryAttributeMapping {
     /*
-     * Type of the delivery attribute or header name.
-     */
-    private DeliveryAttributeMappingType type = DeliveryAttributeMappingType.DYNAMIC;
-
-    /*
      * Properties of dynamic delivery attribute mapping.
      */
     private DynamicDeliveryAttributeMappingProperties innerProperties;
@@ -30,16 +25,7 @@ public final class DynamicDeliveryAttributeMapping extends DeliveryAttributeMapp
      * Creates an instance of DynamicDeliveryAttributeMapping class.
      */
     public DynamicDeliveryAttributeMapping() {
-    }
-
-    /**
-     * Get the type property: Type of the delivery attribute or header name.
-     * 
-     * @return the type value.
-     */
-    @Override
-    public DeliveryAttributeMappingType type() {
-        return this.type;
+        this.type = DeliveryAttributeMappingType.DYNAMIC;
     }
 
     /**
@@ -101,8 +87,7 @@ public final class DynamicDeliveryAttributeMapping extends DeliveryAttributeMapp
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("name", name());
-        jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

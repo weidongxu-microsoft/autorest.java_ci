@@ -20,7 +20,7 @@ public class InputDefinition implements JsonSerializable<InputDefinition> {
     /*
      * The discriminator for derived types.
      */
-    private String odataType = "InputDefinition";
+    String odataType;
 
     /*
      * The list of TrackDescriptors which define the metadata and selection of tracks in the input.
@@ -31,6 +31,7 @@ public class InputDefinition implements JsonSerializable<InputDefinition> {
      * Creates an instance of InputDefinition class.
      */
     public InputDefinition() {
+        this.odataType = "InputDefinition";
     }
 
     /**
@@ -81,10 +82,14 @@ public class InputDefinition implements JsonSerializable<InputDefinition> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeArrayField("includedTracks", this.includedTracks,
             (writer, element) -> writer.writeJson(element));
-        return jsonWriter.writeEndObject();
     }
 
     /**

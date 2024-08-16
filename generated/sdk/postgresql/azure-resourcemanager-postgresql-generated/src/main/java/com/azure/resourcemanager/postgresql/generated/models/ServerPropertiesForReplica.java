@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class ServerPropertiesForReplica extends ServerPropertiesForCreate {
     /*
-     * The mode to create a new server.
-     */
-    private CreateMode createMode = CreateMode.REPLICA;
-
-    /*
      * The master server id to create replica from.
      */
     private String sourceServerId;
@@ -30,16 +25,7 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
      * Creates an instance of ServerPropertiesForReplica class.
      */
     public ServerPropertiesForReplica() {
-    }
-
-    /**
-     * Get the createMode property: The mode to create a new server.
-     * 
-     * @return the createMode value.
-     */
-    @Override
-    public CreateMode createMode() {
-        return this.createMode;
+        this.createMode = CreateMode.REPLICA;
     }
 
     /**
@@ -141,17 +127,8 @@ public final class ServerPropertiesForReplica extends ServerPropertiesForCreate 
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("version", version() == null ? null : version().toString());
-        jsonWriter.writeStringField("sslEnforcement", sslEnforcement() == null ? null : sslEnforcement().toString());
-        jsonWriter.writeStringField("minimalTlsVersion",
-            minimalTlsVersion() == null ? null : minimalTlsVersion().toString());
-        jsonWriter.writeStringField("infrastructureEncryption",
-            infrastructureEncryption() == null ? null : infrastructureEncryption().toString());
-        jsonWriter.writeStringField("publicNetworkAccess",
-            publicNetworkAccess() == null ? null : publicNetworkAccess().toString());
-        jsonWriter.writeJsonField("storageProfile", storageProfile());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("sourceServerId", this.sourceServerId);
-        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
         return jsonWriter.writeEndObject();
     }
 

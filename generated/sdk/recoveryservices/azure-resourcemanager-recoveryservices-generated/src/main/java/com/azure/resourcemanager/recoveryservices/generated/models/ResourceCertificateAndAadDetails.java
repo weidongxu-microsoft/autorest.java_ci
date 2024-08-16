@@ -12,19 +12,12 @@ import com.azure.json.JsonToken;
 import com.azure.json.JsonWriter;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 
 /**
  * Certificate details representing the Vault credentials for AAD.
  */
 @Fluent
 public final class ResourceCertificateAndAadDetails extends ResourceCertificateDetails {
-    /*
-     * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of
-     * types.
-     */
-    private String authType = "AzureActiveDirectory";
-
     /*
      * AAD tenant authority.
      */
@@ -64,17 +57,7 @@ public final class ResourceCertificateAndAadDetails extends ResourceCertificateD
      * Creates an instance of ResourceCertificateAndAadDetails class.
      */
     public ResourceCertificateAndAadDetails() {
-    }
-
-    /**
-     * Get the authType property: This property will be used as the discriminator for deciding the specific types in the
-     * polymorphic chain of types.
-     * 
-     * @return the authType value.
-     */
-    @Override
-    public String authType() {
-        return this.authType;
+        this.authType = "AzureActiveDirectory";
     }
 
     /**
@@ -332,22 +315,12 @@ public final class ResourceCertificateAndAadDetails extends ResourceCertificateD
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeBinaryField("certificate", certificate());
-        jsonWriter.writeStringField("friendlyName", friendlyName());
-        jsonWriter.writeStringField("issuer", issuer());
-        jsonWriter.writeNumberField("resourceId", resourceId());
-        jsonWriter.writeStringField("subject", subject());
-        jsonWriter.writeStringField("thumbprint", thumbprint());
-        jsonWriter.writeStringField("validFrom",
-            validFrom() == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(validFrom()));
-        jsonWriter.writeStringField("validTo",
-            validTo() == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(validTo()));
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("aadAuthority", this.aadAuthority);
         jsonWriter.writeStringField("aadTenantId", this.aadTenantId);
         jsonWriter.writeStringField("servicePrincipalClientId", this.servicePrincipalClientId);
         jsonWriter.writeStringField("servicePrincipalObjectId", this.servicePrincipalObjectId);
         jsonWriter.writeStringField("azureManagementEndpointAudience", this.azureManagementEndpointAudience);
-        jsonWriter.writeStringField("authType", this.authType);
         jsonWriter.writeStringField("serviceResourceId", this.serviceResourceId);
         jsonWriter.writeStringField("aadAudience", this.aadAudience);
         return jsonWriter.writeEndObject();

@@ -22,7 +22,7 @@ public class Overlay implements JsonSerializable<Overlay> {
     /*
      * The discriminator for derived types.
      */
-    private String odataType = "Overlay";
+    String odataType;
 
     /*
      * The label of the job input which is to be used as an overlay. The Input must specify exactly one file. You can
@@ -68,6 +68,7 @@ public class Overlay implements JsonSerializable<Overlay> {
      * Creates an instance of Overlay class.
      */
     public Overlay() {
+        this.odataType = "Overlay";
     }
 
     /**
@@ -247,6 +248,11 @@ public class Overlay implements JsonSerializable<Overlay> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("inputLabel", this.inputLabel);
         jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("start", CoreUtils.durationToStringWithDays(this.start));
@@ -254,7 +260,6 @@ public class Overlay implements JsonSerializable<Overlay> {
         jsonWriter.writeStringField("fadeInDuration", CoreUtils.durationToStringWithDays(this.fadeInDuration));
         jsonWriter.writeStringField("fadeOutDuration", CoreUtils.durationToStringWithDays(this.fadeOutDuration));
         jsonWriter.writeNumberField("audioGainLevel", this.audioGainLevel);
-        return jsonWriter.writeEndObject();
     }
 
     /**

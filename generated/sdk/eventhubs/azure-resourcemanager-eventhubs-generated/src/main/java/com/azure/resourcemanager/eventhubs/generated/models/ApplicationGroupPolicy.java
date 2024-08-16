@@ -20,7 +20,7 @@ public class ApplicationGroupPolicy implements JsonSerializable<ApplicationGroup
     /*
      * Application Group Policy types
      */
-    private ApplicationGroupPolicyType type = ApplicationGroupPolicyType.fromString("ApplicationGroupPolicy");
+    ApplicationGroupPolicyType type;
 
     /*
      * The Name of this policy
@@ -31,6 +31,7 @@ public class ApplicationGroupPolicy implements JsonSerializable<ApplicationGroup
      * Creates an instance of ApplicationGroupPolicy class.
      */
     public ApplicationGroupPolicy() {
+        this.type = ApplicationGroupPolicyType.fromString("ApplicationGroupPolicy");
     }
 
     /**
@@ -82,9 +83,13 @@ public class ApplicationGroupPolicy implements JsonSerializable<ApplicationGroup
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("name", this.name);
         jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
-        return jsonWriter.writeEndObject();
     }
 
     /**

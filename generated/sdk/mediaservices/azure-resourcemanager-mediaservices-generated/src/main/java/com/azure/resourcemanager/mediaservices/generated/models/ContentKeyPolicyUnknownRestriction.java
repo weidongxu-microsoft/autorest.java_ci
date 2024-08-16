@@ -15,25 +15,11 @@ import java.io.IOException;
  */
 @Immutable
 public final class ContentKeyPolicyUnknownRestriction extends ContentKeyPolicyRestriction {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.ContentKeyPolicyUnknownRestriction";
-
     /**
      * Creates an instance of ContentKeyPolicyUnknownRestriction class.
      */
     public ContentKeyPolicyUnknownRestriction() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.ContentKeyPolicyUnknownRestriction";
     }
 
     /**
@@ -51,7 +37,7 @@ public final class ContentKeyPolicyUnknownRestriction extends ContentKeyPolicyRe
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

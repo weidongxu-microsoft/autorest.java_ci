@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class FullBackupStoreDetails extends BackupStoreDetails {
     /*
-     * Type of the specific object - used for deserializing
-     */
-    private String objectType = "FullBackupStoreDetails";
-
-    /*
      * SASUriList of storage containers where backup data is to be streamed/copied.
      */
     private List<String> sasUriList;
@@ -31,16 +26,7 @@ public final class FullBackupStoreDetails extends BackupStoreDetails {
      * Creates an instance of FullBackupStoreDetails class.
      */
     public FullBackupStoreDetails() {
-    }
-
-    /**
-     * Get the objectType property: Type of the specific object - used for deserializing.
-     * 
-     * @return the objectType value.
-     */
-    @Override
-    public String objectType() {
-        return this.objectType;
+        this.objectType = "FullBackupStoreDetails";
     }
 
     /**
@@ -85,8 +71,8 @@ public final class FullBackupStoreDetails extends BackupStoreDetails {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("sasUriList", this.sasUriList, (writer, element) -> writer.writeString(element));
-        jsonWriter.writeStringField("objectType", this.objectType);
         return jsonWriter.writeEndObject();
     }
 

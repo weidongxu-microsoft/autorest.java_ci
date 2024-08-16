@@ -22,7 +22,7 @@ public class AdvancedFilter implements JsonSerializable<AdvancedFilter> {
     /*
      * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
      */
-    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.fromString("AdvancedFilter");
+    AdvancedFilterOperatorType operatorType;
 
     /*
      * The field/property in the event based on which you want to filter.
@@ -33,6 +33,7 @@ public class AdvancedFilter implements JsonSerializable<AdvancedFilter> {
      * Creates an instance of AdvancedFilter class.
      */
     public AdvancedFilter() {
+        this.operatorType = AdvancedFilterOperatorType.fromString("AdvancedFilter");
     }
 
     /**
@@ -79,9 +80,13 @@ public class AdvancedFilter implements JsonSerializable<AdvancedFilter> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeStringField("key", this.key);
-        return jsonWriter.writeEndObject();
     }
 
     /**

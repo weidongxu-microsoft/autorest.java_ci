@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolicyConfiguration {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.ContentKeyPolicyWidevineConfiguration";
-
-    /*
      * The Widevine template.
      */
     private String widevineTemplate;
@@ -30,16 +25,7 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
      * Creates an instance of ContentKeyPolicyWidevineConfiguration class.
      */
     public ContentKeyPolicyWidevineConfiguration() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.ContentKeyPolicyWidevineConfiguration";
     }
 
     /**
@@ -84,8 +70,8 @@ public final class ContentKeyPolicyWidevineConfiguration extends ContentKeyPolic
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("widevineTemplate", this.widevineTemplate);
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

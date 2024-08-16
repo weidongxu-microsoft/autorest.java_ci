@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class BuiltInStandardEncoderPreset extends Preset {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.BuiltInStandardEncoderPreset";
-
-    /*
      * Optional configuration settings for encoder. Configurations is only supported for ContentAwareEncoding and
      * H265ContentAwareEncoding BuiltInStandardEncoderPreset.
      */
@@ -36,16 +31,7 @@ public final class BuiltInStandardEncoderPreset extends Preset {
      * Creates an instance of BuiltInStandardEncoderPreset class.
      */
     public BuiltInStandardEncoderPreset() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.BuiltInStandardEncoderPreset";
     }
 
     /**
@@ -115,8 +101,8 @@ public final class BuiltInStandardEncoderPreset extends Preset {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("presetName", this.presetName == null ? null : this.presetName.toString());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeJsonField("configurations", this.configurations);
         return jsonWriter.writeEndObject();
     }

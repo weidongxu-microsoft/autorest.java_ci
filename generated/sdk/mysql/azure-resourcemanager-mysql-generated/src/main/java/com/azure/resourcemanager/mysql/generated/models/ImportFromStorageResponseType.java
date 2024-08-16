@@ -19,11 +19,6 @@ import java.time.format.DateTimeFormatter;
 @Fluent
 public final class ImportFromStorageResponseType extends OperationProgressResponseType {
     /*
-     * Identifies the type of source operation
-     */
-    private ObjectType objectType = ObjectType.IMPORT_FROM_STORAGE_RESPONSE;
-
-    /*
      * The estimated time of operation completion.
      */
     private OffsetDateTime estimatedCompletionTime;
@@ -32,16 +27,7 @@ public final class ImportFromStorageResponseType extends OperationProgressRespon
      * Creates an instance of ImportFromStorageResponseType class.
      */
     public ImportFromStorageResponseType() {
-    }
-
-    /**
-     * Get the objectType property: Identifies the type of source operation.
-     * 
-     * @return the objectType value.
-     */
-    @Override
-    public ObjectType objectType() {
-        return this.objectType;
+        this.objectType = ObjectType.IMPORT_FROM_STORAGE_RESPONSE;
     }
 
     /**
@@ -79,7 +65,7 @@ public final class ImportFromStorageResponseType extends OperationProgressRespon
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("objectType", this.objectType == null ? null : this.objectType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("estimatedCompletionTime",
             this.estimatedCompletionTime == null
                 ? null

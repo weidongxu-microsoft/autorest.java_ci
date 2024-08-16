@@ -19,12 +19,13 @@ public class RuleAction implements JsonSerializable<RuleAction> {
     /*
      * specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
      */
-    private String odataType = "RuleAction";
+    String odataType;
 
     /**
      * Creates an instance of RuleAction class.
      */
     public RuleAction() {
+        this.odataType = "RuleAction";
     }
 
     /**
@@ -51,8 +52,12 @@ public class RuleAction implements JsonSerializable<RuleAction> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStringField("odata.type", this.odataType);
     }
 
     /**

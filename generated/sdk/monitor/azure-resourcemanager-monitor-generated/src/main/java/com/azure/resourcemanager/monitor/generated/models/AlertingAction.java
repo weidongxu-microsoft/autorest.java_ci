@@ -17,12 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class AlertingAction extends Action {
     /*
-     * Specifies the action. Supported values - AlertingAction, LogToMetricAction
-     */
-    private String odataType
-        = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction";
-
-    /*
      * Severity of the alert
      */
     private AlertSeverity severity;
@@ -46,16 +40,8 @@ public final class AlertingAction extends Action {
      * Creates an instance of AlertingAction class.
      */
     public AlertingAction() {
-    }
-
-    /**
-     * Get the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType
+            = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.AlertingAction";
     }
 
     /**
@@ -168,9 +154,9 @@ public final class AlertingAction extends Action {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("severity", this.severity == null ? null : this.severity.toString());
         jsonWriter.writeJsonField("trigger", this.trigger);
-        jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeJsonField("aznsAction", this.aznsAction);
         jsonWriter.writeNumberField("throttlingInMin", this.throttlingInMin);
         return jsonWriter.writeEndObject();

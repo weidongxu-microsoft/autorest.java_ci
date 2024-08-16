@@ -19,11 +19,6 @@ import java.util.Map;
 @Fluent
 public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriteria {
     /*
-     * specifies the type of the alert criteria.
-     */
-    private Odatatype odataType = Odatatype.MICROSOFT_AZURE_MONITOR_WEBTEST_LOCATION_AVAILABILITY_CRITERIA;
-
-    /*
      * The Application Insights web test Id.
      */
     private String webTestId;
@@ -42,16 +37,7 @@ public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriter
      * Creates an instance of WebtestLocationAvailabilityCriteria class.
      */
     public WebtestLocationAvailabilityCriteria() {
-    }
-
-    /**
-     * Get the odataType property: specifies the type of the alert criteria.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public Odatatype odataType() {
-        return this.odataType;
+        this.odataType = Odatatype.MICROSOFT_AZURE_MONITOR_WEBTEST_LOCATION_AVAILABILITY_CRITERIA;
     }
 
     /**
@@ -141,10 +127,10 @@ public final class WebtestLocationAvailabilityCriteria extends MetricAlertCriter
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("webTestId", this.webTestId);
         jsonWriter.writeStringField("componentId", this.componentId);
         jsonWriter.writeFloatField("failedLocationCount", this.failedLocationCount);
-        jsonWriter.writeStringField("odata.type", this.odataType == null ? null : this.odataType.toString());
         if (additionalProperties() != null) {
             for (Map.Entry<String, Object> additionalProperty : additionalProperties().entrySet()) {
                 jsonWriter.writeUntypedField(additionalProperty.getKey(), additionalProperty.getValue());

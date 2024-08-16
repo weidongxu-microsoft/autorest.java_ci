@@ -16,11 +16,6 @@ import java.io.IOException;
 @Fluent
 public final class BackupAndExportResponseType extends OperationProgressResponseType {
     /*
-     * Identifies the type of source operation
-     */
-    private ObjectType objectType = ObjectType.BACKUP_AND_EXPORT_RESPONSE;
-
-    /*
      * Size of datasource in bytes
      */
     private Long datasourceSizeInBytes;
@@ -39,16 +34,7 @@ public final class BackupAndExportResponseType extends OperationProgressResponse
      * Creates an instance of BackupAndExportResponseType class.
      */
     public BackupAndExportResponseType() {
-    }
-
-    /**
-     * Get the objectType property: Identifies the type of source operation.
-     * 
-     * @return the objectType value.
-     */
-    @Override
-    public ObjectType objectType() {
-        return this.objectType;
+        this.objectType = ObjectType.BACKUP_AND_EXPORT_RESPONSE;
     }
 
     /**
@@ -128,7 +114,7 @@ public final class BackupAndExportResponseType extends OperationProgressResponse
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("objectType", this.objectType == null ? null : this.objectType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeNumberField("datasourceSizeInBytes", this.datasourceSizeInBytes);
         jsonWriter.writeNumberField("dataTransferredInBytes", this.dataTransferredInBytes);
         jsonWriter.writeStringField("backupMetadata", this.backupMetadata);

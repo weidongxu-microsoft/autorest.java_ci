@@ -12,7 +12,6 @@ import com.azure.json.JsonWriter;
 import com.azure.resourcemanager.network.generated.fluent.models.AdminPropertiesFormat;
 import java.io.IOException;
 import java.time.OffsetDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 /**
@@ -20,11 +19,6 @@ import java.util.List;
  */
 @Fluent
 public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
-    /*
-     * Whether the rule is custom or default.
-     */
-    private EffectiveAdminRuleKind kind = EffectiveAdminRuleKind.CUSTOM;
-
     /*
      * Indicates the properties of the security admin rule
      */
@@ -34,16 +28,7 @@ public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
      * Creates an instance of ActiveSecurityAdminRule class.
      */
     public ActiveSecurityAdminRule() {
-    }
-
-    /**
-     * Get the kind property: Whether the rule is custom or default.
-     * 
-     * @return the kind value.
-     */
-    @Override
-    public EffectiveAdminRuleKind kind() {
-        return this.kind;
+        this.kind = EffectiveAdminRuleKind.CUSTOM;
     }
 
     /**
@@ -372,16 +357,7 @@ public final class ActiveSecurityAdminRule extends ActiveBaseSecurityAdminRule {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("id", id());
-        jsonWriter.writeStringField("commitTime",
-            commitTime() == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(commitTime()));
-        jsonWriter.writeStringField("region", region());
-        jsonWriter.writeStringField("configurationDescription", configurationDescription());
-        jsonWriter.writeStringField("ruleCollectionDescription", ruleCollectionDescription());
-        jsonWriter.writeArrayField("ruleCollectionAppliesToGroups", ruleCollectionAppliesToGroups(),
-            (writer, element) -> writer.writeJson(element));
-        jsonWriter.writeArrayField("ruleGroups", ruleGroups(), (writer, element) -> writer.writeJson(element));
-        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

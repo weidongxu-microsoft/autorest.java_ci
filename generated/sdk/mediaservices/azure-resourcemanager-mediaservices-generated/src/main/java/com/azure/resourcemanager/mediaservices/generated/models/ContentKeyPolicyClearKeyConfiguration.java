@@ -15,25 +15,11 @@ import java.io.IOException;
  */
 @Immutable
 public final class ContentKeyPolicyClearKeyConfiguration extends ContentKeyPolicyConfiguration {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration";
-
     /**
      * Creates an instance of ContentKeyPolicyClearKeyConfiguration class.
      */
     public ContentKeyPolicyClearKeyConfiguration() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.ContentKeyPolicyClearKeyConfiguration";
     }
 
     /**
@@ -51,7 +37,7 @@ public final class ContentKeyPolicyClearKeyConfiguration extends ContentKeyPolic
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

@@ -19,12 +19,13 @@ public class Action implements JsonSerializable<Action> {
     /*
      * Specifies the action. Supported values - AlertingAction, LogToMetricAction
      */
-    private String odataType = "Action";
+    String odataType;
 
     /**
      * Creates an instance of Action class.
      */
     public Action() {
+        this.odataType = "Action";
     }
 
     /**
@@ -50,8 +51,12 @@ public class Action implements JsonSerializable<Action> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStringField("odata.type", this.odataType);
     }
 
     /**

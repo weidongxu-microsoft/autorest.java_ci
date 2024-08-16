@@ -22,11 +22,6 @@ import java.util.UUID;
 public final class ModernSingleScopeReservationRecommendationProperties
     extends ModernReservationRecommendationProperties {
     /*
-     * Shared or single recommendation.
-     */
-    private String scope = "Single";
-
-    /*
      * Subscription ID associated with single scoped recommendation.
      */
     private UUID subscriptionId;
@@ -125,16 +120,7 @@ public final class ModernSingleScopeReservationRecommendationProperties
      * Creates an instance of ModernSingleScopeReservationRecommendationProperties class.
      */
     public ModernSingleScopeReservationRecommendationProperties() {
-    }
-
-    /**
-     * Get the scope property: Shared or single recommendation.
-     * 
-     * @return the scope value.
-     */
-    @Override
-    public String scope() {
-        return this.scope;
+        this.scope = "Single";
     }
 
     /**
@@ -353,7 +339,7 @@ public final class ModernSingleScopeReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("scope", this.scope);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

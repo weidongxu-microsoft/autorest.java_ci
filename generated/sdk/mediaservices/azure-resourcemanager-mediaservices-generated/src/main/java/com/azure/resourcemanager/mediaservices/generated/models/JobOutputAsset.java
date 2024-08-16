@@ -19,11 +19,6 @@ import java.time.OffsetDateTime;
 @Fluent
 public final class JobOutputAsset extends JobOutput {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.JobOutputAsset";
-
-    /*
      * The name of the output Asset.
      */
     private String assetName;
@@ -59,16 +54,7 @@ public final class JobOutputAsset extends JobOutput {
      * Creates an instance of JobOutputAsset class.
      */
     public JobOutputAsset() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.JobOutputAsset";
     }
 
     /**
@@ -188,10 +174,8 @@ public final class JobOutputAsset extends JobOutput {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeJsonField("presetOverride", presetOverride());
-        jsonWriter.writeStringField("label", label());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("assetName", this.assetName);
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

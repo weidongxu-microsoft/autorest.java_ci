@@ -25,7 +25,7 @@ public class ModernReservationRecommendationProperties
     /*
      * Shared or single recommendation.
      */
-    private String scope = "ModernReservationRecommendationProperties";
+    String scope;
 
     /*
      * Resource Location.
@@ -121,6 +121,7 @@ public class ModernReservationRecommendationProperties
      * Creates an instance of ModernReservationRecommendationProperties class.
      */
     public ModernReservationRecommendationProperties() {
+        this.scope = "ModernReservationRecommendationProperties";
     }
 
     /**
@@ -519,8 +520,12 @@ public class ModernReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("scope", this.scope);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStringField("scope", this.scope);
     }
 
     /**

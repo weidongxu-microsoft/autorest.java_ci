@@ -22,11 +22,6 @@ import java.util.UUID;
 public final class ModernSharedScopeReservationRecommendationProperties
     extends ModernReservationRecommendationProperties {
     /*
-     * Shared or single recommendation.
-     */
-    private String scope = "Shared";
-
-    /*
      * The total hours for which the cost is covered.
      */
     private Integer totalHours;
@@ -120,16 +115,7 @@ public final class ModernSharedScopeReservationRecommendationProperties
      * Creates an instance of ModernSharedScopeReservationRecommendationProperties class.
      */
     public ModernSharedScopeReservationRecommendationProperties() {
-    }
-
-    /**
-     * Get the scope property: Shared or single recommendation.
-     * 
-     * @return the scope value.
-     */
-    @Override
-    public String scope() {
-        return this.scope;
+        this.scope = "Shared";
     }
 
     /**
@@ -339,7 +325,7 @@ public final class ModernSharedScopeReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("scope", this.scope);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

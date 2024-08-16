@@ -20,11 +20,6 @@ import java.util.UUID;
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier
     extends ContentKeyPolicyPlayReadyContentKeyLocation {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier";
-
-    /*
      * The content key ID.
      */
     private UUID keyId;
@@ -33,16 +28,7 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifie
      * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier class.
      */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifier";
     }
 
     /**
@@ -88,8 +74,8 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromKeyIdentifie
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("keyId", Objects.toString(this.keyId, null));
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

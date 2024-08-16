@@ -22,11 +22,6 @@ import java.util.UUID;
 public final class LegacySingleScopeReservationRecommendationProperties
     extends LegacyReservationRecommendationProperties {
     /*
-     * Shared or single recommendation.
-     */
-    private String scope = "Single";
-
-    /*
      * Subscription id associated with single scoped recommendation.
      */
     private UUID subscriptionId;
@@ -115,16 +110,7 @@ public final class LegacySingleScopeReservationRecommendationProperties
      * Creates an instance of LegacySingleScopeReservationRecommendationProperties class.
      */
     public LegacySingleScopeReservationRecommendationProperties() {
-    }
-
-    /**
-     * Get the scope property: Shared or single recommendation.
-     * 
-     * @return the scope value.
-     */
-    @Override
-    public String scope() {
-        return this.scope;
+        this.scope = "Single";
     }
 
     /**
@@ -314,7 +300,7 @@ public final class LegacySingleScopeReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("scope", this.scope);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

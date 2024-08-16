@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class WebhookEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
-     * Type of the endpoint for the event subscription destination.
-     */
-    private EndpointType endpointType = EndpointType.WEB_HOOK;
-
-    /*
      * WebHook Properties of the event subscription destination.
      */
     private WebhookEventSubscriptionDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
      * Creates an instance of WebhookEventSubscriptionDestination class.
      */
     public WebhookEventSubscriptionDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public EndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = EndpointType.WEB_HOOK;
     }
 
     /**
@@ -248,7 +234,7 @@ public final class WebhookEventSubscriptionDestination extends EventSubscription
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

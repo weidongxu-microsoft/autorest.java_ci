@@ -23,7 +23,7 @@ public class ResourceCertificateDetails implements JsonSerializable<ResourceCert
      * This property will be used as the discriminator for deciding the specific types in the polymorphic chain of
      * types.
      */
-    private String authType = "ResourceCertificateDetails";
+    String authType;
 
     /*
      * The base64 encoded certificate raw data string.
@@ -69,6 +69,7 @@ public class ResourceCertificateDetails implements JsonSerializable<ResourceCert
      * Creates an instance of ResourceCertificateDetails class.
      */
     public ResourceCertificateDetails() {
+        this.authType = "ResourceCertificateDetails";
     }
 
     /**
@@ -255,6 +256,11 @@ public class ResourceCertificateDetails implements JsonSerializable<ResourceCert
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("authType", this.authType);
         jsonWriter.writeBinaryField("certificate", this.certificate);
         jsonWriter.writeStringField("friendlyName", this.friendlyName);
@@ -266,7 +272,6 @@ public class ResourceCertificateDetails implements JsonSerializable<ResourceCert
             this.validFrom == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.validFrom));
         jsonWriter.writeStringField("validTo",
             this.validTo == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.validTo));
-        return jsonWriter.writeEndObject();
     }
 
     /**

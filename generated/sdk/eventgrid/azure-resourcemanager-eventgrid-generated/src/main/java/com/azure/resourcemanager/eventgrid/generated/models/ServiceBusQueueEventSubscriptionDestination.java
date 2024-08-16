@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class ServiceBusQueueEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
-     * Type of the endpoint for the event subscription destination.
-     */
-    private EndpointType endpointType = EndpointType.SERVICE_BUS_QUEUE;
-
-    /*
      * Service Bus Properties of the event subscription destination.
      */
     private ServiceBusQueueEventSubscriptionDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class ServiceBusQueueEventSubscriptionDestination extends EventSubs
      * Creates an instance of ServiceBusQueueEventSubscriptionDestination class.
      */
     public ServiceBusQueueEventSubscriptionDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public EndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = EndpointType.SERVICE_BUS_QUEUE;
     }
 
     /**
@@ -119,7 +105,7 @@ public final class ServiceBusQueueEventSubscriptionDestination extends EventSubs
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

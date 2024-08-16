@@ -17,11 +17,6 @@ import java.util.List;
 @Fluent
 public final class InputFile extends InputDefinition {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.InputFile";
-
-    /*
      * Name of the file that this input definition applies to.
      */
     private String filename;
@@ -30,16 +25,7 @@ public final class InputFile extends InputDefinition {
      * Creates an instance of InputFile class.
      */
     public InputFile() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.InputFile";
     }
 
     /**
@@ -89,8 +75,7 @@ public final class InputFile extends InputDefinition {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeArrayField("includedTracks", includedTracks(), (writer, element) -> writer.writeJson(element));
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("filename", this.filename);
         return jsonWriter.writeEndObject();
     }

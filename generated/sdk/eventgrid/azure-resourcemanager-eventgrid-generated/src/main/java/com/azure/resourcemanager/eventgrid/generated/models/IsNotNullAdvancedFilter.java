@@ -15,26 +15,11 @@ import java.io.IOException;
  */
 @Fluent
 public final class IsNotNullAdvancedFilter extends AdvancedFilter {
-    /*
-     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
-     */
-    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.IS_NOT_NULL;
-
     /**
      * Creates an instance of IsNotNullAdvancedFilter class.
      */
     public IsNotNullAdvancedFilter() {
-    }
-
-    /**
-     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
-     * and others.
-     * 
-     * @return the operatorType value.
-     */
-    @Override
-    public AdvancedFilterOperatorType operatorType() {
-        return this.operatorType;
+        this.operatorType = AdvancedFilterOperatorType.IS_NOT_NULL;
     }
 
     /**
@@ -61,8 +46,7 @@ public final class IsNotNullAdvancedFilter extends AdvancedFilter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("key", key());
-        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

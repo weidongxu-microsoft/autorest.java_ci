@@ -21,7 +21,7 @@ public class MetricAlertCriteria implements JsonSerializable<MetricAlertCriteria
     /*
      * specifies the type of the alert criteria.
      */
-    private Odatatype odataType = Odatatype.fromString("MetricAlertCriteria");
+    Odatatype odataType;
 
     /*
      * The rule criteria that defines the conditions of the alert rule.
@@ -32,6 +32,7 @@ public class MetricAlertCriteria implements JsonSerializable<MetricAlertCriteria
      * Creates an instance of MetricAlertCriteria class.
      */
     public MetricAlertCriteria() {
+        this.odataType = Odatatype.fromString("MetricAlertCriteria");
     }
 
     /**
@@ -77,13 +78,17 @@ public class MetricAlertCriteria implements JsonSerializable<MetricAlertCriteria
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("odata.type", this.odataType == null ? null : this.odataType.toString());
         if (additionalProperties != null) {
             for (Map.Entry<String, Object> additionalProperty : additionalProperties.entrySet()) {
                 jsonWriter.writeUntypedField(additionalProperty.getKey(), additionalProperty.getValue());
             }
         }
-        return jsonWriter.writeEndObject();
     }
 
     /**

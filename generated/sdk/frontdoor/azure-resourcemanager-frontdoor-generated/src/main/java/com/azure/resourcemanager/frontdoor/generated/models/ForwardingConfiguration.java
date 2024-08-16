@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class ForwardingConfiguration extends RouteConfiguration {
     /*
-     * The @odata.type property.
-     */
-    private String odataType = "#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration";
-
-    /*
      * A custom path used to rewrite resource paths matched by this rule. Leave empty to use incoming path.
      */
     private String customForwardingPath;
@@ -45,16 +40,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
      * Creates an instance of ForwardingConfiguration class.
      */
     public ForwardingConfiguration() {
-    }
-
-    /**
-     * Get the odataType property: The &#064;odata.type property.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Azure.FrontDoor.Models.FrontdoorForwardingConfiguration";
     }
 
     /**
@@ -157,7 +143,7 @@ public final class ForwardingConfiguration extends RouteConfiguration {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("customForwardingPath", this.customForwardingPath);
         jsonWriter.writeStringField("forwardingProtocol",
             this.forwardingProtocol == null ? null : this.forwardingProtocol.toString());

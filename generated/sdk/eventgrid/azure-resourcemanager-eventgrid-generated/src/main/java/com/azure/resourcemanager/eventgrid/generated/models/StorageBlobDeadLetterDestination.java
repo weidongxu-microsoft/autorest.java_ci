@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class StorageBlobDeadLetterDestination extends DeadLetterDestination {
     /*
-     * Type of the endpoint for the dead letter destination
-     */
-    private DeadLetterEndPointType endpointType = DeadLetterEndPointType.STORAGE_BLOB;
-
-    /*
      * The properties of the Storage Blob based deadletter destination
      */
     private StorageBlobDeadLetterDestinationProperties innerProperties;
@@ -30,16 +25,7 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
      * Creates an instance of StorageBlobDeadLetterDestination class.
      */
     public StorageBlobDeadLetterDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the dead letter destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public DeadLetterEndPointType endpointType() {
-        return this.endpointType;
+        this.endpointType = DeadLetterEndPointType.STORAGE_BLOB;
     }
 
     /**
@@ -119,7 +105,7 @@ public final class StorageBlobDeadLetterDestination extends DeadLetterDestinatio
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

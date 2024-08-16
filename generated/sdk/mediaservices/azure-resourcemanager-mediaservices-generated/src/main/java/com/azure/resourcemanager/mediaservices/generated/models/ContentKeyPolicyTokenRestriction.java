@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRestriction {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.ContentKeyPolicyTokenRestriction";
-
-    /*
      * The token issuer.
      */
     private String issuer;
@@ -61,16 +56,7 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
      * Creates an instance of ContentKeyPolicyTokenRestriction class.
      */
     public ContentKeyPolicyTokenRestriction() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.ContentKeyPolicyTokenRestriction";
     }
 
     /**
@@ -261,12 +247,12 @@ public final class ContentKeyPolicyTokenRestriction extends ContentKeyPolicyRest
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("issuer", this.issuer);
         jsonWriter.writeStringField("audience", this.audience);
         jsonWriter.writeJsonField("primaryVerificationKey", this.primaryVerificationKey);
         jsonWriter.writeStringField("restrictionTokenType",
             this.restrictionTokenType == null ? null : this.restrictionTokenType.toString());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeArrayField("alternateVerificationKeys", this.alternateVerificationKeys,
             (writer, element) -> writer.writeJson(element));
         jsonWriter.writeArrayField("requiredClaims", this.requiredClaims,

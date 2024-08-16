@@ -17,11 +17,6 @@ import java.util.List;
 @Fluent
 public final class ApplicationRule extends FirewallPolicyRule {
     /*
-     * Rule Type.
-     */
-    private FirewallPolicyRuleType ruleType = FirewallPolicyRuleType.APPLICATION_RULE;
-
-    /*
      * List of source IP addresses for this rule.
      */
     private List<String> sourceAddresses;
@@ -75,16 +70,7 @@ public final class ApplicationRule extends FirewallPolicyRule {
      * Creates an instance of ApplicationRule class.
      */
     public ApplicationRule() {
-    }
-
-    /**
-     * Get the ruleType property: Rule Type.
-     * 
-     * @return the ruleType value.
-     */
-    @Override
-    public FirewallPolicyRuleType ruleType() {
-        return this.ruleType;
+        this.ruleType = FirewallPolicyRuleType.APPLICATION_RULE;
     }
 
     /**
@@ -326,9 +312,7 @@ public final class ApplicationRule extends FirewallPolicyRule {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("name", name());
-        jsonWriter.writeStringField("description", description());
-        jsonWriter.writeStringField("ruleType", this.ruleType == null ? null : this.ruleType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("sourceAddresses", this.sourceAddresses,
             (writer, element) -> writer.writeString(element));
         jsonWriter.writeArrayField("destinationAddresses", this.destinationAddresses,

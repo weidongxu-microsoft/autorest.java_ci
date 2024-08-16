@@ -16,11 +16,6 @@ import java.io.IOException;
 @Fluent
 public class Audio extends Codec {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.Audio";
-
-    /*
      * The number of channels in the audio.
      */
     private Integer channels;
@@ -39,16 +34,7 @@ public class Audio extends Codec {
      * Creates an instance of Audio class.
      */
     public Audio() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.Audio";
     }
 
     /**
@@ -135,12 +121,15 @@ public class Audio extends Codec {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("label", label());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        super.toJsonShared(jsonWriter);
         jsonWriter.writeNumberField("channels", this.channels);
         jsonWriter.writeNumberField("samplingRate", this.samplingRate);
         jsonWriter.writeNumberField("bitrate", this.bitrate);
-        return jsonWriter.writeEndObject();
     }
 
     /**

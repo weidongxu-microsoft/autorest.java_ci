@@ -16,13 +16,6 @@ import java.io.IOException;
 @Fluent
 public final class ManagementEventRuleCondition extends RuleCondition {
     /*
-     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of
-     * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
-     * ThresholdRuleCondition (based on the threshold of a metric).
-     */
-    private String odataType = "Microsoft.Azure.Management.Insights.Models.ManagementEventRuleCondition";
-
-    /*
      * How the data that is collected should be combined over time and when the alert is activated. Note that for
      * management event alerts aggregation is optional – if it is not provided then any event will cause the alert to
      * activate.
@@ -33,18 +26,7 @@ public final class ManagementEventRuleCondition extends RuleCondition {
      * Creates an instance of ManagementEventRuleCondition class.
      */
     public ManagementEventRuleCondition() {
-    }
-
-    /**
-     * Get the odataType property: specifies the type of condition. This can be one of three types:
-     * ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the
-     * number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "Microsoft.Azure.Management.Insights.Models.ManagementEventRuleCondition";
     }
 
     /**
@@ -101,8 +83,7 @@ public final class ManagementEventRuleCondition extends RuleCondition {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeJsonField("dataSource", dataSource());
-        jsonWriter.writeStringField("odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("aggregation", this.aggregation);
         return jsonWriter.writeEndObject();
     }

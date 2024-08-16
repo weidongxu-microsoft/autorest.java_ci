@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class MonitorAlertEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
-     * Type of the endpoint for the event subscription destination.
-     */
-    private EndpointType endpointType = EndpointType.MONITOR_ALERT;
-
-    /*
      * Monitor Alert properties of the event subscription destination.
      */
     private MonitorAlertEventSubscriptionDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
      * Creates an instance of MonitorAlertEventSubscriptionDestination class.
      */
     public MonitorAlertEventSubscriptionDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public EndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = EndpointType.MONITOR_ALERT;
     }
 
     /**
@@ -151,7 +137,7 @@ public final class MonitorAlertEventSubscriptionDestination extends EventSubscri
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

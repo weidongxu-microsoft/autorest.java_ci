@@ -20,7 +20,7 @@ public class EffectiveBaseSecurityAdminRule implements JsonSerializable<Effectiv
     /*
      * Whether the rule is custom or default.
      */
-    private EffectiveAdminRuleKind kind = EffectiveAdminRuleKind.fromString("EffectiveBaseSecurityAdminRule");
+    EffectiveAdminRuleKind kind;
 
     /*
      * Resource ID.
@@ -51,6 +51,7 @@ public class EffectiveBaseSecurityAdminRule implements JsonSerializable<Effectiv
      * Creates an instance of EffectiveBaseSecurityAdminRule class.
      */
     public EffectiveBaseSecurityAdminRule() {
+        this.kind = EffectiveAdminRuleKind.fromString("EffectiveBaseSecurityAdminRule");
     }
 
     /**
@@ -183,6 +184,11 @@ public class EffectiveBaseSecurityAdminRule implements JsonSerializable<Effectiv
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
         jsonWriter.writeStringField("id", this.id);
         jsonWriter.writeStringField("configurationDescription", this.configurationDescription);
@@ -190,7 +196,6 @@ public class EffectiveBaseSecurityAdminRule implements JsonSerializable<Effectiv
         jsonWriter.writeArrayField("ruleCollectionAppliesToGroups", this.ruleCollectionAppliesToGroups,
             (writer, element) -> writer.writeJson(element));
         jsonWriter.writeArrayField("ruleGroups", this.ruleGroups, (writer, element) -> writer.writeJson(element));
-        return jsonWriter.writeEndObject();
     }
 
     /**

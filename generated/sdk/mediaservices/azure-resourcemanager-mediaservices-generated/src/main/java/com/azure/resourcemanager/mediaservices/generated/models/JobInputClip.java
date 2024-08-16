@@ -17,11 +17,6 @@ import java.util.List;
 @Fluent
 public class JobInputClip extends JobInput {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.JobInputClip";
-
-    /*
      * List of files. Required for JobInputHttp. Maximum of 4000 characters each. Query strings will not be returned in
      * service responses to prevent sensitive data exposure.
      */
@@ -57,16 +52,7 @@ public class JobInputClip extends JobInput {
      * Creates an instance of JobInputClip class.
      */
     public JobInputClip() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.JobInputClip";
     }
 
     /**
@@ -207,14 +193,18 @@ public class JobInputClip extends JobInput {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        super.toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("files", this.files, (writer, element) -> writer.writeString(element));
         jsonWriter.writeJsonField("start", this.start);
         jsonWriter.writeJsonField("end", this.end);
         jsonWriter.writeStringField("label", this.label);
         jsonWriter.writeArrayField("inputDefinitions", this.inputDefinitions,
             (writer, element) -> writer.writeJson(element));
-        return jsonWriter.writeEndObject();
     }
 
     /**

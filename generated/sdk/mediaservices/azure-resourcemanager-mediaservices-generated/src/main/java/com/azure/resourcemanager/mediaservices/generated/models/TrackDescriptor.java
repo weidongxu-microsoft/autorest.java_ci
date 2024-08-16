@@ -20,12 +20,13 @@ public class TrackDescriptor implements JsonSerializable<TrackDescriptor> {
     /*
      * The discriminator for derived types.
      */
-    private String odataType = "TrackDescriptor";
+    String odataType;
 
     /**
      * Creates an instance of TrackDescriptor class.
      */
     public TrackDescriptor() {
+        this.odataType = "TrackDescriptor";
     }
 
     /**
@@ -51,8 +52,12 @@ public class TrackDescriptor implements JsonSerializable<TrackDescriptor> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStringField("@odata.type", this.odataType);
     }
 
     /**

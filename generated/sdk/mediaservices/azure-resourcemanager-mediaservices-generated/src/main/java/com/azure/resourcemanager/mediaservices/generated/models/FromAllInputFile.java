@@ -18,25 +18,11 @@ import java.util.List;
  */
 @Fluent
 public final class FromAllInputFile extends InputDefinition {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.FromAllInputFile";
-
     /**
      * Creates an instance of FromAllInputFile class.
      */
     public FromAllInputFile() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.FromAllInputFile";
     }
 
     /**
@@ -66,8 +52,7 @@ public final class FromAllInputFile extends InputDefinition {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeArrayField("includedTracks", includedTracks(), (writer, element) -> writer.writeJson(element));
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

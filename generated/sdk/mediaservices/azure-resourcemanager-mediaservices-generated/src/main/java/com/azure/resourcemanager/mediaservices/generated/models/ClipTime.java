@@ -19,12 +19,13 @@ public class ClipTime implements JsonSerializable<ClipTime> {
     /*
      * The discriminator for derived types.
      */
-    private String odataType = "ClipTime";
+    String odataType;
 
     /**
      * Creates an instance of ClipTime class.
      */
     public ClipTime() {
+        this.odataType = "ClipTime";
     }
 
     /**
@@ -50,8 +51,12 @@ public class ClipTime implements JsonSerializable<ClipTime> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStringField("@odata.type", this.odataType);
     }
 
     /**

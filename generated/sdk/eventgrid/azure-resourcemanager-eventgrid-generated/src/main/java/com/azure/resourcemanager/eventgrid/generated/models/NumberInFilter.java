@@ -17,11 +17,6 @@ import java.util.List;
 @Fluent
 public final class NumberInFilter extends Filter {
     /*
-     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
-     */
-    private FilterOperatorType operatorType = FilterOperatorType.NUMBER_IN;
-
-    /*
      * The set of filter values.
      */
     private List<Double> values;
@@ -30,17 +25,7 @@ public final class NumberInFilter extends Filter {
      * Creates an instance of NumberInFilter class.
      */
     public NumberInFilter() {
-    }
-
-    /**
-     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
-     * and others.
-     * 
-     * @return the operatorType value.
-     */
-    @Override
-    public FilterOperatorType operatorType() {
-        return this.operatorType;
+        this.operatorType = FilterOperatorType.NUMBER_IN;
     }
 
     /**
@@ -87,8 +72,7 @@ public final class NumberInFilter extends Filter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("key", key());
-        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("values", this.values, (writer, element) -> writer.writeDouble(element));
         return jsonWriter.writeEndObject();
     }

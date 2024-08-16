@@ -18,11 +18,6 @@ import java.util.Map;
 @Fluent
 public final class RuleWebhookAction extends RuleAction {
     /*
-     * specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
-     */
-    private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleWebhookAction";
-
-    /*
      * the service uri to Post the notification when the alert activates or resolves.
      */
     private String serviceUri;
@@ -37,17 +32,7 @@ public final class RuleWebhookAction extends RuleAction {
      * Creates an instance of RuleWebhookAction class.
      */
     public RuleWebhookAction() {
-    }
-
-    /**
-     * Get the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and
-     * RuleWebhookAction.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "Microsoft.Azure.Management.Insights.Models.RuleWebhookAction";
     }
 
     /**
@@ -107,7 +92,7 @@ public final class RuleWebhookAction extends RuleAction {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("serviceUri", this.serviceUri);
         jsonWriter.writeMapField("properties", this.properties, (writer, element) -> writer.writeString(element));
         return jsonWriter.writeEndObject();

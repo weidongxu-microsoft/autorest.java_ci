@@ -16,11 +16,6 @@ import java.io.IOException;
 @Fluent
 public final class AacAudio extends Audio {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.AacAudio";
-
-    /*
      * The encoding profile to be used when encoding audio with AAC.
      */
     private AacAudioProfile profile;
@@ -29,16 +24,7 @@ public final class AacAudio extends Audio {
      * Creates an instance of AacAudio class.
      */
     public AacAudio() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.AacAudio";
     }
 
     /**
@@ -112,11 +98,7 @@ public final class AacAudio extends Audio {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("label", label());
-        jsonWriter.writeNumberField("channels", channels());
-        jsonWriter.writeNumberField("samplingRate", samplingRate());
-        jsonWriter.writeNumberField("bitrate", bitrate());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("profile", this.profile == null ? null : this.profile.toString());
         return jsonWriter.writeEndObject();
     }

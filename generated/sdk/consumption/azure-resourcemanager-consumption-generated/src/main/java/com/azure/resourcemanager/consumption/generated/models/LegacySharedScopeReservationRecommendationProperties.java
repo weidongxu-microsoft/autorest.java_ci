@@ -22,11 +22,6 @@ import java.util.UUID;
 public final class LegacySharedScopeReservationRecommendationProperties
     extends LegacyReservationRecommendationProperties {
     /*
-     * Shared or single recommendation.
-     */
-    private String scope = "Shared";
-
-    /*
      * The total hours for which the cost is covered.
      */
     private Integer totalHours;
@@ -110,16 +105,7 @@ public final class LegacySharedScopeReservationRecommendationProperties
      * Creates an instance of LegacySharedScopeReservationRecommendationProperties class.
      */
     public LegacySharedScopeReservationRecommendationProperties() {
-    }
-
-    /**
-     * Get the scope property: Shared or single recommendation.
-     * 
-     * @return the scope value.
-     */
-    @Override
-    public String scope() {
-        return this.scope;
+        this.scope = "Shared";
     }
 
     /**
@@ -300,7 +286,7 @@ public final class LegacySharedScopeReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("scope", this.scope);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

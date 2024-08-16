@@ -20,11 +20,6 @@ import java.util.Map;
 @Fluent
 public final class MetricCriteria extends MultiMetricCriteria {
     /*
-     * Specifies the type of threshold criteria
-     */
-    private CriterionType criterionType = CriterionType.STATIC_THRESHOLD_CRITERION;
-
-    /*
      * the criteria operator.
      */
     private Operator operator;
@@ -38,16 +33,7 @@ public final class MetricCriteria extends MultiMetricCriteria {
      * Creates an instance of MetricCriteria class.
      */
     public MetricCriteria() {
-    }
-
-    /**
-     * Get the criterionType property: Specifies the type of threshold criteria.
-     * 
-     * @return the criterionType value.
-     */
-    @Override
-    public CriterionType criterionType() {
-        return this.criterionType;
+        this.criterionType = CriterionType.STATIC_THRESHOLD_CRITERION;
     }
 
     /**
@@ -180,15 +166,9 @@ public final class MetricCriteria extends MultiMetricCriteria {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("name", name());
-        jsonWriter.writeStringField("metricName", metricName());
-        jsonWriter.writeStringField("timeAggregation", timeAggregation() == null ? null : timeAggregation().toString());
-        jsonWriter.writeStringField("metricNamespace", metricNamespace());
-        jsonWriter.writeArrayField("dimensions", dimensions(), (writer, element) -> writer.writeJson(element));
-        jsonWriter.writeBooleanField("skipMetricValidation", skipMetricValidation());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("operator", this.operator == null ? null : this.operator.toString());
         jsonWriter.writeDoubleField("threshold", this.threshold);
-        jsonWriter.writeStringField("criterionType", this.criterionType == null ? null : this.criterionType.toString());
         if (additionalProperties() != null) {
             for (Map.Entry<String, Object> additionalProperty : additionalProperties().entrySet()) {
                 jsonWriter.writeUntypedField(additionalProperty.getKey(), additionalProperty.getValue());

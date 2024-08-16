@@ -20,7 +20,7 @@ public class Facet implements JsonSerializable<Facet> {
     /*
      * Result type
      */
-    private String resultType = "Facet";
+    String resultType;
 
     /*
      * Facet expression, same as in the corresponding facet request.
@@ -31,6 +31,7 @@ public class Facet implements JsonSerializable<Facet> {
      * Creates an instance of Facet class.
      */
     public Facet() {
+        this.resultType = "Facet";
     }
 
     /**
@@ -82,9 +83,13 @@ public class Facet implements JsonSerializable<Facet> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("expression", this.expression);
         jsonWriter.writeStringField("resultType", this.resultType);
-        return jsonWriter.writeEndObject();
     }
 
     /**

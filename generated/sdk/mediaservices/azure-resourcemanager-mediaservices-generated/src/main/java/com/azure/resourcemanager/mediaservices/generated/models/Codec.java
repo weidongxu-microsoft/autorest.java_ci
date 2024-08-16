@@ -19,7 +19,7 @@ public class Codec implements JsonSerializable<Codec> {
     /*
      * The discriminator for derived types.
      */
-    private String odataType = "Codec";
+    String odataType;
 
     /*
      * An optional label for the codec. The label can be used to control muxing behavior.
@@ -30,6 +30,7 @@ public class Codec implements JsonSerializable<Codec> {
      * Creates an instance of Codec class.
      */
     public Codec() {
+        this.odataType = "Codec";
     }
 
     /**
@@ -75,9 +76,13 @@ public class Codec implements JsonSerializable<Codec> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("label", this.label);
-        return jsonWriter.writeEndObject();
     }
 
     /**

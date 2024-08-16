@@ -18,11 +18,6 @@ import java.util.Map;
 @Fluent
 public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.VideoAnalyzerPreset";
-
-    /*
      * Defines the type of insights that you want the service to generate. The allowed values are 'AudioInsightsOnly',
      * 'VideoInsightsOnly', and 'AllInsights'. The default is AllInsights. If you set this to AllInsights and the input
      * is audio only, then only audio insights are generated. Similarly if the input is video only, then only video
@@ -36,16 +31,7 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
      * Creates an instance of VideoAnalyzerPreset class.
      */
     public VideoAnalyzerPreset() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.VideoAnalyzerPreset";
     }
 
     /**
@@ -120,11 +106,7 @@ public final class VideoAnalyzerPreset extends AudioAnalyzerPreset {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("audioLanguage", audioLanguage());
-        jsonWriter.writeStringField("mode", mode() == null ? null : mode().toString());
-        jsonWriter.writeMapField("experimentalOptions", experimentalOptions(),
-            (writer, element) -> writer.writeString(element));
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("insightsToExtract",
             this.insightsToExtract == null ? null : this.insightsToExtract.toString());
         return jsonWriter.writeEndObject();

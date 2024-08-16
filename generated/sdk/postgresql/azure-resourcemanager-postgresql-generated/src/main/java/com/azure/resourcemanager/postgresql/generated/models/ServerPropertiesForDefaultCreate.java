@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForCreate {
     /*
-     * The mode to create a new server.
-     */
-    private CreateMode createMode = CreateMode.DEFAULT;
-
-    /*
      * The administrator's login name of a server. Can only be specified when the server is being created (and is
      * required for creation).
      */
@@ -36,16 +31,7 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
      * Creates an instance of ServerPropertiesForDefaultCreate class.
      */
     public ServerPropertiesForDefaultCreate() {
-    }
-
-    /**
-     * Get the createMode property: The mode to create a new server.
-     * 
-     * @return the createMode value.
-     */
-    @Override
-    public CreateMode createMode() {
-        return this.createMode;
+        this.createMode = CreateMode.DEFAULT;
     }
 
     /**
@@ -175,18 +161,9 @@ public final class ServerPropertiesForDefaultCreate extends ServerPropertiesForC
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("version", version() == null ? null : version().toString());
-        jsonWriter.writeStringField("sslEnforcement", sslEnforcement() == null ? null : sslEnforcement().toString());
-        jsonWriter.writeStringField("minimalTlsVersion",
-            minimalTlsVersion() == null ? null : minimalTlsVersion().toString());
-        jsonWriter.writeStringField("infrastructureEncryption",
-            infrastructureEncryption() == null ? null : infrastructureEncryption().toString());
-        jsonWriter.writeStringField("publicNetworkAccess",
-            publicNetworkAccess() == null ? null : publicNetworkAccess().toString());
-        jsonWriter.writeJsonField("storageProfile", storageProfile());
+        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("administratorLogin", this.administratorLogin);
         jsonWriter.writeStringField("administratorLoginPassword", this.administratorLoginPassword);
-        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
         return jsonWriter.writeEndObject();
     }
 

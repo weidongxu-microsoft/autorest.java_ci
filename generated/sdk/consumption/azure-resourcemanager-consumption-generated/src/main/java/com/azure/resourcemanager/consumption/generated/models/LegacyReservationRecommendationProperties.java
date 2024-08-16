@@ -25,7 +25,7 @@ public class LegacyReservationRecommendationProperties
     /*
      * Shared or single recommendation.
      */
-    private String scope = "LegacyReservationRecommendationProperties";
+    String scope;
 
     /*
      * The number of days of usage to look back for recommendation.
@@ -111,6 +111,7 @@ public class LegacyReservationRecommendationProperties
      * Creates an instance of LegacyReservationRecommendationProperties class.
      */
     public LegacyReservationRecommendationProperties() {
+        this.scope = "LegacyReservationRecommendationProperties";
     }
 
     /**
@@ -460,8 +461,12 @@ public class LegacyReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("scope", this.scope);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
+        jsonWriter.writeStringField("scope", this.scope);
     }
 
     /**

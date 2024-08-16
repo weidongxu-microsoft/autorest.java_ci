@@ -17,11 +17,6 @@ import java.io.IOException;
 @Fluent
 public final class FacetResult extends Facet {
     /*
-     * Result type
-     */
-    private String resultType = "FacetResult";
-
-    /*
      * Number of total records in the facet results.
      */
     private long totalRecords;
@@ -40,16 +35,7 @@ public final class FacetResult extends Facet {
      * Creates an instance of FacetResult class.
      */
     public FacetResult() {
-    }
-
-    /**
-     * Get the resultType property: Result type.
-     * 
-     * @return the resultType value.
-     */
-    @Override
-    public String resultType() {
-        return this.resultType;
+        this.resultType = "FacetResult";
     }
 
     /**
@@ -148,11 +134,10 @@ public final class FacetResult extends Facet {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("expression", expression());
+        toJsonShared(jsonWriter);
         jsonWriter.writeLongField("totalRecords", this.totalRecords);
         jsonWriter.writeIntField("count", this.count);
         jsonWriter.writeUntypedField("data", this.data);
-        jsonWriter.writeStringField("resultType", this.resultType);
         return jsonWriter.writeEndObject();
     }
 

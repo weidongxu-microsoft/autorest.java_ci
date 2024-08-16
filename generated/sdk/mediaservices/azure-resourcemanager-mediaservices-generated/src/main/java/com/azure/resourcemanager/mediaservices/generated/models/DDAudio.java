@@ -18,25 +18,11 @@ import java.io.IOException;
  */
 @Fluent
 public final class DDAudio extends Audio {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.DDAudio";
-
     /**
      * Creates an instance of DDAudio class.
      */
     public DDAudio() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.DDAudio";
     }
 
     /**
@@ -90,11 +76,7 @@ public final class DDAudio extends Audio {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("label", label());
-        jsonWriter.writeNumberField("channels", channels());
-        jsonWriter.writeNumberField("samplingRate", samplingRate());
-        jsonWriter.writeNumberField("bitrate", bitrate());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         return jsonWriter.writeEndObject();
     }
 

@@ -21,12 +21,13 @@ public class InputSchemaMapping implements JsonSerializable<InputSchemaMapping> 
     /*
      * Type of the custom mapping
      */
-    private InputSchemaMappingType inputSchemaMappingType = InputSchemaMappingType.fromString("InputSchemaMapping");
+    InputSchemaMappingType inputSchemaMappingType;
 
     /**
      * Creates an instance of InputSchemaMapping class.
      */
     public InputSchemaMapping() {
+        this.inputSchemaMappingType = InputSchemaMappingType.fromString("InputSchemaMapping");
     }
 
     /**
@@ -52,9 +53,13 @@ public class InputSchemaMapping implements JsonSerializable<InputSchemaMapping> 
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
+        toJsonShared(jsonWriter);
+        return jsonWriter.writeEndObject();
+    }
+
+    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("inputSchemaMappingType",
             this.inputSchemaMappingType == null ? null : this.inputSchemaMappingType.toString());
-        return jsonWriter.writeEndObject();
     }
 
     /**

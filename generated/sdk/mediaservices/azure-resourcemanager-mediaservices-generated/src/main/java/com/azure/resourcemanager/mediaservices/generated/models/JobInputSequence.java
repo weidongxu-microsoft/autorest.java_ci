@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class JobInputSequence extends JobInput {
     /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.JobInputSequence";
-
-    /*
      * JobInputs that make up the timeline.
      */
     private List<JobInputClip> inputs;
@@ -31,16 +26,7 @@ public final class JobInputSequence extends JobInput {
      * Creates an instance of JobInputSequence class.
      */
     public JobInputSequence() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.JobInputSequence";
     }
 
     /**
@@ -81,7 +67,7 @@ public final class JobInputSequence extends JobInput {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("inputs", this.inputs, (writer, element) -> writer.writeJson(element));
         return jsonWriter.writeEndObject();
     }

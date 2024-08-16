@@ -18,11 +18,6 @@ import java.util.List;
 @Fluent
 public final class AzureFunctionEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
-     * Type of the endpoint for the event subscription destination.
-     */
-    private EndpointType endpointType = EndpointType.AZURE_FUNCTION;
-
-    /*
      * Azure Function Properties of the event subscription destination.
      */
     private AzureFunctionEventSubscriptionDestinationProperties innerProperties;
@@ -31,16 +26,7 @@ public final class AzureFunctionEventSubscriptionDestination extends EventSubscr
      * Creates an instance of AzureFunctionEventSubscriptionDestination class.
      */
     public AzureFunctionEventSubscriptionDestination() {
-    }
-
-    /**
-     * Get the endpointType property: Type of the endpoint for the event subscription destination.
-     * 
-     * @return the endpointType value.
-     */
-    @Override
-    public EndpointType endpointType() {
-        return this.endpointType;
+        this.endpointType = EndpointType.AZURE_FUNCTION;
     }
 
     /**
@@ -166,7 +152,7 @@ public final class AzureFunctionEventSubscriptionDestination extends EventSubscr
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

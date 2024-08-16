@@ -5,7 +5,6 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
-import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
@@ -18,11 +17,6 @@ import java.time.Duration;
  */
 @Fluent
 public final class VideoOverlay extends Overlay {
-    /*
-     * The discriminator for derived types.
-     */
-    private String odataType = "#Microsoft.Media.VideoOverlay";
-
     /*
      * The location in the input video where the overlay is applied.
      */
@@ -43,16 +37,7 @@ public final class VideoOverlay extends Overlay {
      * Creates an instance of VideoOverlay class.
      */
     public VideoOverlay() {
-    }
-
-    /**
-     * Get the odataType property: The discriminator for derived types.
-     * 
-     * @return the odataType value.
-     */
-    @Override
-    public String odataType() {
-        return this.odataType;
+        this.odataType = "#Microsoft.Media.VideoOverlay";
     }
 
     /**
@@ -198,13 +183,7 @@ public final class VideoOverlay extends Overlay {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        jsonWriter.writeStringField("inputLabel", inputLabel());
-        jsonWriter.writeStringField("start", CoreUtils.durationToStringWithDays(start()));
-        jsonWriter.writeStringField("end", CoreUtils.durationToStringWithDays(end()));
-        jsonWriter.writeStringField("fadeInDuration", CoreUtils.durationToStringWithDays(fadeInDuration()));
-        jsonWriter.writeStringField("fadeOutDuration", CoreUtils.durationToStringWithDays(fadeOutDuration()));
-        jsonWriter.writeNumberField("audioGainLevel", audioGainLevel());
-        jsonWriter.writeStringField("@odata.type", this.odataType);
+        toJsonShared(jsonWriter);
         jsonWriter.writeJsonField("position", this.position);
         jsonWriter.writeNumberField("opacity", this.opacity);
         jsonWriter.writeJsonField("cropRectangle", this.cropRectangle);
