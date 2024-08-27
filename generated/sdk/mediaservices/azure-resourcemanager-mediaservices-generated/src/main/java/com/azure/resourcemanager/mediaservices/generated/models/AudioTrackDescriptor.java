@@ -16,6 +16,11 @@ import java.io.IOException;
 @Fluent
 public class AudioTrackDescriptor extends TrackDescriptor {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.AudioTrackDescriptor";
+
+    /*
      * Optional designation for single channel audio tracks. Can be used to combine the tracks into stereo or
      * multi-channel audio tracks.
      */
@@ -25,7 +30,16 @@ public class AudioTrackDescriptor extends TrackDescriptor {
      * Creates an instance of AudioTrackDescriptor class.
      */
     public AudioTrackDescriptor() {
-        this.odataType = "#Microsoft.Media.AudioTrackDescriptor";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -65,14 +79,10 @@ public class AudioTrackDescriptor extends TrackDescriptor {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
-        super.toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("channelMapping",
             this.channelMapping == null ? null : this.channelMapping.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

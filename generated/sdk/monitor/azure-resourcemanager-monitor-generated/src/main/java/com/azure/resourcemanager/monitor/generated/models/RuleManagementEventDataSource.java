@@ -16,6 +16,12 @@ import java.io.IOException;
 @Fluent
 public final class RuleManagementEventDataSource extends RuleDataSource {
     /*
+     * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and
+     * RuleManagementEventDataSource
+     */
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource";
+
+    /*
      * the event name.
      */
     private String eventName;
@@ -64,7 +70,17 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
      * Creates an instance of RuleManagementEventDataSource class.
      */
     public RuleManagementEventDataSource() {
-        this.odataType = "Microsoft.Azure.Management.Insights.Models.RuleManagementEventDataSource";
+    }
+
+    /**
+     * Get the odataType property: specifies the type of data source. There are two types of rule data sources:
+     * RuleMetricDataSource and RuleManagementEventDataSource.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -305,7 +321,11 @@ public final class RuleManagementEventDataSource extends RuleDataSource {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("resourceUri", resourceUri());
+        jsonWriter.writeStringField("legacyResourceId", legacyResourceId());
+        jsonWriter.writeStringField("resourceLocation", resourceLocation());
+        jsonWriter.writeStringField("metricNamespace", metricNamespace());
+        jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeStringField("eventName", this.eventName);
         jsonWriter.writeStringField("eventSource", this.eventSource);
         jsonWriter.writeStringField("level", this.level);

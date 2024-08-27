@@ -28,6 +28,27 @@ public final class PriceSheetsImpl implements PriceSheets {
         this.serviceManager = serviceManager;
     }
 
+    public OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName) {
+        OperationStatusInner inner
+            = this.serviceClient().downloadByBillingAccountPeriod(billingAccountId, billingPeriodName);
+        if (inner != null) {
+            return new OperationStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
+    public OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName,
+        Context context) {
+        OperationStatusInner inner
+            = this.serviceClient().downloadByBillingAccountPeriod(billingAccountId, billingPeriodName, context);
+        if (inner != null) {
+            return new OperationStatusImpl(inner, this.manager());
+        } else {
+            return null;
+        }
+    }
+
     public Response<PriceSheetResult> getWithResponse(String expand, String skiptoken, Integer top, Context context) {
         Response<PriceSheetResultInner> inner = this.serviceClient().getWithResponse(expand, skiptoken, top, context);
         if (inner != null) {
@@ -63,27 +84,6 @@ public final class PriceSheetsImpl implements PriceSheets {
         PriceSheetResultInner inner = this.serviceClient().getByBillingPeriod(billingPeriodName);
         if (inner != null) {
             return new PriceSheetResultImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName) {
-        OperationStatusInner inner
-            = this.serviceClient().downloadByBillingAccountPeriod(billingAccountId, billingPeriodName);
-        if (inner != null) {
-            return new OperationStatusImpl(inner, this.manager());
-        } else {
-            return null;
-        }
-    }
-
-    public OperationStatus downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName,
-        Context context) {
-        OperationStatusInner inner
-            = this.serviceClient().downloadByBillingAccountPeriod(billingAccountId, billingPeriodName, context);
-        if (inner != null) {
-            return new OperationStatusImpl(inner, this.manager());
         } else {
             return null;
         }

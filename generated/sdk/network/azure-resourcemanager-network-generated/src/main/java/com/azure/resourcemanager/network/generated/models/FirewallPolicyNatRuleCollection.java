@@ -17,6 +17,12 @@ import java.util.List;
 @Fluent
 public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCollection {
     /*
+     * The type of the rule collection.
+     */
+    private FirewallPolicyRuleCollectionType ruleCollectionType
+        = FirewallPolicyRuleCollectionType.FIREWALL_POLICY_NAT_RULE_COLLECTION;
+
+    /*
      * The action type of a Nat rule collection.
      */
     private FirewallPolicyNatRuleCollectionAction action;
@@ -30,7 +36,16 @@ public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCol
      * Creates an instance of FirewallPolicyNatRuleCollection class.
      */
     public FirewallPolicyNatRuleCollection() {
-        this.ruleCollectionType = FirewallPolicyRuleCollectionType.FIREWALL_POLICY_NAT_RULE_COLLECTION;
+    }
+
+    /**
+     * Get the ruleCollectionType property: The type of the rule collection.
+     * 
+     * @return the ruleCollectionType value.
+     */
+    @Override
+    public FirewallPolicyRuleCollectionType ruleCollectionType() {
+        return this.ruleCollectionType;
     }
 
     /**
@@ -112,7 +127,10 @@ public final class FirewallPolicyNatRuleCollection extends FirewallPolicyRuleCol
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("name", name());
+        jsonWriter.writeNumberField("priority", priority());
+        jsonWriter.writeStringField("ruleCollectionType",
+            this.ruleCollectionType == null ? null : this.ruleCollectionType.toString());
         jsonWriter.writeJsonField("action", this.action);
         jsonWriter.writeArrayField("rules", this.rules, (writer, element) -> writer.writeJson(element));
         return jsonWriter.writeEndObject();

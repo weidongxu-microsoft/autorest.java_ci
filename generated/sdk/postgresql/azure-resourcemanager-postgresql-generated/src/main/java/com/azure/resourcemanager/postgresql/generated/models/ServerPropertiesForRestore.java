@@ -20,6 +20,11 @@ import java.time.format.DateTimeFormatter;
 @Fluent
 public final class ServerPropertiesForRestore extends ServerPropertiesForCreate {
     /*
+     * The mode to create a new server.
+     */
+    private CreateMode createMode = CreateMode.POINT_IN_TIME_RESTORE;
+
+    /*
      * The source server id to restore from.
      */
     private String sourceServerId;
@@ -33,7 +38,16 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
      * Creates an instance of ServerPropertiesForRestore class.
      */
     public ServerPropertiesForRestore() {
-        this.createMode = CreateMode.POINT_IN_TIME_RESTORE;
+    }
+
+    /**
+     * Get the createMode property: The mode to create a new server.
+     * 
+     * @return the createMode value.
+     */
+    @Override
+    public CreateMode createMode() {
+        return this.createMode;
     }
 
     /**
@@ -162,12 +176,21 @@ public final class ServerPropertiesForRestore extends ServerPropertiesForCreate 
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("version", version() == null ? null : version().toString());
+        jsonWriter.writeStringField("sslEnforcement", sslEnforcement() == null ? null : sslEnforcement().toString());
+        jsonWriter.writeStringField("minimalTlsVersion",
+            minimalTlsVersion() == null ? null : minimalTlsVersion().toString());
+        jsonWriter.writeStringField("infrastructureEncryption",
+            infrastructureEncryption() == null ? null : infrastructureEncryption().toString());
+        jsonWriter.writeStringField("publicNetworkAccess",
+            publicNetworkAccess() == null ? null : publicNetworkAccess().toString());
+        jsonWriter.writeJsonField("storageProfile", storageProfile());
         jsonWriter.writeStringField("sourceServerId", this.sourceServerId);
         jsonWriter.writeStringField("restorePointInTime",
             this.restorePointInTime == null
                 ? null
                 : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.restorePointInTime));
+        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
         return jsonWriter.writeEndObject();
     }
 

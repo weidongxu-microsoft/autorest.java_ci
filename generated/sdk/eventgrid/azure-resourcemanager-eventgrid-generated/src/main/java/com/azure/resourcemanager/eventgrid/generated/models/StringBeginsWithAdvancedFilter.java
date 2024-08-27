@@ -17,6 +17,11 @@ import java.util.List;
 @Fluent
 public final class StringBeginsWithAdvancedFilter extends AdvancedFilter {
     /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.STRING_BEGINS_WITH;
+
+    /*
      * The set of filter values.
      */
     private List<String> values;
@@ -25,7 +30,17 @@ public final class StringBeginsWithAdvancedFilter extends AdvancedFilter {
      * Creates an instance of StringBeginsWithAdvancedFilter class.
      */
     public StringBeginsWithAdvancedFilter() {
-        this.operatorType = AdvancedFilterOperatorType.STRING_BEGINS_WITH;
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public AdvancedFilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**
@@ -72,7 +87,8 @@ public final class StringBeginsWithAdvancedFilter extends AdvancedFilter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("key", key());
+        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeArrayField("values", this.values, (writer, element) -> writer.writeString(element));
         return jsonWriter.writeEndObject();
     }

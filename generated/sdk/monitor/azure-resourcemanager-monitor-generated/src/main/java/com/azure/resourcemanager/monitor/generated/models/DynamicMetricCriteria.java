@@ -23,6 +23,11 @@ import java.util.Map;
 @Fluent
 public final class DynamicMetricCriteria extends MultiMetricCriteria {
     /*
+     * Specifies the type of threshold criteria
+     */
+    private CriterionType criterionType = CriterionType.DYNAMIC_THRESHOLD_CRITERION;
+
+    /*
      * The operator used to compare the metric value against the threshold.
      */
     private DynamicThresholdOperator operator;
@@ -48,7 +53,16 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
      * Creates an instance of DynamicMetricCriteria class.
      */
     public DynamicMetricCriteria() {
-        this.criterionType = CriterionType.DYNAMIC_THRESHOLD_CRITERION;
+    }
+
+    /**
+     * Get the criterionType property: Specifies the type of threshold criteria.
+     * 
+     * @return the criterionType value.
+     */
+    @Override
+    public CriterionType criterionType() {
+        return this.criterionType;
     }
 
     /**
@@ -241,11 +255,17 @@ public final class DynamicMetricCriteria extends MultiMetricCriteria {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("name", name());
+        jsonWriter.writeStringField("metricName", metricName());
+        jsonWriter.writeStringField("timeAggregation", timeAggregation() == null ? null : timeAggregation().toString());
+        jsonWriter.writeStringField("metricNamespace", metricNamespace());
+        jsonWriter.writeArrayField("dimensions", dimensions(), (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeBooleanField("skipMetricValidation", skipMetricValidation());
         jsonWriter.writeStringField("operator", this.operator == null ? null : this.operator.toString());
         jsonWriter.writeStringField("alertSensitivity",
             this.alertSensitivity == null ? null : this.alertSensitivity.toString());
         jsonWriter.writeJsonField("failingPeriods", this.failingPeriods);
+        jsonWriter.writeStringField("criterionType", this.criterionType == null ? null : this.criterionType.toString());
         jsonWriter.writeStringField("ignoreDataBefore",
             this.ignoreDataBefore == null
                 ? null

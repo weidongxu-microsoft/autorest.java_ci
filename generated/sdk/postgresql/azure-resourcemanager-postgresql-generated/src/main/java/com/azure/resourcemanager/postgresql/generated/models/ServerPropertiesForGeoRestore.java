@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCreate {
     /*
+     * The mode to create a new server.
+     */
+    private CreateMode createMode = CreateMode.GEO_RESTORE;
+
+    /*
      * The source server id to restore from.
      */
     private String sourceServerId;
@@ -25,7 +30,16 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
      * Creates an instance of ServerPropertiesForGeoRestore class.
      */
     public ServerPropertiesForGeoRestore() {
-        this.createMode = CreateMode.GEO_RESTORE;
+    }
+
+    /**
+     * Get the createMode property: The mode to create a new server.
+     * 
+     * @return the createMode value.
+     */
+    @Override
+    public CreateMode createMode() {
+        return this.createMode;
     }
 
     /**
@@ -128,8 +142,17 @@ public final class ServerPropertiesForGeoRestore extends ServerPropertiesForCrea
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("version", version() == null ? null : version().toString());
+        jsonWriter.writeStringField("sslEnforcement", sslEnforcement() == null ? null : sslEnforcement().toString());
+        jsonWriter.writeStringField("minimalTlsVersion",
+            minimalTlsVersion() == null ? null : minimalTlsVersion().toString());
+        jsonWriter.writeStringField("infrastructureEncryption",
+            infrastructureEncryption() == null ? null : infrastructureEncryption().toString());
+        jsonWriter.writeStringField("publicNetworkAccess",
+            publicNetworkAccess() == null ? null : publicNetworkAccess().toString());
+        jsonWriter.writeJsonField("storageProfile", storageProfile());
         jsonWriter.writeStringField("sourceServerId", this.sourceServerId);
+        jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
         return jsonWriter.writeEndObject();
     }
 

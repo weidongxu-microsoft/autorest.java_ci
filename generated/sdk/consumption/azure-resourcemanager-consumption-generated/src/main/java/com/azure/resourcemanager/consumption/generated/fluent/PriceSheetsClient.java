@@ -18,6 +18,63 @@ import com.azure.resourcemanager.consumption.generated.fluent.models.PriceSheetR
  */
 public interface PriceSheetsClient {
     /**
+     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
+     * 
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of the status of the long running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner>
+        beginDownloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName);
+
+    /**
+     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
+     * 
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the {@link SyncPoller} for polling of the status of the long running operation.
+     */
+    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
+    SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner>
+        beginDownloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName, Context context);
+
+    /**
+     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
+     * 
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the long running operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    OperationStatusInner downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName);
+
+    /**
+     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
+     * 
+     * @param billingAccountId BillingAccount ID.
+     * @param billingPeriodName Billing Period Name.
+     * @param context The context to associate with this operation.
+     * @throws IllegalArgumentException thrown if parameters fail the validation.
+     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
+     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
+     * @return the status of the long running operation.
+     */
+    @ServiceMethod(returns = ReturnType.SINGLE)
+    OperationStatusInner downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName,
+        Context context);
+
+    /**
      * Gets the price sheet for a subscription. Price sheet is available via this API only for May 1, 2014 or later.
      * 
      * @param expand May be used to expand the properties/meterDetails within a price sheet. By default, these fields
@@ -78,61 +135,4 @@ public interface PriceSheetsClient {
      */
     @ServiceMethod(returns = ReturnType.SINGLE)
     PriceSheetResultInner getByBillingPeriod(String billingPeriodName);
-
-    /**
-     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     * 
-     * @param billingAccountId BillingAccount ID.
-     * @param billingPeriodName Billing Period Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the status of the long running operation.
-     */
-    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner>
-        beginDownloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName);
-
-    /**
-     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     * 
-     * @param billingAccountId BillingAccount ID.
-     * @param billingPeriodName Billing Period Name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the {@link SyncPoller} for polling of the status of the long running operation.
-     */
-    @ServiceMethod(returns = ReturnType.LONG_RUNNING_OPERATION)
-    SyncPoller<PollResult<OperationStatusInner>, OperationStatusInner>
-        beginDownloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName, Context context);
-
-    /**
-     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     * 
-     * @param billingAccountId BillingAccount ID.
-     * @param billingPeriodName Billing Period Name.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    OperationStatusInner downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName);
-
-    /**
-     * Generates the pricesheet for the provided billing period asynchronously based on the enrollment id.
-     * 
-     * @param billingAccountId BillingAccount ID.
-     * @param billingPeriodName Billing Period Name.
-     * @param context The context to associate with this operation.
-     * @throws IllegalArgumentException thrown if parameters fail the validation.
-     * @throws com.azure.core.management.exception.ManagementException thrown if the request is rejected by server.
-     * @throws RuntimeException all other wrapped checked exceptions if the request fails to be sent.
-     * @return the status of the long running operation.
-     */
-    @ServiceMethod(returns = ReturnType.SINGLE)
-    OperationStatusInner downloadByBillingAccountPeriod(String billingAccountId, String billingPeriodName,
-        Context context);
 }

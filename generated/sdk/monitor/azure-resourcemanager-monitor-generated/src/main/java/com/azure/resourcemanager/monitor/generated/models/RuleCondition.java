@@ -21,7 +21,7 @@ public class RuleCondition implements JsonSerializable<RuleCondition> {
      * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
      * ThresholdRuleCondition (based on the threshold of a metric).
      */
-    String odataType;
+    private String odataType = "RuleCondition";
 
     /*
      * the resource from which the rule collects its data. For this type dataSource will always be of type
@@ -33,7 +33,6 @@ public class RuleCondition implements JsonSerializable<RuleCondition> {
      * Creates an instance of RuleCondition class.
      */
     public RuleCondition() {
-        this.odataType = "RuleCondition";
     }
 
     /**
@@ -86,13 +85,9 @@ public class RuleCondition implements JsonSerializable<RuleCondition> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeJsonField("dataSource", this.dataSource);
+        return jsonWriter.writeEndObject();
     }
 
     /**

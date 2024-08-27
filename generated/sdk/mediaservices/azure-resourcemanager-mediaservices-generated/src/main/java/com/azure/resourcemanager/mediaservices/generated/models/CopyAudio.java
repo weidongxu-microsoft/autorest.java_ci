@@ -15,11 +15,25 @@ import java.io.IOException;
  */
 @Fluent
 public final class CopyAudio extends Codec {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.CopyAudio";
+
     /**
      * Creates an instance of CopyAudio class.
      */
     public CopyAudio() {
-        this.odataType = "#Microsoft.Media.CopyAudio";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -46,7 +60,8 @@ public final class CopyAudio extends Codec {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

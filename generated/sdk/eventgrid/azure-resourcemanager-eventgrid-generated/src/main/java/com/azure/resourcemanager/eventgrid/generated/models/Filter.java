@@ -23,7 +23,7 @@ public class Filter implements JsonSerializable<Filter> {
     /*
      * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
      */
-    FilterOperatorType operatorType;
+    private FilterOperatorType operatorType = FilterOperatorType.fromString("Filter");
 
     /*
      * The field/property in the event based on which you want to filter.
@@ -34,7 +34,6 @@ public class Filter implements JsonSerializable<Filter> {
      * Creates an instance of Filter class.
      */
     public Filter() {
-        this.operatorType = FilterOperatorType.fromString("Filter");
     }
 
     /**
@@ -81,13 +80,9 @@ public class Filter implements JsonSerializable<Filter> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeStringField("key", this.key);
+        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -16,6 +16,11 @@ import java.io.IOException;
 @Fluent
 public final class BoolEqualsAdvancedFilter extends AdvancedFilter {
     /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.BOOL_EQUALS;
+
+    /*
      * The boolean filter value.
      */
     private Boolean value;
@@ -24,7 +29,17 @@ public final class BoolEqualsAdvancedFilter extends AdvancedFilter {
      * Creates an instance of BoolEqualsAdvancedFilter class.
      */
     public BoolEqualsAdvancedFilter() {
-        this.operatorType = AdvancedFilterOperatorType.BOOL_EQUALS;
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public AdvancedFilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**
@@ -71,7 +86,8 @@ public final class BoolEqualsAdvancedFilter extends AdvancedFilter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("key", key());
+        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeBooleanField("value", this.value);
         return jsonWriter.writeEndObject();
     }

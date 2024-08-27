@@ -18,6 +18,11 @@ import java.io.IOException;
 @Fluent
 public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPolicyRestrictionTokenKey {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey";
+
+    /*
      * The raw data field of a certificate in PKCS 12 format (X509Certificate2 in .NET)
      */
     private byte[] rawBody;
@@ -26,7 +31,16 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
      * Creates an instance of ContentKeyPolicyX509CertificateTokenKey class.
      */
     public ContentKeyPolicyX509CertificateTokenKey() {
-        this.odataType = "#Microsoft.Media.ContentKeyPolicyX509CertificateTokenKey";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -71,8 +85,8 @@ public final class ContentKeyPolicyX509CertificateTokenKey extends ContentKeyPol
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeBinaryField("rawBody", this.rawBody);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

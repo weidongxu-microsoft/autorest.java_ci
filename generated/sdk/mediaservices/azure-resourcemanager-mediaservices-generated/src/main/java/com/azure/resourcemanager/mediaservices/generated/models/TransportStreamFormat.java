@@ -17,11 +17,25 @@ import java.util.List;
  */
 @Fluent
 public final class TransportStreamFormat extends MultiBitrateFormat {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.TransportStreamFormat";
+
     /**
      * Creates an instance of TransportStreamFormat class.
      */
     public TransportStreamFormat() {
-        this.odataType = "#Microsoft.Media.TransportStreamFormat";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -67,7 +81,9 @@ public final class TransportStreamFormat extends MultiBitrateFormat {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("filenamePattern", filenamePattern());
+        jsonWriter.writeArrayField("outputFiles", outputFiles(), (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

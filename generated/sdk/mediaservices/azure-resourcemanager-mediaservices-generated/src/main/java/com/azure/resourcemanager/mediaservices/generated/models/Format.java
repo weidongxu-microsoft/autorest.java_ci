@@ -20,7 +20,7 @@ public class Format implements JsonSerializable<Format> {
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "Format";
 
     /*
      * The file naming pattern used for the creation of output files. The following macros are supported in the file
@@ -39,7 +39,6 @@ public class Format implements JsonSerializable<Format> {
      * Creates an instance of Format class.
      */
     public Format() {
-        this.odataType = "Format";
     }
 
     /**
@@ -109,13 +108,9 @@ public class Format implements JsonSerializable<Format> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("filenamePattern", this.filenamePattern);
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

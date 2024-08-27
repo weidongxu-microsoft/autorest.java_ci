@@ -19,6 +19,11 @@ import java.util.Map;
 @Fluent
 public final class MetricAlertSingleResourceMultipleMetricCriteria extends MetricAlertCriteria {
     /*
+     * specifies the type of the alert criteria.
+     */
+    private Odatatype odataType = Odatatype.MICROSOFT_AZURE_MONITOR_SINGLE_RESOURCE_MULTIPLE_METRIC_CRITERIA;
+
+    /*
      * The list of metric criteria for this 'all of' operation.
      */
     private List<MetricCriteria> allOf;
@@ -27,7 +32,16 @@ public final class MetricAlertSingleResourceMultipleMetricCriteria extends Metri
      * Creates an instance of MetricAlertSingleResourceMultipleMetricCriteria class.
      */
     public MetricAlertSingleResourceMultipleMetricCriteria() {
-        this.odataType = Odatatype.MICROSOFT_AZURE_MONITOR_SINGLE_RESOURCE_MULTIPLE_METRIC_CRITERIA;
+    }
+
+    /**
+     * Get the odataType property: specifies the type of the alert criteria.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public Odatatype odataType() {
+        return this.odataType;
     }
 
     /**
@@ -68,7 +82,7 @@ public final class MetricAlertSingleResourceMultipleMetricCriteria extends Metri
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("odata.type", this.odataType == null ? null : this.odataType.toString());
         jsonWriter.writeArrayField("allOf", this.allOf, (writer, element) -> writer.writeJson(element));
         if (additionalProperties() != null) {
             for (Map.Entry<String, Object> additionalProperty : additionalProperties().entrySet()) {

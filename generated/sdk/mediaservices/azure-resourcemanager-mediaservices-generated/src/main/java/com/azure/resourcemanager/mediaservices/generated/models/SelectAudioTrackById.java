@@ -16,6 +16,11 @@ import java.io.IOException;
 @Fluent
 public final class SelectAudioTrackById extends AudioTrackDescriptor {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.SelectAudioTrackById";
+
+    /*
      * Track identifier to select
      */
     private long trackId;
@@ -24,7 +29,16 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
      * Creates an instance of SelectAudioTrackById class.
      */
     public SelectAudioTrackById() {
-        this.odataType = "#Microsoft.Media.SelectAudioTrackById";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -71,8 +85,9 @@ public final class SelectAudioTrackById extends AudioTrackDescriptor {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("channelMapping", channelMapping() == null ? null : channelMapping().toString());
         jsonWriter.writeLongField("trackId", this.trackId);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

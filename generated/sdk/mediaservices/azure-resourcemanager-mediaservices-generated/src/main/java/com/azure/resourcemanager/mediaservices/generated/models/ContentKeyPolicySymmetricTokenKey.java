@@ -18,6 +18,11 @@ import java.io.IOException;
 @Fluent
 public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRestrictionTokenKey {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.ContentKeyPolicySymmetricTokenKey";
+
+    /*
      * The key value of the key
      */
     private byte[] keyValue;
@@ -26,7 +31,16 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
      * Creates an instance of ContentKeyPolicySymmetricTokenKey class.
      */
     public ContentKeyPolicySymmetricTokenKey() {
-        this.odataType = "#Microsoft.Media.ContentKeyPolicySymmetricTokenKey";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -71,8 +85,8 @@ public final class ContentKeyPolicySymmetricTokenKey extends ContentKeyPolicyRes
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeBinaryField("keyValue", this.keyValue);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

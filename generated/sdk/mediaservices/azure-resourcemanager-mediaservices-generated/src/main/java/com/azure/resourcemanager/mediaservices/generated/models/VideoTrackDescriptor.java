@@ -15,11 +15,25 @@ import java.io.IOException;
  */
 @Immutable
 public class VideoTrackDescriptor extends TrackDescriptor {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.VideoTrackDescriptor";
+
     /**
      * Creates an instance of VideoTrackDescriptor class.
      */
     public VideoTrackDescriptor() {
-        this.odataType = "#Microsoft.Media.VideoTrackDescriptor";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -37,12 +51,8 @@ public class VideoTrackDescriptor extends TrackDescriptor {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
-        super.toJsonShared(jsonWriter);
     }
 
     /**

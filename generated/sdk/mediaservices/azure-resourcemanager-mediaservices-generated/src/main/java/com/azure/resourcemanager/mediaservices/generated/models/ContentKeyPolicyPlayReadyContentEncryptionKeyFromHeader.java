@@ -16,11 +16,25 @@ import java.io.IOException;
 @Immutable
 public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
     extends ContentKeyPolicyPlayReadyContentKeyLocation {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader";
+
     /**
      * Creates an instance of ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader class.
      */
     public ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader() {
-        this.odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -38,7 +52,7 @@ public final class ContentKeyPolicyPlayReadyContentEncryptionKeyFromHeader
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

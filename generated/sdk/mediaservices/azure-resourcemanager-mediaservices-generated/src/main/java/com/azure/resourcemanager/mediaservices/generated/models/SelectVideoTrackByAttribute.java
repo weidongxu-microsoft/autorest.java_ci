@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.SelectVideoTrackByAttribute";
+
+    /*
      * The TrackAttribute to filter the tracks by.
      */
     private TrackAttribute attribute;
@@ -37,7 +42,16 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
      * Creates an instance of SelectVideoTrackByAttribute class.
      */
     public SelectVideoTrackByAttribute() {
-        this.odataType = "#Microsoft.Media.SelectVideoTrackByAttribute";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -133,9 +147,9 @@ public final class SelectVideoTrackByAttribute extends VideoTrackDescriptor {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("attribute", this.attribute == null ? null : this.attribute.toString());
         jsonWriter.writeStringField("filter", this.filter == null ? null : this.filter.toString());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("filterValue", this.filterValue);
         return jsonWriter.writeEndObject();
     }

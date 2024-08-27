@@ -21,13 +21,12 @@ public class DeadLetterDestination implements JsonSerializable<DeadLetterDestina
     /*
      * Type of the endpoint for the dead letter destination
      */
-    DeadLetterEndPointType endpointType;
+    private DeadLetterEndPointType endpointType = DeadLetterEndPointType.fromString("DeadLetterDestination");
 
     /**
      * Creates an instance of DeadLetterDestination class.
      */
     public DeadLetterDestination() {
-        this.endpointType = DeadLetterEndPointType.fromString("DeadLetterDestination");
     }
 
     /**
@@ -53,12 +52,8 @@ public class DeadLetterDestination implements JsonSerializable<DeadLetterDestina
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

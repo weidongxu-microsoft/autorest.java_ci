@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class WebhookUpdatePartnerDestinationInfo extends PartnerUpdateDestinationInfo {
     /*
+     * Type of the endpoint for the partner destination
+     */
+    private PartnerEndpointType endpointType = PartnerEndpointType.WEB_HOOK;
+
+    /*
      * WebHook Properties of the partner destination.
      */
     private WebhookPartnerDestinationProperties innerProperties;
@@ -25,7 +30,16 @@ public final class WebhookUpdatePartnerDestinationInfo extends PartnerUpdateDest
      * Creates an instance of WebhookUpdatePartnerDestinationInfo class.
      */
     public WebhookUpdatePartnerDestinationInfo() {
-        this.endpointType = PartnerEndpointType.WEB_HOOK;
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the partner destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public PartnerEndpointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -125,7 +139,7 @@ public final class WebhookUpdatePartnerDestinationInfo extends PartnerUpdateDest
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

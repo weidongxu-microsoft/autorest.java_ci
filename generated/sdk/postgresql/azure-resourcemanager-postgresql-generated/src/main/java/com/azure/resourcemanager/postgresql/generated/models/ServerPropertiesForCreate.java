@@ -19,7 +19,7 @@ public class ServerPropertiesForCreate implements JsonSerializable<ServerPropert
     /*
      * The mode to create a new server.
      */
-    CreateMode createMode;
+    private CreateMode createMode = CreateMode.fromString("ServerPropertiesForCreate");
 
     /*
      * Server version.
@@ -56,7 +56,6 @@ public class ServerPropertiesForCreate implements JsonSerializable<ServerPropert
      * Creates an instance of ServerPropertiesForCreate class.
      */
     public ServerPropertiesForCreate() {
-        this.createMode = CreateMode.fromString("ServerPropertiesForCreate");
     }
 
     /**
@@ -207,11 +206,6 @@ public class ServerPropertiesForCreate implements JsonSerializable<ServerPropert
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("createMode", this.createMode == null ? null : this.createMode.toString());
         jsonWriter.writeStringField("version", this.version == null ? null : this.version.toString());
         jsonWriter.writeStringField("sslEnforcement",
@@ -223,6 +217,7 @@ public class ServerPropertiesForCreate implements JsonSerializable<ServerPropert
         jsonWriter.writeStringField("publicNetworkAccess",
             this.publicNetworkAccess == null ? null : this.publicNetworkAccess.toString());
         jsonWriter.writeJsonField("storageProfile", this.storageProfile);
+        return jsonWriter.writeEndObject();
     }
 
     /**

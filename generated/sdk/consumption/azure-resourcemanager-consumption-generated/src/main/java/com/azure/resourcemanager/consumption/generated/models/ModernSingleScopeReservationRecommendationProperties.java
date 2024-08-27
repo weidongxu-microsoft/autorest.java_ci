@@ -22,6 +22,11 @@ import java.util.UUID;
 public final class ModernSingleScopeReservationRecommendationProperties
     extends ModernReservationRecommendationProperties {
     /*
+     * Shared or single recommendation.
+     */
+    private String scope = "Single";
+
+    /*
      * Subscription ID associated with single scoped recommendation.
      */
     private UUID subscriptionId;
@@ -77,7 +82,7 @@ public final class ModernSingleScopeReservationRecommendationProperties
     private Amount costWithNoReservedInstances;
 
     /*
-     * RI recommendations in one or three year terms.
+     * Term period of the reservation. ex: P1M, P1Y or P3Y.
      */
     private String term;
 
@@ -120,7 +125,16 @@ public final class ModernSingleScopeReservationRecommendationProperties
      * Creates an instance of ModernSingleScopeReservationRecommendationProperties class.
      */
     public ModernSingleScopeReservationRecommendationProperties() {
-        this.scope = "Single";
+    }
+
+    /**
+     * Get the scope property: Shared or single recommendation.
+     * 
+     * @return the scope value.
+     */
+    @Override
+    public String scope() {
+        return this.scope;
     }
 
     /**
@@ -233,7 +247,7 @@ public final class ModernSingleScopeReservationRecommendationProperties
     }
 
     /**
-     * Get the term property: RI recommendations in one or three year terms.
+     * Get the term property: Term period of the reservation. ex: P1M, P1Y or P3Y.
      * 
      * @return the term value.
      */
@@ -339,7 +353,7 @@ public final class ModernSingleScopeReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("scope", this.scope);
         return jsonWriter.writeEndObject();
     }
 

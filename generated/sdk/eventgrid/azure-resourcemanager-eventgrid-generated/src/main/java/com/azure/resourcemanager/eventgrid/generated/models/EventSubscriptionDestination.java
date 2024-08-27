@@ -19,13 +19,12 @@ public class EventSubscriptionDestination implements JsonSerializable<EventSubsc
     /*
      * Type of the endpoint for the event subscription destination.
      */
-    EndpointType endpointType;
+    private EndpointType endpointType = EndpointType.fromString("EventSubscriptionDestination");
 
     /**
      * Creates an instance of EventSubscriptionDestination class.
      */
     public EventSubscriptionDestination() {
-        this.endpointType = EndpointType.fromString("EventSubscriptionDestination");
     }
 
     /**
@@ -51,12 +50,8 @@ public class EventSubscriptionDestination implements JsonSerializable<EventSubsc
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -17,6 +17,11 @@ import java.util.List;
 @Fluent
 public final class StringNotEndsWithFilter extends Filter {
     /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    private FilterOperatorType operatorType = FilterOperatorType.STRING_NOT_ENDS_WITH;
+
+    /*
      * The set of filter values.
      */
     private List<String> values;
@@ -25,7 +30,17 @@ public final class StringNotEndsWithFilter extends Filter {
      * Creates an instance of StringNotEndsWithFilter class.
      */
     public StringNotEndsWithFilter() {
-        this.operatorType = FilterOperatorType.STRING_NOT_ENDS_WITH;
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public FilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**
@@ -72,7 +87,8 @@ public final class StringNotEndsWithFilter extends Filter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("key", key());
+        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeArrayField("values", this.values, (writer, element) -> writer.writeString(element));
         return jsonWriter.writeEndObject();
     }

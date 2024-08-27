@@ -16,11 +16,25 @@ import java.io.IOException;
  */
 @Fluent
 public final class JpgFormat extends ImageFormat {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.JpgFormat";
+
     /**
      * Creates an instance of JpgFormat class.
      */
     public JpgFormat() {
-        this.odataType = "#Microsoft.Media.JpgFormat";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -53,7 +67,8 @@ public final class JpgFormat extends ImageFormat {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("filenamePattern", filenamePattern());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

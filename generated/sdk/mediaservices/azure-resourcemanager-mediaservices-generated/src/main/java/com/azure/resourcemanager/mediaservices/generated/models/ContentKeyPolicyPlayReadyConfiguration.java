@@ -18,6 +18,11 @@ import java.util.List;
 @Fluent
 public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPolicyConfiguration {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration";
+
+    /*
      * The PlayReady licenses.
      */
     private List<ContentKeyPolicyPlayReadyLicense> licenses;
@@ -31,7 +36,16 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
      * Creates an instance of ContentKeyPolicyPlayReadyConfiguration class.
      */
     public ContentKeyPolicyPlayReadyConfiguration() {
-        this.odataType = "#Microsoft.Media.ContentKeyPolicyPlayReadyConfiguration";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -98,8 +112,8 @@ public final class ContentKeyPolicyPlayReadyConfiguration extends ContentKeyPoli
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("licenses", this.licenses, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("responseCustomData", this.responseCustomData);
         return jsonWriter.writeEndObject();
     }

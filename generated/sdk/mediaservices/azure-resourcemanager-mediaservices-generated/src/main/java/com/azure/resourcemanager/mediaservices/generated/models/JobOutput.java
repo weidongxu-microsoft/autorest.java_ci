@@ -21,7 +21,7 @@ public class JobOutput implements JsonSerializable<JobOutput> {
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "JobOutput";
 
     /*
      * If the JobOutput is in the Error state, it contains the details of the error.
@@ -71,7 +71,6 @@ public class JobOutput implements JsonSerializable<JobOutput> {
      * Creates an instance of JobOutput class.
      */
     public JobOutput() {
-        this.odataType = "JobOutput";
     }
 
     /**
@@ -261,14 +260,10 @@ public class JobOutput implements JsonSerializable<JobOutput> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeJsonField("presetOverride", this.presetOverride);
         jsonWriter.writeStringField("label", this.label);
+        return jsonWriter.writeEndObject();
     }
 
     /**

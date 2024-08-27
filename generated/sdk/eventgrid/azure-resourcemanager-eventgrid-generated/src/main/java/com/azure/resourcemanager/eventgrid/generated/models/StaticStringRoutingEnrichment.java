@@ -16,6 +16,11 @@ import java.io.IOException;
 @Fluent
 public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment {
     /*
+     * Static routing enrichment value type. For e.g. this property value can be 'String'.
+     */
+    private StaticRoutingEnrichmentType valueType = StaticRoutingEnrichmentType.STRING;
+
+    /*
      * String type routing enrichment value.
      */
     private String value;
@@ -24,7 +29,16 @@ public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment
      * Creates an instance of StaticStringRoutingEnrichment class.
      */
     public StaticStringRoutingEnrichment() {
-        this.valueType = StaticRoutingEnrichmentType.STRING;
+    }
+
+    /**
+     * Get the valueType property: Static routing enrichment value type. For e.g. this property value can be 'String'.
+     * 
+     * @return the valueType value.
+     */
+    @Override
+    public StaticRoutingEnrichmentType valueType() {
+        return this.valueType;
     }
 
     /**
@@ -71,7 +85,8 @@ public final class StaticStringRoutingEnrichment extends StaticRoutingEnrichment
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("key", key());
+        jsonWriter.writeStringField("valueType", this.valueType == null ? null : this.valueType.toString());
         jsonWriter.writeStringField("value", this.value);
         return jsonWriter.writeEndObject();
     }

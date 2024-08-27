@@ -19,13 +19,12 @@ public class JobInput implements JsonSerializable<JobInput> {
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "JobInput";
 
     /**
      * Creates an instance of JobInput class.
      */
     public JobInput() {
-        this.odataType = "JobInput";
     }
 
     /**
@@ -51,12 +50,8 @@ public class JobInput implements JsonSerializable<JobInput> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -22,6 +22,11 @@ import java.util.UUID;
 public final class LegacySharedScopeReservationRecommendationProperties
     extends LegacyReservationRecommendationProperties {
     /*
+     * Shared or single recommendation.
+     */
+    private String scope = "Shared";
+
+    /*
      * The total hours for which the cost is covered.
      */
     private Integer totalHours;
@@ -62,7 +67,7 @@ public final class LegacySharedScopeReservationRecommendationProperties
     private BigDecimal costWithNoReservedInstances;
 
     /*
-     * RI recommendations in one or three year terms.
+     * Term period of the reservation. ex: P1M, P1Y or P3Y.
      */
     private String term;
 
@@ -105,7 +110,16 @@ public final class LegacySharedScopeReservationRecommendationProperties
      * Creates an instance of LegacySharedScopeReservationRecommendationProperties class.
      */
     public LegacySharedScopeReservationRecommendationProperties() {
-        this.scope = "Shared";
+    }
+
+    /**
+     * Get the scope property: Shared or single recommendation.
+     * 
+     * @return the scope value.
+     */
+    @Override
+    public String scope() {
+        return this.scope;
     }
 
     /**
@@ -189,7 +203,7 @@ public final class LegacySharedScopeReservationRecommendationProperties
     }
 
     /**
-     * Get the term property: RI recommendations in one or three year terms.
+     * Get the term property: Term period of the reservation. ex: P1M, P1Y or P3Y.
      * 
      * @return the term value.
      */
@@ -286,7 +300,7 @@ public final class LegacySharedScopeReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("scope", this.scope);
         return jsonWriter.writeEndObject();
     }
 

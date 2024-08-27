@@ -18,6 +18,13 @@ import java.time.Duration;
 @Fluent
 public final class LocationThresholdRuleCondition extends RuleCondition {
     /*
+     * specifies the type of condition. This can be one of three types: ManagementEventRuleCondition (occurrences of
+     * management events), LocationThresholdRuleCondition (based on the number of failures of a web test), and
+     * ThresholdRuleCondition (based on the threshold of a metric).
+     */
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition";
+
+    /*
      * the period of time (in ISO 8601 duration format) that is used to monitor alert activity based on the threshold.
      * If specified then it must be between 5 minutes and 1 day.
      */
@@ -32,7 +39,18 @@ public final class LocationThresholdRuleCondition extends RuleCondition {
      * Creates an instance of LocationThresholdRuleCondition class.
      */
     public LocationThresholdRuleCondition() {
-        this.odataType = "Microsoft.Azure.Management.Insights.Models.LocationThresholdRuleCondition";
+    }
+
+    /**
+     * Get the odataType property: specifies the type of condition. This can be one of three types:
+     * ManagementEventRuleCondition (occurrences of management events), LocationThresholdRuleCondition (based on the
+     * number of failures of a web test), and ThresholdRuleCondition (based on the threshold of a metric).
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -104,8 +122,9 @@ public final class LocationThresholdRuleCondition extends RuleCondition {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeJsonField("dataSource", dataSource());
         jsonWriter.writeIntField("failedLocationCount", this.failedLocationCount);
+        jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeStringField("windowSize", CoreUtils.durationToStringWithDays(this.windowSize));
         return jsonWriter.writeEndObject();
     }

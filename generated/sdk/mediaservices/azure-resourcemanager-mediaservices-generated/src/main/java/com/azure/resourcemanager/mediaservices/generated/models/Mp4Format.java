@@ -17,11 +17,25 @@ import java.util.List;
  */
 @Fluent
 public final class Mp4Format extends MultiBitrateFormat {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.Mp4Format";
+
     /**
      * Creates an instance of Mp4Format class.
      */
     public Mp4Format() {
-        this.odataType = "#Microsoft.Media.Mp4Format";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -66,7 +80,9 @@ public final class Mp4Format extends MultiBitrateFormat {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("filenamePattern", filenamePattern());
+        jsonWriter.writeArrayField("outputFiles", outputFiles(), (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

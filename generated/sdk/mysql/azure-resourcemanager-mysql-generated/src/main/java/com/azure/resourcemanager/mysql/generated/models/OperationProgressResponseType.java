@@ -19,13 +19,12 @@ public class OperationProgressResponseType implements JsonSerializable<Operation
     /*
      * Identifies the type of source operation
      */
-    ObjectType objectType;
+    private ObjectType objectType = ObjectType.fromString("OperationProgressResponseType");
 
     /**
      * Creates an instance of OperationProgressResponseType class.
      */
     public OperationProgressResponseType() {
-        this.objectType = ObjectType.fromString("OperationProgressResponseType");
     }
 
     /**
@@ -51,12 +50,8 @@ public class OperationProgressResponseType implements JsonSerializable<Operation
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("objectType", this.objectType == null ? null : this.objectType.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

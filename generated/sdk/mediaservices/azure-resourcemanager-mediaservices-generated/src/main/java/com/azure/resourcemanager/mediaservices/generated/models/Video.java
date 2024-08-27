@@ -18,6 +18,11 @@ import java.time.Duration;
 @Fluent
 public class Video extends Codec {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.Video";
+
+    /*
      * The distance between two key frames. The value should be non-zero in the range [0.5, 20] seconds, specified in
      * ISO 8601 format. The default is 2 seconds(PT2S). Note that this setting is ignored if VideoSyncMode.Passthrough
      * is set, where the KeyFrameInterval value will follow the input source setting.
@@ -39,7 +44,16 @@ public class Video extends Codec {
      * Creates an instance of Video class.
      */
     public Video() {
-        this.odataType = "#Microsoft.Media.Video";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -134,15 +148,12 @@ public class Video extends Codec {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
-        super.toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(this.keyFrameInterval));
         jsonWriter.writeStringField("stretchMode", this.stretchMode == null ? null : this.stretchMode.toString());
         jsonWriter.writeStringField("syncMode", this.syncMode == null ? null : this.syncMode.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

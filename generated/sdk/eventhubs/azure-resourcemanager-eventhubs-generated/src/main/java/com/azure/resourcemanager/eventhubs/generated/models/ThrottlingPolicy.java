@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     /*
+     * Application Group Policy types
+     */
+    private ApplicationGroupPolicyType type = ApplicationGroupPolicyType.THROTTLING_POLICY;
+
+    /*
      * The Threshold limit above which the application group will be throttled.Rate limit is always per second.
      */
     private long rateLimitThreshold;
@@ -31,7 +36,16 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
      * Creates an instance of ThrottlingPolicy class.
      */
     public ThrottlingPolicy() {
-        this.type = ApplicationGroupPolicyType.THROTTLING_POLICY;
+    }
+
+    /**
+     * Get the type property: Application Group Policy types.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public ApplicationGroupPolicyType type() {
+        return this.type;
     }
 
     /**
@@ -112,9 +126,10 @@ public final class ThrottlingPolicy extends ApplicationGroupPolicy {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("name", name());
         jsonWriter.writeLongField("rateLimitThreshold", this.rateLimitThreshold);
         jsonWriter.writeStringField("metricId", this.metricId == null ? null : this.metricId.toString());
+        jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
         return jsonWriter.writeEndObject();
     }
 

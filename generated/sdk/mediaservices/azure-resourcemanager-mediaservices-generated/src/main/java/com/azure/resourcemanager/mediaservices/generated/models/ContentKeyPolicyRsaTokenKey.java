@@ -18,6 +18,11 @@ import java.io.IOException;
 @Fluent
 public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestrictionTokenKey {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.ContentKeyPolicyRsaTokenKey";
+
+    /*
      * The RSA Parameter exponent
      */
     private byte[] exponent;
@@ -31,7 +36,16 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
      * Creates an instance of ContentKeyPolicyRsaTokenKey class.
      */
     public ContentKeyPolicyRsaTokenKey() {
-        this.odataType = "#Microsoft.Media.ContentKeyPolicyRsaTokenKey";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -101,9 +115,9 @@ public final class ContentKeyPolicyRsaTokenKey extends ContentKeyPolicyRestricti
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeBinaryField("exponent", this.exponent);
         jsonWriter.writeBinaryField("modulus", this.modulus);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

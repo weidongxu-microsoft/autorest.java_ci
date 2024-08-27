@@ -18,6 +18,11 @@ import java.util.List;
 @Fluent
 public final class FacetError extends Facet {
     /*
+     * Result type
+     */
+    private String resultType = "FacetError";
+
+    /*
      * An array containing detected facet errors with details.
      */
     private List<ErrorDetails> errors;
@@ -26,7 +31,16 @@ public final class FacetError extends Facet {
      * Creates an instance of FacetError class.
      */
     public FacetError() {
-        this.resultType = "FacetError";
+    }
+
+    /**
+     * Get the resultType property: Result type.
+     * 
+     * @return the resultType value.
+     */
+    @Override
+    public String resultType() {
+        return this.resultType;
     }
 
     /**
@@ -85,8 +99,9 @@ public final class FacetError extends Facet {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("expression", expression());
         jsonWriter.writeArrayField("errors", this.errors, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("resultType", this.resultType);
         return jsonWriter.writeEndObject();
     }
 

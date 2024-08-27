@@ -20,13 +20,12 @@ public class ContentKeyPolicyPlayReadyContentKeyLocation
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "ContentKeyPolicyPlayReadyContentKeyLocation";
 
     /**
      * Creates an instance of ContentKeyPolicyPlayReadyContentKeyLocation class.
      */
     public ContentKeyPolicyPlayReadyContentKeyLocation() {
-        this.odataType = "ContentKeyPolicyPlayReadyContentKeyLocation";
     }
 
     /**
@@ -52,12 +51,8 @@ public class ContentKeyPolicyPlayReadyContentKeyLocation
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

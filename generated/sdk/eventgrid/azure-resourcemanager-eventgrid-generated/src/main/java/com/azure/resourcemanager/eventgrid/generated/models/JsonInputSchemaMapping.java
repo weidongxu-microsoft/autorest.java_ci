@@ -18,6 +18,11 @@ import java.io.IOException;
 @Fluent
 public final class JsonInputSchemaMapping extends InputSchemaMapping {
     /*
+     * Type of the custom mapping
+     */
+    private InputSchemaMappingType inputSchemaMappingType = InputSchemaMappingType.JSON;
+
+    /*
      * JSON Properties of the input schema mapping
      */
     private JsonInputSchemaMappingProperties innerProperties;
@@ -26,7 +31,16 @@ public final class JsonInputSchemaMapping extends InputSchemaMapping {
      * Creates an instance of JsonInputSchemaMapping class.
      */
     public JsonInputSchemaMapping() {
-        this.inputSchemaMappingType = InputSchemaMappingType.JSON;
+    }
+
+    /**
+     * Get the inputSchemaMappingType property: Type of the custom mapping.
+     * 
+     * @return the inputSchemaMappingType value.
+     */
+    @Override
+    public InputSchemaMappingType inputSchemaMappingType() {
+        return this.inputSchemaMappingType;
     }
 
     /**
@@ -194,7 +208,8 @@ public final class JsonInputSchemaMapping extends InputSchemaMapping {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("inputSchemaMappingType",
+            this.inputSchemaMappingType == null ? null : this.inputSchemaMappingType.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

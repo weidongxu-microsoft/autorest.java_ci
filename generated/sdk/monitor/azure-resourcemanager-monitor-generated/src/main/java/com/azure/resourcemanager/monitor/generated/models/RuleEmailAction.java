@@ -18,6 +18,11 @@ import java.util.List;
 @Fluent
 public final class RuleEmailAction extends RuleAction {
     /*
+     * specifies the type of the action. There are two types of actions: RuleEmailAction and RuleWebhookAction.
+     */
+    private String odataType = "Microsoft.Azure.Management.Insights.Models.RuleEmailAction";
+
+    /*
      * Whether the administrators (service and co-administrators) of the service should be notified when the alert is
      * activated.
      */
@@ -32,7 +37,17 @@ public final class RuleEmailAction extends RuleAction {
      * Creates an instance of RuleEmailAction class.
      */
     public RuleEmailAction() {
-        this.odataType = "Microsoft.Azure.Management.Insights.Models.RuleEmailAction";
+    }
+
+    /**
+     * Get the odataType property: specifies the type of the action. There are two types of actions: RuleEmailAction and
+     * RuleWebhookAction.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -94,7 +109,7 @@ public final class RuleEmailAction extends RuleAction {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeBooleanField("sendToServiceOwners", this.sendToServiceOwners);
         jsonWriter.writeArrayField("customEmails", this.customEmails, (writer, element) -> writer.writeString(element));
         return jsonWriter.writeEndObject();

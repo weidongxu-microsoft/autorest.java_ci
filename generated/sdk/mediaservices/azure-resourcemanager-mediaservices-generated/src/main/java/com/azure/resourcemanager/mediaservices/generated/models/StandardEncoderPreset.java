@@ -19,6 +19,11 @@ import java.util.Map;
 @Fluent
 public final class StandardEncoderPreset extends Preset {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.StandardEncoderPreset";
+
+    /*
      * Dictionary containing key value pairs for parameters not exposed in the preset itself
      */
     private Map<String, String> experimentalOptions;
@@ -42,7 +47,16 @@ public final class StandardEncoderPreset extends Preset {
      * Creates an instance of StandardEncoderPreset class.
      */
     public StandardEncoderPreset() {
-        this.odataType = "#Microsoft.Media.StandardEncoderPreset";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -159,9 +173,9 @@ public final class StandardEncoderPreset extends Preset {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("codecs", this.codecs, (writer, element) -> writer.writeJson(element));
         jsonWriter.writeArrayField("formats", this.formats, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeMapField("experimentalOptions", this.experimentalOptions,
             (writer, element) -> writer.writeString(element));
         jsonWriter.writeJsonField("filters", this.filters);

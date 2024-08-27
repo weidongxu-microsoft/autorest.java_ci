@@ -21,6 +21,11 @@ import java.time.format.DateTimeFormatter;
 @Fluent
 public final class UtcClipTime extends ClipTime {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.UtcClipTime";
+
+    /*
      * The time position on the timeline of the input media based on Utc time.
      */
     private OffsetDateTime time;
@@ -29,7 +34,16 @@ public final class UtcClipTime extends ClipTime {
      * Creates an instance of UtcClipTime class.
      */
     public UtcClipTime() {
-        this.odataType = "#Microsoft.Media.UtcClipTime";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -73,9 +87,9 @@ public final class UtcClipTime extends ClipTime {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeStringField("time",
             this.time == null ? null : DateTimeFormatter.ISO_OFFSET_DATE_TIME.format(this.time));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

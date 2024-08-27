@@ -17,6 +17,11 @@ import java.util.List;
 @Fluent
 public final class JobInputs extends JobInput {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.JobInputs";
+
+    /*
      * List of inputs to a Job.
      */
     private List<JobInput> inputs;
@@ -25,7 +30,16 @@ public final class JobInputs extends JobInput {
      * Creates an instance of JobInputs class.
      */
     public JobInputs() {
-        this.odataType = "#Microsoft.Media.JobInputs";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -66,7 +80,7 @@ public final class JobInputs extends JobInput {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeArrayField("inputs", this.inputs, (writer, element) -> writer.writeJson(element));
         return jsonWriter.writeEndObject();
     }

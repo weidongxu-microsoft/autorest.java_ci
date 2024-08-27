@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class StaticDeliveryAttributeMapping extends DeliveryAttributeMapping {
     /*
+     * Type of the delivery attribute or header name.
+     */
+    private DeliveryAttributeMappingType type = DeliveryAttributeMappingType.STATIC;
+
+    /*
      * Properties of static delivery attribute mapping.
      */
     private StaticDeliveryAttributeMappingProperties innerProperties;
@@ -25,7 +30,16 @@ public final class StaticDeliveryAttributeMapping extends DeliveryAttributeMappi
      * Creates an instance of StaticDeliveryAttributeMapping class.
      */
     public StaticDeliveryAttributeMapping() {
-        this.type = DeliveryAttributeMappingType.STATIC;
+    }
+
+    /**
+     * Get the type property: Type of the delivery attribute or header name.
+     * 
+     * @return the type value.
+     */
+    @Override
+    public DeliveryAttributeMappingType type() {
+        return this.type;
     }
 
     /**
@@ -110,7 +124,8 @@ public final class StaticDeliveryAttributeMapping extends DeliveryAttributeMappi
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("name", name());
+        jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

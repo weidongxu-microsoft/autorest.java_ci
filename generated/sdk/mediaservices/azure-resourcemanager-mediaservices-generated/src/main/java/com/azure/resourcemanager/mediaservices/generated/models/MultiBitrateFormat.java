@@ -20,6 +20,11 @@ import java.util.List;
 @Fluent
 public class MultiBitrateFormat extends Format {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.MultiBitrateFormat";
+
+    /*
      * The list of output files to produce. Each entry in the list is a set of audio and video layer labels to be muxed
      * together .
      */
@@ -29,7 +34,16 @@ public class MultiBitrateFormat extends Format {
      * Creates an instance of MultiBitrateFormat class.
      */
     public MultiBitrateFormat() {
-        this.odataType = "#Microsoft.Media.MultiBitrateFormat";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -88,13 +102,10 @@ public class MultiBitrateFormat extends Format {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
-        super.toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("filenamePattern", filenamePattern());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeArrayField("outputFiles", this.outputFiles, (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
     }
 
     /**

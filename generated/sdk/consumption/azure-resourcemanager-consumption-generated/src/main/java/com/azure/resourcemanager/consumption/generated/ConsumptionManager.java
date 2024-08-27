@@ -71,6 +71,8 @@ import java.util.stream.Collectors;
  * Consumption management client provides access to consumption resources for Azure Enterprise Subscriptions.
  */
 public final class ConsumptionManager {
+    private PriceSheets priceSheets;
+
     private UsageDetails usageDetails;
 
     private Marketplaces marketplaces;
@@ -92,8 +94,6 @@ public final class ConsumptionManager {
     private ReservationRecommendationDetails reservationRecommendationDetails;
 
     private ReservationTransactions reservationTransactions;
-
-    private PriceSheets priceSheets;
 
     private Operations operations;
 
@@ -316,6 +316,18 @@ public final class ConsumptionManager {
     }
 
     /**
+     * Gets the resource collection API of PriceSheets.
+     * 
+     * @return Resource collection API of PriceSheets.
+     */
+    public PriceSheets priceSheets() {
+        if (this.priceSheets == null) {
+            this.priceSheets = new PriceSheetsImpl(clientObject.getPriceSheets(), this);
+        }
+        return priceSheets;
+    }
+
+    /**
      * Gets the resource collection API of UsageDetails.
      * 
      * @return Resource collection API of UsageDetails.
@@ -448,18 +460,6 @@ public final class ConsumptionManager {
                 = new ReservationTransactionsImpl(clientObject.getReservationTransactions(), this);
         }
         return reservationTransactions;
-    }
-
-    /**
-     * Gets the resource collection API of PriceSheets.
-     * 
-     * @return Resource collection API of PriceSheets.
-     */
-    public PriceSheets priceSheets() {
-        if (this.priceSheets == null) {
-            this.priceSheets = new PriceSheetsImpl(clientObject.getPriceSheets(), this);
-        }
-        return priceSheets;
     }
 
     /**

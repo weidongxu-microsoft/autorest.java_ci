@@ -19,13 +19,12 @@ public class PartnerUpdateDestinationInfo implements JsonSerializable<PartnerUpd
     /*
      * Type of the endpoint for the partner destination
      */
-    PartnerEndpointType endpointType;
+    private PartnerEndpointType endpointType = PartnerEndpointType.fromString("PartnerUpdateDestinationInfo");
 
     /**
      * Creates an instance of PartnerUpdateDestinationInfo class.
      */
     public PartnerUpdateDestinationInfo() {
-        this.endpointType = PartnerEndpointType.fromString("PartnerUpdateDestinationInfo");
     }
 
     /**
@@ -51,12 +50,8 @@ public class PartnerUpdateDestinationInfo implements JsonSerializable<PartnerUpd
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

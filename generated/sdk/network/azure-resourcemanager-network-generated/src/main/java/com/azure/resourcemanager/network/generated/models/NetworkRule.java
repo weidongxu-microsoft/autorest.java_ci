@@ -17,6 +17,11 @@ import java.util.List;
 @Fluent
 public final class NetworkRule extends FirewallPolicyRule {
     /*
+     * Rule Type.
+     */
+    private FirewallPolicyRuleType ruleType = FirewallPolicyRuleType.NETWORK_RULE;
+
+    /*
      * Array of FirewallPolicyRuleNetworkProtocols.
      */
     private List<FirewallPolicyRuleNetworkProtocol> ipProtocols;
@@ -55,7 +60,16 @@ public final class NetworkRule extends FirewallPolicyRule {
      * Creates an instance of NetworkRule class.
      */
     public NetworkRule() {
-        this.ruleType = FirewallPolicyRuleType.NETWORK_RULE;
+    }
+
+    /**
+     * Get the ruleType property: Rule Type.
+     * 
+     * @return the ruleType value.
+     */
+    @Override
+    public FirewallPolicyRuleType ruleType() {
+        return this.ruleType;
     }
 
     /**
@@ -231,7 +245,9 @@ public final class NetworkRule extends FirewallPolicyRule {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("name", name());
+        jsonWriter.writeStringField("description", description());
+        jsonWriter.writeStringField("ruleType", this.ruleType == null ? null : this.ruleType.toString());
         jsonWriter.writeArrayField("ipProtocols", this.ipProtocols,
             (writer, element) -> writer.writeString(element == null ? null : element.toString()));
         jsonWriter.writeArrayField("sourceAddresses", this.sourceAddresses,

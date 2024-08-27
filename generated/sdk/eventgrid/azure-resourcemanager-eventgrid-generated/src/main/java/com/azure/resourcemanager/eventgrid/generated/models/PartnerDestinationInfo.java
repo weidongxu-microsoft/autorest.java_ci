@@ -20,7 +20,7 @@ public class PartnerDestinationInfo implements JsonSerializable<PartnerDestinati
     /*
      * Type of the endpoint for the partner destination
      */
-    PartnerEndpointType endpointType;
+    private PartnerEndpointType endpointType = PartnerEndpointType.fromString("PartnerDestinationInfo");
 
     /*
      * Azure subscription ID of the subscriber. The partner destination associated with the channel will be
@@ -53,7 +53,6 @@ public class PartnerDestinationInfo implements JsonSerializable<PartnerDestinati
      * Creates an instance of PartnerDestinationInfo class.
      */
     public PartnerDestinationInfo() {
-        this.endpointType = PartnerEndpointType.fromString("PartnerDestinationInfo");
     }
 
     /**
@@ -191,11 +190,6 @@ public class PartnerDestinationInfo implements JsonSerializable<PartnerDestinati
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
         jsonWriter.writeStringField("azureSubscriptionId", this.azureSubscriptionId);
         jsonWriter.writeStringField("resourceGroupName", this.resourceGroupName);
@@ -203,6 +197,7 @@ public class PartnerDestinationInfo implements JsonSerializable<PartnerDestinati
         jsonWriter.writeStringField("endpointServiceContext", this.endpointServiceContext);
         jsonWriter.writeArrayField("resourceMoveChangeHistory", this.resourceMoveChangeHistory,
             (writer, element) -> writer.writeJson(element));
+        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -23,7 +23,7 @@ public class MultiMetricCriteria implements JsonSerializable<MultiMetricCriteria
     /*
      * Specifies the type of threshold criteria
      */
-    CriterionType criterionType;
+    private CriterionType criterionType = CriterionType.fromString("MultiMetricCriteria");
 
     /*
      * Name of the criteria.
@@ -65,7 +65,6 @@ public class MultiMetricCriteria implements JsonSerializable<MultiMetricCriteria
      * Creates an instance of MultiMetricCriteria class.
      */
     public MultiMetricCriteria() {
-        this.criterionType = CriterionType.fromString("MultiMetricCriteria");
     }
 
     /**
@@ -251,11 +250,6 @@ public class MultiMetricCriteria implements JsonSerializable<MultiMetricCriteria
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("name", this.name);
         jsonWriter.writeStringField("metricName", this.metricName);
         jsonWriter.writeStringField("timeAggregation",
@@ -269,6 +263,7 @@ public class MultiMetricCriteria implements JsonSerializable<MultiMetricCriteria
                 jsonWriter.writeUntypedField(additionalProperty.getKey(), additionalProperty.getValue());
             }
         }
+        return jsonWriter.writeEndObject();
     }
 
     /**

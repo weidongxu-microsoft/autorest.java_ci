@@ -18,6 +18,12 @@ import java.util.List;
 @Fluent
 public final class LogToMetricAction extends Action {
     /*
+     * Specifies the action. Supported values - AlertingAction, LogToMetricAction
+     */
+    private String odataType
+        = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction";
+
+    /*
      * Criteria of Metric
      */
     private List<Criteria> criteria;
@@ -26,8 +32,16 @@ public final class LogToMetricAction extends Action {
      * Creates an instance of LogToMetricAction class.
      */
     public LogToMetricAction() {
-        this.odataType
-            = "Microsoft.WindowsAzure.Management.Monitoring.Alerts.Models.Microsoft.AppInsights.Nexus.DataContracts.Resources.ScheduledQueryRules.LogToMetricAction";
+    }
+
+    /**
+     * Get the odataType property: Specifies the action. Supported values - AlertingAction, LogToMetricAction.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -73,8 +87,8 @@ public final class LogToMetricAction extends Action {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
         jsonWriter.writeArrayField("criteria", this.criteria, (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

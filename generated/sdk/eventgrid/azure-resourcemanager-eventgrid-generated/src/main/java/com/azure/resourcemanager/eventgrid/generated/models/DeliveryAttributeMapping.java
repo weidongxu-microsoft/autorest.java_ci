@@ -19,7 +19,7 @@ public class DeliveryAttributeMapping implements JsonSerializable<DeliveryAttrib
     /*
      * Type of the delivery attribute or header name.
      */
-    DeliveryAttributeMappingType type;
+    private DeliveryAttributeMappingType type = DeliveryAttributeMappingType.fromString("DeliveryAttributeMapping");
 
     /*
      * Name of the delivery attribute or header.
@@ -30,7 +30,6 @@ public class DeliveryAttributeMapping implements JsonSerializable<DeliveryAttrib
      * Creates an instance of DeliveryAttributeMapping class.
      */
     public DeliveryAttributeMapping() {
-        this.type = DeliveryAttributeMappingType.fromString("DeliveryAttributeMapping");
     }
 
     /**
@@ -76,13 +75,9 @@ public class DeliveryAttributeMapping implements JsonSerializable<DeliveryAttrib
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("type", this.type == null ? null : this.type.toString());
         jsonWriter.writeStringField("name", this.name);
+        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -16,6 +16,11 @@ import java.io.IOException;
 @Fluent
 public final class RedirectConfiguration extends RouteConfiguration {
     /*
+     * The @odata.type property.
+     */
+    private String odataType = "#Microsoft.Azure.FrontDoor.Models.FrontdoorRedirectConfiguration";
+
+    /*
      * The redirect type the rule will use when redirecting traffic.
      */
     private FrontDoorRedirectType redirectType;
@@ -53,7 +58,16 @@ public final class RedirectConfiguration extends RouteConfiguration {
      * Creates an instance of RedirectConfiguration class.
      */
     public RedirectConfiguration() {
-        this.odataType = "#Microsoft.Azure.FrontDoor.Models.FrontdoorRedirectConfiguration";
+    }
+
+    /**
+     * Get the odataType property: The &#064;odata.type property.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -201,7 +215,7 @@ public final class RedirectConfiguration extends RouteConfiguration {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("redirectType", this.redirectType == null ? null : this.redirectType.toString());
         jsonWriter.writeStringField("redirectProtocol",
             this.redirectProtocol == null ? null : this.redirectProtocol.toString());

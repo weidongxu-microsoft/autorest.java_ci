@@ -19,13 +19,13 @@ public class PartnerClientAuthentication implements JsonSerializable<PartnerClie
     /*
      * Type of client authentication
      */
-    PartnerClientAuthenticationType clientAuthenticationType;
+    private PartnerClientAuthenticationType clientAuthenticationType
+        = PartnerClientAuthenticationType.fromString("PartnerClientAuthentication");
 
     /**
      * Creates an instance of PartnerClientAuthentication class.
      */
     public PartnerClientAuthentication() {
-        this.clientAuthenticationType = PartnerClientAuthenticationType.fromString("PartnerClientAuthentication");
     }
 
     /**
@@ -51,13 +51,9 @@ public class PartnerClientAuthentication implements JsonSerializable<PartnerClie
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("clientAuthenticationType",
             this.clientAuthenticationType == null ? null : this.clientAuthenticationType.toString());
+        return jsonWriter.writeEndObject();
     }
 
     /**

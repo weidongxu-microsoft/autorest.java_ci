@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class NamespaceTopicEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
+     * Type of the endpoint for the event subscription destination.
+     */
+    private EndpointType endpointType = EndpointType.NAMESPACE_TOPIC;
+
+    /*
      * Namespace Topic properties of the event subscription destination.
      */
     private NamespaceTopicEventSubscriptionDestinationProperties innerProperties;
@@ -25,7 +30,16 @@ public final class NamespaceTopicEventSubscriptionDestination extends EventSubsc
      * Creates an instance of NamespaceTopicEventSubscriptionDestination class.
      */
     public NamespaceTopicEventSubscriptionDestination() {
-        this.endpointType = EndpointType.NAMESPACE_TOPIC;
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the event subscription destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public EndpointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -86,7 +100,7 @@ public final class NamespaceTopicEventSubscriptionDestination extends EventSubsc
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

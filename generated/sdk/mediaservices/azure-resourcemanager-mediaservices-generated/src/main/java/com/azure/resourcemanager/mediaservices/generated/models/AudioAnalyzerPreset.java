@@ -18,6 +18,11 @@ import java.util.Map;
 @Fluent
 public class AudioAnalyzerPreset extends Preset {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.AudioAnalyzerPreset";
+
+    /*
      * The language for the audio payload in the input using the BCP-47 format of 'language tag-region' (e.g: 'en-US').
      * If you know the language of your content, it is recommended that you specify it. The language must be specified
      * explicitly for AudioAnalysisMode::Basic, since automatic language detection is not included in basic mode. If the
@@ -45,7 +50,16 @@ public class AudioAnalyzerPreset extends Preset {
      * Creates an instance of AudioAnalyzerPreset class.
      */
     public AudioAnalyzerPreset() {
-        this.odataType = "#Microsoft.Media.AudioAnalyzerPreset";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -143,16 +157,12 @@ public class AudioAnalyzerPreset extends Preset {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
-        super.toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("audioLanguage", this.audioLanguage);
         jsonWriter.writeStringField("mode", this.mode == null ? null : this.mode.toString());
         jsonWriter.writeMapField("experimentalOptions", this.experimentalOptions,
             (writer, element) -> writer.writeString(element));
+        return jsonWriter.writeEndObject();
     }
 
     /**

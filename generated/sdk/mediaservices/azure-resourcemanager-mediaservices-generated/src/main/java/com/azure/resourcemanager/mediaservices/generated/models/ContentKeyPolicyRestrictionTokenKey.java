@@ -19,13 +19,12 @@ public class ContentKeyPolicyRestrictionTokenKey implements JsonSerializable<Con
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "ContentKeyPolicyRestrictionTokenKey";
 
     /**
      * Creates an instance of ContentKeyPolicyRestrictionTokenKey class.
      */
     public ContentKeyPolicyRestrictionTokenKey() {
-        this.odataType = "ContentKeyPolicyRestrictionTokenKey";
     }
 
     /**
@@ -51,12 +50,8 @@ public class ContentKeyPolicyRestrictionTokenKey implements JsonSerializable<Con
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

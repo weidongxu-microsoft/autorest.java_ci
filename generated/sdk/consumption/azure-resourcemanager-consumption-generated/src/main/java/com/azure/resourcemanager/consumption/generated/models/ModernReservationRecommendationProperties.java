@@ -25,7 +25,7 @@ public class ModernReservationRecommendationProperties
     /*
      * Shared or single recommendation.
      */
-    String scope;
+    private String scope = "ModernReservationRecommendationProperties";
 
     /*
      * Resource Location.
@@ -63,7 +63,7 @@ public class ModernReservationRecommendationProperties
     private UUID meterId;
 
     /*
-     * RI recommendations in one or three year terms.
+     * Term period of the reservation. ex: P1M, P1Y or P3Y.
      */
     private String term;
 
@@ -121,7 +121,6 @@ public class ModernReservationRecommendationProperties
      * Creates an instance of ModernReservationRecommendationProperties class.
      */
     public ModernReservationRecommendationProperties() {
-        this.scope = "ModernReservationRecommendationProperties";
     }
 
     /**
@@ -274,7 +273,7 @@ public class ModernReservationRecommendationProperties
     }
 
     /**
-     * Get the term property: RI recommendations in one or three year terms.
+     * Get the term property: Term period of the reservation. ex: P1M, P1Y or P3Y.
      * 
      * @return the term value.
      */
@@ -283,7 +282,7 @@ public class ModernReservationRecommendationProperties
     }
 
     /**
-     * Set the term property: RI recommendations in one or three year terms.
+     * Set the term property: Term period of the reservation. ex: P1M, P1Y or P3Y.
      * 
      * @param term the term value to set.
      * @return the ModernReservationRecommendationProperties object itself.
@@ -520,12 +519,8 @@ public class ModernReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("scope", this.scope);
+        return jsonWriter.writeEndObject();
     }
 
     /**

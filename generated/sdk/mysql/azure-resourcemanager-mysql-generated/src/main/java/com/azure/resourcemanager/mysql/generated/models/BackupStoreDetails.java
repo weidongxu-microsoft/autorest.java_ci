@@ -19,13 +19,12 @@ public class BackupStoreDetails implements JsonSerializable<BackupStoreDetails> 
     /*
      * Type of the specific object - used for deserializing
      */
-    String objectType;
+    private String objectType = "BackupStoreDetails";
 
     /**
      * Creates an instance of BackupStoreDetails class.
      */
     public BackupStoreDetails() {
-        this.objectType = "BackupStoreDetails";
     }
 
     /**
@@ -51,12 +50,8 @@ public class BackupStoreDetails implements JsonSerializable<BackupStoreDetails> 
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("objectType", this.objectType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

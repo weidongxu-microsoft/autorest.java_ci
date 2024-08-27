@@ -25,7 +25,7 @@ public class LegacyReservationRecommendationProperties
     /*
      * Shared or single recommendation.
      */
-    String scope;
+    private String scope = "LegacyReservationRecommendationProperties";
 
     /*
      * The number of days of usage to look back for recommendation.
@@ -63,7 +63,7 @@ public class LegacyReservationRecommendationProperties
     private String resourceType;
 
     /*
-     * RI recommendations in one or three year terms.
+     * Term period of the reservation. ex: P1M, P1Y or P3Y.
      */
     private String term;
 
@@ -111,7 +111,6 @@ public class LegacyReservationRecommendationProperties
      * Creates an instance of LegacyReservationRecommendationProperties class.
      */
     public LegacyReservationRecommendationProperties() {
-        this.scope = "LegacyReservationRecommendationProperties";
     }
 
     /**
@@ -264,7 +263,7 @@ public class LegacyReservationRecommendationProperties
     }
 
     /**
-     * Get the term property: RI recommendations in one or three year terms.
+     * Get the term property: Term period of the reservation. ex: P1M, P1Y or P3Y.
      * 
      * @return the term value.
      */
@@ -273,7 +272,7 @@ public class LegacyReservationRecommendationProperties
     }
 
     /**
-     * Set the term property: RI recommendations in one or three year terms.
+     * Set the term property: Term period of the reservation. ex: P1M, P1Y or P3Y.
      * 
      * @param term the term value to set.
      * @return the LegacyReservationRecommendationProperties object itself.
@@ -461,12 +460,8 @@ public class LegacyReservationRecommendationProperties
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("scope", this.scope);
+        return jsonWriter.writeEndObject();
     }
 
     /**

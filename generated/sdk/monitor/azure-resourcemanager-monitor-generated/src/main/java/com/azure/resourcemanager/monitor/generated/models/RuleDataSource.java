@@ -20,7 +20,7 @@ public class RuleDataSource implements JsonSerializable<RuleDataSource> {
      * specifies the type of data source. There are two types of rule data sources: RuleMetricDataSource and
      * RuleManagementEventDataSource
      */
-    String odataType;
+    private String odataType = "RuleDataSource";
 
     /*
      * the resource identifier of the resource the rule monitors. **NOTE**: this property cannot be updated for an
@@ -48,7 +48,6 @@ public class RuleDataSource implements JsonSerializable<RuleDataSource> {
      * Creates an instance of RuleDataSource class.
      */
     public RuleDataSource() {
-        this.odataType = "RuleDataSource";
     }
 
     /**
@@ -159,16 +158,12 @@ public class RuleDataSource implements JsonSerializable<RuleDataSource> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("odata.type", this.odataType);
         jsonWriter.writeStringField("resourceUri", this.resourceUri);
         jsonWriter.writeStringField("legacyResourceId", this.legacyResourceId);
         jsonWriter.writeStringField("resourceLocation", this.resourceLocation);
         jsonWriter.writeStringField("metricNamespace", this.metricNamespace);
+        return jsonWriter.writeEndObject();
     }
 
     /**

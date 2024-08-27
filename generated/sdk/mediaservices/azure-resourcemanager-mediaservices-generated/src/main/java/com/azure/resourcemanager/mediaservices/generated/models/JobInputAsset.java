@@ -18,6 +18,11 @@ import java.util.List;
 @Fluent
 public final class JobInputAsset extends JobInputClip {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.JobInputAsset";
+
+    /*
      * The name of the input Asset.
      */
     private String assetName;
@@ -26,7 +31,16 @@ public final class JobInputAsset extends JobInputClip {
      * Creates an instance of JobInputAsset class.
      */
     public JobInputAsset() {
-        this.odataType = "#Microsoft.Media.JobInputAsset";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -124,8 +138,14 @@ public final class JobInputAsset extends JobInputClip {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeArrayField("files", files(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("start", start());
+        jsonWriter.writeJsonField("end", end());
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeArrayField("inputDefinitions", inputDefinitions(),
+            (writer, element) -> writer.writeJson(element));
         jsonWriter.writeStringField("assetName", this.assetName);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

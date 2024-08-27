@@ -17,6 +17,11 @@ import java.util.List;
 @Fluent
 public final class JobInputHttp extends JobInputClip {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.JobInputHttp";
+
+    /*
      * Base URI for HTTPS job input. It will be concatenated with provided file names. If no base uri is given, then the
      * provided file list is assumed to be fully qualified uris. Maximum length of 4000 characters. The query strings
      * will not be returned in service responses to prevent sensitive data exposure.
@@ -27,7 +32,16 @@ public final class JobInputHttp extends JobInputClip {
      * Creates an instance of JobInputHttp class.
      */
     public JobInputHttp() {
-        this.odataType = "#Microsoft.Media.JobInputHttp";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -123,7 +137,13 @@ public final class JobInputHttp extends JobInputClip {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeArrayField("files", files(), (writer, element) -> writer.writeString(element));
+        jsonWriter.writeJsonField("start", start());
+        jsonWriter.writeJsonField("end", end());
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeArrayField("inputDefinitions", inputDefinitions(),
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("baseUri", this.baseUri);
         return jsonWriter.writeEndObject();
     }

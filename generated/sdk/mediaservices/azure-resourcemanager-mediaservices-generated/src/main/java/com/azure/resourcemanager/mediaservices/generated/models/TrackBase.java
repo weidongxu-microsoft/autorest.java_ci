@@ -19,13 +19,12 @@ public class TrackBase implements JsonSerializable<TrackBase> {
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "TrackBase";
 
     /**
      * Creates an instance of TrackBase class.
      */
     public TrackBase() {
-        this.odataType = "TrackBase";
     }
 
     /**
@@ -51,12 +50,8 @@ public class TrackBase implements JsonSerializable<TrackBase> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

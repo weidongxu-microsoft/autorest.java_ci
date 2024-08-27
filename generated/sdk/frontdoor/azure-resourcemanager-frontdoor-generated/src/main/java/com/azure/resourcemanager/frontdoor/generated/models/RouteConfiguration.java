@@ -19,13 +19,12 @@ public class RouteConfiguration implements JsonSerializable<RouteConfiguration> 
     /*
      * The @odata.type property.
      */
-    String odataType;
+    private String odataType = "RouteConfiguration";
 
     /**
      * Creates an instance of RouteConfiguration class.
      */
     public RouteConfiguration() {
-        this.odataType = "RouteConfiguration";
     }
 
     /**
@@ -51,12 +50,8 @@ public class RouteConfiguration implements JsonSerializable<RouteConfiguration> 
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**

@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class AzureADPartnerClientAuthentication extends PartnerClientAuthentication {
     /*
+     * Type of client authentication
+     */
+    private PartnerClientAuthenticationType clientAuthenticationType = PartnerClientAuthenticationType.AZURE_AD;
+
+    /*
      * AzureAD ClientAuthentication Properties
      */
     private AzureADPartnerClientAuthenticationProperties innerProperties;
@@ -25,7 +30,16 @@ public final class AzureADPartnerClientAuthentication extends PartnerClientAuthe
      * Creates an instance of AzureADPartnerClientAuthentication class.
      */
     public AzureADPartnerClientAuthentication() {
-        this.clientAuthenticationType = PartnerClientAuthenticationType.AZURE_AD;
+    }
+
+    /**
+     * Get the clientAuthenticationType property: Type of client authentication.
+     * 
+     * @return the clientAuthenticationType value.
+     */
+    @Override
+    public PartnerClientAuthenticationType clientAuthenticationType() {
+        return this.clientAuthenticationType;
     }
 
     /**
@@ -106,7 +120,8 @@ public final class AzureADPartnerClientAuthentication extends PartnerClientAuthe
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("clientAuthenticationType",
+            this.clientAuthenticationType == null ? null : this.clientAuthenticationType.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

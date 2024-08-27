@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class TextTrack extends TrackBase {
     /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.TextTrack";
+
+    /*
      * The file name to the source file. This file is located in the storage container of the asset.
      */
     private String fileName;
@@ -47,7 +52,16 @@ public final class TextTrack extends TrackBase {
      * Creates an instance of TextTrack class.
      */
     public TextTrack() {
-        this.odataType = "#Microsoft.Media.TextTrack";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -165,7 +179,7 @@ public final class TextTrack extends TrackBase {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeStringField("fileName", this.fileName);
         jsonWriter.writeStringField("displayName", this.displayName);
         jsonWriter.writeStringField("playerVisibility",

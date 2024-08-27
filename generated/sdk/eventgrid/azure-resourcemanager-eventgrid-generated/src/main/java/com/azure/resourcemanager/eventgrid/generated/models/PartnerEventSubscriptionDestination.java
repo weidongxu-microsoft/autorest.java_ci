@@ -17,6 +17,11 @@ import java.io.IOException;
 @Fluent
 public final class PartnerEventSubscriptionDestination extends EventSubscriptionDestination {
     /*
+     * Type of the endpoint for the event subscription destination.
+     */
+    private EndpointType endpointType = EndpointType.PARTNER_DESTINATION;
+
+    /*
      * Partner Destination Properties of the event subscription destination.
      */
     private PartnerEventSubscriptionDestinationProperties innerProperties;
@@ -25,7 +30,16 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
      * Creates an instance of PartnerEventSubscriptionDestination class.
      */
     public PartnerEventSubscriptionDestination() {
-        this.endpointType = EndpointType.PARTNER_DESTINATION;
+    }
+
+    /**
+     * Get the endpointType property: Type of the endpoint for the event subscription destination.
+     * 
+     * @return the endpointType value.
+     */
+    @Override
+    public EndpointType endpointType() {
+        return this.endpointType;
     }
 
     /**
@@ -80,7 +94,7 @@ public final class PartnerEventSubscriptionDestination extends EventSubscription
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("endpointType", this.endpointType == null ? null : this.endpointType.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

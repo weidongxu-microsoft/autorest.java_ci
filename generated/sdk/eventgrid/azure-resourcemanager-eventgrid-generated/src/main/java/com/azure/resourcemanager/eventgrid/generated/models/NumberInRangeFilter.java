@@ -17,6 +17,11 @@ import java.util.List;
 @Fluent
 public final class NumberInRangeFilter extends Filter {
     /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    private FilterOperatorType operatorType = FilterOperatorType.NUMBER_IN_RANGE;
+
+    /*
      * The set of filter values.
      */
     private List<List<Double>> values;
@@ -25,7 +30,17 @@ public final class NumberInRangeFilter extends Filter {
      * Creates an instance of NumberInRangeFilter class.
      */
     public NumberInRangeFilter() {
-        this.operatorType = FilterOperatorType.NUMBER_IN_RANGE;
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public FilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**
@@ -72,7 +87,8 @@ public final class NumberInRangeFilter extends Filter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("key", key());
+        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeArrayField("values", this.values,
             (writer, element) -> writer.writeArray(element, (writer1, element1) -> writer1.writeDouble(element1)));
         return jsonWriter.writeEndObject();

@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
@@ -17,11 +18,25 @@ import java.time.Duration;
  */
 @Fluent
 public final class AudioOverlay extends Overlay {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.AudioOverlay";
+
     /**
      * Creates an instance of AudioOverlay class.
      */
     public AudioOverlay() {
-        this.odataType = "#Microsoft.Media.AudioOverlay";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -99,7 +114,13 @@ public final class AudioOverlay extends Overlay {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("inputLabel", inputLabel());
+        jsonWriter.writeStringField("start", CoreUtils.durationToStringWithDays(start()));
+        jsonWriter.writeStringField("end", CoreUtils.durationToStringWithDays(end()));
+        jsonWriter.writeStringField("fadeInDuration", CoreUtils.durationToStringWithDays(fadeInDuration()));
+        jsonWriter.writeStringField("fadeOutDuration", CoreUtils.durationToStringWithDays(fadeOutDuration()));
+        jsonWriter.writeNumberField("audioGainLevel", audioGainLevel());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         return jsonWriter.writeEndObject();
     }
 

@@ -18,6 +18,11 @@ import java.util.List;
 @Fluent
 public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdminRule {
     /*
+     * Whether the rule is custom or default.
+     */
+    private EffectiveAdminRuleKind kind = EffectiveAdminRuleKind.CUSTOM;
+
+    /*
      * Indicates the properties of the security admin rule
      */
     private AdminPropertiesFormat innerProperties;
@@ -26,7 +31,16 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
      * Creates an instance of EffectiveSecurityAdminRule class.
      */
     public EffectiveSecurityAdminRule() {
-        this.kind = EffectiveAdminRuleKind.CUSTOM;
+    }
+
+    /**
+     * Get the kind property: Whether the rule is custom or default.
+     * 
+     * @return the kind value.
+     */
+    @Override
+    public EffectiveAdminRuleKind kind() {
+        return this.kind;
     }
 
     /**
@@ -337,7 +351,13 @@ public final class EffectiveSecurityAdminRule extends EffectiveBaseSecurityAdmin
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("id", id());
+        jsonWriter.writeStringField("configurationDescription", configurationDescription());
+        jsonWriter.writeStringField("ruleCollectionDescription", ruleCollectionDescription());
+        jsonWriter.writeArrayField("ruleCollectionAppliesToGroups", ruleCollectionAppliesToGroups(),
+            (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeArrayField("ruleGroups", ruleGroups(), (writer, element) -> writer.writeJson(element));
+        jsonWriter.writeStringField("kind", this.kind == null ? null : this.kind.toString());
         jsonWriter.writeJsonField("properties", this.innerProperties);
         return jsonWriter.writeEndObject();
     }

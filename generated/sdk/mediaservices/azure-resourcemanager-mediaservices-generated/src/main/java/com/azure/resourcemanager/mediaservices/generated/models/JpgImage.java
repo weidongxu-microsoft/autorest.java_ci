@@ -5,6 +5,7 @@
 package com.azure.resourcemanager.mediaservices.generated.models;
 
 import com.azure.core.annotation.Fluent;
+import com.azure.core.util.CoreUtils;
 import com.azure.core.util.logging.ClientLogger;
 import com.azure.json.JsonReader;
 import com.azure.json.JsonToken;
@@ -18,6 +19,11 @@ import java.util.List;
  */
 @Fluent
 public final class JpgImage extends Image {
+    /*
+     * The discriminator for derived types.
+     */
+    private String odataType = "#Microsoft.Media.JpgImage";
+
     /*
      * A collection of output JPEG image layers to be produced by the encoder.
      */
@@ -35,7 +41,16 @@ public final class JpgImage extends Image {
      * Creates an instance of JpgImage class.
      */
     public JpgImage() {
-        this.odataType = "#Microsoft.Media.JpgImage";
+    }
+
+    /**
+     * Get the odataType property: The discriminator for derived types.
+     * 
+     * @return the odataType value.
+     */
+    @Override
+    public String odataType() {
+        return this.odataType;
     }
 
     /**
@@ -171,7 +186,14 @@ public final class JpgImage extends Image {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("start", start());
+        jsonWriter.writeStringField("label", label());
+        jsonWriter.writeStringField("keyFrameInterval", CoreUtils.durationToStringWithDays(keyFrameInterval()));
+        jsonWriter.writeStringField("stretchMode", stretchMode() == null ? null : stretchMode().toString());
+        jsonWriter.writeStringField("syncMode", syncMode() == null ? null : syncMode().toString());
+        jsonWriter.writeStringField("step", step());
+        jsonWriter.writeStringField("range", range());
+        jsonWriter.writeStringField("@odata.type", this.odataType);
         jsonWriter.writeArrayField("layers", this.layers, (writer, element) -> writer.writeJson(element));
         jsonWriter.writeNumberField("spriteColumn", this.spriteColumn);
         return jsonWriter.writeEndObject();

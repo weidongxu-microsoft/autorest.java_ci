@@ -16,6 +16,11 @@ import java.io.IOException;
 @Fluent
 public final class NumberLessThanOrEqualsAdvancedFilter extends AdvancedFilter {
     /*
+     * The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals and others.
+     */
+    private AdvancedFilterOperatorType operatorType = AdvancedFilterOperatorType.NUMBER_LESS_THAN_OR_EQUALS;
+
+    /*
      * The filter value.
      */
     private Double value;
@@ -24,7 +29,17 @@ public final class NumberLessThanOrEqualsAdvancedFilter extends AdvancedFilter {
      * Creates an instance of NumberLessThanOrEqualsAdvancedFilter class.
      */
     public NumberLessThanOrEqualsAdvancedFilter() {
-        this.operatorType = AdvancedFilterOperatorType.NUMBER_LESS_THAN_OR_EQUALS;
+    }
+
+    /**
+     * Get the operatorType property: The operator type used for filtering, e.g., NumberIn, StringContains, BoolEquals
+     * and others.
+     * 
+     * @return the operatorType value.
+     */
+    @Override
+    public AdvancedFilterOperatorType operatorType() {
+        return this.operatorType;
     }
 
     /**
@@ -71,7 +86,8 @@ public final class NumberLessThanOrEqualsAdvancedFilter extends AdvancedFilter {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
+        jsonWriter.writeStringField("key", key());
+        jsonWriter.writeStringField("operatorType", this.operatorType == null ? null : this.operatorType.toString());
         jsonWriter.writeNumberField("value", this.value);
         return jsonWriter.writeEndObject();
     }

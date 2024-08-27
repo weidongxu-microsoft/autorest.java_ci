@@ -19,13 +19,12 @@ public class Preset implements JsonSerializable<Preset> {
     /*
      * The discriminator for derived types.
      */
-    String odataType;
+    private String odataType = "Preset";
 
     /**
      * Creates an instance of Preset class.
      */
     public Preset() {
-        this.odataType = "Preset";
     }
 
     /**
@@ -51,12 +50,8 @@ public class Preset implements JsonSerializable<Preset> {
     @Override
     public JsonWriter toJson(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStartObject();
-        toJsonShared(jsonWriter);
-        return jsonWriter.writeEndObject();
-    }
-
-    void toJsonShared(JsonWriter jsonWriter) throws IOException {
         jsonWriter.writeStringField("@odata.type", this.odataType);
+        return jsonWriter.writeEndObject();
     }
 
     /**
